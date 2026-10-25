@@ -25,8 +25,9 @@ jobs:
           
       - name: Install Android SDK
         run: |
+          export ANDROID_HOME="${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
+          export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
           yes | sdkmanager --licenses || true
-          
           sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
       - name: Set up Gradle

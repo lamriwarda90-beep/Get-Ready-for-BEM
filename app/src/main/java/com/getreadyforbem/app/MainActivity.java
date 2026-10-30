@@ -6,10 +6,6 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebSettings;
-import android.webkit.WebResourceRequest;
-import android.content.Intent;
-import android.net.Uri;
-import android.view.View;
 
 public class MainActivity extends Activity {
 
@@ -23,39 +19,16 @@ public class MainActivity extends Activity {
         setContentView(webView);
 
         WebSettings settings = webView.getSettings();
+
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
+        settings.setAllowFileAccess(true);
 
         webView.setWebChromeClient(new WebChromeClient());
+        webView.setWebViewClient(new WebViewClient());
 
-        webView.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(
-                    WebView view,
-                    WebResourceRequest request) {
-
-                Uri uri = request.getUrl();
-
-                if ("https".equals(uri.getScheme())
-                        && "willowy-caramel-1bd458.netlify.app"
-                        .equals(uri.getHost())) {
-                    return false;
-                }
-
-                if ("http".equals(uri.getScheme())
-                        || "https".equals(uri.getScheme())) {
-                    startActivity(new Intent(
-                            Intent.ACTION_VIEW, uri));
-                    return true;
-                }
-
-                return true;
-            }
-        });
-
-        webView.loadUrl(
-            "https://willowy-caramel-1bd458.netlify.app"
-        );
+        // Load the offline website from Android assets
+        webView.loadUrl("file:///android_asset/index.html");
     }
 
     @Override

@@ -1,0 +1,2325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#103e6b">
+
+<title>My English Space | MS4 Learning Platform</title>
+
+<meta name="description"
+content="My English Space — an interactive English learning platform for fourth-year middle school pupils.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================
+   MY ENGLISH SPACE
+   MS4 PREMIUM PHOTOGRAPHIC EDITION
+========================================== */
+
+:root {
+  --navy: #081f3c;
+  --navy-2: #103e6b;
+  --blue: #72c8ff;
+  --blue-light: #d8f2ff;
+  --gold: #ffe1a0;
+  --white: #ffffff;
+  --muted: #d9e8f4;
+  --teal: #78e3cf;
+  --pink: #ff9fc9;
+  --purple: #c4a7ff;
+  --shadow: 0 20px 55px rgba(3, 18, 39, .42);
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 95px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  color: white;
+  background: #103e6b;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: "Sora", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(1380px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   PHOTOGRAPHIC BACKGROUND
+========================================== */
+
+.page-background {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 27, 55, .89) 0%,
+      rgba(9, 49, 89, .73) 46%,
+      rgba(10, 53, 95, .43) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(4, 23, 47, .85),
+      transparent 70%
+    ),
+    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2200&q=85")
+    center / cover no-repeat;
+}
+
+.page-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(133, 207, 255, .13),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(5, 27, 55, .05),
+      rgba(4, 23, 47, .32)
+    );
+}
+
+/* ==========================================
+   SCROLL PROGRESS
+========================================== */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  z-index: 1000;
+
+  background: linear-gradient(
+    90deg,
+    #7ee3ff,
+    var(--gold)
+  );
+}
+
+/* ==========================================
+   FLOATING HEADER
+========================================== */
+
+.site-header {
+  position: relative;
+  z-index: 100;
+}
+
+.navbar {
+  min-height: 72px;
+  margin-top: 16px;
+  padding: 12px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  border: 1px solid rgba(218, 239, 255, .35);
+  border-radius: 22px;
+
+  background: rgba(7, 39, 77, .66);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow: 0 10px 35px rgba(0, 20, 45, .35);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -.5px;
+  white-space: nowrap;
+}
+
+.brand span:last-child strong {
+  color: var(--gold);
+}
+
+.brand-mark {
+  position: relative;
+
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #a9e2ff
+  );
+
+  color: #14517d;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  background: var(--gold);
+  border: 2px solid #154a7a;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(255,255,255,.84);
+  transition: .25s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-cta {
+  padding: 13px 21px;
+  border-radius: 28px;
+
+  background: var(--gold);
+  color: #274466 !important;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,.16);
+}
+
+.nav-cta:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+  min-height: 590px;
+
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+  align-items: center;
+  gap: 65px;
+
+  padding: 65px 8px 70px;
+}
+
+.hero-copy {
+  max-width: 690px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 5px;
+}
+
+.hero h1 {
+  margin: 22px 0 18px;
+
+  font-size: clamp(49px, 5.4vw, 79px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -3.6px;
+
+  text-shadow: 0 5px 25px rgba(0,20,45,.55);
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero-description {
+  max-width: 590px;
+  margin: 0;
+
+  color: #e7f3ff;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 24px;
+}
+
+.hero-pills span {
+  padding: 10px 15px;
+  border-radius: 25px;
+
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(9,47,89,.52);
+
+  backdrop-filter: blur(8px);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+
+  padding: 14px 23px;
+  border-radius: 28px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  transition: .25s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.button-primary {
+  background: var(--gold);
+  color: #29425d;
+  box-shadow: 0 9px 25px rgba(0,0,0,.25);
+}
+
+.button-primary:hover {
+  background: white;
+}
+
+.button-outline {
+  background: rgba(255,255,255,.11);
+  border: 1px solid rgba(255,255,255,.55);
+  backdrop-filter: blur(8px);
+}
+
+.button-outline:hover {
+  background: rgba(255,255,255,.22);
+}
+
+.button-arrow {
+  display: grid;
+  place-items: center;
+
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+
+  background: #24547b;
+  color: white;
+  font-size: 16px;
+}
+
+.hero-motto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+
+  color: #e6f3ff;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.hero-motto span:not(:last-child)::after {
+  content: "✦";
+  margin-left: 12px;
+  color: var(--gold);
+}
+
+/* ==========================================
+   HERO VISUAL
+========================================== */
+
+.hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: auto;
+}
+
+.hero-visual::before {
+  content: "";
+  position: absolute;
+
+  inset: 27px -14px -18px 27px;
+  border-radius: 33px;
+
+  background: rgba(194,230,255,.23);
+  border: 1px solid rgba(255,255,255,.4);
+
+  transform: rotate(4deg);
+}
+
+.hero-photo {
+  position: relative;
+  z-index: 2;
+
+  overflow: hidden;
+  border-radius: 27px;
+
+  border: 1px solid rgba(255,255,255,.6);
+  background: #174e79;
+
+  box-shadow: 0 30px 65px rgba(0,18,43,.5);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+}
+
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(3,27,58,.85),
+    transparent 55%
+  );
+
+  pointer-events: none;
+}
+
+.hero-photo-caption {
+  position: absolute;
+  z-index: 3;
+
+  left: 26px;
+  right: 26px;
+  bottom: 26px;
+
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.hero-photo-caption strong {
+  font-family: "Sora", sans-serif;
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.hero-photo-caption small {
+  display: block;
+  margin-top: 7px;
+  font-size: 11px;
+  color: #e0edfa;
+}
+
+.hero-badge {
+  padding: 13px 17px;
+  border-radius: 13px;
+
+  background: rgba(255,255,255,.17);
+  border: 1px solid rgba(255,255,255,.35);
+
+  backdrop-filter: blur(10px);
+
+  font-family: "Sora", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* ==========================================
+   GLASS PANELS
+========================================== */
+
+.glass {
+  border: 1px solid rgba(222,241,255,.32);
+
+  background: linear-gradient(
+    130deg,
+    rgba(6,34,70,.88),
+    rgba(14,70,119,.76)
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 26px;
+
+  box-shadow: var(--shadow);
+}
+
+/* ==========================================
+   QUICK NAVIGATION
+========================================== */
+
+.quick-nav {
+  position: sticky;
+  top: 10px;
+  z-index: 80;
+
+  margin: 0 auto 35px;
+  padding: 8px;
+
+  width: min(1100px, 100%);
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  border: 1px solid rgba(255,255,255,.36);
+  border-radius: 35px;
+
+  background: rgba(9,54,98,.88);
+  backdrop-filter: blur(16px);
+
+  box-shadow: 0 12px 30px rgba(0,20,45,.35);
+}
+
+.quick-nav a {
+  padding: 11px 15px;
+  border-radius: 25px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  transition: .2s;
+}
+
+.quick-nav a:hover {
+  background: rgba(255,255,255,.16);
+}
+
+.quick-nav a.special {
+  background: var(--gold);
+  color: #27445f;
+}
+
+/* ==========================================
+   SECTION HEADINGS
+========================================== */
+
+.section-heading {
+  text-align: center;
+  padding: 50px 0 28px;
+}
+
+.section-heading .kicker {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.section-heading h2 {
+  margin: 12px 0;
+  font-size: clamp(29px,3.5vw,43px);
+  letter-spacing: -1.4px;
+}
+
+.section-heading h2 span {
+  color: var(--gold);
+}
+
+.section-heading p {
+  max-width: 680px;
+  margin: auto;
+
+  color: #e0edf9;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   WELCOME PANEL
+========================================== */
+
+.welcome-panel {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 25px;
+
+  padding: 28px 35px;
+}
+
+.welcome-symbol {
+  display: grid;
+  place-items: center;
+
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #d6f3ff,
+    #6ec6fa
+  );
+
+  color: #144d7b;
+  font-size: 40px;
+
+  box-shadow: inset -6px -7px 13px rgba(13,75,130,.2);
+}
+
+.welcome-panel h2 {
+  margin: 0 0 10px;
+  font-size: 25px;
+  letter-spacing: -.8px;
+}
+
+.welcome-panel p {
+  margin: 0;
+  max-width: 850px;
+
+  color: #d9eaf8;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.welcome-badge {
+  padding: 13px 17px;
+  border-radius: 14px;
+
+  background: rgba(255,225,160,.13);
+  border: 1px solid rgba(255,225,160,.35);
+
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   SEQUENCE GRID
+========================================== */
+
+.sequence-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+}
+
+.sequence-card {
+  --accent: var(--teal);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  border-radius: 23px;
+
+  border: 1px solid rgba(255,255,255,.35);
+
+  background: rgba(7,35,69,.85);
+
+  box-shadow: 0 17px 40px rgba(0,19,42,.4);
+
+  transition: .3s;
+}
+
+.sequence-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0,18,43,.55);
+}
+
+.sequence-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 4;
+
+  background: var(--accent);
+}
+
+.sequence-one {
+  --accent: var(--teal);
+}
+
+.sequence-two {
+  --accent: var(--pink);
+}
+
+.sequence-three {
+  --accent: var(--purple);
+}
+
+.sequence-image {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+}
+
+.sequence-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+
+.sequence-card:hover img {
+  transform: scale(1.06);
+}
+
+.sequence-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(4,24,52,.85),
+    transparent 65%
+  );
+}
+
+.sequence-number {
+  position: absolute;
+  z-index: 2;
+  bottom: 16px;
+  right: 20px;
+
+  font-family: "Sora", sans-serif;
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: -3px;
+
+  color: white;
+  text-shadow: 0 3px 15px rgba(0,0,0,.45);
+}
+
+.sequence-image-label {
+  position: absolute;
+  z-index: 2;
+  bottom: 22px;
+  left: 22px;
+
+  padding: 8px 12px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.32);
+  backdrop-filter: blur(9px);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.sequence-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  padding: 25px;
+}
+
+.sequence-kicker {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.sequence-content h3 {
+  margin: 12px 0;
+  font-size: 21px;
+  line-height: 1.4;
+  letter-spacing: -.7px;
+}
+
+.sequence-content p {
+  margin: 0 0 25px;
+
+  color: #d8e8f6;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.sequence-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: auto;
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  background: var(--accent);
+  color: #173c53;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sequence-button span {
+  font-size: 19px;
+}
+
+/* ==========================================
+   FEATURE PANELS
+========================================== */
+
+.feature-panel {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 35px;
+
+  padding: 24px;
+}
+
+.feature-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 19px;
+  background: #1a5785;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform .5s;
+}
+
+.feature-panel:hover .feature-image img {
+  transform: scale(1.04);
+}
+
+.feature-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(5,33,67,.7),
+    transparent 60%
+  );
+
+  pointer-events: none;
+}
+
+.feature-photo-label {
+  position: absolute;
+  z-index: 2;
+  bottom: 18px;
+  left: 18px;
+
+  padding: 10px 15px;
+  border-radius: 25px;
+
+  background: rgba(255,255,255,.87);
+  color: #164f7b;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.feature-copy {
+  padding: 15px 15px 15px 0;
+}
+
+.feature-kicker {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.feature-copy h3 {
+  margin: 15px 0;
+  font-size: clamp(27px,3vw,39px);
+  letter-spacing: -1.2px;
+}
+
+.feature-copy h3 span {
+  color: var(--gold);
+}
+
+.feature-copy p {
+  color: #dbeaf7;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 22px 0 26px;
+}
+
+.topic-tags span {
+  padding: 10px 13px;
+  border-radius: 25px;
+
+  background: rgba(255,255,255,.11);
+  border: 1px solid rgba(255,255,255,.25);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* ==========================================
+   EXAM CARD
+========================================== */
+
+.exam-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 720px);
+  justify-content: center;
+  gap: 18px;
+}
+
+.exam-card {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 275px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 23px;
+
+  border: 1px solid rgba(255,255,255,.32);
+
+  background: linear-gradient(
+    135deg,
+    rgba(8,47,89,.91),
+    rgba(20,88,143,.77)
+  );
+
+  box-shadow: var(--shadow);
+
+  transition: .3s;
+}
+
+.exam-card:hover {
+  transform: translateY(-6px);
+}
+
+.exam-card::after {
+  content: "";
+  position: absolute;
+
+  width: 210px;
+  height: 210px;
+  right: -100px;
+  top: -100px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.18);
+
+  pointer-events: none;
+}
+
+.exam-icon {
+  font-size: 36px;
+}
+
+.exam-card h3 {
+  margin: 16px 0 10px;
+  font-size: 24px;
+}
+
+.exam-card p {
+  margin: 0 0 25px;
+
+  color: #e2edf8;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.exam-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: auto;
+
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.exam-card a:hover {
+  color: white;
+}
+
+/* ==========================================
+   FINAL MESSAGE
+========================================== */
+
+.final-panel {
+  margin: 50px 0 0;
+  padding: 55px 25px;
+
+  text-align: center;
+
+  border-radius: 28px;
+  border: 1px solid rgba(255,225,160,.48);
+
+  background: linear-gradient(
+    130deg,
+    rgba(86,64,34,.84),
+    rgba(28,56,86,.86)
+  );
+
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+.final-panel h2 {
+  margin: 0;
+  font-size: clamp(27px,3.5vw,42px);
+  letter-spacing: -1px;
+}
+
+.final-panel h2 span {
+  color: var(--gold);
+}
+
+.final-panel p {
+  max-width: 700px;
+  margin: 18px auto 26px;
+
+  color: #f0e9da;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+  margin-top: 70px;
+  padding: 32px 20px;
+
+  border-top: 1px solid rgba(255,255,255,.17);
+
+  text-align: center;
+  color: #dbeaf8;
+
+  font-size: 11px;
+  line-height: 2;
+}
+
+footer strong {
+  color: var(--gold);
+}
+
+/* ==========================================
+   REVEAL ANIMATION
+========================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:1100px) {
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero {
+    gap: 35px;
+  }
+
+  .hero-photo img {
+    height: 400px;
+  }
+
+  .hero h1 {
+    font-size: clamp(45px,5vw,65px);
+  }
+
+}
+
+/* ==========================================
+   SMALL TABLET
+========================================== */
+
+@media(max-width:850px) {
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    text-align: center;
+  }
+
+  .hero-copy {
+    margin: auto;
+  }
+
+  .hero-description {
+    margin-inline: auto;
+  }
+
+  .hero-pills,
+  .hero-actions,
+  .hero-motto {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    max-width: 620px;
+  }
+
+  .sequence-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .sequence-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 560px;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .welcome-panel {
+    grid-template-columns: auto 1fr;
+  }
+
+  .welcome-badge {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:600px) {
+
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .navbar {
+    margin-top: 10px;
+    padding: 13px;
+    border-radius: 18px;
+  }
+
+  .brand {
+    font-size: 12px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .nav-links {
+    gap: 7px;
+  }
+
+  .nav-links a {
+    padding: 9px;
+    font-size: 10px;
+  }
+
+  .nav-cta {
+    padding: 9px 12px !important;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 55px 5px 65px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px,10vw,59px);
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-photo img {
+    height: 330px;
+  }
+
+  .hero-photo-caption strong {
+    font-size: 17px;
+  }
+
+  .hero-badge {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .quick-nav {
+    top: 6px;
+    border-radius: 20px;
+  }
+
+  .quick-nav a {
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+
+  .welcome-panel {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 27px 20px;
+  }
+
+  .welcome-symbol {
+    margin: auto;
+  }
+
+  .welcome-panel h2 {
+    font-size: 22px;
+  }
+
+  .sequence-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sequence-card:last-child {
+    grid-column: auto;
+  }
+
+  .sequence-image {
+    height: 230px;
+  }
+
+  .feature-panel {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 18px;
+  }
+
+  .feature-image img {
+    height: 255px;
+  }
+
+  .feature-copy {
+    padding: 15px 5px;
+  }
+
+  .feature-copy h3 {
+    font-size: 29px;
+  }
+
+  .final-panel {
+    padding: 40px 20px;
+  }
+
+  .final-panel h2 {
+    font-size: 27px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body id="home">
+
+<!-- ==========================================
+     BACKGROUND
+========================================== -->
+
+<div class="page-background" aria-hidden="true"></div>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="site-header">
+
+  <nav class="navbar container" aria-label="Main navigation">
+
+    <a href="#home" class="brand">
+
+      <span class="brand-mark">ES</span>
+
+      <span>
+        MY ENGLISH <strong>SPACE</strong>
+      </span>
+
+    </a>
+
+    <div class="nav-links">
+
+      <a href="#sequences">
+        Sequences
+      </a>
+
+      <a href="#pronunciation">
+        Pronunciation Lab
+      </a>
+
+      <a href="MS4-Tests.html">
+        Tests &amp; Exams
+      </a>
+
+      <a href="MS4-BEM-Preparation.html">
+        🏆 BEM Preparation
+      </a>
+
+      <a href="MS4-PracticeMore.html" class="nav-cta">
+        ⭐ Practice More
+      </a>
+
+    </div>
+
+  </nav>
+
+</header>
+
+<main>
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="hero container">
+
+  <div class="hero-copy">
+
+    <div class="eyebrow">
+      WELCOME TO YOUR MS4 WORLD
+    </div>
+
+    <h1>
+
+      My English<br>
+
+      <span>Space.</span>
+
+    </h1>
+
+    <p class="hero-description">
+
+      Welcome to your English learning adventure!
+
+      Discover fascinating landmarks,
+      explore your personality and life experiences,
+      and learn how to make a positive difference
+      in your community.
+
+      Enjoy interactive lessons,
+      creative challenges and exciting
+      practice activities designed especially
+      for fourth-year middle school pupils.
+
+    </p>
+
+    <div class="hero-pills">
+
+      <span>🌍 Discover</span>
+      <span>📚 Learn</span>
+      <span>✍️ Create</span>
+      <span>🏆 Succeed</span>
+
+    </div>
+
+    <div class="hero-actions">
+
+      <a href="#sequences" class="button button-primary">
+
+        Explore the Sequences
+
+        <span class="button-arrow">→</span>
+
+      </a>
+
+      <a href="MS4-PracticeMore.html" class="button button-outline">
+
+        ⭐ Practice More
+
+      </a>
+
+    </div>
+
+    <div class="hero-motto">
+
+      <span>Learn</span>
+      <span>Explore</span>
+      <span>Practise</span>
+      <span>Succeed</span>
+
+    </div>
+
+  </div>
+
+  <!-- HERO IMAGE -->
+
+  <div class="hero-visual">
+
+    <div class="hero-photo">
+
+      <img
+        src="https://i.imgur.com/5gO3g1j.png"
+        alt="My English Space MS4 learning adventure"
+        fetchpriority="high"
+      >
+
+      <div class="hero-photo-caption">
+
+        <div>
+
+          <strong>
+            Your Learning<br>
+            Adventure
+          </strong>
+
+          <small>
+            Three sequences. Endless possibilities.
+          </small>
+
+        </div>
+
+        <span class="hero-badge">
+          MS4
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     QUICK NAVIGATION
+========================================== -->
+
+<div class="container">
+
+  <nav class="quick-nav" aria-label="Page sections">
+
+    <a href="#home">
+      ⌂ Home
+    </a>
+
+    <a href="#sequences">
+      🌍 Sequences
+    </a>
+
+    <a href="#pronunciation">
+      🎤 Pronunciation
+    </a>
+
+    <a href="#practice">
+      🎯 Practice
+    </a>
+
+    <a href="#tests">
+      📝 Tests &amp; Exams
+    </a>
+
+    <a href="#bem">
+      🏆 BEM Prep
+    </a>
+
+    <a href="MS4-PracticeMore.html" class="special">
+      ⭐ Practice More
+    </a>
+
+  </nav>
+
+  <!-- ==========================================
+       WELCOME PANEL
+  ========================================== -->
+
+  <section class="welcome-panel glass reveal">
+
+    <div class="welcome-symbol">
+      🌎
+    </div>
+
+    <div>
+
+      <h2>
+        Welcome to Your English Adventure!
+      </h2>
+
+      <p>
+
+        My English Space is designed especially for MS4 pupils.
+
+        Explore three exciting sequences,
+        learn new vocabulary,
+        improve grammar, reading, writing and pronunciation,
+        enjoy educational games
+        and prepare confidently for the BEM.
+
+      </p>
+
+    </div>
+
+    <span class="welcome-badge">
+      ✦ MS4 LEARNING HUB
+    </span>
+
+  </section>
+
+  <!-- ==========================================
+       SEQUENCES
+  ========================================== -->
+
+  <section id="sequences">
+
+    <div class="section-heading reveal">
+
+      <span class="kicker">
+        YOUR LEARNING JOURNEY
+      </span>
+
+      <h2>
+        Three Sequences. <span>Three New Worlds.</span>
+      </h2>
+
+      <p>
+        Choose a sequence and begin your English adventure.
+        Each world brings new discoveries and exciting challenges.
+      </p>
+
+    </div>
+
+    <div class="sequence-grid">
+
+      <!-- SEQUENCE 1 -->
+
+      <a
+        href="MS4-Sequence1.html"
+        class="sequence-card sequence-one reveal"
+      >
+
+        <div class="sequence-image">
+
+          <img
+            src="https://i.imgur.com/BpsuWfI.png"
+            alt="Landmarks and outstanding figures"
+            loading="lazy"
+          >
+
+          <span class="sequence-image-label">
+            EXPLORE THE WORLD
+          </span>
+
+          <span class="sequence-number">
+            01
+          </span>
+
+        </div>
+
+        <div class="sequence-content">
+
+          <span class="sequence-kicker">
+            SEQUENCE ONE
+          </span>
+
+          <h3>
+            Universal Landmarks &amp; Outstanding Figures
+          </h3>
+
+          <p>
+
+            Discover famous places,
+            explore history and meet remarkable figures
+            in literature, arts and culture.
+
+          </p>
+
+          <span class="sequence-button">
+
+            Explore Sequence 1
+
+            <span>→</span>
+
+          </span>
+
+        </div>
+
+      </a>
+
+      <!-- SEQUENCE 2 -->
+
+      <a
+        href="MS4-Sequence2.html"
+        class="sequence-card sequence-two reveal"
+      >
+
+        <div class="sequence-image">
+
+          <img
+            src="https://i.imgur.com/5BVu3T7.png"
+            alt="Personality and life experiences"
+            loading="lazy"
+          >
+
+          <span class="sequence-image-label">
+            DISCOVER YOURSELF
+          </span>
+
+          <span class="sequence-number">
+            02
+          </span>
+
+        </div>
+
+        <div class="sequence-content">
+
+          <span class="sequence-kicker">
+            SEQUENCE TWO
+          </span>
+
+          <h3>
+            My Personality &amp; Life Experiences
+          </h3>
+
+          <p>
+
+            Explore personality traits,
+            dreams, ambitions, memories
+            and life experiences.
+
+          </p>
+
+          <span class="sequence-button">
+
+            Explore Sequence 2
+
+            <span>→</span>
+
+          </span>
+
+        </div>
+
+      </a>
+
+      <!-- SEQUENCE 3 -->
+
+      <a
+        href="MS4-Sequence3.html"
+        class="sequence-card sequence-three reveal"
+      >
+
+        <div class="sequence-image">
+
+          <img
+            src="https://i.imgur.com/cNQWUkG.png"
+            alt="Community and citizenship"
+            loading="lazy"
+          >
+
+          <span class="sequence-image-label">
+            MAKE A DIFFERENCE
+          </span>
+
+          <span class="sequence-number">
+            03
+          </span>
+
+        </div>
+
+        <div class="sequence-content">
+
+          <span class="sequence-kicker">
+            SEQUENCE THREE
+          </span>
+
+          <h3>
+            My Community &amp; Citizenship
+          </h3>
+
+          <p>
+
+            Discover citizenship,
+            volunteering, charity work
+            and helping others in your community.
+
+          </p>
+
+          <span class="sequence-button">
+
+            Explore Sequence 3
+
+            <span>→</span>
+
+          </span>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- ==========================================
+       PRONUNCIATION LAB
+  ========================================== -->
+
+  <section id="pronunciation">
+
+    <div class="section-heading reveal">
+
+      <span class="kicker">
+        LISTEN · REPEAT · SPEAK
+      </span>
+
+      <h2>
+        Pronunciation <span>Lab.</span>
+      </h2>
+
+      <p>
+
+        Discover English sounds,
+        improve your pronunciation
+        and speak with confidence!
+
+      </p>
+
+    </div>
+
+    <div class="feature-panel glass reveal">
+
+      <div class="feature-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1100&q=85"
+          alt="Professional microphone in a sound studio"
+          loading="lazy"
+        >
+
+        <span class="feature-photo-label">
+          🎧 YOUR SOUND ADVENTURE
+        </span>
+
+      </div>
+
+      <div class="feature-copy">
+
+        <span class="feature-kicker">
+          YOUR PRONUNCIATION ZONE
+        </span>
+
+        <h3>
+          Explore English <span>Sounds!</span>
+        </h3>
+
+        <p>
+
+          Discover important English sounds
+          through six exciting pronunciation lessons.
+
+          Learn how to pronounce word endings,
+          recognise vowel and consonant sounds,
+          and identify silent letters.
+
+          Listen to examples,
+          practise difficult words
+          and become a more confident English speaker.
+
+        </p>
+
+        <div class="topic-tags">
+
+          <span>Final -S</span>
+          <span>Final -ED</span>
+          <span>/eɪ/ and /aɪ/</span>
+          <span>Silent Letters</span>
+          <span>TH Pronunciation</span>
+          <span>SH and CH</span>
+
+        </div>
+
+        <a
+          href="MS4-Pronunciation.html"
+          class="button button-primary"
+        >
+
+          Open Pronunciation Lab
+
+          <span class="button-arrow">→</span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ==========================================
+       PRACTICE MORE
+  ========================================== -->
+
+  <section id="practice">
+
+    <div class="section-heading reveal">
+
+      <span class="kicker">
+        EXTRA PRACTICE
+      </span>
+
+      <h2>
+        Practice More. <span>Become Better.</span>
+      </h2>
+
+      <p>
+
+        Strengthen your grammar and reading skills
+        through extra interactive tasks.
+
+      </p>
+
+    </div>
+
+    <div class="feature-panel glass reveal">
+
+      <div class="feature-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1100&q=85"
+          alt="Student practising English"
+          loading="lazy"
+        >
+
+        <span class="feature-photo-label">
+          ⭐ YOUR EXTRA PRACTICE ZONE
+        </span>
+
+      </div>
+
+      <div class="feature-copy">
+
+        <span class="feature-kicker">
+          PRACTISE · IMPROVE · SUCCEED
+        </span>
+
+        <h3>
+          Ready for a <span>Challenge?</span>
+        </h3>
+
+        <p>
+
+          Explore extra grammar exercises
+          and reading comprehension tasks.
+
+          Practise at your own pace,
+          strengthen your knowledge
+          and become more confident in English.
+
+        </p>
+
+        <div class="topic-tags">
+
+          <span>🧩 Grammar Tasks</span>
+          <span>📖 Reading Comprehension</span>
+
+        </div>
+
+        <a
+          href="MS4-PracticeMore.html"
+          class="button button-primary"
+        >
+
+          Open Practice More
+
+          <span class="button-arrow">→</span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ==========================================
+       TESTS & EXAMS
+       SINGLE CARD
+  ========================================== -->
+
+  <section id="tests">
+
+    <div class="section-heading reveal">
+
+      <span class="kicker">
+        SCHOOL ASSESSMENTS
+      </span>
+
+      <h2>
+        Tests &amp; <span>Exams.</span>
+      </h2>
+
+      <p>
+
+        Practise for your school assessments
+        with dedicated first, second
+        and third term examinations.
+
+      </p>
+
+    </div>
+
+    <div class="exam-grid">
+
+      <!-- ONLY THE MAIN TESTS & EXAMS CARD -->
+
+      <article class="exam-card reveal">
+
+        <div class="exam-icon">
+          📝
+        </div>
+
+        <h3>
+          Tests &amp; Exams
+        </h3>
+
+        <p>
+
+          Explore English tests and examinations
+          organised by school term.
+
+          Practise reading comprehension,
+          grammar, vocabulary
+          and written expression
+          in preparation for your classroom assessments.
+
+        </p>
+
+        <a href="MS4-Tests.html">
+
+          Explore First, Second &amp; Third Term Exams →
+
+        </a>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- ==========================================
+       BEM PREPARATION
+       INDEPENDENT SECTION
+  ========================================== -->
+
+  <section id="bem">
+
+    <div class="section-heading reveal">
+
+      <span class="kicker">
+        YOUR JOURNEY TO THE BEM
+      </span>
+
+      <h2>
+        BEM <span>Preparation.</span>
+      </h2>
+
+      <p>
+
+        A dedicated learning centre
+        to help you prepare confidently
+        for the national BEM English examination.
+
+      </p>
+
+    </div>
+
+    <div class="feature-panel glass reveal">
+
+      <div class="feature-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1100&q=85"
+          alt="Books and study materials for BEM preparation"
+          loading="lazy"
+        >
+
+        <span class="feature-photo-label">
+          🏆 YOUR BEM SUCCESS JOURNEY
+        </span>
+
+      </div>
+
+      <div class="feature-copy">
+
+        <span class="feature-kicker">
+          READ · REVISE · PRACTISE · SUCCEED
+        </span>
+
+        <h3>
+          Get Ready for <span>Your BEM!</span>
+        </h3>
+
+        <p>
+
+          Welcome to your dedicated BEM Preparation Centre!
+
+          Learn examination strategies,
+          improve reading comprehension,
+          master grammar and vocabulary,
+          and develop effective writing skills.
+
+          Explore past BEM papers
+          and challenge yourself
+          with complete BEM-style mock examinations.
+
+        </p>
+
+        <div class="topic-tags">
+
+          <span>📖 Reading Comprehension</span>
+
+          <span>🧩 Mastery of Language</span>
+
+          <span>✍️ Written Expression</span>
+
+          <span>📜 Past BEM Papers</span>
+
+          <span>🏆 Mock Examinations</span>
+
+        </div>
+
+        <a
+          href="MS4-BEM-Preparation.html"
+          class="button button-primary"
+        >
+
+          Enter BEM Preparation Centre
+
+          <span class="button-arrow">→</span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ==========================================
+       FINAL MESSAGE
+  ========================================== -->
+
+  <section class="final-panel reveal">
+
+    <h2>
+      Small Steps. <span>Extraordinary Progress.</span>
+    </h2>
+
+    <p>
+
+      Every new word you learn,
+      every sentence you write
+      and every challenge you complete
+      brings you closer to your goals.
+
+      Keep exploring, learning
+      and believing in yourself!
+
+    </p>
+
+    <a
+      href="#sequences"
+      class="button button-primary"
+    >
+
+      Continue Your Journey
+
+      <span class="button-arrow">→</span>
+
+    </a>
+
+  </section>
+
+</div>
+
+</main>
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+  <strong>MY ENGLISH SPACE</strong>
+
+  <br>
+
+  MS4 · Learn · Explore · Practise · Succeed
+
+  <br>
+
+  © <span id="year"></span> My English Space
+
+  <br>
+
+  Created &amp; designed by
+  <strong>Warda Lamri</strong>
+
+</footer>
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+/* ==========================================
+   SCROLL PROGRESS
+========================================== */
+
+const progressBar =
+  document.getElementById("scrollProgress");
+
+function updateProgress() {
+
+  const totalHeight =
+    document.documentElement.scrollHeight -
+    window.innerHeight;
+
+  const percentage =
+    totalHeight > 0
+      ? (window.scrollY / totalHeight) * 100
+      : 0;
+
+  progressBar.style.width =
+    Math.min(100, Math.max(0, percentage)) + "%";
+
+}
+
+window.addEventListener(
+  "scroll",
+  updateProgress,
+  { passive: true }
+);
+
+updateProgress();
+
+/* ==========================================
+   CURRENT YEAR
+========================================== */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+const revealItems =
+  document.querySelectorAll(".reveal");
+
+const reducedMotion =
+  window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+if (
+  "IntersectionObserver" in window &&
+  !reducedMotion
+) {
+
+  const observer = new IntersectionObserver(
+
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("visible");
+
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold: 0.08,
+      rootMargin: "0px 0px -20px 0px"
+    }
+
+  );
+
+  revealItems.forEach((item) => {
+    observer.observe(item);
+  });
+
+} else {
+
+  revealItems.forEach((item) => {
+    item.classList.add("visible");
+  });
+
+}
+
+</script>
+
+</body>
+</html>

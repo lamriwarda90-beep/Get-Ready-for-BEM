@@ -1,0 +1,85 @@
+name: Extract Get Ready for BEM Website
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract-website:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Extract website ZIP
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import shutil
+
+          docs = Path("docs")
+          archive = docs / "get-ready-for-bem (5).zip"
+          temporary = Path("/tmp/bem-website-extracted")
+
+          if not archive.is_file():
+              raise SystemExit(f"ZIP file not found: {archive}")
+
+          if temporary.exists():
+              shutil.rmtree(temporary)
+
+          temporary.mkdir(parents=True)
+
+          with ZipFile(archive) as z:
+              z.extractall(temporary)
+
+          # Find the website homepage.
+          homepages = [
+              p for p in temporary.rglob("index.html")
+              if "__MACOSX" not in p.parts
+              and "node_modules" not in p.parts
+          ]
+
+          if not homepages:
+              raise SystemExit("No index.html found in ZIP.")
+
+          # Prefer a homepage at the archive root.
+          homepage = min(
+              homepages,
+              key=lambda p: (len(p.relative_to(temporary).parts), str(p))
+          )
+
+          website_root = homepage.parent
+          print(f"Website root: {website_root}")
+
+          # Copy website files into docs.
+          for item in website_root.iterdir():
+              destination = docs / item.name
+
+              if item.is_dir():
+                  shutil.copytree(
+                      item,
+                      destination,
+                      dirs_exist_ok=True
+                  )
+              elif item.resolve() != destination.resolve():
+                  shutil.copy2(item, destination)
+
+          print("Website extraction completed.")
+          PY
+
+      - name: Commit extracted website
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/
+          git diff --cached --quiet && exit 0
+
+          git commit -m "Extract complete Get Ready for BEM website"
+          git push

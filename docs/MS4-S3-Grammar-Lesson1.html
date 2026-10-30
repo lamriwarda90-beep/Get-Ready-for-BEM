@@ -1,0 +1,2724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#5426a5">
+
+<title>MS4-S3-Grammar-Lesson1 | The Imperative</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#281846;
+  --muted:#756989;
+  --purple:#7137d5;
+  --deep:#41168b;
+  --violet:#a67cff;
+  --pink:#f45ca8;
+  --gold:#ffcb57;
+  --green:#22b887;
+  --red:#ed6279;
+  --blue:#5598ee;
+  --line:#e9def9;
+  --paper:#fff;
+  --lavender:#f6f0ff;
+  --shadow:0 16px 38px rgba(53,20,109,.10);
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:80px;
+}
+
+body{
+  margin:0;
+  font-family:Nunito,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 5% 10%,#e7d5ff 0,transparent 27%),
+    radial-gradient(circle at 95% 35%,#ffd9ec 0,transparent 26%),
+    linear-gradient(135deg,#f9f5ff,#fff8fc 55%,#f2edff);
+  min-height:100vh;
+}
+
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover}
+[hidden]{display:none!important}
+
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{font-family:"Baloo 2",sans-serif}
+
+.wrap{
+  width:min(1170px,94%);
+  margin:auto;
+}
+
+button{
+  transition:transform .2s,background .2s,border-color .2s;
+}
+
+button:hover:not(:disabled){
+  transform:translateY(-2px);
+}
+
+/* HEADER */
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+
+.top-inner{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-weight:900;
+}
+
+.brand-mark{
+  width:45px;
+  height:45px;
+  display:grid;
+  place-items:center;
+  border-radius:15px;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  color:white;
+  font-size:24px;
+  box-shadow:0 7px 18px #7137d535;
+}
+
+.brand small{
+  display:block;
+  font-size:.69rem;
+  color:var(--muted);
+}
+
+.top-buttons{
+  display:flex;
+  gap:8px;
+}
+
+.nav-btn{
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--deep);
+  border-radius:12px;
+  padding:10px 14px;
+  font-size:.82rem;
+  font-weight:900;
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  margin-top:23px;
+  border-radius:32px;
+  background:linear-gradient(120deg,#3e168c 0%,#7138d5 52%,#bd55c8 100%);
+  box-shadow:0 24px 55px #4a229b35;
+  color:#fff;
+  padding:55px 55px 40px;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:380px;
+  height:380px;
+  border-radius:50%;
+  right:-130px;
+  top:-180px;
+  border:70px solid #ffffff12;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:210px;
+  height:210px;
+  border-radius:48px;
+  background:#ffffff0c;
+  transform:rotate(28deg);
+  right:55px;
+  bottom:-135px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+}
+
+.eyebrow{
+  display:inline-block;
+  padding:9px 15px;
+  border-radius:30px;
+  background:#ffffff23;
+  border:1px solid #ffffff38;
+  font-size:.76rem;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.hero h1{
+  font-size:clamp(3.3rem,7vw,6rem);
+  line-height:.97;
+  letter-spacing:-2px;
+  margin:22px 0 16px;
+}
+
+.hero h1 span{color:var(--gold)}
+
+.hero p{
+  line-height:1.85;
+  color:#f1eaff;
+  font-size:1.02rem;
+  font-weight:700;
+}
+
+.hero-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:23px 0;
+}
+
+.hero-chip{
+  padding:9px 13px;
+  border-radius:12px;
+  background:#ffffff1e;
+  border:1px solid #ffffff27;
+  font-weight:900;
+  font-size:.79rem;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:23px;
+}
+
+.hero-button{
+  border:0;
+  border-radius:14px;
+  background:var(--gold);
+  color:#4d2b65;
+  padding:14px 21px;
+  font-weight:900;
+  box-shadow:0 8px 22px #27115530;
+}
+
+.hero-button.outline{
+  background:#ffffff20;
+  color:white;
+  border:1px solid #ffffff60;
+}
+
+.hero-progress{
+  margin-top:32px;
+  max-width:680px;
+  padding:16px;
+  border-radius:16px;
+  background:#ffffff1b;
+  border:1px solid #ffffff38;
+}
+
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font-size:.83rem;
+  font-weight:900;
+}
+
+.progress-track{
+  height:11px;
+  background:#ffffff35;
+  border-radius:30px;
+  margin-top:11px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+  border-radius:30px;
+  background:linear-gradient(90deg,#ffe080,#ff9ed0);
+  transition:width .5s;
+}
+
+/* LESSON NAVIGATION */
+
+.journey{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin:20px 0;
+}
+
+.journey a{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:13px;
+  text-align:center;
+  font-weight:900;
+  font-size:.82rem;
+  box-shadow:0 5px 14px #4b1d8410;
+  transition:.2s;
+}
+
+.journey a:hover{
+  background:var(--lavender);
+  transform:translateY(-3px);
+}
+
+.journey a span{
+  display:block;
+  font-size:1.35rem;
+  margin-bottom:3px;
+}
+
+/* LESSON SECTIONS */
+
+.lesson{padding-bottom:35px}
+
+.panel{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:27px;
+  margin-bottom:22px;
+  padding:38px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+
+.panel:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:5px;
+  background:linear-gradient(90deg,var(--purple),var(--pink),var(--gold));
+}
+
+.step-label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:30px;
+  background:var(--lavender);
+  color:var(--purple);
+  font-size:.74rem;
+  font-weight:900;
+  letter-spacing:.6px;
+}
+
+.panel h2{
+  margin:14px 0 7px;
+  font-size:clamp(1.9rem,4vw,2.8rem);
+  line-height:1.1;
+  color:var(--deep);
+}
+
+.intro{
+  color:var(--muted);
+  font-weight:700;
+  line-height:1.8;
+  margin-bottom:25px;
+}
+
+.callout{
+  padding:20px;
+  border-radius:17px;
+  background:linear-gradient(120deg,#f5efff,#fff3fa);
+  border:1px solid #e7d9fa;
+  line-height:1.8;
+  margin:18px 0;
+  font-weight:700;
+}
+
+.callout strong{color:var(--deep)}
+
+.callout.gold{
+  background:#fff9e8;
+  border-color:#f6e4a6;
+}
+
+.callout.green{
+  background:#eafaf4;
+  border-color:#b6ead5;
+}
+
+.arabic{
+  font-family:"Noto Naskh Arabic",serif;
+  direction:rtl;
+  text-align:right;
+  font-size:1.06rem;
+  line-height:2.1;
+  background:#f6f0ff;
+  padding:15px 20px;
+  border-radius:14px;
+  color:#60359d;
+  margin-top:16px;
+}
+
+/* PICTURES */
+
+.picture-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:15px;
+}
+
+.picture-card{
+  border:1px solid var(--line);
+  border-radius:19px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 7px 20px #32105c10;
+  transition:.25s;
+}
+
+.picture-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 30px #32105c20;
+}
+
+.picture-image{
+  aspect-ratio:4/3;
+  background:#eee5ff;
+  overflow:hidden;
+}
+
+.picture-image img{transition:transform .35s}
+
+.picture-card:hover img{transform:scale(1.06)}
+
+.picture-caption{padding:15px}
+
+.picture-number{
+  display:inline-grid;
+  place-items:center;
+  width:28px;
+  height:28px;
+  background:#f1e7ff;
+  color:var(--purple);
+  border-radius:9px;
+  font-size:.75rem;
+  font-weight:900;
+  margin-bottom:9px;
+}
+
+.picture-caption h3{
+  font-size:1rem;
+  line-height:1.35;
+  margin:0 0 7px;
+}
+
+.picture-caption h3 strong{color:var(--purple)}
+
+.picture-caption small{
+  color:var(--muted);
+  font-weight:800;
+}
+
+/* GRAMMAR RULES */
+
+.rules-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+
+.rule{
+  padding:24px;
+  border-radius:19px;
+  border:1px solid var(--line);
+  background:#fff;
+  position:relative;
+}
+
+.rule:nth-child(1){border-top:5px solid var(--gold)}
+.rule:nth-child(2){border-top:5px solid var(--red)}
+.rule:nth-child(3){border-top:5px solid var(--blue)}
+.rule:nth-child(4){border-top:5px solid var(--green)}
+
+.rule h3{
+  font-size:1.35rem;
+  color:var(--deep);
+  margin-bottom:7px;
+}
+
+.rule p{
+  font-size:.89rem;
+  color:var(--muted);
+  line-height:1.7;
+  font-weight:700;
+}
+
+.formula{
+  display:inline-block;
+  background:#f0e6ff;
+  color:var(--deep);
+  border-radius:11px;
+  padding:10px 13px;
+  font-weight:900;
+  font-size:.84rem;
+  margin:4px 0 12px;
+}
+
+.example{
+  background:#f9f6ff;
+  border-radius:9px;
+  padding:9px 11px;
+  margin:7px 0;
+  font-size:.88rem;
+  font-weight:800;
+}
+
+/* COMPARISON */
+
+.compare{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.compare-box{
+  background:#f6efff;
+  border:1px solid #e4d3ff;
+  padding:23px;
+  border-radius:18px;
+}
+
+.compare-box:nth-child(2){
+  background:#edfaf3;
+  border-color:#c7edd8;
+}
+
+.compare-box h3{
+  font-size:1.4rem;
+  margin-bottom:7px;
+}
+
+.compare-box p{
+  font-weight:700;
+  color:var(--muted);
+  line-height:1.65;
+}
+
+.compare-pattern{
+  background:white;
+  border-radius:11px;
+  padding:14px;
+  font-weight:900;
+  color:var(--deep);
+  line-height:1.8;
+}
+
+/* INTERACTIVE QUIZZES */
+
+.question{
+  padding:21px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  margin:13px 0;
+  background:#fff;
+}
+
+.question-title{
+  font-weight:900;
+  margin-bottom:13px;
+  line-height:1.5;
+}
+
+.options{
+  display:grid;
+  gap:9px;
+}
+
+.option,
+.mini-option{
+  width:100%;
+  text-align:left;
+  border:2px solid #e8def5;
+  background:white;
+  border-radius:12px;
+  padding:12px 15px;
+  font-size:.88rem;
+  font-weight:800;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.option:hover:not(:disabled),
+.mini-option:hover:not(:disabled){
+  border-color:var(--violet);
+  background:#faf6ff;
+}
+
+.option.correct,
+.mini-option.correct{
+  border-color:var(--green);
+  background:#e9faf2;
+  color:#137a56;
+}
+
+.option.wrong,
+.mini-option.wrong{
+  border-color:var(--red);
+  background:#fff0f3;
+  color:#ac3452;
+}
+
+.option:disabled,
+.mini-option:disabled{
+  opacity:1;
+}
+
+.feedback{
+  margin-top:11px;
+  padding:12px;
+  border-radius:11px;
+  background:#f3ebff;
+  color:var(--deep);
+  font-size:.84rem;
+  font-weight:800;
+  line-height:1.6;
+}
+
+.summary{
+  background:linear-gradient(100deg,#f2eaff,#fff1f8);
+  color:var(--deep);
+  padding:15px 18px;
+  border-radius:13px;
+  font-weight:900;
+  margin-top:17px;
+}
+
+.action-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:16px;
+}
+
+.action{
+  border:0;
+  background:var(--purple);
+  color:white;
+  padding:12px 19px;
+  border-radius:12px;
+  font-weight:900;
+}
+
+.action.secondary{
+  background:#efe5ff;
+  color:var(--deep);
+}
+
+.action.green{background:var(--green)}
+
+/* FILL IN THE BLANKS */
+
+.fill-grid{
+  display:grid;
+  gap:12px;
+}
+
+.fill-item{
+  background:#faf7ff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px;
+  font-weight:800;
+  line-height:2;
+}
+
+.fill-input{
+  width:140px;
+  max-width:100%;
+  border:2px solid #d8c4f2;
+  border-radius:9px;
+  padding:7px 10px;
+  color:var(--deep);
+  font-weight:900;
+  background:white;
+}
+
+.fill-input.correct{
+  border-color:var(--green);
+  background:#e9faf2;
+}
+
+.fill-input.wrong{
+  border-color:var(--red);
+  background:#fff0f3;
+}
+
+.hint{
+  display:block;
+  color:var(--muted);
+  font-size:.76rem;
+  font-weight:700;
+}
+
+/* PICTURE MISSIONS */
+
+.mission-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:17px;
+}
+
+.mission-card{
+  border:1px solid var(--line);
+  border-radius:19px;
+  overflow:hidden;
+  background:white;
+  box-shadow:0 8px 20px #32105c0c;
+}
+
+.mission-image{
+  aspect-ratio:16/9;
+  background:#eee5ff;
+  overflow:hidden;
+}
+
+.mission-image img{transition:transform .3s}
+.mission-card:hover img{transform:scale(1.04)}
+
+.mission-body{padding:18px}
+
+.mission-body h3{
+  font-size:1.25rem;
+  color:var(--deep);
+  margin-bottom:5px;
+}
+
+.mission-body p{
+  font-size:.86rem;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.mini-options{
+  display:grid;
+  gap:8px;
+}
+
+.mission-feedback{
+  background:#f2ebff;
+  color:var(--deep);
+  border-radius:10px;
+  padding:11px;
+  margin-top:10px;
+  font-size:.82rem;
+  font-weight:900;
+}
+
+/* WRITING CHALLENGE */
+
+.writing-zone{
+  padding:23px;
+  border:1px solid #ddc7f8;
+  border-radius:20px;
+  background:linear-gradient(135deg,#f7f0ff,#fff1f9);
+}
+
+.writing-zone h3{
+  text-align:center;
+  font-size:1.7rem;
+  color:var(--deep);
+}
+
+.model{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:19px;
+  line-height:1.9;
+  font-size:.91rem;
+  font-weight:700;
+}
+
+.model strong{color:var(--purple)}
+
+.requirements{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:16px 0;
+}
+
+.requirement{
+  padding:13px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:11px;
+  font-size:.8rem;
+  font-weight:900;
+  line-height:1.5;
+}
+
+.requirement.met{
+  background:#e9faf2;
+  border-color:var(--green);
+  color:#137a56;
+}
+
+textarea{
+  width:100%;
+  min-height:190px;
+  border:2px solid #dcc7f6;
+  border-radius:14px;
+  padding:15px;
+  resize:vertical;
+  line-height:1.8;
+  background:white;
+}
+
+.writing-stats{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:10px;
+  font-size:.79rem;
+  color:var(--muted);
+  font-weight:900;
+}
+
+.campaign-output{
+  margin-top:16px;
+  background:white;
+  border:1px solid var(--line);
+  padding:20px;
+  border-radius:14px;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  line-height:1.8;
+}
+
+/* COMPLETION */
+
+.finish{
+  text-align:center;
+  border-radius:26px;
+  padding:45px 25px;
+  background:linear-gradient(135deg,#4a1b99,#8c4fdf,#c65bba);
+  color:white;
+  box-shadow:0 18px 40px #4a1b9928;
+}
+
+.finish h2{
+  font-size:2.5rem;
+  margin:8px 0;
+}
+
+.finish p{
+  font-weight:800;
+  color:#f1e9ff;
+}
+
+.finish .remember{
+  text-align:left;
+  max-width:740px;
+  margin:22px auto;
+  background:#ffffff1c;
+  border:1px solid #ffffff38;
+  border-radius:16px;
+  padding:22px;
+  line-height:2;
+}
+
+.finish .remember strong{color:#ffe080}
+
+.finish .hero-button{
+  display:inline-block;
+  margin-top:10px;
+}
+
+footer{
+  text-align:center;
+  padding:24px;
+  color:#846e9c;
+  font-size:.77rem;
+  font-weight:900;
+}
+
+/* FLOATING MINI DICTIONARY */
+
+.dictionary-fab{
+  position:fixed;
+  right:23px;
+  bottom:23px;
+  z-index:60;
+  border:0;
+  border-radius:20px;
+  padding:15px 20px;
+  color:white;
+  font-weight:900;
+  font-size:.88rem;
+  background:linear-gradient(135deg,#6e36d1,#ed5caa);
+  box-shadow:0 12px 30px #7137d55c;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.dictionary-fab span{font-size:1.5rem}
+
+.dictionary-panel{
+  position:fixed;
+  right:22px;
+  bottom:91px;
+  z-index:61;
+  width:min(410px,calc(100vw - 28px));
+  max-height:min(650px,75vh);
+  display:flex;
+  flex-direction:column;
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 25px 70px #2c125c50;
+  border:1px solid var(--line);
+}
+
+.dictionary-head{
+  background:linear-gradient(120deg,#5424a8,#a24dd0);
+  color:white;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+}
+
+.dictionary-head h3{
+  margin:0;
+  font-size:1.5rem;
+}
+
+.dictionary-head p{
+  font-size:.76rem;
+  margin:0;
+  color:#e9dbff;
+  font-weight:800;
+}
+
+.close-dict{
+  width:34px;
+  height:34px;
+  border:1px solid #ffffff55;
+  border-radius:10px;
+  background:#ffffff20;
+  color:white;
+  font-size:20px;
+}
+
+.dictionary-search{
+  padding:13px;
+  border-bottom:1px solid var(--line);
+}
+
+.dictionary-search input{
+  width:100%;
+  padding:12px;
+  border:2px solid var(--line);
+  border-radius:12px;
+  outline:none;
+  font-weight:800;
+}
+
+.dictionary-search input:focus{
+  border-color:var(--purple);
+}
+
+.dictionary-list{
+  overflow-y:auto;
+  padding:11px;
+  flex:1;
+}
+
+.dictionary-word{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:8px;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  margin-bottom:8px;
+  background:#fdfbff;
+  align-items:center;
+}
+
+.dictionary-word strong{
+  display:block;
+  color:var(--deep);
+  font-size:.94rem;
+}
+
+.dictionary-word small{
+  display:block;
+  color:var(--muted);
+  font-size:.73rem;
+  margin-top:4px;
+  font-weight:700;
+}
+
+.dictionary-word .translation{
+  font-family:"Noto Naskh Arabic",serif;
+  direction:rtl;
+  text-align:right;
+  color:#703bc0;
+  font-size:1rem;
+  font-weight:700;
+}
+
+.speak{
+  border:0;
+  background:#eee5ff;
+  color:var(--deep);
+  padding:6px 9px;
+  border-radius:9px;
+  font-size:.78rem;
+  font-weight:900;
+  margin-top:7px;
+}
+
+.dictionary-empty{
+  text-align:center;
+  padding:25px;
+  color:var(--muted);
+  font-weight:800;
+}
+
+.dictionary-backdrop{
+  position:fixed;
+  inset:0;
+  background:#180b3155;
+  z-index:59;
+}
+
+.dict-tip{
+  padding:10px 14px;
+  background:#fff8e7;
+  color:#81601d;
+  font-size:.73rem;
+  font-weight:800;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:950px){
+  .picture-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:680px){
+  .top-inner{min-height:65px}
+  .brand{font-size:.78rem}
+  .brand small{font-size:.61rem}
+  .brand-mark{width:39px;height:39px}
+  .nav-btn{padding:9px;font-size:.72rem}
+  .hero{padding:35px 23px;border-radius:23px}
+  .hero h1{font-size:3.35rem}
+  .hero p{font-size:.93rem}
+  .panel{padding:26px 19px;border-radius:21px}
+  .journey{grid-template-columns:repeat(2,1fr)}
+  .rules-grid,.compare,.mission-grid,.requirements{
+    grid-template-columns:1fr;
+  }
+  .picture-grid{gap:10px}
+  .picture-caption{padding:11px}
+  .picture-caption h3{font-size:.85rem}
+  .dictionary-fab{
+    right:13px;
+    bottom:13px;
+    padding:12px 15px;
+  }
+  .dictionary-panel{
+    right:14px;
+    bottom:77px;
+  }
+}
+
+@media(max-width:390px){
+  .picture-grid{grid-template-columns:1fr}
+  .picture-image{aspect-ratio:16/10}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    transition:none!important;
+    animation:none!important;
+  }
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="wrap top-inner">
+    <div class="brand">
+      <div class="brand-mark">📘</div>
+      <div>
+        MY ENGLISH SPACE
+        <small>MS4 · Sequence 3 · Grammar Lesson 1</small>
+      </div>
+    </div>
+
+    <div class="top-buttons">
+      <button class="nav-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        ↑ Top
+      </button>
+      <button class="nav-btn" onclick="restartLesson()">
+        ↻ Restart
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="eyebrow">
+      ⭐ MS4 · SEQUENCE 3 · GRAMMAR LESSON 1
+    </span>
+
+    <h1>The <span>Imperative</span></h1>
+
+    <p>
+      Discover how to give instructions and recommendations,
+      protect your community, and become a responsible citizen.
+      Learn the imperative and <strong>should / shouldn't</strong>
+      through pictures, challenges and a creative writing mission.
+    </p>
+
+    <div class="hero-chips">
+      <span class="hero-chip">🌍 Community</span>
+      <span class="hero-chip">🤝 Citizenship</span>
+      <span class="hero-chip">🛡️ Safety</span>
+      <span class="hero-chip">🏆 BEM Practice</span>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#step1" class="hero-button">
+        Start Learning →
+      </a>
+
+      <button class="hero-button outline" onclick="openDictionary()">
+        📖 Mini Dictionary
+      </button>
+    </div>
+
+    <div class="hero-progress">
+      <div class="progress-top">
+        <span>✨ Your Grammar Journey</span>
+        <span id="progressText">0 / 5 challenges</span>
+      </div>
+
+      <div class="progress-track"
+           id="progressTrack"
+           role="progressbar"
+           aria-label="Lesson progress"
+           aria-valuemin="0"
+           aria-valuemax="5"
+           aria-valuenow="0">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY NAVIGATION -->
+
+<nav class="journey" aria-label="Lesson stages">
+  <a href="#step1"><span>👀</span>01 · Discover</a>
+  <a href="#step2"><span>📚</span>02 · Rules</a>
+  <a href="#step3"><span>⚖️</span>03 · Compare</a>
+  <a href="#step4"><span>🔍</span>04 · Detective</a>
+  <a href="#step5"><span>✏️</span>05 · Complete</a>
+  <a href="#step6"><span>🖼️</span>06 · Pictures</a>
+  <a href="#step7"><span>📝</span>07 · Editor</a>
+  <a href="#step8"><span>🏆</span>08 · Create</a>
+</nav>
+
+<main class="lesson">
+
+<!-- STEP 1 -->
+
+<section class="panel" id="step1">
+
+  <div class="step-label">STEP 01 · NOTICE & THINK</div>
+
+  <h2>Discover the Language</h2>
+
+  <p class="intro">
+    Look at the pictures. Each one shows a simple action that can
+    make our school, neighbourhood or community better.
+  </p>
+
+  <div class="callout">
+    <strong>🔎 Your mission:</strong>
+    Look at the first word in each recommendation.
+    What do you notice?
+    <br>
+    <span style="color:var(--muted)">
+      Hint: It is a verb, but there is no written subject such as
+      <em>you</em>.
+    </span>
+  </div>
+
+  <div class="picture-grid" id="discoveryGrid"></div>
+
+  <div class="callout gold">
+    <strong>💡 What do you notice?</strong>
+    <br>
+    <strong>Keep, Stay, Help, Respect, Take and Be</strong>
+    are verbs in the <strong>base form</strong>.
+    We normally do not write <em>you</em> before the verb.
+    This form is called the <strong>imperative</strong>.
+  </div>
+
+  <div class="arabic">
+    صيغة الأمر في الإنجليزية تبدأ بالفعل في صورته الأصلية،
+    دون كتابة الفاعل عادةً.
+    <br>
+    مثال: Keep the classroom clean.
+    <br>
+    حافظ على نظافة القسم.
+  </div>
+
+</section>
+
+<!-- STEP 2 -->
+
+<section class="panel" id="step2">
+
+  <div class="step-label">STEP 02 · LEARN THE RULE</div>
+
+  <h2>The Imperative Toolkit</h2>
+
+  <p class="intro">
+    Use these four grammar patterns to give instructions,
+    recommendations and advice.
+  </p>
+
+  <div class="rules-grid">
+
+    <article class="rule">
+      <h3>✅ Affirmative Imperative</h3>
+      <p>
+        Use the base form of the verb.
+        The subject <strong>you</strong> is understood.
+      </p>
+      <div class="formula">BASE VERB + ...</div>
+      <div class="example">Keep the streets clean.</div>
+      <div class="example">Respect public places.</div>
+      <div class="example">Help people in need.</div>
+      <div class="example">Protect the environment.</div>
+    </article>
+
+    <article class="rule">
+      <h3>🚫 Negative Imperative</h3>
+      <p>
+        Use <strong>don't</strong> followed by
+        the base form of the verb.
+      </p>
+      <div class="formula">DON'T + BASE VERB</div>
+      <div class="example">Don't throw rubbish.</div>
+      <div class="example">Don't waste water.</div>
+      <div class="example">Don't damage public property.</div>
+      <div class="example">Don't cross carelessly.</div>
+    </article>
+
+    <article class="rule">
+      <h3>🔵 Imperative with “Be”</h3>
+      <p>
+        Use <strong>be</strong> to recommend behaviour
+        or a person's state.
+      </p>
+      <div class="formula">BE + ADJECTIVE</div>
+      <div class="example">Be careful.</div>
+      <div class="example">Be respectful.</div>
+      <div class="example">Be responsible.</div>
+      <div class="example">Don't be careless.</div>
+    </article>
+
+    <article class="rule">
+      <h3>💡 Should / Shouldn't</h3>
+      <p>
+        <strong>Should</strong> gives advice.
+        <strong>Shouldn't</strong> says something
+        is not a good idea.
+      </p>
+      <div class="formula">
+        SUBJECT + SHOULD(N'T) + BASE VERB
+      </div>
+      <div class="example">You should recycle.</div>
+      <div class="example">Citizens should help others.</div>
+      <div class="example">You shouldn't litter.</div>
+      <div class="example">We shouldn't waste water.</div>
+    </article>
+
+  </div>
+
+  <div class="callout gold">
+    <strong>🎯 BEM Grammar Alert</strong>
+    <br>
+    After <strong>should / shouldn't</strong>,
+    use the base verb.
+    <br><br>
+    ✓ You should <strong>respect</strong> the rules.
+    <br>
+    ✗ You should <strong>respects</strong> the rules.
+    <br>
+    ✗ You should <strong>to respect</strong> the rules.
+    <br>
+    ✗ You should <strong>respecting</strong> the rules.
+  </div>
+
+  <div class="arabic">
+    الأمر المثبت: الفعل في المصدر دون to.
+    <br>
+    الأمر المنفي: Don't + الفعل في المصدر.
+    <br>
+    النصيحة: should / shouldn't + الفعل في المصدر.
+  </div>
+
+</section>
+
+<!-- STEP 3 -->
+
+<section class="panel" id="step3">
+
+  <div class="step-label">STEP 03 · COMPARE</div>
+
+  <h2>Imperative or Should?</h2>
+
+  <p class="intro">
+    Both can give advice. Notice how the sentence structure changes.
+  </p>
+
+  <div class="compare">
+
+    <div class="compare-box">
+      <h3>🟣 Imperative</h3>
+      <p>
+        A direct recommendation.
+        The subject <em>you</em> is understood.
+      </p>
+      <div class="compare-pattern">
+        BASE VERB
+        <br>
+        <span style="font-weight:700">
+          Keep the park clean.
+        </span>
+      </div>
+    </div>
+
+    <div class="compare-box">
+      <h3>🟢 Should</h3>
+      <p>
+        Advice about what is a good idea.
+        A subject is written.
+      </p>
+      <div class="compare-pattern">
+        SUBJECT + SHOULD + BASE VERB
+        <br>
+        <span style="font-weight:700">
+          You should keep the park clean.
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    <strong>🧠 Memory Trick:</strong>
+    <br>
+    <strong>KEEP</strong> the park clean.
+    → Direct recommendation.
+    <br>
+    <strong>YOU SHOULD KEEP</strong> the park clean.
+    → Advice.
+  </div>
+
+</section>
+
+<!-- STEP 4 -->
+
+<section class="panel" id="step4">
+
+  <div class="step-label">STEP 04 · EASY CHALLENGE</div>
+
+  <h2>Grammar Detective</h2>
+
+  <p class="intro">
+    Choose the correct answer.
+    Receive instant feedback and try again when necessary.
+  </p>
+
+  <div id="detectiveQuiz"></div>
+
+  <div class="summary" id="detectiveSummary" aria-live="polite">
+    🔍 Correct answers: 0 / 4
+  </div>
+
+</section>
+
+<!-- STEP 5 -->
+
+<section class="panel" id="step5">
+
+  <div class="step-label">STEP 05 · MEDIUM CHALLENGE</div>
+
+  <h2>Complete the Recommendations</h2>
+
+  <p class="intro">
+    Complete each sentence using the correct word.
+  </p>
+
+  <div class="fill-grid">
+
+    <div class="fill-item">
+      1.
+      <input class="fill-input"
+             data-answer="protect"
+             aria-label="Answer 1"
+             autocomplete="off">
+      the environment.
+      <span class="hint">
+        Clue: protect / protecting
+      </span>
+    </div>
+
+    <div class="fill-item">
+      2.
+      <input class="fill-input"
+             data-answer="don't"
+             aria-label="Answer 2"
+             autocomplete="off">
+      throw rubbish on the ground.
+      <span class="hint">
+        Clue: don't / doesn't
+      </span>
+    </div>
+
+    <div class="fill-item">
+      3. You
+      <input class="fill-input"
+             data-answer="should"
+             aria-label="Answer 3"
+             autocomplete="off">
+      respect public places.
+      <span class="hint">
+        Clue: should / shouldn't
+      </span>
+    </div>
+
+    <div class="fill-item">
+      4. You shouldn't
+      <input class="fill-input"
+             data-answer="waste"
+             aria-label="Answer 4"
+             autocomplete="off">
+      water.
+      <span class="hint">
+        Clue: waste / wasting
+      </span>
+    </div>
+
+  </div>
+
+  <div class="action-row">
+    <button class="action" onclick="checkFill()">
+      ✓ Check Answers
+    </button>
+    <button class="action secondary" onclick="resetFill()">
+      ↻ Try Again
+    </button>
+  </div>
+
+  <div class="summary" id="fillResult" hidden aria-live="polite"></div>
+
+</section>
+
+<!-- STEP 6 -->
+
+<section class="panel" id="step6">
+
+  <div class="step-label">STEP 06 · PICTURE CHALLENGE</div>
+
+  <h2>Community Picture Mission</h2>
+
+  <p class="intro">
+    Look at each original picture and choose the correct
+    imperative recommendation.
+  </p>
+
+  <div class="mission-grid" id="missionGrid"></div>
+
+  <div class="summary" id="pictureSummary" aria-live="polite">
+    🖼️ Picture missions completed: 0 / 7
+  </div>
+
+</section>
+
+<!-- STEP 7 -->
+
+<section class="panel" id="step7">
+
+  <div class="step-label">STEP 07 · HIGHER THINKING</div>
+
+  <h2>Grammar Editor</h2>
+
+  <p class="intro">
+    A pupil made grammatical mistakes.
+    Choose the correct version.
+  </p>
+
+  <div id="editorQuiz"></div>
+
+  <div class="summary" id="editorSummary" aria-live="polite">
+    📝 Correct answers: 0 / 4
+  </div>
+
+</section>
+
+<!-- STEP 8 -->
+
+<section class="panel" id="step8">
+
+  <div class="step-label">STEP 08 · CREATIVE MISSION</div>
+
+  <h2>Create a Community Campaign</h2>
+
+  <p class="intro">
+    Your school is launching a
+    <strong>Better Community Campaign</strong>.
+    Write recommendations for pupils.
+  </p>
+
+  <div class="writing-zone">
+
+    <h3>🌍 MAKE OUR COMMUNITY BETTER!</h3>
+
+    <div class="model">
+      <strong>
+        A clean and safe community needs everyone's help.
+      </strong>
+      <br><br>
+      <strong>Keep</strong> the streets clean and
+      <strong>don't throw</strong> rubbish on the ground.
+      <strong>Respect</strong> public places and
+      <strong>help</strong> people who need assistance.
+      You <strong>should</strong> protect green spaces,
+      and you <strong>shouldn't</strong> waste water.
+      <strong>Be</strong> responsible and think about
+      how your actions affect other people.
+    </div>
+
+    <div class="callout gold">
+      <strong>✏️ Your writing mission:</strong>
+      <br>
+      Write at least three affirmative imperatives,
+      one negative imperative, and two sentences
+      using should / shouldn't.
+    </div>
+
+    <div class="requirements">
+      <div class="requirement" id="req1">
+        ☐ 3 affirmative imperatives
+      </div>
+      <div class="requirement" id="req2">
+        ☐ 1 negative imperative
+      </div>
+      <div class="requirement" id="req3">
+        ☐ 2 should / shouldn't sentences
+      </div>
+    </div>
+
+    <label for="campaignText">
+      <strong>📝 Your Campaign:</strong>
+    </label>
+
+    <textarea id="campaignText" placeholder="Keep our school clean.
+Respect public places.
+Help people in need.
+Don't waste water.
+You should recycle.
+You shouldn't damage public property."></textarea>
+
+    <div class="writing-stats">
+      <span id="wordCount">0 words</span>
+      <span id="sentenceCount">0 sentences</span>
+      <span id="writingStatus">Keep writing!</span>
+    </div>
+
+    <div class="action-row">
+      <button class="action" onclick="checkCampaign()">
+        ✓ Check My Writing
+      </button>
+      <button class="action green" onclick="displayCampaign()">
+        ★ Display My Campaign
+      </button>
+      <button class="action secondary" onclick="clearCampaign()">
+        ↻ Clear
+      </button>
+    </div>
+
+    <div class="summary"
+         id="campaignFeedback"
+         hidden
+         aria-live="polite"></div>
+
+    <div class="campaign-output"
+         id="campaignOutput"
+         hidden></div>
+
+  </div>
+
+</section>
+
+<!-- COMPLETION -->
+
+<section class="finish" id="completion">
+
+  <div style="font-size:3.6rem">🏆</div>
+
+  <h2>Grammar Mission Complete!</h2>
+
+  <p id="finalScore">
+    Complete the five interactive challenges to finish your mission.
+  </p>
+
+  <div class="remember">
+    <strong>🧠 Remember the three key patterns:</strong>
+    <br><br>
+
+    🟣 <strong>Imperative:</strong>
+    Base verb →
+    <em>Keep the park clean.</em>
+    <br>
+
+    🔴 <strong>Negative imperative:</strong>
+    Don't + base verb →
+    <em>Don't throw rubbish.</em>
+    <br>
+
+    🟢 <strong>Should / shouldn't:</strong>
+    Subject + should(n't) + base verb →
+    <em>You should recycle.</em>
+  </div>
+
+  <a class="hero-button" href="#step1">
+    ↑ Review the Lesson
+  </a>
+
+</section>
+
+</main>
+
+<footer>
+  MY ENGLISH SPACE · MS4 · SEQUENCE 3 · GRAMMAR LESSON 1
+</footer>
+
+</div>
+
+<!-- MINI DICTIONARY BUTTON -->
+
+<button class="dictionary-fab"
+        id="dictionaryButton"
+        onclick="toggleDictionary()"
+        aria-expanded="false"
+        aria-controls="dictionaryPanel">
+  <span>📖</span> Mini Dictionary
+</button>
+
+<div class="dictionary-backdrop"
+     id="dictionaryBackdrop"
+     onclick="closeDictionary()"
+     hidden></div>
+
+<!-- MINI DICTIONARY PANEL -->
+
+<aside class="dictionary-panel"
+       id="dictionaryPanel"
+       role="dialog"
+       aria-modal="true"
+       aria-label="English Arabic Mini Dictionary"
+       hidden>
+
+  <div class="dictionary-head">
+
+    <div>
+      <h3>📖 Mini Dictionary</h3>
+      <p>English ↔ Arabic · Sequence 3</p>
+    </div>
+
+    <button class="close-dict"
+            onclick="closeDictionary()"
+            aria-label="Close dictionary">
+      ×
+    </button>
+
+  </div>
+
+  <div class="dictionary-search">
+    <input id="dictionarySearch"
+           type="search"
+           placeholder="🔍 Search a word..."
+           aria-label="Search dictionary">
+  </div>
+
+  <div class="dict-tip">
+    🔊 Tap the speaker to hear the English pronunciation.
+  </div>
+
+  <div class="dictionary-list" id="dictionaryList"></div>
+
+</aside>
+
+<script>
+"use strict";
+
+/* =========================================================
+   SEVEN ORIGINAL PICTURES
+   WORK TOGETHER IMAGE REMOVED
+========================================================= */
+
+const pictures = [
+  {
+    image:"https://i.imgur.com/QAQqm7B.png",
+    title:"Keep our community clean.",
+    verb:"Keep",
+    category:"🌍 Community",
+    mission:"Keep Our Community Clean",
+    question:"Choose the correct recommendation.",
+    options:[
+      "Keep our community clean.",
+      "Keeping our community clean."
+    ],
+    answer:0
+  },
+  {
+    image:"https://i.imgur.com/l1M3ayr.png",
+    title:"Stay safe on the road.",
+    verb:"Stay",
+    category:"🚸 Road Safety",
+    mission:"Stay Safe on the Road",
+    question:"Choose the imperative.",
+    options:[
+      "You should stay safe on the road.",
+      "Stay safe on the road."
+    ],
+    answer:1
+  },
+  {
+    image:"https://i.imgur.com/1EX2wqa.png",
+    title:"Help your community.",
+    verb:"Help",
+    category:"🤝 Citizenship",
+    mission:"Help Your Community",
+    question:"Choose the correct base form.",
+    options:[
+      "Help your community.",
+      "Helps your community."
+    ],
+    answer:0
+  },
+  {
+    image:"https://i.imgur.com/DzaDvnW.png",
+    title:"Respect classroom rules.",
+    verb:"Respect",
+    category:"🏫 School Life",
+    mission:"Respect Classroom Rules",
+    question:"Which sentence is an imperative?",
+    options:[
+      "Respecting classroom rules.",
+      "Respect classroom rules."
+    ],
+    answer:1
+  },
+  {
+    image:"https://i.imgur.com/HBOy6pE.png",
+    title:"Take care of public places.",
+    verb:"Take care",
+    category:"🏙️ Public Places",
+    mission:"Take Care of Public Places",
+    question:"Choose the correct recommendation.",
+    options:[
+      "Take care of public places.",
+      "Takes care of public places."
+    ],
+    answer:0
+  },
+  {
+    image:"https://i.imgur.com/EqI7aIi.png",
+    title:"Stay calm in an emergency.",
+    verb:"Stay",
+    category:"🚨 Emergency",
+    mission:"Stay Calm in an Emergency",
+    question:"Choose the direct recommendation.",
+    options:[
+      "You should stay calm.",
+      "Stay calm."
+    ],
+    answer:1
+  },
+  {
+    image:"https://i.imgur.com/M6bMNxC.png",
+    title:"Be respectful in the library.",
+    verb:"Be",
+    category:"📚 Behaviour",
+    mission:"Be Respectful in the Library",
+    question:"Which form is correct?",
+    options:[
+      "Be respectful in the library.",
+      "Being respectful in the library."
+    ],
+    answer:0
+  }
+];
+
+/* =========================================================
+   DISCOVERY PICTURES
+========================================================= */
+
+const discoveryGrid = document.getElementById("discoveryGrid");
+
+pictures.forEach((item,index)=>{
+
+  const card = document.createElement("article");
+  card.className = "picture-card";
+
+  const imageBox = document.createElement("div");
+  imageBox.className = "picture-image";
+
+  const image = document.createElement("img");
+  image.src = item.image;
+  image.alt = item.title;
+  image.loading = "lazy";
+
+  imageBox.appendChild(image);
+
+  const caption = document.createElement("div");
+  caption.className = "picture-caption";
+
+  const number = document.createElement("div");
+  number.className = "picture-number";
+  number.textContent = String(index+1).padStart(2,"0");
+
+  const heading = document.createElement("h3");
+  const strong = document.createElement("strong");
+
+  strong.textContent = item.verb;
+
+  heading.append(
+    strong,
+    document.createTextNode(
+      item.title.slice(item.verb.length)
+    )
+  );
+
+  const category = document.createElement("small");
+  category.textContent = item.category;
+
+  caption.append(number,heading,category);
+  card.append(imageBox,caption);
+  discoveryGrid.appendChild(card);
+
+});
+
+/* =========================================================
+   PROGRESS TRACKING
+========================================================= */
+
+const progress = {
+  detective:false,
+  fill:false,
+  pictures:false,
+  editor:false,
+  campaign:false
+};
+
+function updateProgress(){
+
+  const completed = Object.values(progress).filter(Boolean).length;
+
+  document.getElementById("progressText").textContent =
+    completed + " / 5 challenges";
+
+  document.getElementById("progressFill").style.width =
+    (completed/5*100)+"%";
+
+  document.getElementById("progressTrack")
+    .setAttribute("aria-valuenow",completed);
+
+  document.getElementById("finalScore").textContent =
+    completed===5
+      ? "🌟 Excellent! You completed all five challenges. You are ready for the next grammar checkpoint!"
+      : "You completed "+completed+" of 5 interactive challenges.";
+
+}
+
+/* =========================================================
+   GRAMMAR DETECTIVE QUESTIONS
+========================================================= */
+
+const detectiveQuestions = [
+  {
+    q:"1. Which sentence is an affirmative imperative?",
+    options:[
+      "Keep the streets clean.",
+      "You should keep the streets clean.",
+      "You are keeping the streets clean."
+    ],
+    answer:0,
+    explanation:"The imperative begins with the base verb Keep."
+  },
+  {
+    q:"2. Which sentence is a negative imperative?",
+    options:[
+      "Don't throw rubbish.",
+      "You shouldn't throw rubbish.",
+      "You don't throwing rubbish."
+    ],
+    answer:0,
+    explanation:"Negative imperative = don't + base verb."
+  },
+  {
+    q:"3. Which sentence uses should correctly?",
+    options:[
+      "You should respecting others.",
+      "You should respect others.",
+      "You should to respect others."
+    ],
+    answer:1,
+    explanation:"After should, use the base verb respect."
+  },
+  {
+    q:"4. Which sentence gives a direct recommendation?",
+    options:[
+      "Protect the environment.",
+      "You should protect the environment.",
+      "You protected the environment."
+    ],
+    answer:0,
+    explanation:"Protect begins a direct imperative recommendation."
+  }
+];
+
+/* =========================================================
+   GRAMMAR EDITOR QUESTIONS
+========================================================= */
+
+const editorQuestions = [
+  {
+    q:'1. Correct: "You should respects the rules."',
+    options:[
+      "You should respect the rules.",
+      "You should to respect the rules.",
+      "You should respecting the rules."
+    ],
+    answer:0,
+    explanation:"Should + base verb: respect."
+  },
+  {
+    q:'2. Correct: "Don\'t to waste water."',
+    options:[
+      "Don't waste water.",
+      "Don't wastes water.",
+      "Don't wasting water."
+    ],
+    answer:0,
+    explanation:"Don't + base verb: waste."
+  },
+  {
+    q:'3. Correct: "Keep to the park clean."',
+    options:[
+      "Keep to clean the park.",
+      "Keep the park clean.",
+      "Keeping the park clean."
+    ],
+    answer:1,
+    explanation:"Use Keep + object + adjective."
+  },
+  {
+    q:'4. Correct: "You shouldn\'t wastes water."',
+    options:[
+      "You shouldn't waste water.",
+      "You shouldn't to waste water.",
+      "You shouldn't wasting water."
+    ],
+    answer:0,
+    explanation:"Shouldn't + base verb: waste."
+  }
+];
+
+/* =========================================================
+   QUIZ ENGINE
+========================================================= */
+
+function renderQuiz(containerId,questions,progressKey,summaryId){
+
+  const container=document.getElementById(containerId);
+
+  questions.forEach((item,index)=>{
+
+    const card=document.createElement("div");
+    card.className="question";
+
+    const title=document.createElement("div");
+    title.className="question-title";
+    title.textContent=item.q;
+
+    const options=document.createElement("div");
+    options.className="options";
+
+    const feedback=document.createElement("div");
+    feedback.className="feedback";
+    feedback.hidden=true;
+    feedback.setAttribute("aria-live","polite");
+
+    let solved=false;
+
+    item.options.forEach((choice,choiceIndex)=>{
+
+      const button=document.createElement("button");
+      button.type="button";
+      button.className="option";
+      button.textContent=choice;
+
+      button.addEventListener("click",()=>{
+
+        if(solved)return;
+
+        if(choiceIndex===item.answer){
+
+          solved=true;
+          card.dataset.solved="true";
+          button.classList.add("correct");
+
+          options.querySelectorAll("button").forEach(b=>{
+            b.disabled=true;
+          });
+
+          feedback.textContent="🎉 Correct! "+item.explanation;
+
+          updateQuizSummary();
+
+        }else{
+
+          button.classList.add("wrong");
+          button.disabled=true;
+          feedback.textContent="💡 Not quite. Try another answer.";
+
+        }
+
+        feedback.hidden=false;
+
+      });
+
+      options.appendChild(button);
+
+    });
+
+    card.append(title,options,feedback);
+    container.appendChild(card);
+
+  });
+
+  function updateQuizSummary(){
+
+    const solved=container.querySelectorAll('[data-solved="true"]').length;
+
+    document.getElementById(summaryId).textContent =
+      "✓ Correct answers: "+solved+" / "+questions.length;
+
+    if(solved===questions.length){
+
+      progress[progressKey]=true;
+      updateProgress();
+
+    }
+
+  }
+
+}
+
+renderQuiz(
+  "detectiveQuiz",
+  detectiveQuestions,
+  "detective",
+  "detectiveSummary"
+);
+
+renderQuiz(
+  "editorQuiz",
+  editorQuestions,
+  "editor",
+  "editorSummary"
+);
+
+/* =========================================================
+   FILL IN THE BLANKS
+========================================================= */
+
+function normalise(text){
+
+  return text.toLowerCase().trim()
+    .replace(/[’‘]/g,"'")
+    .replace(/\s+/g," ");
+
+}
+
+function checkFill(){
+
+  const inputs=[...document.querySelectorAll(".fill-input")];
+
+  let correct=0;
+
+  inputs.forEach(input=>{
+
+    const isCorrect=
+      normalise(input.value)===normalise(input.dataset.answer);
+
+    input.classList.toggle("correct",isCorrect);
+    input.classList.toggle("wrong",!isCorrect);
+
+    if(isCorrect)correct++;
+
+  });
+
+  const result=document.getElementById("fillResult");
+
+  result.hidden=false;
+
+  result.textContent=correct===inputs.length
+    ? "🎉 Excellent! All four answers are correct."
+    : "You have "+correct+" / "+inputs.length+" correct answers. Keep trying!";
+
+  if(correct===inputs.length){
+
+    progress.fill=true;
+    updateProgress();
+
+  }
+
+}
+
+function resetFill(){
+
+  document.querySelectorAll(".fill-input").forEach(input=>{
+
+    input.value="";
+    input.classList.remove("correct","wrong");
+
+  });
+
+  document.getElementById("fillResult").hidden=true;
+
+}
+
+document.querySelectorAll(".fill-input").forEach((input,index,all)=>{
+
+  input.addEventListener("keydown",event=>{
+
+    if(event.key==="Enter"){
+
+      event.preventDefault();
+
+      if(all[index+1]){
+        all[index+1].focus();
+      }else{
+        checkFill();
+      }
+
+    }
+
+  });
+
+});
+
+/* =========================================================
+   PICTURE MISSIONS
+========================================================= */
+
+const missionGrid=document.getElementById("missionGrid");
+
+pictures.forEach((item,index)=>{
+
+  const card=document.createElement("article");
+  card.className="mission-card";
+
+  const imageBox=document.createElement("div");
+  imageBox.className="mission-image";
+
+  const image=document.createElement("img");
+  image.src=item.image;
+  image.alt=item.title;
+  image.loading="lazy";
+
+  imageBox.appendChild(image);
+
+  const body=document.createElement("div");
+  body.className="mission-body";
+
+  const title=document.createElement("h3");
+  title.textContent=item.mission;
+
+  const question=document.createElement("p");
+  question.textContent=item.question;
+
+  const options=document.createElement("div");
+  options.className="mini-options";
+
+  const feedback=document.createElement("div");
+  feedback.className="mission-feedback";
+  feedback.hidden=true;
+  feedback.setAttribute("aria-live","polite");
+
+  let solved=false;
+
+  item.options.forEach((choice,choiceIndex)=>{
+
+    const button=document.createElement("button");
+    button.type="button";
+    button.className="mini-option";
+    button.textContent=choice;
+
+    button.addEventListener("click",()=>{
+
+      if(solved)return;
+
+      if(choiceIndex===item.answer){
+
+        solved=true;
+        card.dataset.solved="true";
+        button.classList.add("correct");
+
+        options.querySelectorAll("button").forEach(b=>{
+          b.disabled=true;
+        });
+
+        feedback.textContent=
+          "🎉 Correct! You found the imperative.";
+
+        updatePictureProgress();
+
+      }else{
+
+        button.classList.add("wrong");
+        button.disabled=true;
+
+        feedback.textContent=
+          "💡 Try again. The imperative begins with a base verb.";
+
+      }
+
+      feedback.hidden=false;
+
+    });
+
+    options.appendChild(button);
+
+  });
+
+  body.append(title,question,options,feedback);
+  card.append(imageBox,body);
+  missionGrid.appendChild(card);
+
+});
+
+function updatePictureProgress(){
+
+  const solved=missionGrid.querySelectorAll('[data-solved="true"]').length;
+
+  document.getElementById("pictureSummary").textContent=
+    "🖼️ Picture missions completed: "+solved+" / "+pictures.length;
+
+  if(solved===pictures.length){
+
+    progress.pictures=true;
+    updateProgress();
+
+  }
+
+}
+
+/* =========================================================
+   WRITING CAMPAIGN
+========================================================= */
+
+const campaignText=document.getElementById("campaignText");
+
+function splitSentences(text){
+
+  return text.split(/[.!?\n]+/)
+    .map(s=>s.trim())
+    .filter(Boolean);
+
+}
+
+function analyseCampaign(){
+
+  const text=campaignText.value.trim();
+
+  const sentences=splitSentences(text);
+
+  const verbs=[
+    "keep","respect","help","protect","be","stay","take",
+    "recycle","save","plant","clean","follow","share",
+    "support","care","use","listen","think","stop",
+    "walk","join","volunteer","give","make","avoid"
+  ];
+
+  let affirmative=0;
+  let negative=0;
+  let should=0;
+
+  sentences.forEach(sentence=>{
+
+    const lower=sentence.toLowerCase().trim();
+
+    if(/^(don't|do not)\b/.test(lower)){
+
+      negative++;
+
+    }else if(
+      /^(you|we|they|people|citizens|students|pupils|everyone|everybody|he|she|it)\s+should(?:n't|\s+not)?\b/.test(lower)
+    ){
+
+      should++;
+
+    }else if(verbs.some(verb=>
+      lower===verb||lower.startsWith(verb+" ")
+    )){
+
+      affirmative++;
+
+    }
+
+  });
+
+  return{
+    text,
+    sentences,
+    affirmative,
+    negative,
+    should,
+    valid:affirmative>=3&&negative>=1&&should>=2
+  };
+
+}
+
+function setRequirement(id,met,label){
+
+  const element=document.getElementById(id);
+
+  element.classList.toggle("met",met);
+
+  element.textContent=(met?"✓ ":"☐ ")+label;
+
+}
+
+function updateWritingStats(){
+
+  const text=campaignText.value.trim();
+
+  const words=text?text.split(/\s+/).length:0;
+
+  const a=analyseCampaign();
+
+  document.getElementById("wordCount").textContent=
+    words+" words";
+
+  document.getElementById("sentenceCount").textContent=
+    a.sentences.length+" sentences";
+
+  document.getElementById("writingStatus").textContent=
+    a.valid?"✓ Required patterns detected!":"Keep writing!";
+
+  setRequirement(
+    "req1",
+    a.affirmative>=3,
+    "3 affirmative imperatives"
+  );
+
+  setRequirement(
+    "req2",
+    a.negative>=1,
+    "1 negative imperative"
+  );
+
+  setRequirement(
+    "req3",
+    a.should>=2,
+    "2 should / shouldn't sentences"
+  );
+
+}
+
+campaignText.addEventListener("input",()=>{
+
+  updateWritingStats();
+
+  document.getElementById("campaignOutput").hidden=true;
+
+});
+
+function checkCampaign(){
+
+  const a=analyseCampaign();
+
+  const feedback=document.getElementById("campaignFeedback");
+
+  feedback.hidden=false;
+
+  if(!a.text){
+
+    feedback.textContent=
+      "✏️ Write your recommendations first.";
+
+    return false;
+
+  }
+
+  if(a.valid){
+
+    feedback.textContent=
+      "🌟 Excellent! All required grammar patterns were detected. Review spelling, punctuation and meaning before submitting.";
+
+    progress.campaign=true;
+
+    updateProgress();
+
+    return true;
+
+  }
+
+  feedback.textContent=
+    "💡 Keep improving: include three affirmative imperatives, one negative imperative and two should / shouldn't sentences.";
+
+  return false;
+
+}
+
+function displayCampaign(){
+
+  const a=analyseCampaign();
+
+  if(!a.text){
+    checkCampaign();
+    return;
+  }
+
+  const output=document.getElementById("campaignOutput");
+
+  output.hidden=false;
+
+  output.textContent=
+    "🌍 MY BETTER COMMUNITY CAMPAIGN\n\n"+a.text;
+
+  checkCampaign();
+
+}
+
+function clearCampaign(){
+
+  campaignText.value="";
+
+  document.getElementById("campaignFeedback").hidden=true;
+
+  document.getElementById("campaignOutput").hidden=true;
+
+  updateWritingStats();
+
+}
+
+function restartLesson(){
+
+  if(confirm("Restart the lesson? Your answers will be cleared.")){
+    location.reload();
+  }
+
+}
+
+/* =========================================================
+   ENGLISH–ARABIC MINI DICTIONARY
+========================================================= */
+
+const dictionary = [
+  ["imperative","صيغة الأمر","Grammar"],
+  ["affirmative","مثبت","Grammar"],
+  ["negative","منفي","Grammar"],
+  ["recommendation","توصية","Grammar"],
+  ["advice","نصيحة","Grammar"],
+  ["instruction","تعليمة","Grammar"],
+  ["base form","الفعل في صورته الأصلية","Grammar"],
+  ["verb","فعل","Grammar"],
+  ["subject","فاعل","Grammar"],
+  ["should","ينبغي / يجب","Grammar"],
+  ["shouldn't","لا ينبغي","Grammar"],
+  ["don't","لا تفعل","Grammar"],
+  ["responsible","مسؤول","Citizenship"],
+  ["responsibility","المسؤولية","Citizenship"],
+  ["citizen","مواطن","Citizenship"],
+  ["citizenship","المواطنة","Citizenship"],
+  ["community","المجتمع المحلي","Citizenship"],
+  ["neighbourhood","الحي","Community"],
+  ["respect","يحترم / احترام","Citizenship"],
+  ["respectful","محترم","Citizenship"],
+  ["help","يساعد","Citizenship"],
+  ["volunteer","يتطوع / متطوع","Citizenship"],
+  ["cooperate","يتعاون","Citizenship"],
+  ["charity","عمل خيري / صدقة","Citizenship"],
+  ["donation","تبرع","Citizenship"],
+  ["public property","الممتلكات العامة","Community"],
+  ["public places","الأماكن العامة","Community"],
+  ["environment","البيئة","Environment"],
+  ["protect","يحمي","Environment"],
+  ["recycle","يعيد التدوير","Environment"],
+  ["rubbish","قمامة / نفايات","Environment"],
+  ["litter","يرمي القمامة عشوائياً","Environment"],
+  ["waste","يهدر / يضيع","Environment"],
+  ["save water","يوفر الماء","Environment"],
+  ["clean","نظيف / ينظف","Environment"],
+  ["green spaces","المساحات الخضراء","Environment"],
+  ["pollution","التلوث","Environment"],
+  ["plant trees","يغرس الأشجار","Environment"],
+  ["safety","السلامة","Safety"],
+  ["safe","آمن","Safety"],
+  ["careful","حذر","Safety"],
+  ["careless","مهمل / غير حذر","Safety"],
+  ["emergency","حالة طوارئ","Safety"],
+  ["calm","هادئ","Safety"],
+  ["road","طريق","Safety"],
+  ["cross","يعبر","Safety"],
+  ["rules","قواعد / قوانين","School"],
+  ["behaviour","سلوك","School"],
+  ["library","مكتبة","School"],
+  ["campaign","حملة توعوية","Writing"],
+  ["recommend","يوصي / ينصح","Writing"],
+  ["damage","يتلف / يضر","Community"],
+  ["keep","يحافظ على","Community"],
+  ["take care of","يعتني بـ","Community"]
+];
+
+const dictionaryPanel=document.getElementById("dictionaryPanel");
+
+const dictionaryBackdrop=document.getElementById("dictionaryBackdrop");
+
+const dictionaryButton=document.getElementById("dictionaryButton");
+
+const dictionarySearch=document.getElementById("dictionarySearch");
+
+const dictionaryList=document.getElementById("dictionaryList");
+
+function renderDictionary(query=""){
+
+  dictionaryList.replaceChildren();
+
+  const search=query.trim().toLowerCase();
+
+  const results=dictionary.filter(item=>
+    item[0].toLowerCase().includes(search)||
+    item[1].includes(search)||
+    item[2].toLowerCase().includes(search)
+  );
+
+  if(!results.length){
+
+    const empty=document.createElement("div");
+
+    empty.className="dictionary-empty";
+
+    empty.textContent=
+      "No matching word found. Try another word.";
+
+    dictionaryList.appendChild(empty);
+
+    return;
+
+  }
+
+  results.forEach(item=>{
+
+    const row=document.createElement("div");
+    row.className="dictionary-word";
+
+    const left=document.createElement("div");
+
+    const english=document.createElement("strong");
+    english.textContent=item[0];
+
+    const category=document.createElement("small");
+    category.textContent=item[2];
+
+    const speak=document.createElement("button");
+    speak.type="button";
+    speak.className="speak";
+    speak.textContent="🔊 Listen";
+
+    speak.setAttribute(
+      "aria-label",
+      "Pronounce "+item[0]
+    );
+
+    speak.addEventListener("click",()=>{
+      speakWord(item[0]);
+    });
+
+    left.append(english,category,speak);
+
+    const translation=document.createElement("div");
+    translation.className="translation";
+    translation.lang="ar";
+    translation.textContent=item[1];
+
+    row.append(left,translation);
+
+    dictionaryList.appendChild(row);
+
+  });
+
+}
+
+function speakWord(word){
+
+  if(!("speechSynthesis" in window)){
+
+    alert(
+      "Speech pronunciation is not supported in this browser."
+    );
+
+    return;
+
+  }
+
+  speechSynthesis.cancel();
+
+  const utterance=new SpeechSynthesisUtterance(word);
+
+  utterance.lang="en-GB";
+  utterance.rate=.85;
+
+  speechSynthesis.speak(utterance);
+
+}
+
+function openDictionary(){
+
+  dictionaryPanel.hidden=false;
+  dictionaryBackdrop.hidden=false;
+
+  dictionaryButton.setAttribute(
+    "aria-expanded",
+    "true"
+  );
+
+  renderDictionary(dictionarySearch.value);
+
+  dictionarySearch.focus();
+
+}
+
+function closeDictionary(){
+
+  dictionaryPanel.hidden=true;
+  dictionaryBackdrop.hidden=true;
+
+  dictionaryButton.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+  if("speechSynthesis" in window){
+    speechSynthesis.cancel();
+  }
+
+  dictionaryButton.focus();
+
+}
+
+function toggleDictionary(){
+
+  if(dictionaryPanel.hidden){
+    openDictionary();
+  }else{
+    closeDictionary();
+  }
+
+}
+
+dictionarySearch.addEventListener("input",()=>{
+
+  renderDictionary(dictionarySearch.value);
+
+});
+
+document.addEventListener("keydown",event=>{
+
+  if(event.key==="Escape"&&!dictionaryPanel.hidden){
+    closeDictionary();
+  }
+
+});
+
+/* =========================================================
+   INITIALISE
+========================================================= */
+
+renderDictionary();
+updateWritingStats();
+updateProgress();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Landmark Explorer | MS4 Vocabulary</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #102b3b;
+  --teal: #087e83;
+  --mint: #e5f7f2;
+  --gold: #f8bd61;
+  --paper: #f5f9fc;
+  --ink: #163342;
+  --muted: #627b88;
+  --line: #dce9ed;
+  --good: #167a57;
+  --bad: #c44552;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+}
+
+button, input, textarea { font: inherit; }
+
+button { cursor: pointer; }
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #ffbb4d;
+  outline-offset: 3px;
+}
+
+/* HERO */
+
+.hero {
+  background:
+    radial-gradient(circle at 85% 20%, #238e91, transparent 40%),
+    linear-gradient(125deg, #102b3b, #075a65);
+  color: white;
+  padding: 24px max(20px, calc((100vw - 1120px)/2)) 75px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: Outfit, sans-serif;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+
+.back {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #ffffff66;
+  padding: 10px 15px;
+  border-radius: 14px;
+  font-size: 13px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 35px;
+  align-items: center;
+  margin-top: 42px;
+}
+
+.pill {
+  display: inline-block;
+  background: #ffffff24;
+  border: 1px solid #ffffff45;
+  border-radius: 99px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.hero h1 {
+  font-family: Outfit, sans-serif;
+  font-size: clamp(36px, 5.5vw, 66px);
+  line-height: 1.04;
+  margin: 17px 0;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: #ffd18a;
+}
+
+.hero p {
+  line-height: 1.8;
+  color: #e0f4f2;
+  max-width: 570px;
+}
+
+.hero-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  transform: rotate(2deg);
+}
+
+.hero-photos img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  border: 4px solid #ffffff55;
+  border-radius: 19px;
+  box-shadow: 0 12px 25px #0004;
+}
+
+.hero-photos img:nth-child(2) {
+  transform: translateY(18px);
+}
+
+/* MAIN */
+
+.wrap {
+  max-width: 1120px;
+  margin: -36px auto 70px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.progress {
+  position: sticky;
+  top: 8px;
+  z-index: 10;
+  background: #fffffff2;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 35px #143e4a16;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 20px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.progress strong {
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.track {
+  height: 10px;
+  border-radius: 30px;
+  background: #e2eff0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 11%;
+  background: linear-gradient(90deg, #0b8789, #55c3a1);
+  transition: width .3s;
+}
+
+.section {
+  scroll-margin-top: 95px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 30px;
+  margin-top: 22px;
+  box-shadow: 0 10px 35px #153b4710;
+}
+
+.heading {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.num {
+  background: #dff5ee;
+  color: #087c78;
+  padding: 8px 12px;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.heading h2 {
+  font-family: Outfit, sans-serif;
+  font-size: clamp(22px, 3vw, 29px);
+  margin: 0;
+}
+
+.desc {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 9px 0 22px;
+}
+
+/* GALLERY */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.landmark {
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.landmark:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px #143e4a18;
+}
+
+.landmark img {
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+  display: block;
+}
+
+.landmark .info { padding: 12px; }
+
+.tag {
+  display: inline-block;
+  background: var(--mint);
+  color: var(--teal);
+  border-radius: 8px;
+  padding: 5px 8px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.landmark h3 {
+  font-size: 14px;
+  margin: 9px 0 4px;
+}
+
+.landmark small { color: var(--muted); }
+
+/* LEARNING CARDS */
+
+.toolgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.tool {
+  background: #f0f8fb;
+  border: 1px solid #cfe7ef;
+  border-radius: 17px;
+  padding: 18px;
+}
+
+.tool:nth-child(even) {
+  background: #fff8e9;
+  border-color: #f6e3b9;
+}
+
+.tool h3 {
+  margin: 0 0 8px;
+  font-family: Outfit, sans-serif;
+}
+
+.tool p {
+  margin: 7px 0;
+  line-height: 1.65;
+}
+
+.tool b { color: #087e83; }
+
+.note {
+  background: #fff1ef;
+  border-left: 5px solid #e97d6d;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+/* MIND MAP */
+
+.map {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.map div {
+  padding: 22px 12px;
+  border-radius: 17px;
+  background: var(--mint);
+  text-align: center;
+}
+
+.map b {
+  display: block;
+  color: #096e75;
+  margin-bottom: 7px;
+}
+
+.map small { color: #536c75; }
+
+/* MATCHING */
+
+.bank {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.chip {
+  border: 2px solid #cce8e5;
+  background: #eefaf6;
+  border-radius: 99px;
+  padding: 9px 14px;
+  color: #126d6c;
+  font-weight: 800;
+}
+
+.chip.active {
+  background: var(--gold);
+  border-color: #e5a544;
+}
+
+.chip.used { opacity: .38; }
+
+.matchgrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.matchtile {
+  border: 3px solid var(--line);
+  border-radius: 15px;
+  background: #fff;
+  padding: 0 0 10px;
+  overflow: hidden;
+  text-align: center;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.matchtile img {
+  width: 100%;
+  height: 115px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.matchtile small {
+  display: block;
+  margin: 5px;
+  color: var(--teal);
+}
+
+.correct {
+  border-color: var(--good) !important;
+  background: #e8f8ef !important;
+}
+
+.incorrect {
+  border-color: var(--bad) !important;
+  background: #fff0f0 !important;
+}
+
+.btn {
+  background: var(--teal);
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 19px;
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+.btn.alt {
+  background: #e8f2f3;
+  color: #16626b;
+  margin-left: 7px;
+}
+
+.feedback {
+  min-height: 25px;
+  font-weight: 800;
+  margin: 12px 0 0;
+}
+
+/* READING */
+
+.passage {
+  display: flex;
+  gap: 18px;
+  background: #f2faf9;
+  border-radius: 18px;
+  padding: 18px;
+  line-height: 1.85;
+}
+
+.passage img {
+  width: 200px;
+  object-fit: cover;
+  border-radius: 13px;
+}
+
+/* QUESTIONS */
+
+.question {
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+}
+
+.question p { font-weight: 700; }
+
+.options {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.option {
+  border: 2px solid #d4e8e8;
+  background: #f5fbfb;
+  border-radius: 10px;
+  padding: 9px 15px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.option:disabled { cursor: default; }
+
+/* FACT FILES */
+
+.exercise {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--line);
+  padding: 13px 0;
+}
+
+.exercise img {
+  width: 110px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.exercise .field { flex: 1; }
+
+.exercise label {
+  font-weight: 800;
+  display: block;
+  margin-bottom: 7px;
+}
+
+.exercise input {
+  width: 100%;
+  max-width: 390px;
+  border: 2px solid #d5e7e8;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* SENTENCE BUILDER */
+
+.build {
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+}
+
+.strip {
+  min-height: 52px;
+  border: 2px dashed #b6d9d9;
+  background: #f7fbfb;
+  border-radius: 13px;
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.strip .chip {
+  background: #0c8184;
+  color: #fff;
+}
+
+/* POSTCARD */
+
+.postgrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.postgrid button {
+  border: 3px solid transparent;
+  background: none;
+  padding: 0;
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.postgrid button.picked {
+  border-color: #f4ac3e;
+}
+
+.postgrid img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+}
+
+.prompt {
+  background: #fff7e9;
+  padding: 16px;
+  border-radius: 13px;
+  margin: 16px 0;
+}
+
+.postcard {
+  width: 100%;
+  min-height: 160px;
+  border: 2px solid #cde2e4;
+  border-radius: 14px;
+  padding: 16px;
+  line-height: 1.8;
+  resize: vertical;
+}
+
+.checks {
+  display: grid;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.checks label {
+  background: #f4faf9;
+  padding: 11px;
+  border-radius: 11px;
+}
+
+/* FINISH */
+
+.end {
+  text-align: center;
+  color: #e8fbf8;
+  padding: 40px 10px;
+  background: #0d4c57;
+  border-radius: 25px;
+  margin-top: 25px;
+}
+
+.end a {
+  display: inline-block;
+  background: var(--gold);
+  color: #173e42;
+  padding: 13px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+footer {
+  text-align: center;
+  color: #66818a;
+  padding: 15px;
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+  .gallery, .matchgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-photos { display: none; }
+}
+
+@media(max-width:550px) {
+  .hero { padding: 20px 17px 65px; }
+  .wrap { padding: 0 11px; }
+
+  .section {
+    padding: 19px 15px;
+    border-radius: 19px;
+  }
+
+  .gallery, .matchgrid, .toolgrid, .map {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .map div:last-child { grid-column: span 2; }
+  .passage { flex-direction: column; }
+
+  .passage img {
+    width: 100%;
+    height: 160px;
+  }
+
+  .postgrid { grid-template-columns: repeat(3, 1fr); }
+  .landmark img { height: 115px; }
+  .matchtile img { height: 95px; }
+  .progress { padding: 12px; }
+
+  .exercise img {
+    width: 85px;
+    height: 75px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+
+  <div class="top">
+    <div class="brand">
+      ✦ MY ENGLISH SPACE
+      <span style="opacity:.7">/ MS4</span>
+    </div>
+
+    <a class="back" href="MS4-S1-Vocabulary.html">
+      ← Vocabulary Map
+    </a>
+  </div>
+
+  <div class="hero-grid">
+
+    <div>
+      <span class="pill">
+        SEQUENCE 01 · VOCABULARY · CHECKPOINT 01
+      </span>
+
+      <h1>
+        Explore the <em>World's Landmarks.</em>
+      </h1>
+
+      <p>
+        Discover amazing places. Learn to name their types,
+        describe their locations and write your own landmark
+        postcard. Your journey starts here!
+      </p>
+
+      <a href="#stage1" class="btn"
+         style="display:inline-block;text-decoration:none;background:#f8bd61;color:#183a42">
+        Start exploring →
+      </a>
+    </div>
+
+    <div class="hero-photos">
+      <img src="https://i.imgur.com/bz1pcv2.jpeg" alt="Colosseum">
+      <img src="https://i.imgur.com/DsZc1oE.png" alt="Casbah">
+      <img src="https://i.imgur.com/ZcftHZs.jpeg" alt="Alhambra">
+      <img src="https://i.imgur.com/MfnCyHK.png" alt="Great Mosque of Algiers">
+    </div>
+
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="progress">
+  <strong id="stepLabel">Step 1 of 9</strong>
+
+  <div class="track">
+    <div class="fill" id="progressFill"></div>
+  </div>
+
+  <strong id="percent">11%</strong>
+</div>
+
+<!-- STEP 1 -->
+
+<section class="section" id="stage1">
+
+  <div class="heading">
+    <span class="num">01 · DISCOVER</span>
+    <h2>🖼️ Meet the Landmarks</h2>
+  </div>
+
+  <p class="desc">
+    Study the photos. Notice each landmark's type and location.
+  </p>
+
+  <div class="gallery" id="gallery"></div>
+
+</section>
+
+<!-- STEP 2 -->
+
+<section class="section" id="stage2">
+
+  <div class="heading">
+    <span class="num">02 · LEARN</span>
+    <h2>📍 Location & Description Toolkit</h2>
+  </div>
+
+  <p class="desc">
+    Use these useful expressions to describe famous places.
+  </p>
+
+  <div class="toolgrid">
+
+    <div class="tool">
+      <h3>🧭 Simple location</h3>
+      <p><b>is located in / is situated in</b> + city, country</p>
+      <p>“The Sagrada Família is located in Barcelona, Spain.”</p>
+    </div>
+
+    <div class="tool">
+      <h3>🏞️ Descriptive location</h3>
+      <p>
+        <b>overlooks / lies in the heart of /
+        is perched on a hill above</b>
+      </p>
+      <p>“The Casbah overlooks the Bay of Algiers.”</p>
+    </div>
+
+    <div class="tool">
+      <h3>🏺 Age & history</h3>
+      <p><b>ancient / dates back to / was built in</b></p>
+      <p>“The Alhambra dates back to the 13th century.”</p>
+    </div>
+
+    <div class="tool">
+      <h3>✨ Grandeur</h3>
+      <p><b>iconic / majestic / towering / breathtaking</b></p>
+      <p>“The Colosseum is an iconic amphitheatre.”</p>
+    </div>
+
+    <div class="tool">
+      <h3>🎨 Craftsmanship</h3>
+      <p><b>renowned for / famous for / intricate architecture</b></p>
+      <p>“Topkapı Palace is famous for its intricate tile-work.”</p>
+    </div>
+
+    <div class="tool">
+      <h3>🌍 Heritage</h3>
+      <p><b>historic site / UNESCO World Heritage Site</b></p>
+      <p>“The Casbah is a UNESCO World Heritage Site.”</p>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <b>⚠️ Historic vs Historical</b>
+    <p>
+      <b>Historic</b> means important in history.
+      <b>Historical</b> means related to history.
+    </p>
+    <p>
+      Example: The Casbah is a historic site.
+      It contains many historical buildings.
+    </p>
+  </div>
+
+</section>
+
+<!-- STEP 3 -->
+
+<section class="section" id="stage3">
+
+  <div class="heading">
+    <span class="num">03 · ORGANISE</span>
+    <h2>🗺️ Landmark Description Mind Map</h2>
+  </div>
+
+  <p class="desc">
+    Use these questions to organise your ideas.
+  </p>
+
+  <div class="map">
+    <div>
+      <b>🏷️ WHAT?</b>
+      <small>palace · tower · mosque</small>
+    </div>
+
+    <div>
+      <b>📍 WHERE?</b>
+      <small>is located in...</small>
+    </div>
+
+    <div>
+      <b>🏞️ SETTING</b>
+      <small>overlooks · lies on</small>
+    </div>
+
+    <div>
+      <b>🏺 HISTORY</b>
+      <small>dates back to...</small>
+    </div>
+
+    <div>
+      <b>✨ DESCRIPTION</b>
+      <small>majestic · ancient · iconic</small>
+    </div>
+
+    <div>
+      <b>🌍 IMPORTANCE</b>
+      <small>famous for · heritage site</small>
+    </div>
+  </div>
+
+</section>
+
+<!-- STEP 4 -->
+
+<section class="section" id="stage4">
+
+  <div class="heading">
+    <span class="num">04 · PLAY</span>
+    <h2>🎯 Match the Photo to Its Type</h2>
+  </div>
+
+  <p class="desc">
+    Tap a type chip, then tap the matching photograph.
+    Tap a labelled photograph to change your answer.
+  </p>
+
+  <div class="bank" id="chipBank"></div>
+
+  <div class="matchgrid" id="matchBoard"></div>
+
+  <button class="btn" id="matchCheck">
+    ✓ Check my matches
+  </button>
+
+  <button class="btn alt" id="matchReset">
+    ↻ Start again
+  </button>
+
+  <p class="feedback" id="matchFeedback" aria-live="polite"></p>
+
+</section>
+
+<!-- STEP 5 -->
+
+<section class="section" id="stage5">
+
+  <div class="heading">
+    <span class="num">05 · READ</span>
+    <h2>📖 Read & Check</h2>
+  </div>
+
+  <p class="desc">
+    Read the passage about the Alhambra Palace.
+    Then answer True or False.
+  </p>
+
+  <div class="passage">
+
+    <img src="https://i.imgur.com/ZcftHZs.jpeg"
+         alt="Alhambra Palace">
+
+    <div>
+      The <b>Alhambra Palace</b> is located in Granada,
+      in the south of Spain. This majestic palace and
+      fortress is perched on a hill above the city,
+      overlooking the Sierra Nevada mountains.
+
+      It dates back to the 13th century and is famous
+      for its intricate Islamic architecture, peaceful
+      courtyards, and reflecting pools.
+
+      Today, the Alhambra is a UNESCO World Heritage Site
+      and one of the most visited monuments in Europe.
+    </div>
+
+  </div>
+
+  <div id="tfArea"></div>
+
+</section>
+
+<!-- STEP 6 -->
+
+<section class="section" id="stage6">
+
+  <div class="heading">
+    <span class="num">06 · PRACTISE</span>
+    <h2>🎯 Choose the Correct Word</h2>
+  </div>
+
+  <p class="desc">
+    Select the correct answer to complete each sentence.
+  </p>
+
+  <div id="mcqArea"></div>
+
+</section>
+
+<!-- STEP 7 -->
+
+<section class="section" id="stage7">
+
+  <div class="heading">
+    <span class="num">07 · REMEMBER</span>
+    <h2>🏷️ Complete the Fact Files</h2>
+  </div>
+
+  <p class="desc">
+    Type the missing landmark types.
+    You can correct and check your answers again.
+  </p>
+
+  <div id="labelArea"></div>
+
+  <button class="btn" id="labelCheck">
+    Check answers
+  </button>
+
+  <p class="feedback" id="labelFeedback" aria-live="polite"></p>
+
+</section>
+
+<!-- STEP 8 -->
+
+<section class="section" id="stage8">
+
+  <div class="heading">
+    <span class="num">08 · BUILD</span>
+    <h2>🧩 Build a Description</h2>
+  </div>
+
+  <p class="desc">
+    Tap the words in the correct order.
+    Tap a word in your sentence to put it back.
+  </p>
+
+  <div id="builderArea"></div>
+
+</section>
+
+<!-- STEP 9 -->
+
+<section class="section" id="stage9">
+
+  <div class="heading">
+    <span class="num">09 · CREATE</span>
+    <h2>💌 Write a Landmark Postcard</h2>
+  </div>
+
+  <p class="desc">
+    Pick a landmark and write 3–4 sentences about
+    its type, location and appearance.
+  </p>
+
+  <div class="postgrid" id="postGallery"></div>
+
+  <div class="prompt">
+    <b>My landmark:</b>
+    <span id="pickedName">Choose a photo above</span>
+
+    <br><br>
+
+    <b>Helpful phrases:</b>
+    is located in · is a famous · overlooks ·
+    dates back to · majestic · iconic
+  </div>
+
+  <textarea
+    class="postcard"
+    id="postcardText"
+    placeholder="Dear friend, I am visiting... It is a famous... It is located in... It is..."
+    aria-label="Write your postcard"></textarea>
+
+  <div class="checks">
+
+    <label>
+      <input type="checkbox">
+      I named the landmark and its type.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I described its location.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I used a descriptive adjective.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I checked spelling, capital letters and punctuation.
+    </label>
+
+  </div>
+
+  <button class="btn" id="savePostcard">
+    ⬇ Download my postcard
+  </button>
+
+  <p class="feedback" id="postFeedback" aria-live="polite"></p>
+
+</section>
+
+<!-- FINISH -->
+
+<div class="end">
+
+  <h2>🏆 Checkpoint 01 complete!</h2>
+
+  <p>
+    You're ready to describe amazing landmarks around the world.
+  </p>
+
+  <a href="MS4-S1-Vocabulary-Lesson2.html">
+    Checkpoint 02: Famous Figures →
+  </a>
+
+</div>
+
+</main>
+
+<footer>
+  MY ENGLISH SPACE · MS4 · SEQUENCE 1 · VOCABULARY EXPEDITION
+</footer>
+
+<script>
+
+/* =====================================
+   LANDMARK DATABASE
+===================================== */
+
+const places = [
+  [
+    'The Colosseum',
+    'Amphitheatre',
+    'Rome, Italy',
+    'https://i.imgur.com/bz1pcv2.jpeg'
+  ],
+  [
+    'Leaning Tower of Pisa',
+    'Tower',
+    'Pisa, Italy',
+    'https://i.imgur.com/meVjYyL.jpeg'
+  ],
+  [
+    'Alhambra Palace',
+    'Palace',
+    'Granada, Spain',
+    'https://i.imgur.com/ZcftHZs.jpeg'
+  ],
+  [
+    'Topkapı Palace',
+    'Palace',
+    'Istanbul, Türkiye',
+    'https://i.imgur.com/5PzVUSH.jpeg'
+  ],
+  [
+    'Galata Tower',
+    'Tower',
+    'Istanbul, Türkiye',
+    'https://i.imgur.com/cCXINEy.jpeg'
+  ],
+  [
+    'Sagrada Família',
+    'Basilica',
+    'Barcelona, Spain',
+    'https://i.imgur.com/ZDhj30z.jpeg'
+  ],
+  [
+    'Venice',
+    'Canal City',
+    'Veneto, Italy',
+    'https://i.imgur.com/ZFUmJEe.jpeg'
+  ],
+  [
+    'The Casbah',
+    'Old Quarter',
+    'Algiers, Algeria',
+    'https://i.imgur.com/DsZc1oE.png'
+  ],
+  [
+    "Martyrs' Memorial",
+    'Memorial',
+    'Algiers, Algeria',
+    'https://i.imgur.com/DdbdDBe.jpeg'
+  ],
+  [
+    'Great Mosque of Algiers',
+    'Mosque',
+    'Algiers, Algeria',
+    'https://i.imgur.com/MfnCyHK.png'
+  ]
+];
+
+/* =====================================
+   HELPERS
+===================================== */
+
+const $ = s => document.querySelector(s);
+
+const make = (tag, cls, txt) => {
+  let e = document.createElement(tag);
+
+  if (cls) e.className = cls;
+  if (txt !== undefined) e.textContent = txt;
+
+  return e;
+};
+
+const shuffled = arr => {
+  const a = [...arr];
+
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+
+  return a;
+};
+
+const img = (src, alt) => {
+  let x = make('img');
+
+  x.src = src;
+  x.alt = alt;
+  x.loading = 'lazy';
+
+  return x;
+};
+
+/* =====================================
+   STEP 1 - LANDMARK GALLERY
+===================================== */
+
+places.forEach(p => {
+
+  let c = make('article', 'landmark');
+  let info = make('div', 'info');
+
+  c.append(img(p[3], p[0]));
+
+  info.append(
+    make('span', 'tag', p[1]),
+    make('h3', '', p[0]),
+    make('small', '', `📍 ${p[2]}`)
+  );
+
+  c.append(info);
+
+  $('#gallery').append(c);
+
+});
+
+/* =====================================
+   PROGRESS TRACKER
+===================================== */
+
+const stages = [...document.querySelectorAll('.section')];
+
+function progress() {
+
+  let n = 0;
+
+  stages.forEach((s, i) => {
+    if (s.getBoundingClientRect().top < innerHeight * .65) {
+      n = i;
+    }
+  });
+
+  $('#stepLabel').textContent = `Step ${n + 1} of 9`;
+
+  $('#percent').textContent =
+    `${Math.round((n + 1) / 9 * 100)}%`;
+
+  $('#progressFill').style.width =
+    `${(n + 1) / 9 * 100}%`;
+
+}
+
+addEventListener('scroll', progress, { passive: true });
+
+progress();
+
+/* =====================================
+   STEP 4 - MATCHING GAME
+===================================== */
+
+const matches = [0, 4, 3, 5, 6, 7, 8, 9];
+
+let selected = null;
+let assigned = {};
+
+function renderMatch() {
+
+  let bank = $('#chipBank');
+  let board = $('#matchBoard');
+
+  bank.replaceChildren();
+  board.replaceChildren();
+
+  const used = Object.values(assigned);
+
+  const types = [
+    'Amphitheatre',
+    'Tower',
+    'Palace',
+    'Basilica',
+    'Canal City',
+    'Old Quarter',
+    'Memorial',
+    'Mosque'
+  ];
+
+  types.forEach(t => {
+
+    let b = make(
+      'button',
+      'chip' +
+      (selected === t ? ' active' : '') +
+      (used.includes(t) ? ' used' : ''),
+      t
+    );
+
+    b.disabled = used.includes(t);
+
+    b.onclick = () => {
+      selected = t;
+      renderMatch();
+    };
+
+    bank.append(b);
+
+  });
+
+  matches.forEach(i => {
+
+    let p = places[i];
+
+    let b = make('button', 'matchtile');
+
+    b.append(
+      img(p[3], p[0]),
+      make('span', '', p[0]),
+      make('small', '', assigned[i] || 'Tap to label')
+    );
+
+    b.onclick = () => {
+
+      if (assigned[i]) {
+        delete assigned[i];
+      } else if (selected) {
+        assigned[i] = selected;
+        selected = null;
+      } else {
+        $('#matchFeedback').textContent =
+          'Choose a type chip first.';
+      }
+
+      renderMatch();
+
+    };
+
+    board.append(b);
+
+  });
+
+}
+
+renderMatch();
+
+$('#matchReset').onclick = () => {
+
+  assigned = {};
+  selected = null;
+
+  $('#matchFeedback').textContent = '';
+
+  renderMatch();
+
+};
+
+$('#matchCheck').onclick = () => {
+
+  let score = 0;
+
+  matches.forEach((i, k) => {
+
+    let b = $('#matchBoard').children[k];
+
+    b.classList.remove('correct', 'incorrect');
+
+    if (assigned[i] === places[i][1]) {
+
+      score++;
+      b.classList.add('correct');
+
+    } else if (assigned[i]) {
+
+      b.classList.add('incorrect');
+
+    }
+
+  });
+
+  if (Object.keys(assigned).length < 8) {
+
+    $('#matchFeedback').textContent =
+      `Label all 8 photos first. ${score} correct so far.`;
+
+  } else {
+
+    $('#matchFeedback').textContent =
+      `${score}/8 correct! ` +
+      (score === 8
+        ? 'Excellent work!'
+        : 'Tap a wrong photo to change its answer.');
+
+  }
+
+};
+
+/* =====================================
+   STEPS 5 & 6 - QUIZ ENGINE
+===================================== */
+
+function renderQuiz(target, items) {
+
+  items.forEach((q, i) => {
+
+    let row = make('div', 'question');
+
+    row.append(
+      make('p', '', `${i + 1}. ${q.q}`)
+    );
+
+    let opts = make('div', 'options');
+
+    q.options.forEach(o => {
+
+      let b = make('button', 'option', o);
+
+      b.onclick = () => {
+
+        [...opts.children].forEach(x => {
+
+          x.disabled = true;
+
+          if (x.textContent === q.a) {
+            x.classList.add('correct');
+          }
+
+        });
+
+        if (o !== q.a) {
+          b.classList.add('incorrect');
+        }
+
+        let f = make(
+          'div',
+          'feedback',
+          o === q.a
+            ? '✓ Correct!'
+            : `The correct answer is: ${q.a}`
+        );
+
+        row.append(f);
+
+      };
+
+      opts.append(b);
+
+    });
+
+    row.append(opts);
+
+    $(target).append(row);
+
+  });
+
+}
+
+/* TRUE / FALSE */
+
+renderQuiz('#tfArea', [
+
+  {
+    q: 'The Alhambra is in the north of Spain.',
+    options: ['True', 'False'],
+    a: 'False'
+  },
+
+  {
+    q: 'The Alhambra has views towards the Sierra Nevada mountains.',
+    options: ['True', 'False'],
+    a: 'True'
+  },
+
+  {
+    q: 'The palace dates back to the 20th century.',
+    options: ['True', 'False'],
+    a: 'False'
+  },
+
+  {
+    q: 'The Alhambra is a UNESCO World Heritage Site.',
+    options: ['True', 'False'],
+    a: 'True'
+  }
+
+]);
+
+/* MULTIPLE CHOICE */
+
+renderQuiz('#mcqArea', [
+
+  {
+    q: 'The Leaning Tower of Pisa is a famous ___.',
+    options: ['Tower', 'Basilica', 'Bridge'],
+    a: 'Tower'
+  },
+
+  {
+    q: 'The Great Mosque of Algiers ___ Algiers, Algeria.',
+    options: [
+      'is located in',
+      'is climbing',
+      'is closing'
+    ],
+    a: 'is located in'
+  },
+
+  {
+    q: 'The Sagrada Família is famous for its intricate ___.',
+    options: [
+      'architecture',
+      'transportation',
+      'cooking'
+    ],
+    a: 'architecture'
+  },
+
+  {
+    q: 'The Casbah is ___ on a hill above the bay.',
+    options: ['perched', 'boiled', 'erased'],
+    a: 'perched'
+  }
+
+]);
+
+/* =====================================
+   STEP 7 - FACT FILES
+===================================== */
+
+const labels = [
+
+  [3, 'palace', 'P _ _ _ _ E'],
+
+  [4, 'tower', 'T _ _ _ R'],
+
+  [8, 'memorial', 'M _ _ _ _ _ A L'],
+
+  [6, 'canal city', 'C _ N _ L  C I T Y']
+
+];
+
+labels.forEach(([i, a, h]) => {
+
+  let p = places[i];
+
+  let r = make('div', 'exercise');
+
+  let field = make('div', 'field');
+
+  let label = make(
+    'label',
+    '',
+    `${p[0]} — Type (${h})`
+  );
+
+  let input = make('input');
+
+  input.placeholder = 'Type the missing word';
+
+  input.setAttribute(
+    'aria-label',
+    `Type of ${p[0]}`
+  );
+
+  field.append(label, input);
+
+  r.append(
+    img(p[3], p[0]),
+    field
+  );
+
+  $('#labelArea').append(r);
+
+});
+
+$('#labelCheck').onclick = () => {
+
+  let n = 0;
+
+  [...$('#labelArea').querySelectorAll('input')]
+    .forEach((x, i) => {
+
+      let ok =
+        x.value.trim().toLowerCase().replace(/\s+/g, ' ') ===
+        labels[i][1];
+
+      x.classList.toggle('correct', ok);
+      x.classList.toggle('incorrect', !ok);
+
+      if (ok) n++;
+
+    });
+
+  $('#labelFeedback').textContent =
+    `${n}/4 correct. ` +
+    (n === 4
+      ? 'Fantastic!'
+      : 'Correct the red answers and try again.');
+
+};
+
+/* =====================================
+   STEP 8 - SENTENCE BUILDER
+===================================== */
+
+const sentences = [
+
+  'The Colosseum is located in Rome',
+
+  'The Casbah overlooks the Bay of Algiers',
+
+  'Topkapı Palace dates back to the 15th century'
+
+];
+
+sentences.forEach((sentence, i) => {
+
+  let words = sentence.split(' ');
+
+  let picked = [];
+
+  let row = make('div', 'build');
+
+  let title = make('p', '', `Sentence ${i + 1}`);
+
+  let strip = make('div', 'strip');
+
+  let bank = make('div', 'bank');
+
+  let feedback = make('p', 'feedback');
+
+  let tokens = shuffled(
+    words.map((w, id) => ({ w, id }))
+  );
+
+  function draw() {
+
+    strip.replaceChildren();
+    bank.replaceChildren();
+
+    if (!picked.length) {
+
+      strip.append(
+        make('span', '', 'Tap the words below in order...')
+      );
+
+    }
+
+    picked.forEach(({ w, id }, k) => {
+
+      let b = make('button', 'chip', w);
+
+      b.onclick = () => {
+
+        picked.splice(k, 1);
+
+        feedback.textContent = '';
+
+        draw();
+
+      };
+
+      strip.append(b);
+
+    });
+
+    tokens.forEach(({ w, id }) => {
+
+      if (picked.some(p => p.id === id)) return;
+
+      let b = make('button', 'chip', w);
+
+      b.onclick = () => {
+
+        picked.push({ w, id });
+
+        feedback.textContent = '';
+
+        draw();
+
+      };
+
+      bank.append(b);
+
+    });
+
+  }
+
+  let check = make('button', 'btn', '✓ Check');
+
+  let clear = make('button', 'btn alt', '↻ Clear');
+
+  check.onclick = () => {
+
+    let ok =
+      picked.map(p => p.w).join(' ') === sentence;
+
+    feedback.textContent = ok
+      ? '✓ Correct!'
+      : 'Not quite. Try another order.';
+
+    feedback.style.color = ok
+      ? 'var(--good)'
+      : 'var(--bad)';
+
+  };
+
+  clear.onclick = () => {
+
+    picked = [];
+
+    feedback.textContent = '';
+
+    draw();
+
+  };
+
+  row.append(
+    title,
+    strip,
+    bank,
+    check,
+    clear,
+    feedback
+  );
+
+  $('#builderArea').append(row);
+
+  draw();
+
+});
+
+/* =====================================
+   STEP 9 - POSTCARD
+===================================== */
+
+let chosen = null;
+
+places.forEach((p, i) => {
+
+  let b = make('button');
+
+  b.title = p[0];
+
+  b.setAttribute(
+    'aria-label',
+    `Choose ${p[0]}`
+  );
+
+  b.append(img(p[3], p[0]));
+
+  b.onclick = () => {
+
+    chosen = p;
+
+    [...$('#postGallery').children].forEach(x => {
+      x.classList.remove('picked');
+    });
+
+    b.classList.add('picked');
+
+    $('#pickedName').textContent = p[0];
+
+  };
+
+  $('#postGallery').append(b);
+
+});
+
+/* DOWNLOAD POSTCARD */
+
+$('#savePostcard').onclick = () => {
+
+  let t = $('#postcardText').value.trim();
+
+  if (!chosen || !t) {
+
+    $('#postFeedback').textContent =
+      'Choose a landmark and write your postcard first.';
+
+    return;
+
+  }
+
+  let blob = new Blob(
+    [
+      `MY LANDMARK POSTCARD\n` +
+      `${chosen[0]}\n\n` +
+      `${t}\n`
+    ],
+    {
+      type: 'text/plain;charset=utf-8'
+    }
+  );
+
+  let url = URL.createObjectURL(blob);
+
+  let a = make('a');
+
+  a.href = url;
+
+  a.download = 'my-landmark-postcard.txt';
+
+  a.click();
+
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+  }, 1000);
+
+  $('#postFeedback').textContent =
+    'Your postcard has been saved!';
+
+};
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#291640">
+
+<title>MS4 Sequence 3 | Writing Journey</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   01. DESIGN SYSTEM
+===================================================== */
+
+:root {
+  --purple-dark: #180d32;
+  --purple-deep: #291354;
+  --purple: #6335aa;
+  --purple-light: #9564dc;
+
+  --violet: #b38aff;
+  --lavender: #e9dcff;
+
+  --gold: #ffd47e;
+  --gold-light: #ffedb9;
+
+  --white: #ffffff;
+  --ink: #302046;
+  --muted: #776887;
+
+  --shadow: 0 18px 45px rgba(29, 10, 65, .28);
+  --shadow-deep: 0 26px 65px rgba(29, 10, 65, .42);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  font-family: "Nunito", sans-serif;
+  color: var(--ink);
+
+  background-color: #593b90;
+
+  /*
+     SCENIC BACKGROUND
+
+     Replace the URL below with your own
+     purple-themed background illustration.
+  */
+
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(54, 25, 99, .48),
+      rgba(76, 35, 125, .55) 45%,
+      rgba(28, 12, 60, .80)
+    ),
+    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2200&q=90");
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1, h2, h3 {
+  font-family: "Baloo 2", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.page {
+  width: min(1240px, 94%);
+  margin: auto;
+}
+
+/* =====================================================
+   02. TOP BAR
+===================================================== */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  padding: 20px 0;
+
+  position: relative;
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .8px;
+
+  text-shadow: 0 2px 6px #180d32;
+}
+
+.brand-icon {
+  width: 49px;
+  height: 49px;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(37, 17, 77, .8);
+
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+
+  font-size: 25px;
+
+  box-shadow: 0 8px 20px #180d3266;
+}
+
+.back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 22px;
+
+  background: linear-gradient(
+    180deg,
+    #8052c8,
+    #32175e
+  );
+
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 50px;
+
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+
+  box-shadow: 0 8px 20px #180d3266;
+
+  transition: .25s;
+}
+
+.back-home:hover {
+  transform: translateY(-3px);
+}
+
+/* =====================================================
+   03. HERO
+===================================================== */
+
+.hero {
+  position: relative;
+
+  min-height: 420px;
+
+  padding: 5px 0 15px;
+
+  color: white;
+  text-align: center;
+}
+
+/* POLAROID PHOTOGRAPHS */
+
+.polaroid {
+  position: absolute;
+
+  width: 155px;
+
+  padding: 8px 8px 23px;
+
+  background: white;
+  border-radius: 5px;
+
+  box-shadow: 0 15px 30px #180d3288;
+
+  z-index: 1;
+
+  transition: transform .3s;
+}
+
+.polaroid img {
+  width: 100%;
+  height: 135px;
+
+  object-fit: cover;
+  display: block;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.07);
+  z-index: 10;
+}
+
+.photo-1 {
+  left: 1%;
+  top: 22px;
+  transform: rotate(-11deg);
+}
+
+.photo-2 {
+  left: 13%;
+  top: 140px;
+  transform: rotate(8deg);
+}
+
+.photo-3 {
+  right: 13%;
+  top: 140px;
+  transform: rotate(-8deg);
+}
+
+.photo-4 {
+  right: 1%;
+  top: 22px;
+  transform: rotate(11deg);
+}
+
+/* FLOATING DECORATIONS */
+
+.floating {
+  position: absolute;
+  z-index: 2;
+
+  pointer-events: none;
+
+  filter: drop-shadow(0 5px 8px #180d3277);
+
+  animation: float 5s ease-in-out infinite;
+}
+
+.float-star {
+  top: 30px;
+  left: 32%;
+  font-size: 35px;
+}
+
+.float-earth {
+  top: 28px;
+  right: 32%;
+  font-size: 34px;
+  animation-delay: -2s;
+}
+
+.float-pencil {
+  bottom: 45px;
+  left: 7%;
+  font-size: 42px;
+  animation-delay: -3s;
+}
+
+.float-heart {
+  bottom: 45px;
+  right: 7%;
+  font-size: 40px;
+  animation-delay: -1s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(5deg);
+  }
+}
+
+/* HERO CONTENT */
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+
+  max-width: 640px;
+  margin: auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 19px;
+
+  background: rgba(255,255,255,.95);
+  color: var(--purple-deep);
+
+  border-radius: 50px;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .7px;
+
+  box-shadow: 0 8px 20px #180d3255;
+}
+
+.hero h1 {
+  margin: 17px auto 9px;
+
+  font-size: clamp(62px, 9vw, 105px);
+  line-height: .82;
+
+  font-weight: 800;
+  letter-spacing: -3px;
+
+  text-shadow:
+    0 5px 0 #7645b7,
+    0 9px 0 #452378,
+    0 16px 25px #180d3288;
+
+  -webkit-text-stroke: 1px rgba(255,255,255,.65);
+}
+
+.hero h1 span {
+  display: block;
+
+  color: var(--gold);
+
+  text-shadow:
+    0 5px 0 #b98834,
+    0 9px 0 #825a22,
+    0 16px 25px #180d3288;
+}
+
+/* HERO COMPASS */
+
+.hero-medallion {
+  width: 82px;
+  height: 82px;
+
+  margin: 13px auto 10px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    #fff1c8,
+    #e5b158
+  );
+
+  border: 5px solid #fff1cc;
+
+  box-shadow:
+    0 10px 24px #180d3288,
+    inset 0 0 10px #a87828;
+
+  font-size: 40px;
+
+  animation: medallionFloat 4s ease-in-out infinite;
+}
+
+@keyframes medallionFloat {
+  50% {
+    transform: translateY(-7px) rotate(7deg);
+  }
+}
+
+.hero-tagline {
+  font-size: 16px;
+  font-weight: 900;
+
+  text-shadow: 0 3px 8px #180d32;
+}
+
+.hero-description {
+  max-width: 575px;
+  margin: 10px auto 18px;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.65;
+
+  text-shadow: 0 2px 8px #180d32;
+}
+
+/* =====================================================
+   04. HERO STATS
+===================================================== */
+
+.hero-stats {
+  max-width: 740px;
+  margin: 17px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat {
+  padding: 13px 10px;
+
+  background: rgba(40, 19, 85, .65);
+
+  border: 1px solid rgba(255,255,255,.65);
+  border-radius: 16px;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 8px 20px #180d3255;
+}
+
+.stat strong {
+  display: block;
+
+  color: var(--gold);
+
+  font-size: 25px;
+  line-height: 1.1;
+}
+
+.stat span {
+  display: block;
+  margin-top: 4px;
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+/* =====================================================
+   05. NAVIGATION
+===================================================== */
+
+.navbar {
+  position: sticky;
+  top: 8px;
+  z-index: 50;
+
+  max-width: 950px;
+
+  margin: 20px auto 24px;
+  padding: 7px;
+
+  background: linear-gradient(
+    180deg,
+    #6638a8,
+    #291354
+  );
+
+  border: 2px solid rgba(255,255,255,.85);
+  border-radius: 50px;
+
+  box-shadow: 0 12px 30px #180d3288;
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.nav-links a {
+  padding: 11px 8px;
+
+  color: white;
+  text-align: center;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  border-radius: 50px;
+
+  transition: .25s;
+}
+
+.nav-links a:hover {
+  background: rgba(255,255,255,.15);
+}
+
+.nav-links a.active {
+  color: #352044;
+
+  background: linear-gradient(
+    180deg,
+    #ffe8aa,
+    #ffc35d
+  );
+
+  box-shadow: 0 5px 13px #180d3266;
+}
+
+/* =====================================================
+   06. INTRODUCTION
+===================================================== */
+
+.intro {
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 170px 1fr 240px;
+  align-items: center;
+  gap: 22px;
+
+  padding: 25px 27px;
+
+  background: rgba(255,255,255,.97);
+
+  border: 2px solid white;
+  border-radius: 25px;
+
+  box-shadow: var(--shadow-deep);
+}
+
+.intro::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 5% 10%,
+      #eee1ff,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 96% 85%,
+      #fff0c7,
+      transparent 30%
+    );
+
+  pointer-events: none;
+}
+
+.intro > * {
+  position: relative;
+}
+
+.intro-art {
+  font-size: 100px;
+  text-align: center;
+
+  filter: drop-shadow(0 10px 10px #6335aa33);
+}
+
+.intro-badge {
+  display: inline-block;
+
+  padding: 7px 14px;
+
+  background: #7d4fc4;
+  color: white;
+
+  border-radius: 50px;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .6px;
+}
+
+.intro h2 {
+  margin: 10px 0 7px;
+
+  font-size: clamp(23px, 3vw, 30px);
+  line-height: 1.1;
+
+  color: #382050;
+}
+
+.intro p {
+  color: var(--muted);
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+.sticky-note {
+  padding: 20px;
+
+  background: #ffe6a0;
+
+  border-radius: 8px;
+
+  box-shadow: 0 7px 15px #8c6a2d44;
+
+  transform: rotate(-3deg);
+
+  color: #3e301a;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sticky-note strong {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 14px;
+}
+
+.sticky-note span {
+  display: block;
+  line-height: 1.8;
+}
+
+/* =====================================================
+   07. SECTION HEADING
+===================================================== */
+
+.section-heading {
+  text-align: center;
+
+  padding: 39px 0 20px;
+
+  color: white;
+}
+
+.section-heading .overline {
+  color: var(--gold-light);
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.section-heading h2 {
+  margin: 7px 0 3px;
+
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1.1;
+
+  text-shadow: 0 5px 12px #180d32;
+}
+
+.section-heading p {
+  color: #f0e8ff;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =====================================================
+   08. GOLDEN TRAIL
+===================================================== */
+
+.trail {
+  position: relative;
+
+  height: 38px;
+  margin-bottom: -4px;
+}
+
+.trail::before {
+  content: "";
+
+  position: absolute;
+
+  left: 12%;
+  right: 12%;
+  top: 17px;
+
+  border-top: 4px dashed var(--gold);
+
+  filter: drop-shadow(0 2px 3px #180d32);
+}
+
+.trail-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.trail-number {
+  width: 49px;
+  height: 49px;
+
+  margin: auto;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--gold-light);
+
+  color: #382414;
+
+  border: 4px solid white;
+  border-radius: 50%;
+
+  font-family: "Baloo 2", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+
+  box-shadow: 0 7px 15px #180d3277;
+}
+
+/* =====================================================
+   09. LESSON CARDS
+===================================================== */
+
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+
+  margin-top: 20px;
+}
+
+.lesson-card {
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  background: white;
+
+  border: 3px solid white;
+  border-radius: 22px;
+
+  box-shadow: var(--shadow-deep);
+
+  transition:
+    transform .3s,
+    box-shadow .3s;
+}
+
+.lesson-card:hover {
+  transform: translateY(-9px);
+
+  box-shadow: 0 30px 60px #180d3299;
+}
+
+.lesson-image {
+  position: relative;
+
+  height: 210px;
+
+  overflow: hidden;
+
+  border-radius: 18px 18px 13px 13px;
+}
+
+.lesson-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+
+  transition: transform .6s;
+}
+
+.lesson-card:hover .lesson-image img {
+  transform: scale(1.08);
+}
+
+.lesson-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(33, 14, 70, .5)
+  );
+
+  pointer-events: none;
+}
+
+.image-icon {
+  position: absolute;
+
+  bottom: 13px;
+  left: 13px;
+
+  z-index: 3;
+
+  width: 55px;
+  height: 55px;
+
+  display: grid;
+  place-items: center;
+
+  background: white;
+
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+
+  font-size: 27px;
+
+  box-shadow: 0 7px 17px #180d3288;
+}
+
+.image-label {
+  position: absolute;
+
+  bottom: 14px;
+  right: 12px;
+
+  z-index: 3;
+
+  padding: 8px 12px;
+
+  background: white;
+  color: #382050;
+
+  border-radius: 30px;
+
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.lesson-body {
+  padding: 19px 16px 18px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.lesson-body h3 {
+  font-size: 20px;
+  line-height: 1.08;
+
+  color: #382050;
+
+  margin: 0 0 9px;
+}
+
+.lesson-body p {
+  color: var(--muted);
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.65;
+
+  margin: 0 0 15px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  margin-bottom: 19px;
+}
+
+.skill {
+  padding: 6px 9px;
+
+  background: #eee5ff;
+
+  border-radius: 30px;
+
+  color: #6234a2;
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.lesson-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: auto;
+
+  padding: 13px 8px;
+
+  color: white;
+
+  background: linear-gradient(
+    180deg,
+    #9c6cdb,
+    #5a2ca2
+  );
+
+  border-radius: 50px;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  box-shadow: 0 7px 14px #6335aa55;
+
+  transition: .25s;
+}
+
+.lesson-btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+}
+
+/* =====================================================
+   10. WRITING ROUTE
+===================================================== */
+
+.route-section {
+  margin-top: 28px;
+
+  padding: 25px 26px;
+
+  background: rgba(255,255,255,.97);
+
+  border: 2px solid white;
+  border-radius: 25px;
+
+  box-shadow: var(--shadow-deep);
+}
+
+.route-section h2 {
+  text-align: center;
+
+  font-size: 29px;
+  color: #382050;
+
+  margin: 0 0 4px;
+}
+
+.route-sub {
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  margin: 0 0 20px;
+}
+
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.route-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  padding: 16px;
+
+  border-radius: 20px;
+
+  background: #eee7ff;
+
+  transition: .25s;
+}
+
+.route-card:nth-child(2) {
+  background: #ffe9f4;
+}
+
+.route-card:nth-child(3) {
+  background: #fff0d7;
+}
+
+.route-card:nth-child(4) {
+  background: #e3f8f1;
+}
+
+.route-card:hover {
+  transform: translateY(-4px);
+}
+
+.route-icon {
+  width: 49px;
+  height: 49px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  background: white;
+  border-radius: 50%;
+
+  font-size: 25px;
+}
+
+.route-card h3 {
+  margin: 0 0 5px;
+
+  color: #382050;
+  font-size: 16px;
+}
+
+.route-card p {
+  margin: 0;
+
+  font-size: 11px;
+  line-height: 1.55;
+
+  color: #746781;
+  font-weight: 700;
+}
+
+/* =====================================================
+   11. WRITER'S PASSPORT
+===================================================== */
+
+.passport {
+  margin-top: 28px;
+
+  padding: 26px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  background: linear-gradient(
+    110deg,
+    #fff4dc,
+    #fffdf5,
+    #ffe7c3
+  );
+
+  border: 3px solid #f9d99e;
+  border-radius: 22px;
+
+  box-shadow: var(--shadow-deep);
+}
+
+.passport-info {
+  flex: 1;
+}
+
+.passport h2 {
+  font-size: 27px;
+  color: #382050;
+
+  margin: 0 0 6px;
+}
+
+.passport p {
+  font-size: 12px;
+  line-height: 1.7;
+  font-weight: 700;
+
+  color: #625c62;
+  margin: 0;
+}
+
+.passport-stamps {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stamp {
+  width: 80px;
+  min-height: 94px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px dashed currentColor;
+  border-radius: 9px;
+
+  background: #fffaf0;
+
+  color: #ae771e;
+
+  text-align: center;
+
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1.3;
+
+  transform: rotate(-4deg);
+
+  transition: .3s;
+}
+
+.stamp:nth-child(2) {
+  color: #793cb7;
+  transform: rotate(5deg);
+}
+
+.stamp:nth-child(3) {
+  color: #1787b6;
+  transform: rotate(-5deg);
+}
+
+.stamp:nth-child(4) {
+  color: #d64e76;
+  transform: rotate(5deg);
+}
+
+.stamp-icon {
+  font-size: 27px;
+  margin-bottom: 6px;
+}
+
+/* =====================================================
+   12. PROGRESS
+===================================================== */
+
+.progress-panel {
+  margin-top: 27px;
+
+  padding: 25px;
+
+  background: rgba(255,255,255,.97);
+
+  border: 2px solid white;
+  border-radius: 23px;
+
+  box-shadow: var(--shadow-deep);
+}
+
+.progress-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  color: #382050;
+
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.progress-track {
+  height: 14px;
+
+  margin: 15px 0 10px;
+
+  background: #e9dcff;
+  border-radius: 30px;
+
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    #7a45c7,
+    #b38aff,
+    #ffd47e
+  );
+
+  border-radius: 30px;
+
+  transition: width .5s;
+}
+
+.progress-note {
+  color: var(--muted);
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   13. START BUTTON
+===================================================== */
+
+.start-area {
+  text-align: center;
+  padding: 30px 0 13px;
+}
+
+.start-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 16px 37px;
+
+  background: linear-gradient(
+    180deg,
+    #ffe5a4,
+    #ffc45e
+  );
+
+  color: #382050;
+
+  border: 2px solid #fff2cc;
+  border-radius: 50px;
+
+  font-family: "Baloo 2", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+
+  box-shadow: 0 11px 25px #180d3288;
+
+  transition: .25s;
+}
+
+.start-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* =====================================================
+   14. FOOTER
+===================================================== */
+
+footer {
+  padding: 22px 0 35px;
+
+  color: white;
+  text-align: center;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+
+  text-shadow: 0 2px 7px #180d32;
+}
+
+footer span {
+  display: block;
+  margin-top: 8px;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* =====================================================
+   15. RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .lesson-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trail {
+    display: none;
+  }
+
+  .lesson-image {
+    height: 240px;
+  }
+
+  .route-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .polaroid {
+    width: 125px;
+  }
+
+  .polaroid img {
+    height: 115px;
+  }
+
+  .intro {
+    grid-template-columns: 120px 1fr 210px;
+  }
+
+  .intro-art {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 800px) {
+
+  body {
+    background-attachment: scroll;
+  }
+
+  .hero {
+    min-height: 455px;
+  }
+
+  .polaroid {
+    width: 100px;
+  }
+
+  .polaroid img {
+    height: 90px;
+  }
+
+  .photo-1 {
+    top: 30px;
+    left: 0;
+  }
+
+  .photo-2 {
+    top: 230px;
+    left: 1%;
+  }
+
+  .photo-3 {
+    top: 230px;
+    right: 1%;
+  }
+
+  .photo-4 {
+    top: 30px;
+    right: 0;
+  }
+
+  .hero-content {
+    max-width: 460px;
+  }
+
+  .hero h1 {
+    font-size: 73px;
+  }
+
+  .intro {
+    grid-template-columns: 95px 1fr;
+  }
+
+  .sticky-note {
+    grid-column: 1 / -1;
+    max-width: 450px;
+    justify-self: center;
+  }
+
+  .intro-art {
+    font-size: 70px;
+  }
+
+  .passport {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .lesson-grid {
+    grid-template-columns: 1fr;
+
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lesson-image {
+    height: 235px;
+  }
+
+  .route-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .page {
+    width: 94%;
+  }
+
+  .topbar {
+    padding: 14px 0;
+  }
+
+  .brand {
+    font-size: 10px;
+  }
+
+  .brand-icon {
+    width: 39px;
+    height: 39px;
+    font-size: 21px;
+  }
+
+  .back-home {
+    padding: 9px 12px;
+    font-size: 10px;
+  }
+
+  .hero {
+    min-height: 455px;
+    padding-top: 22px;
+  }
+
+  .hero-badge {
+    font-size: 9px;
+    padding: 8px 11px;
+  }
+
+  .hero h1 {
+    font-size: 60px;
+  }
+
+  .hero-medallion {
+    width: 65px;
+    height: 65px;
+    font-size: 32px;
+  }
+
+  .hero-tagline {
+    font-size: 12px;
+  }
+
+  .hero-description {
+    font-size: 11px;
+    max-width: 290px;
+  }
+
+  .polaroid {
+    width: 74px;
+    padding: 4px 4px 12px;
+  }
+
+  .polaroid img {
+    height: 69px;
+  }
+
+  .photo-1,
+  .photo-4 {
+    top: 15px;
+  }
+
+  .photo-2,
+  .photo-3 {
+    top: 255px;
+  }
+
+  .floating {
+    display: none;
+  }
+
+  .hero-stats {
+    gap: 6px;
+  }
+
+  .stat {
+    padding: 9px 5px;
+  }
+
+  .stat strong {
+    font-size: 20px;
+  }
+
+  .stat span {
+    font-size: 7px;
+  }
+
+  .navbar {
+    border-radius: 20px;
+    margin-top: 12px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+    padding: 9px 11px;
+  }
+
+  .intro {
+    display: block;
+    padding: 22px 17px;
+    text-align: center;
+  }
+
+  .intro-art {
+    font-size: 60px;
+    margin-bottom: 8px;
+  }
+
+  .intro h2 {
+    font-size: 25px;
+  }
+
+  .sticky-note {
+    margin-top: 18px;
+    text-align: left;
+  }
+
+  .section-heading h2 {
+    font-size: 31px;
+  }
+
+  .lesson-body h3 {
+    font-size: 23px;
+  }
+
+  .route-section {
+    padding: 22px 15px;
+  }
+
+  .passport {
+    padding: 23px 14px;
+  }
+
+  .stamp {
+    width: 70px;
+    min-height: 80px;
+    font-size: 8px;
+  }
+
+  .stamp-icon {
+    font-size: 23px;
+  }
+
+  .start-btn {
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="topbar">
+
+  <div class="brand">
+    <span class="brand-icon">📖</span>
+    MY ENGLISH SPACE
+  </div>
+
+  <a href="MS4-Sequence3.html" class="back-home">
+    ← Back to Sequence 3
+  </a>
+
+</div>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+  <!-- FLOATING PHOTOGRAPHS -->
+
+  <div class="polaroid photo-1">
+
+    <img
+      src="https://i.imgur.com/hyM6R4f.jpeg"
+      alt="Solidarity campaign"
+    >
+
+  </div>
+
+  <div class="polaroid photo-2">
+
+    <img
+      src="https://i.imgur.com/FWAYxBM.jpeg"
+      alt="Algerian culture"
+    >
+
+  </div>
+
+  <div class="polaroid photo-3">
+
+    <img
+      src="https://i.imgur.com/flUcXvM.jpeg"
+      alt="Good citizenship"
+    >
+
+  </div>
+
+  <div class="polaroid photo-4">
+
+    <img
+      src="https://i.imgur.com/nAXuVkZ.jpeg"
+      alt="Social media"
+    >
+
+  </div>
+
+  <!-- FLOATING DECORATIONS -->
+
+  <span class="floating float-star">✨</span>
+  <span class="floating float-earth">🌍</span>
+  <span class="floating float-pencil">✏️</span>
+  <span class="floating float-heart">💜</span>
+
+  <!-- HERO CONTENT -->
+
+  <div class="hero-content">
+
+    <span class="hero-badge">
+      ✍️ MS4 · SEQUENCE 3 · WRITING
+    </span>
+
+    <h1>
+      Writing
+      <span>Journey</span>
+    </h1>
+
+    <div class="hero-medallion">
+      🧭
+    </div>
+
+    <p class="hero-tagline">
+      Think • Express • Persuade • Inspire
+    </p>
+
+    <p class="hero-description">
+      Welcome, young writers! Explore the world
+      of citizenship, solidarity, Algerian culture
+      and social media. Learn to express your
+      opinions, support your ideas and write
+      meaningful letters and articles.
+    </p>
+
+    <div class="hero-stats">
+
+      <div class="stat">
+        <strong>04</strong>
+        <span>WRITING DESTINATIONS</span>
+      </div>
+
+      <div class="stat">
+        <strong>💌</strong>
+        <span>LETTERS · ARTICLES · OPINIONS</span>
+      </div>
+
+      <div class="stat">
+        <strong>⭐</strong>
+        <span>BEM WRITING PREPARATION</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar" aria-label="Sequence 3 navigation">
+
+  <div class="nav-links">
+
+    <a href="MS4-Sequence3.html">
+      🏠 Home
+    </a>
+
+    <a href="MS4-S3-Reading.html">
+      📖 Reading
+    </a>
+
+    <a href="MS4-S3-Vocabulary.html">
+      🧳 Vocabulary
+    </a>
+
+    <a
+      href="MS4-S3-Writing.html"
+      class="active"
+      aria-current="page">
+      ✍️ Writing
+    </a>
+
+    <a href="MS4-S3-Grammar.html">
+      🔤 Grammar
+    </a>
+
+  </div>
+
+</nav>
+
+<main>
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<section class="intro">
+
+  <div class="intro-art">
+    🗺️
+  </div>
+
+  <div class="intro-content">
+
+    <span class="intro-badge">
+      YOUR WRITING EXPEDITION
+    </span>
+
+    <h2>
+      Four Stops — Four Writing Adventures
+    </h2>
+
+    <p>
+      Good writing is a powerful way to make
+      your voice heard. During these four lessons,
+      you will learn to write open letters,
+      defend your opinions, support arguments
+      and inspire positive change.
+    </p>
+
+  </div>
+
+  <div class="sticky-note">
+
+    <strong>
+      💡 Your mission:
+    </strong>
+
+    <span>→ Think</span>
+    <span>→ Collect ideas</span>
+    <span>→ Organise</span>
+    <span>→ Give arguments</span>
+    <span>→ Persuade</span>
+    <span>→ Write</span>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     WRITING DESTINATIONS
+===================================================== -->
+
+<section id="destinations">
+
+  <div class="section-heading">
+
+    <span class="overline">
+      ✦ ───── YOUR WRITING ROUTE ───── ✦
+    </span>
+
+    <h2>
+      Choose Your Next Destination
+    </h2>
+
+    <p>
+      Complete the four writing stops and
+      collect new skills along the way.
+    </p>
+
+  </div>
+
+  <!-- GOLDEN TRAIL -->
+
+  <div class="trail" aria-hidden="true">
+
+    <div class="trail-numbers">
+
+      <div class="trail-number">01</div>
+      <div class="trail-number">02</div>
+      <div class="trail-number">03</div>
+      <div class="trail-number">04</div>
+
+    </div>
+
+  </div>
+
+  <!-- LESSON CARDS -->
+
+  <div class="lesson-grid">
+
+    <!-- LESSON 1 -->
+
+    <article class="lesson-card">
+
+      <div class="lesson-image">
+
+        <img
+          src="https://i.imgur.com/hyM6R4f.jpeg"
+          alt="Pupils participating in a solidarity campaign"
+          loading="lazy"
+        >
+
+        <span class="image-icon">💌</span>
+
+        <span class="image-label">
+          OPEN LETTER
+        </span>
+
+      </div>
+
+      <div class="lesson-body">
+
+        <h3>
+          A Letter That Helps
+        </h3>
+
+        <p>
+          Write an inspiring open letter encouraging
+          your schoolmates and community to help
+          people in need and participate in a
+          solidarity campaign.
+        </p>
+
+        <div class="skills">
+
+          <span class="skill">letter layout</span>
+          <span class="skill">solidarity</span>
+          <span class="skill">persuasion</span>
+          <span class="skill">connectors</span>
+
+        </div>
+
+        <a
+          class="lesson-btn"
+          href="MS4-S3-Writing-Lesson1.html">
+
+          Begin Stop 01 →
+
+        </a>
+
+      </div>
+
+    </article>
+
+    <!-- LESSON 2 -->
+
+    <article class="lesson-card">
+
+      <div class="lesson-image">
+
+        <img
+          src="https://i.imgur.com/FWAYxBM.jpeg"
+          alt="Algerian culture and national heritage"
+          loading="lazy"
+        >
+
+        <span class="image-icon">🇩🇿</span>
+
+        <span class="image-label">
+          ARTICLE
+        </span>
+
+      </div>
+
+      <div class="lesson-body">
+
+        <h3>
+          Our Culture, Our Future
+        </h3>
+
+        <p>
+          Write an argumentative article explaining
+          how young Algerians can protect their
+          traditions, heritage and national identity
+          in today's connected world.
+        </p>
+
+        <div class="skills">
+
+          <span class="skill">article writing</span>
+          <span class="skill">identity</span>
+          <span class="skill">globalisation</span>
+          <span class="skill">arguments</span>
+
+        </div>
+
+        <a
+          class="lesson-btn"
+          href="MS4-S3-Writing-Lesson2.html">
+
+          Begin Stop 02 →
+
+        </a>
+
+      </div>
+
+    </article>
+
+    <!-- LESSON 3 -->
+
+    <article class="lesson-card">
+
+      <div class="lesson-image">
+
+        <img
+          src="https://i.imgur.com/flUcXvM.jpeg"
+          alt="Pupils helping their community"
+          loading="lazy"
+        >
+
+        <span class="image-icon">🤝</span>
+
+        <span class="image-label">
+          CITIZENSHIP
+        </span>
+
+      </div>
+
+      <div class="lesson-body">
+
+        <h3>
+          Be a Good Citizen!
+        </h3>
+
+        <p>
+          Write an open letter encouraging young
+          people to respect others, protect public
+          places, volunteer and become active,
+          responsible citizens.
+        </p>
+
+        <div class="skills">
+
+          <span class="skill">open letter</span>
+          <span class="skill">citizenship</span>
+          <span class="skill">volunteering</span>
+          <span class="skill">persuasion</span>
+
+        </div>
+
+        <a
+          class="lesson-btn"
+          href="MS4-S3-Writing-Lesson3.html">
+
+          Begin Stop 03 →
+
+        </a>
+
+      </div>
+
+    </article>
+
+    <!-- LESSON 4 -->
+
+    <article class="lesson-card">
+
+      <div class="lesson-image">
+
+        <img
+          src="https://i.imgur.com/nAXuVkZ.jpeg"
+          alt="Teenagers discussing social media"
+          loading="lazy"
+        >
+
+        <span class="image-icon">📱</span>
+
+        <span class="image-label">
+          OPINION WRITING
+        </span>
+
+      </div>
+
+      <div class="lesson-body">
+
+        <h3>
+          Social Media: Yes or No?
+        </h3>
+
+        <p>
+          Express your opinion about teenagers'
+          use of social media. Present convincing
+          arguments, provide examples and write
+          a strong conclusion.
+        </p>
+
+        <div class="skills">
+
+          <span class="skill">pros & cons</span>
+          <span class="skill">opinions</span>
+          <span class="skill">arguments</span>
+          <span class="skill">conclusion</span>
+
+        </div>
+
+        <a
+          class="lesson-btn"
+          href="MS4-S3-Writing-Lesson4.html">
+
+          Begin Stop 04 →
+
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     WRITING ROUTE
+===================================================== -->
+
+<section class="route-section">
+
+  <h2>
+    🧭 Your Writing Route
+  </h2>
+
+  <p class="route-sub">
+    Follow these four steps to become a confident writer.
+  </p>
+
+  <div class="route-grid">
+
+    <div class="route-card">
+
+      <div class="route-icon">💡</div>
+
+      <div>
+
+        <h3>1. PLAN</h3>
+
+        <p>
+          Understand the topic, audience and purpose.
+          Collect useful ideas before writing.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="route-card">
+
+      <div class="route-icon">🧩</div>
+
+      <div>
+
+        <h3>2. ORGANISE</h3>
+
+        <p>
+          Arrange your ideas into an introduction,
+          body and conclusion.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="route-card">
+
+      <div class="route-icon">🔗</div>
+
+      <div>
+
+        <h3>3. SUPPORT</h3>
+
+        <p>
+          Give reasons and examples.
+          Use linking words to connect ideas.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="route-card">
+
+      <div class="route-icon">🔍</div>
+
+      <div>
+
+        <h3>4. REVIEW</h3>
+
+        <p>
+          Check spelling, punctuation,
+          grammar and organisation.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     WRITER'S PASSPORT
+===================================================== -->
+
+<section class="passport">
+
+  <div class="passport-info">
+
+    <h2>
+      🛂 The Young Writer's Passport
+    </h2>
+
+    <p>
+      Every completed lesson gives you a new
+      writing skill. Collect all four stamps
+      and complete your MS4 Sequence 3
+      writing expedition!
+    </p>
+
+  </div>
+
+  <div class="passport-stamps">
+
+    <div class="stamp">
+
+      <span class="stamp-icon">💌</span>
+
+      LETTER<br>
+      WRITER
+
+    </div>
+
+    <div class="stamp">
+
+      <span class="stamp-icon">🇩🇿</span>
+
+      CULTURE<br>
+      DEFENDER
+
+    </div>
+
+    <div class="stamp">
+
+      <span class="stamp-icon">🤝</span>
+
+      GOOD<br>
+      CITIZEN
+
+    </div>
+
+    <div class="stamp">
+
+      <span class="stamp-icon">📱</span>
+
+      OPINION<br>
+      WRITER
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     PROGRESS TRACKER
+===================================================== -->
+
+<section class="progress-panel">
+
+  <div class="progress-heading">
+
+    <span>
+      🏆 Your Writing Progress
+    </span>
+
+    <span id="progressLabel">
+      0 of 4 lessons explored
+    </span>
+
+  </div>
+
+  <div class="progress-track">
+
+    <div
+      class="progress-fill"
+      id="progressFill"
+      role="progressbar"
+      aria-label="Writing progress"
+      aria-valuemin="0"
+      aria-valuemax="4"
+      aria-valuenow="0"
+    ></div>
+
+  </div>
+
+  <p class="progress-note">
+    Visit each lesson and mark it as explored
+    using the buttons below. Your progress
+    will be saved on this device.
+  </p>
+
+  <div
+    id="progressButtons"
+    style="
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:15px;
+    "
+  >
+
+    <button
+      class="progress-button"
+      data-lesson="1"
+      type="button"
+    >
+      ☐ Stop 01
+    </button>
+
+    <button
+      class="progress-button"
+      data-lesson="2"
+      type="button"
+    >
+      ☐ Stop 02
+    </button>
+
+    <button
+      class="progress-button"
+      data-lesson="3"
+      type="button"
+    >
+      ☐ Stop 03
+    </button>
+
+    <button
+      class="progress-button"
+      data-lesson="4"
+      type="button"
+    >
+      ☐ Stop 04
+    </button>
+
+  </div>
+
+</section>
+
+<style>
+
+.progress-button {
+  padding: 11px 17px;
+
+  background: #eee5ff;
+  color: #5a2ca2;
+
+  border: 1px solid #d5bff8;
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  transition: .25s;
+}
+
+.progress-button:hover {
+  transform: translateY(-2px);
+}
+
+.progress-button.completed {
+  background: #dff7e9;
+  color: #177a49;
+  border-color: #8ddbb0;
+}
+
+</style>
+
+<!-- =====================================================
+     START BUTTON
+===================================================== -->
+
+<div class="start-area">
+
+  <a
+    class="start-btn"
+    href="MS4-S3-Writing-Lesson1.html"
+  >
+
+    ✍️ Start My Writing Journey
+
+  </a>
+
+</div>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  MY ENGLISH SPACE — MS4 · SEQUENCE 3 · WRITING EXPEDITION
+
+  <span>
+    Think • Express • Persuade • Inspire
+  </span>
+
+</footer>
+
+</div>
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+"use strict";
+
+/* =====================================================
+   PROGRESS STORAGE
+===================================================== */
+
+const progressKey = "ms4-s3-writing-journey-progress";
+
+function loadProgress() {
+
+  try {
+
+    return JSON.parse(
+      localStorage.getItem(progressKey) || "{}"
+    );
+
+  } catch (error) {
+
+    return {};
+
+  }
+
+}
+
+function saveProgress(progress) {
+
+  try {
+
+    localStorage.setItem(
+      progressKey,
+      JSON.stringify(progress)
+    );
+
+  } catch (error) {
+
+    console.warn("Progress could not be saved.");
+
+  }
+
+}
+
+/* =====================================================
+   UPDATE PROGRESS
+===================================================== */
+
+function updateProgress() {
+
+  const progress = loadProgress();
+
+  const completed = [1, 2, 3, 4]
+    .filter(id => progress[id] === true)
+    .length;
+
+  const percentage = completed * 25;
+
+  document.getElementById(
+    "progressLabel"
+  ).textContent =
+    completed + " of 4 lessons explored";
+
+  document.getElementById(
+    "progressFill"
+  ).style.width =
+    percentage + "%";
+
+  document.getElementById(
+    "progressFill"
+  ).setAttribute(
+    "aria-valuenow",
+    completed
+  );
+
+  document.querySelectorAll(
+    ".progress-button"
+  ).forEach(button => {
+
+    const id = Number(button.dataset.lesson);
+
+    const isCompleted =
+      progress[id] === true;
+
+    button.classList.toggle(
+      "completed",
+      isCompleted
+    );
+
+    button.textContent =
+      isCompleted
+        ? "✓ Stop 0" + id
+        : "☐ Stop 0" + id;
+
+    button.setAttribute(
+      "aria-pressed",
+      String(isCompleted)
+    );
+
+  });
+
+}
+
+/* =====================================================
+   TOGGLE LESSON PROGRESS
+===================================================== */
+
+document.querySelectorAll(
+  ".progress-button"
+).forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const id = Number(button.dataset.lesson);
+
+    const progress = loadProgress();
+
+    progress[id] = !progress[id];
+
+    saveProgress(progress);
+
+    updateProgress();
+
+  });
+
+});
+
+/* =====================================================
+   INITIALISE
+===================================================== */
+
+updateProgress();
+
+</script>
+
+</body>
+</html>

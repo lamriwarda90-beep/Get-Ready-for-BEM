@@ -1,0 +1,4371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4 Sequence 3 | Vocabulary Lesson 2 — Charity Work</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --violet:#6d4bc3;
+    --violet-dark:#4d318f;
+    --violet-deep:#382365;
+    --violet-light:#eee8ff;
+
+    --gold:#f5c95d;
+    --gold-dark:#dba82e;
+    --gold-light:#fff4c9;
+
+    --blue:#4f9ee8;
+    --pink:#e875a8;
+    --green:#55b98b;
+    --coral:#ef866f;
+    --orange:#f3a451;
+
+    --ink:#302844;
+    --muted:#756d85;
+
+    --paper:#fffdf9;
+    --soft:#f7f3ff;
+
+    --shadow:0 18px 45px rgba(59,38,102,.13);
+    --small-shadow:0 8px 22px rgba(59,38,102,.10);
+
+    --radius:24px;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Nunito",sans-serif;
+    color:var(--ink);
+    background:
+        radial-gradient(circle at 10% 10%,rgba(245,201,93,.12),transparent 28%),
+        radial-gradient(circle at 90% 20%,rgba(109,75,195,.10),transparent 30%),
+        linear-gradient(135deg,#faf8ff,#f3efff 55%,#fffaf0);
+    min-height:100vh;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    background:rgba(56,35,101,.94);
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 5px 25px rgba(38,20,72,.18);
+}
+
+.brand{
+    color:white;
+    text-decoration:none;
+
+    font-family:"Space Mono",monospace;
+    font-weight:700;
+    font-size:.92rem;
+    letter-spacing:1px;
+}
+
+.nav-back{
+    color:#fff;
+    text-decoration:none;
+
+    border:1px solid rgba(255,255,255,.22);
+    padding:9px 16px;
+    border-radius:999px;
+
+    font-weight:800;
+    font-size:.88rem;
+
+    transition:.25s;
+}
+
+.nav-back:hover{
+    background:rgba(255,255,255,.12);
+    transform:translateY(-2px);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+
+    padding:75px 6% 85px;
+
+    color:white;
+
+    background:
+        radial-gradient(circle at 12% 20%,rgba(245,201,93,.18),transparent 25%),
+        radial-gradient(circle at 85% 30%,rgba(232,117,168,.18),transparent 28%),
+        linear-gradient(135deg,#392367,#6240ae 55%,#7655c9);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border:1px dashed rgba(245,201,93,.3);
+    border-radius:50%;
+    right:-120px;
+    top:-170px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border:1px dotted rgba(255,255,255,.18);
+    border-radius:50%;
+    left:-100px;
+    bottom:-100px;
+}
+
+.hero-content{
+    max-width:1050px;
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+.hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    padding:8px 15px;
+    border-radius:999px;
+
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+
+    font-family:"Space Mono",monospace;
+    font-size:.72rem;
+    letter-spacing:1px;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:"Baloo 2",sans-serif;
+    font-size:clamp(3rem,7vw,5.7rem);
+    line-height:.92;
+    max-width:800px;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero-description{
+    max-width:720px;
+    color:rgba(255,255,255,.86);
+    font-size:1.08rem;
+    line-height:1.8;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+    margin-top:30px;
+}
+
+.btn{
+    border:none;
+    cursor:pointer;
+    text-decoration:none;
+
+    padding:13px 20px;
+    border-radius:15px;
+
+    font-family:"Nunito",sans-serif;
+    font-weight:900;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:var(--violet-deep);
+    box-shadow:0 8px 20px rgba(245,201,93,.25);
+}
+
+.btn-secondary{
+    color:white;
+    border:1px solid rgba(255,255,255,.28);
+    background:rgba(255,255,255,.09);
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-wrap{
+    max-width:1100px;
+    margin:-30px auto 0;
+    position:relative;
+    z-index:10;
+    padding:0 20px;
+}
+
+.progress-card{
+    background:rgba(255,255,255,.95);
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    padding:20px 25px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.progress-info{
+    min-width:150px;
+}
+
+.progress-info strong{
+    display:block;
+    font-size:.95rem;
+}
+
+.progress-info span{
+    color:var(--muted);
+    font-size:.8rem;
+}
+
+.progress-bar{
+    flex:1;
+    height:11px;
+    background:#ece8f5;
+    border-radius:999px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    width:0%;
+    border-radius:999px;
+
+    background:linear-gradient(90deg,var(--violet),var(--gold));
+
+    transition:width .5s ease;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main{
+    max-width:1120px;
+    margin:auto;
+    padding:70px 20px 100px;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:42px;
+}
+
+.section-heading .mini{
+    color:var(--violet);
+    font-family:"Space Mono",monospace;
+    font-size:.72rem;
+    letter-spacing:1.5px;
+    font-weight:700;
+}
+
+.section-heading h2{
+    font-family:"Baloo 2",sans-serif;
+    font-size:clamp(2.2rem,5vw,3.5rem);
+    color:var(--violet-deep);
+    line-height:1;
+    margin:8px 0 12px;
+}
+
+.section-heading p{
+    max-width:680px;
+    margin:auto;
+    color:var(--muted);
+    line-height:1.7;
+}
+
+/* =========================================================
+   MISSION
+========================================================= */
+
+.mission{
+    margin-bottom:70px;
+    scroll-margin-top:100px;
+}
+
+.mission-header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.mission-number{
+    width:55px;
+    height:55px;
+    border-radius:17px;
+
+    display:grid;
+    place-items:center;
+
+    background:var(--gold);
+    color:var(--violet-deep);
+
+    font-family:"Space Mono",monospace;
+    font-weight:700;
+
+    box-shadow:0 8px 18px rgba(245,201,93,.25);
+}
+
+.mission-header h3{
+    font-family:"Baloo 2",sans-serif;
+    color:var(--violet-deep);
+    font-size:2rem;
+}
+
+.mission-header p{
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+/* =========================================================
+   STEP 1 — CHARITY MISSION CONTROL
+========================================================= */
+
+.mission-control{
+    background:
+        linear-gradient(135deg,#fff,#f8f4ff);
+    border:1px solid #e9e2f7;
+    border-radius:30px;
+    padding:28px;
+    box-shadow:var(--shadow);
+}
+
+.control-intro{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    gap:20px;
+    align-items:center;
+
+    padding:20px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(135deg,#fff7d9,#fff);
+    border:1px solid #f5e4a8;
+
+    margin-bottom:25px;
+}
+
+.control-icon{
+    width:75px;
+    height:75px;
+    border-radius:23px;
+
+    display:grid;
+    place-items:center;
+
+    font-size:2.6rem;
+    background:white;
+    box-shadow:var(--small-shadow);
+}
+
+.control-intro h4{
+    font-family:"Baloo 2";
+    color:var(--violet-deep);
+    font-size:1.65rem;
+}
+
+.control-intro p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+/* challenge tabs */
+
+.challenge-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.challenge-tab{
+    border:2px solid #e5ddf5;
+    background:white;
+
+    padding:10px 15px;
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-family:"Nunito";
+    font-weight:900;
+    color:var(--violet-deep);
+
+    transition:.25s;
+}
+
+.challenge-tab:hover{
+    transform:translateY(-2px);
+}
+
+.challenge-tab.active{
+    background:var(--violet);
+    color:white;
+    border-color:var(--violet);
+}
+
+/* challenge panels */
+
+.challenge-panel{
+    display:none;
+}
+
+.challenge-panel.active{
+    display:block;
+    animation:fadeIn .35s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.scenario{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.scenario-visual{
+    min-height:270px;
+    border-radius:25px;
+
+    background:
+        radial-gradient(circle at 25% 20%,rgba(245,201,93,.35),transparent 25%),
+        linear-gradient(145deg,#6d4bc3,#392365);
+
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    padding:25px;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.scenario-visual::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border:1px dashed rgba(255,255,255,.2);
+    border-radius:50%;
+}
+
+.scenario-emoji{
+    font-size:5rem;
+    position:relative;
+    z-index:1;
+}
+
+.scenario-visual span{
+    position:relative;
+    z-index:1;
+    margin-top:10px;
+
+    font-family:"Space Mono";
+    font-size:.72rem;
+    letter-spacing:1px;
+    color:#ffeaa1;
+}
+
+.scenario-content{
+    padding:8px 5px;
+}
+
+.scenario-content h4{
+    font-family:"Baloo 2";
+    color:var(--violet-deep);
+    font-size:1.7rem;
+    margin-bottom:8px;
+}
+
+.scenario-content .situation{
+    color:var(--ink);
+    line-height:1.75;
+    margin-bottom:18px;
+}
+
+.decision-title{
+    font-weight:900;
+    color:var(--violet);
+    margin-bottom:10px;
+}
+
+.decision-options{
+    display:grid;
+    gap:10px;
+}
+
+.decision-option{
+    border:2px solid #e7e1f1;
+    background:white;
+
+    padding:13px 15px;
+    border-radius:15px;
+
+    text-align:left;
+    cursor:pointer;
+
+    font-family:"Nunito";
+    font-weight:800;
+    color:var(--ink);
+
+    transition:.25s;
+}
+
+.decision-option:hover{
+    border-color:var(--violet);
+    transform:translateX(3px);
+}
+
+.decision-option.selected{
+    background:#f0ebff;
+    border-color:var(--violet);
+    color:var(--violet-deep);
+}
+
+.decision-feedback{
+    min-height:25px;
+    margin-top:13px;
+
+    color:var(--violet);
+    font-weight:800;
+}
+
+/* observation cards */
+
+.observation-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.observation-card{
+    background:white;
+    border:1px solid #e8e0f4;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:var(--small-shadow);
+}
+
+.observation-icon{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.observation-card h4{
+    font-family:"Baloo 2";
+    font-size:1.3rem;
+    color:var(--violet-deep);
+}
+
+.observation-card p{
+    color:var(--muted);
+    line-height:1.6;
+    margin:7px 0 15px;
+}
+
+.observation-question{
+    color:var(--violet);
+    font-weight:900;
+    font-size:.9rem;
+    margin-bottom:9px;
+}
+
+.observation-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+}
+
+.observation-buttons button{
+    border:1px solid #ded5ef;
+    background:#faf8ff;
+    color:var(--ink);
+
+    padding:7px 10px;
+    border-radius:10px;
+
+    cursor:pointer;
+    font-weight:800;
+}
+
+.observation-buttons button.selected{
+    background:var(--gold-light);
+    border-color:var(--gold-dark);
+}
+
+/* mission control bottom */
+
+.control-footer{
+    margin-top:28px;
+    padding-top:22px;
+    border-top:1px dashed #dcd3eb;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.control-status{
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+.complete-btn{
+    border:none;
+    cursor:pointer;
+
+    padding:13px 19px;
+    border-radius:14px;
+
+    background:var(--violet);
+    color:white;
+
+    font-weight:900;
+
+    transition:.25s;
+}
+
+.complete-btn:hover{
+    background:var(--violet-dark);
+    transform:translateY(-2px);
+}
+
+/* =========================================================
+   STEP 2 — CHARITY ACTION LAB
+========================================================= */
+
+.action-lab{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.action-box{
+    background:white;
+    border-radius:24px;
+    padding:25px;
+    box-shadow:var(--small-shadow);
+    border:1px solid #e8e0f4;
+}
+
+.action-box h4{
+    font-family:"Baloo 2";
+    color:var(--violet-deep);
+    font-size:1.55rem;
+    margin-bottom:7px;
+}
+
+.action-box>p{
+    color:var(--muted);
+    line-height:1.6;
+    margin-bottom:18px;
+}
+
+.action-items{
+    display:grid;
+    gap:10px;
+}
+
+.action-item{
+    padding:14px;
+    border-radius:15px;
+    border:2px solid #ece7f5;
+    background:#fff;
+
+    cursor:pointer;
+    text-align:left;
+
+    font-family:"Nunito";
+    font-weight:800;
+
+    transition:.2s;
+}
+
+.action-item:hover{
+    transform:translateX(3px);
+}
+
+.action-item.selected{
+    background:#f1edff;
+    border-color:var(--violet);
+}
+
+.sort-zone{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.sort-target{
+    min-height:150px;
+    padding:15px;
+    border-radius:18px;
+    border:2px dashed #d8cee9;
+    background:#fbfaff;
+}
+
+.sort-target h5{
+    font-family:"Baloo 2";
+    color:var(--violet);
+    font-size:1.1rem;
+    margin-bottom:10px;
+}
+
+.sort-target p{
+    font-size:.82rem;
+    color:var(--muted);
+}
+
+.selected-action{
+    margin-top:10px;
+    padding:8px 10px;
+    border-radius:9px;
+    background:white;
+    border:1px solid #ddd4ee;
+    font-size:.82rem;
+    font-weight:800;
+}
+
+/* =========================================================
+   STEP 3
+========================================================= */
+
+.step3-card{
+    background:white;
+    border-radius:28px;
+    padding:30px;
+    box-shadow:var(--shadow);
+    border:1px solid #e7def4;
+}
+
+.step3-note{
+    padding:17px 20px;
+    border-radius:17px;
+    background:linear-gradient(135deg,#f5f0ff,#fff);
+    border-left:5px solid var(--violet);
+    margin-bottom:20px;
+    line-height:1.7;
+    color:var(--muted);
+}
+
+.step3-tasks{
+    display:grid;
+    gap:15px;
+}
+
+.step3-task{
+    padding:17px;
+    border-radius:17px;
+    background:#faf9fd;
+    border:1px solid #e8e2f0;
+}
+
+.step3-task strong{
+    color:var(--violet-deep);
+}
+
+.step3-task input,
+.step3-task select{
+    margin-top:10px;
+    width:100%;
+    padding:12px;
+    border:2px solid #e5dff0;
+    border-radius:12px;
+    font-family:"Nunito";
+    outline:none;
+}
+
+.step3-task input:focus,
+.step3-task select:focus{
+    border-color:var(--violet);
+}
+
+/* =========================================================
+   STEP 4 — CHARITY CONTEXT
+========================================================= */
+
+.context-card{
+    background:white;
+    border-radius:28px;
+    box-shadow:var(--shadow);
+    padding:30px;
+}
+
+.context-story{
+    padding:25px;
+
+    background:
+        linear-gradient(135deg,#fff8df,#fff);
+    border-radius:22px;
+
+    border:1px solid #f2df9d;
+
+    line-height:1.9;
+    color:#40394c;
+}
+
+.context-story .story-title{
+    font-family:"Baloo 2";
+    color:var(--violet-deep);
+    font-size:1.7rem;
+    margin-bottom:10px;
+}
+
+.context-questions{
+    margin-top:25px;
+    display:grid;
+    gap:16px;
+}
+
+.context-question{
+    padding:18px;
+    border-radius:17px;
+    background:#faf8fd;
+    border:1px solid #e8e0f1;
+}
+
+.context-question p{
+    font-weight:900;
+    margin-bottom:11px;
+}
+
+.context-options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.context-options button{
+    border:1px solid #ddd4ed;
+    background:white;
+    padding:9px 13px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:800;
+}
+
+.context-options button.selected{
+    background:#f0ebff;
+    border-color:var(--violet);
+}
+
+/* =========================================================
+   STEP 5 — WORD IN ACTION
+========================================================= */
+
+.language-board{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.language-card{
+    background:white;
+    border-radius:24px;
+    padding:25px;
+    border:1px solid #e7e0f1;
+    box-shadow:var(--small-shadow);
+}
+
+.language-card h4{
+    font-family:"Baloo 2";
+    color:var(--violet-deep);
+    font-size:1.45rem;
+}
+
+.language-card p{
+    color:var(--muted);
+    margin:6px 0 16px;
+}
+
+.sentence{
+    padding:15px;
+    border-radius:15px;
+    background:#faf9fd;
+    margin-bottom:12px;
+    line-height:1.7;
+}
+
+.sentence select{
+    border:2px solid #ded6ee;
+    border-radius:9px;
+    padding:5px 8px;
+    font-family:"Nunito";
+    font-weight:800;
+}
+
+/* =========================================================
+   STEP 6 — REFLECT
+========================================================= */
+
+.reflection{
+    background:
+        linear-gradient(135deg,#4e338f,#7654c8);
+    color:white;
+    border-radius:30px;
+    padding:35px;
+    box-shadow:var(--shadow);
+}
+
+.reflection h4{
+    font-family:"Baloo 2";
+    font-size:2rem;
+    margin-bottom:8px;
+}
+
+.reflection>p{
+    color:rgba(255,255,255,.82);
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.reflection-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.reflection-item{
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.16);
+    padding:17px;
+    border-radius:18px;
+}
+
+.reflection-item label{
+    display:block;
+    font-weight:900;
+    margin-bottom:8px;
+}
+
+.reflection-item select{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    font-family:"Nunito";
+}
+
+/* =========================================================
+   STEP 7 — CHARITY CAMPAIGN WORKSHOP
+========================================================= */
+
+.campaign{
+    background:white;
+    border-radius:32px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    border:1px solid #e5dcf1;
+}
+
+.campaign-header{
+    padding:36px;
+
+    color:white;
+
+    background:
+        radial-gradient(circle at 85% 20%,rgba(245,201,93,.2),transparent 25%),
+        linear-gradient(135deg,#3e286f,#6e4bc3);
+}
+
+.campaign-header .badge{
+    display:inline-block;
+    padding:7px 13px;
+    border-radius:999px;
+
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+
+    font-family:"Space Mono";
+    font-size:.68rem;
+    letter-spacing:1px;
+    margin-bottom:12px;
+}
+
+.campaign-header h4{
+    font-family:"Baloo 2";
+    font-size:clamp(2.2rem,5vw,3.6rem);
+    line-height:1;
+    margin-bottom:12px;
+}
+
+.campaign-header p{
+    max-width:750px;
+    color:rgba(255,255,255,.84);
+    line-height:1.7;
+}
+
+/* campaign workflow */
+
+.campaign-body{
+    padding:32px;
+}
+
+.campaign-map{
+    display:flex;
+    align-items:center;
+    gap:0;
+    margin-bottom:35px;
+    overflow-x:auto;
+    padding-bottom:5px;
+}
+
+.map-step{
+    min-width:125px;
+    text-align:center;
+    position:relative;
+}
+
+.map-step:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    top:19px;
+    left:calc(50% + 22px);
+    width:calc(100% - 44px);
+    height:2px;
+    background:#e3dcef;
+}
+
+.map-dot{
+    width:39px;
+    height:39px;
+    border-radius:50%;
+    margin:auto;
+
+    display:grid;
+    place-items:center;
+
+    background:#eee9f7;
+    color:var(--violet);
+
+    font-weight:900;
+
+    position:relative;
+    z-index:2;
+}
+
+.map-step span{
+    display:block;
+    margin-top:7px;
+    color:var(--muted);
+    font-size:.75rem;
+    font-weight:900;
+}
+
+/* campaign stages */
+
+.campaign-stage{
+    margin-bottom:28px;
+    padding:25px;
+
+    border-radius:24px;
+    border:1px solid #e7dff1;
+    background:#fdfcff;
+}
+
+.stage-top{
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+    margin-bottom:20px;
+}
+
+.stage-number{
+    flex:0 0 42px;
+    height:42px;
+    border-radius:13px;
+
+    display:grid;
+    place-items:center;
+
+    background:var(--gold);
+    color:var(--violet-deep);
+
+    font-weight:900;
+}
+
+.stage-top h5{
+    font-family:"Baloo 2";
+    color:var(--violet-deep);
+    font-size:1.6rem;
+}
+
+.stage-top p{
+    color:var(--muted);
+    line-height:1.55;
+    font-size:.9rem;
+}
+
+/* cause */
+
+.cause-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.cause-card{
+    border:2px solid #e6def1;
+    background:white;
+    border-radius:17px;
+
+    padding:17px;
+    cursor:pointer;
+
+    text-align:left;
+
+    transition:.25s;
+}
+
+.cause-card:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--small-shadow);
+}
+
+.cause-card.selected{
+    border-color:var(--violet);
+    background:#f2edff;
+}
+
+.cause-icon{
+    font-size:1.9rem;
+}
+
+.cause-card strong{
+    display:block;
+    margin-top:7px;
+    color:var(--violet-deep);
+}
+
+.cause-card small{
+    display:block;
+    margin-top:4px;
+    color:var(--muted);
+    line-height:1.4;
+}
+
+/* people */
+
+.people-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.people-card{
+    padding:16px;
+    background:white;
+    border:2px solid #e7e0f0;
+    border-radius:16px;
+    cursor:pointer;
+    text-align:center;
+    font-weight:900;
+    transition:.2s;
+}
+
+.people-card:hover{
+    transform:translateY(-2px);
+}
+
+.people-card.selected{
+    background:#fff5d2;
+    border-color:var(--gold-dark);
+}
+
+/* action planner */
+
+.action-planner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.plan-column{
+    padding:18px;
+    border-radius:18px;
+    background:white;
+    border:1px solid #e5deef;
+}
+
+.plan-column h6{
+    font-family:"Baloo 2";
+    font-size:1.2rem;
+    color:var(--violet-deep);
+    margin-bottom:12px;
+}
+
+.plan-option{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+
+    padding:10px 0;
+    border-bottom:1px dashed #e4ddec;
+}
+
+.plan-option:last-child{
+    border-bottom:none;
+}
+
+.plan-option input{
+    margin-top:4px;
+    accent-color:var(--violet);
+}
+
+/* slogan */
+
+.slogan-box{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:15px;
+}
+
+.slogan-input{
+    width:100%;
+    border:2px solid #e2d9ee;
+    border-radius:15px;
+
+    padding:15px 17px;
+
+    font-family:"Baloo 2";
+    font-size:1.2rem;
+
+    outline:none;
+}
+
+.slogan-input:focus{
+    border-color:var(--violet);
+}
+
+.slogan-counter{
+    margin-top:7px;
+    color:var(--muted);
+    font-size:.8rem;
+}
+
+.slogan-ideas{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:13px;
+}
+
+.slogan-idea{
+    border:none;
+    background:#f2edff;
+    color:var(--violet-deep);
+
+    padding:8px 11px;
+    border-radius:10px;
+
+    cursor:pointer;
+    font-weight:800;
+}
+
+/* campaign writing */
+
+.campaign-editor{
+    width:100%;
+    min-height:190px;
+
+    resize:vertical;
+
+    border:2px solid #e3dbee;
+    border-radius:18px;
+
+    padding:18px;
+
+    font-family:"Nunito";
+    font-size:1rem;
+    line-height:1.7;
+
+    outline:none;
+}
+
+.campaign-editor:focus{
+    border-color:var(--violet);
+}
+
+.editor-tools{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:9px;
+
+    color:var(--muted);
+    font-size:.82rem;
+}
+
+.campaign-checklist{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
+    margin-bottom:18px;
+}
+
+.check-item{
+    display:flex;
+    gap:8px;
+    align-items:center;
+
+    padding:10px 12px;
+
+    background:#faf8fd;
+    border-radius:11px;
+
+    color:#514a5d;
+    font-size:.86rem;
+}
+
+.check-item span{
+    color:var(--green);
+}
+
+/* final launch */
+
+.launch-zone{
+    padding:28px;
+    border-radius:24px;
+
+    background:
+        linear-gradient(135deg,#fff8dc,#fff);
+    border:1px solid #f1dda0;
+
+    text-align:center;
+}
+
+.launch-icon{
+    font-size:3rem;
+}
+
+.launch-zone h5{
+    font-family:"Baloo 2";
+    color:var(--violet-deep);
+    font-size:2rem;
+    margin:5px 0;
+}
+
+.launch-zone p{
+    max-width:650px;
+    margin:0 auto 18px;
+    color:var(--muted);
+    line-height:1.7;
+}
+
+.launch-feedback{
+    min-height:30px;
+    margin-top:15px;
+    color:var(--violet);
+    font-weight:900;
+}
+
+/* =========================================================
+   FINISH
+========================================================= */
+
+.finish{
+    text-align:center;
+
+    padding:50px 25px;
+
+    border-radius:32px;
+
+    background:
+        radial-gradient(circle at 20% 20%,rgba(245,201,93,.18),transparent 25%),
+        linear-gradient(135deg,#392365,#6d4bc3);
+
+    color:white;
+
+    box-shadow:var(--shadow);
+}
+
+.finish-icon{
+    font-size:4rem;
+}
+
+.finish h2{
+    font-family:"Baloo 2";
+    font-size:3rem;
+    margin:8px 0;
+}
+
+.finish p{
+    max-width:650px;
+    margin:0 auto 23px;
+    color:rgba(255,255,255,.8);
+    line-height:1.7;
+}
+
+.finish-actions{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+/* =========================================================
+   DICTIONARY
+========================================================= */
+
+.dictionary-tab{
+    position:fixed;
+    right:0;
+    top:48%;
+
+    z-index:2000;
+
+    background:var(--gold);
+    color:var(--violet-deep);
+
+    border:none;
+
+    padding:14px 9px;
+
+    writing-mode:vertical-rl;
+
+    border-radius:13px 0 0 13px;
+
+    font-family:"Space Mono";
+    font-size:.72rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:0 7px 20px rgba(45,28,75,.2);
+}
+
+.dictionary-overlay{
+    position:fixed;
+    inset:0;
+    z-index:3000;
+
+    background:rgba(32,20,52,.45);
+    backdrop-filter:blur(4px);
+
+    display:none;
+}
+
+.dictionary-overlay.open{
+    display:block;
+}
+
+.dictionary-panel{
+    position:absolute;
+    right:0;
+    top:0;
+    height:100%;
+    width:min(390px,92vw);
+
+    background:#fffdfb;
+
+    padding:25px;
+
+    box-shadow:-15px 0 45px rgba(32,20,52,.2);
+
+    overflow-y:auto;
+
+    animation:slideDictionary .3s ease;
+}
+
+@keyframes slideDictionary{
+    from{
+        transform:translateX(100%);
+    }
+    to{
+        transform:translateX(0);
+    }
+}
+
+.dictionary-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding-bottom:17px;
+    border-bottom:1px solid #e8e0ef;
+
+    margin-bottom:17px;
+}
+
+.dictionary-head h3{
+    font-family:"Baloo 2";
+    color:var(--violet-deep);
+    font-size:1.8rem;
+}
+
+.dictionary-close{
+    width:36px;
+    height:36px;
+    border:none;
+    border-radius:50%;
+
+    background:#f0ebf7;
+    color:var(--violet-deep);
+
+    cursor:pointer;
+    font-size:1.1rem;
+}
+
+.dictionary-search{
+    width:100%;
+    border:2px solid #e4dced;
+    border-radius:13px;
+
+    padding:11px 13px;
+
+    font-family:"Nunito";
+    outline:none;
+
+    margin-bottom:15px;
+}
+
+.dictionary-search:focus{
+    border-color:var(--violet);
+}
+
+.dictionary-list{
+    display:grid;
+    gap:9px;
+}
+
+.word-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+    padding:12px 13px;
+
+    border-radius:13px;
+
+    background:#faf8fd;
+    border:1px solid #e9e2f1;
+}
+
+.word-en{
+    font-weight:900;
+    color:var(--violet-deep);
+}
+
+.word-ar{
+    direction:rtl;
+    text-align:right;
+    font-weight:800;
+    color:#645b70;
+}
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+
+    transform:translate(-50%,120px);
+
+    background:#302447;
+    color:white;
+
+    padding:13px 18px;
+
+    border-radius:14px;
+
+    font-weight:800;
+
+    z-index:4000;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+}
+
+.toast.show{
+    transform:translate(-50%,0);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#2d2047;
+    color:white;
+    text-align:center;
+
+    padding:30px 20px;
+}
+
+footer strong{
+    font-family:"Space Mono";
+    font-size:.75rem;
+    letter-spacing:1px;
+}
+
+footer p{
+    margin-top:7px;
+    color:rgba(255,255,255,.55);
+    font-size:.78rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:850px){
+
+    .scenario,
+    .action-lab,
+    .language-board{
+        grid-template-columns:1fr;
+    }
+
+    .observation-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .reflection-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cause-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .people-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .campaign-map{
+        justify-content:flex-start;
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        height:64px;
+        padding:0 4%;
+    }
+
+    .brand{
+        font-size:.72rem;
+    }
+
+    .nav-back{
+        padding:8px 11px;
+        font-size:.75rem;
+    }
+
+    .hero{
+        padding:55px 6% 70px;
+    }
+
+    .hero h1{
+        font-size:3.3rem;
+    }
+
+    .progress-card{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    main{
+        padding-top:55px;
+    }
+
+    .mission-header{
+        align-items:flex-start;
+    }
+
+    .mission-header h3{
+        font-size:1.7rem;
+    }
+
+    .mission-control,
+    .context-card,
+    .step3-card,
+    .campaign-body{
+        padding:20px;
+    }
+
+    .control-intro{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .control-icon{
+        margin:auto;
+    }
+
+    .observation-grid{
+        grid-template-columns:1fr;
+    }
+
+    .sort-zone{
+        grid-template-columns:1fr;
+    }
+
+    .campaign-header{
+        padding:27px 20px;
+    }
+
+    .cause-grid,
+    .people-grid,
+    .action-planner,
+    .campaign-checklist{
+        grid-template-columns:1fr;
+    }
+
+    .slogan-box{
+        grid-template-columns:1fr;
+    }
+
+    .control-footer{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .complete-btn{
+        width:100%;
+    }
+
+    .dictionary-panel{
+        width:94vw;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =======================================================
+     NAVIGATION
+======================================================== -->
+
+<nav class="navbar">
+
+    <a href="#" class="brand">
+        MY ENGLISH SPACE
+    </a>
+
+    <a href="MS4-S3-Vocabulary.html" class="nav-back">
+        ← Vocabulary Expedition
+    </a>
+
+</nav>
+
+
+<!-- =======================================================
+     HERO
+======================================================== -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-eyebrow">
+            🤝 MS4 · SEQUENCE 03 · VOCABULARY · LESSON 02
+        </div>
+
+        <h1>
+            Charity <span>Work</span>
+        </h1>
+
+        <p class="hero-description">
+            Discover how people help others, support their communities,
+            volunteer, donate and organise charity actions.
+            Explore real-life situations, practise useful language
+            and finally design your own charity campaign.
+        </p>
+
+        <div class="hero-actions">
+
+            <a href="#journey" class="btn btn-primary">
+                🤝 Start the Charity Mission
+            </a>
+
+            <a href="#campaign" class="btn btn-secondary">
+                🎯 Build My Campaign
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =======================================================
+     PROGRESS
+======================================================== -->
+
+<div class="progress-wrap">
+
+    <div class="progress-card">
+
+        <div class="progress-info">
+            <strong>Charity Mission Progress</strong>
+            <span id="progressText">0 of 7 missions completed</span>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<main id="journey">
+
+<!-- =======================================================
+     INTRO
+======================================================== -->
+
+<section class="section-heading">
+
+    <div class="mini">
+        CHARITY WORK EXPEDITION
+    </div>
+
+    <h2>Your Mission</h2>
+
+    <p>
+        Charity is not only about giving money. It can include helping
+        people, volunteering time, collecting useful items, supporting
+        communities and working together to solve problems.
+    </p>
+
+</section>
+
+
+<!-- =======================================================
+     STEP 1
+======================================================== -->
+
+<section class="mission" id="step1">
+
+    <div class="mission-header">
+
+        <div class="mission-number">01</div>
+
+        <div>
+            <h3>Charity Mission Control 🎯</h3>
+            <p>Observe. Think. Decide. Discover.</p>
+        </div>
+
+    </div>
+
+
+    <div class="mission-control">
+
+        <div class="control-intro">
+
+            <div class="control-icon">
+                🛰️
+            </div>
+
+            <div>
+
+                <h4>Welcome, Charity Explorer!</h4>
+
+                <p>
+                    You are part of a community team.
+                    Different situations need different kinds of help.
+                    Explore the missions below and decide what a helpful
+                    person could do.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TABS -->
+
+        <div class="challenge-tabs">
+
+            <button class="challenge-tab active"
+                    onclick="openCharityChallenge(1,this)">
+                🏫 School
+            </button>
+
+            <button class="challenge-tab"
+                    onclick="openCharityChallenge(2,this)">
+                👵 Community
+            </button>
+
+            <button class="challenge-tab"
+                    onclick="openCharityChallenge(3,this)">
+                🥫 Food
+            </button>
+
+            <button class="challenge-tab"
+                    onclick="openCharityChallenge(4,this)">
+                🌍 Emergency
+            </button>
+
+        </div>
+
+
+        <!-- CHALLENGE 1 -->
+
+        <div class="challenge-panel active" id="charityChallenge1">
+
+            <div class="scenario">
+
+                <div class="scenario-visual">
+
+                    <div class="scenario-emoji">
+                        🏫🤝
+                    </div>
+
+                    <span>
+                        CHARITY SITUATION 01
+                    </span>
+
+                </div>
+
+
+                <div class="scenario-content">
+
+                    <h4>A School Donation Box</h4>
+
+                    <p class="situation">
+
+                        Your school wants to help children who need
+                        school supplies. A donation box has been placed
+                        near the entrance.
+
+                    </p>
+
+                    <div class="decision-title">
+                        What could you do?
+                    </div>
+
+                    <div class="decision-options">
+
+                        <button class="decision-option"
+                                onclick="chooseDecision(this,1)">
+                            📚 Give useful school supplies.
+                        </button>
+
+                        <button class="decision-option"
+                                onclick="chooseDecision(this,1)">
+                            🚫 Ignore the project completely.
+                        </button>
+
+                        <button class="decision-option"
+                                onclick="chooseDecision(this,1)">
+                            📢 Damage the donation box.
+                        </button>
+
+                    </div>
+
+                    <div class="decision-feedback"
+                         id="decisionFeedback1">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHALLENGE 2 -->
+
+        <div class="challenge-panel" id="charityChallenge2">
+
+            <div class="scenario">
+
+                <div class="scenario-visual">
+
+                    <div class="scenario-emoji">
+                        👵🛍️
+                    </div>
+
+                    <span>
+                        CHARITY SITUATION 02
+                    </span>
+
+                </div>
+
+
+                <div class="scenario-content">
+
+                    <h4>Helping a Neighbour</h4>
+
+                    <p class="situation">
+
+                        An elderly neighbour cannot carry her shopping
+                        bags home. She is waiting outside the shop.
+
+                    </p>
+
+                    <div class="decision-title">
+                        Which action shows solidarity?
+                    </div>
+
+                    <div class="decision-options">
+
+                        <button class="decision-option"
+                                onclick="chooseDecision(this,2)">
+                            🤝 Offer to help her carry the bags.
+                        </button>
+
+                        <button class="decision-option"
+                                onclick="chooseDecision(this,2)">
+                            🏃 Walk away without noticing her.
+                        </button>
+
+                        <button class="decision-option"
+                                onclick="chooseDecision(this,2)">
+                            😄 Make fun of the situation.
+                        </button>
+
+                    </div>
+
+                    <div class="decision-feedback"
+                         id="decisionFeedback2">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHALLENGE 3 -->
+
+        <div class="challenge-panel" id="charityChallenge3">
+
+            <div class="scenario">
+
+                <div class="scenario-visual">
+
+                    <div class="scenario-emoji">
+                        🥫❤️
+                    </div>
+
+                    <span>
+                        CHARITY SITUATION 03
+                    </span>
+
+                </div>
+
+
+                <div class="scenario-content">
+
+                    <h4>A Food Collection</h4>
+
+                    <p class="situation">
+
+                        A local group is collecting food for families
+                        who are experiencing difficulties.
+
+                    </p>
+
+                    <div class="decision-title">
+                        How can you participate?
+                    </div>
+
+                    <div class="decision-options">
+
+                        <button class="decision-option"
+                                onclick="chooseDecision(this,3)">
+                            🥫 Bring useful food items.
+                        </button>
+
+                        <button class="decision-option"
+                                onclick="chooseDecision(this,3)">
+                            📦 Hide the collection boxes.
+                        </button>
+
+                        <button class="decision-option"
+                                onclick="chooseDecision(this,3)">
+                            ❌ Tell everyone not to participate.
+                        </button>
+
+                    </div>
+
+                    <div class="decision-feedback"
+                         id="decisionFeedback3">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHALLENGE 4 -->
+
+        <div class="challenge-panel" id="charityChallenge4">
+
+            <div class="scenario">
+
+                <div class="scenario-visual">
+
+                    <div class="scenario-emoji">
+                        🏥🌍
+                    </div>
+
+                    <span>
+                        CHARITY SITUATION 04
+                    </span>
+
+                </div>
+
+
+                <div class="scenario-content">
+
+                    <h4>Supporting People After an Emergency</h4>
+
+                    <p class="situation">
+
+                        After an emergency, families need food,
+                        clothes and other basic supplies.
+
+                    </p>
+
+                    <div class="decision-title">
+                        What is a useful response?
+                    </div>
+
+                    <div class="decision-options">
+
+                        <button class="decision-option"
+                                onclick="chooseDecision(this,4)">
+                            🧺 Collect appropriate supplies.
+                        </button>
+
+                        <button class="decision-option"
+                                onclick="chooseDecision(this,4)">
+                            📱 Spread unverified rumours.
+                        </button>
+
+                        <button class="decision-option"
+                                onclick="chooseDecision(this,4)">
+                            🚫 Prevent people from helping.
+                        </button>
+
+                    </div>
+
+                    <div class="decision-feedback"
+                         id="decisionFeedback4">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- OBSERVATION -->
+
+        <div style="margin-top:30px;">
+
+            <h4 style="
+                font-family:'Baloo 2';
+                color:var(--violet-deep);
+                font-size:1.6rem;
+                margin-bottom:8px;">
+                🔎 Charity Detective
+            </h4>
+
+            <p style="
+                color:var(--muted);
+                margin-bottom:17px;
+                line-height:1.6;">
+                Look at each situation again. Choose the idea that
+                best describes the type of help involved.
+            </p>
+
+
+            <div class="observation-grid">
+
+                <div class="observation-card">
+
+                    <div class="observation-icon">📚</div>
+
+                    <h4>School Supplies</h4>
+
+                    <p>
+                        Someone gives useful objects to people
+                        who need them.
+                    </p>
+
+                    <div class="observation-question">
+                        What kind of help?
+                    </div>
+
+                    <div class="observation-buttons">
+
+                        <button onclick="selectObservation(this)">
+                            Giving
+                        </button>
+
+                        <button onclick="selectObservation(this)">
+                            Travelling
+                        </button>
+
+                        <button onclick="selectObservation(this)">
+                            Competing
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="observation-card">
+
+                    <div class="observation-icon">🤝</div>
+
+                    <h4>Helping Others</h4>
+
+                    <p>
+                        Someone gives time and effort to support
+                        another person.
+                    </p>
+
+                    <div class="observation-question">
+                        What kind of help?
+                    </div>
+
+                    <div class="observation-buttons">
+
+                        <button onclick="selectObservation(this)">
+                            Volunteering
+                        </button>
+
+                        <button onclick="selectObservation(this)">
+                            Shopping
+                        </button>
+
+                        <button onclick="selectObservation(this)">
+                            Travelling
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="observation-card">
+
+                    <div class="observation-icon">🥫</div>
+
+                    <h4>Food Collection</h4>
+
+                    <p>
+                        People collect useful items for families
+                        who need support.
+                    </p>
+
+                    <div class="observation-question">
+                        What is happening?
+                    </div>
+
+                    <div class="observation-buttons">
+
+                        <button onclick="selectObservation(this)">
+                            Collecting
+                        </button>
+
+                        <button onclick="selectObservation(this)">
+                            Destroying
+                        </button>
+
+                        <button onclick="selectObservation(this)">
+                            Borrowing
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="control-footer">
+
+            <div class="control-status"
+                 id="step1Status">
+                Explore the situations and make your choices.
+            </div>
+
+            <button class="complete-btn"
+                    onclick="completeMission(1)">
+                Complete Mission 01 →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     STEP 2
+========================================================= -->
+
+<section class="mission" id="step2">
+
+    <div class="mission-header">
+
+        <div class="mission-number">02</div>
+
+        <div>
+            <h3>Charity Action Lab 🧪</h3>
+            <p>Explore different ways of helping.</p>
+        </div>
+
+    </div>
+
+
+    <div class="action-lab">
+
+        <div class="action-box">
+
+            <h4>What can people do?</h4>
+
+            <p>
+                Select the actions that can be part of charity work.
+            </p>
+
+            <div class="action-items">
+
+                <button class="action-item"
+                        onclick="toggleAction(this)">
+                    🤝 Volunteer your time
+                </button>
+
+                <button class="action-item"
+                        onclick="toggleAction(this)">
+                    🥫 Collect food
+                </button>
+
+                <button class="action-item"
+                        onclick="toggleAction(this)">
+                    👕 Donate useful clothes
+                </button>
+
+                <button class="action-item"
+                        onclick="toggleAction(this)">
+                    💰 Raise money for a cause
+                </button>
+
+                <button class="action-item"
+                        onclick="toggleAction(this)">
+                    📢 Organise a charity event
+                </button>
+
+                <button class="action-item"
+                        onclick="toggleAction(this)">
+                    🚫 Waste donated resources
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="action-box">
+
+            <h4>Build the action map</h4>
+
+            <p>
+                Think about the purpose of each action. Select an
+                action on the left, then choose where it belongs.
+            </p>
+
+            <div class="sort-zone">
+
+                <div class="sort-target">
+
+                    <h5>💙 Helping People</h5>
+
+                    <p>
+                        Actions that directly support people.
+                    </p>
+
+                    <div id="helpingZone"></div>
+
+                </div>
+
+
+                <div class="sort-target">
+
+                    <h5>📣 Supporting a Cause</h5>
+
+                    <p>
+                        Actions that help organise or promote
+                        charity work.
+                    </p>
+
+                    <div id="causeZone"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div style="
+        text-align:center;
+        margin-top:22px;">
+
+        <button class="complete-btn"
+                onclick="completeMission(2)">
+            Complete Mission 02 →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     STEP 3 — EXISTING CORRECTED STEP
+========================================================= -->
+
+<section class="mission" id="step3">
+
+    <div class="mission-header">
+
+        <div class="mission-number">03</div>
+
+        <div>
+            <h3>Charity Language Workshop ✏️</h3>
+            <p>Practise the language of charity work.</p>
+        </div>
+
+    </div>
+
+
+    <div class="step3-card">
+
+        <div class="step3-note">
+
+            <strong>Language Workshop:</strong>
+            Complete the activities using the vocabulary and
+            structures you have discovered in the lesson.
+            Think carefully about meaning and context.
+
+        </div>
+
+
+        <div class="step3-tasks">
+
+            <div class="step3-task">
+
+                <strong>1. Complete the sentence.</strong>
+
+                <p style="margin-top:7px;">
+                    Many people __________ their time to help
+                    others in their community.
+                </p>
+
+                <select id="step3q1">
+
+                    <option value="">
+                        Choose...
+                    </option>
+
+                    <option>volunteer</option>
+                    <option>damage</option>
+                    <option>ignore</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="step3-task">
+
+                <strong>2. Choose the suitable expression.</strong>
+
+                <p style="margin-top:7px;">
+                    A person gives money or useful objects to help
+                    people in need.
+                </p>
+
+                <select id="step3q2">
+
+                    <option value="">
+                        Choose...
+                    </option>
+
+                    <option>make a donation</option>
+                    <option>break a rule</option>
+                    <option>waste resources</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="step3-task">
+
+                <strong>3. Complete the idea.</strong>
+
+                <p style="margin-top:7px;">
+                    Charity organisations often organise
+                    __________ to collect money.
+                </p>
+
+                <select id="step3q3">
+
+                    <option value="">
+                        Choose...
+                    </option>
+
+                    <option>fundraising events</option>
+                    <option>school holidays</option>
+                    <option>traffic problems</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div style="
+            margin-top:22px;
+            text-align:center;">
+
+            <button class="complete-btn"
+                    onclick="checkStep3()">
+                Check My Language Work →
+            </button>
+
+            <div id="step3Feedback"
+                 style="
+                    margin-top:13px;
+                    min-height:25px;
+                    color:var(--violet);
+                    font-weight:900;">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     STEP 4
+========================================================= -->
+
+<section class="mission" id="step4">
+
+    <div class="mission-header">
+
+        <div class="mission-number">04</div>
+
+        <div>
+            <h3>Charity Story 📖</h3>
+            <p>Read. Understand. Connect ideas.</p>
+        </div>
+
+    </div>
+
+
+    <div class="context-card">
+
+        <div class="context-story">
+
+            <div class="story-title">
+                The “Warm Hearts” Project
+            </div>
+
+            <p>
+                Last winter, a group of pupils decided to help
+                families in their neighbourhood. They called their
+                project <strong>“Warm Hearts”</strong>.
+                First, they collected warm clothes and blankets.
+                Then, they organised a small fundraising event at
+                school. Some pupils prepared posters, while others
+                talked to parents and neighbours about the project.
+                The collected items were given to families who
+                needed support.
+            </p>
+
+        </div>
+
+
+        <div class="context-questions">
+
+            <div class="context-question">
+
+                <p>
+                    1. What was the name of the project?
+                </p>
+
+                <div class="context-options">
+
+                    <button onclick="selectContext(this)">
+                        Warm Hearts
+                    </button>
+
+                    <button onclick="selectContext(this)">
+                        Helping Hands
+                    </button>
+
+                    <button onclick="selectContext(this)">
+                        School Friends
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="context-question">
+
+                <p>
+                    2. What did the pupils collect?
+                </p>
+
+                <div class="context-options">
+
+                    <button onclick="selectContext(this)">
+                        Clothes and blankets
+                    </button>
+
+                    <button onclick="selectContext(this)">
+                        Books only
+                    </button>
+
+                    <button onclick="selectContext(this)">
+                        Toys only
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="context-question">
+
+                <p>
+                    3. Who received the collected items?
+                </p>
+
+                <div class="context-options">
+
+                    <button onclick="selectContext(this)">
+                        Families needing support
+                    </button>
+
+                    <button onclick="selectContext(this)">
+                        Tourists
+                    </button>
+
+                    <button onclick="selectContext(this)">
+                        Shop owners
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div style="
+            text-align:center;
+            margin-top:23px;">
+
+            <button class="complete-btn"
+                    onclick="completeMission(4)">
+                Complete Mission 04 →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     STEP 5
+========================================================= -->
+
+<section class="mission" id="step5">
+
+    <div class="mission-header">
+
+        <div class="mission-number">05</div>
+
+        <div>
+            <h3>Language in Action 💬</h3>
+            <p>Use charity vocabulary in meaningful sentences.</p>
+        </div>
+
+    </div>
+
+
+    <div class="language-board">
+
+        <div class="language-card">
+
+            <h4>Choose the meaning</h4>
+
+            <p>
+                Select the expression that completes each idea.
+            </p>
+
+
+            <div class="sentence">
+
+                People who give their time without receiving
+                payment are __________.
+
+                <select onchange="languageChanged(this)">
+
+                    <option value="">Choose...</option>
+
+                    <option>volunteers</option>
+                    <option>tourists</option>
+                    <option>customers</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="sentence">
+
+                When people give money or useful things to support
+                a cause, they __________.
+
+                <select onchange="languageChanged(this)">
+
+                    <option value="">Choose...</option>
+
+                    <option>donate</option>
+                    <option>destroy</option>
+                    <option>borrow</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="language-card">
+
+            <h4>Complete the message</h4>
+
+            <p>
+                Choose the words that make the message meaningful.
+            </p>
+
+
+            <div class="sentence">
+
+                We can help our community by
+
+                <select onchange="languageChanged(this)">
+
+                    <option value="">...</option>
+
+                    <option>volunteering</option>
+                    <option>damaging</option>
+                    <option>ignoring</option>
+
+                </select>
+
+                our time.
+
+            </div>
+
+
+            <div class="sentence">
+
+                A charity campaign can
+
+                <select onchange="languageChanged(this)">
+
+                    <option value="">...</option>
+
+                    <option>raise</option>
+                    <option>hide</option>
+                    <option>waste</option>
+
+                </select>
+
+                money for people in need.
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div style="
+        text-align:center;
+        margin-top:22px;">
+
+        <button class="complete-btn"
+                onclick="completeMission(5)">
+            Complete Mission 05 →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     STEP 6
+========================================================= -->
+
+<section class="mission" id="step6">
+
+    <div class="mission-header">
+
+        <div class="mission-number">06</div>
+
+        <div>
+            <h3>Think Like a Volunteer 💭</h3>
+            <p>Reflect on how small actions can make a difference.</p>
+        </div>
+
+    </div>
+
+
+    <div class="reflection">
+
+        <h4>Your Charity Compass</h4>
+
+        <p>
+            Imagine that your class wants to organise a charity
+            activity. Think about the people who may need help,
+            the action you could take and the result you hope to see.
+        </p>
+
+
+        <div class="reflection-grid">
+
+            <div class="reflection-item">
+
+                <label>
+                    Who could you help?
+                </label>
+
+                <select id="reflection1">
+
+                    <option value="">
+                        Choose...
+                    </option>
+
+                    <option>Families in need</option>
+                    <option>Children</option>
+                    <option>Elderly people</option>
+                    <option>People affected by difficulties</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="reflection-item">
+
+                <label>
+                    What could you do?
+                </label>
+
+                <select id="reflection2">
+
+                    <option value="">
+                        Choose...
+                    </option>
+
+                    <option>Collect useful items</option>
+                    <option>Volunteer</option>
+                    <option>Organise a fundraiser</option>
+                    <option>Donate</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="reflection-item">
+
+                <label>
+                    What could change?
+                </label>
+
+                <select id="reflection3">
+
+                    <option value="">
+                        Choose...
+                    </option>
+
+                    <option>People receive support</option>
+                    <option>The community becomes stronger</option>
+                    <option>People work together</option>
+                    <option>A problem becomes smaller</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div style="
+            text-align:center;
+            margin-top:25px;">
+
+            <button class="btn btn-primary"
+                    onclick="completeMission(6)">
+                Continue to Campaign → 
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     STEP 7 — NEW CAMPAIGN
+========================================================= -->
+
+<section class="mission" id="campaign">
+
+    <div class="mission-header">
+
+        <div class="mission-number">07</div>
+
+        <div>
+            <h3>Build a Real Charity Campaign 🎯</h3>
+            <p>From an idea to a message that can inspire action.</p>
+        </div>
+
+    </div>
+
+
+    <div class="campaign">
+
+        <div class="campaign-header">
+
+            <div class="badge">
+                FINAL CREATIVE MISSION
+            </div>
+
+            <h4>
+                Your Charity Campaign
+            </h4>
+
+            <p>
+                You are now the organiser of a school charity campaign.
+                Your mission is to choose a real community need,
+                decide how your class can help and create a short
+                campaign message.
+            </p>
+
+        </div>
+
+
+        <div class="campaign-body">
+
+
+            <!-- CAMPAIGN MAP -->
+
+            <div class="campaign-map">
+
+                <div class="map-step">
+                    <div class="map-dot">1</div>
+                    <span>CAUSE</span>
+                </div>
+
+                <div class="map-step">
+                    <div class="map-dot">2</div>
+                    <span>PEOPLE</span>
+                </div>
+
+                <div class="map-step">
+                    <div class="map-dot">3</div>
+                    <span>ACTION</span>
+                </div>
+
+                <div class="map-step">
+                    <div class="map-dot">4</div>
+                    <span>SLOGAN</span>
+                </div>
+
+                <div class="map-step">
+                    <div class="map-dot">5</div>
+                    <span>MESSAGE</span>
+                </div>
+
+                <div class="map-step">
+                    <div class="map-dot">6</div>
+                    <span>LAUNCH</span>
+                </div>
+
+            </div>
+
+
+            <!-- STAGE 1 -->
+
+            <div class="campaign-stage">
+
+                <div class="stage-top">
+
+                    <div class="stage-number">1</div>
+
+                    <div>
+
+                        <h5>Choose the Cause ❤️</h5>
+
+                        <p>
+                            A good campaign starts with a clear problem
+                            or need. What would you like your class to
+                            help with?
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cause-grid">
+
+                    <button class="cause-card"
+                            onclick="selectCause(this)">
+
+                        <div class="cause-icon">🥫</div>
+
+                        <strong>Food Support</strong>
+
+                        <small>
+                            Collect food for families who need help.
+                        </small>
+
+                    </button>
+
+
+                    <button class="cause-card"
+                            onclick="selectCause(this)">
+
+                        <div class="cause-icon">👕</div>
+
+                        <strong>Warm Clothes</strong>
+
+                        <small>
+                            Collect suitable clothes for people
+                            during cold weather.
+                        </small>
+
+                    </button>
+
+
+                    <button class="cause-card"
+                            onclick="selectCause(this)">
+
+                        <div class="cause-icon">📚</div>
+
+                        <strong>School Supplies</strong>
+
+                        <small>
+                            Help pupils who need books and supplies.
+                        </small>
+
+                    </button>
+
+
+                    <button class="cause-card"
+                            onclick="selectCause(this)">
+
+                        <div class="cause-icon">🌳</div>
+
+                        <strong>Community Environment</strong>
+
+                        <small>
+                            Organise a useful community action.
+                        </small>
+
+                    </button>
+
+
+                    <button class="cause-card"
+                            onclick="selectCause(this)">
+
+                        <div class="cause-icon">👵</div>
+
+                        <strong>Support Others</strong>
+
+                        <small>
+                            Help elderly or vulnerable people.
+                        </small>
+
+                    </button>
+
+
+                    <button class="cause-card"
+                            onclick="selectCause(this)">
+
+                        <div class="cause-icon">💙</div>
+
+                        <strong>Another Cause</strong>
+
+                        <small>
+                            Choose another meaningful need in your
+                            community.
+                        </small>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAGE 2 -->
+
+            <div class="campaign-stage">
+
+                <div class="stage-top">
+
+                    <div class="stage-number">2</div>
+
+                    <div>
+
+                        <h5>Who Needs Help? 👥</h5>
+
+                        <p>
+                            Identify the people your campaign is
+                            designed to support.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="people-grid">
+
+                    <button class="people-card"
+                            onclick="togglePeople(this)">
+                        👨‍👩‍👧 Families
+                    </button>
+
+                    <button class="people-card"
+                            onclick="togglePeople(this)">
+                        👧 Children
+                    </button>
+
+                    <button class="people-card"
+                            onclick="togglePeople(this)">
+                        👵 Elderly People
+                    </button>
+
+                    <button class="people-card"
+                            onclick="togglePeople(this)">
+                        🏘️ Local Community
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAGE 3 -->
+
+            <div class="campaign-stage">
+
+                <div class="stage-top">
+
+                    <div class="stage-number">3</div>
+
+                    <div>
+
+                        <h5>Plan Your Action 🛠️</h5>
+
+                        <p>
+                            Decide exactly what your campaign will do.
+                            A clear plan makes a charity action easier
+                            to organise.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="action-planner">
+
+                    <div class="plan-column">
+
+                        <h6>What will we collect or provide?</h6>
+
+                        <label class="plan-option">
+                            <input type="checkbox">
+                            Food
+                        </label>
+
+                        <label class="plan-option">
+                            <input type="checkbox">
+                            Clothes
+                        </label>
+
+                        <label class="plan-option">
+                            <input type="checkbox">
+                            School supplies
+                        </label>
+
+                        <label class="plan-option">
+                            <input type="checkbox">
+                            Other useful items
+                        </label>
+
+                    </div>
+
+
+                    <div class="plan-column">
+
+                        <h6>How will we organise it?</h6>
+
+                        <label class="plan-option">
+                            <input type="checkbox">
+                            Create collection boxes
+                        </label>
+
+                        <label class="plan-option">
+                            <input type="checkbox">
+                            Organise a fundraiser
+                        </label>
+
+                        <label class="plan-option">
+                            <input type="checkbox">
+                            Make posters
+                        </label>
+
+                        <label class="plan-option">
+                            <input type="checkbox">
+                            Invite people to participate
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAGE 4 -->
+
+            <div class="campaign-stage">
+
+                <div class="stage-top">
+
+                    <div class="stage-number">4</div>
+
+                    <div>
+
+                        <h5>Create Your Slogan 📣</h5>
+
+                        <p>
+                            Your slogan should be short, positive and
+                            easy to remember.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="slogan-box">
+
+                    <div>
+
+                        <input
+                            id="campaignSlogan"
+                            class="slogan-input"
+                            maxlength="80"
+                            placeholder="Write your campaign slogan..."
+                        >
+
+                        <div class="slogan-counter"
+                             id="sloganCounter">
+                            0 / 80 characters
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="slogan-ideas">
+
+                    <button class="slogan-idea"
+                            onclick="useSlogan('Together, we can make a difference!')">
+                        Together, we can make a difference!
+                    </button>
+
+                    <button class="slogan-idea"
+                            onclick="useSlogan('Give a little. Help a lot.')">
+                        Give a little. Help a lot.
+                    </button>
+
+                    <button class="slogan-idea"
+                            onclick="useSlogan('Our community, our responsibility!')">
+                        Our community, our responsibility!
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAGE 5 -->
+
+            <div class="campaign-stage">
+
+                <div class="stage-top">
+
+                    <div class="stage-number">5</div>
+
+                    <div>
+
+                        <h5>Write Your Campaign Message ✍️</h5>
+
+                        <p>
+                            Write a short message of about 60–80 words.
+                            Explain the problem, your action and how
+                            people can participate.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="campaign-checklist">
+
+                    <div class="check-item">
+                        <span>✓</span>
+                        Introduce the charity cause
+                    </div>
+
+                    <div class="check-item">
+                        <span>✓</span>
+                        Explain who needs help
+                    </div>
+
+                    <div class="check-item">
+                        <span>✓</span>
+                        Mention your charity action
+                    </div>
+
+                    <div class="check-item">
+                        <span>✓</span>
+                        Use charity vocabulary
+                    </div>
+
+                    <div class="check-item">
+                        <span>✓</span>
+                        Include your slogan
+                    </div>
+
+                    <div class="check-item">
+                        <span>✓</span>
+                        Invite people to participate
+                    </div>
+
+                </div>
+
+
+                <textarea
+                    id="campaignMessage"
+                    class="campaign-editor"
+                    placeholder="Write your campaign message here...
+
+Example structure:
+Our campaign is about...
+We want to help...
+We are going to...
+People can participate by...
+Together, we can..."></textarea>
+
+
+                <div class="editor-tools">
+
+                    <span>
+                        Aim for 60–80 words.
+                    </span>
+
+                    <span id="campaignWordCount">
+                        0 words
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAGE 6 -->
+
+            <div class="launch-zone">
+
+                <div class="launch-icon">
+                    🚀
+                </div>
+
+                <h5>Ready to Launch?</h5>
+
+                <p>
+                    Review your campaign. Make sure you have chosen
+                    a cause, identified the people you want to help,
+                    planned an action, created a slogan and written
+                    your message.
+                </p>
+
+                <button class="btn btn-primary"
+                        onclick="launchCampaign()">
+                    🚀 Launch My Charity Campaign
+                </button>
+
+                <div class="launch-feedback"
+                     id="launchFeedback">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FINISH
+========================================================= -->
+
+<section class="finish">
+
+    <div class="finish-icon">
+        🤝
+    </div>
+
+    <h2>Charity Explorer!</h2>
+
+    <p>
+        You have explored different forms of charity work,
+        practised useful language and created your own campaign.
+        Real change often begins with one small helpful action.
+    </p>
+
+    <div class="finish-actions">
+
+        <a href="MS4-S3-Vocabulary-Lesson3.html"
+           class="btn btn-primary">
+            Continue to Charity Organisations →
+        </a>
+
+        <a href="MS4-S3-Vocabulary.html"
+           class="btn btn-secondary">
+            ← Vocabulary Expedition
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =======================================================
+     DICTIONARY BUTTON
+========================================================= -->
+
+<button class="dictionary-tab"
+        onclick="openDictionary()">
+    📖 DICTIONARY
+</button>
+
+
+<!-- =======================================================
+     DICTIONARY PANEL
+========================================================= -->
+
+<div class="dictionary-overlay"
+     id="dictionaryOverlay"
+     onclick="closeDictionaryOutside(event)">
+
+    <aside class="dictionary-panel">
+
+        <div class="dictionary-head">
+
+            <h3>Mini Dictionary</h3>
+
+            <button class="dictionary-close"
+                    onclick="closeDictionary()">
+                ✕
+            </button>
+
+        </div>
+
+
+        <p style="
+            color:var(--muted);
+            line-height:1.6;
+            margin-bottom:15px;">
+            Search the key English–Arabic words from this lesson.
+        </p>
+
+
+        <input
+            type="text"
+            id="dictionarySearch"
+            class="dictionary-search"
+            placeholder="Search a word..."
+            oninput="filterDictionary()"
+        >
+
+
+        <div class="dictionary-list"
+             id="dictionaryList">
+
+
+            <div class="word-row">
+                <div class="word-en">charity</div>
+                <div class="word-ar">عمل خيري</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">charity work</div>
+                <div class="word-ar">العمل الخيري</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">volunteer</div>
+                <div class="word-ar">متطوع</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">volunteer</div>
+                <div class="word-ar">يتطوع</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">donate</div>
+                <div class="word-ar">يتبرع</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">donation</div>
+                <div class="word-ar">تبرع</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">fundraising</div>
+                <div class="word-ar">جمع التبرعات</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">fundraiser</div>
+                <div class="word-ar">حملة / نشاط لجمع التبرعات</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">campaign</div>
+                <div class="word-ar">حملة</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">support</div>
+                <div class="word-ar">يدعم / دعم</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">needy</div>
+                <div class="word-ar">محتاج</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">community</div>
+                <div class="word-ar">مجتمع</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">collect</div>
+                <div class="word-ar">يجمع</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">supplies</div>
+                <div class="word-ar">مستلزمات</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">shelter</div>
+                <div class="word-ar">مأوى</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">help in need</div>
+                <div class="word-ar">مساعدة المحتاجين</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">make a difference</div>
+                <div class="word-ar">يُحدث فرقاً</div>
+            </div>
+
+
+            <div class="word-row">
+                <div class="word-en">participate</div>
+                <div class="word-ar">يشارك</div>
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+
+
+<!-- =======================================================
+     TOAST
+========================================================= -->
+
+<div class="toast"
+     id="toast">
+</div>
+
+
+<!-- =======================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <strong>
+        MY ENGLISH SPACE — MS4 · SEQUENCE 3 · VOCABULARY · LESSON 02
+    </strong>
+
+    <p>
+        CHARITY WORK · HELPING · VOLUNTEERING · DONATIONS · CAMPAIGNS
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   PROGRESS SYSTEM
+========================================================= */
+
+const charityCompleted = new Set();
+
+function updateCharityProgress(){
+
+    const count = charityCompleted.size;
+
+    const percentage = (count / 7) * 100;
+
+    document.getElementById("progressFill").style.width =
+        percentage + "%";
+
+    document.getElementById("progressText").textContent =
+        count + " of 7 missions completed";
+
+}
+
+
+/* =========================================================
+   COMPLETE MISSION
+========================================================= */
+
+function completeMission(number){
+
+    charityCompleted.add(number);
+
+    updateCharityProgress();
+
+    showToast(
+        "Mission " + String(number).padStart(2,"0") +
+        " completed! 🎉"
+    );
+
+}
+
+
+/* =========================================================
+   STEP 1 — CHALLENGE TABS
+========================================================= */
+
+function openCharityChallenge(number,button){
+
+    document.querySelectorAll(".challenge-tab")
+        .forEach(tab => tab.classList.remove("active"));
+
+    document.querySelectorAll(".challenge-panel")
+        .forEach(panel => panel.classList.remove("active"));
+
+    button.classList.add("active");
+
+    document.getElementById(
+        "charityChallenge" + number
+    ).classList.add("active");
+
+}
+
+
+/* =========================================================
+   STEP 1 — DECISIONS
+========================================================= */
+
+function chooseDecision(button,number){
+
+    const container = button.parentElement;
+
+    container.querySelectorAll(".decision-option")
+        .forEach(option => {
+            option.classList.remove("selected");
+        });
+
+    button.classList.add("selected");
+
+    const feedback =
+        document.getElementById(
+            "decisionFeedback" + number
+        );
+
+    feedback.textContent =
+        "✓ Decision recorded. Now think about why this action could help.";
+
+    showToast("Decision recorded 💡");
+
+}
+
+
+/* =========================================================
+   STEP 1 — OBSERVATION
+========================================================= */
+
+function selectObservation(button){
+
+    const parent = button.parentElement;
+
+    parent.querySelectorAll("button")
+        .forEach(btn => {
+            btn.classList.remove("selected");
+        });
+
+    button.classList.add("selected");
+
+}
+
+
+/* =========================================================
+   STEP 2 — ACTIONS
+========================================================= */
+
+function toggleAction(button){
+
+    button.classList.toggle("selected");
+
+}
+
+
+/* =========================================================
+   STEP 2 — DRAG-LIKE ACTION MAP
+========================================================= */
+
+let selectedActionText = "";
+
+document.querySelectorAll(".action-item")
+    .forEach(item => {
+
+        item.addEventListener("click",function(){
+
+            selectedActionText =
+                this.textContent.trim();
+
+            showToast(
+                "Action selected. Choose a category below."
+            );
+
+        });
+
+    });
+
+
+document.querySelectorAll(".sort-target")
+    .forEach(zone => {
+
+        zone.addEventListener("click",function(){
+
+            if(!selectedActionText){
+                showToast(
+                    "Select an action first."
+                );
+                return;
+            }
+
+            const item =
+                document.createElement("div");
+
+            item.className = "selected-action";
+
+            item.textContent =
+                selectedActionText;
+
+            this.appendChild(item);
+
+            selectedActionText = "";
+
+            showToast(
+                "Action added to the map."
+            );
+
+        });
+
+    });
+
+
+/* =========================================================
+   STEP 3
+========================================================= */
+
+function checkStep3(){
+
+    const q1 =
+        document.getElementById("step3q1").value;
+
+    const q2 =
+        document.getElementById("step3q2").value;
+
+    const q3 =
+        document.getElementById("step3q3").value;
+
+    const feedback =
+        document.getElementById("step3Feedback");
+
+
+    if(!q1 || !q2 || !q3){
+
+        feedback.textContent =
+            "✏️ Complete all three language tasks first.";
+
+        return;
+    }
+
+
+    /*
+       We deliberately give only a general success message
+       rather than displaying the corrected answers.
+    */
+
+    feedback.textContent =
+        "🎉 Language work completed. Review your choices and keep going!";
+
+    charityCompleted.add(3);
+
+    updateCharityProgress();
+
+}
+
+
+/* =========================================================
+   STEP 4
+========================================================= */
+
+function selectContext(button){
+
+    const parent = button.parentElement;
+
+    parent.querySelectorAll("button")
+        .forEach(btn => {
+            btn.classList.remove("selected");
+        });
+
+    button.classList.add("selected");
+
+}
+
+
+/* =========================================================
+   STEP 5
+========================================================= */
+
+function languageChanged(select){
+
+    if(select.value){
+
+        select.style.borderColor =
+            "#6d4bc3";
+
+    }
+
+}
+
+
+/* =========================================================
+   STEP 6
+========================================================= */
+
+function validateReflection(){
+
+    const r1 =
+        document.getElementById("reflection1").value;
+
+    const r2 =
+        document.getElementById("reflection2").value;
+
+    const r3 =
+        document.getElementById("reflection3").value;
+
+    return r1 && r2 && r3;
+
+}
+
+
+/* =========================================================
+   CAMPAIGN — CAUSE
+========================================================= */
+
+function selectCause(button){
+
+    document.querySelectorAll(".cause-card")
+        .forEach(card => {
+            card.classList.remove("selected");
+        });
+
+    button.classList.add("selected");
+
+    showToast(
+        "Campaign cause selected ❤️"
+    );
+
+}
+
+
+/* =========================================================
+   CAMPAIGN — PEOPLE
+========================================================= */
+
+function togglePeople(button){
+
+    button.classList.toggle("selected");
+
+}
+
+
+/* =========================================================
+   CAMPAIGN — SLOGAN
+========================================================= */
+
+const campaignSlogan =
+    document.getElementById("campaignSlogan");
+
+campaignSlogan.addEventListener(
+    "input",
+    updateSloganCounter
+);
+
+
+function updateSloganCounter(){
+
+    const length =
+        campaignSlogan.value.length;
+
+    document.getElementById(
+        "sloganCounter"
+    ).textContent =
+        length + " / 80 characters";
+
+}
+
+
+function useSlogan(text){
+
+    campaignSlogan.value = text;
+
+    updateSloganCounter();
+
+    campaignSlogan.focus();
+
+}
+
+
+/* =========================================================
+   CAMPAIGN — WORD COUNT
+========================================================= */
+
+const campaignMessage =
+    document.getElementById("campaignMessage");
+
+
+campaignMessage.addEventListener(
+    "input",
+    updateCampaignWordCount
+);
+
+
+function updateCampaignWordCount(){
+
+    const text =
+        campaignMessage.value.trim();
+
+    const words =
+        text === ""
+        ? []
+        : text.split(/\s+/);
+
+    document.getElementById(
+        "campaignWordCount"
+    ).textContent =
+        words.length + " words";
+
+}
+
+
+/* =========================================================
+   CAMPAIGN — LAUNCH
+========================================================= */
+
+function launchCampaign(){
+
+    const cause =
+        document.querySelector(
+            ".cause-card.selected"
+        );
+
+    const people =
+        document.querySelectorAll(
+            ".people-card.selected"
+        );
+
+    const slogan =
+        campaignSlogan.value.trim();
+
+    const checkedPlans =
+        document.querySelectorAll(
+            ".plan-column input:checked"
+        );
+
+    const message =
+        campaignMessage.value.trim();
+
+    const feedback =
+        document.getElementById(
+            "launchFeedback"
+        );
+
+
+    if(!cause){
+
+        feedback.textContent =
+            "❤️ Choose the cause of your campaign first.";
+
+        return;
+    }
+
+
+    if(people.length === 0){
+
+        feedback.textContent =
+            "👥 Choose at least one group of people you want to help.";
+
+        return;
+    }
+
+
+    if(checkedPlans.length < 2){
+
+        feedback.textContent =
+            "🛠️ Select at least two elements for your charity action plan.";
+
+        return;
+    }
+
+
+    if(slogan.length < 5){
+
+        feedback.textContent =
+            "📣 Create a clear campaign slogan.";
+
+        return;
+    }
+
+
+    const words =
+        message === ""
+        ? []
+        : message.split(/\s+/);
+
+
+    if(words.length < 40){
+
+        feedback.textContent =
+            "✍️ Develop your campaign message a little more. Aim for about 60–80 words.";
+
+        return;
+    }
+
+
+    charityCompleted.add(7);
+
+    updateCharityProgress();
+
+
+    feedback.innerHTML =
+        "🎉 <strong>Your campaign is ready!</strong> " +
+        "You have turned a charity idea into a complete action plan and communication message.";
+
+    showToast(
+        "Charity Campaign launched! 🚀🤝"
+    );
+
+}
+
+
+/* =========================================================
+   DICTIONARY
+========================================================= */
+
+function openDictionary(){
+
+    document.getElementById(
+        "dictionaryOverlay"
+    ).classList.add("open");
+
+}
+
+
+function closeDictionary(){
+
+    document.getElementById(
+        "dictionaryOverlay"
+    ).classList.remove("open");
+
+}
+
+
+function closeDictionaryOutside(event){
+
+    if(
+        event.target.id ===
+        "dictionaryOverlay"
+    ){
+
+        closeDictionary();
+
+    }
+
+}
+
+
+function filterDictionary(){
+
+    const query =
+        document.getElementById(
+            "dictionarySearch"
+        ).value
+        .toLowerCase()
+        .trim();
+
+
+    document.querySelectorAll(
+        ".word-row"
+    ).forEach(row => {
+
+        const text =
+            row.textContent.toLowerCase();
+
+        row.style.display =
+            text.includes(query)
+            ? "grid"
+            : "none";
+
+    });
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer =
+        setTimeout(() => {
+
+            toast.classList.remove("show");
+
+        },2500);
+
+}
+
+
+/* =========================================================
+   CLOSE DICTIONARY WITH ESC
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeDictionary();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INITIALISE
+========================================================= */
+
+updateCharityProgress();
+
+</script>
+
+</body>
+</html>

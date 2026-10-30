@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4 Pronunciation Lab | My English Space</title>
+
+<meta name="theme-color" content="#087da7">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================
+   GLOBAL DESIGN
+========================== */
+
+:root{
+  --blue:#087da7;
+  --deep:#064c75;
+  --navy:#103b5b;
+  --aqua:#42d5dc;
+  --gold:#ffdb88;
+  --ink:#24435b;
+  --muted:#637c8c;
+  --shadow:0 16px 40px rgba(4,47,79,.22);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:95px;
+}
+
+body{
+  font-family:"Nunito",Arial,sans-serif;
+  color:var(--ink);
+  background:#087da7;
+  overflow-x:hidden;
+}
+
+h1,h2,h3{
+  font-family:"Baloo 2",Arial,sans-serif;
+  line-height:1.15;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+}
+
+a:focus-visible,
+button:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:4px;
+}
+
+.container{
+  width:min(1150px,calc(100% - 34px));
+  margin:auto;
+}
+
+/* ==========================
+   BACKGROUND
+========================== */
+
+.background{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,115,150,.74),
+      rgba(5,61,103,.9)
+    ),
+    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=85")
+    center/cover no-repeat;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+  background:rgba(4,52,82,.6);
+  border-bottom:1px solid rgba(255,255,255,.25);
+}
+
+.header-inner{
+  min-height:78px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  color:white;
+  font-size:18px;
+  font-weight:900;
+}
+
+.logo-icon{
+  width:46px;
+  height:46px;
+
+  display:grid;
+  place-items:center;
+
+  background:white;
+  color:var(--blue);
+
+  border-radius:15px;
+  font-size:25px;
+}
+
+.header-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.header-links a{
+  padding:10px 16px;
+
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:25px;
+
+  color:white;
+  font-size:12px;
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.header-links a:hover{
+  background:white;
+  color:var(--deep);
+}
+
+.header-links .home-button{
+  background:var(--gold);
+  color:#62491e;
+  border-color:var(--gold);
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+  padding:75px 0 90px;
+}
+
+.hero-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.hero-text{
+  color:white;
+}
+
+.hero-label{
+  display:inline-block;
+
+  padding:10px 16px;
+
+  background:white;
+  color:#087da7;
+
+  border-radius:25px;
+
+  font-size:11px;
+  font-weight:900;
+}
+
+.hero h1{
+  margin:24px 0 20px;
+
+  font-size:clamp(50px,6vw,80px);
+  line-height:1.02;
+
+  text-shadow:
+    0 5px 0 #08617d,
+    0 12px 20px rgba(0,30,65,.4);
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+}
+
+.hero-description{
+  max-width:520px;
+
+  color:#f0fbff;
+  font-size:15px;
+  font-weight:700;
+  line-height:1.95;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+
+  padding:15px 24px;
+
+  border-radius:30px;
+
+  font-size:13px;
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.btn-gold{
+  background:linear-gradient(180deg,#ffedbb,#ffd17a);
+  color:#644b1f;
+
+  border:2px solid #fff1cf;
+}
+
+.btn-white{
+  background:white;
+  color:#087da7;
+
+  border:2px solid white;
+}
+
+/* ==========================
+   HERO IMAGE
+========================== */
+
+.hero-visual{
+  position:relative;
+  max-width:540px;
+  margin:auto;
+}
+
+.hero-visual::before{
+  content:"";
+  position:absolute;
+
+  inset:20px -15px -15px 25px;
+
+  background:rgba(210,249,255,.42);
+  border:2px solid rgba(255,255,255,.65);
+  border-radius:32px;
+
+  transform:rotate(5deg);
+}
+
+.hero-image{
+  position:relative;
+  overflow:hidden;
+
+  background:#e6faff;
+
+  border:8px solid white;
+  border-radius:30px;
+
+  box-shadow:0 25px 55px rgba(0,35,65,.4);
+}
+
+.hero-image img{
+  display:block;
+  width:100%;
+  height:410px;
+  object-fit:cover;
+}
+
+.hero-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(4,43,68,.75)
+  );
+  pointer-events:none;
+}
+
+.hero-caption{
+  position:absolute;
+  z-index:2;
+
+  bottom:24px;
+  left:25px;
+  right:25px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:12px;
+
+  color:white;
+}
+
+.hero-caption strong{
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-size:26px;
+  line-height:1.1;
+}
+
+.hero-caption small{
+  display:block;
+  margin-top:8px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.ms4-badge{
+  padding:12px 15px;
+
+  background:var(--gold);
+  color:#60491e;
+
+  border-radius:13px;
+
+  font-size:16px;
+  font-weight:900;
+}
+
+/* ==========================
+   STATS
+========================== */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+
+  margin-top:28px;
+}
+
+.stat{
+  padding:15px 8px;
+
+  background:rgba(3,55,81,.65);
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:15px;
+
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+
+  color:var(--gold);
+  font-size:24px;
+  font-weight:900;
+}
+
+.stat span{
+  color:white;
+  font-size:10px;
+  font-weight:900;
+}
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+.main-nav{
+  position:sticky;
+  top:10px;
+  z-index:20;
+
+  max-width:1000px;
+  margin:0 auto 30px;
+  padding:7px;
+
+  background:linear-gradient(180deg,#48c6d4,#087fa8);
+
+  border:2px solid white;
+  border-radius:40px;
+
+  box-shadow:0 12px 25px rgba(0,35,65,.3);
+}
+
+.nav-inner{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:5px;
+}
+
+.nav-inner a{
+  padding:11px 16px;
+
+  border-radius:25px;
+
+  color:white;
+  font-size:12px;
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.nav-inner a:hover{
+  background:rgba(255,255,255,.2);
+}
+
+.nav-inner .active{
+  background:var(--gold);
+  color:#63491e;
+}
+
+/* ==========================
+   SECTION HEADINGS
+========================== */
+
+.section-heading{
+  padding:55px 0 28px;
+
+  text-align:center;
+  color:white;
+}
+
+.section-heading small{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.5px;
+}
+
+.section-heading h2{
+  margin:10px 0;
+
+  font-size:clamp(32px,4vw,46px);
+
+  text-shadow:0 3px 12px rgba(0,35,65,.4);
+}
+
+.section-heading p{
+  max-width:650px;
+  margin:auto;
+
+  font-size:13px;
+  font-weight:800;
+  line-height:1.8;
+}
+
+/* ==========================
+   WELCOME PANEL
+========================== */
+
+.welcome-panel{
+  display:grid;
+  grid-template-columns:95px 1fr;
+  gap:23px;
+  align-items:center;
+
+  padding:30px;
+
+  background:rgba(255,255,255,.97);
+  border:2px solid white;
+  border-radius:24px;
+
+  box-shadow:var(--shadow);
+}
+
+.welcome-icon{
+  font-size:65px;
+  text-align:center;
+}
+
+.welcome-panel h2{
+  margin-bottom:10px;
+  font-size:30px;
+}
+
+.welcome-panel p{
+  color:var(--muted);
+
+  font-size:13px;
+  font-weight:700;
+  line-height:1.85;
+}
+
+/* ==========================
+   LESSON CARDS
+========================== */
+
+.lesson-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:23px;
+}
+
+.lesson-card{
+  display:flex;
+  flex-direction:column;
+
+  overflow:hidden;
+
+  background:white;
+
+  border:3px solid white;
+  border-radius:24px;
+
+  box-shadow:var(--shadow);
+
+  transition:.3s;
+}
+
+.lesson-card:hover{
+  transform:translateY(-7px);
+}
+
+.lesson-top{
+  position:relative;
+
+  height:180px;
+  padding:23px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  overflow:hidden;
+
+  background:var(--lesson-bg);
+}
+
+.lesson-top::after{
+  content:"";
+  position:absolute;
+
+  width:160px;
+  height:160px;
+
+  right:-55px;
+  top:-65px;
+
+  background:rgba(255,255,255,.18);
+  border:2px solid rgba(255,255,255,.3);
+  border-radius:50%;
+}
+
+.lesson-number{
+  position:relative;
+  z-index:2;
+
+  align-self:flex-start;
+
+  padding:8px 13px;
+
+  background:rgba(255,255,255,.9);
+  color:var(--lesson-dark);
+
+  border-radius:25px;
+
+  font-size:10px;
+  font-weight:900;
+}
+
+.lesson-symbol{
+  position:relative;
+  z-index:2;
+
+  color:white;
+
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-size:57px;
+  font-weight:800;
+  line-height:1;
+
+  text-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.lesson-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+
+  padding:25px;
+}
+
+.lesson-category{
+  color:var(--lesson-dark);
+
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.lesson-body h3{
+  margin:10px 0;
+
+  font-size:24px;
+}
+
+.lesson-body p{
+  color:var(--muted);
+
+  font-size:12px;
+  font-weight:700;
+  line-height:1.8;
+}
+
+.examples{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+
+  margin:20px 0 15px;
+}
+
+.examples span{
+  padding:8px 11px;
+
+  background:var(--lesson-soft);
+  color:var(--lesson-dark);
+
+  border-radius:25px;
+
+  font-size:11px;
+  font-weight:900;
+}
+
+.listen-btn{
+  align-self:flex-start;
+
+  padding:11px 15px;
+  margin-bottom:20px;
+
+  background:#e9f7fc;
+  color:#087da7;
+
+  border:1px solid #cce9f5;
+  border-radius:25px;
+
+  font-size:11px;
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.listen-btn:hover{
+  background:#d6f1fb;
+}
+
+.lesson-link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin-top:auto;
+  padding:15px;
+
+  background:var(--lesson-soft);
+  color:var(--lesson-dark);
+
+  border-radius:14px;
+
+  font-size:12px;
+  font-weight:900;
+}
+
+.lesson-link:hover{
+  filter:brightness(.96);
+}
+
+/* LESSON COLOURS */
+
+.lesson-one{
+  --lesson-bg:linear-gradient(135deg,#24b88f,#0e856e);
+  --lesson-dark:#118465;
+  --lesson-soft:#e2f8ee;
+}
+
+.lesson-two{
+  --lesson-bg:linear-gradient(135deg,#f0a553,#d77a3c);
+  --lesson-dark:#b76a2d;
+  --lesson-soft:#fff0df;
+}
+
+.lesson-three{
+  --lesson-bg:linear-gradient(135deg,#9678ee,#6548c8);
+  --lesson-dark:#6748b8;
+  --lesson-soft:#eee8ff;
+}
+
+.lesson-four{
+  --lesson-bg:linear-gradient(135deg,#50a9e8,#216fc3);
+  --lesson-dark:#226fb3;
+  --lesson-soft:#e5f2ff;
+}
+
+.lesson-five{
+  --lesson-bg:linear-gradient(135deg,#ee85aa,#d45c88);
+  --lesson-dark:#c34d79;
+  --lesson-soft:#ffe8f0;
+}
+
+.lesson-six{
+  --lesson-bg:linear-gradient(135deg,#2bb9c9,#078b9e);
+  --lesson-dark:#087e92;
+  --lesson-soft:#e1f8fa;
+}
+
+/* ==========================
+   TIPS
+========================== */
+
+.tips-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.tip-card{
+  padding:30px;
+
+  background:rgba(255,255,255,.98);
+  border:2px solid white;
+  border-radius:23px;
+
+  text-align:center;
+  box-shadow:var(--shadow);
+}
+
+.tip-icon{
+  display:block;
+  margin-bottom:14px;
+  font-size:40px;
+}
+
+.tip-card h3{
+  margin-bottom:10px;
+  font-size:23px;
+}
+
+.tip-card p{
+  color:var(--muted);
+
+  font-size:12px;
+  font-weight:700;
+  line-height:1.8;
+}
+
+/* ==========================
+   FINAL PANEL
+========================== */
+
+.final-panel{
+  margin-top:40px;
+  padding:45px 25px;
+
+  background:linear-gradient(120deg,#fff1d4,#fffdf7);
+
+  border:3px solid #f5dda6;
+  border-radius:25px;
+
+  box-shadow:var(--shadow);
+
+  text-align:center;
+}
+
+.final-panel h2{
+  font-size:35px;
+}
+
+.final-panel p{
+  max-width:690px;
+  margin:14px auto 25px;
+
+  color:#766b5d;
+
+  font-size:13px;
+  font-weight:700;
+  line-height:1.85;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+  padding:45px 20px;
+
+  text-align:center;
+  color:white;
+
+  font-size:12px;
+  font-weight:800;
+
+  text-shadow:0 2px 7px rgba(0,35,65,.5);
+}
+
+footer strong{
+  color:var(--gold);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:950px){
+
+  .hero-layout{
+    gap:30px;
+  }
+
+  .hero h1{
+    font-size:58px;
+  }
+
+  .hero-image img{
+    height:350px;
+  }
+
+  .lesson-grid{
+    gap:15px;
+  }
+
+  .lesson-body{
+    padding:20px;
+  }
+
+  .lesson-body h3{
+    font-size:21px;
+  }
+
+}
+
+@media(max-width:780px){
+
+  .hero-layout{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero{
+    padding:55px 0 75px;
+  }
+
+  .hero-description{
+    margin:auto;
+  }
+
+  .hero-actions{
+    justify-content:center;
+  }
+
+  .hero-visual{
+    width:min(540px,100%);
+    margin-top:25px;
+  }
+
+  .stats{
+    max-width:540px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .lesson-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+}
+
+@media(max-width:560px){
+
+  .header-inner{
+    flex-direction:column;
+    padding:15px 0;
+  }
+
+  .header-links{
+    justify-content:center;
+  }
+
+  .header-links a{
+    padding:9px 12px;
+    font-size:10px;
+  }
+
+  .hero h1{
+    font-size:clamp(48px,11vw,64px);
+  }
+
+  .hero-description{
+    font-size:13px;
+  }
+
+  .hero-image img{
+    height:290px;
+  }
+
+  .hero-caption strong{
+    font-size:19px;
+  }
+
+  .ms4-badge{
+    font-size:12px;
+    padding:9px 11px;
+  }
+
+  .main-nav a{
+    padding:9px 10px;
+    font-size:10px;
+  }
+
+  .welcome-panel{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:25px;
+  }
+
+  .welcome-icon{
+    font-size:55px;
+  }
+
+  .welcome-panel h2{
+    font-size:26px;
+  }
+
+  .section-heading{
+    padding:43px 0 25px;
+  }
+
+  .section-heading h2{
+    font-size:32px;
+  }
+
+  .lesson-grid{
+    grid-template-columns:1fr;
+  }
+
+  .lesson-body{
+    padding:25px;
+  }
+
+  .lesson-body h3{
+    font-size:25px;
+  }
+
+  .tips-grid{
+    grid-template-columns:1fr;
+  }
+
+  .final-panel h2{
+    font-size:29px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+
+}
+
+</style>
+</head>
+
+<body id="top">
+
+<div class="background"></div>
+
+<!-- HEADER -->
+
+<header>
+
+  <div class="container header-inner">
+
+    <a href="./index.html" class="logo">
+      <span class="logo-icon">🎤</span>
+      My English Space
+    </a>
+
+    <nav class="header-links">
+
+      <a href="#lessons">📚 Lessons</a>
+
+      <a href="#tips">💡 Speaking Tips</a>
+
+      <a href="./index.html" class="home-button">
+        🏠 Back to Home
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container hero-layout">
+
+    <div class="hero-text">
+
+      <span class="hero-label">
+        🎧 MS4 · ALL THREE SEQUENCES
+      </span>
+
+      <h1>
+        Pronunciation
+        <span>Lab!</span>
+      </h1>
+
+      <p class="hero-description">
+
+        Welcome to your English Sound Adventure!
+
+        Discover the secrets of English pronunciation
+        through six exciting lessons.
+
+        Listen to different sounds,
+        practise tricky words
+        and become a more confident English speaker.
+
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#lessons" class="btn btn-gold">
+          🎧 Explore Lessons →
+        </a>
+
+        <a href="#tips" class="btn btn-white">
+          💡 Speaking Tips
+        </a>
+
+      </div>
+
+      <div class="stats">
+
+        <div class="stat">
+          <strong>06</strong>
+          <span>SOUND LESSONS</span>
+        </div>
+
+        <div class="stat">
+          <strong>03</strong>
+          <span>SEQUENCES</span>
+        </div>
+
+        <div class="stat">
+          <strong>∞</strong>
+          <span>PRACTICE</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- LARGE PHOTO -->
+
+    <div class="hero-visual">
+
+      <div class="hero-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1100&q=85"
+          alt="Microphone in a recording studio"
+        >
+
+        <div class="hero-caption">
+
+          <div>
+
+            <strong>
+              Listen. Repeat.<br>
+              Speak Confidently!
+            </strong>
+
+            <small>
+              Your sound adventure starts here.
+            </small>
+
+          </div>
+
+          <span class="ms4-badge">
+            🎤 MS4
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- NAVIGATION -->
+
+<nav class="main-nav">
+
+  <div class="nav-inner">
+
+    <a href="./index.html">
+      🏠 Home
+    </a>
+
+    <a href="#lessons" class="active">
+      📚 Pronunciation Lessons
+    </a>
+
+    <a href="#tips">
+      💡 Speaking Tips
+    </a>
+
+  </div>
+
+</nav>
+
+<div class="container">
+
+<!-- WELCOME -->
+
+<section class="welcome-panel">
+
+  <div class="welcome-icon">
+    🎧
+  </div>
+
+  <div>
+
+    <h2>
+      Welcome to the Pronunciation Lab!
+    </h2>
+
+    <p>
+
+      English spelling and pronunciation
+      are not always the same.
+
+      Some letters have different sounds,
+      while others are silent.
+
+      Choose a lesson,
+      listen carefully to the examples
+      and practise speaking aloud.
+
+    </p>
+
+  </div>
+
+</section>
+
+<!-- LESSONS -->
+
+<section id="lessons">
+
+  <div class="section-heading">
+
+    <small>
+      ✦ CHOOSE YOUR SOUND MISSION ✦
+    </small>
+
+    <h2>
+      Six Lessons — Six Sound Adventures!
+    </h2>
+
+    <p>
+      Explore pronunciation lessons
+      from all three MS4 sequences.
+    </p>
+
+  </div>
+
+  <div class="lesson-grid">
+
+    <!-- LESSON 1 -->
+
+    <article class="lesson-card lesson-one">
+
+      <div class="lesson-top">
+
+        <span class="lesson-number">
+          LESSON 01
+        </span>
+
+        <span class="lesson-symbol">
+          -s
+        </span>
+
+      </div>
+
+      <div class="lesson-body">
+
+        <span class="lesson-category">
+          WORD ENDINGS
+        </span>
+
+        <h3>
+          Final -S Pronunciation
+        </h3>
+
+        <p>
+          Learn the three ways to pronounce
+          final -s and -es:
+          /s/, /z/ and /ɪz/.
+        </p>
+
+        <div class="examples">
+          <span>cats /s/</span>
+          <span>dogs /z/</span>
+          <span>buses /ɪz/</span>
+        </div>
+
+        <button
+          type="button"
+          class="listen-btn"
+          data-speak="cats, dogs, buses"
+        >
+          🔊 Listen to Examples
+        </button>
+
+        <a
+          href="./MS4-Pronunciation-FinalS.html"
+          class="lesson-link"
+        >
+          Explore Lesson 01
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </article>
+
+    <!-- LESSON 2 -->
+
+    <article class="lesson-card lesson-two">
+
+      <div class="lesson-top">
+
+        <span class="lesson-number">
+          LESSON 02
+        </span>
+
+        <span class="lesson-symbol">
+          -ed
+        </span>
+
+      </div>
+
+      <div class="lesson-body">
+
+        <span class="lesson-category">
+          PAST TENSE SOUNDS
+        </span>
+
+        <h3>
+          Final -ED Pronunciation
+        </h3>
+
+        <p>
+          Learn the three sounds of
+          the regular past tense ending:
+          /t/, /d/ and /ɪd/.
+        </p>
+
+        <div class="examples">
+          <span>walked /t/</span>
+          <span>played /d/</span>
+          <span>wanted /ɪd/</span>
+        </div>
+
+        <button
+          type="button"
+          class="listen-btn"
+          data-speak="walked, played, wanted"
+        >
+          🔊 Listen to Examples
+        </button>
+
+        <a
+          href="./MS4-Pronunciation-FinalED.html"
+          class="lesson-link"
+        >
+          Explore Lesson 02
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </article>
+
+    <!-- LESSON 3 -->
+
+    <article class="lesson-card lesson-three">
+
+      <div class="lesson-top">
+
+        <span class="lesson-number">
+          LESSON 03
+        </span>
+
+        <span class="lesson-symbol">
+          /eɪ/ /aɪ/
+        </span>
+
+      </div>
+
+      <div class="lesson-body">
+
+        <span class="lesson-category">
+          VOWEL SOUNDS
+        </span>
+
+        <h3>
+          /eɪ/ and /aɪ/
+        </h3>
+
+        <p>
+          Discover two important English
+          vowel sounds and learn to
+          recognise them in common words.
+        </p>
+
+        <div class="examples">
+          <span>day /eɪ/</span>
+          <span>name /eɪ/</span>
+          <span>my /aɪ/</span>
+          <span>time /aɪ/</span>
+        </div>
+
+        <button
+          type="button"
+          class="listen-btn"
+          data-speak="day, name, my, time"
+        >
+          🔊 Listen to Examples
+        </button>
+
+        <a
+          href="./MS4-Pronunciation-EI-AI.html"
+          class="lesson-link"
+        >
+          Explore Lesson 03
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </article>
+
+    <!-- LESSON 4 -->
+
+    <article class="lesson-card lesson-four">
+
+      <div class="lesson-top">
+
+        <span class="lesson-number">
+          LESSON 04
+        </span>
+
+        <span class="lesson-symbol">
+          🤫
+        </span>
+
+      </div>
+
+      <div class="lesson-body">
+
+        <span class="lesson-category">
+          HIDDEN SOUNDS
+        </span>
+
+        <h3>
+          Silent Letters
+        </h3>
+
+        <p>
+          Discover letters that are
+          written but not pronounced
+          in everyday English words.
+        </p>
+
+        <div class="examples">
+          <span>knee</span>
+          <span>write</span>
+          <span>climb</span>
+          <span>listen</span>
+        </div>
+
+        <button
+          type="button"
+          class="listen-btn"
+          data-speak="knee, write, climb, listen"
+        >
+          🔊 Listen to Examples
+        </button>
+
+        <a
+          href="./MS4-Pronunciation-SilentLetters.html"
+          class="lesson-link"
+        >
+          Explore Lesson 04
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </article>
+
+    <!-- LESSON 5 -->
+
+    <article class="lesson-card lesson-five">
+
+      <div class="lesson-top">
+
+        <span class="lesson-number">
+          LESSON 05
+        </span>
+
+        <span class="lesson-symbol">
+          TH
+        </span>
+
+      </div>
+
+      <div class="lesson-body">
+
+        <span class="lesson-category">
+          CONSONANT SOUNDS
+        </span>
+
+        <h3>
+          TH Pronunciation
+        </h3>
+
+        <p>
+          Discover the difference between
+          the voiceless /θ/ and
+          voiced /ð/ sounds.
+        </p>
+
+        <div class="examples">
+          <span>think /θ/</span>
+          <span>three /θ/</span>
+          <span>this /ð/</span>
+          <span>mother /ð/</span>
+        </div>
+
+        <button
+          type="button"
+          class="listen-btn"
+          data-speak="think, three, this, mother"
+        >
+          🔊 Listen to Examples
+        </button>
+
+        <a
+          href="./MS4-Pronunciation-TH.html"
+          class="lesson-link"
+        >
+          Explore Lesson 05
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </article>
+
+    <!-- LESSON 6 -->
+
+    <article class="lesson-card lesson-six">
+
+      <div class="lesson-top">
+
+        <span class="lesson-number">
+          LESSON 06
+        </span>
+
+        <span class="lesson-symbol">
+          SH CH
+        </span>
+
+      </div>
+
+      <div class="lesson-body">
+
+        <span class="lesson-category">
+          CONSONANT COMBINATIONS
+        </span>
+
+        <h3>
+          SH and CH Pronunciation
+        </h3>
+
+        <p>
+          Learn the difference between
+          /ʃ/ and /tʃ/ with useful
+          English examples.
+        </p>
+
+        <div class="examples">
+          <span>ship /ʃ/</span>
+          <span>shop /ʃ/</span>
+          <span>chair /tʃ/</span>
+          <span>cheese /tʃ/</span>
+        </div>
+
+        <button
+          type="button"
+          class="listen-btn"
+          data-speak="ship, shop, chair, cheese"
+        >
+          🔊 Listen to Examples
+        </button>
+
+        <a
+          href="./MS4-Pronunciation-SH-CH.html"
+          class="lesson-link"
+        >
+          Explore Lesson 06
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+<!-- SPEAKING TIPS -->
+
+<section id="tips">
+
+  <div class="section-heading">
+
+    <small>
+      ✦ BECOME A BETTER SPEAKER ✦
+    </small>
+
+    <h2>
+      Three Golden Speaking Tips
+    </h2>
+
+    <p>
+      Improve your pronunciation
+      through simple daily habits.
+    </p>
+
+  </div>
+
+  <div class="tips-grid">
+
+    <article class="tip-card">
+
+      <span class="tip-icon">👂</span>
+
+      <h3>Listen Carefully</h3>
+
+      <p>
+        Pay attention to each sound.
+        Notice the difference between
+        similar English words.
+      </p>
+
+    </article>
+
+    <article class="tip-card">
+
+      <span class="tip-icon">🗣️</span>
+
+      <h3>Repeat Aloud</h3>
+
+      <p>
+        Say each word several times.
+        Practise slowly first,
+        then speak more naturally.
+      </p>
+
+    </article>
+
+    <article class="tip-card">
+
+      <span class="tip-icon">🌟</span>
+
+      <h3>Practise Every Day</h3>
+
+      <p>
+        A few minutes of regular
+        pronunciation practice
+        can help you improve.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+<!-- FINAL MESSAGE -->
+
+<section class="final-panel">
+
+  <h2>
+    🎤 Listen — Repeat — Speak!
+  </h2>
+
+  <p>
+
+    Every sound you practise brings
+    you closer to speaking English
+    with more confidence.
+
+    Do not be afraid of mistakes.
+    Keep listening, repeating
+    and enjoying your English journey!
+
+  </p>
+
+  <a href="#lessons" class="btn btn-gold">
+    🚀 Continue My Sound Adventure →
+  </a>
+
+</section>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <strong>MY ENGLISH SPACE</strong>
+
+  <br><br>
+
+  MS4 · Pronunciation Lab · All Sequences
+
+  <br><br>
+
+  © <span id="year"></span> My English Space
+
+  <br>
+
+  Created &amp; designed by
+  <strong>Warda Lamri</strong>
+
+</footer>
+
+<script>
+
+/* ==========================
+   LISTEN BUTTONS
+========================== */
+
+function speakWords(text){
+
+  if(!("speechSynthesis" in window)){
+
+    alert(
+      "Speech playback is not supported by this browser."
+    );
+
+    return;
+  }
+
+  window.speechSynthesis.cancel();
+
+  var speech = new SpeechSynthesisUtterance(text);
+
+  speech.lang = "en-GB";
+  speech.rate = 0.8;
+  speech.pitch = 1;
+  speech.volume = 1;
+
+  window.speechSynthesis.speak(speech);
+
+}
+
+document.querySelectorAll(".listen-btn").forEach(
+  function(button){
+
+    button.addEventListener("click",function(){
+
+      speakWords(button.getAttribute("data-speak"));
+
+    });
+
+  }
+);
+
+/* CURRENT YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>

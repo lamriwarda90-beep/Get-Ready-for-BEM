@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#9e2f64">
+
+<title>Sequence 2 | My English Space — MS4</title>
+
+<meta name="description" content="Explore personality, life experiences, interests and dreams through MS4 English lessons.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================
+   MY ENGLISH SPACE — SEQUENCE 02
+   PREMIUM PHOTOGRAPHIC PINK EDITION
+========================================== */
+
+:root {
+  --pink-dark: #3b1027;
+  --pink: #a92f68;
+  --rose: #ff8fbd;
+  --rose-light: #ffd1e3;
+  --white: #ffffff;
+  --muted: #f5dce8;
+  --gold: #ffe09a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  background: #541632;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--rose-light);
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(1400px, calc(100% - 70px));
+  margin: auto;
+}
+
+/* ==========================================
+   FULL SCREEN PHOTOGRAPHIC BACKGROUND
+========================================== */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(61,8,40,.76),
+      rgba(90,18,53,.23) 75%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(43,5,28,.78),
+      transparent 85%
+    ),
+    url('https://i.imgur.com/W97VZTC.png')
+      center center / cover no-repeat;
+}
+
+.backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(60,8,40,.10),
+      rgba(45,5,29,.44)
+    );
+}
+
+/* ==========================================
+   SCROLL PROGRESS
+========================================== */
+
+.progress {
+  height: 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  z-index: 50;
+
+  background: linear-gradient(
+    90deg,
+    var(--rose-light),
+    var(--rose)
+  );
+}
+
+/* ==========================================
+   GLASS NAVIGATION
+========================================== */
+
+.nav {
+  margin: 15px auto 0;
+  padding: 13px 20px;
+
+  border: 1px solid #ffffff63;
+  border-radius: 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  background: rgba(104,24,63,.55);
+  backdrop-filter: blur(19px);
+  -webkit-backdrop-filter: blur(19px);
+
+  box-shadow: 0 9px 30px #28071c70;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-family: Sora, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.brand b {
+  color: var(--rose-light);
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 9px;
+
+  color: #5c1640;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffe0ee,
+      #ff88b9
+    );
+
+  font-size: 19px;
+  position: relative;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: -3px;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: var(--rose-light);
+}
+
+.back {
+  border-radius: 30px;
+  padding: 13px 22px;
+
+  background: var(--rose-light);
+  color: #52142f;
+
+  font-weight: 800;
+  font-size: 12px;
+  white-space: nowrap;
+
+  box-shadow: 0 6px 20px #0003;
+  transition: .2s;
+}
+
+.back:hover,
+.cta:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+  min-height: 400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+  padding: 34px 12px 38px;
+}
+
+.hero-copy {
+  max-width: 660px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  color: var(--rose-light);
+}
+
+.eyebrow::before {
+  content: '';
+
+  display: inline-block;
+  vertical-align: middle;
+
+  width: 32px;
+  height: 3px;
+
+  background: var(--rose);
+  margin-right: 10px;
+}
+
+.hero h1 {
+  font: 800 clamp(40px,4.2vw,64px)/1.05 Sora,sans-serif;
+
+  letter-spacing: -2.8px;
+  margin: 14px 0 12px;
+
+  text-shadow: 0 3px 16px #3b102777;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--rose-light);
+}
+
+.hero p {
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 570px;
+
+  text-shadow: 0 2px 9px #3b1027;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 9px;
+  margin: 18px 0;
+}
+
+.pills span {
+  border-radius: 25px;
+
+  border: 1px solid #ffd1e380;
+
+  background: rgba(104,24,63,.65);
+  backdrop-filter: blur(8px);
+
+  padding: 9px 15px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cta {
+  display: inline-flex;
+  gap: 26px;
+  align-items: center;
+
+  background: var(--rose-light);
+  color: #52142f;
+
+  font-weight: 800;
+  border-radius: 28px;
+
+  padding: 12px 13px 12px 28px;
+
+  box-shadow: 0 8px 30px #28071c70;
+  transition: .2s;
+}
+
+.cta i {
+  font-style: normal;
+
+  display: grid;
+  place-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: #7e2351;
+  color: var(--rose-light);
+}
+
+/* ==========================================
+   HERO DECORATIVE TEXT
+========================================== */
+
+.hero-script {
+  align-self: flex-end;
+  text-align: center;
+
+  margin: 0 15px 25px 0;
+
+  text-shadow: 0 4px 16px #3b1027;
+}
+
+.hero-script strong {
+  font: 400 clamp(29px,3vw,48px)/.95
+    'Great Vibes', cursive;
+
+  display: block;
+  transform: rotate(-7deg);
+}
+
+.hero-script small {
+  display: block;
+  letter-spacing: 3px;
+
+  font-size: 9px;
+  font-weight: 800;
+  margin-top: 17px;
+}
+
+.hero-script strong::after {
+  content: '';
+
+  display: block;
+
+  width: 115px;
+  height: 3px;
+
+  background: var(--rose-light);
+
+  margin: 13px auto 0;
+  transform: rotate(-5deg);
+}
+
+/* ==========================================
+   GLASS PANELS
+========================================== */
+
+.glass {
+  border: 1px solid #ffd1e359;
+
+  background:
+    linear-gradient(
+      125deg,
+      rgba(70,11,43,.85),
+      rgba(105,27,65,.73)
+    );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 14px 35px #28071c70;
+  border-radius: 23px;
+}
+
+/* ==========================================
+   LEARNING SECTION
+========================================== */
+
+.learning {
+  padding: 22px 23px 20px;
+  scroll-margin-top: 20px;
+}
+
+.learning-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+  margin: 0 28px 20px;
+}
+
+.learning-header h2 {
+  font: 800 clamp(23px,2.4vw,34px)/1.2
+    Sora, sans-serif;
+
+  letter-spacing: -1px;
+  margin: 7px 0;
+}
+
+.learning-header h2 em,
+.feature h2 em {
+  font-style: normal;
+  color: var(--rose-light);
+}
+
+.learning-header .note {
+  max-width: 415px;
+
+  border-left: 4px solid var(--rose-light);
+  padding-left: 22px;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   FIVE LEARNING CARDS
+========================================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: 12px;
+}
+
+.card {
+  --accent: #91c6ff;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 278px;
+  padding: 18px;
+
+  border-radius: 19px;
+  overflow: hidden;
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--accent),
+      transparent 50%
+    );
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(50,10,35,.16),
+      rgba(42,8,29,.83)
+    ),
+    linear-gradient(
+      125deg,
+      color-mix(
+        in srgb,
+        var(--accent),
+        transparent 45%
+      ),
+      transparent
+    ),
+    var(--card-bg) center / cover;
+
+  transition:
+    transform .25s,
+    box-shadow .25s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 12px 30px #28071c9c;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+
+  width: 51px;
+  height: 51px;
+
+  flex: none;
+  border-radius: 50%;
+
+  background: var(--accent);
+  box-shadow: 0 5px 14px #28071c70;
+
+  font-size: 25px;
+}
+
+.index {
+  font: 800 17px Sora,sans-serif;
+  color: var(--accent);
+}
+
+.category {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.card h3 {
+  font: 800 20px/1.25 Sora,sans-serif;
+
+  letter-spacing: -.6px;
+  margin: 21px 0 7px;
+}
+
+.card p {
+  font-size: 12px;
+  line-height: 1.6;
+
+  margin: 0 0 14px;
+  flex: 1;
+}
+
+.card-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  border-radius: 25px;
+  background: var(--accent);
+
+  padding: 12px 9px;
+
+  color: #3b1027;
+
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* ==========================================
+   INDIVIDUAL CARD THEMES
+========================================== */
+
+.grammar {
+  --accent: #91c6ff;
+
+  --card-bg:
+    url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&q=80');
+}
+
+.vocab {
+  --accent: #c6a9ff;
+
+  --card-bg:
+    url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700&q=80');
+}
+
+.reading {
+  --accent: #80e5bd;
+
+  --card-bg:
+    url('https://images.unsplash.com/photo-1512820790803-83ca734da794?w=700&q=80');
+}
+
+.writing {
+  --accent: #ffb49d;
+
+  --card-bg:
+    url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=700&q=80');
+}
+
+.games {
+  --accent: #ffe09a;
+
+  --card-bg:
+    url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=700&q=80');
+}
+
+/* ==========================================
+   DISCOVERY FEATURE
+========================================== */
+
+.feature {
+  margin: 12px 0 30px;
+
+  display: grid;
+  grid-template-columns:
+    auto 1.05fr 1.35fr auto;
+
+  gap: 22px;
+  align-items: center;
+
+  padding: 21px 24px;
+}
+
+.feature-symbol {
+  width: 83px;
+  height: 83px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  font-size: 45px;
+
+  background:
+    radial-gradient(
+      circle at 25% 20%,
+      #ffe0ee,
+      #b42c72 75%
+    );
+
+  box-shadow:
+    inset -9px -9px 18px #5d1640,
+    0 3px 15px #0006;
+}
+
+.feature h2 {
+  font: 800 clamp(21px,2vw,30px)/1.2
+    Sora,sans-serif;
+
+  letter-spacing: -1px;
+  margin: 6px 0;
+}
+
+.feature p {
+  font-size: 12px;
+  line-height: 1.6;
+
+  border-left: 3px solid var(--rose-light);
+  padding-left: 18px;
+
+  margin: 0;
+}
+
+.feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.feature-tags span {
+  border: 1px solid #ffffff45;
+
+  background: #ffffff15;
+  border-radius: 25px;
+
+  padding: 9px 12px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+  padding: 12px 0 25px;
+  text-align: center;
+
+  color: #f5dce8;
+  font-size: 11px;
+}
+
+/* ==========================================
+   REVEAL ANIMATION
+========================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+
+  transition:
+    opacity .6s,
+    transform .6s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media(max-width:1100px) {
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .cards {
+    grid-template-columns:
+      repeat(3, minmax(0,1fr));
+  }
+
+  .feature {
+    grid-template-columns:
+      auto 1fr 1fr;
+  }
+
+  .feature-tags {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+}
+
+@media(max-width:750px) {
+
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .nav {
+    padding: 10px 12px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .brand {
+    font-size: 12px;
+  }
+
+  .back {
+    padding: 11px 13px;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 430px;
+    padding: 35px 4px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px,8vw,56px);
+  }
+
+  .hero-script {
+    display: none;
+  }
+
+  .learning-header {
+    display: block;
+    margin: 0 4px 20px;
+  }
+
+  .learning-header .note {
+    margin-top: 15px;
+  }
+
+  .cards {
+    grid-template-columns:
+      repeat(2, minmax(0,1fr));
+  }
+
+  .learning {
+    padding: 18px;
+  }
+
+  .feature {
+    grid-template-columns:
+      auto 1fr;
+
+    gap: 14px;
+  }
+
+  .feature p {
+    grid-column: 1 / -1;
+  }
+
+  .feature-tags {
+    grid-column: 1 / -1;
+  }
+
+  .feature-symbol {
+    width: 65px;
+    height: 65px;
+    font-size: 35px;
+  }
+
+}
+
+@media(max-width:490px) {
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 240px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .hero {
+    min-height: 440px;
+  }
+
+  .brand b {
+    display: none;
+  }
+
+  .pills span {
+    font-size: 10px;
+  }
+
+  .learning-header h2 {
+    font-size: 25px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ==========================================
+     BACKGROUND
+========================================== -->
+
+<div
+  class="backdrop"
+  aria-hidden="true"
+></div>
+
+<!-- SCROLL PROGRESS -->
+
+<div
+  class="progress"
+  id="progress"
+></div>
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<header class="container">
+
+  <nav
+    class="nav"
+    aria-label="Main navigation"
+  >
+
+    <a
+      href="MS4.html"
+      class="brand"
+    >
+
+      <span class="logo">
+        ES
+      </span>
+
+      MY ENGLISH
+
+      <b>SPACE</b>
+
+    </a>
+
+    <div class="nav-links">
+
+      <a href="MS4.html">
+        ⌂ &nbsp;Home
+      </a>
+
+      <a href="#learning">
+        ▤ &nbsp;Learning Areas
+      </a>
+
+      <a href="#discovery">
+        ☆ &nbsp;Discover
+      </a>
+
+    </div>
+
+    <a
+      class="back"
+      href="MS4.html"
+    >
+      ← &nbsp; Back to MS4
+    </a>
+
+  </nav>
+
+</header>
+
+<main class="container">
+
+<!-- ==========================================
+     HERO SECTION
+========================================== -->
+
+<section
+  class="hero"
+  aria-labelledby="hero-title"
+>
+
+  <div class="hero-copy">
+
+    <div class="eyebrow">
+      MS4 / SEQUENCE 02
+    </div>
+
+    <h1 id="hero-title">
+
+      Discover
+
+      <em>Yourself.</em>
+
+      <br>
+
+      Tell Your
+
+      <em>Story.</em>
+
+    </h1>
+
+    <p>
+
+      Explore your personality,
+      remember your life experiences
+      and discover the interests
+      that make you unique.
+
+      Learn to express your dreams,
+      ambitions and future plans
+      confidently in English.
+
+    </p>
+
+    <div class="pills">
+
+      <span>
+        ♡ &nbsp;Personality
+      </span>
+
+      <span>
+        ◉ &nbsp;Life Experiences
+      </span>
+
+      <span>
+        ✦ &nbsp;Dreams
+      </span>
+
+    </div>
+
+    <a
+      class="cta"
+      href="#learning"
+    >
+
+      Explore the Learning Areas
+
+      <i>➜</i>
+
+    </a>
+
+  </div>
+
+  <div class="hero-script">
+
+    <strong>
+
+      My Story
+
+      <br>
+
+      My Journey
+
+    </strong>
+
+    <small>
+      PERSONALITY · MEMORIES · DREAMS
+    </small>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     LEARNING AREAS
+========================================== -->
+
+<section
+  class="glass learning reveal"
+  id="learning"
+>
+
+  <div class="learning-header">
+
+    <div>
+
+      <div class="eyebrow">
+        01 / YOUR LEARNING JOURNEY
+      </div>
+
+      <h2>
+
+        Five Ways to
+
+        <em>
+          Express Yourself.
+        </em>
+
+      </h2>
+
+    </div>
+
+    <div class="note">
+
+      Choose a learning area
+      and begin exploring.
+
+      Each destination helps you develop
+      the language you need to express
+      your thoughts, feelings,
+      experiences and ambitions.
+
+    </div>
+
+  </div>
+
+  <div class="cards">
+
+    <!-- GRAMMAR -->
+
+    <a
+      class="card grammar"
+      href="MS4-S2-Grammar.html"
+    >
+
+      <div class="card-top">
+
+        <span class="icon">
+          ▤
+        </span>
+
+        <div>
+
+          <div class="index">
+            01
+          </div>
+
+          <div class="category">
+            GRAMMAR
+          </div>
+
+        </div>
+
+      </div>
+
+      <h3>
+        Grammar Lab
+      </h3>
+
+      <p>
+
+        Master the grammar needed
+        to describe your personality,
+        talk about past experiences,
+        make comparisons
+        and express future plans.
+
+      </p>
+
+      <span class="card-btn">
+
+        Explore Grammar &nbsp; →
+
+      </span>
+
+    </a>
+
+    <!-- VOCABULARY -->
+
+    <a
+      class="card vocab"
+      href="MS4-S2-Vocabulary.html"
+    >
+
+      <div class="card-top">
+
+        <span class="icon">
+          ▣
+        </span>
+
+        <div>
+
+          <div class="index">
+            02
+          </div>
+
+          <div class="category">
+            VOCABULARY
+          </div>
+
+        </div>
+
+      </div>
+
+      <h3>
+        Vocabulary Zone
+      </h3>
+
+      <p>
+
+        Discover useful words about
+        personality traits, character,
+        feelings, hobbies,
+        childhood memories,
+        careers and ambitions.
+
+      </p>
+
+      <span class="card-btn">
+
+        Build Your Vocabulary &nbsp; →
+
+      </span>
+
+    </a>
+
+    <!-- READING -->
+
+    <a
+      class="card reading"
+      href="MS4-S2-Reading.html"
+    >
+
+      <div class="card-top">
+
+        <span class="icon">
+          ◫
+        </span>
+
+        <div>
+
+          <div class="index">
+            03
+          </div>
+
+          <div class="category">
+            READING
+          </div>
+
+        </div>
+
+      </div>
+
+      <h3>
+        Reading Corner
+      </h3>
+
+      <p>
+
+        Read fascinating texts
+        about inspiring teenagers,
+        personal qualities,
+        memorable experiences
+        and future dreams.
+
+      </p>
+
+      <span class="card-btn">
+
+        Discover Reading &nbsp; →
+
+      </span>
+
+    </a>
+
+    <!-- WRITING -->
+
+    <a
+      class="card writing"
+      href="MS4-S2-Writing.html"
+    >
+
+      <div class="card-top">
+
+        <span class="icon">
+          ✎
+        </span>
+
+        <div>
+
+          <div class="index">
+            04
+          </div>
+
+          <div class="category">
+            WRITING
+          </div>
+
+        </div>
+
+      </div>
+
+      <h3>
+        Writing Studio
+      </h3>
+
+      <p>
+
+        Learn to write about yourself,
+        your personality,
+        childhood memories,
+        hobbies, important experiences
+        and future ambitions.
+
+        Express your ideas clearly,
+        step by step.
+
+      </p>
+
+      <span class="card-btn">
+
+        Start Writing &nbsp; →
+
+      </span>
+
+    </a>
+
+    <!-- GAMES -->
+
+    <a
+      class="card games"
+      href="MS4-S2-Games.html"
+    >
+
+      <div class="card-top">
+
+        <span class="icon">
+          ✦
+        </span>
+
+        <div>
+
+          <div class="index">
+            05
+          </div>
+
+          <div class="category">
+            GAMES
+          </div>
+
+        </div>
+
+      </div>
+
+      <h3>
+        Game Arena
+      </h3>
+
+      <p>
+
+        Challenge yourself with
+        interactive grammar missions,
+        vocabulary games,
+        memory challenges
+        and exciting revision activities.
+
+        Learn English while having fun.
+
+      </p>
+
+      <span class="card-btn">
+
+        Play &amp; Learn &nbsp; →
+
+      </span>
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     DISCOVERY SECTION
+========================================== -->
+
+<section
+  class="glass feature reveal"
+  id="discovery"
+>
+
+  <div
+    class="feature-symbol"
+    aria-hidden="true"
+  >
+    ✨
+  </div>
+
+  <div>
+
+    <div class="eyebrow">
+      THE HEART OF SEQUENCE TWO
+    </div>
+
+    <h2>
+
+      Discover Who You Are.
+
+      <br>
+
+      <em>
+        Imagine Who You Can Become.
+      </em>
+
+    </h2>
+
+  </div>
+
+  <p>
+
+    Everyone has a unique personality,
+    special memories and dreams
+    worth sharing.
+
+    Discover your strengths,
+    explore your interests
+    and reflect on the experiences
+    that shape your life.
+
+    Learn to tell your story
+    confidently in English.
+
+  </p>
+
+  <div class="feature-tags">
+
+    <span>
+      ♡ Personality
+    </span>
+
+    <span>
+      ◉ Life Experiences
+    </span>
+
+    <span>
+      ✦ Interests
+    </span>
+
+    <span>
+      ☆ Dreams &amp; Ambitions
+    </span>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+  MY ENGLISH SPACE · MS4 · SEQUENCE 02
+
+  —
+
+  PERSONALITY &amp; LIFE EXPERIENCES
+
+</footer>
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+/* SCROLL PROGRESS */
+
+const progress =
+  document.getElementById("progress");
+
+function onScroll() {
+
+  const max =
+    document.documentElement.scrollHeight -
+    innerHeight;
+
+  progress.style.width =
+    (
+      max > 0
+        ? scrollY / max * 100
+        : 0
+    ) + "%";
+
+}
+
+addEventListener(
+  "scroll",
+  onScroll,
+  { passive: true }
+);
+
+onScroll();
+
+
+/* SCROLL REVEAL */
+
+const items =
+  document.querySelectorAll(".reveal");
+
+const reducedMotion =
+  matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+if (
+  "IntersectionObserver" in window &&
+  !reducedMotion
+) {
+
+  const observer =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: .07
+      }
+
+    );
+
+  items.forEach(el => {
+    observer.observe(el);
+  });
+
+} else {
+
+  items.forEach(el => {
+    el.classList.add("visible");
+  });
+
+}
+
+</script>
+
+</body>
+</html>

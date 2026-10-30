@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vocabulary Explorers | MS4 Sequence 1</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ========================================
+   DESIGN SYSTEM
+======================================== */
+
+:root{
+
+--green-dark:#073d35;
+--green-deep:#095448;
+--green-main:#137c68;
+--green-bright:#20a486;
+--green-light:#48c5a2;
+
+--mint:#c9f7e6;
+--mint-soft:#e9faf3;
+
+--gold:#f4c66a;
+
+--white:#ffffff;
+--text:#183d35;
+--muted:#6c8580;
+
+--shadow:0 20px 60px rgba(0,35,25,.16);
+
+}
+
+/* ========================================
+   RESET
+======================================== */
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+margin:0;
+
+font-family:'Nunito',sans-serif;
+
+background:#f3faf7;
+
+color:var(--text);
+
+overflow-x:hidden;
+
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+button{
+font-family:inherit;
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero{
+
+position:relative;
+
+min-height:460px;
+
+background:
+radial-gradient(circle at 85% 15%,rgba(72,197,162,.25),transparent 30%),
+radial-gradient(circle at 10% 90%,rgba(72,197,162,.18),transparent 35%),
+linear-gradient(135deg,#073d35 0%,#095448 50%,#137c68 100%);
+
+overflow:hidden;
+
+padding:35px 20px 105px;
+
+color:white;
+
+}
+
+/* Decorative circles */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:520px;
+height:520px;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:50%;
+
+right:-160px;
+top:-280px;
+
+box-shadow:
+0 0 0 70px rgba(255,255,255,.025),
+0 0 0 140px rgba(255,255,255,.02);
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:400px;
+height:400px;
+
+border-radius:50%;
+
+background:rgba(72,197,162,.06);
+
+left:-180px;
+bottom:-280px;
+
+}
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.nav{
+
+max-width:1150px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+position:relative;
+
+z-index:2;
+
+gap:15px;
+
+}
+
+.brand{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-family:'Baloo 2',sans-serif;
+
+font-size:20px;
+
+font-weight:800;
+
+}
+
+.brand-icon{
+
+width:46px;
+height:46px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.14);
+
+border:1px solid rgba(255,255,255,.2);
+
+font-size:24px;
+
+}
+
+.back-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:9px;
+
+padding:11px 19px;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.12);
+
+border:1px solid rgba(255,255,255,.2);
+
+color:white;
+
+font-size:13px;
+
+font-weight:800;
+
+transition:.3s;
+
+}
+
+.back-btn:hover{
+
+background:white;
+
+color:var(--green-dark);
+
+transform:translateY(-2px);
+
+}
+
+/* ========================================
+   HERO CONTENT
+======================================== */
+
+.hero-content{
+
+max-width:850px;
+
+margin:60px auto 0;
+
+text-align:center;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.sequence-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+background:rgba(255,255,255,.12);
+
+border:1px solid rgba(255,255,255,.25);
+
+padding:9px 18px;
+
+border-radius:100px;
+
+font-family:'Space Mono',monospace;
+
+font-size:11px;
+
+font-weight:700;
+
+letter-spacing:1.5px;
+
+margin-bottom:22px;
+
+}
+
+.hero h1{
+
+font-family:'Baloo 2',sans-serif;
+
+font-size:clamp(35px,6vw,62px);
+
+font-weight:800;
+
+line-height:1.1;
+
+margin:0 0 20px;
+
+letter-spacing:-1.5px;
+
+}
+
+.hero h1 span{
+
+color:#91f1cb;
+
+}
+
+.hero-description{
+
+font-size:16px;
+
+line-height:1.9;
+
+max-width:630px;
+
+margin:auto;
+
+color:rgba(255,255,255,.82);
+
+font-weight:600;
+
+}
+
+/* ========================================
+   HERO STATS
+======================================== */
+
+.hero-stats{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+margin-top:35px;
+
+}
+
+.stat{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+background:rgba(255,255,255,.1);
+
+border:1px solid rgba(255,255,255,.18);
+
+padding:13px 20px;
+
+border-radius:15px;
+
+backdrop-filter:blur(10px);
+
+}
+
+.stat-icon{
+
+font-size:23px;
+
+}
+
+.stat strong{
+
+display:block;
+
+font-size:17px;
+
+font-weight:900;
+
+}
+
+.stat small{
+
+display:block;
+
+font-size:11px;
+
+color:rgba(255,255,255,.7);
+
+font-weight:700;
+
+}
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.main{
+
+max-width:1150px;
+
+margin:-65px auto 0;
+
+padding:0 22px 75px;
+
+position:relative;
+
+z-index:5;
+
+}
+
+/* ========================================
+   INTRO PANEL
+======================================== */
+
+.intro-panel{
+
+background:white;
+
+border-radius:22px;
+
+padding:28px 34px;
+
+box-shadow:var(--shadow);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:25px;
+
+margin-bottom:65px;
+
+border:1px solid #e0f2e9;
+
+}
+
+.intro-left{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.intro-icon{
+
+width:62px;
+height:62px;
+
+flex-shrink:0;
+
+background:var(--mint-soft);
+
+border-radius:18px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:30px;
+
+}
+
+.intro-panel h2{
+
+font-family:'Baloo 2',sans-serif;
+
+font-size:23px;
+
+margin:0 0 4px;
+
+color:var(--green-dark);
+
+}
+
+.intro-panel p{
+
+font-size:13px;
+
+color:var(--muted);
+
+font-weight:700;
+
+margin:0;
+
+line-height:1.7;
+
+}
+
+.intro-badge{
+
+background:var(--mint-soft);
+
+color:var(--green-main);
+
+padding:11px 17px;
+
+border-radius:12px;
+
+font-size:12px;
+
+font-weight:900;
+
+white-space:nowrap;
+
+}
+
+/* ========================================
+   SECTION TITLE
+======================================== */
+
+.section-heading{
+
+text-align:center;
+
+margin-bottom:55px;
+
+}
+
+.section-eyebrow{
+
+font-family:'Space Mono',monospace;
+
+font-size:11px;
+
+letter-spacing:2px;
+
+font-weight:700;
+
+color:var(--green-main);
+
+text-transform:uppercase;
+
+}
+
+.section-heading h2{
+
+font-family:'Baloo 2',sans-serif;
+
+font-size:clamp(29px,4vw,39px);
+
+font-weight:800;
+
+margin:12px 0;
+
+color:var(--green-dark);
+
+}
+
+.section-heading p{
+
+font-size:14px;
+
+font-weight:700;
+
+color:var(--muted);
+
+}
+
+/* ========================================
+   LEARNING JOURNEY
+======================================== */
+
+.journey{
+
+position:relative;
+
+display:flex;
+
+flex-direction:column;
+
+gap:45px;
+
+max-width:1050px;
+
+margin:auto;
+
+}
+
+/* Vertical journey line */
+
+.journey::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:45px;
+
+bottom:45px;
+
+width:3px;
+
+background:repeating-linear-gradient(
+to bottom,
+#9bdac4 0px,
+#9bdac4 12px,
+transparent 12px,
+transparent 23px
+);
+
+transform:translateX(-50%);
+
+}
+
+/* ========================================
+   CHECKPOINT ROW
+======================================== */
+
+.checkpoint{
+
+position:relative;
+
+display:grid;
+
+grid-template-columns:1fr 80px 1fr;
+
+align-items:center;
+
+}
+
+.checkpoint:nth-child(odd) .lesson-card{
+
+grid-column:1;
+
+}
+
+.checkpoint:nth-child(even) .lesson-card{
+
+grid-column:3;
+
+}
+
+.checkpoint:nth-child(odd) .checkpoint-info{
+
+grid-column:3;
+
+grid-row:1;
+
+text-align:left;
+
+padding-left:35px;
+
+}
+
+.checkpoint:nth-child(even) .checkpoint-info{
+
+grid-column:1;
+
+grid-row:1;
+
+text-align:right;
+
+padding-right:35px;
+
+}
+
+/* ========================================
+   NUMBERED CHECKPOINT
+======================================== */
+
+.checkpoint-number{
+
+grid-column:2;
+
+grid-row:1;
+
+width:58px;
+height:58px;
+
+margin:auto;
+
+background:var(--green-main);
+
+border:6px solid #f3faf7;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+color:white;
+
+font-family:'Space Mono',monospace;
+
+font-size:15px;
+
+font-weight:700;
+
+box-shadow:0 0 0 2px #9bdac4;
+
+z-index:3;
+
+}
+
+/* ========================================
+   CHECKPOINT INFO
+======================================== */
+
+.checkpoint-info{
+
+position:relative;
+
+}
+
+.checkpoint-info .step-label{
+
+font-family:'Space Mono',monospace;
+
+font-size:11px;
+
+color:var(--green-main);
+
+font-weight:700;
+
+letter-spacing:1px;
+
+}
+
+.checkpoint-info h3{
+
+font-family:'Baloo 2',sans-serif;
+
+font-size:25px;
+
+color:var(--green-dark);
+
+margin:10px 0;
+
+line-height:1.3;
+
+}
+
+.checkpoint-info p{
+
+color:var(--muted);
+
+font-size:13px;
+
+line-height:1.8;
+
+font-weight:700;
+
+max-width:310px;
+
+}
+
+.checkpoint:nth-child(even) .checkpoint-info p{
+
+margin-left:auto;
+
+}
+
+.topic-tag{
+
+display:inline-block;
+
+background:#e1f5eb;
+
+color:var(--green-main);
+
+font-size:11px;
+
+font-weight:900;
+
+padding:7px 13px;
+
+border-radius:8px;
+
+margin-top:10px;
+
+}
+
+/* ========================================
+   LESSON CARD
+======================================== */
+
+.lesson-card{
+
+background:white;
+
+border-radius:22px;
+
+overflow:hidden;
+
+box-shadow:0 15px 45px rgba(0,65,45,.11);
+
+border:1px solid #e2f1e9;
+
+transition:transform .35s,box-shadow .35s;
+
+position:relative;
+
+display:block;
+
+}
+
+.lesson-card:hover{
+
+transform:translateY(-9px);
+
+box-shadow:0 25px 55px rgba(0,65,45,.2);
+
+}
+
+.lesson-card:focus-visible{
+
+outline:3px solid var(--gold);
+
+outline-offset:5px;
+
+}
+
+/* ========================================
+   CARD IMAGE
+======================================== */
+
+.image-wrap{
+
+height:210px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.image-wrap img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+transition:transform .6s;
+
+}
+
+.lesson-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+.image-wrap::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+to top,
+rgba(0,35,25,.35),
+transparent 65%
+);
+
+pointer-events:none;
+
+}
+
+.image-badge{
+
+position:absolute;
+
+top:15px;
+left:15px;
+
+z-index:2;
+
+background:rgba(255,255,255,.96);
+
+padding:9px 13px;
+
+border-radius:10px;
+
+font-size:11px;
+
+font-weight:900;
+
+color:var(--green-dark);
+
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+/* ========================================
+   CARD BODY
+======================================== */
+
+.card-content{
+
+padding:23px;
+
+}
+
+.card-topline{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:10px;
+
+margin-bottom:10px;
+
+}
+
+.card-category{
+
+font-family:'Space Mono',monospace;
+
+font-size:10px;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+color:var(--green-main);
+
+}
+
+.card-icon{
+
+width:36px;
+height:36px;
+
+background:var(--mint-soft);
+
+border-radius:10px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:19px;
+
+}
+
+.card-content h3{
+
+font-family:'Baloo 2',sans-serif;
+
+font-size:21px;
+
+font-weight:800;
+
+line-height:1.25;
+
+color:var(--green-dark);
+
+margin:0 0 12px;
+
+}
+
+.card-content p{
+
+font-size:13px;
+
+font-weight:700;
+
+line-height:1.8;
+
+color:var(--muted);
+
+margin:0 0 20px;
+
+}
+
+/* ========================================
+   CARD BUTTON
+======================================== */
+
+.card-button{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+width:100%;
+
+background:var(--green-main);
+
+color:white;
+
+border-radius:12px;
+
+padding:13px 17px;
+
+font-size:13px;
+
+font-weight:900;
+
+transition:.3s;
+
+}
+
+.card-button .arrow{
+
+width:27px;
+height:27px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+background:rgba(255,255,255,.18);
+
+border-radius:8px;
+
+transition:.3s;
+
+}
+
+.lesson-card:hover .card-button{
+
+background:var(--green-deep);
+
+}
+
+.lesson-card:hover .arrow{
+
+transform:translateX(4px);
+
+background:rgba(255,255,255,.25);
+
+}
+
+/* ========================================
+   FINISH SECTION
+======================================== */
+
+.finish-section{
+
+margin:85px auto 0;
+
+max-width:850px;
+
+text-align:center;
+
+background:
+radial-gradient(circle at 85% 15%,rgba(72,197,162,.2),transparent 35%),
+linear-gradient(135deg,#073d35,#137c68);
+
+border-radius:28px;
+
+padding:48px 25px;
+
+color:white;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:0 20px 50px rgba(0,65,45,.18);
+
+}
+
+.finish-icon{
+
+width:80px;
+height:80px;
+
+margin:0 auto 18px;
+
+background:rgba(255,255,255,.13);
+
+border:1px solid rgba(255,255,255,.2);
+
+border-radius:24px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:40px;
+
+}
+
+.finish-section h2{
+
+font-family:'Baloo 2',sans-serif;
+
+font-size:31px;
+
+margin:0 0 12px;
+
+}
+
+.finish-section p{
+
+font-size:14px;
+
+color:rgba(255,255,255,.8);
+
+font-weight:700;
+
+line-height:1.8;
+
+max-width:520px;
+
+margin:0 auto 25px;
+
+}
+
+.finish-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+background:var(--gold);
+
+color:#4b3915;
+
+padding:14px 25px;
+
+border-radius:12px;
+
+font-size:13px;
+
+font-weight:900;
+
+transition:.3s;
+
+}
+
+.finish-btn:hover{
+
+transform:translateY(-4px);
+
+background:#ffda88;
+
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer{
+
+text-align:center;
+
+padding:30px 20px;
+
+border-top:1px solid #dceee5;
+
+background:white;
+
+}
+
+.footer-brand{
+
+font-family:'Baloo 2',sans-serif;
+
+font-size:18px;
+
+font-weight:800;
+
+color:var(--green-dark);
+
+}
+
+footer p{
+
+font-size:11px;
+
+color:var(--muted);
+
+font-family:'Space Mono',monospace;
+
+letter-spacing:.5px;
+
+}
+
+/* ========================================
+   SCROLL REVEAL
+======================================== */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(30px);
+
+transition:opacity .7s ease,transform .7s ease;
+
+}
+
+.reveal.visible{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media(max-width:900px){
+
+.checkpoint{
+
+grid-template-columns:1fr 55px 1fr;
+
+}
+
+.checkpoint-info h3{
+
+font-size:20px;
+
+}
+
+.checkpoint:nth-child(odd) .checkpoint-info{
+
+padding-left:15px;
+
+}
+
+.checkpoint:nth-child(even) .checkpoint-info{
+
+padding-right:15px;
+
+}
+
+.image-wrap{
+
+height:170px;
+
+}
+
+.card-content{
+
+padding:18px;
+
+}
+
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media(max-width:650px){
+
+.hero{
+
+padding:22px 17px 105px;
+
+min-height:auto;
+
+}
+
+.nav{
+
+align-items:center;
+
+}
+
+.brand{
+
+font-size:15px;
+
+}
+
+.brand-icon{
+
+width:38px;
+height:38px;
+
+font-size:20px;
+
+}
+
+.back-btn{
+
+font-size:11px;
+
+padding:10px 12px;
+
+}
+
+.hero-content{
+
+margin-top:48px;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero-description{
+
+font-size:14px;
+
+}
+
+.hero-stats{
+
+gap:10px;
+
+}
+
+.stat{
+
+padding:11px 13px;
+
+gap:8px;
+
+}
+
+.stat strong{
+
+font-size:14px;
+
+}
+
+.stat small{
+
+font-size:10px;
+
+}
+
+.main{
+
+padding:0 16px 55px;
+
+margin-top:-55px;
+
+}
+
+.intro-panel{
+
+padding:20px;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:15px;
+
+margin-bottom:55px;
+
+}
+
+.intro-left{
+
+align-items:flex-start;
+
+}
+
+.intro-icon{
+
+width:50px;
+height:50px;
+
+font-size:25px;
+
+}
+
+.intro-panel h2{
+
+font-size:20px;
+
+}
+
+.intro-badge{
+
+align-self:flex-start;
+
+}
+
+.section-heading{
+
+margin-bottom:40px;
+
+}
+
+/* Mobile timeline */
+
+.journey{
+
+gap:35px;
+
+padding-left:34px;
+
+}
+
+.journey::before{
+
+left:12px;
+
+transform:none;
+
+}
+
+.checkpoint{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+.checkpoint-number{
+
+position:absolute;
+
+left:-50px;
+
+top:20px;
+
+width:56px;
+height:56px;
+
+font-size:13px;
+
+}
+
+.checkpoint-info{
+
+display:none;
+
+}
+
+.lesson-card{
+
+width:100%;
+
+}
+
+.image-wrap{
+
+height:190px;
+
+}
+
+.card-content h3{
+
+font-size:20px;
+
+}
+
+.finish-section{
+
+margin-top:60px;
+
+padding:38px 20px;
+
+}
+
+.finish-section h2{
+
+font-size:26px;
+
+}
+
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+html{
+
+scroll-behavior:auto;
+
+}
+
+*{
+
+animation:none!important;
+
+transition:none!important;
+
+}
+
+.reveal{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ======================================
+     HERO
+====================================== -->
+
+<section class="hero">
+
+<nav class="nav">
+
+<div class="brand">
+
+<div class="brand-icon">🌍</div>
+
+<span>My English Space</span>
+
+</div>
+
+<a href="MS4-Sequence1.html" class="back-btn">
+
+<span>←</span>
+
+Back to Sequence 1
+
+</a>
+
+</nav>
+
+
+<div class="hero-content">
+
+<div class="sequence-badge">
+
+✦ MS4 · SEQUENCE 01 · VOCABULARY
+
+</div>
+
+<h1>
+
+Vocabulary <span>Explorers'</span><br>
+
+Map
+
+</h1>
+
+<p class="hero-description">
+
+Explore the world of English vocabulary through three exciting learning destinations.
+Discover famous landmarks, outstanding figures, and the language of travel.
+
+</p>
+
+
+<div class="hero-stats">
+
+<div class="stat">
+
+<span class="stat-icon">🗺️</span>
+
+<div>
+
+<strong>03</strong>
+
+<small>Checkpoints</small>
+
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<span class="stat-icon">📚</span>
+
+<div>
+
+<strong>Vocabulary</strong>
+
+<small>Learning Journey</small>
+
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<span class="stat-icon">🏆</span>
+
+<div>
+
+<strong>Explorer</strong>
+
+<small>Final Destination</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================
+     MAIN
+====================================== -->
+
+<main class="main">
+
+
+<!-- INTRO -->
+
+<div class="intro-panel">
+
+<div class="intro-left">
+
+<div class="intro-icon">🧭</div>
+
+<div>
+
+<h2>Your Vocabulary Adventure Starts Here!</h2>
+
+<p>
+
+Follow the learning path, explore each checkpoint,
+and practise the words you need to become a confident English explorer.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="intro-badge">
+
+✦ 3 Learning Destinations
+
+</div>
+
+</div>
+
+
+<!-- SECTION TITLE -->
+
+<div class="section-heading">
+
+<span class="section-eyebrow">
+
+YOUR LEARNING ROUTE
+
+</span>
+
+<h2>Choose Your Next Destination</h2>
+
+<p>
+
+Three checkpoints. Three topics. One exciting journey.
+
+</p>
+
+</div>
+
+
+<!-- ======================================
+     JOURNEY
+====================================== -->
+
+<div class="journey">
+
+
+<!-- ======================================
+     CHECKPOINT 01
+====================================== -->
+
+<div class="checkpoint reveal">
+
+<a href="MS4-S1-Vocabulary-Lesson1.html" class="lesson-card">
+
+<div class="image-wrap">
+
+<img
+src="https://i.imgur.com/bz1pcv2.jpeg"
+alt="The Colosseum in Rome"
+loading="lazy"
+>
+
+<div class="image-badge">
+
+🏛️ DESTINATION 01
+
+</div>
+
+</div>
+
+
+<div class="card-content">
+
+<div class="card-topline">
+
+<span class="card-category">
+
+CHECKPOINT 01
+
+</span>
+
+<div class="card-icon">🏛️</div>
+
+</div>
+
+<h3>
+
+Landmarks: Types, Locations &amp; Descriptions
+
+</h3>
+
+<p>
+
+Discover different types of landmarks, learn where they are located,
+and practise describing their special features.
+
+</p>
+
+<span class="card-button">
+
+Explore This Lesson
+
+<span class="arrow">→</span>
+
+</span>
+
+</div>
+
+</a>
+
+
+<div class="checkpoint-number">
+
+01
+
+</div>
+
+
+<div class="checkpoint-info">
+
+<span class="step-label">
+
+FIRST DESTINATION
+
+</span>
+
+<h3>
+
+Discover the World's Landmarks
+
+</h3>
+
+<p>
+
+Explore palaces, towers, basilicas, mosques,
+and other famous monuments around the world.
+
+</p>
+
+<span class="topic-tag">
+
+Landmarks & Descriptions
+
+</span>
+
+</div>
+
+</div>
+
+
+<!-- ======================================
+     CHECKPOINT 02
+====================================== -->
+
+<div class="checkpoint reveal">
+
+<a href="MS4-S1-Vocabulary-Lesson2.html" class="lesson-card">
+
+<div class="image-wrap">
+
+<img
+src="https://i.imgur.com/10q9eBQ.jpeg"
+alt="Leonardo da Vinci"
+loading="lazy"
+>
+
+<div class="image-badge">
+
+🎨 DESTINATION 02
+
+</div>
+
+</div>
+
+
+<div class="card-content">
+
+<div class="card-topline">
+
+<span class="card-category">
+
+CHECKPOINT 02
+
+</span>
+
+<div class="card-icon">🎨</div>
+
+</div>
+
+<h3>
+
+Famous Figures: Works, Nationality &amp; Domain
+
+</h3>
+
+<p>
+
+Meet outstanding painters, writers, and musicians.
+Learn about their nationalities, fields, and masterpieces.
+
+</p>
+
+<span class="card-button">
+
+Explore This Lesson
+
+<span class="arrow">→</span>
+
+</span>
+
+</div>
+
+</a>
+
+
+<div class="checkpoint-number">
+
+02
+
+</div>
+
+
+<div class="checkpoint-info">
+
+<span class="step-label">
+
+SECOND DESTINATION
+
+</span>
+
+<h3>
+
+Meet Outstanding Figures
+
+</h3>
+
+<p>
+
+Discover inspiring people from art,
+history, literature, and music.
+
+</p>
+
+<span class="topic-tag">
+
+Famous People & Achievements
+
+</span>
+
+</div>
+
+</div>
+
+
+<!-- ======================================
+     CHECKPOINT 03
+====================================== -->
+
+<div class="checkpoint reveal">
+
+<a href="MS4-S1-Vocabulary-Lesson3.html" class="lesson-card">
+
+<div class="image-wrap">
+
+<img
+src="https://i.imgur.com/ZFUmJEe.jpeg"
+alt="Beautiful canals in Venice"
+loading="lazy"
+>
+
+<div class="image-badge">
+
+🧳 DESTINATION 03
+
+</div>
+
+</div>
+
+
+<div class="card-content">
+
+<div class="card-topline">
+
+<span class="card-category">
+
+CHECKPOINT 03
+
+</span>
+
+<div class="card-icon">🧳</div>
+
+</div>
+
+<h3>
+
+Trip &amp; Tour Vocabulary
+
+</h3>
+
+<p>
+
+Learn essential travel vocabulary including transport,
+departure, arrival, stopovers, and exciting journeys.
+
+</p>
+
+<span class="card-button">
+
+Explore This Lesson
+
+<span class="arrow">→</span>
+
+</span>
+
+</div>
+
+</a>
+
+
+<div class="checkpoint-number">
+
+03
+
+</div>
+
+
+<div class="checkpoint-info">
+
+<span class="step-label">
+
+FINAL DESTINATION
+
+</span>
+
+<h3>
+
+Travel Around the World
+
+</h3>
+
+<p>
+
+Get ready to describe journeys,
+talk about trips, and use useful travel expressions.
+
+</p>
+
+<span class="topic-tag">
+
+Travel & Tourism
+
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- ======================================
+     FINISH SECTION
+====================================== -->
+
+<section class="finish-section reveal">
+
+<div class="finish-icon">
+
+🏆
+
+</div>
+
+<h2>
+
+Become a Vocabulary Explorer!
+
+</h2>
+
+<p>
+
+Complete all three learning checkpoints to build your vocabulary
+and become more confident when describing landmarks,
+famous people, and journeys.
+
+</p>
+
+<a href="MS4-S1-Vocabulary-Lesson1.html" class="finish-btn">
+
+🚀 Start Your Adventure
+
+<span>→</span>
+
+</a>
+
+</section>
+
+
+</main>
+
+
+<!-- ======================================
+     FOOTER
+====================================== -->
+
+<footer>
+
+<div class="footer-brand">
+
+🌍 My English Space
+
+</div>
+
+<p>
+
+MS4 · SEQUENCE 01 · VOCABULARY EXPLORERS
+
+</p>
+
+</footer>
+
+
+<!-- ======================================
+     JAVASCRIPT
+====================================== -->
+
+<script>
+
+/* Scroll reveal animations */
+
+const revealElements = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('visible');
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},{
+
+threshold:0.1
+
+});
+
+revealElements.forEach(element=>{
+
+observer.observe(element);
+
+});
+
+} else {
+
+revealElements.forEach(element=>{
+
+element.classList.add('visible');
+
+});
+
+}
+
+/* Respect reduced-motion preferences */
+
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+
+revealElements.forEach(element=>{
+
+element.classList.add('visible');
+
+});
+
+}
+
+</script>
+
+</body>
+</html>

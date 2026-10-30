@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS4 Writing Studio | Lesson 4 — Social Media: Yes or No?</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --deep:#30184f;
+  --purple:#7643bd;
+  --violet:#a579e7;
+  --gold:#ffd77c;
+  --bg:#faf7ff;
+  --ink:#34234a;
+  --muted:#746784;
+  --line:#e7dcf4;
+  --green:#17785b;
+  --red:#b74258;
+}
+
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  margin:0;
+  background:radial-gradient(circle at top left,#f1e6ff,transparent 35%),var(--bg);
+  color:var(--ink);
+  font-family:Nunito,Arial,sans-serif;
+}
+
+h1,h2,h3 {
+  font-family:"Baloo 2",sans-serif;
+  line-height:1.15;
+}
+
+button,input,select,textarea { font:inherit; }
+button { cursor:pointer; }
+a { text-decoration:none; color:inherit; }
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline:3px solid #e4a332;
+  outline-offset:3px;
+}
+
+.wrap {
+  width:min(1080px,93%);
+  margin:auto;
+}
+
+/* NAVIGATION */
+
+.top {
+  background:white;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.topinner {
+  min-height:66px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.brand {
+  font-family:"Baloo 2",sans-serif;
+  font-size:21px;
+  font-weight:800;
+  color:var(--deep);
+}
+
+.top a.small {
+  font-size:12px;
+  font-weight:900;
+  padding:10px 14px;
+  border-radius:22px;
+  background:#f1e8ff;
+}
+
+/* HERO */
+
+.hero {
+  background:linear-gradient(120deg,#30184f,#7546b5);
+  color:white;
+  padding:58px 0 85px;
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:35px;
+  align-items:center;
+}
+
+.pill {
+  display:inline-block;
+  border:1px solid #ffffff70;
+  border-radius:30px;
+  padding:8px 13px;
+  font-size:11px;
+  letter-spacing:1px;
+  font-weight:900;
+}
+
+.hero h1 {
+  font-size:clamp(39px,5.8vw,70px);
+  margin:15px 0;
+}
+
+.hero h1 span { color:var(--gold); }
+
+.hero p {
+  line-height:1.85;
+  color:#f0e7ff;
+}
+
+.hero-images { position:relative; }
+
+.hero-images img {
+  width:100%;
+  height:305px;
+  object-fit:cover;
+  border:6px solid #ffffff3d;
+  border-radius:25px;
+  box-shadow:0 20px 50px #1c0e3266;
+}
+
+.hero-caption {
+  position:absolute;
+  bottom:-14px;
+  left:18px;
+  background:var(--gold);
+  color:var(--deep);
+  padding:10px 16px;
+  border-radius:15px;
+  font-weight:900;
+  font-size:12px;
+}
+
+/* BUTTONS */
+
+.primary,.secondary,.quiet {
+  border:0;
+  border-radius:24px;
+  padding:12px 19px;
+  font-weight:900;
+  font-size:13px;
+  transition:.2s;
+}
+
+.primary {
+  background:var(--purple);
+  color:white;
+}
+
+.primary:hover {
+  background:#5d329a;
+  transform:translateY(-2px);
+}
+
+.secondary {
+  background:var(--gold);
+  color:var(--deep);
+}
+
+.quiet {
+  background:#eee3fc;
+  color:var(--deep);
+}
+
+.hero .secondary {
+  display:inline-block;
+  margin-top:12px;
+}
+
+/* PROGRESS */
+
+.progress-wrap {
+  margin:-30px auto 28px;
+  position:relative;
+  background:white;
+  border-radius:20px;
+  padding:20px 24px;
+  box-shadow:0 10px 35px #39215819;
+  border:1px solid var(--line);
+}
+
+.progress-head {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  font-size:13px;
+  font-weight:900;
+}
+
+.track {
+  height:12px;
+  background:#eee5f8;
+  border-radius:20px;
+  margin-top:12px;
+  overflow:hidden;
+}
+
+.fill {
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#7943c0,#d1a2ff,#ffd77c);
+  transition:width .3s;
+}
+
+/* INTRODUCTION */
+
+.intro {
+  margin:35px 0 25px;
+  text-align:center;
+}
+
+.intro h2 {
+  font-size:37px;
+  margin:5px;
+}
+
+.intro p {
+  color:var(--muted);
+  line-height:1.8;
+}
+
+/* LESSON CARDS */
+
+.card {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:28px;
+  margin:23px 0;
+  box-shadow:0 12px 36px #3921580c;
+  scroll-margin-top:85px;
+}
+
+.stephead {
+  display:flex;
+  gap:13px;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.stepnum {
+  width:48px;
+  height:48px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  background:#efe4ff;
+  color:#60359e;
+  border-radius:16px;
+  font-weight:900;
+}
+
+.stephead h2 {
+  font-size:28px;
+  margin:0;
+}
+
+.lead {
+  color:var(--muted);
+  line-height:1.85;
+}
+
+/* SITUATION */
+
+.situation {
+  background:#fff6df;
+  border:2px solid #f8d891;
+  border-radius:18px;
+  padding:22px;
+  line-height:1.9;
+}
+
+.situation strong { color:#6b4210; }
+
+/* ACTIVITIES */
+
+.grid2 {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.choice {
+  display:block;
+  background:#faf7ff;
+  border:2px solid #e8dcf7;
+  border-radius:14px;
+  padding:13px;
+  margin:9px 0;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.choice:has(input:checked) {
+  border-color:#8954c8;
+  background:#f0e4ff;
+}
+
+.choice input {
+  accent-color:var(--purple);
+  margin-right:8px;
+}
+
+.feedback {
+  margin-top:12px;
+  font-weight:900;
+  min-height:22px;
+}
+
+.ok { color:var(--green); }
+.bad { color:var(--red); }
+
+.task {
+  background:#fcfaff;
+  border:1px dashed #d5c2eb;
+  border-radius:17px;
+  padding:19px;
+  margin:18px 0;
+}
+
+.task h3 {
+  font-size:20px;
+  margin:0 0 10px;
+}
+
+.task p { line-height:1.7; }
+
+.row {
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin:10px 0;
+}
+
+.row label { font-weight:800; }
+
+.row select,.builder select {
+  background:white;
+  border:2px solid #e4d6f2;
+  border-radius:11px;
+  padding:10px;
+  color:var(--ink);
+  max-width:100%;
+}
+
+.row select {
+  flex:1;
+  min-width:160px;
+}
+
+/* VOCABULARY */
+
+.wordbank {
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+}
+
+.wordbank span {
+  background:#fff0c8;
+  border:1px solid #f3d68e;
+  border-radius:20px;
+  padding:8px 13px;
+  font-weight:900;
+  font-size:13px;
+}
+
+/* ARTICLE PARTS */
+
+.article-part {
+  display:block;
+  background:white;
+  border:1px solid #e4d6f3;
+  border-radius:10px;
+  margin:9px 0;
+  padding:12px;
+  line-height:1.7;
+}
+
+.tag {
+  display:inline-block;
+  background:#e9dbfb;
+  border-radius:10px;
+  padding:4px 9px;
+  font-size:11px;
+  font-weight:900;
+  color:#542c85;
+  margin-right:6px;
+}
+
+/* OPINION SELECTOR */
+
+.opinion-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin:20px 0;
+}
+
+.opinion-card {
+  display:block;
+  background:#faf7ff;
+  border:3px solid #e7dcf4;
+  border-radius:20px;
+  padding:20px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.opinion-card:hover {
+  transform:translateY(-3px);
+}
+
+.opinion-card:has(input:checked) {
+  background:#f0e5ff;
+  border-color:var(--purple);
+  box-shadow:0 8px 22px #7643bd22;
+}
+
+.opinion-card input {
+  accent-color:var(--purple);
+}
+
+.opinion-card strong {
+  display:block;
+  font-size:19px;
+  margin:10px 0;
+  color:var(--deep);
+}
+
+.opinion-card small {
+  display:block;
+  line-height:1.7;
+  color:var(--muted);
+}
+
+/* SENTENCE BUILDERS */
+
+.builder {
+  background:#f9f5ff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:20px;
+  margin:15px 0;
+}
+
+.builder h3 {
+  font-size:21px;
+  margin:0 0 12px;
+}
+
+.builder label {
+  display:block;
+  font-size:13px;
+  font-weight:900;
+  margin:10px 0 5px;
+}
+
+.builder select { width:100%; }
+
+.output {
+  background:white;
+  border-left:4px solid #e6b957;
+  border-radius:10px;
+  padding:13px 16px;
+  margin-top:13px;
+  min-height:47px;
+  line-height:1.8;
+}
+
+/* WRITING */
+
+.finalarea {
+  width:100%;
+  min-height:320px;
+  resize:vertical;
+  border:2px solid #d9c5ed;
+  border-radius:16px;
+  padding:20px;
+  font-size:15px;
+  line-height:1.9;
+  color:var(--ink);
+  background:white;
+}
+
+.checks {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.checks label {
+  background:#f8f2ff;
+  border:1px solid var(--line);
+  padding:12px;
+  border-radius:12px;
+  font-weight:800;
+  font-size:13px;
+}
+
+.checks input { accent-color:var(--purple); }
+
+.mini {
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.status {
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+  font-weight:900;
+}
+
+.tools {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:15px;
+}
+
+.arabic {
+  direction:rtl;
+  text-align:right;
+  color:#66527f;
+  font-size:13px;
+  background:#f7f0ff;
+  padding:10px 14px;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+.note {
+  padding:14px 17px;
+  border-left:4px solid var(--purple);
+  background:#f6eeff;
+  border-radius:10px;
+  margin:15px 0;
+  line-height:1.8;
+}
+
+/* FOOTER */
+
+.footer {
+  text-align:center;
+  background:var(--deep);
+  color:#eee3ff;
+  padding:35px 15px;
+  margin-top:65px;
+}
+
+/* NOTIFICATIONS */
+
+.toast {
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#342052;
+  color:white;
+  padding:13px 20px;
+  border-radius:20px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s;
+  z-index:120;
+  font-weight:900;
+  text-align:center;
+}
+
+.toast.show { opacity:1; }
+
+/* MINI DICTIONARY */
+
+.dict-fab {
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:90;
+  width:65px;
+  height:65px;
+  border:0;
+  border-radius:22px;
+  background:linear-gradient(135deg,#6433a6,#a77be7);
+  color:white;
+  font-size:28px;
+  box-shadow:0 12px 30px #45247777;
+}
+
+.dict-fab span {
+  position:absolute;
+  right:0;
+  bottom:70px;
+  font-size:11px;
+  white-space:nowrap;
+  background:#30184f;
+  padding:6px 10px;
+  border-radius:9px;
+  font-weight:900;
+}
+
+.dict-overlay {
+  position:fixed;
+  inset:0;
+  background:#160a2bc9;
+  z-index:100;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+}
+
+.dict-overlay.open { display:flex; }
+
+.dict-panel {
+  width:min(610px,100%);
+  max-height:88vh;
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 24px 65px #0006;
+}
+
+.dict-header {
+  background:linear-gradient(120deg,#30184f,#8653c6);
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:18px 22px;
+}
+
+.dict-header h2 {
+  margin:0;
+  font-size:25px;
+}
+
+.dict-close {
+  background:#ffffff33;
+  color:white;
+  border:0;
+  border-radius:50%;
+  width:38px;
+  height:38px;
+  font-size:24px;
+}
+
+.dict-body {
+  padding:18px 20px;
+  overflow-y:auto;
+}
+
+.dict-search {
+  width:100%;
+  padding:13px 15px;
+  border:2px solid #e4d6f2;
+  border-radius:13px;
+  margin:10px 0 15px;
+}
+
+.dict-list {
+  display:grid;
+  gap:8px;
+}
+
+.dict-entry {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  background:#faf7ff;
+  border:1px solid #e7dcf4;
+  border-radius:12px;
+  padding:12px 14px;
+}
+
+.dict-entry b { color:#30184f; }
+
+.dict-entry span {
+  color:#7643bd;
+  direction:rtl;
+  text-align:right;
+  font-weight:800;
+}
+
+.dict-note {
+  font-size:12px;
+  color:#746784;
+  line-height:1.7;
+}
+
+/* MOBILE */
+
+@media(max-width:720px) {
+  .hero-grid,.grid2,.checks,.opinion-grid {
+    grid-template-columns:1fr;
+  }
+
+  .hero { padding:35px 0 70px; }
+  .hero img { height:220px; }
+  .card { padding:19px; }
+  .stephead h2 { font-size:24px; }
+  .topinner { justify-content:center; }
+  .progress-wrap { padding:17px; }
+
+  .dict-fab {
+    width:57px;
+    height:57px;
+    right:14px;
+    bottom:14px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  * {
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav class="top">
+  <div class="wrap topinner">
+    <a class="brand" href="MS4-S3-Writing-Homepage.html">
+      ✍️ Writing Studio
+    </a>
+
+    <span style="font-size:12px;font-weight:900">
+      MS4 · Sequence 3 · Lesson 04
+    </span>
+
+    <a class="small" href="MS4-S3-Writing-Homepage.html">
+      ← Writing Homepage
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+  <div class="wrap hero-grid">
+
+    <div>
+      <span class="pill">
+        📱 GUIDED WRITING · BEGINNER FRIENDLY
+      </span>
+
+      <h1>
+        Social Media:<br>
+        <span>Yes or No?</span>
+      </h1>
+
+      <p>
+        Is social media helpful or harmful?
+        Learn to express your opinion,
+        give clear reasons and examples,
+        and write your own argumentative article.
+      </p>
+
+      <a class="secondary" href="#step1">
+        🚀 Let's Start Writing ↓
+      </a>
+    </div>
+
+    <div class="hero-images">
+      <img
+        src="https://i.imgur.com/nAXuVkZ.jpeg"
+        alt="Teenagers discussing social media"
+      >
+
+      <div class="hero-caption">
+        💬 Think Before You Share
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- PROGRESS -->
+
+<div class="progress-wrap">
+  <div class="progress-head">
+    <span>🌟 My writing journey</span>
+    <span id="progressText">0 / 6 steps completed</span>
+  </div>
+
+  <div class="track">
+    <div class="fill" id="progressFill"></div>
+  </div>
+</div>
+
+<!-- INTRODUCTION -->
+
+<div class="intro">
+  <span style="
+    color:#7946c2;
+    font-weight:900;
+    letter-spacing:2px;
+    font-size:11px;
+  ">
+    THINK · CHOOSE · BUILD · WRITE
+  </span>
+
+  <h2>What Do You Think? ✨</h2>
+
+  <p>
+    There is no single correct opinion.
+    Choose your position, support it with reasons,
+    and write in clear English.
+  </p>
+</div>
+
+<!-- =====================================
+     STEP 1
+===================================== -->
+
+<section class="card" id="step1">
+
+  <div class="stephead">
+    <span class="stepnum">01</span>
+    <h2>Read the situation 🎯</h2>
+  </div>
+
+  <div class="situation">
+    <strong>Situation of Integration — Writing Task</strong>
+
+    <br><br>
+
+    Your school magazine is preparing a special issue
+    called <strong>“Teenagers and Social Media.”</strong>
+
+    Some pupils say that social media helps them
+    learn and communicate.
+
+    Others think it wastes time and creates problems.
+
+    <br><br>
+
+    <strong>
+      Write a short argumentative article
+      (about 80–100 words)
+    </strong>
+
+    for your school magazine.
+
+    Answer the question:
+
+    <strong>“Is social media good for teenagers?”</strong>
+
+    Express your opinion, give two reasons
+    with examples, mention one possible disadvantage
+    or advantage, and conclude with advice.
+
+    <br><br>
+
+    <strong>Use:</strong>
+    a title, opinion, arguments, examples,
+    linking words and conclusion.
+  </div>
+
+  <div class="arabic">
+    الوضعية: تُحضّر مجلة مدرستك موضوعًا حول
+    المراهقين ووسائل التواصل الاجتماعي.
+    اكتب مقالًا حجاجيًا قصيرًا تعبر فيه عن رأيك:
+    هل وسائل التواصل الاجتماعي مفيدة أم ضارة؟
+    قدم حجتين مع أمثلة، واذكر وجهة نظر أخرى،
+    ثم اختم بنصيحة.
+  </div>
+
+  <div class="task">
+
+    <h3>🔎 Check that you understand</h3>
+
+    <p><strong>1.</strong> Who will read your article?</p>
+
+    <label class="choice">
+      <input type="radio" name="q1" value="1">
+      Readers of the school magazine
+    </label>
+
+    <label class="choice">
+      <input type="radio" name="q1" value="0">
+      Your family only
+    </label>
+
+    <p><strong>2.</strong> What must you write?</p>
+
+    <label class="choice">
+      <input type="radio" name="q2" value="0">
+      A story about a holiday
+    </label>
+
+    <label class="choice">
+      <input type="radio" name="q2" value="1">
+      An argumentative article about social media
+    </label>
+
+    <button class="primary" onclick="checkSituation()">
+      ✓ Check my answers
+    </button>
+
+    <div class="feedback" id="f1" aria-live="polite"></div>
+
+  </div>
+</section>
+
+<!-- =====================================
+     STEP 2
+===================================== -->
+
+<section class="card" id="step2">
+
+  <div class="stephead">
+    <span class="stepnum">02</span>
+    <h2>Discover the article 🧩</h2>
+  </div>
+
+  <p class="lead">
+    An argumentative article expresses an opinion
+    and supports it with reasons and examples.
+    It can also mention a different point of view.
+  </p>
+
+  <div class="grid2">
+
+    <div class="task">
+      <h3>💬 Opinion</h3>
+      <p>Say what you think.</p>
+      <div class="article-part">
+        <span class="tag">OPINION</span>
+        I think social media can be useful.
+      </div>
+      <div class="arabic">التعبير عن الرأي</div>
+    </div>
+
+    <div class="task">
+      <h3>💡 Reason</h3>
+      <p>Explain why you think so.</p>
+      <div class="article-part">
+        <span class="tag">REASON</span>
+        It helps us communicate.
+      </div>
+      <div class="arabic">تقديم حجة أو سبب</div>
+    </div>
+
+    <div class="task">
+      <h3>🔎 Example</h3>
+      <p>Support your reason with an example.</p>
+      <div class="article-part">
+        <span class="tag">EXAMPLE</span>
+        For example, we can contact relatives.
+      </div>
+      <div class="arabic">تقديم مثال</div>
+    </div>
+
+    <div class="task">
+      <h3>⚖️ Contrast</h3>
+      <p>Mention a different point of view.</p>
+      <div class="article-part">
+        <span class="tag">CONTRAST</span>
+        However, it can waste our time.
+      </div>
+      <div class="arabic">ذكر وجهة نظر مختلفة</div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    ✨ Article structure:
+    <strong>
+      Title → Opinion → Reason 1 → Example →
+      Reason 2 → Example → Contrast → Conclusion
+    </strong>
+  </div>
+
+  <div class="task">
+
+    <h3>🧩 Match each expression to its job</h3>
+
+    <div class="row">
+      <label for="m1">
+        “In my opinion, social media is useful.”
+      </label>
+      <select id="m1">
+        <option value="">Choose...</option>
+        <option value="example">Example</option>
+        <option value="opinion">Opinion</option>
+        <option value="contrast">Contrast</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="m2">
+        “It helps pupils learn.”
+      </label>
+      <select id="m2">
+        <option value="">Choose...</option>
+        <option value="reason">Reason</option>
+        <option value="opinion">Opinion</option>
+        <option value="example">Example</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="m3">
+        “For example, we can watch lessons online.”
+      </label>
+      <select id="m3">
+        <option value="">Choose...</option>
+        <option value="contrast">Contrast</option>
+        <option value="example">Example</option>
+        <option value="reason">Reason</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="m4">
+        “However, it may distract us.”
+      </label>
+      <select id="m4">
+        <option value="">Choose...</option>
+        <option value="opinion">Opinion</option>
+        <option value="contrast">Contrast</option>
+        <option value="example">Example</option>
+      </select>
+    </div>
+
+    <button class="primary" onclick="checkParts()">
+      ✓ Check the parts
+    </button>
+
+    <div class="feedback" id="f2" aria-live="polite"></div>
+
+  </div>
+</section>
+
+<!-- =====================================
+     STEP 3
+===================================== -->
+
+<section class="card" id="step3">
+
+  <div class="stephead">
+    <span class="stepnum">03</span>
+    <h2>Collect easy words 🧺</h2>
+  </div>
+
+  <p class="lead">
+    Social media has advantages and disadvantages.
+    Explore both sides before choosing your opinion.
+  </p>
+
+  <div class="grid2">
+
+    <div class="task">
+      <h3>👍 Advantages</h3>
+
+      <div class="wordbank">
+        <span>learn online</span>
+        <span>communicate</span>
+        <span>share ideas</span>
+        <span>make friends</span>
+        <span>find information</span>
+        <span>watch lessons</span>
+      </div>
+
+      <div class="arabic">
+        الإيجابيات: التعلم، التواصل،
+        مشاركة الأفكار والحصول على المعلومات.
+      </div>
+    </div>
+
+    <div class="task">
+      <h3>👎 Disadvantages</h3>
+
+      <div class="wordbank">
+        <span>waste time</span>
+        <span>distraction</span>
+        <span>false information</span>
+        <span>privacy problems</span>
+        <span>cyberbullying</span>
+        <span>too much screen time</span>
+      </div>
+
+      <div class="arabic">
+        السلبيات: تضييع الوقت، التشتت،
+        الأخبار الكاذبة ومشكلات الخصوصية.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="task">
+
+    <h3>💡 Choose two useful ideas</h3>
+
+    <label class="choice">
+      <input type="checkbox" class="idea">
+      Social media helps us learn.
+    </label>
+
+    <label class="choice">
+      <input type="checkbox" class="idea">
+      It helps us communicate.
+    </label>
+
+    <label class="choice">
+      <input type="checkbox" class="idea">
+      It can waste our time.
+    </label>
+
+    <label class="choice">
+      <input type="checkbox" class="idea">
+      It can create privacy problems.
+    </label>
+
+    <label class="choice">
+      <input type="checkbox" class="idea">
+      It can spread false information.
+    </label>
+
+    <button class="primary" onclick="checkIdeas()">
+      ✓ Save my ideas
+    </button>
+
+    <div class="feedback" id="f3" aria-live="polite"></div>
+
+  </div>
+
+  <p class="mini">
+    📖 Use the floating dictionary to find
+    more English–Arabic vocabulary.
+  </p>
+
+</section>
+
+<!-- =====================================
+     STEP 4
+===================================== -->
+
+<section class="card" id="step4">
+
+  <div class="stephead">
+    <span class="stepnum">04</span>
+    <h2>Build your sentences 🧱</h2>
+  </div>
+
+  <p class="lead">
+    First, choose your opinion.
+    Then select the sentences you want to use.
+    Your sentence builders will change automatically.
+  </p>
+
+  <div class="task">
+
+    <h3>⚖️ Choose your position</h3>
+
+    <div class="opinion-grid">
+
+      <label class="opinion-card">
+        <input
+          type="radio"
+          name="stance"
+          value="positive"
+          checked
+          onchange="setStance()"
+        >
+
+        <strong>👍 YES — It can be useful!</strong>
+
+        <small>
+          Focus on learning, communication
+          and staying connected.
+        </small>
+      </label>
+
+      <label class="opinion-card">
+        <input
+          type="radio"
+          name="stance"
+          value="negative"
+          onchange="setStance()"
+        >
+
+        <strong>👎 NO — It can be harmful!</strong>
+
+        <small>
+          Focus on wasted time, distraction,
+          privacy and online safety.
+        </small>
+      </label>
+
+    </div>
+
+    <div class="arabic">
+      اختر رأيك أولًا:
+      نعم، وسائل التواصل مفيدة،
+      أو لا، قد تكون ضارة.
+      ستتغير الجمل المقترحة حسب اختيارك.
+    </div>
+
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 1 — Express your opinion 💬</h3>
+    <label for="opinion">Choose your opening.</label>
+    <select id="opinion" onchange="updatePreview()"></select>
+    <div class="output" id="out1"></div>
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 2 — Give your first reason 💡</h3>
+    <label for="reason1">Choose reason one.</label>
+    <select id="reason1" onchange="updatePreview()"></select>
+    <div class="output" id="out2"></div>
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 3 — Give an example 🔎</h3>
+    <label for="example1">Choose an example.</label>
+    <select id="example1" onchange="updatePreview()"></select>
+    <div class="output" id="out3"></div>
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 4 — Give your second reason 💡</h3>
+    <label for="reason2">Choose reason two.</label>
+    <select id="reason2" onchange="updatePreview()"></select>
+    <div class="output" id="out4"></div>
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 5 — Add another example 📱</h3>
+    <label for="example2">Choose another example.</label>
+    <select id="example2" onchange="updatePreview()"></select>
+    <div class="output" id="out5"></div>
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 6 — Mention the other side ⚖️</h3>
+    <label for="contrast">Choose a contrasting idea.</label>
+    <select id="contrast" onchange="updatePreview()"></select>
+    <div class="output" id="out6"></div>
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 7 — Conclude with advice 🌟</h3>
+    <label for="conclusion">Choose a final message.</label>
+    <select id="conclusion" onchange="updatePreview()"></select>
+    <div class="output" id="out7"></div>
+  </div>
+
+  <button class="primary" onclick="finishBuilder()">
+    ✓ My sentences are ready!
+  </button>
+
+  <div class="feedback" id="f4" aria-live="polite"></div>
+
+</section>
+
+<!-- =====================================
+     STEP 5
+===================================== -->
+
+<section class="card" id="step5">
+
+  <div class="stephead">
+    <span class="stepnum">05</span>
+    <h2>Put it all together ✍️</h2>
+  </div>
+
+  <p class="lead">
+    Click <strong>Build my article</strong>
+    to combine your chosen sentences.
+    Then edit the draft, add your own ideas,
+    and check that your arguments support your opinion.
+  </p>
+
+  <div class="tools">
+
+    <button class="primary" onclick="makeDraft()">
+      ✨ Build my article
+    </button>
+
+    <button class="quiet" onclick="saveDraft()">
+      💾 Save my writing
+    </button>
+
+    <button class="quiet" onclick="loadDraft()">
+      📂 Load saved writing
+    </button>
+
+  </div>
+
+  <p class="mini">
+    Your chosen sentences are a starting point,
+    not a complete sample article.
+    Aim for 80–100 words, excluding the title.
+  </p>
+
+  <textarea
+    class="finalarea"
+    id="draft"
+    aria-label="My social media article"
+    placeholder="Write your title and article here..."
+    oninput="updateWordCount()"
+  ></textarea>
+
+  <div class="status">
+    <span id="wordCount">0 words</span>
+    <span id="lengthAdvice">Aim for 80–100 words.</span>
+  </div>
+
+  <div class="task">
+
+    <h3>💡 Improve your article</h3>
+
+    <p>Choose a useful extra idea:</p>
+
+    <div class="wordbank">
+      <span>We must protect our personal information.</span>
+      <span>Teenagers should limit their screen time.</span>
+      <span>We should check information before sharing it.</span>
+      <span>Online tools can support our learning.</span>
+    </div>
+
+  </div>
+
+  <div class="arabic">
+    تأكد من أن رأيك واضح وأن الحجج
+    والأمثلة تدعمه.
+    أضف فكرة من عندك ثم راجع الأخطاء.
+  </div>
+
+  <button class="primary" onclick="finishDraft()">
+    ✓ My article is ready
+  </button>
+
+  <div class="feedback" id="f5" aria-live="polite"></div>
+
+</section>
+
+<!-- =====================================
+     STEP 6
+===================================== -->
+
+<section class="card" id="step6">
+
+  <div class="stephead">
+    <span class="stepnum">06</span>
+    <h2>Check & celebrate! 🏆</h2>
+  </div>
+
+  <p class="lead">
+    Read your article again.
+    Tick a box only when it is true.
+  </p>
+
+  <div class="checks">
+
+    <label>
+      <input type="checkbox" class="review">
+      I wrote a suitable title.
+    </label>
+
+    <label>
+      <input type="checkbox" class="review">
+      I clearly expressed my opinion.
+    </label>
+
+    <label>
+      <input type="checkbox" class="review">
+      I gave two reasons.
+    </label>
+
+    <label>
+      <input type="checkbox" class="review">
+      I supported my reasons with examples.
+    </label>
+
+    <label>
+      <input type="checkbox" class="review">
+      I mentioned the other side and used linking words.
+    </label>
+
+    <label>
+      <input type="checkbox" class="review">
+      I wrote a conclusion and checked my language.
+    </label>
+
+  </div>
+
+  <div class="tools">
+
+    <button class="primary" onclick="finishReview()">
+      🏅 Check my work
+    </button>
+
+    <button class="secondary" onclick="printArticle()">
+      🖨️ Print my article
+    </button>
+
+    <button class="quiet" onclick="resetLesson()">
+      ↺ Start again
+    </button>
+
+  </div>
+
+  <div class="feedback" id="f6" aria-live="polite"></div>
+
+  <p class="mini">
+    The checklist is for self-assessment.
+    It does not automatically verify grammar
+    or the quality of your arguments.
+  </p>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <strong>💜 MS4 Writing Studio — Lesson 04</strong>
+  <p>
+    Think critically. Write clearly.
+    Use social media wisely.
+  </p>
+</footer>
+
+<div
+  class="toast"
+  id="toast"
+  role="status"
+  aria-live="polite"
+></div>
+
+<!-- =====================================
+     FLOATING MINI DICTIONARY
+===================================== -->
+
+<button
+  class="dict-fab"
+  id="dictOpen"
+  type="button"
+  aria-label="Open English Arabic mini dictionary"
+>
+  📖
+  <span>Mini Dictionary · قاموس</span>
+</button>
+
+<div
+  class="dict-overlay"
+  id="dictOverlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="dictTitle"
+  aria-hidden="true"
+>
+  <div class="dict-panel">
+
+    <div class="dict-header">
+      <h2 id="dictTitle">
+        📖 English–Arabic Mini Dictionary
+      </h2>
+
+      <button
+        class="dict-close"
+        id="dictClose"
+        type="button"
+        aria-label="Close dictionary"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="dict-body">
+
+      <p class="dict-note" lang="ar" dir="rtl">
+        ابحث عن كلمة أو عبارة بالإنجليزية أو العربية.
+      </p>
+
+      <input
+        id="dictSearch"
+        class="dict-search"
+        type="search"
+        placeholder="Search a word / ابحث عن كلمة"
+        aria-label="Search dictionary"
+      >
+
+      <div class="dict-list" id="dictList"></div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+"use strict";
+
+/* HELPERS */
+
+const $ = id => document.getElementById(id);
+const done = new Set();
+
+function complete(n) {
+  done.add(n);
+
+  $("progressText").textContent =
+    `${done.size} / 6 steps completed`;
+
+  $("progressFill").style.width =
+    (done.size / 6 * 100) + "%";
+}
+
+function feedback(n,good,message) {
+  const el = $("f" + n);
+
+  el.className =
+    "feedback " + (good ? "ok" : "bad");
+
+  el.textContent = message;
+
+  if(good) complete(n);
+}
+
+/* STEP 1 */
+
+function checkSituation() {
+  const a = document.querySelector(
+    'input[name="q1"]:checked'
+  );
+
+  const b = document.querySelector(
+    'input[name="q2"]:checked'
+  );
+
+  const correct =
+    a?.value === "1" &&
+    b?.value === "1";
+
+  feedback(
+    1,
+    correct,
+    correct
+      ? "🌟 Excellent! You understand the task."
+      : "Try again. Who is your audience? What must you write?"
+  );
+}
+
+/* STEP 2 */
+
+function checkParts() {
+  const answers = [
+    "opinion",
+    "reason",
+    "example",
+    "contrast"
+  ];
+
+  const correct = answers.every(
+    (answer,index) =>
+      $("m" + (index + 1)).value === answer
+  );
+
+  feedback(
+    2,
+    correct,
+    correct
+      ? "🌟 Well done! You know the article parts."
+      : "Look at each expression and try again."
+  );
+}
+
+/* STEP 3 */
+
+function checkIdeas() {
+  const count = document.querySelectorAll(
+    ".idea:checked"
+  ).length;
+
+  feedback(
+    3,
+    count >= 2,
+    count >= 2
+      ? "🌟 Great! You collected useful ideas."
+      : "Choose at least two ideas."
+  );
+}
+
+/* =====================================
+   OPINION-DEPENDENT SENTENCE BUILDERS
+===================================== */
+
+const options = {
+
+  positive: {
+
+    opinion: [
+      "In my opinion, social media can be useful for teenagers.",
+      "I believe that social media has many benefits when used wisely."
+    ],
+
+    reason1: [
+      "First, it helps pupils learn new things.",
+      "First, it makes learning easier."
+    ],
+
+    example1: [
+      "For example, we can watch educational videos.",
+      "For example, pupils can share homework and useful lessons."
+    ],
+
+    reason2: [
+      "Second, it helps us communicate with others.",
+      "Second, it connects friends and families."
+    ],
+
+    example2: [
+      "For instance, we can keep in touch with relatives.",
+      "For instance, we can share useful ideas with classmates."
+    ],
+
+    contrast: [
+      "However, spending too much time online can harm our studies.",
+      "However, we must be careful about false information."
+    ],
+
+    conclusion: [
+      "To conclude, teenagers should use social media wisely.",
+      "In conclusion, we should enjoy its benefits and limit screen time."
+    ]
+
+  },
+
+  negative: {
+
+    opinion: [
+      "In my opinion, too much social media is harmful for teenagers.",
+      "I believe that teenagers should spend less time on social media."
+    ],
+
+    reason1: [
+      "First, it can waste a lot of our time.",
+      "First, it can distract pupils from studying."
+    ],
+
+    example1: [
+      "For example, some teenagers scroll for hours instead of revising.",
+      "For example, notifications can interrupt homework."
+    ],
+
+    reason2: [
+      "Second, it can create safety and privacy problems.",
+      "Second, it may spread false information."
+    ],
+
+    example2: [
+      "For instance, strangers may ask for private information.",
+      "For instance, false posts can confuse young people."
+    ],
+
+    contrast: [
+      "However, social media can help us learn when used carefully.",
+      "However, it can connect friends and families."
+    ],
+
+    conclusion: [
+      "To conclude, we should limit screen time and stay safe online.",
+      "In conclusion, teenagers must use social media carefully and responsibly."
+    ]
+
+  }
+
+};
+
+const builderIds = [
+  "opinion",
+  "reason1",
+  "example1",
+  "reason2",
+  "example2",
+  "contrast",
+  "conclusion"
+];
+
+function stance() {
+  return document.querySelector(
+    'input[name="stance"]:checked'
+  )?.value || "positive";
+}
+
+function setStance() {
+  const selected = options[stance()];
+
+  builderIds.forEach(id => {
+    const select = $(id);
+
+    select.replaceChildren();
+
+    selected[id].forEach(sentence => {
+      const option = document.createElement("option");
+
+      option.value = sentence;
+      option.textContent = sentence;
+
+      select.appendChild(option);
+    });
+  });
+
+  updatePreview();
+}
+
+function sentences() {
+  return builderIds.map(id => $(id).value);
+}
+
+function updatePreview() {
+  sentences().forEach((sentence,index) => {
+    $("out" + (index + 1)).textContent =
+      sentence;
+  });
+}
+
+function finishBuilder() {
+  feedback(
+    4,
+    true,
+    "🌟 Excellent! Your seven sentences are ready."
+  );
+}
+
+/* STEP 5 */
+
+function val(id) {
+  return $(id).value;
+}
+
+function makeDraft() {
+  if(
+    val("draft").trim() &&
+    !confirm("Replace your current article with a new draft?")
+  ) {
+    return;
+  }
+
+  const s = sentences();
+
+  $("draft").value = [
+    "Social Media: Yes or No?",
+    "",
+    s[0],
+    s[1],
+    s[2],
+    s[3],
+    s[4],
+    s[5],
+    s[6]
+  ].join("\n");
+
+  updateWordCount();
+
+  toast(
+    "✨ Your draft is ready. Add your own ideas!"
+  );
+}
+
+function countWords(text) {
+  return text.trim()
+    ? text.trim().split(/\s+/).length
+    : 0;
+}
+
+function articleWordCount() {
+  const lines = val("draft").trim().split(/\n/);
+
+  const body = lines.length > 1
+    ? lines.slice(1).join(" ")
+    : lines[0];
+
+  return countWords(body);
+}
+
+function updateWordCount() {
+  const n = articleWordCount();
+
+  $("wordCount").textContent =
+    n + " words (excluding the title if on its own line)";
+
+  $("lengthAdvice").textContent =
+    n < 80
+      ? "Add detail (aim for 80–100 words)."
+      : n > 100
+        ? "Make your article shorter (aim for 80–100 words)."
+        : "🌟 Good length!";
+}
+
+function finishDraft() {
+  const n = articleWordCount();
+
+  feedback(
+    5,
+    n >= 50,
+    n >= 50
+      ? "🌟 Good! Review and improve your article."
+      : "Write your article first. Use the builders if needed."
+  );
+}
+
+/* STEP 6 */
+
+function finishReview() {
+  const checked = document.querySelectorAll(
+    ".review:checked"
+  ).length;
+
+  const ready =
+    checked === 6 &&
+    articleWordCount() >= 50;
+
+  feedback(
+    6,
+    ready,
+    ready
+      ? "🏆 Well done! You reviewed your article."
+      : "Read carefully and tick the six points when they are true."
+  );
+}
+
+/* NOTIFICATIONS */
+
+function toast(message) {
+  const el = $("toast");
+
+  el.textContent = message;
+  el.classList.add("show");
+
+  clearTimeout(window.toastTimer);
+
+  window.toastTimer = setTimeout(() => {
+    el.classList.remove("show");
+  },2800);
+}
+
+/* SAVE */
+
+function saveDraft() {
+  try {
+    localStorage.setItem(
+      "ms4-s3-writing-lesson4",
+      val("draft")
+    );
+
+    toast(
+      "💾 Your article was saved on this device."
+    );
+
+  } catch(error) {
+    toast(
+      "Saving is unavailable. Copy your article to keep it."
+    );
+  }
+}
+
+/* LOAD */
+
+function loadDraft() {
+  try {
+    const saved = localStorage.getItem(
+      "ms4-s3-writing-lesson4"
+    );
+
+    if(saved === null) {
+      toast("No saved article found.");
+      return;
+    }
+
+    if(
+      val("draft").trim() &&
+      !confirm(
+        "Replace your writing with the saved article?"
+      )
+    ) {
+      return;
+    }
+
+    $("draft").value = saved;
+
+    updateWordCount();
+
+    toast("📂 Saved article loaded.");
+
+  } catch(error) {
+    toast("Loading is unavailable.");
+  }
+}
+
+/* PRINT */
+
+function printArticle() {
+  const text = val("draft").trim();
+
+  if(!text) {
+    toast("Write your article first.");
+    return;
+  }
+
+  const printWindow = window.open(
+    "",
+    "_blank",
+    "width=800,height=700"
+  );
+
+  if(!printWindow) {
+    toast("Please allow pop-ups to print.");
+    return;
+  }
+
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>My Article</title>
+      <style>
+        body {
+          font:17px/1.9 Arial,sans-serif;
+          padding:45px;
+        }
+        article {
+          white-space:pre-wrap;
+        }
+      </style>
+    </head>
+    <body>
+      <article id="printContent"></article>
+    </body>
+    </html>
+  `);
+
+  printWindow.document.close();
+
+  printWindow.document.getElementById(
+    "printContent"
+  ).textContent = text;
+
+  printWindow.focus();
+
+  setTimeout(() => {
+    printWindow.print();
+  },300);
+}
+
+/* RESET */
+
+function resetLesson() {
+  if(!confirm(
+    "Start again? Your current unsaved writing will be cleared."
+  )) {
+    return;
+  }
+
+  done.clear();
+
+  $("progressText").textContent =
+    "0 / 6 steps completed";
+
+  $("progressFill").style.width = "0%";
+
+  document.querySelectorAll(
+    'input[type="radio"],input[type="checkbox"]'
+  ).forEach(input => {
+    input.checked = false;
+  });
+
+  document.querySelector(
+    'input[name="stance"][value="positive"]'
+  ).checked = true;
+
+  document.querySelectorAll(
+    "#step2 select"
+  ).forEach(select => {
+    select.selectedIndex = 0;
+  });
+
+  for(let i=1;i<=6;i++) {
+    $("f" + i).textContent = "";
+    $("f" + i).className = "feedback";
+  }
+
+  $("draft").value = "";
+
+  setStance();
+  updateWordCount();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+/* =====================================
+   ENGLISH–ARABIC MINI DICTIONARY
+===================================== */
+
+const dictionaryEntries = [
+  ["social media","وسائل التواصل الاجتماعي"],
+  ["teenager","مراهق"],
+  ["teenagers","مراهقون"],
+  ["benefit","فائدة"],
+  ["benefits","فوائد"],
+  ["advantage","ميزة"],
+  ["disadvantage","عيب"],
+  ["risk","خطر"],
+  ["harmful","ضار"],
+  ["useful","مفيد"],
+  ["responsible","مسؤول"],
+  ["responsibly","بمسؤولية"],
+  ["wisely","بحكمة"],
+  ["communicate","يتواصل"],
+  ["communication","تواصل"],
+  ["connect","يربط / يتواصل"],
+  ["share","يشارك"],
+  ["information","معلومات"],
+  ["false information","معلومات خاطئة"],
+  ["news","أخبار"],
+  ["educational","تعليمي"],
+  ["online lessons","دروس عبر الإنترنت"],
+  ["homework","واجب منزلي"],
+  ["study","يدرس"],
+  ["learn","يتعلم"],
+  ["revise","يراجع"],
+  ["research","بحث"],
+  ["video","فيديو"],
+  ["message","رسالة"],
+  ["post","منشور"],
+  ["comment","تعليق"],
+  ["notification","إشعار"],
+  ["screen time","وقت الشاشة"],
+  ["limit","يحدّ من"],
+  ["waste time","يضيع الوقت"],
+  ["distraction","تشتت الانتباه"],
+  ["distract","يشتت"],
+  ["focus","تركيز"],
+  ["addiction","إدمان"],
+  ["privacy","خصوصية"],
+  ["personal information","معلومات شخصية"],
+  ["password","كلمة مرور"],
+  ["stranger","شخص غريب"],
+  ["cyberbullying","تنمر إلكتروني"],
+  ["safety","سلامة"],
+  ["safe","آمن"],
+  ["protect","يحمي"],
+  ["check","يتحقق"],
+  ["trust","يثق"],
+  ["friends","أصدقاء"],
+  ["family","عائلة"],
+  ["classmates","زملاء الدراسة"],
+  ["in my opinion","في رأيي"],
+  ["I believe","أعتقد"],
+  ["argument","حجة"],
+  ["reason","سبب"],
+  ["example","مثال"],
+  ["for example","على سبيل المثال"],
+  ["for instance","مثلًا"],
+  ["first","أولًا"],
+  ["second","ثانيًا"],
+  ["however","لكن / مع ذلك"],
+  ["although","رغم أن"],
+  ["because","لأن"],
+  ["therefore","لذلك"],
+  ["in addition","بالإضافة إلى ذلك"],
+  ["to conclude","في الختام"],
+  ["in conclusion","في الختام"],
+  ["advice","نصيحة"],
+  ["we should","ينبغي علينا"],
+  ["we must","يجب علينا"],
+  ["school magazine","مجلة المدرسة"],
+  ["article","مقال"],
+  ["opinion","رأي"],
+  ["conclusion","خاتمة"]
+];
+
+/* DICTIONARY SEARCH */
+
+function renderDictionary() {
+  const query = $("dictSearch")
+    .value
+    .trim()
+    .toLowerCase();
+
+  const list = $("dictList");
+
+  list.replaceChildren();
+
+  let count = 0;
+
+  for(const [english,arabic] of dictionaryEntries) {
+    const match =
+      english.toLowerCase().includes(query) ||
+      arabic.includes(query);
+
+    if(!match) continue;
+
+    count++;
+
+    const row = document.createElement("div");
+    row.className = "dict-entry";
+
+    const en = document.createElement("b");
+    en.textContent = english;
+
+    const ar = document.createElement("span");
+    ar.lang = "ar";
+    ar.textContent = arabic;
+
+    row.append(en,ar);
+    list.appendChild(row);
+  }
+
+  if(count === 0) {
+    const empty = document.createElement("p");
+    empty.className = "dict-note";
+    empty.textContent =
+      "No matching word / لا توجد نتائج";
+
+    list.appendChild(empty);
+  }
+}
+
+/* DICTIONARY OPEN / CLOSE */
+
+let returnFocus = null;
+
+function openDictionary() {
+  returnFocus = document.activeElement;
+
+  $("dictOverlay").classList.add("open");
+
+  $("dictOverlay").setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow = "hidden";
+
+  renderDictionary();
+  $("dictSearch").focus();
+}
+
+function closeDictionary() {
+  $("dictOverlay").classList.remove("open");
+
+  $("dictOverlay").setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow = "";
+
+  if(returnFocus) returnFocus.focus();
+}
+
+$("dictOpen").addEventListener(
+  "click",
+  openDictionary
+);
+
+$("dictClose").addEventListener(
+  "click",
+  closeDictionary
+);
+
+$("dictSearch").addEventListener(
+  "input",
+  renderDictionary
+);
+
+$("dictOverlay").addEventListener(
+  "click",
+  event => {
+    if(event.target === $("dictOverlay")) {
+      closeDictionary();
+    }
+  }
+);
+
+/* KEYBOARD SUPPORT */
+
+document.addEventListener("keydown",event => {
+  if(
+    !$("dictOverlay").classList.contains("open")
+  ) {
+    return;
+  }
+
+  if(event.key === "Escape") {
+    closeDictionary();
+    return;
+  }
+
+  if(event.key === "Tab") {
+    const first = $("dictClose");
+    const last = $("dictSearch");
+
+    if(
+      event.shiftKey &&
+      document.activeElement === first
+    ) {
+      event.preventDefault();
+      last.focus();
+
+    } else if(
+      !event.shiftKey &&
+      document.activeElement === last
+    ) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+});
+
+/* INITIALISE */
+
+setStance();
+updateWordCount();
+renderDictionary();
+
+</script>
+</body>
+</html>

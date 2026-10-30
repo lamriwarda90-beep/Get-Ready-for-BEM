@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#082f3a">
+
+<title>Picture Match Adventure | MS4 S1 Game 3</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --deep:#072d39;
+  --navy:#0b3b49;
+  --teal:#087e86;
+  --aqua:#1ab7aa;
+  --gold:#ffca70;
+  --paper:#f4f9f8;
+  --ink:#183e46;
+  --muted:#6b858b;
+  --good:#13815c;
+  --bad:#c74c5e;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  background:linear-gradient(
+    150deg,
+    #05242f,
+    #0b5360 62%,
+    #0a8286
+  );
+  font-family:'DM Sans',sans-serif;
+  color:var(--ink);
+  min-height:100vh;
+}
+
+body:before {
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(
+    #ffffff1b 1px,
+    transparent 1px
+  ) 0 0/27px 27px;
+}
+
+button,a {
+  font:inherit;
+}
+
+button {
+  cursor:pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+.wrap {
+  width:min(1170px,94%);
+  margin:auto;
+  position:relative;
+}
+
+/* NAVIGATION */
+
+.top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:22px 0;
+  color:white;
+}
+
+.brand {
+  font:800 13px Sora,sans-serif;
+  letter-spacing:1px;
+}
+
+.brand small {
+  display:block;
+  color:#b0d2d2;
+  font:700 10px 'DM Sans',sans-serif;
+  letter-spacing:2px;
+  margin-top:6px;
+}
+
+.back {
+  color:white;
+  text-decoration:none;
+  border:1px solid #ffffff55;
+  border-radius:40px;
+  background:#ffffff18;
+  padding:12px 17px;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* HERO */
+
+.hero {
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(
+      100deg,
+      #062b39f2,
+      #0c4757bc
+    ),
+    url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1600&q=85')
+    center/cover;
+
+  color:white;
+  border-radius:28px;
+  border:1px solid #ffffff36;
+  padding:45px 48px;
+  box-shadow:0 20px 60px #001d2a66;
+}
+
+.eyebrow {
+  color:var(--gold);
+  font-weight:800;
+  letter-spacing:2px;
+  font-size:11px;
+}
+
+.hero h1 {
+  font:800 clamp(36px,5.5vw,64px)/1.12 Sora,sans-serif;
+  letter-spacing:-2px;
+  margin:15px 0;
+}
+
+.hero h1 span {
+  color:var(--gold);
+}
+
+.hero p {
+  max-width:650px;
+  color:#d3e8e7;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:23px;
+}
+
+.tags span {
+  padding:9px 13px;
+  background:#ffffff19;
+  border:1px solid #ffffff40;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* STATISTICS */
+
+.stats {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin:19px 0;
+}
+
+.stat {
+  background:#ffffff17;
+  border:1px solid #ffffff2c;
+  color:white;
+  border-radius:16px;
+  padding:16px 20px;
+}
+
+.stat strong {
+  display:block;
+  font:800 25px Sora,sans-serif;
+}
+
+.stat small {
+  font-size:10px;
+  color:#bbdad9;
+  letter-spacing:1.5px;
+  font-weight:800;
+}
+
+/* GAME CONTAINER */
+
+.game {
+  background:var(--paper);
+  border-radius:27px;
+  overflow:hidden;
+  box-shadow:0 22px 65px #001d2a80;
+  margin-bottom:20px;
+}
+
+.gamehead {
+  background:white;
+  padding:25px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.gamehead h2 {
+  font:800 22px Sora,sans-serif;
+  color:var(--deep);
+  margin:0;
+}
+
+.gamehead p {
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.pill {
+  background:#e2f4ee;
+  color:#087b78;
+  border-radius:30px;
+  padding:10px 14px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+/* PROGRESS */
+
+.bar {
+  height:8px;
+  background:#d9e9e6;
+}
+
+.bar div {
+  height:100%;
+  width:0;
+  background:linear-gradient(
+    90deg,
+    var(--aqua),
+    var(--gold)
+  );
+  transition:width .35s;
+}
+
+/* JOURNEY ROUTE */
+
+.route {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  padding:20px 26px 8px;
+}
+
+.stop {
+  border:1px solid #dbe9e6;
+  background:#eaf1ef;
+  border-radius:13px;
+  padding:12px 8px;
+  text-align:center;
+  color:#748c8d;
+  font-size:12px;
+  font-weight:800;
+}
+
+.stop .symbol {
+  display:block;
+  font-size:24px;
+  margin-bottom:5px;
+}
+
+.stop.active {
+  background:#fff1cd;
+  border-color:#f3c96c;
+  color:#79521a;
+  box-shadow:0 4px 15px #d6a84327;
+}
+
+.stop.done {
+  background:#d8f2e6;
+  color:#126e56;
+  border-color:#a6ddc6;
+}
+
+/* QUESTION */
+
+.gamebody {
+  padding:22px 26px 28px;
+}
+
+.prompt {
+  text-align:center;
+  max-width:850px;
+  margin:0 auto 22px;
+}
+
+.prompt .category {
+  color:var(--teal);
+  font-size:11px;
+  letter-spacing:1.5px;
+  font-weight:800;
+}
+
+.prompt h3 {
+  font:800 clamp(21px,3vw,29px) Sora,sans-serif;
+  margin:9px 0;
+  color:var(--deep);
+}
+
+.clue {
+  background:white;
+  border:1px solid #dce9e6;
+  border-left:5px solid var(--gold);
+  border-radius:14px;
+  padding:17px 20px;
+  line-height:1.7;
+  font-size:15px;
+  font-weight:700;
+  text-align:left;
+  margin:17px auto 0;
+  box-shadow:0 4px 15px #0c3d4310;
+}
+
+.clue small {
+  display:block;
+  color:#9b722f;
+  letter-spacing:1.2px;
+  font-size:10px;
+  font-weight:800;
+  margin-bottom:5px;
+}
+
+/* PICTURE CARDS */
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:15px;
+}
+
+.picture {
+  position:relative;
+  display:block;
+  padding:0;
+  border:4px solid white;
+  border-radius:18px;
+  background:#cfe5e1;
+  overflow:hidden;
+  aspect-ratio:4/4.2;
+  box-shadow:0 6px 17px #062e391a;
+  transition:
+    transform .2s,
+    border-color .2s,
+    box-shadow .2s;
+}
+
+.picture:hover:not(:disabled) {
+  transform:translateY(-5px);
+  border-color:var(--gold);
+  box-shadow:0 12px 24px #062e3930;
+}
+
+.picture img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.picture .number {
+  position:absolute;
+  top:9px;
+  left:9px;
+  display:grid;
+  place-items:center;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  background:#fffef2;
+  color:var(--deep);
+  font:800 13px Sora,sans-serif;
+  box-shadow:0 3px 10px #0003;
+}
+
+.picture.correct {
+  border-color:#20a87e;
+  box-shadow:0 0 0 3px #20a87e3d;
+}
+
+.picture.wrong {
+  border-color:#e15d6e;
+  animation:shake .32s;
+}
+
+.picture:disabled {
+  cursor:default;
+}
+
+.picture:disabled:not(.correct):not(.wrong) {
+  opacity:.72;
+}
+
+.picture .tick {
+  display:none;
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  background:#0c956c;
+  color:white;
+  border-radius:50%;
+  width:38px;
+  height:38px;
+  place-items:center;
+  font-weight:800;
+  font-size:23px;
+}
+
+.picture.correct .tick {
+  display:grid;
+}
+
+@keyframes shake {
+  25% {
+    transform:translateX(-5px);
+  }
+
+  75% {
+    transform:translateX(5px);
+  }
+}
+
+/* FEEDBACK */
+
+.feedback {
+  display:none;
+  padding:15px 18px;
+  border-radius:13px;
+  margin:18px auto 0;
+  max-width:850px;
+  font-size:14px;
+  line-height:1.65;
+  font-weight:700;
+}
+
+.feedback.show {
+  display:block;
+}
+
+.feedback.good {
+  background:#dff5e9;
+  color:#146748;
+}
+
+.feedback.bad {
+  background:#fff0f1;
+  color:#a4394a;
+}
+
+/* DISCOVERY FACT */
+
+.discovery {
+  display:none;
+  background:#fff6df;
+  border:1px solid #f0d18d;
+  padding:17px 20px;
+  border-radius:13px;
+  max-width:850px;
+  margin:12px auto 0;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.discovery.show {
+  display:block;
+}
+
+.discovery b {
+  color:#876027;
+}
+
+/* HINT */
+
+.hint {
+  display:none;
+  text-align:center;
+  padding:13px;
+  background:#fff1cd;
+  border-radius:12px;
+  margin:13px auto 0;
+  max-width:850px;
+  color:#76531d;
+  font-weight:700;
+  font-size:13px;
+}
+
+.hint.show {
+  display:block;
+}
+
+/* BUTTONS */
+
+.actions {
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.btn {
+  border:1px solid #d5e6e1;
+  background:white;
+  color:var(--deep);
+  padding:13px 19px;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.btn.primary {
+  background:var(--teal);
+  color:white;
+  border-color:var(--teal);
+}
+
+.btn.gold {
+  background:var(--gold);
+  color:#614318;
+  border-color:var(--gold);
+}
+
+.btn:disabled {
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+/* DICTIONARY */
+
+.dictionary {
+  background:white;
+  border-radius:22px;
+  padding:26px;
+  margin:0 0 35px;
+}
+
+.dictionary h2 {
+  font:800 22px Sora,sans-serif;
+  margin:0 0 6px;
+}
+
+.dictionary p {
+  color:var(--muted);
+  font-size:13px;
+  margin:0 0 18px;
+}
+
+.dictgrid {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+}
+
+.dictitem {
+  background:#f3f9f7;
+  border:1px solid #e0eeea;
+  border-radius:11px;
+  padding:12px;
+}
+
+.dictitem b {
+  display:block;
+  color:#086e75;
+  font-size:13px;
+}
+
+.dictitem span {
+  font:600 17px 'Noto Naskh Arabic',serif;
+  color:#647c7f;
+}
+
+/* FINAL SCREEN */
+
+.final {
+  display:none;
+  text-align:center;
+  padding:55px 25px;
+}
+
+.final.show {
+  display:block;
+}
+
+.final .trophy {
+  font-size:70px;
+}
+
+.final h2 {
+  font:800 34px Sora,sans-serif;
+  color:var(--deep);
+}
+
+.final .total {
+  font:800 40px Sora,sans-serif;
+  color:var(--teal);
+}
+
+.final p {
+  max-width:560px;
+  margin:16px auto 25px;
+  line-height:1.8;
+  color:#607d81;
+}
+
+footer {
+  text-align:center;
+  color:#b9d5d4;
+  font-size:11px;
+  letter-spacing:1px;
+  padding-bottom:30px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px) {
+  .grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .dictgrid {
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .picture {
+    aspect-ratio:4/3.2;
+  }
+}
+
+@media(max-width:550px) {
+  .hero {
+    padding:28px 21px;
+  }
+
+  .hero h1 {
+    letter-spacing:-1px;
+  }
+
+  .stats {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stat {
+    padding:13px;
+  }
+
+  .gamehead {
+    padding:20px;
+  }
+
+  .route {
+    padding:14px 12px 4px;
+    gap:6px;
+  }
+
+  .stop {
+    padding:9px 4px;
+    font-size:9px;
+  }
+
+  .stop .symbol {
+    font-size:19px;
+  }
+
+  .gamebody {
+    padding:17px 13px 23px;
+  }
+
+  .grid {
+    gap:10px;
+  }
+
+  .picture {
+    border-width:3px;
+    aspect-ratio:1/1.06;
+  }
+
+  .clue {
+    padding:13px 14px;
+    font-size:14px;
+  }
+
+  .dictgrid {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .dictionary {
+    padding:19px;
+  }
+
+  .back {
+    padding:10px;
+    font-size:10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <!-- NAVIGATION -->
+
+  <nav class="top">
+
+    <div class="brand">
+      MY ENGLISH SPACE
+      <small>MS4 / SEQUENCE 01 / GAME 03</small>
+    </div>
+
+    <a class="back" href="MS4-S1-Games.html">
+      ← Back to Games
+    </a>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="eyebrow">
+      THE EXPLORER SERIES · VISUAL VOCABULARY
+    </div>
+
+    <h1>
+      Picture Match<br>
+      <span>Adventure.</span>
+    </h1>
+
+    <p>
+      Four exciting destinations. Sixteen picture mysteries.
+      Read each clue, study the photographs, and discover
+      the world of landmarks, Algeria, famous figures,
+      and travel.
+    </p>
+
+    <div class="tags">
+      <span>01 · Read the clue</span>
+      <span>02 · Choose a picture</span>
+      <span>03 · Discover the fact</span>
+      <span>04 · Complete the journey</span>
+    </div>
+
+  </header>
+
+  <!-- STATISTICS -->
+
+  <section class="stats" aria-label="Game statistics">
+
+    <div class="stat">
+      <strong id="score">0</strong>
+      <small>YOUR SCORE</small>
+    </div>
+
+    <div class="stat">
+      <strong id="lives">♥ ♥ ♥</strong>
+      <small>HEARTS LEFT</small>
+    </div>
+
+    <div class="stat">
+      <strong id="streak">0</strong>
+      <small>BEST STREAK: <span id="best">0</span></small>
+    </div>
+
+    <div class="stat">
+      <strong id="count">1 / 16</strong>
+      <small>CHALLENGE</small>
+    </div>
+
+  </section>
+
+  <!-- GAME -->
+
+  <main class="game" id="game">
+
+    <div class="gamehead">
+
+      <div>
+        <h2>Visual Discovery Challenge</h2>
+
+        <p>
+          Picture names stay hidden until you answer.
+        </p>
+      </div>
+
+      <span class="pill" id="badge">
+        WORLD LANDMARKS
+      </span>
+
+    </div>
+
+    <!-- PROGRESS BAR -->
+
+    <div class="bar">
+      <div id="progress"></div>
+    </div>
+
+    <!-- FOUR DESTINATIONS -->
+
+    <div class="route">
+
+      <div class="stop active" id="stop1">
+        <span class="symbol">🌍</span>
+        Landmarks
+      </div>
+
+      <div class="stop" id="stop2">
+        <span class="symbol">🇩🇿</span>
+        Algeria
+      </div>
+
+      <div class="stop" id="stop3">
+        <span class="symbol">🎨</span>
+        Famous Figures
+      </div>
+
+      <div class="stop" id="stop4">
+        <span class="symbol">🧳</span>
+        Travel Kit
+      </div>
+
+    </div>
+
+    <!-- QUESTION AREA -->
+
+    <div class="gamebody">
+
+      <div class="prompt">
+
+        <div class="category" id="category">
+          DESTINATION 01 · WORLD LANDMARKS
+        </div>
+
+        <h3 id="title">
+          Find the Landmark
+        </h3>
+
+        <div class="clue">
+
+          <small>YOUR MYSTERY CLUE</small>
+
+          <span id="clue"></span>
+
+        </div>
+
+      </div>
+
+      <!-- PICTURES -->
+
+      <div class="grid" id="grid"></div>
+
+      <!-- FEEDBACK -->
+
+      <div
+        class="feedback"
+        id="feedback"
+        role="status"
+        aria-live="polite">
+      </div>
+
+      <!-- DISCOVERY -->
+
+      <div class="discovery" id="discovery"></div>
+
+      <!-- HINT -->
+
+      <div class="hint" id="hint"></div>
+
+      <!-- CONTROLS -->
+
+      <div class="actions">
+
+        <button
+          class="btn gold"
+          id="hintBtn"
+          type="button">
+          💡 Show Hint
+        </button>
+
+        <button
+          class="btn primary"
+          id="nextBtn"
+          type="button"
+          hidden>
+          Next Destination →
+        </button>
+
+        <button
+          class="btn"
+          id="restartBtn"
+          type="button">
+          ↻ Restart
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FINAL RESULTS -->
+
+  <section
+    class="game final"
+    id="final"
+    aria-live="polite">
+
+    <div class="trophy" id="trophy">🏆</div>
+
+    <div class="eyebrow" style="color:#087e86">
+      EXPLORER'S REPORT
+    </div>
+
+    <h2 id="finalTitle">
+      Journey Complete!
+    </h2>
+
+    <div class="total" id="finalScore">
+      0 POINTS
+    </div>
+
+    <p id="finalMessage"></p>
+
+    <button
+      class="btn primary"
+      id="againBtn">
+      Play Again
+    </button>
+
+    <a
+      class="btn"
+      href="MS4-S1-Games.html"
+      style="display:inline-block;text-decoration:none">
+      Back to Games
+    </a>
+
+  </section>
+
+  <!-- MINI DICTIONARY -->
+
+  <section class="dictionary">
+
+    <h2>Explorer's Mini Dictionary</h2>
+
+    <p>
+      Useful English–Arabic words from MS4 Sequence 1.
+    </p>
+
+    <div class="dictgrid">
+
+      <div class="dictitem">
+        <b>landmark</b>
+        <span lang="ar">معلم</span>
+      </div>
+
+      <div class="dictitem">
+        <b>tower</b>
+        <span lang="ar">برج</span>
+      </div>
+
+      <div class="dictitem">
+        <b>palace</b>
+        <span lang="ar">قصر</span>
+      </div>
+
+      <div class="dictitem">
+        <b>artist</b>
+        <span lang="ar">فنان</span>
+      </div>
+
+      <div class="dictitem">
+        <b>writer</b>
+        <span lang="ar">كاتب</span>
+      </div>
+
+      <div class="dictitem">
+        <b>painting</b>
+        <span lang="ar">لوحة فنية</span>
+      </div>
+
+      <div class="dictitem">
+        <b>journey</b>
+        <span lang="ar">رحلة</span>
+      </div>
+
+      <div class="dictitem">
+        <b>passport</b>
+        <span lang="ar">جواز السفر</span>
+      </div>
+
+      <div class="dictitem">
+        <b>suitcase</b>
+        <span lang="ar">حقيبة سفر</span>
+      </div>
+
+      <div class="dictitem">
+        <b>monument</b>
+        <span lang="ar">نصب تذكاري</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    MY ENGLISH SPACE · CREATED BY WARDA LAMRI · MS4 SEQUENCE 1
+  </footer>
+
+</div>
+
+<script>
+"use strict";
+
+/* ==========================================
+   IMAGE LIBRARY
+========================================== */
+
+const images = {
+
+  eiffel: [
+    "https://i.imgur.com/5G4cDjn.jpeg",
+    "Eiffel Tower"
+  ],
+
+  pisa: [
+    "https://i.imgur.com/eRIwwsf.jpeg",
+    "Leaning Tower of Pisa"
+  ],
+
+  burj: [
+    "https://i.imgur.com/mGTBDEc.jpeg",
+    "Burj Khalifa"
+  ],
+
+  liberty: [
+    "https://i.imgur.com/Z5sMXAo.jpeg",
+    "Statue of Liberty"
+  ],
+
+  greatwall: [
+    "https://i.imgur.com/2MqDLEs.jpeg",
+    "Great Wall of China"
+  ],
+
+  bigben: [
+    "https://i.imgur.com/R7oMvt6.jpeg",
+    "Big Ben"
+  ],
+
+  pyramids: [
+    "https://i.imgur.com/hY9lF3I.jpeg",
+    "Pyramids"
+  ],
+
+  casbah: [
+    "https://i.imgur.com/CtNNwUE.png",
+    "Casbah of Algiers"
+  ],
+
+  mosque: [
+    "https://i.imgur.com/F0uLuA3.png",
+    "Great Mosque of Algiers"
+  ],
+
+  martyrs: [
+    "https://i.imgur.com/ppwmxSY.jpeg",
+    "Martyrs' Memorial"
+  ],
+
+  tassili: [
+    "https://i.imgur.com/sFU35Xj.png",
+    "Tassili n'Ajjer"
+  ],
+
+  beach: [
+    "https://i.imgur.com/3YAaHx9.png",
+    "Beach"
+  ],
+
+  forest: [
+    "https://i.imgur.com/t90F4m8.png",
+    "Forest"
+  ],
+
+  desert: [
+    "https://i.imgur.com/HJcJFuc.png",
+    "Desert"
+  ],
+
+  shakespeare: [
+    "https://i.imgur.com/7TlMigk.jpeg",
+    "William Shakespeare"
+  ],
+
+  picasso: [
+    "https://i.imgur.com/3MYG6G2.jpeg",
+    "Pablo Picasso"
+  ],
+
+  davinci: [
+    "https://i.imgur.com/10q9eBQ.jpeg",
+    "Leonardo da Vinci"
+  ],
+
+  vangogh: [
+    "https://i.imgur.com/ZLQkr4P.jpeg",
+    "Vincent van Gogh"
+  ],
+
+  malek: [
+    "https://i.imgur.com/SjjrIHh.jpeg",
+    "Malek Bennabi"
+  ],
+
+  kateb: [
+    "https://i.imgur.com/2r7RlHA.jpeg",
+    "Kateb Yacine"
+  ],
+
+  emir: [
+    "https://i.imgur.com/xk0BhHu.jpeg",
+    "Emir Abdelkader"
+  ],
+
+  airplane: [
+    "https://i.imgur.com/7TMONrs.jpeg",
+    "Airplane"
+  ],
+
+  suitcase: [
+    "https://i.imgur.com/kEYAS7g.jpeg",
+    "Suitcase"
+  ],
+
+  train: [
+    "https://i.imgur.com/AUnEveB.jpeg",
+    "Train"
+  ],
+
+  hotel: [
+    "https://i.imgur.com/jaA5pxO.jpeg",
+    "Hotel"
+  ],
+
+  camera: [
+    "https://i.imgur.com/H1580sL.jpeg",
+    "Camera"
+  ],
+
+  restaurant: [
+    "https://i.imgur.com/Ye51rsv.jpeg",
+    "Restaurant"
+  ],
+
+  map: [
+    "https://i.imgur.com/AHzrsu0.jpeg",
+    "Tourist map"
+  ],
+
+  taxi: [
+    "https://i.imgur.com/1HMasMy.jpeg",
+    "Taxi"
+  ],
+
+  passport: [
+    "https://i.imgur.com/3asYyZH.jpeg",
+    "Passport"
+  ],
+
+  cruise: [
+    "https://i.imgur.com/O1yut3Z.jpeg",
+    "Cruise ship"
+  ]
+
+};
+
+/* ==========================================
+   PICTURE CATEGORIES
+========================================== */
+
+const pools = {
+
+  1: [
+    "eiffel",
+    "pisa",
+    "burj",
+    "liberty",
+    "greatwall",
+    "bigben",
+    "pyramids"
+  ],
+
+  2: [
+    "casbah",
+    "mosque",
+    "martyrs",
+    "tassili",
+    "beach",
+    "forest",
+    "desert"
+  ],
+
+  3: [
+    "shakespeare",
+    "picasso",
+    "vangogh",
+    "davinci",
+    "malek",
+    "kateb",
+    "emir"
+  ],
+
+  4: [
+    "passport",
+    "train",
+    "camera",
+    "map",
+    "airplane",
+    "suitcase",
+    "hotel",
+    "taxi",
+    "cruise"
+  ]
+
+};
+
+/* ==========================================
+   16 QUESTIONS
+========================================== */
+
+const questions = [
+
+  // WORLD LANDMARKS
+
+  [
+    1,
+    "eiffel",
+    "This famous iron tower stands in Paris, France. It was completed in 1889.",
+    "Think of Paris and a tall iron tower.",
+    "The Eiffel Tower was completed in 1889 for the Paris World’s Fair."
+  ],
+
+  [
+    1,
+    "pisa",
+    "This historic Italian tower is famous because it leans to one side.",
+    "It is in Italy and is not perfectly straight.",
+    "The Leaning Tower of Pisa began leaning during construction."
+  ],
+
+  [
+    1,
+    "greatwall",
+    "This enormous historic structure stretches across northern China.",
+    "It is a very long wall.",
+    "The Great Wall of China is a system of fortifications built over many centuries."
+  ],
+
+  [
+    1,
+    "liberty",
+    "This famous statue in New York Harbor was a gift from France.",
+    "It holds a torch.",
+    "The Statue of Liberty stands on Liberty Island and symbolizes freedom."
+  ],
+
+  // DISCOVER ALGERIA
+
+  [
+    2,
+    "casbah",
+    "This historic district in Algiers has narrow streets and traditional houses.",
+    "It is the old quarter of Algiers.",
+    "The Casbah of Algiers is a UNESCO World Heritage Site."
+  ],
+
+  [
+    2,
+    "mosque",
+    "This enormous religious building in Algiers has a very tall minaret.",
+    "Look for a large mosque.",
+    "Djamaa El Djazair is also called the Great Mosque of Algiers."
+  ],
+
+  [
+    2,
+    "tassili",
+    "This Saharan landscape is known for sandstone formations and prehistoric rock art.",
+    "Look for unusual desert rocks.",
+    "Tassili n’Ajjer is famous for ancient rock art and spectacular scenery."
+  ],
+
+  [
+    2,
+    "martyrs",
+    "This monument in Algiers honours those who died in Algeria’s struggle for independence.",
+    "It is a tall memorial in the capital.",
+    "Maqam Echahid, or the Martyrs’ Memorial, is a landmark of Algiers."
+  ],
+
+  // FAMOUS FIGURES
+
+  [
+    3,
+    "shakespeare",
+    "This English playwright wrote Hamlet, Macbeth and Romeo and Juliet.",
+    "His first name was William.",
+    "William Shakespeare was an English playwright and poet."
+  ],
+
+  [
+    3,
+    "picasso",
+    "This Spanish artist helped develop Cubism.",
+    "His first name was Pablo.",
+    "Pablo Picasso was one of the most influential artists of the twentieth century."
+  ],
+
+  [
+    3,
+    "vangogh",
+    "This Dutch painter created The Starry Night.",
+    "His first name was Vincent.",
+    "Vincent van Gogh was a Dutch post-Impressionist painter."
+  ],
+
+  [
+    3,
+    "davinci",
+    "This Renaissance artist painted the Mona Lisa and The Last Supper.",
+    "His first name was Leonardo.",
+    "Leonardo da Vinci was an Italian artist and inventor."
+  ],
+
+  // TRAVEL KIT
+
+  [
+    4,
+    "passport",
+    "You need this official document to travel to many other countries.",
+    "You show it at border control.",
+    "A passport is an official document that identifies a traveller."
+  ],
+
+  [
+    4,
+    "train",
+    "This means of transport carries passengers along railway tracks.",
+    "It runs on rails.",
+    "A train carries passengers or goods on railway tracks."
+  ],
+
+  [
+    4,
+    "camera",
+    "Tourists use this device to take photographs during their journeys.",
+    "It captures pictures.",
+    "A camera helps travellers record memorable moments."
+  ],
+
+  [
+    4,
+    "map",
+    "This helps tourists locate streets, landmarks and destinations.",
+    "It helps you find your way.",
+    "A map shows places and helps people plan routes."
+  ]
+
+];
+
+/* ==========================================
+   ELEMENT HELPERS
+========================================== */
+
+const $ = id => document.getElementById(id);
+
+const labels = {
+  1: "WORLD LANDMARKS",
+  2: "DISCOVER ALGERIA",
+  3: "FAMOUS FIGURES",
+  4: "TRAVEL KIT"
+};
+
+/* ==========================================
+   GAME STATE
+========================================== */
+
+let current = 0;
+let score = 0;
+let lives = 3;
+let streak = 0;
+let best = 0;
+let answered = false;
+let hintUsed = false;
+
+let wrongChoices = new Set();
+let options = [];
+
+/* ==========================================
+   SHUFFLE
+========================================== */
+
+function shuffle(array) {
+
+  const copy = [...array];
+
+  for (let i = copy.length - 1; i > 0; i--) {
+
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+
+  }
+
+  return copy;
+
+}
+
+/* ==========================================
+   UPDATE STATISTICS
+========================================== */
+
+function stats() {
+
+  $("score").textContent = score;
+
+  $("lives").textContent =
+    "♥ ".repeat(lives).trim() || "0";
+
+  $("streak").textContent = streak;
+
+  $("best").textContent = best;
+
+  $("count").textContent =
+    Math.min(current + 1, questions.length) +
+    " / " +
+    questions.length;
+
+  $("progress").style.width =
+    (current / questions.length * 100) + "%";
+
+}
+
+/* ==========================================
+   RENDER QUESTION
+========================================== */
+
+function render() {
+
+  const q = questions[current];
+
+  const stage = q[0];
+
+  answered = false;
+  hintUsed = false;
+
+  wrongChoices.clear();
+
+  $("category").textContent =
+    "DESTINATION 0" + stage +
+    " · " +
+    labels[stage];
+
+  $("badge").textContent = labels[stage];
+
+  $("title").textContent = [
+    "",
+    "Find the Landmark",
+    "Discover Algeria",
+    "Meet the Famous Figure",
+    "Identify the Travel Item"
+  ][stage];
+
+  $("clue").textContent = q[2];
+
+  $("feedback").className = "feedback";
+  $("feedback").textContent = "";
+
+  $("discovery").className = "discovery";
+  $("discovery").textContent = "";
+
+  $("hint").className = "hint";
+  $("hint").textContent = "";
+
+  $("hintBtn").disabled = false;
+
+  $("nextBtn").hidden = true;
+
+  $("nextBtn").textContent =
+    current === questions.length - 1
+      ? "See My Results →"
+      : "Continue Journey →";
+
+  /* UPDATE JOURNEY STOPS */
+
+  for (let i = 1; i <= 4; i++) {
+
+    $("stop" + i).className =
+      "stop" +
+      (
+        i < stage
+          ? " done"
+          : i === stage
+            ? " active"
+            : ""
+      );
+
+  }
+
+  /* GENERATE FOUR OPTIONS */
+
+  options = shuffle([
+
+    q[1],
+
+    ...shuffle(
+      pools[stage].filter(x => x !== q[1])
+    ).slice(0, 3)
+
+  ]);
+
+  $("grid").replaceChildren();
+
+  options.forEach((id, index) => {
+
+    const button = document.createElement("button");
+
+    button.type = "button";
+    button.className = "picture";
+
+    button.setAttribute(
+      "aria-label",
+      "Picture option " + (index + 1)
+    );
+
+    /* PICTURE */
+
+    const img = document.createElement("img");
+
+    img.src = images[id][0];
+
+    img.alt = "Mystery picture " + (index + 1);
+
+    img.loading = "eager";
+
+    /* IMAGE FALLBACK */
+
+    img.onerror = () => {
+
+      img.onerror = null;
+      img.style.display = "none";
+
+      button.style.background =
+        "linear-gradient(145deg,#bfdedc,#8cbfba)";
+
+      const message = document.createElement("span");
+
+      message.textContent = "Image unavailable";
+
+      message.style.cssText =
+        "position:absolute;" +
+        "inset:45% 0 auto;" +
+        "text-align:center;" +
+        "font-size:12px;" +
+        "color:#174c52;" +
+        "font-weight:800";
+
+      button.append(message);
+
+    };
+
+    /* OPTION NUMBER */
+
+    const number = document.createElement("span");
+
+    number.className = "number";
+
+    number.textContent =
+      String.fromCharCode(65 + index);
+
+    /* CORRECT CHECKMARK */
+
+    const tick = document.createElement("span");
+
+    tick.className = "tick";
+
+    tick.textContent = "✓";
+
+    button.append(img, number, tick);
+
+    button.onclick = () => choose(id, button);
+
+    $("grid").append(button);
+
+  });
+
+  stats();
+
+}
+
+/* ==========================================
+   FEEDBACK
+========================================== */
+
+function feedback(type, message) {
+
+  $("feedback").className =
+    "feedback show " + type;
+
+  $("feedback").textContent = message;
+
+}
+
+/* ==========================================
+   CHECK ANSWER
+========================================== */
+
+function choose(id, button) {
+
+  if (
+    answered ||
+    wrongChoices.has(id)
+  ) {
+    return;
+  }
+
+  const q = questions[current];
+
+  /* CORRECT ANSWER */
+
+  if (id === q[1]) {
+
+    answered = true;
+
+    streak++;
+
+    best = Math.max(best, streak);
+
+    const points =
+      100 +
+      Math.min(streak - 1, 4) * 20 -
+      (hintUsed ? 20 : 0);
+
+    score += points;
+
+    button.classList.add("correct");
+
+    document
+      .querySelectorAll(".picture")
+      .forEach(b => b.disabled = true);
+
+    feedback(
+      "good",
+      "Excellent! " +
+      images[id][1] +
+      " is correct. +" +
+      points +
+      " points!"
+    );
+
+    /* DISCOVERY FACT */
+
+    $("discovery").className =
+      "discovery show";
+
+    const strong = document.createElement("b");
+
+    strong.textContent =
+      "Discovery unlocked: " +
+      images[id][1] +
+      " — ";
+
+    $("discovery").append(
+      strong,
+      document.createTextNode(q[4])
+    );
+
+    $("nextBtn").hidden = false;
+
+    $("hintBtn").disabled = true;
+
+  }
+
+  /* WRONG ANSWER */
+
+  else {
+
+    wrongChoices.add(id);
+
+    button.classList.add("wrong");
+
+    button.disabled = true;
+
+    lives = Math.max(0, lives - 1);
+
+    streak = 0;
+
+    if (lives === 0) {
+
+      answered = true;
+
+      document
+        .querySelectorAll(".picture")
+        .forEach(b => b.disabled = true);
+
+      const correctIndex =
+        options.indexOf(q[1]);
+
+      $("grid")
+        .children[correctIndex]
+        .classList.add("correct");
+
+      feedback(
+        "bad",
+        "No hearts left. The correct picture is " +
+        images[q[1]][1] +
+        ". You can try the adventure again!"
+      );
+
+      $("nextBtn").textContent =
+        "See My Results →";
+
+      $("nextBtn").hidden = false;
+
+      $("hintBtn").disabled = true;
+
+    }
+
+    else {
+
+      feedback(
+        "bad",
+        "Not quite! Look carefully and try another picture. " +
+        lives +
+        " heart" +
+        (lives === 1 ? "" : "s") +
+        " left."
+      );
+
+    }
+
+  }
+
+  stats();
+
+}
+
+/* ==========================================
+   HINT
+========================================== */
+
+$("hintBtn").onclick = () => {
+
+  if (answered) return;
+
+  hintUsed = true;
+
+  $("hint").className = "hint show";
+
+  $("hint").textContent =
+    "💡 Hint: " + questions[current][3];
+
+  $("hintBtn").disabled = true;
+
+};
+
+/* ==========================================
+   NEXT QUESTION
+========================================== */
+
+$("nextBtn").onclick = () => {
+
+  if (!answered) return;
+
+  if (
+    lives === 0 ||
+    current === questions.length - 1
+  ) {
+
+    finish();
+
+  }
+
+  else {
+
+    current++;
+
+    render();
+
+    document
+      .querySelector(".gamehead")
+      .scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+  }
+
+};
+
+/* ==========================================
+   FINISH GAME
+========================================== */
+
+function finish() {
+
+  $("game").style.display = "none";
+
+  $("final").classList.add("show");
+
+  $("finalScore").textContent =
+    score + " POINTS";
+
+  $("finalTitle").textContent =
+    lives === 0
+      ? "Journey Paused!"
+      : "Journey Complete!";
+
+  $("trophy").textContent =
+    lives === 0 ? "🧭" : "🏆";
+
+  const completed =
+    current === questions.length - 1 &&
+    lives > 0;
+
+  if (completed) {
+
+    $("finalMessage").textContent =
+      "Wonderful! You explored all four destinations " +
+      "and solved 16 visual mysteries. " +
+      "Your best correct-answer streak was " +
+      best +
+      ".";
+
+  }
+
+  else {
+
+    $("finalMessage").textContent =
+      "You reached challenge " +
+      (current + 1) +
+      " of " +
+      questions.length +
+      ". Keep practising to discover every destination!";
+
+  }
+
+  /* SAVE GAME 3 COMPLETION */
+
+  if (completed) {
+
+    try {
+
+      const key = "MS4_S1_GAMES_PROGRESS";
+
+      const saved = JSON.parse(
+        localStorage.getItem(key) || "[]"
+      );
+
+      const done =
+        Array.isArray(saved) ? saved : [];
+
+      if (!done.includes(3)) {
+        done.push(3);
+      }
+
+      localStorage.setItem(
+        key,
+        JSON.stringify(done)
+      );
+
+    } catch (error) {
+      // Game works even when storage is unavailable.
+    }
+
+  }
+
+  $("final").scrollIntoView({
+    behavior: "smooth"
+  });
+
+}
+
+/* ==========================================
+   RESTART
+========================================== */
+
+function restart() {
+
+  current = 0;
+  score = 0;
+  lives = 3;
+  streak = 0;
+  best = 0;
+  answered = false;
+
+  $("game").style.display = "block";
+
+  $("final").classList.remove("show");
+
+  render();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+$("restartBtn").onclick = () => {
+
+  if (
+    confirm(
+      "Restart the adventure and reset your score?"
+    )
+  ) {
+    restart();
+  }
+
+};
+
+$("againBtn").onclick = restart;
+
+/* ==========================================
+   START GAME
+========================================== */
+
+render();
+
+</script>
+
+</body>
+</html>

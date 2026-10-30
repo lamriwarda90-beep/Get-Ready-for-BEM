@@ -1,0 +1,4529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#5220a0">
+
+<title>Checkpoint 04 — Discourse Markers | MS4 English</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   CHECKPOINT 04
+   DISCOURSE MARKERS TO LINK ARGUMENTS
+   MS4 — SEQUENCE 3
+========================================================= */
+
+:root{
+    --purple:#7940e8;
+    --purple-dark:#49218c;
+    --purple-deep:#2d145b;
+    --violet:#ad72f6;
+    --pink:#f35ba5;
+    --pink-light:#ffe5f2;
+    --gold:#ffc75c;
+    --blue:#4a93f5;
+    --cyan:#3dcbd5;
+    --green:#22b87d;
+    --red:#eb5572;
+
+    --ink:#302347;
+    --muted:#786e8b;
+    --white:#ffffff;
+    --paper:#fffaff;
+    --line:#eee3fb;
+
+    --shadow:0 18px 45px rgba(43,19,93,.12);
+    --radius:26px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Nunito",sans-serif;
+    color:var(--ink);
+    min-height:100vh;
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at 0% 5%,rgba(182,102,255,.35),transparent 28%),
+        radial-gradient(circle at 100% 28%,rgba(246,92,177,.28),transparent 25%),
+        radial-gradient(circle at 50% 95%,rgba(75,147,245,.25),transparent 35%),
+        linear-gradient(145deg,#231044,#422078,#351764);
+
+    background-attachment:fixed;
+}
+
+button,
+input,
+textarea,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:3px;
+}
+
+button:disabled{
+    cursor:default;
+}
+
+.container{
+    width:min(1160px,calc(100% - 28px));
+    margin:auto;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.orb{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(8px);
+    opacity:.32;
+    animation:float 11s ease-in-out infinite;
+}
+
+.orb.one{
+    width:230px;
+    height:230px;
+    top:10%;
+    left:-100px;
+    background:#b66aff;
+}
+
+.orb.two{
+    width:300px;
+    height:300px;
+    right:-130px;
+    top:42%;
+    background:#ff71b7;
+    animation-delay:2s;
+}
+
+.orb.three{
+    width:220px;
+    height:220px;
+    left:35%;
+    bottom:-120px;
+    background:#62d6ff;
+    animation-delay:4s;
+}
+
+@keyframes float{
+    0%,100%{transform:translate(0,0)}
+    50%{transform:translate(25px,-35px)}
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar{
+    position:sticky;
+    top:10px;
+    z-index:100;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+
+    margin:13px 0 22px;
+    padding:12px 17px;
+
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.8);
+    border-radius:20px;
+
+    box-shadow:0 12px 35px rgba(15,5,43,.2);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo-icon{
+    width:47px;
+    height:47px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:15px;
+    font-size:24px;
+
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    color:white;
+
+    box-shadow:0 8px 20px rgba(121,64,232,.3);
+}
+
+.logo-text{
+    font-family:"Baloo 2",sans-serif;
+    font-size:17px;
+    font-weight:800;
+    color:var(--purple-dark);
+    line-height:1.1;
+}
+
+.logo-text small{
+    display:block;
+    margin-top:4px;
+
+    font-family:"Nunito",sans-serif;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:1px;
+    color:var(--purple);
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.pill{
+    padding:9px 13px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.lesson-pill{
+    background:#f3ebff;
+    color:var(--purple-dark);
+}
+
+.score-pill{
+    background:#fff4d9;
+    color:#ad690d;
+}
+
+.dictionary-nav{
+    border:none;
+    color:white;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+
+    padding:55px 35px 43px;
+    margin-bottom:25px;
+
+    text-align:center;
+
+    background:
+        radial-gradient(circle at 12% 15%,#f5e9ff,transparent 32%),
+        radial-gradient(circle at 90% 85%,#ffe8f4,transparent 30%),
+        #fff;
+
+    border-radius:35px;
+    box-shadow:0 30px 70px rgba(10,4,36,.22);
+}
+
+.hero::before{
+    content:"🔗";
+    position:absolute;
+    left:3%;
+    top:14%;
+    font-size:65px;
+    opacity:.13;
+    transform:rotate(-20deg);
+}
+
+.hero::after{
+    content:"✦";
+    position:absolute;
+    right:7%;
+    bottom:12%;
+    font-size:90px;
+    color:var(--pink);
+    opacity:.18;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-block;
+    padding:9px 17px;
+    margin-bottom:20px;
+
+    background:#f2e9ff;
+    border:1px solid #dfc9ff;
+    border-radius:30px;
+
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
+    color:var(--purple-dark);
+}
+
+.hero h1{
+    max-width:850px;
+    margin:auto;
+
+    font-family:"Baloo 2",sans-serif;
+    font-size:clamp(34px,5.5vw,58px);
+    font-weight:800;
+    line-height:1.12;
+    letter-spacing:-1.4px;
+
+    background:linear-gradient(110deg,#49218c,#7940e8,#e23b90);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:710px;
+    margin:16px auto 0;
+
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.85;
+}
+
+.hero-formula{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    width:fit-content;
+    max-width:100%;
+    margin:25px auto 0;
+    padding:14px 20px;
+
+    border:2px solid #e4d3ff;
+    border-radius:17px;
+
+    background:white;
+    box-shadow:0 8px 25px rgba(121,64,232,.08);
+}
+
+.formula-piece{
+    font-weight:900;
+    color:var(--purple-dark);
+}
+
+.formula-marker{
+    padding:8px 14px;
+    border-radius:10px;
+
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    color:white;
+    font-weight:900;
+}
+
+.hero-stats{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-top:25px;
+}
+
+.hero-stat{
+    padding:10px 15px;
+    border-radius:13px;
+    background:#f7f1ff;
+    color:#6944a0;
+    font-size:12px;
+    font-weight:900;
+}
+
+/* =========================================================
+   PROGRESS RIBBON
+========================================================= */
+
+.progress-ribbon{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    margin-bottom:25px;
+    padding:18px 22px;
+
+    background:rgba(255,255,255,.96);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.progress-symbol{
+    width:48px;
+    height:48px;
+    flex-shrink:0;
+
+    display:grid;
+    place-items:center;
+
+    background:#fff0d1;
+    border-radius:15px;
+    font-size:25px;
+}
+
+.progress-info{
+    flex:1;
+    min-width:0;
+}
+
+.progress-top{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:9px;
+
+    font-weight:900;
+    font-size:13px;
+    color:var(--purple-dark);
+}
+
+.progress-track{
+    height:12px;
+    background:#ede1fc;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    border-radius:30px;
+    background:linear-gradient(90deg,var(--purple),var(--pink),var(--gold));
+    transition:width .5s ease;
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+    padding:31px;
+    margin-bottom:24px;
+
+    border-radius:var(--radius);
+    background:rgba(255,255,255,.98);
+    border:1px solid rgba(255,255,255,.8);
+
+    box-shadow:var(--shadow);
+}
+
+.section-heading{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin-bottom:22px;
+}
+
+.section-number{
+    width:48px;
+    height:48px;
+    flex-shrink:0;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:15px;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+    color:white;
+
+    font-family:"Baloo 2",sans-serif;
+    font-size:22px;
+    font-weight:800;
+
+    box-shadow:0 8px 18px rgba(121,64,232,.22);
+}
+
+.section-heading h2{
+    font-family:"Baloo 2",sans-serif;
+    color:var(--purple-deep);
+    font-size:clamp(21px,3vw,27px);
+    line-height:1.2;
+}
+
+.section-heading p{
+    margin-top:4px;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.section-intro{
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:18px;
+}
+
+/* =========================================================
+   LEARNING PATH
+========================================================= */
+
+.learning-path{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-bottom:20px;
+}
+
+.path-card{
+    padding:23px 18px;
+    border-radius:20px;
+    text-align:center;
+    border:2px solid #e9d9ff;
+    background:linear-gradient(145deg,#faf5ff,#fff);
+}
+
+.path-icon{
+    display:block;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.path-card strong{
+    display:block;
+    font-size:17px;
+    color:var(--purple-dark);
+}
+
+.path-card span{
+    display:block;
+    margin-top:7px;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.rule-box{
+    padding:22px;
+    border-radius:17px;
+
+    background:#f6efff;
+    border-left:5px solid var(--purple);
+
+    line-height:1.9;
+}
+
+.rule-box strong{
+    color:var(--purple-dark);
+}
+
+.arabic-note{
+    margin-top:13px;
+    padding:15px 18px;
+
+    border-radius:15px;
+    background:#fff2f8;
+    border:1px solid #ffd1e6;
+
+    font-family:"Noto Naskh Arabic",serif;
+    font-size:17px;
+    line-height:2;
+    text-align:right;
+    direction:rtl;
+    color:#873260;
+}
+
+/* =========================================================
+   CONNECTOR EXPLORER
+========================================================= */
+
+.connector-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.connector-card{
+    position:relative;
+    overflow:hidden;
+
+    padding:19px 16px;
+    min-height:155px;
+
+    border:2px solid #eee0ff;
+    border-radius:20px;
+
+    background:white;
+    text-align:left;
+
+    transition:.25s;
+}
+
+.connector-card::before{
+    content:"";
+    position:absolute;
+    inset:0 0 auto;
+    height:5px;
+    background:var(--accent,var(--purple));
+}
+
+.connector-card:hover{
+    transform:translateY(-5px);
+    border-color:#d0b5ff;
+    box-shadow:0 13px 25px rgba(76,29,149,.11);
+}
+
+.connector-icon{
+    display:block;
+    font-size:29px;
+    margin-bottom:9px;
+}
+
+.connector-word{
+    display:block;
+    color:var(--purple-dark);
+    font-family:"Baloo 2",sans-serif;
+    font-size:21px;
+    font-weight:800;
+}
+
+.connector-purpose{
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+}
+
+.connector-extra{
+    display:none;
+    padding-top:12px;
+    margin-top:12px;
+    border-top:1px dashed #dfd0f2;
+}
+
+.connector-card.open .connector-extra{
+    display:block;
+}
+
+.connector-example{
+    color:#543480;
+    font-size:13px;
+    line-height:1.75;
+}
+
+.connector-ar{
+    display:block;
+    margin-top:8px;
+    color:#b3377b;
+    font-family:"Noto Naskh Arabic",serif;
+    font-size:16px;
+    direction:rtl;
+    text-align:right;
+}
+
+/* =========================================================
+   CONNECTOR GROUPS
+========================================================= */
+
+.group-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.group-card{
+    padding:18px;
+    border-radius:18px;
+    border:1px solid #e9d9fb;
+    background:#fcf9ff;
+}
+
+.group-card strong{
+    color:var(--purple-dark);
+}
+
+.group-card p{
+    margin-top:8px;
+    line-height:1.8;
+    font-size:14px;
+    color:var(--muted);
+}
+
+/* =========================================================
+   MODEL PARAGRAPH
+========================================================= */
+
+.model-text{
+    padding:25px;
+    border-radius:20px;
+
+    background:linear-gradient(145deg,#f7efff,#fff2f9);
+    border:1px solid #ead8ff;
+
+    line-height:2.15;
+    font-size:16px;
+}
+
+.model-text h3{
+    margin-bottom:12px;
+    color:var(--purple-dark);
+    font-family:"Baloo 2",sans-serif;
+    font-size:23px;
+}
+
+.highlight{
+    display:inline-block;
+    padding:1px 8px;
+    border-radius:8px;
+
+    background:#e6d6ff;
+    color:#6124ae;
+
+    font-weight:900;
+}
+
+.info{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+
+    padding:18px;
+    margin-top:17px;
+
+    border-radius:16px;
+    line-height:1.8;
+}
+
+.info.tip{
+    background:#eaf5ff;
+    border:1px solid #c5e3ff;
+}
+
+.info.success{
+    background:#eafbf2;
+    border:1px solid #bcebd1;
+}
+
+.info.warning{
+    background:#fff7e9;
+    border:1px solid #ffe1ad;
+}
+
+.info-icon{
+    font-size:27px;
+}
+
+.info strong{
+    color:var(--purple-dark);
+}
+
+/* =========================================================
+   TASKS
+========================================================= */
+
+.task{
+    position:relative;
+    padding:25px;
+    border-radius:22px;
+
+    border:1px solid #e9dbfa;
+    background:linear-gradient(145deg,#fff,#fdfaff);
+}
+
+.task::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    width:5px;
+
+    border-radius:22px 0 0 22px;
+    background:linear-gradient(var(--purple),var(--pink));
+}
+
+.task-head{
+    display:flex;
+    align-items:flex-start;
+    gap:13px;
+    margin-bottom:20px;
+}
+
+.task-tag{
+    flex-shrink:0;
+    padding:8px 13px;
+    border-radius:30px;
+
+    color:white;
+    background:linear-gradient(135deg,var(--purple),var(--pink));
+
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.5px;
+}
+
+.task-head h3{
+    color:var(--purple-deep);
+    font-size:17px;
+    line-height:1.6;
+}
+
+.question{
+    margin:12px 0;
+    padding:16px;
+
+    background:#fff;
+    border:1px solid #e9e2f1;
+    border-radius:15px;
+
+    line-height:1.85;
+}
+
+.question.correct-answer{
+    border-color:#7eddb0;
+    background:#f1fff8;
+}
+
+.question.wrong-answer{
+    border-color:#ffc0cb;
+    background:#fff6f7;
+}
+
+input[type=text],
+select,
+textarea{
+    width:100%;
+    padding:12px 14px;
+
+    border:2px solid #e8d9fa;
+    border-radius:12px;
+
+    background:white;
+    color:var(--ink);
+    outline:none;
+    font-size:15px;
+
+    transition:.2s;
+}
+
+input[type=text]{
+    margin-top:9px;
+}
+
+select{
+    margin-top:10px;
+}
+
+textarea{
+    min-height:150px;
+    resize:vertical;
+    line-height:1.75;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--purple);
+    box-shadow:0 0 0 4px rgba(121,64,232,.1);
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    padding:12px 21px;
+    margin-top:12px;
+
+    border:0;
+    border-radius:13px;
+
+    color:white;
+    background:linear-gradient(135deg,var(--purple),#9d4ff2);
+
+    font-weight:900;
+    box-shadow:0 8px 19px rgba(121,64,232,.22);
+
+    transition:.2s;
+}
+
+.btn:hover:not(:disabled){
+    transform:translateY(-2px);
+    box-shadow:0 12px 23px rgba(121,64,232,.3);
+}
+
+.btn.pink{
+    background:linear-gradient(135deg,#e94d9d,#9a4cea);
+}
+
+.btn.blue{
+    background:linear-gradient(135deg,#4a93f5,#3dcbd5);
+}
+
+.btn.green{
+    background:linear-gradient(135deg,#15a96f,#34ca91);
+}
+
+.btn.outline{
+    color:var(--purple-dark);
+    background:white;
+    border:2px solid #dac4ff;
+    box-shadow:none;
+}
+
+.feedback{
+    display:none;
+    padding:14px 16px;
+    margin-top:15px;
+
+    border-radius:13px;
+    font-size:14px;
+    font-weight:800;
+    line-height:1.8;
+}
+
+.feedback.show{
+    display:block;
+}
+
+.feedback.correct{
+    background:#e9fbf1;
+    color:#14764e;
+    border:1px solid #a6e8c8;
+}
+
+.feedback.incorrect{
+    background:#fff0f3;
+    color:#aa3152;
+    border:1px solid #ffc2d0;
+}
+
+.feedback.neutral{
+    background:#f2ecff;
+    color:#6134a1;
+    border:1px solid #dac7ff;
+}
+
+/* =========================================================
+   MULTIPLE CHOICE
+========================================================= */
+
+.choice-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-top:12px;
+}
+
+.choice{
+    padding:14px;
+    border:2px solid #e9d9fa;
+    border-radius:13px;
+
+    background:#faf6ff;
+    color:var(--purple-dark);
+
+    font-weight:800;
+    text-align:left;
+
+    transition:.2s;
+}
+
+.choice:hover:not(:disabled){
+    background:#f1e7ff;
+    transform:translateY(-2px);
+}
+
+.choice.selected-correct{
+    border-color:#69d8a0;
+    background:#e9fff3;
+    color:#14764e;
+}
+
+.choice.selected-wrong{
+    border-color:#ffaabf;
+    background:#fff0f3;
+    color:#ad3151;
+}
+
+.choice:disabled{
+    opacity:1;
+}
+
+/* =========================================================
+   MATCHING GAME
+========================================================= */
+
+.match-instruction{
+    margin-bottom:15px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.8;
+}
+
+.match-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.match-column{
+    padding:15px;
+    border:2px dashed #d9c5fa;
+    border-radius:18px;
+    background:#faf6ff;
+}
+
+.match-column h4{
+    margin-bottom:12px;
+    color:var(--purple-dark);
+}
+
+.match-item{
+    display:block;
+    width:100%;
+    padding:12px;
+    margin-bottom:9px;
+
+    background:white;
+    border:2px solid #e7d7fb;
+    border-radius:12px;
+
+    text-align:left;
+    color:#59328c;
+    font-weight:850;
+}
+
+.match-item.selected{
+    border-color:var(--purple);
+    background:#e9dbff;
+    box-shadow:0 0 0 3px rgba(121,64,232,.12);
+}
+
+.match-item.matched{
+    border-color:#78dba9;
+    background:#eafff3;
+    color:#168253;
+}
+
+.match-item.wrong{
+    border-color:#ff9db7;
+    background:#fff0f4;
+}
+
+.match-pairs{
+    margin-top:15px;
+    padding:14px;
+    border-radius:14px;
+    background:white;
+    border:1px solid #e8d9fa;
+}
+
+.match-pairs h4{
+    color:var(--purple-dark);
+    margin-bottom:8px;
+}
+
+.pair-row{
+    padding:8px 0;
+    border-bottom:1px dashed #eee1fa;
+    color:#6b4a92;
+    font-size:14px;
+}
+
+.pair-row:last-child{
+    border-bottom:none;
+}
+
+/* =========================================================
+   CONTEXT
+========================================================= */
+
+.context-card{
+    padding:22px;
+    border-radius:19px;
+
+    background:linear-gradient(145deg,#f8f1ff,#fff2f9);
+    border:1px solid #ead7fa;
+
+    line-height:2.1;
+}
+
+.context-card strong{
+    color:var(--purple-dark);
+}
+
+.speaker{
+    display:inline-grid;
+    place-items:center;
+
+    width:30px;
+    height:30px;
+    margin-right:7px;
+
+    border-radius:50%;
+    background:var(--purple);
+    color:white;
+
+    font-size:12px;
+    font-weight:900;
+}
+
+.reveal-box{
+    display:none;
+    padding:18px;
+    margin-top:15px;
+
+    border-radius:15px;
+    background:#ecfbf3;
+    border:1px solid #b8edcf;
+
+    line-height:2;
+    color:#206747;
+}
+
+.reveal-box.show{
+    display:block;
+}
+
+/* =========================================================
+   ORDERING GAME
+========================================================= */
+
+.order-instruction{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.order-list{
+    display:grid;
+    gap:10px;
+}
+
+.order-item{
+    display:flex;
+    align-items:center;
+    gap:13px;
+
+    padding:14px;
+    border:2px solid #e9d9fa;
+    border-radius:15px;
+
+    background:#fff;
+    text-align:left;
+    color:var(--ink);
+    line-height:1.65;
+
+    transition:.2s;
+}
+
+.order-item:hover{
+    border-color:#c4a5f9;
+}
+
+.order-item.selected{
+    border-color:var(--purple);
+    background:#eee2ff;
+    transform:scale(1.01);
+}
+
+.order-number{
+    width:35px;
+    height:35px;
+    flex-shrink:0;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:11px;
+    background:#eee2ff;
+    color:var(--purple-dark);
+    font-weight:900;
+}
+
+/* =========================================================
+   WRITING
+========================================================= */
+
+.writing-tools{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:15px 0;
+}
+
+.word-chip{
+    padding:9px 13px;
+    border-radius:25px;
+
+    border:1px solid #dec9fa;
+    background:#f4ebff;
+
+    color:#6430a6;
+    font-size:12px;
+    font-weight:900;
+
+    transition:.2s;
+}
+
+.word-chip:hover{
+    background:#e8d6ff;
+    transform:translateY(-2px);
+}
+
+.word-counter{
+    margin-top:8px;
+    text-align:right;
+    color:#8b70ae;
+    font-size:12px;
+    font-weight:900;
+}
+
+.writing-checklist{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-top:17px;
+}
+
+.checklist-item{
+    padding:12px;
+    border-radius:12px;
+    background:#f8f2ff;
+    color:#65428e;
+    font-size:13px;
+    font-weight:800;
+}
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.badges{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:13px;
+    margin-top:20px;
+}
+
+.badge-card{
+    padding:20px 12px;
+    border:2px solid #eee1fb;
+    border-radius:18px;
+
+    background:#fff;
+    text-align:center;
+
+    opacity:.4;
+    filter:grayscale(1);
+    transition:.4s;
+}
+
+.badge-card.unlocked{
+    opacity:1;
+    filter:none;
+    border-color:#d3b1ff;
+    box-shadow:0 10px 24px rgba(121,64,232,.1);
+}
+
+.badge-icon{
+    display:block;
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+.badge-card strong{
+    display:block;
+    color:var(--purple-dark);
+    font-size:14px;
+}
+
+.badge-card small{
+    color:var(--muted);
+    font-size:11px;
+}
+
+/* =========================================================
+   FINAL MISSION
+========================================================= */
+
+.final{
+    position:relative;
+    overflow:hidden;
+
+    padding:42px;
+    margin-bottom:25px;
+
+    border-radius:32px;
+    color:white;
+
+    background:
+        radial-gradient(circle at 10% 10%,rgba(255,255,255,.16),transparent 25%),
+        radial-gradient(circle at 90% 90%,rgba(255,120,190,.25),transparent 30%),
+        linear-gradient(135deg,#46208a,#7739db,#ba3d9d);
+
+    box-shadow:0 25px 60px rgba(15,5,40,.28);
+}
+
+.final h2{
+    font-family:"Baloo 2",sans-serif;
+    font-size:35px;
+    text-align:center;
+    margin-bottom:12px;
+}
+
+.final > p{
+    max-width:780px;
+    margin:0 auto 20px;
+    line-height:1.85;
+    text-align:center;
+    color:#f6ebff;
+}
+
+.final .word-chip{
+    background:rgba(255,255,255,.16);
+    color:white;
+    border-color:rgba(255,255,255,.35);
+}
+
+.final .word-chip:hover{
+    background:rgba(255,255,255,.28);
+}
+
+.final textarea{
+    min-height:220px;
+}
+
+.final .word-counter{
+    color:#f1e6ff;
+}
+
+.final .writing-checklist{
+    margin-bottom:16px;
+}
+
+.final .checklist-item{
+    color:#fff;
+    background:rgba(255,255,255,.12);
+}
+
+.final .feedback{
+    text-align:left;
+}
+
+/* =========================================================
+   DICTIONARY
+========================================================= */
+
+.dictionary-fab{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:500;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    padding:14px 18px;
+    border:2px solid white;
+    border-radius:40px;
+
+    background:linear-gradient(135deg,#7434df,#ec4899);
+    color:white;
+
+    font-weight:900;
+    box-shadow:0 12px 32px rgba(42,13,86,.35);
+
+    animation:fabPulse 3s ease-in-out infinite;
+}
+
+@keyframes fabPulse{
+    0%,100%{box-shadow:0 12px 32px rgba(42,13,86,.35)}
+    50%{box-shadow:0 12px 38px rgba(236,72,153,.55)}
+}
+
+.dictionary-overlay{
+    position:fixed;
+    inset:0;
+    z-index:1000;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    padding:18px;
+    background:rgba(22,7,48,.7);
+    backdrop-filter:blur(7px);
+}
+
+.dictionary-overlay.open{
+    display:flex;
+}
+
+.dictionary-panel{
+    display:flex;
+    flex-direction:column;
+
+    width:min(560px,100%);
+    max-height:min(760px,90vh);
+
+    overflow:hidden;
+    border-radius:25px;
+    background:white;
+
+    box-shadow:0 30px 90px rgba(0,0,0,.3);
+}
+
+.dictionary-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+
+    padding:20px;
+    color:white;
+    background:linear-gradient(135deg,var(--purple-dark),var(--purple),var(--pink));
+}
+
+.dictionary-header h2{
+    font-family:"Baloo 2",sans-serif;
+    font-size:24px;
+}
+
+.dictionary-header p{
+    font-size:12px;
+    color:#f5e9ff;
+}
+
+.close-dictionary{
+    width:38px;
+    height:38px;
+
+    border:none;
+    border-radius:12px;
+
+    background:rgba(255,255,255,.18);
+    color:white;
+    font-size:22px;
+}
+
+.dictionary-search{
+    padding:15px 18px;
+    border-bottom:1px solid #eee1fa;
+}
+
+.dictionary-search input{
+    margin:0;
+}
+
+.dictionary-list{
+    padding:13px 18px 20px;
+    overflow-y:auto;
+}
+
+.dictionary-entry{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+
+    padding:13px 4px;
+    border-bottom:1px solid #f0e8f8;
+}
+
+.dictionary-entry strong{
+    display:block;
+    color:var(--purple-dark);
+    font-size:15px;
+}
+
+.dictionary-entry small{
+    display:block;
+    margin-top:3px;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.dictionary-entry .arabic{
+    display:block;
+    font-family:"Noto Naskh Arabic",serif;
+    font-size:17px;
+    color:#b33b83;
+    direction:rtl;
+}
+
+.speak-btn{
+    width:40px;
+    height:40px;
+    flex-shrink:0;
+
+    border:0;
+    border-radius:12px;
+
+    background:#f1e7ff;
+    color:var(--purple-dark);
+    font-size:18px;
+}
+
+.dictionary-empty{
+    padding:30px;
+    text-align:center;
+    color:var(--muted);
+}
+
+/* =========================================================
+   TOAST / CONFETTI
+========================================================= */
+
+.toast{
+    position:fixed;
+    top:90px;
+    left:50%;
+    z-index:2000;
+
+    max-width:calc(100% - 30px);
+    padding:13px 20px;
+
+    border-radius:15px;
+    background:#2c1659;
+    color:white;
+
+    text-align:center;
+    font-weight:900;
+    box-shadow:0 14px 35px rgba(0,0,0,.25);
+
+    opacity:0;
+    pointer-events:none;
+    transform:translate(-50%,-15px);
+    transition:.3s;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+.confetti{
+    position:fixed;
+    top:-30px;
+    z-index:3000;
+    pointer-events:none;
+
+    animation:fall 3s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+.footer{
+    padding:20px 20px 95px;
+    color:#f2e7ff;
+    text-align:center;
+    font-size:13px;
+    line-height:1.9;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:950px){
+    .connector-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+    .learning-path,
+    .badges{
+        grid-template-columns:1fr;
+    }
+
+    .match-grid,
+    .group-grid,
+    .writing-checklist,
+    .choice-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:42px 22px;
+    }
+
+    .section{
+        padding:22px 18px;
+    }
+
+    .final{
+        padding:30px 20px;
+    }
+
+    .lesson-pill{
+        display:none;
+    }
+}
+
+@media(max-width:470px){
+    .container{
+        width:calc(100% - 16px);
+    }
+
+    .logo-text{
+        display:none;
+    }
+
+    .navbar{
+        padding:9px 12px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .connector-grid{
+        grid-template-columns:1fr 1fr;
+        gap:9px;
+    }
+
+    .connector-card{
+        padding:17px 11px;
+    }
+
+    .connector-word{
+        font-size:18px;
+    }
+
+    .task{
+        padding:21px 14px;
+    }
+
+    .task-head{
+        flex-direction:column;
+    }
+
+    .dictionary-fab{
+        right:12px;
+        bottom:12px;
+        padding:13px;
+    }
+
+    .dictionary-fab span:last-child{
+        display:none;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms!important;
+        transition-duration:.01ms!important;
+        scroll-behavior:auto!important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background" aria-hidden="true">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="container">
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">🔗</div>
+
+        <div class="logo-text">
+            MY ENGLISH SPACE
+            <small>MS4 • SEQUENCE 3 • GRAMMAR</small>
+        </div>
+    </div>
+
+    <div class="nav-right">
+
+        <span class="pill lesson-pill">
+            CHECKPOINT 04
+        </span>
+
+        <span class="pill score-pill">
+            ⭐ <span id="score">0</span> XP
+        </span>
+
+        <button class="pill dictionary-nav"
+                onclick="openDictionary()"
+                aria-label="Open English Arabic dictionary">
+            📖 Dictionary
+        </button>
+
+    </div>
+
+</nav>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✨ GRAMMAR ADVENTURE • CHECKPOINT 04
+        </div>
+
+        <h1>
+            Discourse Markers<br>
+            to Link Arguments
+        </h1>
+
+        <p>
+            Become a confident young citizen!
+            Discover how to connect your ideas,
+            organise your arguments and express
+            your opinions about community life.
+        </p>
+
+        <div class="hero-formula">
+            <span class="formula-piece">💭 Idea 1</span>
+            <span>➜</span>
+            <span class="formula-marker">Moreover</span>
+            <span>➜</span>
+            <span class="formula-piece">💡 Idea 2</span>
+        </div>
+
+        <div class="hero-stats">
+            <div class="hero-stat">🎯 12 Challenges</div>
+            <div class="hero-stat">📖 Arabic Dictionary</div>
+            <div class="hero-stat">🏆 3 Achievements</div>
+            <div class="hero-stat">✍️ BEM Writing Mission</div>
+        </div>
+
+    </div>
+
+</header>
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="progress-ribbon">
+
+    <div class="progress-symbol">🏆</div>
+
+    <div class="progress-info">
+
+        <div class="progress-top">
+            <span>Your Learning Journey</span>
+            <span id="progressPercent">0%</span>
+        </div>
+
+        <div class="progress-track"
+             role="progressbar"
+             aria-label="Lesson completion"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-valuenow="0"
+             id="progressTrack">
+
+            <div class="progress-fill" id="progressFill"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+     SECTION 1 — RULE
+===================================================== -->
+
+<section class="section" id="rule">
+
+    <div class="section-heading">
+        <div class="section-number">01</div>
+        <div>
+            <h2>Discover the Rule</h2>
+            <p>What are discourse markers?</p>
+        </div>
+    </div>
+
+    <div class="learning-path">
+
+        <div class="path-card">
+            <span class="path-icon">🏘️</span>
+            <strong>Community Topic</strong>
+            <span>Choose a problem or an issue.</span>
+        </div>
+
+        <div class="path-card">
+            <span class="path-icon">🔗</span>
+            <strong>Discourse Marker</strong>
+            <span>Connect your ideas logically.</span>
+        </div>
+
+        <div class="path-card">
+            <span class="path-icon">💬</span>
+            <strong>Strong Argument</strong>
+            <span>Explain your opinion clearly.</span>
+        </div>
+
+    </div>
+
+    <div class="rule-box">
+
+        <strong>💡 Remember!</strong>
+
+        <p>
+            Discourse markers are words or expressions
+            that help us <strong>organise and connect ideas</strong>
+            in speaking and writing.
+        </p>
+
+        <br>
+
+        <p>
+            <span class="highlight">First</span>,
+            citizens should keep public places clean.
+        </p>
+
+        <p>
+            <span class="highlight">Moreover</span>,
+            they should respect their neighbours.
+        </p>
+
+        <p>
+            <span class="highlight">Finally</span>,
+            everyone should help improve the community.
+        </p>
+
+    </div>
+
+    <div class="arabic-note">
+        أدوات الربط هي كلمات وعبارات نستعملها
+        لتنظيم الأفكار وربط الحجج ببعضها.
+        تساعدنا على كتابة فقرة واضحة ومتسلسلة.
+    </div>
+
+</section>
+
+<!-- =====================================================
+     SECTION 2 — CONNECTOR EXPLORER
+===================================================== -->
+
+<section class="section" id="connectors">
+
+    <div class="section-heading">
+        <div class="section-number">02</div>
+        <div>
+            <h2>Explore the Connectors</h2>
+            <p>Tap each card to discover its meaning and example.</p>
+        </div>
+    </div>
+
+    <div class="connector-grid" id="connectorGrid">
+
+        <button class="connector-card"
+                style="--accent:#8b5cf6"
+                onclick="toggleConnector(this)">
+
+            <span class="connector-icon">🥇</span>
+            <span class="connector-word">First</span>
+            <span class="connector-purpose">Introduce your first argument.</span>
+
+            <span class="connector-extra">
+                <span class="connector-example">
+                    First, citizens should respect community rules.
+                </span>
+                <span class="connector-ar">أولاً</span>
+            </span>
+        </button>
+
+        <button class="connector-card"
+                style="--accent:#f59e0b"
+                onclick="toggleConnector(this)">
+
+            <span class="connector-icon">🥈</span>
+            <span class="connector-word">Secondly</span>
+            <span class="connector-purpose">Introduce a second point.</span>
+
+            <span class="connector-extra">
+                <span class="connector-example">
+                    Secondly, people should help their neighbours.
+                </span>
+                <span class="connector-ar">ثانياً</span>
+            </span>
+        </button>
+
+        <button class="connector-card"
+                style="--accent:#ec4899"
+                onclick="toggleConnector(this)">
+
+            <span class="connector-icon">➕</span>
+            <span class="connector-word">Moreover</span>
+            <span class="connector-purpose">Add another important idea.</span>
+
+            <span class="connector-extra">
+                <span class="connector-example">
+                    Moreover, volunteering makes communities stronger.
+                </span>
+                <span class="connector-ar">علاوة على ذلك</span>
+            </span>
+        </button>
+
+        <button class="connector-card"
+                style="--accent:#3b82f6"
+                onclick="toggleConnector(this)">
+
+            <span class="connector-icon">💡</span>
+            <span class="connector-word">In addition</span>
+            <span class="connector-purpose">Add extra information.</span>
+
+            <span class="connector-extra">
+                <span class="connector-example">
+                    In addition, pupils can organise charity activities.
+                </span>
+                <span class="connector-ar">بالإضافة إلى ذلك</span>
+            </span>
+        </button>
+
+        <button class="connector-card"
+                style="--accent:#06b6d4"
+                onclick="toggleConnector(this)">
+
+            <span class="connector-icon">🔎</span>
+            <span class="connector-word">For example</span>
+            <span class="connector-purpose">Give a specific example.</span>
+
+            <span class="connector-extra">
+                <span class="connector-example">
+                    For example, pupils can clean a public garden.
+                </span>
+                <span class="connector-ar">على سبيل المثال</span>
+            </span>
+        </button>
+
+        <button class="connector-card"
+                style="--accent:#ef4444"
+                onclick="toggleConnector(this)">
+
+            <span class="connector-icon">⚖️</span>
+            <span class="connector-word">However</span>
+            <span class="connector-purpose">Show contrast or an opposite idea.</span>
+
+            <span class="connector-extra">
+                <span class="connector-example">
+                    Volunteering is useful. However, it requires time.
+                </span>
+                <span class="connector-ar">لكن / مع ذلك</span>
+            </span>
+        </button>
+
+        <button class="connector-card"
+                style="--accent:#10b981"
+                onclick="toggleConnector(this)">
+
+            <span class="connector-icon">➡️</span>
+            <span class="connector-word">Therefore</span>
+            <span class="connector-purpose">Show a result or conclusion.</span>
+
+            <span class="connector-extra">
+                <span class="connector-example">
+                    The park is dirty. Therefore, we should clean it.
+                </span>
+                <span class="connector-ar">لذلك / وبالتالي</span>
+            </span>
+        </button>
+
+        <button class="connector-card"
+                style="--accent:#a855f7"
+                onclick="toggleConnector(this)">
+
+            <span class="connector-icon">🏁</span>
+            <span class="connector-word">Finally</span>
+            <span class="connector-purpose">Introduce the last point.</span>
+
+            <span class="connector-extra">
+                <span class="connector-example">
+                    Finally, everyone should protect public places.
+                </span>
+                <span class="connector-ar">أخيراً</span>
+            </span>
+        </button>
+
+    </div>
+
+    <div class="group-grid">
+
+        <div class="group-card">
+            <strong>🟣 Organising ideas</strong>
+            <p>First • Secondly • Finally</p>
+        </div>
+
+        <div class="group-card">
+            <strong>💗 Adding ideas</strong>
+            <p>Moreover • In addition</p>
+        </div>
+
+        <div class="group-card">
+            <strong>🔵 Giving examples</strong>
+            <p>For example</p>
+        </div>
+
+        <div class="group-card">
+            <strong>🟢 Contrast and result</strong>
+            <p>However • Therefore</p>
+        </div>
+
+    </div>
+
+    <div class="info tip">
+        <span class="info-icon">🧠</span>
+        <div>
+            <strong>Grammar Tip</strong><br>
+            Think about the relationship between your ideas
+            before choosing a discourse marker.
+        </div>
+    </div>
+
+</section>
+
+<!-- =====================================================
+     SECTION 3 — MODEL PARAGRAPH
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <div class="section-number">03</div>
+        <div>
+            <h2>Read a Model Argument</h2>
+            <p>Notice how the connectors organise the paragraph.</p>
+        </div>
+    </div>
+
+    <div class="model-text">
+
+        <h3>🌍 How Can Young People Help Their Community?</h3>
+
+        <p>
+            Young people can play an important role
+            in making their community better.
+        </p>
+
+        <p>
+            <span class="highlight">First</span>,
+            they can help keep their neighbourhood clean.
+        </p>
+
+        <p>
+            <span class="highlight">Moreover</span>,
+            they can support elderly neighbours.
+        </p>
+
+        <p>
+            <span class="highlight">For example</span>,
+            pupils can organise clean-up campaigns
+            and collect clothes for people in need.
+        </p>
+
+        <p>
+            <span class="highlight">However</span>,
+            some young people may have little free time.
+        </p>
+
+        <p>
+            <span class="highlight">Therefore</span>,
+            schools can organise short volunteering activities.
+        </p>
+
+        <p>
+            <span class="highlight">Finally</span>,
+            everyone should remember that even small
+            actions can improve community life.
+        </p>
+
+    </div>
+
+    <div class="info success">
+        <span class="info-icon">🌟</span>
+        <div>
+            <strong>Writing Secret</strong><br>
+            A good argumentative paragraph includes
+            a clear opinion, supporting arguments,
+            examples and a concluding idea.
+        </div>
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TASK 1
+===================================================== -->
+
+<section class="section" id="task1Section">
+
+    <div class="section-heading">
+        <div class="section-number">04</div>
+        <div>
+            <h2>Challenge 1 — Choose the Connector</h2>
+            <p>Recognition • Lower-order thinking</p>
+        </div>
+    </div>
+
+    <div class="task">
+
+        <div class="task-head">
+            <span class="task-tag">TASK 01</span>
+            <h3>Choose the discourse marker that best completes each sentence.</h3>
+        </div>
+
+        <div class="question">
+            1. ________, citizens should respect community rules.
+            <select id="t1a">
+                <option value="">Choose an answer</option>
+                <option>First</option>
+                <option>However</option>
+                <option>For example</option>
+            </select>
+        </div>
+
+        <div class="question">
+            2. People should help their neighbours.
+            ________, they should protect public places.
+
+            <select id="t1b">
+                <option value="">Choose an answer</option>
+                <option>Moreover</option>
+                <option>However</option>
+                <option>Therefore</option>
+            </select>
+        </div>
+
+        <div class="question">
+            3. Young people can volunteer in many ways.
+            ________, they can help clean a public garden.
+
+            <select id="t1c">
+                <option value="">Choose an answer</option>
+                <option>For example</option>
+                <option>Therefore</option>
+                <option>However</option>
+            </select>
+        </div>
+
+        <div class="question">
+            4. Volunteering is useful.
+            ________, some pupils have little free time.
+
+            <select id="t1d">
+                <option value="">Choose an answer</option>
+                <option>However</option>
+                <option>Moreover</option>
+                <option>First</option>
+            </select>
+        </div>
+
+        <div class="question">
+            5. The neighbourhood is dirty.
+            ________, residents should organise a clean-up day.
+
+            <select id="t1e">
+                <option value="">Choose an answer</option>
+                <option>Therefore</option>
+                <option>For example</option>
+                <option>Secondly</option>
+            </select>
+        </div>
+
+        <div class="question">
+            6. ________, everyone should work together
+            to make the community better.
+
+            <select id="t1f">
+                <option value="">Choose an answer</option>
+                <option>Finally</option>
+                <option>However</option>
+                <option>For example</option>
+            </select>
+        </div>
+
+        <button class="btn" onclick="checkTask1()">
+            ✓ Check My Answers
+        </button>
+
+        <div id="feedback1" class="feedback" role="status"></div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TASK 2 — MATCHING
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <div class="section-number">05</div>
+        <div>
+            <h2>Challenge 2 — Connector Match</h2>
+            <p>Match the meaning to the correct marker.</p>
+        </div>
+    </div>
+
+    <div class="task">
+
+        <div class="task-head">
+            <span class="task-tag">TASK 02</span>
+            <h3>Match each discourse marker with its function.</h3>
+        </div>
+
+        <p class="match-instruction">
+            🎮 Select a connector on the left,
+            then select its function on the right.
+            Correct pairs turn green.
+        </p>
+
+        <div class="match-grid">
+
+            <div class="match-column">
+
+                <h4>🔗 Discourse Markers</h4>
+
+                <button class="match-item"
+                        data-match="first"
+                        onclick="selectMatch(this,'marker')">
+                    First
+                </button>
+
+                <button class="match-item"
+                        data-match="moreover"
+                        onclick="selectMatch(this,'marker')">
+                    Moreover
+                </button>
+
+                <button class="match-item"
+                        data-match="example"
+                        onclick="selectMatch(this,'marker')">
+                    For example
+                </button>
+
+                <button class="match-item"
+                        data-match="however"
+                        onclick="selectMatch(this,'marker')">
+                    However
+                </button>
+
+                <button class="match-item"
+                        data-match="therefore"
+                        onclick="selectMatch(this,'marker')">
+                    Therefore
+                </button>
+
+                <button class="match-item"
+                        data-match="finally"
+                        onclick="selectMatch(this,'marker')">
+                    Finally
+                </button>
+
+            </div>
+
+            <div class="match-column">
+
+                <h4>🎯 Functions</h4>
+
+                <button class="match-item"
+                        data-match="however"
+                        onclick="selectMatch(this,'function')">
+                    Show contrast
+                </button>
+
+                <button class="match-item"
+                        data-match="example"
+                        onclick="selectMatch(this,'function')">
+                    Give an example
+                </button>
+
+                <button class="match-item"
+                        data-match="finally"
+                        onclick="selectMatch(this,'function')">
+                    Introduce the final point
+                </button>
+
+                <button class="match-item"
+                        data-match="first"
+                        onclick="selectMatch(this,'function')">
+                    Introduce the first argument
+                </button>
+
+                <button class="match-item"
+                        data-match="therefore"
+                        onclick="selectMatch(this,'function')">
+                    Show a result
+                </button>
+
+                <button class="match-item"
+                        data-match="moreover"
+                        onclick="selectMatch(this,'function')">
+                    Add another idea
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="match-pairs">
+            <h4>✨ Your Matches</h4>
+            <div id="matchResults" aria-live="polite">
+                <div class="pair-row">
+                    No pairs matched yet. Start playing!
+                </div>
+            </div>
+        </div>
+
+        <div id="feedback2" class="feedback" role="status"></div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TASK 3 — CHOICES
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <div class="section-number">06</div>
+        <div>
+            <h2>Challenge 3 — Grammar Detective</h2>
+            <p>Identify the most logical connector.</p>
+        </div>
+    </div>
+
+    <div class="task">
+
+        <div class="task-head">
+            <span class="task-tag">TASK 03</span>
+            <h3>Choose the best sentence in each situation.</h3>
+        </div>
+
+        <div id="task3Questions">
+
+            <div class="question">
+                <strong>1. Which sentence shows a result?</strong>
+
+                <div class="choice-grid">
+                    <button class="choice" data-correct="false">
+                        I was late. Moreover, I missed the meeting.
+                    </button>
+                    <button class="choice" data-correct="true">
+                        I was late. Therefore, I missed the meeting.
+                    </button>
+                </div>
+            </div>
+
+            <div class="question">
+                <strong>2. Which sentence introduces the first argument?</strong>
+
+                <div class="choice-grid">
+                    <button class="choice" data-correct="true">
+                        First, citizens should respect public places.
+                    </button>
+                    <button class="choice" data-correct="false">
+                        However, citizens should respect public places.
+                    </button>
+                </div>
+            </div>
+
+            <div class="question">
+                <strong>3. Which sentence gives an example?</strong>
+
+                <div class="choice-grid">
+                    <button class="choice" data-correct="true">
+                        Many pupils volunteer. For example, they help elderly neighbours.
+                    </button>
+                    <button class="choice" data-correct="false">
+                        Many pupils volunteer. However, they help elderly neighbours.
+                    </button>
+                </div>
+            </div>
+
+            <div class="question">
+                <strong>4. Which sentence shows contrast?</strong>
+
+                <div class="choice-grid">
+                    <button class="choice" data-correct="false">
+                        The park is beautiful. Moreover, it has many trees.
+                    </button>
+                    <button class="choice" data-correct="true">
+                        The park is beautiful. However, some visitors leave rubbish there.
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="feedback3" class="feedback" role="status"></div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TASK 4
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <div class="section-number">07</div>
+        <div>
+            <h2>Challenge 4 — Fill the Gaps</h2>
+            <p>Apply the grammar rule.</p>
+        </div>
+    </div>
+
+    <div class="task">
+
+        <div class="task-head">
+            <span class="task-tag">TASK 04</span>
+            <h3>Complete each sentence with a suitable discourse marker.</h3>
+        </div>
+
+        <div class="info tip" style="margin:0 0 15px">
+            <span class="info-icon">💡</span>
+            <div>
+                <strong>Word Bank</strong><br>
+                First • Secondly • Moreover • For example • However • Finally
+            </div>
+        </div>
+
+        <div class="question">
+            1. __________, citizens should respect community rules.
+            <input type="text" id="t4a" placeholder="Your answer...">
+        </div>
+
+        <div class="question">
+            2. __________, they should help their neighbours.
+            <input type="text" id="t4b" placeholder="Your answer...">
+        </div>
+
+        <div class="question">
+            3. Volunteering is important.
+            __________, it brings people together.
+            <input type="text" id="t4c" placeholder="Your answer...">
+        </div>
+
+        <div class="question">
+            4. Pupils can help in many ways.
+            __________, they can clean a public garden.
+            <input type="text" id="t4d" placeholder="Your answer...">
+        </div>
+
+        <div class="question">
+            5. Community projects are useful.
+            __________, they can require time.
+            <input type="text" id="t4e" placeholder="Your answer...">
+        </div>
+
+        <div class="question">
+            6. __________, everyone should help improve community life.
+            <input type="text" id="t4f" placeholder="Your answer...">
+        </div>
+
+        <button class="btn" onclick="checkTask4()">
+            ✓ Check Answers
+        </button>
+
+        <div id="feedback4" class="feedback" role="status"></div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TASK 5
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <div class="section-number">08</div>
+        <div>
+            <h2>Challenge 5 — Connect the Ideas</h2>
+            <p>Rewrite and combine sentences.</p>
+        </div>
+    </div>
+
+    <div class="task">
+
+        <div class="task-head">
+            <span class="task-tag">TASK 05</span>
+            <h3>Join the ideas using the marker in brackets.</h3>
+        </div>
+
+        <div class="question">
+            1. Citizens should keep streets clean.
+            They should protect public parks.
+            <br><strong>(Moreover)</strong>
+
+            <input type="text" id="t5a"
+                   placeholder="Write the two connected ideas...">
+        </div>
+
+        <div class="question">
+            2. Community activities are useful.
+            Some people have little free time.
+            <br><strong>(However)</strong>
+
+            <input type="text" id="t5b"
+                   placeholder="Write the two connected ideas...">
+        </div>
+
+        <div class="question">
+            3. Young people can help their community.
+            They can organise a clean-up day.
+            <br><strong>(For example)</strong>
+
+            <input type="text" id="t5c"
+                   placeholder="Write the two connected ideas...">
+        </div>
+
+        <div class="question">
+            4. The neighbourhood has a lot of rubbish.
+            Residents should organise a clean-up campaign.
+            <br><strong>(Therefore)</strong>
+
+            <input type="text" id="t5d"
+                   placeholder="Write the two connected ideas...">
+        </div>
+
+        <div class="question">
+            5. Pupils can support their community.
+            They can help elderly neighbours.
+            <br><strong>(In addition)</strong>
+
+            <input type="text" id="t5e"
+                   placeholder="Write the two connected ideas...">
+        </div>
+
+        <div class="question">
+            6. Citizens have different responsibilities.
+            They should work together.
+            <br><strong>(Finally)</strong>
+
+            <input type="text" id="t5f"
+                   placeholder="Write the two connected ideas...">
+        </div>
+
+        <button class="btn" onclick="checkTask5()">
+            ✓ Check My Sentences
+        </button>
+
+        <button class="btn outline"
+                onclick="toggleReveal('task5Model')">
+            💡 Suggested Answers
+        </button>
+
+        <div id="feedback5" class="feedback" role="status"></div>
+
+        <div class="reveal-box" id="task5Model">
+            <strong>Possible answers:</strong><br><br>
+
+            1. Citizens should keep streets clean.
+            Moreover, they should protect public parks.<br>
+
+            2. Community activities are useful.
+            However, some people have little free time.<br>
+
+            3. Young people can help their community.
+            For example, they can organise a clean-up day.<br>
+
+            4. The neighbourhood has a lot of rubbish.
+            Therefore, residents should organise a clean-up campaign.<br>
+
+            5. Pupils can support their community.
+            In addition, they can help elderly neighbours.<br>
+
+            6. Citizens have different responsibilities.
+            Finally, they should work together.
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TASK 6
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <div class="section-number">09</div>
+        <div>
+            <h2>Challenge 6 — Reading Detective</h2>
+            <p>Identify discourse markers in context.</p>
+        </div>
+    </div>
+
+    <div class="task">
+
+        <div class="task-head">
+            <span class="task-tag">TASK 06</span>
+            <h3>Read the text and identify the function of each marker.</h3>
+        </div>
+
+        <div class="context-card">
+
+            <strong>🏘️ A Better Community</strong>
+
+            <br><br>
+
+            <strong>First</strong>, citizens should keep
+            their neighbourhood clean.
+
+            <br>
+
+            <strong>Moreover</strong>, they should respect
+            their neighbours and help people in need.
+
+            <br>
+
+            <strong>For example</strong>, pupils can help
+            elderly people carry shopping bags.
+
+            <br>
+
+            <strong>However</strong>, some people may not
+            have enough time to volunteer.
+
+            <br>
+
+            <strong>Therefore</strong>, community activities
+            should be planned at suitable times.
+
+            <br>
+
+            <strong>Finally</strong>, everyone can make
+            a small contribution.
+
+        </div>
+
+        <button class="btn blue" onclick="revealTask('6','feedback6')">
+            💡 Reveal the Functions
+        </button>
+
+        <div class="reveal-box" id="feedback6">
+
+            <strong>First</strong> → First argument<br>
+            <strong>Moreover</strong> → Addition<br>
+            <strong>For example</strong> → Example<br>
+            <strong>However</strong> → Contrast<br>
+            <strong>Therefore</strong> → Result<br>
+            <strong>Finally</strong> → Final point
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TASK 7
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <div class="section-number">10</div>
+        <div>
+            <h2>Challenge 7 — Choose the Function</h2>
+            <p>Apply connectors to real situations.</p>
+        </div>
+    </div>
+
+    <div class="task">
+
+        <div class="task-head">
+            <span class="task-tag">TASK 07</span>
+            <h3>Choose the best connector for each situation.</h3>
+        </div>
+
+        <div id="task7Questions">
+
+            <div class="question">
+                <strong>1. Introduce your first reason.</strong>
+                <div class="choice-grid">
+                    <button class="choice" data-correct="true">First</button>
+                    <button class="choice" data-correct="false">However</button>
+                    <button class="choice" data-correct="false">Therefore</button>
+                </div>
+            </div>
+
+            <div class="question">
+                <strong>2. Add another reason.</strong>
+                <div class="choice-grid">
+                    <button class="choice" data-correct="false">For example</button>
+                    <button class="choice" data-correct="true">Moreover</button>
+                    <button class="choice" data-correct="false">Finally</button>
+                </div>
+            </div>
+
+            <div class="question">
+                <strong>3. Give an example of community service.</strong>
+                <div class="choice-grid">
+                    <button class="choice" data-correct="true">For example</button>
+                    <button class="choice" data-correct="false">Therefore</button>
+                    <button class="choice" data-correct="false">However</button>
+                </div>
+            </div>
+
+            <div class="question">
+                <strong>4. Show an opposite idea.</strong>
+                <div class="choice-grid">
+                    <button class="choice" data-correct="false">Moreover</button>
+                    <button class="choice" data-correct="true">However</button>
+                    <button class="choice" data-correct="false">First</button>
+                </div>
+            </div>
+
+            <div class="question">
+                <strong>5. Show a result.</strong>
+                <div class="choice-grid">
+                    <button class="choice" data-correct="true">Therefore</button>
+                    <button class="choice" data-correct="false">Moreover</button>
+                    <button class="choice" data-correct="false">For example</button>
+                </div>
+            </div>
+
+            <div class="question">
+                <strong>6. Introduce your final argument.</strong>
+                <div class="choice-grid">
+                    <button class="choice" data-correct="false">However</button>
+                    <button class="choice" data-correct="false">Secondly</button>
+                    <button class="choice" data-correct="true">Finally</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="feedback7" class="feedback" role="status"></div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TASK 8
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <div class="section-number">11</div>
+        <div>
+            <h2>Challenge 8 — Complete the Dialogue</h2>
+            <p>Connect ideas in a conversation.</p>
+        </div>
+    </div>
+
+    <div class="task">
+
+        <div class="task-head">
+            <span class="task-tag">TASK 08</span>
+            <h3>Complete the dialogue with suitable discourse markers.</h3>
+        </div>
+
+        <div class="context-card">
+
+            <p>
+                <span class="speaker">A</span>
+                Can young people improve their community?
+            </p>
+
+            <p>
+                <span class="speaker">B</span>
+                Yes! __________, they can keep public places clean.
+            </p>
+
+            <p>
+                <span class="speaker">A</span>
+                __________, they can help elderly neighbours.
+            </p>
+
+            <p>
+                <span class="speaker">B</span>
+                __________, they can join clean-up campaigns.
+            </p>
+
+            <p>
+                <span class="speaker">A</span>
+                __________, some pupils have little free time.
+            </p>
+
+            <p>
+                <span class="speaker">B</span>
+                __________, schools can organise short activities.
+            </p>
+
+            <p>
+                <span class="speaker">A</span>
+                __________, everyone can make a difference.
+            </p>
+
+        </div>
+
+        <button class="btn blue" onclick="revealTask('8','feedback8')">
+            💡 Reveal Possible Answers
+        </button>
+
+        <div class="reveal-box" id="feedback8">
+            1. First<br>
+            2. Moreover<br>
+            3. For example<br>
+            4. However<br>
+            5. Therefore<br>
+            6. Finally
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TASK 9
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <div class="section-number">12</div>
+        <div>
+            <h2>Challenge 9 — Grammar Editor</h2>
+            <p>Analyse and improve a paragraph.</p>
+        </div>
+    </div>
+
+    <div class="task">
+
+        <div class="task-head">
+            <span class="task-tag">TASK 09</span>
+            <h3>Correct the discourse markers in the paragraph.</h3>
+        </div>
+
+        <div class="context-card">
+
+            <strong>Helping Our Community</strong>
+
+            <br><br>
+
+            However, young people can help their community
+            in many ways.
+
+            Moreover, pupils can take part in community activities.
+
+            Therefore, they can help clean a public garden.
+
+            For example, some young people may have little free time.
+
+            First, schools can organise activities at suitable times.
+
+            Finally, everyone should contribute to community life.
+
+        </div>
+
+        <br>
+
+        <textarea id="t9"
+                  placeholder="Rewrite the corrected paragraph here..."></textarea>
+
+        <div class="word-counter">
+            <span id="count9">0</span> words
+        </div>
+
+        <button class="btn" onclick="checkTask9()">
+            ✓ Check My Work
+        </button>
+
+        <button class="btn outline"
+                onclick="toggleReveal('task9Model')">
+            💡 Suggested Correction
+        </button>
+
+        <div id="feedback9" class="feedback" role="status"></div>
+
+        <div class="reveal-box" id="task9Model">
+
+            <strong>Suggested correction:</strong>
+
+            <br><br>
+
+            <strong>First</strong>, young people can help
+            their community in many ways.
+
+            <strong>Moreover</strong>, pupils can take part
+            in community activities.
+
+            <strong>For example</strong>, they can help clean
+            a public garden.
+
+            <strong>However</strong>, some young people
+            may have little free time.
+
+            <strong>Therefore</strong>, schools can organise
+            activities at suitable times.
+
+            <strong>Finally</strong>, everyone should
+            contribute to community life.
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TASK 10 — ORDERING
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <div class="section-number">13</div>
+        <div>
+            <h2>Challenge 10 — Argument Builder</h2>
+            <p>Put the sentences into a logical order.</p>
+        </div>
+    </div>
+
+    <div class="task">
+
+        <div class="task-head">
+            <span class="task-tag">TASK 10</span>
+            <h3>Arrange the sentences to create a logical paragraph.</h3>
+        </div>
+
+        <p class="order-instruction">
+            🔄 Tap one sentence, then tap another
+            to swap their positions.
+        </p>
+
+        <div class="order-list" id="orderList">
+
+            <button class="order-item" data-order="5">
+                <span class="order-number">1</span>
+                <span>
+                    <strong>Therefore</strong>, residents should
+                    organise activities to protect public spaces.
+                </span>
+            </button>
+
+            <button class="order-item" data-order="1">
+                <span class="order-number">2</span>
+                <span>
+                    <strong>First</strong>, a clean neighbourhood
+                    is healthier and more pleasant.
+                </span>
+            </button>
+
+            <button class="order-item" data-order="3">
+                <span class="order-number">3</span>
+                <span>
+                    <strong>For example</strong>, pupils can
+                    organise a community clean-up day.
+                </span>
+            </button>
+
+            <button class="order-item" data-order="2">
+                <span class="order-number">4</span>
+                <span>
+                    <strong>Moreover</strong>, clean public places
+                    make people proud of their community.
+                </span>
+            </button>
+
+            <button class="order-item" data-order="6">
+                <span class="order-number">5</span>
+                <span>
+                    <strong>Finally</strong>, everyone has a responsibility
+                    to keep shared spaces clean.
+                </span>
+            </button>
+
+            <button class="order-item" data-order="4">
+                <span class="order-number">6</span>
+                <span>
+                    <strong>However</strong>, some residents
+                    do not always protect their neighbourhood.
+                </span>
+            </button>
+
+        </div>
+
+        <button class="btn" onclick="checkOrder()">
+            🔗 Check the Order
+        </button>
+
+        <button class="btn outline" onclick="resetOrder()">
+            ↺ Shuffle Again
+        </button>
+
+        <div id="feedback10" class="feedback" role="status"></div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     TASK 11 — WRITING PRACTICE
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <div class="section-number">14</div>
+        <div>
+            <h2>Challenge 11 — Young Citizen Writer</h2>
+            <p>Write a short argument about your neighbourhood.</p>
+        </div>
+    </div>
+
+    <div class="task">
+
+        <div class="task-head">
+            <span class="task-tag">TASK 11</span>
+            <h3>
+                Your neighbourhood has a rubbish problem.
+                Explain how young people can help.
+            </h3>
+        </div>
+
+        <div class="context-card">
+
+            <strong>🎯 Real-Life Situation</strong>
+
+            <br><br>
+
+            Some public areas in your neighbourhood
+            are dirty.
+
+            <br>
+
+            Your community wants young people
+            to participate in improving these places.
+
+            <br><br>
+
+            Write a paragraph using
+            <strong>at least four different discourse markers</strong>
+            and <strong>40 words</strong>.
+
+        </div>
+
+        <div class="writing-tools" data-target="task11">
+
+            <button class="word-chip" data-insert="First, ">First</button>
+            <button class="word-chip" data-insert="Moreover, ">Moreover</button>
+            <button class="word-chip" data-insert="In addition, ">In addition</button>
+            <button class="word-chip" data-insert="For example, ">For example</button>
+            <button class="word-chip" data-insert="However, ">However</button>
+            <button class="word-chip" data-insert="Therefore, ">Therefore</button>
+            <button class="word-chip" data-insert="Finally, ">Finally</button>
+
+        </div>
+
+        <textarea id="task11"
+                  placeholder="First, young people can help keep their neighbourhood clean..."></textarea>
+
+        <div class="word-counter">
+            <span id="count11">0</span> words
+        </div>
+
+        <button class="btn pink" onclick="checkTask11()">
+            ✍️ Check My Paragraph
+        </button>
+
+        <div id="feedback11" class="feedback" role="status"></div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PROGRESS & BADGES
+===================================================== -->
+
+<section class="section" id="achievements">
+
+    <div class="section-heading">
+        <div class="section-number">🏆</div>
+        <div>
+            <h2>Your Achievements</h2>
+            <p>Complete challenges to unlock your badges.</p>
+        </div>
+    </div>
+
+    <div class="progress-ribbon"
+         style="box-shadow:none;border:1px solid #e9d9fa;margin:0">
+
+        <div class="progress-symbol">⭐</div>
+
+        <div class="progress-info">
+
+            <div class="progress-top">
+                <span>Completed Challenges</span>
+                <span id="completedCount">0 / 12</span>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill2"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="badges">
+
+        <div class="badge-card" id="badge1">
+            <span class="badge-icon">🔗</span>
+            <strong>Connector Explorer</strong>
+            <small>Explore all eight connectors</small>
+        </div>
+
+        <div class="badge-card" id="badge2">
+            <span class="badge-icon">🤝</span>
+            <strong>Community Builder</strong>
+            <small>Complete six challenges</small>
+        </div>
+
+        <div class="badge-card" id="badge3">
+            <span class="badge-icon">✍️</span>
+            <strong>Young Citizen Writer</strong>
+            <small>Complete the final mission</small>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     FINAL MISSION
+===================================================== -->
+
+<section class="final" id="finalMission">
+
+    <h2>🚀 Final Writing Mission</h2>
+
+    <p>
+        Imagine you are writing an opinion letter
+        to your school administration.
+
+        <br><br>
+
+        <strong>
+            Should young people participate more actively
+            in their community?
+        </strong>
+
+        <br><br>
+
+        Write an argumentative paragraph of at least
+        <strong>60 words</strong>.
+
+        Use at least <strong>five different discourse markers</strong>
+        to organise your ideas.
+    </p>
+
+    <div class="writing-tools" data-target="finalText">
+
+        <button class="word-chip" data-insert="First, ">First</button>
+        <button class="word-chip" data-insert="Secondly, ">Secondly</button>
+        <button class="word-chip" data-insert="Moreover, ">Moreover</button>
+        <button class="word-chip" data-insert="In addition, ">In addition</button>
+        <button class="word-chip" data-insert="For example, ">For example</button>
+        <button class="word-chip" data-insert="However, ">However</button>
+        <button class="word-chip" data-insert="Therefore, ">Therefore</button>
+        <button class="word-chip" data-insert="Finally, ">Finally</button>
+
+    </div>
+
+    <textarea id="finalText"
+              placeholder="In my opinion, young people should participate in community activities because..."></textarea>
+
+    <div class="word-counter">
+        <span id="finalCount">0</span> words
+    </div>
+
+    <div class="writing-checklist">
+
+        <div class="checklist-item">
+            ✓ I expressed my opinion.
+        </div>
+
+        <div class="checklist-item">
+            ✓ I gave supporting arguments.
+        </div>
+
+        <div class="checklist-item">
+            ✓ I used at least five markers.
+        </div>
+
+        <div class="checklist-item">
+            ✓ I checked punctuation and spelling.
+        </div>
+
+    </div>
+
+    <button class="btn green" onclick="finishMission()">
+        🎉 Complete My Mission
+    </button>
+
+    <div id="finalFeedback"
+         class="feedback"
+         role="status"></div>
+
+</section>
+
+<footer class="footer">
+
+    ✨ MY ENGLISH SPACE — MS4 ENGLISH
+
+    <br>
+
+    SEQUENCE 3 • ME, MY COMMUNITY & CITIZENSHIP
+
+    <br>
+
+    Learn • Connect Ideas • Express Opinions • Succeed
+
+</footer>
+
+</div>
+
+<!-- =====================================================
+     FLOATING DICTIONARY
+===================================================== -->
+
+<button class="dictionary-fab"
+        onclick="openDictionary()"
+        aria-label="Open English Arabic mini dictionary">
+
+    <span>📖</span>
+    <span>Mini Dictionary</span>
+
+</button>
+
+<div class="dictionary-overlay"
+     id="dictionaryOverlay"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="dictionaryTitle">
+
+    <div class="dictionary-panel">
+
+        <div class="dictionary-header">
+
+            <div>
+                <h2 id="dictionaryTitle">📖 Mini Dictionary</h2>
+                <p>English ↔ Arabic • Tap 🔊 to listen</p>
+            </div>
+
+            <button class="close-dictionary"
+                    onclick="closeDictionary()"
+                    aria-label="Close dictionary">
+                ×
+            </button>
+
+        </div>
+
+        <div class="dictionary-search">
+
+            <input type="text"
+                   id="dictionarySearch"
+                   placeholder="🔎 Search in English or Arabic..."
+                   oninput="renderDictionary()">
+
+        </div>
+
+        <div class="dictionary-list"
+             id="dictionaryList"></div>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================================================
+   GLOBAL STATE
+========================================================= */
+
+let score = 0;
+
+const completedTasks = new Set();
+const exploredConnectors = new Set();
+
+const TOTAL_CHALLENGES = 12;
+
+const taskPoints = {
+    "1":20,
+    "2":25,
+    "3":20,
+    "4":20,
+    "5":25,
+    "6":5,
+    "7":25,
+    "8":5,
+    "9":15,
+    "10":30,
+    "11":35,
+    "final":50
+};
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+function completeTask(id){
+
+    id = String(id);
+
+    if(completedTasks.has(id)){
+        return false;
+    }
+
+    completedTasks.add(id);
+
+    score += taskPoints[id] || 10;
+
+    document.getElementById("score").textContent = score;
+
+    updateProgress();
+
+    showToast("⭐ Challenge completed! +" +
+        (taskPoints[id] || 10) + " XP");
+
+    return true;
+}
+
+function updateProgress(){
+
+    const percentage = Math.round(
+        completedTasks.size / TOTAL_CHALLENGES * 100
+    );
+
+    document.getElementById("progressPercent").textContent =
+        percentage + "%";
+
+    document.getElementById("progressFill").style.width =
+        percentage + "%";
+
+    document.getElementById("progressFill2").style.width =
+        percentage + "%";
+
+    document.getElementById("completedCount").textContent =
+        completedTasks.size + " / " + TOTAL_CHALLENGES;
+
+    document.getElementById("progressTrack")
+        .setAttribute("aria-valuenow",percentage);
+
+    if(exploredConnectors.size === 8){
+        document.getElementById("badge1")
+            .classList.add("unlocked");
+    }
+
+    if(completedTasks.size >= 6){
+        document.getElementById("badge2")
+            .classList.add("unlocked");
+    }
+
+    if(completedTasks.has("final")){
+        document.getElementById("badge3")
+            .classList.add("unlocked");
+    }
+}
+
+/* =========================================================
+   FEEDBACK
+========================================================= */
+
+function showFeedback(id,message,type){
+
+    const box = document.getElementById(id);
+
+    box.textContent = message;
+
+    box.className = "feedback show " + type;
+}
+
+function normalise(text){
+
+    return text
+        .toLowerCase()
+        .trim()
+        .replace(/[.,!?;:]/g,"")
+        .replace(/\s+/g," ");
+}
+
+function wordCount(text){
+
+    const words = text.trim().match(/\S+/g);
+
+    return words ? words.length : 0;
+}
+
+function markField(element,correct){
+
+    const question = element.closest(".question");
+
+    if(!question)return;
+
+    question.classList.toggle("correct-answer",correct);
+    question.classList.toggle("wrong-answer",!correct);
+}
+
+/* =========================================================
+   CONNECTOR EXPLORER
+========================================================= */
+
+function toggleConnector(card){
+
+    card.classList.toggle("open");
+
+    const word = card.querySelector(".connector-word")
+        .textContent.trim();
+
+    exploredConnectors.add(word);
+
+    updateProgress();
+
+    if(exploredConnectors.size === 8){
+        showToast("🏆 Connector Explorer badge unlocked!");
+    }
+}
+
+/* =========================================================
+   TASK 1
+========================================================= */
+
+function checkTask1(){
+
+    const answers = [
+        "First",
+        "Moreover",
+        "For example",
+        "However",
+        "Therefore",
+        "Finally"
+    ];
+
+    const ids = [
+        "t1a","t1b","t1c",
+        "t1d","t1e","t1f"
+    ];
+
+    let correct = 0;
+
+    ids.forEach((id,index)=>{
+
+        const element = document.getElementById(id);
+
+        const valid = element.value === answers[index];
+
+        if(valid)correct++;
+
+        markField(element,valid);
+    });
+
+    if(correct === 6){
+
+        showFeedback(
+            "feedback1",
+            "🎉 Excellent! All six connectors are correct.",
+            "correct"
+        );
+
+        if(completeTask("1"))confetti();
+
+    }else{
+
+        showFeedback(
+            "feedback1",
+            "You got " + correct +
+            "/6 correct. Check the highlighted questions and try again.",
+            "incorrect"
+        );
+    }
+}
+
+/* =========================================================
+   TASK 2 — REAL MATCHING
+========================================================= */
+
+let selectedMarker = null;
+let selectedFunction = null;
+
+const matchedPairs = new Map();
+
+function selectMatch(element,type){
+
+    if(element.classList.contains("matched"))return;
+
+    const column = element.closest(".match-column");
+
+    column.querySelectorAll(".match-item")
+        .forEach(item=>{
+            if(!item.classList.contains("matched")){
+                item.classList.remove("selected","wrong");
+            }
+        });
+
+    element.classList.add("selected");
+
+    if(type === "marker"){
+        selectedMarker = element;
+    }else{
+        selectedFunction = element;
+    }
+
+    if(selectedMarker && selectedFunction){
+        checkMatchPair();
+    }
+}
+
+function checkMatchPair(){
+
+    const marker = selectedMarker;
+    const func = selectedFunction;
+
+    const correct =
+        marker.dataset.match === func.dataset.match;
+
+    if(correct){
+
+        marker.classList.remove("selected");
+        func.classList.remove("selected");
+
+        marker.classList.add("matched");
+        func.classList.add("matched");
+
+        marker.disabled = true;
+        func.disabled = true;
+
+        matchedPairs.set(
+            marker.textContent.trim(),
+            func.textContent.trim()
+        );
+
+        renderMatchedPairs();
+
+        showToast("✨ Correct match!");
+
+        if(matchedPairs.size === 6){
+
+            showFeedback(
+                "feedback2",
+                "🏆 Fantastic! You matched all six connectors correctly.",
+                "correct"
+            );
+
+            if(completeTask("2"))confetti();
+        }
+
+    }else{
+
+        marker.classList.add("wrong");
+        func.classList.add("wrong");
+
+        showToast("💡 Not quite. Try another function.");
+
+        setTimeout(()=>{
+
+            marker.classList.remove("wrong","selected");
+            func.classList.remove("wrong","selected");
+
+        },700);
+    }
+
+    selectedMarker = null;
+    selectedFunction = null;
+}
+
+function renderMatchedPairs(){
+
+    const box = document.getElementById("matchResults");
+
+    box.innerHTML = "";
+
+    matchedPairs.forEach((func,marker)=>{
+
+        const row = document.createElement("div");
+
+        row.className = "pair-row";
+
+        row.textContent = "✓ " + marker + " → " + func;
+
+        box.appendChild(row);
+    });
+}
+
+/* =========================================================
+   TASK 3 AND TASK 7 — MULTIPLE CHOICE
+========================================================= */
+
+function setupChoiceTask(containerId,feedbackId,taskId){
+
+    const container = document.getElementById(containerId);
+
+    const questions = [...container.querySelectorAll(".question")];
+
+    questions.forEach(question=>{
+
+        const buttons = [...question.querySelectorAll(".choice")];
+
+        buttons.forEach(button=>{
+
+            button.addEventListener("click",()=>{
+
+                if(question.dataset.solved === "true")return;
+
+                const correct =
+                    button.dataset.correct === "true";
+
+                if(correct){
+
+                    button.classList.add("selected-correct");
+
+                    question.dataset.solved = "true";
+
+                    buttons.forEach(b=>b.disabled = true);
+
+                    question.classList.add("correct-answer");
+
+                }else{
+
+                    button.classList.add("selected-wrong");
+
+                    button.disabled = true;
+
+                    showToast("💡 Try another answer!");
+                }
+
+                const solved = questions.filter(
+                    q=>q.dataset.solved === "true"
+                ).length;
+
+                if(solved === questions.length){
+
+                    showFeedback(
+                        feedbackId,
+                        "🎉 Brilliant! You completed all " +
+                        questions.length + " questions.",
+                        "correct"
+                    );
+
+                    if(completeTask(taskId))confetti();
+
+                }else{
+
+                    showFeedback(
+                        feedbackId,
+                        "✓ " + solved + " / " +
+                        questions.length + " questions completed.",
+                        "neutral"
+                    );
+                }
+            });
+        });
+    });
+}
+
+setupChoiceTask(
+    "task3Questions",
+    "feedback3",
+    "3"
+);
+
+setupChoiceTask(
+    "task7Questions",
+    "feedback7",
+    "7"
+);
+
+/* =========================================================
+   TASK 4
+========================================================= */
+
+function checkTask4(){
+
+    const answers = [
+        ["first"],
+        ["secondly","second"],
+        ["moreover","in addition"],
+        ["for example"],
+        ["however"],
+        ["finally"]
+    ];
+
+    const ids = [
+        "t4a","t4b","t4c",
+        "t4d","t4e","t4f"
+    ];
+
+    let correct = 0;
+
+    ids.forEach((id,index)=>{
+
+        const element = document.getElementById(id);
+
+        const value = normalise(element.value);
+
+        const valid = answers[index].includes(value);
+
+        if(valid)correct++;
+
+        markField(element,valid);
+    });
+
+    if(correct === 6){
+
+        showFeedback(
+            "feedback4",
+            "🌟 Perfect! All your discourse markers are correct.",
+            "correct"
+        );
+
+        if(completeTask("4"))confetti();
+
+    }else{
+
+        showFeedback(
+            "feedback4",
+            "You got " + correct +
+            "/6 correct. Review the word bank and try again.",
+            "incorrect"
+        );
+    }
+}
+
+/* =========================================================
+   TASK 5 — BASIC SENTENCE CHECKING
+========================================================= */
+
+function checkTask5(){
+
+    const data = [
+        {
+            id:"t5a",
+            marker:"moreover",
+            first:["citizens","streets","clean"],
+            second:["protect","public","parks"]
+        },
+        {
+            id:"t5b",
+            marker:"however",
+            first:["community","activities","useful"],
+            second:["people","free","time"]
+        },
+        {
+            id:"t5c",
+            marker:"for example",
+            first:["young","people","community"],
+            second:["organise","clean-up","day"]
+        },
+        {
+            id:"t5d",
+            marker:"therefore",
+            first:["neighbourhood","rubbish"],
+            second:["residents","clean-up","campaign"]
+        },
+        {
+            id:"t5e",
+            marker:"in addition",
+            first:["pupils","support","community"],
+            second:["help","elderly","neighbours"]
+        },
+        {
+            id:"t5f",
+            marker:"finally",
+            first:["citizens","responsibilities"],
+            second:["work","together"]
+        }
+    ];
+
+    let correct = 0;
+
+    data.forEach(item=>{
+
+        const element = document.getElementById(item.id);
+
+        const value = normalise(element.value);
+
+        const hasMarker = value.includes(item.marker);
+
+        const hasFirstIdea =
+            item.first.some(word=>value.includes(word));
+
+        const hasSecondIdea =
+            item.second.some(word=>value.includes(word));
+
+        const valid =
+            hasMarker &&
+            hasFirstIdea &&
+            hasSecondIdea &&
+            wordCount(value) >= 8;
+
+        if(valid)correct++;
+
+        markField(element,valid);
+    });
+
+    if(correct === 6){
+
+        showFeedback(
+            "feedback5",
+            "✨ Well done! Your sentences include the required connectors and both ideas. Read them once more to check grammar and meaning.",
+            "correct"
+        );
+
+        if(completeTask("5"))confetti();
+
+    }else{
+
+        showFeedback(
+            "feedback5",
+            correct + "/6 responses meet the basic checks. Include the given marker and both ideas in each answer. Different correct wordings are possible.",
+            "incorrect"
+        );
+    }
+}
+
+/* =========================================================
+   REVEAL TASKS
+========================================================= */
+
+function revealTask(taskId,elementId){
+
+    document.getElementById(elementId)
+        .classList.add("show");
+
+    completeTask(taskId);
+}
+
+function toggleReveal(id){
+
+    document.getElementById(id)
+        .classList.toggle("show");
+}
+
+/* =========================================================
+   TASK 9
+========================================================= */
+
+function checkTask9(){
+
+    const text = document.getElementById("t9").value;
+
+    const words = wordCount(text);
+
+    const markers = countMarkers(text);
+
+    if(words < 35){
+
+        showFeedback(
+            "feedback9",
+            "✏️ Write a longer corrected paragraph. Aim for at least 35 words.",
+            "incorrect"
+        );
+
+        return;
+    }
+
+    if(markers < 5){
+
+        showFeedback(
+            "feedback9",
+            "🔗 Include at least five different discourse markers.",
+            "incorrect"
+        );
+
+        return;
+    }
+
+    showFeedback(
+        "feedback9",
+        "🌟 Good effort! Your paragraph contains enough words and connectors. Compare it with the suggested correction to check whether every marker expresses the intended relationship.",
+        "correct"
+    );
+
+    completeTask("9");
+}
+
+/* =========================================================
+   TASK 10 — TRUE POSITION SWAPPING
+========================================================= */
+
+let selectedOrderItem = null;
+
+const orderList = document.getElementById("orderList");
+
+orderList.addEventListener("click",event=>{
+
+    const item = event.target.closest(".order-item");
+
+    if(!item)return;
+
+    swapOrder(item);
+});
+
+function swapOrder(item){
+
+    if(!selectedOrderItem){
+
+        selectedOrderItem = item;
+
+        item.classList.add("selected");
+
+        return;
+    }
+
+    if(selectedOrderItem === item){
+
+        item.classList.remove("selected");
+
+        selectedOrderItem = null;
+
+        return;
+    }
+
+    const first = selectedOrderItem;
+    const second = item;
+
+    const placeholder = document.createElement("span");
+
+    first.parentNode.insertBefore(placeholder,first);
+
+    second.parentNode.insertBefore(first,second);
+
+    placeholder.parentNode.replaceChild(second,placeholder);
+
+    first.classList.remove("selected");
+    second.classList.remove("selected");
+
+    selectedOrderItem = null;
+
+    updateOrderNumbers();
+}
+
+function updateOrderNumbers(){
+
+    [...orderList.children].forEach((item,index)=>{
+
+        item.querySelector(".order-number").textContent =
+            index + 1;
+    });
+}
+
+function checkOrder(){
+
+    const items = [...orderList.children];
+
+    const correct = items.every(
+        (item,index)=>
+            Number(item.dataset.order) === index + 1
+    );
+
+    if(correct){
+
+        showFeedback(
+            "feedback10",
+            "🏆 Fantastic! Your paragraph follows a clear logical order.",
+            "correct"
+        );
+
+        if(completeTask("10"))confetti();
+
+    }else{
+
+        showFeedback(
+            "feedback10",
+            "Not quite! Think: First → Moreover → For example → However → Therefore → Finally.",
+            "incorrect"
+        );
+    }
+}
+
+function resetOrder(){
+
+    selectedOrderItem = null;
+
+    const items = [...orderList.children];
+
+    for(let i=items.length-1;i>0;i--){
+
+        const j = Math.floor(Math.random()*(i+1));
+
+        [items[i],items[j]] = [items[j],items[i]];
+    }
+
+    if(items.every((item,index)=>
+        Number(item.dataset.order) === index+1)){
+
+        items.reverse();
+    }
+
+    items.forEach(item=>{
+        item.classList.remove("selected");
+        orderList.appendChild(item);
+    });
+
+    updateOrderNumbers();
+
+    const feedback = document.getElementById("feedback10");
+
+    feedback.className = "feedback";
+}
+
+/* =========================================================
+   WRITING HELPERS
+========================================================= */
+
+const markerList = [
+    "first",
+    "secondly",
+    "moreover",
+    "in addition",
+    "for example",
+    "however",
+    "therefore",
+    "finally"
+];
+
+function countMarkers(text){
+
+    const value = text.toLowerCase();
+
+    return markerList.filter(marker=>{
+
+        const escaped = marker.replace(
+            /[.*+?^${}()|[\]\\]/g,
+            "\\$&"
+        );
+
+        const regex = new RegExp(
+            "\\b" + escaped + "\\b",
+            "i"
+        );
+
+        return regex.test(value);
+
+    }).length;
+}
+
+function insertAtCursor(textarea,text){
+
+    textarea.focus();
+
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+
+    textarea.setRangeText(
+        text,
+        start,
+        end,
+        "end"
+    );
+
+    textarea.dispatchEvent(new Event("input"));
+}
+
+document.querySelectorAll(".writing-tools").forEach(group=>{
+
+    const targetId = group.dataset.target;
+
+    group.querySelectorAll(".word-chip").forEach(button=>{
+
+        button.addEventListener("click",()=>{
+
+            const textarea = document.getElementById(targetId);
+
+            insertAtCursor(
+                textarea,
+                button.dataset.insert
+            );
+        });
+    });
+});
+
+[
+    ["t9","count9"],
+    ["task11","count11"],
+    ["finalText","finalCount"]
+].forEach(([inputId,countId])=>{
+
+    const input = document.getElementById(inputId);
+
+    input.addEventListener("input",()=>{
+
+        document.getElementById(countId).textContent =
+            wordCount(input.value);
+    });
+});
+
+/* =========================================================
+   TASK 11
+========================================================= */
+
+function checkTask11(){
+
+    const text = document.getElementById("task11").value;
+
+    const words = wordCount(text);
+    const markers = countMarkers(text);
+
+    if(words < 40){
+
+        showFeedback(
+            "feedback11",
+            "✏️ You wrote " + words +
+            " words. Write at least 40 words.",
+            "incorrect"
+        );
+
+        return;
+    }
+
+    if(markers < 4){
+
+        showFeedback(
+            "feedback11",
+            "🔗 You used " + markers +
+            " different discourse markers. Try to use at least four.",
+            "incorrect"
+        );
+
+        return;
+    }
+
+    showFeedback(
+        "feedback11",
+        "🌟 Great progress! You wrote " +
+        words + " words and used " +
+        markers + " different discourse markers. Now reread your paragraph to check the meaning, grammar and punctuation.",
+        "correct"
+    );
+
+    if(completeTask("11"))confetti();
+}
+
+/* =========================================================
+   FINAL MISSION
+========================================================= */
+
+function finishMission(){
+
+    const text = document.getElementById("finalText").value;
+
+    const words = wordCount(text);
+    const markers = countMarkers(text);
+
+    const feedback = document.getElementById("finalFeedback");
+
+    if(words < 60){
+
+        showFeedback(
+            "finalFeedback",
+            "✏️ Your paragraph has " + words +
+            " words. You need at least 60 words. Add more arguments and examples.",
+            "incorrect"
+        );
+
+        return;
+    }
+
+    if(markers < 5){
+
+        showFeedback(
+            "finalFeedback",
+            "🔗 You used " + markers +
+            " different discourse markers. Try to include at least five.",
+            "incorrect"
+        );
+
+        return;
+    }
+
+    showFeedback(
+        "finalFeedback",
+        "🎉 MISSION COMPLETED! You wrote " +
+        words + " words and included " +
+        markers + " different discourse markers. You have met the mission's length and connector targets. Review your arguments, grammar and punctuation before submitting your paragraph.",
+        "correct"
+    );
+
+    if(completeTask("final")){
+
+        confetti();
+
+        showToast("🏆 Young Citizen Writer badge unlocked!");
+    }
+}
+
+/* =========================================================
+   MINI DICTIONARY DATA
+========================================================= */
+
+const dictionary = [
+
+    ["Discourse marker","أداة ربط","A word that connects ideas"],
+    ["Argument","حجة","A reason supporting an opinion"],
+    ["Opinion","رأي","What someone thinks"],
+    ["First","أولاً","Introduces the first argument"],
+    ["Secondly","ثانياً","Introduces the second argument"],
+    ["Moreover","علاوة على ذلك","Adds another idea"],
+    ["In addition","بالإضافة إلى ذلك","Adds information"],
+    ["For example","على سبيل المثال","Introduces an example"],
+    ["However","لكن / مع ذلك","Shows contrast"],
+    ["Therefore","لذلك / وبالتالي","Shows a result"],
+    ["Finally","أخيراً","Introduces the final point"],
+    ["Furthermore","فضلاً عن ذلك","Adds further information"],
+    ["Also","أيضاً","Adds information"],
+    ["Because","لأن","Introduces a reason"],
+    ["As a result","نتيجة لذلك","Shows a consequence"],
+    ["In conclusion","في الختام","Introduces a conclusion"],
+
+    ["Citizenship","المواطنة","Being a responsible member of society"],
+    ["Citizen","مواطن","A member of a country or community"],
+    ["Community","مجتمع محلي","People living in the same area"],
+    ["Neighbourhood","حي","An area where people live"],
+    ["Neighbour","جار","A person living nearby"],
+    ["Responsibility","مسؤولية","Something you should do"],
+    ["Duty","واجب","An obligation"],
+    ["Respect","احترام","To treat people well"],
+    ["Cooperation","تعاون","Working together"],
+    ["Solidarity","تضامن","Supporting one another"],
+    ["Volunteer","متطوع","A person who helps freely"],
+    ["Volunteering","التطوع","Helping without payment"],
+    ["Charity","عمل خيري","Helping people in need"],
+    ["Charity organisation","منظمة خيرية","An organisation that helps others"],
+    ["Donation","تبرع","Something given to help"],
+    ["Donate","يتبرع","To give something to help"],
+    ["Campaign","حملة","Organised activities for a purpose"],
+    ["Clean-up campaign","حملة تنظيف","An organised cleaning activity"],
+
+    ["Environment","بيئة","The natural world around us"],
+    ["Pollution","تلوث","Harmful substances in the environment"],
+    ["Rubbish","قمامة","Waste or unwanted materials"],
+    ["Litter","نفايات مرمية","Rubbish left in public places"],
+    ["Recycle","يعيد التدوير","To use waste materials again"],
+    ["Protect","يحمي","To keep something safe"],
+    ["Public place","مكان عمومي","A place everyone can use"],
+    ["Public garden","حديقة عمومية","A garden open to everyone"],
+    ["Elderly","كبار السن","Older people"],
+    ["Support","يدعم","To help someone"],
+    ["Improve","يحسن","To make something better"],
+    ["Participate","يشارك","To take part"],
+    ["Organise","ينظم","To arrange activities"],
+    ["Encourage","يشجع","To give confidence or motivation"],
+
+    ["Benefit","فائدة","A positive result"],
+    ["Problem","مشكلة","Something that needs a solution"],
+    ["Solution","حل","A way to solve a problem"],
+    ["Result","نتيجة","What happens because of something"],
+    ["Reason","سبب","Why something happens"],
+    ["Example","مثال","Something that explains an idea"],
+    ["Contrast","تعارض / اختلاف","A difference between ideas"],
+    ["Addition","إضافة","Adding information"],
+    ["Conclusion","خاتمة","The final part of a text"],
+    ["Paragraph","فقرة","A group of related sentences"],
+    ["Topic sentence","جملة افتتاحية","The main sentence of a paragraph"],
+    ["Supporting idea","فكرة داعمة","An idea that supports an argument"],
+    ["Link","يربط","To connect things or ideas"],
+    ["Logical","منطقي","Clear and reasonable"],
+    ["Active citizen","مواطن فعال","A person who helps society"]
+
+];
+
+/* =========================================================
+   DICTIONARY FUNCTIONS
+========================================================= */
+
+const dictionaryOverlay =
+    document.getElementById("dictionaryOverlay");
+
+let previousFocus = null;
+
+function openDictionary(){
+
+    previousFocus = document.activeElement;
+
+    dictionaryOverlay.classList.add("open");
+
+    document.body.style.overflow = "hidden";
+
+    renderDictionary();
+
+    setTimeout(()=>{
+        document.getElementById("dictionarySearch").focus();
+    },50);
+}
+
+function closeDictionary(){
+
+    dictionaryOverlay.classList.remove("open");
+
+    document.body.style.overflow = "";
+
+    if(previousFocus && previousFocus.focus){
+        previousFocus.focus();
+    }
+}
+
+dictionaryOverlay.addEventListener("click",event=>{
+
+    if(event.target === dictionaryOverlay){
+        closeDictionary();
+    }
+});
+
+document.addEventListener("keydown",event=>{
+
+    if(event.key === "Escape" &&
+       dictionaryOverlay.classList.contains("open")){
+
+        closeDictionary();
+    }
+});
+
+function renderDictionary(){
+
+    const query = document.getElementById("dictionarySearch")
+        .value.toLowerCase().trim();
+
+    const list = document.getElementById("dictionaryList");
+
+    list.innerHTML = "";
+
+    const filtered = dictionary.filter(entry=>
+
+        entry[0].toLowerCase().includes(query) ||
+        entry[1].includes(query) ||
+        entry[2].toLowerCase().includes(query)
+    );
+
+    if(!filtered.length){
+
+        const empty = document.createElement("div");
+
+        empty.className = "dictionary-empty";
+
+        empty.textContent =
+            "🔎 No matching words found. Try another search.";
+
+        list.appendChild(empty);
+
+        return;
+    }
+
+    filtered.forEach(entry=>{
+
+        const row = document.createElement("div");
+
+        row.className = "dictionary-entry";
+
+        const details = document.createElement("div");
+
+        const english = document.createElement("strong");
+        english.textContent = entry[0];
+
+        const arabic = document.createElement("span");
+        arabic.className = "arabic";
+        arabic.textContent = entry[1];
+
+        const definition = document.createElement("small");
+        definition.textContent = entry[2];
+
+        details.appendChild(english);
+        details.appendChild(arabic);
+        details.appendChild(definition);
+
+        const speak = document.createElement("button");
+
+        speak.className = "speak-btn";
+        speak.textContent = "🔊";
+        speak.setAttribute(
+            "aria-label",
+            "Pronounce " + entry[0]
+        );
+
+        speak.addEventListener("click",()=>{
+            pronounce(entry[0]);
+        });
+
+        row.appendChild(details);
+        row.appendChild(speak);
+
+        list.appendChild(row);
+    });
+}
+
+function pronounce(text){
+
+    if(!("speechSynthesis" in window)){
+
+        showToast("Pronunciation is unavailable in this browser.");
+
+        return;
+    }
+
+    speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+
+    utterance.lang = "en-GB";
+    utterance.rate = .85;
+    utterance.pitch = 1;
+
+    speechSynthesis.speak(utterance);
+}
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+function showToast(message){
+
+    const toast = document.getElementById("toast");
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(()=>{
+        toast.classList.remove("show");
+    },2600);
+}
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+function confetti(){
+
+    const symbols = [
+        "🎉","⭐","✨","💜","🌟","🤝","🌍"
+    ];
+
+    for(let i=0;i<32;i++){
+
+        const piece = document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.textContent =
+            symbols[Math.floor(Math.random()*symbols.length)];
+
+        piece.style.left = Math.random()*100 + "vw";
+
+        piece.style.fontSize =
+            (12+Math.random()*15) + "px";
+
+        piece.style.animationDuration =
+            (2+Math.random()*2) + "s";
+
+        piece.style.animationDelay =
+            Math.random()*.5 + "s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(()=>{
+            piece.remove();
+        },4500);
+    }
+}
+
+/* =========================================================
+   INITIALISE
+========================================================= */
+
+renderDictionary();
+updateProgress();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,4505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4-S1-Reading-Lesson3 — Amazing Journeys</title>
+
+<meta name="theme-color" content="#17324d">
+
+<meta name="description"
+content="Interactive MS4 reading lesson about journeys through Algeria and Italy, with reading activities and an English-Arabic mini dictionary.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* ==========================================================
+   DESIGN SYSTEM
+========================================================== */
+
+:root{
+  --navy:#17324d;
+  --navy-deep:#10263c;
+  --blue:#2678b8;
+  --cyan:#35b9c4;
+  --cyan-light:#e6f9fa;
+  --gold:#f4c65d;
+  --gold-light:#fff4ce;
+  --cream:#fff8e8;
+  --paper:#ffffff;
+  --background:#eef7fa;
+  --ink:#263746;
+  --muted:#667d8c;
+  --line:#d8e8ee;
+  --green:#2d965b;
+  --green-light:#e1f5e8;
+  --red:#d95450;
+  --red-light:#fde8e6;
+  --purple:#7657b8;
+  --orange:#e98a3a;
+
+  --shadow:0 12px 35px rgba(23,50,77,.09);
+  --shadow-lg:0 24px 60px rgba(23,50,77,.15);
+
+  --radius:24px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--background);
+  color:var(--ink);
+  font-family:Nunito,Arial,sans-serif;
+  line-height:1.7;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+button:disabled{
+  cursor:default;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+}
+
+[hidden]{
+  display:none!important;
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:36px 20px 52px;
+  color:white;
+  text-align:center;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(53,185,196,.35),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(244,198,93,.2),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #10263c,
+      #205d90 55%,
+      #249ba9
+    );
+}
+
+.hero::before,
+.hero::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.hero::before{
+  width:350px;
+  height:350px;
+  top:-200px;
+  left:-140px;
+  border:45px solid rgba(255,255,255,.05);
+}
+
+.hero::after{
+  width:430px;
+  height:430px;
+  right:-200px;
+  bottom:-270px;
+  border:60px solid rgba(255,255,255,.05);
+}
+
+.hero-inner{
+  max-width:1100px;
+  margin:auto;
+  position:relative;
+  z-index:1;
+}
+
+.hero-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:30px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:"Baloo 2",sans-serif;
+  font-size:20px;
+  font-weight:800;
+}
+
+.brand-icon{
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:14px;
+  font-size:22px;
+}
+
+.back-home{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 17px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  font-size:12px;
+  font-weight:900;
+  transition:.25s;
+}
+
+.back-home:hover{
+  background:white;
+  color:var(--navy);
+  transform:translateY(-2px);
+}
+
+.hero-badges{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.hero-badge{
+  padding:7px 15px;
+  border-radius:999px;
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.25);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.6px;
+}
+
+.hero h1{
+  margin:18px 0 5px;
+  font:800 clamp(39px,7vw,70px)/1.05 "Baloo 2",sans-serif;
+  letter-spacing:-1px;
+}
+
+.hero h1 span{
+  color:var(--gold);
+}
+
+.hero-sub{
+  max-width:700px;
+  margin:10px auto;
+  color:#e9fbff;
+  font-weight:700;
+  font-size:15px;
+}
+
+.hero-icons{
+  font-size:38px;
+  margin:20px 0;
+  letter-spacing:7px;
+}
+
+.hero-stats{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:24px;
+}
+
+.hero-stat{
+  min-width:125px;
+  padding:12px 17px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:17px;
+  backdrop-filter:blur(8px);
+}
+
+.hero-stat strong{
+  display:block;
+  font:800 24px "Baloo 2",sans-serif;
+  line-height:1.2;
+}
+
+.hero-stat span{
+  font-size:11px;
+  font-weight:800;
+  color:#e1f6ff;
+}
+
+/* ==========================================================
+   STICKY NAVIGATION
+========================================================== */
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 5px 20px rgba(23,50,77,.06);
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  padding:11px 15px 6px;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.nav button{
+  border:0;
+  border-radius:999px;
+  background:#eaf4f8;
+  color:var(--navy);
+  padding:9px 15px;
+  font-size:12px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.nav button:hover{
+  background:var(--navy);
+  color:white;
+  transform:translateY(-2px);
+}
+
+.progress{
+  max-width:1100px;
+  margin:auto;
+  padding:7px 17px 12px;
+}
+
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:5px;
+  font-size:11px;
+  font-weight:900;
+  color:var(--muted);
+}
+
+.progressbar{
+  height:9px;
+  background:#e0edf1;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.progressfill{
+  width:0;
+  height:100%;
+  border-radius:999px;
+  background:linear-gradient(
+    90deg,
+    var(--gold),
+    var(--cyan),
+    var(--blue)
+  );
+  transition:width .4s ease;
+}
+
+/* ==========================================================
+   GENERAL LAYOUT
+========================================================== */
+
+main{
+  max-width:1120px;
+  margin:auto;
+  padding:15px 18px 75px;
+}
+
+.section{
+  margin:24px 0;
+  padding:28px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  scroll-margin-top:170px;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:11px;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  padding:6px 13px;
+  background:var(--cyan);
+  color:white;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+
+h2{
+  font:800 clamp(24px,4vw,31px) "Baloo 2",sans-serif;
+  color:var(--navy);
+  margin:0;
+}
+
+h3{
+  font:800 21px "Baloo 2",sans-serif;
+  color:var(--navy);
+  margin:0;
+}
+
+.lead{
+  color:var(--muted);
+  font-weight:700;
+  margin:5px 0 20px;
+}
+
+.tip{
+  background:var(--cream);
+  border-left:5px solid var(--gold);
+  border-radius:14px;
+  padding:15px 18px;
+  margin-top:22px;
+  font-weight:700;
+}
+
+.tip strong{
+  color:var(--navy);
+}
+
+/* ==========================================================
+   STORY CARDS
+========================================================== */
+
+.story-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+
+.story-card{
+  overflow:hidden;
+  border-radius:23px;
+  background:white;
+  border:1px solid var(--line);
+  box-shadow:0 8px 25px rgba(23,50,77,.07);
+  transition:.3s;
+}
+
+.story-card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow-lg);
+}
+
+.story-image-wrap{
+  position:relative;
+  overflow:hidden;
+  height:245px;
+  background:#dceef2;
+}
+
+.story-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .5s;
+}
+
+.story-card:hover .story-img{
+  transform:scale(1.05);
+}
+
+.story-image-label{
+  position:absolute;
+  left:15px;
+  bottom:15px;
+  padding:7px 13px;
+  border-radius:999px;
+  color:white;
+  background:rgba(16,38,60,.82);
+  backdrop-filter:blur(7px);
+  font-size:12px;
+  font-weight:900;
+}
+
+.story-content{
+  padding:20px;
+}
+
+.country{
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.story-content h3{
+  font-size:26px;
+  margin:4px 0;
+}
+
+.story-content p{
+  margin:0 0 15px;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.story-link{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  border:0;
+  border-radius:999px;
+  padding:10px 16px;
+  color:white;
+  background:var(--blue);
+  font-weight:900;
+  font-size:12px;
+  transition:.2s;
+}
+
+.story-link:hover{
+  background:var(--navy);
+  transform:translateX(3px);
+}
+
+/* ==========================================================
+   READING TEXT LAYOUT
+========================================================== */
+
+.text-layout{
+  display:grid;
+  grid-template-columns:240px minmax(0,1fr);
+  gap:23px;
+  align-items:start;
+}
+
+.text-layout > *{
+  min-width:0;
+}
+
+.text-portrait{
+  position:sticky;
+  top:165px;
+}
+
+.text-portrait > img{
+  width:100%;
+  height:250px;
+  display:block;
+  object-fit:cover;
+  border-radius:20px;
+  border:3px solid var(--line);
+  box-shadow:var(--shadow);
+}
+
+.caption{
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:900;
+  margin:8px 0;
+}
+
+.visual-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:9px;
+  margin-top:14px;
+}
+
+.visual-gallery figure{
+  margin:0;
+  padding:5px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  text-align:center;
+}
+
+.visual-gallery img{
+  display:block;
+  width:100%;
+  height:95px;
+  object-fit:cover;
+  border-radius:9px;
+}
+
+.visual-gallery figcaption{
+  font-size:10px;
+  font-weight:900;
+  padding:5px 2px 2px;
+  line-height:1.3;
+}
+
+.reading-text{
+  position:relative;
+  background:linear-gradient(
+    180deg,
+    #ffffff,
+    #f8fcfd
+  );
+  border:2px solid var(--line);
+  border-radius:22px;
+  padding:24px;
+  font-size:15px;
+}
+
+.reading-text::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:25px;
+  bottom:25px;
+  width:4px;
+  border-radius:0 4px 4px 0;
+  background:var(--cyan);
+}
+
+.reading-text p{
+  margin:0 0 17px;
+}
+
+.reading-text p:last-child{
+  margin:0;
+}
+
+.key{
+  background:#fff0bc;
+  border-radius:5px;
+  padding:1px 4px;
+  font-weight:900;
+  color:#745113;
+}
+
+/* ==========================================================
+   ACTIVITY CARDS
+========================================================== */
+
+.activity{
+  margin-top:21px;
+  padding:20px;
+  background:#f7fbfd;
+  border:1px solid var(--line);
+  border-radius:21px;
+}
+
+.activity-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:9px;
+}
+
+.activity-number{
+  flex-shrink:0;
+  width:37px;
+  height:37px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:var(--gold);
+  color:var(--navy);
+  font-weight:900;
+  box-shadow:0 4px 10px rgba(244,198,93,.25);
+}
+
+.instructions{
+  margin:0 0 14px;
+  color:var(--muted);
+  font-weight:700;
+  font-size:13px;
+}
+
+.question{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:15px;
+  margin:11px 0;
+}
+
+.question strong{
+  color:var(--navy);
+}
+
+.options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:11px;
+}
+
+.option{
+  border:2px solid #d4e7ed;
+  background:#f9fcfd;
+  color:var(--ink);
+  border-radius:999px;
+  padding:9px 15px;
+  font-size:13px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.option:hover:not(:disabled){
+  background:var(--cyan-light);
+  border-color:var(--cyan);
+  transform:translateY(-2px);
+}
+
+.option.correct{
+  background:var(--green-light);
+  border-color:var(--green);
+  color:#226b40;
+}
+
+.option.wrong{
+  background:var(--red-light);
+  border-color:var(--red);
+  color:#9a3834;
+}
+
+.feedback{
+  min-height:22px;
+  margin-top:8px;
+  font-size:13px;
+  font-weight:900;
+}
+
+.ok{
+  color:var(--green);
+}
+
+.no{
+  color:var(--red);
+}
+
+/* ==========================================================
+   TRUE / FALSE
+========================================================== */
+
+.tfrow{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  border-bottom:1px solid var(--line);
+  padding:14px 3px;
+}
+
+.tfrow:last-child{
+  border-bottom:0;
+}
+
+.tftext{
+  flex:1;
+  min-width:180px;
+  font-weight:800;
+}
+
+.tfbuttons{
+  display:flex;
+  gap:7px;
+}
+
+.tfbtn{
+  border:2px solid #d4e7ed;
+  border-radius:999px;
+  background:white;
+  padding:7px 13px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.tfbtn:hover:not(:disabled){
+  border-color:var(--cyan);
+}
+
+.tfbtn.correct{
+  background:var(--green-light);
+  border-color:var(--green);
+  color:#226b40;
+}
+
+.tfbtn.wrong{
+  background:var(--red-light);
+  border-color:var(--red);
+  color:#9a3834;
+}
+
+.justify{
+  display:none;
+  width:100%;
+  margin:0;
+  padding:11px 13px;
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  border-radius:10px;
+  font-weight:700;
+  font-size:13px;
+}
+
+.justify.show{
+  display:block;
+}
+
+/* ==========================================================
+   SELECT TASKS
+========================================================== */
+
+.answer-grid{
+  display:grid;
+  grid-template-columns:repeat(
+    auto-fit,
+    minmax(min(100%,220px),1fr)
+  );
+  gap:12px;
+}
+
+.answer-box{
+  padding:15px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+
+.answer-box strong{
+  color:var(--navy);
+  font-size:13px;
+}
+
+.answer-select{
+  display:block;
+  width:100%;
+  margin-top:10px;
+  padding:11px 12px;
+  background:#f8fcfd;
+  border:2px solid var(--line);
+  border-radius:11px;
+  color:var(--ink);
+  font-size:13px;
+  font-weight:800;
+}
+
+.answer-select.correct{
+  border-color:var(--green);
+  background:var(--green-light);
+}
+
+.answer-select.wrong{
+  border-color:var(--red);
+  background:var(--red-light);
+}
+
+.check-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-top:16px;
+  border:0;
+  border-radius:999px;
+  padding:11px 20px;
+  background:var(--blue);
+  color:white;
+  font-size:13px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.check-btn:hover:not(:disabled){
+  background:var(--navy);
+  transform:translateY(-2px);
+}
+
+/* ==========================================================
+   FINAL CHALLENGE
+========================================================== */
+
+.final-box{
+  padding:25px;
+  background:linear-gradient(
+    135deg,
+    var(--navy-deep),
+    var(--blue)
+  );
+  color:white;
+  border-radius:24px;
+  text-align:center;
+}
+
+.final-box h2{
+  color:white;
+}
+
+.final-box > p{
+  color:#e7f8ff;
+  font-weight:700;
+}
+
+.final-box .question{
+  color:var(--ink);
+  text-align:left;
+}
+
+.score{
+  margin:17px 0;
+  font:800 35px "Baloo 2",sans-serif;
+  color:var(--gold);
+}
+
+.final-btn{
+  border:0;
+  border-radius:999px;
+  padding:12px 23px;
+  background:var(--gold);
+  color:var(--navy);
+  font-weight:900;
+  transition:.2s;
+}
+
+.final-btn:hover{
+  background:#ffe09b;
+  transform:translateY(-2px);
+}
+
+.small{
+  font-size:12px;
+  font-weight:800;
+  color:#dff7fb;
+}
+
+/* ==========================================================
+   FLOATING ENGLISH–ARABIC DICTIONARY
+========================================================== */
+
+.dictionary-launcher{
+  position:fixed;
+  right:19px;
+  bottom:23px;
+  z-index:90;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:13px 18px;
+  border:2px solid rgba(255,255,255,.8);
+  border-radius:999px;
+
+  background:linear-gradient(
+    135deg,
+    var(--navy),
+    var(--blue)
+  );
+
+  color:white;
+  font-size:13px;
+  font-weight:900;
+
+  box-shadow:0 12px 35px rgba(23,50,77,.3);
+  transition:.25s;
+}
+
+.dictionary-launcher:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 45px rgba(23,50,77,.4);
+}
+
+.dictionary-launcher .icon{
+  font-size:22px;
+}
+
+.dictionary-panel{
+  position:fixed;
+  right:18px;
+  bottom:90px;
+  z-index:100;
+
+  width:min(405px,calc(100vw - 30px));
+  max-height:min(72vh,650px);
+
+  display:flex;
+  flex-direction:column;
+
+  background:white;
+  border:1px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+
+  box-shadow:0 25px 75px rgba(23,50,77,.3);
+}
+
+.dictionary-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+
+  padding:18px;
+  color:white;
+
+  background:linear-gradient(
+    135deg,
+    var(--navy),
+    var(--blue)
+  );
+}
+
+.dictionary-header h2{
+  color:white;
+  font-size:23px;
+}
+
+.dictionary-header p{
+  margin:0;
+  color:#e4f8ff;
+  font-size:11px;
+  font-weight:800;
+}
+
+.dictionary-close{
+  flex-shrink:0;
+  width:37px;
+  height:37px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:12px;
+  background:rgba(255,255,255,.15);
+  color:white;
+  font-size:24px;
+}
+
+.dictionary-close:hover{
+  background:rgba(255,255,255,.3);
+}
+
+.dictionary-search-wrap{
+  padding:14px 14px 9px;
+}
+
+.dictionary-search{
+  width:100%;
+  padding:12px 14px;
+  border:2px solid var(--line);
+  border-radius:13px;
+  background:#f8fcfd;
+  font-size:13px;
+}
+
+.dictionary-search:focus{
+  border-color:var(--cyan);
+}
+
+.dictionary-filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  padding:0 14px 12px;
+}
+
+.dictionary-filter{
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#f3f9fc;
+  padding:7px 11px;
+  color:var(--navy);
+  font-size:11px;
+  font-weight:900;
+}
+
+.dictionary-filter.active{
+  background:var(--navy);
+  border-color:var(--navy);
+  color:white;
+}
+
+.dictionary-list{
+  min-height:70px;
+  overflow-y:auto;
+  padding:0 14px 14px;
+  overscroll-behavior:contain;
+}
+
+.dictionary-entry{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:11px 9px;
+  border-bottom:1px solid var(--line);
+}
+
+.dictionary-entry:last-child{
+  border-bottom:0;
+}
+
+.dictionary-entry-main{
+  flex:1;
+  min-width:0;
+}
+
+.dictionary-english{
+  color:var(--navy);
+  font-size:13px;
+  font-weight:900;
+}
+
+.dictionary-arabic{
+  color:var(--green);
+  font-size:16px;
+  font-weight:800;
+  text-align:right;
+  direction:rtl;
+}
+
+.speak-btn{
+  flex-shrink:0;
+  width:37px;
+  height:37px;
+  border:0;
+  border-radius:12px;
+  background:#e8f6fa;
+  font-size:17px;
+}
+
+.speak-btn:hover{
+  background:#d4edf5;
+}
+
+.dictionary-empty{
+  padding:28px 10px;
+  text-align:center;
+  color:var(--muted);
+  font-weight:800;
+}
+
+.dictionary-footer{
+  padding:11px 14px;
+  background:#f4f9fc;
+  border-top:1px solid var(--line);
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:800;
+}
+
+/* ==========================================================
+   PAGE FOOTER
+========================================================== */
+
+.page-footer{
+  background:var(--navy-deep);
+  color:white;
+  text-align:center;
+  padding:35px 18px 105px;
+}
+
+.page-footer strong{
+  display:block;
+  font:800 25px "Baloo 2",sans-serif;
+}
+
+.page-footer p{
+  margin:4px 0;
+  color:#c9e7f0;
+  font-size:12px;
+  font-weight:800;
+}
+
+.footer-home{
+  display:inline-block;
+  margin-top:14px;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;
+  padding:9px 18px;
+  font-size:12px;
+  font-weight:900;
+  color:white;
+  background:rgba(255,255,255,.1);
+}
+
+.footer-home:hover{
+  background:white;
+  color:var(--navy);
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:850px){
+
+  .text-layout{
+    grid-template-columns:1fr;
+  }
+
+  .text-portrait{
+    position:static;
+  }
+
+  .text-portrait > img{
+    height:270px;
+  }
+
+  .visual-gallery{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .visual-gallery img{
+    height:120px;
+  }
+}
+
+@media(max-width:650px){
+
+  .hero{
+    padding:20px 14px 35px;
+  }
+
+  .hero-top{
+    justify-content:center;
+    margin-bottom:25px;
+  }
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .hero-icons{
+    font-size:30px;
+    letter-spacing:3px;
+  }
+
+  .hero-stat{
+    min-width:95px;
+    padding:10px;
+  }
+
+  .section{
+    padding:18px;
+    border-radius:22px;
+    scroll-margin-top:200px;
+  }
+
+  .story-grid{
+    grid-template-columns:1fr;
+  }
+
+  .story-image-wrap{
+    height:210px;
+  }
+
+  .activity{
+    padding:15px;
+  }
+
+  .reading-text{
+    padding:18px;
+  }
+
+  .nav button{
+    padding:8px 10px;
+    font-size:11px;
+  }
+
+  .tfrow{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .justify{
+    width:100%;
+  }
+
+  .visual-gallery img{
+    height:95px;
+  }
+
+  .dictionary-launcher{
+    right:12px;
+    bottom:13px;
+    padding:11px 14px;
+    font-size:12px;
+  }
+
+  .dictionary-panel{
+    right:10px;
+    bottom:75px;
+    width:calc(100vw - 20px);
+    max-height:72vh;
+  }
+
+  .final-box{
+    padding:18px;
+  }
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    animation:none!important;
+    transition:none!important;
+  }
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print{
+
+  .navbar,
+  .dictionary-launcher,
+  .dictionary-panel,
+  .back-home,
+  .story-link,
+  .check-btn,
+  .final-btn,
+  .option,
+  .tfbtn,
+  .answer-select{
+    display:none!important;
+  }
+
+  body{
+    background:white;
+  }
+
+  .section{
+    box-shadow:none;
+    break-inside:avoid;
+  }
+
+  .text-portrait{
+    position:static;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<header class="hero">
+
+  <div class="hero-inner">
+
+    <div class="hero-top">
+
+      <div class="brand">
+
+        <span class="brand-icon">📚</span>
+
+        <span>My English Space</span>
+
+      </div>
+
+      <a href="MS4-S1-Reading.html" class="back-home">
+        ← Reading Homepage
+      </a>
+
+    </div>
+
+    <div class="hero-badges">
+
+      <span class="hero-badge">
+        MS4 • SEQUENCE 1
+      </span>
+
+      <span class="hero-badge">
+        READING COMPREHENSION
+      </span>
+
+      <span class="hero-badge">
+        LESSON 03
+      </span>
+
+    </div>
+
+    <h1>
+      Amazing <span>Journeys</span>
+    </h1>
+
+    <p class="hero-sub">
+      Pack your bags! Read two exciting travel stories,
+      discover famous landmarks and practise your reading
+      skills like a BEM candidate.
+    </p>
+
+    <div class="hero-icons">
+      🧳 ✈️ 🗺️ 📖 🏛️
+    </div>
+
+    <div class="hero-stats">
+
+      <div class="hero-stat">
+        <strong>02</strong>
+        <span>Travel Stories</span>
+      </div>
+
+      <div class="hero-stat">
+        <strong>02</strong>
+        <span>Countries</span>
+      </div>
+
+      <div class="hero-stat">
+        <strong>09</strong>
+        <span>Reading Activities</span>
+      </div>
+
+      <div class="hero-stat">
+        <strong>05</strong>
+        <span>Final Questions</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- ==========================================================
+     NAVIGATION
+========================================================== -->
+
+<div class="navbar">
+
+  <div class="nav">
+
+    <button type="button" onclick="go('start')">
+      🏠 Start
+    </button>
+
+    <button type="button" onclick="go('text1')">
+      🇩🇿 Algeria
+    </button>
+
+    <button type="button" onclick="go('text2')">
+      🇮🇹 Italy
+    </button>
+
+    <button type="button" onclick="go('compare')">
+      🔎 Compare
+    </button>
+
+    <button type="button" onclick="go('challenge')">
+      🏆 Challenge
+    </button>
+
+  </div>
+
+  <div class="progress">
+
+    <div class="progress-top">
+
+      <span>YOUR READING JOURNEY</span>
+
+      <span id="progressText" aria-live="polite">
+        0% completed
+      </span>
+
+    </div>
+
+    <div
+      class="progressbar"
+      id="progressBar"
+      role="progressbar"
+      aria-label="Reading progress"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="0">
+
+      <div class="progressfill" id="progressFill"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<main id="start">
+
+<!-- ==========================================================
+     WARM-UP
+========================================================== -->
+
+<section class="section">
+
+  <div class="section-title">
+
+    <span class="badge">GET READY</span>
+
+    <h2>
+      Two journeys. Two countries. Many discoveries.
+    </h2>
+
+  </div>
+
+  <p class="lead">
+    Look at the pictures before reading.
+    Then read each travel story carefully and complete
+    the comprehension activities.
+  </p>
+
+  <div class="story-grid">
+
+    <!-- ALGERIA -->
+
+    <article class="story-card">
+
+      <div class="story-image-wrap">
+
+        <img
+          class="story-img"
+          src="https://i.imgur.com/DsZc1oE.png"
+          alt="The Casbah of Algiers"
+          loading="lazy">
+
+        <span class="story-image-label">
+          🇩🇿 ALGERIA
+        </span>
+
+      </div>
+
+      <div class="story-content">
+
+        <div class="country">
+          DESTINATION 01
+        </div>
+
+        <h3>Discovering Algiers</h3>
+
+        <p>
+          Explore the historic Casbah, impressive monuments
+          and beautiful Mediterranean views.
+        </p>
+
+        <button
+          type="button"
+          class="story-link"
+          onclick="go('text1')">
+          Explore Algeria →
+        </button>
+
+      </div>
+
+    </article>
+
+    <!-- ITALY -->
+
+    <article class="story-card">
+
+      <div class="story-image-wrap">
+
+        <img
+          class="story-img"
+          src="https://i.imgur.com/bz1pcv2.jpeg"
+          alt="The Colosseum in Rome"
+          loading="lazy">
+
+        <span class="story-image-label">
+          🇮🇹 ITALY
+        </span>
+
+      </div>
+
+      <div class="story-content">
+
+        <div class="country">
+          DESTINATION 02
+        </div>
+
+        <h3>Exploring Italy</h3>
+
+        <p>
+          Discover Rome, Florence and Venice,
+          with their history, art and unforgettable landmarks.
+        </p>
+
+        <button
+          type="button"
+          class="story-link"
+          onclick="go('text2')">
+          Explore Italy →
+        </button>
+
+      </div>
+
+    </article>
+
+  </div>
+
+  <div class="tip">
+
+    💡 <strong>Reading tip:</strong>
+
+    When reading a travel story, look for the
+    <strong>place, time, landmarks, activities,
+    feelings and important people.</strong>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     TEXT 1 — ALGERIA
+========================================================== -->
+
+<section class="section" id="text1">
+
+  <div class="section-title">
+
+    <span class="badge">TEXT 01</span>
+
+    <h2>
+      A Wonderful Journey Through Algiers
+    </h2>
+
+  </div>
+
+  <p class="lead">
+    Read the travel story carefully. Pay attention
+    to the places visited, landmarks described
+    and historical figure mentioned.
+  </p>
+
+  <div class="text-layout">
+
+    <aside class="text-portrait">
+
+      <img
+        src="https://i.imgur.com/DsZc1oE.png"
+        alt="The Casbah of Algiers"
+        loading="lazy">
+
+      <div class="caption">
+        The Casbah of Algiers 🇩🇿
+      </div>
+
+      <div class="visual-gallery">
+
+        <figure>
+
+          <img
+            src="https://i.imgur.com/DdbdDBe.jpeg"
+            alt="Martyr's Memorial"
+            loading="lazy">
+
+          <figcaption>
+            Martyr's Memorial
+          </figcaption>
+
+        </figure>
+
+        <figure>
+
+          <img
+            src="https://i.imgur.com/MfnCyHK.png"
+            alt="Great Mosque of Algiers"
+            loading="lazy">
+
+          <figcaption>
+            Great Mosque
+          </figcaption>
+
+        </figure>
+
+        <figure>
+
+          <img
+            src="https://i.imgur.com/xk0BhHu.jpeg"
+            alt="Emir Abdelkader"
+            loading="lazy">
+
+          <figcaption>
+            Emir Abdelkader
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+    </aside>
+
+    <div>
+
+      <!-- READING TEXT -->
+
+      <div class="reading-text">
+
+        <p>
+          Last spring, I travelled to
+          <span class="key">Algiers</span>,
+          the capital of Algeria. I had always wanted to visit
+          this historic city because it combines a rich history
+          with beautiful Mediterranean scenery. When I arrived
+          in the morning, the sea was shining and the streets
+          were already full of life.
+        </p>
+
+        <p>
+          My first stop was the
+          <span class="key">Casbah of Algiers</span>,
+          a historic neighbourhood with narrow streets,
+          old houses and traditional buildings.
+          As I walked through its lively streets,
+          I imagined how people had lived there many years ago.
+          The atmosphere was fascinating, and every corner
+          seemed to tell a story.
+        </p>
+
+        <p>
+          Later, I visited the
+          <span class="key">Martyr's Memorial</span>.
+          From there, I enjoyed a wonderful view of the city.
+          The monument reminded me of the people who had
+          sacrificed their lives for Algeria's independence.
+          I also learned about important Algerian historical
+          figures, including
+          <span class="key">Emir Abdelkader</span>,
+          who became famous for his resistance and leadership
+          in the nineteenth century.
+        </p>
+
+        <p>
+          In the afternoon, I continued my journey towards
+          the coast and saw the impressive
+          <span class="key">Great Mosque of Algiers</span>.
+          Its enormous minaret and modern architecture
+          made a strong impression on me.
+          Before leaving, I walked along the seafront
+          and watched the sunset over the Mediterranean.
+          It was a memorable day, and I promised myself
+          to discover more of Algeria in the future.
+        </p>
+
+      </div>
+
+      <!-- ACTIVITY A -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+
+          <span class="activity-number">A</span>
+
+          <h3>Choose the correct answer</h3>
+
+        </div>
+
+        <p class="instructions">
+          Read the text and select the answer that best
+          completes each statement.
+        </p>
+
+        <div class="question">
+
+          <strong>
+            1. Where did the traveller go last spring?
+          </strong>
+
+          <div class="options">
+
+            <button class="option" data-correct="true">
+              Algiers
+            </button>
+
+            <button class="option">
+              Oran
+            </button>
+
+            <button class="option">
+              Constantine
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            2. What did the traveller visit first?
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              The Great Mosque
+            </button>
+
+            <button class="option" data-correct="true">
+              The Casbah
+            </button>
+
+            <button class="option">
+              The seafront
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            3. What did the traveller enjoy from
+            the Martyr's Memorial?
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              A view of the desert
+            </button>
+
+            <button class="option" data-correct="true">
+              A view of the city
+            </button>
+
+            <button class="option">
+              A view of the mountains
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            4. How did the Great Mosque make
+            the traveller feel?
+          </strong>
+
+          <div class="options">
+
+            <button class="option" data-correct="true">
+              Impressed
+            </button>
+
+            <button class="option">
+              Bored
+            </button>
+
+            <button class="option">
+              Frightened
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+      </div>
+
+      <!-- ACTIVITY B -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+
+          <span class="activity-number">B</span>
+
+          <h3>True or False? Justify your answer.</h3>
+
+        </div>
+
+        <p class="instructions">
+          Choose True or False, then read the textual evidence.
+        </p>
+
+        <div class="tfrow" data-answer="true">
+
+          <div class="tftext">
+            1. The traveller visited Algiers in spring.
+          </div>
+
+          <div class="tfbuttons">
+
+            <button class="tfbtn" data-choice="true">
+              True
+            </button>
+
+            <button class="tfbtn" data-choice="false">
+              False
+            </button>
+
+          </div>
+
+          <div class="justify">
+            ✅ True — The traveller says,
+            “Last spring, I travelled to Algiers.”
+          </div>
+
+        </div>
+
+        <div class="tfrow" data-answer="false">
+
+          <div class="tftext">
+            2. The Casbah has wide modern streets.
+          </div>
+
+          <div class="tfbuttons">
+
+            <button class="tfbtn" data-choice="true">
+              True
+            </button>
+
+            <button class="tfbtn" data-choice="false">
+              False
+            </button>
+
+          </div>
+
+          <div class="justify">
+            ❌ False — The Casbah has narrow streets,
+            old houses and traditional buildings.
+          </div>
+
+        </div>
+
+        <div class="tfrow" data-answer="true">
+
+          <div class="tftext">
+            3. The Martyr's Memorial reminded the traveller
+            of people who sacrificed their lives for independence.
+          </div>
+
+          <div class="tfbuttons">
+
+            <button class="tfbtn" data-choice="true">
+              True
+            </button>
+
+            <button class="tfbtn" data-choice="false">
+              False
+            </button>
+
+          </div>
+
+          <div class="justify">
+            ✅ True — The monument reminded the traveller
+            of people who had sacrificed their lives
+            for Algeria's independence.
+          </div>
+
+        </div>
+
+        <div class="tfrow" data-answer="false">
+
+          <div class="tftext">
+            4. The traveller left Algiers before visiting the coast.
+          </div>
+
+          <div class="tfbuttons">
+
+            <button class="tfbtn" data-choice="true">
+              True
+            </button>
+
+            <button class="tfbtn" data-choice="false">
+              False
+            </button>
+
+          </div>
+
+          <div class="justify">
+            ❌ False — The traveller continued towards
+            the coast before leaving.
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ACTIVITY C -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+
+          <span class="activity-number">C</span>
+
+          <h3>Vocabulary in context</h3>
+
+        </div>
+
+        <p class="instructions">
+          Choose the option that has the same meaning
+          as the expression from the text.
+        </p>
+
+        <div class="answer-grid">
+
+          <div class="answer-box">
+
+            <strong>
+              1. “fascinating” means:
+            </strong>
+
+            <select class="answer-select"
+              data-answer="very interesting">
+
+              <option value="">Choose...</option>
+              <option>very interesting</option>
+              <option>very boring</option>
+              <option>very dangerous</option>
+
+            </select>
+
+          </div>
+
+          <div class="answer-box">
+
+            <strong>
+              2. “enormous” means:
+            </strong>
+
+            <select class="answer-select"
+              data-answer="very large">
+
+              <option value="">Choose...</option>
+              <option>very small</option>
+              <option>very large</option>
+              <option>very old</option>
+
+            </select>
+
+          </div>
+
+          <div class="answer-box">
+
+            <strong>
+              3. The opposite of “narrow” is:
+            </strong>
+
+            <select class="answer-select"
+              data-answer="wide">
+
+              <option value="">Choose...</option>
+              <option>dark</option>
+              <option>wide</option>
+              <option>short</option>
+
+            </select>
+
+          </div>
+
+          <div class="answer-box">
+
+            <strong>
+              4. “There” in “people had lived there”
+              refers to:
+            </strong>
+
+            <select class="answer-select"
+              data-answer="the Casbah">
+
+              <option value="">Choose...</option>
+              <option>the coast</option>
+              <option>the Great Mosque</option>
+              <option>the Casbah</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+        <button
+          type="button"
+          class="check-btn"
+          onclick="checkSelects(this)">
+          ✓ Check Answers
+        </button>
+
+        <div class="feedback select-feedback"
+          aria-live="polite"></div>
+
+      </div>
+
+      <!-- ACTIVITY D -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+
+          <span class="activity-number">D</span>
+
+          <h3>Put the journey in the correct order</h3>
+
+        </div>
+
+        <p class="instructions">
+          Select what happened first, second,
+          third and fourth.
+        </p>
+
+        <div class="answer-grid">
+
+          <div class="answer-box">
+
+            <strong>1. First stop</strong>
+
+            <select class="answer-select"
+              data-answer="Casbah">
+
+              <option value="">Choose...</option>
+              <option>Great Mosque</option>
+              <option>Casbah</option>
+              <option>Seafront</option>
+              <option>Martyr's Memorial</option>
+
+            </select>
+
+          </div>
+
+          <div class="answer-box">
+
+            <strong>2. Second visit</strong>
+
+            <select class="answer-select"
+              data-answer="Martyr's Memorial">
+
+              <option value="">Choose...</option>
+              <option>Casbah</option>
+              <option>Great Mosque</option>
+              <option>Martyr's Memorial</option>
+              <option>Seafront</option>
+
+            </select>
+
+          </div>
+
+          <div class="answer-box">
+
+            <strong>3. Third visit</strong>
+
+            <select class="answer-select"
+              data-answer="Great Mosque">
+
+              <option value="">Choose...</option>
+              <option>Seafront</option>
+              <option>Casbah</option>
+              <option>Great Mosque</option>
+              <option>Martyr's Memorial</option>
+
+            </select>
+
+          </div>
+
+          <div class="answer-box">
+
+            <strong>4. Final activity</strong>
+
+            <select class="answer-select"
+              data-answer="Seafront">
+
+              <option value="">Choose...</option>
+              <option>Great Mosque</option>
+              <option>Casbah</option>
+              <option>Martyr's Memorial</option>
+              <option>Seafront</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+        <button
+          type="button"
+          class="check-btn"
+          onclick="checkSelects(this)">
+          🧭 Check Sequence
+        </button>
+
+        <div class="feedback select-feedback"
+          aria-live="polite"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     TEXT 2 — ITALY
+========================================================== -->
+
+<section class="section" id="text2">
+
+  <div class="section-title">
+
+    <span class="badge">TEXT 02</span>
+
+    <h2>
+      An Unforgettable Trip to Italy
+    </h2>
+
+  </div>
+
+  <p class="lead">
+    Travel across Italy and discover ancient monuments,
+    artistic treasures and famous cities.
+  </p>
+
+  <div class="text-layout">
+
+    <aside class="text-portrait">
+
+      <img
+        src="https://i.imgur.com/bz1pcv2.jpeg"
+        alt="The Colosseum in Rome"
+        loading="lazy">
+
+      <div class="caption">
+        The Colosseum — Rome 🇮🇹
+      </div>
+
+      <div class="visual-gallery">
+
+        <figure>
+
+          <img
+            src="https://i.imgur.com/10q9eBQ.jpeg"
+            alt="Leonardo da Vinci"
+            loading="lazy">
+
+          <figcaption>
+            Leonardo da Vinci
+          </figcaption>
+
+        </figure>
+
+        <figure>
+
+          <img
+            src="https://i.imgur.com/ZFUmJEe.jpeg"
+            alt="Venice"
+            loading="lazy">
+
+          <figcaption>
+            Venice
+          </figcaption>
+
+        </figure>
+
+        <figure>
+
+          <img
+            src="https://i.imgur.com/meVjYyL.jpeg"
+            alt="Leaning Tower of Pisa"
+            loading="lazy">
+
+          <figcaption>
+            Pisa
+          </figcaption>
+
+        </figure>
+
+        <figure>
+
+          <img
+            src="https://i.imgur.com/3MYG6G2.jpeg"
+            alt="Art and culture"
+            loading="lazy">
+
+          <figcaption>
+            Art & Culture
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+    </aside>
+
+    <div>
+
+      <!-- READING TEXT -->
+
+      <div class="reading-text">
+
+        <p>
+          During the summer holidays, my family and I
+          travelled to <span class="key">Italy</span>.
+          It was my first visit to the country, so I was
+          excited to discover its famous cities and landmarks.
+          Our journey began in <span class="key">Rome</span>,
+          a city where ancient history can be seen almost
+          everywhere.
+        </p>
+
+        <p>
+          On our first morning, we visited the impressive
+          <span class="key">Colosseum</span>.
+          As I stood in front of the huge ancient building,
+          I imagined the crowds who had watched shows there
+          many centuries ago. We then walked through the
+          historic centre and admired several old buildings
+          and beautiful squares.
+        </p>
+
+        <p>
+          After Rome, we travelled to
+          <span class="key">Florence</span>,
+          a city famous for art and culture.
+          In a museum, I discovered the work of
+          <span class="key">Leonardo da Vinci</span>,
+          one of the great artists and thinkers
+          of the Renaissance.
+          I was fascinated by his creativity and by
+          the importance of Florence in the history of art.
+        </p>
+
+        <p>
+          Our final destination was
+          <span class="key">Venice</span>.
+          Instead of ordinary streets, the city seemed
+          to be crossed by water.
+          We travelled along its canals and admired
+          the beautiful buildings.
+          The atmosphere was peaceful and magical.
+          On the way home, I realised that Italy was much
+          more than a holiday destination: it was a journey
+          through history, art and culture.
+          I returned home with wonderful memories
+          and a strong desire to visit Italy again.
+        </p>
+
+      </div>
+
+      <!-- ACTIVITY A -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+
+          <span class="activity-number">A</span>
+
+          <h3>Choose the correct answer</h3>
+
+        </div>
+
+        <p class="instructions">
+          Choose the answer that best completes each statement.
+        </p>
+
+        <div class="question">
+
+          <strong>
+            1. When did the journey take place?
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              In winter
+            </button>
+
+            <button class="option" data-correct="true">
+              During the summer holidays
+            </button>
+
+            <button class="option">
+              In spring
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            2. What was the first Italian city they visited?
+          </strong>
+
+          <div class="options">
+
+            <button class="option" data-correct="true">
+              Rome
+            </button>
+
+            <button class="option">
+              Venice
+            </button>
+
+            <button class="option">
+              Florence
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            3. What is Florence famous for according to the text?
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              Beaches and sports
+            </button>
+
+            <button class="option" data-correct="true">
+              Art and culture
+            </button>
+
+            <button class="option">
+              Mountains and forests
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            4. How did the traveller describe Venice?
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              Noisy and dangerous
+            </button>
+
+            <button class="option">
+              Empty and boring
+            </button>
+
+            <button class="option" data-correct="true">
+              Peaceful and magical
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+      </div>
+
+      <!-- ACTIVITY B -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+
+          <span class="activity-number">B</span>
+
+          <h3>True or False? Justify from the text.</h3>
+
+        </div>
+
+        <p class="instructions">
+          Read carefully and decide whether each
+          statement is True or False.
+        </p>
+
+        <div class="tfrow" data-answer="true">
+
+          <div class="tftext">
+            1. It was the traveller's first visit to Italy.
+          </div>
+
+          <div class="tfbuttons">
+
+            <button class="tfbtn" data-choice="true">
+              True
+            </button>
+
+            <button class="tfbtn" data-choice="false">
+              False
+            </button>
+
+          </div>
+
+          <div class="justify">
+            ✅ True — The traveller says,
+            “It was my first visit to the country.”
+          </div>
+
+        </div>
+
+        <div class="tfrow" data-answer="true">
+
+          <div class="tftext">
+            2. The traveller visited the Colosseum in Rome.
+          </div>
+
+          <div class="tfbuttons">
+
+            <button class="tfbtn" data-choice="true">
+              True
+            </button>
+
+            <button class="tfbtn" data-choice="false">
+              False
+            </button>
+
+          </div>
+
+          <div class="justify">
+            ✅ True — The text says they visited
+            the impressive Colosseum in Rome.
+          </div>
+
+        </div>
+
+        <div class="tfrow" data-answer="false">
+
+          <div class="tftext">
+            3. Leonardo da Vinci was presented
+            as a modern scientist.
+          </div>
+
+          <div class="tfbuttons">
+
+            <button class="tfbtn" data-choice="true">
+              True
+            </button>
+
+            <button class="tfbtn" data-choice="false">
+              False
+            </button>
+
+          </div>
+
+          <div class="justify">
+            ❌ False — He is described as one of
+            the great artists and thinkers
+            of the Renaissance.
+          </div>
+
+        </div>
+
+        <div class="tfrow" data-answer="true">
+
+          <div class="tftext">
+            4. The travellers travelled along canals in Venice.
+          </div>
+
+          <div class="tfbuttons">
+
+            <button class="tfbtn" data-choice="true">
+              True
+            </button>
+
+            <button class="tfbtn" data-choice="false">
+              False
+            </button>
+
+          </div>
+
+          <div class="justify">
+            ✅ True — The text says they travelled
+            along the canals.
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ACTIVITY C -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+
+          <span class="activity-number">C</span>
+
+          <h3>Who or what does it refer to?</h3>
+
+        </div>
+
+        <p class="instructions">
+          Choose the correct option according to the text.
+        </p>
+
+        <div class="answer-grid">
+
+          <div class="answer-box">
+
+            <strong>
+              1. “It” in “It was my first visit...”
+            </strong>
+
+            <select class="answer-select"
+              data-answer="the visit to Italy">
+
+              <option value="">Choose...</option>
+              <option>the Colosseum</option>
+              <option>the visit to Italy</option>
+              <option>the museum</option>
+
+            </select>
+
+          </div>
+
+          <div class="answer-box">
+
+            <strong>
+              2. “his” in “his creativity” refers to:
+            </strong>
+
+            <select class="answer-select"
+              data-answer="Leonardo da Vinci">
+
+              <option value="">Choose...</option>
+              <option>the traveller</option>
+              <option>Leonardo da Vinci</option>
+              <option>the museum guide</option>
+
+            </select>
+
+          </div>
+
+          <div class="answer-box">
+
+            <strong>
+              3. “there” in “shows there” refers to:
+            </strong>
+
+            <select class="answer-select"
+              data-answer="the Colosseum">
+
+              <option value="">Choose...</option>
+              <option>Florence</option>
+              <option>Venice</option>
+              <option>the Colosseum</option>
+
+            </select>
+
+          </div>
+
+          <div class="answer-box">
+
+            <strong>
+              4. “the country” refers to:
+            </strong>
+
+            <select class="answer-select"
+              data-answer="Italy">
+
+              <option value="">Choose...</option>
+              <option>France</option>
+              <option>Italy</option>
+              <option>England</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+        <button
+          type="button"
+          class="check-btn"
+          onclick="checkSelects(this)">
+          ✓ Check Answers
+        </button>
+
+        <div class="feedback select-feedback"
+          aria-live="polite"></div>
+
+      </div>
+
+      <!-- ACTIVITY D -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+
+          <span class="activity-number">D</span>
+
+          <h3>Find the information</h3>
+
+        </div>
+
+        <p class="instructions">
+          Choose the correct option based on the text.
+        </p>
+
+        <div class="question">
+
+          <strong>
+            1. The Colosseum is a famous landmark in...
+          </strong>
+
+          <div class="options">
+
+            <button class="option" data-correct="true">
+              Rome
+            </button>
+
+            <button class="option">
+              Florence
+            </button>
+
+            <button class="option">
+              Venice
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            2. Leonardo da Vinci is connected
+            in the text with...
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              Venice
+            </button>
+
+            <button class="option" data-correct="true">
+              Florence
+            </button>
+
+            <button class="option">
+              Rome
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            3. Venice is described as a city crossed by...
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              mountains
+            </button>
+
+            <button class="option">
+              deserts
+            </button>
+
+            <button class="option" data-correct="true">
+              water
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            4. The traveller returned home with...
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              disappointment
+            </button>
+
+            <button class="option" data-correct="true">
+              wonderful memories
+            </button>
+
+            <button class="option">
+              no memories
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     COMPARISON
+========================================================== -->
+
+<section class="section" id="compare">
+
+  <div class="section-title">
+
+    <span class="badge">
+      READ & COMPARE
+    </span>
+
+    <h2>
+      Two Journeys at a Glance
+    </h2>
+
+  </div>
+
+  <p class="lead">
+    Use information from both texts to complete
+    the following activities.
+  </p>
+
+  <!-- COMPARISON A -->
+
+  <div class="activity">
+
+    <div class="activity-head">
+
+      <span class="activity-number">A</span>
+
+      <h3>Which text?</h3>
+
+    </div>
+
+    <p class="instructions">
+      Choose the correct option: Text 1 or Text 2.
+    </p>
+
+    <div class="question">
+
+      <strong>
+        1. Which text mentions the Casbah?
+      </strong>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          Text 1
+        </button>
+
+        <button class="option">
+          Text 2
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>
+        2. Which text mentions Leonardo da Vinci?
+      </strong>
+
+      <div class="options">
+
+        <button class="option">
+          Text 1
+        </button>
+
+        <button class="option" data-correct="true">
+          Text 2
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>
+        3. Which text mentions the Mediterranean?
+      </strong>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          Text 1
+        </button>
+
+        <button class="option">
+          Text 2
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>
+        4. Which text mentions canals?
+      </strong>
+
+      <div class="options">
+
+        <button class="option">
+          Text 1
+        </button>
+
+        <button class="option" data-correct="true">
+          Text 2
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+  <!-- COMPARISON B -->
+
+  <div class="activity">
+
+    <div class="activity-head">
+
+      <span class="activity-number">B</span>
+
+      <h3>Complete the comparison</h3>
+
+    </div>
+
+    <p class="instructions">
+      Choose the correct option for each statement.
+    </p>
+
+    <div class="answer-grid">
+
+      <div class="answer-box">
+
+        <strong>
+          1. The Casbah is found in...
+        </strong>
+
+        <select class="answer-select"
+          data-answer="Algeria">
+
+          <option value="">Choose...</option>
+          <option>Italy</option>
+          <option>Algeria</option>
+          <option>England</option>
+
+        </select>
+
+      </div>
+
+      <div class="answer-box">
+
+        <strong>
+          2. The Colosseum is found in...
+        </strong>
+
+        <select class="answer-select"
+          data-answer="Italy">
+
+          <option value="">Choose...</option>
+          <option>Algeria</option>
+          <option>Italy</option>
+          <option>Spain</option>
+
+        </select>
+
+      </div>
+
+      <div class="answer-box">
+
+        <strong>
+          3. Emir Abdelkader is mentioned in...
+        </strong>
+
+        <select class="answer-select"
+          data-answer="Text 1">
+
+          <option value="">Choose...</option>
+          <option>Text 1</option>
+          <option>Text 2</option>
+          <option>Both texts</option>
+
+        </select>
+
+      </div>
+
+      <div class="answer-box">
+
+        <strong>
+          4. Leonardo da Vinci is mentioned in...
+        </strong>
+
+        <select class="answer-select"
+          data-answer="Text 2">
+
+          <option value="">Choose...</option>
+          <option>Text 1</option>
+          <option>Text 2</option>
+          <option>Both texts</option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+    <button
+      type="button"
+      class="check-btn"
+      onclick="checkSelects(this)">
+      ✓ Check Comparison
+    </button>
+
+    <div class="feedback select-feedback"
+      aria-live="polite"></div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     FINAL CHALLENGE
+========================================================== -->
+
+<section class="section" id="challenge">
+
+  <div class="final-box">
+
+    <h2>
+      🏆 Final Reading Challenge
+    </h2>
+
+    <p>
+      You have travelled through Algeria and Italy.
+      Now prove how carefully you read!
+    </p>
+
+    <div class="question">
+
+      <strong>
+        1. Which traveller visited the Casbah?
+      </strong>
+
+      <div class="options">
+
+        <button class="option challenge-opt"
+          data-correct="true">
+          Traveller 1
+        </button>
+
+        <button class="option challenge-opt">
+          Traveller 2
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>
+        2. Which traveller visited the Colosseum?
+      </strong>
+
+      <div class="options">
+
+        <button class="option challenge-opt">
+          Traveller 1
+        </button>
+
+        <button class="option challenge-opt"
+          data-correct="true">
+          Traveller 2
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>
+        3. Who is associated with the Renaissance?
+      </strong>
+
+      <div class="options">
+
+        <button class="option challenge-opt">
+          Emir Abdelkader
+        </button>
+
+        <button class="option challenge-opt"
+          data-correct="true">
+          Leonardo da Vinci
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>
+        4. Which city is famous for canals?
+      </strong>
+
+      <div class="options">
+
+        <button class="option challenge-opt">
+          Algiers
+        </button>
+
+        <button class="option challenge-opt"
+          data-correct="true">
+          Venice
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>
+        5. Which text describes the Mediterranean?
+      </strong>
+
+      <div class="options">
+
+        <button class="option challenge-opt"
+          data-correct="true">
+          Text 1
+        </button>
+
+        <button class="option challenge-opt">
+          Text 2
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="score" id="score" aria-live="polite">
+      ⭐ 0 / 5
+    </div>
+
+    <button
+      type="button"
+      class="final-btn"
+      onclick="resetChallenge()">
+      🔄 Try Again
+    </button>
+
+    <p class="small">
+      🌟 Excellent readers find evidence in the text
+      instead of guessing!
+    </p>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- ==========================================================
+     FLOATING DICTIONARY BUTTON
+========================================================== -->
+
+<button
+  class="dictionary-launcher"
+  id="dictionaryLauncher"
+  type="button"
+  aria-label="Open English-Arabic dictionary"
+  aria-controls="dictionaryPanel"
+  aria-expanded="false"
+  onclick="toggleDictionary()">
+
+  <span class="icon">📖</span>
+
+  <span>EN–AR Dictionary</span>
+
+</button>
+
+<!-- ==========================================================
+     MINI DICTIONARY PANEL
+========================================================== -->
+
+<aside
+  class="dictionary-panel"
+  id="dictionaryPanel"
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="dictionaryTitle"
+  hidden>
+
+  <div class="dictionary-header">
+
+    <div>
+
+      <h2 id="dictionaryTitle">
+        📖 Mini Dictionary
+      </h2>
+
+      <p>
+        English ↔ Arabic | قاموس إنجليزي عربي
+      </p>
+
+    </div>
+
+    <button
+      class="dictionary-close"
+      type="button"
+      aria-label="Close dictionary"
+      onclick="closeDictionary()">
+      ×
+    </button>
+
+  </div>
+
+  <div class="dictionary-search-wrap">
+
+    <input
+      class="dictionary-search"
+      type="search"
+      id="dictionarySearch"
+      placeholder="🔎 Search English or Arabic..."
+      aria-label="Search dictionary"
+      autocomplete="off">
+
+  </div>
+
+  <div class="dictionary-filters">
+
+    <button
+      type="button"
+      class="dictionary-filter active"
+      data-category="all">
+      All
+    </button>
+
+    <button
+      type="button"
+      class="dictionary-filter"
+      data-category="algeria">
+      🇩🇿 Algeria
+    </button>
+
+    <button
+      type="button"
+      class="dictionary-filter"
+      data-category="italy">
+      🇮🇹 Italy
+    </button>
+
+    <button
+      type="button"
+      class="dictionary-filter"
+      data-category="general">
+      📚 General
+    </button>
+
+  </div>
+
+  <div
+    class="dictionary-list"
+    id="dictionaryList"
+    aria-live="polite">
+  </div>
+
+  <div class="dictionary-footer"
+    id="dictionaryCount">
+    Tap 🔊 to hear the English pronunciation.
+  </div>
+
+</aside>
+
+<!-- ==========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="page-footer">
+
+  <strong>
+    📚 My English Space
+  </strong>
+
+  <p>
+    MS4 · SEQUENCE 1 · READING LESSON 3
+  </p>
+
+  <p>
+    Read • Explore • Discover • Succeed
+  </p>
+
+  <a
+    href="MS4-S1-Reading.html"
+    class="footer-home">
+    ← Back to Reading Homepage
+  </a>
+
+</footer>
+
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script>
+
+"use strict";
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+
+function go(id){
+
+  const element = document.getElementById(id);
+
+  if(!element){
+    return;
+  }
+
+  const navbar = document.querySelector(".navbar");
+
+  const offset = navbar
+    ? navbar.offsetHeight + 15
+    : 15;
+
+  const position =
+    element.getBoundingClientRect().top +
+    window.scrollY -
+    offset;
+
+  window.scrollTo({
+
+    top:Math.max(0,position),
+
+    behavior:window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches ? "auto" : "smooth"
+
+  });
+
+}
+
+/* ==========================================================
+   READING PROGRESS
+   Counts:
+   - Normal multiple-choice questions
+   - True/False questions
+   - Individual dropdown answers
+   Final challenge is scored separately.
+========================================================== */
+
+function updateProgress(){
+
+  const questions = document.querySelectorAll(
+    ".question:not(#challenge .question)"
+  );
+
+  const trueFalseRows =
+    document.querySelectorAll(".tfrow");
+
+  const dropdowns =
+    document.querySelectorAll(".answer-select");
+
+  const total =
+    questions.length +
+    trueFalseRows.length +
+    dropdowns.length;
+
+  let completed = 0;
+
+  questions.forEach(question=>{
+
+    if(question.dataset.locked === "1"){
+      completed++;
+    }
+
+  });
+
+  trueFalseRows.forEach(row=>{
+
+    if(row.dataset.locked === "1"){
+      completed++;
+    }
+
+  });
+
+  dropdowns.forEach(select=>{
+
+    if(select.dataset.checked === "1"){
+      completed++;
+    }
+
+  });
+
+  const percentage = total
+    ? Math.round(completed / total * 100)
+    : 0;
+
+  document.getElementById("progressFill").style.width =
+    percentage + "%";
+
+  document.getElementById("progressText").textContent =
+    percentage + "% completed";
+
+  document.getElementById("progressBar").setAttribute(
+    "aria-valuenow",
+    percentage
+  );
+
+}
+
+/* ==========================================================
+   MULTIPLE CHOICE
+========================================================== */
+
+document.querySelectorAll(
+  ".question:not(#challenge .question) .option"
+).forEach(button=>{
+
+  button.addEventListener("click",()=>{
+
+    const question =
+      button.closest(".question");
+
+    if(question.dataset.locked === "1"){
+      return;
+    }
+
+    question.dataset.locked = "1";
+
+    question.querySelectorAll(".option").forEach(option=>{
+      option.disabled = true;
+    });
+
+    const feedback =
+      question.querySelector(".feedback");
+
+    const correct =
+      button.dataset.correct === "true";
+
+    if(correct){
+
+      button.classList.add("correct");
+
+      feedback.textContent =
+        "✓ Correct! Excellent reading.";
+
+      feedback.className = "feedback ok";
+
+    }else{
+
+      button.classList.add("wrong");
+
+      const right = question.querySelector(
+        '.option[data-correct="true"]'
+      );
+
+      if(right){
+        right.classList.add("correct");
+      }
+
+      feedback.textContent =
+        "✗ Not quite. Go back to the text and check the evidence.";
+
+      feedback.className = "feedback no";
+
+    }
+
+    updateProgress();
+
+  });
+
+});
+
+/* ==========================================================
+   TRUE / FALSE
+========================================================== */
+
+document.querySelectorAll(".tfrow").forEach(row=>{
+
+  row.querySelectorAll(".tfbtn").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+      if(row.dataset.locked === "1"){
+        return;
+      }
+
+      row.dataset.locked = "1";
+
+      const correct =
+        button.dataset.choice === row.dataset.answer;
+
+      row.querySelectorAll(".tfbtn").forEach(btn=>{
+        btn.disabled = true;
+      });
+
+      button.classList.add(
+        correct ? "correct" : "wrong"
+      );
+
+      if(!correct){
+
+        const right = row.querySelector(
+          '.tfbtn[data-choice="' +
+          row.dataset.answer +
+          '"]'
+        );
+
+        if(right){
+          right.classList.add("correct");
+        }
+
+      }
+
+      const justification =
+        row.querySelector(".justify");
+
+      if(justification){
+        justification.classList.add("show");
+      }
+
+      updateProgress();
+
+    });
+
+  });
+
+});
+
+/* ==========================================================
+   CHECK DROPDOWN ACTIVITIES
+========================================================== */
+
+function checkSelects(button){
+
+  const activity =
+    button.closest(".activity");
+
+  const selects =
+    activity.querySelectorAll(".answer-select");
+
+  let correctCount = 0;
+
+  let unanswered = 0;
+
+  selects.forEach(select=>{
+
+    if(select.value === ""){
+      unanswered++;
+    }
+
+  });
+
+  if(unanswered > 0){
+
+    const feedback =
+      activity.querySelector(".select-feedback");
+
+    feedback.textContent =
+      "Please choose an answer for every question first.";
+
+    feedback.className = "feedback no";
+
+    return;
+
+  }
+
+  selects.forEach(select=>{
+
+    const correct =
+      select.value === select.dataset.answer;
+
+    select.classList.remove(
+      "correct",
+      "wrong"
+    );
+
+    select.classList.add(
+      correct ? "correct" : "wrong"
+    );
+
+    if(correct){
+      correctCount++;
+    }
+
+    select.dataset.checked = "1";
+
+    select.disabled = true;
+
+  });
+
+  button.disabled = true;
+
+  const feedback =
+    activity.querySelector(".select-feedback");
+
+  feedback.textContent =
+    "⭐ You got " +
+    correctCount +
+    " / " +
+    selects.length +
+    " correct.";
+
+  feedback.className =
+    "feedback " +
+    (correctCount === selects.length ? "ok" : "no");
+
+  updateProgress();
+
+}
+
+/* ==========================================================
+   FINAL CHALLENGE
+========================================================== */
+
+let challengeScore = 0;
+
+document.querySelectorAll(
+  ".challenge-opt"
+).forEach(button=>{
+
+  button.addEventListener("click",()=>{
+
+    const question =
+      button.closest(".question");
+
+    if(question.dataset.challengeLocked === "1"){
+      return;
+    }
+
+    question.dataset.challengeLocked = "1";
+
+    const correct =
+      button.dataset.correct === "true";
+
+    question.querySelectorAll(
+      ".challenge-opt"
+    ).forEach(option=>{
+      option.disabled = true;
+    });
+
+    if(correct){
+
+      button.classList.add("correct");
+
+      challengeScore++;
+
+    }else{
+
+      button.classList.add("wrong");
+
+      const right = question.querySelector(
+        '.challenge-opt[data-correct="true"]'
+      );
+
+      if(right){
+        right.classList.add("correct");
+      }
+
+    }
+
+    const feedback =
+      question.querySelector(".feedback");
+
+    feedback.textContent = correct
+      ? "✓ Correct!"
+      : "✗ Check the text again.";
+
+    feedback.className =
+      "feedback " +
+      (correct ? "ok" : "no");
+
+    document.getElementById("score").textContent =
+      "⭐ " + challengeScore + " / 5";
+
+  });
+
+});
+
+/* ==========================================================
+   RESET FINAL CHALLENGE
+========================================================== */
+
+function resetChallenge(){
+
+  challengeScore = 0;
+
+  document.getElementById("score").textContent =
+    "⭐ 0 / 5";
+
+  document.querySelectorAll(
+    ".challenge-opt"
+  ).forEach(button=>{
+
+    button.disabled = false;
+
+    button.classList.remove(
+      "correct",
+      "wrong"
+    );
+
+  });
+
+  document.querySelectorAll(
+    "#challenge .feedback"
+  ).forEach(feedback=>{
+
+    feedback.textContent = "";
+
+    feedback.className = "feedback";
+
+  });
+
+  document.querySelectorAll(
+    "#challenge .question"
+  ).forEach(question=>{
+
+    delete question.dataset.challengeLocked;
+
+  });
+
+}
+
+/* ==========================================================
+   ENGLISH–ARABIC MINI DICTIONARY DATA
+========================================================== */
+
+const dictionaryWords = [
+
+  /* ALGERIA */
+
+  {
+    en:"Casbah",
+    ar:"القصبة / حي تاريخي قديم",
+    category:"algeria"
+  },
+  {
+    en:"Historic",
+    ar:"تاريخي",
+    category:"algeria"
+  },
+  {
+    en:"Neighbourhood",
+    ar:"حي سكني",
+    category:"algeria"
+  },
+  {
+    en:"Narrow",
+    ar:"ضيق",
+    category:"algeria"
+  },
+  {
+    en:"Traditional",
+    ar:"تقليدي",
+    category:"algeria"
+  },
+  {
+    en:"Buildings",
+    ar:"مبانٍ",
+    category:"algeria"
+  },
+  {
+    en:"Monument",
+    ar:"معلم تذكاري",
+    category:"algeria"
+  },
+  {
+    en:"Martyr",
+    ar:"شهيد",
+    category:"algeria"
+  },
+  {
+    en:"Martyr's Memorial",
+    ar:"مقام الشهيد",
+    category:"algeria"
+  },
+  {
+    en:"Independence",
+    ar:"الاستقلال",
+    category:"algeria"
+  },
+  {
+    en:"Sacrifice",
+    ar:"تضحية",
+    category:"algeria"
+  },
+  {
+    en:"Sacrificed",
+    ar:"ضحّوا",
+    category:"algeria"
+  },
+  {
+    en:"Resistance",
+    ar:"المقاومة",
+    category:"algeria"
+  },
+  {
+    en:"Leadership",
+    ar:"القيادة",
+    category:"algeria"
+  },
+  {
+    en:"Historical figure",
+    ar:"شخصية تاريخية",
+    category:"algeria"
+  },
+  {
+    en:"Great Mosque",
+    ar:"الجامع الكبير",
+    category:"algeria"
+  },
+  {
+    en:"Minaret",
+    ar:"مئذنة",
+    category:"algeria"
+  },
+  {
+    en:"Architecture",
+    ar:"الهندسة المعمارية",
+    category:"algeria"
+  },
+  {
+    en:"Enormous",
+    ar:"ضخم جداً",
+    category:"algeria"
+  },
+  {
+    en:"Impressive",
+    ar:"مثير للإعجاب",
+    category:"algeria"
+  },
+  {
+    en:"Mediterranean Sea",
+    ar:"البحر الأبيض المتوسط",
+    category:"algeria"
+  },
+  {
+    en:"Coast",
+    ar:"الساحل",
+    category:"algeria"
+  },
+  {
+    en:"Seafront",
+    ar:"الواجهة البحرية",
+    category:"algeria"
+  },
+  {
+    en:"Sunset",
+    ar:"غروب الشمس",
+    category:"algeria"
+  },
+  {
+    en:"Scenery",
+    ar:"المناظر الطبيعية",
+    category:"algeria"
+  },
+
+  /* ITALY */
+
+  {
+    en:"Italy",
+    ar:"إيطاليا",
+    category:"italy"
+  },
+  {
+    en:"Rome",
+    ar:"روما",
+    category:"italy"
+  },
+  {
+    en:"Florence",
+    ar:"فلورنسا",
+    category:"italy"
+  },
+  {
+    en:"Venice",
+    ar:"البندقية",
+    category:"italy"
+  },
+  {
+    en:"Colosseum",
+    ar:"الكولوسيوم / المدرج الروماني",
+    category:"italy"
+  },
+  {
+    en:"Ancient",
+    ar:"قديم / أثري",
+    category:"italy"
+  },
+  {
+    en:"Ancient history",
+    ar:"التاريخ القديم",
+    category:"italy"
+  },
+  {
+    en:"Crowds",
+    ar:"حشود",
+    category:"italy"
+  },
+  {
+    en:"Centuries",
+    ar:"قرون",
+    category:"italy"
+  },
+  {
+    en:"Historic centre",
+    ar:"المركز التاريخي",
+    category:"italy"
+  },
+  {
+    en:"Squares",
+    ar:"ساحات",
+    category:"italy"
+  },
+  {
+    en:"Admired",
+    ar:"أُعجب بـ",
+    category:"italy"
+  },
+  {
+    en:"Museum",
+    ar:"متحف",
+    category:"italy"
+  },
+  {
+    en:"Artist",
+    ar:"فنان",
+    category:"italy"
+  },
+  {
+    en:"Thinker",
+    ar:"مفكر",
+    category:"italy"
+  },
+  {
+    en:"Renaissance",
+    ar:"عصر النهضة",
+    category:"italy"
+  },
+  {
+    en:"Creativity",
+    ar:"الإبداع",
+    category:"italy"
+  },
+  {
+    en:"Culture",
+    ar:"الثقافة",
+    category:"italy"
+  },
+  {
+    en:"Art",
+    ar:"الفن",
+    category:"italy"
+  },
+  {
+    en:"Canal",
+    ar:"قناة مائية",
+    category:"italy"
+  },
+  {
+    en:"Canals",
+    ar:"قنوات مائية",
+    category:"italy"
+  },
+  {
+    en:"Peaceful",
+    ar:"هادئ / مسالم",
+    category:"italy"
+  },
+  {
+    en:"Magical",
+    ar:"ساحر",
+    category:"italy"
+  },
+
+  /* GENERAL TRAVEL AND READING */
+
+  {
+    en:"Journey",
+    ar:"رحلة",
+    category:"general"
+  },
+  {
+    en:"Travel",
+    ar:"يسافر / سفر",
+    category:"general"
+  },
+  {
+    en:"Traveller",
+    ar:"مسافر",
+    category:"general"
+  },
+  {
+    en:"Trip",
+    ar:"رحلة",
+    category:"general"
+  },
+  {
+    en:"Destination",
+    ar:"وجهة",
+    category:"general"
+  },
+  {
+    en:"Landmark",
+    ar:"معلم مشهور",
+    category:"general"
+  },
+  {
+    en:"Discover",
+    ar:"يكتشف",
+    category:"general"
+  },
+  {
+    en:"Explore",
+    ar:"يستكشف",
+    category:"general"
+  },
+  {
+    en:"Fascinating",
+    ar:"رائع / مثير للاهتمام",
+    category:"general"
+  },
+  {
+    en:"Unforgettable",
+    ar:"لا يُنسى",
+    category:"general"
+  },
+  {
+    en:"Memorable",
+    ar:"لا يُنسى / جدير بالتذكر",
+    category:"general"
+  },
+  {
+    en:"Wonderful",
+    ar:"رائع",
+    category:"general"
+  },
+  {
+    en:"Excited",
+    ar:"متحمس",
+    category:"general"
+  },
+  {
+    en:"Atmosphere",
+    ar:"الأجواء",
+    category:"general"
+  },
+  {
+    en:"Arrived",
+    ar:"وصل",
+    category:"general"
+  },
+  {
+    en:"Visited",
+    ar:"زار",
+    category:"general"
+  },
+  {
+    en:"Walked",
+    ar:"مشى",
+    category:"general"
+  },
+  {
+    en:"Continued",
+    ar:"واصل",
+    category:"general"
+  },
+  {
+    en:"Returned",
+    ar:"عاد",
+    category:"general"
+  },
+  {
+    en:"Realised",
+    ar:"أدرك",
+    category:"general"
+  },
+  {
+    en:"Promised",
+    ar:"وعد",
+    category:"general"
+  },
+  {
+    en:"Memories",
+    ar:"ذكريات",
+    category:"general"
+  },
+  {
+    en:"Desire",
+    ar:"رغبة",
+    category:"general"
+  },
+  {
+    en:"Evidence",
+    ar:"دليل من النص",
+    category:"general"
+  },
+  {
+    en:"Justify",
+    ar:"برّر إجابتك",
+    category:"general"
+  },
+  {
+    en:"According to the text",
+    ar:"حسب النص",
+    category:"general"
+  },
+  {
+    en:"True",
+    ar:"صحيح",
+    category:"general"
+  },
+  {
+    en:"False",
+    ar:"خطأ",
+    category:"general"
+  },
+  {
+    en:"Compare",
+    ar:"قارن",
+    category:"general"
+  },
+  {
+    en:"Sequence",
+    ar:"ترتيب الأحداث",
+    category:"general"
+  },
+  {
+    en:"First",
+    ar:"أولاً",
+    category:"general"
+  },
+  {
+    en:"Then",
+    ar:"ثم",
+    category:"general"
+  },
+  {
+    en:"Later",
+    ar:"لاحقاً",
+    category:"general"
+  },
+  {
+    en:"Finally",
+    ar:"أخيراً",
+    category:"general"
+  }
+
+];
+
+/* ==========================================================
+   DICTIONARY ELEMENTS
+========================================================== */
+
+const dictionaryPanel =
+  document.getElementById("dictionaryPanel");
+
+const dictionaryLauncher =
+  document.getElementById("dictionaryLauncher");
+
+const dictionarySearch =
+  document.getElementById("dictionarySearch");
+
+const dictionaryList =
+  document.getElementById("dictionaryList");
+
+const dictionaryCount =
+  document.getElementById("dictionaryCount");
+
+let activeDictionaryCategory = "all";
+
+/* ==========================================================
+   OPEN AND CLOSE
+========================================================== */
+
+function toggleDictionary(){
+
+  if(dictionaryPanel.hidden){
+    openDictionary();
+  }else{
+    closeDictionary();
+  }
+
+}
+
+function openDictionary(){
+
+  dictionaryPanel.hidden = false;
+
+  dictionaryLauncher.setAttribute(
+    "aria-expanded",
+    "true"
+  );
+
+  renderDictionary();
+
+  dictionarySearch.focus();
+
+}
+
+function closeDictionary(){
+
+  dictionaryPanel.hidden = true;
+
+  dictionaryLauncher.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+  if("speechSynthesis" in window){
+    window.speechSynthesis.cancel();
+  }
+
+  dictionaryLauncher.focus();
+
+}
+
+/* ==========================================================
+   DICTIONARY RENDERING
+========================================================== */
+
+function renderDictionary(){
+
+  const searchTerm =
+    dictionarySearch.value
+      .trim()
+      .toLocaleLowerCase();
+
+  const filteredWords = dictionaryWords.filter(word=>{
+
+    const categoryMatches =
+      activeDictionaryCategory === "all" ||
+      word.category === activeDictionaryCategory;
+
+    const searchMatches =
+      word.en.toLocaleLowerCase().includes(searchTerm) ||
+      word.ar.includes(searchTerm);
+
+    return categoryMatches && searchMatches;
+
+  });
+
+  dictionaryList.innerHTML = "";
+
+  if(filteredWords.length === 0){
+
+    const empty = document.createElement("div");
+
+    empty.className = "dictionary-empty";
+
+    empty.textContent =
+      "No matching words found. Try another word.";
+
+    dictionaryList.appendChild(empty);
+
+  }else{
+
+    filteredWords.forEach(word=>{
+
+      const entry = document.createElement("div");
+
+      entry.className = "dictionary-entry";
+
+      const main = document.createElement("div");
+
+      main.className = "dictionary-entry-main";
+
+      const english = document.createElement("div");
+
+      english.className = "dictionary-english";
+      english.textContent = word.en;
+
+      const arabic = document.createElement("div");
+
+      arabic.className = "dictionary-arabic";
+      arabic.lang = "ar";
+      arabic.dir = "rtl";
+      arabic.textContent = word.ar;
+
+      main.appendChild(english);
+      main.appendChild(arabic);
+
+      const speak = document.createElement("button");
+
+      speak.className = "speak-btn";
+      speak.type = "button";
+      speak.textContent = "🔊";
+
+      speak.setAttribute(
+        "aria-label",
+        "Pronounce " + word.en
+      );
+
+      speak.addEventListener("click",()=>{
+        pronounceWord(word.en);
+      });
+
+      entry.appendChild(main);
+      entry.appendChild(speak);
+
+      dictionaryList.appendChild(entry);
+
+    });
+
+  }
+
+  dictionaryCount.textContent =
+    filteredWords.length +
+    " words • Tap 🔊 for English pronunciation";
+
+}
+
+/* ==========================================================
+   DICTIONARY SEARCH
+========================================================== */
+
+dictionarySearch.addEventListener(
+  "input",
+  renderDictionary
+);
+
+/* ==========================================================
+   DICTIONARY FILTERS
+========================================================== */
+
+document.querySelectorAll(
+  ".dictionary-filter"
+).forEach(button=>{
+
+  button.setAttribute(
+    "aria-pressed",
+    button.dataset.category === "all"
+      ? "true"
+      : "false"
+  );
+
+  button.addEventListener("click",()=>{
+
+    activeDictionaryCategory =
+      button.dataset.category;
+
+    document.querySelectorAll(
+      ".dictionary-filter"
+    ).forEach(filter=>{
+
+      const selected =
+        filter === button;
+
+      filter.classList.toggle(
+        "active",
+        selected
+      );
+
+      filter.setAttribute(
+        "aria-pressed",
+        selected ? "true" : "false"
+      );
+
+    });
+
+    renderDictionary();
+
+    dictionaryList.scrollTop = 0;
+
+  });
+
+});
+
+/* ==========================================================
+   ENGLISH PRONUNCIATION
+========================================================== */
+
+function pronounceWord(word){
+
+  if(!("speechSynthesis" in window)){
+
+    dictionaryCount.textContent =
+      "Audio pronunciation is not supported by this browser.";
+
+    return;
+
+  }
+
+  window.speechSynthesis.cancel();
+
+  const utterance =
+    new SpeechSynthesisUtterance(word);
+
+  utterance.lang = "en-GB";
+  utterance.rate = 0.85;
+  utterance.pitch = 1;
+
+  window.speechSynthesis.speak(utterance);
+
+}
+
+/* ==========================================================
+   CLOSE WITH ESCAPE
+========================================================== */
+
+document.addEventListener("keydown",event=>{
+
+  if(
+    event.key === "Escape" &&
+    !dictionaryPanel.hidden
+  ){
+    closeDictionary();
+  }
+
+});
+
+/* ==========================================================
+   CLOSE WHEN CLICKING OUTSIDE
+========================================================== */
+
+document.addEventListener("pointerdown",event=>{
+
+  if(dictionaryPanel.hidden){
+    return;
+  }
+
+  if(
+    !dictionaryPanel.contains(event.target) &&
+    !dictionaryLauncher.contains(event.target)
+  ){
+    closeDictionary();
+  }
+
+});
+
+/* ==========================================================
+   INITIALIZE
+========================================================== */
+
+renderDictionary();
+
+updateProgress();
+
+</script>
+
+</body>
+</html>

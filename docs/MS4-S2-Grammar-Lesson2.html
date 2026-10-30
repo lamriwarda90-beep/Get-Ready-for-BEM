@@ -1,0 +1,3217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#d93f82">
+
+<title>MS4 S2 | Past Continuous vs Past Simple</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================
+   MS4 SEQUENCE 2 — PINK DESIGN SYSTEM
+========================================== */
+
+:root {
+  --pink-950:#571735;
+  --pink-900:#79234c;
+  --pink-800:#a32d65;
+  --pink-700:#c73578;
+  --pink-600:#df4b8c;
+  --pink-500:#ee70a6;
+  --pink-400:#f59bc2;
+  --pink-300:#fac4da;
+  --pink-200:#fbdce9;
+  --pink-100:#fff0f6;
+  --pink-50:#fff8fb;
+
+  --rose:#fa709a;
+  --peach:#fff1e9;
+  --gold:#ffc66d;
+
+  --navy:#30243c;
+  --ink:#342b3a;
+  --muted:#776c7b;
+  --white:#fff;
+
+  --green:#16865d;
+  --green-bg:#e6f8ef;
+  --red:#c93c58;
+  --red-bg:#fff0f2;
+
+  --border:#f4d9e6;
+  --shadow:0 12px 35px rgba(144,39,89,.09);
+  --shadow-lg:0 20px 55px rgba(144,39,89,.16);
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  background:
+    radial-gradient(circle at 10% 8%,#ffe4ef,transparent 30%),
+    radial-gradient(circle at 95% 25%,#fff0d9,transparent 28%),
+    #fff8fb;
+  color:var(--ink);
+  font-family:"Nunito",sans-serif;
+  line-height:1.7;
+}
+
+button,
+input,
+textarea {
+  font:inherit;
+}
+
+button {
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+button:hover {
+  transform:translateY(-2px);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline:3px solid var(--pink-500);
+  outline-offset:3px;
+}
+
+h1,h2,h3,h4 {
+  font-family:"Baloo 2",sans-serif;
+  line-height:1.25;
+}
+
+h2 {
+  font-size:clamp(24px,3vw,32px);
+}
+
+p {
+  margin-top:0;
+}
+
+.container {
+  width:min(1120px,calc(100% - 32px));
+  margin:auto;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+  position:relative;
+  overflow:hidden;
+  padding:26px 0 90px;
+  color:white;
+  background:
+    radial-gradient(circle at 80% 15%,rgba(255,200,226,.35),transparent 30%),
+    radial-gradient(circle at 15% 90%,rgba(255,207,151,.20),transparent 30%),
+    linear-gradient(125deg,#83214f,#d93f82 62%,#f38eaf);
+}
+
+.hero::before,
+.hero::after {
+  content:"";
+  position:absolute;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.hero::before {
+  width:450px;
+  height:450px;
+  right:-180px;
+  top:-180px;
+}
+
+.hero::after {
+  width:280px;
+  height:280px;
+  left:-120px;
+  bottom:-150px;
+}
+
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.brand {
+  font-weight:900;
+  letter-spacing:1px;
+  font-size:14px;
+}
+
+.back-link {
+  text-decoration:none;
+  color:white;
+  padding:10px 17px;
+  border:1px solid rgba(255,255,255,.45);
+  background:rgba(255,255,255,.13);
+  border-radius:30px;
+  font-size:13px;
+  font-weight:900;
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:40px;
+  align-items:center;
+  margin-top:52px;
+}
+
+.eyebrow {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 15px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:30px;
+  font-weight:900;
+  font-size:11px;
+  letter-spacing:1.5px;
+}
+
+.hero h1 {
+  font-size:clamp(38px,6vw,66px);
+  line-height:1.08;
+  margin:20px 0;
+  letter-spacing:-1.5px;
+}
+
+.hero h1 span {
+  color:#ffe0ef;
+}
+
+.hero-description {
+  max-width:650px;
+  color:#fff0f7;
+  font-size:16px;
+  font-weight:600;
+}
+
+.hero-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:22px;
+}
+
+.hero-tags span {
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:30px;
+  padding:8px 13px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.hero-art {
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:32px;
+  padding:30px;
+  text-align:center;
+  backdrop-filter:blur(10px);
+  box-shadow:0 25px 50px rgba(82,13,48,.16);
+}
+
+.hero-art .big-icon {
+  font-size:90px;
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% {
+    transform:translateY(-12px);
+  }
+}
+
+.hero-art h3 {
+  margin:10px 0;
+  font-size:23px;
+}
+
+.hero-art p {
+  color:#ffe7f2;
+  font-size:13px;
+}
+
+/* ==========================================
+   PROGRESS
+========================================== */
+
+.progress-card {
+  position:relative;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin:-40px auto 24px;
+  padding:20px 24px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:var(--shadow-lg);
+}
+
+.progress-title {
+  font-weight:900;
+  color:var(--pink-900);
+  white-space:nowrap;
+}
+
+.progress-track {
+  flex:1;
+  min-width:160px;
+  height:13px;
+  background:#fbe5ee;
+  border-radius:30px;
+  overflow:hidden;
+}
+
+.progress-fill {
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#d83e81,#fa91b6);
+  transition:width .5s;
+}
+
+.progress-count {
+  font-weight:900;
+  color:var(--pink-800);
+}
+
+.xp {
+  padding:8px 15px;
+  background:#fff4d8;
+  border-radius:30px;
+  color:#946400;
+  font-weight:900;
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.lesson-nav {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:28px;
+}
+
+.lesson-nav a {
+  padding:10px 15px;
+  background:white;
+  color:var(--pink-900);
+  border:1px solid var(--border);
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:900;
+  font-size:12px;
+  transition:.2s;
+}
+
+.lesson-nav a:hover {
+  background:var(--pink-100);
+  border-color:var(--pink-400);
+}
+
+/* ==========================================
+   MAIN CARDS
+========================================== */
+
+.stage {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:26px;
+  padding:clamp(20px,4vw,36px);
+  margin-bottom:27px;
+  box-shadow:var(--shadow);
+  scroll-margin-top:25px;
+}
+
+.stage-header {
+  display:flex;
+  gap:15px;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.stage-number {
+  width:52px;
+  height:52px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  background:var(--pink-100);
+  color:var(--pink-700);
+  border-radius:16px;
+  font-family:"Baloo 2",sans-serif;
+  font-size:20px;
+  font-weight:800;
+}
+
+.stage-kicker {
+  color:var(--pink-700);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.3px;
+}
+
+.stage h2 {
+  margin:3px 0;
+  color:var(--pink-950);
+}
+
+.desc {
+  color:var(--muted);
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:24px;
+}
+
+.difficulty {
+  display:inline-block;
+  padding:5px 11px;
+  border-radius:30px;
+  font-size:10px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.easy {
+  color:#16805b;
+  background:#e5f8ed;
+}
+
+.medium {
+  color:#9a6615;
+  background:#fff3d8;
+}
+
+.hard {
+  color:#bd3155;
+  background:#ffe6ed;
+}
+
+/* ==========================================
+   RULE CARDS
+========================================== */
+
+.rule-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.rule-card {
+  border-radius:21px;
+  padding:24px;
+  border:1px solid var(--border);
+}
+
+.rule-card.past-simple {
+  background:#fff4e9;
+  border-color:#f8d6b6;
+}
+
+.rule-card.past-continuous {
+  background:#fff0f6;
+  border-color:#f4c5d8;
+}
+
+.rule-icon {
+  font-size:37px;
+}
+
+.rule-card h3 {
+  font-size:23px;
+  margin:10px 0;
+}
+
+.rule-card ul {
+  padding-left:21px;
+}
+
+.rule-card li {
+  margin:9px 0;
+}
+
+.formula {
+  display:block;
+  padding:13px;
+  border-radius:11px;
+  background:white;
+  border:1px solid rgba(0,0,0,.05);
+  color:var(--pink-900);
+  font-weight:900;
+  font-size:13px;
+  margin:15px 0;
+}
+
+.example {
+  padding:13px 15px;
+  border-radius:12px;
+  background:white;
+  font-size:14px;
+  font-weight:700;
+  margin:10px 0;
+}
+
+.highlight-pink {
+  color:var(--pink-700);
+  font-weight:900;
+}
+
+.highlight-orange {
+  color:#ba6823;
+  font-weight:900;
+}
+
+.mini-title {
+  font-size:18px;
+  color:var(--pink-900);
+  margin:24px 0 12px;
+}
+
+/* ==========================================
+   GRAMMAR TABLE
+========================================== */
+
+.table-wrap {
+  overflow-x:auto;
+  border:1px solid var(--border);
+  border-radius:15px;
+}
+
+table {
+  border-collapse:collapse;
+  width:100%;
+  min-width:540px;
+  font-size:13px;
+}
+
+th {
+  background:var(--pink-800);
+  color:white;
+  text-align:left;
+  padding:13px;
+}
+
+td {
+  padding:13px;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+
+tr:nth-child(even) td {
+  background:var(--pink-50);
+}
+
+tr:last-child td {
+  border-bottom:0;
+}
+
+/* ==========================================
+   TIMELINE
+========================================== */
+
+.timeline-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
+  margin:22px 0;
+}
+
+.timeline-card {
+  background:var(--pink-50);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+}
+
+.timeline-card h4 {
+  font-size:18px;
+  color:var(--pink-900);
+  margin:0 0 8px;
+}
+
+.timeline-card p {
+  font-size:13px;
+}
+
+.line-area {
+  position:relative;
+  height:85px;
+  margin:20px 0 8px;
+}
+
+.long-line {
+  position:absolute;
+  left:5%;
+  right:5%;
+  top:25px;
+  height:15px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#f6a7c9,#d83e81);
+}
+
+.short-marker {
+  position:absolute;
+  left:65%;
+  top:5px;
+  width:4px;
+  height:57px;
+  background:#d45a22;
+  border-radius:10px;
+}
+
+.short-marker::after {
+  content:"⚡";
+  position:absolute;
+  top:-22px;
+  left:-11px;
+  font-size:22px;
+}
+
+.line-labels {
+  position:absolute;
+  top:49px;
+  left:0;
+  right:0;
+  display:flex;
+  justify-content:space-between;
+  font-size:10px;
+  font-weight:900;
+  color:var(--muted);
+}
+
+.double-line {
+  margin:20px 0;
+}
+
+.double-line div {
+  height:15px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#f7b1d0,#dc478b);
+  margin:14px 0;
+}
+
+.double-line div:last-child {
+  background:linear-gradient(90deg,#ffd7a7,#ed9c55);
+}
+
+/* ==========================================
+   INFORMATION BOXES
+========================================== */
+
+.info-box {
+  background:#fff7ed;
+  border-left:5px solid #efaa54;
+  padding:18px 20px;
+  border-radius:13px;
+  margin:18px 0;
+}
+
+.info-box.pink {
+  background:var(--pink-100);
+  border-color:var(--pink-600);
+}
+
+.info-box.green {
+  background:#ecfaf3;
+  border-color:var(--green);
+}
+
+.info-box h4 {
+  margin:0 0 8px;
+  font-size:17px;
+}
+
+.info-box p:last-child {
+  margin-bottom:0;
+}
+
+.grammar-example {
+  padding:11px 14px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:10px;
+  margin:9px 0;
+  font-weight:700;
+  font-size:13px;
+}
+
+/* ==========================================
+   ARABIC SUPPORT
+========================================== */
+
+.arabic-toggle {
+  background:var(--pink-100);
+  color:var(--pink-800);
+  border:1px solid var(--pink-300);
+  border-radius:12px;
+  padding:12px 17px;
+  font-weight:900;
+  margin-top:12px;
+}
+
+.arabic-panel {
+  display:none;
+  direction:rtl;
+  text-align:right;
+  font-family:Arial,sans-serif;
+  background:#fff2f7;
+  border:1px solid var(--pink-300);
+  border-radius:15px;
+  padding:20px;
+  margin-top:15px;
+  line-height:2;
+}
+
+.arabic-panel.show {
+  display:block;
+}
+
+/* ==========================================
+   ACTIVITIES
+========================================== */
+
+.activity-card {
+  padding:20px;
+  background:#fffafd;
+  border:1px solid var(--border);
+  border-radius:17px;
+  margin:15px 0;
+}
+
+.activity-card h4 {
+  margin:0 0 12px;
+  font-size:16px;
+  color:var(--pink-950);
+}
+
+.question-text {
+  font-size:14px;
+  font-weight:800;
+  margin-bottom:13px;
+}
+
+.option-grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.option-btn {
+  padding:10px 16px;
+  background:white;
+  color:var(--pink-900);
+  border:2px solid var(--pink-200);
+  border-radius:12px;
+  font-weight:900;
+  text-align:left;
+  font-size:13px;
+}
+
+.option-btn:hover:not(:disabled) {
+  background:var(--pink-100);
+}
+
+.option-btn.correct {
+  background:var(--green-bg);
+  color:var(--green);
+  border-color:var(--green);
+}
+
+.option-btn.wrong {
+  background:var(--red-bg);
+  color:var(--red);
+  border-color:var(--red);
+}
+
+.option-btn:disabled {
+  cursor:default;
+}
+
+.feedback {
+  min-height:20px;
+  margin-top:10px;
+  font-size:13px;
+  font-weight:900;
+}
+
+.feedback.good {
+  color:var(--green);
+}
+
+.feedback.bad {
+  color:var(--red);
+}
+
+.feedback.info {
+  color:var(--pink-800);
+}
+
+.answer-input {
+  width:100%;
+  padding:13px 15px;
+  border:2px solid var(--pink-200);
+  border-radius:12px;
+  background:white;
+  color:var(--ink);
+  font-size:14px;
+}
+
+.answer-input:focus {
+  outline:none;
+  border-color:var(--pink-600);
+}
+
+.answer-input.correct {
+  border-color:var(--green);
+  background:var(--green-bg);
+}
+
+.answer-input.wrong {
+  border-color:var(--red);
+  background:var(--red-bg);
+}
+
+.hint {
+  font-size:12px;
+  color:var(--muted);
+  font-weight:700;
+  margin-top:8px;
+}
+
+.btn {
+  padding:12px 21px;
+  border:0;
+  border-radius:12px;
+  font-weight:900;
+  font-size:13px;
+  margin:5px 6px 5px 0;
+}
+
+.btn-primary {
+  background:linear-gradient(120deg,var(--pink-700),var(--pink-500));
+  color:white;
+  box-shadow:0 7px 16px rgba(216,62,129,.18);
+}
+
+.btn-light {
+  background:var(--pink-100);
+  color:var(--pink-800);
+  border:1px solid var(--pink-200);
+}
+
+.score-message {
+  font-size:14px;
+  font-weight:900;
+  margin-top:14px;
+  color:var(--pink-800);
+}
+
+/* ==========================================
+   READING PASSAGE
+========================================== */
+
+.reading-passage {
+  padding:25px;
+  background:linear-gradient(120deg,#fff3f8,#fffaf4);
+  border:1px solid var(--pink-200);
+  border-radius:20px;
+  font-size:15px;
+  line-height:2.1;
+  margin:20px 0;
+}
+
+.reading-passage strong {
+  color:var(--pink-800);
+}
+
+.reading-passage mark {
+  background:#ffe2ad;
+  border-radius:5px;
+  padding:2px 4px;
+}
+
+/* ==========================================
+   SENTENCE BUILDER
+========================================== */
+
+.word-bank {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:13px 0;
+}
+
+.word-chip {
+  border:2px solid var(--pink-200);
+  background:white;
+  border-radius:11px;
+  padding:9px 14px;
+  color:var(--pink-900);
+  font-weight:900;
+}
+
+.word-chip.used {
+  opacity:.35;
+  pointer-events:none;
+}
+
+.answer-strip {
+  min-height:65px;
+  padding:13px;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  border:2px dashed var(--pink-400);
+  background:var(--pink-50);
+  border-radius:13px;
+}
+
+.strip-chip {
+  background:var(--pink-700);
+  color:white;
+  border:0;
+  border-radius:10px;
+  padding:8px 12px;
+  font-weight:900;
+}
+
+.placeholder {
+  color:var(--muted);
+  font-size:13px;
+  font-weight:700;
+}
+
+/* ==========================================
+   CERTIFICATE
+========================================== */
+
+.certificate {
+  text-align:center;
+  padding:38px 24px;
+  background:linear-gradient(125deg,#7e214d,#d53d80,#ef83ab);
+  color:white;
+  border-radius:25px;
+}
+
+.certificate .medal {
+  font-size:70px;
+}
+
+.certificate h2 {
+  color:white;
+  font-size:32px;
+}
+
+.certificate p {
+  color:#ffedf5;
+}
+
+.next-link {
+  display:inline-block;
+  margin-top:17px;
+  padding:13px 23px;
+  background:white;
+  color:var(--pink-800);
+  text-decoration:none;
+  font-weight:900;
+  border-radius:30px;
+}
+
+/* ==========================================
+   DICTIONARY
+========================================== */
+
+.dictionary-button {
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:30;
+  padding:15px 20px;
+  border:3px solid white;
+  border-radius:35px;
+  background:linear-gradient(120deg,#c73578,#ed78a8);
+  color:white;
+  font-weight:900;
+  box-shadow:0 12px 28px rgba(111,20,60,.28);
+}
+
+.modal {
+  position:fixed;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  background:rgba(49,20,39,.75);
+  padding:20px;
+  z-index:50;
+}
+
+.modal.show {
+  display:flex;
+}
+
+.modal-content {
+  width:100%;
+  max-width:560px;
+  max-height:85vh;
+  overflow:auto;
+  background:white;
+  border-radius:23px;
+  padding:27px;
+}
+
+.dictionary-row {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:11px 4px;
+  border-bottom:1px solid var(--border);
+  font-size:14px;
+}
+
+.dictionary-row span {
+  direction:rtl;
+}
+
+footer {
+  text-align:center;
+  color:var(--muted);
+  padding:30px 15px;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:780px) {
+  .hero-grid,
+  .rule-grid,
+  .timeline-grid {
+    grid-template-columns:1fr;
+  }
+
+  .hero-art {
+    display:none;
+  }
+
+  .hero {
+    padding-bottom:75px;
+  }
+
+  .hero-grid {
+    margin-top:35px;
+  }
+
+  .progress-card {
+    padding:16px;
+  }
+
+  .stage {
+    padding:20px;
+  }
+}
+
+@media(max-width:480px) {
+  .hero h1 {
+    font-size:37px;
+  }
+
+  .stage-header {
+    align-items:flex-start;
+  }
+
+  .stage-number {
+    width:44px;
+    height:44px;
+  }
+
+  .dictionary-button {
+    right:12px;
+    bottom:12px;
+    padding:12px 15px;
+  }
+
+  .option-btn {
+    width:100%;
+  }
+}
+
+@media print {
+  body {
+    background:white;
+  }
+
+  .hero {
+    background:white;
+    color:black;
+    padding:15px;
+  }
+
+  .hero-description {
+    color:black;
+  }
+
+  .hero-art,
+  .progress-card,
+  .lesson-nav,
+  .dictionary-button,
+  .btn,
+  .arabic-toggle,
+  .back-link {
+    display:none!important;
+  }
+
+  .stage {
+    box-shadow:none;
+    break-inside:avoid;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ======================================
+     HERO
+====================================== -->
+
+<header class="hero">
+  <div class="container">
+
+    <div class="topbar">
+      <div class="brand">
+        ✦ MY ENGLISH SPACE · MS4
+      </div>
+
+      <a href="MS4-S2-Grammar-Lesson1.html" class="back-link">
+        ← Checkpoint 01
+      </a>
+    </div>
+
+    <div class="hero-grid">
+
+      <div>
+        <span class="eyebrow">
+          🕰️ SEQUENCE 02 · GRAMMAR · CHECKPOINT 02
+        </span>
+
+        <h1>
+          When Memories<br>
+          <span>Come Alive.</span>
+        </h1>
+
+        <p class="hero-description">
+          Master the Past Simple and Past Continuous.
+          Learn to describe your childhood memories,
+          personal experiences and unforgettable moments
+          using <b>WHEN</b> and <b>WHILE</b>.
+        </p>
+
+        <div class="hero-tags">
+          <span>📖 Life Experiences</span>
+          <span>⏳ Past Memories</span>
+          <span>💗 My Childhood</span>
+          <span>🎮 9 Learning Stages</span>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="big-icon">🕰️</div>
+
+        <h3>My Memory Journey</h3>
+
+        <p>
+          Every memory tells a story.<br>
+          Every story has a timeline.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ======================================
+     PROGRESS
+====================================== -->
+
+<div class="container">
+
+  <div class="progress-card">
+
+    <div class="progress-title">
+      🌸 My Learning Journey
+    </div>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <span class="progress-count" id="progressText">
+      0 / 7 Missions
+    </span>
+
+    <span class="xp" id="xpText">
+      ⭐ 0 XP
+    </span>
+
+  </div>
+
+  <nav class="lesson-nav">
+    <a href="#stage1">📚 Rules</a>
+    <a href="#stage2">⚠️ Tricky Cases</a>
+    <a href="#stage3">🔎 Identify</a>
+    <a href="#stage4">📖 Reading</a>
+    <a href="#stage5">🎯 Choose</a>
+    <a href="#stage6">✏️ Combine</a>
+    <a href="#stage7">🧩 Build</a>
+    <a href="#stage8">⏳ Verbs</a>
+    <a href="#stage9">🔍 Correct</a>
+  </nav>
+
+<main>
+
+<!-- ======================================
+     STAGE 1 — DETAILED RULES
+====================================== -->
+
+<section class="stage" id="stage1">
+
+  <div class="stage-header">
+    <div class="stage-number">01</div>
+
+    <div>
+      <div class="stage-kicker">
+        DISCOVER · UNDERSTAND
+      </div>
+
+      <h2>📚 Two Tenses, Two Stories</h2>
+    </div>
+  </div>
+
+  <p class="desc">
+    Before using WHEN and WHILE, learn the difference
+    between the Past Simple and the Past Continuous.
+  </p>
+
+  <div class="rule-grid">
+
+    <!-- PAST SIMPLE -->
+
+    <div class="rule-card past-simple">
+
+      <div class="rule-icon">⚡</div>
+
+      <h3>Past Simple</h3>
+
+      <p>
+        We use the Past Simple for actions
+        that happened and finished in the past.
+      </p>
+
+      <ul>
+        <li>Completed past actions</li>
+        <li>Childhood memories</li>
+        <li>Past achievements</li>
+        <li>Short actions that interrupt longer actions</li>
+      </ul>
+
+      <span class="formula">
+        Subject + Past Verb
+      </span>
+
+      <div class="example">
+        I <span class="highlight-orange">won</span>
+        a competition last year.
+      </div>
+
+      <div class="example">
+        My teacher
+        <span class="highlight-orange">called</span>
+        me yesterday.
+      </div>
+
+      <div class="example">
+        I
+        <span class="highlight-orange">met</span>
+        my best friend in primary school.
+      </div>
+
+      <h4>Negative</h4>
+
+      <span class="formula">
+        Subject + didn't + Base Verb
+      </span>
+
+      <div class="example">
+        I didn't forget my childhood friend.
+      </div>
+
+      <h4>Question</h4>
+
+      <span class="formula">
+        Did + Subject + Base Verb?
+      </span>
+
+      <div class="example">
+        Did you enjoy your childhood?
+      </div>
+
+    </div>
+
+    <!-- PAST CONTINUOUS -->
+
+    <div class="rule-card past-continuous">
+
+      <div class="rule-icon">⏳</div>
+
+      <h3>Past Continuous</h3>
+
+      <p>
+        We use the Past Continuous for actions
+        that were happening at a particular
+        moment in the past.
+      </p>
+
+      <ul>
+        <li>Actions in progress in the past</li>
+        <li>Background actions in stories</li>
+        <li>Longer actions interrupted by short events</li>
+        <li>Two actions happening at the same time</li>
+      </ul>
+
+      <span class="formula">
+        Subject + was/were + Verb-ing
+      </span>
+
+      <div class="example">
+        I
+        <span class="highlight-pink">was reading</span>
+        my favourite biography.
+      </div>
+
+      <div class="example">
+        My friends
+        <span class="highlight-pink">were preparing</span>
+        a school project.
+      </div>
+
+      <h4>Negative</h4>
+
+      <span class="formula">
+        Subject + wasn't/weren't + Verb-ing
+      </span>
+
+      <div class="example">
+        I wasn't sleeping at 8 p.m.
+      </div>
+
+      <h4>Question</h4>
+
+      <span class="formula">
+        Was/Were + Subject + Verb-ing?
+      </span>
+
+      <div class="example">
+        Were you studying yesterday evening?
+      </div>
+
+    </div>
+
+  </div>
+
+  <h3 class="mini-title">
+    🧠 Remember WAS and WERE
+  </h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Auxiliary</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>I / He / She / It</td>
+          <td><b>was</b></td>
+          <td>She was reading.</td>
+        </tr>
+
+        <tr>
+          <td>You / We / They</td>
+          <td><b>were</b></td>
+          <td>They were studying.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="mini-title">
+    📊 Understanding the Two Timelines
+  </h3>
+
+  <div class="timeline-grid">
+
+    <div class="timeline-card">
+
+      <h4>⚡ Pattern A: Interrupted Action</h4>
+
+      <p>
+        A longer action was happening when
+        a shorter event interrupted it.
+      </p>
+
+      <div class="line-area">
+        <div class="long-line"></div>
+        <div class="short-marker"></div>
+
+        <div class="line-labels">
+          <span>Long action</span>
+          <span>Short event ⚡</span>
+        </div>
+      </div>
+
+      <div class="example">
+        I <b>was writing</b> my life story
+        <b>when</b> my friend <b>called</b>.
+      </div>
+
+      <p>
+        <b>was writing</b> = long action<br>
+        <b>called</b> = short action
+      </p>
+
+    </div>
+
+    <div class="timeline-card">
+
+      <h4>🔄 Pattern B: Simultaneous Actions</h4>
+
+      <p>
+        Two longer actions were happening
+        at the same time.
+      </p>
+
+      <div class="double-line">
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="example">
+        <b>While</b> I <b>was studying</b>,
+        my sister <b>was drawing</b>.
+      </div>
+
+      <p>
+        Both actions were in progress
+        at the same time.
+      </p>
+
+    </div>
+
+  </div>
+
+  <h3 class="mini-title">
+    🌸 WHEN vs WHILE
+  </h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Connector</th>
+          <th>Common Pattern</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><b>WHEN</b></td>
+          <td>
+            Past Continuous + when + Past Simple
+          </td>
+          <td>
+            I was reading when the phone rang.
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>WHILE</b></td>
+          <td>
+            While + Past Continuous,
+            Past Continuous
+          </td>
+          <td>
+            While I was reading,
+            my brother was studying.
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>WHILE</b></td>
+          <td>
+            While + Past Continuous,
+            Past Simple
+          </td>
+          <td>
+            While I was walking,
+            I met an old friend.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box pink">
+
+    <h4>💡 Important!</h4>
+
+    <p>
+      WHEN and WHILE are not restricted to only
+      one tense. What matters is the meaning:
+      whether an action was completed or
+      was in progress.
+    </p>
+
+    <div class="grammar-example">
+      I was studying <b>when</b> my mother arrived.
+    </div>
+
+    <div class="grammar-example">
+      <b>While</b> I was studying, my mother arrived.
+    </div>
+
+    <p>
+      Both sentences are grammatically correct.
+    </p>
+
+  </div>
+
+  <button class="arabic-toggle" onclick="toggleArabic(this)">
+    🌍 Explain in Arabic
+  </button>
+
+  <div class="arabic-panel">
+
+    <h3>شرح الماضي البسيط والماضي المستمر</h3>
+
+    <p>
+      <b>الماضي البسيط:</b>
+      نستعمله للتعبير عن حدث وقع وانتهى في الماضي.
+    </p>
+
+    <p>
+      مثال:<br>
+      I visited my grandmother yesterday.<br>
+      زرت جدتي أمس.
+    </p>
+
+    <p>
+      <b>الماضي المستمر:</b>
+      نستعمله للتعبير عن حدث كان مستمراً
+      في وقت معين في الماضي.
+    </p>
+
+    <p>
+      الصيغة:<br>
+      was / were + verb-ing
+    </p>
+
+    <p>
+      مثال:<br>
+      I was reading when my friend called.<br>
+      كنت أقرأ عندما اتصل بي صديقي.
+    </p>
+
+    <p>
+      <b>WHEN:</b>
+      تُستعمل غالباً مع الحدث القصير الذي وقع
+      أثناء حدث مستمر.
+    </p>
+
+    <p>
+      <b>WHILE:</b>
+      تُستعمل غالباً مع حدث كان مستمراً،
+      ويمكن أن تربط بين حدثين مستمرين في الوقت نفسه.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ======================================
+     STAGE 2 — EXCEPTIONS
+====================================== -->
+
+<section class="stage" id="stage2">
+
+  <div class="stage-header">
+    <div class="stage-number">02</div>
+
+    <div>
+      <div class="stage-kicker">
+        MASTER THE DETAILS
+      </div>
+
+      <h2>⚠️ Important Rules & Tricky Cases</h2>
+    </div>
+  </div>
+
+  <p class="desc">
+    Study these rules to avoid common grammar mistakes.
+  </p>
+
+  <div class="info-box pink">
+
+    <h4>1️⃣ Stative Verbs</h4>
+
+    <p>
+      Some verbs describe states, feelings or thoughts.
+      They are not normally used in continuous forms.
+    </p>
+
+    <p>
+      Examples:
+      <b>know, believe, understand, want, need, love, hate</b>
+    </p>
+
+    <div class="grammar-example">
+      ✅ I knew my best friend when I was young.
+    </div>
+
+    <div class="grammar-example">
+      ❌ I was knowing my best friend.
+    </div>
+
+    <p class="hint">
+      Some stative verbs can have continuous forms
+      when their meaning changes, but beginners should
+      first master their usual stative meanings.
+    </p>
+
+  </div>
+
+  <div class="info-box">
+
+    <h4>2️⃣ The Comma Rule</h4>
+
+    <p>
+      When a WHEN or WHILE clause comes first,
+      we usually put a comma after it.
+    </p>
+
+    <div class="grammar-example">
+      While I was studying, my sister was sleeping.
+    </div>
+
+    <p>
+      When the main clause comes first,
+      we normally do not need a comma.
+    </p>
+
+    <div class="grammar-example">
+      My sister was sleeping while I was studying.
+    </div>
+
+  </div>
+
+  <div class="info-box pink">
+
+    <h4>3️⃣ Spelling Rules for -ING</h4>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Rule</th>
+            <th>Examples</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Most verbs: add -ing</td>
+            <td>read → reading</td>
+          </tr>
+
+          <tr>
+            <td>Final silent -e: remove e</td>
+            <td>write → writing</td>
+          </tr>
+
+          <tr>
+            <td>Short stressed vowel + consonant: double consonant</td>
+            <td>run → running</td>
+          </tr>
+
+          <tr>
+            <td>Final -ie: change to -ying</td>
+            <td>lie → lying</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="info-box">
+
+    <h4>4️⃣ Past Simple Irregular Verbs</h4>
+
+    <p>
+      Some verbs do not take -ed.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Base Verb</th>
+            <th>Past Simple</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr><td>see</td><td>saw</td></tr>
+          <tr><td>meet</td><td>met</td></tr>
+          <tr><td>write</td><td>wrote</td></tr>
+          <tr><td>go</td><td>went</td></tr>
+          <tr><td>know</td><td>knew</td></tr>
+          <tr><td>win</td><td>won</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="info-box pink">
+
+    <h4>5️⃣ Common Mistakes</h4>
+
+    <div class="grammar-example">
+      ❌ I was study when she arrived.<br>
+      ✅ I was studying when she arrived.
+    </div>
+
+    <div class="grammar-example">
+      ❌ They was playing.<br>
+      ✅ They were playing.
+    </div>
+
+    <div class="grammar-example">
+      ❌ I didn't went to school.<br>
+      ✅ I didn't go to school.
+    </div>
+
+    <div class="grammar-example">
+      ❌ While I was reading I was listening to music.<br>
+      ✅ While I was reading, I was listening to music.
+    </div>
+
+  </div>
+
+  <button class="arabic-toggle" onclick="toggleArabic(this)">
+    🌍 Explain in Arabic
+  </button>
+
+  <div class="arabic-panel">
+
+    <h3>قواعد مهمة</h3>
+
+    <p>
+      بعض الأفعال مثل know و want و believe
+      تعبّر عادة عن حالات وليست أفعالاً مستمرة،
+      لذلك لا نستعملها غالباً بصيغة ing.
+    </p>
+
+    <p>
+      إذا بدأت الجملة بـ When أو While،
+      نضع عادة فاصلة بعد الجملة التابعة.
+    </p>
+
+    <p>
+      عند إضافة ing نحذف حرف e الأخير
+      في أفعال مثل write → writing.
+    </p>
+
+    <p>
+      بعض الأفعال شاذة في الماضي مثل:
+      go → went و see → saw.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ======================================
+     STAGE 3 — TRUE / FALSE
+====================================== -->
+
+<section class="stage" id="stage3">
+
+  <div class="stage-header">
+    <div class="stage-number">03</div>
+
+    <div>
+      <span class="difficulty easy">
+        ⭐ EASY · RECOGNITION
+      </span>
+
+      <h2>🔎 Interrupted or Simultaneous?</h2>
+    </div>
+  </div>
+
+  <p class="desc">
+    Read each statement and choose TRUE or FALSE.
+    Think about what was happening in the past.
+  </p>
+
+  <div id="trueFalseArea"></div>
+
+  <p class="score-message" id="trueFalseScore"
+     aria-live="polite"></p>
+
+</section>
+
+<!-- ======================================
+     STAGE 4 — READING
+====================================== -->
+
+<section class="stage" id="stage4">
+
+  <div class="stage-header">
+    <div class="stage-number">04</div>
+
+    <div>
+      <span class="difficulty easy">
+        ⭐ EASY · READING
+      </span>
+
+      <h2>📖 An Unforgettable School Day</h2>
+    </div>
+  </div>
+
+  <p class="desc">
+    Read the story about a pupil's memorable experience.
+    Then answer the questions.
+  </p>
+
+  <div class="reading-passage">
+
+    <p>
+      Last year, I had an unforgettable experience
+      at school.
+    </p>
+
+    <p>
+      One morning, while I
+      <strong>was preparing</strong>
+      my science project, my best friend
+      <strong>was decorating</strong>
+      our classroom.
+    </p>
+
+    <p>
+      Suddenly, our teacher
+      <mark>entered</mark>
+      the room while we
+      <strong>were working</strong>.
+      She told us that our school
+      <mark>had won</mark>
+      a national competition.
+    </p>
+
+    <p>
+      When she
+      <mark>announced</mark>
+      the wonderful news, everyone
+      <strong>was listening</strong>
+      carefully.
+    </p>
+
+    <p>
+      We
+      <mark>felt</mark>
+      very proud and happy.
+      It was one of the best days
+      of my school life!
+    </p>
+
+  </div>
+
+  <div class="info-box pink">
+    <h4>🎨 Reading Clues</h4>
+
+    <p>
+      <b>Pink words:</b> actions in progress.<br>
+      <b>Yellow words:</b> completed past events.
+    </p>
+  </div>
+
+  <div id="readingQuestions"></div>
+
+  <p class="score-message" id="readingScore"
+     aria-live="polite"></p>
+
+</section>
+
+<!-- ======================================
+     STAGE 5 — MCQ
+====================================== -->
+
+<section class="stage" id="stage5">
+
+  <div class="stage-header">
+    <div class="stage-number">05</div>
+
+    <div>
+      <span class="difficulty medium">
+        ⭐⭐ MEDIUM · APPLICATION
+      </span>
+
+      <h2>🎯 Choose the Correct Answer</h2>
+    </div>
+  </div>
+
+  <p class="desc">
+    Choose the correct connector or verb form.
+    Use the meaning of the sentence to help you.
+  </p>
+
+  <div id="grammarQuiz"></div>
+
+  <p class="score-message" id="grammarScore"
+     aria-live="polite"></p>
+
+</section>
+
+<!-- ======================================
+     STAGE 6 — COMBINE
+====================================== -->
+
+<section class="stage" id="stage6">
+
+  <div class="stage-header">
+    <div class="stage-number">06</div>
+
+    <div>
+      <span class="difficulty medium">
+        ⭐⭐ MEDIUM · SENTENCE TRANSFORMATION
+      </span>
+
+      <h2>✏️ Join the Sentences</h2>
+    </div>
+  </div>
+
+  <p class="desc">
+    Combine each pair of sentences using
+    WHEN or WHILE.
+  </p>
+
+  <div class="info-box pink">
+    <h4>💡 Example</h4>
+
+    <p>
+      I was reading. My friend called. (when)
+    </p>
+
+    <div class="grammar-example">
+      I was reading when my friend called.
+    </div>
+  </div>
+
+  <div id="combineArea"></div>
+
+  <button class="btn btn-primary" onclick="checkCombine()">
+    ✅ Check My Answers
+  </button>
+
+  <button class="btn btn-light" onclick="resetCombine()">
+    🔄 Try Again
+  </button>
+
+  <p class="score-message" id="combineScore"
+     aria-live="polite"></p>
+
+</section>
+
+<!-- ======================================
+     STAGE 7 — SENTENCE BUILDER
+====================================== -->
+
+<section class="stage" id="stage7">
+
+  <div class="stage-header">
+    <div class="stage-number">07</div>
+
+    <div>
+      <span class="difficulty medium">
+        ⭐⭐ MEDIUM · SENTENCE BUILDING
+      </span>
+
+      <h2>🧩 Build a Memory Sentence</h2>
+    </div>
+  </div>
+
+  <p class="desc">
+    Tap the word cards in the correct order.
+    Tap a selected word to return it to the bank.
+  </p>
+
+  <div id="builderArea"></div>
+
+</section>
+
+<!-- ======================================
+     STAGE 8 — VERB FORMS
+====================================== -->
+
+<section class="stage" id="stage8">
+
+  <div class="stage-header">
+    <div class="stage-number">08</div>
+
+    <div>
+      <span class="difficulty medium">
+        ⭐⭐ MEDIUM · VERB FORMS
+      </span>
+
+      <h2>⏳ Complete the Memories</h2>
+    </div>
+  </div>
+
+  <p class="desc">
+    Put the verbs in brackets into the Past Simple
+    or Past Continuous.
+  </p>
+
+  <div id="verbArea"></div>
+
+  <button class="btn btn-primary" onclick="checkVerbs()">
+    ✅ Check My Answers
+  </button>
+
+  <button class="btn btn-light" onclick="resetVerbs()">
+    🔄 Try Again
+  </button>
+
+  <p class="score-message" id="verbScore"
+     aria-live="polite"></p>
+
+</section>
+
+<!-- ======================================
+     STAGE 9 — ERROR CORRECTION
+====================================== -->
+
+<section class="stage" id="stage9">
+
+  <div class="stage-header">
+    <div class="stage-number">09</div>
+
+    <div>
+      <span class="difficulty hard">
+        ⭐⭐⭐ CHALLENGE · ANALYSIS
+      </span>
+
+      <h2>🔍 Become a Grammar Detective</h2>
+    </div>
+  </div>
+
+  <p class="desc">
+    Find the underlined mistake.
+    Type only the correct word or verb form.
+  </p>
+
+  <div id="mistakeArea"></div>
+
+  <button class="btn btn-primary" onclick="checkMistakes()">
+    🔎 Check Corrections
+  </button>
+
+  <button class="btn btn-light" onclick="resetMistakes()">
+    🔄 Try Again
+  </button>
+
+  <p class="score-message" id="mistakeScore"
+     aria-live="polite"></p>
+
+</section>
+
+<!-- ======================================
+     FINAL CERTIFICATE
+====================================== -->
+
+<section class="stage">
+
+  <div class="certificate">
+
+    <div class="medal">🏆</div>
+
+    <h2>Memory Grammar Master</h2>
+
+    <p>
+      Complete the seven interactive missions
+      to earn your special Sequence 2 badge!
+    </p>
+
+    <h3 id="certificateProgress">
+      0 / 7 Missions Completed
+    </h3>
+
+    <button class="btn btn-light"
+            onclick="checkCertificate()">
+      🌟 Check My Achievement
+    </button>
+
+    <p id="certificateMessage"
+       aria-live="polite"></p>
+
+    <a href="MS4-S2-Grammar-Lesson3.html"
+       class="next-link">
+      Next Checkpoint: Superlative Degree →
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+</div>
+
+<!-- ======================================
+     DICTIONARY
+====================================== -->
+
+<button class="dictionary-button"
+        onclick="openDictionary()">
+  📖 Mini Dictionary
+</button>
+
+<div class="modal" id="dictionaryModal"
+     role="dialog"
+     aria-modal="true"
+     aria-label="English Arabic dictionary">
+
+  <div class="modal-content">
+
+    <h2>📖 English–Arabic Dictionary</h2>
+
+    <p>
+      Useful vocabulary from Sequence 2.
+    </p>
+
+    <input
+      class="answer-input"
+      id="dictionarySearch"
+      type="search"
+      placeholder="Search for a word..."
+      oninput="renderDictionary()"
+    >
+
+    <div id="dictionaryList"></div>
+
+    <br>
+
+    <button class="btn btn-light"
+            onclick="closeDictionary()">
+      ✕ Close Dictionary
+    </button>
+
+  </div>
+</div>
+
+<footer>
+  MY ENGLISH SPACE · MS4 · SEQUENCE 02<br>
+  Me, My Personality and Life Experiences
+</footer>
+
+<script>
+"use strict";
+
+/* ======================================
+   PROGRESS SYSTEM
+====================================== */
+
+const completedMissions = new Set();
+
+const totalMissions = 7;
+
+function completeMission(name) {
+  completedMissions.add(name);
+  updateProgress();
+}
+
+function updateProgress() {
+  const count = completedMissions.size;
+  const percent = (count / totalMissions) * 100;
+
+  document.getElementById("progressFill").style.width =
+    percent + "%";
+
+  document.getElementById("progressText").textContent =
+    count + " / " + totalMissions + " Missions";
+
+  document.getElementById("xpText").textContent =
+    "⭐ " + (count * 20) + " XP";
+
+  document.getElementById("certificateProgress").textContent =
+    count + " / " + totalMissions + " Missions Completed";
+}
+
+/* ======================================
+   ARABIC EXPLANATIONS
+====================================== */
+
+function toggleArabic(button) {
+  const panel = button.nextElementSibling;
+
+  panel.classList.toggle("show");
+
+  button.textContent = panel.classList.contains("show")
+    ? "🌍 Hide Arabic Explanation"
+    : "🌍 Explain in Arabic";
+}
+
+/* ======================================
+   SHARED HELPERS
+====================================== */
+
+function normalize(text) {
+  return String(text)
+    .toLowerCase()
+    .replace(/’/g, "'")
+    .replace(/[.,!?;:]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function shuffle(array) {
+  const copy = [...array];
+
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+
+  return copy;
+}
+
+function setFeedback(element, message, type) {
+  element.className = "feedback " + type;
+  element.textContent = message;
+}
+
+/* ======================================
+   SHARED MULTIPLE-CHOICE ENGINE
+====================================== */
+
+function createChoiceActivity(
+  containerId,
+  questions,
+  missionName,
+  scoreId
+) {
+  const container = document.getElementById(containerId);
+  const answered = new Set();
+  const correctAnswers = new Set();
+
+  questions.forEach((question, index) => {
+    const card = document.createElement("div");
+    card.className = "activity-card";
+
+    const title = document.createElement("div");
+    title.className = "question-text";
+    title.textContent = (index + 1) + ". " + question.q;
+
+    const options = document.createElement("div");
+    options.className = "option-grid";
+
+    const feedback = document.createElement("div");
+    feedback.className = "feedback";
+    feedback.setAttribute("aria-live", "polite");
+
+    question.options.forEach((option, optionIndex) => {
+      const button = document.createElement("button");
+      button.className = "option-btn";
+      button.textContent = option;
+
+      button.addEventListener("click", () => {
+        if (answered.has(index)) return;
+
+        if (optionIndex === question.answer) {
+          answered.add(index);
+          correctAnswers.add(index);
+
+          button.classList.add("correct");
+
+          options.querySelectorAll("button").forEach(b => {
+            b.disabled = true;
+          });
+
+          setFeedback(
+            feedback,
+            "✅ Correct! " + question.explanation,
+            "good"
+          );
+        } else {
+          button.classList.add("wrong");
+          button.disabled = true;
+
+          setFeedback(
+            feedback,
+            "💡 Not quite. " + question.hint + " Try again.",
+            "bad"
+          );
+        }
+
+        document.getElementById(scoreId).textContent =
+          correctAnswers.size + " / " +
+          questions.length + " completed";
+
+        if (correctAnswers.size === questions.length) {
+          completeMission(missionName);
+
+          document.getElementById(scoreId).textContent =
+            "🏆 Excellent! Mission completed!";
+        }
+      });
+
+      options.appendChild(button);
+    });
+
+    card.appendChild(title);
+    card.appendChild(options);
+    card.appendChild(feedback);
+
+    container.appendChild(card);
+  });
+}
+
+/* ======================================
+   STAGE 3 — TRUE / FALSE
+====================================== */
+
+const trueFalseQuestions = [
+  {
+    q:
+      "I was reading when my friend called. " +
+      "The phone call interrupted the reading.",
+    options:["True","False"],
+    answer:0,
+    explanation:"The call was the short event.",
+    hint:"Which action was already in progress?"
+  },
+  {
+    q:
+      "While I was studying, my sister was drawing. " +
+      "Both actions were happening at the same time.",
+    options:["True","False"],
+    answer:0,
+    explanation:"Both verbs are in the Past Continuous.",
+    hint:"Look at the two -ing verbs."
+  },
+  {
+    q:
+      "I won a competition last year. " +
+      "This sentence describes an action in progress.",
+    options:["True","False"],
+    answer:1,
+    explanation:"Won is Past Simple.",
+    hint:"The action was completed."
+  },
+  {
+    q:
+      "When I arrived, my friends were waiting. " +
+      "My friends started waiting only after I arrived.",
+    options:["True","False"],
+    answer:1,
+    explanation:"They were already waiting.",
+    hint:"Were waiting describes an ongoing action."
+  }
+];
+
+createChoiceActivity(
+  "trueFalseArea",
+  trueFalseQuestions,
+  "trueFalse",
+  "trueFalseScore"
+);
+
+/* ======================================
+   STAGE 4 — READING COMPREHENSION
+====================================== */
+
+const readingQuestions = [
+  {
+    q:"What was the pupil preparing?",
+    options:[
+      "A science project",
+      "A birthday party",
+      "A football match"
+    ],
+    answer:0,
+    explanation:"The pupil was preparing a science project.",
+    hint:"Read the second paragraph."
+  },
+  {
+    q:"What was the best friend doing?",
+    options:[
+      "Reading a book",
+      "Decorating the classroom",
+      "Playing football"
+    ],
+    answer:1,
+    explanation:"The friend was decorating the classroom.",
+    hint:"Look for the second ongoing action."
+  },
+  {
+    q:"What happened while the pupils were working?",
+    options:[
+      "The teacher entered",
+      "The pupils went home",
+      "The lights went out"
+    ],
+    answer:0,
+    explanation:"The teacher entered the classroom.",
+    hint:"Find the short completed event."
+  },
+  {
+    q:"Which sentence uses the Past Continuous?",
+    options:[
+      "We felt very proud.",
+      "The teacher entered.",
+      "Everyone was listening."
+    ],
+    answer:2,
+    explanation:"Was listening is Past Continuous.",
+    hint:"Look for was/were + verb-ing."
+  }
+];
+
+createChoiceActivity(
+  "readingQuestions",
+  readingQuestions,
+  "reading",
+  "readingScore"
+);
+
+/* ======================================
+   STAGE 5 — GRAMMAR QUIZ
+====================================== */
+
+const grammarQuestions = [
+  {
+    q:"I was writing my life story ___ my friend called.",
+    options:["when","during","because"],
+    answer:0,
+    explanation:"WHEN introduces the interrupting event.",
+    hint:"Choose the connector for the short event."
+  },
+  {
+    q:"___ I was reading, my sister was drawing.",
+    options:["While","Because","After"],
+    answer:0,
+    explanation:"WHILE connects the two ongoing actions.",
+    hint:"Both actions were happening together."
+  },
+  {
+    q:"I ___ my childhood friend yesterday.",
+    options:["meet","met","was meeting"],
+    answer:1,
+    explanation:"MET is the Past Simple of MEET.",
+    hint:"Yesterday suggests a completed past event."
+  },
+  {
+    q:"My friends ___ when the teacher entered.",
+    options:["were talking","was talking","talk"],
+    answer:0,
+    explanation:"Friends is plural, so use WERE.",
+    hint:"They = were."
+  },
+  {
+    q:"Choose the correct sentence.",
+    options:[
+      "I was studying when the phone rang.",
+      "I were studying when the phone rang.",
+      "I was study when the phone rang."
+    ],
+    answer:0,
+    explanation:"Use was + verb-ing.",
+    hint:"I + was + verb-ing."
+  },
+  {
+    q:"Choose the correct sentence.",
+    options:[
+      "While I was drawing, my sister was singing.",
+      "While I drawing, my sister singing.",
+      "While I were drawing, my sister was singing."
+    ],
+    answer:0,
+    explanation:"Both actions use Past Continuous.",
+    hint:"Use was/were + verb-ing."
+  }
+];
+
+createChoiceActivity(
+  "grammarQuiz",
+  grammarQuestions,
+  "grammar",
+  "grammarScore"
+);
+
+/* ======================================
+   STAGE 6 — COMBINE SENTENCES
+====================================== */
+
+const combineItems = [
+  {
+    prompt:
+      "I was reading a biography. " +
+      "My teacher called me. (when)",
+    answers:[
+      "I was reading a biography when my teacher called me",
+      "When my teacher called me I was reading a biography"
+    ],
+    model:
+      "I was reading a biography when my teacher called me.",
+    hint:
+      "Use WHEN with the short action: called."
+  },
+  {
+    prompt:
+      "My sister was drawing. " +
+      "I was writing my life story. (while)",
+    answers:[
+      "While my sister was drawing I was writing my life story",
+      "While I was writing my life story my sister was drawing",
+      "My sister was drawing while I was writing my life story",
+      "I was writing my life story while my sister was drawing"
+    ],
+    model:
+      "While my sister was drawing, I was writing my life story.",
+    hint:
+      "Both actions were happening at the same time."
+  },
+  {
+    prompt:
+      "We were preparing a school project. " +
+      "The teacher entered. (when)",
+    answers:[
+      "We were preparing a school project when the teacher entered",
+      "When the teacher entered we were preparing a school project"
+    ],
+    model:
+      "We were preparing a school project when the teacher entered.",
+    hint:
+      "The teacher's arrival was the short event."
+  },
+  {
+    prompt:
+      "I was walking home. " +
+      "I met an old friend. (while)",
+    answers:[
+      "While I was walking home I met an old friend",
+      "I met an old friend while I was walking home"
+    ],
+    model:
+      "While I was walking home, I met an old friend.",
+    hint:
+      "WHILE introduces the longer action."
+  }
+];
+
+function renderCombine() {
+  const area = document.getElementById("combineArea");
+  area.innerHTML = "";
+
+  combineItems.forEach((item,index) => {
+    const card = document.createElement("div");
+    card.className = "activity-card";
+
+    const title = document.createElement("h4");
+    title.textContent = (index + 1) + ". " + item.prompt;
+
+    const input = document.createElement("input");
+    input.className = "answer-input";
+    input.id = "combine" + index;
+    input.placeholder = "Write one complete sentence...";
+
+    const hint = document.createElement("p");
+    hint.className = "hint";
+    hint.textContent = "💡 " + item.hint;
+
+    const feedback = document.createElement("div");
+    feedback.className = "feedback";
+    feedback.id = "combineFeedback" + index;
+
+    card.append(title,input,hint,feedback);
+    area.appendChild(card);
+  });
+}
+
+function checkCombine() {
+  let score = 0;
+
+  combineItems.forEach((item,index) => {
+    const input = document.getElementById("combine" + index);
+    const feedback = document.getElementById(
+      "combineFeedback" + index
+    );
+
+    const answer = normalize(input.value);
+
+    const correct = item.answers.some(
+      accepted => normalize(accepted) === answer
+    );
+
+    input.classList.remove("correct","wrong");
+
+    if (correct) {
+      score++;
+      input.classList.add("correct");
+
+      setFeedback(
+        feedback,
+        "✅ Excellent sentence!",
+        "good"
+      );
+    } else {
+      if (answer) input.classList.add("wrong");
+
+      setFeedback(
+        feedback,
+        "💡 Model answer: " + item.model,
+        "bad"
+      );
+    }
+  });
+
+  document.getElementById("combineScore").textContent =
+    score + " / " + combineItems.length + " correct";
+
+  if (score === combineItems.length) {
+    completeMission("combine");
+  }
+}
+
+function resetCombine() {
+  renderCombine();
+  document.getElementById("combineScore").textContent = "";
+}
+
+renderCombine();
+
+/* ======================================
+   STAGE 7 — SENTENCE BUILDER
+====================================== */
+
+const builderItems = [
+  {
+    words:[
+      "I","was","reading","when",
+      "my","friend","called"
+    ],
+    answer:
+      "I was reading when my friend called"
+  },
+  {
+    words:[
+      "While","my","sister","was","drawing",
+      "I","was","studying"
+    ],
+    answer:
+      "While my sister was drawing I was studying"
+  },
+  {
+    words:[
+      "We","were","playing","when",
+      "the","rain","started"
+    ],
+    answer:
+      "We were playing when the rain started"
+  }
+];
+
+const builderState = builderItems.map(() => []);
+const completedBuilders = new Set();
+
+function renderBuilders() {
+  const area = document.getElementById("builderArea");
+  area.innerHTML = "";
+
+  builderItems.forEach((item,index) => {
+    const card = document.createElement("div");
+    card.className = "activity-card";
+
+    const title = document.createElement("h4");
+    title.textContent = "Sentence " + (index + 1);
+
+    const strip = document.createElement("div");
+    strip.className = "answer-strip";
+    strip.id = "builderStrip" + index;
+
+    const bank = document.createElement("div");
+    bank.className = "word-bank";
+
+    const feedback = document.createElement("div");
+    feedback.className = "feedback";
+    feedback.id = "builderFeedback" + index;
+
+    const controls = document.createElement("div");
+
+    const checkButton = document.createElement("button");
+    checkButton.className = "btn btn-primary";
+    checkButton.textContent = "✅ Check";
+    checkButton.onclick = () => checkBuilder(index);
+
+    const resetButton = document.createElement("button");
+    resetButton.className = "btn btn-light";
+    resetButton.textContent = "↺ Clear";
+    resetButton.onclick = () => clearBuilder(index);
+
+    controls.append(checkButton,resetButton);
+
+    const shuffledWords = shuffle(
+      item.words.map((word,id) => ({word,id}))
+    );
+
+    shuffledWords.forEach(token => {
+      const button = document.createElement("button");
+      button.className = "word-chip";
+      button.textContent = token.word;
+
+      button.onclick = () => {
+        if (button.classList.contains("used")) return;
+
+        button.classList.add("used");
+
+        builderState[index].push({
+          word:token.word,
+          button
+        });
+
+        updateBuilderStrip(index);
+      };
+
+      bank.appendChild(button);
+    });
+
+    card.append(title,strip,bank,controls,feedback);
+    area.appendChild(card);
+
+    updateBuilderStrip(index);
+  });
+}
+
+function updateBuilderStrip(index) {
+  const strip = document.getElementById(
+    "builderStrip" + index
+  );
+
+  strip.innerHTML = "";
+
+  if (!builderState[index].length) {
+    const placeholder = document.createElement("span");
+    placeholder.className = "placeholder";
+    placeholder.textContent =
+      "Tap the words below in the correct order...";
+
+    strip.appendChild(placeholder);
+    return;
+  }
+
+  builderState[index].forEach((item,position) => {
+    const chip = document.createElement("button");
+    chip.className = "strip-chip";
+    chip.textContent = item.word;
+
+    chip.onclick = () => {
+      item.button.classList.remove("used");
+      builderState[index].splice(position,1);
+      updateBuilderStrip(index);
+    };
+
+    strip.appendChild(chip);
+  });
+}
+
+function clearBuilder(index) {
+  builderState[index].forEach(item => {
+    item.button.classList.remove("used");
+  });
+
+  builderState[index] = [];
+
+  updateBuilderStrip(index);
+
+  document.getElementById(
+    "builderFeedback" + index
+  ).textContent = "";
+}
+
+function checkBuilder(index) {
+  const sentence = builderState[index]
+    .map(item => item.word)
+    .join(" ");
+
+  const feedback = document.getElementById(
+    "builderFeedback" + index
+  );
+
+  if (normalize(sentence) ===
+      normalize(builderItems[index].answer)) {
+
+    completedBuilders.add(index);
+
+    setFeedback(
+      feedback,
+      "🌟 Perfect! Your sentence is correct.",
+      "good"
+    );
+
+    if (completedBuilders.size === builderItems.length) {
+      completeMission("builder");
+    }
+  } else {
+    setFeedback(
+      feedback,
+      "💡 Check the word order and try again.",
+      "bad"
+    );
+  }
+}
+
+renderBuilders();
+
+/* ======================================
+   STAGE 8 — VERB FORMS
+====================================== */
+
+const verbItems = [
+  {
+    sentence:
+      "While I ___ (read) my favourite biography, " +
+      "my friend called.",
+    answers:["was reading"],
+    hint:"A longer action interrupted by a short event."
+  },
+  {
+    sentence:
+      "I ___ (meet) my childhood friend yesterday.",
+    answers:["met"],
+    hint:"A completed past event."
+  },
+  {
+    sentence:
+      "My sister ___ (draw) while I was studying.",
+    answers:["was drawing"],
+    hint:"Two actions in progress at the same time."
+  },
+  {
+    sentence:
+      "The teacher ___ (enter) while we were working.",
+    answers:["entered"],
+    hint:"A completed event during an ongoing action."
+  },
+  {
+    sentence:
+      "We ___ (prepare) our project when the bell rang.",
+    answers:["were preparing"],
+    hint:"The longer background action."
+  },
+  {
+    sentence:
+      "I ___ (know) the answer when my teacher asked me.",
+    answers:["knew"],
+    hint:"KNOW is normally a stative verb."
+  }
+];
+
+function renderVerbs() {
+  const area = document.getElementById("verbArea");
+  area.innerHTML = "";
+
+  verbItems.forEach((item,index) => {
+    const card = document.createElement("div");
+    card.className = "activity-card";
+
+    const title = document.createElement("h4");
+    title.textContent =
+      (index + 1) + ". " + item.sentence;
+
+    const input = document.createElement("input");
+    input.className = "answer-input";
+    input.id = "verb" + index;
+    input.placeholder = "Write the correct verb form...";
+
+    const hint = document.createElement("p");
+    hint.className = "hint";
+    hint.textContent = "💡 " + item.hint;
+
+    const feedback = document.createElement("div");
+    feedback.className = "feedback";
+    feedback.id = "verbFeedback" + index;
+
+    card.append(title,input,hint,feedback);
+    area.appendChild(card);
+  });
+}
+
+function checkVerbs() {
+  let score = 0;
+
+  verbItems.forEach((item,index) => {
+    const input = document.getElementById("verb" + index);
+    const feedback = document.getElementById(
+      "verbFeedback" + index
+    );
+
+    const correct = item.answers.some(
+      answer => normalize(answer) === normalize(input.value)
+    );
+
+    input.classList.remove("correct","wrong");
+
+    if (correct) {
+      score++;
+      input.classList.add("correct");
+
+      setFeedback(feedback,"✅ Correct!","good");
+    } else {
+      if (input.value.trim()) input.classList.add("wrong");
+
+      setFeedback(
+        feedback,
+        "💡 Correct answer: " + item.answers[0],
+        "bad"
+      );
+    }
+  });
+
+  document.getElementById("verbScore").textContent =
+    score + " / " + verbItems.length + " correct";
+
+  if (score === verbItems.length) {
+    completeMission("verbs");
+  }
+}
+
+function resetVerbs() {
+  renderVerbs();
+  document.getElementById("verbScore").textContent = "";
+}
+
+renderVerbs();
+
+/* ======================================
+   STAGE 9 — ERROR CORRECTION
+====================================== */
+
+const mistakeItems = [
+  {
+    sentence:
+      "I <u>were</u> reading when my friend arrived.",
+    answers:["was"],
+    hint:"I takes WAS."
+  },
+  {
+    sentence:
+      "My friends <u>was</u> playing when it rained.",
+    answers:["were"],
+    hint:"Friends is plural."
+  },
+  {
+    sentence:
+      "I was <u>write</u> my story when the phone rang.",
+    answers:["writing"],
+    hint:"Use verb-ing after WAS."
+  },
+  {
+    sentence:
+      "I <u>see</u> my old friend yesterday.",
+    answers:["saw"],
+    hint:"Use the irregular Past Simple."
+  },
+  {
+    sentence:
+      "While I was studying, my sister <u>sing</u>.",
+    answers:["was singing"],
+    hint:"Two actions were in progress."
+  },
+  {
+    sentence:
+      "I was <u>knowing</u> the answer when she asked.",
+    answers:["knew"],
+    hint:"KNOW is normally a stative verb."
+  }
+];
+
+function renderMistakes() {
+  const area = document.getElementById("mistakeArea");
+  area.innerHTML = "";
+
+  mistakeItems.forEach((item,index) => {
+    const card = document.createElement("div");
+    card.className = "activity-card";
+
+    const title = document.createElement("h4");
+    title.innerHTML =
+      (index + 1) + ". " + item.sentence;
+
+    const input = document.createElement("input");
+    input.className = "answer-input";
+    input.id = "mistake" + index;
+    input.placeholder = "Type the correction...";
+
+    const hint = document.createElement("p");
+    hint.className = "hint";
+    hint.textContent = "💡 " + item.hint;
+
+    const feedback = document.createElement("div");
+    feedback.className = "feedback";
+    feedback.id = "mistakeFeedback" + index;
+
+    card.append(title,input,hint,feedback);
+    area.appendChild(card);
+  });
+}
+
+function checkMistakes() {
+  let score = 0;
+
+  mistakeItems.forEach((item,index) => {
+    const input = document.getElementById(
+      "mistake" + index
+    );
+
+    const feedback = document.getElementById(
+      "mistakeFeedback" + index
+    );
+
+    const correct = item.answers.some(
+      answer => normalize(answer) === normalize(input.value)
+    );
+
+    input.classList.remove("correct","wrong");
+
+    if (correct) {
+      score++;
+      input.classList.add("correct");
+
+      setFeedback(
+        feedback,
+        "✅ Excellent correction!",
+        "good"
+      );
+    } else {
+      if (input.value.trim()) input.classList.add("wrong");
+
+      setFeedback(
+        feedback,
+        "💡 Correct answer: " + item.answers[0],
+        "bad"
+      );
+    }
+  });
+
+  document.getElementById("mistakeScore").textContent =
+    score + " / " + mistakeItems.length + " correct";
+
+  if (score === mistakeItems.length) {
+    completeMission("mistakes");
+  }
+}
+
+function resetMistakes() {
+  renderMistakes();
+  document.getElementById("mistakeScore").textContent = "";
+}
+
+renderMistakes();
+
+/* ======================================
+   CERTIFICATE
+====================================== */
+
+function checkCertificate() {
+  const message = document.getElementById(
+    "certificateMessage"
+  );
+
+  if (completedMissions.size === totalMissions) {
+    message.textContent =
+      "🎉 Congratulations! You completed all seven " +
+      "missions and earned 140 XP. " +
+      "You are a Memory Grammar Master!";
+  } else {
+    message.textContent =
+      "You have completed " +
+      completedMissions.size +
+      " / " + totalMissions +
+      " missions. Keep learning!";
+  }
+}
+
+/* ======================================
+   ENGLISH–ARABIC DICTIONARY
+====================================== */
+
+const dictionary = [
+  ["memory","ذكرى"],
+  ["memories","ذكريات"],
+  ["childhood","الطفولة"],
+  ["experience","تجربة"],
+  ["unforgettable","لا يُنسى"],
+  ["past","الماضي"],
+  ["action","فعل / حدث"],
+  ["event","حدث"],
+  ["interrupted","مُتقطع / قوطع"],
+  ["simultaneous","متزامن"],
+  ["while","بينما"],
+  ["when","عندما"],
+  ["suddenly","فجأة"],
+  ["yesterday","أمس"],
+  ["last year","السنة الماضية"],
+  ["long action","حدث طويل"],
+  ["short action","حدث قصير"],
+  ["in progress","في طور الحدوث"],
+  ["completed","مكتمل"],
+  ["biography","سيرة ذاتية"],
+  ["competition","مسابقة"],
+  ["achievement","إنجاز"],
+  ["project","مشروع"],
+  ["prepare","يحضر"],
+  ["decorate","يزين"],
+  ["arrive","يصل"],
+  ["enter","يدخل"],
+  ["announce","يعلن"],
+  ["proud","فخور"],
+  ["happy","سعيد"],
+  ["friendship","صداقة"],
+  ["teacher","أستاذ"],
+  ["classroom","قسم"],
+  ["school","مدرسة"],
+  ["story","قصة"],
+  ["believe","يعتقد"],
+  ["know","يعرف"],
+  ["understand","يفهم"],
+  ["remember","يتذكر"],
+  ["forget","ينسى"],
+  ["write","يكتب"],
+  ["read","يقرأ"],
+  ["study","يدرس"],
+  ["draw","يرسم"],
+  ["meet","يلتقي"],
+  ["win","يفوز"]
+];
+
+function openDictionary() {
+  document.getElementById("dictionaryModal")
+    .classList.add("show");
+
+  renderDictionary();
+
+  document.getElementById("dictionarySearch").focus();
+}
+
+function closeDictionary() {
+  document.getElementById("dictionaryModal")
+    .classList.remove("show");
+}
+
+function renderDictionary() {
+  const query = document.getElementById(
+    "dictionarySearch"
+  ).value.toLowerCase().trim();
+
+  const area = document.getElementById("dictionaryList");
+  area.innerHTML = "";
+
+  const results = dictionary.filter(item =>
+    item[0].toLowerCase().includes(query) ||
+    item[1].includes(query)
+  );
+
+  results.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "dictionary-row";
+
+    const english = document.createElement("strong");
+    english.textContent = item[0];
+
+    const arabic = document.createElement("span");
+    arabic.textContent = item[1];
+
+    row.append(english,arabic);
+    area.appendChild(row);
+  });
+
+  if (!results.length) {
+    const empty = document.createElement("p");
+    empty.textContent = "No matching word found.";
+    area.appendChild(empty);
+  }
+}
+
+document.getElementById("dictionaryModal")
+  .addEventListener("click",function(event) {
+    if (event.target === this) {
+      closeDictionary();
+    }
+  });
+
+document.addEventListener("keydown",function(event) {
+  if (event.key === "Escape") {
+    closeDictionary();
+  }
+});
+
+/* ======================================
+   INITIALIZE
+====================================== */
+
+updateProgress();
+
+</script>
+
+</body>
+</html>

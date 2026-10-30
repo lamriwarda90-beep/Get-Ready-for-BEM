@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073c42">
+
+<title>MS4 Sequence 1 | Games Expedition</title>
+
+<meta name="description"
+content="Explore four exciting educational games about landmarks, grammar, vocabulary and writing for MS4 pupils.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* ==========================================
+   GLOBAL DESIGN
+========================================== */
+
+:root {
+    --gold: #ffe09b;
+    --mint: #a8f4e9;
+    --ink: #062d35;
+    --muted: #d1e6e6;
+    --border: rgba(255,255,255,.23);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    background: #06363d;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+h1, h2, h3 {
+    font-family: "Sora", sans-serif;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   PHOTOGRAPHIC BACKGROUND
+========================================== */
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(3,37,44,.93),
+            rgba(4,58,63,.86)
+        ),
+        url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2200&q=85")
+        center / cover no-repeat;
+}
+
+.backdrop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(67,212,199,.22),
+            transparent 35%
+        ),
+        linear-gradient(
+            transparent,
+            rgba(1,22,28,.45)
+        );
+}
+
+.container {
+    width: min(1160px, calc(100% - 36px));
+    margin: auto;
+}
+
+/* ==========================================
+   SCROLL PROGRESS
+========================================== */
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    z-index: 99;
+
+    background: linear-gradient(
+        90deg,
+        #65e8d7,
+        var(--gold)
+    );
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 24px 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.brand-mark {
+    width: 49px;
+    height: 49px;
+    border-radius: 15px;
+    object-fit: cover;
+
+    border: 2px solid rgba(255,255,255,.65);
+}
+
+.brand strong {
+    display: block;
+    font: 800 15px "Sora", sans-serif;
+}
+
+.brand strong span {
+    color: var(--mint);
+}
+
+.brand small {
+    display: block;
+    margin-top: 6px;
+
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.1px;
+}
+
+.back {
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,.09);
+
+    padding: 13px 18px;
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: .25s;
+}
+
+.back:hover {
+    background: white;
+    color: var(--ink);
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 390px;
+    gap: 50px;
+    align-items: center;
+
+    padding: 55px 0 58px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--mint);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.eyebrow::before {
+    content: "";
+
+    width: 30px;
+    height: 3px;
+
+    background: var(--gold);
+    border-radius: 5px;
+}
+
+.hero h1 {
+    font-size: clamp(49px, 6.5vw, 83px);
+    line-height: 1.08;
+    letter-spacing: -3px;
+
+    margin: 22px 0;
+}
+
+.hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+}
+
+.hero p {
+    max-width: 640px;
+
+    line-height: 1.85;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    margin-top: 22px;
+}
+
+.hero-tags span {
+    padding: 9px 13px;
+
+    border: 1px solid var(--border);
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.08);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* ==========================================
+   HERO PHOTOGRAPH
+========================================== */
+
+.hero-photo {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+
+    border: 5px solid rgba(255,255,255,.86);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.4);
+
+    min-height: 390px;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 40%,
+            rgba(0,26,35,.85)
+        );
+}
+
+.hero-photo-caption {
+    position: absolute;
+    bottom: 22px;
+    left: 23px;
+    right: 23px;
+    z-index: 1;
+}
+
+.hero-photo-caption b {
+    display: block;
+
+    font: 800 23px "Sora", sans-serif;
+}
+
+.hero-photo-caption small {
+    display: block;
+    margin-top: 7px;
+    color: #e6f4f2;
+}
+
+/* ==========================================
+   PROGRESS DASHBOARD
+========================================== */
+
+.dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 23px 28px;
+    margin-bottom: 52px;
+
+    border-radius: 22px;
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,.1);
+
+    backdrop-filter: blur(15px);
+}
+
+.dashboard h2 {
+    font-size: 18px;
+    margin: 0 0 7px;
+}
+
+.dashboard p {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0;
+}
+
+.progress-side {
+    width: min(330px, 45%);
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    margin-bottom: 10px;
+}
+
+.progress-text strong {
+    color: var(--gold);
+}
+
+.progress-track {
+    height: 9px;
+
+    background: rgba(0,0,0,.3);
+    border-radius: 30px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #72e6d6,
+            var(--gold)
+        );
+
+    transition: width .4s;
+}
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 43px;
+}
+
+.section-heading small {
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--mint);
+    font-size: 11px;
+}
+
+.section-heading h2 {
+    font-size: clamp(28px, 4vw, 43px);
+    margin: 12px 0;
+}
+
+.section-heading h2 span {
+    color: var(--gold);
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ==========================================
+   GAME GRID
+========================================== */
+
+.game-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap: 27px;
+}
+
+/* ==========================================
+   GAME CARDS
+========================================== */
+
+.game-card {
+    overflow: hidden;
+    border-radius: 27px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,.1);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 50px rgba(0,20,25,.3);
+
+    transition:
+        transform .3s,
+        border-color .3s;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+/* ==========================================
+   GAME PHOTOGRAPHS
+========================================== */
+
+.game-image {
+    position: relative;
+    height: 255px;
+    overflow: hidden;
+
+    background: #1e5960;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition: transform .6s;
+}
+
+.game-card:hover .game-image img {
+    transform: scale(1.07);
+}
+
+.game-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 38%,
+            rgba(2,28,37,.82)
+        );
+}
+
+.game-number {
+    position: absolute;
+    top: 17px;
+    left: 18px;
+    z-index: 1;
+
+    padding: 9px 13px;
+    border-radius: 30px;
+
+    background: rgba(0,37,46,.78);
+
+    border:
+        1px solid rgba(255,255,255,.35);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.game-image-title {
+    position: absolute;
+    bottom: 21px;
+    left: 23px;
+    z-index: 1;
+
+    font: 800 25px "Sora", sans-serif;
+
+    text-shadow:
+        0 2px 15px rgba(0,0,0,.45);
+}
+
+/* ==========================================
+   GAME CONTENT
+========================================== */
+
+.game-body {
+    padding: 25px 27px 27px;
+}
+
+.game-kicker {
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    font-weight: 800;
+    color: var(--mint);
+}
+
+.game-body h3 {
+    font-size: 23px;
+    margin: 12px 0;
+}
+
+.game-body p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--muted);
+    margin: 0;
+}
+
+/* ==========================================
+   SKILL TAGS
+========================================== */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin: 21px 0;
+}
+
+.skills span {
+    padding: 8px 11px;
+    border-radius: 9px;
+
+    background: rgba(255,255,255,.1);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* ==========================================
+   GAME STATUS
+========================================== */
+
+.status {
+    font-size: 11px;
+    color: #c8dfdf;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.status::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #8da9ab;
+
+    margin-right: 8px;
+}
+
+.game-card.visited .status::before {
+    background: var(--gold);
+}
+
+.game-card.completed .status::before {
+    background: #72f5aa;
+}
+
+/* ==========================================
+   PLAY BUTTONS
+========================================== */
+
+.enter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--gold);
+    color: #163d42;
+
+    padding: 15px 18px;
+
+    border-radius: 13px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: .25s;
+}
+
+.enter:hover {
+    background: white;
+}
+
+.enter span:last-child {
+    font-size: 20px;
+}
+
+/* Different colours for each game */
+
+.game-card:nth-child(2) .enter {
+    background: #d8c1ff;
+}
+
+.game-card:nth-child(3) .enter {
+    background: #ffb9d2;
+}
+
+.game-card:nth-child(4) .enter {
+    background: #a9dbff;
+}
+
+/* ==========================================
+   FINAL DESTINATION
+========================================== */
+
+.destination {
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: 70px auto 35px;
+    padding: 42px 30px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,219,136,.17),
+            rgba(255,255,255,.07)
+        );
+
+    border:
+        1px solid rgba(255,219,136,.4);
+}
+
+.destination h2 {
+    font-size: clamp(25px, 4vw, 36px);
+    margin: 8px 0 14px;
+}
+
+.destination p {
+    max-width: 600px;
+    margin: auto;
+
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.destination strong {
+    display: block;
+    margin-top: 16px;
+
+    color: var(--gold);
+    font-size: 13px;
+}
+
+/* ==========================================
+   BEM PANEL
+========================================== */
+
+.bem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    max-width: 900px;
+
+    margin: 0 auto 65px;
+    padding: 23px 27px;
+
+    background: rgba(0,0,0,.19);
+
+    border: 1px solid var(--border);
+    border-radius: 19px;
+}
+
+.bem b {
+    font: 800 17px "Sora", sans-serif;
+}
+
+.bem p {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 7px 0 0;
+}
+
+.bem span {
+    border-radius: 30px;
+    padding: 10px 13px;
+
+    border: 1px solid #c9aaff;
+
+    color: #e6d5ff;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+
+    padding: 30px 15px 40px;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: #c2d8d9;
+}
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media(max-width:850px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 32px;
+    }
+
+    .hero-photo {
+        max-width: 570px;
+        min-height: 300px;
+    }
+
+    .hero-photo img {
+        height: 350px;
+    }
+
+    .game-image {
+        height: 220px;
+    }
+
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media(max-width:600px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .brand strong {
+        font-size: 11px;
+    }
+
+    .brand small {
+        font-size: 8px;
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .back {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    .hero h1 {
+        font-size: clamp(43px,10vw,61px);
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .hero-photo img {
+        height: 280px;
+    }
+
+    .hero-photo {
+        min-height: 280px;
+    }
+
+    .dashboard {
+        display: block;
+        padding: 23px;
+    }
+
+    .progress-side {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .game-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .game-image {
+        height: 220px;
+    }
+
+    .game-body {
+        padding: 23px;
+    }
+
+    .bem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .destination {
+        margin-top: 45px;
+    }
+
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media(prefers-reduced-motion:reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ==========================================
+     BACKGROUND
+========================================== -->
+
+<div class="backdrop" aria-hidden="true"></div>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<header class="container">
+
+    <nav class="navbar" aria-label="Main navigation">
+
+        <div class="brand">
+
+            <img
+                class="brand-mark"
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&q=80"
+                alt=""
+            >
+
+            <div>
+
+                <strong>
+                    MY ENGLISH <span>SPACE</span>
+                </strong>
+
+                <small>
+                    MS4 · SEQUENCE 1 · GAME ZONE
+                </small>
+
+            </div>
+
+        </div>
+
+        <a
+            class="back"
+            href="MS4-Sequence1.html"
+        >
+            ← Back to Sequence
+        </a>
+
+    </nav>
+
+</header>
+
+<main class="container">
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="hero">
+
+    <div>
+
+        <div class="eyebrow">
+            MS4 · SEQUENCE 01 · GAME ZONE
+        </div>
+
+        <h1>
+            Games<br>
+            <em>Expedition.</em>
+        </h1>
+
+        <p>
+
+            Explore four interactive challenges
+            inspired by landmarks, literature,
+            art and outstanding figures.
+
+            Play, practise your English
+            and discover new skills through
+            exciting learning adventures.
+
+        </p>
+
+        <div class="hero-tags">
+
+            <span>Vocabulary</span>
+            <span>Grammar</span>
+            <span>Visual Memory</span>
+            <span>Writing</span>
+
+        </div>
+
+    </div>
+
+    <!-- HERO PHOTO -->
+
+    <div class="hero-photo">
+
+        <img
+            src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=1100&q=85"
+            alt="Colourful video game controllers"
+            fetchpriority="high"
+        >
+
+        <div class="hero-photo-caption">
+
+            <b>
+                Play. Learn. Succeed.
+            </b>
+
+            <small>
+                Four exciting challenges await you.
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     EXPLORER DASHBOARD
+========================================== -->
+
+<section
+    class="dashboard"
+    aria-label="Game progress"
+>
+
+    <div>
+
+        <h2>
+            Your Explorer Dashboard
+        </h2>
+
+        <p>
+            Track the games you have opened.
+            Your progress is saved on this device.
+        </p>
+
+    </div>
+
+    <div class="progress-side">
+
+        <div class="progress-text">
+
+            <span>
+                Games explored
+            </span>
+
+            <strong id="progressNumber">
+                0 / 4
+            </strong>
+
+        </div>
+
+        <div
+            class="progress-track"
+            id="progressTrack"
+            role="progressbar"
+            aria-label="Games explored"
+            aria-valuemin="0"
+            aria-valuemax="4"
+            aria-valuenow="0"
+        >
+
+            <div
+                class="progress-fill"
+                id="progressFill"
+            ></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     GAME SELECTION
+========================================== -->
+
+<section id="games">
+
+    <div class="section-heading">
+
+        <small>
+            CHOOSE YOUR NEXT ADVENTURE
+        </small>
+
+        <h2>
+            Four Games.
+            <span>Endless Discovery.</span>
+        </h2>
+
+        <p>
+            Beautiful challenges designed for MS4 learners.
+            Choose a game to begin!
+        </p>
+
+    </div>
+
+    <div class="game-grid">
+
+        <!-- ==================================
+             GAME 1 — CROSSWORD
+        =================================== -->
+
+        <article
+            class="game-card"
+            data-stop="1"
+        >
+
+            <div class="game-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1000&q=85"
+                    alt="Colourful puzzle and mathematical learning"
+                    loading="lazy"
+                >
+
+                <span class="game-number">
+                    GAME 01 · VOCABULARY
+                </span>
+
+                <div class="game-image-title">
+                    Word Explorer
+                </div>
+
+            </div>
+
+            <div class="game-body">
+
+                <div class="game-kicker">
+                    VOCABULARY CHALLENGE
+                </div>
+
+                <h3>
+                    Crossword Expedition
+                </h3>
+
+                <p>
+
+                    Discover hidden vocabulary
+                    from literature, art,
+                    landmarks and outstanding figures.
+
+                    Read clues and complete
+                    the crossword.
+
+                </p>
+
+                <div class="skills">
+
+                    <span>Vocabulary</span>
+                    <span>Literature</span>
+                    <span>Landmarks</span>
+
+                </div>
+
+                <div class="status">
+                    Not visited yet
+                </div>
+
+                <a
+                    class="enter"
+                    href="MS4-S1-Game1-Crossword.html"
+                    data-game="1"
+                >
+
+                    <span>
+                        Play Crossword Expedition
+                    </span>
+
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+        <!-- ==================================
+             GAME 2 — GRAMMAR ARCADE
+        =================================== -->
+
+        <article
+            class="game-card"
+            data-stop="2"
+        >
+
+            <div class="game-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1000&q=85"
+                    alt="Video gaming setup with glowing screen"
+                    loading="lazy"
+                >
+
+                <span class="game-number">
+                    GAME 02 · GRAMMAR
+                </span>
+
+                <div class="game-image-title">
+                    Grammar Challenge
+                </div>
+
+            </div>
+
+            <div class="game-body">
+
+                <div class="game-kicker">
+                    GRAMMAR CHALLENGE
+                </div>
+
+                <h3>
+                    Grammar Arcade
+                </h3>
+
+                <p>
+
+                    Put your grammar knowledge
+                    into action in a fast
+                    and interactive arcade game.
+
+                    Practise Sequence 1 grammar
+                    and collect points.
+
+                </p>
+
+                <div class="skills">
+
+                    <span>Grammar</span>
+                    <span>Accuracy</span>
+                    <span>Quick Thinking</span>
+
+                </div>
+
+                <div class="status">
+                    Not visited yet
+                </div>
+
+                <a
+                    class="enter"
+                    href="MS4-S1-Game2-GrammarArcade.html"
+                    data-game="2"
+                >
+
+                    <span>
+                        Play Grammar Arcade
+                    </span>
+
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+        <!-- ==================================
+             GAME 3 — PICTURE MATCH
+        =================================== -->
+
+        <article
+            class="game-card"
+            data-stop="3"
+        >
+
+            <div class="game-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1000&q=85"
+                    alt="Books and photographs on a desk"
+                    loading="lazy"
+                >
+
+                <span class="game-number">
+                    GAME 03 · VISUAL VOCABULARY
+                </span>
+
+                <div class="game-image-title">
+                    Picture Explorer
+                </div>
+
+            </div>
+
+            <div class="game-body">
+
+                <div class="game-kicker">
+                    VISUAL VOCABULARY
+                </div>
+
+                <h3>
+                    Picture Match Expedition
+                </h3>
+
+                <p>
+
+                    Explore pictures of landmarks,
+                    art and outstanding figures.
+
+                    Match each picture
+                    with the correct word
+                    and train your visual memory.
+
+                </p>
+
+                <div class="skills">
+
+                    <span>Picture Matching</span>
+                    <span>Vocabulary</span>
+                    <span>Observation</span>
+
+                </div>
+
+                <div class="status">
+                    Not visited yet
+                </div>
+
+                <a
+                    class="enter"
+                    href="MS4-S1-Game3-PictureMatch.html"
+                    data-game="3"
+                >
+
+                    <span>
+                        Play Picture Match
+                    </span>
+
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+        <!-- ==================================
+             GAME 4 — SENTENCE BUILDER
+        =================================== -->
+
+        <article
+            class="game-card"
+            data-stop="4"
+        >
+
+            <div class="game-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85"
+                    alt="Notebook and pen for creative writing"
+                    loading="lazy"
+                >
+
+                <span class="game-number">
+                    GAME 04 · WRITING
+                </span>
+
+                <div class="game-image-title">
+                    Writing Master
+                </div>
+
+            </div>
+
+            <div class="game-body">
+
+                <div class="game-kicker">
+                    WRITING CHALLENGE
+                </div>
+
+                <h3>
+                    Sentence Builder
+                </h3>
+
+                <p>
+
+                    Arrange words to build
+                    meaningful English sentences.
+
+                    Improve sentence structure,
+                    accuracy and BEM writing skills.
+
+                </p>
+
+                <div class="skills">
+
+                    <span>Sentence Structure</span>
+                    <span>Writing</span>
+                    <span>BEM Preparation</span>
+
+                </div>
+
+                <div class="status">
+                    Not visited yet
+                </div>
+
+                <a
+                    class="enter"
+                    href="MS4-S1-Game4-SentenceBuilder.html"
+                    data-game="4"
+                >
+
+                    <span>
+                        Play Sentence Builder
+                    </span>
+
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     FINAL DESTINATION
+========================================== -->
+
+<section class="destination">
+
+    <small style="
+        color:var(--gold);
+        letter-spacing:2px;
+        font-weight:800;
+    ">
+        YOUR FINAL DESTINATION
+    </small>
+
+    <h2>
+        Become a Sequence 1 Game Explorer!
+    </h2>
+
+    <p>
+
+        Explore all four games
+        to develop your vocabulary,
+        grammar, visual memory
+        and writing skills
+        while learning about the world.
+
+    </p>
+
+    <strong id="destinationMessage">
+        Your adventure is waiting!
+    </strong>
+
+</section>
+
+<!-- ==========================================
+     BEM SKILL ZONE
+========================================== -->
+
+<section class="bem">
+
+    <div>
+
+        <b>
+            BEM Skill Zone
+        </b>
+
+        <p>
+            Build vocabulary · Improve accuracy ·
+            Organise ideas · Write clearly
+        </p>
+
+    </div>
+
+    <span>
+        EXAM READY
+    </span>
+
+</section>
+
+</main>
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    MY ENGLISH SPACE ·
+    MS4 ·
+    SEQUENCE 01 ·
+    GAMES EXPEDITION
+
+</footer>
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+"use strict";
+
+/* ==========================================
+   STORAGE KEYS
+========================================== */
+
+const VISITED_KEY =
+    "MS4_S1_GAMES_VISITED";
+
+const COMPLETED_KEY =
+    "MS4_S1_GAMES_PROGRESS";
+
+/* ==========================================
+   READ SAVED GAME NUMBERS
+========================================== */
+
+function readNumbers(key) {
+
+    try {
+
+        const data = JSON.parse(
+            localStorage.getItem(key)
+        );
+
+        return Array.isArray(data)
+            ? [
+                ...new Set(
+                    data
+                        .map(Number)
+                        .filter(
+                            n =>
+                                Number.isInteger(n) &&
+                                n >= 1 &&
+                                n <= 4
+                        )
+                )
+            ]
+            : [];
+
+    } catch (error) {
+
+        return [];
+
+    }
+
+}
+
+/* ==========================================
+   UPDATE GAME PROGRESS
+========================================== */
+
+function updateProgress() {
+
+    const visited =
+        readNumbers(VISITED_KEY);
+
+    const completed =
+        readNumbers(COMPLETED_KEY);
+
+    const explored = new Set([
+        ...visited,
+        ...completed
+    ]);
+
+    document
+        .querySelectorAll(".game-card")
+        .forEach(card => {
+
+            const number = Number(
+                card.dataset.stop
+            );
+
+            const done =
+                completed.includes(number);
+
+            const seen =
+                explored.has(number);
+
+            card.classList.toggle(
+                "visited",
+                seen
+            );
+
+            card.classList.toggle(
+                "completed",
+                done
+            );
+
+            const status =
+                card.querySelector(".status");
+
+            status.textContent = done
+                ? "Game completed"
+                : seen
+                    ? "Game visited"
+                    : "Not visited yet";
+
+        });
+
+    const count =
+        explored.size;
+
+    document.getElementById(
+        "progressNumber"
+    ).textContent = `${count} / 4`;
+
+    document.getElementById(
+        "progressFill"
+    ).style.width = (count * 25) + "%";
+
+    document.getElementById(
+        "progressTrack"
+    ).setAttribute(
+        "aria-valuenow",
+        count
+    );
+
+    document.getElementById(
+        "destinationMessage"
+    ).textContent =
+
+        count === 4
+            ? "Wonderful! You have explored all four games."
+
+            : count > 0
+                ? "Great start! Keep exploring the other games."
+
+                : "Your adventure is waiting!";
+
+}
+
+/* ==========================================
+   SAVE VISITED GAMES
+========================================== */
+
+document
+    .querySelectorAll("[data-game]")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                const number = Number(
+                    link.dataset.game
+                );
+
+                const visited =
+                    readNumbers(VISITED_KEY);
+
+                if (!visited.includes(number)) {
+
+                    visited.push(number);
+
+                    try {
+
+                        localStorage.setItem(
+                            VISITED_KEY,
+                            JSON.stringify(visited)
+                        );
+
+                    } catch (error) {
+
+                        // Continue even if storage is unavailable.
+
+                    }
+
+                }
+
+                updateProgress();
+
+            }
+        );
+
+    });
+
+/* ==========================================
+   SCROLL PROGRESS
+========================================== */
+
+function updateScroll() {
+
+    const total =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const percentage =
+        total > 0
+            ? Math.min(
+                100,
+                window.scrollY / total * 100
+            )
+            : 0;
+
+    document.getElementById(
+        "scrollProgress"
+    ).style.width = percentage + "%";
+
+}
+
+/* ==========================================
+   INITIALISATION
+========================================== */
+
+window.addEventListener(
+    "scroll",
+    updateScroll,
+    { passive: true }
+);
+
+window.addEventListener(
+    "pageshow",
+    updateProgress
+);
+
+window.addEventListener(
+    "storage",
+    updateProgress
+);
+
+updateProgress();
+updateScroll();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#086cb6">
+
+<title>MS4 Reading Practice | Sequence 2</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#086cb6;
+  --deep:#103c70;
+  --sky:#e9f5ff;
+  --cyan:#20b8d5;
+  --purple:#7555c7;
+  --gold:#ffc857;
+  --green:#178a60;
+  --red:#d84a55;
+  --ink:#20344d;
+  --muted:#61758b;
+  --line:#dce9f4;
+  --white:#fff;
+  --bg:#f3f8ff;
+  --shadow:0 14px 40px rgba(16,60,112,.09);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Nunito",sans-serif;
+  line-height:1.65;
+}
+
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+  outline:3px solid var(--cyan);
+  outline-offset:3px;
+}
+
+.topbar{
+  background:white;
+  border-bottom:1px solid var(--line);
+  padding:13px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+
+.brand{
+  color:var(--deep);
+  font-family:"Baloo 2",sans-serif;
+  font-size:21px;
+  font-weight:800;
+}
+
+.badge{
+  background:#e6f3ff;
+  color:var(--blue);
+  padding:7px 13px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.hero{
+  background:
+    radial-gradient(circle at 85% 15%,rgba(255,255,255,.17),transparent 30%),
+    linear-gradient(135deg,#07558f,#0879c8 60%,#13a4cc);
+  padding:70px 20px 85px;
+  text-align:center;
+  color:white;
+}
+
+.hero-label{
+  display:inline-block;
+  padding:7px 17px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:30px;
+  font-size:12px;
+  letter-spacing:1px;
+  font-weight:900;
+}
+
+.hero h1{
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(34px,6vw,62px);
+  line-height:1.15;
+  margin:18px auto 10px;
+  max-width:900px;
+}
+
+.hero p{
+  max-width:680px;
+  margin:0 auto;
+  color:#e7f5ff;
+  font-size:17px;
+}
+
+.hero-stats{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:13px;
+  margin-top:28px;
+}
+
+.stat{
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:18px;
+  padding:13px 23px;
+  min-width:120px;
+}
+
+.stat strong{
+  display:block;
+  font-size:25px;
+}
+
+.stat span{font-size:12px}
+
+.container{
+  max-width:1120px;
+  margin:-38px auto 70px;
+  padding:0 18px;
+  position:relative;
+}
+
+.progress-card{
+  background:white;
+  border-radius:22px;
+  padding:22px;
+  box-shadow:var(--shadow);
+  margin-bottom:28px;
+}
+
+.progress-heading{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  font-weight:900;
+  color:var(--deep);
+}
+
+.progress-track{
+  height:12px;
+  background:#e5eef8;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:13px;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,#18b6d1,#0878bd);
+  transition:width .4s;
+}
+
+.intro{
+  text-align:center;
+  margin:45px auto 30px;
+}
+
+.eyebrow{
+  color:var(--blue);
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.intro h2{
+  font-family:"Baloo 2",sans-serif;
+  color:var(--deep);
+  font-size:35px;
+  margin:7px 0;
+}
+
+.intro p{
+  color:var(--muted);
+  max-width:650px;
+  margin:auto;
+}
+
+.mission-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-bottom:35px;
+}
+
+.mission-card{
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+  transition:transform .25s,box-shadow .25s;
+}
+
+.mission-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 18px 45px rgba(16,60,112,.15);
+}
+
+.mission-image{
+  height:175px;
+  background-size:cover;
+  background-position:center;
+}
+
+.mission-content{padding:21px}
+
+.mission-tag{
+  display:inline-block;
+  background:#eaf5ff;
+  color:var(--blue);
+  padding:5px 11px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.mission-content h3{
+  font-family:"Baloo 2",sans-serif;
+  font-size:23px;
+  color:var(--deep);
+  margin:10px 0 4px;
+}
+
+.mission-content p{
+  color:var(--muted);
+  font-size:13px;
+  min-height:43px;
+}
+
+.primary-btn{
+  background:linear-gradient(135deg,#0876c3,#075b9d);
+  border:0;
+  color:white;
+  padding:12px 20px;
+  border-radius:13px;
+  font-weight:900;
+  box-shadow:0 7px 15px rgba(8,108,182,.15);
+  transition:transform .2s;
+}
+
+.primary-btn:hover{transform:translateY(-2px)}
+
+.secondary-btn{
+  background:white;
+  border:2px solid var(--line);
+  color:var(--deep);
+  padding:11px 18px;
+  border-radius:13px;
+  font-weight:900;
+}
+
+.lesson{
+  display:none;
+  animation:fade .35s ease;
+}
+
+.lesson.active{display:block}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.lesson-header{
+  background:white;
+  padding:25px;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  margin-bottom:22px;
+}
+
+.lesson-header h2{
+  font-family:"Baloo 2",sans-serif;
+  font-size:34px;
+  line-height:1.2;
+  color:var(--deep);
+  margin:10px 0;
+}
+
+.lesson-header p{
+  color:var(--muted);
+  margin:0;
+}
+
+.reading-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 285px;
+  gap:22px;
+  align-items:start;
+}
+
+.reading-main{min-width:0}
+
+.text-card,.task-card,.side-card{
+  background:white;
+  border-radius:22px;
+  padding:26px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+  margin-bottom:22px;
+}
+
+.text-card h3,
+.task-card h3,
+.side-card h3{
+  font-family:"Baloo 2",sans-serif;
+  color:var(--deep);
+  font-size:24px;
+  margin:0 0 14px;
+}
+
+.reading-text{
+  font-size:16px;
+  line-height:2;
+}
+
+.reading-text p{margin:0 0 17px}
+.reading-text p:last-child{margin-bottom:0}
+
+.side-card{
+  position:sticky;
+  top:88px;
+}
+
+.side-card img{
+  width:100%;
+  height:155px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+.tip{
+  background:#edf8ff;
+  border-left:4px solid var(--cyan);
+  padding:13px;
+  border-radius:10px;
+  font-size:13px;
+  margin-top:15px;
+}
+
+.task-number{
+  display:inline-flex;
+  width:33px;
+  height:33px;
+  border-radius:11px;
+  background:var(--sky);
+  color:var(--blue);
+  justify-content:center;
+  align-items:center;
+  font-weight:900;
+  margin-right:8px;
+}
+
+.task-description{
+  color:var(--muted);
+  font-size:14px;
+  margin-top:-5px;
+  margin-bottom:19px;
+}
+
+.question{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:17px;
+  margin:15px 0;
+  background:#fcfdff;
+}
+
+.question-title{
+  font-weight:900;
+  color:var(--deep);
+  margin:0 0 12px;
+}
+
+.options{
+  display:grid;
+  gap:9px;
+}
+
+.option{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:11px 13px;
+  border:2px solid #e6edf5;
+  border-radius:12px;
+  background:white;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.option:hover{
+  border-color:#91c9ee;
+  background:#f1f9ff;
+}
+
+.option input{
+  margin-top:5px;
+  accent-color:var(--blue);
+}
+
+.option:has(input:checked){
+  background:#eaf5ff;
+  border-color:var(--blue);
+}
+
+.option.correct{
+  background:#e5f8ed;
+  border-color:var(--green);
+}
+
+.option.incorrect{
+  background:#fff0f0;
+  border-color:var(--red);
+}
+
+.short-answer{
+  width:100%;
+  padding:12px 14px;
+  border:2px solid var(--line);
+  border-radius:12px;
+  background:white;
+  outline:none;
+}
+
+.short-answer:focus{border-color:var(--blue)}
+
+.short-answer.correct{
+  border-color:var(--green);
+  background:#edfff5;
+}
+
+.short-answer.incorrect{
+  border-color:var(--red);
+  background:#fff3f3;
+}
+
+.feedback{
+  display:none;
+  margin-top:11px;
+  padding:11px 13px;
+  border-radius:11px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.feedback.show{display:block}
+
+.feedback.good{
+  background:#e4f8ee;
+  color:#087448;
+}
+
+.feedback.bad{
+  background:#fff0f0;
+  color:#b33343;
+}
+
+.task-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.task-result{
+  margin-top:15px;
+  font-weight:900;
+  color:var(--deep);
+}
+
+.lesson-navigation{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:25px 0 50px;
+}
+
+.final-card{
+  background:linear-gradient(135deg,#0c5796,#087fbe);
+  color:white;
+  text-align:center;
+  border-radius:26px;
+  padding:32px 22px;
+  margin-top:35px;
+}
+
+.final-card h2{
+  font-family:"Baloo 2",sans-serif;
+  font-size:32px;
+  margin:0 0 8px;
+}
+
+.final-card p{color:#e8f6ff}
+
+.score-number{
+  font-size:46px;
+  font-weight:900;
+  margin:15px 0;
+}
+
+footer{
+  background:#103c70;
+  text-align:center;
+  color:#d8ebff;
+  padding:25px 15px;
+  font-size:13px;
+}
+
+@media(max-width:900px){
+  .mission-grid{grid-template-columns:repeat(2,1fr)}
+  .reading-layout{grid-template-columns:1fr}
+  .side-card{position:static}
+}
+
+@media(max-width:600px){
+  .mission-grid{grid-template-columns:1fr}
+  .hero{padding:48px 18px 70px}
+  .text-card,.task-card,.side-card{padding:19px}
+  .topbar{padding:12px 15px}
+  .brand{font-size:17px}
+  .lesson-header h2{font-size:28px}
+  .reading-text{font-size:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="brand">📘 My English Space</div>
+  <div class="badge">MS4 · PRACTICE MORE · PART 02</div>
+</header>
+
+<section class="hero">
+  <div class="hero-label">SEQUENCE 02 · READING LAB</div>
+  <h1>Reading Adventure</h1>
+  <p>
+    Discover inspiring stories about friendship, childhood memories,
+    personality and dreams. Read, think and become a BEM reading champion!
+  </p>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <strong>03</strong>
+      <span>Reading missions</span>
+    </div>
+    <div class="stat">
+      <strong>30</strong>
+      <span>Interactive questions</span>
+    </div>
+    <div class="stat">
+      <strong>100%</strong>
+      <span>BEM preparation</span>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+  <section class="progress-card">
+    <div class="progress-heading">
+      <span>My Reading Progress</span>
+      <span id="progressText">0 / 30 questions</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </section>
+
+  <section id="home">
+    <div class="intro">
+      <div class="eyebrow">Choose your adventure</div>
+      <h2>Three Reading Missions</h2>
+      <p>
+        Read about a wonderful friendship, discover an unforgettable
+        childhood experience and explore the journey from dreams to success.
+      </p>
+    </div>
+
+    <div class="mission-grid">
+
+      <article class="mission-card">
+        <div class="mission-image"
+          style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900')">
+        </div>
+        <div class="mission-content">
+          <span class="mission-tag">MISSION 01 · EASY</span>
+          <h3>My Best Childhood Friend</h3>
+          <p>Discover how friendship and personality make memories special.</p>
+          <button class="primary-btn" onclick="openLesson(1)">
+            Start Reading →
+          </button>
+        </div>
+      </article>
+
+      <article class="mission-card">
+        <div class="mission-image"
+          style="background-image:url('https://images.unsplash.com/photo-1472162314594-eca3c3d90e0d?w=900')">
+        </div>
+        <div class="mission-content">
+          <span class="mission-tag">MISSION 02 · MEDIUM</span>
+          <h3>An Unforgettable Childhood Day</h3>
+          <p>Follow a young pupil through an exciting childhood experience.</p>
+          <button class="primary-btn" onclick="openLesson(2)">
+            Start Reading →
+          </button>
+        </div>
+      </article>
+
+      <article class="mission-card">
+        <div class="mission-image"
+          style="background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=900')">
+        </div>
+        <div class="mission-content">
+          <span class="mission-tag">MISSION 03 · BEM LEVEL</span>
+          <h3>From a Dream to Success</h3>
+          <p>Discover how determination and hard work can change a life.</p>
+          <button class="primary-btn" onclick="openLesson(3)">
+            Start Reading →
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MISSION 1 -->
+
+  <div id="lesson1" class="lesson">
+    <div class="lesson-header">
+      <span class="mission-tag">MISSION 01 · FRIENDSHIP & PERSONALITY</span>
+      <h2>My Best Childhood Friend</h2>
+      <p>Read the passage and discover the qualities of a true friend.</p>
+    </div>
+
+    <div class="reading-layout">
+      <div class="reading-main">
+
+        <article class="text-card">
+          <h3>📖 Read the Text</h3>
+          <div class="reading-text">
+            <p>
+              When I was a little child, I lived in a quiet neighbourhood
+              in Sétif. My best friend was Yacine, a cheerful and generous
+              boy who lived next door. We were the same age and attended
+              the same primary school. Although we had different
+              personalities, we became inseparable friends.
+            </p>
+
+            <p>
+              Yacine was tall and slim, with short curly black hair
+              and bright brown eyes. He was extremely friendly and
+              sociable. He enjoyed meeting new people and making
+              everyone laugh. I was rather shy and quiet, but
+              he always encouraged me to participate in activities.
+              He was also honest and reliable. Whenever I needed
+              help, he was there for me.
+            </p>
+
+            <p>
+              Every afternoon, we used to play football in the
+              neighbourhood playground. Sometimes, we rode our
+              bicycles or exchanged storybooks. During the
+              summer holidays, we visited our grandparents
+              and spent wonderful evenings telling stories.
+              Those simple moments were the happiest memories
+              of my childhood.
+            </p>
+
+            <p>
+              One day, Yacine's family moved to another city.
+              I felt terribly sad because I thought our friendship
+              would end. However, we continued communicating
+              through phone calls and messages.
+              Today, although we live far from each other,
+              we are still close friends.
+            </p>
+
+            <p>
+              Yacine taught me that true friendship is not
+              about living in the same place. It is about
+              trust, kindness, respect and supporting
+              each other in difficult moments.
+            </p>
+          </div>
+        </article>
+
+        <div id="tasks1"></div>
+
+        <div class="lesson-navigation">
+          <button class="secondary-btn" onclick="goHome()">← Missions</button>
+          <button class="primary-btn" onclick="openLesson(2)">
+            Next Mission →
+          </button>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <h3>🔎 Reading Strategy</h3>
+        <img
+          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600"
+          alt="Friends spending time together">
+
+        <div class="tip">
+          <strong>Character description:</strong><br>
+          Look for adjectives describing appearance and personality.
+        </div>
+
+        <div class="tip">
+          <strong>Past habits:</strong><br>
+          Notice expressions such as "used to" and time markers.
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- MISSION 2 -->
+
+  <div id="lesson2" class="lesson">
+    <div class="lesson-header">
+      <span class="mission-tag">MISSION 02 · CHILDHOOD EXPERIENCES</span>
+      <h2>An Unforgettable Childhood Day</h2>
+      <p>Read the story and follow the events in chronological order.</p>
+    </div>
+
+    <div class="reading-layout">
+      <div class="reading-main">
+
+        <article class="text-card">
+          <h3>📖 Read the Text</h3>
+          <div class="reading-text">
+            <p>
+              When I was eleven years old, I experienced one of
+              the most unforgettable days of my childhood.
+              It happened during a school trip to a beautiful
+              forest near our town. Our teacher organised
+              the excursion to help us discover nature
+              and learn about protecting the environment.
+            </p>
+
+            <p>
+              Early in the morning, we gathered in front of
+              our school. Everyone was excited. After a
+              short journey by bus, we arrived at the forest.
+              The weather was sunny, the birds were singing,
+              and the trees looked magnificent.
+            </p>
+
+            <p>
+              First, our teacher divided us into small groups.
+              We explored the forest and identified different
+              plants. Then, we collected litter to keep
+              the area clean. Afterwards, we sat under
+              a large tree and enjoyed our lunch together.
+            </p>
+
+            <p>
+              Suddenly, I noticed that my little backpack
+              was missing. I became extremely worried because
+              it contained my lunchbox, notebook and camera.
+              My classmates immediately offered to help me.
+              We searched everywhere until my friend Lina
+              finally found it near a wooden bench.
+              I felt incredibly relieved and thanked everyone.
+            </p>
+
+            <p>
+              At the end of the day, we returned home
+              tired but happy. I learnt two important
+              lessons: we must respect nature, and
+              true friends always help each other.
+              Even today, I remember that wonderful
+              school trip with a big smile.
+            </p>
+          </div>
+        </article>
+
+        <div id="tasks2"></div>
+
+        <div class="lesson-navigation">
+          <button class="secondary-btn" onclick="openLesson(1)">← Previous</button>
+          <button class="primary-btn" onclick="openLesson(3)">Next Mission →</button>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <h3>🧭 Reading Strategy</h3>
+        <img
+          src="https://images.unsplash.com/photo-1472162314594-eca3c3d90e0d?w=600"
+          alt="Nature and forest">
+
+        <div class="tip">
+          <strong>Chronological order:</strong><br>
+          Look for sequencers: first, then, afterwards, suddenly and finally.
+        </div>
+
+        <div class="tip">
+          <strong>Feelings:</strong><br>
+          Identify words describing emotions such as worried, relieved and happy.
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- MISSION 3 -->
+
+  <div id="lesson3" class="lesson">
+    <div class="lesson-header">
+      <span class="mission-tag">MISSION 03 · DREAMS & AMBITIONS</span>
+      <h2>From a Dream to Success</h2>
+      <p>Complete this BEM-level reading comprehension mission.</p>
+    </div>
+
+    <div class="reading-layout">
+      <div class="reading-main">
+
+        <article class="text-card">
+          <h3>📖 Read the Text</h3>
+          <div class="reading-text">
+            <p>
+              Since her early childhood, Amina had always dreamed
+              of becoming a doctor. She grew up in a small Algerian
+              village where medical services were limited.
+              Whenever someone became ill, families sometimes
+              had to travel long distances to reach a hospital.
+              These experiences inspired her ambition.
+            </p>
+
+            <p>
+              Amina was a hardworking, patient and determined
+              pupil. Although her family had limited financial
+              resources, she never gave up. She studied
+              regularly, borrowed books from the school
+              library and asked her teachers for advice.
+              Her favourite subjects were science
+              and mathematics.
+            </p>
+
+            <p>
+              During her secondary school years, Amina faced
+              several difficulties. She sometimes felt
+              exhausted because she had to help her family
+              and complete her homework. Nevertheless,
+              she remained optimistic. Her teachers
+              encouraged her, and her parents supported
+              her dream.
+            </p>
+
+            <p>
+              After years of effort, Amina successfully
+              passed her examinations and entered medical
+              school. She worked extremely hard and
+              eventually became a doctor. Later, she
+              returned to her home region to help
+              people who needed medical care.
+            </p>
+
+            <p>
+              Today, Amina is admired for her generosity
+              and dedication. She believes that success
+              requires patience, determination and
+              continuous learning. Her story proves
+              that difficult circumstances do not
+              necessarily prevent people from
+              achieving their dreams.
+            </p>
+          </div>
+        </article>
+
+        <div id="tasks3"></div>
+
+        <div class="lesson-navigation">
+          <button class="secondary-btn" onclick="openLesson(2)">← Previous</button>
+          <button class="primary-btn" onclick="showResults()">🏆 My Final Results</button>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <h3>🎯 BEM Strategy</h3>
+
+        <div class="tip">
+          <strong>Main idea:</strong><br>
+          Identify what the whole passage is mainly about.
+        </div>
+
+        <div class="tip">
+          <strong>Inference:</strong><br>
+          Use information from different paragraphs to understand implied ideas.
+        </div>
+
+        <div class="tip">
+          <strong>Vocabulary:</strong><br>
+          Guess meanings using the surrounding words.
+        </div>
+
+        <div class="tip">
+          <strong>Pronoun reference:</strong><br>
+          Identify the person or thing replaced by a pronoun.
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+
+  <section id="results" class="lesson">
+    <div class="final-card">
+      <div style="font-size:55px">🏆</div>
+      <h2>Reading Champion!</h2>
+      <p>You have reached the end of the Sequence 2 reading adventure.</p>
+      <div class="score-number" id="finalScore">0 / 30</div>
+      <p id="finalMessage"></p>
+
+      <div class="task-actions" style="justify-content:center">
+        <button class="secondary-btn" onclick="goHome()">Review Missions</button>
+        <button class="secondary-btn" onclick="restartAll()">Try Again</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  My English Space · MS4 Reading Comprehension Practice · Sequence 02
+</footer>
+
+<script>
+"use strict";
+
+/* =========================================================
+   QUESTION BANK
+   10 QUESTIONS PER PASSAGE
+   30 QUESTIONS IN TOTAL
+========================================================= */
+
+const lessons = {
+
+  1:{
+    title:"My Best Childhood Friend",
+    groups:[
+      {
+        title:"Reading for Gist",
+        description:"Choose the correct answer.",
+        questions:[
+          {
+            id:"s2m1q1",
+            type:"mcq",
+            question:"What is the passage mainly about?",
+            options:[
+              "The importance of school examinations",
+              "A childhood friendship and its importance",
+              "The history of Sétif"
+            ],
+            answer:1,
+            explanation:"The narrator describes a childhood friend and explains the meaning of true friendship."
+          },
+          {
+            id:"s2m1q2",
+            type:"mcq",
+            question:"The text is mainly...",
+            options:[
+              "a personal recollection",
+              "a scientific report",
+              "a set of instructions"
+            ],
+            answer:0,
+            explanation:"The narrator remembers and describes experiences from childhood."
+          }
+        ]
+      },
+      {
+        title:"Reading for Details",
+        description:"Find information in the text.",
+        questions:[
+          {
+            id:"s2m1q3",
+            type:"mcq",
+            question:"Yacine and the narrator attended different primary schools.",
+            options:["True","False"],
+            answer:1,
+            explanation:"False. They attended the same primary school."
+          },
+          {
+            id:"s2m1q4",
+            type:"mcq",
+            question:"Yacine was shy and unsociable.",
+            options:["True","False"],
+            answer:1,
+            explanation:"False. Yacine was friendly and sociable. The narrator was shy."
+          },
+          {
+            id:"s2m1q5",
+            type:"text",
+            question:"Where did the two friends use to play football?",
+            answers:[
+              "in the neighbourhood playground",
+              "at the neighbourhood playground",
+              "the neighbourhood playground",
+              "in the playground",
+              "at the playground",
+              "the playground"
+            ],
+            display:"In the neighbourhood playground."
+          },
+          {
+            id:"s2m1q6",
+            type:"mcq",
+            question:"Why did the narrator feel sad?",
+            options:[
+              "Because Yacine failed his examinations",
+              "Because Yacine's family moved to another city",
+              "Because he lost his bicycle"
+            ],
+            answer:1,
+            explanation:"The narrator felt sad when Yacine's family moved away."
+          }
+        ]
+      },
+      {
+        title:"Vocabulary and Language",
+        description:"Understand words and references.",
+        questions:[
+          {
+            id:"s2m1q7",
+            type:"mcq",
+            question:"The word 'cheerful' is closest in meaning to...",
+            options:["happy","angry","lazy"],
+            answer:0,
+            explanation:"Cheerful means happy and positive."
+          },
+          {
+            id:"s2m1q8",
+            type:"mcq",
+            question:"The opposite of 'honest' is...",
+            options:["friendly","dishonest","generous"],
+            answer:1,
+            explanation:"The prefix 'dis-' forms the opposite: dishonest."
+          },
+          {
+            id:"s2m1q9",
+            type:"mcq",
+            question:"In 'He was also honest and reliable', 'He' refers to...",
+            options:["the narrator","Yacine","the teacher"],
+            answer:1,
+            explanation:"'He' refers to Yacine."
+          },
+          {
+            id:"s2m1q10",
+            type:"mcq",
+            question:"What can we infer about true friendship?",
+            options:[
+              "It depends only on distance.",
+              "It can continue despite physical separation.",
+              "It always ends when people move away."
+            ],
+            answer:1,
+            explanation:"The two friends remained close even after living in different cities."
+          }
+        ]
+      }
+    ]
+  },
+
+  2:{
+    title:"An Unforgettable Childhood Day",
+    groups:[
+      {
+        title:"General Understanding",
+        description:"Choose the best answer.",
+        questions:[
+          {
+            id:"s2m2q1",
+            type:"mcq",
+            question:"The text is mainly about...",
+            options:[
+              "a school trip and an unexpected problem",
+              "a family wedding",
+              "a visit to a museum"
+            ],
+            answer:0,
+            explanation:"The narrator describes a school trip during which a backpack went missing."
+          },
+          {
+            id:"s2m2q2",
+            type:"mcq",
+            question:"What type of text is it?",
+            options:["narrative","argumentative","instructional"],
+            answer:0,
+            explanation:"The text tells a story about past events."
+          }
+        ]
+      },
+      {
+        title:"Understanding Details",
+        description:"Read and find the correct information.",
+        questions:[
+          {
+            id:"s2m2q3",
+            type:"mcq",
+            question:"The excursion was organised to help pupils learn about nature.",
+            options:["True","False"],
+            answer:0,
+            explanation:"True. The teacher wanted pupils to discover nature and learn about environmental protection."
+          },
+          {
+            id:"s2m2q4",
+            type:"mcq",
+            question:"The pupils travelled to the forest by train.",
+            options:["True","False"],
+            answer:1,
+            explanation:"False. They travelled by bus."
+          },
+          {
+            id:"s2m2q5",
+            type:"text",
+            question:"Who found the missing backpack?",
+            answers:[
+              "lina",
+              "his friend lina",
+              "her friend lina",
+              "my friend lina",
+              "the narrator's friend lina",
+              "friend lina"
+            ],
+            display:"The narrator's friend Lina."
+          },
+          {
+            id:"s2m2q6",
+            type:"mcq",
+            question:"What did the pupils do after exploring the forest?",
+            options:[
+              "They collected litter.",
+              "They returned home immediately.",
+              "They visited a hospital."
+            ],
+            answer:0,
+            explanation:"After exploring the forest, they collected litter."
+          }
+        ]
+      },
+      {
+        title:"Vocabulary, Chronology and Inference",
+        description:"Think carefully about the story.",
+        questions:[
+          {
+            id:"s2m2q7",
+            type:"mcq",
+            question:"The word 'relieved' means...",
+            options:[
+              "feeling less worried after a problem is solved",
+              "feeling extremely angry",
+              "feeling very sleepy"
+            ],
+            answer:0,
+            explanation:"The narrator felt relieved when the missing backpack was found."
+          },
+          {
+            id:"s2m2q8",
+            type:"mcq",
+            question:"Which event happened first?",
+            options:[
+              "Lina found the backpack.",
+              "The pupils gathered in front of school.",
+              "The pupils ate lunch."
+            ],
+            answer:1,
+            explanation:"The pupils gathered at school before travelling to the forest."
+          },
+          {
+            id:"s2m2q9",
+            type:"mcq",
+            question:"In 'We searched everywhere', 'We' refers to...",
+            options:[
+              "the narrator and classmates",
+              "the narrator's parents",
+              "the teachers only"
+            ],
+            answer:0,
+            explanation:"The narrator and classmates searched for the backpack."
+          },
+          {
+            id:"s2m2q10",
+            type:"mcq",
+            question:"What lesson did the narrator learn?",
+            options:[
+              "Nature should be ignored.",
+              "Friendship and environmental protection are important.",
+              "School trips are always dangerous."
+            ],
+            answer:1,
+            explanation:"The narrator learnt to respect nature and appreciate helpful friends."
+          }
+        ]
+      }
+    ]
+  },
+
+  3:{
+    title:"From a Dream to Success",
+    groups:[
+      {
+        title:"BEM Challenge · General Understanding",
+        description:"Choose the correct answer.",
+        questions:[
+          {
+            id:"s2m3q1",
+            type:"mcq",
+            question:"The best title for the passage is...",
+            options:[
+              "Amina's Journey from Ambition to Achievement",
+              "Amina's Favourite Holiday",
+              "A Visit to a Famous Landmark"
+            ],
+            answer:0,
+            explanation:"The passage describes Amina's ambition and how she achieved her dream."
+          },
+          {
+            id:"s2m3q2",
+            type:"mcq",
+            question:"The writer's main purpose is to...",
+            options:[
+              "describe a city",
+              "tell an inspiring success story",
+              "explain how to travel abroad"
+            ],
+            answer:1,
+            explanation:"The text presents an inspiring story about determination and success."
+          }
+        ]
+      },
+      {
+        title:"BEM Challenge · Comprehension",
+        description:"Find precise information in the text.",
+        questions:[
+          {
+            id:"s2m3q3",
+            type:"mcq",
+            question:"Amina grew up in a large city with many hospitals.",
+            options:["True","False"],
+            answer:1,
+            explanation:"False. She grew up in a small village where medical services were limited."
+          },
+          {
+            id:"s2m3q4",
+            type:"mcq",
+            question:"Amina gave up her dream when she faced difficulties.",
+            options:["True","False"],
+            answer:1,
+            explanation:"False. She remained optimistic and continued working hard."
+          },
+          {
+            id:"s2m3q5",
+            type:"text",
+            question:"What did Amina dream of becoming?",
+            answers:[
+              "a doctor",
+              "doctor",
+              "becoming a doctor",
+              "she dreamed of becoming a doctor",
+              "she wanted to become a doctor"
+            ],
+            display:"She dreamed of becoming a doctor."
+          },
+          {
+            id:"s2m3q6",
+            type:"mcq",
+            question:"Why did Amina return to her home region?",
+            options:[
+              "To help people who needed medical care",
+              "To stop working",
+              "To become a school pupil again"
+            ],
+            answer:0,
+            explanation:"She returned to help people who needed medical care."
+          }
+        ]
+      },
+      {
+        title:"BEM Challenge · Language",
+        description:"Vocabulary, reference and inference.",
+        questions:[
+          {
+            id:"s2m3q7",
+            type:"mcq",
+            question:"The word 'determined' is closest in meaning to...",
+            options:[
+              "strong-willed",
+              "careless",
+              "unmotivated"
+            ],
+            answer:0,
+            explanation:"A determined person continues working towards a goal despite difficulties."
+          },
+          {
+            id:"s2m3q8",
+            type:"mcq",
+            question:"The opposite of 'optimistic' is...",
+            options:[
+              "pessimistic",
+              "generous",
+              "successful"
+            ],
+            answer:0,
+            explanation:"Optimistic and pessimistic are opposites."
+          },
+          {
+            id:"s2m3q9",
+            type:"mcq",
+            question:"In 'Her teachers encouraged her', 'Her' refers to...",
+            options:[
+              "Amina",
+              "Amina's mother",
+              "a doctor"
+            ],
+            answer:0,
+            explanation:"The possessive adjective 'Her' refers to Amina."
+          },
+          {
+            id:"s2m3q10",
+            type:"mcq",
+            question:"What message does Amina's story communicate?",
+            options:[
+              "Only wealthy people can achieve success.",
+              "Determination and hard work can help people overcome difficulties.",
+              "Dreams are impossible to achieve."
+            ],
+            answer:1,
+            explanation:"Amina succeeded through patience, determination and hard work."
+          }
+        ]
+      }
+    ]
+  }
+
+};
+
+/* =========================================================
+   STATE
+========================================================= */
+
+const STORAGE_KEY="ms4_reading_s2_v1";
+
+let state={
+  answers:{},
+  checked:{}
+};
+
+try{
+  const saved=JSON.parse(localStorage.getItem(STORAGE_KEY));
+  if(saved && typeof saved==="object"){
+    state.answers=saved.answers||{};
+    state.checked=saved.checked||{};
+  }
+}catch(error){
+  console.warn("Saved progress could not be loaded.");
+}
+
+function saveState(){
+  try{
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
+  }catch(error){
+    console.warn("Progress could not be saved.");
+  }
+}
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function escapeHTML(value){
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#39;");
+}
+
+function normalize(value){
+  return String(value)
+    .toLowerCase()
+    .replace(/[’']/g,"")
+    .replace(/[^a-z0-9 ]/g," ")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function getAllQuestions(){
+  return Object.values(lessons)
+    .flatMap(lesson=>lesson.groups)
+    .flatMap(group=>group.questions);
+}
+
+function isCorrect(question,answer){
+  if(answer===undefined || answer===null){
+    return false;
+  }
+
+  if(question.type==="mcq"){
+    return Number(answer)===question.answer;
+  }
+
+  return question.answers.some(
+    accepted=>normalize(accepted)===normalize(answer)
+  );
+}
+
+function getCorrectAnswer(question){
+  if(question.type==="mcq"){
+    return question.options[question.answer];
+  }
+  return question.display;
+}
+
+/* =========================================================
+   RENDER QUESTIONS
+========================================================= */
+
+function renderQuestion(question,index){
+
+  let inputHTML="";
+
+  if(question.type==="mcq"){
+
+    inputHTML=`
+      <div class="options">
+        ${question.options.map((option,i)=>`
+          <label class="option" id="option-${question.id}-${i}">
+            <input
+              type="radio"
+              name="${question.id}"
+              value="${i}"
+              onchange="recordAnswer('${question.id}',this.value)"
+            >
+            <span>${escapeHTML(option)}</span>
+          </label>
+        `).join("")}
+      </div>
+    `;
+
+  }else{
+
+    inputHTML=`
+      <input
+        class="short-answer"
+        type="text"
+        id="input-${question.id}"
+        placeholder="Write your answer here..."
+        autocomplete="off"
+        oninput="recordAnswer('${question.id}',this.value)"
+      >
+    `;
+
+  }
+
+  return `
+    <div class="question" id="question-${question.id}">
+      <p class="question-title">
+        ${index}. ${escapeHTML(question.question)}
+      </p>
+
+      ${inputHTML}
+
+      <div
+        class="feedback"
+        id="feedback-${question.id}"
+        role="status"
+        aria-live="polite"
+      ></div>
+    </div>
+  `;
+}
+
+function renderLessons(){
+
+  Object.entries(lessons).forEach(([lessonId,lesson])=>{
+
+    let questionNumber=0;
+
+    const html=lesson.groups.map((group,index)=>{
+
+      const questionsHTML=group.questions.map(question=>{
+        questionNumber++;
+        return renderQuestion(question,questionNumber);
+      }).join("");
+
+      return `
+        <section class="task-card">
+          <h3>
+            <span class="task-number">${index+1}</span>
+            ${escapeHTML(group.title)}
+          </h3>
+
+          <p class="task-description">
+            ${escapeHTML(group.description)}
+          </p>
+
+          ${questionsHTML}
+
+          <div class="task-actions">
+            <button
+              class="primary-btn"
+              onclick="checkGroup(${lessonId},${index})"
+            >
+              ✓ Check My Answers
+            </button>
+
+            <button
+              class="secondary-btn"
+              onclick="resetGroup(${lessonId},${index})"
+            >
+              ↻ Try Again
+            </button>
+          </div>
+
+          <div
+            class="task-result"
+            id="result-${lessonId}-${index}"
+            aria-live="polite"
+          ></div>
+        </section>
+      `;
+
+    }).join("");
+
+    document.getElementById("tasks"+lessonId).innerHTML=html;
+
+  });
+
+  restoreAnswers();
+}
+
+/* =========================================================
+   RECORD AND RESTORE
+========================================================= */
+
+function recordAnswer(id,value){
+
+  if(state.checked[id]){
+    return;
+  }
+
+  state.answers[id]=value;
+  saveState();
+}
+
+function restoreAnswers(){
+
+  getAllQuestions().forEach(question=>{
+
+    const answer=state.answers[question.id];
+
+    if(answer===undefined){
+      return;
+    }
+
+    if(question.type==="mcq"){
+
+      const input=document.querySelector(
+        `input[name="${question.id}"][value="${answer}"]`
+      );
+
+      if(input){
+        input.checked=true;
+      }
+
+    }else{
+
+      const input=document.getElementById("input-"+question.id);
+
+      if(input){
+        input.value=answer;
+      }
+
+    }
+
+    if(state.checked[question.id]){
+      displayFeedback(question);
+    }
+
+  });
+
+  Object.entries(lessons).forEach(([lessonId,lesson])=>{
+    lesson.groups.forEach((group,index)=>{
+      updateGroupResult(lessonId,index);
+    });
+  });
+
+  updateProgress();
+}
+
+/* =========================================================
+   CHECK ANSWERS
+========================================================= */
+
+function displayFeedback(question){
+
+  const id=question.id;
+  const answer=state.answers[id];
+  const correct=isCorrect(question,answer);
+
+  const feedback=document.getElementById("feedback-"+id);
+
+  if(!feedback){
+    return;
+  }
+
+  feedback.className="feedback show "+(correct?"good":"bad");
+
+  if(correct){
+
+    feedback.innerHTML=
+      "✓ Excellent! "+escapeHTML(question.explanation||"Correct answer.");
+
+  }else{
+
+    feedback.innerHTML=
+      "✗ Correct answer: <strong>"+
+      escapeHTML(getCorrectAnswer(question))+
+      "</strong><br>"+
+      escapeHTML(question.explanation||"Read the text again.");
+
+  }
+
+  if(question.type==="mcq"){
+
+    document.querySelectorAll(`input[name="${id}"]`).forEach(input=>{
+
+      input.disabled=true;
+
+      const label=input.closest(".option");
+
+      label.classList.remove("correct","incorrect");
+
+      if(Number(input.value)===question.answer){
+        label.classList.add("correct");
+      }
+
+      if(input.checked && !correct){
+        label.classList.add("incorrect");
+      }
+
+    });
+
+  }else{
+
+    const input=document.getElementById("input-"+id);
+
+    if(input){
+      input.disabled=true;
+      input.classList.add(correct?"correct":"incorrect");
+    }
+
+  }
+}
+
+function checkGroup(lessonId,groupIndex){
+
+  const group=lessons[lessonId].groups[groupIndex];
+
+  const unanswered=group.questions.filter(question=>{
+
+    if(state.checked[question.id]){
+      return false;
+    }
+
+    const answer=state.answers[question.id];
+
+    return answer===undefined ||
+      String(answer).trim()==="";
+
+  });
+
+  if(unanswered.length){
+
+    alert(
+      "Please answer all questions in this activity before checking."
+    );
+
+    const first=unanswered[0];
+
+    document.getElementById("question-"+first.id)
+      .scrollIntoView({behavior:"smooth",block:"center"});
+
+    return;
+  }
+
+  group.questions.forEach(question=>{
+    state.checked[question.id]=true;
+    displayFeedback(question);
+  });
+
+  saveState();
+  updateGroupResult(lessonId,groupIndex);
+  updateProgress();
+}
+
+function updateGroupResult(lessonId,groupIndex){
+
+  const group=lessons[lessonId].groups[groupIndex];
+
+  const checkedQuestions=group.questions.filter(
+    question=>state.checked[question.id]
+  );
+
+  const result=document.getElementById(
+    `result-${lessonId}-${groupIndex}`
+  );
+
+  if(!result){
+    return;
+  }
+
+  if(!checkedQuestions.length){
+    result.textContent="";
+    return;
+  }
+
+  const correct=checkedQuestions.filter(
+    question=>isCorrect(question,state.answers[question.id])
+  ).length;
+
+  result.textContent=
+    `Your score: ${correct} / ${group.questions.length}`;
+
+}
+
+function resetGroup(lessonId,groupIndex){
+
+  const group=lessons[lessonId].groups[groupIndex];
+
+  group.questions.forEach(question=>{
+
+    delete state.answers[question.id];
+    delete state.checked[question.id];
+
+    const feedback=document.getElementById(
+      "feedback-"+question.id
+    );
+
+    feedback.className="feedback";
+    feedback.textContent="";
+
+    if(question.type==="mcq"){
+
+      document.querySelectorAll(
+        `input[name="${question.id}"]`
+      ).forEach(input=>{
+
+        input.checked=false;
+        input.disabled=false;
+
+        input.closest(".option")
+          .classList.remove("correct","incorrect");
+
+      });
+
+    }else{
+
+      const input=document.getElementById(
+        "input-"+question.id
+      );
+
+      input.value="";
+      input.disabled=false;
+      input.classList.remove("correct","incorrect");
+
+    }
+
+  });
+
+  updateGroupResult(lessonId,groupIndex);
+  updateProgress();
+  saveState();
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+function updateProgress(){
+
+  const all=getAllQuestions();
+
+  const completed=all.filter(
+    question=>state.checked[question.id]
+  ).length;
+
+  const percentage=Math.round(
+    completed/all.length*100
+  );
+
+  document.getElementById("progressText").textContent=
+    `${completed} / ${all.length} questions`;
+
+  document.getElementById("progressFill").style.width=
+    percentage+"%";
+
+}
+
+function calculateScore(){
+
+  const all=getAllQuestions();
+
+  const correct=all.filter(question=>
+    state.checked[question.id] &&
+    isCorrect(question,state.answers[question.id])
+  ).length;
+
+  return {
+    correct,
+    total:all.length
+  };
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function hideSections(){
+
+  document.getElementById("home").style.display="none";
+
+  document.querySelectorAll(".lesson").forEach(section=>{
+    section.classList.remove("active");
+  });
+
+}
+
+function openLesson(number){
+
+  hideSections();
+
+  document.getElementById("lesson"+number)
+    .classList.add("active");
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function goHome(){
+
+  hideSections();
+
+  document.getElementById("home").style.display="block";
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function showResults(){
+
+  const all=getAllQuestions();
+
+  const completed=all.filter(
+    question=>state.checked[question.id]
+  ).length;
+
+  if(completed<all.length){
+
+    const continueAnyway=confirm(
+      `You have checked ${completed} out of ${all.length} questions.\n\n`+
+      "Would you like to see your current results?"
+    );
+
+    if(!continueAnyway){
+      return;
+    }
+  }
+
+  const score=calculateScore();
+
+  hideSections();
+
+  document.getElementById("results")
+    .classList.add("active");
+
+  document.getElementById("finalScore").textContent=
+    `${score.correct} / ${score.total}`;
+
+  const percentage=score.correct/score.total*100;
+
+  let message="";
+
+  if(percentage>=90){
+    message="Outstanding! You are a true reading champion!";
+  }else if(percentage>=70){
+    message="Very good! Keep practising to become even better.";
+  }else if(percentage>=50){
+    message="Good effort! Review the passages and try again.";
+  }else{
+    message="Keep learning! Read carefully and practise again.";
+  }
+
+  document.getElementById("finalMessage").textContent=message;
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function restartAll(){
+
+  if(!confirm("Restart all three missions and clear your answers?")){
+    return;
+  }
+
+  state={
+    answers:{},
+    checked:{}
+  };
+
+  saveState();
+
+  document.querySelectorAll(".question input").forEach(input=>{
+    input.disabled=false;
+    input.checked=false;
+    if(input.type==="text"){
+      input.value="";
+    }
+    input.classList.remove("correct","incorrect");
+  });
+
+  document.querySelectorAll(".option").forEach(option=>{
+    option.classList.remove("correct","incorrect");
+  });
+
+  document.querySelectorAll(".feedback").forEach(feedback=>{
+    feedback.className="feedback";
+    feedback.textContent="";
+  });
+
+  document.querySelectorAll(".task-result").forEach(result=>{
+    result.textContent="";
+  });
+
+  updateProgress();
+  goHome();
+}
+
+/* =========================================================
+   INITIALISATION
+========================================================= */
+
+renderLessons();
+
+</script>
+
+</body>
+</html>

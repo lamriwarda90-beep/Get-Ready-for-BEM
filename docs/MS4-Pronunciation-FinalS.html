@@ -1,0 +1,4063 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#087da7">
+
+<title>MS4 Pronunciation Lab | Lesson 01 — Final -S</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   MS4 PRONUNCIATION LAB
+   LESSON 01 — FINAL -S
+========================================================= */
+
+:root{
+
+    --navy:#102b4e;
+    --deep:#075b83;
+    --blue:#087da7;
+    --cyan:#35c8d8;
+    --aqua:#6be4e5;
+
+    --green:#19a879;
+    --green-soft:#e2f9ee;
+
+    --purple:#7954d5;
+    --purple-soft:#eee8ff;
+
+    --orange:#ed9747;
+    --orange-soft:#fff1df;
+
+    --gold:#ffcf6c;
+
+    --red:#e85b65;
+
+    --white:#ffffff;
+    --paper:#f7fcff;
+
+    --ink:#203c55;
+    --muted:#6b8093;
+
+    --border:#dcecf4;
+
+    --shadow:0 18px 45px rgba(15,60,100,.12);
+
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:90px;
+}
+
+body{
+
+    margin:0;
+
+    font-family:"Nunito",sans-serif;
+
+    color:var(--ink);
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            #d8faff,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 40%,
+            #e9e0ff,
+            transparent 40%
+        ),
+        #eef8fd;
+
+}
+
+h1,h2,h3,h4{
+
+    font-family:"Baloo 2",sans-serif;
+    line-height:1.2;
+
+}
+
+button,
+input,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+button:disabled{
+    cursor:not-allowed;
+    opacity:.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible{
+
+    outline:3px solid var(--orange);
+    outline-offset:3px;
+
+}
+
+.container{
+
+    width:min(1120px,calc(100% - 32px));
+    margin:auto;
+
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar{
+
+    background:var(--navy);
+    color:white;
+
+    border-bottom:3px solid var(--cyan);
+
+}
+
+.topbar-inner{
+
+    min-height:75px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.brand{
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    font-size:15px;
+    font-weight:900;
+
+}
+
+.brand-icon{
+
+    width:45px;
+    height:45px;
+
+    display:grid;
+    place-items:center;
+
+    background:var(--cyan);
+
+    border-radius:14px;
+
+    font-size:24px;
+
+}
+
+.back-btn{
+
+    padding:11px 17px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:30px;
+
+    font-size:12px;
+    font-weight:900;
+
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    position:relative;
+    overflow:hidden;
+
+    padding:65px 20px 75px;
+
+    background:linear-gradient(
+        135deg,
+        #075477,
+        #087da7,
+        #32b8c9
+    );
+
+    text-align:center;
+    color:white;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    top:-190px;
+    right:-130px;
+
+    border:55px solid rgba(255,255,255,.08);
+
+    border-radius:50%;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    bottom:-170px;
+    left:-80px;
+
+    border:35px solid rgba(255,255,255,.08);
+
+    border-radius:50%;
+
+}
+
+.hero-content{
+
+    position:relative;
+    z-index:2;
+
+    max-width:850px;
+    margin:auto;
+
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    padding:9px 18px;
+
+    background:white;
+    color:var(--deep);
+
+    border-radius:30px;
+
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
+
+}
+
+.hero h1{
+
+    margin:22px 0 8px;
+
+    font-size:clamp(46px,7vw,82px);
+
+    line-height:1;
+
+    text-shadow:
+        0 5px 0 rgba(0,55,90,.5),
+        0 12px 25px rgba(0,30,60,.3);
+
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero-subtitle{
+
+    margin:17px auto;
+
+    max-width:680px;
+
+    font-size:15px;
+    font-weight:800;
+    line-height:1.9;
+
+}
+
+.sound-bubbles{
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin:30px 0;
+
+}
+
+.sound-bubble{
+
+    width:110px;
+    height:110px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    background:white;
+
+    border:5px solid rgba(255,255,255,.45);
+    border-radius:50%;
+
+    box-shadow:0 12px 25px rgba(0,45,75,.2);
+
+    color:var(--ink);
+
+    animation:bubbleFloat 4s ease-in-out infinite;
+
+}
+
+.sound-bubble:nth-child(2){
+    animation-delay:-1.2s;
+}
+
+.sound-bubble:nth-child(3){
+    animation-delay:-2.4s;
+}
+
+.sound-bubble strong{
+
+    font-family:"Baloo 2",sans-serif;
+
+    font-size:34px;
+    line-height:1;
+
+}
+
+.sound-bubble small{
+
+    margin-top:5px;
+
+    font-size:11px;
+    font-weight:900;
+
+}
+
+.bubble-s{
+    color:var(--green);
+}
+
+.bubble-z{
+    color:var(--purple);
+}
+
+.bubble-iz{
+    color:var(--orange);
+}
+
+@keyframes bubbleFloat{
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+.hero-start{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:15px 30px;
+
+    background:var(--gold);
+    color:#674719;
+
+    border-radius:40px;
+
+    font-size:15px;
+    font-weight:900;
+
+    box-shadow:0 10px 22px rgba(0,40,70,.25);
+
+    transition:.25s;
+
+}
+
+.hero-start:hover{
+    transform:translateY(-4px);
+}
+
+/* =========================================================
+   PROGRESS NAVIGATION
+========================================================= */
+
+.progress-nav{
+
+    position:sticky;
+    top:0;
+
+    z-index:50;
+
+    background:rgba(255,255,255,.97);
+
+    border-bottom:1px solid var(--border);
+
+    box-shadow:0 5px 20px rgba(0,40,70,.08);
+
+}
+
+.progress-inner{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:15px;
+
+    padding:13px 0;
+
+}
+
+.progress-text{
+
+    font-size:12px;
+    font-weight:900;
+
+}
+
+.progress-track{
+
+    flex:1;
+    max-width:500px;
+
+    height:12px;
+
+    background:#e1edf5;
+
+    border-radius:30px;
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:0%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--green),
+        var(--cyan),
+        var(--purple)
+    );
+
+    border-radius:30px;
+
+    transition:width .4s;
+
+}
+
+/* =========================================================
+   LESSON SECTIONS
+========================================================= */
+
+.lesson-section{
+    padding:52px 0 15px;
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:28px;
+
+}
+
+.section-kicker{
+
+    display:inline-block;
+
+    padding:8px 15px;
+
+    background:#def5fa;
+    color:var(--deep);
+
+    border-radius:25px;
+
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
+
+}
+
+.section-heading h2{
+
+    margin:12px 0 9px;
+
+    font-size:clamp(29px,4vw,42px);
+
+}
+
+.section-heading p{
+
+    max-width:680px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    font-size:14px;
+    font-weight:700;
+    line-height:1.8;
+
+}
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.panel{
+
+    padding:30px;
+
+    background:white;
+
+    border:1px solid var(--border);
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.panel + .panel{
+    margin-top:20px;
+}
+
+.panel h3{
+
+    margin:0 0 13px;
+
+    font-size:26px;
+
+}
+
+.panel p{
+
+    color:var(--muted);
+
+    font-size:14px;
+    font-weight:700;
+    line-height:1.85;
+
+}
+
+/* =========================================================
+   AUDIO CONTROLS
+========================================================= */
+
+.audio-toolbar{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    padding:16px;
+
+    background:#eaf8fc;
+
+    border:1px solid #ccecf4;
+    border-radius:18px;
+
+}
+
+.audio-toolbar label{
+
+    font-size:12px;
+    font-weight:900;
+
+}
+
+.audio-toolbar select{
+
+    padding:10px 13px;
+
+    background:white;
+
+    border:1px solid #bddfe9;
+    border-radius:12px;
+
+    color:var(--ink);
+
+    font-weight:800;
+
+}
+
+.audio-status{
+
+    font-size:12px;
+    font-weight:800;
+
+    color:var(--deep);
+
+    text-align:center;
+
+}
+
+.audio-btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    padding:11px 16px;
+
+    background:var(--blue);
+    color:white;
+
+    border:0;
+    border-radius:30px;
+
+    font-size:12px;
+    font-weight:900;
+
+    transition:.2s;
+
+}
+
+.audio-btn:hover{
+    background:var(--deep);
+    transform:translateY(-2px);
+}
+
+.audio-btn.secondary{
+
+    background:#e8f6fc;
+    color:var(--deep);
+
+    border:1px solid #b8e0ec;
+
+}
+
+.audio-btn.gold{
+
+    background:var(--gold);
+    color:#654819;
+
+}
+
+.audio-btn.purple{
+    background:var(--purple);
+}
+
+.audio-btn.green{
+    background:var(--green);
+}
+
+.audio-btn.stop{
+    background:#d84c5c;
+}
+
+.audio-btn.speaking{
+
+    box-shadow:0 0 0 5px rgba(53,200,216,.22);
+
+}
+
+/* =========================================================
+   SOUND CARDS
+========================================================= */
+
+.sound-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+
+    gap:20px;
+
+}
+
+.sound-card{
+
+    padding:26px;
+
+    background:white;
+
+    border-radius:24px;
+
+    border:2px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+.sound-card.s{
+    border-top:7px solid var(--green);
+}
+
+.sound-card.z{
+    border-top:7px solid var(--purple);
+}
+
+.sound-card.iz{
+    border-top:7px solid var(--orange);
+}
+
+.sound-symbol{
+
+    width:100px;
+    height:100px;
+
+    display:grid;
+    place-items:center;
+
+    margin:0 auto 15px;
+
+    background:var(--green-soft);
+    color:var(--green);
+
+    border-radius:50%;
+
+    font-family:"Baloo 2",sans-serif;
+    font-size:40px;
+    font-weight:800;
+
+}
+
+.sound-card.z .sound-symbol{
+
+    background:var(--purple-soft);
+    color:var(--purple);
+
+}
+
+.sound-card.iz .sound-symbol{
+
+    background:var(--orange-soft);
+    color:var(--orange);
+
+}
+
+.sound-card h3{
+
+    margin:5px 0;
+
+    font-size:23px;
+
+}
+
+.sound-card p{
+
+    min-height:85px;
+
+    font-size:12px;
+    line-height:1.8;
+
+    color:var(--muted);
+
+}
+
+.arabic{
+
+    font-family:"Noto Naskh Arabic",serif;
+
+    font-size:16px !important;
+
+    line-height:1.9 !important;
+
+    direction:rtl;
+
+}
+
+.word-buttons{
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin:17px 0;
+
+}
+
+.word-btn{
+
+    padding:10px 13px;
+
+    background:#f0f7fb;
+    color:var(--ink);
+
+    border:1px solid #d5e8f1;
+    border-radius:12px;
+
+    font-size:12px;
+    font-weight:900;
+
+}
+
+.word-btn:hover{
+
+    background:#def3fb;
+
+}
+
+/* =========================================================
+   RULE BOX
+========================================================= */
+
+.rule-box{
+
+    margin-top:22px;
+
+    padding:22px;
+
+    background:#f0f9fc;
+
+    border-left:6px solid var(--cyan);
+    border-radius:16px;
+
+}
+
+.rule-box strong{
+
+    display:block;
+    margin-bottom:10px;
+
+    font-size:16px;
+
+}
+
+.rule-box p{
+    margin:7px 0;
+}
+
+.rule-box code{
+
+    padding:3px 7px;
+
+    background:white;
+
+    border-radius:6px;
+
+    font-weight:900;
+
+}
+
+/* =========================================================
+   SEQUENCE TAGS
+========================================================= */
+
+.sequence-tags{
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:18px 0 5px;
+
+}
+
+.sequence-tag{
+
+    padding:9px 14px;
+
+    background:white;
+
+    border:1px solid var(--border);
+    border-radius:25px;
+
+    font-size:11px;
+    font-weight:900;
+
+}
+
+.sequence-tag:nth-child(1){
+    color:var(--green);
+}
+
+.sequence-tag:nth-child(2){
+    color:var(--purple);
+}
+
+.sequence-tag:nth-child(3){
+    color:var(--orange);
+}
+
+/* =========================================================
+   LISTENING PASSAGE
+========================================================= */
+
+.passage-panel{
+
+    position:relative;
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #f0faff
+    );
+
+    border:2px solid #cdebf5;
+
+}
+
+.passage-heading{
+
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:18px;
+
+}
+
+.passage-icon{
+
+    width:68px;
+    height:68px;
+
+    display:grid;
+    place-items:center;
+
+    background:var(--cyan);
+
+    border-radius:20px;
+
+    font-size:35px;
+
+}
+
+.passage-heading h3{
+    margin:0;
+}
+
+.passage-heading small{
+
+    font-size:11px;
+    font-weight:900;
+
+    color:var(--blue);
+
+}
+
+.passage-text{
+
+    padding:25px;
+
+    background:white;
+
+    border:1px solid #d8edf5;
+    border-radius:20px;
+
+    font-size:17px;
+    font-weight:800;
+    line-height:2.2;
+
+}
+
+.passage-text.hidden-text{
+
+    filter:blur(7px);
+    user-select:none;
+    pointer-events:none;
+
+}
+
+.passage-controls{
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin:20px 0;
+
+}
+
+.passage-instructions{
+
+    padding:20px;
+
+    background:#fff5de;
+
+    border:1px solid #f7dda3;
+    border-radius:17px;
+
+}
+
+.passage-instructions h4{
+
+    margin:0 0 8px;
+
+    font-size:21px;
+
+}
+
+.passage-instructions p{
+
+    margin:5px 0;
+
+    color:#76603e;
+
+}
+
+/* =========================================================
+   DETECTIVE WORD GRID
+========================================================= */
+
+.detective-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+.detective-word{
+
+    min-height:55px;
+
+    padding:12px 7px;
+
+    background:#f3f8fc;
+
+    border:2px solid #dceaf3;
+    border-radius:13px;
+
+    font-size:13px;
+    font-weight:900;
+
+    transition:.2s;
+
+}
+
+.detective-word:hover{
+    transform:translateY(-2px);
+}
+
+.detective-word.selected{
+
+    background:#dff7ed;
+
+    border-color:var(--green);
+    color:#117b55;
+
+}
+
+.detective-word.correct{
+
+    background:#dff7ed;
+
+    border-color:var(--green);
+    color:#117b55;
+
+}
+
+.detective-word.incorrect{
+
+    background:#ffe8e8;
+
+    border-color:var(--red);
+    color:#a72d3b;
+
+}
+
+.detective-word.missed{
+
+    background:#fff0d7;
+
+    border-color:var(--orange);
+    color:#98601e;
+
+}
+
+/* =========================================================
+   CLASSIFICATION
+========================================================= */
+
+.classify-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+
+    margin-top:20px;
+
+}
+
+.classify-column{
+
+    padding:18px;
+
+    background:#f6fbfd;
+
+    border:2px solid #dcebf3;
+    border-radius:18px;
+
+}
+
+.classify-column h4{
+
+    margin:0 0 15px;
+
+    text-align:center;
+
+    font-size:25px;
+
+}
+
+.classify-column:nth-child(1) h4{
+    color:var(--green);
+}
+
+.classify-column:nth-child(2) h4{
+    color:var(--purple);
+}
+
+.classify-column:nth-child(3) h4{
+    color:var(--orange);
+}
+
+.classify-item{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:8px;
+
+    padding:10px;
+
+    margin:8px 0;
+
+    background:white;
+
+    border:1px solid var(--border);
+    border-radius:12px;
+
+}
+
+.classify-item span{
+
+    font-size:12px;
+    font-weight:900;
+
+}
+
+.classify-item select{
+
+    min-width:74px;
+
+    padding:7px 5px;
+
+    background:#f5f9fc;
+
+    border:1px solid #cbdfe9;
+    border-radius:9px;
+
+    font-size:12px;
+    font-weight:900;
+
+}
+
+.classify-item.correct{
+
+    border-color:var(--green);
+    background:#e7f9ef;
+
+}
+
+.classify-item.incorrect{
+
+    border-color:var(--red);
+    background:#fff0f0;
+
+}
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz-card{
+
+    padding:27px;
+
+    background:white;
+
+    border:1px solid var(--border);
+    border-radius:23px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.quiz-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}
+
+.quiz-count{
+
+    font-size:12px;
+    font-weight:900;
+
+    color:var(--blue);
+
+}
+
+.quiz-score{
+
+    padding:8px 13px;
+
+    background:#fff0d3;
+
+    border-radius:20px;
+
+    font-size:12px;
+    font-weight:900;
+
+}
+
+.quiz-word{
+
+    margin:15px auto;
+
+    text-align:center;
+
+    font-family:"Baloo 2",sans-serif;
+
+    font-size:clamp(35px,6vw,55px);
+    font-weight:800;
+
+}
+
+.quiz-options{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    margin:22px 0;
+
+}
+
+.quiz-option{
+
+    padding:20px 10px;
+
+    background:#edf7fc;
+
+    border:2px solid #d2e8f3;
+    border-radius:16px;
+
+    font-family:"Baloo 2",sans-serif;
+    font-size:28px;
+    font-weight:800;
+
+    transition:.2s;
+
+}
+
+.quiz-option:hover{
+    transform:translateY(-3px);
+}
+
+.quiz-option.correct{
+
+    background:#dff7e9;
+    border-color:var(--green);
+    color:#11875b;
+
+}
+
+.quiz-option.incorrect{
+
+    background:#ffe8e8;
+    border-color:var(--red);
+    color:#bc3d49;
+
+}
+
+/* =========================================================
+   FEEDBACK
+========================================================= */
+
+.feedback{
+
+    min-height:25px;
+
+    margin:17px 0;
+
+    font-size:14px;
+    font-weight:900;
+
+    text-align:center;
+
+}
+
+.feedback.success{
+    color:#11865a;
+}
+
+.feedback.error{
+    color:#c44750;
+}
+
+.feedback.info{
+    color:var(--deep);
+}
+
+.action-row{
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.action-btn{
+
+    padding:14px 23px;
+
+    background:var(--blue);
+    color:white;
+
+    border:0;
+    border-radius:30px;
+
+    font-size:13px;
+    font-weight:900;
+
+    transition:.2s;
+
+}
+
+.action-btn:hover{
+    transform:translateY(-2px);
+}
+
+.action-btn.green{
+    background:var(--green);
+}
+
+.action-btn.purple{
+    background:var(--purple);
+}
+
+.action-btn.gold{
+
+    background:var(--gold);
+    color:#62451a;
+
+}
+
+.action-btn.secondary{
+
+    background:#e8f5fb;
+    color:var(--deep);
+
+    border:1px solid #c7e6f2;
+
+}
+
+/* =========================================================
+   FINAL RESULTS
+========================================================= */
+
+.result-panel{
+
+    padding:40px 25px;
+
+    background:linear-gradient(
+        135deg,
+        #123d64,
+        #087da7
+    );
+
+    border-radius:25px;
+
+    color:white;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.result-icon{
+
+    font-size:70px;
+
+}
+
+.result-panel h2{
+
+    margin:12px 0;
+
+    font-size:36px;
+
+}
+
+.result-panel p{
+
+    max-width:650px;
+
+    margin:12px auto;
+
+    font-size:14px;
+    font-weight:700;
+    line-height:1.9;
+
+}
+
+.result-stats{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    margin:25px 0;
+
+}
+
+.result-stat{
+
+    padding:20px 10px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:17px;
+
+}
+
+.result-stat strong{
+
+    display:block;
+
+    color:var(--gold);
+
+    font-size:29px;
+
+}
+
+.result-stat span{
+
+    font-size:11px;
+    font-weight:900;
+
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    margin-top:60px;
+
+    padding:35px 20px;
+
+    background:var(--navy);
+    color:white;
+
+    text-align:center;
+
+    font-size:12px;
+    font-weight:800;
+
+    line-height:2;
+
+}
+
+footer strong{
+    color:var(--gold);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:800px){
+
+    .sound-grid{
+        grid-template-columns:1fr;
+    }
+
+    .sound-card p{
+        min-height:auto;
+    }
+
+    .classify-grid{
+        grid-template-columns:1fr;
+    }
+
+    .detective-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:550px){
+
+    .hero{
+        padding:45px 15px 55px;
+    }
+
+    .hero h1{
+        font-size:49px;
+    }
+
+    .hero-subtitle{
+        font-size:13px;
+    }
+
+    .sound-bubble{
+
+        width:91px;
+        height:91px;
+
+    }
+
+    .sound-bubble strong{
+        font-size:29px;
+    }
+
+    .panel{
+        padding:20px 16px;
+    }
+
+    .passage-text{
+
+        padding:17px;
+
+        font-size:15px;
+        line-height:2;
+
+    }
+
+    .detective-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .quiz-options{
+        gap:7px;
+    }
+
+    .quiz-option{
+
+        padding:15px 6px;
+        font-size:24px;
+
+    }
+
+    .result-stats{
+        gap:6px;
+    }
+
+    .result-stat strong{
+        font-size:23px;
+    }
+
+    .result-stat span{
+        font-size:9px;
+    }
+
+    .topbar-inner{
+        gap:8px;
+    }
+
+    .brand{
+        font-size:12px;
+    }
+
+    .back-btn{
+
+        padding:9px 11px;
+        font-size:10px;
+
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation:none!important;
+        transition:none!important;
+
+    }
+
+}
+
+@media print{
+
+    .topbar,
+    .progress-nav,
+    .hero,
+    .audio-toolbar,
+    .audio-btn,
+    .action-btn,
+    .listen-controls,
+    footer{
+
+        display:none!important;
+
+    }
+
+    body{
+        background:white;
+    }
+
+    .lesson-section{
+        padding:15px 0;
+    }
+
+    .panel,
+    .quiz-card,
+    .result-panel{
+
+        box-shadow:none;
+        break-inside:avoid;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<header class="topbar">
+
+    <div class="container topbar-inner">
+
+        <div class="brand">
+
+            <span class="brand-icon">
+                🎧
+            </span>
+
+            MY ENGLISH SPACE
+
+        </div>
+
+        <a
+            href="MS4-Pronunciation.html"
+            class="back-btn"
+        >
+
+            ← Pronunciation Lab
+
+        </a>
+
+    </div>
+
+</header>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+
+            🎤 MS4 · PRONUNCIATION · LESSON 01
+
+        </span>
+
+        <h1>
+
+            Final -S
+
+            <span>
+                Sound Galaxy!
+            </span>
+
+        </h1>
+
+        <p class="hero-subtitle">
+
+            Three sounds. One exciting mission!
+
+            Listen carefully, discover the rules,
+            investigate a listening passage,
+            classify words and become
+            a pronunciation champion.
+
+        </p>
+
+        <div class="sound-bubbles">
+
+            <div class="sound-bubble bubble-s">
+
+                <strong>/s/</strong>
+
+                <small>cats</small>
+
+            </div>
+
+            <div class="sound-bubble bubble-z">
+
+                <strong>/z/</strong>
+
+                <small>dogs</small>
+
+            </div>
+
+            <div class="sound-bubble bubble-iz">
+
+                <strong>/ɪz/</strong>
+
+                <small>buses</small>
+
+            </div>
+
+        </div>
+
+        <a
+            href="#discovery"
+            class="hero-start"
+        >
+
+            🚀 Start Sound Mission →
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     PROGRESS BAR
+========================================================= -->
+
+<div class="progress-nav">
+
+    <div class="container progress-inner">
+
+        <span class="progress-text">
+
+            ⭐ Lesson Progress
+
+        </span>
+
+        <div class="progress-track">
+
+            <div
+                id="progressFill"
+                class="progress-fill"
+                role="progressbar"
+                aria-label="Lesson progress"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+            ></div>
+
+        </div>
+
+        <span
+            class="progress-text"
+            id="progressText"
+        >
+            0%
+        </span>
+
+    </div>
+
+</div>
+
+<main class="container">
+
+<!-- =========================================================
+     AUDIO SETTINGS
+========================================================= -->
+
+<section class="lesson-section">
+
+    <div class="panel">
+
+        <h3>
+            🎧 Your Listening Studio
+        </h3>
+
+        <p>
+
+            Put on your headphones, choose your
+            listening speed and click the
+            speaker buttons whenever you want
+            to hear a word or sentence.
+
+        </p>
+
+        <div class="audio-toolbar">
+
+            <label for="speedSelect">
+                🎚️ Audio Speed
+            </label>
+
+            <select id="speedSelect">
+
+                <option value="0.7">
+                    Slow
+                </option>
+
+                <option value="0.85" selected>
+                    Clear
+                </option>
+
+                <option value="1">
+                    Natural
+                </option>
+
+            </select>
+
+            <button
+                type="button"
+                class="audio-btn secondary"
+                id="testAudio"
+            >
+
+                🔊 Test Audio
+
+            </button>
+
+            <button
+                type="button"
+                class="audio-btn stop"
+                id="stopAudio"
+            >
+
+                ⏹ Stop
+
+            </button>
+
+        </div>
+
+        <p
+            class="audio-status"
+            id="audioStatus"
+            role="status"
+            aria-live="polite"
+        >
+
+            🎤 Ready to listen!
+
+        </p>
+
+        <p class="arabic">
+
+            اضغط على زر الصوت للاستماع.
+            يمكنك اختيار السرعة البطيئة أو العادية
+            وإعادة الاستماع عدة مرات.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     STAGE 1 — SOUND DISCOVERY
+========================================================= -->
+
+<section
+    class="lesson-section"
+    id="discovery"
+>
+
+    <div class="section-heading">
+
+        <span class="section-kicker">
+
+            🔬 MISSION 01 · DISCOVER
+
+        </span>
+
+        <h2>
+            Meet the Three Sounds!
+        </h2>
+
+        <p>
+
+            The final -s and -es endings
+            do not always sound the same.
+
+            Listen to the examples
+            and discover the difference.
+
+        </p>
+
+    </div>
+
+    <div class="sound-grid">
+
+        <!-- /s/ -->
+
+        <article class="sound-card s">
+
+            <div class="sound-symbol">
+                /s/
+            </div>
+
+            <h3>
+                The Quiet Sound
+            </h3>
+
+            <p>
+
+                Use /s/ after a voiceless
+                consonant sound such as
+                /p/, /t/, /k/, /f/ or /θ/.
+
+                Your throat does not vibrate
+                when you make the /s/ sound.
+
+            </p>
+
+            <p class="arabic">
+
+                ننطق النهاية /s/ بعد الأصوات
+                الساكنة المهموسة مثل
+                p و t و k و f.
+
+            </p>
+
+            <div class="word-buttons">
+
+                <button
+                    class="word-btn speak"
+                    data-text="cats"
+                >
+                    🔊 cats
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="books"
+                >
+                    🔊 books
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="shops"
+                >
+                    🔊 shops
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="monuments"
+                >
+                    🔊 monuments
+                </button>
+
+            </div>
+
+        </article>
+
+        <!-- /z/ -->
+
+        <article class="sound-card z">
+
+            <div class="sound-symbol">
+                /z/
+            </div>
+
+            <h3>
+                The Buzzing Sound
+            </h3>
+
+            <p>
+
+                Use /z/ after a vowel sound
+                or a voiced consonant sound,
+                except the sibilant sounds
+                that take /ɪz/.
+
+                Feel your throat vibrate
+                when you make /z/.
+
+            </p>
+
+            <p class="arabic">
+
+                ننطق النهاية /z/ بعد الحركات
+                والأصوات الساكنة المجهورة،
+                ما عدا الأصوات التي تتطلب /ɪz/.
+
+            </p>
+
+            <div class="word-buttons">
+
+                <button
+                    class="word-btn speak"
+                    data-text="dogs"
+                >
+                    🔊 dogs
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="friends"
+                >
+                    🔊 friends
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="towers"
+                >
+                    🔊 towers
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="volunteers"
+                >
+                    🔊 volunteers
+                </button>
+
+            </div>
+
+        </article>
+
+        <!-- /ɪz/ -->
+
+        <article class="sound-card iz">
+
+            <div class="sound-symbol">
+                /ɪz/
+            </div>
+
+            <h3>
+                The Extra Syllable
+            </h3>
+
+            <p>
+
+                Use /ɪz/ after sounds
+                such as /s/, /z/, /ʃ/,
+                /ʒ/, /tʃ/ and /dʒ/.
+
+                This ending adds
+                an extra syllable.
+
+            </p>
+
+            <p class="arabic">
+
+                ننطق النهاية /ɪz/ بعد أصوات
+                الصفير مثل s و z و sh و ch.
+                نضيف مقطعاً صوتياً جديداً.
+
+            </p>
+
+            <div class="word-buttons">
+
+                <button
+                    class="word-btn speak"
+                    data-text="buses"
+                >
+                    🔊 buses
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="watches"
+                >
+                    🔊 watches
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="places"
+                >
+                    🔊 places
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="wishes"
+                >
+                    🔊 wishes
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+    <div class="panel" style="margin-top:22px">
+
+        <h3>
+            🧠 Remember the Golden Rule!
+        </h3>
+
+        <div class="rule-box">
+
+            <strong>
+                Look at the LAST SOUND, not just the last letter!
+            </strong>
+
+            <p>
+
+                🟢 <strong>/s/</strong>
+                after /p/, /t/, /k/, /f/, /θ/
+
+            </p>
+
+            <p>
+
+                🟣 <strong>/z/</strong>
+                after vowels and most voiced consonants
+
+            </p>
+
+            <p>
+
+                🟠 <strong>/ɪz/</strong>
+                after /s/, /z/, /ʃ/, /ʒ/, /tʃ/, /dʒ/
+
+            </p>
+
+        </div>
+
+        <p class="arabic">
+
+            القاعدة الذهبية:
+            نعتمد على آخر صوت في الكلمة
+            وليس فقط على آخر حرف مكتوب.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     STAGE 2 — LISTENING DETECTIVE
+========================================================= -->
+
+<section
+    class="lesson-section"
+    id="detective"
+>
+
+    <div class="section-heading">
+
+        <span class="section-kicker">
+
+            🕵️ MISSION 02 · LISTENING DETECTIVE
+
+        </span>
+
+        <h2>
+            The Mystery of the Final -S!
+        </h2>
+
+        <p>
+
+            Listen to a short passage about
+            landmarks, memories and citizenship.
+
+            Find the words containing
+            the three target endings.
+
+        </p>
+
+        <div class="sequence-tags">
+
+            <span class="sequence-tag">
+                🏛️ Sequence 1 · Landmarks
+            </span>
+
+            <span class="sequence-tag">
+                💜 Sequence 2 · Memories
+            </span>
+
+            <span class="sequence-tag">
+                🌍 Sequence 3 · Citizenship
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="panel passage-panel">
+
+        <div class="passage-heading">
+
+            <div class="passage-icon">
+                📖
+            </div>
+
+            <div>
+
+                <small>
+                    LISTENING TEXT
+                </small>
+
+                <h3>
+                    A Journey Through Our World
+                </h3>
+
+            </div>
+
+        </div>
+
+        <div class="passage-instructions">
+
+            <h4>
+                🎯 Your Mission
+            </h4>
+
+            <p>
+
+                <strong>First:</strong>
+                Listen to the passage twice.
+
+            </p>
+
+            <p>
+
+                <strong>Next:</strong>
+                Read the passage and identify
+                the words ending in -s or -es.
+
+            </p>
+
+            <p>
+
+                <strong>Finally:</strong>
+                Classify the words according
+                to their final sounds.
+
+            </p>
+
+            <p class="arabic">
+
+                استمع إلى النص مرتين، ثم حدد الكلمات
+                التي تنتهي بـ s أو es،
+                وبعدها صنفها حسب النطق الصحيح.
+
+            </p>
+
+        </div>
+
+        <div class="passage-controls">
+
+            <button
+                type="button"
+                class="audio-btn speak"
+                id="playPassage"
+                data-text=""
+            >
+
+                ▶️ Listen to Passage
+
+            </button>
+
+            <button
+                type="button"
+                class="audio-btn purple"
+                id="replayPassage"
+            >
+
+                🔁 Listen Again
+
+            </button>
+
+            <button
+                type="button"
+                class="audio-btn gold"
+                id="togglePassage"
+            >
+
+                👀 Hide Passage
+
+            </button>
+
+        </div>
+
+        <div
+            class="passage-text"
+            id="passageText"
+        >
+
+            Every year, many
+            <strong>tourists</strong>
+            visit famous
+            <strong>landmarks</strong>.
+            They admire beautiful
+            <strong>towers</strong>,
+            ancient
+            <strong>monuments</strong>
+            and interesting
+            <strong>museums</strong>.
+            These wonderful
+            <strong>places</strong>
+            tell important
+            <strong>stories</strong>
+            about history.
+
+            <br><br>
+
+            When I was younger, my
+            <strong>friends</strong>
+            and I shared happy
+            <strong>memories</strong>.
+            Our
+            <strong>teachers</strong>
+            encouraged us to respect others.
+            Everyone
+            <strong>wishes</strong>
+            for a kind and peaceful world.
+
+            <br><br>
+
+            Today, responsible
+            <strong>citizens</strong>
+            help their
+            <strong>communities</strong>.
+            Many
+            <strong>volunteers</strong>
+            support local
+            <strong>charities</strong>.
+            They collect
+            <strong>books</strong>,
+            clean public
+            <strong>parks</strong>
+            and protect
+            <strong>beaches</strong>.
+            Small
+            <strong>actions</strong>
+            can make a big difference!
+
+        </div>
+
+    </div>
+
+    <!-- =====================================================
+         DETECTIVE TASK
+    ====================================================== -->
+
+    <div class="panel">
+
+        <h3>
+            🔎 Task 1 — Spot the Target Words!
+        </h3>
+
+        <p>
+
+            Which words from the passage
+            contain the final -s or -es ending?
+
+            Click all the correct words.
+
+            Be careful! Some words
+            are distractors.
+
+        </p>
+
+        <div
+            class="detective-grid"
+            id="detectiveGrid"
+        ></div>
+
+        <div class="action-row">
+
+            <button
+                type="button"
+                class="action-btn green"
+                id="checkDetective"
+            >
+
+                ✓ Check My Answers
+
+            </button>
+
+            <button
+                type="button"
+                class="action-btn secondary"
+                id="resetDetective"
+            >
+
+                ↻ Try Again
+
+            </button>
+
+        </div>
+
+        <div
+            class="feedback"
+            id="detectiveFeedback"
+            role="status"
+            aria-live="polite"
+        ></div>
+
+    </div>
+
+    <!-- =====================================================
+         CLASSIFICATION TASK
+    ====================================================== -->
+
+    <div class="panel">
+
+        <h3>
+            🧩 Task 2 — Classify the Sounds!
+        </h3>
+
+        <p>
+
+            Listen to the words taken from
+            the passage.
+
+            Choose their correct final sound:
+            /s/, /z/ or /ɪz/.
+
+        </p>
+
+        <div
+            class="classify-grid"
+            id="classifyGrid"
+        ></div>
+
+        <div class="action-row">
+
+            <button
+                type="button"
+                class="action-btn purple"
+                id="checkClassification"
+            >
+
+                🎯 Check Classification
+
+            </button>
+
+            <button
+                type="button"
+                class="action-btn secondary"
+                id="resetClassification"
+            >
+
+                ↻ Reset
+
+            </button>
+
+        </div>
+
+        <div
+            class="feedback"
+            id="classificationFeedback"
+            role="status"
+            aria-live="polite"
+        ></div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     STAGE 3 — SOUND RADAR
+========================================================= -->
+
+<section
+    class="lesson-section"
+    id="quiz"
+>
+
+    <div class="section-heading">
+
+        <span class="section-kicker">
+
+            🎮 MISSION 03 · SOUND RADAR
+
+        </span>
+
+        <h2>
+            Can You Hear the Difference?
+        </h2>
+
+        <p>
+
+            Listen to each word carefully
+            and choose its final sound.
+
+            Complete all ten questions
+            to become a Sound Radar Champion!
+
+        </p>
+
+    </div>
+
+    <div class="quiz-card">
+
+        <div class="quiz-header">
+
+            <span
+                class="quiz-count"
+                id="quizCount"
+            >
+                Question 1 of 10
+            </span>
+
+            <span
+                class="quiz-score"
+                id="quizScore"
+            >
+                ⭐ 0 points
+            </span>
+
+        </div>
+
+        <div
+            class="quiz-word"
+            id="quizWord"
+        >
+            Ready?
+        </div>
+
+        <div class="action-row">
+
+            <button
+                type="button"
+                class="audio-btn"
+                id="quizListen"
+            >
+
+                🔊 Listen to the Word
+
+            </button>
+
+        </div>
+
+        <div class="quiz-options">
+
+            <button
+                type="button"
+                class="quiz-option"
+                data-answer="s"
+            >
+                /s/
+            </button>
+
+            <button
+                type="button"
+                class="quiz-option"
+                data-answer="z"
+            >
+                /z/
+            </button>
+
+            <button
+                type="button"
+                class="quiz-option"
+                data-answer="iz"
+            >
+                /ɪz/
+            </button>
+
+        </div>
+
+        <div
+            class="feedback"
+            id="quizFeedback"
+            role="status"
+            aria-live="polite"
+        ></div>
+
+        <div class="action-row">
+
+            <button
+                type="button"
+                class="action-btn"
+                id="nextQuiz"
+                disabled
+            >
+
+                Next Question →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     FINAL CHAMPION PANEL
+========================================================= -->
+
+<section
+    class="lesson-section"
+    id="results"
+>
+
+    <div class="result-panel">
+
+        <div class="result-icon">
+            🏆
+        </div>
+
+        <h2>
+            Your Pronunciation Achievement!
+        </h2>
+
+        <p>
+
+            Congratulations on exploring
+            the three final -s sounds!
+
+            Review your results below.
+
+            Keep practising until
+            you can recognise each sound
+            quickly and confidently.
+
+        </p>
+
+        <div class="result-stats">
+
+            <div class="result-stat">
+
+                <strong id="resultDetective">
+                    —
+                </strong>
+
+                <span>
+                    WORD DETECTIVE
+                </span>
+
+            </div>
+
+            <div class="result-stat">
+
+                <strong id="resultClassify">
+                    —
+                </strong>
+
+                <span>
+                    CLASSIFICATION
+                </span>
+
+            </div>
+
+            <div class="result-stat">
+
+                <strong id="resultQuiz">
+                    —
+                </strong>
+
+                <span>
+                    SOUND RADAR
+                </span>
+
+            </div>
+
+        </div>
+
+        <p id="finalMessage">
+
+            Complete the three missions
+            to earn your achievement!
+
+        </p>
+
+        <div class="action-row">
+
+            <button
+                type="button"
+                class="action-btn gold"
+                id="printResult"
+            >
+
+                🖨️ Print My Result
+
+            </button>
+
+            <button
+                type="button"
+                class="action-btn secondary"
+                id="restartLesson"
+            >
+
+                🔄 Restart Lesson
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <strong>
+        MY ENGLISH SPACE
+    </strong>
+
+    <br>
+
+    MS4 · Pronunciation Lab · Lesson 01
+
+    <br>
+
+    Listen • Discover • Practise • Achieve
+
+    <br><br>
+
+    Created &amp; designed by
+    <strong>Warda Lamri</strong>
+
+</footer>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+"use strict";
+
+/* =========================================================
+   AUDIO ENGINE
+========================================================= */
+
+const synth = window.speechSynthesis || null;
+
+const speedSelect =
+    document.getElementById("speedSelect");
+
+const audioStatus =
+    document.getElementById("audioStatus");
+
+let englishVoice = null;
+
+let currentUtterance = null;
+
+let speechToken = 0;
+
+/* =========================================================
+   VOICE SELECTION
+========================================================= */
+
+function selectEnglishVoice(){
+
+    if(!synth){
+        return;
+    }
+
+    const voices = synth.getVoices();
+
+    const englishVoices = voices.filter(
+        voice => voice.lang.toLowerCase().startsWith("en")
+    );
+
+    if(!englishVoices.length){
+
+        englishVoice = null;
+        return;
+
+    }
+
+    englishVoice =
+
+        englishVoices.find(
+            voice =>
+                voice.lang.toLowerCase() === "en-gb" &&
+                /google|natural|premium|enhanced/i.test(
+                    voice.name
+                )
+        )
+
+        ||
+
+        englishVoices.find(
+            voice =>
+                voice.lang.toLowerCase() === "en-gb"
+        )
+
+        ||
+
+        englishVoices.find(
+            voice =>
+                voice.lang.toLowerCase().startsWith("en-gb")
+        )
+
+        ||
+
+        englishVoices.find(
+            voice =>
+                /google|natural|premium|enhanced/i.test(
+                    voice.name
+                )
+        )
+
+        ||
+
+        englishVoices[0];
+
+}
+
+if(synth){
+
+    selectEnglishVoice();
+
+    if(
+        typeof synth.addEventListener === "function"
+    ){
+
+        synth.addEventListener(
+            "voiceschanged",
+            selectEnglishVoice
+        );
+
+    }else{
+
+        synth.onvoiceschanged =
+            selectEnglishVoice;
+
+    }
+
+}
+
+/* =========================================================
+   SPEAK
+========================================================= */
+
+function speak(text){
+
+    if(!synth){
+
+        audioStatus.textContent =
+            "⚠️ Speech playback is not supported by this browser.";
+
+        return;
+
+    }
+
+    const content = String(text || "").trim();
+
+    if(!content){
+        return;
+    }
+
+    speechToken++;
+
+    const token = speechToken;
+
+    synth.cancel();
+
+    selectEnglishVoice();
+
+    const utterance =
+        new SpeechSynthesisUtterance(content);
+
+    utterance.lang = englishVoice
+        ? englishVoice.lang
+        : "en-GB";
+
+    if(englishVoice){
+
+        utterance.voice = englishVoice;
+
+    }
+
+    utterance.rate =
+        Number(speedSelect.value);
+
+    utterance.pitch = 1;
+    utterance.volume = 1;
+
+    currentUtterance = utterance;
+
+    utterance.onstart = function(){
+
+        if(token !== speechToken){
+            return;
+        }
+
+        audioStatus.textContent =
+            "🔊 Playing audio... Listen carefully!";
+
+    };
+
+    utterance.onend = function(){
+
+        if(token !== speechToken){
+            return;
+        }
+
+        currentUtterance = null;
+
+        audioStatus.textContent =
+            "✅ Finished. You can listen again!";
+
+    };
+
+    utterance.onerror = function(event){
+
+        if(token !== speechToken){
+            return;
+        }
+
+        if(event.error === "canceled"){
+            return;
+        }
+
+        currentUtterance = null;
+
+        audioStatus.textContent =
+            "⚠️ Audio could not play. Try another browser or voice.";
+
+    };
+
+    audioStatus.textContent =
+        "🎧 Preparing audio...";
+
+    synth.speak(utterance);
+
+}
+
+/* =========================================================
+   STOP AUDIO
+========================================================= */
+
+function stopSpeaking(){
+
+    if(synth){
+
+        speechToken++;
+
+        synth.cancel();
+
+    }
+
+    currentUtterance = null;
+
+    audioStatus.textContent =
+        "⏹ Audio stopped.";
+
+}
+
+document.getElementById(
+    "stopAudio"
+).addEventListener(
+    "click",
+    stopSpeaking
+);
+
+/* =========================================================
+   GENERAL AUDIO BUTTONS
+========================================================= */
+
+document.querySelectorAll(
+    ".speak"
+).forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        speak(button.dataset.text);
+
+    });
+
+});
+
+document.getElementById(
+    "testAudio"
+).addEventListener("click", () => {
+
+    speak(
+        "Cats, dogs, buses. Listen carefully to the final sounds."
+    );
+
+});
+
+/* =========================================================
+   LISTENING PASSAGE
+========================================================= */
+
+const passage =
+
+    "Every year, many tourists visit famous landmarks. " +
+
+    "They admire beautiful towers, ancient monuments " +
+
+    "and interesting museums. " +
+
+    "These wonderful places tell important stories " +
+
+    "about history. " +
+
+    "When I was younger, my friends and I shared " +
+
+    "happy memories. " +
+
+    "Our teachers encouraged us to respect others. " +
+
+    "Everyone wishes for a kind and peaceful world. " +
+
+    "Today, responsible citizens help their communities. " +
+
+    "Many volunteers support local charities. " +
+
+    "They collect books, clean public parks " +
+
+    "and protect beaches. " +
+
+    "Small actions can make a big difference.";
+
+/* =========================================================
+   PASSAGE AUDIO
+========================================================= */
+
+document.getElementById(
+    "playPassage"
+).addEventListener("click", () => {
+
+    speak(passage);
+
+});
+
+document.getElementById(
+    "replayPassage"
+).addEventListener("click", () => {
+
+    speak(passage);
+
+});
+
+/* =========================================================
+   HIDE / SHOW PASSAGE
+========================================================= */
+
+const passageText =
+    document.getElementById("passageText");
+
+const togglePassage =
+    document.getElementById("togglePassage");
+
+let passageHidden = false;
+
+togglePassage.addEventListener("click", () => {
+
+    passageHidden = !passageHidden;
+
+    passageText.classList.toggle(
+        "hidden-text",
+        passageHidden
+    );
+
+    togglePassage.textContent = passageHidden
+        ? "👀 Show Passage"
+        : "🙈 Hide Passage";
+
+});
+
+/* =========================================================
+   DETECTIVE TASK DATA
+========================================================= */
+
+const detectiveWords = [
+
+    {word:"tourists",target:true},
+    {word:"landmarks",target:true},
+    {word:"beautiful",target:false},
+    {word:"towers",target:true},
+
+    {word:"monuments",target:true},
+    {word:"museums",target:true},
+    {word:"places",target:true},
+    {word:"history",target:false},
+
+    {word:"stories",target:true},
+    {word:"friends",target:true},
+    {word:"younger",target:false},
+    {word:"memories",target:true},
+
+    {word:"teachers",target:true},
+    {word:"wishes",target:true},
+    {word:"peaceful",target:false},
+    {word:"citizens",target:true},
+
+    {word:"communities",target:true},
+    {word:"volunteers",target:true},
+    {word:"charities",target:true},
+    {word:"books",target:true},
+
+    {word:"parks",target:true},
+    {word:"beaches",target:true},
+    {word:"actions",target:true},
+    {word:"difference",target:false}
+
+];
+
+const detectiveGrid =
+    document.getElementById("detectiveGrid");
+
+let detectiveScore = null;
+
+let detectiveChecked = false;
+
+/* =========================================================
+   BUILD DETECTIVE GRID
+========================================================= */
+
+function buildDetective(){
+
+    detectiveGrid.innerHTML = "";
+
+    detectiveWords.forEach((item,index) => {
+
+        const button =
+            document.createElement("button");
+
+        button.type = "button";
+
+        button.className = "detective-word";
+
+        button.textContent = item.word;
+
+        button.dataset.index = index;
+
+        button.setAttribute(
+            "aria-pressed",
+            "false"
+        );
+
+        button.addEventListener("click", () => {
+
+            if(detectiveChecked){
+                return;
+            }
+
+            button.classList.toggle("selected");
+
+            button.setAttribute(
+                "aria-pressed",
+                String(
+                    button.classList.contains("selected")
+                )
+            );
+
+        });
+
+        detectiveGrid.appendChild(button);
+
+    });
+
+}
+
+/* =========================================================
+   CHECK DETECTIVE
+========================================================= */
+
+document.getElementById(
+    "checkDetective"
+).addEventListener("click", () => {
+
+    if(detectiveChecked){
+        return;
+    }
+
+    detectiveChecked = true;
+
+    let correct = 0;
+
+    detectiveGrid.querySelectorAll(
+        ".detective-word"
+    ).forEach(button => {
+
+        const item =
+            detectiveWords[Number(button.dataset.index)];
+
+        const selected =
+            button.classList.contains("selected");
+
+        if(selected === item.target){
+
+            correct++;
+
+            if(item.target){
+
+                button.classList.add("correct");
+
+            }
+
+        }else{
+
+            if(selected){
+
+                button.classList.add("incorrect");
+
+            }else{
+
+                button.classList.add("missed");
+
+            }
+
+        }
+
+        button.disabled = true;
+
+    });
+
+    detectiveScore = correct;
+
+    const total = detectiveWords.length;
+
+    const feedback =
+        document.getElementById("detectiveFeedback");
+
+    feedback.textContent =
+        "🔎 Detective Score: " +
+        correct + " / " + total;
+
+    feedback.className =
+        "feedback " +
+        (correct === total ? "success" : "info");
+
+    updateResults();
+
+    updateProgress();
+
+});
+
+/* =========================================================
+   RESET DETECTIVE
+========================================================= */
+
+document.getElementById(
+    "resetDetective"
+).addEventListener("click", () => {
+
+    detectiveChecked = false;
+
+    detectiveScore = null;
+
+    document.getElementById(
+        "detectiveFeedback"
+    ).textContent = "";
+
+    buildDetective();
+
+    updateResults();
+
+    updateProgress();
+
+});
+
+/* =========================================================
+   CLASSIFICATION DATA
+========================================================= */
+
+const classificationWords = [
+
+    {word:"tourists",sound:"s"},
+    {word:"landmarks",sound:"s"},
+    {word:"monuments",sound:"s"},
+    {word:"books",sound:"s"},
+    {word:"parks",sound:"s"},
+
+    {word:"towers",sound:"z"},
+    {word:"museums",sound:"z"},
+    {word:"friends",sound:"z"},
+    {word:"teachers",sound:"z"},
+    {word:"volunteers",sound:"z"},
+
+    {word:"places",sound:"iz"},
+    {word:"wishes",sound:"iz"},
+    {word:"beaches",sound:"iz"}
+
+];
+
+const classifyGrid =
+    document.getElementById("classifyGrid");
+
+let classificationScore = null;
+
+let classificationChecked = false;
+
+/* =========================================================
+   BUILD CLASSIFICATION
+========================================================= */
+
+function buildClassification(){
+
+    classifyGrid.innerHTML = "";
+
+    const groups = [
+
+        {
+            title:"🟢 Sound /s/",
+            words:classificationWords.slice(0,5)
+        },
+
+        {
+            title:"🟣 Sound /z/",
+            words:classificationWords.slice(5,10)
+        },
+
+        {
+            title:"🟠 Sound /ɪz/",
+            words:classificationWords.slice(10)
+        }
+
+    ];
+
+    /*
+       Words are displayed in mixed positions.
+       The group headings are only visual
+       practice zones, not answer hints.
+    */
+
+    const allWords = classificationWords.slice();
+
+    const order = [
+        7,0,11,4,8,2,10,
+        6,1,12,9,3,5
+    ];
+
+    const mixed = order.map(index => allWords[index]);
+
+    const columns = [
+
+        mixed.slice(0,5),
+        mixed.slice(5,9),
+        mixed.slice(9)
+
+    ];
+
+    columns.forEach((words,columnIndex) => {
+
+        const column =
+            document.createElement("div");
+
+        column.className = "classify-column";
+
+        const heading =
+            document.createElement("h4");
+
+        heading.textContent =
+            "Sound Set " + (columnIndex + 1);
+
+        column.appendChild(heading);
+
+        words.forEach(item => {
+
+            const row =
+                document.createElement("div");
+
+            row.className = "classify-item";
+
+            const label =
+                document.createElement("span");
+
+            label.textContent = item.word;
+
+            const controls =
+                document.createElement("div");
+
+            controls.style.display = "flex";
+            controls.style.gap = "5px";
+            controls.style.alignItems = "center";
+
+            const listen =
+                document.createElement("button");
+
+            listen.type = "button";
+
+            listen.className = "word-btn";
+
+            listen.textContent = "🔊";
+
+            listen.setAttribute(
+                "aria-label",
+                "Listen to " + item.word
+            );
+
+            listen.addEventListener("click", () => {
+
+                speak(item.word);
+
+            });
+
+            const select =
+                document.createElement("select");
+
+            select.setAttribute(
+                "aria-label",
+                "Final sound of " + item.word
+            );
+
+            select.dataset.answer = item.sound;
+
+            select.innerHTML = `
+                <option value="">Choose</option>
+                <option value="s">/s/</option>
+                <option value="z">/z/</option>
+                <option value="iz">/ɪz/</option>
+            `;
+
+            controls.appendChild(listen);
+            controls.appendChild(select);
+
+            row.appendChild(label);
+            row.appendChild(controls);
+
+            column.appendChild(row);
+
+        });
+
+        classifyGrid.appendChild(column);
+
+    });
+
+}
+
+/* =========================================================
+   CHECK CLASSIFICATION
+========================================================= */
+
+document.getElementById(
+    "checkClassification"
+).addEventListener("click", () => {
+
+    if(classificationChecked){
+        return;
+    }
+
+    const selects =
+        classifyGrid.querySelectorAll("select");
+
+    let answered = 0;
+
+    selects.forEach(select => {
+
+        if(select.value){
+            answered++;
+        }
+
+    });
+
+    if(answered !== selects.length){
+
+        const feedback =
+            document.getElementById(
+                "classificationFeedback"
+            );
+
+        feedback.textContent =
+            "🎧 Please classify every word first.";
+
+        feedback.className = "feedback error";
+
+        return;
+
+    }
+
+    classificationChecked = true;
+
+    let correct = 0;
+
+    selects.forEach(select => {
+
+        const row =
+            select.closest(".classify-item");
+
+        if(select.value === select.dataset.answer){
+
+            correct++;
+
+            row.classList.add("correct");
+
+        }else{
+
+            row.classList.add("incorrect");
+
+        }
+
+        select.disabled = true;
+
+    });
+
+    classificationScore = correct;
+
+    const feedback =
+        document.getElementById(
+            "classificationFeedback"
+        );
+
+    feedback.textContent =
+        "🧩 Classification Score: " +
+        correct + " / " + selects.length;
+
+    feedback.className =
+        "feedback " +
+        (
+            correct === selects.length
+            ? "success"
+            : "info"
+        );
+
+    updateResults();
+
+    updateProgress();
+
+});
+
+/* =========================================================
+   RESET CLASSIFICATION
+========================================================= */
+
+document.getElementById(
+    "resetClassification"
+).addEventListener("click", () => {
+
+    classificationChecked = false;
+
+    classificationScore = null;
+
+    document.getElementById(
+        "classificationFeedback"
+    ).textContent = "";
+
+    buildClassification();
+
+    updateResults();
+
+    updateProgress();
+
+});
+
+/* =========================================================
+   SOUND RADAR QUIZ
+========================================================= */
+
+const quizQuestions = [
+
+    {word:"landmarks",answer:"s"},
+    {word:"towers",answer:"z"},
+    {word:"places",answer:"iz"},
+    {word:"books",answer:"s"},
+    {word:"friends",answer:"z"},
+    {word:"wishes",answer:"iz"},
+    {word:"parks",answer:"s"},
+    {word:"volunteers",answer:"z"},
+    {word:"beaches",answer:"iz"},
+    {word:"citizens",answer:"z"}
+
+];
+
+let quizIndex = 0;
+
+let quizPoints = 0;
+
+let quizAnswered = false;
+
+let quizFinished = false;
+
+/* =========================================================
+   RENDER QUIZ
+========================================================= */
+
+function renderQuiz(){
+
+    const question =
+        quizQuestions[quizIndex];
+
+    document.getElementById(
+        "quizCount"
+    ).textContent =
+        "Question " +
+        (quizIndex + 1) +
+        " of " +
+        quizQuestions.length;
+
+    document.getElementById(
+        "quizWord"
+    ).textContent = question.word;
+
+    document.getElementById(
+        "quizScore"
+    ).textContent =
+        "⭐ " + quizPoints + " points";
+
+    document.getElementById(
+        "quizFeedback"
+    ).textContent = "";
+
+    const next =
+        document.getElementById("nextQuiz");
+
+    next.disabled = true;
+
+    next.textContent =
+        quizIndex === quizQuestions.length - 1
+        ? "🏆 Finish Challenge"
+        : "Next Question →";
+
+    quizAnswered = false;
+
+    document.querySelectorAll(
+        ".quiz-option"
+    ).forEach(button => {
+
+        button.disabled = false;
+
+        button.classList.remove(
+            "correct",
+            "incorrect"
+        );
+
+    });
+
+}
+
+/* =========================================================
+   PLAY QUIZ WORD
+========================================================= */
+
+document.getElementById(
+    "quizListen"
+).addEventListener("click", () => {
+
+    speak(quizQuestions[quizIndex].word);
+
+});
+
+/* =========================================================
+   CHECK QUIZ ANSWER
+========================================================= */
+
+document.querySelectorAll(
+    ".quiz-option"
+).forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        if(quizAnswered || quizFinished){
+            return;
+        }
+
+        quizAnswered = true;
+
+        const answer =
+            button.dataset.answer;
+
+        const correctAnswer =
+            quizQuestions[quizIndex].answer;
+
+        const feedback =
+            document.getElementById(
+                "quizFeedback"
+            );
+
+        if(answer === correctAnswer){
+
+            quizPoints++;
+
+            button.classList.add("correct");
+
+            feedback.textContent =
+                "🎉 Excellent! You heard the correct sound!";
+
+            feedback.className =
+                "feedback success";
+
+        }else{
+
+            button.classList.add("incorrect");
+
+            const display = {
+
+                s:"/s/",
+                z:"/z/",
+                iz:"/ɪz/"
+
+            };
+
+            feedback.textContent =
+                "Keep practising! The correct sound is " +
+                display[correctAnswer] + ".";
+
+            feedback.className =
+                "feedback error";
+
+        }
+
+        document.querySelectorAll(
+            ".quiz-option"
+        ).forEach(option => {
+
+            option.disabled = true;
+
+            if(option.dataset.answer === correctAnswer){
+
+                option.classList.add("correct");
+
+            }
+
+        });
+
+        document.getElementById(
+            "quizScore"
+        ).textContent =
+            "⭐ " + quizPoints + " points";
+
+        document.getElementById(
+            "nextQuiz"
+        ).disabled = false;
+
+    });
+
+});
+
+/* =========================================================
+   NEXT QUESTION
+========================================================= */
+
+document.getElementById(
+    "nextQuiz"
+).addEventListener("click", () => {
+
+    if(!quizAnswered){
+        return;
+    }
+
+    if(quizIndex < quizQuestions.length - 1){
+
+        quizIndex++;
+
+        renderQuiz();
+
+    }else{
+
+        quizFinished = true;
+
+        document.getElementById(
+            "nextQuiz"
+        ).disabled = true;
+
+        document.getElementById(
+            "nextQuiz"
+        ).textContent =
+            "✓ Challenge Completed";
+
+        document.getElementById(
+            "quizWord"
+        ).textContent =
+            "🏆 Mission Complete!";
+
+        updateResults();
+
+        updateProgress();
+
+        document.getElementById(
+            "results"
+        ).scrollIntoView({
+            behavior:"smooth"
+        });
+
+    }
+
+});
+
+/* =========================================================
+   UPDATE RESULTS
+========================================================= */
+
+function updateResults(){
+
+    document.getElementById(
+        "resultDetective"
+    ).textContent =
+        detectiveScore === null
+        ? "—"
+        : detectiveScore + "/" + detectiveWords.length;
+
+    document.getElementById(
+        "resultClassify"
+    ).textContent =
+        classificationScore === null
+        ? "—"
+        : classificationScore + "/" + classificationWords.length;
+
+    document.getElementById(
+        "resultQuiz"
+    ).textContent =
+        quizFinished
+        ? quizPoints + "/" + quizQuestions.length
+        : "—";
+
+    const finalMessage =
+        document.getElementById(
+            "finalMessage"
+        );
+
+    if(
+        detectiveScore !== null &&
+        classificationScore !== null &&
+        quizFinished
+    ){
+
+        const total =
+            detectiveScore +
+            classificationScore +
+            quizPoints;
+
+        const maximum =
+            detectiveWords.length +
+            classificationWords.length +
+            quizQuestions.length;
+
+        const percentage =
+            Math.round(total / maximum * 100);
+
+        if(percentage >= 85){
+
+            finalMessage.textContent =
+                "🌟 Outstanding! You are a Final -S Sound Champion! " +
+                "Your total score is " +
+                percentage + "%.";
+
+        }else if(percentage >= 60){
+
+            finalMessage.textContent =
+                "👏 Well done! Your total score is " +
+                percentage +
+                "%. Keep listening and practising!";
+
+        }else{
+
+            finalMessage.textContent =
+                "💪 Good effort! Your total score is " +
+                percentage +
+                "%. Review the sounds and try again.";
+
+        }
+
+    }else{
+
+        finalMessage.textContent =
+            "Complete all three missions " +
+            "to receive your final achievement!";
+
+    }
+
+}
+
+/* =========================================================
+   UPDATE PROGRESS
+========================================================= */
+
+function updateProgress(){
+
+    let completed = 0;
+
+    if(detectiveScore !== null){
+        completed++;
+    }
+
+    if(classificationScore !== null){
+        completed++;
+    }
+
+    if(quizFinished){
+        completed++;
+    }
+
+    const percentage =
+        Math.round(completed / 3 * 100);
+
+    document.getElementById(
+        "progressFill"
+    ).style.width =
+        percentage + "%";
+
+    document.getElementById(
+        "progressFill"
+    ).setAttribute(
+        "aria-valuenow",
+        percentage
+    );
+
+    document.getElementById(
+        "progressText"
+    ).textContent =
+        percentage + "%";
+
+}
+
+/* =========================================================
+   PRINT RESULT
+========================================================= */
+
+document.getElementById(
+    "printResult"
+).addEventListener("click", () => {
+
+    window.print();
+
+});
+
+/* =========================================================
+   RESTART LESSON
+========================================================= */
+
+document.getElementById(
+    "restartLesson"
+).addEventListener("click", () => {
+
+    const confirmed = confirm(
+        "Restart all pronunciation missions?"
+    );
+
+    if(!confirmed){
+        return;
+    }
+
+    stopSpeaking();
+
+    detectiveScore = null;
+    detectiveChecked = false;
+
+    classificationScore = null;
+    classificationChecked = false;
+
+    quizIndex = 0;
+    quizPoints = 0;
+    quizAnswered = false;
+    quizFinished = false;
+
+    buildDetective();
+
+    buildClassification();
+
+    renderQuiz();
+
+    updateResults();
+
+    updateProgress();
+
+    document.getElementById(
+        "detectiveFeedback"
+    ).textContent = "";
+
+    document.getElementById(
+        "classificationFeedback"
+    ).textContent = "";
+
+    document.getElementById(
+        "discovery"
+    ).scrollIntoView({
+        behavior:"smooth"
+    });
+
+});
+
+/* =========================================================
+   INITIALISE
+========================================================= */
+
+buildDetective();
+
+buildClassification();
+
+renderQuiz();
+
+updateResults();
+
+updateProgress();
+
+</script>
+
+</body>
+</html>

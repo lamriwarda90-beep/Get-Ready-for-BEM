@@ -1,0 +1,5089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4-S3-Vocabulary-Lesson1 | Citizenship</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --violet:#6d3fc4;
+    --violet-dark:#45227e;
+    --violet-deep:#29164d;
+    --violet-light:#efe7ff;
+
+    --purple:#8e5bd9;
+    --gold:#f4c95d;
+    --gold-dark:#dcae35;
+    --gold-light:#fff5cf;
+
+    --blue:#4d9de0;
+    --blue-light:#eaf5ff;
+
+    --pink:#e86b9b;
+    --pink-light:#fff0f6;
+
+    --green:#48a868;
+    --green-light:#eaf9ef;
+
+    --coral:#ed806b;
+    --coral-light:#fff0ed;
+
+    --white:#ffffff;
+    --paper:#fbf9ff;
+    --ink:#302742;
+    --muted:#756d86;
+
+    --shadow:0 18px 45px rgba(45,24,79,.14);
+    --shadow-soft:0 10px 25px rgba(45,24,79,.10);
+
+    --radius:26px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Nunito",sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(142,91,217,.13),transparent 30%),
+        radial-gradient(circle at 90% 30%,rgba(244,201,93,.12),transparent 30%),
+        linear-gradient(180deg,#f8f4ff 0%,#ffffff 45%,#f7f2ff 100%);
+    color:var(--ink);
+    line-height:1.6;
+}
+
+button,
+input,
+textarea,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:14px 5%;
+
+    background:rgba(41,22,77,.94);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:white;
+    font-family:"Baloo 2",sans-serif;
+    font-size:1.15rem;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.brand-badge{
+    width:40px;
+    height:40px;
+
+    display:grid;
+    place-items:center;
+
+    background:linear-gradient(135deg,var(--gold),#fff0a7);
+    color:var(--violet-dark);
+
+    border-radius:13px;
+
+    box-shadow:0 7px 20px rgba(244,201,93,.3);
+}
+
+.back-link{
+    color:#eee8ff;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    font-weight:800;
+    font-size:.92rem;
+
+    transition:.25s;
+}
+
+.back-link:hover{
+    color:var(--gold);
+    transform:translateX(-4px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+
+    min-height:540px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:80px 6%;
+
+    background:
+        radial-gradient(circle at 15% 30%,rgba(255,255,255,.16),transparent 25%),
+        radial-gradient(circle at 85% 70%,rgba(244,201,93,.15),transparent 25%),
+        linear-gradient(135deg,#392060,#5d35a0 48%,#7b4cc4);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+        radial-gradient(circle,rgba(255,255,255,.15) 1px,transparent 1px);
+
+    background-size:28px 28px;
+
+    opacity:.35;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+
+    width:480px;
+    height:480px;
+
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:50%;
+
+    right:-170px;
+    top:-180px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:900px;
+
+    text-align:center;
+    color:white;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    padding:8px 17px;
+
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:999px;
+
+    background:rgba(255,255,255,.09);
+
+    font-family:"Space Mono",monospace;
+    font-size:.75rem;
+    letter-spacing:1.3px;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:"Baloo 2",sans-serif;
+
+    font-size:clamp(3rem,8vw,6.2rem);
+
+    line-height:.9;
+
+    margin-bottom:25px;
+
+    text-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    max-width:760px;
+    margin:auto;
+
+    font-size:1.15rem;
+    color:#eee7ff;
+}
+
+.hero-buttons{
+    margin-top:34px;
+
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:none;
+
+    padding:14px 24px;
+
+    border-radius:16px;
+
+    font-weight:900;
+
+    transition:.25s;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:var(--violet-dark);
+
+    box-shadow:0 10px 25px rgba(244,201,93,.25);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(244,201,93,.35);
+}
+
+.btn-outline{
+    background:rgba(255,255,255,.08);
+    color:white;
+    border:1px solid rgba(255,255,255,.25);
+}
+
+.btn-outline:hover{
+    background:rgba(255,255,255,.16);
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-wrap{
+    max-width:1050px;
+    margin:35px auto 10px;
+
+    padding:0 22px;
+}
+
+.progress-card{
+    background:white;
+    border:1px solid #ece4fa;
+
+    box-shadow:var(--shadow-soft);
+
+    border-radius:22px;
+
+    padding:18px 22px;
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.progress-label{
+    white-space:nowrap;
+
+    font-family:"Space Mono",monospace;
+
+    color:var(--violet);
+    font-size:.75rem;
+    font-weight:700;
+}
+
+.progress-track{
+    height:12px;
+    flex:1;
+
+    background:#eee8f8;
+    border-radius:999px;
+
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+
+    background:linear-gradient(90deg,var(--violet),var(--gold));
+
+    border-radius:999px;
+
+    transition:.5s;
+}
+
+.progress-percent{
+    min-width:48px;
+
+    text-align:right;
+
+    font-weight:900;
+    color:var(--violet);
+}
+
+
+/* =========================================================
+   JOURNEY
+========================================================= */
+
+.journey{
+    max-width:1180px;
+    margin:auto;
+
+    padding:70px 22px 120px;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-kicker{
+    font-family:"Space Mono",monospace;
+    font-size:.75rem;
+    color:var(--violet);
+
+    letter-spacing:2px;
+    font-weight:700;
+}
+
+.section-heading h2{
+    font-family:"Baloo 2",sans-serif;
+    font-size:clamp(2.2rem,5vw,3.6rem);
+
+    color:var(--violet-dark);
+
+    margin:8px 0;
+}
+
+.section-heading p{
+    max-width:720px;
+    margin:auto;
+
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   MISSION
+========================================================= */
+
+.mission{
+    position:relative;
+
+    background:white;
+
+    border-radius:30px;
+
+    border:1px solid #e9e0f7;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:55px;
+
+    overflow:hidden;
+}
+
+.mission-header{
+    padding:27px 32px;
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    color:white;
+}
+
+.mission-number{
+    width:55px;
+    height:55px;
+
+    flex:0 0 55px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:17px;
+
+    background:rgba(255,255,255,.18);
+
+    font-family:"Space Mono",monospace;
+    font-weight:700;
+}
+
+.mission-header h3{
+    font-family:"Baloo 2",sans-serif;
+    font-size:1.9rem;
+}
+
+.mission-header p{
+    opacity:.85;
+    font-size:.95rem;
+}
+
+.header-blue{
+    background:linear-gradient(135deg,#347fbf,#5fa8e5);
+}
+
+.header-pink{
+    background:linear-gradient(135deg,#c94e7c,#eb7fa6);
+}
+
+.header-green{
+    background:linear-gradient(135deg,#37894f,#5abf77);
+}
+
+.header-coral{
+    background:linear-gradient(135deg,#cf6251,#ef907d);
+}
+
+.header-purple{
+    background:linear-gradient(135deg,#5a319f,#8555ce);
+}
+
+.header-gold{
+    background:linear-gradient(135deg,#b98922,#e4bb48);
+}
+
+.mission-body{
+    padding:35px;
+}
+
+
+/* =========================================================
+   MISSION 1 — DISCOVER
+========================================================= */
+
+.discovery-intro{
+    text-align:center;
+    margin-bottom:28px;
+}
+
+.discovery-intro h4{
+    font-family:"Baloo 2",sans-serif;
+    color:var(--violet-dark);
+    font-size:1.8rem;
+}
+
+.discovery-intro p{
+    color:var(--muted);
+}
+
+.picture-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.picture-card{
+    background:#faf8ff;
+
+    border:1px solid #e9e0f7;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.picture-card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow-soft);
+}
+
+.picture-image{
+    position:relative;
+    aspect-ratio:16/10;
+    overflow:hidden;
+    background:#e9e1f8;
+}
+
+.picture-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.picture-number{
+    position:absolute;
+    top:10px;
+    left:10px;
+
+    width:35px;
+    height:35px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:11px;
+
+    background:rgba(41,22,77,.88);
+
+    color:white;
+
+    font-family:"Space Mono",monospace;
+    font-size:.72rem;
+}
+
+.picture-info{
+    padding:18px;
+}
+
+.picture-info h5{
+    font-family:"Baloo 2",sans-serif;
+    font-size:1.25rem;
+
+    color:var(--violet-dark);
+
+    margin-bottom:6px;
+}
+
+.picture-info p{
+    font-size:.88rem;
+    color:var(--muted);
+    min-height:45px;
+}
+
+.reveal-btn{
+    width:100%;
+    margin-top:12px;
+
+    border:none;
+
+    padding:10px 13px;
+
+    border-radius:12px;
+
+    background:var(--violet-light);
+    color:var(--violet-dark);
+
+    font-weight:900;
+}
+
+.reveal-btn:hover{
+    background:#dfd0fb;
+}
+
+.picture-reveal{
+    display:none;
+
+    margin-top:12px;
+
+    padding:12px;
+
+    background:white;
+
+    border-left:4px solid var(--gold);
+
+    border-radius:10px;
+
+    font-size:.88rem;
+
+    color:#51485f;
+}
+
+.picture-reveal.show{
+    display:block;
+}
+
+
+/* =========================================================
+   MISSION 2 — DETECTIVE
+========================================================= */
+
+.detective-intro{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+
+    padding:20px;
+
+    background:linear-gradient(135deg,#f4eeff,#fff9e6);
+
+    border-radius:20px;
+
+    border:1px solid #e7dcfa;
+
+    margin-bottom:30px;
+}
+
+.detective-icon{
+    width:52px;
+    height:52px;
+
+    flex:0 0 52px;
+
+    display:grid;
+    place-items:center;
+
+    background:var(--gold-light);
+
+    border-radius:16px;
+
+    font-size:1.5rem;
+}
+
+.detective-intro h4{
+    font-family:"Baloo 2",sans-serif;
+    color:var(--violet-dark);
+    font-size:1.5rem;
+}
+
+.detective-intro p{
+    color:var(--muted);
+}
+
+.detective-board{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.detective-card{
+    border:1px solid #e8def7;
+    border-radius:22px;
+    overflow:hidden;
+
+    background:white;
+
+    box-shadow:0 8px 20px rgba(50,25,90,.07);
+
+    transition:.3s;
+}
+
+.detective-card:hover{
+    transform:translateY(-4px);
+}
+
+.detective-image{
+    position:relative;
+    aspect-ratio:16/10;
+    overflow:hidden;
+}
+
+.detective-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.detective-number{
+    position:absolute;
+    top:10px;
+    left:10px;
+
+    width:34px;
+    height:34px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:10px;
+
+    background:rgba(41,22,77,.9);
+    color:white;
+
+    font-family:"Space Mono",monospace;
+    font-size:.7rem;
+}
+
+.detective-content{
+    padding:18px;
+}
+
+.detective-category{
+    display:inline-block;
+
+    font-family:"Space Mono",monospace;
+    font-size:.62rem;
+    letter-spacing:1px;
+
+    color:var(--violet);
+
+    background:var(--violet-light);
+
+    padding:5px 8px;
+
+    border-radius:7px;
+
+    margin-bottom:8px;
+}
+
+.detective-content h5{
+    font-family:"Baloo 2",sans-serif;
+    color:var(--violet-dark);
+    font-size:1.3rem;
+    margin-bottom:8px;
+}
+
+.detective-question{
+    font-size:.9rem;
+    color:var(--muted);
+    margin-bottom:12px;
+}
+
+.detective-options{
+    display:grid;
+    gap:7px;
+}
+
+.detective-options button{
+    border:1px solid #e4dbf3;
+
+    background:#fbf9ff;
+
+    padding:9px 11px;
+
+    border-radius:10px;
+
+    text-align:left;
+
+    color:#4b4258;
+
+    font-size:.85rem;
+
+    transition:.2s;
+}
+
+.detective-options button:hover{
+    border-color:var(--violet);
+}
+
+.detective-options button.selected{
+    background:var(--violet-light);
+    border-color:var(--violet);
+    color:var(--violet-dark);
+    font-weight:800;
+}
+
+.reveal-clue{
+    width:100%;
+
+    margin-top:10px;
+
+    border:none;
+
+    background:transparent;
+
+    color:var(--violet);
+
+    font-size:.82rem;
+    font-weight:900;
+
+    padding:7px;
+}
+
+.detective-clue{
+    display:none;
+
+    margin-top:5px;
+
+    padding:11px;
+
+    background:var(--gold-light);
+
+    border-radius:10px;
+
+    font-size:.82rem;
+
+    color:#66531d;
+}
+
+.detective-clue.show{
+    display:block;
+}
+
+.detective-completion{
+    margin-top:28px;
+
+    padding:22px;
+
+    background:linear-gradient(135deg,#f7f0ff,#fffaf0);
+
+    border-radius:18px;
+
+    text-align:center;
+
+    border:1px solid #e7dcfa;
+}
+
+.detective-completion p{
+    color:var(--muted);
+    margin-bottom:14px;
+}
+
+
+/* =========================================================
+   MISSION 3 — CLASSIFY
+========================================================= */
+
+.instruction-box{
+    padding:20px;
+
+    border-radius:18px;
+
+    background:#f8f5ff;
+
+    border:1px solid #e7ddf7;
+
+    margin-bottom:25px;
+
+    text-align:center;
+}
+
+.instruction-box strong{
+    color:var(--violet-dark);
+}
+
+.drag-area{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+}
+
+.word-bank,
+.category-box{
+    padding:22px;
+
+    border-radius:20px;
+
+    border:2px dashed #d9cbed;
+
+    background:#fcfbff;
+}
+
+.word-bank h4,
+.category-box h4{
+    font-family:"Baloo 2",sans-serif;
+    color:var(--violet-dark);
+
+    margin-bottom:15px;
+}
+
+.word-bank-items{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.word-item{
+    border:none;
+
+    padding:9px 13px;
+
+    border-radius:12px;
+
+    background:white;
+
+    border:1px solid #e0d6ef;
+
+    color:var(--violet-dark);
+
+    font-weight:800;
+
+    box-shadow:0 4px 10px rgba(50,25,90,.06);
+
+    transition:.2s;
+}
+
+.word-item:hover{
+    transform:translateY(-2px);
+}
+
+.word-item.used{
+    opacity:.35;
+    pointer-events:none;
+}
+
+.category-box{
+    min-height:230px;
+}
+
+.drop-zone{
+    min-height:145px;
+
+    display:flex;
+    flex-wrap:wrap;
+    align-content:flex-start;
+
+    gap:8px;
+
+    padding:10px;
+
+    background:white;
+
+    border-radius:14px;
+}
+
+.dropped-word{
+    padding:7px 10px;
+
+    border-radius:9px;
+
+    background:var(--violet-light);
+
+    color:var(--violet-dark);
+
+    font-size:.82rem;
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   MISSION 4 — GAP FILL
+========================================================= */
+
+.context-card{
+    background:#faf8ff;
+
+    border:1px solid #e5dbf5;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    margin-bottom:20px;
+}
+
+.context-card h4{
+    font-family:"Baloo 2",sans-serif;
+
+    font-size:1.45rem;
+
+    color:var(--violet-dark);
+
+    margin-bottom:10px;
+}
+
+.context-card p{
+    color:#50475d;
+    line-height:2;
+}
+
+.gap-select{
+    border:1px solid #d9cce9;
+
+    border-radius:9px;
+
+    background:white;
+
+    color:var(--violet-dark);
+
+    padding:5px 9px;
+
+    font-weight:800;
+
+    outline:none;
+}
+
+.gap-select:focus{
+    border-color:var(--violet);
+    box-shadow:0 0 0 3px rgba(109,63,196,.1);
+}
+
+
+/* =========================================================
+   MISSION 5 — CONTEXT
+========================================================= */
+
+.question-card{
+    padding:24px;
+
+    background:white;
+
+    border:1px solid #e6dcf4;
+
+    border-radius:20px;
+
+    margin-bottom:18px;
+}
+
+.question-card h4{
+    color:var(--violet-dark);
+    margin-bottom:14px;
+}
+
+.question-options{
+    display:grid;
+    gap:9px;
+}
+
+.question-options button{
+    padding:12px 15px;
+
+    border:1px solid #dfd5ec;
+
+    background:#fbfaff;
+
+    border-radius:12px;
+
+    text-align:left;
+
+    color:#4b4257;
+
+    transition:.2s;
+}
+
+.question-options button:hover{
+    border-color:var(--violet);
+}
+
+.question-options button.selected{
+    background:var(--violet-light);
+
+    border-color:var(--violet);
+
+    color:var(--violet-dark);
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   MISSION 6 — SENTENCE BUILDER
+========================================================= */
+
+.sentence-area{
+    background:linear-gradient(135deg,#f5efff,#fff9e9);
+
+    border:1px solid #e4d9f5;
+
+    border-radius:22px;
+
+    padding:25px;
+}
+
+.sentence-area h4{
+    font-family:"Baloo 2",sans-serif;
+    color:var(--violet-dark);
+    font-size:1.5rem;
+
+    margin-bottom:7px;
+}
+
+.sentence-area p{
+    color:var(--muted);
+    margin-bottom:18px;
+}
+
+.sentence-slots{
+    min-height:72px;
+
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:9px;
+
+    padding:15px;
+
+    background:white;
+
+    border-radius:16px;
+
+    border:2px dashed #d9c9ef;
+
+    margin-bottom:20px;
+}
+
+.sentence-placeholder{
+    color:#aaa1b5;
+    font-style:italic;
+}
+
+.sentence-word-bank{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.sentence-word{
+    border:none;
+
+    background:var(--violet);
+
+    color:white;
+
+    padding:9px 13px;
+
+    border-radius:11px;
+
+    font-weight:800;
+}
+
+.sentence-word:hover{
+    background:var(--violet-dark);
+}
+
+.sentence-selected{
+    padding:9px 13px;
+
+    border-radius:11px;
+
+    background:var(--gold-light);
+
+    color:#66531d;
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   MISSION 7 — CAMPAIGN
+========================================================= */
+
+.campaign-hero{
+    text-align:center;
+
+    padding:25px;
+
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,255,255,.5),transparent 30%),
+        linear-gradient(135deg,#f4edff,#fff5d7);
+
+    border-radius:22px;
+
+    margin-bottom:28px;
+
+    border:1px solid #e6dbf4;
+}
+
+.campaign-badge{
+    width:65px;
+    height:65px;
+
+    display:grid;
+    place-items:center;
+
+    margin:0 auto 10px;
+
+    background:var(--gold);
+
+    border-radius:20px;
+
+    font-size:1.8rem;
+
+    box-shadow:0 10px 25px rgba(244,201,93,.3);
+}
+
+.campaign-kicker{
+    font-family:"Space Mono",monospace;
+
+    font-size:.68rem;
+
+    letter-spacing:1.5px;
+
+    color:var(--violet);
+
+    font-weight:700;
+}
+
+.campaign-hero h4{
+    font-family:"Baloo 2",sans-serif;
+
+    font-size:2rem;
+
+    color:var(--violet-dark);
+
+    margin:4px 0;
+}
+
+.campaign-hero p{
+    color:var(--muted);
+}
+
+.campaign-stage{
+    padding:25px;
+
+    border:1px solid #e6dcf4;
+
+    border-radius:22px;
+
+    margin-bottom:20px;
+
+    background:white;
+}
+
+.campaign-stage-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-bottom:18px;
+}
+
+.campaign-stage-number{
+    width:38px;
+    height:38px;
+
+    display:grid;
+    place-items:center;
+
+    background:var(--violet);
+
+    color:white;
+
+    border-radius:12px;
+
+    font-family:"Space Mono",monospace;
+    font-size:.75rem;
+}
+
+.campaign-stage h5{
+    font-family:"Baloo 2",sans-serif;
+
+    color:var(--violet-dark);
+
+    font-size:1.4rem;
+}
+
+.cause-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+}
+
+.cause-grid button{
+    padding:17px 13px;
+
+    border:1px solid #e3d9ef;
+
+    background:#fcfbff;
+
+    border-radius:15px;
+
+    color:#4e455b;
+
+    font-weight:800;
+
+    transition:.2s;
+}
+
+.cause-grid button:hover{
+    transform:translateY(-2px);
+
+    border-color:var(--violet);
+}
+
+.cause-grid button.selected{
+    background:var(--violet-light);
+
+    color:var(--violet-dark);
+
+    border:2px solid var(--violet);
+}
+
+.slogan-maker{
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:12px;
+}
+
+.slogan-maker input{
+    width:100%;
+
+    padding:15px;
+
+    border:2px solid #e1d7ee;
+
+    border-radius:14px;
+
+    outline:none;
+
+    color:var(--violet-dark);
+
+    font-weight:800;
+}
+
+.slogan-maker input:focus{
+    border-color:var(--violet);
+}
+
+.slogan-examples{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+}
+
+.slogan-examples button{
+    border:none;
+
+    background:var(--gold-light);
+
+    color:#66531d;
+
+    padding:9px 12px;
+
+    border-radius:11px;
+
+    font-size:.82rem;
+
+    font-weight:800;
+}
+
+.character-counter{
+    color:var(--muted);
+
+    font-size:.78rem;
+
+    text-align:right;
+}
+
+.action-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px;
+}
+
+.action-grid button{
+    padding:13px;
+
+    border:1px solid #e2d9ed;
+
+    background:#fcfbff;
+
+    border-radius:12px;
+
+    text-align:left;
+
+    color:#4e4559;
+
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.action-grid button.selected{
+    background:var(--green-light);
+
+    border-color:var(--green);
+
+    color:#246437;
+}
+
+.campaign-writing{
+    display:grid;
+
+    grid-template-columns:1fr 270px;
+
+    gap:22px;
+}
+
+.campaign-editor textarea{
+    width:100%;
+
+    min-height:230px;
+
+    resize:vertical;
+
+    border:2px solid #e1d7ee;
+
+    border-radius:17px;
+
+    padding:17px;
+
+    outline:none;
+
+    color:#403748;
+
+    line-height:1.7;
+}
+
+.campaign-editor textarea:focus{
+    border-color:var(--violet);
+}
+
+.editor-footer{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:.78rem;
+}
+
+.writing-checklist{
+    padding:20px;
+
+    background:#faf7ff;
+
+    border:1px solid #e4d9f3;
+
+    border-radius:17px;
+}
+
+.writing-checklist h6{
+    font-family:"Baloo 2",sans-serif;
+
+    color:var(--violet-dark);
+
+    font-size:1.1rem;
+
+    margin-bottom:10px;
+}
+
+.writing-checklist label{
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:9px;
+
+    margin-bottom:10px;
+
+    color:#5b5265;
+
+    font-size:.85rem;
+}
+
+.writing-checklist input{
+    accent-color:var(--violet);
+
+    margin-top:4px;
+}
+
+.campaign-presentation{
+    text-align:center;
+
+    padding:25px;
+
+    background:linear-gradient(135deg,#fff8dd,#f4edff);
+
+    border-radius:20px;
+
+    border:1px solid #e8ddf0;
+}
+
+.presentation-star{
+    font-size:2.4rem;
+
+    margin-bottom:5px;
+}
+
+.campaign-presentation h5{
+    font-family:"Baloo 2",sans-serif;
+
+    font-size:1.5rem;
+
+    color:var(--violet-dark);
+
+    margin-bottom:7px;
+}
+
+.campaign-presentation p{
+    color:var(--muted);
+
+    margin-bottom:16px;
+}
+
+.campaign-feedback{
+    margin-top:15px;
+
+    min-height:25px;
+
+    color:var(--violet-dark);
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   ACTION BUTTON
+========================================================= */
+
+.complete-btn{
+    display:block;
+
+    margin:30px auto 0;
+
+    border:none;
+
+    padding:13px 22px;
+
+    border-radius:15px;
+
+    background:var(--violet);
+
+    color:white;
+
+    font-weight:900;
+
+    box-shadow:0 8px 20px rgba(109,63,196,.2);
+
+    transition:.25s;
+}
+
+.complete-btn:hover{
+    transform:translateY(-2px);
+
+    background:var(--violet-dark);
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.finish{
+    max-width:900px;
+
+    margin:0 auto 100px;
+
+    padding:50px 30px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:
+        radial-gradient(circle at 20% 20%,rgba(244,201,93,.2),transparent 25%),
+        linear-gradient(135deg,#38205f,#6940a9);
+
+    color:white;
+
+    box-shadow:var(--shadow);
+}
+
+.finish-icon{
+    font-size:3.2rem;
+    margin-bottom:10px;
+}
+
+.finish h2{
+    font-family:"Baloo 2",sans-serif;
+
+    font-size:2.8rem;
+}
+
+.finish p{
+    color:#eee5ff;
+
+    max-width:650px;
+
+    margin:10px auto 25px;
+}
+
+.score-box{
+    display:none;
+
+    margin:20px auto;
+
+    max-width:400px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.1);
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.score-box.show{
+    display:block;
+}
+
+.score-number{
+    font-family:"Space Mono",monospace;
+
+    color:var(--gold);
+
+    font-size:2rem;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   DICTIONARY
+========================================================= */
+
+.dictionary-tab{
+    position:fixed;
+
+    right:0;
+    top:45%;
+
+    z-index:1500;
+
+    border:none;
+
+    padding:16px 10px;
+
+    background:var(--gold);
+
+    color:var(--violet-dark);
+
+    border-radius:16px 0 0 16px;
+
+    writing-mode:vertical-rl;
+
+    font-family:"Space Mono",monospace;
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+
+    transition:.25s;
+}
+
+.dictionary-tab:hover{
+    padding-right:15px;
+}
+
+.dictionary-overlay{
+    position:fixed;
+
+    inset:0;
+
+    z-index:2000;
+
+    background:rgba(25,14,45,.45);
+
+    backdrop-filter:blur(5px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+}
+
+.dictionary-overlay.open{
+    opacity:1;
+
+    visibility:visible;
+}
+
+.dictionary-panel{
+    position:absolute;
+
+    right:0;
+    top:0;
+
+    height:100%;
+
+    width:min(430px,92vw);
+
+    background:white;
+
+    box-shadow:-15px 0 45px rgba(0,0,0,.18);
+
+    transform:translateX(100%);
+
+    transition:.35s;
+
+    overflow-y:auto;
+
+    padding:28px;
+}
+
+.dictionary-overlay.open .dictionary-panel{
+    transform:translateX(0);
+}
+
+.dictionary-top{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:22px;
+}
+
+.dictionary-top h2{
+    font-family:"Baloo 2",sans-serif;
+
+    color:var(--violet-dark);
+
+    font-size:1.8rem;
+}
+
+.close-dictionary{
+    width:40px;
+    height:40px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#f2ecfb;
+
+    color:var(--violet-dark);
+
+    font-weight:900;
+}
+
+.dictionary-note{
+    padding:14px;
+
+    background:var(--gold-light);
+
+    border-radius:14px;
+
+    color:#62521e;
+
+    font-size:.84rem;
+
+    margin-bottom:18px;
+}
+
+.dictionary-table{
+    width:100%;
+
+    border-collapse:separate;
+
+    border-spacing:0 8px;
+}
+
+.dictionary-table th{
+    font-family:"Space Mono",monospace;
+
+    font-size:.65rem;
+
+    color:var(--muted);
+
+    text-align:left;
+
+    padding:0 10px;
+}
+
+.dictionary-table td{
+    background:#faf8ff;
+
+    padding:11px 10px;
+
+    border-top:1px solid #ece4f5;
+
+    border-bottom:1px solid #ece4f5;
+
+    font-size:.86rem;
+}
+
+.dictionary-table td:first-child{
+    border-left:1px solid #ece4f5;
+
+    border-radius:10px 0 0 10px;
+
+    font-weight:800;
+
+    color:var(--violet-dark);
+}
+
+.dictionary-table td:last-child{
+    border-right:1px solid #ece4f5;
+
+    border-radius:0 10px 10px 0;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+    position:fixed;
+
+    left:50%;
+
+    bottom:25px;
+
+    transform:translate(-50%,30px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:3000;
+
+    background:var(--violet-dark);
+
+    color:white;
+
+    padding:13px 20px;
+
+    border-radius:14px;
+
+    box-shadow:var(--shadow);
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.toast.show{
+    opacity:1;
+
+    transform:translate(-50%,0);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:35px 20px;
+
+    background:#281545;
+
+    color:#dcd2ec;
+
+    text-align:center;
+}
+
+footer strong{
+    color:var(--gold);
+}
+
+footer p{
+    font-size:.8rem;
+    margin-top:6px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .picture-grid,
+    .detective-board{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .campaign-writing{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .navbar{
+        padding:12px 4%;
+    }
+
+    .brand{
+        font-size:.95rem;
+    }
+
+    .brand-badge{
+        width:35px;
+        height:35px;
+    }
+
+    .hero{
+        min-height:480px;
+
+        padding:65px 5%;
+    }
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .mission-body{
+        padding:22px;
+    }
+
+    .mission-header{
+        padding:20px;
+    }
+
+    .mission-header h3{
+        font-size:1.5rem;
+    }
+
+    .picture-grid,
+    .detective-board,
+    .cause-grid{
+        grid-template-columns:1fr;
+    }
+
+    .drag-area{
+        grid-template-columns:1fr;
+    }
+
+    .action-grid{
+        grid-template-columns:1fr;
+    }
+
+    .progress-card{
+        gap:10px;
+    }
+
+    .progress-label{
+        display:none;
+    }
+
+    .progress-percent{
+        min-width:45px;
+    }
+
+    .dictionary-panel{
+        padding:22px;
+    }
+
+}
+
+@media(max-width:430px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+    }
+
+    .mission-header{
+        align-items:flex-start;
+    }
+
+    .mission-number{
+        width:45px;
+        height:45px;
+        flex-basis:45px;
+    }
+
+    .detective-intro{
+        flex-direction:column;
+    }
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print{
+
+    .navbar,
+    .dictionary-tab,
+    .dictionary-overlay,
+    .toast,
+    .hero-buttons,
+    .complete-btn{
+        display:none!important;
+    }
+
+    body{
+        background:white;
+    }
+
+    .mission{
+        box-shadow:none;
+        break-inside:avoid;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+    <a class="brand" href="MS4-S3-Vocabulary.html">
+        <span class="brand-badge">🧭</span>
+        <span>MY ENGLISH SPACE</span>
+    </a>
+
+    <a class="back-link" href="MS4-S3-Vocabulary.html">
+        ← Back to Vocabulary Expedition
+    </a>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            MS4 · SEQUENCE 3 · VOCABULARY · CHECKPOINT 01
+        </div>
+
+        <h1>
+            Citizenship <span>Expedition</span>
+        </h1>
+
+        <p>
+            Discover how responsible citizens help their communities,
+            respect others, protect public spaces and take positive action.
+            Observe, investigate, practise and finally create your own
+            citizenship campaign.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#mission1" class="btn btn-primary">
+                🧭 Start the Mission
+            </a>
+
+            <button class="btn btn-outline" onclick="openDictionary()">
+                📖 English–Arabic Dictionary
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="progress-wrap">
+
+    <div class="progress-card">
+
+        <div class="progress-label">
+            EXPEDITION PROGRESS
+        </div>
+
+        <div class="progress-track">
+
+            <div id="progressBar" class="progress-bar"></div>
+
+        </div>
+
+        <div id="progressPercent" class="progress-percent">
+            0%
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JOURNEY
+===================================================== -->
+
+<main class="journey" id="journey">
+
+    <div class="section-heading">
+
+        <div class="section-kicker">
+            YOUR CITIZENSHIP JOURNEY
+        </div>
+
+        <h2>
+            Seven Missions
+        </h2>
+
+        <p>
+            Move from observation to understanding, from practice to
+            communication. Complete each mission at your own pace.
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         MISSION 1
+    ================================================== -->
+
+    <section class="mission" id="mission1">
+
+        <div class="mission-header header-blue">
+
+            <div class="mission-number">01</div>
+
+            <div>
+                <h3>Look & Discover 👀</h3>
+
+                <p>
+                    Observe real-life citizenship situations.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="mission-body">
+
+            <div class="discovery-intro">
+
+                <h4>
+                    What is happening?
+                </h4>
+
+                <p>
+                    Look carefully at each picture. Think about the people,
+                    their actions and the effect of those actions on others.
+                    Then reveal the observation prompt.
+                </p>
+
+            </div>
+
+
+            <div class="picture-grid">
+
+
+                <!-- 1 -->
+
+                <article class="picture-card">
+
+                    <div class="picture-image">
+
+                        <img
+                            src="https://i.imgur.com/4n5CLgK.png"
+                            alt="Keeping Our Community Clean"
+                        >
+
+                        <span class="picture-number">01</span>
+
+                    </div>
+
+                    <div class="picture-info">
+
+                        <h5>
+                            Keeping Our Community Clean
+                        </h5>
+
+                        <p>
+                            Think about how people can take care of the
+                            places they share.
+                        </p>
+
+                        <button
+                            class="reveal-btn"
+                            onclick="toggleReveal(this)"
+                        >
+                            🔍 Reveal the clue
+                        </button>
+
+                        <div class="picture-reveal">
+                            Look at the action. What does it show about
+                            caring for the community?
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 2 -->
+
+                <article class="picture-card">
+
+                    <div class="picture-image">
+
+                        <img
+                            src="https://i.imgur.com/XVxLQik.png"
+                            alt="Helping People in Need"
+                        >
+
+                        <span class="picture-number">02</span>
+
+                    </div>
+
+                    <div class="picture-info">
+
+                        <h5>
+                            Helping People in Need
+                        </h5>
+
+                        <p>
+                            Think about helping someone who needs support.
+                        </p>
+
+                        <button
+                            class="reveal-btn"
+                            onclick="toggleReveal(this)"
+                        >
+                            🔍 Reveal the clue
+                        </button>
+
+                        <div class="picture-reveal">
+                            What kind of positive relationship can this
+                            action create between people?
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 3 -->
+
+                <article class="picture-card">
+
+                    <div class="picture-image">
+
+                        <img
+                            src="https://i.imgur.com/qGLDUZ8.png"
+                            alt="Following the Rules"
+                        >
+
+                        <span class="picture-number">03</span>
+
+                    </div>
+
+                    <div class="picture-info">
+
+                        <h5>
+                            Following the Rules
+                        </h5>
+
+                        <p>
+                            Think about why communities need rules.
+                        </p>
+
+                        <button
+                            class="reveal-btn"
+                            onclick="toggleReveal(this)"
+                        >
+                            🔍 Reveal the clue
+                        </button>
+
+                        <div class="picture-reveal">
+                            How can following rules make life safer and
+                            more organised?
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 4 -->
+
+                <article class="picture-card">
+
+                    <div class="picture-image">
+
+                        <img
+                            src="https://i.imgur.com/k0EqOGr.png"
+                            alt="Good Citizenship at School"
+                        >
+
+                        <span class="picture-number">04</span>
+
+                    </div>
+
+                    <div class="picture-info">
+
+                        <h5>
+                            Good Citizenship at School
+                        </h5>
+
+                        <p>
+                            Think about responsible behaviour at school.
+                        </p>
+
+                        <button
+                            class="reveal-btn"
+                            onclick="toggleReveal(this)"
+                        >
+                            🔍 Reveal the clue
+                        </button>
+
+                        <div class="picture-reveal">
+                            Which actions help create a positive school
+                            community?
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 5 -->
+
+                <article class="picture-card">
+
+                    <div class="picture-image">
+
+                        <img
+                            src="https://i.imgur.com/aUcdMCa.png"
+                            alt="Our Rights and Responsibilities"
+                        >
+
+                        <span class="picture-number">05</span>
+
+                    </div>
+
+                    <div class="picture-info">
+
+                        <h5>
+                            Our Rights and Responsibilities
+                        </h5>
+
+                        <p>
+                            Think about the balance between what we can
+                            expect and what we should do.
+                        </p>
+
+                        <button
+                            class="reveal-btn"
+                            onclick="toggleReveal(this)"
+                        >
+                            🔍 Reveal the clue
+                        </button>
+
+                        <div class="picture-reveal">
+                            A good community depends on both rights and
+                            responsible behaviour.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 6 -->
+
+                <article class="picture-card">
+
+                    <div class="picture-image">
+
+                        <img
+                            src="https://i.imgur.com/yQpJ2gU.png"
+                            alt="Volunteering in the Community"
+                        >
+
+                        <span class="picture-number">06</span>
+
+                    </div>
+
+                    <div class="picture-info">
+
+                        <h5>
+                            Volunteering in the Community
+                        </h5>
+
+                        <p>
+                            Think about giving time and effort to help others.
+                        </p>
+
+                        <button
+                            class="reveal-btn"
+                            onclick="toggleReveal(this)"
+                        >
+                            🔍 Reveal the clue
+                        </button>
+
+                        <div class="picture-reveal">
+                            What can people do voluntarily to improve
+                            community life?
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 7 -->
+
+                <article class="picture-card">
+
+                    <div class="picture-image">
+
+                        <img
+                            src="https://i.imgur.com/PogaEhy.png"
+                            alt="Respect, Tolerance and Equality"
+                        >
+
+                        <span class="picture-number">07</span>
+
+                    </div>
+
+                    <div class="picture-info">
+
+                        <h5>
+                            Respect, Tolerance and Equality
+                        </h5>
+
+                        <p>
+                            Think about living peacefully with people
+                            who may be different from us.
+                        </p>
+
+                        <button
+                            class="reveal-btn"
+                            onclick="toggleReveal(this)"
+                        >
+                            🔍 Reveal the clue
+                        </button>
+
+                        <div class="picture-reveal">
+                            What attitudes help people live together
+                            peacefully?
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 8 -->
+
+                <article class="picture-card">
+
+                    <div class="picture-image">
+
+                        <img
+                            src="https://i.imgur.com/eeoc3Qh.png"
+                            alt="Protecting Public Property"
+                        >
+
+                        <span class="picture-number">08</span>
+
+                    </div>
+
+                    <div class="picture-info">
+
+                        <h5>
+                            Protecting Public Property
+                        </h5>
+
+                        <p>
+                            Think about things that belong to everyone.
+                        </p>
+
+                        <button
+                            class="reveal-btn"
+                            onclick="toggleReveal(this)"
+                        >
+                            🔍 Reveal the clue
+                        </button>
+
+                        <div class="picture-reveal">
+                            Why should public places and objects be
+                            treated carefully?
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 9 -->
+
+                <article class="picture-card">
+
+                    <div class="picture-image">
+
+                        <img
+                            src="https://i.imgur.com/Nvrhp92.png"
+                            alt="A Good Citizen"
+                        >
+
+                        <span class="picture-number">09</span>
+
+                    </div>
+
+                    <div class="picture-info">
+
+                        <h5>
+                            A Good Citizen
+                        </h5>
+
+                        <p>
+                            Think about the qualities and actions that
+                            make a positive citizen.
+                        </p>
+
+                        <button
+                            class="reveal-btn"
+                            onclick="toggleReveal(this)"
+                        >
+                            🔍 Reveal the clue
+                        </button>
+
+                        <div class="picture-reveal">
+                            Look at the whole picture and think about
+                            the qualities connected with good citizenship.
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                onclick="completeMission(1)"
+            >
+                Complete Mission 01 →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MISSION 2
+    ================================================== -->
+
+    <section class="mission" id="mission2">
+
+        <div class="mission-header header-pink">
+
+            <div class="mission-number">02</div>
+
+            <div>
+                <h3>Citizenship Detective 🔎</h3>
+
+                <p>
+                    Observe, interpret and identify the situation.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="mission-body">
+
+
+            <div class="detective-intro">
+
+                <div class="detective-icon">
+                    🔎
+                </div>
+
+                <div>
+
+                    <h4>
+                        Become a Citizenship Detective
+                    </h4>
+
+                    <p>
+                        Study each scene carefully. Choose the idea that
+                        best describes what you observe. You can reveal a
+                        clue when you need another hint. There are no
+                        corrections shown here — think, discuss and decide.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="detective-board">
+
+
+                <!-- Detective 1 -->
+
+                <article class="detective-card">
+
+                    <div class="detective-image">
+
+                        <img
+                            src="https://i.imgur.com/4n5CLgK.png"
+                            alt="Keeping Our Community Clean"
+                        >
+
+                        <span class="detective-number">01</span>
+
+                    </div>
+
+                    <div class="detective-content">
+
+                        <span class="detective-category">
+                            COMMUNITY
+                        </span>
+
+                        <h5>
+                            Keeping Our Community Clean
+                        </h5>
+
+                        <p class="detective-question">
+                            What idea is most closely connected with this scene?
+                        </p>
+
+                        <div class="detective-options">
+
+                            <button onclick="selectDetective(this)">
+                                Caring for shared places
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Buying something new
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Travelling abroad
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="reveal-clue"
+                            onclick="revealDetective(this)"
+                        >
+                            🔐 Reveal the clue
+                        </button>
+
+                        <div class="detective-clue">
+                            Think about an action that benefits everyone
+                            who uses the same place.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Detective 2 -->
+
+                <article class="detective-card">
+
+                    <div class="detective-image">
+
+                        <img
+                            src="https://i.imgur.com/XVxLQik.png"
+                            alt="Helping People in Need"
+                        >
+
+                        <span class="detective-number">02</span>
+
+                    </div>
+
+                    <div class="detective-content">
+
+                        <span class="detective-category">
+                            SOLIDARITY
+                        </span>
+
+                        <h5>
+                            Helping People in Need
+                        </h5>
+
+                        <p class="detective-question">
+                            Which idea fits the situation?
+                        </p>
+
+                        <div class="detective-options">
+
+                            <button onclick="selectDetective(this)">
+                                Supporting others
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Ignoring a problem
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Damaging public property
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="reveal-clue"
+                            onclick="revealDetective(this)"
+                        >
+                            🔐 Reveal the clue
+                        </button>
+
+                        <div class="detective-clue">
+                            Focus on the relationship between the people
+                            and the positive action taking place.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Detective 3 -->
+
+                <article class="detective-card">
+
+                    <div class="detective-image">
+
+                        <img
+                            src="https://i.imgur.com/qGLDUZ8.png"
+                            alt="Following the Rules"
+                        >
+
+                        <span class="detective-number">03</span>
+
+                    </div>
+
+                    <div class="detective-content">
+
+                        <span class="detective-category">
+                            RESPONSIBILITY
+                        </span>
+
+                        <h5>
+                            Following the Rules
+                        </h5>
+
+                        <p class="detective-question">
+                            Why might this behaviour be important?
+                        </p>
+
+                        <div class="detective-options">
+
+                            <button onclick="selectDetective(this)">
+                                It helps organise community life
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                It prevents people from helping
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                It makes public spaces private
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="reveal-clue"
+                            onclick="revealDetective(this)"
+                        >
+                            🔐 Reveal the clue
+                        </button>
+
+                        <div class="detective-clue">
+                            Rules can help people live and work together
+                            in an organised way.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Detective 4 -->
+
+                <article class="detective-card">
+
+                    <div class="detective-image">
+
+                        <img
+                            src="https://i.imgur.com/k0EqOGr.png"
+                            alt="Good Citizenship at School"
+                        >
+
+                        <span class="detective-number">04</span>
+
+                    </div>
+
+                    <div class="detective-content">
+
+                        <span class="detective-category">
+                            SCHOOL LIFE
+                        </span>
+
+                        <h5>
+                            Good Citizenship at School
+                        </h5>
+
+                        <p class="detective-question">
+                            Which behaviour supports a healthy school community?
+                        </p>
+
+                        <div class="detective-options">
+
+                            <button onclick="selectDetective(this)">
+                                Respecting people and school rules
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Damaging classroom materials
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Excluding classmates
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="reveal-clue"
+                            onclick="revealDetective(this)"
+                        >
+                            🔐 Reveal the clue
+                        </button>
+
+                        <div class="detective-clue">
+                            Think about actions that make school a safe
+                            and respectful place.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Detective 5 -->
+
+                <article class="detective-card">
+
+                    <div class="detective-image">
+
+                        <img
+                            src="https://i.imgur.com/aUcdMCa.png"
+                            alt="Our Rights and Responsibilities"
+                        >
+
+                        <span class="detective-number">05</span>
+
+                    </div>
+
+                    <div class="detective-content">
+
+                        <span class="detective-category">
+                            CIVIC LIFE
+                        </span>
+
+                        <h5>
+                            Our Rights and Responsibilities
+                        </h5>
+
+                        <p class="detective-question">
+                            What two ideas belong together?
+                        </p>
+
+                        <div class="detective-options">
+
+                            <button onclick="selectDetective(this)">
+                                Rights and responsibilities
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Shopping and travelling
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Weather and transport
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="reveal-clue"
+                            onclick="revealDetective(this)"
+                        >
+                            🔐 Reveal the clue
+                        </button>
+
+                        <div class="detective-clue">
+                            Think about what people can expect and what
+                            they should contribute.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Detective 6 -->
+
+                <article class="detective-card">
+
+                    <div class="detective-image">
+
+                        <img
+                            src="https://i.imgur.com/yQpJ2gU.png"
+                            alt="Volunteering in the Community"
+                        >
+
+                        <span class="detective-number">06</span>
+
+                    </div>
+
+                    <div class="detective-content">
+
+                        <span class="detective-category">
+                            VOLUNTARY ACTION
+                        </span>
+
+                        <h5>
+                            Volunteering in the Community
+                        </h5>
+
+                        <p class="detective-question">
+                            What makes this action special?
+                        </p>
+
+                        <div class="detective-options">
+
+                            <button onclick="selectDetective(this)">
+                                Giving time to help others
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Avoiding community activities
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Refusing all cooperation
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="reveal-clue"
+                            onclick="revealDetective(this)"
+                        >
+                            🔐 Reveal the clue
+                        </button>
+
+                        <div class="detective-clue">
+                            Think about helping without doing it simply
+                            because you are forced to.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Detective 7 -->
+
+                <article class="detective-card">
+
+                    <div class="detective-image">
+
+                        <img
+                            src="https://i.imgur.com/PogaEhy.png"
+                            alt="Respect, Tolerance and Equality"
+                        >
+
+                        <span class="detective-number">07</span>
+
+                    </div>
+
+                    <div class="detective-content">
+
+                        <span class="detective-category">
+                            LIVING TOGETHER
+                        </span>
+
+                        <h5>
+                            Respect, Tolerance and Equality
+                        </h5>
+
+                        <p class="detective-question">
+                            Which principle helps people live together?
+                        </p>
+
+                        <div class="detective-options">
+
+                            <button onclick="selectDetective(this)">
+                                Respecting differences
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Treating people unfairly
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Refusing cooperation
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="reveal-clue"
+                            onclick="revealDetective(this)"
+                        >
+                            🔐 Reveal the clue
+                        </button>
+
+                        <div class="detective-clue">
+                            Think about accepting people and treating
+                            them fairly.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Detective 8 -->
+
+                <article class="detective-card">
+
+                    <div class="detective-image">
+
+                        <img
+                            src="https://i.imgur.com/eeoc3Qh.png"
+                            alt="Protecting Public Property"
+                        >
+
+                        <span class="detective-number">08</span>
+
+                    </div>
+
+                    <div class="detective-content">
+
+                        <span class="detective-category">
+                            PUBLIC SPACE
+                        </span>
+
+                        <h5>
+                            Protecting Public Property
+                        </h5>
+
+                        <p class="detective-question">
+                            Why does this behaviour matter?
+                        </p>
+
+                        <div class="detective-options">
+
+                            <button onclick="selectDetective(this)">
+                                Shared property belongs to the community
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Public property has no value
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Only one person can use it
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="reveal-clue"
+                            onclick="revealDetective(this)"
+                        >
+                            🔐 Reveal the clue
+                        </button>
+
+                        <div class="detective-clue">
+                            Think about objects and places used by
+                            many members of society.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Detective 9 -->
+
+                <article class="detective-card">
+
+                    <div class="detective-image">
+
+                        <img
+                            src="https://i.imgur.com/Nvrhp92.png"
+                            alt="A Good Citizen"
+                        >
+
+                        <span class="detective-number">09</span>
+
+                    </div>
+
+                    <div class="detective-content">
+
+                        <span class="detective-category">
+                            FINAL CLUE
+                        </span>
+
+                        <h5>
+                            A Good Citizen
+                        </h5>
+
+                        <p class="detective-question">
+                            Which group of ideas describes positive citizenship?
+                        </p>
+
+                        <div class="detective-options">
+
+                            <button onclick="selectDetective(this)">
+                                Respect, responsibility and participation
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Carelessness and selfishness
+                            </button>
+
+                            <button onclick="selectDetective(this)">
+                                Disrespect and exclusion
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="reveal-clue"
+                            onclick="revealDetective(this)"
+                        >
+                            🔐 Reveal the clue
+                        </button>
+
+                        <div class="detective-clue">
+                            Connect the ideas you discovered in the
+                            previous eight scenes.
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                onclick="completeMission(2)"
+            >
+                Complete Investigation →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MISSION 3
+    ================================================== -->
+
+    <section class="mission" id="mission3">
+
+        <div class="mission-header header-green">
+
+            <div class="mission-number">03</div>
+
+            <div>
+                <h3>Sort the Ideas 🧩</h3>
+
+                <p>
+                    Classify expressions according to their meaning.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="mission-body">
+
+            <div class="instruction-box">
+
+                <strong>
+                    Your challenge:
+                </strong>
+
+                Choose a word or expression and place it in the
+                category that you think fits it best.
+
+            </div>
+
+
+            <div class="drag-area">
+
+
+                <div class="word-bank">
+
+                    <h4>
+                        🧠 Expression Bank
+                    </h4>
+
+                    <div class="word-bank-items">
+
+                        <button class="word-item"
+                                onclick="placeWord(this,'positiveZone')">
+                            help people in need
+                        </button>
+
+                        <button class="word-item"
+                                onclick="placeWord(this,'positiveZone')">
+                            respect others
+                        </button>
+
+                        <button class="word-item"
+                                onclick="placeWord(this,'responsibilityZone')">
+                            follow the rules
+                        </button>
+
+                        <button class="word-item"
+                                onclick="placeWord(this,'responsibilityZone')">
+                            protect public property
+                        </button>
+
+                        <button class="word-item"
+                                onclick="placeWord(this,'positiveZone')">
+                            volunteer
+                        </button>
+
+                        <button class="word-item"
+                                onclick="placeWord(this,'responsibilityZone')">
+                            keep public places clean
+                        </button>
+
+                        <button class="word-item"
+                                onclick="placeWord(this,'positiveZone')">
+                            respect differences
+                        </button>
+
+                        <button class="word-item"
+                                onclick="placeWord(this,'responsibilityZone')">
+                            take care of shared spaces
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="category-box">
+
+                    <h4>
+                        🌍 Positive Citizenship
+                    </h4>
+
+                    <div
+                        id="positiveZone"
+                        class="drop-zone"
+                    >
+                        <span class="sentence-placeholder">
+                            Place related expressions here.
+                        </span>
+                    </div>
+
+                    <h4 style="margin-top:22px;">
+                        🛡️ Civic Responsibility
+                    </h4>
+
+                    <div
+                        id="responsibilityZone"
+                        class="drop-zone"
+                    >
+                        <span class="sentence-placeholder">
+                            Place related expressions here.
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                onclick="completeMission(3)"
+            >
+                Complete Classification →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MISSION 4
+    ================================================== -->
+
+    <section class="mission" id="mission4">
+
+        <div class="mission-header header-coral">
+
+            <div class="mission-number">04</div>
+
+            <div>
+                <h3>Choose the Right Word ✨</h3>
+
+                <p>
+                    Use citizenship vocabulary in context.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="mission-body">
+
+
+            <div class="context-card">
+
+                <h4>
+                    A Responsible School Community
+                </h4>
+
+                <p>
+
+                    A good school community needs
+
+                    <select class="gap-select">
+                        <option value="">choose</option>
+                        <option>respect</option>
+                        <option>transport</option>
+                        <option>weather</option>
+                    </select>
+
+                    between pupils and teachers.
+
+                    Pupils should also
+
+                    <select class="gap-select">
+                        <option value="">choose</option>
+                        <option>follow the rules</option>
+                        <option>travel abroad</option>
+                        <option>buy clothes</option>
+                    </select>
+
+                    and take care of school property.
+
+                </p>
+
+            </div>
+
+
+            <div class="context-card">
+
+                <h4>
+                    Helping Others
+                </h4>
+
+                <p>
+
+                    Some young people decide to
+
+                    <select class="gap-select">
+                        <option value="">choose</option>
+                        <option>volunteer</option>
+                        <option>complain</option>
+                        <option>destroy</option>
+                    </select>
+
+                    in their community.
+
+                    They may
+
+                    <select class="gap-select">
+                        <option value="">choose</option>
+                        <option>help people in need</option>
+                        <option>ignore everyone</option>
+                        <option>damage public places</option>
+                    </select>
+
+                    and support local activities.
+
+                </p>
+
+            </div>
+
+
+            <div class="context-card">
+
+                <h4>
+                    Living Together
+                </h4>
+
+                <p>
+
+                    People do not always have the same ideas or backgrounds.
+                    A responsible citizen should show
+
+                    <select class="gap-select">
+                        <option value="">choose</option>
+                        <option>tolerance</option>
+                        <option>anger</option>
+                        <option>carelessness</option>
+                    </select>
+
+                    and treat people with
+
+                    <select class="gap-select">
+                        <option value="">choose</option>
+                        <option>equality</option>
+                        <option>silence</option>
+                        <option>competition</option>
+                    </select>
+
+                    .
+
+                </p>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                onclick="completeMission(4)"
+            >
+                Complete Language Practice →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MISSION 5
+    ================================================== -->
+
+    <section class="mission" id="mission5">
+
+        <div class="mission-header header-purple">
+
+            <div class="mission-number">05</div>
+
+            <div>
+                <h3>Citizenship in Context 💬</h3>
+
+                <p>
+                    Think about meaning, behaviour and consequences.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="mission-body">
+
+
+            <div class="question-card">
+
+                <h4>
+                    1. Why is volunteering useful to a community?
+                </h4>
+
+                <div class="question-options">
+
+                    <button onclick="selectQuestion(this)">
+                        It allows people to contribute their time and effort.
+                    </button>
+
+                    <button onclick="selectQuestion(this)">
+                        It prevents people from cooperating.
+                    </button>
+
+                    <button onclick="selectQuestion(this)">
+                        It makes public property private.
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="question-card">
+
+                <h4>
+                    2. What can happen when people respect public property?
+                </h4>
+
+                <div class="question-options">
+
+                    <button onclick="selectQuestion(this)">
+                        Shared places can remain useful and pleasant.
+                    </button>
+
+                    <button onclick="selectQuestion(this)">
+                        Communities become less organised.
+                    </button>
+
+                    <button onclick="selectQuestion(this)">
+                        People stop using public places.
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="question-card">
+
+                <h4>
+                    3. Which behaviour can support tolerance?
+                </h4>
+
+                <div class="question-options">
+
+                    <button onclick="selectQuestion(this)">
+                        Listening to others and respecting differences.
+                    </button>
+
+                    <button onclick="selectQuestion(this)">
+                        Refusing to cooperate with others.
+                    </button>
+
+                    <button onclick="selectQuestion(this)">
+                        Treating some people unfairly.
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="complete-btn"
+                onclick="completeMission(5)"
+            >
+                Complete Context Challenge →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MISSION 6
+    ================================================== -->
+
+    <section class="mission" id="mission6">
+
+        <div class="mission-header header-gold">
+
+            <div class="mission-number">06</div>
+
+            <div>
+                <h3>Build a Citizenship Message 🧱</h3>
+
+                <p>
+                    Arrange words to create a meaningful sentence.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="mission-body">
+
+            <div class="sentence-area">
+
+                <h4>
+                    Build the sentence
+                </h4>
+
+                <p>
+                    Click the words in the order you think creates a
+                    meaningful citizenship message.
+                </p>
+
+
+                <div
+                    id="sentenceSlots"
+                    class="sentence-slots"
+                >
+
+                    <span
+                        id="sentencePlaceholder"
+                        class="sentence-placeholder"
+                    >
+                        Your sentence will appear here...
+                    </span>
+
+                </div>
+
+
+                <div class="sentence-word-bank">
+
+                    <button
+                        class="sentence-word"
+                        onclick="addSentenceWord(this,'together')"
+                    >
+                        together
+                    </button>
+
+                    <button
+                        class="sentence-word"
+                        onclick="addSentenceWord(this,'can')"
+                    >
+                        can
+                    </button>
+
+                    <button
+                        class="sentence-word"
+                        onclick="addSentenceWord(this,'we')"
+                    >
+                        we
+                    </button>
+
+                    <button
+                        class="sentence-word"
+                        onclick="addSentenceWord(this,'make')"
+                    >
+                        make
+                    </button>
+
+                    <button
+                        class="sentence-word"
+                        onclick="addSentenceWord(this,'a')"
+                    >
+                        a
+                    </button>
+
+                    <button
+                        class="sentence-word"
+                        onclick="addSentenceWord(this,'difference')"
+                    >
+                        difference
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="complete-btn"
+                    onclick="completeSentenceMission()"
+                >
+                    Check My Sentence →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MISSION 7
+    ================================================== -->
+
+    <section class="mission" id="mission7">
+
+        <div class="mission-header header-pink">
+
+            <div class="mission-number">07</div>
+
+            <div>
+                <h3>Create a Citizenship Campaign 🎯</h3>
+
+                <p>
+                    Turn your vocabulary into a real communication project.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="mission-body">
+
+
+            <div class="campaign-hero">
+
+                <div class="campaign-badge">
+                    📣
+                </div>
+
+                <div class="campaign-kicker">
+                    FINAL COMMUNICATIVE CHALLENGE
+                </div>
+
+                <h4>
+                    Your Voice Can Make a Difference
+                </h4>
+
+                <p>
+                    Choose a cause, create a slogan, plan responsible
+                    actions and write a short campaign message.
+                </p>
+
+            </div>
+
+
+            <!-- STAGE 1 -->
+
+            <div class="campaign-stage">
+
+                <div class="campaign-stage-title">
+
+                    <div class="campaign-stage-number">
+                        01
+                    </div>
+
+                    <h5>
+                        Choose Your Cause
+                    </h5>
+
+                </div>
+
+
+                <div class="cause-grid">
+
+                    <button onclick="chooseCause(this)">
+                        🧹 Clean Community
+                    </button>
+
+                    <button onclick="chooseCause(this)">
+                        🤝 Help Others
+                    </button>
+
+                    <button onclick="chooseCause(this)">
+                        🏫 School Responsibility
+                    </button>
+
+                    <button onclick="chooseCause(this)">
+                        🌱 Protect the Environment
+                    </button>
+
+                    <button onclick="chooseCause(this)">
+                        🕊️ Respect & Tolerance
+                    </button>
+
+                    <button onclick="chooseCause(this)">
+                        ⚖️ Equality
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAGE 2 -->
+
+            <div class="campaign-stage">
+
+                <div class="campaign-stage-title">
+
+                    <div class="campaign-stage-number">
+                        02
+                    </div>
+
+                    <h5>
+                        Create Your Message
+                    </h5>
+
+                </div>
+
+
+                <div class="slogan-maker">
+
+                    <input
+                        id="campaignSlogan"
+                        type="text"
+                        maxlength="80"
+                        placeholder="Write your campaign slogan..."
+                    >
+
+
+                    <div class="slogan-examples">
+
+                        <button onclick="insertSlogan('Respect today, build a better tomorrow!')">
+                            Respect today, build a better tomorrow!
+                        </button>
+
+                        <button onclick="insertSlogan('Together we can make a difference!')">
+                            Together we can make a difference!
+                        </button>
+
+                        <button onclick="insertSlogan('Our school, our responsibility!')">
+                            Our school, our responsibility!
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="sloganCounter"
+                        class="character-counter"
+                    >
+                        0 / 80 characters
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAGE 3 -->
+
+            <div class="campaign-stage">
+
+                <div class="campaign-stage-title">
+
+                    <div class="campaign-stage-number">
+                        03
+                    </div>
+
+                    <h5>
+                        Plan Your Actions
+                    </h5>
+
+                </div>
+
+
+                <div class="action-grid">
+
+                    <button onclick="toggleCampaignAction(this)">
+                        🤝 Respect others
+                    </button>
+
+                    <button onclick="toggleCampaignAction(this)">
+                        📏 Follow the rules
+                    </button>
+
+                    <button onclick="toggleCampaignAction(this)">
+                        🙋 Volunteer
+                    </button>
+
+                    <button onclick="toggleCampaignAction(this)">
+                        🏫 Protect public property
+                    </button>
+
+                    <button onclick="toggleCampaignAction(this)">
+                        ❤️ Help people in need
+                    </button>
+
+                    <button onclick="toggleCampaignAction(this)">
+                        🧹 Keep places clean
+                    </button>
+
+                    <button onclick="toggleCampaignAction(this)">
+                        🕊️ Respect differences
+                    </button>
+
+                    <button onclick="toggleCampaignAction(this)">
+                        🌍 Work together
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAGE 4 -->
+
+            <div class="campaign-stage">
+
+                <div class="campaign-stage-title">
+
+                    <div class="campaign-stage-number">
+                        04
+                    </div>
+
+                    <h5>
+                        Write Your Campaign Message
+                    </h5>
+
+                </div>
+
+
+                <div class="campaign-writing">
+
+
+                    <div class="campaign-editor">
+
+                        <textarea
+                            id="campaignText"
+                            placeholder="Write a short campaign message of about 60–80 words. Explain your cause, mention responsible actions and encourage people to participate..."
+                        ></textarea>
+
+                        <div class="editor-footer">
+
+                            <span>
+                                Aim for about 60–80 words.
+                            </span>
+
+                            <span id="campaignWordCount">
+                                0 words
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="writing-checklist">
+
+                        <h6>
+                            ✍️ My Writing Checklist
+                        </h6>
+
+                        <label>
+                            <input type="checkbox">
+                            Clear campaign topic
+                        </label>
+
+                        <label>
+                            <input type="checkbox">
+                            Strong slogan
+                        </label>
+
+                        <label>
+                            <input type="checkbox">
+                            At least two actions
+                        </label>
+
+                        <label>
+                            <input type="checkbox">
+                            Citizenship vocabulary
+                        </label>
+
+                        <label>
+                            <input type="checkbox">
+                            Personal opinion
+                        </label>
+
+                        <label>
+                            <input type="checkbox">
+                            Final call to action
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAGE 5 -->
+
+            <div class="campaign-stage">
+
+                <div class="campaign-presentation">
+
+                    <div class="presentation-star">
+                        🌟
+                    </div>
+
+                    <h5>
+                        Ready to Present?
+                    </h5>
+
+                    <p>
+                        Read your campaign message aloud. Imagine that
+                        you are presenting it to your classmates.
+                    </p>
+
+                    <button
+                        class="btn btn-primary"
+                        onclick="finishCampaign()"
+                    >
+                        📣 Launch My Campaign
+                    </button>
+
+                    <div
+                        id="campaignFeedback"
+                        class="campaign-feedback"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         FINISH
+    ================================================== -->
+
+    <section class="finish">
+
+        <div class="finish-icon">
+            🏆
+        </div>
+
+        <h2>
+            Citizenship Explorer!
+        </h2>
+
+        <p>
+            You have completed the Citizenship Expedition.
+            Review the ideas you discovered, use the vocabulary in
+            your own sentences and keep thinking about how citizens
+            can contribute positively to their communities.
+        </p>
+
+
+        <button
+            class="btn btn-primary"
+            onclick="calculateFinalScore()"
+        >
+            🎯 View My Expedition Progress
+        </button>
+
+
+        <div
+            id="scoreBox"
+            class="score-box"
+        >
+
+            <div>
+                Completed missions
+            </div>
+
+            <div
+                id="scoreNumber"
+                class="score-number"
+            >
+                0 / 7
+            </div>
+
+            <div id="scoreMessage">
+                Keep exploring!
+            </div>
+
+        </div>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="MS4-S3-Vocabulary.html"
+                class="btn btn-outline"
+            >
+                ← Vocabulary Expedition
+            </a>
+
+            <a
+                href="MS4-S3-Vocabulary-Lesson2.html"
+                class="btn btn-primary"
+            >
+                Next Checkpoint →
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     DICTIONARY BUTTON
+===================================================== -->
+
+<button
+    class="dictionary-tab"
+    onclick="openDictionary()"
+>
+    📖 DICTIONARY
+</button>
+
+
+<!-- =====================================================
+     DICTIONARY OVERLAY
+===================================================== -->
+
+<div
+    id="dictionaryOverlay"
+    class="dictionary-overlay"
+    onclick="closeDictionaryOutside(event)"
+>
+
+    <aside
+        class="dictionary-panel"
+        onclick="event.stopPropagation()"
+    >
+
+        <div class="dictionary-top">
+
+            <h2>
+                📖 Mini Dictionary
+            </h2>
+
+            <button
+                class="close-dictionary"
+                onclick="closeDictionary()"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div class="dictionary-note">
+
+            Use this mini English–Arabic dictionary whenever you need
+            support. Try to understand the word in context before
+            checking the meaning.
+
+        </div>
+
+
+        <table class="dictionary-table">
+
+            <thead>
+
+                <tr>
+                    <th>ENGLISH</th>
+                    <th>ARABIC</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>citizen</td>
+                    <td>مواطن</td>
+                </tr>
+
+                <tr>
+                    <td>citizenship</td>
+                    <td>المواطنة</td>
+                </tr>
+
+                <tr>
+                    <td>community</td>
+                    <td>مجتمع</td>
+                </tr>
+
+                <tr>
+                    <td>responsibility</td>
+                    <td>مسؤولية</td>
+                </tr>
+
+                <tr>
+                    <td>responsible</td>
+                    <td>مسؤول</td>
+                </tr>
+
+                <tr>
+                    <td>right</td>
+                    <td>حق</td>
+                </tr>
+
+                <tr>
+                    <td>duty</td>
+                    <td>واجب</td>
+                </tr>
+
+                <tr>
+                    <td>rule</td>
+                    <td>قاعدة / قانون</td>
+                </tr>
+
+                <tr>
+                    <td>respect</td>
+                    <td>احترام</td>
+                </tr>
+
+                <tr>
+                    <td>tolerance</td>
+                    <td>تسامح</td>
+                </tr>
+
+                <tr>
+                    <td>equality</td>
+                    <td>مساواة</td>
+                </tr>
+
+                <tr>
+                    <td>volunteer</td>
+                    <td>يتطوع / متطوع</td>
+                </tr>
+
+                <tr>
+                    <td>volunteering</td>
+                    <td>العمل التطوعي</td>
+                </tr>
+
+                <tr>
+                    <td>donate</td>
+                    <td>يتبرع</td>
+                </tr>
+
+                <tr>
+                    <td>donation</td>
+                    <td>تبرع</td>
+                </tr>
+
+                <tr>
+                    <td>help people in need</td>
+                    <td>يساعد المحتاجين</td>
+                </tr>
+
+                <tr>
+                    <td>protect</td>
+                    <td>يحمي</td>
+                </tr>
+
+                <tr>
+                    <td>public property</td>
+                    <td>الملكية العامة</td>
+                </tr>
+
+                <tr>
+                    <td>public space</td>
+                    <td>فضاء عام</td>
+                </tr>
+
+                <tr>
+                    <td>charity</td>
+                    <td>عمل خيري</td>
+                </tr>
+
+                <tr>
+                    <td>organisation</td>
+                    <td>منظمة</td>
+                </tr>
+
+                <tr>
+                    <td>campaign</td>
+                    <td>حملة</td>
+                </tr>
+
+                <tr>
+                    <td>participate</td>
+                    <td>يشارك</td>
+                </tr>
+
+                <tr>
+                    <td>cooperate</td>
+                    <td>يتعاون</td>
+                </tr>
+
+                <tr>
+                    <td>difference</td>
+                    <td>اختلاف</td>
+                </tr>
+
+                <tr>
+                    <td>equality</td>
+                    <td>مساواة</td>
+                </tr>
+
+                <tr>
+                    <td>fair</td>
+                    <td>عادل</td>
+                </tr>
+
+                <tr>
+                    <td>support</td>
+                    <td>يدعم / دعم</td>
+                </tr>
+
+                <tr>
+                    <td>improve</td>
+                    <td>يحسّن</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </aside>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    id="toast"
+    class="toast"
+>
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <strong>
+        MY ENGLISH SPACE
+    </strong>
+
+    <p>
+        MS4 · SEQUENCE 3 · VOCABULARY · CITIZENSHIP
+    </p>
+
+    <p>
+        Observe · Understand · Practise · Communicate
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================================================
+   GLOBAL STATE
+========================================================= */
+
+const completedMissions = new Set();
+
+let sentenceWords = [];
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+function updateProgress(){
+
+    const total = 7;
+
+    const completed = completedMissions.size;
+
+    const percentage =
+        Math.round((completed / total) * 100);
+
+    const bar =
+        document.getElementById("progressBar");
+
+    const percent =
+        document.getElementById("progressPercent");
+
+    if(bar){
+        bar.style.width = percentage + "%";
+    }
+
+    if(percent){
+        percent.textContent = percentage + "%";
+    }
+
+}
+
+
+/* =========================================================
+   COMPLETE MISSION
+========================================================= */
+
+function completeMission(number){
+
+    completedMissions.add(number);
+
+    updateProgress();
+
+    showToast(
+        "Mission " + String(number).padStart(2,"0") +
+        " completed! 🎉"
+    );
+
+}
+
+
+/* =========================================================
+   PICTURE REVEALS
+========================================================= */
+
+function toggleReveal(button){
+
+    const reveal =
+        button.nextElementSibling;
+
+    if(!reveal){
+        return;
+    }
+
+    const isVisible =
+        reveal.classList.contains("show");
+
+    reveal.classList.toggle("show");
+
+    button.textContent =
+        isVisible
+            ? "🔍 Reveal the clue"
+            : "🔓 Hide the clue";
+
+}
+
+
+/* =========================================================
+   DETECTIVE OPTIONS
+========================================================= */
+
+function selectDetective(button){
+
+    const parent =
+        button.parentElement;
+
+    parent
+        .querySelectorAll("button")
+        .forEach(function(btn){
+
+            btn.classList.remove("selected");
+
+        });
+
+    button.classList.add("selected");
+
+}
+
+
+/* =========================================================
+   DETECTIVE CLUE
+========================================================= */
+
+function revealDetective(button){
+
+    const clue =
+        button.nextElementSibling;
+
+    if(!clue){
+        return;
+    }
+
+    const open =
+        clue.classList.contains("show");
+
+    clue.classList.toggle("show");
+
+    button.innerHTML =
+        open
+            ? "🔐 Reveal the clue"
+            : "🔓 Hide the clue";
+
+}
+
+
+/* =========================================================
+   CLASSIFICATION
+========================================================= */
+
+function placeWord(button, zoneId){
+
+    if(button.classList.contains("used")){
+        return;
+    }
+
+    const zone =
+        document.getElementById(zoneId);
+
+    if(!zone){
+        return;
+    }
+
+    const placeholder =
+        zone.querySelector(".sentence-placeholder");
+
+    if(placeholder){
+        placeholder.remove();
+    }
+
+    const item =
+        document.createElement("span");
+
+    item.className =
+        "dropped-word";
+
+    item.textContent =
+        button.textContent.trim();
+
+    zone.appendChild(item);
+
+    button.classList.add("used");
+
+    showToast("Added to the category ✓");
+
+}
+
+
+/* =========================================================
+   CONTEXT QUESTIONS
+========================================================= */
+
+function selectQuestion(button){
+
+    const parent =
+        button.parentElement;
+
+    parent
+        .querySelectorAll("button")
+        .forEach(function(btn){
+
+            btn.classList.remove("selected");
+
+        });
+
+    button.classList.add("selected");
+
+}
+
+
+/* =========================================================
+   SENTENCE BUILDER
+========================================================= */
+
+function addSentenceWord(button,word){
+
+    if(button.disabled){
+        return;
+    }
+
+    sentenceWords.push(word);
+
+    button.disabled = true;
+
+    button.style.opacity = ".4";
+
+    renderSentence();
+
+}
+
+
+function renderSentence(){
+
+    const slots =
+        document.getElementById("sentenceSlots");
+
+    const placeholder =
+        document.getElementById("sentencePlaceholder");
+
+    if(!slots){
+        return;
+    }
+
+    if(sentenceWords.length === 0){
+
+        if(placeholder){
+            placeholder.style.display = "block";
+        }
+
+        return;
+    }
+
+    if(placeholder){
+        placeholder.style.display = "none";
+    }
+
+    slots
+        .querySelectorAll(".sentence-selected")
+        .forEach(function(el){
+
+            el.remove();
+
+        });
+
+    sentenceWords.forEach(function(word){
+
+        const item =
+            document.createElement("span");
+
+        item.className =
+            "sentence-selected";
+
+        item.textContent =
+            word;
+
+        slots.appendChild(item);
+
+    });
+
+}
+
+
+function completeSentenceMission(){
+
+    const sentence =
+        sentenceWords.join(" ");
+
+    if(sentenceWords.length < 6){
+
+        showToast(
+            "Use all the words to build the complete sentence."
+        );
+
+        return;
+    }
+
+    completedMissions.add(6);
+
+    updateProgress();
+
+    showToast(
+        "Great! Your citizenship message is ready. ��"
+    );
+
+}
+
+
+/* =========================================================
+   CAMPAIGN
+========================================================= */
+
+function chooseCause(button){
+
+    document
+        .querySelectorAll(".cause-grid button")
+        .forEach(function(btn){
+
+            btn.classList.remove("selected");
+
+        });
+
+    button.classList.add("selected");
+
+}
+
+
+function insertSlogan(text){
+
+    const input =
+        document.getElementById("campaignSlogan");
+
+    if(!input){
+        return;
+    }
+
+    input.value = text;
+
+    updateSloganCounter();
+
+    input.focus();
+
+}
+
+
+function updateSloganCounter(){
+
+    const input =
+        document.getElementById("campaignSlogan");
+
+    const counter =
+        document.getElementById("sloganCounter");
+
+    if(!input || !counter){
+        return;
+    }
+
+    counter.textContent =
+        input.value.length +
+        " / 80 characters";
+
+}
+
+
+const sloganInput =
+    document.getElementById("campaignSlogan");
+
+if(sloganInput){
+
+    sloganInput.addEventListener(
+        "input",
+        updateSloganCounter
+    );
+
+}
+
+
+function toggleCampaignAction(button){
+
+    button.classList.toggle("selected");
+
+}
+
+
+/* =========================================================
+   CAMPAIGN WORD COUNT
+========================================================= */
+
+const campaignText =
+    document.getElementById("campaignText");
+
+if(campaignText){
+
+    campaignText.addEventListener(
+        "input",
+        function(){
+
+            const text =
+                this.value.trim();
+
+            const words =
+                text === ""
+                    ? []
+                    : text.split(/\s+/);
+
+            const counter =
+                document.getElementById(
+                    "campaignWordCount"
+                );
+
+            if(counter){
+
+                counter.textContent =
+                    words.length + " words";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   FINISH CAMPAIGN
+========================================================= */
+
+function finishCampaign(){
+
+    const cause =
+        document.querySelector(
+            ".cause-grid button.selected"
+        );
+
+    const slogan =
+        document
+            .getElementById("campaignSlogan")
+            .value
+            .trim();
+
+    const actions =
+        document.querySelectorAll(
+            ".action-grid button.selected"
+        );
+
+    const text =
+        document
+            .getElementById("campaignText")
+            .value
+            .trim();
+
+    const feedback =
+        document.getElementById(
+            "campaignFeedback"
+        );
+
+
+    if(!cause){
+
+        feedback.textContent =
+            "🧭 Choose a campaign cause first.";
+
+        return;
+    }
+
+
+    if(slogan.length < 5){
+
+        feedback.textContent =
+            "💡 Create a slogan for your campaign.";
+
+        return;
+    }
+
+
+    if(actions.length < 2){
+
+        feedback.textContent =
+            "🤝 Select at least two actions for your campaign.";
+
+        return;
+    }
+
+
+    const words =
+        text === ""
+            ? []
+            : text.split(/\s+/);
+
+
+    if(words.length < 40){
+
+        feedback.textContent =
+            "✍️ Develop your campaign message a little more. Aim for about 60–80 words.";
+
+        return;
+    }
+
+
+    completedMissions.add(7);
+
+    updateProgress();
+
+
+    feedback.innerHTML =
+        "🎉 <strong>Campaign launched!</strong> " +
+        "You have transformed citizenship vocabulary into a real communication message.";
+
+
+    showToast(
+        "Your Citizenship Campaign is ready! 📣"
+    );
+
+}
+
+
+/* =========================================================
+   DICTIONARY
+========================================================= */
+
+function openDictionary(){
+
+    const overlay =
+        document.getElementById(
+            "dictionaryOverlay"
+        );
+
+    if(overlay){
+        overlay.classList.add("open");
+    }
+
+}
+
+
+function closeDictionary(){
+
+    const overlay =
+        document.getElementById(
+            "dictionaryOverlay"
+        );
+
+    if(overlay){
+        overlay.classList.remove("open");
+    }
+
+}
+
+
+function closeDictionaryOutside(event){
+
+    if(
+        event.target.id ===
+        "dictionaryOverlay"
+    ){
+
+        closeDictionary();
+
+    }
+
+}
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeDictionary();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   FINAL SCORE
+========================================================= */
+
+function calculateFinalScore(){
+
+    const total = 7;
+
+    const completed =
+        completedMissions.size;
+
+    const box =
+        document.getElementById(
+            "scoreBox"
+        );
+
+    const number =
+        document.getElementById(
+            "scoreNumber"
+        );
+
+    const message =
+        document.getElementById(
+            "scoreMessage"
+        );
+
+
+    if(!box || !number || !message){
+        return;
+    }
+
+
+    number.textContent =
+        completed + " / " + total;
+
+
+    if(completed === 7){
+
+        message.textContent =
+            "🌟 Expedition complete! You explored, practised and created.";
+
+    }
+    else if(completed >= 5){
+
+        message.textContent =
+            "🚀 Excellent progress! Complete the remaining missions.";
+
+    }
+    else if(completed >= 3){
+
+        message.textContent =
+            "👏 Good work! Keep exploring the citizenship trail.";
+
+    }
+    else{
+
+        message.textContent =
+            "🧭 Keep going! Every mission adds a new step.";
+
+    }
+
+
+    box.classList.add("show");
+
+    box.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer = null;
+
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    if(!toast){
+        return;
+    }
+
+    toast.textContent =
+        message;
+
+    toast.classList.add("show");
+
+
+    clearTimeout(toastTimer);
+
+
+    toastTimer =
+        setTimeout(function(){
+
+            toast.classList.remove("show");
+
+        },2600);
+
+}
+
+
+/* =========================================================
+   INITIALISE
+========================================================= */
+
+updateProgress();
+
+</script>
+
+</body>
+</html>

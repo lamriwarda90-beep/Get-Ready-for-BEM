@@ -1,0 +1,4234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4 Sequence 2 | Checkpoint 05 — Negative Prefixes</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================
+   DESIGN SYSTEM
+========================================== */
+
+:root{
+--pink:#ed5992;
+--pink-dark:#c63875;
+--pink-light:#ffe6f0;
+--pink-pale:#fff5f9;
+
+--purple:#7946b7;
+--purple-dark:#48236c;
+--purple-light:#f3eaff;
+
+--gold:#ffc766;
+--gold-dark:#e7a32f;
+
+--green:#19865b;
+--green-light:#e7f8ef;
+
+--red:#cb425c;
+--red-light:#ffe9ee;
+
+--blue:#3685c9;
+--blue-light:#eaf5ff;
+
+--ink:#30243c;
+--muted:#74697e;
+--white:#ffffff;
+--line:#f4dce8;
+
+--shadow:0 15px 45px rgba(128,46,92,.12);
+}
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:"Nunito",Arial,sans-serif;
+background:#fff6fa;
+color:var(--ink);
+}
+
+button,
+input,
+textarea{
+font:inherit;
+}
+
+button{
+cursor:pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+outline:3px solid var(--gold);
+outline-offset:3px;
+}
+
+a{
+color:inherit;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+background:
+radial-gradient(circle at 90% 20%,rgba(255,255,255,.18),transparent 30%),
+radial-gradient(circle at 5% 85%,rgba(255,200,220,.15),transparent 35%),
+linear-gradient(125deg,#743481,#c94083 55%,#f27da4);
+
+color:white;
+padding:28px 20px 95px;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before,
+.hero::after{
+content:"";
+position:absolute;
+border:2px solid rgba(255,255,255,.15);
+border-radius:50%;
+pointer-events:none;
+}
+
+.hero::before{
+width:400px;
+height:400px;
+right:-150px;
+top:-180px;
+}
+
+.hero::after{
+width:270px;
+height:270px;
+left:-150px;
+bottom:-160px;
+}
+
+.hero-inner{
+max-width:1100px;
+margin:auto;
+position:relative;
+z-index:1;
+}
+
+.topbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.brand{
+font-size:12px;
+font-weight:900;
+letter-spacing:1.2px;
+color:#ffe9b9;
+}
+
+.back{
+color:white;
+text-decoration:none;
+border:1px solid rgba(255,255,255,.5);
+border-radius:30px;
+padding:10px 17px;
+font-weight:800;
+font-size:13px;
+transition:.2s;
+}
+
+.back:hover{
+background:rgba(255,255,255,.15);
+}
+
+.hero-content{
+display:grid;
+grid-template-columns:1.4fr .6fr;
+align-items:center;
+gap:30px;
+padding-top:55px;
+}
+
+.eyebrow{
+display:inline-block;
+padding:8px 15px;
+background:rgba(255,255,255,.16);
+border:1px solid rgba(255,255,255,.35);
+border-radius:30px;
+font-size:11px;
+font-weight:900;
+letter-spacing:1px;
+}
+
+.hero h1{
+font-family:"Baloo 2",sans-serif;
+font-size:clamp(37px,6vw,65px);
+line-height:1.08;
+margin:18px 0;
+}
+
+.hero h1 span{
+color:#ffe29b;
+}
+
+.hero p{
+font-size:16px;
+line-height:1.8;
+max-width:630px;
+color:#fff0f6;
+}
+
+.hero-button{
+display:inline-block;
+margin-top:12px;
+padding:14px 25px;
+background:var(--gold);
+color:#60305b;
+text-decoration:none;
+border:none;
+border-radius:30px;
+font-weight:900;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+transition:.2s;
+}
+
+.hero-button:hover{
+transform:translateY(-3px);
+}
+
+.hero-visual{
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+min-height:240px;
+}
+
+.visual-circle{
+width:235px;
+height:235px;
+border-radius:50%;
+background:rgba(255,255,255,.13);
+border:2px solid rgba(255,255,255,.35);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+box-shadow:0 25px 50px rgba(62,15,72,.2);
+animation:float 4s ease-in-out infinite;
+}
+
+.visual-circle .prefix-symbol{
+font-family:"Baloo 2",sans-serif;
+font-size:74px;
+font-weight:800;
+line-height:1;
+color:#ffe29b;
+}
+
+.visual-circle .prefix-caption{
+font-size:13px;
+font-weight:900;
+letter-spacing:1px;
+}
+
+.visual-label{
+position:absolute;
+background:white;
+color:var(--purple-dark);
+padding:9px 15px;
+border-radius:25px;
+font-weight:900;
+font-size:12px;
+box-shadow:0 8px 22px rgba(0,0,0,.15);
+}
+
+.label-one{
+top:10px;
+left:0;
+}
+
+.label-two{
+bottom:12px;
+right:0;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+}
+
+/* ==========================================
+   MAIN LAYOUT
+========================================== */
+
+.container{
+max-width:1100px;
+margin:-48px auto 70px;
+padding:0 18px;
+position:relative;
+}
+
+.progress-box{
+background:white;
+padding:18px 23px;
+border-radius:22px;
+box-shadow:var(--shadow);
+border:1px solid var(--line);
+display:flex;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+position:sticky;
+top:8px;
+z-index:20;
+}
+
+.progress-label{
+font-weight:900;
+color:var(--purple-dark);
+}
+
+.progress-track{
+flex:1;
+min-width:110px;
+height:12px;
+background:#ffe3ee;
+border-radius:30px;
+overflow:hidden;
+}
+
+.progress-fill{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,var(--pink),var(--purple));
+border-radius:30px;
+transition:width .4s;
+}
+
+#progressText{
+color:var(--pink-dark);
+font-weight:900;
+font-size:13px;
+}
+
+.lesson-nav{
+display:flex;
+flex-wrap:wrap;
+gap:9px;
+margin:22px 0;
+}
+
+.lesson-nav a{
+background:white;
+border:1px solid var(--line);
+color:var(--pink-dark);
+border-radius:25px;
+padding:9px 14px;
+text-decoration:none;
+font-size:12px;
+font-weight:900;
+transition:.2s;
+}
+
+.lesson-nav a:hover{
+background:var(--pink-light);
+transform:translateY(-2px);
+}
+
+/* ==========================================
+   STAGES
+========================================== */
+
+.stage{
+background:white;
+border:1px solid var(--line);
+border-radius:25px;
+padding:clamp(20px,3vw,34px);
+margin:24px 0;
+box-shadow:var(--shadow);
+scroll-margin-top:115px;
+}
+
+.stage-header{
+display:flex;
+align-items:center;
+gap:11px;
+flex-wrap:wrap;
+}
+
+.badge{
+background:var(--pink-light);
+color:var(--pink-dark);
+padding:7px 13px;
+border-radius:30px;
+font-size:11px;
+font-weight:900;
+}
+
+.difficulty{
+padding:6px 11px;
+border-radius:30px;
+font-size:11px;
+font-weight:900;
+background:#e6f7ed;
+color:var(--green);
+}
+
+.difficulty.medium{
+background:#fff1d7;
+color:#98651b;
+}
+
+.difficulty.hard{
+background:#ffe5eb;
+color:var(--red);
+}
+
+.stage h2{
+font-family:"Baloo 2",sans-serif;
+font-size:clamp(23px,3vw,30px);
+color:var(--purple-dark);
+margin:10px 0;
+}
+
+.stage h3{
+font-family:"Baloo 2",sans-serif;
+color:var(--purple-dark);
+font-size:20px;
+margin:24px 0 12px;
+}
+
+.description{
+color:var(--muted);
+line-height:1.8;
+margin:0 0 22px;
+}
+
+/* ==========================================
+   DISCOVERY CARDS
+========================================== */
+
+.discovery-grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:18px;
+margin:20px 0;
+}
+
+.discovery-card{
+background:#fff2f7;
+border:1px solid #ffd7e7;
+border-radius:20px;
+padding:22px;
+text-align:center;
+}
+
+.discovery-card:nth-child(2){
+background:#f5edff;
+border-color:#e8d8ff;
+}
+
+.discovery-avatar{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.discovery-card h3{
+margin:6px 0;
+}
+
+.discovery-card p{
+line-height:1.8;
+font-size:14px;
+}
+
+.word-change{
+display:flex;
+align-items:center;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+padding:20px;
+background:#fff4f8;
+border-radius:18px;
+margin:20px 0;
+font-weight:900;
+}
+
+.word-change .positive{
+color:var(--green);
+font-size:22px;
+}
+
+.word-change .negative{
+color:var(--pink-dark);
+font-size:22px;
+}
+
+.word-change .arrow{
+font-size:28px;
+color:var(--purple);
+}
+
+.prefix-highlight{
+color:var(--pink-dark);
+background:#ffe1ec;
+border-radius:6px;
+padding:1px 5px;
+}
+
+/* ==========================================
+   RULE CARDS
+========================================== */
+
+.rule-grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:17px;
+}
+
+.rule-card{
+padding:22px;
+border-radius:20px;
+background:#fff1f7;
+border:1px solid #ffd7e7;
+}
+
+.rule-card.purple{
+background:#f7f0ff;
+border-color:#e8d8ff;
+}
+
+.rule-card.gold{
+background:#fff9ea;
+border-color:#ffe7a6;
+}
+
+.rule-card.blue{
+background:#eff8ff;
+border-color:#d8ebff;
+}
+
+.rule-card.green{
+background:#eefaf3;
+border-color:#d3f0df;
+}
+
+.rule-card h3{
+color:var(--purple-dark);
+font-family:"Baloo 2",sans-serif;
+font-size:21px;
+margin:0 0 12px;
+}
+
+.rule-card p{
+font-size:14px;
+line-height:1.8;
+}
+
+.formula{
+background:white;
+color:var(--pink-dark);
+padding:12px 13px;
+border-radius:11px;
+font-weight:900;
+display:block;
+margin:12px 0;
+font-size:13px;
+}
+
+.example{
+background:rgba(255,255,255,.85);
+padding:13px;
+border-radius:11px;
+font-size:14px;
+line-height:2;
+margin-top:12px;
+}
+
+.example strong{
+color:var(--pink-dark);
+}
+
+.arabic{
+display:none;
+direction:rtl;
+text-align:right;
+background:white;
+padding:15px;
+border-radius:12px;
+color:var(--purple-dark);
+line-height:2.1;
+margin-top:12px;
+font-size:16px;
+font-family:"Noto Naskh Arabic",serif;
+}
+
+.arabic.visible{
+display:block;
+}
+
+.arabic-button{
+border:1px solid #e7c8f5;
+background:white;
+color:var(--purple);
+border-radius:30px;
+padding:9px 14px;
+font-size:12px;
+font-weight:900;
+margin-top:14px;
+}
+
+.arabic-button:hover{
+background:#f7f0ff;
+}
+
+/* ==========================================
+   PREFIX FAMILY
+========================================== */
+
+.prefix-family{
+background:linear-gradient(125deg,#fff0f6,#f5edff);
+border:1px solid #edd2ef;
+border-radius:20px;
+padding:23px;
+margin:20px 0;
+}
+
+.family-title{
+font-weight:900;
+font-size:17px;
+color:var(--purple-dark);
+margin-bottom:15px;
+}
+
+.family-row{
+display:grid;
+grid-template-columns:90px 1fr;
+align-items:center;
+gap:14px;
+background:white;
+border-radius:13px;
+padding:13px;
+margin:10px 0;
+}
+
+.family-prefix{
+background:var(--pink);
+color:white;
+padding:12px;
+text-align:center;
+border-radius:12px;
+font-weight:900;
+font-size:21px;
+}
+
+.family-prefix.purple{
+background:var(--purple);
+}
+
+.family-prefix.gold{
+background:#d5962f;
+}
+
+.family-prefix.blue{
+background:var(--blue);
+}
+
+.family-description{
+font-size:13px;
+line-height:1.8;
+}
+
+.family-description strong{
+color:var(--pink-dark);
+}
+
+/* ==========================================
+   TIPS
+========================================== */
+
+.tip{
+background:#fff3f8;
+border-left:5px solid var(--pink);
+border-radius:13px;
+padding:17px;
+margin:13px 0;
+line-height:1.9;
+font-size:14px;
+}
+
+.tip strong{
+color:var(--pink-dark);
+}
+
+.tip.purple{
+background:#f7f0ff;
+border-color:var(--purple);
+}
+
+.tip.gold{
+background:#fff9ea;
+border-color:var(--gold-dark);
+}
+
+.tip.blue{
+background:#eef7ff;
+border-color:var(--blue);
+}
+
+.correct-example{
+color:var(--green);
+font-weight:900;
+}
+
+.wrong-example{
+color:var(--red);
+font-weight:900;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin:20px 0;
+}
+
+table{
+border-collapse:collapse;
+width:100%;
+min-width:540px;
+}
+
+th,td{
+border:1px solid #f0d9e5;
+padding:13px;
+text-align:left;
+font-size:13px;
+line-height:1.7;
+}
+
+th{
+background:var(--pink);
+color:white;
+}
+
+tr:nth-child(even){
+background:#fff7fa;
+}
+
+/* ==========================================
+   QUIZZES
+========================================== */
+
+.question{
+border:1px solid var(--line);
+border-radius:17px;
+padding:19px;
+margin:15px 0;
+background:#fffdfd;
+}
+
+.question-title{
+font-size:14px;
+font-weight:900;
+line-height:1.8;
+margin:0 0 13px;
+}
+
+.options{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
+}
+
+.option{
+background:#fff3f8;
+border:2px solid #f7dbe8;
+border-radius:12px;
+padding:12px;
+color:var(--purple-dark);
+font-weight:800;
+text-align:center;
+transition:.2s;
+}
+
+.option:hover:not(:disabled){
+background:#ffe2ef;
+transform:translateY(-2px);
+}
+
+.option.correct{
+background:#e4f8ec;
+border-color:#24a873;
+color:#126c4b;
+}
+
+.option.incorrect{
+background:#ffe6eb;
+border-color:#e35d7c;
+color:#a32e4b;
+}
+
+.option:disabled{
+cursor:default;
+}
+
+.feedback{
+font-size:13px;
+font-weight:900;
+margin-top:12px;
+min-height:18px;
+line-height:1.7;
+}
+
+.success{
+color:var(--green);
+}
+
+.error{
+color:var(--red);
+}
+
+/* ==========================================
+   READING
+========================================== */
+
+.reading{
+background:#fff4f8;
+border:1px dashed #ed9fbd;
+border-radius:18px;
+padding:24px;
+line-height:2.2;
+font-size:15px;
+margin-bottom:20px;
+}
+
+.reading strong{
+color:var(--pink-dark);
+background:#ffe1ec;
+padding:2px 5px;
+border-radius:5px;
+}
+
+/* ==========================================
+   WRITTEN TASKS
+========================================== */
+
+.task{
+border-bottom:1px solid var(--line);
+padding:18px 0;
+}
+
+.task:last-child{
+border-bottom:none;
+}
+
+.task label{
+display:block;
+font-weight:800;
+line-height:1.8;
+margin-bottom:10px;
+}
+
+.task input{
+width:100%;
+padding:13px;
+border:2px solid #f0dbe7;
+border-radius:12px;
+background:#fffbfd;
+}
+
+.task input.correct{
+border-color:var(--green);
+background:#ecfbf3;
+}
+
+.task input.incorrect{
+border-color:var(--red);
+background:#fff0f2;
+}
+
+.hint{
+color:var(--muted);
+font-size:12px;
+margin-top:7px;
+line-height:1.7;
+}
+
+.answer-feedback{
+font-size:13px;
+font-weight:800;
+margin-top:9px;
+line-height:1.7;
+}
+
+.primary{
+border:none;
+border-radius:30px;
+padding:13px 25px;
+background:linear-gradient(110deg,var(--pink),var(--pink-dark));
+color:white;
+font-weight:900;
+margin-top:17px;
+}
+
+.primary:hover{
+filter:brightness(1.06);
+}
+
+.secondary{
+border:2px solid #f1c8dc;
+background:white;
+color:var(--pink-dark);
+border-radius:30px;
+padding:11px 19px;
+font-weight:900;
+margin-top:17px;
+}
+
+/* ==========================================
+   SENTENCE BUILDER
+========================================== */
+
+.word-bank,
+.answer-strip{
+display:flex;
+flex-wrap:wrap;
+gap:9px;
+padding:14px;
+border-radius:15px;
+min-height:62px;
+align-items:center;
+}
+
+.word-bank{
+background:#fff0f6;
+}
+
+.answer-strip{
+border:2px dashed #efaac6;
+margin:12px 0;
+background:#fffafd;
+}
+
+.word-chip{
+border:none;
+border-radius:30px;
+padding:9px 14px;
+background:var(--pink);
+color:white;
+font-weight:900;
+}
+
+.word-chip:disabled{
+opacity:.3;
+}
+
+.answer-strip .word-chip{
+background:var(--purple);
+}
+
+/* ==========================================
+   WRITING
+========================================== */
+
+.writing-card{
+background:#fff4f8;
+border:1px solid var(--line);
+padding:18px;
+border-radius:17px;
+margin:16px 0;
+}
+
+.writing-card label{
+display:block;
+font-weight:900;
+color:var(--purple-dark);
+margin-bottom:10px;
+}
+
+.writing-card textarea{
+width:100%;
+min-height:95px;
+border:2px solid #f1d3e3;
+border-radius:13px;
+padding:13px;
+resize:vertical;
+background:white;
+}
+
+.checklist{
+margin-top:22px;
+display:grid;
+gap:10px;
+}
+
+.checklist label{
+background:#fff5f9;
+border:1px solid var(--line);
+border-radius:12px;
+padding:12px;
+font-size:13px;
+font-weight:800;
+cursor:pointer;
+}
+
+.checklist input{
+accent-color:var(--pink);
+}
+
+/* ==========================================
+   CERTIFICATE
+========================================== */
+
+.certificate{
+text-align:center;
+background:linear-gradient(125deg,#823b91,#e85b96);
+color:white;
+padding:35px;
+border-radius:25px;
+margin:25px 0;
+box-shadow:var(--shadow);
+}
+
+.certificate h2{
+font-family:"Baloo 2",sans-serif;
+font-size:32px;
+margin:10px 0;
+}
+
+.certificate p{
+line-height:1.8;
+}
+
+.certificate .icon{
+font-size:75px;
+}
+
+.end-links{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin:25px 0;
+}
+
+.end-links a{
+text-decoration:none;
+padding:14px 22px;
+background:white;
+border-radius:30px;
+color:var(--pink-dark);
+font-weight:900;
+border:1px solid var(--line);
+}
+
+footer{
+text-align:center;
+padding:0 20px 35px;
+font-size:12px;
+font-weight:800;
+color:var(--muted);
+}
+
+/* ==========================================
+   DICTIONARY
+========================================== */
+
+.dict-button{
+position:fixed;
+bottom:24px;
+right:24px;
+z-index:40;
+border:3px solid white;
+border-radius:50px;
+background:var(--gold);
+padding:15px 18px;
+box-shadow:0 10px 28px rgba(91,30,74,.25);
+font-size:22px;
+}
+
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(40,15,43,.65);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:50;
+padding:15px;
+}
+
+.overlay.open{
+display:flex;
+}
+
+.dictionary{
+width:min(480px,100%);
+max-height:85vh;
+background:white;
+border-radius:25px;
+padding:23px;
+display:flex;
+flex-direction:column;
+}
+
+.dictionary-head{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.dictionary h2{
+font-family:"Baloo 2",sans-serif;
+color:var(--purple-dark);
+margin:0;
+}
+
+.close-button{
+background:#ffe6ef;
+border:none;
+border-radius:50%;
+width:36px;
+height:36px;
+color:var(--pink-dark);
+font-weight:900;
+}
+
+.dictionary-search{
+width:100%;
+padding:12px;
+border:2px solid #efd9e6;
+border-radius:12px;
+margin:17px 0;
+}
+
+.dictionary-list{
+overflow-y:auto;
+}
+
+.dictionary-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+padding:12px;
+border-bottom:1px solid var(--line);
+}
+
+.dictionary-row strong{
+color:var(--purple-dark);
+}
+
+.dictionary-row span{
+direction:rtl;
+text-align:right;
+color:var(--pink-dark);
+font-weight:800;
+font-family:"Noto Naskh Arabic",serif;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:700px){
+
+.hero-content,
+.rule-grid,
+.discovery-grid{
+grid-template-columns:1fr;
+}
+
+.hero-visual{
+min-height:160px;
+}
+
+.visual-circle{
+width:145px;
+height:145px;
+}
+
+.visual-circle .prefix-symbol{
+font-size:52px;
+}
+
+.visual-label{
+font-size:10px;
+}
+
+.hero{
+padding-bottom:75px;
+}
+
+.hero-content{
+padding-top:35px;
+}
+
+.container{
+padding:0 11px;
+}
+
+.progress-box{
+top:0;
+border-radius:0 0 18px 18px;
+}
+
+.stage{
+border-radius:19px;
+}
+
+.family-row{
+grid-template-columns:70px 1fr;
+}
+
+.family-prefix{
+font-size:16px;
+}
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+html{
+scroll-behavior:auto;
+}
+
+.visual-circle{
+animation:none;
+}
+
+*{
+transition:none!important;
+}
+
+}
+
+@media print{
+
+.hero,
+.progress-box,
+.lesson-nav,
+.dict-button,
+.overlay,
+.primary,
+.secondary,
+.end-links{
+display:none!important;
+}
+
+body{
+background:white;
+}
+
+.container{
+margin:0;
+max-width:100%;
+}
+
+.stage{
+box-shadow:none;
+break-inside:avoid;
+}
+
+.certificate{
+color:black;
+background:white;
+border:2px solid black;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<header class="hero">
+
+<div class="hero-inner">
+
+<div class="topbar">
+
+<span class="brand">
+✦ MY ENGLISH SPACE · MS4 · SEQUENCE 2
+</span>
+
+<a href="MS4-S2-Grammar-Lesson4.html" class="back">
+← Checkpoint 04
+</a>
+
+</div>
+
+<div class="hero-content">
+
+<div>
+
+<span class="eyebrow">
+GRAMMAR EXPEDITION · CHECKPOINT 05
+</span>
+
+<h1>
+Negative<br>
+<span>Prefixes</span> ✨
+</h1>
+
+<p>
+Discover how small prefixes can change
+the meaning of words and help you describe
+personalities, feelings, habits, and experiences.
+</p>
+
+<p>
+Master the six negative prefixes:
+<strong>un-, in-, dis-, il-, ir-, im-</strong>.
+</p>
+
+<a href="#stage1" class="hero-button">
+Start Learning ↗
+</a>
+
+</div>
+
+<div class="hero-visual" aria-hidden="true">
+
+<div class="visual-circle">
+
+<div class="prefix-symbol">un-</div>
+
+<div class="prefix-caption">CHANGE THE MEANING</div>
+
+</div>
+
+<div class="visual-label label-one">
+😊 HAPPY
+</div>
+
+<div class="visual-label label-two">
+😔 UNHAPPY
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
+<main class="container">
+
+<!-- PROGRESS -->
+
+<div class="progress-box">
+
+<span class="progress-label">
+🏆 Your Progress
+</span>
+
+<div class="progress-track">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+
+<span id="progressText">
+0 / 7 missions
+</span>
+
+</div>
+
+<!-- NAVIGATION -->
+
+<nav class="lesson-nav" aria-label="Lesson sections">
+
+<a href="#stage1">Discover</a>
+<a href="#stage2">Grammar Rules</a>
+<a href="#stage3">Exceptions</a>
+<a href="#stage4">Recognise</a>
+<a href="#stage5">Reading</a>
+<a href="#stage6">Choose</a>
+<a href="#stage7">Form Words</a>
+<a href="#stage8">Build</a>
+<a href="#stage9">Correct</a>
+<a href="#stage10">Write</a>
+
+</nav>
+
+<!-- ==========================================
+     STAGE 1: DISCOVERY
+========================================== -->
+
+<section class="stage" id="stage1">
+
+<div class="stage-header">
+<span class="badge">DISCOVER · 01</span>
+</div>
+
+<h2>👀 Look, Think & Discover</h2>
+
+<p class="description">
+Meet two pupils with different personalities.
+Read their descriptions and notice the highlighted words.
+</p>
+
+<div class="discovery-grid">
+
+<div class="discovery-card">
+
+<div class="discovery-avatar">👩🏻‍🎓</div>
+
+<h3>Sara</h3>
+
+<p>
+Sara is a happy, polite, and responsible girl.
+</p>
+
+<p>
+She is always honest with her friends.
+</p>
+
+<p>
+She is patient and enjoys helping others.
+</p>
+
+</div>
+
+<div class="discovery-card">
+
+<div class="discovery-avatar">👦🏽</div>
+
+<h3>Amir</h3>
+
+<p>
+Amir is sometimes
+<strong>unhappy</strong>
+and <strong>impatient</strong>.
+</p>
+
+<p>
+He can be <strong>impolite</strong>
+when he is angry.
+</p>
+
+<p>
+He sometimes acts in an
+<strong>irresponsible</strong> way.
+</p>
+
+</div>
+
+</div>
+
+<h3>💡 What Do You Notice?</h3>
+
+<div class="word-change">
+
+<span class="positive">happy</span>
+
+<span class="arrow">→</span>
+
+<span class="negative">
+<span class="prefix-highlight">un</span>happy
+</span>
+
+</div>
+
+<div class="word-change">
+
+<span class="positive">patient</span>
+
+<span class="arrow">→</span>
+
+<span class="negative">
+<span class="prefix-highlight">im</span>patient
+</span>
+
+</div>
+
+<div class="word-change">
+
+<span class="positive">polite</span>
+
+<span class="arrow">→</span>
+
+<span class="negative">
+<span class="prefix-highlight">im</span>polite
+</span>
+
+</div>
+
+<div class="word-change">
+
+<span class="positive">responsible</span>
+
+<span class="arrow">→</span>
+
+<span class="negative">
+<span class="prefix-highlight">ir</span>responsible
+</span>
+
+</div>
+
+<div class="tip">
+
+<strong>Discover the Rule!</strong>
+
+<br>
+
+We can add a small group of letters
+at the beginning of a word to change its meaning.
+
+<br><br>
+
+This group of letters is called a
+<strong>PREFIX</strong>.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arDiscovery')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arDiscovery">
+
+السابقة (Prefix) هي حرف أو مجموعة حروف
+نضيفها في بداية الكلمة لتغيير معناها.
+
+<br><br>
+
+مثال:
+
+<br>
+
+happy = سعيد
+
+<br>
+
+unhappy = غير سعيد
+
+<br><br>
+
+patient = صبور
+
+<br>
+
+impatient = غير صبور
+
+<br><br>
+
+تسمى هذه السوابق سوابق النفي لأنها
+تُكوّن كلمات تحمل معنى النفي أو العكس.
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 2: GRAMMAR RULES
+========================================== -->
+
+<section class="stage" id="stage2">
+
+<div class="stage-header">
+<span class="badge">LEARN · 02</span>
+</div>
+
+<h2>🧠 The Six Negative Prefixes</h2>
+
+<p class="description">
+Negative prefixes are added to the beginning
+of certain words to form their negative
+or opposite meanings.
+</p>
+
+<div class="tip">
+
+<strong>General Structure:</strong>
+
+<br><br>
+
+PREFIX + BASE WORD = NEW WORD
+
+<br><br>
+
+Example:
+
+<br>
+
+un + happy = unhappy
+
+</div>
+
+<div class="rule-grid">
+
+<!-- UN -->
+
+<div class="rule-card">
+
+<h3>🌸 1. Prefix UN-</h3>
+
+<p>
+The prefix <strong>un-</strong>
+is commonly used to form the opposite
+of many adjectives.
+</p>
+
+<span class="formula">
+un + adjective
+</span>
+
+<div class="example">
+
+happy → <strong>unhappy</strong>
+
+<br>
+
+kind → <strong>unkind</strong>
+
+<br>
+
+fair → <strong>unfair</strong>
+
+<br>
+
+friendly → <strong>unfriendly</strong>
+
+<br>
+
+lucky → <strong>unlucky</strong>
+
+</div>
+
+<p>
+<strong>Sequence 2 example:</strong>
+</p>
+
+<div class="example">
+
+Amir felt <strong>unhappy</strong>
+when he failed his first test.
+
+<br><br>
+
+An <strong>unkind</strong> person
+may hurt other people's feelings.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arUn')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arUn">
+
+نستعمل السابقة un- مع عدد كبير
+من الصفات لتكوين المعنى العكسي.
+
+<br><br>
+
+happy = سعيد
+
+<br>
+
+unhappy = غير سعيد
+
+<br><br>
+
+kind = لطيف
+
+<br>
+
+unkind = غير لطيف
+
+<br><br>
+
+fair = عادل
+
+<br>
+
+unfair = غير عادل
+
+</div>
+
+</div>
+
+<!-- IN -->
+
+<div class="rule-card purple">
+
+<h3>💜 2. Prefix IN-</h3>
+
+<p>
+The prefix <strong>in-</strong>
+forms the opposite of certain adjectives.
+</p>
+
+<span class="formula">
+in + adjective
+</span>
+
+<div class="example">
+
+active → <strong>inactive</strong>
+
+<br>
+
+correct → <strong>incorrect</strong>
+
+<br>
+
+complete → <strong>incomplete</strong>
+
+<br>
+
+dependent → <strong>independent</strong>
+
+<br>
+
+secure → <strong>insecure</strong>
+
+</div>
+
+<p>
+<strong>Sequence 2 example:</strong>
+</p>
+
+<div class="example">
+
+When I was younger,
+I was <strong>insecure</strong>
+about speaking in public.
+
+<br><br>
+
+Sara is becoming more
+<strong>independent</strong>
+as she grows older.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arIn')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arIn">
+
+نستعمل السابقة in- مع بعض الصفات
+لتكوين معنى النفي أو العكس.
+
+<br><br>
+
+active = نشيط
+
+<br>
+
+inactive = غير نشيط
+
+<br><br>
+
+correct = صحيح
+
+<br>
+
+incorrect = غير صحيح
+
+<br><br>
+
+secure = واثق / آمن
+
+<br>
+
+insecure = غير واثق / غير آمن
+
+</div>
+
+</div>
+
+<!-- DIS -->
+
+<div class="rule-card gold">
+
+<h3>🌟 3. Prefix DIS-</h3>
+
+<p>
+The prefix <strong>dis-</strong>
+can form negative adjectives
+and opposite verbs.
+</p>
+
+<span class="formula">
+dis + adjective / verb
+</span>
+
+<div class="example">
+
+honest → <strong>dishonest</strong>
+
+<br>
+
+loyal → <strong>disloyal</strong>
+
+<br>
+
+agree → <strong>disagree</strong>
+
+<br>
+
+like → <strong>dislike</strong>
+
+<br>
+
+obey → <strong>disobey</strong>
+
+</div>
+
+<p>
+<strong>Sequence 2 example:</strong>
+</p>
+
+<div class="example">
+
+A <strong>dishonest</strong>
+person does not always tell the truth.
+
+<br><br>
+
+I <strong>dislike</strong>
+getting up very early.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arDis')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arDis">
+
+نستعمل السابقة dis- مع بعض
+الصفات والأفعال لتكوين معنى معاكس.
+
+<br><br>
+
+honest = صادق
+
+<br>
+
+dishonest = غير صادق
+
+<br><br>
+
+agree = يوافق
+
+<br>
+
+disagree = لا يوافق / يختلف
+
+<br><br>
+
+like = يحب
+
+<br>
+
+dislike = لا يحب
+
+</div>
+
+</div>
+
+<!-- IL -->
+
+<div class="rule-card blue">
+
+<h3>💙 4. Prefix IL-</h3>
+
+<p>
+The prefix <strong>il-</strong>
+is used with certain adjectives
+beginning with the letter <strong>L</strong>.
+</p>
+
+<span class="formula">
+il + adjective beginning with L
+</span>
+
+<div class="example">
+
+legal → <strong>illegal</strong>
+
+<br>
+
+logical → <strong>illogical</strong>
+
+<br>
+
+legible → <strong>illegible</strong>
+
+</div>
+
+<p>
+<strong>Sequence 2 example:</strong>
+</p>
+
+<div class="example">
+
+Sara thinks cheating
+is an <strong>illegal</strong>
+act in some circumstances.
+
+<br><br>
+
+His explanation was
+<strong>illogical</strong>.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arIl')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arIl">
+
+نستعمل السابقة il- مع بعض الصفات
+التي تبدأ بالحرف L.
+
+<br><br>
+
+legal = قانوني
+
+<br>
+
+illegal = غير قانوني
+
+<br><br>
+
+logical = منطقي
+
+<br>
+
+illogical = غير منطقي
+
+<br><br>
+
+ملاحظة:
+
+<br>
+
+ليست كل كلمة تبدأ بالحرف L
+تأخذ السابقة il-.
+
+</div>
+
+</div>
+
+<!-- IR -->
+
+<div class="rule-card purple">
+
+<h3>🔮 5. Prefix IR-</h3>
+
+<p>
+The prefix <strong>ir-</strong>
+is used with certain adjectives
+beginning with the letter <strong>R</strong>.
+</p>
+
+<span class="formula">
+ir + adjective beginning with R
+</span>
+
+<div class="example">
+
+regular → <strong>irregular</strong>
+
+<br>
+
+responsible → <strong>irresponsible</strong>
+
+<br>
+
+relevant → <strong>irrelevant</strong>
+
+<br>
+
+rational → <strong>irrational</strong>
+
+</div>
+
+<p>
+<strong>Sequence 2 example:</strong>
+</p>
+
+<div class="example">
+
+Amir was
+<strong>irresponsible</strong>
+when he forgot his homework.
+
+<br><br>
+
+My childhood routine was sometimes
+<strong>irregular</strong>.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arIr')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arIr">
+
+نستعمل السابقة ir- مع بعض الصفات
+التي تبدأ بالحرف R.
+
+<br><br>
+
+regular = منتظم
+
+<br>
+
+irregular = غير منتظم
+
+<br><br>
+
+responsible = مسؤول
+
+<br>
+
+irresponsible = غير مسؤول
+
+</div>
+
+</div>
+
+<!-- IM -->
+
+<div class="rule-card green">
+
+<h3>🍀 6. Prefix IM-</h3>
+
+<p>
+The prefix <strong>im-</strong>
+is used with certain adjectives
+beginning with <strong>M</strong>
+or <strong>P</strong>.
+</p>
+
+<p>
+It is also found in some words
+beginning with <strong>B</strong>.
+</p>
+
+<span class="formula">
+im + selected adjectives
+</span>
+
+<div class="example">
+
+patient → <strong>impatient</strong>
+
+<br>
+
+polite → <strong>impolite</strong>
+
+<br>
+
+possible → <strong>impossible</strong>
+
+<br>
+
+mature → <strong>immature</strong>
+
+<br>
+
+balanced → <strong>imbalanced</strong>
+
+</div>
+
+<p>
+<strong>Sequence 2 example:</strong>
+</p>
+
+<div class="example">
+
+When I was a child,
+I was very <strong>impatient</strong>.
+
+<br><br>
+
+Now I try not to be
+<strong>impolite</strong>
+when I disagree with someone.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arIm')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arIm">
+
+نستعمل السابقة im- مع بعض الصفات
+التي تبدأ بالحرفين M أو P،
+وتوجد أيضاً مع بعض الكلمات التي تبدأ بـ B.
+
+<br><br>
+
+patient = صبور
+
+<br>
+
+impatient = غير صبور
+
+<br><br>
+
+polite = مؤدب
+
+<br>
+
+impolite = غير مؤدب
+
+<br><br>
+
+possible = ممكن
+
+<br>
+
+impossible = مستحيل
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PREFIX FAMILY -->
+
+<h3>🌳 The IN- Prefix Family</h3>
+
+<div class="prefix-family">
+
+<div class="family-title">
+One Prefix Family — Different Forms
+</div>
+
+<p>
+The prefixes <strong>in-, im-, il-, and ir-</strong>
+are related forms of the same negative prefix.
+The spelling changes in certain words.
+</p>
+
+<div class="family-row">
+
+<div class="family-prefix">in-</div>
+
+<div class="family-description">
+<strong>inactive, incorrect, incomplete</strong>
+<br>
+Used with selected adjectives.
+</div>
+
+</div>
+
+<div class="family-row">
+
+<div class="family-prefix purple">im-</div>
+
+<div class="family-description">
+<strong>impatient, immature, imbalanced</strong>
+<br>
+Often appears before P, M, and B.
+</div>
+
+</div>
+
+<div class="family-row">
+
+<div class="family-prefix gold">il-</div>
+
+<div class="family-description">
+<strong>illegal, illogical, illegible</strong>
+<br>
+Appears before L in certain words.
+</div>
+
+</div>
+
+<div class="family-row">
+
+<div class="family-prefix blue">ir-</div>
+
+<div class="family-description">
+<strong>irregular, irresponsible, irrelevant</strong>
+<br>
+Appears before R in certain words.
+</div>
+
+</div>
+
+</div>
+
+<div class="tip">
+
+<strong>Very Important!</strong>
+
+<br>
+
+The first letter can help you choose
+between <strong>in-, im-, il-, and ir-</strong>,
+but it does not tell you whether a word
+takes this prefix family.
+
+<br><br>
+
+For example:
+
+<br>
+
+<strong>unhappy</strong> is correct.
+
+<br>
+
+<strong>inhappy</strong> is incorrect.
+
+<br><br>
+
+You must learn which prefix belongs
+to each word.
+
+</div>
+
+<h3>📊 Quick Reference Table</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Prefix</th>
+<th>Base Word</th>
+<th>Negative Word</th>
+<th>Meaning</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>un-</td>
+<td>happy</td>
+<td>unhappy</td>
+<td>not happy</td>
+</tr>
+
+<tr>
+<td>un-</td>
+<td>kind</td>
+<td>unkind</td>
+<td>not kind</td>
+</tr>
+
+<tr>
+<td>in-</td>
+<td>active</td>
+<td>inactive</td>
+<td>not active</td>
+</tr>
+
+<tr>
+<td>in-</td>
+<td>correct</td>
+<td>incorrect</td>
+<td>not correct</td>
+</tr>
+
+<tr>
+<td>dis-</td>
+<td>honest</td>
+<td>dishonest</td>
+<td>not honest</td>
+</tr>
+
+<tr>
+<td>dis-</td>
+<td>agree</td>
+<td>disagree</td>
+<td>not agree</td>
+</tr>
+
+<tr>
+<td>il-</td>
+<td>legal</td>
+<td>illegal</td>
+<td>not legal</td>
+</tr>
+
+<tr>
+<td>ir-</td>
+<td>responsible</td>
+<td>irresponsible</td>
+<td>not responsible</td>
+</tr>
+
+<tr>
+<td>im-</td>
+<td>patient</td>
+<td>impatient</td>
+<td>not patient</td>
+</tr>
+
+<tr>
+<td>im-</td>
+<td>possible</td>
+<td>impossible</td>
+<td>not possible</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 3: EXCEPTIONS
+========================================== -->
+
+<section class="stage" id="stage3">
+
+<div class="stage-header">
+<span class="badge">LEARN · 03</span>
+</div>
+
+<h2>⚠️ Important Rules & Common Mistakes</h2>
+
+<p class="description">
+Be careful! We cannot add any negative prefix
+to any word.
+</p>
+
+<div class="tip">
+
+<strong>1. Do not invent negative words.</strong>
+
+<br><br>
+
+<span class="correct-example">
+✓ unhappy
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ inhappy
+</span>
+
+<br><br>
+
+<span class="correct-example">
+✓ dishonest
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ unhonest
+</span>
+
+</div>
+
+<div class="tip purple">
+
+<strong>2. Remember the spelling of the IN- family.</strong>
+
+<br><br>
+
+<span class="correct-example">
+✓ impossible
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ inpossible
+</span>
+
+<br><br>
+
+<span class="correct-example">
+✓ illegal
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ inlegal
+</span>
+
+<br><br>
+
+<span class="correct-example">
+✓ irregular
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ inregular
+</span>
+
+</div>
+
+<div class="tip gold">
+
+<strong>3. A prefix does not always make a word negative.</strong>
+
+<br><br>
+
+Not every word beginning with
+<strong>in-</strong>,
+<strong>im-</strong>,
+or <strong>dis-</strong>
+contains a negative prefix.
+
+<br><br>
+
+For example:
+
+<br>
+
+<strong>important</strong>
+does not mean "not portant".
+
+<br>
+
+<strong>discover</strong>
+does not mean "not cover".
+
+</div>
+
+<div class="tip blue">
+
+<strong>4. Some words have special meanings.</strong>
+
+<br><br>
+
+<strong>independent</strong>
+means able to act or live without relying
+on other people.
+
+<br><br>
+
+<strong>disappointed</strong>
+means unhappy because something
+did not happen as expected.
+
+<br><br>
+
+Knowing the meaning of the whole word
+is important.
+
+</div>
+
+<div class="tip">
+
+<strong>5. Negative prefixes are not the same as NOT.</strong>
+
+<br><br>
+
+Compare:
+
+<br>
+
+Sara is <strong>not happy</strong>.
+
+<br>
+
+Sara is <strong>unhappy</strong>.
+
+<br><br>
+
+Both sentences express a similar meaning.
+
+<br><br>
+
+However, not every adjective has
+a commonly used negative-prefix form.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arExceptions')">
+🇩🇿 Arabic Summary
+</button>
+
+<div class="arabic" id="arExceptions">
+
+قواعد مهمة:
+
+<br><br>
+
+1. لا يمكن إضافة أي سابقة إلى أي كلمة.
+
+<br><br>
+
+2. يجب حفظ الكلمة مع السابقة المناسبة لها.
+
+<br><br>
+
+3. توجد علاقة بين السوابق
+in- و im- و il- و ir-.
+
+<br><br>
+
+4. يتغير شكل السابقة أحياناً حسب
+الحرف الذي تبدأ به الكلمة.
+
+<br><br>
+
+5. ليست كل كلمة تبدأ بهذه الحروف
+كلمة منفية.
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 4: MISSION 1
+========================================== -->
+
+<section class="stage" id="stage4">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 01</span>
+
+<span class="difficulty">
+⭐ EASY
+</span>
+
+</div>
+
+<h2>🔎 True or False?</h2>
+
+<p class="description">
+Read each statement carefully.
+Choose True or False.
+</p>
+
+<div id="quiz1"></div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 5: MISSION 2
+========================================== -->
+
+<section class="stage" id="stage5">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 02</span>
+
+<span class="difficulty">
+⭐ EASY
+</span>
+
+</div>
+
+<h2>📖 My Personality: Then and Now</h2>
+
+<p class="description">
+Read Sara's short passage about her childhood
+and personality changes.
+</p>
+
+<div class="reading">
+
+When I was a little girl,
+I was often <strong>unhappy</strong>
+because I was very shy.
+
+<br><br>
+
+I was also <strong>impatient</strong>.
+I wanted everything to happen quickly.
+
+<br><br>
+
+Sometimes, I was
+<strong>impolite</strong>
+when I was angry,
+and I made <strong>incorrect</strong>
+decisions.
+
+<br><br>
+
+As I grew older,
+I became more confident and responsible.
+
+<br><br>
+
+Now, I try to be honest,
+because I believe that being
+<strong>dishonest</strong>
+can destroy friendships.
+
+<br><br>
+
+I also try to avoid
+<strong>irresponsible</strong>
+behaviour.
+
+<br><br>
+
+I know that becoming a better person
+is not <strong>impossible</strong>.
+We can all learn from our mistakes.
+
+</div>
+
+<div id="quiz2"></div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 6: MISSION 3
+========================================== -->
+
+<section class="stage" id="stage6">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 03</span>
+
+<span class="difficulty">
+⭐ EASY
+</span>
+
+</div>
+
+<h2>🎯 Choose the Correct Prefix</h2>
+
+<p class="description">
+Choose the prefix that forms
+the correct negative word.
+</p>
+
+<div id="quiz3"></div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 7: MISSION 4
+========================================== -->
+
+<section class="stage" id="stage7">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 04</span>
+
+<span class="difficulty medium">
+⭐⭐ MEDIUM
+</span>
+
+</div>
+
+<h2>✏️ Form the Negative Word</h2>
+
+<p class="description">
+Add the correct prefix to each base word.
+Write the complete negative word.
+</p>
+
+<div class="tip">
+
+<strong>Example:</strong>
+
+<br>
+
+happy → <strong>unhappy</strong>
+
+<br>
+
+patient → <strong>impatient</strong>
+
+</div>
+
+<div id="wordTasks"></div>
+
+<button class="primary"
+onclick="checkWritten('word')">
+✓ Check My Answers
+</button>
+
+<button class="secondary"
+onclick="resetWritten('word')">
+↺ Try Again
+</button>
+
+<p class="feedback" id="wordResult"></p>
+
+</section>
+
+<!-- ==========================================
+     STAGE 8: MISSION 5
+========================================== -->
+
+<section class="stage" id="stage8">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 05</span>
+
+<span class="difficulty medium">
+⭐⭐ MEDIUM
+</span>
+
+</div>
+
+<h2>🧩 Build a Sentence</h2>
+
+<p class="description">
+Tap the word chips in the correct order
+to build sentences using negative words.
+</p>
+
+<div id="builderArea"></div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 9: MISSION 6
+========================================== -->
+
+<section class="stage" id="stage9">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 06</span>
+
+<span class="difficulty hard">
+⭐⭐⭐ HARD
+</span>
+
+</div>
+
+<h2>🔍 Grammar Detective</h2>
+
+<p class="description">
+Each sentence contains a misspelled negative word.
+Write the correct word.
+</p>
+
+<div id="repairTasks"></div>
+
+<button class="primary"
+onclick="checkWritten('repair')">
+✓ Check My Answers
+</button>
+
+<button class="secondary"
+onclick="resetWritten('repair')">
+↺ Try Again
+</button>
+
+<p class="feedback" id="repairResult"></p>
+
+</section>
+
+<!-- ==========================================
+     STAGE 10: MISSION 7
+========================================== -->
+
+<section class="stage" id="stage10">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 07</span>
+
+<span class="difficulty hard">
+⭐⭐⭐ HARD
+</span>
+
+</div>
+
+<h2>✍️ My Personality Journey</h2>
+
+<p class="description">
+Write a short paragraph about your personality
+when you were younger and how you have changed.
+Use at least three negative-prefix words.
+</p>
+
+<div class="tip">
+
+<strong>Writing Guide:</strong>
+
+<br><br>
+
+1. Begin with your childhood personality.
+
+<br>
+
+2. Describe one or two negative traits
+you had in the past.
+
+<br>
+
+3. Explain how you have changed.
+
+<br>
+
+4. Finish with a positive sentence
+about your personality today.
+
+</div>
+
+<div class="writing-card">
+
+<label for="writing1">
+🌸 Step 1 — My Childhood Personality
+</label>
+
+<p class="hint">
+Example:
+When I was a child, I was sometimes impatient and unhappy.
+</p>
+
+<textarea id="writing1"
+placeholder="When I was younger, I was..."></textarea>
+
+</div>
+
+<div class="writing-card">
+
+<label for="writing2">
+💜 Step 2 — My Personality Changes
+</label>
+
+<p class="hint">
+Example:
+I sometimes behaved irresponsibly, but I learned from my mistakes.
+</p>
+
+<textarea id="writing2"
+placeholder="As I grew older, I..."></textarea>
+
+</div>
+
+<div class="writing-card">
+
+<label for="writing3">
+🌟 Step 3 — My Personality Today
+</label>
+
+<p class="hint">
+Example:
+Today, I try not to be impolite or dishonest.
+</p>
+
+<textarea id="writing3"
+placeholder="Today, I am..."></textarea>
+
+</div>
+
+<h3>💡 Useful Vocabulary</h3>
+
+<div class="tip purple">
+
+<strong>Negative words:</strong>
+
+<br>
+
+unhappy · unkind · unfriendly ·
+impatient · impolite · dishonest ·
+irresponsible · insecure · inactive
+
+<br><br>
+
+<strong>Useful expressions:</strong>
+
+<br>
+
+When I was younger...
+
+<br>
+
+In the past...
+
+<br>
+
+As I grew older...
+
+<br>
+
+I used to be...
+
+<br>
+
+Today, I am...
+
+<br>
+
+I have learned to...
+
+</div>
+
+<h3>✅ My Writing Checklist</h3>
+
+<div class="checklist">
+
+<label>
+<input type="checkbox">
+I described my childhood personality.
+</label>
+
+<label>
+<input type="checkbox">
+I used at least three negative-prefix words.
+</label>
+
+<label>
+<input type="checkbox">
+I explained how my personality has changed.
+</label>
+
+<label>
+<input type="checkbox">
+I checked my spelling, capital letters, and punctuation.
+</label>
+
+</div>
+
+<button class="primary"
+onclick="checkWriting()">
+🏆 Check My Writing
+</button>
+
+<button class="secondary"
+onclick="window.print()">
+🖨 Print My Work
+</button>
+
+<p class="feedback" id="writingResult"></p>
+
+</section>
+
+<!-- ==========================================
+     CERTIFICATE
+========================================== -->
+
+<section class="certificate">
+
+<div class="icon">🏆</div>
+
+<h2 id="certificateTitle">
+Become a Prefix Champion!
+</h2>
+
+<p id="certificateMessage">
+Complete all seven interactive missions
+to earn your achievement.
+</p>
+
+<button class="hero-button"
+onclick="showAchievement()">
+View My Achievement
+</button>
+
+</section>
+
+<!-- NEXT LESSON -->
+
+<div class="end-links">
+
+<a href="MS4-S2-Grammar-Lesson4.html">
+← Previous Checkpoint
+</a>
+
+<a href="MS4-S2-Grammar.html">
+Back to Grammar Homepage →
+</a>
+
+</div>
+
+</main>
+
+<footer>
+MY ENGLISH SPACE — MS4 · SEQUENCE 2 · GRAMMAR EXPEDITION
+</footer>
+
+<!-- ==========================================
+     MINI DICTIONARY
+========================================== -->
+
+<button class="dict-button"
+id="dictionaryButton"
+aria-label="Open English Arabic dictionary">
+📖
+</button>
+
+<div class="overlay" id="dictionaryOverlay">
+
+<div class="dictionary"
+role="dialog"
+aria-modal="true"
+aria-labelledby="dictionaryTitle">
+
+<div class="dictionary-head">
+
+<h2 id="dictionaryTitle">
+📖 Mini Dictionary
+</h2>
+
+<button class="close-button"
+id="dictionaryClose"
+aria-label="Close dictionary">
+✕
+</button>
+
+</div>
+
+<input
+type="search"
+class="dictionary-search"
+id="dictionarySearch"
+placeholder="Search in English or Arabic..."
+>
+
+<div class="dictionary-list"
+id="dictionaryList"></div>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+/* ==========================================
+   GENERAL UTILITIES
+========================================== */
+
+function toggleArabic(id){
+
+document.getElementById(id)
+.classList.toggle("visible");
+
+}
+
+function normalize(text){
+
+return text
+.toLowerCase()
+.trim()
+.replace(/[.!?]+$/,"")
+.replace(/\s+/g," ")
+.replace(/\s+,/g,",");
+
+}
+
+function shuffle(array){
+
+const result=[...array];
+
+for(let i=result.length-1;i>0;i--){
+
+const j=Math.floor(Math.random()*(i+1));
+
+[result[i],result[j]]=
+[result[j],result[i]];
+
+}
+
+return result;
+
+}
+
+/* ==========================================
+   PROGRESS SYSTEM
+========================================== */
+
+const completedMissions=new Set();
+
+const totalMissions=7;
+
+function completeMission(number){
+
+completedMissions.add(number);
+
+const count=completedMissions.size;
+
+document.getElementById("progressFill")
+.style.width=(count/totalMissions*100)+"%";
+
+document.getElementById("progressText")
+.textContent=count+" / "+totalMissions+" missions";
+
+if(count===totalMissions){
+
+document.getElementById("certificateTitle")
+.textContent="🏆 Prefix Champion!";
+
+document.getElementById("certificateMessage")
+.textContent=
+"Congratulations! You completed all seven missions!";
+
+}
+
+}
+
+function showAchievement(){
+
+const count=completedMissions.size;
+
+if(count===totalMissions){
+
+alert(
+"🏆 PREFIX CHAMPION!\n\n"+
+"Excellent work!\n"+
+"You completed all seven missions."
+);
+
+}else{
+
+alert(
+"You completed "+count+" out of 7 missions.\n\n"+
+"Keep practising!"
+);
+
+}
+
+}
+
+/* ==========================================
+   QUIZ DATA
+========================================== */
+
+const quizzes={
+
+quiz1:[
+
+{
+q:"A prefix is added to the beginning of a word.",
+options:["True","False"],
+answer:0,
+explanation:"A prefix comes before the base word."
+},
+
+{
+q:'The opposite of "happy" is "inhappy".',
+options:["True","False"],
+answer:1,
+explanation:"The correct word is UNHAPPY."
+},
+
+{
+q:'The opposite of "honest" is "dishonest".',
+options:["True","False"],
+answer:0,
+explanation:"DIS- forms the negative adjective dishonest."
+},
+
+{
+q:'The opposite of "possible" is "impossible".',
+options:["True","False"],
+answer:0,
+explanation:"IM- is the correct prefix for possible."
+},
+
+{
+q:'"Irresponsible" means "very responsible".',
+options:["True","False"],
+answer:1,
+explanation:"IRRESPONSIBLE means not responsible."
+},
+
+{
+q:"Every adjective beginning with L takes IL-.",
+options:["True","False"],
+answer:1,
+explanation:"Only certain adjectives take IL-."
+}
+
+],
+
+quiz2:[
+
+{
+q:"How did Sara often feel when she was little?",
+options:[
+"Unhappy",
+"Very confident",
+"Always excited"
+],
+answer:0,
+explanation:"Sara says she was often unhappy."
+},
+
+{
+q:"What does impatient mean?",
+options:[
+"Very patient",
+"Not patient",
+"Very polite"
+],
+answer:1,
+explanation:"IM- changes patient to impatient."
+},
+
+{
+q:"Which negative word describes Sara's behaviour when she was angry?",
+options:[
+"Illegal",
+"Impulsive",
+"Impolite"
+],
+answer:2,
+explanation:"Sara says she was sometimes impolite."
+},
+
+{
+q:"What does dishonest mean?",
+options:[
+"Not honest",
+"Very honest",
+"Always happy"
+],
+answer:0,
+explanation:"DIS- changes honest to dishonest."
+},
+
+{
+q:"What did Sara learn as she grew older?",
+options:[
+"To be careless",
+"To become more responsible",
+"To avoid friendships"
+],
+answer:1,
+explanation:"She became more confident and responsible."
+}
+
+],
+
+quiz3:[
+
+{
+q:"___ + happy = unhappy",
+options:["un","in","dis"],
+answer:0,
+explanation:"UN- is used with happy."
+},
+
+{
+q:"___ + correct = incorrect",
+options:["dis","in","im"],
+answer:1,
+explanation:"IN- is used with correct."
+},
+
+{
+q:"___ + honest = dishonest",
+options:["un","im","dis"],
+answer:2,
+explanation:"DIS- is used with honest."
+},
+
+{
+q:"___ + legal = illegal",
+options:["il","ir","im"],
+answer:0,
+explanation:"IL- is used with legal."
+},
+
+{
+q:"___ + responsible = irresponsible",
+options:["in","ir","un"],
+answer:1,
+explanation:"IR- is used with responsible."
+},
+
+{
+q:"___ + patient = impatient",
+options:["in","il","im"],
+answer:2,
+explanation:"IM- is used with patient."
+},
+
+{
+q:"___ + possible = impossible",
+options:["im","ir","dis"],
+answer:0,
+explanation:"IM- is used with possible."
+},
+
+{
+q:"___ + agree = disagree",
+options:["un","dis","in"],
+answer:1,
+explanation:"DIS- is used with agree."
+},
+
+{
+q:"___ + regular = irregular",
+options:["im","il","ir"],
+answer:2,
+explanation:"IR- is used with regular."
+},
+
+{
+q:"___ + active = inactive",
+options:["in","un","dis"],
+answer:0,
+explanation:"IN- is used with active."
+}
+
+]
+
+};
+
+/* ==========================================
+   RENDER MULTIPLE CHOICE
+========================================== */
+
+function renderQuiz(id,missionNumber){
+
+const container=document.getElementById(id);
+
+const questions=quizzes[id];
+
+const solved=new Set();
+
+questions.forEach((question,index)=>{
+
+const box=document.createElement("div");
+box.className="question";
+
+const title=document.createElement("p");
+title.className="question-title";
+
+title.textContent=
+(index+1)+". "+question.q;
+
+const options=document.createElement("div");
+options.className="options";
+
+const feedback=document.createElement("div");
+feedback.className="feedback";
+feedback.setAttribute("role","status");
+
+question.options.forEach((option,optionIndex)=>{
+
+const button=document.createElement("button");
+
+button.className="option";
+button.textContent=option;
+
+button.addEventListener("click",()=>{
+
+if(solved.has(index))return;
+
+if(optionIndex===question.answer){
+
+button.classList.add("correct");
+
+feedback.className="feedback success";
+
+feedback.textContent=
+"✓ Excellent! "+question.explanation;
+
+solved.add(index);
+
+options.querySelectorAll("button")
+.forEach(btn=>btn.disabled=true);
+
+if(solved.size===questions.length){
+
+completeMission(missionNumber);
+
+}
+
+}else{
+
+button.classList.add("incorrect");
+button.disabled=true;
+
+feedback.className="feedback error";
+
+feedback.textContent=
+"Not quite. Try another answer!";
+
+}
+
+});
+
+options.appendChild(button);
+
+});
+
+box.appendChild(title);
+box.appendChild(options);
+box.appendChild(feedback);
+
+container.appendChild(box);
+
+});
+
+}
+
+renderQuiz("quiz1",1);
+renderQuiz("quiz2",2);
+renderQuiz("quiz3",3);
+
+/* ==========================================
+   WRITTEN TASK DATA
+========================================== */
+
+const writtenTasks={
+
+word:[
+
+{
+sentence:"happy → ______",
+answers:["unhappy"],
+hint:"This word takes UN-.",
+model:"unhappy"
+},
+
+{
+sentence:"patient → ______",
+answers:["impatient"],
+hint:"This word takes IM-.",
+model:"impatient"
+},
+
+{
+sentence:"honest → ______",
+answers:["dishonest"],
+hint:"This word takes DIS-.",
+model:"dishonest"
+},
+
+{
+sentence:"legal → ______",
+answers:["illegal"],
+hint:"This word takes IL-.",
+model:"illegal"
+},
+
+{
+sentence:"responsible → ______",
+answers:["irresponsible"],
+hint:"This word takes IR-.",
+model:"irresponsible"
+},
+
+{
+sentence:"correct → ______",
+answers:["incorrect"],
+hint:"This word takes IN-.",
+model:"incorrect"
+},
+
+{
+sentence:"kind → ______",
+answers:["unkind"],
+hint:"This word takes UN-.",
+model:"unkind"
+},
+
+{
+sentence:"polite → ______",
+answers:["impolite"],
+hint:"This word takes IM-.",
+model:"impolite"
+},
+
+{
+sentence:"regular → ______",
+answers:["irregular"],
+hint:"This word takes IR-.",
+model:"irregular"
+},
+
+{
+sentence:"agree → ______",
+answers:["disagree"],
+hint:"This word takes DIS-.",
+model:"disagree"
+},
+
+{
+sentence:"possible → ______",
+answers:["impossible"],
+hint:"This word takes IM-.",
+model:"impossible"
+},
+
+{
+sentence:"active → ______",
+answers:["inactive"],
+hint:"This word takes IN-.",
+model:"inactive"
+}
+
+],
+
+repair:[
+
+{
+sentence:
+"Sara felt <u>inhappy</u> when she failed her test.",
+answers:["unhappy"],
+hint:"Use the correct prefix with HAPPY.",
+model:"unhappy"
+},
+
+{
+sentence:
+"Amir is sometimes <u>unpatient</u>.",
+answers:["impatient"],
+hint:"The word PATIENT takes IM-.",
+model:"impatient"
+},
+
+{
+sentence:
+"My brother was <u>unhonest</u> with his friends.",
+answers:["dishonest"],
+hint:"The word HONEST takes DIS-.",
+model:"dishonest"
+},
+
+{
+sentence:
+"His behaviour was <u>inresponsible</u>.",
+answers:["irresponsible"],
+hint:"The word RESPONSIBLE takes IR-.",
+model:"irresponsible"
+},
+
+{
+sentence:
+"That answer is <u>uncorrect</u>.",
+answers:["incorrect"],
+hint:"The word CORRECT takes IN-.",
+model:"incorrect"
+},
+
+{
+sentence:
+"Some actions are <u>inlegal</u>.",
+answers:["illegal"],
+hint:"The word LEGAL takes IL-.",
+model:"illegal"
+},
+
+{
+sentence:
+"His childhood routine was <u>inregular</u>.",
+answers:["irregular"],
+hint:"The word REGULAR takes IR-.",
+model:"irregular"
+},
+
+{
+sentence:
+"Nothing is <u>inpossible</u> if you keep trying.",
+answers:["impossible"],
+hint:"The word POSSIBLE takes IM-.",
+model:"impossible"
+}
+
+]
+
+};
+
+/* ==========================================
+   RENDER WRITTEN TASKS
+========================================== */
+
+function renderWrittenTasks(type){
+
+const container=
+document.getElementById(type+"Tasks");
+
+writtenTasks[type].forEach((task,index)=>{
+
+const wrapper=document.createElement("div");
+wrapper.className="task";
+
+const label=document.createElement("label");
+label.htmlFor=type+index;
+
+label.innerHTML=
+(index+1)+". "+task.sentence;
+
+const input=document.createElement("input");
+
+input.type="text";
+input.id=type+index;
+input.autocomplete="off";
+
+input.placeholder=
+type==="word"
+?"Write the negative word..."
+:"Write the correct word...";
+
+const hint=document.createElement("p");
+hint.className="hint";
+
+hint.textContent="💡 Hint: "+task.hint;
+
+const feedback=document.createElement("div");
+feedback.className="answer-feedback";
+feedback.setAttribute("role","status");
+
+wrapper.appendChild(label);
+wrapper.appendChild(input);
+wrapper.appendChild(hint);
+wrapper.appendChild(feedback);
+
+container.appendChild(wrapper);
+
+});
+
+}
+
+renderWrittenTasks("word");
+renderWrittenTasks("repair");
+
+/* ==========================================
+   CHECK WRITTEN ANSWERS
+========================================== */
+
+function checkWritten(type){
+
+const tasks=writtenTasks[type];
+
+const rows=document.querySelectorAll(
+"#"+type+"Tasks .task"
+);
+
+let correctCount=0;
+
+rows.forEach((row,index)=>{
+
+const input=row.querySelector("input");
+
+const feedback=
+row.querySelector(".answer-feedback");
+
+const answer=normalize(input.value);
+
+const accepted=tasks[index].answers.map(normalize);
+
+input.classList.remove("correct","incorrect");
+
+if(accepted.includes(answer)){
+
+correctCount++;
+
+input.classList.add("correct");
+
+feedback.className="answer-feedback success";
+
+feedback.textContent="✓ Excellent!";
+
+}else{
+
+input.classList.add("incorrect");
+
+feedback.className="answer-feedback error";
+
+if(answer===""){
+
+feedback.textContent=
+"Please write an answer.";
+
+}else{
+
+feedback.textContent=
+"Check your spelling. Correct answer: "+
+tasks[index].model;
+
+}
+
+}
+
+});
+
+const result=
+document.getElementById(type+"Result");
+
+result.textContent=
+correctCount+" / "+tasks.length+" correct.";
+
+result.className=
+"feedback "+
+(correctCount===tasks.length?"success":"error");
+
+if(correctCount===tasks.length){
+
+completeMission(type==="word"?4:6);
+
+result.textContent+=" Mission complete! 🎉";
+
+}
+
+}
+
+/* ==========================================
+   RESET WRITTEN ANSWERS
+========================================== */
+
+function resetWritten(type){
+
+document.querySelectorAll(
+"#"+type+"Tasks .task"
+).forEach(row=>{
+
+const input=row.querySelector("input");
+
+input.value="";
+
+input.classList.remove("correct","incorrect");
+
+row.querySelector(".answer-feedback")
+.textContent="";
+
+});
+
+document.getElementById(type+"Result")
+.textContent="";
+
+}
+
+/* ==========================================
+   SENTENCE BUILDER
+========================================== */
+
+const builderSentences=[
+
+"Sara was unhappy when she failed her test",
+
+"Amir was impatient when he was younger",
+
+"A dishonest person can lose friends",
+
+"Being responsible is not impossible"
+
+];
+
+const builderCompleted=new Set();
+
+function createSentenceBuilder(sentence,index){
+
+const container=
+document.getElementById("builderArea");
+
+const box=document.createElement("div");
+box.className="question";
+
+const title=document.createElement("p");
+title.className="question-title";
+
+title.textContent="Sentence "+(index+1);
+
+const answerStrip=document.createElement("div");
+answerStrip.className="answer-strip";
+
+const wordBank=document.createElement("div");
+wordBank.className="word-bank";
+
+const feedback=document.createElement("p");
+feedback.className="feedback";
+feedback.setAttribute("role","status");
+
+const tiles=shuffle(
+sentence.split(" ").map((word,id)=>({
+word,
+id
+}))
+);
+
+let selected=[];
+
+function render(){
+
+answerStrip.innerHTML="";
+wordBank.innerHTML="";
+
+if(selected.length===0){
+
+answerStrip.textContent=
+"Tap the words below to build your sentence...";
+
+}
+
+selected.forEach((tile,selectedIndex)=>{
+
+const button=document.createElement("button");
+
+button.className="word-chip";
+button.textContent=tile.word;
+
+button.onclick=()=>{
+
+selected.splice(selectedIndex,1);
+render();
+
+};
+
+answerStrip.appendChild(button);
+
+});
+
+tiles.forEach(tile=>{
+
+const button=document.createElement("button");
+
+button.className="word-chip";
+button.textContent=tile.word;
+
+button.disabled=selected.includes(tile);
+
+button.onclick=()=>{
+
+selected.push(tile);
+render();
+
+};
+
+wordBank.appendChild(button);
+
+});
+
+}
+
+const checkButton=document.createElement("button");
+
+checkButton.className="primary";
+checkButton.textContent="✓ Check Sentence";
+
+checkButton.onclick=()=>{
+
+const answer=
+selected.map(tile=>tile.word).join(" ");
+
+if(answer===sentence){
+
+feedback.className="feedback success";
+
+feedback.textContent=
+"✓ Perfect sentence!";
+
+builderCompleted.add(index);
+
+if(builderCompleted.size===builderSentences.length){
+
+completeMission(5);
+
+}
+
+}else{
+
+feedback.className="feedback error";
+
+feedback.textContent=
+"Not yet. Check the word order.";
+
+}
+
+};
+
+const clearButton=document.createElement("button");
+
+clearButton.className="secondary";
+clearButton.textContent="↺ Clear";
+
+clearButton.onclick=()=>{
+
+selected=[];
+feedback.textContent="";
+render();
+
+};
+
+box.appendChild(title);
+box.appendChild(answerStrip);
+box.appendChild(wordBank);
+box.appendChild(checkButton);
+box.appendChild(clearButton);
+box.appendChild(feedback);
+
+container.appendChild(box);
+
+render();
+
+}
+
+builderSentences.forEach(createSentenceBuilder);
+
+/* ==========================================
+   WRITING CHECK
+========================================== */
+
+const negativeVocabulary=[
+
+"unhappy",
+"unkind",
+"unfriendly",
+"unlucky",
+"unfair",
+
+"impatient",
+"impolite",
+"impossible",
+"immature",
+
+"dishonest",
+"disloyal",
+"disagree",
+"dislike",
+
+"irresponsible",
+"irregular",
+
+"insecure",
+"inactive",
+"incorrect",
+"incomplete",
+"independent",
+
+"illegal",
+"illogical"
+
+];
+
+function checkWriting(){
+
+const writing1=
+document.getElementById("writing1").value.trim();
+
+const writing2=
+document.getElementById("writing2").value.trim();
+
+const writing3=
+document.getElementById("writing3").value.trim();
+
+const sentences=[
+writing1,
+writing2,
+writing3
+];
+
+const combined=sentences.join(" ").toLowerCase();
+
+const foundWords=negativeVocabulary.filter(word=>{
+
+const pattern=new RegExp(
+"\\b"+word+"\\b","i"
+);
+
+return pattern.test(combined);
+
+});
+
+const enoughWords=sentences.every(sentence=>
+sentence.split(/\s+/).filter(Boolean).length>=7
+);
+
+const result=
+document.getElementById("writingResult");
+
+if(
+enoughWords &&
+foundWords.length>=3
+){
+
+result.className="feedback success";
+
+result.textContent=
+"🎉 Excellent effort! You used "+
+foundWords.length+
+" different negative-prefix words: "+
+foundWords.join(", ")+
+". Read your paragraph again to check "+
+"grammar, meaning, spelling and punctuation.";
+
+completeMission(7);
+
+}else{
+
+result.className="feedback error";
+
+result.textContent=
+"Keep improving! Write at least seven words "+
+"in each section and use at least three "+
+"different negative-prefix words. "+
+"You have used "+
+foundWords.length+
+" recognised negative words so far.";
+
+}
+
+}
+
+/* ==========================================
+   MINI DICTIONARY
+========================================== */
+
+const vocabulary=[
+
+["prefix","سابقة"],
+["negative prefix","سابقة النفي"],
+["base word","الكلمة الأصلية"],
+["opposite","عكس"],
+["meaning","معنى"],
+
+["happy","سعيد"],
+["unhappy","غير سعيد"],
+
+["kind","لطيف"],
+["unkind","غير لطيف"],
+
+["friendly","ودود"],
+["unfriendly","غير ودود"],
+
+["fair","عادل"],
+["unfair","غير عادل"],
+
+["patient","صبور"],
+["impatient","غير صبور"],
+
+["polite","مؤدب"],
+["impolite","غير مؤدب"],
+
+["possible","ممكن"],
+["impossible","مستحيل"],
+
+["mature","ناضج"],
+["immature","غير ناضج"],
+
+["honest","صادق"],
+["dishonest","غير صادق"],
+
+["loyal","مخلص"],
+["disloyal","غير مخلص"],
+
+["agree","يوافق"],
+["disagree","يختلف / لا يوافق"],
+
+["like","يحب"],
+["dislike","لا يحب"],
+
+["legal","قانوني"],
+["illegal","غير قانوني"],
+
+["logical","منطقي"],
+["illogical","غير منطقي"],
+
+["regular","منتظم"],
+["irregular","غير منتظم"],
+
+["responsible","مسؤول"],
+["irresponsible","غير مسؤول"],
+
+["active","نشيط"],
+["inactive","غير نشيط"],
+
+["correct","صحيح"],
+["incorrect","غير صحيح"],
+
+["complete","مكتمل"],
+["incomplete","غير مكتمل"],
+
+["secure","آمن / واثق"],
+["insecure","غير آمن / غير واثق"],
+
+["independent","مستقل"],
+
+["personality","شخصية"],
+["personality traits","صفات الشخصية"],
+
+["childhood","طفولة"],
+["ambition","طموح"],
+["experience","تجربة"],
+
+["confidence","ثقة بالنفس"],
+["behaviour","سلوك"],
+
+["mistake","خطأ"],
+["improve","يتحسن"],
+["change","يتغير"],
+
+["dream","حلم"],
+["habit","عادة"],
+["preference","تفضيل"]
+
+];
+
+const dictionaryButton=
+document.getElementById("dictionaryButton");
+
+const dictionaryOverlay=
+document.getElementById("dictionaryOverlay");
+
+const dictionaryClose=
+document.getElementById("dictionaryClose");
+
+const dictionarySearch=
+document.getElementById("dictionarySearch");
+
+const dictionaryList=
+document.getElementById("dictionaryList");
+
+function renderDictionary(){
+
+const searchText=
+dictionarySearch.value.toLowerCase().trim();
+
+dictionaryList.innerHTML="";
+
+const filtered=vocabulary.filter(([english,arabic])=>
+
+english.toLowerCase().includes(searchText)||
+arabic.includes(searchText)
+
+);
+
+filtered.forEach(([english,arabic])=>{
+
+const row=document.createElement("div");
+row.className="dictionary-row";
+
+const englishWord=document.createElement("strong");
+englishWord.textContent=english;
+
+const arabicWord=document.createElement("span");
+arabicWord.textContent=arabic;
+
+row.appendChild(englishWord);
+row.appendChild(arabicWord);
+
+dictionaryList.appendChild(row);
+
+});
+
+if(filtered.length===0){
+
+dictionaryList.textContent=
+"No matching words found.";
+
+}
+
+}
+
+function openDictionary(){
+
+dictionaryOverlay.classList.add("open");
+
+renderDictionary();
+
+dictionarySearch.focus();
+
+}
+
+function closeDictionary(){
+
+dictionaryOverlay.classList.remove("open");
+
+dictionaryButton.focus();
+
+}
+
+dictionaryButton.addEventListener(
+"click",
+openDictionary
+);
+
+dictionaryClose.addEventListener(
+"click",
+closeDictionary
+);
+
+dictionarySearch.addEventListener(
+"input",
+renderDictionary
+);
+
+dictionaryOverlay.addEventListener("click",event=>{
+
+if(event.target===dictionaryOverlay){
+
+closeDictionary();
+
+}
+
+});
+
+document.addEventListener("keydown",event=>{
+
+if(
+event.key==="Escape" &&
+dictionaryOverlay.classList.contains("open")
+){
+
+closeDictionary();
+
+}
+
+});
+
+/* ==========================================
+   INITIALISATION COMPLETE
+========================================== */
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4 Reading 03 | Al Baraka Charity Organisation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --purple:#7543bc;
+  --deep:#35205d;
+  --violet:#a77cde;
+  --lavender:#f4edff;
+  --gold:#ffd47d;
+  --ink:#332643;
+  --muted:#786b88;
+  --line:#e8dcf8;
+  --green:#207a51;
+  --red:#b63e5a;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 10% 15%,#efe2ff,transparent 30%),
+    linear-gradient(180deg,#fdfbff,#f3edff);
+  font-family:"Nunito",sans-serif;
+  color:var(--ink);
+  line-height:1.75;
+}
+
+h1,h2,h3{
+  font-family:"Baloo 2",sans-serif;
+  line-height:1.2;
+}
+
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+/* NAVIGATION */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:#ffffffed;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  padding:13px max(18px,calc((100vw - 1100px)/2));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.brand{
+  font-weight:900;
+  color:var(--deep);
+  font-size:15px;
+}
+
+.home{
+  padding:9px 15px;
+  border-radius:30px;
+  background:var(--lavender);
+  color:var(--purple);
+  font-size:12px;
+  font-weight:900;
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  color:white;
+  padding:65px 18px 90px;
+  background:
+    radial-gradient(circle at 80% 20%,#b88de56b,transparent 35%),
+    linear-gradient(125deg,#35205d,#7543bc);
+}
+
+.hero::before{
+  content:"✦";
+  position:absolute;
+  left:8%;
+  top:30px;
+  font-size:70px;
+  color:#ffffff33;
+}
+
+.hero::after{
+  content:"✦";
+  position:absolute;
+  right:9%;
+  bottom:35px;
+  font-size:90px;
+  color:#ffd47d55;
+}
+
+.pill{
+  display:inline-block;
+  background:#ffffff25;
+  border:1px solid #ffffff55;
+  border-radius:30px;
+  padding:8px 16px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.hero h1{
+  font-size:clamp(38px,7vw,70px);
+  margin:18px 0 12px;
+}
+
+.hero h1 span{color:var(--gold)}
+
+.hero p{
+  max-width:670px;
+  margin:auto;
+  color:#eee4ff;
+  font-size:15px;
+}
+
+.hero-tags{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:22px;
+}
+
+.hero-tags span{
+  padding:7px 13px;
+  border-radius:25px;
+  background:#ffffff1e;
+  border:1px solid #ffffff30;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* MAIN */
+
+main{
+  max-width:1080px;
+  margin:-38px auto 65px;
+  padding:0 18px;
+  position:relative;
+  z-index:2;
+}
+
+.lesson-section{
+  margin-bottom:29px;
+  scroll-margin-top:85px;
+}
+
+.label{
+  font-size:11px;
+  font-weight:900;
+  color:var(--purple);
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+}
+
+.lesson-section>h2{
+  font-size:30px;
+  color:var(--deep);
+  margin:6px 0 14px;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:25px;
+  box-shadow:0 12px 35px #44257412;
+}
+
+/* IMAGE */
+
+.intro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  align-items:center;
+}
+
+.intro-image{
+  width:100%;
+  height:330px;
+  object-fit:contain;
+  background:#f5f0fb;
+  border-radius:20px;
+  border:1px solid var(--line);
+  padding:8px;
+}
+
+.image-caption{
+  color:var(--muted);
+  font-size:11px;
+  font-weight:800;
+  text-align:center;
+  margin-top:7px;
+}
+
+.image-fallback{
+  display:none;
+  min-height:240px;
+  background:linear-gradient(135deg,#eadbff,#c5a3ee);
+  border-radius:20px;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  color:var(--deep);
+  font-size:24px;
+  font-weight:900;
+  padding:25px;
+}
+
+.image-fallback span{font-size:70px}
+
+/* TASKS */
+
+.task{
+  background:#fcfaff;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:19px;
+  margin:14px 0;
+}
+
+.task h3{
+  margin:0 0 11px;
+  color:var(--deep);
+  font-size:19px;
+}
+
+.task p{
+  margin:0 0 12px;
+  font-size:14px;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.option{
+  background:white;
+  border:2px solid var(--line);
+  border-radius:13px;
+  padding:13px;
+  text-align:left;
+  font-size:13px;
+  font-weight:800;
+  color:var(--ink);
+  transition:.2s;
+  min-height:52px;
+}
+
+.option:hover:not(:disabled){
+  border-color:var(--violet);
+  transform:translateY(-2px);
+}
+
+.option.correct{
+  background:#e5f8ed;
+  border-color:#5ab88b;
+  color:var(--green);
+}
+
+.option.wrong{
+  background:#fff0f3;
+  border-color:#e398ab;
+  color:var(--red);
+}
+
+.option:disabled{cursor:default}
+
+.feedback{
+  display:none;
+  padding:11px 14px;
+  border-radius:12px;
+  margin-top:12px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.feedback.show{display:block}
+.feedback.good{background:#e5f8ed;color:var(--green)}
+.feedback.bad{background:#fff0f3;color:var(--red)}
+.feedback.info{background:#f0e8ff;color:var(--purple)}
+
+/* READING ARTICLE */
+
+.article{
+  padding:32px;
+}
+
+.article-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  border-bottom:2px dashed var(--line);
+  padding-bottom:15px;
+  margin-bottom:6px;
+}
+
+.article h2{
+  font-size:36px;
+  color:var(--deep);
+  margin:0;
+}
+
+.byline{
+  font-size:12px;
+  color:var(--muted);
+  font-weight:800;
+  margin:5px 0 0;
+}
+
+.article-icon{
+  width:62px;
+  height:62px;
+  background:var(--lavender);
+  border-radius:19px;
+  display:grid;
+  place-items:center;
+  font-size:32px;
+  flex-shrink:0;
+}
+
+.paragraph{
+  display:grid;
+  grid-template-columns:37px 1fr;
+  gap:14px;
+  padding:20px 0;
+  border-bottom:1px solid #eee7f7;
+}
+
+.paragraph:last-of-type{border-bottom:0}
+
+.number{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#7545b9,#ae86e2);
+  color:white;
+  display:grid;
+  place-items:center;
+  font-size:12px;
+  font-weight:900;
+}
+
+.paragraph p{
+  margin:0;
+  font-size:15px;
+  line-height:2;
+}
+
+.reference{
+  background:#f0e3ff;
+  color:#6534a5;
+  border-radius:5px;
+  padding:1px 4px;
+  font-weight:900;
+}
+
+.quote{
+  background:#fff7e5;
+  border-left:5px solid var(--gold);
+  padding:16px 20px;
+  border-radius:0 13px 13px 0;
+  font-weight:900;
+  color:#79551f;
+  margin-top:15px;
+}
+
+.source-note{
+  margin-top:16px;
+  font-size:11px;
+  color:var(--muted);
+}
+
+/* MATCHING & FORM FIELDS */
+
+.match-row,.tf-row{
+  display:grid;
+  grid-template-columns:1fr 185px;
+  gap:13px;
+  align-items:center;
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.match-row strong,.tf-row strong{
+  font-size:14px;
+}
+
+.tf-row input{grid-column:1/-1}
+
+select,input[type=text],textarea{
+  width:100%;
+  border:2px solid var(--line);
+  border-radius:12px;
+  padding:11px 13px;
+  background:white;
+  color:var(--ink);
+  outline:none;
+}
+
+select:focus,input:focus,textarea:focus{
+  border-color:var(--purple);
+}
+
+.profile{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px;
+}
+
+.field{
+  padding:15px;
+  border:1px solid var(--line);
+  background:#fcfaff;
+  border-radius:14px;
+}
+
+.field label{
+  display:block;
+  font-weight:900;
+  font-size:13px;
+  margin-bottom:9px;
+}
+
+/* BUTTONS */
+
+.btn{
+  border:0;
+  border-radius:28px;
+  padding:12px 21px;
+  background:linear-gradient(120deg,#593191,#8d59ce);
+  color:white;
+  font-size:13px;
+  font-weight:900;
+  margin-top:15px;
+  transition:.2s;
+}
+
+.btn:hover{transform:translateY(-2px)}
+
+.btn.secondary{
+  background:white;
+  color:var(--purple);
+  border:2px solid #d8c2f2;
+}
+
+.btn-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* WRITING */
+
+.support-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:15px 0;
+}
+
+.support{
+  padding:15px;
+  background:#faf6ff;
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+
+.support strong{
+  color:var(--deep);
+  font-size:13px;
+}
+
+.support p{
+  margin:5px 0;
+  font-size:13px;
+}
+
+textarea{
+  min-height:170px;
+  resize:vertical;
+}
+
+.score{
+  background:linear-gradient(120deg,#392063,#8050c1);
+  border-radius:24px;
+  padding:26px;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:25px;
+}
+
+.score strong{
+  display:block;
+  font:800 35px "Baloo 2";
+}
+
+.score small{
+  color:#eadcff;
+  font-weight:900;
+}
+
+/* DICTIONARY */
+
+.dict-button{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:40;
+  width:57px;
+  height:57px;
+  border:3px solid white;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ffda8b,#a271da);
+  box-shadow:0 9px 27px #38205c55;
+  font-size:26px;
+}
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:50;
+  background:#1c0b35b5;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+}
+
+.overlay.open{display:flex}
+
+.dictionary{
+  width:min(440px,100%);
+  max-height:82vh;
+  background:white;
+  border-radius:24px;
+  padding:21px;
+  display:flex;
+  flex-direction:column;
+}
+
+.dict-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.dict-head h3{
+  color:var(--deep);
+  margin:0;
+}
+
+.close{
+  border:0;
+  background:var(--lavender);
+  width:37px;
+  height:37px;
+  border-radius:50%;
+  font-size:21px;
+}
+
+#dictSearch{margin:15px 0}
+
+.dict-list{overflow:auto}
+
+.word{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:10px 5px;
+  border-bottom:1px solid var(--line);
+}
+
+.arabic{
+  font:600 18px "Noto Naskh Arabic",serif;
+  direction:rtl;
+  color:var(--purple);
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  color:#796491;
+  font-size:12px;
+  font-weight:900;
+  padding:10px 15px 80px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:760px){
+  .intro{grid-template-columns:1fr}
+  .options,.profile,.support-grid{grid-template-columns:1fr}
+  .match-row,.tf-row{grid-template-columns:1fr}
+  .tf-row input{grid-column:auto}
+  .card{padding:19px}
+  .article{padding:20px}
+  .hero{padding:55px 15px 75px}
+  .intro-image{height:260px}
+  .article h2{font-size:28px}
+  .article-icon{display:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .option,.btn{transition:none}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+  <a class="brand" href="MS4-S3-Reading-Beautiful.html">
+    📚 MY ENGLISH SPACE
+  </a>
+
+  <a class="home" href="MS4-S3-Reading-Beautiful.html">
+    ← Reading Home
+  </a>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <span class="pill">
+    MS4 • SEQUENCE 3 • READING LESSON 03
+  </span>
+
+  <h1>
+    Together, <span>We Can Help More</span>
+  </h1>
+
+  <p>
+    Discover the inspiring humanitarian mission of
+    Al Baraka Charity Organisation and learn how
+    solidarity can make our world a better place.
+  </p>
+
+  <div class="hero-tags">
+    <span>🇩🇿 Algerian Organisation</span>
+    <span>🤝 Solidarity</span>
+    <span>💜 Humanity</span>
+    <span>📖 Reading</span>
+  </div>
+
+</section>
+
+<main>
+
+<!-- BEFORE READING -->
+
+<section class="lesson-section" id="before">
+
+  <div class="card intro">
+
+    <div>
+
+      <span class="label">
+        01 • BEFORE READING
+      </span>
+
+      <h2 style="color:var(--deep)">
+        💭 Look, Think &amp; Predict
+      </h2>
+
+      <p>
+        Look carefully at the picture.
+        What organisation does it represent?
+        What do you think its members do?
+      </p>
+
+      <div class="task">
+
+        <h3>
+          What will the text probably be about?
+        </h3>
+
+        <div class="options" data-q="predict">
+
+          <button class="option">
+            A famous Algerian football club
+          </button>
+
+          <button class="option" data-right="1">
+            An Algerian humanitarian organisation
+          </button>
+
+          <button class="option">
+            A tourist destination
+          </button>
+
+          <button class="option">
+            A traditional celebration
+          </button>
+
+        </div>
+
+        <div class="feedback"></div>
+
+      </div>
+
+    </div>
+
+    <div>
+
+      <!-- YOUR AL BARAKA PICTURE -->
+
+      <img
+        class="intro-image"
+        src="https://i.imgur.com/p5RM73H.jpeg"
+        alt="Al Baraka Charity Organisation"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+
+      <div class="image-fallback">
+        <span>🇩🇿🤝</span>
+        Al Baraka Charity Organisation
+      </div>
+
+      <p class="image-caption">
+        Al Baraka Charity Organisation — جمعية البركة
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- READING TEXT -->
+
+<section class="lesson-section" id="reading">
+
+  <span class="label">
+    02 • READING DISCOVERY
+  </span>
+
+  <h2>📖 Read the Article</h2>
+
+  <article class="card article">
+
+    <div class="article-header">
+
+      <div>
+        <h2>Al Baraka: A Bridge of Hope</h2>
+
+        <p class="byline">
+          An Algerian charity organisation making a difference
+        </p>
+      </div>
+
+      <div class="article-icon">💜</div>
+
+    </div>
+
+    <!-- PARAGRAPH 1 -->
+
+    <div class="paragraph">
+
+      <span class="number">01</span>
+
+      <p>
+        Algeria has a long tradition of solidarity and
+        generosity. One organisation that reflects these
+        values is <strong>Al Baraka Charity Organisation</strong>,
+        an Algerian humanitarian association established
+        on <strong>15 January 2015</strong>.
+        <span class="reference">It</span> works to support
+        vulnerable people and communities.
+        Its main mission is to provide humanitarian
+        assistance and encourage social solidarity.
+        The organisation believes that everyone deserves
+        care, respect and dignity.
+      </p>
+
+    </div>
+
+    <!-- PARAGRAPH 2 -->
+
+    <div class="paragraph">
+
+      <span class="number">02</span>
+
+      <p>
+        Al Baraka supports people in need through different
+        humanitarian projects. Its activities include
+        emergency relief, educational assistance and
+        healthcare support. Donations help provide food,
+        essential supplies and other forms of assistance
+        to vulnerable families.
+        <span class="reference">These contributions</span>
+        can reduce suffering and bring hope to people
+        facing difficult situations.
+        The organisation aims to make a positive
+        difference in their lives.
+      </p>
+
+    </div>
+
+    <!-- PARAGRAPH 3 -->
+
+    <div class="paragraph">
+
+      <span class="number">03</span>
+
+      <p>
+        Volunteers and supporters play an essential role
+        in humanitarian work. They give their time,
+        energy and resources to help others.
+        Some assist with collecting donations,
+        while others support relief activities
+        or help spread information about campaigns.
+        <span class="reference">They</span>
+        work together because cooperation makes
+        charitable efforts more effective.
+        Their generosity shows that kindness
+        can unite people.
+      </p>
+
+    </div>
+
+    <!-- PARAGRAPH 4 -->
+
+    <div class="paragraph">
+
+      <span class="number">04</span>
+
+      <p>
+        Al Baraka's humanitarian mission also encourages
+        young people to become active citizens.
+        Pupils can support charitable causes by collecting
+        useful school materials, helping with supervised
+        campaigns or sharing positive messages.
+        Such experiences teach
+        <span class="reference">them</span>
+        responsibility, empathy and teamwork.
+        Young volunteers learn that charity is not
+        only about money. It is also about caring
+        for others and respecting their dignity.
+      </p>
+
+    </div>
+
+    <!-- PARAGRAPH 5 -->
+
+    <div class="paragraph">
+
+      <span class="number">05</span>
+
+      <p>
+        Like other humanitarian organisations,
+        Al Baraka depends on the generosity
+        and cooperation of supporters.
+        Its work reminds us that solidarity
+        can create meaningful change.
+        If more people participate in charity work,
+        more vulnerable families will receive help.
+        Everyone can contribute through useful donations,
+        volunteering or responsible community action.
+        <strong>Together, we can build a more caring
+        and compassionate world.</strong>
+      </p>
+
+    </div>
+
+    <div class="quote">
+      ✨ Small acts of kindness can create great hope.
+    </div>
+
+    <p class="source-note">
+      Adapted educational text based on the organisation's
+      publicly described mission and activities.
+    </p>
+
+  </article>
+
+</section>
+
+<!-- GLOBAL COMPREHENSION -->
+
+<section class="lesson-section">
+
+  <span class="label">
+    03 • GLOBAL COMPREHENSION
+  </span>
+
+  <h2>🌍 Understand the Main Message</h2>
+
+  <div class="card">
+
+    <div class="task">
+
+      <h3>1. What is the text mainly about?</h3>
+
+      <div class="options" data-q="global1">
+
+        <button class="option">
+          A famous Algerian monument
+        </button>
+
+        <button class="option" data-right="1">
+          Al Baraka's humanitarian mission and activities
+        </button>
+
+        <button class="option">
+          A school competition
+        </button>
+
+        <button class="option">
+          A family holiday
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>2. What is the writer's purpose?</h3>
+
+      <div class="options" data-q="global2">
+
+        <button class="option">
+          To describe a tourist destination
+        </button>
+
+        <button class="option">
+          To sell products
+        </button>
+
+        <button class="option" data-right="1">
+          To inform readers about humanitarian work
+        </button>
+
+        <button class="option">
+          To explain a sports game
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>3. Choose the best alternative title.</h3>
+
+      <div class="options" data-q="global3">
+
+        <button class="option">
+          A Journey Across Algeria
+        </button>
+
+        <button class="option" data-right="1">
+          Al Baraka: Helping People, Spreading Hope
+        </button>
+
+        <button class="option">
+          A Wonderful School Trip
+        </button>
+
+        <button class="option">
+          The History of Football
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MAIN IDEAS -->
+
+<section class="lesson-section">
+
+  <span class="label">
+    04 • MAIN IDEAS &amp; PARAGRAPHS
+  </span>
+
+  <h2>🧩 Match Each Main Idea with Its Paragraph</h2>
+
+  <div class="card">
+
+    <p>
+      Read the five main ideas.
+      Choose the paragraph that develops each idea.
+      Use each paragraph number only once.
+    </p>
+
+    <div id="ideaRows">
+
+      <div class="match-row" data-answer="3">
+        <strong>
+          A. The role of volunteers and supporters.
+        </strong>
+        <select aria-label="Main idea A">
+          <option value="">Choose a paragraph...</option>
+        </select>
+      </div>
+
+      <div class="match-row" data-answer="1">
+        <strong>
+          B. Introducing Al Baraka and its mission.
+        </strong>
+        <select aria-label="Main idea B">
+          <option value="">Choose a paragraph...</option>
+        </select>
+      </div>
+
+      <div class="match-row" data-answer="5">
+        <strong>
+          C. The importance of cooperation and community support.
+        </strong>
+        <select aria-label="Main idea C">
+          <option value="">Choose a paragraph...</option>
+        </select>
+      </div>
+
+      <div class="match-row" data-answer="2">
+        <strong>
+          D. Humanitarian projects and assistance to people in need.
+        </strong>
+        <select aria-label="Main idea D">
+          <option value="">Choose a paragraph...</option>
+        </select>
+      </div>
+
+      <div class="match-row" data-answer="4">
+        <strong>
+          E. Young people's participation in charity work.
+        </strong>
+        <select aria-label="Main idea E">
+          <option value="">Choose a paragraph...</option>
+        </select>
+      </div>
+
+    </div>
+
+    <button class="btn"
+      onclick="checkRows('ideaRows','idea','ideaFeedback',true)">
+      ✓ Check My Matching
+    </button>
+
+    <div class="feedback" id="ideaFeedback"></div>
+
+  </div>
+
+</section>
+
+<!-- DETAILED COMPREHENSION -->
+
+<section class="lesson-section">
+
+  <span class="label">
+    05 • DETAILED COMPREHENSION
+  </span>
+
+  <h2>🎯 Find Specific Information</h2>
+
+  <div class="card">
+
+    <div class="task">
+
+      <h3>4. When was Al Baraka established?</h3>
+
+      <div class="options" data-q="detail1">
+
+        <button class="option">15 January 2010</button>
+        <button class="option">15 January 2020</button>
+        <button class="option" data-right="1">
+          15 January 2015
+        </button>
+        <button class="option">15 January 2005</button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>5. What is Al Baraka's main mission?</h3>
+
+      <div class="options" data-q="detail2">
+
+        <button class="option">
+          To organise sports competitions
+        </button>
+
+        <button class="option" data-right="1">
+          To provide humanitarian assistance and promote solidarity
+        </button>
+
+        <button class="option">
+          To sell school materials
+        </button>
+
+        <button class="option">
+          To organise tourist trips
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>6. Which areas does Al Baraka support?</h3>
+
+      <div class="options" data-q="detail3">
+
+        <button class="option">
+          Tourism and entertainment only
+        </button>
+
+        <button class="option" data-right="1">
+          Emergency relief, education and healthcare
+        </button>
+
+        <button class="option">
+          Football and music only
+        </button>
+
+        <button class="option">
+          Transport and shopping
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>7. How do volunteers contribute?</h3>
+
+      <div class="options" data-q="detail4">
+
+        <button class="option">
+          By ignoring humanitarian campaigns
+        </button>
+
+        <button class="option" data-right="1">
+          By giving time, energy and resources
+        </button>
+
+        <button class="option">
+          By refusing to cooperate
+        </button>
+
+        <button class="option">
+          By wasting useful supplies
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>8. What can pupils learn from charity work?</h3>
+
+      <div class="options" data-q="detail5">
+
+        <button class="option">
+          Selfishness and competition
+        </button>
+
+        <button class="option" data-right="1">
+          Responsibility, empathy and teamwork
+        </button>
+
+        <button class="option">
+          How to avoid responsibility
+        </button>
+
+        <button class="option">
+          How to become famous
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TRUE / FALSE -->
+
+<section class="lesson-section">
+
+  <span class="label">
+    06 • TEXTUAL EVIDENCE
+  </span>
+
+  <h2>🧾 True or False? Justify.</h2>
+
+  <div class="card">
+
+    <p>
+      Choose True or False.
+      Copy a suitable phrase from the text
+      to justify your answer.
+    </p>
+
+    <div id="tfRows">
+
+      <div class="tf-row"
+        data-answer="false"
+        data-evidence="15 january 2015|established on 15 january 2015">
+
+        <strong>
+          1. Al Baraka was established in 2020.
+        </strong>
+
+        <select aria-label="Statement 1">
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+
+        <input type="text"
+          placeholder="Evidence from paragraph 1...">
+
+      </div>
+
+      <div class="tf-row"
+        data-answer="true"
+        data-evidence="educational assistance|healthcare support|emergency relief">
+
+        <strong>
+          2. Al Baraka supports education and healthcare.
+        </strong>
+
+        <select aria-label="Statement 2">
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+
+        <input type="text"
+          placeholder="Evidence from paragraph 2...">
+
+      </div>
+
+      <div class="tf-row"
+        data-answer="false"
+        data-evidence="give their time|give their time, energy and resources|volunteers and supporters">
+
+        <strong>
+          3. Volunteers never offer their time to help others.
+        </strong>
+
+        <select aria-label="Statement 3">
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+
+        <input type="text"
+          placeholder="Evidence from paragraph 3...">
+
+      </div>
+
+      <div class="tf-row"
+        data-answer="true"
+        data-evidence="pupils can support charitable causes|collecting useful school materials|supervised campaigns">
+
+        <strong>
+          4. Young people can take part in charitable activities.
+        </strong>
+
+        <select aria-label="Statement 4">
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+
+        <input type="text"
+          placeholder="Evidence from paragraph 4...">
+
+      </div>
+
+    </div>
+
+    <button class="btn" onclick="checkTF()">
+      ✓ Check My Evidence
+    </button>
+
+    <div class="feedback" id="tfFeedback"></div>
+
+  </div>
+
+</section>
+
+<!-- REFERENCE WORDS -->
+
+<section class="lesson-section">
+
+  <span class="label">
+    07 • REFERENCE WORDS
+  </span>
+
+  <h2>🔗 What Do These Words Refer To?</h2>
+
+  <div class="card">
+
+    <p>
+      Read each highlighted word in its original sentence.
+      Identify what it refers to.
+    </p>
+
+    <div class="task">
+
+      <h3>
+        9. Paragraph 1: “<em>It</em> works to support vulnerable people...”
+      </h3>
+
+      <div class="options" data-q="ref1">
+
+        <button class="option">Algeria</button>
+
+        <button class="option" data-right="1">
+          Al Baraka Charity Organisation
+        </button>
+
+        <button class="option">Generosity</button>
+
+        <button class="option">A school</button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>
+        10. Paragraph 2: “<em>These contributions</em>
+        can reduce suffering...”
+      </h3>
+
+      <div class="options" data-q="ref2">
+
+        <button class="option">Sports competitions</button>
+
+        <button class="option" data-right="1">
+          Donations and humanitarian assistance
+        </button>
+
+        <button class="option">Tourist visits</button>
+
+        <button class="option">School examinations</button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>
+        11. Paragraph 3: “<em>They</em> work together...”
+      </h3>
+
+      <div class="options" data-q="ref3">
+
+        <button class="option">School supplies</button>
+
+        <button class="option" data-right="1">
+          Volunteers and supporters
+        </button>
+
+        <button class="option">Hospitals</button>
+
+        <button class="option">Charity projects</button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>
+        12. Paragraph 4: “Such experiences teach
+        <em>them</em> responsibility...”
+      </h3>
+
+      <div class="options" data-q="ref4">
+
+        <button class="option">Families in need</button>
+
+        <button class="option">Teachers</button>
+
+        <button class="option" data-right="1">
+          Pupils and young people
+        </button>
+
+        <button class="option">Humanitarian organisations</button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SYNONYMS AND OPPOSITES -->
+
+<section class="lesson-section">
+
+  <span class="label">
+    08 • VOCABULARY IN CONTEXT
+  </span>
+
+  <h2>🔎 Synonyms &amp; Opposites</h2>
+
+  <div class="card">
+
+    <div class="task">
+
+      <h3>
+        13. Find a word in paragraph 1 meaning “help”.
+      </h3>
+
+      <div class="options" data-q="syn1">
+
+        <button class="option">Reflect</button>
+        <button class="option" data-right="1">Support</button>
+        <button class="option">Believe</button>
+        <button class="option">Respect</button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>
+        14. Find a word in paragraph 2 meaning “necessary”.
+      </h3>
+
+      <div class="options" data-q="syn2">
+
+        <button class="option">Positive</button>
+        <button class="option">Different</button>
+        <button class="option" data-right="1">Essential</button>
+        <button class="option">Difficult</button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>
+        15. Find a word in paragraph 3 meaning “working together”.
+      </h3>
+
+      <div class="options" data-q="syn3">
+
+        <button class="option">Energy</button>
+        <button class="option" data-right="1">Cooperation</button>
+        <button class="option">Generosity</button>
+        <button class="option">Resources</button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>
+        16. Choose the opposite of “positive”
+        (paragraph 2).
+      </h3>
+
+      <div class="options" data-q="opp1">
+
+        <button class="option">Useful</button>
+        <button class="option">Helpful</button>
+        <button class="option" data-right="1">Negative</button>
+        <button class="option">Kind</button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>
+        17. Choose the opposite of “active”
+        (paragraph 4).
+      </h3>
+
+      <div class="options" data-q="opp2">
+
+        <button class="option">Energetic</button>
+        <button class="option" data-right="1">Inactive</button>
+        <button class="option">Helpful</button>
+        <button class="option">Responsible</button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- INFORMATION TRANSFER -->
+
+<section class="lesson-section">
+
+  <span class="label">
+    09 • INFORMATION TRANSFER
+  </span>
+
+  <h2>🗂️ Complete Al Baraka's Profile</h2>
+
+  <div class="card">
+
+    <div class="profile" id="profileRows">
+
+      <div class="field" data-answer="albaraka">
+
+        <label>Organisation's name</label>
+
+        <select>
+          <option value="">Choose...</option>
+          <option value="albaraka">Al Baraka</option>
+          <option value="green">Green Planet</option>
+          <option value="stars">Bright Stars</option>
+        </select>
+
+      </div>
+
+      <div class="field" data-answer="algeria">
+
+        <label>Country</label>
+
+        <select>
+          <option value="">Choose...</option>
+          <option value="algeria">Algeria</option>
+          <option value="france">France</option>
+          <option value="italy">Italy</option>
+        </select>
+
+      </div>
+
+      <div class="field" data-answer="2015">
+
+        <label>Year of establishment</label>
+
+        <select>
+          <option value="">Choose...</option>
+          <option value="2010">2010</option>
+          <option value="2015">2015</option>
+          <option value="2020">2020</option>
+        </select>
+
+      </div>
+
+      <div class="field" data-answer="humanitarian">
+
+        <label>Main mission</label>
+
+        <select>
+          <option value="">Choose...</option>
+          <option value="tourism">Tourism</option>
+          <option value="sports">Sports</option>
+          <option value="humanitarian">
+            Humanitarian assistance
+          </option>
+        </select>
+
+      </div>
+
+    </div>
+
+    <button class="btn"
+      onclick="checkRows('profileRows','profile','profileFeedback',false)">
+      ✓ Check My Profile
+    </button>
+
+    <div class="feedback" id="profileFeedback"></div>
+
+  </div>
+
+</section>
+
+<!-- INFERENCE -->
+
+<section class="lesson-section">
+
+  <span class="label">
+    10 • READ BETWEEN THE LINES
+  </span>
+
+  <h2>💡 Think More Deeply</h2>
+
+  <div class="card">
+
+    <div class="task">
+
+      <h3>
+        18. Why is cooperation important in charity work?
+      </h3>
+
+      <div class="options" data-q="infer1">
+
+        <button class="option">
+          It makes people work alone.
+        </button>
+
+        <button class="option" data-right="1">
+          It allows people to combine their efforts.
+        </button>
+
+        <button class="option">
+          It prevents people from helping.
+        </button>
+
+        <button class="option">
+          It makes donations unnecessary.
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>
+        19. Why should young people participate in charity work?
+      </h3>
+
+      <div class="options" data-q="infer2">
+
+        <button class="option">
+          To avoid school responsibilities
+        </button>
+
+        <button class="option" data-right="1">
+          To develop empathy and become responsible citizens
+        </button>
+
+        <button class="option">
+          To become famous
+        </button>
+
+        <button class="option">
+          To compete with vulnerable families
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>
+        20. What does the final paragraph suggest?
+      </h3>
+
+      <div class="options" data-q="infer3">
+
+        <button class="option">
+          Only wealthy people can help.
+        </button>
+
+        <button class="option" data-right="1">
+          Everyone can contribute to a better community.
+        </button>
+
+        <button class="option">
+          Charity work is unnecessary.
+        </button>
+
+        <button class="option">
+          Small actions never make a difference.
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- REAL-LIFE APPLICATION -->
+
+<section class="lesson-section">
+
+  <span class="label">
+    11 • APPLY WHAT YOU READ
+  </span>
+
+  <h2>🌟 Be an Active Citizen</h2>
+
+  <div class="card">
+
+    <div class="task">
+
+      <h3>
+        Your class wants to support a humanitarian campaign.
+        What should you do first?
+      </h3>
+
+      <div class="options" data-q="apply">
+
+        <button class="option">
+          Collect damaged items without checking them.
+        </button>
+
+        <button class="option" data-right="1">
+          Ask what is needed and organise a supervised collection.
+        </button>
+
+        <button class="option">
+          Share private information about families.
+        </button>
+
+        <button class="option">
+          Ignore the campaign.
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- WRITING -->
+
+<section class="lesson-section">
+
+  <span class="label">
+    12 • WRITTEN PRODUCTION
+  </span>
+
+  <h2>✍️ Let's Support a Charity Campaign</h2>
+
+  <div class="card">
+
+    <p>
+      <strong>Situation:</strong>
+      Your school is organising a charity campaign
+      inspired by the humanitarian work of Al Baraka.
+      Write a message of <strong>70–90 words</strong>
+      encouraging your classmates to participate.
+      Mention the purpose of the campaign,
+      the actions pupils can take and the importance
+      of solidarity.
+    </p>
+
+    <div class="support-grid">
+
+      <div class="support">
+        <strong>① Introduce the campaign</strong>
+        <p>Dear schoolmates, our school is organising...</p>
+      </div>
+
+      <div class="support">
+        <strong>② Suggest helpful actions</strong>
+        <p>We can collect... / We can donate...</p>
+      </div>
+
+      <div class="support">
+        <strong>③ Explain the purpose</strong>
+        <p>We want to help... / in order to...</p>
+      </div>
+
+      <div class="support">
+        <strong>④ End with an encouraging message</strong>
+        <p>If we work together, we will...</p>
+      </div>
+
+    </div>
+
+    <textarea
+      id="writing"
+      aria-label="Write your charity campaign message"
+      placeholder="Dear schoolmates, our school is organising a charity campaign to help people in need..."></textarea>
+
+    <p id="wordCount"
+      style="color:var(--purple);font-weight:900">
+      0 words
+    </p>
+
+    <div class="btn-row">
+
+      <button class="btn" onclick="reviewWriting()">
+        ✨ Review My Writing
+      </button>
+
+      <button class="btn secondary" onclick="saveWriting()">
+        💾 Save My Work
+      </button>
+
+      <button class="btn secondary" onclick="printWriting()">
+        🖨️ Print
+      </button>
+
+    </div>
+
+    <div class="feedback" id="writingFeedback"></div>
+
+  </div>
+
+  <div class="score">
+
+    <div>
+
+      <small>YOUR READING PROGRESS</small>
+
+      <strong>
+        ⭐ <span id="score">0</span> /
+        <span id="total">0</span>
+      </strong>
+
+    </div>
+
+    <button class="btn secondary" onclick="resetLesson()">
+      ↻ Try Again
+    </button>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  💜 MY ENGLISH SPACE<br>
+  MS4 • SEQUENCE 3 • READING TOGETHER<br>
+  LESSON 03 — AL BARAKA CHARITY ORGANISATION
+</footer>
+
+<!-- DICTIONARY -->
+
+<button
+  class="dict-button"
+  id="dictOpen"
+  aria-label="Open English Arabic dictionary">
+  📖
+</button>
+
+<div
+  class="overlay"
+  id="overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="English Arabic dictionary">
+
+  <div class="dictionary">
+
+    <div class="dict-head">
+
+      <h3>📖 English ↔ Arabic</h3>
+
+      <button
+        class="close"
+        id="dictClose"
+        aria-label="Close dictionary">
+        ×
+      </button>
+
+    </div>
+
+    <input
+      type="text"
+      id="dictSearch"
+      placeholder="Search for a word...">
+
+    <div class="dict-list" id="dictList"></div>
+
+  </div>
+
+</div>
+
+<script>
+"use strict";
+
+/* ==========================
+   SCORING SYSTEM
+========================== */
+
+const scored = new Set();
+
+let points = 0;
+
+const groups = [
+  ...document.querySelectorAll("[data-q]")
+];
+
+const ideaRows = [
+  ...document.querySelectorAll("#ideaRows .match-row")
+];
+
+const profileRows = [
+  ...document.querySelectorAll("#profileRows .field")
+];
+
+const tfRows = [
+  ...document.querySelectorAll("#tfRows .tf-row")
+];
+
+const total =
+  groups.length +
+  ideaRows.length +
+  profileRows.length +
+  tfRows.length;
+
+document.getElementById("total").textContent = total;
+
+function award(key){
+
+  if(scored.has(key)) return;
+
+  scored.add(key);
+
+  points++;
+
+  document.getElementById("score").textContent = points;
+
+}
+
+function feedback(element,type,text){
+
+  element.className = "feedback show " + type;
+
+  element.textContent = text;
+
+}
+
+/* ==========================
+   MULTIPLE CHOICE
+========================== */
+
+groups.forEach(group=>{
+
+  const buttons = [
+    ...group.querySelectorAll(".option")
+  ];
+
+  const message = group.nextElementSibling;
+
+  buttons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+      if(group.dataset.done) return;
+
+      if(button.dataset.right === "1"){
+
+        button.classList.add("correct");
+
+        group.dataset.done = "yes";
+
+        buttons.forEach(b=>{
+          b.disabled = true;
+        });
+
+        award("q:" + group.dataset.q);
+
+        feedback(
+          message,
+          "good",
+          "✓ Excellent! Your answer is correct."
+        );
+
+      }else{
+
+        button.classList.add("wrong");
+
+        button.disabled = true;
+
+        feedback(
+          message,
+          "bad",
+          "Not quite! Read the text carefully and try again."
+        );
+
+      }
+
+    });
+
+  });
+
+});
+
+/* ==========================
+   MAIN IDEA MATCHING
+========================== */
+
+ideaRows.forEach(row=>{
+
+  const select = row.querySelector("select");
+
+  for(let n=1;n<=5;n++){
+
+    const option = document.createElement("option");
+
+    option.value = String(n);
+
+    option.textContent = "Paragraph " + n;
+
+    select.append(option);
+
+  }
+
+});
+
+/* ==========================
+   SELECT TASKS
+========================== */
+
+function checkRows(id,prefix,feedbackId,unique){
+
+  const rows = [
+    ...document.querySelectorAll("#"+id+" [data-answer]")
+  ];
+
+  const values = rows.map(row=>
+    row.querySelector("select").value
+  );
+
+  const selected = values.filter(Boolean);
+
+  const validUnique =
+    !unique ||
+    selected.length === new Set(selected).size;
+
+  let correct = 0;
+
+  rows.forEach((row,index)=>{
+
+    const select = row.querySelector("select");
+
+    const ok =
+      validUnique &&
+      select.value === row.dataset.answer;
+
+    select.style.borderColor =
+      ok ? "#5ab88b" : "#e398ab";
+
+    if(ok){
+
+      correct++;
+
+      award(prefix+":"+index);
+
+    }
+
+  });
+
+  let message =
+    correct + " / " + rows.length + " correct. ";
+
+  if(!validUnique){
+
+    message += "Use each paragraph only once.";
+
+  }else if(correct === rows.length){
+
+    message += "Fantastic work!";
+
+  }else{
+
+    message += "Return to the numbered paragraphs.";
+
+  }
+
+  feedback(
+    document.getElementById(feedbackId),
+    correct === rows.length ? "good" : "bad",
+    message
+  );
+
+}
+
+/* ==========================
+   TRUE / FALSE
+========================== */
+
+function checkTF(){
+
+  let correct = 0;
+
+  tfRows.forEach((row,index)=>{
+
+    const answer =
+      row.querySelector("select").value;
+
+    const evidence = row
+      .querySelector("input")
+      .value
+      .trim()
+      .toLowerCase();
+
+    const accepted =
+      row.dataset.evidence.split("|");
+
+    const validEvidence =
+      evidence.length >= 8 &&
+      accepted.some(phrase=>
+        evidence.includes(phrase)
+      );
+
+    const ok =
+      answer === row.dataset.answer &&
+      validEvidence;
+
+    row.style.background =
+      ok ? "#ecfaf2" : "#fff0f4";
+
+    if(ok){
+
+      correct++;
+
+      award("tf:"+index);
+
+    }
+
+  });
+
+  feedback(
+    document.getElementById("tfFeedback"),
+    correct === tfRows.length ? "good" : "bad",
+    correct + " / " + tfRows.length +
+    " correctly justified. " +
+    (
+      correct === tfRows.length
+        ? "Excellent reading!"
+        : "Use a suitable phrase from the text."
+    )
+  );
+
+}
+
+/* ==========================
+   WRITING
+========================== */
+
+const writing =
+  document.getElementById("writing");
+
+try{
+
+  writing.value =
+    localStorage.getItem("ms4_albaraka_writing") || "";
+
+}catch(error){}
+
+function countWords(){
+
+  const text = writing.value.trim();
+
+  const count = text
+    ? text.split(/\s+/).length
+    : 0;
+
+  document.getElementById("wordCount").textContent =
+    count + " words";
+
+  return count;
+
+}
+
+writing.addEventListener("input",countWords);
+
+countWords();
+
+function saveWriting(){
+
+  try{
+
+    localStorage.setItem(
+      "ms4_albaraka_writing",
+      writing.value
+    );
+
+    feedback(
+      document.getElementById("writingFeedback"),
+      "good",
+      "✓ Your writing has been saved on this device."
+    );
+
+  }catch(error){
+
+    feedback(
+      document.getElementById("writingFeedback"),
+      "bad",
+      "Saving is unavailable. Please copy your writing."
+    );
+
+  }
+
+}
+
+function reviewWriting(){
+
+  const count = countWords();
+
+  const text = writing.value;
+
+  const notes = [];
+
+  if(count < 70){
+
+    notes.push("Add details to reach 70 words.");
+
+  }
+
+  if(count > 90){
+
+    notes.push("Keep your message within 90 words.");
+
+  }
+
+  if(!/help|support|donat|volunteer|collect/i.test(text)){
+
+    notes.push("Mention ways to help.");
+
+  }
+
+  if(!/because|so that|in order to|\bto help\b|\bto support\b/i.test(text)){
+
+    notes.push("Explain the purpose of the campaign.");
+
+  }
+
+  if(!/[.!?]/.test(text)){
+
+    notes.push("Check your punctuation.");
+
+  }
+
+  feedback(
+    document.getElementById("writingFeedback"),
+    notes.length ? "info" : "good",
+    notes.length
+      ? notes.join(" ")
+      : "Good progress! Your message meets the basic checks. Read it again for clarity and accuracy."
+  );
+
+}
+
+/* ==========================
+   PRINT WRITING
+========================== */
+
+function printWriting(){
+
+  const text = writing.value.trim();
+
+  if(!text){
+
+    feedback(
+      document.getElementById("writingFeedback"),
+      "bad",
+      "Write your paragraph before printing."
+    );
+
+    return;
+
+  }
+
+  const printable = window.open("","_blank");
+
+  if(!printable){
+
+    feedback(
+      document.getElementById("writingFeedback"),
+      "bad",
+      "Please allow pop-ups to print."
+    );
+
+    return;
+
+  }
+
+  const safeText = text
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;");
+
+  printable.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Charity Campaign</title>
+      <style>
+        body{
+          font-family:Arial,sans-serif;
+          margin:45px;
+          line-height:1.8;
+        }
+        h1{color:#60389d}
+        p{white-space:pre-wrap}
+      </style>
+    </head>
+    <body>
+      <h1>Our Charity Campaign</h1>
+      <p>Name: _______________________</p>
+      <p>Class: _______________________</p>
+      <hr>
+      <p>${safeText}</p>
+    </body>
+    </html>
+  `);
+
+  printable.document.close();
+
+  printable.focus();
+
+  printable.print();
+
+}
+
+/* ==========================
+   RESET
+========================== */
+
+function resetLesson(){
+
+  if(!confirm(
+    "Reset your answers? Your saved writing will remain."
+  )){
+
+    return;
+
+  }
+
+  scored.clear();
+
+  points = 0;
+
+  document.getElementById("score").textContent = "0";
+
+  groups.forEach(group=>{
+
+    delete group.dataset.done;
+
+    group.querySelectorAll("button").forEach(button=>{
+
+      button.disabled = false;
+
+      button.classList.remove("correct","wrong");
+
+    });
+
+    group.nextElementSibling.className = "feedback";
+
+  });
+
+  [...ideaRows,...profileRows].forEach(row=>{
+
+    const select = row.querySelector("select");
+
+    select.value = "";
+
+    select.style.borderColor = "";
+
+  });
+
+  tfRows.forEach(row=>{
+
+    row.querySelector("select").value = "";
+
+    row.querySelector("input").value = "";
+
+    row.style.background = "";
+
+  });
+
+  [
+    "ideaFeedback",
+    "profileFeedback",
+    "tfFeedback"
+  ].forEach(id=>{
+
+    document.getElementById(id).className = "feedback";
+
+  });
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+/* ==========================
+   ENGLISH–ARABIC DICTIONARY
+========================== */
+
+const dictionary = [
+
+  ["Al Baraka","البركة"],
+  ["charity organisation","منظمة خيرية"],
+  ["humanitarian","إنساني"],
+  ["association","جمعية"],
+  ["mission","مهمة / رسالة"],
+  ["solidarity","تضامن"],
+  ["generosity","كرم"],
+  ["kindness","لطف / إحسان"],
+  ["citizen","مواطن"],
+  ["dignity","كرامة"],
+  ["support","يدعم / يساعد"],
+  ["donation","تبرع"],
+  ["volunteer","متطوع"],
+  ["campaign","حملة"],
+  ["supplies","مستلزمات"],
+  ["essential","ضروري"],
+  ["vulnerable","هش / ضعيف"],
+  ["contribution","مساهمة"],
+  ["cooperation","تعاون"],
+  ["responsibility","مسؤولية"],
+  ["compassion","تعاطف"],
+  ["empathy","التعاطف مع الآخرين"],
+  ["teamwork","عمل جماعي"],
+  ["community","مجتمع"],
+  ["relief","إغاثة"],
+  ["initiative","مبادرة"],
+  ["participate","يشارك"],
+  ["positive","إيجابي"],
+  ["negative","سلبي"],
+  ["active","نشط"],
+  ["inactive","غير نشط"],
+  ["generous","كريم"],
+  ["in need","في حاجة"],
+  ["make a difference","يحدث فرقاً"],
+  ["synonym","مرادف"],
+  ["opposite","ضد"],
+  ["reference word","كلمة إحالة"],
+  ["main idea","الفكرة الرئيسية"],
+  ["paragraph","فقرة"],
+  ["evidence","دليل من النص"],
+  ["healthcare","الرعاية الصحية"],
+  ["education","التعليم"],
+  ["emergency","حالة طوارئ"],
+  ["suffering","معاناة"],
+  ["respect","احترام"]
+
+];
+
+const overlay =
+  document.getElementById("overlay");
+
+const search =
+  document.getElementById("dictSearch");
+
+const list =
+  document.getElementById("dictList");
+
+function renderDictionary(){
+
+  const query =
+    search.value.trim().toLowerCase();
+
+  list.replaceChildren();
+
+  const matches = dictionary.filter(([en,ar])=>
+    en.toLowerCase().includes(query) ||
+    ar.includes(query)
+  );
+
+  matches.forEach(([en,ar])=>{
+
+    const row = document.createElement("div");
+
+    const english = document.createElement("strong");
+
+    const arabic = document.createElement("span");
+
+    row.className = "word";
+
+    english.textContent = en;
+
+    arabic.textContent = ar;
+
+    arabic.className = "arabic";
+
+    row.append(english,arabic);
+
+    list.append(row);
+
+  });
+
+  if(!matches.length){
+
+    const message = document.createElement("p");
+
+    message.textContent = "No matching word found.";
+
+    list.append(message);
+
+  }
+
+}
+
+function closeDictionary(){
+
+  overlay.classList.remove("open");
+
+}
+
+document.getElementById("dictOpen").onclick = ()=>{
+
+  overlay.classList.add("open");
+
+  renderDictionary();
+
+  search.focus();
+
+};
+
+document.getElementById("dictClose").onclick =
+  closeDictionary;
+
+overlay.addEventListener("click",event=>{
+
+  if(event.target === overlay){
+
+    closeDictionary();
+
+  }
+
+});
+
+document.addEventListener("keydown",event=>{
+
+  if(event.key === "Escape"){
+
+    closeDictionary();
+
+  }
+
+});
+
+search.addEventListener("input",renderDictionary);
+
+</script>
+
+</body>
+</html>

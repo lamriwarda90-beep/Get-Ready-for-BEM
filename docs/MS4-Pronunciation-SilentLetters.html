@@ -1,0 +1,3643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#087da7">
+
+<title>MS4 Pronunciation Lab | Lesson 04 — Silent Letters</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   MS4 PRONUNCIATION LAB
+   LESSON 04 — SILENT LETTERS
+   MY ENGLISH SPACE
+========================================================= */
+
+:root{
+    --navy:#102b4e;
+    --deep:#075b83;
+    --blue:#087da7;
+    --cyan:#35c8d8;
+    --aqua:#6be4e5;
+
+    --green:#19a879;
+    --green-soft:#e2f9ee;
+
+    --purple:#7954d5;
+    --purple-soft:#eee8ff;
+
+    --orange:#ed9747;
+    --orange-soft:#fff1df;
+
+    --gold:#ffcf6c;
+    --red:#e85b65;
+
+    --white:#ffffff;
+    --paper:#f7fcff;
+
+    --ink:#203c55;
+    --muted:#6b8093;
+
+    --border:#dcecf4;
+    --shadow:0 18px 45px rgba(15,60,100,.12);
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:90px;
+}
+
+body{
+    margin:0;
+    font-family:"Nunito",sans-serif;
+    color:var(--ink);
+
+    background:
+        radial-gradient(circle at 15% 10%,#d8faff,transparent 35%),
+        radial-gradient(circle at 85% 40%,#e9e0ff,transparent 40%),
+        #eef8fd;
+}
+
+h1,h2,h3,h4{
+    font-family:"Baloo 2",sans-serif;
+    line-height:1.2;
+}
+
+button,
+input,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+button:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible{
+    outline:3px solid var(--orange);
+    outline-offset:3px;
+}
+
+.container{
+    width:min(1120px,calc(100% - 32px));
+    margin:auto;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar{
+    background:var(--navy);
+    color:white;
+    border-bottom:3px solid var(--cyan);
+}
+
+.topbar-inner{
+    min-height:75px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    font-size:15px;
+    font-weight:900;
+}
+
+.brand-icon{
+    width:45px;
+    height:45px;
+    display:grid;
+    place-items:center;
+    background:var(--cyan);
+    border-radius:14px;
+    font-size:24px;
+}
+
+.back-btn{
+    padding:11px 17px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:30px;
+    font-size:12px;
+    font-weight:900;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    padding:65px 20px 75px;
+
+    background:linear-gradient(
+        135deg,
+        #075477,
+        #087da7,
+        #32b8c9
+    );
+
+    text-align:center;
+    color:white;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    top:-190px;
+    right:-130px;
+    border:55px solid rgba(255,255,255,.08);
+    border-radius:50%;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    bottom:-170px;
+    left:-80px;
+    border:35px solid rgba(255,255,255,.08);
+    border-radius:50%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+    margin:auto;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:9px 18px;
+    background:white;
+    color:var(--deep);
+    border-radius:30px;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.hero h1{
+    margin:22px 0 8px;
+    font-size:clamp(43px,7vw,78px);
+    line-height:1.1;
+
+    text-shadow:
+        0 5px 0 rgba(0,55,90,.5),
+        0 12px 25px rgba(0,30,60,.3);
+}
+
+.hero h1 span{
+    display:block;
+    color:var(--gold);
+}
+
+.hero-subtitle{
+    margin:17px auto;
+    max-width:680px;
+    font-size:15px;
+    font-weight:800;
+    line-height:1.9;
+}
+
+.sound-bubbles{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:16px;
+    margin:30px 0;
+}
+
+.sound-bubble{
+    width:115px;
+    height:115px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:white;
+    border:5px solid rgba(255,255,255,.45);
+    border-radius:50%;
+    box-shadow:0 12px 25px rgba(0,45,75,.2);
+    animation:bubbleFloat 4s ease-in-out infinite;
+}
+
+.sound-bubble:nth-child(2){
+    animation-delay:-1.3s;
+}
+
+.sound-bubble:nth-child(3){
+    animation-delay:-2.6s;
+}
+
+.sound-bubble strong{
+    font-family:"Baloo 2",sans-serif;
+    font-size:38px;
+    line-height:1;
+}
+
+.sound-bubble small{
+    margin-top:7px;
+    font-size:12px;
+    font-weight:900;
+}
+
+.bubble-k{
+    color:var(--green);
+}
+
+.bubble-w{
+    color:var(--purple);
+}
+
+.bubble-b{
+    color:var(--orange);
+}
+
+@keyframes bubbleFloat{
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.hero-start{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 30px;
+    background:var(--gold);
+    color:#674719;
+    border-radius:40px;
+    font-size:15px;
+    font-weight:900;
+    box-shadow:0 10px 22px rgba(0,40,70,.25);
+    transition:.25s;
+}
+
+.hero-start:hover{
+    transform:translateY(-4px);
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,255,255,.97);
+    border-bottom:1px solid var(--border);
+    box-shadow:0 5px 20px rgba(0,40,70,.08);
+}
+
+.progress-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    padding:13px 0;
+}
+
+.progress-text{
+    font-size:12px;
+    font-weight:900;
+}
+
+.progress-track{
+    flex:1;
+    max-width:500px;
+    height:12px;
+    background:#e1edf5;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        var(--green),
+        var(--cyan),
+        var(--purple)
+    );
+    border-radius:30px;
+    transition:width .4s;
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.lesson-section{
+    padding:52px 0 15px;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:28px;
+}
+
+.section-kicker{
+    display:inline-block;
+    padding:8px 15px;
+    background:#def5fa;
+    color:var(--deep);
+    border-radius:25px;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.section-heading h2{
+    margin:12px 0 9px;
+    font-size:clamp(29px,4vw,42px);
+}
+
+.section-heading p{
+    max-width:680px;
+    margin:auto;
+    color:var(--muted);
+    font-size:14px;
+    font-weight:700;
+    line-height:1.8;
+}
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.panel{
+    padding:30px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:25px;
+    box-shadow:var(--shadow);
+}
+
+.panel + .panel{
+    margin-top:20px;
+}
+
+.panel h3{
+    margin:0 0 13px;
+    font-size:26px;
+}
+
+.panel p{
+    color:var(--muted);
+    font-size:14px;
+    font-weight:700;
+    line-height:1.85;
+}
+
+.arabic{
+    font-family:"Noto Naskh Arabic",serif;
+    font-size:16px!important;
+    line-height:1.9!important;
+    direction:rtl;
+}
+
+/* =========================================================
+   AUDIO
+========================================================= */
+
+.audio-toolbar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    padding:16px;
+    background:#eaf8fc;
+    border:1px solid #ccecf4;
+    border-radius:18px;
+}
+
+.audio-toolbar label{
+    font-size:12px;
+    font-weight:900;
+}
+
+.audio-toolbar select{
+    padding:10px 13px;
+    background:white;
+    border:1px solid #bddfe9;
+    border-radius:12px;
+    color:var(--ink);
+    font-weight:800;
+    max-width:100%;
+}
+
+.audio-status{
+    font-size:12px;
+    font-weight:800;
+    color:var(--deep);
+    text-align:center;
+}
+
+.audio-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:11px 16px;
+    background:var(--blue);
+    color:white;
+    border:0;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:900;
+    transition:.2s;
+}
+
+.audio-btn:hover{
+    background:var(--deep);
+    transform:translateY(-2px);
+}
+
+.audio-btn.secondary{
+    background:#e8f6fc;
+    color:var(--deep);
+    border:1px solid #b8e0ec;
+}
+
+.audio-btn.gold{
+    background:var(--gold);
+    color:#654819;
+}
+
+.audio-btn.purple{
+    background:var(--purple);
+}
+
+.audio-btn.green{
+    background:var(--green);
+}
+
+.audio-btn.stop{
+    background:#d84c5c;
+}
+
+.audio-btn.speaking{
+    box-shadow:0 0 0 5px rgba(53,200,216,.22);
+}
+
+/* =========================================================
+   SOUND CARDS
+========================================================= */
+
+.sound-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:20px;
+}
+
+.sound-card{
+    padding:26px;
+    background:white;
+    border-radius:24px;
+    border:2px solid var(--border);
+    box-shadow:var(--shadow);
+    text-align:center;
+}
+
+.sound-card.k{
+    border-top:7px solid var(--green);
+}
+
+.sound-card.w{
+    border-top:7px solid var(--purple);
+}
+
+.sound-card.b{
+    border-top:7px solid var(--orange);
+}
+
+.sound-symbol{
+    width:100px;
+    height:100px;
+    display:grid;
+    place-items:center;
+    margin:0 auto 15px;
+    background:var(--green-soft);
+    color:var(--green);
+    border-radius:50%;
+    font-family:"Baloo 2",sans-serif;
+    font-size:40px;
+    font-weight:800;
+}
+
+.sound-card.w .sound-symbol{
+    background:var(--purple-soft);
+    color:var(--purple);
+}
+
+.sound-card.b .sound-symbol{
+    background:var(--orange-soft);
+    color:var(--orange);
+}
+
+.sound-card h3{
+    margin:5px 0;
+    font-size:23px;
+}
+
+.sound-card p{
+    font-size:12px;
+    line-height:1.8;
+    color:var(--muted);
+}
+
+.silent{
+    color:var(--red);
+    text-decoration:line-through;
+    text-decoration-thickness:3px;
+    text-decoration-color:var(--red);
+}
+
+.word-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:17px 0;
+}
+
+.word-btn{
+    padding:10px 13px;
+    background:#f0f7fb;
+    color:var(--ink);
+    border:1px solid #d5e8f1;
+    border-radius:12px;
+    font-size:12px;
+    font-weight:900;
+}
+
+.word-btn:hover{
+    background:#def3fb;
+}
+
+.rule-box{
+    margin-top:22px;
+    padding:22px;
+    background:#f0f9fc;
+    border-left:6px solid var(--cyan);
+    border-radius:16px;
+}
+
+.rule-box strong{
+    display:block;
+    margin-bottom:10px;
+    font-size:16px;
+}
+
+.rule-box p{
+    margin:7px 0;
+}
+
+/* =========================================================
+   SEQUENCE TAGS
+========================================================= */
+
+.sequence-tags{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:18px 0 5px;
+}
+
+.sequence-tag{
+    padding:9px 14px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:25px;
+    font-size:11px;
+    font-weight:900;
+}
+
+.sequence-tag:nth-child(1){
+    color:var(--green);
+}
+
+.sequence-tag:nth-child(2){
+    color:var(--purple);
+}
+
+.sequence-tag:nth-child(3){
+    color:var(--orange);
+}
+
+/* =========================================================
+   PASSAGE
+========================================================= */
+
+.passage-panel{
+    background:linear-gradient(135deg,#ffffff,#f0faff);
+    border:2px solid #cdebf5;
+}
+
+.passage-heading{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:18px;
+}
+
+.passage-icon{
+    width:68px;
+    height:68px;
+    display:grid;
+    place-items:center;
+    background:var(--cyan);
+    border-radius:20px;
+    font-size:35px;
+    flex-shrink:0;
+}
+
+.passage-heading h3{
+    margin:0;
+}
+
+.passage-heading small{
+    font-size:11px;
+    font-weight:900;
+    color:var(--blue);
+}
+
+.passage-text{
+    padding:25px;
+    background:white;
+    border:1px solid #d8edf5;
+    border-radius:20px;
+    font-size:17px;
+    font-weight:800;
+    line-height:2.2;
+}
+
+.passage-text strong{
+    color:var(--blue);
+}
+
+.passage-text.hidden-text{
+    filter:blur(7px);
+    user-select:none;
+    pointer-events:none;
+}
+
+.passage-controls{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:20px 0;
+}
+
+.passage-instructions{
+    padding:20px;
+    background:#fff5de;
+    border:1px solid #f7dda3;
+    border-radius:17px;
+}
+
+.passage-instructions h4{
+    margin:0 0 8px;
+    font-size:21px;
+}
+
+.passage-instructions p{
+    margin:5px 0;
+    color:#76603e;
+}
+
+/* =========================================================
+   DETECTIVE
+========================================================= */
+
+.detective-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-top:20px;
+}
+
+.detective-word{
+    min-height:55px;
+    padding:12px 7px;
+    background:#f3f8fc;
+    border:2px solid #dceaf3;
+    border-radius:13px;
+    font-size:13px;
+    font-weight:900;
+    transition:.2s;
+}
+
+.detective-word:hover{
+    transform:translateY(-2px);
+}
+
+.detective-word.selected,
+.detective-word.correct{
+    background:#dff7ed;
+    border-color:var(--green);
+    color:#117b55;
+}
+
+.detective-word.incorrect{
+    background:#ffe8e8;
+    border-color:var(--red);
+    color:#a72d3b;
+}
+
+.detective-word.missed{
+    background:#fff0d7;
+    border-color:var(--orange);
+    color:#98601e;
+}
+
+/* =========================================================
+   CLASSIFICATION
+========================================================= */
+
+.classify-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    margin-top:20px;
+}
+
+.classify-column{
+    padding:18px;
+    background:#f6fbfd;
+    border:2px solid #dcebf3;
+    border-radius:18px;
+}
+
+.classify-column h4{
+    margin:0 0 15px;
+    text-align:center;
+    font-size:25px;
+}
+
+.classify-column:nth-child(1) h4{
+    color:var(--green);
+}
+
+.classify-column:nth-child(2) h4{
+    color:var(--purple);
+}
+
+.classify-column:nth-child(3) h4{
+    color:var(--orange);
+}
+
+.classify-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    padding:10px;
+    margin:8px 0;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:12px;
+}
+
+.classify-item span{
+    font-size:12px;
+    font-weight:900;
+    overflow-wrap:anywhere;
+}
+
+.classify-item select{
+    min-width:74px;
+    padding:7px 5px;
+    background:#f5f9fc;
+    border:1px solid #cbdfe9;
+    border-radius:9px;
+    font-size:12px;
+    font-weight:900;
+}
+
+.classify-item.correct{
+    border-color:var(--green);
+    background:#e7f9ef;
+}
+
+.classify-item.incorrect{
+    border-color:var(--red);
+    background:#fff0f0;
+}
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz-card{
+    padding:27px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:23px;
+    box-shadow:var(--shadow);
+}
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.quiz-count{
+    font-size:12px;
+    font-weight:900;
+    color:var(--blue);
+}
+
+.quiz-score{
+    padding:8px 13px;
+    background:#fff0d3;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:900;
+}
+
+.quiz-word{
+    margin:15px auto;
+    text-align:center;
+    font-family:"Baloo 2",sans-serif;
+    font-size:clamp(35px,6vw,55px);
+    font-weight:800;
+}
+
+.quiz-options{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin:22px 0;
+}
+
+.quiz-option{
+    padding:20px 10px;
+    background:#edf7fc;
+    border:2px solid #d2e8f3;
+    border-radius:16px;
+    font-family:"Baloo 2",sans-serif;
+    font-size:27px;
+    font-weight:800;
+    transition:.2s;
+}
+
+.quiz-option:hover{
+    transform:translateY(-3px);
+}
+
+.quiz-option.correct{
+    background:#dff7e9;
+    border-color:var(--green);
+    color:#11875b;
+}
+
+.quiz-option.incorrect{
+    background:#ffe8e8;
+    border-color:var(--red);
+    color:#bc3d49;
+}
+
+/* =========================================================
+   FEEDBACK
+========================================================= */
+
+.feedback{
+    min-height:25px;
+    margin:17px 0;
+    font-size:14px;
+    font-weight:900;
+    text-align:center;
+}
+
+.feedback.success{
+    color:#11865a;
+}
+
+.feedback.error{
+    color:#c44750;
+}
+
+.feedback.info{
+    color:var(--deep);
+}
+
+.action-row{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:20px;
+}
+
+.action-btn{
+    padding:14px 23px;
+    background:var(--blue);
+    color:white;
+    border:0;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:900;
+    transition:.2s;
+}
+
+.action-btn:hover{
+    transform:translateY(-2px);
+}
+
+.action-btn.green{
+    background:var(--green);
+}
+
+.action-btn.purple{
+    background:var(--purple);
+}
+
+.action-btn.gold{
+    background:var(--gold);
+    color:#62451a;
+}
+
+.action-btn.secondary{
+    background:#e8f5fb;
+    color:var(--deep);
+    border:1px solid #c7e6f2;
+}
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+.result-panel{
+    padding:40px 25px;
+    background:linear-gradient(135deg,#123d64,#087da7);
+    border-radius:25px;
+    color:white;
+    text-align:center;
+    box-shadow:var(--shadow);
+}
+
+.result-icon{
+    font-size:70px;
+}
+
+.result-panel h2{
+    margin:12px 0;
+    font-size:36px;
+}
+
+.result-panel p{
+    max-width:650px;
+    margin:12px auto;
+    font-size:14px;
+    font-weight:700;
+    line-height:1.9;
+}
+
+.result-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin:25px 0;
+}
+
+.result-stat{
+    padding:20px 10px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:17px;
+}
+
+.result-stat strong{
+    display:block;
+    color:var(--gold);
+    font-size:29px;
+}
+
+.result-stat span{
+    font-size:11px;
+    font-weight:900;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    margin-top:60px;
+    padding:35px 20px;
+    background:var(--navy);
+    color:white;
+    text-align:center;
+    font-size:12px;
+    font-weight:800;
+    line-height:2;
+}
+
+footer strong{
+    color:var(--gold);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:850px){
+
+    .sound-grid{
+        grid-template-columns:1fr;
+    }
+
+    .classify-grid{
+        grid-template-columns:1fr;
+    }
+
+    .detective-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:550px){
+
+    .hero{
+        padding:45px 15px 55px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero-subtitle{
+        font-size:13px;
+    }
+
+    .sound-bubble{
+        width:95px;
+        height:95px;
+    }
+
+    .sound-bubble strong{
+        font-size:31px;
+    }
+
+    .panel{
+        padding:20px 16px;
+    }
+
+    .passage-text{
+        padding:17px;
+        font-size:15px;
+        line-height:2;
+    }
+
+    .detective-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .quiz-options{
+        gap:7px;
+    }
+
+    .quiz-option{
+        padding:15px 6px;
+        font-size:23px;
+    }
+
+    .result-stats{
+        gap:6px;
+    }
+
+    .result-stat strong{
+        font-size:23px;
+    }
+
+    .result-stat span{
+        font-size:9px;
+    }
+
+    .brand{
+        font-size:12px;
+    }
+
+    .back-btn{
+        padding:9px 11px;
+        font-size:10px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none!important;
+        transition:none!important;
+    }
+}
+
+@media print{
+
+    .topbar,
+    .progress-nav,
+    .hero,
+    .audio-toolbar,
+    .audio-btn,
+    .action-btn,
+    footer{
+        display:none!important;
+    }
+
+    body{
+        background:white;
+    }
+
+    .panel,
+    .quiz-card,
+    .result-panel{
+        box-shadow:none;
+        break-inside:avoid;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<header class="topbar">
+
+    <div class="container topbar-inner">
+
+        <div class="brand">
+
+            <span class="brand-icon">🎧</span>
+
+            MY ENGLISH SPACE
+
+        </div>
+
+        <a
+            href="MS4-Pronunciation.html"
+            class="back-btn"
+        >
+            ← Pronunciation Lab
+        </a>
+
+    </div>
+
+</header>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            🎤 MS4 · PRONUNCIATION · LESSON 04
+        </span>
+
+        <h1>
+            Silent Letters
+            <span>Sound Galaxy!</span>
+        </h1>
+
+        <p class="hero-subtitle">
+
+            Some letters are written but never heard!
+
+            Discover the secrets of silent letters,
+            listen carefully, solve sound mysteries
+            and become a Silent Letter Detective!
+
+        </p>
+
+        <div class="sound-bubbles">
+
+            <div class="sound-bubble bubble-k">
+                <strong>K</strong>
+                <small>knee</small>
+            </div>
+
+            <div class="sound-bubble bubble-w">
+                <strong>W</strong>
+                <small>write</small>
+            </div>
+
+            <div class="sound-bubble bubble-b">
+                <strong>B</strong>
+                <small>climb</small>
+            </div>
+
+        </div>
+
+        <a
+            href="#discovery"
+            class="hero-start"
+        >
+            🚀 Start Sound Mission →
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     PROGRESS
+========================================================= -->
+
+<div class="progress-nav">
+
+    <div class="container progress-inner">
+
+        <span class="progress-text">
+            ⭐ Lesson Progress
+        </span>
+
+        <div class="progress-track">
+
+            <div
+                id="progressFill"
+                class="progress-fill"
+                role="progressbar"
+                aria-label="Lesson progress"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+            ></div>
+
+        </div>
+
+        <span
+            class="progress-text"
+            id="progressText"
+        >
+            0%
+        </span>
+
+    </div>
+
+</div>
+
+<main class="container">
+
+<!-- =========================================================
+     AUDIO STUDIO
+========================================================= -->
+
+<section class="lesson-section">
+
+    <div class="panel">
+
+        <h3>
+            🎧 Your British English Listening Studio
+        </h3>
+
+        <p>
+
+            Put on your headphones, choose your
+            listening speed and click the speaker
+            buttons to hear the words.
+
+            Remember: the silent letters are
+            written, but they are not pronounced!
+
+        </p>
+
+        <div class="audio-toolbar">
+
+            <label for="speedSelect">
+                🎚️ Audio Speed
+            </label>
+
+            <select id="speedSelect">
+
+                <option value="0.7">Slow</option>
+                <option value="0.85" selected>Clear</option>
+                <option value="1">Natural</option>
+
+            </select>
+
+            <label for="voiceSelect">
+                🎤 Voice
+            </label>
+
+            <select id="voiceSelect">
+                <option value="">
+                    Automatic British English
+                </option>
+            </select>
+
+            <button
+                type="button"
+                class="audio-btn secondary"
+                id="testAudio"
+            >
+                🔊 Test Audio
+            </button>
+
+            <button
+                type="button"
+                class="audio-btn stop"
+                id="stopAudio"
+            >
+                ⏹ Stop
+            </button>
+
+        </div>
+
+        <p
+            class="audio-status"
+            id="audioStatus"
+            role="status"
+            aria-live="polite"
+        >
+            🎤 Ready to listen!
+        </p>
+
+        <p class="arabic">
+
+            اضغط على زر الصوت للاستماع إلى
+            النطق الصحيح للكلمات.
+
+            تذكر أن بعض الحروف تكتب
+            ولكنها لا تنطق.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     MISSION 01 — DISCOVERY
+========================================================= -->
+
+<section
+    class="lesson-section"
+    id="discovery"
+>
+
+    <div class="section-heading">
+
+        <span class="section-kicker">
+            🔬 MISSION 01 · DISCOVER
+        </span>
+
+        <h2>
+            Meet the Silent Letters!
+        </h2>
+
+        <p>
+
+            In English, some letters appear
+            in spelling but disappear
+            when we pronounce a word.
+
+            Listen and discover three
+            important silent-letter patterns.
+
+        </p>
+
+    </div>
+
+    <div class="sound-grid">
+
+        <!-- SILENT K -->
+
+        <article class="sound-card k">
+
+            <div class="sound-symbol">
+                K
+            </div>
+
+            <h3>
+                The Invisible K
+            </h3>
+
+            <p>
+
+                The letter <strong>K</strong>
+                is usually silent at the beginning
+                of words starting with
+                <strong>kn</strong>.
+
+                We pronounce the /n/ sound,
+                but not the /k/ sound.
+
+            </p>
+
+            <p class="arabic">
+
+                الحرف K لا ينطق عادة
+                في بداية الكلمات التي تبدأ بـ kn.
+
+                ننطق صوت n فقط.
+
+            </p>
+
+            <div class="word-buttons">
+
+                <button
+                    class="word-btn speak"
+                    data-text="know"
+                >
+                    🔊 <span class="silent">k</span>now
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="knee"
+                >
+                    🔊 <span class="silent">k</span>nee
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="knife"
+                >
+                    🔊 <span class="silent">k</span>nife
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="knowledge"
+                >
+                    🔊 <span class="silent">k</span>nowledge
+                </button>
+
+            </div>
+
+        </article>
+
+        <!-- SILENT W -->
+
+        <article class="sound-card w">
+
+            <div class="sound-symbol">
+                W
+            </div>
+
+            <h3>
+                The Invisible W
+            </h3>
+
+            <p>
+
+                The letter <strong>W</strong>
+                is silent at the beginning
+                of many words starting
+                with <strong>wr</strong>.
+
+                We pronounce the /r/ sound,
+                but not the /w/ sound.
+
+            </p>
+
+            <p class="arabic">
+
+                الحرف W لا ينطق في بداية
+                الكلمات التي تبدأ بـ wr.
+
+                ننطق صوت r فقط.
+
+            </p>
+
+            <div class="word-buttons">
+
+                <button
+                    class="word-btn speak"
+                    data-text="write"
+                >
+                    🔊 <span class="silent">w</span>rite
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="wrong"
+                >
+                    🔊 <span class="silent">w</span>rong
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="wrist"
+                >
+                    🔊 <span class="silent">w</span>rist
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="written"
+                >
+                    🔊 <span class="silent">w</span>ritten
+                </button>
+
+            </div>
+
+        </article>
+
+        <!-- SILENT B -->
+
+        <article class="sound-card b">
+
+            <div class="sound-symbol">
+                B
+            </div>
+
+            <h3>
+                The Invisible B
+            </h3>
+
+            <p>
+
+                The letter <strong>B</strong>
+                is silent in words such as
+                <strong>climb</strong>,
+                <strong>thumb</strong>
+                and <strong>comb</strong>.
+
+                It is often silent after
+                <strong>m</strong> at the end
+                of a word.
+
+            </p>
+
+            <p class="arabic">
+
+                الحرف B لا ينطق في بعض
+                الكلمات عندما يأتي بعد m
+                في نهاية الكلمة.
+
+            </p>
+
+            <div class="word-buttons">
+
+                <button
+                    class="word-btn speak"
+                    data-text="climb"
+                >
+                    🔊 clim<span class="silent">b</span>
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="thumb"
+                >
+                    🔊 thum<span class="silent">b</span>
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="comb"
+                >
+                    🔊 com<span class="silent">b</span>
+                </button>
+
+                <button
+                    class="word-btn speak"
+                    data-text="lamb"
+                >
+                    🔊 lam<span class="silent">b</span>
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+    <!-- ADDITIONAL SILENT LETTERS -->
+
+    <div class="panel" style="margin-top:22px">
+
+        <h3>
+            🌟 More Silent Letter Secrets!
+        </h3>
+
+        <p>
+
+            Silent letters are not limited
+            to K, W and B.
+
+            Explore these additional examples
+            that are useful in everyday English.
+
+        </p>
+
+        <div class="word-buttons">
+
+            <button
+                class="word-btn speak"
+                data-text="listen"
+            >
+                🔊 lis<span class="silent">t</span>en
+            </button>
+
+            <button
+                class="word-btn speak"
+                data-text="castle"
+            >
+                🔊 cas<span class="silent">t</span>le
+            </button>
+
+            <button
+                class="word-btn speak"
+                data-text="honest"
+            >
+                🔊 <span class="silent">h</span>onest
+            </button>
+
+            <button
+                class="word-btn speak"
+                data-text="hour"
+            >
+                🔊 <span class="silent">h</span>our
+            </button>
+
+            <button
+                class="word-btn speak"
+                data-text="walk"
+            >
+                🔊 wa<span class="silent">l</span>k
+            </button>
+
+            <button
+                class="word-btn speak"
+                data-text="talk"
+            >
+                🔊 ta<span class="silent">l</span>k
+            </button>
+
+            <button
+                class="word-btn speak"
+                data-text="island"
+            >
+                🔊 i<span class="silent">s</span>land
+            </button>
+
+            <button
+                class="word-btn speak"
+                data-text="design"
+            >
+                🔊 de<span class="silent">s</span>ign
+            </button>
+
+        </div>
+
+        <div class="rule-box">
+
+            <strong>
+                🧠 The Golden Rule
+            </strong>
+
+            <p>
+
+                A silent letter is a letter
+                that appears in spelling
+                but is not pronounced.
+
+            </p>
+
+            <p>
+
+                🟢 <strong>K</strong>:
+                know, knee, knife
+
+            </p>
+
+            <p>
+
+                🟣 <strong>W</strong>:
+                write, wrong, wrist
+
+            </p>
+
+            <p>
+
+                🟠 <strong>B</strong>:
+                climb, thumb, comb
+
+            </p>
+
+            <p>
+
+                Other examples include silent
+                T, H, L and S.
+
+            </p>
+
+        </div>
+
+        <p class="arabic">
+
+            القاعدة الذهبية:
+            الحرف الصامت هو حرف نكتبه
+            في الكلمة لكن لا ننطقه.
+
+            يجب أن نستمع إلى النطق الصحيح
+            ولا نعتمد على الكتابة فقط.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     MISSION 02 — LISTENING DETECTIVE
+========================================================= -->
+
+<section
+    class="lesson-section"
+    id="detective"
+>
+
+    <div class="section-heading">
+
+        <span class="section-kicker">
+            🕵️ MISSION 02 · LISTENING DETECTIVE
+        </span>
+
+        <h2>
+            The Mystery of the Missing Sounds!
+        </h2>
+
+        <p>
+
+            Listen to a passage about
+            landmarks, memories and citizenship.
+
+            Find the words that contain
+            silent letters.
+
+        </p>
+
+        <div class="sequence-tags">
+
+            <span class="sequence-tag">
+                🏛️ Sequence 1 · Landmarks
+            </span>
+
+            <span class="sequence-tag">
+                💜 Sequence 2 · Memories
+            </span>
+
+            <span class="sequence-tag">
+                🌍 Sequence 3 · Citizenship
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- PASSAGE -->
+
+    <div class="panel passage-panel">
+
+        <div class="passage-heading">
+
+            <div class="passage-icon">
+                📖
+            </div>
+
+            <div>
+
+                <small>
+                    LISTENING TEXT
+                </small>
+
+                <h3>
+                    A Journey of Knowledge and Kindness
+                </h3>
+
+            </div>
+
+        </div>
+
+        <div class="passage-instructions">
+
+            <h4>
+                🎯 Your Mission
+            </h4>
+
+            <p>
+
+                <strong>First:</strong>
+                Listen to the passage twice.
+
+            </p>
+
+            <p>
+
+                <strong>Next:</strong>
+                Read the passage and find
+                the words containing silent letters.
+
+            </p>
+
+            <p>
+
+                <strong>Finally:</strong>
+                Classify the words according
+                to their silent letters.
+
+            </p>
+
+            <p class="arabic">
+
+                استمع إلى النص مرتين،
+                ثم حدد الكلمات التي تحتوي
+                على حروف صامتة،
+                وبعدها صنفها حسب الحرف الصامت.
+
+            </p>
+
+        </div>
+
+        <div class="passage-controls">
+
+            <button
+                type="button"
+                class="audio-btn"
+                id="playPassage"
+            >
+                ▶️ Listen to Passage
+            </button>
+
+            <button
+                type="button"
+                class="audio-btn purple"
+                id="replayPassage"
+            >
+                🔁 Listen Again
+            </button>
+
+            <button
+                type="button"
+                class="audio-btn gold"
+                id="togglePassage"
+            >
+                🙈 Hide Passage
+            </button>
+
+        </div>
+
+        <div
+            class="passage-text"
+            id="passageText"
+        >
+
+            Last year, our teacher took us
+            to visit an old
+            <strong>castle</strong>.
+
+            We wanted to
+            <strong>know</strong>
+            more about its history.
+
+            We
+            <strong>walked</strong>
+            around the building and
+            <strong>listened</strong>
+            to an interesting story.
+
+            Our guide shared his
+            <strong>knowledge</strong>
+            about the people who lived there.
+
+            <br><br>
+
+            The visit reminded me of
+            my childhood.
+
+            I used to
+            <strong>write</strong>
+            stories about brave heroes.
+
+            Once, I hurt my
+            <strong>knee</strong>
+            while playing outside.
+
+            My mother was always
+            <strong>honest</strong>
+            and kind.
+
+            She taught me that it was
+            <strong>wrong</strong>
+            to hurt others.
+
+            <br><br>
+
+            Today, I believe good citizens
+            should
+            <strong>listen</strong>
+            carefully and
+            <strong>talk</strong>
+            politely.
+
+            We can
+            <strong>design</strong>
+            posters about helping others.
+
+            We should never
+            <strong>doubt</strong>
+            the importance of kindness.
+
+            Together, we can build
+            a better community.
+
+        </div>
+
+    </div>
+
+    <!-- DETECTIVE TASK -->
+
+    <div class="panel">
+
+        <h3>
+            🔎 Task 1 — Find the Silent Letters!
+        </h3>
+
+        <p>
+
+            Which words from the passage
+            contain a silent letter?
+
+            Click all the correct words.
+
+            Be careful! Some words
+            are distractors.
+
+        </p>
+
+        <div
+            class="detective-grid"
+            id="detectiveGrid"
+        ></div>
+
+        <div class="action-row">
+
+            <button
+                type="button"
+                class="action-btn green"
+                id="checkDetective"
+            >
+                ✓ Check My Answers
+            </button>
+
+            <button
+                type="button"
+                class="action-btn secondary"
+                id="resetDetective"
+            >
+                ↻ Try Again
+            </button>
+
+        </div>
+
+        <div
+            class="feedback"
+            id="detectiveFeedback"
+            role="status"
+            aria-live="polite"
+        ></div>
+
+    </div>
+
+    <!-- CLASSIFICATION TASK -->
+
+    <div class="panel">
+
+        <h3>
+            🧩 Task 2 — Classify the Silent Letters!
+        </h3>
+
+        <p>
+
+            Listen to the words.
+
+            Choose the silent letter
+            in each word: K, W, B,
+            T, H, L or S.
+
+        </p>
+
+        <div
+            class="classify-grid"
+            id="classifyGrid"
+        ></div>
+
+        <div class="action-row">
+
+            <button
+                type="button"
+                class="action-btn purple"
+                id="checkClassification"
+            >
+                🎯 Check Classification
+            </button>
+
+            <button
+                type="button"
+                class="action-btn secondary"
+                id="resetClassification"
+            >
+                ↻ Reset
+            </button>
+
+        </div>
+
+        <div
+            class="feedback"
+            id="classificationFeedback"
+            role="status"
+            aria-live="polite"
+        ></div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     MISSION 03 — SOUND RADAR
+========================================================= -->
+
+<section
+    class="lesson-section"
+    id="quiz"
+>
+
+    <div class="section-heading">
+
+        <span class="section-kicker">
+            🎮 MISSION 03 · SOUND RADAR
+        </span>
+
+        <h2>
+            Which Letter Is Silent?
+        </h2>
+
+        <p>
+
+            Listen to each word carefully.
+
+            Choose the letter that is
+            written but not pronounced.
+
+            Complete ten questions
+            to become a Silent Letter Champion!
+
+        </p>
+
+    </div>
+
+    <div class="quiz-card">
+
+        <div class="quiz-header">
+
+            <span
+                class="quiz-count"
+                id="quizCount"
+            >
+                Question 1 of 10
+            </span>
+
+            <span
+                class="quiz-score"
+                id="quizScore"
+            >
+                ⭐ 0 points
+            </span>
+
+        </div>
+
+        <div
+            class="quiz-word"
+            id="quizWord"
+        >
+            Ready?
+        </div>
+
+        <div class="action-row">
+
+            <button
+                type="button"
+                class="audio-btn"
+                id="quizListen"
+            >
+                🔊 Listen to the Word
+            </button>
+
+        </div>
+
+        <div
+            class="quiz-options"
+            id="quizOptions"
+        ></div>
+
+        <div
+            class="feedback"
+            id="quizFeedback"
+            role="status"
+            aria-live="polite"
+        ></div>
+
+        <div class="action-row">
+
+            <button
+                type="button"
+                class="action-btn"
+                id="nextQuiz"
+                disabled
+            >
+                Next Question →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     FINAL RESULTS
+========================================================= -->
+
+<section
+    class="lesson-section"
+    id="results"
+>
+
+    <div class="result-panel">
+
+        <div class="result-icon">
+            🏆
+        </div>
+
+        <h2>
+            Your Pronunciation Achievement!
+        </h2>
+
+        <p>
+
+            Congratulations on exploring
+            the secrets of silent letters!
+
+            Review your results below.
+
+            Keep practising until you
+            can recognise silent letters
+            quickly and confidently.
+
+        </p>
+
+        <div class="result-stats">
+
+            <div class="result-stat">
+
+                <strong id="resultDetective">
+                    —
+                </strong>
+
+                <span>
+                    WORD DETECTIVE
+                </span>
+
+            </div>
+
+            <div class="result-stat">
+
+                <strong id="resultClassify">
+                    —
+                </strong>
+
+                <span>
+                    CLASSIFICATION
+                </span>
+
+            </div>
+
+            <div class="result-stat">
+
+                <strong id="resultQuiz">
+                    —
+                </strong>
+
+                <span>
+                    SOUND RADAR
+                </span>
+
+            </div>
+
+        </div>
+
+        <p id="finalMessage">
+
+            Complete the three missions
+            to earn your achievement!
+
+        </p>
+
+        <div class="action-row">
+
+            <button
+                type="button"
+                class="action-btn gold"
+                id="printResult"
+            >
+                🖨️ Print My Result
+            </button>
+
+            <button
+                type="button"
+                class="action-btn secondary"
+                id="restartLesson"
+            >
+                🔄 Restart Lesson
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <strong>
+        MY ENGLISH SPACE
+    </strong>
+
+    <br>
+
+    MS4 · Pronunciation Lab · Lesson 04
+
+    <br>
+
+    Listen • Discover • Practise • Achieve
+
+    <br><br>
+
+    Created &amp; designed by
+    <strong>Warda Lamri</strong>
+
+</footer>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+"use strict";
+
+/* =========================================================
+   AUDIO ENGINE
+========================================================= */
+
+const synth = window.speechSynthesis || null;
+
+const speedSelect =
+    document.getElementById("speedSelect");
+
+const voiceSelect =
+    document.getElementById("voiceSelect");
+
+const audioStatus =
+    document.getElementById("audioStatus");
+
+let englishVoice = null;
+let availableEnglishVoices = [];
+let currentUtterance = null;
+let speechToken = 0;
+
+/* =========================================================
+   VOICE SELECTION
+========================================================= */
+
+function loadEnglishVoices(){
+
+    if(!synth){
+        audioStatus.textContent =
+            "⚠️ Speech synthesis is unavailable in this browser.";
+        return;
+    }
+
+    const voices = synth.getVoices();
+
+    availableEnglishVoices = voices.filter(
+        voice =>
+            voice.lang &&
+            voice.lang.toLowerCase().startsWith("en")
+    );
+
+    const previousValue = voiceSelect.value;
+
+    voiceSelect.innerHTML =
+        '<option value="">Automatic British English</option>';
+
+    availableEnglishVoices.forEach((voice,index) => {
+
+        const option = document.createElement("option");
+
+        option.value = String(index);
+
+        option.textContent =
+            voice.name + " (" + voice.lang + ")";
+
+        voiceSelect.appendChild(option);
+
+    });
+
+    if(
+        previousValue !== "" &&
+        Number(previousValue) < availableEnglishVoices.length
+    ){
+        voiceSelect.value = previousValue;
+    }
+
+    englishVoice =
+
+        availableEnglishVoices.find(
+            voice =>
+                voice.lang.toLowerCase() === "en-gb" &&
+                /google|natural|premium|enhanced/i.test(
+                    voice.name
+                )
+        )
+
+        ||
+
+        availableEnglishVoices.find(
+            voice =>
+                voice.lang.toLowerCase() === "en-gb"
+        )
+
+        ||
+
+        availableEnglishVoices.find(
+            voice =>
+                voice.lang.toLowerCase().startsWith("en-gb")
+        )
+
+        ||
+
+        availableEnglishVoices[0]
+
+        ||
+
+        null;
+
+}
+
+if(synth){
+
+    loadEnglishVoices();
+
+    if(typeof synth.addEventListener === "function"){
+
+        synth.addEventListener(
+            "voiceschanged",
+            loadEnglishVoices
+        );
+
+    }else{
+
+        synth.onvoiceschanged = loadEnglishVoices;
+
+    }
+
+}
+
+/* =========================================================
+   SPEAK
+========================================================= */
+
+function speak(text){
+
+    if(!synth){
+
+        audioStatus.textContent =
+            "⚠️ Audio is not supported by this browser.";
+
+        return;
+    }
+
+    const content = String(text || "").trim();
+
+    if(!content){
+        return;
+    }
+
+    speechToken++;
+
+    const token = speechToken;
+
+    synth.cancel();
+
+    loadEnglishVoices();
+
+    let chosenVoice = englishVoice;
+
+    if(voiceSelect.value !== ""){
+
+        const selectedIndex =
+            Number(voiceSelect.value);
+
+        if(availableEnglishVoices[selectedIndex]){
+
+            chosenVoice =
+                availableEnglishVoices[selectedIndex];
+
+        }
+
+    }
+
+    const utterance =
+        new SpeechSynthesisUtterance(content);
+
+    utterance.lang = chosenVoice
+        ? chosenVoice.lang
+        : "en-GB";
+
+    if(chosenVoice){
+        utterance.voice = chosenVoice;
+    }
+
+    utterance.rate = Number(speedSelect.value);
+    utterance.pitch = 1;
+    utterance.volume = 1;
+
+    currentUtterance = utterance;
+
+    utterance.onstart = function(){
+
+        if(token !== speechToken){
+            return;
+        }
+
+        audioStatus.textContent =
+            "🔊 Playing audio... Listen carefully!";
+
+    };
+
+    utterance.onend = function(){
+
+        if(token !== speechToken){
+            return;
+        }
+
+        currentUtterance = null;
+
+        audioStatus.textContent =
+            "✅ Finished. You can listen again!";
+
+    };
+
+    utterance.onerror = function(event){
+
+        if(token !== speechToken){
+            return;
+        }
+
+        if(
+            event.error === "canceled" ||
+            event.error === "interrupted"
+        ){
+            return;
+        }
+
+        currentUtterance = null;
+
+        audioStatus.textContent =
+            "⚠️ Audio could not play. Check your device's text-to-speech settings.";
+
+    };
+
+    audioStatus.textContent =
+        "🎧 Preparing audio...";
+
+    synth.speak(utterance);
+
+}
+
+/* =========================================================
+   STOP AUDIO
+========================================================= */
+
+function stopSpeaking(){
+
+    if(synth){
+
+        speechToken++;
+        synth.cancel();
+
+    }
+
+    currentUtterance = null;
+
+    audioStatus.textContent =
+        "⏹ Audio stopped.";
+
+}
+
+document.getElementById(
+    "stopAudio"
+).addEventListener(
+    "click",
+    stopSpeaking
+);
+
+/* =========================================================
+   GENERAL AUDIO BUTTONS
+========================================================= */
+
+document.querySelectorAll(
+    ".speak"
+).forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        speak(button.dataset.text);
+
+    });
+
+});
+
+document.getElementById(
+    "testAudio"
+).addEventListener("click", () => {
+
+    speak(
+        "Know, write, climb. Listen carefully. Some letters are silent."
+    );
+
+});
+
+/* =========================================================
+   LISTENING PASSAGE
+========================================================= */
+
+const passage =
+
+    "Last year, our teacher took us " +
+    "to visit an old castle. " +
+
+    "We wanted to know more about its history. " +
+
+    "We walked around the building " +
+    "and listened to an interesting story. " +
+
+    "Our guide shared his knowledge " +
+    "about the people who lived there. " +
+
+    "The visit reminded me of my childhood. " +
+
+    "I used to write stories about brave heroes. " +
+
+    "Once, I hurt my knee while playing outside. " +
+
+    "My mother was always honest and kind. " +
+
+    "She taught me that it was wrong " +
+    "to hurt others. " +
+
+    "Today, I believe good citizens should " +
+    "listen carefully and talk politely. " +
+
+    "We can design posters about helping others. " +
+
+    "We should never doubt the importance " +
+    "of kindness. " +
+
+    "Together, we can build a better community.";
+
+document.getElementById(
+    "playPassage"
+).addEventListener("click", () => {
+
+    speak(passage);
+
+});
+
+document.getElementById(
+    "replayPassage"
+).addEventListener("click", () => {
+
+    speak(passage);
+
+});
+
+/* =========================================================
+   HIDE / SHOW PASSAGE
+========================================================= */
+
+const passageText =
+    document.getElementById("passageText");
+
+const togglePassage =
+    document.getElementById("togglePassage");
+
+let passageHidden = false;
+
+togglePassage.addEventListener("click", () => {
+
+    passageHidden = !passageHidden;
+
+    passageText.classList.toggle(
+        "hidden-text",
+        passageHidden
+    );
+
+    togglePassage.textContent = passageHidden
+        ? "👀 Show Passage"
+        : "🙈 Hide Passage";
+
+});
+
+/* =========================================================
+   DETECTIVE TASK DATA
+========================================================= */
+
+const detectiveWords = [
+
+    {word:"castle",target:true},
+    {word:"teacher",target:false},
+
+    {word:"know",target:true},
+    {word:"history",target:false},
+
+    {word:"walked",target:true},
+    {word:"listened",target:true},
+
+    {word:"knowledge",target:true},
+    {word:"building",target:false},
+
+    {word:"childhood",target:false},
+    {word:"write",target:true},
+
+    {word:"heroes",target:false},
+    {word:"knee",target:true},
+
+    {word:"honest",target:true},
+    {word:"kind",target:false},
+
+    {word:"wrong",target:true},
+    {word:"citizens",target:false},
+
+    {word:"listen",target:true},
+    {word:"talk",target:true},
+
+    {word:"design",target:true},
+    {word:"posters",target:false},
+
+    {word:"doubt",target:true},
+    {word:"importance",target:false},
+
+    {word:"community",target:false},
+    {word:"helping",target:false}
+
+];
+
+const detectiveGrid =
+    document.getElementById("detectiveGrid");
+
+let detectiveScore = null;
+let detectiveChecked = false;
+
+/* =========================================================
+   BUILD DETECTIVE
+========================================================= */
+
+function buildDetective(){
+
+    detectiveGrid.innerHTML = "";
+
+    detectiveWords.forEach((item,index) => {
+
+        const button =
+            document.createElement("button");
+
+        button.type = "button";
+        button.className = "detective-word";
+        button.textContent = item.word;
+        button.dataset.index = index;
+
+        button.setAttribute(
+            "aria-pressed",
+            "false"
+        );
+
+        button.addEventListener("click", () => {
+
+            if(detectiveChecked){
+                return;
+            }
+
+            button.classList.toggle("selected");
+
+            button.setAttribute(
+                "aria-pressed",
+                String(
+                    button.classList.contains("selected")
+                )
+            );
+
+        });
+
+        detectiveGrid.appendChild(button);
+
+    });
+
+}
+
+/* =========================================================
+   CHECK DETECTIVE
+========================================================= */
+
+document.getElementById(
+    "checkDetective"
+).addEventListener("click", () => {
+
+    if(detectiveChecked){
+        return;
+    }
+
+    detectiveChecked = true;
+
+    let correct = 0;
+
+    detectiveGrid.querySelectorAll(
+        ".detective-word"
+    ).forEach(button => {
+
+        const item =
+            detectiveWords[Number(button.dataset.index)];
+
+        const selected =
+            button.classList.contains("selected");
+
+        if(selected === item.target){
+
+            correct++;
+
+            if(item.target){
+                button.classList.add("correct");
+            }
+
+        }else{
+
+            if(selected){
+                button.classList.add("incorrect");
+            }else{
+                button.classList.add("missed");
+            }
+
+        }
+
+        button.disabled = true;
+
+    });
+
+    detectiveScore = correct;
+
+    const total = detectiveWords.length;
+
+    const feedback =
+        document.getElementById("detectiveFeedback");
+
+    feedback.textContent =
+        "🔎 Detective Score: " +
+        correct + " / " + total;
+
+    feedback.className =
+        "feedback " +
+        (correct === total ? "success" : "info");
+
+    updateResults();
+    updateProgress();
+
+});
+
+/* =========================================================
+   RESET DETECTIVE
+========================================================= */
+
+document.getElementById(
+    "resetDetective"
+).addEventListener("click", () => {
+
+    detectiveChecked = false;
+    detectiveScore = null;
+
+    document.getElementById(
+        "detectiveFeedback"
+    ).textContent = "";
+
+    document.getElementById(
+        "detectiveFeedback"
+    ).className = "feedback";
+
+    buildDetective();
+
+    updateResults();
+    updateProgress();
+
+});
+
+/* =========================================================
+   CLASSIFICATION DATA
+========================================================= */
+
+const classificationWords = [
+
+    {word:"know",letter:"k"},
+    {word:"knee",letter:"k"},
+    {word:"knife",letter:"k"},
+    {word:"knowledge",letter:"k"},
+
+    {word:"write",letter:"w"},
+    {word:"wrong",letter:"w"},
+    {word:"wrist",letter:"w"},
+    {word:"written",letter:"w"},
+
+    {word:"climb",letter:"b"},
+    {word:"thumb",letter:"b"},
+    {word:"comb",letter:"b"},
+    {word:"lamb",letter:"b"},
+
+    {word:"listen",letter:"t"},
+    {word:"castle",letter:"t"},
+
+    {word:"honest",letter:"h"},
+    {word:"hour",letter:"h"},
+
+    {word:"walk",letter:"l"},
+    {word:"talk",letter:"l"},
+
+    {word:"island",letter:"s"},
+    {word:"design",letter:"s"},
+
+    {word:"doubt",letter:"b"}
+
+];
+
+const classifyGrid =
+    document.getElementById("classifyGrid");
+
+let classificationScore = null;
+let classificationChecked = false;
+
+/* =========================================================
+   BUILD CLASSIFICATION
+========================================================= */
+
+function buildClassification(){
+
+    classifyGrid.innerHTML = "";
+
+    const order = [
+        6,0,12,8,17,4,19,
+        14,2,10,5,16,1,20,
+        9,3,13,18,7,15,11
+    ];
+
+    const mixed =
+        order.map(index => classificationWords[index]);
+
+    const columns = [
+        mixed.slice(0,7),
+        mixed.slice(7,14),
+        mixed.slice(14)
+    ];
+
+    columns.forEach((words,columnIndex) => {
+
+        const column =
+            document.createElement("div");
+
+        column.className = "classify-column";
+
+        const heading =
+            document.createElement("h4");
+
+        heading.textContent =
+            "Sound Set " + (columnIndex + 1);
+
+        column.appendChild(heading);
+
+        words.forEach(item => {
+
+            const row =
+                document.createElement("div");
+
+            row.className = "classify-item";
+
+            const label =
+                document.createElement("span");
+
+            label.textContent = item.word;
+
+            const controls =
+                document.createElement("div");
+
+            controls.style.display = "flex";
+            controls.style.gap = "5px";
+            controls.style.alignItems = "center";
+
+            const listen =
+                document.createElement("button");
+
+            listen.type = "button";
+            listen.className = "word-btn";
+            listen.textContent = "🔊";
+
+            listen.setAttribute(
+                "aria-label",
+                "Listen to " + item.word
+            );
+
+            listen.addEventListener("click", () => {
+                speak(item.word);
+            });
+
+            const select =
+                document.createElement("select");
+
+            select.setAttribute(
+                "aria-label",
+                "Silent letter in " + item.word
+            );
+
+            select.dataset.answer = item.letter;
+
+            select.innerHTML = `
+                <option value="">Choose</option>
+                <option value="k">K</option>
+                <option value="w">W</option>
+                <option value="b">B</option>
+                <option value="t">T</option>
+                <option value="h">H</option>
+                <option value="l">L</option>
+                <option value="s">S</option>
+            `;
+
+            controls.appendChild(listen);
+            controls.appendChild(select);
+
+            row.appendChild(label);
+            row.appendChild(controls);
+
+            column.appendChild(row);
+
+        });
+
+        classifyGrid.appendChild(column);
+
+    });
+
+}
+
+/* =========================================================
+   CHECK CLASSIFICATION
+========================================================= */
+
+document.getElementById(
+    "checkClassification"
+).addEventListener("click", () => {
+
+    if(classificationChecked){
+        return;
+    }
+
+    const selects =
+        classifyGrid.querySelectorAll("select");
+
+    let answered = 0;
+
+    selects.forEach(select => {
+        if(select.value){
+            answered++;
+        }
+    });
+
+    const feedback =
+        document.getElementById("classificationFeedback");
+
+    if(answered !== selects.length){
+
+        feedback.textContent =
+            "🎧 Please classify every word first.";
+
+        feedback.className = "feedback error";
+
+        return;
+    }
+
+    classificationChecked = true;
+
+    let correct = 0;
+
+    selects.forEach(select => {
+
+        const row =
+            select.closest(".classify-item");
+
+        if(select.value === select.dataset.answer){
+
+            correct++;
+            row.classList.add("correct");
+
+        }else{
+
+            row.classList.add("incorrect");
+
+        }
+
+        select.disabled = true;
+
+    });
+
+    classificationScore = correct;
+
+    feedback.textContent =
+        "🧩 Classification Score: " +
+        correct + " / " + selects.length;
+
+    feedback.className =
+        "feedback " +
+        (
+            correct === selects.length
+            ? "success"
+            : "info"
+        );
+
+    updateResults();
+    updateProgress();
+
+});
+
+/* =========================================================
+   RESET CLASSIFICATION
+========================================================= */
+
+document.getElementById(
+    "resetClassification"
+).addEventListener("click", () => {
+
+    classificationChecked = false;
+    classificationScore = null;
+
+    document.getElementById(
+        "classificationFeedback"
+    ).textContent = "";
+
+    document.getElementById(
+        "classificationFeedback"
+    ).className = "feedback";
+
+    buildClassification();
+
+    updateResults();
+    updateProgress();
+
+});
+
+/* =========================================================
+   SOUND RADAR QUIZ
+========================================================= */
+
+const quizQuestions = [
+
+    {
+        word:"know",
+        answer:"K",
+        options:["K","N","W"]
+    },
+
+    {
+        word:"write",
+        answer:"W",
+        options:["W","R","T"]
+    },
+
+    {
+        word:"climb",
+        answer:"B",
+        options:["B","M","L"]
+    },
+
+    {
+        word:"listen",
+        answer:"T",
+        options:["T","S","N"]
+    },
+
+    {
+        word:"honest",
+        answer:"H",
+        options:["H","N","T"]
+    },
+
+    {
+        word:"walk",
+        answer:"L",
+        options:["L","W","K"]
+    },
+
+    {
+        word:"island",
+        answer:"S",
+        options:["S","L","D"]
+    },
+
+    {
+        word:"knee",
+        answer:"K",
+        options:["K","N","E"]
+    },
+
+    {
+        word:"wrong",
+        answer:"W",
+        options:["W","R","G"]
+    },
+
+    {
+        word:"doubt",
+        answer:"B",
+        options:["B","D","T"]
+    }
+
+];
+
+let quizIndex = 0;
+let quizPoints = 0;
+let quizAnswered = false;
+let quizFinished = false;
+
+/* =========================================================
+   RENDER QUIZ
+========================================================= */
+
+function renderQuiz(){
+
+    const question =
+        quizQuestions[quizIndex];
+
+    document.getElementById(
+        "quizCount"
+    ).textContent =
+        "Question " +
+        (quizIndex + 1) +
+        " of " +
+        quizQuestions.length;
+
+    document.getElementById(
+        "quizWord"
+    ).textContent = question.word;
+
+    document.getElementById(
+        "quizScore"
+    ).textContent =
+        "⭐ " + quizPoints + " points";
+
+    const feedback =
+        document.getElementById("quizFeedback");
+
+    feedback.textContent = "";
+    feedback.className = "feedback";
+
+    const next =
+        document.getElementById("nextQuiz");
+
+    next.disabled = true;
+
+    next.textContent =
+        quizIndex === quizQuestions.length - 1
+        ? "🏆 Finish Challenge"
+        : "Next Question →";
+
+    quizAnswered = false;
+
+    const optionsContainer =
+        document.getElementById("quizOptions");
+
+    optionsContainer.innerHTML = "";
+
+    question.options.forEach(letter => {
+
+        const button =
+            document.createElement("button");
+
+        button.type = "button";
+        button.className = "quiz-option";
+        button.textContent = letter;
+        button.dataset.answer = letter;
+
+        button.addEventListener("click", () => {
+            checkQuizAnswer(button);
+        });
+
+        optionsContainer.appendChild(button);
+
+    });
+
+}
+
+/* =========================================================
+   PLAY QUIZ WORD
+========================================================= */
+
+document.getElementById(
+    "quizListen"
+).addEventListener("click", () => {
+
+    if(!quizFinished){
+        speak(quizQuestions[quizIndex].word);
+    }
+
+});
+
+/* =========================================================
+   CHECK QUIZ ANSWER
+========================================================= */
+
+function checkQuizAnswer(button){
+
+    if(quizAnswered || quizFinished){
+        return;
+    }
+
+    quizAnswered = true;
+
+    const answer =
+        button.dataset.answer;
+
+    const correctAnswer =
+        quizQuestions[quizIndex].answer;
+
+    const feedback =
+        document.getElementById("quizFeedback");
+
+    if(answer === correctAnswer){
+
+        quizPoints++;
+
+        button.classList.add("correct");
+
+        feedback.textContent =
+            "🎉 Excellent! You found the silent letter!";
+
+        feedback.className =
+            "feedback success";
+
+    }else{
+
+        button.classList.add("incorrect");
+
+        feedback.textContent =
+            "Keep practising! The silent letter is " +
+            correctAnswer + ".";
+
+        feedback.className =
+            "feedback error";
+
+    }
+
+    document.querySelectorAll(
+        ".quiz-option"
+    ).forEach(option => {
+
+        option.disabled = true;
+
+        if(option.dataset.answer === correctAnswer){
+            option.classList.add("correct");
+        }
+
+    });
+
+    document.getElementById(
+        "quizScore"
+    ).textContent =
+        "⭐ " + quizPoints + " points";
+
+    document.getElementById(
+        "nextQuiz"
+    ).disabled = false;
+
+}
+
+/* =========================================================
+   NEXT QUESTION
+========================================================= */
+
+document.getElementById(
+    "nextQuiz"
+).addEventListener("click", () => {
+
+    if(!quizAnswered){
+        return;
+    }
+
+    if(quizIndex < quizQuestions.length - 1){
+
+        quizIndex++;
+        renderQuiz();
+
+    }else{
+
+        quizFinished = true;
+
+        document.getElementById(
+            "nextQuiz"
+        ).disabled = true;
+
+        document.getElementById(
+            "nextQuiz"
+        ).textContent =
+            "✓ Challenge Completed";
+
+        document.getElementById(
+            "quizWord"
+        ).textContent =
+            "🏆 Mission Complete!";
+
+        updateResults();
+        updateProgress();
+
+        document.getElementById(
+            "results"
+        ).scrollIntoView({
+            behavior:"smooth"
+        });
+
+    }
+
+});
+
+/* =========================================================
+   UPDATE RESULTS
+========================================================= */
+
+function updateResults(){
+
+    document.getElementById(
+        "resultDetective"
+    ).textContent =
+        detectiveScore === null
+        ? "—"
+        : detectiveScore + "/" + detectiveWords.length;
+
+    document.getElementById(
+        "resultClassify"
+    ).textContent =
+        classificationScore === null
+        ? "—"
+        : classificationScore + "/" + classificationWords.length;
+
+    document.getElementById(
+        "resultQuiz"
+    ).textContent =
+        quizFinished
+        ? quizPoints + "/" + quizQuestions.length
+        : "—";
+
+    const finalMessage =
+        document.getElementById("finalMessage");
+
+    if(
+        detectiveScore !== null &&
+        classificationScore !== null &&
+        quizFinished
+    ){
+
+        const total =
+            detectiveScore +
+            classificationScore +
+            quizPoints;
+
+        const maximum =
+            detectiveWords.length +
+            classificationWords.length +
+            quizQuestions.length;
+
+        const percentage =
+            Math.round(total / maximum * 100);
+
+        if(percentage >= 85){
+
+            finalMessage.textContent =
+                "🌟 Outstanding! You are a Silent Letter Champion! " +
+                "Your total score is " +
+                percentage + "%.";
+
+        }else if(percentage >= 60){
+
+            finalMessage.textContent =
+                "👏 Well done! Your total score is " +
+                percentage +
+                "%. Keep listening and practising!";
+
+        }else{
+
+            finalMessage.textContent =
+                "💪 Good effort! Your total score is " +
+                percentage +
+                "%. Review the silent letters and try again.";
+
+        }
+
+    }else{
+
+        finalMessage.textContent =
+            "Complete all three missions " +
+            "to receive your final achievement!";
+
+    }
+
+}
+
+/* =========================================================
+   UPDATE PROGRESS
+========================================================= */
+
+function updateProgress(){
+
+    let completed = 0;
+
+    if(detectiveScore !== null){
+        completed++;
+    }
+
+    if(classificationScore !== null){
+        completed++;
+    }
+
+    if(quizFinished){
+        completed++;
+    }
+
+    const percentage =
+        Math.round(completed / 3 * 100);
+
+    document.getElementById(
+        "progressFill"
+    ).style.width =
+        percentage + "%";
+
+    document.getElementById(
+        "progressFill"
+    ).setAttribute(
+        "aria-valuenow",
+        percentage
+    );
+
+    document.getElementById(
+        "progressText"
+    ).textContent =
+        percentage + "%";
+
+}
+
+/* =========================================================
+   PRINT RESULTS
+========================================================= */
+
+document.getElementById(
+    "printResult"
+).addEventListener("click", () => {
+
+    window.print();
+
+});
+
+/* =========================================================
+   RESTART LESSON
+========================================================= */
+
+document.getElementById(
+    "restartLesson"
+).addEventListener("click", () => {
+
+    const confirmed = confirm(
+        "Restart all pronunciation missions?"
+    );
+
+    if(!confirmed){
+        return;
+    }
+
+    stopSpeaking();
+
+    detectiveScore = null;
+    detectiveChecked = false;
+
+    classificationScore = null;
+    classificationChecked = false;
+
+    quizIndex = 0;
+    quizPoints = 0;
+    quizAnswered = false;
+    quizFinished = false;
+
+    buildDetective();
+    buildClassification();
+    renderQuiz();
+
+    updateResults();
+    updateProgress();
+
+    document.getElementById(
+        "detectiveFeedback"
+    ).textContent = "";
+
+    document.getElementById(
+        "classificationFeedback"
+    ).textContent = "";
+
+    document.getElementById(
+        "quizFeedback"
+    ).textContent = "";
+
+    document.getElementById(
+        "discovery"
+    ).scrollIntoView({
+        behavior:"smooth"
+    });
+
+});
+
+/* =========================================================
+   INITIALISE
+========================================================= */
+
+buildDetective();
+buildClassification();
+renderQuiz();
+
+updateResults();
+updateProgress();
+
+</script>
+
+</body>
+</html>

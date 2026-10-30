@@ -1,0 +1,3625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#062e3a">
+
+<title>Grammar Treasure Quest | MS4 Sequence 1</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   DESIGN SYSTEM
+========================================= */
+
+:root{
+
+  --navy:#062e3a;
+  --navy-light:#104b59;
+
+  --teal:#087f89;
+  --turquoise:#18b5ac;
+  --mint:#d9f7ee;
+
+  --gold:#ffc857;
+  --gold-dark:#e5a935;
+
+  --cream:#fffaf0;
+  --white:#ffffff;
+
+  --background:#f1f8f7;
+
+  --ink:#173c46;
+  --muted:#728a90;
+
+  --green:#15986d;
+  --red:#df596b;
+
+  --border:#dcebe8;
+
+  --shadow:0 18px 50px rgba(9,55,67,.10);
+
+  --radius:24px;
+
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  margin:0;
+
+  font-family:"Nunito",sans-serif;
+
+  background:var(--background);
+
+  color:var(--ink);
+
+  min-height:100vh;
+
+}
+
+button,
+input{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+button:disabled{
+  cursor:not-allowed;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+a{
+  text-decoration:none;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header{
+
+  background:var(--navy);
+
+  color:white;
+
+  padding:17px 0;
+
+  border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+.header-inner{
+
+  width:min(1180px,94%);
+
+  margin:auto;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:20px;
+
+}
+
+.brand{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+}
+
+.brand-icon{
+
+  width:48px;
+  height:48px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:15px;
+
+  background:linear-gradient(
+    135deg,
+    var(--gold),
+    #ffe6a2
+  );
+
+  color:var(--navy);
+
+  font-size:27px;
+
+  box-shadow:0 6px 18px rgba(255,200,87,.2);
+
+}
+
+.brand h2{
+
+  font-family:"Baloo 2",sans-serif;
+
+  font-size:19px;
+
+  margin:0;
+
+  line-height:1.1;
+
+}
+
+.brand p{
+
+  margin:3px 0 0;
+
+  color:#a9cdd0;
+
+  font-size:10px;
+
+  letter-spacing:1.5px;
+
+  font-weight:800;
+
+}
+
+.back-link{
+
+  color:white;
+
+  border:1px solid rgba(255,255,255,.25);
+
+  border-radius:30px;
+
+  padding:11px 18px;
+
+  font-size:12px;
+
+  font-weight:900;
+
+  background:rgba(255,255,255,.07);
+
+  transition:.2s;
+
+}
+
+.back-link:hover{
+  background:rgba(255,255,255,.16);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+
+  background:
+
+    linear-gradient(
+      105deg,
+      rgba(5,37,49,.96),
+      rgba(7,72,85,.82)
+    ),
+
+    url("https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+
+  position:relative;
+
+  overflow:hidden;
+
+  color:white;
+
+  padding:65px 20px 80px;
+
+}
+
+.hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  border-radius:50%;
+
+  border:1px solid rgba(255,255,255,.13);
+
+  right:-110px;
+  top:-150px;
+
+  box-shadow:
+    0 0 0 65px rgba(255,255,255,.025),
+    0 0 0 130px rgba(255,255,255,.02);
+
+  pointer-events:none;
+
+}
+
+.hero-inner{
+
+  max-width:1180px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:1.15fr .85fr;
+
+  align-items:center;
+
+  gap:40px;
+
+  position:relative;
+
+  z-index:1;
+
+}
+
+.hero-badge{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  border:1px solid rgba(255,200,87,.4);
+
+  background:rgba(255,200,87,.13);
+
+  color:var(--gold);
+
+  padding:9px 16px;
+
+  border-radius:30px;
+
+  font-size:11px;
+
+  font-weight:900;
+
+  letter-spacing:1.5px;
+
+}
+
+.hero h1{
+
+  font-family:"Baloo 2",sans-serif;
+
+  font-size:clamp(42px,6vw,74px);
+
+  line-height:1.03;
+
+  letter-spacing:-2px;
+
+  margin:20px 0;
+
+}
+
+.hero h1 span{
+
+  color:var(--gold);
+
+}
+
+.hero-description{
+
+  max-width:590px;
+
+  font-size:15px;
+
+  line-height:1.9;
+
+  color:#d3e8e9;
+
+}
+
+.hero-tags{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:9px;
+
+  margin-top:24px;
+
+}
+
+.hero-tags span{
+
+  background:rgba(255,255,255,.1);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  padding:9px 13px;
+
+  border-radius:30px;
+
+  font-size:12px;
+
+  font-weight:800;
+
+}
+
+/* =========================================
+   TREASURE HERO VISUAL
+========================================= */
+
+.treasure-art{
+
+  min-height:300px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  position:relative;
+
+}
+
+.treasure-circle{
+
+  width:min(310px,80vw);
+
+  aspect-ratio:1;
+
+  border-radius:50%;
+
+  display:grid;
+
+  place-items:center;
+
+  background:
+
+    radial-gradient(
+      circle,
+      rgba(255,200,87,.25),
+      rgba(255,200,87,.05) 55%,
+      transparent 70%
+    );
+
+  border:2px dashed rgba(255,200,87,.45);
+
+  box-shadow:
+    0 0 0 22px rgba(255,255,255,.025),
+    0 0 0 45px rgba(255,255,255,.02);
+
+  animation:float 4s ease-in-out infinite;
+
+}
+
+.treasure-emoji{
+
+  font-size:135px;
+
+  filter:drop-shadow(0 20px 18px rgba(0,0,0,.3));
+
+}
+
+.floating-star{
+
+  position:absolute;
+
+  font-size:27px;
+
+  animation:twinkle 2.5s infinite alternate;
+
+}
+
+.star1{
+  top:15%;
+  left:10%;
+}
+
+.star2{
+  right:12%;
+  top:20%;
+  animation-delay:.5s;
+}
+
+.star3{
+  bottom:17%;
+  right:17%;
+  animation-delay:1s;
+}
+
+@keyframes float{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-13px);
+  }
+
+}
+
+@keyframes twinkle{
+
+  from{
+    transform:scale(.8);
+    opacity:.5;
+  }
+
+  to{
+    transform:scale(1.2);
+    opacity:1;
+  }
+
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.main-container{
+
+  width:min(1180px,94%);
+
+  margin:-35px auto 55px;
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+/* =========================================
+   STATS DASHBOARD
+========================================= */
+
+.dashboard{
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:15px;
+
+  margin-bottom:23px;
+
+}
+
+.stat-card{
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:19px;
+
+  padding:20px;
+
+  box-shadow:var(--shadow);
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+}
+
+.stat-icon{
+
+  width:48px;
+  height:48px;
+
+  flex-shrink:0;
+
+  border-radius:14px;
+
+  display:grid;
+
+  place-items:center;
+
+  font-size:23px;
+
+  background:#eef9f6;
+
+}
+
+.stat-info strong{
+
+  display:block;
+
+  font-family:"Baloo 2",sans-serif;
+
+  font-size:27px;
+
+  color:var(--navy);
+
+  line-height:1;
+
+}
+
+.stat-info span{
+
+  font-size:10px;
+
+  font-weight:900;
+
+  color:var(--muted);
+
+  letter-spacing:1px;
+
+}
+
+/* =========================================
+   QUEST MAP
+========================================= */
+
+.map-card{
+
+  background:white;
+
+  border-radius:var(--radius);
+
+  border:1px solid var(--border);
+
+  padding:28px;
+
+  box-shadow:var(--shadow);
+
+  margin-bottom:25px;
+
+}
+
+.section-top{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  flex-wrap:wrap;
+
+  gap:15px;
+
+  margin-bottom:26px;
+
+}
+
+.section-title{
+
+  font-family:"Baloo 2",sans-serif;
+
+  font-size:26px;
+
+  font-weight:800;
+
+  color:var(--navy);
+
+  margin:0;
+
+}
+
+.section-subtitle{
+
+  font-size:13px;
+
+  color:var(--muted);
+
+  margin-top:3px;
+
+}
+
+.map-badge{
+
+  background:#fff3d8;
+
+  color:#8b6222;
+
+  padding:10px 15px;
+
+  border-radius:30px;
+
+  font-size:12px;
+
+  font-weight:900;
+
+}
+
+.map-route{
+
+  display:grid;
+
+  grid-template-columns:repeat(5,minmax(0,1fr));
+
+  gap:12px;
+
+  position:relative;
+
+  margin:25px 0 20px;
+
+}
+
+.map-route::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:37px;
+
+  left:10%;
+
+  right:10%;
+
+  height:4px;
+
+  background:#dceae7;
+
+  border-radius:20px;
+
+}
+
+.map-location{
+
+  position:relative;
+
+  z-index:1;
+
+  text-align:center;
+
+  transition:.3s;
+
+}
+
+.location-icon{
+
+  width:75px;
+  height:75px;
+
+  margin:auto;
+
+  border-radius:21px;
+
+  display:grid;
+
+  place-items:center;
+
+  font-size:33px;
+
+  background:#eef4f2;
+
+  border:2px solid #e1ebe8;
+
+  color:#9caeae;
+
+  transition:.3s;
+
+}
+
+.map-location.active .location-icon{
+
+  background:linear-gradient(
+    135deg,
+    var(--gold),
+    #ffe6a5
+  );
+
+  border-color:var(--gold-dark);
+
+  box-shadow:
+    0 0 0 6px rgba(255,200,87,.2),
+    0 10px 25px rgba(255,200,87,.3);
+
+  transform:translateY(-5px);
+
+}
+
+.map-location.done .location-icon{
+
+  background:#dff7e9;
+
+  border-color:#8bd6b1;
+
+}
+
+.map-location.locked{
+
+  opacity:.5;
+
+}
+
+.location-name{
+
+  display:block;
+
+  font-size:11px;
+
+  font-weight:900;
+
+  color:var(--navy);
+
+  margin-top:12px;
+
+  line-height:1.4;
+
+}
+
+.location-status{
+
+  display:block;
+
+  color:var(--muted);
+
+  font-size:10px;
+
+  margin-top:5px;
+
+}
+
+.progress-track{
+
+  height:11px;
+
+  background:#e4eeeb;
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  margin-top:20px;
+
+}
+
+.progress-fill{
+
+  height:100%;
+
+  width:0%;
+
+  border-radius:30px;
+
+  background:linear-gradient(
+    90deg,
+    var(--turquoise),
+    var(--gold)
+  );
+
+  transition:width .5s ease;
+
+}
+
+.progress-label{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:10px;
+
+  margin-top:9px;
+
+  color:var(--muted);
+
+  font-size:11px;
+
+  font-weight:900;
+
+}
+
+/* =========================================
+   CHALLENGE CARD
+========================================= */
+
+.quest-card{
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:var(--radius);
+
+  overflow:hidden;
+
+  box-shadow:var(--shadow);
+
+}
+
+.quest-header{
+
+  padding:25px 30px;
+
+  background:linear-gradient(
+    110deg,
+    var(--navy),
+    #11616b
+  );
+
+  color:white;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  flex-wrap:wrap;
+
+  gap:15px;
+
+}
+
+.quest-header h2{
+
+  font-family:"Baloo 2",sans-serif;
+
+  font-size:26px;
+
+  margin:0;
+
+}
+
+.quest-header p{
+
+  color:#bad7d8;
+
+  font-size:12px;
+
+  margin-top:5px;
+
+}
+
+.challenge-badge{
+
+  background:rgba(255,200,87,.15);
+
+  border:1px solid rgba(255,200,87,.4);
+
+  color:var(--gold);
+
+  padding:11px 16px;
+
+  border-radius:30px;
+
+  font-size:11px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+
+}
+
+.quest-content{
+
+  padding:30px;
+
+}
+
+.question-label{
+
+  color:var(--teal);
+
+  font-size:11px;
+
+  letter-spacing:2px;
+
+  font-weight:900;
+
+}
+
+.question{
+
+  font-family:"Baloo 2",sans-serif;
+
+  font-size:clamp(23px,3vw,31px);
+
+  color:var(--navy);
+
+  line-height:1.35;
+
+  margin:12px 0;
+
+}
+
+.instructions{
+
+  font-size:13px;
+
+  color:var(--muted);
+
+  margin-bottom:22px;
+
+  line-height:1.7;
+
+}
+
+/* =========================================
+   VISUAL CARD
+========================================= */
+
+.visual-card{
+
+  display:grid;
+
+  grid-template-columns:220px 1fr;
+
+  align-items:center;
+
+  gap:20px;
+
+  background:#f1f8f6;
+
+  border:1px solid #deeeea;
+
+  border-radius:19px;
+
+  padding:13px;
+
+  margin-bottom:25px;
+
+}
+
+.visual-card img{
+
+  width:100%;
+
+  height:155px;
+
+  object-fit:cover;
+
+  border-radius:13px;
+
+  background:#c9dfdc;
+
+}
+
+.visual-details{
+
+  padding:10px;
+
+}
+
+.visual-label{
+
+  color:var(--teal);
+
+  font-size:10px;
+
+  letter-spacing:1.5px;
+
+  font-weight:900;
+
+}
+
+.visual-details h3{
+
+  font-family:"Baloo 2",sans-serif;
+
+  font-size:23px;
+
+  margin:7px 0;
+
+  color:var(--navy);
+
+}
+
+.visual-details p{
+
+  font-size:13px;
+
+  color:var(--muted);
+
+  line-height:1.7;
+
+}
+
+/* =========================================
+   MULTIPLE CHOICE
+========================================= */
+
+.options{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:13px;
+
+}
+
+.option{
+
+  width:100%;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  text-align:left;
+
+  background:white;
+
+  border:2px solid #e0ebe8;
+
+  border-radius:15px;
+
+  padding:15px;
+
+  font-size:15px;
+
+  font-weight:900;
+
+  color:var(--ink);
+
+  transition:.2s;
+
+}
+
+.option-letter{
+
+  flex-shrink:0;
+
+  width:36px;
+  height:36px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:10px;
+
+  background:#eef7f5;
+
+  color:var(--teal);
+
+  font-family:"Space Mono",monospace;
+
+  font-size:13px;
+
+}
+
+.option:hover:not(:disabled){
+
+  border-color:var(--turquoise);
+
+  transform:translateY(-3px);
+
+  box-shadow:0 8px 20px rgba(9,80,88,.1);
+
+}
+
+.option.selected{
+
+  background:#eafaf7;
+
+  border-color:var(--teal);
+
+}
+
+.option.correct{
+
+  background:#e1f7e9;
+
+  border-color:var(--green);
+
+}
+
+.option.wrong{
+
+  background:#fff0f2;
+
+  border-color:var(--red);
+
+  animation:shake .3s;
+
+}
+
+@keyframes shake{
+
+  25%{transform:translateX(-5px);}
+  75%{transform:translateX(5px);}
+
+}
+
+/* =========================================
+   SENTENCE BUILDER
+========================================= */
+
+.builder{
+
+  background:#f7fbfa;
+
+  border:1px solid var(--border);
+
+  border-radius:19px;
+
+  padding:20px;
+
+}
+
+.builder-title{
+
+  color:var(--teal);
+
+  font-size:11px;
+
+  letter-spacing:1.5px;
+
+  font-weight:900;
+
+  margin-bottom:13px;
+
+}
+
+.sentence-area{
+
+  min-height:85px;
+
+  background:white;
+
+  border:2px dashed #9acac5;
+
+  border-radius:15px;
+
+  padding:14px;
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  align-items:center;
+
+  gap:8px;
+
+}
+
+.placeholder{
+
+  color:#93a9aa;
+
+  font-size:13px;
+
+  font-style:italic;
+
+}
+
+.word-bank{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:9px;
+
+  margin-top:18px;
+
+}
+
+.word-chip{
+
+  background:white;
+
+  color:var(--navy);
+
+  border:2px solid #d7e8e4;
+
+  border-radius:11px;
+
+  padding:10px 15px;
+
+  font-weight:900;
+
+  font-size:14px;
+
+  transition:.2s;
+
+}
+
+.word-chip:hover:not(:disabled){
+
+  transform:translateY(-3px);
+
+  border-color:var(--teal);
+
+  background:#f0faf8;
+
+}
+
+.word-chip.used{
+
+  opacity:.35;
+
+}
+
+.sentence-area .word-chip{
+
+  background:var(--navy);
+
+  color:white;
+
+  border-color:var(--navy);
+
+}
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+.feedback{
+
+  display:none;
+
+  margin-top:22px;
+
+  padding:18px 20px;
+
+  border-radius:15px;
+
+  line-height:1.7;
+
+  font-size:14px;
+
+  font-weight:800;
+
+}
+
+.feedback.show{
+  display:block;
+}
+
+.feedback.good{
+
+  background:#e1f7e9;
+
+  border:1px solid #9bd7b4;
+
+  color:#116946;
+
+}
+
+.feedback.bad{
+
+  background:#fff0f2;
+
+  border:1px solid #f1b4bd;
+
+  color:#a53c4d;
+
+}
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.actions{
+
+  display:flex;
+
+  gap:11px;
+
+  flex-wrap:wrap;
+
+  margin-top:24px;
+
+}
+
+.btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:8px;
+
+  border:0;
+
+  border-radius:13px;
+
+  padding:14px 23px;
+
+  font-size:13px;
+
+  font-weight:900;
+
+  transition:.2s;
+
+}
+
+.btn:hover:not(:disabled){
+
+  transform:translateY(-2px);
+
+}
+
+.btn-primary{
+
+  background:var(--teal);
+
+  color:white;
+
+}
+
+.btn-primary:hover:not(:disabled){
+
+  background:#076973;
+
+}
+
+.btn-secondary{
+
+  background:#eaf2ef;
+
+  color:var(--navy);
+
+}
+
+.btn-gold{
+
+  background:linear-gradient(
+    135deg,
+    var(--gold),
+    #ffdb8c
+  );
+
+  color:#684719;
+
+}
+
+.btn:disabled{
+
+  opacity:.45;
+
+}
+
+/* =========================================
+   DICTIONARY
+========================================= */
+
+.dictionary{
+
+  position:fixed;
+
+  right:22px;
+  bottom:22px;
+
+  z-index:100;
+
+}
+
+.dict-toggle{
+
+  width:64px;
+  height:64px;
+
+  border:0;
+
+  border-radius:20px;
+
+  background:linear-gradient(
+    135deg,
+    var(--teal),
+    var(--navy)
+  );
+
+  color:white;
+
+  font-size:28px;
+
+  box-shadow:0 12px 30px rgba(5,60,70,.3);
+
+  transition:.2s;
+
+}
+
+.dict-toggle:hover{
+
+  transform:translateY(-4px);
+
+}
+
+.dict-panel{
+
+  display:none;
+
+  position:absolute;
+
+  right:0;
+  bottom:77px;
+
+  width:min(340px,calc(100vw - 30px));
+
+  max-height:70vh;
+
+  overflow:auto;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  box-shadow:0 20px 60px rgba(0,0,0,.2);
+
+  padding:22px;
+
+}
+
+.dict-panel.show{
+  display:block;
+}
+
+.dict-panel h3{
+
+  font-family:"Baloo 2",sans-serif;
+
+  font-size:24px;
+
+  color:var(--navy);
+
+  margin:0 0 6px;
+
+}
+
+.dict-panel p{
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  margin-bottom:15px;
+
+}
+
+.dict-panel input{
+
+  width:100%;
+
+  padding:13px 15px;
+
+  border:2px solid var(--border);
+
+  border-radius:12px;
+
+  outline:none;
+
+  font-size:14px;
+
+}
+
+.dict-panel input:focus{
+
+  border-color:var(--teal);
+
+}
+
+.translation{
+
+  margin-top:14px;
+
+  padding:14px;
+
+  border-radius:12px;
+
+  background:#f1f8f6;
+
+  min-height:55px;
+
+  font-size:15px;
+
+  font-weight:800;
+
+}
+
+.arabic{
+
+  font-family:"Noto Naskh Arabic",serif;
+
+  font-size:22px;
+
+  color:var(--teal);
+
+}
+
+/* =========================================
+   FINAL TREASURE
+========================================= */
+
+.final-screen{
+
+  display:none;
+
+  text-align:center;
+
+  background:white;
+
+  border-radius:var(--radius);
+
+  padding:55px 25px;
+
+  box-shadow:var(--shadow);
+
+}
+
+.final-screen.show{
+  display:block;
+}
+
+.final-icon{
+
+  font-size:100px;
+
+  display:inline-block;
+
+  animation:float 2.5s infinite;
+
+}
+
+.final-screen h2{
+
+  font-family:"Baloo 2",sans-serif;
+
+  font-size:clamp(32px,5vw,48px);
+
+  color:var(--navy);
+
+  margin:15px 0 5px;
+
+}
+
+.final-screen p{
+
+  max-width:580px;
+
+  margin:15px auto;
+
+  color:var(--muted);
+
+  line-height:1.8;
+
+}
+
+.final-score{
+
+  font-family:"Baloo 2",sans-serif;
+
+  font-size:50px;
+
+  font-weight:800;
+
+  color:var(--teal);
+
+}
+
+.final-badge{
+
+  display:inline-block;
+
+  background:#fff0cc;
+
+  color:#88601d;
+
+  border-radius:30px;
+
+  padding:12px 23px;
+
+  font-weight:900;
+
+  margin:15px 0 22px;
+
+}
+
+.final-actions{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+  background:var(--navy);
+
+  color:#a9cbd0;
+
+  text-align:center;
+
+  padding:24px 15px;
+
+  font-size:11px;
+
+  letter-spacing:1px;
+
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:900px){
+
+  .hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .treasure-art{
+    display:none;
+  }
+
+  .dashboard{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:700px){
+
+  .hero{
+    padding:45px 15px 65px;
+  }
+
+  .hero h1{
+    letter-spacing:-1px;
+  }
+
+  .map-card{
+    padding:18px 12px;
+  }
+
+  .map-route{
+    gap:5px;
+  }
+
+  .location-icon{
+    width:53px;
+    height:53px;
+    font-size:25px;
+    border-radius:15px;
+  }
+
+  .map-route::before{
+    top:26px;
+  }
+
+  .location-name{
+    font-size:9px;
+  }
+
+  .location-status{
+    font-size:8px;
+  }
+
+  .quest-header{
+    padding:20px;
+  }
+
+  .quest-content{
+    padding:20px 15px;
+  }
+
+  .visual-card{
+    grid-template-columns:1fr;
+  }
+
+  .visual-card img{
+    height:190px;
+  }
+
+  .options{
+    grid-template-columns:1fr;
+  }
+
+  .dictionary{
+    right:12px;
+    bottom:12px;
+  }
+
+  .dict-toggle{
+    width:55px;
+    height:55px;
+    font-size:24px;
+  }
+
+}
+
+@media(max-width:430px){
+
+  .brand h2{
+    font-size:15px;
+  }
+
+  .back-link{
+    font-size:10px;
+    padding:9px 11px;
+  }
+
+  .stat-card{
+    padding:13px;
+    gap:8px;
+  }
+
+  .stat-icon{
+    width:39px;
+    height:39px;
+    font-size:20px;
+  }
+
+  .stat-info strong{
+    font-size:22px;
+  }
+
+  .location-icon{
+    width:45px;
+    height:45px;
+    font-size:21px;
+  }
+
+  .map-route::before{
+    top:22px;
+  }
+
+  .location-name{
+    font-size:8px;
+  }
+
+  .actions .btn{
+    flex:1;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="site-header">
+
+  <div class="header-inner">
+
+    <div class="brand">
+
+      <div class="brand-icon">🧭</div>
+
+      <div>
+
+        <h2>MY ENGLISH SPACE</h2>
+
+        <p>MS4 · SEQUENCE 01 · GAME 04</p>
+
+      </div>
+
+    </div>
+
+    <a href="MS4-S1-Games.html" class="back-link">
+      ← Back to Games
+    </a>
+
+  </div>
+
+</header>
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div>
+
+      <div class="hero-badge">
+        ✨ THE EXPLORER SERIES
+      </div>
+
+      <h1>
+
+        The Grammar<br>
+
+        <span>Treasure Quest.</span>
+
+      </h1>
+
+      <p class="hero-description">
+
+        An exciting English adventure awaits!
+
+        Travel through five mysterious destinations,
+        solve grammar challenges, collect precious gems,
+        and unlock the legendary treasure chest.
+
+      </p>
+
+      <div class="hero-tags">
+
+        <span>🏛️ Famous Landmarks</span>
+
+        <span>📖 Grammar Challenges</span>
+
+        <span>💎 Collect Gems</span>
+
+        <span>🏆 Unlock Treasure</span>
+
+      </div>
+
+    </div>
+
+    <div class="treasure-art" aria-hidden="true">
+
+      <div class="treasure-circle">
+
+        <span class="treasure-emoji">🗝️</span>
+
+      </div>
+
+      <span class="floating-star star1">✨</span>
+
+      <span class="floating-star star2">⭐</span>
+
+      <span class="floating-star star3">💎</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="main-container">
+
+  <!-- STATS -->
+
+  <section class="dashboard" aria-label="Game statistics">
+
+    <div class="stat-card">
+
+      <div class="stat-icon">⭐</div>
+
+      <div class="stat-info">
+
+        <strong id="score">0</strong>
+
+        <span>YOUR SCORE</span>
+
+      </div>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="stat-icon">❤️</div>
+
+      <div class="stat-info">
+
+        <strong id="lives">3</strong>
+
+        <span>HEARTS LEFT</span>
+
+      </div>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="stat-icon">💎</div>
+
+      <div class="stat-info">
+
+        <strong id="gems">0</strong>
+
+        <span>GEMS COLLECTED</span>
+
+      </div>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="stat-icon">🎯</div>
+
+      <div class="stat-info">
+
+        <strong id="challengeNumber">1/12</strong>
+
+        <span>CHALLENGE</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+       TREASURE MAP
+  ========================================= -->
+
+  <section class="map-card" id="mapCard">
+
+    <div class="section-top">
+
+      <div>
+
+        <h2 class="section-title">
+          🗺️ Your Treasure Map
+        </h2>
+
+        <p class="section-subtitle">
+          Follow the route and unlock every destination.
+        </p>
+
+      </div>
+
+      <div class="map-badge" id="mapBadge">
+        📍 Destination 1 of 5
+      </div>
+
+    </div>
+
+    <div class="map-route">
+
+      <div class="map-location active" id="loc1">
+
+        <div class="location-icon">🏛️</div>
+
+        <span class="location-name">
+          LANDMARK<br>GATE
+        </span>
+
+        <span class="location-status">Exploring</span>
+
+      </div>
+
+      <div class="map-location locked" id="loc2">
+
+        <div class="location-icon">✈️</div>
+
+        <span class="location-name">
+          TRAVEL<br>PASS
+        </span>
+
+        <span class="location-status">Locked</span>
+
+      </div>
+
+      <div class="map-location locked" id="loc3">
+
+        <div class="location-icon">📜</div>
+
+        <span class="location-name">
+          HISTORY<br>RUINS
+        </span>
+
+        <span class="location-status">Locked</span>
+
+      </div>
+
+      <div class="map-location locked" id="loc4">
+
+        <div class="location-icon">🧩</div>
+
+        <span class="location-name">
+          FINAL<br>ISLAND
+        </span>
+
+        <span class="location-status">Locked</span>
+
+      </div>
+
+      <div class="map-location locked" id="loc5">
+
+        <div class="location-icon">💰</div>
+
+        <span class="location-name">
+          TREASURE<br>CHEST
+        </span>
+
+        <span class="location-status">Locked</span>
+
+      </div>
+
+    </div>
+
+    <div class="progress-track">
+
+      <div class="progress-fill" id="progress"></div>
+
+    </div>
+
+    <div class="progress-label">
+
+      <span>QUEST PROGRESS</span>
+
+      <span id="progressText">0% COMPLETE</span>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+       QUEST CARD
+  ========================================= -->
+
+  <section class="quest-card" id="quest">
+
+    <div class="quest-header">
+
+      <div>
+
+        <h2 id="questHeading">
+          🧭 Your Next Challenge
+        </h2>
+
+        <p>
+          Read carefully and choose the correct answer.
+        </p>
+
+      </div>
+
+      <span class="challenge-badge" id="challengeType">
+        CHALLENGE 01
+      </span>
+
+    </div>
+
+    <div class="quest-content">
+
+      <div class="question-label">
+        GRAMMAR MISSION
+      </div>
+
+      <h2 class="question" id="question"></h2>
+
+      <p class="instructions" id="instructions"></p>
+
+      <!-- VISUAL -->
+
+      <div class="visual-card">
+
+        <img
+          id="visualImg"
+          src=""
+          alt="Landmark or travel illustration"
+        >
+
+        <div class="visual-details">
+
+          <span class="visual-label">
+            EXPLORER'S DISCOVERY
+          </span>
+
+          <h3 id="visualTitle"></h3>
+
+          <p id="visualDescription"></p>
+
+        </div>
+
+      </div>
+
+      <!-- INTERACTIVE CHALLENGE -->
+
+      <div id="challenge"></div>
+
+      <!-- FEEDBACK -->
+
+      <div
+        class="feedback"
+        id="feedback"
+        role="status"
+        aria-live="polite">
+      </div>
+
+      <!-- BUTTONS -->
+
+      <div class="actions">
+
+        <button
+          class="btn btn-primary"
+          id="checkBtn"
+          onclick="checkAnswer()">
+
+          ✓ Check Answer
+
+        </button>
+
+        <button
+          class="btn btn-secondary"
+          id="resetBtn"
+          onclick="resetChallenge()">
+
+          ↻ Reset Answer
+
+        </button>
+
+        <button
+          class="btn btn-gold"
+          id="nextBtn"
+          onclick="nextChallenge()"
+          hidden>
+
+          Continue Journey →
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================
+       FINAL TREASURE
+  ========================================= -->
+
+  <section class="final-screen" id="finalScreen">
+
+    <div class="final-icon" id="finalIcon">
+      💰
+    </div>
+
+    <h2 id="finalTitle">
+      Treasure Unlocked!
+    </h2>
+
+    <div class="final-score" id="finalScore">
+      0 POINTS
+    </div>
+
+    <div class="final-badge" id="finalBadge">
+      👑 GRAMMAR EXPLORER
+    </div>
+
+    <p id="finalMessage"></p>
+
+    <div class="final-actions">
+
+      <button
+        class="btn btn-primary"
+        onclick="restartGame()">
+
+        ↻ Play Again
+
+      </button>
+
+      <a
+        class="btn btn-secondary"
+        href="MS4-S1-Games.html">
+
+        ← Back to Games
+
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+<!-- =========================================
+     MINI DICTIONARY
+========================================= -->
+
+<div class="dictionary">
+
+  <button
+    class="dict-toggle"
+    id="dictToggle"
+    onclick="toggleDictionary()"
+    aria-label="Open English Arabic dictionary"
+    aria-expanded="false"
+    aria-controls="dictionaryPanel">
+
+    📖
+
+  </button>
+
+  <div class="dict-panel" id="dictionaryPanel">
+
+    <h3>📖 Mini Dictionary</h3>
+
+    <p>Search for a useful English word.</p>
+
+    <input
+      type="text"
+      id="dictInput"
+      placeholder="Type an English word..."
+      oninput="translateWord()"
+      aria-label="English word"
+    >
+
+    <div class="translation" id="translation">
+      English → Arabic
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+
+  MY ENGLISH SPACE · CREATED BY WARDA LAMRI · MS4 SEQUENCE 1
+
+</footer>
+
+<script>
+"use strict";
+
+/* =========================================
+   GAME DATA
+========================================= */
+
+const challenges = [
+
+  {
+    type:"🏛️ LANDMARK COMPARISON",
+
+    question:
+      "The Eiffel Tower is ______ than the Leaning Tower of Pisa.",
+
+    instructions:
+      "Choose the correct comparative adjective.",
+
+    image:
+      "https://i.imgur.com/5G4cDjn.jpeg",
+
+    title:"The Eiffel Tower",
+
+    description:
+      "A famous iron tower located in Paris, France.",
+
+    options:[
+      "more tall",
+      "taller",
+      "the taller",
+      "tallest"
+    ],
+
+    answer:"taller",
+
+    explanation:
+      "Tall is a short adjective. We add -er: tall → taller."
+  },
+
+  {
+    type:"🏛️ LANDMARK COMPARISON",
+
+    question:
+      "The Great Wall of China is ______ than the Colosseum.",
+
+    instructions:
+      "Choose the correct comparative form.",
+
+    image:
+      "https://i.imgur.com/2MqDLEs.jpeg",
+
+    title:"The Great Wall of China",
+
+    description:
+      "An extraordinary historical landmark in China.",
+
+    options:[
+      "more long",
+      "longer",
+      "longest",
+      "the more long"
+    ],
+
+    answer:"longer",
+
+    explanation:
+      "Long is a short adjective. We add -er: long → longer."
+  },
+
+  {
+    type:"⚖️ EQUALITY CHALLENGE",
+
+    question:
+      "The Leaning Tower of Pisa is ______ famous as the Eiffel Tower.",
+
+    instructions:
+      "Complete the equality structure.",
+
+    image:
+      "https://i.imgur.com/eRIwwsf.jpeg",
+
+    title:"The Leaning Tower of Pisa",
+
+    description:
+      "An Italian landmark famous for its unusual tilt.",
+
+    options:[
+      "as",
+      "more",
+      "less",
+      "than"
+    ],
+
+    answer:"as",
+
+    explanation:
+      "The equality structure is: as + adjective + as."
+  },
+
+  {
+    type:"📉 INFERIORITY CHALLENGE",
+
+    question:
+      "The Colosseum is ______ modern than many buildings today.",
+
+    instructions:
+      "Choose the correct word.",
+
+    image:
+      "https://i.imgur.com/bz1pcv2.jpeg",
+
+    title:"The Colosseum",
+
+    description:
+      "An ancient amphitheatre in Rome, Italy.",
+
+    options:[
+      "less",
+      "more",
+      "as",
+      "most"
+    ],
+
+    answer:"less",
+
+    explanation:
+      "To express inferiority, use: less + adjective + than."
+  },
+
+  {
+    type:"📜 PAST PASSIVE VOICE",
+
+    question:
+      "The Eiffel Tower ______ in 1889.",
+
+    instructions:
+      "Choose the correct past simple passive form.",
+
+    image:
+      "https://i.imgur.com/5G4cDjn.jpeg",
+
+    title:"A Landmark from the Past",
+
+    description:
+      "Historical landmarks are often described using the passive voice.",
+
+    options:[
+      "built",
+      "was built",
+      "is built",
+      "was build"
+    ],
+
+    answer:"was built",
+
+    explanation:
+      "Past simple passive = was/were + past participle."
+  },
+
+  {
+    type:"🕰️ CHRONOLOGICAL MARKERS",
+
+    question:
+      "______ we visited the Colosseum. Then, we walked through Rome.",
+
+    instructions:
+      "Choose the marker that introduces the first event.",
+
+    image:
+      "https://i.imgur.com/bz1pcv2.jpeg",
+
+    title:"A Day in Rome",
+
+    description:
+      "Use chronological markers to organise events in order.",
+
+    options:[
+      "Finally,",
+      "After,",
+      "First,",
+      "However,"
+    ],
+
+    answer:"First,",
+
+    explanation:
+      "First introduces the first action in a sequence."
+  },
+
+  {
+    type:"🕰️ CHRONOLOGICAL MARKERS",
+
+    question:
+      "We visited the museum. ______, we went to the restaurant.",
+
+    instructions:
+      "Choose the best chronological marker.",
+
+    image:
+      "https://i.imgur.com/Ye51rsv.jpeg",
+
+    title:"A Travel Story",
+
+    description:
+      "Describe the events of a journey in the correct order.",
+
+    options:[
+      "Next",
+      "Because",
+      "Although",
+      "But"
+    ],
+
+    answer:"Next",
+
+    explanation:
+      "Next introduces an action that happens after a previous one."
+  },
+
+  {
+    type:"⚡ CAUSE AND EFFECT",
+
+    question:
+      "The road was closed, ______ we took a taxi.",
+
+    instructions:
+      "Choose the connector that introduces the result.",
+
+    image:
+      "https://i.imgur.com/1HMasMy.jpeg",
+
+    title:"A Change of Plan",
+
+    description:
+      "Sometimes travellers must change their plans.",
+
+    options:[
+      "because",
+      "so",
+      "although",
+      "first"
+    ],
+
+    answer:"so",
+
+    explanation:
+      "So introduces the result of a situation."
+  },
+
+  {
+    type:"📖 IRREGULAR VERBS",
+
+    question:
+      "Yesterday, we ______ the Great Mosque of Algiers.",
+
+    instructions:
+      "Choose the correct past simple form.",
+
+    image:
+      "https://i.imgur.com/F0uLuA3.png",
+
+    title:"Great Mosque of Algiers",
+
+    description:
+      "A remarkable modern landmark in Algeria.",
+
+    options:[
+      "see",
+      "seed",
+      "saw",
+      "seen"
+    ],
+
+    answer:"saw",
+
+    explanation:
+      "See is irregular: see → saw."
+  },
+
+  {
+    type:"📖 PAST SIMPLE",
+
+    question:
+      "We ______ many photographs during our trip.",
+
+    instructions:
+      "Choose the correct past simple form.",
+
+    image:
+      "https://i.imgur.com/H1580sL.jpeg",
+
+    title:"Travel Memories",
+
+    description:
+      "Photographs help travellers remember special moments.",
+
+    options:[
+      "take",
+      "took",
+      "taken",
+      "takes"
+    ],
+
+    answer:"took",
+
+    explanation:
+      "Take is an irregular verb: take → took."
+  },
+
+  {
+    type:"🧩 SENTENCE BUILDER",
+
+    question:
+      "Build a correct sentence about a famous Algerian landmark.",
+
+    instructions:
+      "Click the word cards in the correct order.",
+
+    image:
+      "https://i.imgur.com/ppwmxSY.jpeg",
+
+    title:"Martyrs' Memorial",
+
+    description:
+      "A famous monument located in Algiers.",
+
+    words:[
+      "First,",
+      "we",
+      "visited",
+      "the",
+      "Martyrs'",
+      "Memorial."
+    ],
+
+    answer:[
+      "First,",
+      "we",
+      "visited",
+      "the",
+      "Martyrs'",
+      "Memorial."
+    ],
+
+    explanation:
+      "Excellent! First introduces the first event in a travel story."
+  },
+
+  {
+    type:"🧩 SENTENCE BUILDER",
+
+    question:
+      "Build a sentence using cause and effect.",
+
+    instructions:
+      "Arrange the word cards to make a meaningful sentence.",
+
+    image:
+      "https://i.imgur.com/0DTyuEa.jpeg",
+
+    title:"The Mountain Journey",
+
+    description:
+      "The weather changed during the journey.",
+
+    words:[
+      "It",
+      "was",
+      "cold,",
+      "so",
+      "we",
+      "left",
+      "the",
+      "mountain."
+    ],
+
+    answer:[
+      "It",
+      "was",
+      "cold,",
+      "so",
+      "we",
+      "left",
+      "the",
+      "mountain."
+    ],
+
+    explanation:
+      "Excellent! So connects the cause and its result."
+  }
+
+];
+
+/* =========================================
+   GAME STATE
+========================================= */
+
+let current = 0;
+
+let score = 0;
+
+let lives = 3;
+
+let gems = 0;
+
+let selectedOption = null;
+
+let builtSentence = [];
+
+let answered = false;
+
+let gameEnded = false;
+
+let selectedWordIds = [];
+
+/* =========================================
+   HELPERS
+========================================= */
+
+const $ = id => document.getElementById(id);
+
+function shuffleArray(array){
+
+  const copy = [...array];
+
+  for(let i=copy.length-1;i>0;i--){
+
+    const j = Math.floor(Math.random()*(i+1));
+
+    [copy[i],copy[j]]=[copy[j],copy[i]];
+
+  }
+
+  return copy;
+
+}
+
+/* =========================================
+   GAME PROGRESS
+========================================= */
+
+function updateStats(){
+
+  $("score").textContent = score;
+
+  $("lives").textContent = lives;
+
+  $("gems").textContent = gems;
+
+  $("challengeNumber").textContent =
+    Math.min(current+1,challenges.length)+
+    "/"+
+    challenges.length;
+
+  const percent =
+    Math.round(current/challenges.length*100);
+
+  $("progress").style.width = percent+"%";
+
+  $("progressText").textContent =
+    percent+"% COMPLETE";
+
+  updateMap();
+
+}
+
+/* =========================================
+   MAP
+========================================= */
+
+function updateMap(){
+
+  const stage =
+    Math.min(
+      4,
+      Math.floor(current/challenges.length*5)
+    );
+
+  $("mapBadge").textContent =
+    "📍 Destination "+(stage+1)+" of 5";
+
+  for(let i=0;i<5;i++){
+
+    const loc = $("loc"+(i+1));
+
+    loc.className = "map-location";
+
+    const status =
+      loc.querySelector(".location-status");
+
+    if(i<stage){
+
+      loc.classList.add("done");
+
+      status.textContent="Completed ✓";
+
+    }
+
+    else if(i===stage){
+
+      loc.classList.add("active");
+
+      status.textContent="Exploring";
+
+    }
+
+    else{
+
+      loc.classList.add("locked");
+
+      status.textContent="Locked";
+
+    }
+
+  }
+
+}
+
+/* =========================================
+   LOAD CHALLENGE
+========================================= */
+
+function loadChallenge(){
+
+  if(gameEnded)return;
+
+  const c = challenges[current];
+
+  answered = false;
+
+  selectedOption = null;
+
+  builtSentence = [];
+
+  selectedWordIds = [];
+
+  $("questHeading").textContent =
+    "🧭 Challenge "+(current+1);
+
+  $("challengeType").textContent = c.type;
+
+  $("question").textContent = c.question;
+
+  $("instructions").textContent =
+    c.instructions;
+
+  $("visualImg").src = c.image;
+
+  $("visualImg").alt = c.title;
+
+  $("visualImg").onerror = function(){
+
+    this.onerror = null;
+
+    this.src =
+      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80";
+
+  };
+
+  $("visualTitle").textContent = c.title;
+
+  $("visualDescription").textContent =
+    c.description;
+
+  $("feedback").className = "feedback";
+
+  $("feedback").textContent = "";
+
+  $("checkBtn").hidden = false;
+
+  $("resetBtn").hidden = false;
+
+  $("nextBtn").hidden = true;
+
+  $("nextBtn").textContent =
+    current===challenges.length-1
+      ? "Unlock Treasure →"
+      : "Continue Journey →";
+
+  createChallenge();
+
+  updateStats();
+
+}
+
+/* =========================================
+   CREATE CHALLENGE
+========================================= */
+
+function createChallenge(){
+
+  const c = challenges[current];
+
+  const area = $("challenge");
+
+  area.replaceChildren();
+
+  if(c.options){
+
+    createMultipleChoice(c,area);
+
+  }
+
+  else if(c.words){
+
+    createSentenceBuilder(c,area);
+
+  }
+
+}
+
+/* =========================================
+   MULTIPLE CHOICE
+========================================= */
+
+function createMultipleChoice(c,area){
+
+  const options = document.createElement("div");
+
+  options.className = "options";
+
+  c.options.forEach((option,index)=>{
+
+    const button = document.createElement("button");
+
+    button.type = "button";
+
+    button.className = "option";
+
+    const letter = document.createElement("span");
+
+    letter.className = "option-letter";
+
+    letter.textContent = "ABCD"[index];
+
+    const text = document.createElement("span");
+
+    text.textContent = option;
+
+    button.append(letter,text);
+
+    button.onclick = ()=>{
+
+      if(answered)return;
+
+      selectedOption = option;
+
+      document
+        .querySelectorAll(".option")
+        .forEach(btn=>btn.classList.remove("selected"));
+
+      button.classList.add("selected");
+
+    };
+
+    options.append(button);
+
+  });
+
+  area.append(options);
+
+}
+
+/* =========================================
+   SENTENCE BUILDER
+========================================= */
+
+function createSentenceBuilder(c,area){
+
+  const builder = document.createElement("div");
+
+  builder.className = "builder";
+
+  const title = document.createElement("div");
+
+  title.className = "builder-title";
+
+  title.textContent = "BUILD YOUR SENTENCE";
+
+  const sentenceArea = document.createElement("div");
+
+  sentenceArea.className = "sentence-area";
+
+  sentenceArea.id = "sentenceArea";
+
+  const bank = document.createElement("div");
+
+  bank.className = "word-bank";
+
+  bank.id = "wordBank";
+
+  builder.append(title,sentenceArea,bank);
+
+  area.append(builder);
+
+  const shuffled = shuffleArray(
+    c.words.map((word,index)=>({
+      word,
+      id:index
+    }))
+  );
+
+  shuffled.forEach(item=>{
+
+    const button = document.createElement("button");
+
+    button.type = "button";
+
+    button.className = "word-chip";
+
+    button.textContent = item.word;
+
+    button.dataset.wordId = item.id;
+
+    button.onclick = ()=>{
+
+      if(answered)return;
+
+      if(selectedWordIds.includes(item.id))return;
+
+      selectedWordIds.push(item.id);
+
+      builtSentence.push(item.word);
+
+      renderSentence(c);
+
+    };
+
+    bank.append(button);
+
+  });
+
+  renderSentence(c);
+
+}
+
+/* =========================================
+   RENDER BUILT SENTENCE
+========================================= */
+
+function renderSentence(c){
+
+  const area = $("sentenceArea");
+
+  area.replaceChildren();
+
+  if(builtSentence.length===0){
+
+    const placeholder = document.createElement("span");
+
+    placeholder.className = "placeholder";
+
+    placeholder.textContent =
+      "Click the words below to build your sentence...";
+
+    area.append(placeholder);
+
+  }
+
+  selectedWordIds.forEach((id,index)=>{
+
+    const button = document.createElement("button");
+
+    button.type = "button";
+
+    button.className = "word-chip";
+
+    button.textContent = c.words[id];
+
+    button.title = "Remove this word";
+
+    button.onclick = ()=>{
+
+      if(answered)return;
+
+      selectedWordIds.splice(index,1);
+
+      builtSentence.splice(index,1);
+
+      renderSentence(c);
+
+    };
+
+    area.append(button);
+
+  });
+
+  document
+    .querySelectorAll("#wordBank .word-chip")
+    .forEach(button=>{
+
+      const id = Number(button.dataset.wordId);
+
+      const used = selectedWordIds.includes(id);
+
+      button.classList.toggle("used",used);
+
+      button.disabled = used || answered;
+
+    });
+
+}
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+function showFeedback(message,good){
+
+  const feedback = $("feedback");
+
+  feedback.textContent = message;
+
+  feedback.className =
+    "feedback show "+(good?"good":"bad");
+
+}
+
+/* =========================================
+   CHECK ANSWER
+========================================= */
+
+function checkAnswer(){
+
+  if(answered || gameEnded)return;
+
+  const c = challenges[current];
+
+  let correct = false;
+
+  if(c.options){
+
+    if(selectedOption===null){
+
+      showFeedback(
+        "Please choose an answer first.",
+        false
+      );
+
+      return;
+
+    }
+
+    correct = selectedOption===c.answer;
+
+  }
+
+  else{
+
+    if(builtSentence.length!==c.answer.length){
+
+      showFeedback(
+        "Complete the sentence using all the word cards.",
+        false
+      );
+
+      return;
+
+    }
+
+    correct =
+      JSON.stringify(builtSentence)===
+      JSON.stringify(c.answer);
+
+  }
+
+  if(correct){
+
+    answered = true;
+
+    score += 100;
+
+    gems++;
+
+    showFeedback(
+      "🎉 Excellent! +100 points and +1 gem! "+
+      c.explanation,
+      true
+    );
+
+    $("checkBtn").hidden = true;
+
+    $("resetBtn").hidden = true;
+
+    $("nextBtn").hidden = false;
+
+    document
+      .querySelectorAll(
+        ".option, #wordBank .word-chip, #sentenceArea .word-chip"
+      )
+      .forEach(btn=>btn.disabled=true);
+
+  }
+
+  else{
+
+    lives = Math.max(0,lives-1);
+
+    if(c.options){
+
+      document
+        .querySelectorAll(".option")
+        .forEach(btn=>{
+
+          const value =
+            btn.querySelector("span:last-child").textContent;
+
+          btn.classList.toggle(
+            "correct",
+            value===c.answer
+          );
+
+          if(
+            value===selectedOption &&
+            value!==c.answer
+          ){
+            btn.classList.add("wrong");
+          }
+
+        });
+
+    }
+
+    if(lives===0){
+
+      answered = true;
+
+      showFeedback(
+        "💔 Your hearts have run out. The correct answer is: "+
+        (
+          c.options
+            ? c.answer
+            : c.answer.join(" ")
+        )+
+        ". "+(c.explanation||""),
+        false
+      );
+
+      $("checkBtn").hidden = true;
+
+      $("resetBtn").hidden = true;
+
+      $("nextBtn").hidden = false;
+
+      $("nextBtn").textContent =
+        "See My Results →";
+
+    }
+
+    else{
+
+      showFeedback(
+        "Not quite! You have "+
+        lives+
+        " heart"+
+        (lives===1?"":"s")+
+        " left. "+
+        (c.explanation||"Try again."),
+        false
+      );
+
+      $("checkBtn").hidden = true;
+
+      $("resetBtn").hidden = false;
+
+    }
+
+  }
+
+  updateStats();
+
+}
+
+/* =========================================
+   RESET CURRENT ANSWER
+========================================= */
+
+function resetChallenge(){
+
+  if(answered || gameEnded)return;
+
+  selectedOption = null;
+
+  builtSentence = [];
+
+  selectedWordIds = [];
+
+  $("feedback").className = "feedback";
+
+  $("feedback").textContent = "";
+
+  $("checkBtn").hidden = false;
+
+  createChallenge();
+
+}
+
+/* =========================================
+   NEXT CHALLENGE
+========================================= */
+
+function nextChallenge(){
+
+  if(!answered || gameEnded)return;
+
+  if(lives===0){
+
+    finishGame(false);
+
+    return;
+
+  }
+
+  current++;
+
+  if(current>=challenges.length){
+
+    finishGame(true);
+
+    return;
+
+  }
+
+  loadChallenge();
+
+  $("quest").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+/* =========================================
+   FINISH GAME
+========================================= */
+
+function finishGame(success){
+
+  if(gameEnded)return;
+
+  gameEnded = true;
+
+  $("quest").style.display = "none";
+
+  $("finalScreen").classList.add("show");
+
+  $("finalScore").textContent =
+    score+" POINTS";
+
+  if(success){
+
+    $("finalIcon").textContent = "💰";
+
+    $("finalTitle").textContent =
+      "Treasure Unlocked!";
+
+    $("finalBadge").textContent =
+      "👑 MASTER GRAMMAR EXPLORER";
+
+    $("finalMessage").textContent =
+      "Congratulations! You completed all 12 grammar missions "+
+      "and collected "+gems+" precious gems. "+
+      "Your English adventure was a success!";
+
+    $("progress").style.width = "100%";
+
+    $("progressText").textContent =
+      "100% COMPLETE";
+
+    for(let i=1;i<=5;i++){
+
+      const loc = $("loc"+i);
+
+      loc.className = "map-location done";
+
+      loc.querySelector(".location-status").textContent =
+        "Completed ✓";
+
+    }
+
+    $("mapBadge").textContent =
+      "🏆 All destinations unlocked";
+
+    saveCompletion();
+
+  }
+
+  else{
+
+    $("finalIcon").textContent = "🧭";
+
+    $("finalTitle").textContent =
+      "Adventure Paused!";
+
+    $("finalBadge").textContent =
+      "⭐ BRAVE EXPLORER";
+
+    $("finalMessage").textContent =
+      "You reached challenge "+
+      (current+1)+
+      " of "+
+      challenges.length+
+      ". Keep practising and try again to unlock the treasure!";
+
+  }
+
+  $("finalScreen").scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+/* =========================================
+   SAVE HOMEPAGE PROGRESS
+========================================= */
+
+function saveCompletion(){
+
+  try{
+
+    const key = "MS4_S1_GAMES_PROGRESS";
+
+    const saved = JSON.parse(
+      localStorage.getItem(key)||"[]"
+    );
+
+    const completed =
+      Array.isArray(saved)?saved:[];
+
+    if(!completed.includes(4)){
+
+      completed.push(4);
+
+    }
+
+    localStorage.setItem(
+      key,
+      JSON.stringify(completed)
+    );
+
+  }
+
+  catch(error){
+
+    // The game still works if storage is unavailable.
+
+  }
+
+}
+
+/* =========================================
+   RESTART GAME
+========================================= */
+
+function restartGame(){
+
+  current = 0;
+
+  score = 0;
+
+  lives = 3;
+
+  gems = 0;
+
+  selectedOption = null;
+
+  builtSentence = [];
+
+  selectedWordIds = [];
+
+  answered = false;
+
+  gameEnded = false;
+
+  $("quest").style.display = "block";
+
+  $("finalScreen").classList.remove("show");
+
+  loadChallenge();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+/* =========================================
+   MINI DICTIONARY
+========================================= */
+
+const dictionary = {
+
+  landmark:"مَعْلَم",
+  journey:"رِحْلَة",
+  trip:"رِحْلَة",
+  travel:"سَفَر",
+  visited:"زَارَ",
+  built:"بُنِيَ",
+  famous:"مَشْهُور",
+  ancient:"قَدِيم",
+  modern:"حَدِيث",
+  taller:"أَطْوَل",
+  longer:"أَطْوَل",
+  beautiful:"جَمِيل",
+  because:"لِأَنَّ",
+  so:"لِذَلِكَ",
+  first:"أَوَّلًا",
+  next:"ثُمَّ",
+  finally:"أَخِيرًا",
+  museum:"مَتْحَف",
+  tower:"بُرْج",
+  palace:"قَصْر",
+  mountain:"جَبَل",
+  beach:"شَاطِئ",
+  photograph:"صُورَة",
+  photographs:"صُوَر",
+  went:"ذَهَبَ",
+  saw:"رَأَى",
+  took:"أَخَذَ",
+  comparative:"صِيغَةُ المُقَارَنَة",
+  passive:"المَبْنِيُّ لِلْمَجْهُول",
+  treasure:"كَنْز",
+  adjective:"صِفَة",
+  sentence:"جُمْلَة",
+  monument:"نَصْب تِذْكَارِيّ",
+  history:"تَارِيخ"
+
+};
+
+function toggleDictionary(){
+
+  const panel = $("dictionaryPanel");
+
+  const isOpen = panel.classList.toggle("show");
+
+  $("dictToggle").setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+
+  if(isOpen){
+
+    $("dictInput").focus();
+
+  }
+
+}
+
+function translateWord(){
+
+  const input =
+    $("dictInput").value
+      .toLowerCase()
+      .trim();
+
+  const result = $("translation");
+
+  result.replaceChildren();
+
+  if(!input){
+
+    result.textContent = "English → Arabic";
+
+    return;
+
+  }
+
+  if(dictionary[input]){
+
+    const english = document.createElement("div");
+
+    english.textContent = input;
+
+    const arabic = document.createElement("div");
+
+    arabic.className = "arabic";
+
+    arabic.lang = "ar";
+
+    arabic.dir = "rtl";
+
+    arabic.textContent = dictionary[input];
+
+    result.append(english,arabic);
+
+  }
+
+  else{
+
+    result.textContent =
+      "Word not found. Try another word from the journey.";
+
+  }
+
+}
+
+/* =========================================
+   KEYBOARD SUPPORT
+========================================= */
+
+document.addEventListener("keydown",event=>{
+
+  if(event.key==="Escape"){
+
+    $("dictionaryPanel").classList.remove("show");
+
+    $("dictToggle").setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+});
+
+/* =========================================
+   START
+========================================= */
+
+loadChallenge();
+
+</script>
+
+</body>
+</html>

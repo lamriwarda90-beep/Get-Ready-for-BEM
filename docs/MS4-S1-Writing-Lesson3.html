@@ -1,0 +1,2922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#51248b">
+<title>MS4-S1-Writing-Lesson3 | My Unforgettable Journey</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --deep:#271044;
+  --purple:#6b36aa;
+  --violet:#9b6cdd;
+  --gold:#ffd279;
+  --ink:#302641;
+  --muted:#746b83;
+  --line:#e7ddf1;
+  --good:#23845c;
+  --bad:#c14d61;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at top left,#efe2ff,transparent 35%),
+    #f8f6fd;
+  color:var(--ink);
+  font-family:Nunito,Arial,sans-serif;
+}
+
+h1,h2,h3{
+  font-family:"Baloo 2",sans-serif;
+  line-height:1.17;
+}
+
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline:3px solid #e2a536;
+  outline-offset:3px;
+}
+
+.wrap{
+  max-width:1110px;
+  width:94%;
+  margin:auto;
+}
+
+/* NAVIGATION */
+
+nav{
+  position:sticky;
+  top:0;
+  background:#fff;
+  z-index:20;
+  border-bottom:1px solid var(--line);
+  box-shadow:0 4px 15px #2c174010;
+}
+
+nav .wrap{
+  min-height:66px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+nav strong{
+  color:var(--deep);
+  font-size:14px;
+}
+
+nav a,.button{
+  display:inline-block;
+  border:0;
+  border-radius:30px;
+  padding:12px 19px;
+  background:var(--purple);
+  color:white;
+  font-weight:900;
+  font-size:13px;
+  margin:5px 5px 5px 0;
+  transition:transform .2s;
+}
+
+nav a:hover,.button:hover{
+  transform:translateY(-2px);
+}
+
+.button.gold{
+  background:var(--gold);
+  color:#42274e;
+}
+
+.button.soft{
+  background:#efe7f9;
+  color:#573081;
+}
+
+.button.green{
+  background:var(--good);
+}
+
+/* HERO */
+
+.hero{
+  background:
+    radial-gradient(
+      circle at 88% 15%,
+      #a675d555,
+      transparent 35%
+    ),
+    linear-gradient(
+      120deg,
+      #291047,
+      #51258a 65%,
+      #7948b3
+    );
+  color:white;
+  padding:55px 0 65px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:35px;
+  align-items:center;
+}
+
+.eyebrow{
+  display:inline-block;
+  border:1px solid #ffffff50;
+  background:#ffffff19;
+  padding:8px 15px;
+  border-radius:30px;
+  font-weight:900;
+  font-size:11px;
+  letter-spacing:1px;
+}
+
+.hero h1{
+  font-size:clamp(42px,6vw,70px);
+  margin:16px 0 10px;
+}
+
+.hero h1 span{
+  color:var(--gold);
+  display:block;
+}
+
+.hero p{
+  line-height:1.8;
+  font-size:15px;
+  color:#f0e5ff;
+}
+
+.hero img{
+  width:100%;
+  height:305px;
+  object-fit:cover;
+  border:8px solid white;
+  border-radius:24px;
+  transform:rotate(3deg);
+  box-shadow:0 18px 40px #1b0d3477;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:17px;
+}
+
+.tags span{
+  background:#ffffff22;
+  border-radius:30px;
+  padding:8px 13px;
+  font-weight:900;
+  font-size:11px;
+}
+
+/* PROGRESS */
+
+.progress{
+  position:relative;
+  margin-top:-25px;
+  background:white;
+  padding:20px 25px;
+  border-radius:20px;
+  box-shadow:0 12px 35px #30104b18;
+}
+
+.progress-head{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.track{
+  height:12px;
+  background:#eee5f6;
+  border-radius:20px;
+  margin:12px 0;
+  overflow:hidden;
+}
+
+.fill{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,#8346c6,#f2b64d);
+  transition:width .3s;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:7px;
+}
+
+.steps a{
+  text-align:center;
+  background:#f3edfa;
+  color:#623a87;
+  padding:10px 4px;
+  border-radius:11px;
+  font-size:10px;
+  font-weight:900;
+}
+
+/* LESSON CARDS */
+
+main{
+  padding:32px 0 65px;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:24px;
+  box-shadow:0 12px 35px #32175313;
+  padding:30px;
+  margin:0 0 26px;
+  scroll-margin-top:85px;
+}
+
+.heading{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:20px;
+}
+
+.number{
+  width:58px;
+  height:58px;
+  flex-shrink:0;
+  border-radius:18px;
+  background:linear-gradient(135deg,#a46adb,#51218d);
+  color:white;
+  display:grid;
+  place-items:center;
+  font:800 28px "Baloo 2";
+}
+
+.small{
+  font-size:10px;
+  letter-spacing:1.5px;
+  color:var(--purple);
+  font-weight:900;
+}
+
+.heading h2{
+  font-size:clamp(23px,3vw,31px);
+  margin:3px 0;
+  color:var(--deep);
+}
+
+.intro{
+  font-size:14px;
+  line-height:1.85;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.mission{
+  background:#fff9e9;
+  border:2px solid #f4dfaa;
+  border-radius:17px;
+  padding:21px;
+  line-height:1.85;
+  font-size:14px;
+}
+
+.arabic{
+  direction:rtl;
+  text-align:right;
+  background:#f0e8fc;
+  border-right:4px solid var(--purple);
+  padding:13px 16px;
+  border-radius:11px;
+  margin-top:13px;
+  font-size:13px;
+  line-height:1.9;
+  font-weight:800;
+}
+
+/* ACTIVITIES */
+
+.activity{
+  background:#faf8fe;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:19px;
+  margin-top:18px;
+}
+
+.activity h3{
+  color:var(--purple);
+  margin:0 0 10px;
+}
+
+.question{
+  background:white;
+  border:1px solid var(--line);
+  padding:14px;
+  border-radius:13px;
+  margin:12px 0;
+}
+
+.question p{
+  font-weight:900;
+  margin:0 0 10px;
+}
+
+.choice{
+  display:block;
+  border:1px solid #e3d7ef;
+  border-radius:10px;
+  padding:10px;
+  margin:7px 0;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.choice:hover{
+  background:#f1e8fb;
+}
+
+.choice input{
+  accent-color:var(--purple);
+}
+
+.feedback{
+  margin-top:12px;
+  min-height:18px;
+  font-size:13px;
+  font-weight:900;
+}
+
+.good{color:var(--good)}
+.bad{color:var(--bad)}
+
+/* VISUAL LANDMARK CARDS */
+
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;
+}
+
+.photo-card{
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  background:#faf8ff;
+}
+
+.photo-card img{
+  width:100%;
+  height:155px;
+  object-fit:cover;
+  display:block;
+}
+
+.photo-card div{
+  padding:13px;
+}
+
+.photo-card b{
+  display:block;
+  color:var(--deep);
+}
+
+.photo-card span{
+  font-size:12px;
+  color:var(--muted);
+  font-weight:800;
+}
+
+/* MODEL PARAGRAPH */
+
+.model{
+  border:1px solid #f1dfb1;
+  background:#fffdf5;
+  border-radius:17px;
+  padding:22px;
+  line-height:2.05;
+  font-size:15px;
+}
+
+.hl{
+  border-radius:5px;
+  padding:1px 4px;
+}
+
+.topic{background:#d9ecff}
+.detail{background:#fff0c4}
+.link{background:#dff4e6}
+.end{background:#efdcf9}
+
+.legend{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:13px 0;
+}
+
+.legend span{
+  padding:7px 11px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:900;
+}
+
+/* MATCHING */
+
+.match{
+  display:grid;
+  grid-template-columns:1fr 210px;
+  gap:12px;
+  align-items:center;
+  padding:12px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:12px;
+  margin:10px 0;
+  font-size:13px;
+  font-weight:800;
+}
+
+select,
+input[type=text]{
+  width:100%;
+  padding:12px;
+  border:2px solid #ded0ed;
+  border-radius:11px;
+  background:white;
+  color:var(--ink);
+  font-size:13px;
+  font-weight:800;
+}
+
+/* FACT FILE */
+
+.facts{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.fact{
+  padding:13px;
+  border-radius:13px;
+  background:#f8f2ff;
+  border:1px solid var(--line);
+}
+
+.fact b{
+  display:block;
+  color:var(--purple);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.fact span{
+  font-weight:900;
+  font-size:13px;
+}
+
+.tip{
+  background:#eaf8f1;
+  border-left:5px solid var(--good);
+  padding:15px;
+  border-radius:11px;
+  font-size:13px;
+  line-height:1.8;
+  font-weight:800;
+  margin:16px 0;
+}
+
+/* SENTENCE BUILDERS */
+
+.builder{
+  background:#faf8fe;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:17px;
+  margin:12px 0;
+}
+
+.builder b{
+  display:block;
+  color:var(--deep);
+  margin-bottom:10px;
+}
+
+.preview{
+  background:white;
+  border:1px dashed #bca4d5;
+  border-radius:10px;
+  padding:12px;
+  margin-top:10px;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.8;
+}
+
+.wordbank{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:12px 0;
+}
+
+.wordbank span{
+  background:#efe6f9;
+  color:#60368b;
+  padding:8px 12px;
+  border-radius:22px;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* WRITING STUDIO */
+
+textarea{
+  width:100%;
+  min-height:280px;
+  border:2px solid #ddcdec;
+  border-radius:16px;
+  padding:20px;
+  line-height:2;
+  resize:vertical;
+  outline:0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      white 0,
+      white 35px,
+      #f0e9f8 36px
+    );
+  font-size:15px;
+}
+
+.counter{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:13px 0;
+}
+
+.counter span{
+  background:#efe7f9;
+  border-radius:25px;
+  padding:9px 14px;
+  font-weight:900;
+  font-size:12px;
+}
+
+.result{
+  display:none;
+  background:#f2eafa;
+  border:1px solid #e0cdee;
+  border-radius:15px;
+  padding:18px;
+  margin-top:13px;
+  font-size:13px;
+  line-height:1.85;
+}
+
+/* CHECKLIST */
+
+.checks{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.checks label{
+  background:#faf8ff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:13px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.checks input{
+  accent-color:var(--purple);
+}
+
+.finish{
+  background:linear-gradient(120deg,#35155d,#7641b0);
+  color:white;
+  text-align:center;
+  border-radius:18px;
+  padding:23px;
+  margin-top:18px;
+}
+
+.finish h3{
+  color:var(--gold);
+  font-size:27px;
+  margin:0;
+}
+
+/* DICTIONARY */
+
+.dict-btn{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:30;
+  border:0;
+  border-radius:30px;
+  background:var(--gold);
+  padding:14px 18px;
+  box-shadow:0 9px 30px #24123f55;
+  font-weight:900;
+  color:#352048;
+}
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:40;
+  background:#180c2dbb;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+}
+
+.overlay.open{
+  display:flex;
+}
+
+.dialog{
+  background:white;
+  width:min(490px,100%);
+  max-height:85vh;
+  overflow:auto;
+  border-radius:22px;
+  padding:22px;
+}
+
+.dialog-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.dialog-head h2{
+  margin:0;
+  color:var(--deep);
+}
+
+.close{
+  border:0;
+  border-radius:50%;
+  font-size:23px;
+  background:#eee4fa;
+  width:38px;
+  height:38px;
+}
+
+.dict-row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  border-bottom:1px solid var(--line);
+  padding:10px;
+  font-size:13px;
+}
+
+.dict-row span{
+  direction:rtl;
+}
+
+footer{
+  text-align:center;
+  background:#281247;
+  color:#f0e6ff;
+  padding:26px;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:750px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero img{
+    max-width:370px;
+    height:230px;
+  }
+
+  .photo-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .steps{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .facts{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:530px){
+
+  .card{
+    padding:18px;
+  }
+
+  .photo-grid{
+    grid-template-columns:1fr;
+  }
+
+  .photo-card img{
+    height:190px;
+  }
+
+  .match{
+    grid-template-columns:1fr;
+  }
+
+  .checks{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .heading h2{
+    font-size:22px;
+  }
+
+  nav strong{
+    font-size:11px;
+  }
+
+  nav a{
+    font-size:10px;
+    padding:9px;
+  }
+}
+
+@media print{
+
+  nav,
+  .hero,
+  .progress,
+  .dict-btn,
+  .overlay,
+  .button{
+    display:none!important;
+  }
+
+  .card{
+    box-shadow:none;
+    break-inside:avoid;
+  }
+
+  body{
+    background:white;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+  <div class="wrap">
+
+    <strong>
+      ✍️ MY ENGLISH SPACE · MS4
+    </strong>
+
+    <a href="MS4-S1-Writing.html">
+      ← Writing Homepage
+    </a>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="wrap hero-grid">
+
+    <div>
+
+      <span class="eyebrow">
+        MS4 · SEQUENCE 1 · WRITING STUDIO
+      </span>
+
+      <h1>
+        My Unforgettable
+        <span>Journey</span>
+      </h1>
+
+      <p>
+        Travel through London, discover extraordinary
+        landmarks and learn to write a wonderful
+        past travel report—one sentence at a time.
+      </p>
+
+      <div class="tags">
+
+        <span>🧳 Past simple</span>
+        <span>🗺️ Landmarks</span>
+        <span>🔗 Sequencers</span>
+        <span>✍️ Guided writing</span>
+
+      </div>
+
+    </div>
+
+    <img
+      src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1000&q=85"
+      alt="London skyline with Big Ben and Westminster Bridge"
+    >
+
+  </div>
+
+</header>
+
+<!-- PROGRESS -->
+
+<div class="wrap">
+
+  <div class="progress">
+
+    <div class="progress-head">
+
+      <span>🧭 YOUR WRITING JOURNEY</span>
+
+      <span id="progressLabel">
+        0 of 6 steps completed
+      </span>
+
+    </div>
+
+    <div class="track">
+      <div class="fill" id="fill"></div>
+    </div>
+
+    <div class="steps">
+
+      <a href="#s1">01 Mission</a>
+      <a href="#s2">02 Model</a>
+      <a href="#s3">03 Explore</a>
+      <a href="#s4">04 Build</a>
+      <a href="#s5">05 Write</a>
+      <a href="#s6">06 Review</a>
+
+    </div>
+
+  </div>
+
+</div>
+
+<main class="wrap">
+
+<!-- ==========================================
+     STEP 1
+========================================== -->
+
+<section class="card" id="s1">
+
+  <div class="heading">
+
+    <div class="number">01</div>
+
+    <div>
+
+      <span class="small">
+        SITUATION OF INTEGRATION
+      </span>
+
+      <h2>
+        📮 Your Travel Writing Mission
+      </h2>
+
+    </div>
+
+  </div>
+
+  <div class="mission">
+
+    <p>
+      Last summer, you visited
+      <strong>London</strong>
+      with your family.
+
+      You saw wonderful landmarks,
+      took photographs and enjoyed
+      your holiday.
+    </p>
+
+    <p>
+      Your English teacher is preparing
+      a class magazine called
+      <strong>“Our Amazing Journeys”</strong>
+      and asks you to write about your trip.
+    </p>
+
+    <p>
+      <strong>
+        Write a paragraph of 80–100 words
+      </strong>
+      about your past trip.
+
+      Mention when and where you went,
+      who accompanied you,
+      the landmarks you visited,
+      what you did and how you felt.
+
+      Use the <strong>past simple</strong>
+      and
+      <strong>chronological linking words</strong>.
+    </p>
+
+    <div class="arabic">
+
+      المهمة: اكتب فقرة من 80 إلى 100 كلمة
+      عن رحلة سابقة إلى لندن.
+
+      اذكر متى سافرت، ومع من،
+      والمعالم التي زرتها، وما فعلته،
+      وكيف شعرت.
+
+      استعمل الماضي البسيط
+      وأدوات الترتيب الزمني.
+
+    </div>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>
+      🎯 Understand the Mission
+    </h3>
+
+    <div class="question">
+
+      <p>
+        1. Which tense do you mainly need?
+      </p>
+
+      <label class="choice">
+        <input
+          type="radio"
+          name="m1"
+          value="0"
+        >
+        Present simple
+      </label>
+
+      <label class="choice">
+        <input
+          type="radio"
+          name="m1"
+          value="1"
+        >
+        Past simple
+      </label>
+
+      <label class="choice">
+        <input
+          type="radio"
+          name="m1"
+          value="0"
+        >
+        Future simple
+      </label>
+
+    </div>
+
+    <div class="question">
+
+      <p>
+        2. What are you writing?
+      </p>
+
+      <label class="choice">
+        <input
+          type="radio"
+          name="m2"
+          value="1"
+        >
+        A past travel report
+      </label>
+
+      <label class="choice">
+        <input
+          type="radio"
+          name="m2"
+          value="0"
+        >
+        A biography
+      </label>
+
+      <label class="choice">
+        <input
+          type="radio"
+          name="m2"
+          value="0"
+        >
+        An invitation
+      </label>
+
+    </div>
+
+    <button
+      class="button"
+      onclick="checkRadio(['m1','m2'],'missionFeedback',1)"
+    >
+      ✓ Check Answers
+    </button>
+
+    <div
+      class="feedback"
+      id="missionFeedback"
+      aria-live="polite"
+    ></div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 2
+========================================== -->
+
+<section class="card" id="s2">
+
+  <div class="heading">
+
+    <div class="number">02</div>
+
+    <div>
+
+      <span class="small">
+        READ · NOTICE · UNDERSTAND
+      </span>
+
+      <h2>
+        📖 Read a Model Travel Report
+      </h2>
+
+    </div>
+
+  </div>
+
+  <p class="intro">
+
+    Read the paragraph.
+
+    The colours show the opening,
+    the details, the chronological
+    linking words and the ending.
+
+  </p>
+
+  <div class="model">
+
+    <span class="hl topic">
+      Last summer, I travelled to London
+      with my family for five wonderful days.
+    </span>
+
+    <span class="hl link">
+      First,
+    </span>
+
+    <span class="hl detail">
+      we visited Big Ben, the famous
+      clock tower near the Houses of Parliament.
+
+      We took beautiful photos
+      beside the River Thames.
+    </span>
+
+    <span class="hl link">
+      Next,
+    </span>
+
+    <span class="hl detail">
+      we went to Tower Bridge
+      and walked across it.
+
+      The view was amazing!
+    </span>
+
+    <span class="hl link">
+      Then,
+    </span>
+
+    <span class="hl detail">
+      we rode the London Eye
+      and saw the city from above.
+    </span>
+
+    <span class="hl link">
+      After that,
+    </span>
+
+    <span class="hl detail">
+      we visited Buckingham Palace
+      and watched the guards.
+    </span>
+
+    <span class="hl end">
+      Finally, we returned home feeling
+      happy and excited.
+
+      It was an unforgettable trip!
+    </span>
+
+  </div>
+
+  <div class="legend">
+
+    <span class="topic">
+      🔵 Opening
+    </span>
+
+    <span class="detail">
+      🟡 Events and descriptions
+    </span>
+
+    <span class="link">
+      🟢 Sequencers
+    </span>
+
+    <span class="end">
+      🟣 Ending and feelings
+    </span>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>
+      🔎 Match Each Part to Its Job
+    </h3>
+
+    <div class="match">
+
+      <span>
+        1. “Last summer, I travelled to London...”
+      </span>
+
+      <select id="match1">
+
+        <option value="">Choose</option>
+
+        <option value="opening">
+          Opening
+        </option>
+
+        <option value="event">
+          Event
+        </option>
+
+        <option value="ending">
+          Ending
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="match">
+
+      <span>
+        2. “We went to Tower Bridge...”
+      </span>
+
+      <select id="match2">
+
+        <option value="">Choose</option>
+
+        <option value="opening">
+          Opening
+        </option>
+
+        <option value="event">
+          Event
+        </option>
+
+        <option value="ending">
+          Ending
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="match">
+
+      <span>
+        3. “Next, we went...”
+      </span>
+
+      <select id="match3">
+
+        <option value="">Choose</option>
+
+        <option value="time">
+          Sequencer
+        </option>
+
+        <option value="place">
+          Place
+        </option>
+
+        <option value="feeling">
+          Feeling
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="match">
+
+      <span>
+        4. “It was an unforgettable trip!”
+      </span>
+
+      <select id="match4">
+
+        <option value="">Choose</option>
+
+        <option value="opening">
+          Opening
+        </option>
+
+        <option value="event">
+          Event
+        </option>
+
+        <option value="ending">
+          Ending
+        </option>
+
+      </select>
+
+    </div>
+
+    <button
+      class="button"
+      onclick="checkMatches()"
+    >
+      ✓ Check My Answers
+    </button>
+
+    <div
+      id="matchFeedback"
+      class="feedback"
+      aria-live="polite"
+    ></div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 3
+========================================== -->
+
+<section class="card" id="s3">
+
+  <div class="heading">
+
+    <div class="number">03</div>
+
+    <div>
+
+      <span class="small">
+        COLLECT IDEAS AND LANGUAGE
+      </span>
+
+      <h2>
+        🏙️ Explore London's Landmarks
+      </h2>
+
+    </div>
+
+  </div>
+
+  <p class="intro">
+
+    Study the real pictures and fact cards.
+
+    These are the places you can mention
+    in your travel report.
+
+  </p>
+
+  <div class="photo-grid">
+
+    <article class="photo-card">
+
+      <img
+        loading="lazy"
+        src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=800&q=80"
+        alt="Big Ben and Westminster in London"
+      >
+
+      <div>
+
+        <b>🕰️ Big Ben</b>
+
+        <span>
+          Famous clock tower ·
+          near the River Thames ·
+          take photos
+        </span>
+
+      </div>
+
+    </article>
+
+    <article class="photo-card">
+
+      <img
+        loading="lazy"
+        src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80"
+        alt="Tower Bridge and the London skyline"
+      >
+
+      <div>
+
+        <b>🌉 Tower Bridge</b>
+
+        <span>
+          Famous bridge ·
+          cross the bridge ·
+          enjoy the view
+        </span>
+
+      </div>
+
+    </article>
+
+    <article class="photo-card">
+
+      <img
+        loading="lazy"
+        src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=800&q=80"
+        alt="London Eye observation wheel"
+      >
+
+      <div>
+
+        <b>🎡 London Eye</b>
+
+        <span>
+          Observation wheel ·
+          ride it ·
+          see London from above
+        </span>
+
+      </div>
+
+    </article>
+
+  </div>
+
+  <div
+    class="facts"
+    style="margin-top:18px"
+  >
+
+    <div class="fact">
+      <b>Destination</b>
+      <span>London, England</span>
+    </div>
+
+    <div class="fact">
+      <b>When</b>
+      <span>Last summer</span>
+    </div>
+
+    <div class="fact">
+      <b>Companions</b>
+      <span>My family</span>
+    </div>
+
+    <div class="fact">
+      <b>Transport</b>
+      <span>By plane</span>
+    </div>
+
+    <div class="fact">
+      <b>Landmark 1</b>
+      <span>Big Ben — took photos</span>
+    </div>
+
+    <div class="fact">
+      <b>Landmark 2</b>
+      <span>Tower Bridge — crossed the bridge</span>
+    </div>
+
+    <div class="fact">
+      <b>Landmark 3</b>
+      <span>London Eye — enjoyed a ride</span>
+    </div>
+
+    <div class="fact">
+      <b>Feelings</b>
+      <span>Happy, excited, amazed</span>
+    </div>
+
+  </div>
+
+  <div class="tip">
+
+    💡 <strong>Past simple:</strong>
+
+    go → <strong>went</strong> ·
+
+    see → <strong>saw</strong> ·
+
+    take → <strong>took</strong> ·
+
+    visit → <strong>visited</strong> ·
+
+    travel → <strong>travelled</strong> ·
+
+    enjoy → <strong>enjoyed</strong> ·
+
+    be → <strong>was/were</strong>.
+
+  </div>
+
+  <div class="wordbank">
+
+    <span>First,</span>
+    <span>Next,</span>
+    <span>Then,</span>
+    <span>After that,</span>
+    <span>Finally,</span>
+    <span>beautiful</span>
+    <span>amazing</span>
+    <span>very tall</span>
+    <span>extremely impressive</span>
+    <span>unforgettable</span>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>
+      🧠 Practise Past Simple and Sequencers
+    </h3>
+
+    <div class="match">
+
+      <span>
+        1. Yesterday, we ___ Big Ben.
+      </span>
+
+      <select id="g1">
+
+        <option value="">Choose</option>
+        <option value="visited">visited</option>
+        <option value="visit">visit</option>
+        <option value="visiting">visiting</option>
+
+      </select>
+
+    </div>
+
+    <div class="match">
+
+      <span>
+        2. We ___ many beautiful photographs.
+      </span>
+
+      <select id="g2">
+
+        <option value="">Choose</option>
+        <option value="took">took</option>
+        <option value="take">take</option>
+        <option value="taked">taked</option>
+
+      </select>
+
+    </div>
+
+    <div class="match">
+
+      <span>
+        3. We ___ the city from the London Eye.
+      </span>
+
+      <select id="g3">
+
+        <option value="">Choose</option>
+        <option value="saw">saw</option>
+        <option value="see">see</option>
+        <option value="seed">seed</option>
+
+      </select>
+
+    </div>
+
+    <div class="match">
+
+      <span>
+        4. First, we visited Big Ben.
+        ___, we went to Tower Bridge.
+      </span>
+
+      <select id="g4">
+
+        <option value="">Choose</option>
+        <option value="next">Next</option>
+        <option value="because">Because</option>
+        <option value="but">But</option>
+
+      </select>
+
+    </div>
+
+    <button
+      class="button"
+      onclick="checkGrammar()"
+    >
+      ✓ Check Grammar
+    </button>
+
+    <div
+      id="grammarFeedback"
+      class="feedback"
+      aria-live="polite"
+    ></div>
+
+  </div>
+
+  <div class="arabic">
+
+    تذكّر: نستعمل الماضي البسيط
+    للحديث عن أحداث انتهت.
+
+    الأفعال غير المنتظمة:
+
+    went = ذهب،
+
+    saw = رأى،
+
+    took = التقط.
+
+    أدوات الترتيب:
+
+    First = أولاً،
+
+    Next = بعد ذلك،
+
+    Then = ثم،
+
+    Finally = أخيراً.
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 4
+========================================== -->
+
+<section class="card" id="s4">
+
+  <div class="heading">
+
+    <div class="number">04</div>
+
+    <div>
+
+      <span class="small">
+        GUIDED SENTENCE-BY-SENTENCE WRITING
+      </span>
+
+      <h2>
+        🧩 Build Your Own Travel Report
+      </h2>
+
+    </div>
+
+  </div>
+
+  <p class="intro">
+
+    Choose one correct sentence for each stage.
+
+    The eight sentences will form
+    your first draft.
+
+    Read the fact file when you need help.
+
+  </p>
+
+  <div class="arabic">
+
+    اختر جملة صحيحة في كل خانة.
+
+    ثم اضغط على زر إنشاء الفقرة.
+
+    ستظهر فقرتك في مساحة الكتابة
+    في الخطوة الخامسة.
+
+  </div>
+
+  <div id="builders"></div>
+
+  <button
+    class="button"
+    onclick="buildDraft()"
+  >
+    ✨ Build My Travel Report
+  </button>
+
+  <div
+    id="builderFeedback"
+    class="feedback"
+    aria-live="polite"
+  ></div>
+
+</section>
+
+<!-- ==========================================
+     STEP 5
+========================================== -->
+
+<section class="card" id="s5">
+
+  <div class="heading">
+
+    <div class="number">05</div>
+
+    <div>
+
+      <span class="small">
+        WRITE · EDIT · IMPROVE
+      </span>
+
+      <h2>
+        ✍️ Your Writing Studio
+      </h2>
+
+    </div>
+
+  </div>
+
+  <p class="intro">
+
+    Read your draft.
+
+    Improve it by adding details
+    about the landmarks,
+    your activities and your feelings.
+
+    Aim for <strong>80–100 words</strong>.
+
+  </p>
+
+  <div class="tip">
+
+    🌟 <strong>Writer's tip:</strong>
+
+    Use the past simple to narrate events.
+
+    Use descriptive adjectives and qualifiers
+    to describe landmarks:
+
+    <em>
+      very beautiful,
+      extremely tall,
+      really impressive
+    </em>.
+
+    Use
+    <em>
+      First, Next, Then, After that, Finally
+    </em>
+    to connect events.
+
+  </div>
+
+  <div class="counter">
+
+    <span id="words">
+      📝 0 words
+    </span>
+
+    <span id="sentences">
+      ✏️ 0 sentences
+    </span>
+
+  </div>
+
+  <textarea
+    id="draft"
+    aria-label="Write your past travel report"
+    placeholder="Last summer, I travelled to London with my family..."
+  ></textarea>
+
+  <div style="margin-top:13px">
+
+    <button
+      class="button"
+      onclick="checkWriting()"
+    >
+      🔎 Check My Writing
+    </button>
+
+    <button
+      class="button green"
+      onclick="saveDraft()"
+    >
+      💾 Save
+    </button>
+
+    <button
+      class="button soft"
+      onclick="loadDraft()"
+    >
+      📂 Load
+    </button>
+
+    <button
+      class="button gold"
+      onclick="printDraft()"
+    >
+      🖨️ Print
+    </button>
+
+    <button
+      class="button soft"
+      onclick="clearDraft()"
+    >
+      ↻ Clear
+    </button>
+
+  </div>
+
+  <div
+    id="writingFeedback"
+    class="result"
+    aria-live="polite"
+  ></div>
+
+</section>
+
+<!-- ==========================================
+     STEP 6
+========================================== -->
+
+<section class="card" id="s6">
+
+  <div class="heading">
+
+    <div class="number">06</div>
+
+    <div>
+
+      <span class="small">
+        SELF-CORRECTION
+      </span>
+
+      <h2>
+        🪞 My Travel Writer's Checklist
+      </h2>
+
+    </div>
+
+  </div>
+
+  <p class="intro">
+
+    Read your paragraph and tick each box
+    when you are sure the statement is true.
+
+  </p>
+
+  <div class="checks" id="checks">
+
+    <label>
+      <input type="checkbox">
+      I wrote a clear opening sentence.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I mentioned when and where I travelled.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I said who travelled with me.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I named at least two landmarks.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I described the landmarks with adjectives.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I used the past simple correctly.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I used chronological linking words.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I included what I did during the trip.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I ended with my feelings.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I checked capital letters,
+      punctuation and spelling.
+    </label>
+
+  </div>
+
+  <div style="margin-top:15px">
+
+    <button
+      class="button"
+      onclick="finish()"
+    >
+      🏆 Finish My Journey
+    </button>
+
+    <div
+      class="feedback"
+      id="finishFeedback"
+      aria-live="polite"
+    ></div>
+
+  </div>
+
+  <div class="finish">
+
+    <h3>
+      🌟 You Are a Travel Writer!
+    </h3>
+
+    <p>
+
+      You can now describe a past journey,
+      organise events and write about
+      famous landmarks.
+
+    </p>
+
+    <a
+      class="button gold"
+      href="MS4-S1-Writing.html"
+    >
+      ← Return to Writing Homepage
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- DICTIONARY BUTTON -->
+
+<button
+  class="dict-btn"
+  onclick="openDict()"
+  id="openDict"
+>
+  📚 EN–AR Dictionary
+</button>
+
+<!-- DICTIONARY MODAL -->
+
+<div
+  class="overlay"
+  id="overlay"
+  aria-hidden="true"
+>
+
+  <div
+    class="dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="dictTitle"
+  >
+
+    <div class="dialog-head">
+
+      <h2 id="dictTitle">
+        📚 Mini Dictionary
+      </h2>
+
+      <button
+        class="close"
+        onclick="closeDict()"
+        aria-label="Close dictionary"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <p class="intro">
+      Search useful travel words
+      in English or Arabic.
+    </p>
+
+    <input
+      type="text"
+      id="search"
+      placeholder="Search a word..."
+      oninput="renderDict()"
+    >
+
+    <div id="dictList"></div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+  ✍️ MY ENGLISH SPACE · MS4 · SEQUENCE 1 · WRITING STUDIO
+
+  <br>
+
+  Discover · Organise · Write · Improve
+
+</footer>
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+/* GENERAL HELPERS */
+
+const $ = id => document.getElementById(id);
+
+const completed = new Set();
+
+function mark(n){
+
+  completed.add(n);
+
+  $("progressLabel").textContent =
+    completed.size + " of 6 steps completed";
+
+  $("fill").style.width =
+    (completed.size / 6 * 100) + "%";
+
+}
+
+function feedback(id,message,ok){
+
+  const e = $(id);
+
+  e.textContent = message;
+
+  e.className =
+    "feedback " + (ok ? "good" : "bad");
+
+}
+
+/* MISSION CHECK */
+
+function checkRadio(names,id,step){
+
+  let score = 0;
+
+  for(const name of names){
+
+    const a = document.querySelector(
+      'input[name="' + name + '"]:checked'
+    );
+
+    if(!a){
+
+      feedback(
+        id,
+        "⚠ Please answer every question.",
+        false
+      );
+
+      return;
+
+    }
+
+    score += Number(a.value);
+
+  }
+
+  const ok = score === names.length;
+
+  feedback(
+    id,
+    ok
+      ? "🌟 Excellent! All answers are correct."
+      : "You got " + score + "/" +
+        names.length +
+        ". Read the mission and try again.",
+    ok
+  );
+
+  if(ok){
+    mark(step);
+  }
+
+}
+
+/* SELECT ANSWER CHECKER */
+
+function checkSelects(pairs,id,step){
+
+  let score = 0;
+
+  for(const [field,answer] of pairs){
+
+    const e = $(field);
+
+    if(e.value === answer){
+
+      score++;
+
+      e.style.borderColor = "#23845c";
+
+    }else{
+
+      e.style.borderColor = "#c14d61";
+
+    }
+
+  }
+
+  const ok = score === pairs.length;
+
+  feedback(
+    id,
+    ok
+      ? "🌟 Perfect! " +
+        score + "/" +
+        pairs.length + " correct."
+      : "You got " +
+        score + "/" +
+        pairs.length +
+        ". Review the lesson and try again.",
+    ok
+  );
+
+  if(ok){
+    mark(step);
+  }
+
+}
+
+/* MODEL COMPREHENSION */
+
+function checkMatches(){
+
+  checkSelects(
+    [
+      ["match1","opening"],
+      ["match2","event"],
+      ["match3","time"],
+      ["match4","ending"]
+    ],
+    "matchFeedback",
+    2
+  );
+
+}
+
+/* GRAMMAR */
+
+function checkGrammar(){
+
+  checkSelects(
+    [
+      ["g1","visited"],
+      ["g2","took"],
+      ["g3","saw"],
+      ["g4","next"]
+    ],
+    "grammarFeedback",
+    3
+  );
+
+}
+
+/* SENTENCE BUILDERS */
+
+const items = [
+
+  [
+    "1. Introduce your trip",
+    "OPENING",
+    [
+      "Last summer, I travelled to London with my family for five exciting days.",
+      "Last summer, I travel to London with my family.",
+      "Tomorrow, I visited London with my family."
+    ]
+  ],
+
+  [
+    "2. Say how you travelled",
+    "TRANSPORT",
+    [
+      "We went there by plane and stayed in a comfortable hotel.",
+      "We go there by plane and stayed in a hotel.",
+      "We went to London by a bicycle across the sea."
+    ]
+  ],
+
+  [
+    "3. Visit the first landmark",
+    "FIRST",
+    [
+      "First, we visited Big Ben, a very famous clock tower.",
+      "First, we visit Big Ben, a famous clock tower.",
+      "First, we visited Big Ben, a famous museum."
+    ]
+  ],
+
+  [
+    "4. Describe your activity",
+    "ACTIVITY",
+    [
+      "We took lovely photos near the River Thames.",
+      "We taked lovely photos near the River Thames.",
+      "We took photos beside the Sahara Desert."
+    ]
+  ],
+
+  [
+    "5. Visit the second landmark",
+    "NEXT",
+    [
+      "Next, we went to Tower Bridge and crossed the beautiful bridge.",
+      "Next, we goed to Tower Bridge.",
+      "Next, we went to the Eiffel Tower in London."
+    ]
+  ],
+
+  [
+    "6. Visit another landmark",
+    "THEN",
+    [
+      "Then, we rode the London Eye and saw the amazing city from above.",
+      "Then, we ride the London Eye and see the city.",
+      "Then, we swam in the London Eye."
+    ]
+  ],
+
+  [
+    "7. Describe your feelings",
+    "FEELINGS",
+    [
+      "We were extremely happy and excited because the views were wonderful.",
+      "We was happy and excited because the views were wonderful.",
+      "We were very bored because nothing was interesting."
+    ]
+  ],
+
+  [
+    "8. End the report",
+    "CONCLUSION",
+    [
+      "Finally, we returned home with great memories. It was an unforgettable journey!",
+      "Finally, we return home yesterday. It is a boring journey.",
+      "Finally, we are going to London next summer."
+    ]
+  ]
+
+];
+
+const builders = $("builders");
+
+items.forEach((item,i) => {
+
+  const div = document.createElement("div");
+
+  div.className = "builder";
+
+  const label = document.createElement("b");
+
+  label.textContent =
+    item[0] + " · " + item[1];
+
+  const select = document.createElement("select");
+
+  select.id = "b" + i;
+
+  select.setAttribute(
+    "aria-label",
+    item[0]
+  );
+
+  const placeholder =
+    document.createElement("option");
+
+  placeholder.value = "";
+
+  placeholder.textContent =
+    "Choose the best sentence";
+
+  select.appendChild(placeholder);
+
+  item[2].forEach((sentence,j) => {
+
+    const option =
+      document.createElement("option");
+
+    option.value = String(j);
+
+    option.textContent = sentence;
+
+    select.appendChild(option);
+
+  });
+
+  const preview =
+    document.createElement("div");
+
+  preview.className = "preview";
+
+  preview.textContent =
+    "✍️ Your sentence will appear here.";
+
+  select.addEventListener(
+    "change",
+    () => {
+
+      preview.textContent =
+        select.value === ""
+          ? "✍️ Your sentence will appear here."
+          : item[2][Number(select.value)];
+
+    }
+  );
+
+  div.append(
+    label,
+    select,
+    preview
+  );
+
+  builders.appendChild(div);
+
+});
+
+/* BUILD PARAGRAPH */
+
+function buildDraft(){
+
+  const choices = items.map(
+    (item,i) => $("b" + i).value
+  );
+
+  if(choices.some(v => v === "")){
+
+    feedback(
+      "builderFeedback",
+      "⚠ Choose a sentence in every box first.",
+      false
+    );
+
+    return;
+
+  }
+
+  const score = choices.filter(
+    v => v === "0"
+  ).length;
+
+  if(score < 8){
+
+    feedback(
+      "builderFeedback",
+      "You chose " + score +
+      "/8 correct sentences. Check the past tense and landmark facts.",
+      false
+    );
+
+    return;
+
+  }
+
+  $("draft").value = items.map(
+    item => item[2][0]
+  ).join(" ");
+
+  updateCount();
+
+  mark(4);
+
+  feedback(
+    "builderFeedback",
+    "🌟 Great! Your first draft is ready. Improve it in Step 5.",
+    true
+  );
+
+  $("s5").scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+/* WORD COUNT */
+
+function countWords(s){
+
+  return s.trim()
+    ? s.trim().split(/\s+/).length
+    : 0;
+
+}
+
+function updateCount(){
+
+  const text = $("draft").value;
+
+  $("words").textContent =
+    "📝 " + countWords(text) + " words";
+
+  $("sentences").textContent =
+    "✏️ " +
+    (
+      text.trim()
+        ? text.split(/[.!?]+/).filter(
+            x => x.trim()
+          ).length
+        : 0
+    ) +
+    " sentences";
+
+}
+
+$("draft").addEventListener(
+  "input",
+  updateCount
+);
+
+/* WRITING CHECKER */
+
+function checkWriting(){
+
+  const text = $("draft").value.trim();
+
+  const box = $("writingFeedback");
+
+  box.style.display = "block";
+
+  if(!text){
+
+    box.textContent =
+      "✏️ Write your travel report first.";
+
+    return;
+
+  }
+
+  const tests = [
+
+    [
+      countWords(text) >= 80 &&
+      countWords(text) <= 100,
+
+      "Your paragraph is 80–100 words long.",
+
+      "Aim for 80–100 words."
+    ],
+
+    [
+      /London/i.test(text),
+
+      "You mentioned your destination.",
+
+      "Mention London."
+    ],
+
+    [
+      /last summer|last year|yesterday|ago|last holiday/i.test(text),
+
+      "You mentioned when you travelled.",
+
+      "Say when you travelled."
+    ],
+
+    [
+      /Big Ben|Tower Bridge|London Eye|Buckingham Palace/i.test(text),
+
+      "You mentioned a famous landmark.",
+
+      "Name some landmarks you visited."
+    ],
+
+    [
+      /(went|visited|travelled|traveled|saw|took|rode|walked|stayed|returned|enjoyed)\b/i.test(text),
+
+      "You used a past-tense travel verb.",
+
+      "Use past-tense verbs such as went, visited, saw or took."
+    ],
+
+    [
+      /first|next|then|after that|finally/i.test(text),
+
+      "You used a chronological linker.",
+
+      "Use First, Next, Then, After that or Finally."
+    ],
+
+    [
+      /beautiful|amazing|wonderful|famous|impressive|tall|exciting/i.test(text),
+
+      "You described the sights.",
+
+      "Add descriptive adjectives."
+    ],
+
+    [
+      /happy|excited|unforgettable|enjoyed|great memories|loved/i.test(text),
+
+      "You expressed feelings about your trip.",
+
+      "End with how you felt."
+    ]
+
+  ];
+
+  const score = tests.filter(
+    t => t[0]
+  ).length;
+
+  box.replaceChildren();
+
+  const h = document.createElement("h3");
+
+  h.textContent =
+    "🧭 Writing Check: " + score + "/8";
+
+  box.appendChild(h);
+
+  for(const [ok,yes,no] of tests){
+
+    const p = document.createElement("p");
+
+    p.textContent =
+      (ok ? "✓ " : "⚠ ") +
+      (ok ? yes : no);
+
+    box.appendChild(p);
+
+  }
+
+  const note = document.createElement("p");
+
+  note.textContent =
+    "This is a simple automatic checklist, not a full grammar or spelling assessment.";
+
+  box.appendChild(note);
+
+  if(score >= 6){
+    mark(5);
+  }
+
+}
+
+/* SAVE / LOAD */
+
+const KEY = "ms4-s1-writing-lesson3";
+
+function saveDraft(){
+
+  try{
+
+    localStorage.setItem(
+      KEY,
+      $("draft").value
+    );
+
+    alert(
+      "💾 Your report was saved in this browser."
+    );
+
+  }catch(e){
+
+    alert("Saving is unavailable.");
+
+  }
+
+}
+
+function loadDraft(){
+
+  try{
+
+    const saved =
+      localStorage.getItem(KEY);
+
+    if(saved === null){
+
+      alert("No saved report found.");
+
+      return;
+
+    }
+
+    $("draft").value = saved;
+
+    updateCount();
+
+    alert("📂 Your report was loaded.");
+
+  }catch(e){
+
+    alert("Loading is unavailable.");
+
+  }
+
+}
+
+/* CLEAR */
+
+function clearDraft(){
+
+  if(confirm("Clear your current draft?")){
+
+    $("draft").value = "";
+
+    $("writingFeedback").style.display =
+      "none";
+
+    updateCount();
+
+  }
+
+}
+
+/* PRINT */
+
+function printDraft(){
+
+  const text = $("draft").value.trim();
+
+  if(!text){
+
+    alert(
+      "Write your report before printing."
+    );
+
+    return;
+
+  }
+
+  const win = window.open(
+    "",
+    "_blank"
+  );
+
+  if(!win){
+
+    alert(
+      "Please allow pop-ups to print."
+    );
+
+    return;
+
+  }
+
+  const escaped = text
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;");
+
+  win.document.write(
+    '<!doctype html>' +
+    '<html>' +
+    '<head>' +
+    '<title>My Past Travel Report</title>' +
+    '<style>' +
+    'body{font:17px/2 Georgia,serif;margin:45px}' +
+    'h1{text-align:center}' +
+    'article{white-space:pre-wrap;text-indent:35px}' +
+    '</style>' +
+    '</head>' +
+    '<body>' +
+    '<h1>My Unforgettable Journey</h1>' +
+    '<p>Name: ____________________ Class: __________</p>' +
+    '<article>' +
+    escaped +
+    '</article>' +
+    '</body>' +
+    '</html>'
+  );
+
+  win.document.close();
+
+  win.focus();
+
+  setTimeout(
+    () => win.print(),
+    300
+  );
+
+}
+
+/* FINAL CHECKLIST */
+
+function finish(){
+
+  const all = [
+    ...document.querySelectorAll(
+      "#checks input"
+    )
+  ];
+
+  const done = all.filter(
+    x => x.checked
+  ).length;
+
+  const ok = done === all.length;
+
+  feedback(
+    "finishFeedback",
+    ok
+      ? "🏆 Congratulations! Your travel writing journey is complete!"
+      : "You checked " +
+        done + "/" +
+        all.length +
+        " items. Review your report and finish the checklist.",
+    ok
+  );
+
+  if(ok){
+    mark(6);
+  }
+
+}
+
+/* ENGLISH-ARABIC DICTIONARY */
+
+const words = [
+
+  ["Travel","سفر"],
+  ["Journey","رحلة"],
+  ["Trip","رحلة"],
+  ["Landmark","معلم مشهور"],
+  ["Destination","وجهة"],
+  ["Last summer","الصيف الماضي"],
+  ["Family","عائلة"],
+  ["Plane","طائرة"],
+  ["Hotel","فندق"],
+  ["Bridge","جسر"],
+  ["Tower","برج"],
+  ["Clock tower","برج الساعة"],
+  ["River","نهر"],
+  ["View","منظر"],
+  ["Photograph","صورة فوتوغرافية"],
+  ["Visited","زار"],
+  ["Went","ذهب"],
+  ["Saw","رأى"],
+  ["Took","التقط"],
+  ["Rode","ركب"],
+  ["Returned","عاد"],
+  ["Enjoyed","استمتع"],
+  ["Walked","مشى"],
+  ["Travelled","سافر"],
+  ["First","أولاً"],
+  ["Next","بعد ذلك"],
+  ["Then","ثم"],
+  ["After that","بعد ذلك"],
+  ["Finally","أخيراً"],
+  ["Beautiful","جميل"],
+  ["Amazing","مدهش"],
+  ["Impressive","مثير للإعجاب"],
+  ["Unforgettable","لا يُنسى"],
+  ["Happy","سعيد"],
+  ["Excited","متحمس"],
+  ["Past simple","الماضي البسيط"],
+  ["Sequencer","أداة ترتيب زمني"],
+  ["Opening","مقدمة"],
+  ["Conclusion","خاتمة"],
+  ["Paragraph","فقرة"],
+  ["Description","وصف"],
+  ["Qualifier","أداة تقوية الصفة"]
+
+];
+
+let oldFocus = null;
+
+function openDict(){
+
+  oldFocus = document.activeElement;
+
+  $("overlay").classList.add("open");
+
+  $("overlay").setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  $("search").value = "";
+
+  renderDict();
+
+  $("search").focus();
+
+}
+
+function closeDict(){
+
+  $("overlay").classList.remove("open");
+
+  $("overlay").setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  if(oldFocus){
+    oldFocus.focus();
+  }
+
+}
+
+function renderDict(){
+
+  const q = $("search")
+    .value
+    .toLowerCase()
+    .trim();
+
+  const target = $("dictList");
+
+  target.replaceChildren();
+
+  let count = 0;
+
+  words.forEach(([en,ar]) => {
+
+    if(
+      !en.toLowerCase().includes(q) &&
+      !ar.includes(q)
+    ){
+      return;
+    }
+
+    count++;
+
+    const row =
+      document.createElement("div");
+
+    row.className = "dict-row";
+
+    const b =
+      document.createElement("strong");
+
+    b.textContent = en;
+
+    const span =
+      document.createElement("span");
+
+    span.textContent = ar;
+
+    row.append(b,span);
+
+    target.appendChild(row);
+
+  });
+
+  if(!count){
+
+    const p =
+      document.createElement("p");
+
+    p.textContent =
+      "No matching word found.";
+
+    target.appendChild(p);
+
+  }
+
+}
+
+/* DICTIONARY EVENTS */
+
+$("overlay").addEventListener(
+  "click",
+  e => {
+
+    if(e.target === $("overlay")){
+      closeDict();
+    }
+
+  }
+);
+
+document.addEventListener(
+  "keydown",
+  e => {
+
+    if(
+      !$("overlay").classList.contains("open")
+    ){
+      return;
+    }
+
+    if(e.key === "Escape"){
+      closeDict();
+    }
+
+    if(e.key === "Tab"){
+
+      const controls = [
+        $("search"),
+        document.querySelector(".close")
+      ];
+
+      const i = controls.indexOf(
+        document.activeElement
+      );
+
+      if(i >= 0){
+
+        e.preventDefault();
+
+        controls[
+          (i + 1) % 2
+        ].focus();
+
+      }
+
+    }
+
+  }
+);
+
+/* INITIALISATION */
+
+updateCount();
+
+</script>
+
+</body>
+</html>

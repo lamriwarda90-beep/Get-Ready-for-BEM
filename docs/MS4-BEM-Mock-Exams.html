@@ -1,0 +1,2558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102c55">
+
+<title>BEM Mock Examinations Academy | My English Space</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root{
+  --navy:#102c55;
+  --blue:#2478c8;
+  --purple:#7853c6;
+  --gold:#ffcd65;
+  --green:#148664;
+  --red:#c94b5c;
+  --ink:#243650;
+  --muted:#687c91;
+  --line:#dce6f4;
+  --bg:#f3f7ff;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Nunito,Arial,sans-serif;
+  line-height:1.7;
+}
+
+h1,h2,h3,h4{
+  font-family:"Baloo 2",Arial,sans-serif;
+  line-height:1.25;
+}
+
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+
+.container{
+  width:min(1160px,94%);
+  margin:auto;
+}
+
+/* NAVIGATION */
+
+nav{
+  background:#0b2343;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 6px 22px #102c5525;
+}
+
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  min-height:68px;
+}
+
+.logo{
+  font-weight:900;
+  font-size:19px;
+}
+
+.back{
+  background:var(--gold);
+  color:var(--navy);
+  border-radius:25px;
+  padding:9px 15px;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* HERO */
+
+.hero{
+  padding:72px 0 85px;
+  color:white;
+  background:
+    radial-gradient(circle at 85% 15%,#ffffff25,transparent 35%),
+    linear-gradient(125deg,#102c55,#246aa7 65%,#7953bc);
+}
+
+.badge{
+  display:inline-block;
+  padding:7px 15px;
+  border:1px solid #ffffff65;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.hero h1{
+  font-size:clamp(38px,6vw,68px);
+  margin:18px 0 10px;
+}
+
+.hero h1 span{color:var(--gold)}
+
+.hero p{
+  max-width:720px;
+  color:#e8f2ff;
+  font-weight:750;
+  font-size:15px;
+}
+
+.hero-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
+}
+
+.hero-stats span{
+  padding:11px 18px;
+  background:#ffffff20;
+  border:1px solid #ffffff45;
+  border-radius:14px;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* SECTION */
+
+.section{padding:55px 0}
+
+.section-title{
+  text-align:center;
+  color:var(--navy);
+  font-size:clamp(29px,4vw,42px);
+  margin:0 0 12px;
+}
+
+.subtitle{
+  max-width:780px;
+  margin:0 auto 30px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:800;
+}
+
+/* EXAM CARDS */
+
+.exam-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.exam-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:23px;
+  padding:24px;
+  box-shadow:0 12px 30px #102c5510;
+  transition:.2s;
+  position:relative;
+  overflow:hidden;
+}
+
+.exam-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 17px 40px #102c5520;
+}
+
+.exam-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  height:6px;
+  background:var(--blue);
+}
+
+.exam-card:nth-child(3n+2)::before{background:var(--purple)}
+.exam-card:nth-child(3n)::before{background:var(--green)}
+
+.exam-number{
+  color:var(--blue);
+  font:800 35px "Baloo 2";
+}
+
+.exam-icon{font-size:37px}
+
+.exam-card h3{
+  color:var(--navy);
+  font-size:22px;
+  margin:8px 0;
+}
+
+.exam-card p{
+  font-size:12px;
+  color:var(--muted);
+  font-weight:800;
+  min-height:55px;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:16px 0;
+}
+
+.tag{
+  background:#eaf3ff;
+  color:#2468a9;
+  border-radius:20px;
+  padding:5px 10px;
+  font-size:10px;
+  font-weight:900;
+}
+
+/* BUTTONS */
+
+.btn{
+  border:0;
+  border-radius:25px;
+  padding:11px 18px;
+  font-size:12px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.btn:hover{filter:brightness(.94)}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+
+.btn-blue{background:var(--blue);color:white}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-green{background:var(--green);color:white}
+.btn-red{background:var(--red);color:white}
+.btn-light{background:#eaf3ff;color:var(--navy)}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+  outline:3px solid #edb039;
+  outline-offset:3px;
+}
+
+/* EXAM PAPER */
+
+.exam-paper{
+  display:none;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  overflow:hidden;
+  margin-top:35px;
+  box-shadow:0 20px 55px #102c5518;
+}
+
+.exam-paper.show{display:block}
+
+.paper-header{
+  background:linear-gradient(120deg,#102c55,#286eaa);
+  color:white;
+  padding:28px;
+}
+
+.paper-header h2{
+  font-size:33px;
+  margin:8px 0;
+}
+
+.paper-header p{
+  font-size:12px;
+  color:#e7f2ff;
+  font-weight:800;
+}
+
+.controls{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+  margin-top:18px;
+}
+
+.timer{
+  background:#ffffff25;
+  border:1px solid #ffffff55;
+  border-radius:25px;
+  padding:9px 17px;
+  font-weight:900;
+  font-size:17px;
+  font-variant-numeric:tabular-nums;
+}
+
+.timer.warning{
+  background:#b72d46;
+}
+
+.paper-body{
+  padding:clamp(18px,4vw,38px);
+}
+
+.note{
+  background:#fff8e8;
+  border-left:5px solid var(--gold);
+  padding:15px 18px;
+  border-radius:0 13px 13px 0;
+  font-size:12px;
+  font-weight:800;
+  margin:20px 0;
+}
+
+.passage{
+  background:#f2f7ff;
+  border:1px solid #dbe8f9;
+  border-radius:19px;
+  padding:clamp(18px,4vw,30px);
+}
+
+.passage h3{
+  text-align:center;
+  color:var(--navy);
+  font-size:28px;
+  margin:0 0 18px;
+}
+
+.passage p{
+  font-size:14px;
+  font-weight:750;
+  line-height:2.1;
+  text-align:justify;
+  margin:0 0 15px;
+}
+
+.part-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  border-bottom:2px solid var(--line);
+  padding-bottom:12px;
+  margin:35px 0 20px;
+}
+
+.part-heading h3{
+  font-size:26px;
+  color:var(--navy);
+  margin:0;
+}
+
+.marks{
+  background:#e9f3ff;
+  color:#2468a8;
+  border-radius:25px;
+  padding:6px 13px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.activity{
+  margin:28px 0;
+}
+
+.activity h4{
+  font-size:22px;
+  color:var(--navy);
+  margin:0 0 4px;
+}
+
+.activity-desc{
+  font-size:12px;
+  font-weight:800;
+  color:var(--muted);
+  margin:0 0 14px;
+}
+
+.question{
+  border:1px solid var(--line);
+  background:white;
+  border-radius:15px;
+  padding:17px;
+  margin:12px 0;
+}
+
+.question strong{
+  display:block;
+  font-size:13px;
+  margin:4px 0 11px;
+}
+
+.question small{
+  color:var(--blue);
+  font-size:10px;
+  font-weight:900;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:9px;
+}
+
+.option{
+  display:flex;
+  gap:9px;
+  align-items:center;
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:10px;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:800;
+}
+
+.option:has(input:checked){
+  background:#eaf4ff;
+  border-color:var(--blue);
+}
+
+.option input{accent-color:var(--blue)}
+
+.short-answer{
+  width:100%;
+  padding:12px 14px;
+  border:2px solid #dce7f4;
+  border-radius:12px;
+  font-size:13px;
+}
+
+.feedback{
+  display:none;
+  border-radius:11px;
+  padding:12px;
+  margin-top:12px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.feedback.show{display:block}
+.feedback.good{background:#e4f8ec;color:#126846}
+.feedback.bad{background:#fff0f1;color:#a13b4c}
+
+/* WRITING */
+
+.writing-box{
+  background:#fff9eb;
+  border:1px solid #f1dfb8;
+  border-radius:19px;
+  padding:24px;
+}
+
+.writing-box p,
+.writing-box li{
+  font-size:13px;
+  font-weight:800;
+}
+
+.writing-box ul{padding-left:22px}
+
+.editor{
+  width:100%;
+  min-height:260px;
+  border:2px solid #dce7f5;
+  border-radius:16px;
+  padding:18px;
+  resize:vertical;
+  margin-top:17px;
+  font-size:14px;
+  line-height:2;
+}
+
+.wordcount{
+  font-size:12px;
+  font-weight:900;
+  color:var(--muted);
+}
+
+.rubric{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin:20px 0;
+}
+
+.rubric div{
+  background:#edf5ff;
+  border-radius:13px;
+  text-align:center;
+  padding:15px 8px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.rubric b{
+  display:block;
+  font:800 28px "Baloo 2";
+  color:var(--blue);
+}
+
+/* RESULTS */
+
+.results{
+  display:none;
+  text-align:center;
+  background:linear-gradient(120deg,#e9f5ff,#f3ecff);
+  border-radius:20px;
+  padding:28px;
+  margin:25px 0;
+}
+
+.results.show{display:block}
+
+.results h3{
+  color:var(--navy);
+  font-size:28px;
+}
+
+.big-score{
+  font:800 60px "Baloo 2";
+  color:var(--blue);
+}
+
+.results p{
+  font-size:13px;
+  font-weight:800;
+}
+
+/* PROGRESS */
+
+.progress-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+}
+
+.progress-item{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:17px;
+  text-align:center;
+  font-size:12px;
+  font-weight:900;
+}
+
+.progress-item b{
+  display:block;
+  font-size:20px;
+  color:var(--navy);
+}
+
+/* FOOTER */
+
+footer{
+  background:#0b2343;
+  color:#dce9f8;
+  padding:30px;
+  text-align:center;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+  .exam-grid{grid-template-columns:repeat(2,1fr)}
+  .progress-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(max-width:600px){
+  .exam-grid{grid-template-columns:1fr}
+  .progress-grid{grid-template-columns:repeat(2,1fr)}
+  .rubric{grid-template-columns:repeat(2,1fr)}
+  .options{grid-template-columns:1fr}
+  .hero{padding:48px 0 65px}
+  .logo{font-size:15px}
+  .back{font-size:10px}
+}
+
+@media print{
+  nav,.hero,.exam-grid,.section-title,.subtitle,
+  .controls,.results,.progress-grid,.btn,footer{
+    display:none!important;
+  }
+  .exam-paper{
+    display:block!important;
+    box-shadow:none;
+    border:0;
+  }
+  .paper-header{
+    background:white;
+    color:black;
+  }
+  .paper-header p{color:black}
+  .paper-body{padding:0}
+  .question{break-inside:avoid}
+  .feedback{display:none!important}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">🎓 My English Space</a>
+    <a href="MS4-BEM-Preparation.html" class="back">
+      ← BEM Preparation
+    </a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+
+    <span class="badge">
+      MS4 · BEM PREPARATION · DESTINATION 06
+    </span>
+
+    <h1>
+      BEM Mock <span>Examinations Academy</span>
+    </h1>
+
+    <p>
+      Ten complete BEM-style challenges.
+      Different topics, different tasks, different grammar.
+      Practise the three sequences and prepare for success!
+    </p>
+
+    <div class="hero-stats">
+      <span>📚 10 Mock Examinations</span>
+      <span>⏱️ 90 Minutes Each</span>
+      <span>🎯 20 Points</span>
+      <span>✍️ Writing Practice</span>
+      <span>🏆 Saved Progress</span>
+    </div>
+
+  </div>
+</section>
+
+<main class="container">
+
+<section class="section">
+
+  <h2 class="section-title">Choose Your Challenge</h2>
+
+  <p class="subtitle">
+    Each mock includes Reading Comprehension (7 points),
+    Mastery of Language (7 points), and Written Expression
+    (6 points). Choose a paper and start practising.
+  </p>
+
+  <div class="exam-grid" id="examCards"></div>
+
+  <div class="exam-paper" id="examPaper"></div>
+
+</section>
+
+<section class="section">
+
+  <h2 class="section-title">🏆 My Mock Exam Progress</h2>
+
+  <p class="subtitle">
+    Your best Reading and Language scores are saved
+    automatically in this browser.
+  </p>
+
+  <div class="progress-grid" id="progressGrid"></div>
+
+  <div style="text-align:center;margin-top:25px">
+    <button class="btn btn-red" onclick="resetProgress()">
+      Reset Saved Scores
+    </button>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  MY ENGLISH SPACE · BEM MOCK EXAMINATIONS ACADEMY
+  <br>
+  Practise · Improve · Succeed
+</footer>
+
+<script>
+"use strict";
+
+/*
+============================================
+QUESTION HELPERS
+============================================
+
+MCQ:
+M(question, options, answerIndex, points, explanation)
+
+TEXT:
+T(question, acceptedAnswers, points, explanation)
+
+Accepted answers are case-insensitive.
+Minor spacing and punctuation differences
+are ignored in text answers.
+*/
+
+const M=(q,o,a,p,why="")=>({
+  type:"mcq",q,o,a,p,why
+});
+
+const T=(q,answers,p,why="")=>({
+  type:"text",q,
+  answers:Array.isArray(answers)?answers:[answers],
+  p,why
+});
+
+const A=(title,desc,items)=>({
+  title,desc,items
+});
+
+/*
+============================================
+EXAMINATION DATABASE
+============================================
+
+Each exam contains:
+
+Reading:
+3 activities, total 7 points.
+
+Language:
+3 activities, total 7 points.
+
+Writing:
+6 points, teacher-assessed.
+
+These are ORIGINAL practice exams.
+============================================
+*/
+
+const exams=[
+
+/* ========================================
+   MOCK 01 — CONSTANTINE
+======================================== */
+
+{
+id:1,
+icon:"🌉",
+title:"Discovering Constantine",
+theme:"Landmarks & Tourism",
+sequence:"Sequence 1",
+grammar:"Past Simple · Passive Voice · -ed",
+
+passageTitle:"A Wonderful Trip to Constantine",
+
+passages:[
+`Last spring, Lina and her classmates visited Constantine. They travelled by bus from Sétif early in the morning. Their English teacher accompanied them because the visit was part of a school project about Algerian landmarks.`,
+
+`Constantine is one of the oldest cities in Algeria. It is famous for its magnificent bridges and deep gorges. The Sidi M'Cid Bridge was opened in 1912. The pupils admired its impressive structure and took many photographs. They also visited the Palace of Ahmed Bey, which was built in the nineteenth century.`,
+
+`In the afternoon, the group walked through the old streets and discovered traditional shops. Lina bought a small souvenir for her mother. She was extremely happy because she learnt many things about her country's history. The pupils returned home in the evening with unforgettable memories.`
+],
+
+reading:[
+A("Activity 1 — True / False / Not Mentioned",
+"Choose the correct answer.",[
+M("The pupils travelled to Constantine by train.",
+["True","False","Not Mentioned"],1,1,
+"They travelled by bus."),
+M("The Sidi M'Cid Bridge was opened in 1912.",
+["True","False","Not Mentioned"],0,1),
+M("Lina visited Constantine with her parents.",
+["True","False","Not Mentioned"],1,1)
+]),
+A("Activity 2 — Answer the Questions",
+"Choose the answer supported by the passage.",[
+M("Why did the pupils visit Constantine?",
+["For a sports competition",
+"For a school project",
+"For a family celebration"],1,1),
+M("What did Lina buy?",
+["A souvenir","A bicycle","A book"],0,1)
+]),
+A("Activity 3 — Vocabulary",
+"Match each word with its meaning.",[
+M("magnificent",["beautiful and impressive","very small","dangerous"],0,.5),
+M("ancient / old",["modern","very old","expensive"],1,.5),
+M("souvenir",["something bought to remember a visit","a school subject","a type of bridge"],0,.5),
+M("unforgettable",["easy to forget","impossible to remember","very memorable"],2,.5)
+])
+],
+
+language:[
+A("Activity 1 — Past Simple",
+"Complete the sentences.",[
+T("The pupils (travel) by bus.","travelled",.5),
+T("They (take) many photographs.","took",.5),
+T("Lina (buy) a souvenir.","bought",.5),
+T("They (return) home in the evening.","returned",.5)
+]),
+A("Activity 2 — Passive Voice",
+"Choose the correct transformation.",[
+M("People opened the bridge in 1912.",
+["The bridge opened in 1912.",
+"The bridge was opened in 1912.",
+"The bridge is opened in 1912."],1,1),
+M("Workers built the palace in the nineteenth century.",
+["The palace was built in the nineteenth century.",
+"The palace built in the nineteenth century.",
+"The palace was build in the nineteenth century."],0,1),
+M("The pupils visited the palace.",
+["The palace is visited by the pupils.",
+"The palace was visited by the pupils.",
+"The palace visited the pupils."],1,1)
+]),
+A("Activity 3 — Final -ed",
+"Choose the correct pronunciation.",[
+M("visited",["/t/","/d/","/ɪd/"],2,.5),
+M("walked",["/t/","/d/","/ɪd/"],0,.5),
+M("opened",["/t/","/d/","/ɪd/"],1,.5),
+M("started",["/t/","/d/","/ɪd/"],2,.5)
+])
+],
+
+writing:{
+context:"Your school website is publishing articles about Algerian landmarks.",
+task:"Write a descriptive paragraph about a famous Algerian landmark.",
+support:[
+"Name and type of landmark.",
+"Location and date of construction.",
+"Appearance and interesting facts.",
+"Importance and your opinion."
+]
+}
+},
+
+/* ========================================
+   MOCK 02 — MOSQUE OF ALGIERS
+======================================== */
+
+{
+id:2,
+icon:"🕌",
+title:"An Architectural Wonder",
+theme:"The Great Mosque of Algiers",
+sequence:"Sequence 1",
+grammar:"Superlatives · Qualifiers · Final -s",
+
+passageTitle:"The Great Mosque of Algiers",
+
+passages:[
+`Djemaâ El Djazaïr is an outstanding religious and architectural landmark in Algiers. It is located in El Mohammadia, near the Mediterranean Sea. The mosque was inaugurated in 2019 and attracts visitors who admire its beautiful design.`,
+
+`It is the largest mosque in Africa and one of the largest mosques in the world. Its minaret is more than 260 metres high. The building includes a prayer hall, a library, a cultural centre and several other facilities. Its architecture combines traditional Algerian elements with modern techniques.`,
+
+`Many visitors describe the mosque as extremely impressive. Its large spaces and elegant decorations make it an important symbol of Algerian architecture. Tourists can learn about Islamic art and appreciate the beauty of this remarkable monument.`
+],
+
+reading:[
+A("Activity 1 — Information Transfer",
+"Complete the fact file.",[
+T("Name of the landmark:",["Djemaâ El Djazaïr","Djamaa El Djazair","Great Mosque of Algiers","Mosque of Algiers"],.5),
+T("City:",["Algiers"],.5),
+T("Year of inauguration:","2019",.5),
+T("Location / district:","El Mohammadia",.5),
+M("Its minaret is ...",["less than 100 m","more than 260 m","exactly 200 m"],1,.5),
+M("It is the largest mosque in ...",["Africa","Europe","Asia"],0,.5)
+]),
+A("Activity 2 — Comprehension",
+"Choose the correct answer.",[
+M("What does its architecture combine?",
+["Traditional and modern elements",
+"Only European elements",
+"Only ancient Roman elements"],0,1),
+M("What can tourists learn about?",
+["Space travel","Islamic art","Marine biology"],1,1)
+]),
+A("Activity 3 — Synonyms and Antonyms",
+"Choose the correct word.",[
+M("outstanding =",["ordinary","remarkable","tiny"],1,.5),
+M("large ≠",["huge","small","big"],1,.5),
+M("modern ≠",["ancient","new","recent"],0,.5),
+M("beautiful =",["attractive","ugly","boring"],0,.5)
+])
+],
+
+language:[
+A("Activity 1 — Superlatives",
+"Complete with the correct form.",[
+T("This is the (large) mosque in Africa.","largest",.5),
+T("It is one of the (beautiful) landmarks.",["most beautiful"],.5),
+T("This is the (good) view of the mosque.","best",.5),
+T("That is the (high) building in the area.","highest",.5)
+]),
+A("Activity 2 — Qualifiers",
+"Choose the most suitable expression.",[
+M("The mosque is ___ impressive.",
+["extremely","a little of","many"],0,1),
+M("The minaret is ___ tall.",
+["very","much of","many"],0,1),
+M("The library is ___ large.",
+["a bit","a many","an"],0,1)
+]),
+A("Activity 3 — Final -s",
+"Choose the pronunciation of the final -s.",[
+M("books",["/s/","/z/","/ɪz/"],0,.5),
+M("gardens",["/s/","/z/","/ɪz/"],1,.5),
+M("places",["/s/","/z/","/ɪz/"],2,.5),
+M("centres",["/s/","/z/","/ɪz/"],1,.5)
+])
+],
+
+writing:{
+context:"An international tourism website is presenting Algerian monuments.",
+task:"Write an article describing Djemaâ El Djazaïr.",
+support:[
+"Name, location and type.",
+"Year of inauguration.",
+"Architecture and facilities.",
+"Superlatives and qualifiers.",
+"Why it is worth visiting."
+]
+}
+},
+
+/* ========================================
+   MOCK 03 — BIOGRAPHY
+======================================== */
+
+{
+id:3,
+icon:"🌟",
+title:"An Outstanding Woman",
+theme:"Biography & History",
+sequence:"Sequence 1",
+grammar:"Past Simple · Sequencers · Word Stress",
+
+passageTitle:"The Courage of Hassiba Benbouali",
+
+passages:[
+`Hassiba Benbouali was an Algerian heroine. She was born on 18 January 1938 in Chlef, Algeria. When she was young, she moved with her family to Algiers, where she continued her education.`,
+
+`As a teenager, Hassiba became interested in helping her country. She joined organisations for young people and later participated in the Algerian struggle for independence. She was known for her courage and determination.`,
+
+`In October 1957, Hassiba died in the Casbah of Algiers. She was only nineteen years old. Today, Algerians remember her as a symbol of bravery and patriotism. Her story continues to inspire younger generations.`
+],
+
+reading:[
+A("Activity 1 — Choose the Correct Answer",
+"Select the correct information.",[
+M("Hassiba Benbouali was born in ...",
+["1938","1957","1945"],0,1),
+M("She was born in ...",
+["Algiers","Chlef","Oran"],1,1),
+M("She died at the age of ...",
+["17","21","19"],2,1)
+]),
+A("Activity 2 — Pronoun Reference",
+"Identify what the pronoun refers to.",[
+M('"She" in paragraph 2 refers to ...',
+["Hassiba Benbouali","her mother","a teacher"],0,1),
+M('"Her" in "Her story" refers to ...',
+["Algeria","Hassiba Benbouali","the Casbah"],1,1)
+]),
+A("Activity 3 — Vocabulary",
+"Choose the correct meaning.",[
+M("courage",["bravery","fear","laziness"],0,.5),
+M("determination",["a strong will to succeed","confusion","weakness"],0,.5),
+M("young ≠",["old","small","short"],0,.5),
+M("remember ≠",["recall","forget","recognise"],1,.5)
+])
+],
+
+language:[
+A("Activity 1 — Past Simple",
+"Complete the biography.",[
+T("She (be) born in 1938.","was",.5),
+T("She (move) to Algiers.","moved",.5),
+T("She (join) organisations.","joined",.5),
+T("She (die) in 1957.","died",.5)
+]),
+A("Activity 2 — Chronological Markers",
+"Choose the appropriate linker.",[
+M("___, she was born in Chlef.",
+["First","Finally","However"],0,1),
+M("___, she moved to Algiers.",
+["In conclusion","Later","Because"],1,1),
+M("___, she became a national heroine.",
+["Before she was born","Finally","Although"],1,1)
+]),
+A("Activity 3 — Word Stress",
+"Choose the stressed syllable.",[
+M("HIS-to-ry: which syllable is stressed?",
+["HIS","to","ry"],0,.5),
+M("im-POR-tant: which syllable is stressed?",
+["im","POR","tant"],1,.5),
+M("COU-rage: which syllable is stressed?",
+["COU","rage"],0,.5),
+M("de-TER-mined: which syllable is stressed?",
+["de","TER","mined"],1,.5)
+])
+],
+
+writing:{
+context:"Your school is celebrating National Memory Day.",
+task:"Write a short biography of an outstanding Algerian figure.",
+support:[
+"Full name and birthplace.",
+"Date of birth.",
+"Education and achievements.",
+"Important events in chronological order.",
+"Why this person is remembered."
+]
+}
+},
+
+/* ========================================
+   MOCK 04 — CHILDHOOD
+======================================== */
+
+{
+id:4,
+icon:"🪁",
+title:"My Childhood Memories",
+theme:"Memories & Experiences",
+sequence:"Sequence 2",
+grammar:"Used to · Past Simple · Vowel Sounds",
+
+passageTitle:"The Days I Will Never Forget",
+
+passages:[
+`When I was a child, I lived in a small village near Batna. Life was simple and peaceful. I used to spend most afternoons playing outside with my neighbours. We did not have smartphones, but we were never bored.`,
+
+`My best friend Samir and I used to ride our bicycles, play football and collect colourful stones. During summer, we visited our grandparents and listened to their fascinating stories. My grandmother often prepared delicious traditional cakes for us.`,
+
+`I still remember my first teacher, Mrs Nadia. She was kind, patient and cheerful. She encouraged me to read books and always helped me when I made mistakes. Those happy memories remain in my heart.`
+],
+
+reading:[
+A("Activity 1 — True / False / Not Mentioned",
+"Choose the correct answer.",[
+M("The writer lived in a large city.",
+["True","False","Not Mentioned"],1,1),
+M("The children played football.",
+["True","False","Not Mentioned"],0,1),
+M("Samir became a professional footballer.",
+["True","False","Not Mentioned"],2,1)
+]),
+A("Activity 2 — Answer the Questions",
+"Select the correct answer.",[
+M("What did the writer and Samir collect?",
+["Flowers","Colourful stones","Old coins"],1,1),
+M("What was Mrs Nadia like?",
+["Strict and impatient","Lazy and careless","Kind and patient"],2,1)
+]),
+A("Activity 3 — Vocabulary",
+"Find the correct meaning.",[
+M("peaceful =",["quiet","noisy","dangerous"],0,.5),
+M("fascinating =",["boring","very interesting","terrible"],1,.5),
+M("delicious =",["tasty","awful","cold"],0,.5),
+M("remember ≠",["forget","recall","recognise"],0,.5)
+])
+],
+
+language:[
+A("Activity 1 — Used To",
+"Complete the sentences.",[
+T("I (use to) play football when I was young.","used to",.5),
+T("She (use to) read stories every night.","used to",.5),
+T("We (not / use to) have smartphones.",["did not use to","didn't use to"],.5),
+T("Did you (use to) ride a bicycle?","use to",.5)
+]),
+A("Activity 2 — Past Simple",
+"Choose the correct verb.",[
+M("Yesterday, I ___ my grandparents.",
+["visit","visited","visiting"],1,1),
+M("We ___ happy together.",
+["was","were","are"],1,1),
+M("My grandmother ___ delicious cakes.",
+["made","maked","makes"],0,1)
+]),
+A("Activity 3 — Vowel Sounds",
+"Choose the vowel sound.",[
+M("kite",["/eɪ/","/aɪ/"],1,.5),
+M("day",["/eɪ/","/aɪ/"],0,.5),
+M("bike",["/eɪ/","/aɪ/"],1,.5),
+M("play",["/eɪ/","/aɪ/"],0,.5)
+])
+],
+
+writing:{
+context:"Your school magazine is preparing a special edition about childhood.",
+task:"Write a paragraph describing your best childhood memories.",
+support:[
+"Where you lived.",
+"Your favourite games and activities.",
+"Your best friend.",
+"Your favourite teacher.",
+"Use past simple and used to."
+]
+}
+},
+
+/* ========================================
+   MOCK 05 — IDEAL TEACHER
+======================================== */
+
+{
+id:5,
+icon:"👩‍🏫",
+title:"The Teacher Who Inspired Me",
+theme:"Personality & Character",
+sequence:"Sequence 2",
+grammar:"Adjectives · Prefixes · Comparisons",
+
+passageTitle:"An Unforgettable English Teacher",
+
+passages:[
+`Mr Karim is my favourite English teacher. He is friendly, patient and extremely helpful. He always welcomes his pupils with a warm smile. His lessons are interesting because he uses stories, pictures and educational games.`,
+
+`Mr Karim believes that every pupil can improve. When someone makes a mistake, he explains the answer calmly instead of becoming angry. He encourages shy pupils to speak and helps weak learners develop their confidence.`,
+
+`Last year, our class won an English competition. We were very proud because our teacher had prepared us carefully. I hope to become a teacher like him one day. He taught me that kindness and hard work are important for success.`
+],
+
+reading:[
+A("Activity 1 — Multiple Choice",
+"Choose the correct answer.",[
+M("Mr Karim teaches ...",
+["English","Mathematics","History"],0,1),
+M("He uses ... in his lessons.",
+["Only examinations","Stories and games","Only dictionaries"],1,1),
+M("His pupils won ...",
+["a sports match","a science prize","an English competition"],2,1)
+]),
+A("Activity 2 — Pronoun Reference",
+"Identify the reference.",[
+M('"He" in paragraph 2 refers to ...',
+["a pupil","Mr Karim","the headmaster"],1,1),
+M('"him" in "like him" refers to ...',
+["Mr Karim","the writer's father","a friend"],0,1)
+]),
+A("Activity 3 — Synonyms / Antonyms",
+"Choose the correct word.",[
+M("helpful =",["supportive","careless","selfish"],0,.5),
+M("shy ≠",["timid","confident","quiet"],1,.5),
+M("kind ≠",["cruel","friendly","caring"],0,.5),
+M("proud =",["pleased with an achievement","ashamed","angry"],0,.5)
+])
+],
+
+language:[
+A("Activity 1 — Adjective Formation",
+"Complete with -ful or -less.",[
+T("help + ful =","helpful",.5),
+T("care + less =","careless",.5),
+T("hope + ful =","hopeful",.5),
+T("use + less =","useless",.5)
+]),
+A("Activity 2 — Comparisons",
+"Choose the correct form.",[
+M("Mr Karim is ___ than the previous teacher.",
+["more patient","patienter","most patient"],0,1),
+M("This is ___ lesson of the week.",
+["interesting","the most interesting","more interesting"],1,1),
+M("English is ___ than I expected.",
+["easyer","easiest","easier"],2,1)
+]),
+A("Activity 3 — Negative Prefixes",
+"Form the opposite adjective.",[
+T("patient →","impatient",.5),
+T("honest →","dishonest",.5),
+T("regular →","irregular",.5),
+T("possible →","impossible",.5)
+])
+],
+
+writing:{
+context:"Your school is organising a competition entitled 'My Ideal Teacher'.",
+task:"Write an article describing your ideal teacher.",
+support:[
+"Subject taught.",
+"Physical description if relevant.",
+"Personality traits.",
+"Teaching methods.",
+"Why you admire this teacher."
+]
+}
+},
+
+/* ========================================
+   MOCK 06 — DREAM JOB
+======================================== */
+
+{
+id:6,
+icon:"🚀",
+title:"My Future Dream Job",
+theme:"Dreams & Ambitions",
+sequence:"Sequence 2",
+grammar:"Gerunds · Word Formation · Conditionals",
+
+passageTitle:"A Dream Worth Following",
+
+passages:[
+`Amine is a fifteen-year-old pupil from Oran. He dreams of becoming a doctor because he enjoys helping people. He is hardworking, ambitious and responsible. His favourite school subjects are science and English.`,
+
+`Amine knows that achieving his dream will not be easy. He studies regularly, reads books and asks his teachers for advice. He dislikes wasting time and prefers learning new things to spending hours playing video games.`,
+
+`If he gets excellent results in his examinations, he will continue his studies at university. Amine believes that determination and patience are essential for success. His parents are proud of his efforts and always encourage him.`
+],
+
+reading:[
+A("Activity 1 — True / False / Not Mentioned",
+"Choose the correct answer.",[
+M("Amine wants to become a doctor.",
+["True","False","Not Mentioned"],0,1),
+M("Amine hates helping people.",
+["True","False","Not Mentioned"],1,1),
+M("His father is also a doctor.",
+["True","False","Not Mentioned"],2,1)
+]),
+A("Activity 2 — Answer the Questions",
+"Choose the correct answer.",[
+M("Why does Amine want to become a doctor?",
+["To travel abroad","Because he enjoys helping people","To become famous"],1,1),
+M("What will he do if he gets excellent results?",
+["Continue his studies","Stop studying","Change schools"],0,1)
+]),
+A("Activity 3 — Vocabulary",
+"Choose the correct meaning.",[
+M("ambitious =",["having strong goals","lazy","afraid"],0,.5),
+M("essential =",["unnecessary","very important","optional"],1,.5),
+M("regularly =",["often and consistently","never","once"],0,.5),
+M("success ≠",["achievement","victory","failure"],2,.5)
+])
+],
+
+language:[
+A("Activity 1 — Gerunds",
+"Complete with the -ing form.",[
+T("Amine enjoys (help) people.","helping",.5),
+T("He prefers (learn) new things.","learning",.5),
+T("He dislikes (waste) time.","wasting",.5),
+T("He loves (read) books.","reading",.5)
+]),
+A("Activity 2 — Conditional Type 1",
+"Complete the conditional sentences.",[
+T("If he (study) hard, he will succeed.","studies",1),
+T("If he succeeds, he (become) a doctor.",["will become","'ll become"],1),
+T("If you want to improve, (work) hard.","work",1)
+]),
+A("Activity 3 — Word Formation",
+"Complete the words.",[
+T("success → adjective","successful",.5),
+T("care → adjective with -ful","careful",.5),
+T("responsible → negative adjective","irresponsible",.5),
+T("happy → negative adjective","unhappy",.5)
+])
+],
+
+writing:{
+context:"Your school blog is asking pupils to describe their future ambitions.",
+task:"Write a paragraph about your dream job.",
+support:[
+"Your dream career.",
+"Why you prefer it.",
+"Your personality traits.",
+"Your favourite subjects.",
+"Your plans and efforts.",
+"Use conditional type 1."
+]
+}
+},
+
+/* ========================================
+   MOCK 07 — CITIZENSHIP
+======================================== */
+
+{
+id:7,
+icon:"🤝",
+title:"A Responsible Citizen",
+theme:"Citizenship & Community",
+sequence:"Sequence 3",
+grammar:"Imperatives · Conditionals · Final -s",
+
+passageTitle:"Small Actions, Big Changes",
+
+passages:[
+`A good citizen respects other people and takes care of the community. In a neighbourhood in Tlemcen, a group of young pupils decided to make their streets cleaner and safer. They organised a citizenship campaign with the help of their teachers.`,
+
+`Every Saturday, the pupils collect rubbish, plant trees and help elderly neighbours. They also prepare posters to encourage people to protect public places. Their slogan is simple: "Respect your city and keep it clean!"`,
+
+`The campaign has inspired many families. If more people participate, the neighbourhood will become more beautiful. The pupils believe that everyone can make a difference through small acts of kindness and responsibility.`
+],
+
+reading:[
+A("Activity 1 — Choose the Correct Answer",
+"Select the correct information.",[
+M("The campaign took place in ...",
+["Tlemcen","Annaba","Béjaïa"],0,1),
+M("The pupils meet every ...",
+["Monday","Saturday","Friday"],1,1),
+M("They help ...",
+["tourists only","football players","elderly neighbours"],2,1)
+]),
+A("Activity 2 — Comprehension",
+"Choose the correct answer.",[
+M("Why do they prepare posters?",
+["To encourage people to protect public places",
+"To sell products",
+"To advertise a concert"],0,1),
+M("What will happen if more people participate?",
+["The streets will disappear",
+"The neighbourhood will become more beautiful",
+"The school will close"],1,1)
+]),
+A("Activity 3 — Vocabulary",
+"Choose the correct meaning.",[
+M("respect =",["show consideration","ignore","destroy"],0,.5),
+M("protect ≠",["save","damage","preserve"],1,.5),
+M("elderly =",["young","very old","tiny"],1,.5),
+M("participate =",["take part","refuse","leave"],0,.5)
+])
+],
+
+language:[
+A("Activity 1 — Imperatives",
+"Choose the correct imperative.",[
+M("You must keep your school clean.",
+["Keep your school clean!",
+"Keeping your school clean!",
+"To keep your school clean!"],0,.5),
+M("You must not throw rubbish.",
+["Not throw rubbish!",
+"Don't throw rubbish!",
+"Doesn't throw rubbish!"],1,.5),
+M("You should respect others.",
+["Respect others!",
+"Respecting others!",
+"Respects others!"],0,.5),
+M("You must not waste water.",
+["Don't waste water!",
+"Not wasting water!",
+"Doesn't waste water!"],0,.5)
+]),
+A("Activity 2 — Conditional Type 1",
+"Choose the correct form.",[
+M("If people plant trees, the city ___ greener.",
+["becomes yesterday","will become","became"],1,1),
+M("If you see rubbish, ___ it up.",
+["pick","picked","will picked"],0,1),
+M("If we work together, we ___ our community.",
+["improved","improves","will improve"],2,1)
+]),
+A("Activity 3 — Final -s",
+"Choose the pronunciation.",[
+M("streets",["/s/","/z/","/ɪz/"],0,.5),
+M("trees",["/s/","/z/","/ɪz/"],1,.5),
+M("watches",["/s/","/z/","/ɪz/"],2,.5),
+M("helps",["/s/","/z/","/ɪz/"],0,.5)
+])
+],
+
+writing:{
+context:"Your municipality is launching a citizenship awareness campaign.",
+task:"Write a short article explaining how to become a good citizen.",
+support:[
+"Respecting people and public property.",
+"Keeping the environment clean.",
+"Helping others.",
+"Following rules.",
+"Use imperatives and conditional type 1."
+]
+}
+},
+
+/* ========================================
+   MOCK 08 — VOLUNTEERING
+======================================== */
+
+{
+id:8,
+icon:"💚",
+title:"Young Volunteers in Action",
+theme:"Charity & Volunteering",
+sequence:"Sequence 3",
+grammar:"Gerunds · Linkers · Prefixes",
+
+passageTitle:"The Helping Hands Club",
+
+passages:[
+`Last year, a group of middle school pupils created a charity club called Helping Hands. Their aim was to support families in need and encourage young people to volunteer. The members meet every Thursday after school.`,
+
+`The club organises food collections, distributes clothes and visits elderly people. Some pupils enjoy preparing charity posters, while others prefer organising events. They believe that helping others is more important than receiving rewards.`,
+
+`At first, only ten pupils joined the club. However, the number of volunteers increased quickly. Moreover, local families began supporting the project. Today, the club is a successful example of cooperation and generosity.`
+],
+
+reading:[
+A("Activity 1 — True / False / Not Mentioned",
+"Choose the correct answer.",[
+M("Helping Hands was created by pupils.",
+["True","False","Not Mentioned"],0,1),
+M("The club meets every Sunday.",
+["True","False","Not Mentioned"],1,1),
+M("The club received an international prize.",
+["True","False","Not Mentioned"],2,1)
+]),
+A("Activity 2 — Answer the Questions",
+"Choose the correct answer.",[
+M("What does the club collect?",
+["Food and clothes","Cars and bicycles","Mobile phones only"],0,1),
+M("How many pupils joined at first?",
+["Twenty","Ten","Fifty"],1,1)
+]),
+A("Activity 3 — Vocabulary",
+"Choose the correct meaning.",[
+M("volunteer =",["a person who helps willingly","a tourist","a customer"],0,.5),
+M("generosity =",["selfishness","willingness to give and help","laziness"],1,.5),
+M("successful ≠",["unsuccessful","helpful","careful"],0,.5),
+M("support =",["help","ignore","refuse"],0,.5)
+])
+],
+
+language:[
+A("Activity 1 — Gerunds",
+"Complete with the correct form.",[
+T("They enjoy (help) others.","helping",.5),
+T("She loves (organise) events.","organising",.5),
+T("He dislikes (waste) food.","wasting",.5),
+T("We prefer (work) together.","working",.5)
+]),
+A("Activity 2 — Discourse Markers",
+"Choose the most suitable linker.",[
+M("The pupils collected food. ___, they distributed clothes.",
+["Moreover","Because","Although"],0,1),
+M("The club was small. ___, it became successful.",
+["First","However","Because"],1,1),
+M("___, the pupils planned the campaign.",
+["First","Finally","In conclusion"],0,1)
+]),
+A("Activity 3 — Negative Prefixes",
+"Form the opposite adjective.",[
+T("fair →","unfair",.5),
+T("honest →","dishonest",.5),
+T("legal →","illegal",.5),
+T("complete →","incomplete",.5)
+])
+],
+
+writing:{
+context:"Your school wants to create a volunteering club.",
+task:"Write an article encouraging pupils to join the club.",
+support:[
+"Name and aim of the club.",
+"Charity activities.",
+"How volunteers help people.",
+"Benefits of volunteering.",
+"Use gerunds and discourse markers."
+]
+}
+},
+
+/* ========================================
+   MOCK 09 — ENVIRONMENT
+======================================== */
+
+{
+id:9,
+icon:"🌍",
+title:"Save Our Planet",
+theme:"Environment & Responsibility",
+sequence:"Sequence 3",
+grammar:"Conditionals · Imperatives · Transformations",
+
+passageTitle:"A Greener School for Everyone",
+
+passages:[
+`Environmental protection begins with simple actions. At a middle school in Béjaïa, pupils started a Green School project to reduce waste and protect nature. Their science and English teachers helped them plan different activities.`,
+
+`First, the pupils placed recycling boxes in classrooms. Next, they planted flowers and trees in the school garden. They also organised a campaign about saving water and electricity. Their posters reminded classmates to switch off lights and avoid wasting paper.`,
+
+`The project made the school cleaner and more attractive. The headmaster congratulated the pupils on their efforts. If every school follows this example, our communities will become healthier and greener.`
+],
+
+reading:[
+A("Activity 1 — Information Transfer",
+"Complete the information.",[
+T("City where the project started:","Béjaïa",.5),
+T("Name of the project:","Green School",.5),
+M("The pupils placed ... in classrooms.",
+["recycling boxes","televisions","new desks"],0,.5),
+M("They planted ...",
+["only vegetables","flowers and trees","wheat"],1,.5),
+M("They wanted to save ...",
+["water and electricity","money only","sports equipment"],0,.5),
+M("The headmaster ... the pupils.",
+["punished","ignored","congratulated"],2,.5)
+]),
+A("Activity 2 — Answer the Questions",
+"Choose the correct answer.",[
+M("Who helped the pupils plan activities?",
+["Their teachers","Only their parents","Tourists"],0,1),
+M("What will happen if schools follow this example?",
+["Communities will become greener",
+"All trees will disappear",
+"Schools will close"],0,1)
+]),
+A("Activity 3 — Vocabulary",
+"Choose the correct answer.",[
+M("reduce =",["make smaller","increase","destroy"],0,.5),
+M("protect =",["damage","preserve","ignore"],1,.5),
+M("cleaner ≠",["dirtier","greener","safer"],0,.5),
+M("efforts =",["attempts to achieve something","holidays","mistakes"],0,.5)
+])
+],
+
+language:[
+A("Activity 1 — Conditional Type 1",
+"Complete the sentences.",[
+T("If we (recycle) paper, we will save trees.","recycle",.5),
+T("If pupils save water, they (protect) nature.",["will protect","'ll protect"],.5),
+T("If you (see) rubbish, pick it up.","see",.5),
+T("If we work together, our school (be) cleaner.",["will be","'ll be"],.5)
+]),
+A("Activity 2 — Imperatives",
+"Choose the correct sentence.",[
+M("You must not waste water.",
+["Don't waste water!",
+"Doesn't waste water!",
+"Not waste water!"],0,1),
+M("You should switch off the lights.",
+["Switching off the lights!",
+"Switch off the lights!",
+"Switches off the lights!"],1,1),
+M("You must protect trees.",
+["Protect trees!",
+"Protecting trees!",
+"Protected trees!"],0,1)
+]),
+A("Activity 3 — Sentence Transformation",
+"Choose the correct transformation.",[
+M("People should recycle paper. (Imperative)",
+["Recycle paper!","Recycling paper!","Paper recycled!"],0,.5),
+M("If we plant trees, our city (become) greener.",
+["becomes","will become","became"],1,.5),
+M("Don't throw rubbish. (Positive imperative)",
+["Keep the area clean!","Not throwing rubbish!","Doesn't throw rubbish!"],0,.5),
+M("If you want a clean school, ...",
+["help keep it clean!","helped keep it clean!","will helping keep it clean!"],0,.5)
+])
+],
+
+writing:{
+context:"Your school is organising an Environment Day.",
+task:"Write a paragraph suggesting ways to protect the environment.",
+support:[
+"Problems affecting the environment.",
+"Actions pupils can take.",
+"Recycling and saving resources.",
+"Imperatives and conditional sentences.",
+"An encouraging conclusion."
+]
+}
+},
+
+/* ========================================
+   MOCK 10 — GRAND CHALLENGE
+======================================== */
+
+{
+id:10,
+icon:"🏆",
+title:"The BEM Grand Challenge",
+theme:"Mixed Sequences 1, 2 & 3",
+sequence:"Final Challenge",
+grammar:"Mixed Grammar · Vocabulary · Pronunciation",
+
+passageTitle:"A School Project That Changed Our Lives",
+
+passages:[
+`Last year, our English teacher organised a special school project called Discover Algeria and Help Others. The aim was to improve our English while learning about our country's history, culture and citizenship. At first, we were shy and unsure of our abilities.`,
+
+`Our first activity was a visit to the Roman ruins of Timgad. We admired the ancient monuments and learnt that Timgad was founded during the Roman period. Next, we prepared biographies of outstanding Algerian figures. Our teacher encouraged us to use the past simple and chronological markers.`,
+
+`Later, we organised a charity campaign to help families in need. We collected school supplies, prepared posters and cleaned our neighbourhood. We enjoyed working together because everyone had an important role. The project made us more responsible and confident.`,
+
+`Today, we believe that learning English is not only about grammar and vocabulary. It also helps us understand the world and communicate with others. If we continue working hard, we will achieve our dreams and become active citizens.`
+],
+
+reading:[
+A("Activity 1 — True / False / Not Mentioned",
+"Choose the correct answer.",[
+M("The project was organised by an English teacher.",
+["True","False","Not Mentioned"],0,1),
+M("The pupils visited the Eiffel Tower.",
+["True","False","Not Mentioned"],1,1),
+M("The school won a national prize.",
+["True","False","Not Mentioned"],2,1)
+]),
+A("Activity 2 — Answer the Questions",
+"Choose the correct answer.",[
+M("Which historical site did the pupils visit?",
+["Timgad","Big Ben","The Colosseum"],0,1),
+M("What did the charity campaign collect?",
+["School supplies","Cars","Furniture"],0,1)
+]),
+A("Activity 3 — Vocabulary and Reference",
+"Choose the correct answer.",[
+M("ancient =",["very old","modern","new"],0,.5),
+M("confident ≠",["self-assured","insecure","brave"],1,.5),
+M('"we" in the last paragraph refers to ...',
+["the pupils / project participants","tourists","teachers only"],0,.5),
+M("achieve =",["give up","forget","accomplish"],2,.5)
+])
+],
+
+language:[
+A("Activity 1 — Mixed Grammar",
+"Complete the sentences.",[
+T("Timgad (be) founded during the Roman period.","was",.5),
+T("The pupils (collect) school supplies.","collected",.5),
+T("They enjoy (work) together.","working",.5),
+T("If they study hard, they (succeed).",["will succeed","'ll succeed"],.5)
+]),
+A("Activity 2 — Sentence Transformations",
+"Choose the correct sentence.",[
+M("People built the monument long ago.",
+["The monument was built long ago.",
+"The monument is build long ago.",
+"The monument built people."],0,1),
+M("A responsible pupil should help others.",
+["Help others!",
+"Helping others!",
+"Helped others!"],0,1),
+M("This is the (interesting) project.",
+["more interesting","most interesting","the most interesting"],2,1)
+]),
+A("Activity 3 — Pronunciation and Word Formation",
+"Choose the correct answer.",[
+M("visited: final -ed",["/t/","/d/","/ɪd/"],2,.5),
+M("helped: final -ed",["/t/","/d/","/ɪd/"],0,.5),
+M("responsible → opposite",["irresponsible","unresponsible","disresponsible"],0,.5),
+M("hope → adjective with -ful",["hopeless","hopeful","hoping"],1,.5)
+])
+],
+
+writing:{
+context:"Your school website is inviting pupils to describe a memorable educational experience.",
+task:"Write an article about a school project, trip or charity activity that taught you important lessons.",
+support:[
+"Name and purpose of the project.",
+"Where and when it happened.",
+"Activities and important events.",
+"Your feelings and what you learnt.",
+"Use appropriate tenses and linkers.",
+"Explain how the experience changed you."
+]
+}
+}
+
+];
+
+/* ==========================================
+   APPLICATION STATE
+========================================== */
+
+let currentExam=null;
+let submitted=false;
+let remainingSeconds=5400;
+let timerInterval=null;
+
+/* ==========================================
+   SAFE HTML
+========================================== */
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g,c=>({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  }[c]));
+}
+
+/* ==========================================
+   STORAGE
+========================================== */
+
+function save(key,value){
+  try{
+    localStorage.setItem(key,JSON.stringify(value));
+  }catch(e){
+    console.warn("Local storage unavailable.");
+  }
+}
+
+function load(key,fallback){
+  try{
+    const value=localStorage.getItem(key);
+    return value===null?fallback:JSON.parse(value);
+  }catch(e){
+    return fallback;
+  }
+}
+
+/* ==========================================
+   EXAM CARDS
+========================================== */
+
+function renderCards(){
+
+  document.getElementById("examCards").innerHTML=
+  exams.map(exam=>`
+
+    <article class="exam-card">
+
+      <div class="exam-icon">${exam.icon}</div>
+
+      <div class="exam-number">
+        MOCK ${String(exam.id).padStart(2,"0")}
+      </div>
+
+      <h3>${escapeHTML(exam.title)}</h3>
+
+      <p>${escapeHTML(exam.theme)}</p>
+
+      <div class="tags">
+        <span class="tag">${escapeHTML(exam.sequence)}</span>
+        <span class="tag">20 Points</span>
+        <span class="tag">90 Minutes</span>
+      </div>
+
+      <p>
+        <strong>Language:</strong>
+        ${escapeHTML(exam.grammar)}
+      </p>
+
+      <button
+        class="btn btn-blue"
+        onclick="startExam(${exam.id})">
+        Start Examination →
+      </button>
+
+    </article>
+
+  `).join("");
+
+}
+
+/* ==========================================
+   START EXAMINATION
+========================================== */
+
+function startExam(id){
+
+  if(currentExam && !submitted){
+
+    const confirmed=confirm(
+      "Leave the current examination? Your answers will not be submitted."
+    );
+
+    if(!confirmed)return;
+
+  }
+
+  clearInterval(timerInterval);
+
+  currentExam=exams.find(e=>e.id===id);
+  submitted=false;
+  remainingSeconds=5400;
+
+  const exam=currentExam;
+
+  let html=`
+
+    <div class="paper-header">
+
+      <span class="badge">
+        BEM ENGLISH · MOCK ${String(exam.id).padStart(2,"0")}
+      </span>
+
+      <h2>${escapeHTML(exam.title)}</h2>
+
+      <p>
+        Duration: 1 hour 30 minutes ·
+        Total: 20 points
+      </p>
+
+      <div class="controls">
+
+        <span class="timer" id="timer">
+          ⏱️ 90:00
+        </span>
+
+        <button
+          class="btn btn-gold"
+          onclick="submitExam()">
+          ✓ Submit Exam
+        </button>
+
+        <button
+          class="btn btn-light"
+          onclick="restartExam()">
+          ↻ Restart
+        </button>
+
+        <button
+          class="btn btn-light"
+          onclick="window.print()">
+          🖨 Print
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="paper-body">
+
+      <div class="note">
+        <strong>Instructions:</strong>
+        Read the text carefully.
+        Answer all questions.
+        Complete the writing task.
+        You have 90 minutes.
+        The objective activities are automatically corrected.
+        Written Expression requires teacher assessment.
+      </div>
+
+      <div class="part-heading">
+        <h3>PART ONE · Reading and Language</h3>
+        <span class="marks">14 POINTS</span>
+      </div>
+
+      <div class="passage">
+
+        <h3>${escapeHTML(exam.passageTitle)}</h3>
+
+        ${exam.passages.map(p=>`
+          <p>${escapeHTML(p)}</p>
+        `).join("")}
+
+      </div>
+
+  `;
+
+  let questionIndex=0;
+
+  const sections=[
+    {
+      title:"A — Reading Comprehension",
+      activities:exam.reading
+    },
+    {
+      title:"B — Mastery of Language",
+      activities:exam.language
+    }
+  ];
+
+  sections.forEach(section=>{
+
+    html+=`
+
+      <div class="part-heading">
+        <h3>${section.title}</h3>
+        <span class="marks">7 POINTS</span>
+      </div>
+
+    `;
+
+    section.activities.forEach((activity,ai)=>{
+
+      const activityPoints=activity.items.reduce(
+        (sum,q)=>sum+q.p,0
+      );
+
+      html+=`
+
+        <div class="activity">
+
+          <h4>
+            ${escapeHTML(activity.title)}
+            <span class="marks">
+              ${activityPoints} pts
+            </span>
+          </h4>
+
+          <p class="activity-desc">
+            ${escapeHTML(activity.desc)}
+          </p>
+
+      `;
+
+      activity.items.forEach(question=>{
+
+        const qid=questionIndex++;
+
+        html+=`
+
+          <div class="question" data-question="${qid}">
+
+            <small>
+              ${question.p}
+              ${question.p===1?"point":"points"}
+            </small>
+
+            <strong>
+              ${escapeHTML(question.q)}
+            </strong>
+
+        `;
+
+        if(question.type==="mcq"){
+
+          html+=`
+
+            <div class="options">
+
+              ${question.o.map((option,i)=>`
+
+                <label class="option">
+
+                  <input
+                    type="radio"
+                    name="q${qid}"
+                    value="${i}"
+                  >
+
+                  <span>${escapeHTML(option)}</span>
+
+                </label>
+
+              `).join("")}
+
+            </div>
+
+          `;
+
+        }else{
+
+          html+=`
+
+            <input
+              type="text"
+              class="short-answer"
+              name="q${qid}"
+              autocomplete="off"
+              placeholder="Type your answer..."
+              aria-label="${escapeHTML(question.q)}"
+            >
+
+          `;
+
+        }
+
+        html+=`
+
+            <div class="feedback" role="status"></div>
+
+          </div>
+
+        `;
+
+      });
+
+      html+="</div>";
+
+    });
+
+  });
+
+  html+=`
+
+    <div class="part-heading">
+      <h3>PART TWO · Written Expression</h3>
+      <span class="marks">6 POINTS</span>
+    </div>
+
+    <div class="writing-box">
+
+      <h4>✍️ Situation of Integration</h4>
+
+      <p>
+        <strong>Context:</strong>
+        ${escapeHTML(exam.writing.context)}
+      </p>
+
+      <p>
+        <strong>Task:</strong>
+        ${escapeHTML(exam.writing.task)}
+      </p>
+
+      <strong>Support / Hints:</strong>
+
+      <ul>
+        ${exam.writing.support.map(s=>`
+          <li>${escapeHTML(s)}</li>
+        `).join("")}
+      </ul>
+
+      <p>
+        Write a well-organised paragraph.
+        Pay attention to grammar,
+        spelling, punctuation and coherence.
+      </p>
+
+    </div>
+
+    <textarea
+      class="editor"
+      id="writingEditor"
+      placeholder="Write your paragraph here..."
+      aria-label="Written Expression"
+    ></textarea>
+
+    <p class="wordcount" id="wordCount">
+      0 words · Draft saved automatically
+    </p>
+
+    <h3>Writing Assessment Criteria</h3>
+
+    <div class="rubric">
+
+      <div>
+        Relevance
+        <b>2</b>
+      </div>
+
+      <div>
+        Coherence
+        <b>1.5</b>
+      </div>
+
+      <div>
+        Correct Use of Language
+        <b>1.5</b>
+      </div>
+
+      <div>
+        Excellence
+        <b>1</b>
+      </div>
+
+    </div>
+
+    <div class="note">
+      The writing task is worth 6 points.
+      It is not automatically marked.
+      Ask your teacher to assess it using
+      the criteria above.
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+
+      <button
+        class="btn btn-green"
+        onclick="submitExam()">
+        ✓ Submit Examination
+      </button>
+
+      <button
+        class="btn btn-light"
+        onclick="scrollToExamTop()">
+        ↑ Back to Passage
+      </button>
+
+    </div>
+
+    <div class="results" id="results" aria-live="polite"></div>
+
+    </div>
+
+  `;
+
+  const paper=document.getElementById("examPaper");
+
+  paper.innerHTML=html;
+  paper.classList.add("show");
+
+  const editor=document.getElementById("writingEditor");
+
+  editor.value=load(
+    "bem_mock_draft_"+exam.id,
+    ""
+  );
+
+  editor.addEventListener("input",()=>{
+
+    save(
+      "bem_mock_draft_"+exam.id,
+      editor.value
+    );
+
+    const words=editor.value.trim()
+      ?editor.value.trim().split(/\s+/).length
+      :0;
+
+    document.getElementById("wordCount").textContent=
+      words+" words · Draft saved automatically";
+
+  });
+
+  editor.dispatchEvent(new Event("input"));
+
+  startTimer();
+
+  paper.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+/* ==========================================
+   TIMER
+========================================== */
+
+function startTimer(){
+
+  updateTimer();
+
+  timerInterval=setInterval(()=>{
+
+    if(submitted){
+      clearInterval(timerInterval);
+      return;
+    }
+
+    remainingSeconds--;
+
+    updateTimer();
+
+    if(remainingSeconds<=0){
+
+      clearInterval(timerInterval);
+
+      alert(
+        "Time is up! Your objective answers will now be submitted."
+      );
+
+      submitExam(true);
+
+    }
+
+  },1000);
+
+}
+
+function updateTimer(){
+
+  const element=document.getElementById("timer");
+
+  if(!element)return;
+
+  const minutes=Math.floor(
+    Math.max(remainingSeconds,0)/60
+  );
+
+  const seconds=Math.max(remainingSeconds,0)%60;
+
+  element.textContent=
+    "⏱️ "+
+    String(minutes).padStart(2,"0")+
+    ":"+
+    String(seconds).padStart(2,"0");
+
+  element.classList.toggle(
+    "warning",
+    remainingSeconds<=600
+  );
+
+}
+
+/* ==========================================
+   NORMALISE TEXT ANSWERS
+========================================== */
+
+function normalise(value){
+
+  return String(value)
+    .toLowerCase()
+    .normalize("NFKC")
+    .replace(/[’‘]/g,"'")
+    .replace(/[.,!?;:]/g,"")
+    .replace(/\s+/g," ")
+    .trim();
+
+}
+
+/* ==========================================
+   GET ALL QUESTIONS
+========================================== */
+
+function allQuestions(exam){
+
+  return [
+    ...exam.reading.flatMap(a=>a.items),
+    ...exam.language.flatMap(a=>a.items)
+  ];
+
+}
+
+/* ==========================================
+   AUTOMATIC CORRECTION
+========================================== */
+
+function submitExam(auto=false){
+
+  if(!currentExam || submitted)return;
+
+  if(!auto){
+
+    const confirmed=confirm(
+      "Submit your examination and see the corrections?"
+    );
+
+    if(!confirmed)return;
+
+  }
+
+  clearInterval(timerInterval);
+
+  submitted=true;
+
+  const exam=currentExam;
+
+  const questions=allQuestions(exam);
+
+  let readingScore=0;
+  let languageScore=0;
+  let totalScore=0;
+
+  const readingCount=exam.reading.reduce(
+    (sum,a)=>sum+a.items.length,0
+  );
+
+  questions.forEach((question,index)=>{
+
+    const box=document.querySelector(
+      `.question[data-question="${index}"]`
+    );
+
+    if(!box)return;
+
+    let correct=false;
+    let correctAnswer="";
+
+    if(question.type==="mcq"){
+
+      const selected=box.querySelector(
+        "input:checked"
+      );
+
+      correct=!!selected &&
+        Number(selected.value)===question.a;
+
+      correctAnswer=question.o[question.a];
+
+      box.querySelectorAll("input").forEach(input=>{
+        input.disabled=true;
+      });
+
+    }else{
+
+      const input=box.querySelector(
+        "input[type=text]"
+      );
+
+      const response=normalise(input.value);
+
+      correct=question.answers.some(
+        answer=>normalise(answer)===response
+      );
+
+      correctAnswer=question.answers.join(" / ");
+
+      input.disabled=true;
+
+    }
+
+    const feedback=box.querySelector(".feedback");
+
+    feedback.className=
+      "feedback show "+(correct?"good":"bad");
+
+    feedback.textContent=
+      (correct?"✓ Correct! ":"✗ Review this answer. ")+
+      "Accepted answer: "+correctAnswer+
+      (question.why?" — "+question.why:"");
+
+    if(correct){
+
+      totalScore+=question.p;
+
+      if(index<readingCount){
+        readingScore+=question.p;
+      }else{
+        languageScore+=question.p;
+      }
+
+    }
+
+  });
+
+  const best=load(
+    "bem_mock_best_"+exam.id,
+    null
+  );
+
+  if(best===null || totalScore>best){
+
+    save(
+      "bem_mock_best_"+exam.id,
+      totalScore
+    );
+
+  }
+
+  const result=document.getElementById("results");
+
+  result.classList.add("show");
+
+  const percentage=Math.round(
+    totalScore/14*100
+  );
+
+  let message="Keep practising!";
+
+  if(percentage>=85){
+    message="Excellent work! 🌟";
+  }else if(percentage>=65){
+    message="Very good progress! 👏";
+  }else if(percentage>=45){
+    message="Good effort! Keep improving. 💪";
+  }
+
+  result.innerHTML=`
+
+    <h3>🏆 Examination Results</h3>
+
+    <div class="big-score">
+      ${totalScore.toFixed(1).replace(".0","")} / 14
+    </div>
+
+    <p>${message}</p>
+
+    <p>
+      Automatically marked sections only.
+    </p>
+
+    <div style="
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:20px 0;
+    ">
+
+      <div style="
+        background:white;
+        padding:15px 22px;
+        border-radius:14px;
+        font-weight:900;
+      ">
+        📖 Reading<br>${readingScore}/7
+      </div>
+
+      <div style="
+        background:white;
+        padding:15px 22px;
+        border-radius:14px;
+        font-weight:900;
+      ">
+        🧠 Language<br>${languageScore}/7
+      </div>
+
+      <div style="
+        background:white;
+        padding:15px 22px;
+        border-radius:14px;
+        font-weight:900;
+      ">
+        ✍️ Writing<br>Not marked /6
+      </div>
+
+    </div>
+
+    <p>
+      Your writing task must be assessed
+      separately by your teacher.
+    </p>
+
+    <p>
+      Review the corrections under the questions.
+      You can restart this mock examination
+      to improve your result.
+    </p>
+
+    <button
+      class="btn btn-blue"
+      onclick="restartExam()">
+      Try Again ↻
+    </button>
+
+  `;
+
+  updateProgress();
+
+  result.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+}
+
+/* ==========================================
+   RESTART
+========================================== */
+
+function restartExam(){
+
+  if(!currentExam)return;
+
+  const id=currentExam.id;
+
+  const confirmed=confirm(
+    "Restart this examination? Your current answers will be cleared. Your writing draft will be kept."
+  );
+
+  if(!confirmed)return;
+
+  submitted=true;
+
+  startExam(id);
+
+}
+
+/* ==========================================
+   SCROLL
+========================================== */
+
+function scrollToExamTop(){
+
+  document.getElementById("examPaper")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+}
+
+/* ==========================================
+   PROGRESS
+========================================== */
+
+function updateProgress(){
+
+  const container=document.getElementById(
+    "progressGrid"
+  );
+
+  container.innerHTML=exams.map(exam=>{
+
+    const score=load(
+      "bem_mock_best_"+exam.id,
+      null
+    );
+
+    return `
+
+      <div class="progress-item">
+
+        <b>
+          MOCK ${String(exam.id).padStart(2,"0")}
+        </b>
+
+        ${
+          score===null
+          ?"Not completed"
+          :"Best score: "+score+"/14"
+        }
+
+      </div>
+
+    `;
+
+  }).join("");
+
+}
+
+/* ==========================================
+   RESET SCORES
+========================================== */
+
+function resetProgress(){
+
+  const confirmed=confirm(
+    "Delete all saved mock examination scores? Writing drafts will be kept."
+  );
+
+  if(!confirmed)return;
+
+  exams.forEach(exam=>{
+
+    try{
+
+      localStorage.removeItem(
+        "bem_mock_best_"+exam.id
+      );
+
+    }catch(e){}
+
+  });
+
+  updateProgress();
+
+}
+
+/* ==========================================
+   INITIALISE
+========================================== */
+
+renderCards();
+updateProgress();
+
+/* ==========================================
+   PREVENT ACCIDENTAL PAGE EXIT
+========================================== */
+
+window.addEventListener("beforeunload",event=>{
+
+  if(currentExam && !submitted){
+
+    event.preventDefault();
+
+    event.returnValue="";
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>

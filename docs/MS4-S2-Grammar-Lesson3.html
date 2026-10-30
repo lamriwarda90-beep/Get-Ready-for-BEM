@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4 Sequence 2 | Checkpoint 03 — The Superlative Degree</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #ed5992;
+  --pink-dark: #c63875;
+  --pink-light: #ffe6f0;
+  --pink-pale: #fff5f9;
+  --purple: #7946b7;
+  --purple-dark: #48236c;
+  --gold: #ffc766;
+  --green: #19865b;
+  --red: #cb425c;
+  --ink: #30243c;
+  --muted: #74697e;
+  --white: #ffffff;
+  --line: #f4dce8;
+  --shadow: 0 15px 45px rgba(128, 46, 92, .12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", Arial, sans-serif;
+  background: #fff6fa;
+  color: var(--ink);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  background:
+    radial-gradient(circle at 90% 20%, rgba(255,255,255,.18), transparent 30%),
+    linear-gradient(125deg, #7c347e, #d74685 55%, #f27da4);
+
+  color: white;
+  padding: 28px 20px 95px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  color: #ffe9b9;
+}
+
+.back {
+  color: white;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 30px;
+  padding: 10px 17px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.4fr .6fr;
+  align-items: center;
+  gap: 30px;
+  padding-top: 55px;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 8px 15px;
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(37px, 6vw, 65px);
+  line-height: 1.05;
+  margin: 18px 0;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 630px;
+  color: #fff0f6;
+}
+
+.hero-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 14px 25px;
+  background: var(--gold);
+  color: #60305b;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 900;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+.trophy {
+  text-align: center;
+  font-size: 145px;
+  filter: drop-shadow(0 18px 15px rgba(72,20,72,.25));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ================= LAYOUT ================= */
+
+.container {
+  max-width: 1100px;
+  margin: -48px auto 70px;
+  padding: 0 18px;
+  position: relative;
+}
+
+.progress-box {
+  background: white;
+  padding: 18px 23px;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 8px;
+  z-index: 20;
+}
+
+.progress-label {
+  font-weight: 900;
+  color: var(--purple-dark);
+}
+
+.progress-track {
+  flex: 1;
+  min-width: 110px;
+  height: 12px;
+  background: #ffe3ee;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+  border-radius: 30px;
+  transition: width .4s;
+}
+
+#progressText {
+  color: var(--pink-dark);
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.lesson-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 22px 0;
+}
+
+.lesson-nav a {
+  background: white;
+  border: 1px solid var(--line);
+  color: var(--pink-dark);
+  border-radius: 25px;
+  padding: 9px 14px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.lesson-nav a:hover {
+  background: var(--pink-light);
+}
+
+.stage {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 25px;
+  padding: clamp(20px, 3vw, 34px);
+  margin: 24px 0;
+  box-shadow: var(--shadow);
+  scroll-margin-top: 110px;
+}
+
+.stage-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: var(--pink-light);
+  color: var(--pink-dark);
+  padding: 7px 13px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.difficulty {
+  padding: 6px 11px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 900;
+  background: #e6f7ed;
+  color: var(--green);
+}
+
+.difficulty.medium {
+  background: #fff1d7;
+  color: #98651b;
+}
+
+.difficulty.hard {
+  background: #ffe5eb;
+  color: var(--red);
+}
+
+.stage h2 {
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(23px, 3vw, 30px);
+  color: var(--purple-dark);
+  margin: 10px 0;
+}
+
+.description {
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0 0 22px;
+}
+
+/* ================= GRAMMAR ================= */
+
+.rule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.rule-card {
+  padding: 22px;
+  border-radius: 20px;
+  background: #fff1f7;
+  border: 1px solid #ffd7e7;
+}
+
+.rule-card:nth-child(2) {
+  background: #f7f0ff;
+  border-color: #e8d8ff;
+}
+
+.rule-card:nth-child(3) {
+  background: #fff9ea;
+  border-color: #ffe7a6;
+}
+
+.rule-card:nth-child(4) {
+  background: #eff8ff;
+  border-color: #d8ebff;
+}
+
+.rule-card h3 {
+  color: var(--purple-dark);
+  font-family: "Baloo 2", sans-serif;
+  font-size: 19px;
+  margin: 0 0 12px;
+}
+
+.rule-card p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.formula {
+  background: white;
+  color: var(--pink-dark);
+  padding: 10px 13px;
+  border-radius: 11px;
+  font-weight: 900;
+  display: block;
+  margin: 10px 0;
+}
+
+.example {
+  background: rgba(255,255,255,.7);
+  padding: 11px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.example strong {
+  color: var(--pink-dark);
+}
+
+.arabic {
+  display: none;
+  direction: rtl;
+  text-align: right;
+  background: white;
+  padding: 13px;
+  border-radius: 12px;
+  color: var(--purple-dark);
+  line-height: 2;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.arabic.visible {
+  display: block;
+}
+
+.arabic-button {
+  border: 1px solid #e7c8f5;
+  background: white;
+  color: var(--purple);
+  border-radius: 30px;
+  padding: 8px 13px;
+  font-size: 12px;
+  font-weight: 900;
+  margin-top: 12px;
+}
+
+.tip {
+  background: #fff3f8;
+  border-left: 5px solid var(--pink);
+  border-radius: 13px;
+  padding: 17px;
+  margin: 13px 0;
+  line-height: 1.8;
+}
+
+.tip strong {
+  color: var(--pink-dark);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 17px 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 430px;
+}
+
+th, td {
+  border: 1px solid #f0d9e5;
+  padding: 12px;
+  text-align: left;
+  font-size: 13px;
+}
+
+th {
+  background: var(--pink);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #fff7fa;
+}
+
+.highlight {
+  background: #ffe2a8;
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-weight: 900;
+}
+
+/* ================= QUIZZES ================= */
+
+.question {
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  padding: 19px;
+  margin: 15px 0;
+  background: #fffdfd;
+}
+
+.question-title {
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.7;
+  margin: 0 0 13px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.option {
+  background: #fff3f8;
+  border: 2px solid #f7dbe8;
+  border-radius: 12px;
+  padding: 12px;
+  color: var(--purple-dark);
+  font-weight: 800;
+  text-align: left;
+  transition: .2s;
+}
+
+.option:hover:not(:disabled) {
+  background: #ffe2ef;
+  transform: translateY(-2px);
+}
+
+.option.correct {
+  background: #e4f8ec;
+  border-color: #24a873;
+  color: #126c4b;
+}
+
+.option.incorrect {
+  background: #ffe6eb;
+  border-color: #e35d7c;
+  color: #a32e4b;
+}
+
+.option:disabled {
+  cursor: default;
+}
+
+.feedback {
+  font-size: 13px;
+  font-weight: 900;
+  margin-top: 12px;
+  min-height: 18px;
+}
+
+.success {
+  color: var(--green);
+}
+
+.error {
+  color: var(--red);
+}
+
+.reading {
+  background: #fff4f8;
+  border: 1px dashed #ed9fbd;
+  border-radius: 18px;
+  padding: 23px;
+  line-height: 2.2;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.task {
+  border-bottom: 1px solid var(--line);
+  padding: 17px 0;
+}
+
+.task:last-child {
+  border-bottom: none;
+}
+
+.task label {
+  display: block;
+  font-weight: 800;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.task input {
+  width: 100%;
+  padding: 13px;
+  border: 2px solid #f0dbe7;
+  border-radius: 12px;
+  background: #fffbfd;
+}
+
+.task input.correct {
+  border-color: var(--green);
+  background: #ecfbf3;
+}
+
+.task input.incorrect {
+  border-color: var(--red);
+  background: #fff0f2;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.answer-feedback {
+  font-size: 13px;
+  font-weight: 800;
+  margin-top: 9px;
+}
+
+.primary {
+  border: none;
+  border-radius: 30px;
+  padding: 13px 25px;
+  background: linear-gradient(110deg, var(--pink), var(--pink-dark));
+  color: white;
+  font-weight: 900;
+  margin-top: 17px;
+}
+
+.secondary {
+  border: 2px solid #f1c8dc;
+  background: white;
+  color: var(--pink-dark);
+  border-radius: 30px;
+  padding: 11px 19px;
+  font-weight: 900;
+  margin-top: 17px;
+}
+
+/* ================= SENTENCE BUILDER ================= */
+
+.word-bank,
+.answer-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 14px;
+  border-radius: 15px;
+  min-height: 62px;
+}
+
+.word-bank {
+  background: #fff0f6;
+}
+
+.answer-strip {
+  border: 2px dashed #efaac6;
+  margin: 12px 0;
+  background: #fffafd;
+}
+
+.word-chip {
+  border: none;
+  border-radius: 30px;
+  padding: 9px 14px;
+  background: var(--pink);
+  color: white;
+  font-weight: 900;
+}
+
+.word-chip:disabled {
+  opacity: .3;
+}
+
+.answer-strip .word-chip {
+  background: var(--purple);
+}
+
+/* ================= WRITING ================= */
+
+.writing-card {
+  background: #fff4f8;
+  border: 1px solid var(--line);
+  padding: 18px;
+  border-radius: 17px;
+  margin: 16px 0;
+}
+
+.writing-card label {
+  display: block;
+  font-weight: 900;
+  color: var(--purple-dark);
+  margin-bottom: 10px;
+}
+
+.writing-card textarea {
+  width: 100%;
+  min-height: 90px;
+  border: 2px solid #f1d3e3;
+  border-radius: 13px;
+  padding: 13px;
+  resize: vertical;
+}
+
+.checklist {
+  margin-top: 22px;
+  display: grid;
+  gap: 10px;
+}
+
+.checklist label {
+  background: #fff5f9;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.checklist input {
+  accent-color: var(--pink);
+}
+
+/* ================= FINISH ================= */
+
+.certificate {
+  text-align: center;
+  background: linear-gradient(125deg, #823b91, #e85b96);
+  color: white;
+  padding: 35px;
+  border-radius: 25px;
+  margin: 25px 0;
+}
+
+.certificate h2 {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.certificate p {
+  line-height: 1.8;
+}
+
+.certificate .icon {
+  font-size: 75px;
+}
+
+.end-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.end-links a {
+  text-decoration: none;
+  padding: 14px 22px;
+  background: white;
+  border-radius: 30px;
+  color: var(--pink-dark);
+  font-weight: 900;
+  border: 1px solid var(--line);
+}
+
+/* ================= DICTIONARY ================= */
+
+.dict-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 40;
+  border: 3px solid white;
+  border-radius: 50px;
+  background: var(--gold);
+  padding: 15px 18px;
+  box-shadow: 0 10px 28px rgba(91,30,74,.25);
+  font-size: 22px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(40,15,43,.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 15px;
+}
+
+.overlay.open {
+  display: flex;
+}
+
+.dictionary {
+  width: min(480px, 100%);
+  max-height: 85vh;
+  background: white;
+  border-radius: 25px;
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dictionary-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dictionary h2 {
+  font-family: "Baloo 2", sans-serif;
+  color: var(--purple-dark);
+  margin: 0;
+}
+
+.close-button {
+  background: #ffe6ef;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  color: var(--pink-dark);
+  font-weight: 900;
+}
+
+.dictionary-search {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #efd9e6;
+  border-radius: 12px;
+  margin: 17px 0;
+}
+
+.dictionary-list {
+  overflow-y: auto;
+}
+
+.dictionary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.dictionary-row strong {
+  color: var(--purple-dark);
+}
+
+.dictionary-row span {
+  direction: rtl;
+  text-align: right;
+  color: var(--pink-dark);
+  font-weight: 800;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 700px) {
+  .hero-content,
+  .rule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trophy {
+    font-size: 90px;
+  }
+
+  .hero {
+    padding-bottom: 75px;
+  }
+
+  .hero-content {
+    padding-top: 35px;
+  }
+
+  .container {
+    padding: 0 11px;
+  }
+
+  .progress-box {
+    top: 0;
+    border-radius: 0 0 18px 18px;
+  }
+
+  .stage {
+    border-radius: 19px;
+  }
+}
+
+@media print {
+  .hero,
+  .progress-box,
+  .lesson-nav,
+  .dict-button,
+  .overlay,
+  .primary,
+  .secondary,
+  .end-links {
+    display: none !important;
+  }
+
+  .container {
+    margin: 0;
+  }
+
+  .stage {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+  <div class="hero-inner">
+
+    <div class="topbar">
+      <span class="brand">✦ MY ENGLISH SPACE · MS4 · SEQUENCE 2</span>
+
+      <a href="MS4-S2-Grammar-Lesson2.html" class="back">
+        ← Checkpoint 02
+      </a>
+    </div>
+
+    <div class="hero-content">
+
+      <div>
+        <span class="eyebrow">
+          GRAMMAR EXPEDITION · CHECKPOINT 03
+        </span>
+
+        <h1>
+          The Superlative<br>
+          Degree 🏆
+        </h1>
+
+        <p>
+          Discover how to describe the best moments,
+          the greatest achievements, and the most
+          unforgettable experiences of your life.
+        </p>
+
+        <p>
+          Learn the rules, practise step by step,
+          and become a Superlative Champion!
+        </p>
+
+        <a href="#stage1" class="hero-button">
+          Start Learning ↗
+        </a>
+      </div>
+
+      <div class="trophy" aria-hidden="true">
+        🏆
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+  <div class="progress-box">
+    <span class="progress-label">🏆 Your Progress</span>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <span id="progressText">0 / 7 missions</span>
+  </div>
+
+  <nav class="lesson-nav" aria-label="Lesson sections">
+    <a href="#stage1">Rules</a>
+    <a href="#stage2">Exceptions</a>
+    <a href="#stage3">Spot It</a>
+    <a href="#stage4">Reading</a>
+    <a href="#stage5">Choose</a>
+    <a href="#stage6">Complete</a>
+    <a href="#stage7">Build</a>
+    <a href="#stage8">Correct</a>
+    <a href="#stage9">Write</a>
+  </nav>
+
+  <!-- ================= STEP 1 ================= -->
+
+  <section class="stage" id="stage1">
+
+    <div class="stage-header">
+      <span class="badge">LEARN · 01</span>
+    </div>
+
+    <h2>🧠 Understanding the Superlative</h2>
+
+    <p class="description">
+      We use the superlative degree to compare three
+      or more people, things, or experiences and identify
+      the one with the highest or lowest degree of a quality.
+    </p>
+
+    <div class="tip">
+      <strong>Example:</strong><br>
+      Sara is tall.<br>
+      Lina is taller than Sara.<br>
+      Amira is <strong>the tallest</strong> girl in the class.
+    </div>
+
+    <div class="rule-grid">
+
+      <div class="rule-card">
+        <h3>🌸 Rule 1: Short Adjectives</h3>
+
+        <p>
+          Most adjectives with one syllable take
+          <strong>-est</strong>.
+        </p>
+
+        <span class="formula">
+          the + adjective + est
+        </span>
+
+        <div class="example">
+          young → <strong>the youngest</strong><br>
+          tall → <strong>the tallest</strong><br>
+          small → <strong>the smallest</strong>
+        </div>
+
+        <p>
+          My grandfather is
+          <strong>the oldest</strong> person in our family.
+        </p>
+
+        <button class="arabic-button"
+                onclick="toggleArabic('ar1')">
+          🇩🇿 Explain in Arabic
+        </button>
+
+        <div class="arabic" id="ar1">
+          نستعمل صيغة التفضيل العليا للمقارنة بين
+          ثلاثة أشخاص أو أشياء أو أكثر.
+
+          مع الصفات القصيرة نضيف
+          <strong>est</strong>
+          إلى الصفة ونضع
+          <strong>the</strong>
+          قبلها.
+        </div>
+      </div>
+
+      <div class="rule-card">
+        <h3>💜 Rule 2: Long Adjectives</h3>
+
+        <p>
+          Most longer adjectives take
+          <strong>the most</strong>
+          before the adjective.
+        </p>
+
+        <span class="formula">
+          the most + adjective
+        </span>
+
+        <div class="example">
+          beautiful → <strong>the most beautiful</strong><br>
+          intelligent → <strong>the most intelligent</strong><br>
+          exciting → <strong>the most exciting</strong>
+        </div>
+
+        <p>
+          Winning the competition was
+          <strong>the most exciting</strong>
+          experience of my life.
+        </p>
+
+        <button class="arabic-button"
+                onclick="toggleArabic('ar2')">
+          🇩🇿 Explain in Arabic
+        </button>
+
+        <div class="arabic" id="ar2">
+          مع معظم الصفات الطويلة لا نضيف
+          est.
+
+          بل نستعمل
+          <strong>the most</strong>
+          قبل الصفة.
+
+          مثال:
+          the most interesting
+          = الأكثر تشويقاً.
+        </div>
+      </div>
+
+      <div class="rule-card">
+        <h3>⭐ Rule 3: Irregular Adjectives</h3>
+
+        <p>
+          Some adjectives have special superlative
+          forms. We must memorise them.
+        </p>
+
+        <div class="example">
+          good → <strong>the best</strong><br>
+          bad → <strong>the worst</strong><br>
+          far → <strong>the farthest / furthest</strong><br>
+          little → <strong>the least</strong><br>
+          much / many → <strong>the most</strong>
+        </div>
+
+        <p>
+          My childhood was
+          <strong>the best</strong>
+          period of my life.
+        </p>
+
+        <button class="arabic-button"
+                onclick="toggleArabic('ar3')">
+          🇩🇿 Explain in Arabic
+        </button>
+
+        <div class="arabic" id="ar3">
+          توجد صفات شاذة لا تتبع القواعد السابقة.
+
+          مثال:
+          good تصبح best،
+          و bad تصبح worst.
+
+          يجب حفظ هذه الصيغ.
+        </div>
+      </div>
+
+      <div class="rule-card">
+        <h3>📍 Rule 4: IN and OF</h3>
+
+        <p>
+          We often use <strong>in</strong> with places
+          and groups such as a class or family.
+        </p>
+
+        <div class="example">
+          She is the youngest pupil
+          <strong>in</strong> our class.
+        </div>
+
+        <p>
+          We use <strong>of</strong> with expressions
+          such as <em>all</em>, <em>the three</em>,
+          and <em>my life</em>.
+        </p>
+
+        <div class="example">
+          This is the happiest day
+          <strong>of</strong> my life.
+        </div>
+
+        <button class="arabic-button"
+                onclick="toggleArabic('ar4')">
+          🇩🇿 Explain in Arabic
+        </button>
+
+        <div class="arabic" id="ar4">
+          نستعمل in مع الأماكن أو المجموعات
+          مثل القسم والعائلة.
+
+          ونستعمل of مع تعابير مثل
+          of all و of my life.
+        </div>
+      </div>
+
+    </div>
+
+    <h3>📊 Comparative vs Superlative</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Adjective</th>
+            <th>Comparative</th>
+            <th>Superlative</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>young</td>
+            <td>younger</td>
+            <td>the youngest</td>
+          </tr>
+          <tr>
+            <td>happy</td>
+            <td>happier</td>
+            <td>the happiest</td>
+          </tr>
+          <tr>
+            <td>beautiful</td>
+            <td>more beautiful</td>
+            <td>the most beautiful</td>
+          </tr>
+          <tr>
+            <td>good</td>
+            <td>better</td>
+            <td>the best</td>
+          </tr>
+          <tr>
+            <td>bad</td>
+            <td>worse</td>
+            <td>the worst</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+  <!-- ================= STEP 2 ================= -->
+
+  <section class="stage" id="stage2">
+
+    <div class="stage-header">
+      <span class="badge">LEARN · 02</span>
+    </div>
+
+    <h2>⚠️ Spelling Rules and Exceptions</h2>
+
+    <p class="description">
+      Pay attention to these spelling changes.
+      They will help you avoid common mistakes.
+    </p>
+
+    <div class="tip">
+      <strong>1. Adjectives ending in -e</strong><br>
+      Add only <strong>-st</strong>.<br>
+      nice → nicest<br>
+      large → largest
+    </div>
+
+    <div class="tip">
+      <strong>2. Consonant + y</strong><br>
+      Change <strong>y</strong> to <strong>i</strong>
+      and add <strong>-est</strong>.<br>
+      happy → happiest<br>
+      funny → funniest<br>
+      easy → easiest
+    </div>
+
+    <div class="tip">
+      <strong>3. Consonant–vowel–consonant</strong><br>
+      For certain short adjectives, double the
+      final consonant.<br>
+      big → biggest<br>
+      hot → hottest<br>
+      thin → thinnest
+    </div>
+
+    <div class="tip">
+      <strong>4. Some two-syllable adjectives</strong><br>
+      Certain adjectives ending in -y, -ow,
+      -er or -le can take -est.<br>
+      narrow → narrowest<br>
+      clever → cleverest<br>
+      simple → simplest
+    </div>
+
+    <div class="tip">
+      <strong>5. Avoid double superlatives</strong><br>
+      ❌ the most tallest<br>
+      ✅ the tallest<br><br>
+      ❌ the most happiest<br>
+      ✅ the happiest
+    </div>
+
+    <button class="arabic-button"
+            onclick="toggleArabic('arExceptions')">
+      🇩🇿 Arabic Summary
+    </button>
+
+    <div class="arabic" id="arExceptions">
+      قواعد مهمة:
+
+      <br>1. إذا انتهت الصفة بحرف e نضيف st فقط.
+      <br>2. إذا انتهت الصفة بحرف ساكن ثم y
+      نحول y إلى i ونضيف est.
+      <br>3. في بعض الصفات القصيرة نضاعف
+      الحرف الأخير.
+      <br>4. لا نستعمل most و est معاً.
+    </div>
+
+  </section>
+
+  <!-- ================= STEP 3 ================= -->
+
+  <section class="stage" id="stage3">
+
+    <div class="stage-header">
+      <span class="badge">MISSION 01</span>
+      <span class="difficulty">⭐ EASY</span>
+    </div>
+
+    <h2>🔎 Spot the Correct Form</h2>
+
+    <p class="description">
+      Read each statement and decide whether
+      it is True or False.
+    </p>
+
+    <div id="quiz1"></div>
+
+  </section>
+
+  <!-- ================= STEP 4 ================= -->
+
+  <section class="stage" id="stage4">
+
+    <div class="stage-header">
+      <span class="badge">MISSION 02</span>
+      <span class="difficulty">⭐ EASY</span>
+    </div>
+
+    <h2>📖 A Memorable School Day</h2>
+
+    <p class="description">
+      Read the story carefully and answer
+      the comprehension questions.
+    </p>
+
+    <div class="reading">
+      Last month, our school organised a talent competition.
+      It was one of
+      <span class="highlight">the most exciting</span>
+      days of the year.
+
+      My friend Lina was
+      <span class="highlight">the youngest</span>
+      contestant, but she was also one of
+      <span class="highlight">the most talented</span>
+      pupils.
+
+      She sang a beautiful song about childhood memories.
+
+      Her performance was
+      <span class="highlight">the best</span>
+      of all.
+
+      Everyone applauded loudly.
+
+      For Lina, winning the competition was
+      <span class="highlight">the happiest</span>
+      moment of her school life.
+    </div>
+
+    <div id="quiz2"></div>
+
+  </section>
+
+  <!-- ================= STEP 5 ================= -->
+
+  <section class="stage" id="stage5">
+
+    <div class="stage-header">
+      <span class="badge">MISSION 03</span>
+      <span class="difficulty medium">⭐⭐ MEDIUM</span>
+    </div>
+
+    <h2>🎯 Choose the Correct Superlative</h2>
+
+    <p class="description">
+      Choose the correct answer to complete
+      each sentence.
+    </p>
+
+    <div id="quiz3"></div>
+
+  </section>
+
+  <!-- ================= STEP 6 ================= -->
+
+  <section class="stage" id="stage6">
+
+    <div class="stage-header">
+      <span class="badge">MISSION 04</span>
+      <span class="difficulty medium">⭐⭐ MEDIUM</span>
+    </div>
+
+    <h2>✏️ Complete the Sentences</h2>
+
+    <p class="description">
+      Write the adjective in brackets
+      in the correct superlative form.
+      Remember to include <strong>the</strong>.
+    </p>
+
+    <div id="fillTasks"></div>
+
+    <button class="primary" onclick="checkInputs('fill')">
+      ✓ Check My Answers
+    </button>
+
+    <button class="secondary" onclick="resetInputs('fill')">
+      ↺ Try Again
+    </button>
+
+    <p class="feedback" id="fillResult"></p>
+
+  </section>
+
+  <!-- ================= STEP 7 ================= -->
+
+  <section class="stage" id="stage7">
+
+    <div class="stage-header">
+      <span class="badge">MISSION 05</span>
+      <span class="difficulty medium">⭐⭐ MEDIUM</span>
+    </div>
+
+    <h2>🧩 Build a Superlative Sentence</h2>
+
+    <p class="description">
+      Tap the words in the correct order
+      to make a meaningful sentence.
+      Tap a word in your answer to remove it.
+    </p>
+
+    <div id="builderArea"></div>
+
+  </section>
+
+  <!-- ================= STEP 8 ================= -->
+
+  <section class="stage" id="stage8">
+
+    <div class="stage-header">
+      <span class="badge">MISSION 06</span>
+      <span class="difficulty hard">⭐⭐⭐ HARD</span>
+    </div>
+
+    <h2>🔍 Correct the Mistake</h2>
+
+    <p class="description">
+      Each sentence contains an underlined mistake.
+      Write only the correct form.
+    </p>
+
+    <div id="repairTasks"></div>
+
+    <button class="primary" onclick="checkInputs('repair')">
+      ✓ Check My Answers
+    </button>
+
+    <button class="secondary" onclick="resetInputs('repair')">
+      ↺ Try Again
+    </button>
+
+    <p class="feedback" id="repairResult"></p>
+
+  </section>
+
+  <!-- ================= STEP 9 ================= -->
+
+  <section class="stage" id="stage9">
+
+    <div class="stage-header">
+      <span class="badge">MISSION 07</span>
+      <span class="difficulty hard">⭐⭐⭐ HARD</span>
+    </div>
+
+    <h2>✍️ My Best Life Experiences</h2>
+
+    <p class="description">
+      Write three original sentences about
+      your family, personality, childhood,
+      or life experiences.
+    </p>
+
+    <div class="writing-card">
+
+      <label for="sentence1">
+        🌸 Sentence 1 — Use a short adjective.
+      </label>
+
+      <p class="hint">
+        Example: My grandfather is the oldest
+        person in our family.
+      </p>
+
+      <textarea id="sentence1"
+        placeholder="Write your sentence using the ...est"></textarea>
+
+    </div>
+
+    <div class="writing-card">
+
+      <label for="sentence2">
+        💜 Sentence 2 — Use a long adjective.
+      </label>
+
+      <p class="hint">
+        Example: Winning the prize was
+        the most exciting experience of my life.
+      </p>
+
+      <textarea id="sentence2"
+        placeholder="Write your sentence using the most ..."></textarea>
+
+    </div>
+
+    <div class="writing-card">
+
+      <label for="sentence3">
+        ⭐ Sentence 3 — Use an irregular adjective.
+      </label>
+
+      <p class="hint">
+        Example: My first school trip was
+        the best day of my childhood.
+      </p>
+
+      <textarea id="sentence3"
+        placeholder="Write your sentence using the best / worst ..."></textarea>
+
+    </div>
+
+    <h3>✅ My Writing Checklist</h3>
+
+    <div class="checklist">
+
+      <label>
+        <input type="checkbox">
+        I used the correct superlative forms.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I used "the" before the superlatives.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I checked my spelling.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I started each sentence with a capital letter
+        and ended it with a full stop.
+      </label>
+
+    </div>
+
+    <button class="primary" onclick="checkWriting()">
+      🏆 Check My Writing
+    </button>
+
+    <button class="secondary" onclick="window.print()">
+      🖨 Print My Work
+    </button>
+
+    <p class="feedback" id="writingResult"></p>
+
+  </section>
+
+  <!-- ================= CERTIFICATE ================= -->
+
+  <section class="certificate">
+
+    <div class="icon">🏆</div>
+
+    <h2 id="certificateTitle">
+      Become a Superlative Champion!
+    </h2>
+
+    <p id="certificateMessage">
+      Complete the seven interactive missions
+      to earn your achievement.
+    </p>
+
+    <button class="hero-button"
+            onclick="showAchievement()">
+      View My Achievement
+    </button>
+
+  </section>
+
+  <div class="end-links">
+
+    <a href="MS4-S2-Grammar-Lesson2.html">
+      ← Previous Checkpoint
+    </a>
+
+    <a href="MS4-S2-Grammar-Lesson4.html">
+      Checkpoint 04: Like, Unlike & Whereas →
+    </a>
+
+  </div>
+
+</main>
+
+<!-- ================= DICTIONARY ================= -->
+
+<button class="dict-button"
+        id="dictionaryButton"
+        aria-label="Open English Arabic dictionary">
+  📖
+</button>
+
+<div class="overlay" id="dictionaryOverlay">
+
+  <div class="dictionary"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="dictionaryTitle">
+
+    <div class="dictionary-head">
+
+      <h2 id="dictionaryTitle">
+        📖 Mini Dictionary
+      </h2>
+
+      <button class="close-button"
+              id="dictionaryClose"
+              aria-label="Close dictionary">
+        ✕
+      </button>
+
+    </div>
+
+    <input type="search"
+           class="dictionary-search"
+           id="dictionarySearch"
+           placeholder="Search in English or Arabic...">
+
+    <div class="dictionary-list" id="dictionaryList"></div>
+
+  </div>
+
+</div>
+
+<script>
+
+/* =========================================
+   GENERAL UTILITIES
+========================================= */
+
+function toggleArabic(id) {
+  document.getElementById(id).classList.toggle("visible");
+}
+
+function normalize(text) {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[.!?]+$/, "")
+    .replace(/\s+/g, " ");
+}
+
+function shuffle(array) {
+  const result = [...array];
+
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [result[i], result[j]] =
+      [result[j], result[i]];
+  }
+
+  return result;
+}
+
+/* =========================================
+   PROGRESS SYSTEM
+========================================= */
+
+const completedMissions = new Set();
+
+const totalMissions = 7;
+
+function completeMission(number) {
+
+  completedMissions.add(number);
+
+  const count = completedMissions.size;
+
+  document.getElementById("progressFill").style.width =
+    (count / totalMissions * 100) + "%";
+
+  document.getElementById("progressText").textContent =
+    count + " / " + totalMissions + " missions";
+
+  if (count === totalMissions) {
+    document.getElementById("certificateTitle").textContent =
+      "🏆 Superlative Champion!";
+
+    document.getElementById("certificateMessage").textContent =
+      "Congratulations! You have completed all seven missions!";
+  }
+}
+
+function showAchievement() {
+
+  const count = completedMissions.size;
+
+  if (count === totalMissions) {
+    alert(
+      "🏆 SUPERLATIVE CHAMPION!\n\n" +
+      "Excellent work!\n" +
+      "You completed all seven missions."
+    );
+  } else {
+    alert(
+      "You have completed " +
+      count + " out of 7 missions.\n\n" +
+      "Keep practising!"
+    );
+  }
+}
+
+/* =========================================
+   MULTIPLE-CHOICE QUIZZES
+========================================= */
+
+const quizzes = {
+
+  quiz1: [
+    {
+      q: '"The biggest achievement of my life" is correct.',
+      options: ["True", "False"],
+      answer: 0,
+      explanation: "Big → biggest. Double the final consonant."
+    },
+    {
+      q: '"The beautifulest moment" is correct.',
+      options: ["True", "False"],
+      answer: 1,
+      explanation: "Use the most beautiful."
+    },
+    {
+      q: '"My sister is the happiest in our family" is correct.',
+      options: ["True", "False"],
+      answer: 0,
+      explanation: "Happy changes to happiest."
+    },
+    {
+      q: '"That was the goodest day" is correct.',
+      options: ["True", "False"],
+      answer: 1,
+      explanation: "Good becomes the best."
+    }
+  ],
+
+  quiz2: [
+    {
+      q: "What did the school organise?",
+      options: [
+        "A sports day",
+        "A talent competition",
+        "A school trip"
+      ],
+      answer: 1,
+      explanation: "The school organised a talent competition."
+    },
+    {
+      q: "Who was the youngest contestant?",
+      options: [
+        "Lina",
+        "The narrator",
+        "The teacher"
+      ],
+      answer: 0,
+      explanation: "Lina was the youngest contestant."
+    },
+    {
+      q: "How was Lina's performance described?",
+      options: [
+        "The most beautiful",
+        "The happiest",
+        "The best"
+      ],
+      answer: 2,
+      explanation: "The passage says her performance was the best."
+    }
+  ],
+
+  quiz3: [
+    {
+      q: "My brother is ___ person in our family.",
+      options: [
+        "the youngest",
+        "the most young",
+        "the younger"
+      ],
+      answer: 0,
+      explanation: "Young is a short adjective."
+    },
+    {
+      q: "That was ___ experience of my life.",
+      options: [
+        "the excitingest",
+        "the most exciting",
+        "the more exciting"
+      ],
+      answer: 1,
+      explanation: "Exciting is a long adjective."
+    },
+    {
+      q: "She is ___ pupil in our class.",
+      options: [
+        "the most hardworking",
+        "the hardworkingest",
+        "the more hardworking"
+      ],
+      answer: 0,
+      explanation: "Use the most with hardworking."
+    },
+    {
+      q: "It was ___ day of my childhood.",
+      options: [
+        "the goodest",
+        "the better",
+        "the best"
+      ],
+      answer: 2,
+      explanation: "Good → better → best."
+    },
+    {
+      q: "I am ___ when I spend time with my family.",
+      options: [
+        "the happiest",
+        "the happyest",
+        "the most happiest"
+      ],
+      answer: 0,
+      explanation: "Happy → happiest."
+    },
+    {
+      q: "This is ___ story of the three.",
+      options: [
+        "the funnier",
+        "the funniest",
+        "the most funniest"
+      ],
+      answer: 1,
+      explanation: "Funny → funniest."
+    }
+  ]
+
+};
+
+function renderQuiz(id, missionNumber) {
+
+  const container = document.getElementById(id);
+
+  const questions = quizzes[id];
+
+  const solved = new Set();
+
+  questions.forEach((question, index) => {
+
+    const box = document.createElement("div");
+    box.className = "question";
+
+    const title = document.createElement("p");
+    title.className = "question-title";
+    title.textContent =
+      (index + 1) + ". " + question.q;
+
+    const options = document.createElement("div");
+    options.className = "options";
+
+    const feedback = document.createElement("div");
+    feedback.className = "feedback";
+    feedback.setAttribute("role", "status");
+
+    question.options.forEach((option, optionIndex) => {
+
+      const button = document.createElement("button");
+      button.className = "option";
+      button.textContent = option;
+
+      button.addEventListener("click", () => {
+
+        if (solved.has(index)) return;
+
+        if (optionIndex === question.answer) {
+
+          button.classList.add("correct");
+
+          feedback.className = "feedback success";
+          feedback.textContent =
+            "✓ Excellent! " + question.explanation;
+
+          solved.add(index);
+
+          options.querySelectorAll("button").forEach(btn => {
+            btn.disabled = true;
+          });
+
+          if (solved.size === questions.length) {
+            completeMission(missionNumber);
+          }
+
+        } else {
+
+          button.classList.add("incorrect");
+          button.disabled = true;
+
+          feedback.className = "feedback error";
+          feedback.textContent =
+            "Not quite. Try another answer!";
+        }
+
+      });
+
+      options.appendChild(button);
+    });
+
+    box.appendChild(title);
+    box.appendChild(options);
+    box.appendChild(feedback);
+
+    container.appendChild(box);
+
+  });
+}
+
+renderQuiz("quiz1", 1);
+renderQuiz("quiz2", 2);
+renderQuiz("quiz3", 3);
+
+/* =========================================
+   WRITTEN GRAMMAR TASKS
+========================================= */
+
+const writtenTasks = {
+
+  fill: [
+    {
+      sentence:
+        "My childhood was one of (happy) times of my life.",
+      answer: "the happiest",
+      hint: "Consonant + y → iest."
+    },
+    {
+      sentence:
+        "Lina is (intelligent) pupil in our class.",
+      answer: "the most intelligent",
+      hint: "Long adjective → the most."
+    },
+    {
+      sentence:
+        "My grandfather is (old) person in our family.",
+      answer: "the oldest",
+      hint: "Short adjective → -est."
+    },
+    {
+      sentence:
+        "Winning the prize was (good) experience I had.",
+      answer: "the best",
+      hint: "Irregular: good → best."
+    },
+    {
+      sentence:
+        "That was (bad) mistake of my life.",
+      answer: "the worst",
+      hint: "Irregular: bad → worst."
+    },
+    {
+      sentence:
+        "Our school has (big) library in the area.",
+      answer: "the biggest",
+      hint: "Double the final consonant."
+    },
+    {
+      sentence:
+        "It was (exciting) day of the year.",
+      answer: "the most exciting",
+      hint: "Long adjective → the most."
+    }
+  ],
+
+  repair: [
+    {
+      sentence:
+        "This is <u>the most happiest</u> moment of my life.",
+      answer: "the happiest",
+      hint: "Do not combine most and -est."
+    },
+    {
+      sentence:
+        "She is <u>the goodest</u> singer in the school.",
+      answer: "the best",
+      hint: "Irregular form of good."
+    },
+    {
+      sentence:
+        "That was <u>the more interesting</u> story of all.",
+      answer: "the most interesting",
+      hint: "Use most, not more."
+    },
+    {
+      sentence:
+        "My brother is <u>the young</u> child in our family.",
+      answer: "the youngest",
+      hint: "Add -est."
+    },
+    {
+      sentence:
+        "It was <u>the badest</u> experience of my childhood.",
+      answer: "the worst",
+      hint: "Irregular form of bad."
+    }
+  ]
+
+};
+
+function renderWrittenTasks(type) {
+
+  const container = document.getElementById(type + "Tasks");
+
+  writtenTasks[type].forEach((task, index) => {
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "task";
+
+    const label = document.createElement("label");
+    label.htmlFor = type + index;
+    label.innerHTML =
+      (index + 1) + ". " + task.sentence;
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.id = type + index;
+    input.autocomplete = "off";
+    input.placeholder = "Write your answer here...";
+
+    const hint = document.createElement("p");
+    hint.className = "hint";
+    hint.textContent = "💡 Hint: " + task.hint;
+
+    const feedback = document.createElement("div");
+    feedback.className = "answer-feedback";
+
+    wrapper.appendChild(label);
+    wrapper.appendChild(input);
+    wrapper.appendChild(hint);
+    wrapper.appendChild(feedback);
+
+    container.appendChild(wrapper);
+
+  });
+
+}
+
+renderWrittenTasks("fill");
+renderWrittenTasks("repair");
+
+function checkInputs(type) {
+
+  const tasks = writtenTasks[type];
+
+  const rows = document.querySelectorAll(
+    "#" + type + "Tasks .task"
+  );
+
+  let correctCount = 0;
+
+  rows.forEach((row, index) => {
+
+    const input = row.querySelector("input");
+
+    const feedback = row.querySelector(".answer-feedback");
+
+    const answer = normalize(input.value);
+
+    const correctAnswer = normalize(tasks[index].answer);
+
+    input.classList.remove("correct", "incorrect");
+
+    if (answer === correctAnswer) {
+
+      correctCount++;
+
+      input.classList.add("correct");
+
+      feedback.className = "answer-feedback success";
+      feedback.textContent = "✓ Excellent!";
+
+    } else {
+
+      input.classList.add("incorrect");
+
+      feedback.className = "answer-feedback error";
+
+      if (answer === "") {
+        feedback.textContent = "Please write an answer.";
+      } else {
+        feedback.textContent =
+          "Try again. Model answer: " + tasks[index].answer;
+      }
+
+    }
+
+  });
+
+  const result = document.getElementById(type + "Result");
+
+  result.textContent =
+    correctCount + " / " + tasks.length + " correct.";
+
+  result.className =
+    "feedback " +
+    (correctCount === tasks.length ? "success" : "error");
+
+  if (correctCount === tasks.length) {
+    completeMission(type === "fill" ? 4 : 6);
+    result.textContent += " Mission complete! 🎉";
+  }
+
+}
+
+function resetInputs(type) {
+
+  document.querySelectorAll(
+    "#" + type + "Tasks .task"
+  ).forEach(row => {
+
+    const input = row.querySelector("input");
+
+    input.value = "";
+    input.classList.remove("correct", "incorrect");
+
+    row.querySelector(".answer-feedback").textContent = "";
+
+  });
+
+  document.getElementById(type + "Result").textContent = "";
+
+}
+
+/* =========================================
+   SENTENCE BUILDER
+========================================= */
+
+const builderSentences = [
+  "My sister is the funniest person in our family",
+  "It was the most memorable day of my childhood",
+  "This is the best story I have ever read"
+];
+
+const builderCompleted = new Set();
+
+function createSentenceBuilder(sentence, index) {
+
+  const container = document.getElementById("builderArea");
+
+  const box = document.createElement("div");
+  box.className = "question";
+
+  const title = document.createElement("p");
+  title.className = "question-title";
+  title.textContent = "Sentence " + (index + 1);
+
+  const answerStrip = document.createElement("div");
+  answerStrip.className = "answer-strip";
+
+  const wordBank = document.createElement("div");
+  wordBank.className = "word-bank";
+
+  const feedback = document.createElement("p");
+  feedback.className = "feedback";
+
+  const tiles = shuffle(
+    sentence.split(" ").map((word, id) => ({
+      word,
+      id
+    }))
+  );
+
+  let selected = [];
+
+  function render() {
+
+    answerStrip.innerHTML = "";
+    wordBank.innerHTML = "";
+
+    if (selected.length === 0) {
+      answerStrip.textContent =
+        "Tap the words below to build your sentence...";
+    }
+
+    selected.forEach((tile, selectedIndex) => {
+
+      const button = document.createElement("button");
+      button.className = "word-chip";
+      button.textContent = tile.word;
+
+      button.onclick = () => {
+        selected.splice(selectedIndex, 1);
+        render();
+      };
+
+      answerStrip.appendChild(button);
+
+    });
+
+    tiles.forEach(tile => {
+
+      const button = document.createElement("button");
+      button.className = "word-chip";
+      button.textContent = tile.word;
+
+      button.disabled = selected.includes(tile);
+
+      button.onclick = () => {
+        selected.push(tile);
+        render();
+      };
+
+      wordBank.appendChild(button);
+
+    });
+
+  }
+
+  const checkButton = document.createElement("button");
+  checkButton.className = "primary";
+  checkButton.textContent = "✓ Check Sentence";
+
+  checkButton.onclick = () => {
+
+    const answer = selected.map(tile => tile.word).join(" ");
+
+    if (answer === sentence) {
+
+      feedback.className = "feedback success";
+      feedback.textContent = "✓ Perfect sentence!";
+
+      builderCompleted.add(index);
+
+      if (builderCompleted.size === builderSentences.length) {
+        completeMission(5);
+      }
+
+    } else {
+
+      feedback.className = "feedback error";
+      feedback.textContent =
+        "Not yet. Check the word order and try again.";
+
+    }
+
+  };
+
+  const clearButton = document.createElement("button");
+  clearButton.className = "secondary";
+  clearButton.textContent = "↺ Clear";
+
+  clearButton.onclick = () => {
+    selected = [];
+    feedback.textContent = "";
+    render();
+  };
+
+  box.appendChild(title);
+  box.appendChild(answerStrip);
+  box.appendChild(wordBank);
+  box.appendChild(checkButton);
+  box.appendChild(clearButton);
+  box.appendChild(feedback);
+
+  container.appendChild(box);
+
+  render();
+
+}
+
+builderSentences.forEach(createSentenceBuilder);
+
+/* =========================================
+   WRITING CHECK
+========================================= */
+
+function checkWriting() {
+
+  const sentence1 =
+    document.getElementById("sentence1").value.trim();
+
+  const sentence2 =
+    document.getElementById("sentence2").value.trim();
+
+  const sentence3 =
+    document.getElementById("sentence3").value.trim();
+
+  const sentences = [
+    sentence1,
+    sentence2,
+    sentence3
+  ];
+
+  const enoughWords = sentences.every(sentence =>
+    sentence.split(/\s+/).length >= 6
+  );
+
+  const shortForm =
+    /\bthe\s+\w+(?:est|iest)\b/i.test(sentence1);
+
+  const longForm =
+    /\bthe\s+most\s+\w+/i.test(sentence2);
+
+  const irregularForm =
+    /\bthe\s+(best|worst|least|most|farthest|furthest)\b/i
+      .test(sentence3);
+
+  const result = document.getElementById("writingResult");
+
+  if (
+    enoughWords &&
+    shortForm &&
+    longForm &&
+    irregularForm
+  ) {
+
+    result.className = "feedback success";
+
+    result.textContent =
+      "🎉 Excellent effort! You used all three " +
+      "superlative patterns. Read your sentences " +
+      "again to check meaning, spelling and punctuation.";
+
+    completeMission(7);
+
+  } else {
+
+    result.className = "feedback error";
+
+    result.textContent =
+      "Keep improving! Sentence 1 needs 'the ...est', " +
+      "sentence 2 needs 'the most ...', and sentence 3 " +
+      "needs an irregular superlative. " +
+      "Write at least six words in each sentence.";
+
+  }
+
+}
+
+/* =========================================
+   MINI DICTIONARY
+========================================= */
+
+const vocabulary = [
+  ["superlative", "صيغة التفضيل العليا"],
+  ["adjective", "صفة"],
+  ["the tallest", "الأطول"],
+  ["the happiest", "الأسعد"],
+  ["the youngest", "الأصغر سناً"],
+  ["the oldest", "الأكبر سناً"],
+  ["the biggest", "الأكبر"],
+  ["the most beautiful", "الأجمل"],
+  ["the most exciting", "الأكثر إثارة"],
+  ["the most interesting", "الأكثر تشويقاً"],
+  ["the best", "الأفضل"],
+  ["the worst", "الأسوأ"],
+  ["the farthest", "الأبعد"],
+  ["the least", "الأقل"],
+  ["achievement", "إنجاز"],
+  ["experience", "تجربة"],
+  ["childhood", "الطفولة"],
+  ["competition", "مسابقة"],
+  ["performance", "أداء"],
+  ["contestant", "متسابق"],
+  ["memorable", "لا يُنسى"],
+  ["intelligent", "ذكي"],
+  ["hardworking", "مجتهد"],
+  ["unforgettable", "لا يُنسى"],
+  ["prize", "جائزة"],
+  ["talented", "موهوب"],
+  ["applaud", "يصفق"],
+  ["moment", "لحظة"]
+];
+
+const dictionaryButton =
+  document.getElementById("dictionaryButton");
+
+const dictionaryOverlay =
+  document.getElementById("dictionaryOverlay");
+
+const dictionaryClose =
+  document.getElementById("dictionaryClose");
+
+const dictionarySearch =
+  document.getElementById("dictionarySearch");
+
+const dictionaryList =
+  document.getElementById("dictionaryList");
+
+function renderDictionary() {
+
+  const searchText =
+    dictionarySearch.value.toLowerCase().trim();
+
+  dictionaryList.innerHTML = "";
+
+  const filtered = vocabulary.filter(([english, arabic]) =>
+    english.toLowerCase().includes(searchText) ||
+    arabic.includes(searchText)
+  );
+
+  filtered.forEach(([english, arabic]) => {
+
+    const row = document.createElement("div");
+    row.className = "dictionary-row";
+
+    const englishWord = document.createElement("strong");
+    englishWord.textContent = english;
+
+    const arabicWord = document.createElement("span");
+    arabicWord.textContent = arabic;
+
+    row.appendChild(englishWord);
+    row.appendChild(arabicWord);
+
+    dictionaryList.appendChild(row);
+
+  });
+
+  if (filtered.length === 0) {
+    dictionaryList.textContent = "No matching words found.";
+  }
+
+}
+
+function openDictionary() {
+  dictionaryOverlay.classList.add("open");
+  renderDictionary();
+  dictionarySearch.focus();
+}
+
+function closeDictionary() {
+  dictionaryOverlay.classList.remove("open");
+  dictionaryButton.focus();
+}
+
+dictionaryButton.addEventListener("click", openDictionary);
+
+dictionaryClose.addEventListener("click", closeDictionary);
+
+dictionarySearch.addEventListener("input", renderDictionary);
+
+dictionaryOverlay.addEventListener("click", event => {
+  if (event.target === dictionaryOverlay) {
+    closeDictionary();
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (
+    event.key === "Escape" &&
+    dictionaryOverlay.classList.contains("open")
+  ) {
+    closeDictionary();
+  }
+});
+
+</script>
+
+</body>
+</html>

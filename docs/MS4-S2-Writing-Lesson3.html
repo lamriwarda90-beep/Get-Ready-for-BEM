@@ -1,0 +1,2923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#c4427b">
+
+<title>MS4 S2 — Writing Lesson 3 | All About Me</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --rose:#c4427b;
+  --rose-dark:#922653;
+  --rose-light:#fff0f6;
+  --pink:#f7b6d0;
+  --plum:#51344c;
+  --purple:#8b67b1;
+  --gold:#e9b85b;
+  --gold-light:#fff4d9;
+  --ink:#382a38;
+  --muted:#786778;
+  --white:#fff;
+  --green:#25885c;
+  --green-light:#e8f8ef;
+  --red:#c94d63;
+  --red-light:#fff0f2;
+  --line:#f0d8e4;
+  --shadow:0 18px 48px rgba(111,43,78,.11);
+  --radius:25px;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:"Nunito",sans-serif;
+  line-height:1.65;
+  background:
+    radial-gradient(circle at 7% 8%,rgba(255,255,255,.9) 0 70px,transparent 72px),
+    radial-gradient(circle at 95% 20%,rgba(255,255,255,.5) 0 100px,transparent 102px),
+    linear-gradient(145deg,#fff3f8,#f9d5e6 48%,#fff1d9);
+  min-height:100vh;
+}
+
+button,input,textarea,select{font:inherit}
+
+button{cursor:pointer}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible{
+  outline:3px solid var(--purple);
+  outline-offset:3px;
+}
+
+a{color:inherit}
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,250,253,.94);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid #efd4e0;
+}
+
+.topbar-inner{
+  max-width:1190px;
+  margin:auto;
+  padding:12px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.back-link{
+  color:var(--rose-dark);
+  font-weight:900;
+  text-decoration:none;
+}
+
+.top-label{
+  font:700 .68rem "Space Mono",monospace;
+  letter-spacing:.08em;
+  color:var(--muted);
+  text-align:right;
+}
+
+.hero{
+  max-width:1190px;
+  padding:28px 20px 0;
+  margin:auto;
+}
+
+.hero-card{
+  background:#fff;
+  border-radius:35px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  border:1px solid rgba(255,255,255,.9);
+}
+
+.hero-copy{
+  padding:55px 48px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.eyebrow{
+  display:inline-block;
+  align-self:flex-start;
+  background:var(--gold-light);
+  border:1px solid #f0d59a;
+  color:#956920;
+  padding:7px 13px;
+  border-radius:99px;
+  font:700 .73rem "Space Mono",monospace;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-family:"Baloo 2",sans-serif;
+  color:var(--rose-dark);
+  font-size:clamp(3rem,6vw,5rem);
+  line-height:.98;
+  margin:0 0 18px;
+}
+
+.hero h1 span{color:var(--purple)}
+
+.hero p{
+  font-size:1.08rem;
+  color:var(--muted);
+  margin:0 0 23px;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.tag{
+  background:#fff7fa;
+  border:1px solid var(--line);
+  padding:7px 12px;
+  border-radius:99px;
+  font-size:.8rem;
+  font-weight:900;
+}
+
+.hero-art{
+  position:relative;
+  min-height:380px;
+  background:
+    radial-gradient(circle at 70% 15%,#fff7d5 0 45px,transparent 47px),
+    radial-gradient(circle at 18% 85%,#fbd8e8 0 65px,transparent 67px),
+    linear-gradient(140deg,#f6a9c8,#db84b5,#a17ac1);
+  display:grid;
+  place-items:center;
+  padding:25px;
+  overflow:hidden;
+}
+
+.hero-art::before{
+  content:"✦";
+  position:absolute;
+  top:24px;
+  left:30px;
+  color:white;
+  font-size:42px;
+}
+
+.hero-art::after{
+  content:"✧";
+  position:absolute;
+  bottom:25px;
+  right:30px;
+  color:#fff4d6;
+  font-size:60px;
+}
+
+.profile-illustration{
+  position:relative;
+  width:min(315px,90%);
+  background:white;
+  border:9px solid rgba(255,255,255,.5);
+  border-radius:27px;
+  padding:23px;
+  box-shadow:0 25px 45px rgba(73,31,70,.22);
+  transform:rotate(3deg);
+  z-index:1;
+}
+
+.profile-head{
+  display:flex;
+  gap:13px;
+  align-items:center;
+  border-bottom:2px dashed #f1d4e2;
+  padding-bottom:15px;
+}
+
+.avatar{
+  width:73px;
+  height:73px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#ffe5ef,#ecc6f7);
+  display:grid;
+  place-items:center;
+  font-size:43px;
+}
+
+.profile-head strong{
+  font-family:"Baloo 2";
+  font-size:1.25rem;
+  color:var(--rose-dark);
+}
+
+.profile-head small{
+  display:block;
+  color:var(--muted);
+}
+
+.profile-line{
+  padding:11px 0;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  border-bottom:1px solid #f4e3eb;
+  font-size:.85rem;
+}
+
+.profile-line span{color:var(--muted)}
+.profile-line strong{color:var(--plum)}
+
+.profile-sticker{
+  text-align:center;
+  background:var(--gold-light);
+  border-radius:12px;
+  margin-top:15px;
+  padding:8px;
+  color:#98691c;
+  font-weight:900;
+  font-size:.82rem;
+}
+
+.overview{
+  max-width:1190px;
+  margin:23px auto;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+}
+
+.overview-card{
+  background:rgba(255,255,255,.86);
+  border:1px solid white;
+  border-radius:19px;
+  padding:17px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  box-shadow:0 7px 20px rgba(103,40,80,.06);
+}
+
+.overview-icon{
+  font-size:27px;
+  background:#fff0f6;
+  border-radius:14px;
+  width:49px;
+  height:49px;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+}
+
+.overview-card strong{
+  display:block;
+  font-size:.9rem;
+  color:var(--plum);
+}
+
+.overview-card small{
+  color:var(--muted);
+  font-size:.73rem;
+}
+
+.journey{
+  position:sticky;
+  top:55px;
+  z-index:90;
+  max-width:1100px;
+  margin:24px auto;
+  padding:13px 16px;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(16px);
+  border:1px solid #efd8e3;
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(100,41,78,.08);
+}
+
+.journey-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+  margin-bottom:9px;
+}
+
+.journey-title{
+  font:700 .68rem "Space Mono",monospace;
+  color:var(--rose-dark);
+  letter-spacing:.05em;
+}
+
+.journey-score{
+  font-weight:900;
+  color:var(--rose-dark);
+  font-size:.9rem;
+}
+
+.progress-track{
+  background:#f4dce7;
+  border-radius:99px;
+  height:8px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,var(--rose),var(--gold));
+  transition:width .3s;
+}
+
+.step-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  justify-content:center;
+  margin-top:12px;
+}
+
+.step-nav a{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border:1px solid #e9c7d7;
+  border-radius:11px;
+  text-decoration:none;
+  font:700 .8rem "Space Mono",monospace;
+  background:#fff;
+  color:var(--rose-dark);
+  transition:.2s;
+}
+
+.step-nav a:hover,
+.step-nav a.active{
+  background:var(--rose);
+  color:white;
+  transform:translateY(-2px);
+}
+
+main{
+  max-width:1040px;
+  margin:auto;
+  padding:0 18px 60px;
+}
+
+.step{
+  position:relative;
+  margin:38px 0;
+  scroll-margin-top:180px;
+}
+
+.step-card{
+  position:relative;
+  background:rgba(255,255,255,.96);
+  padding:35px;
+  border:1px solid white;
+  border-radius:28px;
+  box-shadow:var(--shadow);
+}
+
+.step-badge{
+  position:absolute;
+  top:-19px;
+  left:25px;
+  width:55px;
+  height:55px;
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  background:var(--rose);
+  border:4px solid white;
+  box-shadow:0 6px 18px rgba(160,52,103,.2);
+  color:white;
+  font:700 1.1rem "Space Mono",monospace;
+}
+
+.step-label{
+  margin:15px 0 7px;
+  font:700 .71rem "Space Mono",monospace;
+  color:var(--rose);
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+
+.step h2{
+  font:800 clamp(1.7rem,4vw,2.4rem) "Baloo 2",sans-serif;
+  color:var(--rose-dark);
+  margin:0 0 7px;
+  line-height:1.2;
+}
+
+.step-intro{
+  color:var(--muted);
+  margin:0 0 22px;
+}
+
+.task{
+  padding:23px;
+  background:#fffafd;
+  border:1px solid var(--line);
+  border-radius:20px;
+  margin:18px 0;
+}
+
+.task h3{
+  font:800 1.35rem "Baloo 2",sans-serif;
+  color:var(--plum);
+  margin:0 0 6px;
+}
+
+.task p{margin:6px 0 12px}
+
+.note{
+  background:var(--gold-light);
+  border-left:4px solid var(--gold);
+  border-radius:12px;
+  padding:13px 15px;
+  margin:14px 0;
+  color:#755524;
+}
+
+.note strong{color:#91621d}
+
+.mini{
+  color:var(--muted);
+  font-size:.85rem;
+}
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.info-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+}
+
+.info-card strong{
+  display:block;
+  color:var(--rose-dark);
+  margin-bottom:5px;
+}
+
+.quality-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin:16px 0;
+}
+
+.quality{
+  border:2px solid #efd4e1;
+  border-radius:15px;
+  background:white;
+  padding:15px 7px;
+  text-align:center;
+  font-weight:900;
+  color:var(--plum);
+  transition:.2s;
+}
+
+.quality:hover{
+  border-color:var(--rose);
+  transform:translateY(-2px);
+}
+
+.quality.selected{
+  background:var(--rose);
+  color:white;
+  border-color:var(--rose);
+}
+
+.quality .icon{
+  display:block;
+  font-size:25px;
+  margin-bottom:5px;
+}
+
+.question{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:17px;
+  margin:12px 0;
+}
+
+.question strong{
+  display:block;
+  color:var(--plum);
+  margin-bottom:10px;
+}
+
+.question select,
+.field,
+textarea{
+  width:100%;
+  border:2px solid #ead2de;
+  border-radius:12px;
+  background:white;
+  color:var(--ink);
+  padding:12px 13px;
+  outline:none;
+}
+
+.question select:focus,
+.field:focus,
+textarea:focus{
+  border-color:var(--rose);
+  box-shadow:0 0 0 4px #f9e2ed;
+}
+
+textarea{
+  min-height:105px;
+  resize:vertical;
+  line-height:1.75;
+}
+
+label.field-label{
+  display:block;
+  font-weight:900;
+  color:var(--plum);
+  margin:0 0 6px;
+}
+
+.field-group{margin:13px 0}
+
+.btn-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:17px;
+}
+
+.btn{
+  border:0;
+  border-radius:99px;
+  padding:11px 19px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.btn:hover{transform:translateY(-2px)}
+
+.btn-primary{
+  background:var(--rose);
+  color:white;
+  box-shadow:0 6px 15px rgba(196,66,123,.17);
+}
+
+.btn-secondary{
+  background:white;
+  color:var(--rose-dark);
+  border:1px solid #e9c3d5;
+}
+
+.btn-gold{
+  background:var(--gold-light);
+  color:#90621c;
+  border:1px solid #efd49b;
+}
+
+.feedback{
+  display:none;
+  padding:13px 16px;
+  margin-top:15px;
+  border-radius:13px;
+  font-weight:800;
+}
+
+.feedback.show{display:block}
+.feedback.good{background:var(--green-light);color:#206e4b}
+.feedback.try{background:var(--red-light);color:#a43c52}
+.feedback.info{background:#f1edff;color:#644a95}
+
+.example{
+  background:var(--gold-light);
+  padding:15px;
+  border-radius:13px;
+  margin:12px 0;
+  color:#684d26;
+}
+
+.example strong{color:#91631d}
+
+.word-chips{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin:12px 0;
+}
+
+.chip{
+  border:1px solid #eacbd9;
+  background:white;
+  color:var(--plum);
+  border-radius:99px;
+  padding:8px 13px;
+  font-weight:900;
+}
+
+.chip:hover{background:var(--rose-light)}
+.chip.active{background:var(--rose);color:white}
+
+.sentence-builder{
+  background:white;
+  border:2px dashed #e5bfd1;
+  padding:15px;
+  min-height:70px;
+  border-radius:15px;
+  margin:13px 0;
+  font-weight:900;
+}
+
+.sentence-builder span{color:var(--muted);font-weight:600}
+
+.order-bank,
+.order-answer{
+  display:grid;
+  gap:9px;
+}
+
+.order-item{
+  padding:12px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:13px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.order-item span{
+  flex:1;
+  font-weight:800;
+}
+
+.order-item button{
+  border:0;
+  background:var(--rose-light);
+  color:var(--rose-dark);
+  width:33px;
+  height:33px;
+  border-radius:9px;
+  font-weight:900;
+}
+
+.order-number{
+  background:var(--rose);
+  color:white;
+  width:29px;
+  height:29px;
+  border-radius:9px;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  font:700 .8rem "Space Mono",monospace;
+}
+
+.structure-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:11px;
+}
+
+.structure-card{
+  border-radius:16px;
+  background:white;
+  border:1px solid var(--line);
+  padding:16px;
+}
+
+.structure-card .num{
+  font:700 .8rem "Space Mono",monospace;
+  color:var(--rose);
+}
+
+.structure-card h4{
+  margin:5px 0;
+  color:var(--plum);
+}
+
+.structure-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.87rem;
+}
+
+.checklist{
+  display:grid;
+  gap:9px;
+  margin:13px 0;
+}
+
+.check-item{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:11px 13px;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  cursor:pointer;
+}
+
+.check-item input{
+  accent-color:var(--rose);
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+  margin-top:4px;
+}
+
+.final-step .step-card{
+  background:linear-gradient(145deg,#fff,#fff8e9);
+  border:2px solid #f0c5d8;
+}
+
+.word-meter{
+  margin-top:11px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font:700 .8rem "Space Mono",monospace;
+  color:var(--muted);
+}
+
+.meter{
+  height:10px;
+  border-radius:99px;
+  background:#f0dbe5;
+  overflow:hidden;
+  margin-top:8px;
+}
+
+.meter span{
+  display:block;
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,var(--rose),var(--gold));
+  transition:width .3s;
+}
+
+.score-box{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:19px;
+  padding:20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.score-big{
+  font:800 2.7rem "Baloo 2";
+  color:var(--rose);
+  line-height:1;
+}
+
+.score-big small{
+  font-size:1.1rem;
+  color:var(--muted);
+}
+
+.score-float{
+  position:fixed;
+  bottom:21px;
+  left:20px;
+  z-index:80;
+  border-radius:18px;
+  padding:10px 15px;
+  background:white;
+  box-shadow:0 9px 30px rgba(70,31,53,.2);
+  border:1px solid #ecd4df;
+  font-weight:900;
+  color:var(--rose-dark);
+}
+
+.dictionary-btn{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:80;
+  background:var(--plum);
+  color:white;
+  border:0;
+  border-radius:99px;
+  padding:13px 18px;
+  font-weight:900;
+  box-shadow:0 10px 25px rgba(62,37,60,.23);
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(38,24,37,.6);
+  z-index:300;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  padding:18px;
+}
+
+.overlay.open{display:flex}
+
+.dictionary{
+  width:min(620px,100%);
+  max-height:85vh;
+  overflow:auto;
+  background:white;
+  border-radius:25px;
+  padding:25px;
+}
+
+.dictionary-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.dictionary h2{
+  margin:0;
+  color:var(--rose-dark);
+  font-family:"Baloo 2";
+}
+
+.close-btn{
+  border:0;
+  background:var(--rose-light);
+  color:var(--rose-dark);
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  font-size:23px;
+}
+
+.dict-search{
+  width:100%;
+  padding:12px;
+  border:2px solid var(--line);
+  border-radius:12px;
+  margin:15px 0;
+}
+
+.dict-item{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  border-bottom:1px solid #f0e1e8;
+  padding:9px 5px;
+}
+
+.dict-item strong{color:var(--plum)}
+
+.dict-item span{
+  font-family:"Noto Naskh Arabic",serif;
+  direction:rtl;
+  color:var(--rose-dark);
+  font-size:1.05rem;
+}
+
+footer{
+  text-align:center;
+  padding:30px 20px 95px;
+  color:var(--muted);
+  font:700 .72rem "Space Mono",monospace;
+  letter-spacing:.06em;
+}
+
+@media(max-width:850px){
+  .hero-card{grid-template-columns:1fr}
+  .hero-copy{padding:35px 27px}
+  .hero-art{min-height:320px}
+  .overview{grid-template-columns:repeat(2,1fr)}
+  .structure-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:600px){
+  .top-label{font-size:.58rem}
+  .step-card{padding:25px 18px}
+  .task{padding:17px}
+  .quality-grid{grid-template-columns:repeat(2,1fr)}
+  .card-grid{grid-template-columns:1fr}
+  .overview{gap:8px}
+  .overview-card{padding:12px;gap:8px}
+  .overview-icon{width:40px;height:40px;font-size:21px}
+  .overview-card strong{font-size:.77rem}
+  .overview-card small{font-size:.65rem}
+  .hero h1{font-size:3.25rem}
+  .score-float{bottom:14px;left:10px;font-size:.8rem}
+  .dictionary-btn{bottom:14px;right:10px;padding:11px 13px;font-size:.8rem}
+  .journey{margin:15px 12px;top:54px}
+  .step{scroll-margin-top:185px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+}
+
+@media print{
+  .topbar,.journey,.dictionary-btn,.score-float,.btn-row,
+  .step-nav,.overlay{display:none!important}
+  body{background:white}
+  .hero-card,.step-card{box-shadow:none}
+  .step{break-inside:avoid}
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="MS4-S2-Writing.html" class="back-link">← Writing Map</a>
+    <span class="top-label">MS4 · SEQUENCE 2 · WRITING 03</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-card">
+    <div class="hero-copy">
+      <span class="eyebrow">✦ WRITING EXPEDITION · CHECKPOINT 03</span>
+      <h1>All<br><span>About Me</span></h1>
+      <p>
+        Discover how to write a beautiful personal profile about your
+        personality, school life, hobbies, past experiences, ambitions
+        and future plans.
+      </p>
+      <div class="tags">
+        <span class="tag">✍️ Guided Writing</span>
+        <span class="tag">🧠 Grammar Practice</span>
+        <span class="tag">🎯 9 Missions</span>
+        <span class="tag">🏆 100 Points</span>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="profile-illustration">
+        <div class="profile-head">
+          <div class="avatar">🧑‍🎓</div>
+          <div>
+            <strong>MY PROFILE</strong>
+            <small>A little story about me</small>
+          </div>
+        </div>
+        <div class="profile-line">
+          <span>Personality</span><strong>Kind & curious</strong>
+        </div>
+        <div class="profile-line">
+          <span>Favourite subject</span><strong>English</strong>
+        </div>
+        <div class="profile-line">
+          <span>Hobby</span><strong>Reading</strong>
+        </div>
+        <div class="profile-line">
+          <span>My dream</span><strong>To succeed</strong>
+        </div>
+        <div class="profile-sticker">✨ EVERY STORY IS UNIQUE ✨</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="overview">
+  <div class="overview-card">
+    <span class="overview-icon">🌸</span>
+    <div><strong>Discover</strong><small>Who you are</small></div>
+  </div>
+  <div class="overview-card">
+    <span class="overview-icon">🧩</span>
+    <div><strong>Practise</strong><small>Words & grammar</small></div>
+  </div>
+  <div class="overview-card">
+    <span class="overview-icon">✍️</span>
+    <div><strong>Build</strong><small>Strong sentences</small></div>
+  </div>
+  <div class="overview-card">
+    <span class="overview-icon">🏆</span>
+    <div><strong>Create</strong><small>Your final profile</small></div>
+  </div>
+</div>
+
+<nav class="journey" aria-label="Lesson progress">
+  <div class="journey-top">
+    <span class="journey-title">YOUR WRITING JOURNEY</span>
+    <span class="journey-score"><span id="topScore">0</span>/100 POINTS</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="lessonProgress"></div>
+  </div>
+  <div class="step-nav">
+    <a href="#step1">1</a>
+    <a href="#step2">2</a>
+    <a href="#step3">3</a>
+    <a href="#step4">4</a>
+    <a href="#step5">5</a>
+    <a href="#step6">6</a>
+    <a href="#step7">7</a>
+    <a href="#step8">8</a>
+    <a href="#step9">9</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ==================== STEP 1 ==================== -->
+
+<section class="step" id="step1">
+  <div class="step-card">
+    <div class="step-badge">01</div>
+    <div class="step-label">Mission 01 · Discover Yourself</div>
+    <h2>Who Am I?</h2>
+    <p class="step-intro">
+      Before writing about yourself, think about the qualities
+      that make you special.
+    </p>
+
+    <div class="task">
+      <h3>🌟 Activity 1 — My Personality</h3>
+      <p>Select <strong>exactly four positive personality traits</strong>.</p>
+
+      <div class="quality-grid" id="qualityGrid">
+        <button class="quality" data-good="true"><span class="icon">💛</span>Kind</button>
+        <button class="quality" data-good="false"><span class="icon">😠</span>Rude</button>
+        <button class="quality" data-good="true"><span class="icon">🤝</span>Helpful</button>
+        <button class="quality" data-good="true"><span class="icon">🦁</span>Brave</button>
+        <button class="quality" data-good="false"><span class="icon">😴</span>Lazy</button>
+        <button class="quality" data-good="true"><span class="icon">😊</span>Friendly</button>
+        <button class="quality" data-good="false"><span class="icon">😤</span>Selfish</button>
+        <button class="quality" data-good="false"><span class="icon">😒</span>Impolite</button>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="checkQualities()">Check My Choices</button>
+        <button class="btn btn-secondary" onclick="clearQualities()">Try Again</button>
+      </div>
+      <div class="feedback" id="qualitiesFeedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>💬 Activity 2 — Introduce Yourself</h3>
+      <p>Complete your mini identity card.</p>
+
+      <div class="card-grid">
+        <div class="field-group">
+          <label class="field-label" for="myName">My first name</label>
+          <input class="field" id="myName" placeholder="My name is...">
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="myAge">My age</label>
+          <input class="field" id="myAge" placeholder="I am ... years old">
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="myCity">My hometown</label>
+          <input class="field" id="myCity" placeholder="I live in...">
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="mySchool">My school</label>
+          <input class="field" id="mySchool" placeholder="I study at...">
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Writing tip:</strong> A personal profile usually starts
+        with your name, age, hometown and a short description of your personality.
+      </div>
+
+      <button class="btn btn-primary" onclick="checkIdentity()">
+        Check My Identity Card
+      </button>
+      <div class="feedback" id="identityFeedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STEP 2 ==================== -->
+
+<section class="step" id="step2">
+  <div class="step-card">
+    <div class="step-badge">02</div>
+    <div class="step-label">Mission 02 · Vocabulary Explorer</div>
+    <h2>Words About My World</h2>
+    <p class="step-intro">
+      Learn useful expressions about personality, school life,
+      hobbies and ambitions.
+    </p>
+
+    <div class="card-grid">
+      <div class="info-card">
+        <strong>🌸 Personality</strong>
+        kind · friendly · honest · shy · ambitious · hardworking
+      </div>
+      <div class="info-card">
+        <strong>🏫 School Life</strong>
+        subjects · classmates · teachers · lessons · homework
+      </div>
+      <div class="info-card">
+        <strong>🎨 Hobbies</strong>
+        reading · drawing · swimming · cooking · playing football
+      </div>
+      <div class="info-card">
+        <strong>🚀 Ambitions</strong>
+        dream · hope · future · career · succeed · achieve
+      </div>
+    </div>
+
+    <div class="task">
+      <h3>🎯 Choose the Correct Word</h3>
+      <p>Complete each sentence with the most suitable answer.</p>
+
+      <div class="question">
+        <strong>1. I always help my classmates. I am ______.</strong>
+        <select id="v1">
+          <option value="">Choose...</option>
+          <option value="lazy">lazy</option>
+          <option value="helpful">helpful</option>
+          <option value="selfish">selfish</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>2. I enjoy reading books. Reading is my ______.</strong>
+        <select id="v2">
+          <option value="">Choose...</option>
+          <option value="hobby">hobby</option>
+          <option value="school">school</option>
+          <option value="career">career</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>3. I want to become a doctor. This is my ______.</strong>
+        <select id="v3">
+          <option value="">Choose...</option>
+          <option value="memory">memory</option>
+          <option value="ambition">ambition</option>
+          <option value="subject">subject</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>4. I study every day because I am ______.</strong>
+        <select id="v4">
+          <option value="">Choose...</option>
+          <option value="rude">rude</option>
+          <option value="hardworking">hardworking</option>
+          <option value="careless">careless</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>5. My ______ subject is English.</strong>
+        <select id="v5">
+          <option value="">Choose...</option>
+          <option value="favourite">favourite</option>
+          <option value="future">future</option>
+          <option value="friendly">friendly</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" onclick="checkVocabulary()">
+        Check Vocabulary
+      </button>
+      <div class="feedback" id="vocabFeedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STEP 3 ==================== -->
+
+<section class="step" id="step3">
+  <div class="step-card">
+    <div class="step-badge">03</div>
+    <div class="step-label">Mission 03 · Gather Your Ideas</div>
+    <h2>My Personal Information</h2>
+    <p class="step-intro">
+      Good writers collect ideas before they start writing.
+      Complete this personal information organiser.
+    </p>
+
+    <div class="task">
+      <h3>🗂️ My Idea Bank</h3>
+
+      <div class="field-group">
+        <label class="field-label" for="ideaPersonality">
+          🌸 Three words describing my personality
+        </label>
+        <input id="ideaPersonality" class="field"
+          placeholder="kind, friendly, hardworking">
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="ideaSubjects">
+          🏫 My favourite school subjects
+        </label>
+        <input id="ideaSubjects" class="field"
+          placeholder="English and science">
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="ideaHobbies">
+          🎨 My hobbies and interests
+        </label>
+        <input id="ideaHobbies" class="field"
+          placeholder="reading and playing football">
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="ideaExperience">
+          📸 One memorable experience
+        </label>
+        <input id="ideaExperience" class="field"
+          placeholder="Last summer, I visited...">
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="ideaDream">
+          🚀 My future ambition
+        </label>
+        <input id="ideaDream" class="field"
+          placeholder="I want to become...">
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="ideaPlan">
+          📚 One thing I will do to achieve my dream
+        </label>
+        <input id="ideaPlan" class="field"
+          placeholder="I will study hard...">
+      </div>
+
+      <button class="btn btn-primary" onclick="checkIdeas()">
+        Check My Idea Bank
+      </button>
+      <div class="feedback" id="ideasFeedback"></div>
+    </div>
+
+    <div class="note">
+      <strong>Remember:</strong> Your profile should contain real
+      information about you. You do not need to invent achievements
+      or experiences.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STEP 4 ==================== -->
+
+<section class="step" id="step4">
+  <div class="step-card">
+    <div class="step-badge">04</div>
+    <div class="step-label">Mission 04 · Grammar Workshop</div>
+    <h2>Choose the Right Tense</h2>
+    <p class="step-intro">
+      A personal profile describes your present life,
+      remembers past experiences and explains future plans.
+    </p>
+
+    <div class="card-grid">
+      <div class="info-card">
+        <strong>🟢 Present Simple</strong>
+        I study English.<br>
+        I enjoy reading.
+      </div>
+      <div class="info-card">
+        <strong>🟡 Past Simple</strong>
+        I visited Algiers last year.<br>
+        I won a school competition.
+      </div>
+      <div class="info-card">
+        <strong>🟣 Past Continuous</strong>
+        I was studying when my friend called.
+      </div>
+      <div class="info-card">
+        <strong>🔵 Future Simple</strong>
+        I will work hard.<br>
+        I will achieve my dream.
+      </div>
+    </div>
+
+    <div class="task">
+      <h3>🧠 Grammar Challenge</h3>
+      <p>Choose the correct verb form.</p>
+
+      <div class="question">
+        <strong>1. I ______ English every day.</strong>
+        <select id="g1">
+          <option value="">Choose...</option>
+          <option value="study">study</option>
+          <option value="studied">studied</option>
+          <option value="studying">studying</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>2. Last year, I ______ a school trip.</strong>
+        <select id="g2">
+          <option value="">Choose...</option>
+          <option value="enjoy">enjoy</option>
+          <option value="enjoyed">enjoyed</option>
+          <option value="will enjoy">will enjoy</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>3. I ______ a doctor in the future.</strong>
+        <select id="g3">
+          <option value="">Choose...</option>
+          <option value="became">became</option>
+          <option value="become">become</option>
+          <option value="will become">will become</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>4. I enjoy ______ stories.</strong>
+        <select id="g4">
+          <option value="">Choose...</option>
+          <option value="read">read</option>
+          <option value="reading">reading</option>
+          <option value="reads">reads</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>5. I ______ my homework when the lights went out.</strong>
+        <select id="g5">
+          <option value="">Choose...</option>
+          <option value="was doing">was doing</option>
+          <option value="do">do</option>
+          <option value="will do">will do</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>6. I ______ very shy when I was younger.</strong>
+        <select id="g6">
+          <option value="">Choose...</option>
+          <option value="am">am</option>
+          <option value="was">was</option>
+          <option value="will be">will be</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" onclick="checkGrammar()">
+        Check Grammar
+      </button>
+      <div class="feedback" id="grammarFeedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STEP 5 ==================== -->
+
+<section class="step" id="step5">
+  <div class="step-card">
+    <div class="step-badge">05</div>
+    <div class="step-label">Mission 05 · Sentence Builder</div>
+    <h2>Build Strong Sentences</h2>
+    <p class="step-intro">
+      Turn short notes into meaningful sentences.
+      Remember: a complete sentence needs a subject and a verb.
+    </p>
+
+    <div class="task">
+      <h3>🧩 Activity 1 — Put the Words in Order</h3>
+      <p>Click the words in the correct order.</p>
+
+      <div class="note">
+        <strong>Target sentence:</strong>
+        A sentence about your hobbies.
+      </div>
+
+      <div class="word-chips" id="builderWords"></div>
+      <div class="sentence-builder" id="builderOutput">
+        <span>Your sentence will appear here...</span>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="checkBuilder()">
+          Check Sentence
+        </button>
+        <button class="btn btn-secondary" onclick="resetBuilder()">
+          Reset
+        </button>
+      </div>
+      <div class="feedback" id="builderFeedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>✍️ Activity 2 — Expand Your Sentences</h3>
+      <p>Add details to make these short sentences more interesting.</p>
+
+      <div class="question">
+        <strong>1. I am a pupil.</strong>
+        <p class="mini">Add your school year, personality or favourite subject.</p>
+        <textarea id="s1" rows="2"
+          placeholder="I am a fourth-year middle school pupil who..."></textarea>
+      </div>
+
+      <div class="question">
+        <strong>2. I like reading.</strong>
+        <p class="mini">Explain what you read and why you enjoy it.</p>
+        <textarea id="s2" rows="2"
+          placeholder="I enjoy reading... because..."></textarea>
+      </div>
+
+      <div class="question">
+        <strong>3. I want to succeed.</strong>
+        <p class="mini">Explain your dream and how you will achieve it.</p>
+        <textarea id="s3" rows="2"
+          placeholder="In the future, I hope to..."></textarea>
+      </div>
+
+      <button class="btn btn-primary" onclick="checkSentences()">
+        Check My Sentences
+      </button>
+      <div class="feedback" id="sentencesFeedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STEP 6 ==================== -->
+
+<section class="step" id="step6">
+  <div class="step-card">
+    <div class="step-badge">06</div>
+    <div class="step-label">Mission 06 · Connect Your Ideas</div>
+    <h2>Make Your Writing Flow</h2>
+    <p class="step-intro">
+      Connectors make your personal profile smoother
+      and help readers understand your ideas.
+    </p>
+
+    <div class="card-grid">
+      <div class="info-card">
+        <strong>➕ Addition</strong>
+        and · also · moreover · in addition
+      </div>
+      <div class="info-card">
+        <strong>💡 Reason</strong>
+        because · since
+      </div>
+      <div class="info-card">
+        <strong>⚖️ Contrast</strong>
+        but · however · although
+      </div>
+      <div class="info-card">
+        <strong>⏳ Time</strong>
+        when · last year · in the future · finally
+      </div>
+    </div>
+
+    <div class="task">
+      <h3>🎯 Choose the Best Connector</h3>
+
+      <div class="question">
+        <strong>1. I am shy, ______ I am friendly.</strong>
+        <select id="c1">
+          <option value="">Choose...</option>
+          <option value="because">because</option>
+          <option value="but">but</option>
+          <option value="and">and</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>2. I love English ______ it is interesting.</strong>
+        <select id="c2">
+          <option value="">Choose...</option>
+          <option value="because">because</option>
+          <option value="but">but</option>
+          <option value="however">however</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>3. I enjoy drawing. ______, I like reading.</strong>
+        <select id="c3">
+          <option value="">Choose...</option>
+          <option value="However">However</option>
+          <option value="In addition">In addition</option>
+          <option value="Because">Because</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>4. ______, I want to become an engineer.</strong>
+        <select id="c4">
+          <option value="">Choose...</option>
+          <option value="Yesterday">Yesterday</option>
+          <option value="In the future">In the future</option>
+          <option value="Last week">Last week</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <strong>5. I was very happy ______ I won the competition.</strong>
+        <select id="c5">
+          <option value="">Choose...</option>
+          <option value="when">when</option>
+          <option value="but">but</option>
+          <option value="however">however</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" onclick="checkConnectors()">
+        Check Connectors
+      </button>
+      <div class="feedback" id="connectorsFeedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>✍️ Use Connectors in Your Own Writing</h3>
+      <p>Write three connected sentences about your school life and hobbies.</p>
+
+      <div class="example">
+        I enjoy studying English because I love learning new words.
+        In addition, I like reading short stories.
+        However, I sometimes find grammar difficult.
+      </div>
+
+      <textarea id="connectorWriting" rows="5"
+        placeholder="Write your three connected sentences..."></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STEP 7 ==================== -->
+
+<section class="step" id="step7">
+  <div class="step-card">
+    <div class="step-badge">07</div>
+    <div class="step-label">Mission 07 · Paragraph Architect</div>
+    <h2>Organise Your Profile</h2>
+    <p class="step-intro">
+      A good personal profile follows a logical order.
+      Start with your identity and finish with your future ambitions.
+    </p>
+
+    <div class="structure-grid">
+      <div class="structure-card">
+        <span class="num">PART 01</span>
+        <h4>🌸 Introduction</h4>
+        <p>Name, age, hometown, school and personality.</p>
+      </div>
+      <div class="structure-card">
+        <span class="num">PART 02</span>
+        <h4>📚 Development</h4>
+        <p>School life, hobbies, preferences and experiences.</p>
+      </div>
+      <div class="structure-card">
+        <span class="num">PART 03</span>
+        <h4>🚀 Conclusion</h4>
+        <p>Ambitions, future plans and a positive ending.</p>
+      </div>
+    </div>
+
+    <div class="task">
+      <h3>🧩 Put the Sentences in Order</h3>
+      <p>
+        Use the arrows to organise the sentences into a logical personal profile.
+      </p>
+
+      <div class="order-bank" id="orderList"></div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="checkOrder()">
+          Check Order
+        </button>
+        <button class="btn btn-secondary" onclick="resetOrder()">
+          Reset
+        </button>
+      </div>
+
+      <div class="feedback" id="orderFeedback"></div>
+    </div>
+
+    <div class="note">
+      <strong>Writing tip:</strong> A profile is not just a list of facts.
+      Group similar ideas together and use connectors to link them.
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STEP 8 ==================== -->
+
+<section class="step" id="step8">
+  <div class="step-card">
+    <div class="step-badge">08</div>
+    <div class="step-label">Mission 08 · Writing Studio</div>
+    <h2>Plan Your Personal Profile</h2>
+    <p class="step-intro">
+      You are almost ready! Use your notes to prepare
+      the three parts of your final writing.
+    </p>
+
+    <div class="task">
+      <h3>📝 Part 1 — Introduction</h3>
+      <p>Introduce yourself and describe your personality.</p>
+      <div class="example">
+        My name is ... . I am ... years old, and I live in ... .
+        I am a ... and ... person.
+      </div>
+      <textarea id="planIntro" rows="5"
+        placeholder="Write your introduction here..."></textarea>
+    </div>
+
+    <div class="task">
+      <h3>📚 Part 2 — School, Hobbies and Experiences</h3>
+      <p>Talk about your school life, interests and one past experience.</p>
+      <div class="example">
+        My favourite subject is ... because ... .
+        In my free time, I enjoy ... .
+        Last year, I ... .
+      </div>
+      <textarea id="planBody" rows="7"
+        placeholder="Write the middle part here..."></textarea>
+    </div>
+
+    <div class="task">
+      <h3>🚀 Part 3 — My Future</h3>
+      <p>Describe your ambitions and how you plan to achieve them.</p>
+      <div class="example">
+        In the future, I hope to become ... .
+        I will work hard because ... .
+      </div>
+      <textarea id="planEnd" rows="5"
+        placeholder="Write your conclusion here..."></textarea>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="checkPlan()">
+        Check My Writing Plan
+      </button>
+      <button class="btn btn-gold" onclick="transferPlan()">
+        ✨ Send My Plan to Final Writing
+      </button>
+    </div>
+
+    <div class="feedback" id="planFeedback"></div>
+  </div>
+</section>
+
+<!-- ==================== STEP 9 ==================== -->
+
+<section class="step final-step" id="step9">
+  <div class="step-card">
+    <div class="step-badge">09</div>
+    <div class="step-label">Mission 09 · The Final Challenge</div>
+    <h2>My Story, My Future</h2>
+    <p class="step-intro">
+      You have reached the final checkpoint!
+      Write a complete personal profile using everything you have learned.
+    </p>
+
+    <div class="task">
+      <h3>🏆 Final Writing Mission</h3>
+
+      <p>
+        Write a coherent personal profile of approximately
+        <strong>100–130 words</strong>.
+      </p>
+
+      <div class="note">
+        <strong>Include:</strong><br>
+        ✓ your identity and personality<br>
+        ✓ your school life and favourite subjects<br>
+        ✓ your hobbies and preferences<br>
+        ✓ a memorable past experience<br>
+        ✓ your ambitions and future plans<br>
+        ✓ appropriate tenses and connectors
+      </div>
+
+      <label class="field-label" for="finalWriting">
+        ✍️ All About Me — My Personal Profile
+      </label>
+
+      <textarea id="finalWriting" rows="16"
+        placeholder="My name is... I am... I live in...
+
+I enjoy...
+
+Last year...
+
+In the future..."></textarea>
+
+      <div class="word-meter">
+        <span>WORDS: <span id="wordCount">0</span></span>
+        <span>TARGET: 100–130</span>
+      </div>
+
+      <div class="meter">
+        <span id="writingMeter"></span>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="evaluateWriting()">
+          ✓ Check My Writing
+        </button>
+        <button class="btn btn-secondary" onclick="copyWriting()">
+          📋 Copy
+        </button>
+        <button class="btn btn-secondary" onclick="downloadWriting()">
+          ⬇ Download
+        </button>
+      </div>
+
+      <div class="feedback" id="writingFeedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>⭐ My Final Editing Checklist</h3>
+      <p>Tick each item after checking your writing.</p>
+
+      <div class="checklist">
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I introduced myself clearly.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I described my personality.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I mentioned my school life.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I included my hobbies and preferences.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I described a past experience.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I explained my future ambition.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I used the correct verb tenses.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I used connectors to link my ideas.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I checked capital letters and punctuation.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>My profile is clear and well organised.</span>
+        </label>
+      </div>
+
+      <div class="score-box">
+        <div>
+          <strong>My Self-Check</strong>
+          <p class="mini">Your own editing checklist</p>
+        </div>
+        <div class="score-big">
+          <span id="selfScore">0</span><small>/10</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="task">
+      <h3>🎉 My Writing Expedition Score</h3>
+
+      <div class="score-box">
+        <div>
+          <strong>Total Points Earned</strong>
+          <p class="mini">
+            Complete the nine missions to improve your score.
+          </p>
+        </div>
+        <div class="score-big">
+          <span id="finalScore">0</span><small>/100</small>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="window.print()">
+          🖨️ Print Lesson
+        </button>
+        <button class="btn btn-secondary" onclick="resetLesson()">
+          ↻ Start Again
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  MY ENGLISH SPACE · MS4 · SEQUENCE 2 · WRITING EXPEDITION
+</footer>
+
+<div class="score-float" aria-live="polite">
+  🏆 <span id="floatingScore">0</span>/100
+</div>
+
+<button class="dictionary-btn" onclick="openDictionary()">
+  📖 EN–AR Dictionary
+</button>
+
+<div class="overlay" id="dictionaryOverlay">
+  <div class="dictionary" role="dialog" aria-modal="true"
+       aria-label="English Arabic mini dictionary">
+
+    <div class="dictionary-header">
+      <h2>📖 Mini Dictionary</h2>
+      <button class="close-btn" onclick="closeDictionary()"
+              aria-label="Close dictionary">×</button>
+    </div>
+
+    <p class="mini">
+      Search for useful words about personality, school life,
+      hobbies and future plans.
+    </p>
+
+    <input class="dict-search" id="dictSearch"
+           placeholder="Search in English or Arabic...">
+
+    <div id="dictionaryList"></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+/* =====================================
+   CONFIGURATION
+===================================== */
+
+const STORAGE_KEY = "ms4_s2_writing_lesson3_v1";
+
+const MAX_POINTS = {
+  qualities: 6,
+  identity: 6,
+  vocabulary: 12,
+  ideas: 10,
+  grammar: 12,
+  builder: 8,
+  sentences: 8,
+  connectors: 10,
+  order: 8,
+  plan: 10,
+  writing: 10
+};
+
+const scores = {};
+
+Object.keys(MAX_POINTS).forEach(key => {
+  scores[key] = 0;
+});
+
+const $ = id => document.getElementById(id);
+
+function wordCount(text){
+  const clean = text.trim();
+  return clean ? clean.split(/\s+/).length : 0;
+}
+
+function normalize(text){
+  return text.toLowerCase()
+    .replace(/[.,!?;:]/g,"")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function feedback(id,message,type="info"){
+  const el = $(id);
+  el.textContent = message;
+  el.className = "feedback show " + type;
+}
+
+function award(key,points){
+  scores[key] = Math.max(
+    0,
+    Math.min(MAX_POINTS[key],points)
+  );
+
+  updateScore();
+  saveProgress();
+}
+
+function updateScore(){
+  const total = Object.values(scores)
+    .reduce((sum,value) => sum + value,0);
+
+  $("topScore").textContent = total;
+  $("floatingScore").textContent = total;
+  $("finalScore").textContent = total;
+  $("lessonProgress").style.width = total + "%";
+}
+
+/* =====================================
+   STEP 1 — PERSONALITY
+===================================== */
+
+document.querySelectorAll(".quality").forEach(button => {
+  button.addEventListener("click",()=>{
+    button.classList.toggle("selected");
+    button.setAttribute(
+      "aria-pressed",
+      button.classList.contains("selected")
+    );
+    saveProgress();
+  });
+});
+
+function checkQualities(){
+  const selected = [...document.querySelectorAll(".quality.selected")];
+
+  if(selected.length !== 4){
+    feedback(
+      "qualitiesFeedback",
+      "Select exactly four personality traits before checking.",
+      "try"
+    );
+    return;
+  }
+
+  const correct = selected.filter(
+    button => button.dataset.good === "true"
+  ).length;
+
+  const points = Math.round(correct * 6 / 4);
+
+  award("qualities",points);
+
+  if(correct === 4){
+    feedback(
+      "qualitiesFeedback",
+      "✓ Excellent! Kind, helpful, brave and friendly are positive qualities. +6 points",
+      "good"
+    );
+  }else{
+    feedback(
+      "qualitiesFeedback",
+      `You selected ${correct}/4 positive qualities. Try replacing negative traits.`,
+      "try"
+    );
+  }
+}
+
+function clearQualities(){
+  document.querySelectorAll(".quality").forEach(button=>{
+    button.classList.remove("selected");
+    button.setAttribute("aria-pressed","false");
+  });
+
+  $("qualitiesFeedback").className = "feedback";
+  saveProgress();
+}
+
+function checkIdentity(){
+  const ids = ["myName","myAge","myCity","mySchool"];
+
+  const complete = ids.filter(
+    id => $(id).value.trim().length >= 2
+  ).length;
+
+  const points = Math.round(complete * 6 / 4);
+
+  award("identity",points);
+
+  feedback(
+    "identityFeedback",
+    complete === 4
+      ? "✓ Your identity card is complete! You are ready to introduce yourself."
+      : `You completed ${complete}/4 fields. Add the missing information.`,
+    complete === 4 ? "good" : "try"
+  );
+}
+
+/* =====================================
+   MULTIPLE CHOICE CHECKING
+===================================== */
+
+function checkSelects(config){
+  let correct = 0;
+  let answered = 0;
+
+  config.questions.forEach(([id,answer])=>{
+    const element = $(id);
+    const value = element.value;
+
+    if(value) answered++;
+
+    if(value === answer){
+      correct++;
+      element.style.borderColor = "#25885c";
+    }else{
+      element.style.borderColor = value
+        ? "#c94d63"
+        : "#ead2de";
+    }
+  });
+
+  const points = Math.round(
+    correct * MAX_POINTS[config.key] /
+    config.questions.length
+  );
+
+  award(config.key,points);
+
+  const perfect = correct === config.questions.length;
+
+  feedback(
+    config.feedbackId,
+    perfect
+      ? `✓ Excellent! ${correct}/${config.questions.length} correct.`
+      : `${correct}/${config.questions.length} correct. Review the highlighted answers and try again.`,
+    perfect ? "good" : "try"
+  );
+}
+
+function checkVocabulary(){
+  checkSelects({
+    key:"vocabulary",
+    feedbackId:"vocabFeedback",
+    questions:[
+      ["v1","helpful"],
+      ["v2","hobby"],
+      ["v3","ambition"],
+      ["v4","hardworking"],
+      ["v5","favourite"]
+    ]
+  });
+}
+
+/* =====================================
+   STEP 3 — IDEA BANK
+===================================== */
+
+function checkIdeas(){
+  const ids = [
+    "ideaPersonality",
+    "ideaSubjects",
+    "ideaHobbies",
+    "ideaExperience",
+    "ideaDream",
+    "ideaPlan"
+  ];
+
+  const complete = ids.filter(
+    id => wordCount($(id).value) >= 2
+  ).length;
+
+  award("ideas",Math.round(complete * 10 / 6));
+
+  feedback(
+    "ideasFeedback",
+    complete === 6
+      ? "✓ Wonderful! Your idea bank is complete. These notes will help you write your profile."
+      : `You completed ${complete}/6 ideas. Write at least two words for each idea.`,
+    complete === 6 ? "good" : "try"
+  );
+}
+
+/* =====================================
+   STEP 4 — GRAMMAR
+===================================== */
+
+function checkGrammar(){
+  checkSelects({
+    key:"grammar",
+    feedbackId:"grammarFeedback",
+    questions:[
+      ["g1","study"],
+      ["g2","enjoyed"],
+      ["g3","will become"],
+      ["g4","reading"],
+      ["g5","was doing"],
+      ["g6","was"]
+    ]
+  });
+}
+
+/* =====================================
+   STEP 5 — SENTENCE BUILDER
+===================================== */
+
+const builderWords = [
+  "I","enjoy","reading","books",
+  "in","my","free","time."
+];
+
+let chosenWords = [];
+
+function renderBuilder(){
+  const bank = $("builderWords");
+  bank.innerHTML = "";
+
+  builderWords.forEach((word,index)=>{
+    if(chosenWords.includes(index)) return;
+
+    const button = document.createElement("button");
+    button.className = "chip";
+    button.textContent = word;
+
+    button.addEventListener("click",()=>{
+      chosenWords.push(index);
+      renderBuilder();
+      saveProgress();
+    });
+
+    bank.appendChild(button);
+  });
+
+  const output = $("builderOutput");
+
+  if(!chosenWords.length){
+    output.innerHTML =
+      "<span>Your sentence will appear here...</span>";
+    return;
+  }
+
+  output.textContent = chosenWords
+    .map(index=>builderWords[index])
+    .join(" ");
+}
+
+function checkBuilder(){
+  const sentence = chosenWords
+    .map(index=>builderWords[index])
+    .join(" ");
+
+  const correct =
+    normalize(sentence) ===
+    normalize("I enjoy reading books in my free time.");
+
+  award("builder",correct ? 8 : 0);
+
+  feedback(
+    "builderFeedback",
+    correct
+      ? "✓ Perfect! I enjoy reading books in my free time."
+      : "Not quite. Begin with 'I enjoy' and think about the correct word order.",
+    correct ? "good" : "try"
+  );
+}
+
+function resetBuilder(){
+  chosenWords = [];
+  renderBuilder();
+  $("builderFeedback").className = "feedback";
+  saveProgress();
+}
+
+function checkSentences(){
+  const ids = ["s1","s2","s3"];
+
+  const complete = ids.filter(
+    id => wordCount($(id).value) >= 8
+  ).length;
+
+  award(
+    "sentences",
+    Math.round(complete * 8 / 3)
+  );
+
+  feedback(
+    "sentencesFeedback",
+    complete === 3
+      ? "✓ Well done! All three sentences have been expanded. Read them again to check grammar and punctuation."
+      : `${complete}/3 sentences contain at least eight words. Add more meaningful details.`,
+    complete === 3 ? "good" : "try"
+  );
+}
+
+/* =====================================
+   STEP 6 — CONNECTORS
+===================================== */
+
+function checkConnectors(){
+  checkSelects({
+    key:"connectors",
+    feedbackId:"connectorsFeedback",
+    questions:[
+      ["c1","but"],
+      ["c2","because"],
+      ["c3","In addition"],
+      ["c4","In the future"],
+      ["c5","when"]
+    ]
+  });
+}
+
+/* =====================================
+   STEP 7 — ORDERING
+===================================== */
+
+const orderSentences = [
+  {
+    id:3,
+    text:"In my free time, I enjoy reading and playing football."
+  },
+  {
+    id:5,
+    text:"In the future, I hope to become a successful doctor."
+  },
+  {
+    id:1,
+    text:"My name is Amine, and I am fourteen years old."
+  },
+  {
+    id:4,
+    text:"Last year, I participated in a school competition."
+  },
+  {
+    id:2,
+    text:"I am a friendly pupil, and my favourite subject is English."
+  }
+];
+
+const initialOrder = orderSentences.map(item=>item.id);
+
+let currentOrder = [...initialOrder];
+
+function renderOrder(){
+  const list = $("orderList");
+  list.innerHTML = "";
+
+  currentOrder.forEach((id,index)=>{
+    const data = orderSentences.find(item=>item.id===id);
+
+    const row = document.createElement("div");
+    row.className = "order-item";
+
+    const number = document.createElement("div");
+    number.className = "order-number";
+    number.textContent = index+1;
+
+    const text = document.createElement("span");
+    text.textContent = data.text;
+
+    const up = document.createElement("button");
+    up.textContent = "▲";
+    up.setAttribute("aria-label","Move sentence up");
+    up.disabled = index===0;
+    up.addEventListener("click",()=>moveOrder(index,-1));
+
+    const down = document.createElement("button");
+    down.textContent = "▼";
+    down.setAttribute("aria-label","Move sentence down");
+    down.disabled = index===currentOrder.length-1;
+    down.addEventListener("click",()=>moveOrder(index,1));
+
+    row.append(number,text,up,down);
+    list.appendChild(row);
+  });
+}
+
+function moveOrder(index,direction){
+  const next = index+direction;
+
+  if(next<0 || next>=currentOrder.length) return;
+
+  [currentOrder[index],currentOrder[next]] =
+    [currentOrder[next],currentOrder[index]];
+
+  renderOrder();
+  $("orderFeedback").className = "feedback";
+  saveProgress();
+}
+
+function checkOrder(){
+  const correct = currentOrder.filter(
+    (id,index)=>id===index+1
+  ).length;
+
+  award("order",Math.round(correct*8/5));
+
+  feedback(
+    "orderFeedback",
+    correct===5
+      ? "✓ Excellent organisation! Identity → personality and school → hobbies → past experience → future ambition."
+      : `${correct}/5 sentences are in the correct positions. Think about the logical structure of a personal profile.`,
+    correct===5 ? "good" : "try"
+  );
+}
+
+function resetOrder(){
+  currentOrder = [...initialOrder];
+  renderOrder();
+  $("orderFeedback").className = "feedback";
+  saveProgress();
+}
+
+/* =====================================
+   STEP 8 — WRITING PLAN
+===================================== */
+
+function checkPlan(){
+  const intro = wordCount($("planIntro").value);
+  const body = wordCount($("planBody").value);
+  const end = wordCount($("planEnd").value);
+
+  const completed =
+    Number(intro>=15) +
+    Number(body>=25) +
+    Number(end>=15);
+
+  award("plan",Math.round(completed*10/3));
+
+  feedback(
+    "planFeedback",
+    completed===3
+      ? "✓ Your three-part writing plan is ready! Read it carefully before moving to the final challenge."
+      : "Develop your plan further. Aim for at least 15 words in the introduction, 25 in the middle and 15 in the conclusion.",
+    completed===3 ? "good" : "try"
+  );
+}
+
+function transferPlan(){
+  const parts = [
+    $("planIntro").value.trim(),
+    $("planBody").value.trim(),
+    $("planEnd").value.trim()
+  ].filter(Boolean);
+
+  if(!parts.length){
+    feedback(
+      "planFeedback",
+      "Write something in your plan before transferring it.",
+      "try"
+    );
+    return;
+  }
+
+  const final = $("finalWriting");
+
+  if(final.value.trim()){
+    const confirmed = confirm(
+      "Replace your current final writing with your plan?"
+    );
+
+    if(!confirmed) return;
+  }
+
+  final.value = parts.join("\n\n");
+
+  updateWordCount();
+  saveProgress();
+
+  feedback(
+    "planFeedback",
+    "✓ Your plan has been transferred to the final writing box.",
+    "good"
+  );
+
+  $("step9").scrollIntoView({behavior:"smooth"});
+}
+
+/* =====================================
+   STEP 9 — FINAL WRITING
+===================================== */
+
+function updateWordCount(){
+  const count = wordCount($("finalWriting").value);
+
+  $("wordCount").textContent = count;
+
+  $("writingMeter").style.width =
+    Math.min(count/100*100,100)+"%";
+
+  $("writingMeter").style.background =
+    count>=100 && count<=130
+      ? "linear-gradient(90deg,#25885c,#68c991)"
+      : "linear-gradient(90deg,#c4427b,#e9b85b)";
+}
+
+function evaluateWriting(){
+  const text = $("finalWriting").value.trim();
+  const lower = text.toLowerCase();
+  const count = wordCount(text);
+
+  if(count<40){
+    award("writing",0);
+
+    feedback(
+      "writingFeedback",
+      "Your profile is still too short. Add details about your personality, school life, hobbies, experiences and ambitions.",
+      "try"
+    );
+    return;
+  }
+
+  let points = 0;
+  const suggestions = [];
+
+  if(count>=100 && count<=130){
+    points+=3;
+  }else if(count>=80 && count<=150){
+    points+=1;
+    suggestions.push("Aim for 100–130 words.");
+  }else{
+    suggestions.push("Adjust your length to 100–130 words.");
+  }
+
+  if(/\b(my name is|i am|i'm)\b/i.test(text)){
+    points++;
+  }else{
+    suggestions.push("Introduce yourself clearly.");
+  }
+
+  if(/\b(kind|friendly|honest|shy|helpful|hardworking|brave|ambitious|patient|creative)\b/i.test(text)){
+    points++;
+  }else{
+    suggestions.push("Describe your personality.");
+  }
+
+  if(/\b(school|subject|teacher|class|pupil|student|study)\b/i.test(text)){
+    points++;
+  }else{
+    suggestions.push("Mention your school life.");
+  }
+
+  if(/\b(enjoy|like|love|hobby|hobbies|free time|interested in)\b/i.test(text)){
+    points++;
+  }else{
+    suggestions.push("Mention your hobbies or preferences.");
+  }
+
+  if(/\b(last year|last summer|yesterday|when i was|ago|once)\b/i.test(text)){
+    points++;
+  }else{
+    suggestions.push("Include a past experience.");
+  }
+
+  if(/\b(will|going to|hope to|want to become|dream of|in the future)\b/i.test(text)){
+    points++;
+  }else{
+    suggestions.push("Explain your future plans.");
+  }
+
+  if(/\b(because|however|but|also|in addition|moreover|first|finally|when)\b/i.test(text)){
+    points++;
+  }else{
+    suggestions.push("Use connectors to link your ideas.");
+  }
+
+  award("writing",points);
+
+  const intro =
+    points>=8
+      ? "🌟 Very good draft! "
+      : "Good effort! ";
+
+  const advice = suggestions.length
+    ? suggestions.slice(0,3).join(" ")
+    : "Your profile includes the main expected elements.";
+
+  feedback(
+    "writingFeedback",
+    `${intro}Writing check: ${points}/10. ${advice} Remember: this is an automatic guidance check, not a full grammar or fact check.`,
+    points>=8 ? "good" : "info"
+  );
+}
+
+async function copyWriting(){
+  const text = $("finalWriting").value.trim();
+
+  if(!text){
+    feedback(
+      "writingFeedback",
+      "Write your profile before copying it.",
+      "try"
+    );
+    return;
+  }
+
+  try{
+    await navigator.clipboard.writeText(text);
+
+    feedback(
+      "writingFeedback",
+      "✓ Your writing has been copied.",
+      "good"
+    );
+  }catch(error){
+    $("finalWriting").focus();
+    $("finalWriting").select();
+
+    feedback(
+      "writingFeedback",
+      "Select Copy from your browser menu. Your writing is highlighted.",
+      "info"
+    );
+  }
+}
+
+function downloadWriting(){
+  const text = $("finalWriting").value.trim();
+
+  if(!text){
+    feedback(
+      "writingFeedback",
+      "Write your profile before downloading it.",
+      "try"
+    );
+    return;
+  }
+
+  const blob = new Blob(
+    ["ALL ABOUT ME — MY PERSONAL PROFILE\n\n"+text],
+    {type:"text/plain;charset=utf-8"}
+  );
+
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "All-About-Me-My-Profile.txt";
+
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+/* =====================================
+   SELF CHECK
+===================================== */
+
+function updateSelfScore(){
+  const checks = document.querySelectorAll(".final-check");
+
+  const total = [...checks].filter(
+    item=>item.checked
+  ).length;
+
+  $("selfScore").textContent = total;
+  saveProgress();
+}
+
+document.querySelectorAll(".final-check").forEach(check=>{
+  check.addEventListener("change",updateSelfScore);
+});
+
+/* =====================================
+   ENGLISH–ARABIC DICTIONARY
+===================================== */
+
+const dictionary = [
+  ["personal profile","ملف شخصي"],
+  ["personality","الشخصية"],
+  ["identity","الهوية"],
+  ["kind","لطيف"],
+  ["friendly","ودود"],
+  ["helpful","متعاون"],
+  ["honest","صادق"],
+  ["shy","خجول"],
+  ["brave","شجاع"],
+  ["hardworking","مجتهد"],
+  ["ambitious","طموح"],
+  ["creative","مبدع"],
+  ["patient","صبور"],
+  ["rude","وقح"],
+  ["selfish","أناني"],
+  ["lazy","كسول"],
+  ["hometown","مسقط الرأس"],
+  ["school life","الحياة المدرسية"],
+  ["subject","مادة دراسية"],
+  ["classmate","زميل في القسم"],
+  ["favourite","مفضل"],
+  ["hobby","هواية"],
+  ["free time","وقت الفراغ"],
+  ["reading","القراءة"],
+  ["drawing","الرسم"],
+  ["swimming","السباحة"],
+  ["preference","تفضيل"],
+  ["enjoy","يستمتع"],
+  ["interested in","مهتم بـ"],
+  ["experience","تجربة"],
+  ["memorable","لا يُنسى"],
+  ["memory","ذكرى"],
+  ["competition","مسابقة"],
+  ["participate","يشارك"],
+  ["achievement","إنجاز"],
+  ["success","نجاح"],
+  ["succeed","ينجح"],
+  ["ambition","طموح"],
+  ["dream","حلم"],
+  ["future","المستقبل"],
+  ["career","مهنة"],
+  ["goal","هدف"],
+  ["hope","أمل / يأمل"],
+  ["plan","خطة"],
+  ["achieve","يحقق"],
+  ["improve","يحسن"],
+  ["develop","يطور"],
+  ["because","لأن"],
+  ["however","لكن / مع ذلك"],
+  ["in addition","بالإضافة إلى ذلك"],
+  ["although","رغم أن"],
+  ["finally","أخيرًا"],
+  ["introduction","مقدمة"],
+  ["conclusion","خاتمة"],
+  ["paragraph","فقرة"],
+  ["sentence","جملة"],
+  ["connector","أداة ربط"],
+  ["punctuation","علامات الترقيم"],
+  ["organise","ينظم"],
+  ["coherent","مترابط"],
+  ["confident","واثق من نفسه"],
+  ["proud","فخور"],
+  ["responsible","مسؤول"]
+];
+
+function renderDictionary(query=""){
+  const list = $("dictionaryList");
+  list.innerHTML = "";
+
+  const q = query.toLowerCase().trim();
+
+  const filtered = dictionary.filter(
+    ([english,arabic])=>
+      english.toLowerCase().includes(q) ||
+      arabic.includes(q)
+  );
+
+  if(!filtered.length){
+    list.textContent = "No matching words found.";
+    return;
+  }
+
+  filtered.forEach(([english,arabic])=>{
+    const row = document.createElement("div");
+    row.className = "dict-item";
+
+    const en = document.createElement("strong");
+    en.textContent = english;
+
+    const ar = document.createElement("span");
+    ar.textContent = arabic;
+    ar.lang = "ar";
+
+    row.append(en,ar);
+    list.appendChild(row);
+  });
+}
+
+function openDictionary(){
+  $("dictionaryOverlay").classList.add("open");
+  $("dictSearch").focus();
+}
+
+function closeDictionary(){
+  $("dictionaryOverlay").classList.remove("open");
+}
+
+$("dictSearch").addEventListener("input",event=>{
+  renderDictionary(event.target.value);
+});
+
+$("dictionaryOverlay").addEventListener("click",event=>{
+  if(event.target===$("dictionaryOverlay")){
+    closeDictionary();
+  }
+});
+
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape") closeDictionary();
+});
+
+/* =====================================
+   AUTO SAVE
+===================================== */
+
+function saveProgress(){
+  const fields = {};
+
+  document.querySelectorAll(
+    "input:not([type='checkbox']),textarea,select"
+  ).forEach(element=>{
+    if(element.id){
+      fields[element.id] = element.value;
+    }
+  });
+
+  const data = {
+    fields,
+    scores,
+    qualities:[
+      ...document.querySelectorAll(".quality.selected")
+    ].map(button=>
+      [...document.querySelectorAll(".quality")].indexOf(button)
+    ),
+    chosenWords,
+    currentOrder,
+    checks:[
+      ...document.querySelectorAll(".final-check")
+    ].map(item=>item.checked)
+  };
+
+  try{
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(data)
+    );
+  }catch(error){
+    console.warn("Progress could not be saved.",error);
+  }
+}
+
+function restoreProgress(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return;
+
+    const data = JSON.parse(raw);
+
+    if(data.fields){
+      Object.entries(data.fields).forEach(([id,value])=>{
+        const element = $(id);
+        if(element) element.value = value;
+      });
+    }
+
+    if(data.scores){
+      Object.keys(MAX_POINTS).forEach(key=>{
+        const value = Number(data.scores[key])||0;
+
+        scores[key] = Math.max(
+          0,
+          Math.min(MAX_POINTS[key],value)
+        );
+      });
+    }
+
+    if(Array.isArray(data.qualities)){
+      const buttons = [
+        ...document.querySelectorAll(".quality")
+      ];
+
+      data.qualities.forEach(index=>{
+        if(buttons[index]){
+          buttons[index].classList.add("selected");
+          buttons[index].setAttribute("aria-pressed","true");
+        }
+      });
+    }
+
+    if(Array.isArray(data.chosenWords)){
+      chosenWords = data.chosenWords.filter(
+        index=>Number.isInteger(index) &&
+        index>=0 &&
+        index<builderWords.length
+      );
+    }
+
+    if(
+      Array.isArray(data.currentOrder) &&
+      data.currentOrder.length===5 &&
+      new Set(data.currentOrder).size===5 &&
+      data.currentOrder.every(id=>id>=1 && id<=5)
+    ){
+      currentOrder = data.currentOrder;
+    }
+
+    if(Array.isArray(data.checks)){
+      document.querySelectorAll(".final-check")
+        .forEach((item,index)=>{
+          item.checked = Boolean(data.checks[index]);
+        });
+    }
+
+  }catch(error){
+    console.warn("Saved progress could not be restored.",error);
+  }
+}
+
+function resetLesson(){
+  if(!confirm(
+    "Start again? Your saved answers and score will be cleared."
+  )){
+    return;
+  }
+
+  localStorage.removeItem(STORAGE_KEY);
+  location.reload();
+}
+
+document.addEventListener("input",event=>{
+  if(event.target.id==="finalWriting"){
+    updateWordCount();
+  }
+
+  if(
+    event.target.matches("input,textarea,select")
+  ){
+    saveProgress();
+  }
+});
+
+document.addEventListener("change",event=>{
+  if(event.target.matches("input,textarea,select")){
+    saveProgress();
+  }
+});
+
+/* =====================================
+   ACTIVE STEP NAVIGATION
+===================================== */
+
+const sections = [...document.querySelectorAll(".step")];
+const navLinks = [...document.querySelectorAll(".step-nav a")];
+
+let scrollScheduled = false;
+
+function updateActiveStep(){
+  let activeId = sections[0].id;
+
+  sections.forEach(section=>{
+    if(section.getBoundingClientRect().top<=230){
+      activeId = section.id;
+    }
+  });
+
+  navLinks.forEach(link=>{
+    const active = link.getAttribute("href")==="#"+activeId;
+
+    link.classList.toggle("active",active);
+
+    if(active){
+      link.setAttribute("aria-current","step");
+    }else{
+      link.removeAttribute("aria-current");
+    }
+  });
+
+  scrollScheduled = false;
+}
+
+window.addEventListener("scroll",()=>{
+  if(scrollScheduled) return;
+
+  scrollScheduled = true;
+  requestAnimationFrame(updateActiveStep);
+},{passive:true});
+
+/* =====================================
+   INITIALISE
+===================================== */
+
+restoreProgress();
+renderBuilder();
+renderOrder();
+renderDictionary();
+updateWordCount();
+updateSelfScore();
+updateScore();
+updateActiveStep();
+
+</script>
+
+</body>
+</html>

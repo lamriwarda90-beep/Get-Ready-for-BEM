@@ -1,0 +1,4694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#b93668">
+
+<title>MS4 S2 Writing Lesson 4 | The Life of Kateb Yacine</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   DESIGN SYSTEM
+========================================= */
+
+:root{
+  --rose:#e65c91;
+  --rose-dark:#b93668;
+  --rose-light:#fff0f6;
+  --pink:#ffd8e8;
+
+  --plum:#4d315f;
+  --purple:#765092;
+  --lavender:#f1eaff;
+
+  --gold:#efbd59;
+  --gold-light:#fff5d9;
+
+  --green:#23885d;
+  --green-light:#e8f8ef;
+
+  --red:#c64d59;
+  --red-light:#fff0f1;
+
+  --blue:#3478b9;
+  --blue-light:#ebf5ff;
+
+  --ink:#332b39;
+  --muted:#796d7f;
+  --line:#efdde7;
+
+  --white:#ffffff;
+  --cream:#fffaf7;
+
+  --shadow:0 16px 48px rgba(91,43,76,.09);
+  --shadow-lg:0 25px 65px rgba(91,43,76,.15);
+
+  --radius:24px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:115px;
+}
+
+body{
+  font-family:"Nunito",Arial,sans-serif;
+  background:
+    radial-gradient(circle at 4% 8%,#ffe1ec 0,transparent 25%),
+    radial-gradient(circle at 94% 19%,#fff0c7 0,transparent 22%),
+    radial-gradient(circle at 50% 70%,#f6eaff 0,transparent 32%),
+    #fff9fc;
+  color:var(--ink);
+  line-height:1.7;
+  min-height:100vh;
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+a{
+  color:inherit;
+}
+
+h1,h2,h3,h4{
+  font-family:"Baloo 2",sans-serif;
+  line-height:1.18;
+}
+
+h2{
+  font-size:clamp(1.7rem,3vw,2.3rem);
+}
+
+p{
+  margin-bottom:10px;
+}
+
+::selection{
+  background:#ffd3e5;
+  color:#562b45;
+}
+
+/* =========================================
+   TOP NAVIGATION
+========================================= */
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 5px 25px rgba(71,31,60,.05);
+}
+
+.topbar-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:11px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand-icon{
+  width:41px;
+  height:41px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--rose),var(--purple));
+  color:white;
+  font-size:1.3rem;
+}
+
+.brand-name{
+  font-family:"Baloo 2";
+  font-weight:800;
+  color:var(--plum);
+  font-size:1.15rem;
+  line-height:1.1;
+}
+
+.brand-sub{
+  color:var(--muted);
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.top-actions{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  flex-wrap:wrap;
+}
+
+.top-btn{
+  border:1px solid #ecd3df;
+  background:white;
+  color:var(--plum);
+  text-decoration:none;
+  padding:9px 13px;
+  border-radius:13px;
+  font-size:.8rem;
+  font-weight:900;
+  transition:.2s;
+}
+
+.top-btn:hover{
+  background:var(--rose-light);
+  transform:translateY(-2px);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+  max-width:1200px;
+  margin:30px auto 22px;
+  padding:0 20px;
+}
+
+.hero-card{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  background:
+    radial-gradient(circle at 20% 15%,rgba(255,255,255,.12),transparent 30%),
+    linear-gradient(125deg,#5b345f,#9d3e76 55%,#e17b9e);
+  border-radius:35px;
+  overflow:hidden;
+  box-shadow:var(--shadow-lg);
+  color:white;
+  min-height:390px;
+  position:relative;
+}
+
+.hero-card::before{
+  content:"✦";
+  position:absolute;
+  top:22px;
+  left:52%;
+  font-size:2rem;
+  color:rgba(255,255,255,.3);
+}
+
+.hero-content{
+  padding:55px 48px;
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+.hero-label{
+  display:inline-block;
+  padding:7px 14px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:99px;
+  background:rgba(255,255,255,.12);
+  color:#fff1bd;
+  font-family:"Space Mono";
+  font-size:.7rem;
+  letter-spacing:.06em;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:clamp(2.5rem,5.4vw,4.6rem);
+  font-weight:800;
+  line-height:1.02;
+  margin-bottom:18px;
+}
+
+.hero h1 span{
+  color:#ffe3a4;
+}
+
+.hero-description{
+  max-width:550px;
+  font-size:1.04rem;
+  color:#fcebf4;
+  margin-bottom:23px;
+}
+
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.hero-tag{
+  padding:7px 12px;
+  border-radius:99px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.18);
+  font-size:.75rem;
+  font-weight:900;
+}
+
+.hero-visual{
+  min-height:350px;
+  position:relative;
+  display:grid;
+  place-items:center;
+  padding:30px;
+  background:
+    radial-gradient(circle at 55% 48%,rgba(255,255,255,.28),transparent 48%),
+    linear-gradient(135deg,rgba(255,225,181,.15),rgba(255,255,255,.05));
+}
+
+.portrait-frame{
+  width:min(265px,82%);
+  height:315px;
+  border:9px solid white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 22px 48px rgba(38,17,37,.3);
+  transform:rotate(3deg);
+  background:#f9e5ee;
+}
+
+.portrait-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.portrait-caption{
+  position:absolute;
+  bottom:20px;
+  left:10%;
+  background:#fff;
+  color:var(--plum);
+  border-radius:13px;
+  padding:8px 15px;
+  font-weight:900;
+  box-shadow:var(--shadow);
+  transform:rotate(-4deg);
+}
+
+.sparkle{
+  position:absolute;
+  font-size:2.1rem;
+  color:#ffe4a0;
+}
+
+.sparkle.one{
+  top:34px;
+  right:35px;
+}
+
+.sparkle.two{
+  bottom:50px;
+  right:26px;
+  font-size:1.3rem;
+}
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard{
+  max-width:1200px;
+  margin:0 auto 23px;
+  padding:0 20px;
+}
+
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:1.3fr .7fr .7fr;
+  gap:14px;
+}
+
+.dashboard-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:19px 22px;
+  box-shadow:var(--shadow);
+}
+
+.dashboard-label{
+  font-size:.73rem;
+  color:var(--muted);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  margin-bottom:6px;
+}
+
+.dashboard-value{
+  font-family:"Baloo 2";
+  color:var(--plum);
+  font-size:2rem;
+  font-weight:800;
+  line-height:1;
+}
+
+.dashboard-value span{
+  color:var(--rose-dark);
+}
+
+.progress-track{
+  width:100%;
+  height:12px;
+  background:#f6e7ef;
+  border-radius:99px;
+  overflow:hidden;
+  margin:13px 0 6px;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,var(--rose),var(--gold));
+  border-radius:99px;
+  transition:width .4s;
+}
+
+.dashboard-note{
+  color:var(--muted);
+  font-size:.78rem;
+}
+
+/* =========================================
+   STEP NAVIGATION
+========================================= */
+
+.step-navigation{
+  max-width:1200px;
+  margin:0 auto 28px;
+  padding:0 20px;
+}
+
+.nav-shell{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:var(--shadow);
+  padding:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+.step-link{
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  border:1px solid #efd7e3;
+  display:grid;
+  place-items:center;
+  text-decoration:none;
+  color:var(--rose-dark);
+  background:#fff8fb;
+  font-family:"Space Mono";
+  font-weight:700;
+  font-size:.8rem;
+  transition:.2s;
+  position:relative;
+}
+
+.step-link:hover,
+.step-link.active{
+  color:white;
+  background:var(--rose-dark);
+  border-color:var(--rose-dark);
+  transform:translateY(-2px);
+}
+
+.step-link.done::after{
+  content:"✓";
+  position:absolute;
+  right:-5px;
+  top:-7px;
+  width:17px;
+  height:17px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:var(--green);
+  color:white;
+  font:900 10px "Nunito";
+}
+
+.nav-caption{
+  margin-right:auto;
+  font-weight:900;
+  color:var(--plum);
+  font-size:.85rem;
+  padding:0 12px;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+main{
+  max-width:1040px;
+  margin:auto;
+  padding:0 20px 60px;
+}
+
+.step{
+  margin:32px 0;
+  scroll-margin-top:100px;
+}
+
+.step-card{
+  background:rgba(255,255,255,.97);
+  border:1px solid #f0e0e8;
+  border-radius:28px;
+  padding:34px;
+  box-shadow:var(--shadow);
+}
+
+.step-heading{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:19px;
+}
+
+.step-icon{
+  flex:0 0 56px;
+  height:56px;
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  background:var(--rose-light);
+  font-size:1.65rem;
+}
+
+.step-kicker{
+  font-family:"Space Mono";
+  font-size:.68rem;
+  color:var(--rose-dark);
+  letter-spacing:.09em;
+  font-weight:700;
+  margin-bottom:5px;
+}
+
+.step-heading h2{
+  color:var(--plum);
+  margin-bottom:6px;
+}
+
+.step-description{
+  color:var(--muted);
+  font-size:.94rem;
+}
+
+.task{
+  margin:18px 0;
+  background:#fffafd;
+  border:1px solid var(--line);
+  border-radius:19px;
+  padding:22px;
+}
+
+.task-title{
+  font-size:1.3rem;
+  color:var(--plum);
+  margin-bottom:7px;
+}
+
+.instruction{
+  font-weight:800;
+  margin-bottom:15px;
+}
+
+.support-note{
+  background:var(--blue-light);
+  border-left:4px solid var(--blue);
+  border-radius:12px;
+  padding:13px 15px;
+  margin:14px 0;
+  color:#325777;
+  font-size:.9rem;
+}
+
+.support-note strong{
+  color:#215a89;
+}
+
+.hint{
+  background:var(--gold-light);
+  border:1px solid #f6dfa5;
+  border-radius:13px;
+  padding:12px 15px;
+  margin:13px 0;
+  font-size:.89rem;
+  color:#805d24;
+}
+
+.hint strong{
+  color:#8a6018;
+}
+
+.small-text{
+  color:var(--muted);
+  font-size:.82rem;
+}
+
+.btn-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:15px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  border:0;
+  border-radius:12px;
+  padding:11px 17px;
+  font-weight:900;
+  font-size:.87rem;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  color:white;
+  background:linear-gradient(135deg,var(--rose),var(--rose-dark));
+  box-shadow:0 7px 18px rgba(185,54,104,.16);
+}
+
+.btn-secondary{
+  color:var(--rose-dark);
+  background:white;
+  border:1px solid #e9c9d8;
+}
+
+.btn-purple{
+  color:white;
+  background:var(--purple);
+}
+
+.btn-green{
+  color:white;
+  background:var(--green);
+}
+
+.btn-gold{
+  color:#60461c;
+  background:var(--gold);
+}
+
+.feedback{
+  display:none;
+  margin-top:14px;
+  padding:13px 16px;
+  border-radius:12px;
+  font-weight:800;
+  font-size:.9rem;
+}
+
+.feedback.show{
+  display:block;
+}
+
+.feedback.correct{
+  background:var(--green-light);
+  border:1px solid #c2ead2;
+  color:#206d49;
+}
+
+.feedback.wrong{
+  background:var(--red-light);
+  border:1px solid #f4cbd0;
+  color:#a43b48;
+}
+
+.feedback.info{
+  background:var(--blue-light);
+  border:1px solid #c9e1f9;
+  color:#295d8c;
+}
+
+.answer-reveal{
+  display:none;
+  background:#f4efff;
+  border:1px solid #ddd0f5;
+  border-radius:14px;
+  padding:16px;
+  margin-top:14px;
+  color:#584275;
+}
+
+.answer-reveal.show{
+  display:block;
+}
+
+/* =========================================
+   OPTIONS AND QUIZZES
+========================================= */
+
+.option-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.option{
+  border:2px solid #efdae4;
+  border-radius:15px;
+  padding:13px 15px;
+  background:white;
+  color:var(--ink);
+  font-weight:800;
+  text-align:left;
+  transition:.2s;
+  min-height:56px;
+}
+
+.option:hover{
+  border-color:var(--rose);
+  background:#fff5fa;
+}
+
+.option.selected{
+  border-color:var(--rose-dark);
+  background:#ffe5f0;
+  color:var(--rose-dark);
+}
+
+.option.correct-choice{
+  border-color:var(--green);
+  background:var(--green-light);
+  color:var(--green);
+}
+
+.option.wrong-choice{
+  border-color:var(--red);
+  background:var(--red-light);
+  color:var(--red);
+}
+
+.question{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px;
+  margin:12px 0;
+}
+
+.question-title{
+  font-weight:900;
+  margin-bottom:11px;
+}
+
+.question-number{
+  display:inline-grid;
+  place-items:center;
+  width:27px;
+  height:27px;
+  border-radius:9px;
+  background:var(--rose-light);
+  color:var(--rose-dark);
+  margin-right:6px;
+  font-size:.78rem;
+}
+
+/* =========================================
+   IMAGES AND FACT CARD
+========================================= */
+
+.visual-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.visual-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:17px;
+  overflow:hidden;
+}
+
+.visual-card img{
+  width:100%;
+  height:235px;
+  display:block;
+  object-fit:contain;
+  background:#fff3f8;
+}
+
+.visual-caption{
+  text-align:center;
+  padding:11px;
+  font-weight:900;
+  color:var(--plum);
+}
+
+.fact-card{
+  border:2px solid #f0d9a5;
+  border-radius:20px;
+  overflow:hidden;
+  background:#fffdf7;
+}
+
+.fact-header{
+  padding:20px;
+  background:linear-gradient(135deg,#fff1c9,#ffe4ad);
+}
+
+.fact-header h3{
+  color:#76541d;
+  font-size:1.6rem;
+}
+
+.fact-header p{
+  margin:0;
+  color:#816943;
+  font-size:.88rem;
+}
+
+.fact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.fact-item{
+  padding:14px 18px;
+  border-bottom:1px solid #f1e3c6;
+}
+
+.fact-item:nth-child(odd){
+  border-right:1px solid #f1e3c6;
+}
+
+.fact-label{
+  font-size:.71rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  font-family:"Space Mono";
+  color:#997438;
+  display:block;
+  margin-bottom:4px;
+}
+
+.fact-value{
+  font-weight:900;
+  color:#56432a;
+}
+
+/* =========================================
+   CHRONOLOGICAL ORDER
+========================================= */
+
+.order-list{
+  display:grid;
+  gap:9px;
+}
+
+.order-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:white;
+  border:1px solid #eed9e4;
+  border-radius:14px;
+  padding:12px;
+}
+
+.order-number{
+  flex:0 0 32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:var(--rose-light);
+  color:var(--rose-dark);
+  font-weight:900;
+}
+
+.order-text{
+  flex:1;
+  font-weight:800;
+}
+
+.order-year{
+  font-family:"Space Mono";
+  font-size:.74rem;
+  color:var(--purple);
+  background:var(--lavender);
+  border-radius:8px;
+  padding:5px 8px;
+}
+
+.order-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.order-buttons button{
+  border:0;
+  background:#f7e4ed;
+  color:var(--rose-dark);
+  border-radius:7px;
+  width:31px;
+  height:28px;
+  font-weight:900;
+}
+
+/* =========================================
+   SENTENCE BUILDER
+========================================= */
+
+.builder-output{
+  min-height:70px;
+  padding:15px;
+  border:2px dashed #dfb8cb;
+  background:white;
+  border-radius:14px;
+  margin-bottom:13px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:7px;
+}
+
+.builder-placeholder{
+  color:#aa92a1;
+  font-size:.85rem;
+  font-weight:800;
+}
+
+.word-bank{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.word-tile{
+  background:#fff;
+  border:1px solid #e7c9d8;
+  color:var(--plum);
+  padding:9px 13px;
+  border-radius:10px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.word-tile:hover{
+  background:#fff0f6;
+}
+
+.word-tile.used{
+  opacity:.4;
+  cursor:default;
+}
+
+.word-tile.in-output{
+  background:var(--lavender);
+  border-color:#d4c3f0;
+  color:var(--plum);
+}
+
+/* =========================================
+   INPUTS AND WRITING
+========================================= */
+
+.text-input,
+.write-box,
+.select-input{
+  width:100%;
+  border:2px solid #eed7e2;
+  border-radius:13px;
+  padding:12px 14px;
+  background:white;
+  color:var(--ink);
+  outline:none;
+  transition:.2s;
+}
+
+.text-input:focus,
+.write-box:focus,
+.select-input:focus{
+  border-color:var(--rose);
+  box-shadow:0 0 0 4px rgba(230,92,145,.09);
+}
+
+.write-box{
+  min-height:90px;
+  resize:vertical;
+  line-height:1.85;
+}
+
+.writing-label{
+  display:block;
+  color:var(--plum);
+  font-weight:900;
+  margin:13px 0 7px;
+}
+
+.sentence-frame{
+  border:1px solid #e3d7f0;
+  background:#f8f4ff;
+  border-radius:13px;
+  padding:13px 15px;
+  color:#61497b;
+  font-size:.93rem;
+  margin:10px 0;
+}
+
+.sentence-frame strong{
+  color:var(--purple);
+}
+
+.word-bank-panel{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:12px 0;
+}
+
+.word-chip{
+  border:1px solid #efd5e2;
+  border-radius:99px;
+  background:white;
+  color:var(--rose-dark);
+  padding:7px 12px;
+  font-size:.83rem;
+  font-weight:900;
+}
+
+.word-chip:hover{
+  background:var(--rose-light);
+}
+
+.writing-part{
+  margin:15px 0;
+  padding:17px;
+  border:1px solid var(--line);
+  background:white;
+  border-radius:16px;
+}
+
+.writing-part h4{
+  color:var(--plum);
+  font-size:1.16rem;
+  margin-bottom:5px;
+}
+
+.writing-part .write-box{
+  margin-top:9px;
+}
+
+.final-area{
+  min-height:330px;
+  font-size:1.02rem;
+  line-height:2;
+}
+
+.word-count-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:12px;
+  font-size:.82rem;
+  font-weight:900;
+  color:var(--muted);
+}
+
+.word-progress{
+  width:100%;
+  height:10px;
+  border-radius:99px;
+  background:#f2dfe9;
+  overflow:hidden;
+  margin:10px 0;
+}
+
+.word-progress span{
+  display:block;
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,var(--rose),var(--gold));
+  transition:.3s;
+}
+
+.model-paragraph{
+  background:#fff7e7;
+  border-left:4px solid var(--gold);
+  padding:18px;
+  border-radius:13px;
+  line-height:2;
+  margin-top:12px;
+}
+
+/* =========================================
+   GRAMMAR
+========================================= */
+
+.rule-card{
+  background:var(--lavender);
+  border:1px solid #e1d2f4;
+  border-radius:15px;
+  padding:17px;
+  margin:14px 0;
+}
+
+.rule-card h4{
+  color:var(--purple);
+  margin-bottom:7px;
+}
+
+.rule-card p{
+  margin:5px 0;
+}
+
+.rule-card em{
+  color:var(--rose-dark);
+  font-style:normal;
+  font-weight:900;
+}
+
+.grammar-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+/* =========================================
+   CHECKLIST
+========================================= */
+
+.checklist{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.check-item{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  border:1px solid var(--line);
+  background:white;
+  border-radius:13px;
+  padding:13px;
+  font-weight:800;
+  font-size:.87rem;
+}
+
+.check-item input{
+  accent-color:var(--rose-dark);
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+  margin-top:4px;
+}
+
+.final-card{
+  background:linear-gradient(140deg,#fff,#fff5fa 70%,#fff7df);
+  border:2px solid #f0cbdc;
+}
+
+.celebration{
+  text-align:center;
+  background:linear-gradient(135deg,#fff1c8,#ffe6ee);
+  border-radius:18px;
+  padding:23px;
+  margin-top:18px;
+}
+
+.celebration h3{
+  color:var(--plum);
+  font-size:1.6rem;
+}
+
+.score-badge{
+  font-family:"Baloo 2";
+  font-size:2.8rem;
+  font-weight:800;
+  color:var(--rose-dark);
+  line-height:1.2;
+}
+
+/* =========================================
+   DICTIONARY
+========================================= */
+
+.dictionary-trigger{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:900;
+  border:0;
+  border-radius:99px;
+  background:linear-gradient(135deg,var(--plum),var(--purple));
+  color:white;
+  padding:13px 19px;
+  font-weight:900;
+  box-shadow:0 12px 30px rgba(64,35,77,.25);
+}
+
+.dictionary-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(37,21,45,.6);
+  backdrop-filter:blur(5px);
+  z-index:2000;
+  padding:20px;
+  align-items:center;
+  justify-content:center;
+}
+
+.dictionary-overlay.open{
+  display:flex;
+}
+
+.dictionary-box{
+  width:min(580px,100%);
+  max-height:85vh;
+  overflow:auto;
+  background:white;
+  border-radius:25px;
+  padding:25px;
+  box-shadow:var(--shadow-lg);
+}
+
+.dictionary-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:14px;
+}
+
+.dictionary-header h2{
+  color:var(--plum);
+}
+
+.close-dict{
+  width:37px;
+  height:37px;
+  border:0;
+  border-radius:50%;
+  background:var(--rose-light);
+  color:var(--rose-dark);
+  font-size:1.35rem;
+}
+
+.dict-list{
+  margin-top:13px;
+}
+
+.dict-item{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  padding:11px;
+  border-bottom:1px solid var(--line);
+}
+
+.dict-en{
+  font-weight:900;
+  color:var(--plum);
+}
+
+.dict-ar{
+  direction:rtl;
+  text-align:right;
+  font-family:"Noto Naskh Arabic",serif;
+  color:#85556c;
+  font-size:1.07rem;
+}
+
+footer{
+  padding:30px 20px 90px;
+  text-align:center;
+  color:var(--muted);
+  font-size:.75rem;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:850px){
+
+  .hero-card{
+    grid-template-columns:1fr;
+  }
+
+  .hero-content{
+    padding:37px 30px;
+  }
+
+  .hero-visual{
+    min-height:310px;
+  }
+
+  .dashboard-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .dashboard-card:first-child{
+    grid-column:1/-1;
+  }
+
+  .nav-caption{
+    width:100%;
+    text-align:center;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .topbar-inner{
+    padding:10px 13px;
+  }
+
+  .brand-sub{
+    display:none;
+  }
+
+  .top-btn{
+    padding:8px 10px;
+    font-size:.72rem;
+  }
+
+  .hero{
+    padding:0 12px;
+    margin-top:17px;
+  }
+
+  .hero-content{
+    padding:32px 23px;
+  }
+
+  .hero h1{
+    font-size:2.65rem;
+  }
+
+  .hero-description{
+    font-size:.94rem;
+  }
+
+  .dashboard,
+  .step-navigation{
+    padding:0 12px;
+  }
+
+  main{
+    padding:0 12px 45px;
+  }
+
+  .step-card{
+    padding:20px 16px;
+    border-radius:21px;
+  }
+
+  .step-heading{
+    gap:10px;
+  }
+
+  .step-icon{
+    flex-basis:44px;
+    height:44px;
+    font-size:1.25rem;
+  }
+
+  .task{
+    padding:15px;
+  }
+
+  .option-grid,
+  .visual-grid,
+  .grammar-grid,
+  .checklist,
+  .fact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .fact-item:nth-child(odd){
+    border-right:0;
+  }
+
+  .step-link{
+    width:35px;
+    height:35px;
+    border-radius:10px;
+  }
+
+  .order-item{
+    flex-wrap:wrap;
+  }
+
+  .order-year{
+    order:3;
+  }
+
+  .dictionary-trigger{
+    right:12px;
+    bottom:12px;
+    padding:11px 14px;
+    font-size:.78rem;
+  }
+
+}
+
+@media print{
+
+  body{
+    background:white;
+  }
+
+  .topbar,
+  .step-navigation,
+  .dashboard,
+  .dictionary-trigger,
+  .btn-row,
+  .hero-visual,
+  .dictionary-overlay{
+    display:none!important;
+  }
+
+  .hero-card{
+    background:white;
+    color:black;
+    box-shadow:none;
+    min-height:0;
+    display:block;
+  }
+
+  .hero-content{
+    padding:15px;
+  }
+
+  .hero h1,
+  .hero h1 span{
+    color:black;
+  }
+
+  .hero-description{
+    color:#333;
+  }
+
+  .step-card{
+    box-shadow:none;
+    border:1px solid #ccc;
+    break-inside:avoid;
+  }
+
+  .step{
+    margin:15px 0;
+  }
+
+  .answer-reveal{
+    display:block;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ======================================
+     TOP BAR
+====================================== -->
+
+<header class="topbar">
+
+  <div class="topbar-inner">
+
+    <div class="brand">
+      <div class="brand-icon">✍</div>
+
+      <div>
+        <div class="brand-name">My English Space</div>
+        <div class="brand-sub">Writing Expedition · MS4</div>
+      </div>
+    </div>
+
+    <div class="top-actions">
+
+      <a class="top-btn" href="MS4-S2-Writing.html">
+        ← Writing Map
+      </a>
+
+      <button class="top-btn" onclick="window.print()">
+        🖨 Print
+      </button>
+
+      <button class="top-btn" onclick="resetLesson()">
+        ↻ Reset
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- ======================================
+     HERO
+====================================== -->
+
+<section class="hero">
+
+  <div class="hero-card">
+
+    <div class="hero-content">
+
+      <div class="hero-label">
+        WRITING EXPEDITION · LESSON 04
+      </div>
+
+      <h1>
+        The Life of<br>
+        <span>Kateb Yacine</span>
+      </h1>
+
+      <p class="hero-description">
+        Discover the life of a famous Algerian writer.
+        Learn to organise facts, build correct sentences,
+        and write a short biography step by step.
+      </p>
+
+      <div class="hero-tags">
+        <span class="hero-tag">📖 Biography</span>
+        <span class="hero-tag">🧩 Easy Activities</span>
+        <span class="hero-tag">✍ Guided Writing</span>
+        <span class="hero-tag">🏆 100 Points</span>
+      </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+      <span class="sparkle one">✦</span>
+      <span class="sparkle two">✧</span>
+
+      <div class="portrait-frame">
+        <img
+          src="https://i.imgur.com/sY5SLYe.jpeg"
+          alt="Portrait of Kateb Yacine"
+          onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;display:grid;place-items:center;height:100%;font-size:5rem;color:#b93668&quot;>📖</div>'"
+        >
+      </div>
+
+      <div class="portrait-caption">
+        Kateb Yacine · 1929–1989
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+     LEARNING DASHBOARD
+====================================== -->
+
+<div class="dashboard">
+
+  <div class="dashboard-grid">
+
+    <div class="dashboard-card">
+
+      <div class="dashboard-label">
+        Your Learning Journey
+      </div>
+
+      <div class="dashboard-value">
+        <span id="progressPercent">0</span>%
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="mainProgress"></div>
+      </div>
+
+      <div class="dashboard-note">
+        Complete the activities to fill your progress bar.
+      </div>
+
+    </div>
+
+    <div class="dashboard-card">
+
+      <div class="dashboard-label">
+        Your Points
+      </div>
+
+      <div class="dashboard-value">
+        <span id="totalScore">0</span>/100
+      </div>
+
+      <div class="dashboard-note">
+        Every step counts!
+      </div>
+
+    </div>
+
+    <div class="dashboard-card">
+
+      <div class="dashboard-label">
+        Completed Steps
+      </div>
+
+      <div class="dashboard-value">
+        <span id="completedSteps">0</span>/9
+      </div>
+
+      <div class="dashboard-note">
+        Keep going, writer!
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ======================================
+     STEP NAVIGATION
+====================================== -->
+
+<nav class="step-navigation" aria-label="Lesson steps">
+
+  <div class="nav-shell">
+
+    <span class="nav-caption">
+      YOUR WRITING JOURNEY
+    </span>
+
+    <a class="step-link active" href="#step1" title="Meet the writer">1</a>
+    <a class="step-link" href="#step2" title="Discover the facts">2</a>
+    <a class="step-link" href="#step3" title="Put events in order">3</a>
+    <a class="step-link" href="#step4" title="Build sentences">4</a>
+    <a class="step-link" href="#step5" title="Use connectors">5</a>
+    <a class="step-link" href="#step6" title="Grammar practice">6</a>
+    <a class="step-link" href="#step7" title="Guided biography">7</a>
+    <a class="step-link" href="#step8" title="Improve your writing">8</a>
+    <a class="step-link" href="#step9" title="Final writing">9</a>
+
+  </div>
+
+</nav>
+
+
+<main>
+
+
+<!-- ======================================
+     STEP 1
+====================================== -->
+
+<section class="step" id="step1">
+
+  <div class="step-card">
+
+    <div class="step-heading">
+
+      <div class="step-icon">👀</div>
+
+      <div>
+        <div class="step-kicker">STEP 01 · LOOK AND THINK</div>
+        <h2>Meet the Famous Writer</h2>
+        <p class="step-description">
+          Start with pictures and easy questions.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="visual-grid">
+
+      <div class="visual-card">
+
+        <img
+          src="https://i.imgur.com/sY5SLYe.jpeg"
+          alt="Kateb Yacine"
+          onerror="this.style.display='none';this.parentElement.style.background='#fff1f7'"
+        >
+
+        <div class="visual-caption">
+          Kateb Yacine
+        </div>
+
+      </div>
+
+      <div class="visual-card">
+
+        <img
+          src="https://i.imgur.com/0ReDTY2.jpeg"
+          alt="Cover of Nedjma"
+          onerror="this.style.display='none';this.parentElement.style.background='#fff1f7'"
+        >
+
+        <div class="visual-caption">
+          Nedjma · A Famous Novel
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <h3 class="task-title">🎯 Activity 1 — Choose the Answer</h3>
+
+      <p class="instruction">
+        Look at the pictures. Choose the correct answers.
+      </p>
+
+      <div class="question" data-quiz="intro">
+
+        <p class="question-title">
+          <span class="question-number">1</span>
+          Kateb Yacine was a famous...
+        </p>
+
+        <div class="option-grid">
+          <button class="option" data-value="doctor">doctor</button>
+          <button class="option" data-value="writer">writer</button>
+          <button class="option" data-value="footballer">footballer</button>
+          <button class="option" data-value="pilot">pilot</button>
+        </div>
+
+      </div>
+
+      <div class="question" data-quiz="intro">
+
+        <p class="question-title">
+          <span class="question-number">2</span>
+          He was from...
+        </p>
+
+        <div class="option-grid">
+          <button class="option" data-value="Algeria">Algeria</button>
+          <button class="option" data-value="England">England</button>
+          <button class="option" data-value="Italy">Italy</button>
+          <button class="option" data-value="Spain">Spain</button>
+        </div>
+
+      </div>
+
+      <div class="question" data-quiz="intro">
+
+        <p class="question-title">
+          <span class="question-number">3</span>
+          Nedjma is the title of a...
+        </p>
+
+        <div class="option-grid">
+          <button class="option" data-value="film">film</button>
+          <button class="option" data-value="song">song</button>
+          <button class="option" data-value="novel">novel</button>
+          <button class="option" data-value="painting">painting</button>
+        </div>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button class="btn btn-primary" onclick="checkIntro()">
+          ✓ Check My Answers
+        </button>
+
+      </div>
+
+      <div class="feedback" id="introFeedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="support-note">
+      💡 <strong>Remember:</strong> A biography tells us about
+      a person's life, education, work, and achievements.
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+     STEP 2
+====================================== -->
+
+<section class="step" id="step2">
+
+  <div class="step-card">
+
+    <div class="step-heading">
+
+      <div class="step-icon">🪪</div>
+
+      <div>
+        <div class="step-kicker">STEP 02 · READ AND DISCOVER</div>
+        <h2>Discover the Facts</h2>
+        <p class="step-description">
+          Read the ID card. You do not need to memorise everything.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="fact-card">
+
+      <div class="fact-header">
+
+        <h3>📋 Kateb Yacine — Fact File</h3>
+
+        <p>
+          Use these facts to write your biography.
+        </p>
+
+      </div>
+
+      <div class="fact-grid">
+
+        <div class="fact-item">
+          <span class="fact-label">Full Name</span>
+          <span class="fact-value">Kateb Yacine</span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">Nationality</span>
+          <span class="fact-value">Algerian</span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">Born</span>
+          <span class="fact-value">1929</span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">Birthplace</span>
+          <span class="fact-value">Constantine, Algeria</span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">Professions</span>
+          <span class="fact-value">
+            Writer, poet, journalist, playwright
+          </span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">Education</span>
+          <span class="fact-value">
+            Quranic school, French school, school in Sétif
+          </span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">1945</span>
+          <span class="fact-value">
+            Took part in demonstrations; was arrested
+          </span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">1946</span>
+          <span class="fact-value">
+            Published Soliloques
+          </span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">1949–1951</span>
+          <span class="fact-value">
+            Worked at Alger Républicain
+          </span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">1956</span>
+          <span class="fact-value">
+            Nedjma was published
+          </span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">1966</span>
+          <span class="fact-value">
+            Le Polygone étoilé was published
+          </span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">From 1971</span>
+          <span class="fact-value">
+            Developed popular theatre in Algerian Arabic
+          </span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">Award</span>
+          <span class="fact-value">
+            Grand Prix National des Lettres, 1987
+          </span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">Died</span>
+          <span class="fact-value">
+            28 October 1989, France
+          </span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">Famous For</span>
+          <span class="fact-value">
+            His important contribution to Algerian literature
+          </span>
+        </div>
+
+        <div class="fact-item">
+          <span class="fact-label">Main Themes</span>
+          <span class="fact-value">
+            Algeria, identity, history, society
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <h3 class="task-title">
+        🔎 Activity 2 — Find the Information
+      </h3>
+
+      <p class="instruction">
+        Choose the correct answer from the ID card.
+      </p>
+
+      <div class="question">
+
+        <p class="question-title">
+          1. Where was Kateb Yacine born?
+        </p>
+
+        <select class="select-input" id="fact1">
+          <option value="">Choose an answer...</option>
+          <option value="Algiers">Algiers</option>
+          <option value="Constantine">Constantine</option>
+          <option value="Oran">Oran</option>
+        </select>
+
+      </div>
+
+      <div class="question">
+
+        <p class="question-title">
+          2. When was Nedjma published?
+        </p>
+
+        <select class="select-input" id="fact2">
+          <option value="">Choose an answer...</option>
+          <option value="1929">1929</option>
+          <option value="1945">1945</option>
+          <option value="1956">1956</option>
+        </select>
+
+      </div>
+
+      <div class="question">
+
+        <p class="question-title">
+          3. When did Kateb Yacine die?
+        </p>
+
+        <select class="select-input" id="fact3">
+          <option value="">Choose an answer...</option>
+          <option value="1987">1987</option>
+          <option value="1989">1989</option>
+          <option value="1999">1999</option>
+        </select>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button class="btn btn-primary" onclick="checkFacts()">
+          ✓ Check Answers
+        </button>
+
+      </div>
+
+      <div class="feedback" id="factsFeedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+     STEP 3
+====================================== -->
+
+<section class="step" id="step3">
+
+  <div class="step-card">
+
+    <div class="step-heading">
+
+      <div class="step-icon">🕰️</div>
+
+      <div>
+        <div class="step-kicker">STEP 03 · ORGANISE IDEAS</div>
+        <h2>Put the Events in Order</h2>
+        <p class="step-description">
+          A biography tells a life story from the beginning to the end.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="support-note">
+      💡 <strong>Easy tip:</strong> Start with the smallest year.
+      Finish with the largest year.
+    </div>
+
+    <div class="task">
+
+      <h3 class="task-title">
+        🧩 Activity 3 — Build the Timeline
+      </h3>
+
+      <p class="instruction">
+        Use ▲ and ▼ to put the events in chronological order.
+      </p>
+
+      <div class="order-list" id="orderList">
+
+        <div class="order-item" data-year="1956">
+
+          <span class="order-number">1</span>
+
+          <span class="order-text">
+            Nedjma was published.
+          </span>
+
+          <span class="order-year">1956</span>
+
+          <div class="order-buttons">
+            <button onclick="moveOrder(this,-1)" aria-label="Move up">▲</button>
+            <button onclick="moveOrder(this,1)" aria-label="Move down">▼</button>
+          </div>
+
+        </div>
+
+        <div class="order-item" data-year="1929">
+
+          <span class="order-number">2</span>
+
+          <span class="order-text">
+            Kateb Yacine was born.
+          </span>
+
+          <span class="order-year">1929</span>
+
+          <div class="order-buttons">
+            <button onclick="moveOrder(this,-1)" aria-label="Move up">▲</button>
+            <button onclick="moveOrder(this,1)" aria-label="Move down">▼</button>
+          </div>
+
+        </div>
+
+        <div class="order-item" data-year="1989">
+
+          <span class="order-number">3</span>
+
+          <span class="order-text">
+            He died in France.
+          </span>
+
+          <span class="order-year">1989</span>
+
+          <div class="order-buttons">
+            <button onclick="moveOrder(this,-1)" aria-label="Move up">▲</button>
+            <button onclick="moveOrder(this,1)" aria-label="Move down">▼</button>
+          </div>
+
+        </div>
+
+        <div class="order-item" data-year="1945">
+
+          <span class="order-number">4</span>
+
+          <span class="order-text">
+            He participated in demonstrations.
+          </span>
+
+          <span class="order-year">1945</span>
+
+          <div class="order-buttons">
+            <button onclick="moveOrder(this,-1)" aria-label="Move up">▲</button>
+            <button onclick="moveOrder(this,1)" aria-label="Move down">▼</button>
+          </div>
+
+        </div>
+
+        <div class="order-item" data-year="1946">
+
+          <span class="order-number">5</span>
+
+          <span class="order-text">
+            He published Soliloques.
+          </span>
+
+          <span class="order-year">1946</span>
+
+          <div class="order-buttons">
+            <button onclick="moveOrder(this,-1)" aria-label="Move up">▲</button>
+            <button onclick="moveOrder(this,1)" aria-label="Move down">▼</button>
+          </div>
+
+        </div>
+
+        <div class="order-item" data-year="1971">
+
+          <span class="order-number">6</span>
+
+          <span class="order-text">
+            He developed popular theatre.
+          </span>
+
+          <span class="order-year">1971</span>
+
+          <div class="order-buttons">
+            <button onclick="moveOrder(this,-1)" aria-label="Move up">▲</button>
+            <button onclick="moveOrder(this,1)" aria-label="Move down">▼</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button class="btn btn-primary" onclick="checkOrder()">
+          ✓ Check Timeline
+        </button>
+
+        <button class="btn btn-secondary" onclick="showTimelineHint()">
+          💡 Help Me
+        </button>
+
+      </div>
+
+      <div class="feedback" id="orderFeedback" aria-live="polite"></div>
+
+      <div class="answer-reveal" id="timelineHint">
+        Start with <strong>1929</strong>, the year he was born.
+        Then find the next year.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+     STEP 4
+====================================== -->
+
+<section class="step" id="step4">
+
+  <div class="step-card">
+
+    <div class="step-heading">
+
+      <div class="step-icon">🧱</div>
+
+      <div>
+        <div class="step-kicker">STEP 04 · BUILD SENTENCES</div>
+        <h2>From Words to Sentences</h2>
+        <p class="step-description">
+          First, arrange words. Then, write simple sentences.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <h3 class="task-title">
+        🧩 Activity 4A — Sentence Builder
+      </h3>
+
+      <p class="instruction">
+        Click the words in the correct order.
+      </p>
+
+      <div class="hint">
+        💡 <strong>Hint:</strong> Begin with "Kateb Yacine".
+      </div>
+
+      <div class="builder-output" id="builderOutput">
+        <span class="builder-placeholder">
+          Your sentence will appear here...
+        </span>
+      </div>
+
+      <div class="word-bank" id="builderBank"></div>
+
+      <div class="btn-row">
+
+        <button class="btn btn-primary" onclick="checkBuilder()">
+          ✓ Check Sentence
+        </button>
+
+        <button class="btn btn-secondary" onclick="resetBuilder()">
+          ↻ Try Again
+        </button>
+
+      </div>
+
+      <div class="feedback" id="builderFeedback" aria-live="polite"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3 class="task-title">
+        ✍ Activity 4B — Complete the Sentences
+      </h3>
+
+      <p class="instruction">
+        Choose the correct words.
+      </p>
+
+      <div class="question">
+
+        <p class="question-title">
+          1. Kateb Yacine ______ born in 1929.
+        </p>
+
+        <select class="select-input" id="sentence1">
+          <option value="">Choose...</option>
+          <option value="is">is</option>
+          <option value="was">was</option>
+          <option value="were">were</option>
+        </select>
+
+      </div>
+
+      <div class="question">
+
+        <p class="question-title">
+          2. He ______ Soliloques in 1946.
+        </p>
+
+        <select class="select-input" id="sentence2">
+          <option value="">Choose...</option>
+          <option value="publish">publish</option>
+          <option value="published">published</option>
+          <option value="publishes">publishes</option>
+        </select>
+
+      </div>
+
+      <div class="question">
+
+        <p class="question-title">
+          3. He ______ in France in 1989.
+        </p>
+
+        <select class="select-input" id="sentence3">
+          <option value="">Choose...</option>
+          <option value="die">die</option>
+          <option value="dies">dies</option>
+          <option value="died">died</option>
+        </select>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button class="btn btn-primary" onclick="checkSentences()">
+          ✓ Check My Sentences
+        </button>
+
+      </div>
+
+      <div class="feedback" id="sentencesFeedback" aria-live="polite"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3 class="task-title">
+        ✏ Activity 4C — Write with Support
+      </h3>
+
+      <p class="instruction">
+        Use the sentence starters to write about Kateb Yacine.
+      </p>
+
+      <div class="sentence-frame">
+        <strong>Sentence 1:</strong>
+        Kateb Yacine was born in ...
+      </div>
+
+      <textarea
+        class="write-box"
+        id="practiceBirth"
+        rows="2"
+        placeholder="Kateb Yacine was born in..."
+      ></textarea>
+
+      <div class="sentence-frame">
+        <strong>Sentence 2:</strong>
+        He was a famous ...
+      </div>
+
+      <textarea
+        class="write-box"
+        id="practiceJob"
+        rows="2"
+        placeholder="He was a famous..."
+      ></textarea>
+
+      <div class="sentence-frame">
+        <strong>Sentence 3:</strong>
+        In 1956, his novel ...
+      </div>
+
+      <textarea
+        class="write-box"
+        id="practiceBook"
+        rows="2"
+        placeholder="In 1956, his novel..."
+      ></textarea>
+
+      <div class="btn-row">
+
+        <button class="btn btn-secondary" onclick="toggleReveal('sentenceModels')">
+          👁 Show Model Answers
+        </button>
+
+        <button class="btn btn-primary" onclick="checkPracticeSentences()">
+          ✓ Check My Work
+        </button>
+
+      </div>
+
+      <div class="feedback" id="practiceFeedback" aria-live="polite"></div>
+
+      <div class="answer-reveal" id="sentenceModels">
+
+        <strong>Possible answers:</strong>
+
+        <p>
+          1. Kateb Yacine was born in Constantine, Algeria, in 1929.
+        </p>
+
+        <p>
+          2. He was a famous Algerian writer and poet.
+        </p>
+
+        <p>
+          3. In 1956, his novel Nedjma was published.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+     STEP 5
+====================================== -->
+
+<section class="step" id="step5">
+
+  <div class="step-card">
+
+    <div class="step-heading">
+
+      <div class="step-icon">🔗</div>
+
+      <div>
+        <div class="step-kicker">STEP 05 · CONNECT IDEAS</div>
+        <h2>Use Time Connectors</h2>
+        <p class="step-description">
+          Make your biography clear and easy to follow.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <h3 class="task-title">
+        📚 Useful Time Expressions
+      </h3>
+
+      <div class="word-bank-panel">
+
+        <button class="word-chip" onclick="insertConnector('First, ')">First</button>
+
+        <button class="word-chip" onclick="insertConnector('Later, ')">Later</button>
+
+        <button class="word-chip" onclick="insertConnector('In 1945, ')">In 1945</button>
+
+        <button class="word-chip" onclick="insertConnector('After that, ')">After that</button>
+
+        <button class="word-chip" onclick="insertConnector('In 1956, ')">In 1956</button>
+
+        <button class="word-chip" onclick="insertConnector('Finally, ')">Finally</button>
+
+      </div>
+
+      <div class="support-note">
+        💡 Click a connector to add it to the practice box below.
+      </div>
+
+      <textarea
+        id="connectorPractice"
+        class="write-box"
+        rows="4"
+        placeholder="Click a connector and complete a sentence..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3 class="task-title">
+        🎯 Activity 5 — Choose the Best Connector
+      </h3>
+
+      <div class="question">
+
+        <p class="question-title">
+          1. ______, Kateb Yacine was born in 1929.
+        </p>
+
+        <select class="select-input" id="connector1">
+          <option value="">Choose...</option>
+          <option value="First">First</option>
+          <option value="Finally">Finally</option>
+        </select>
+
+      </div>
+
+      <div class="question">
+
+        <p class="question-title">
+          2. ______, he published Soliloques in 1946.
+        </p>
+
+        <select class="select-input" id="connector2">
+          <option value="">Choose...</option>
+          <option value="Before he was born">Before he was born</option>
+          <option value="Later">Later</option>
+        </select>
+
+      </div>
+
+      <div class="question">
+
+        <p class="question-title">
+          3. ______, he died in France in 1989.
+        </p>
+
+        <select class="select-input" id="connector3">
+          <option value="">Choose...</option>
+          <option value="First">First</option>
+          <option value="Finally">Finally</option>
+        </select>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button class="btn btn-primary" onclick="checkConnectors()">
+          ✓ Check Connectors
+        </button>
+
+      </div>
+
+      <div class="feedback" id="connectorsFeedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+     STEP 6
+====================================== -->
+
+<section class="step" id="step6">
+
+  <div class="step-card">
+
+    <div class="step-heading">
+
+      <div class="step-icon">⚙️</div>
+
+      <div>
+        <div class="step-kicker">STEP 06 · LANGUAGE TOOLBOX</div>
+        <h2>Grammar for Biographies</h2>
+        <p class="step-description">
+          Learn the grammar you need before writing.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="grammar-grid">
+
+      <div class="rule-card">
+
+        <h4>🟣 Past Simple</h4>
+
+        <p>
+          We use the Past Simple for completed actions.
+        </p>
+
+        <p>
+          He <em>published</em> Soliloques in 1946.
+        </p>
+
+        <p>
+          He <em>worked</em> as a journalist.
+        </p>
+
+      </div>
+
+      <div class="rule-card">
+
+        <h4>🌸 Past Passive</h4>
+
+        <p>
+          We use:
+          <strong>was / were + past participle</strong>
+        </p>
+
+        <p>
+          He <em>was born</em> in 1929.
+        </p>
+
+        <p>
+          Nedjma <em>was published</em> in 1956.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <h3 class="task-title">
+        🧠 Activity 6 — Choose the Correct Form
+      </h3>
+
+      <div class="question">
+
+        <p class="question-title">
+          1. Kateb Yacine ______ in Constantine.
+        </p>
+
+        <select class="select-input" id="grammar1">
+          <option value="">Choose...</option>
+          <option value="is born">is born</option>
+          <option value="was born">was born</option>
+          <option value="were born">were born</option>
+        </select>
+
+      </div>
+
+      <div class="question">
+
+        <p class="question-title">
+          2. He ______ in demonstrations in 1945.
+        </p>
+
+        <select class="select-input" id="grammar2">
+          <option value="">Choose...</option>
+          <option value="participated">participated</option>
+          <option value="participate">participate</option>
+          <option value="was participate">was participate</option>
+        </select>
+
+      </div>
+
+      <div class="question">
+
+        <p class="question-title">
+          3. Nedjma ______ in 1956.
+        </p>
+
+        <select class="select-input" id="grammar3">
+          <option value="">Choose...</option>
+          <option value="published">published</option>
+          <option value="was published">was published</option>
+          <option value="was publish">was publish</option>
+        </select>
+
+      </div>
+
+      <div class="question">
+
+        <p class="question-title">
+          4. Kateb Yacine ______ in France in 1989.
+        </p>
+
+        <select class="select-input" id="grammar4">
+          <option value="">Choose...</option>
+          <option value="die">die</option>
+          <option value="died">died</option>
+          <option value="was died">was died</option>
+        </select>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button class="btn btn-primary" onclick="checkGrammar()">
+          ✓ Check Grammar
+        </button>
+
+        <button class="btn btn-secondary" onclick="toggleReveal('grammarHelp')">
+          💡 Grammar Help
+        </button>
+
+      </div>
+
+      <div class="feedback" id="grammarFeedback" aria-live="polite"></div>
+
+      <div class="answer-reveal" id="grammarHelp">
+
+        <strong>Remember:</strong>
+
+        <p>
+          <strong>was born</strong> — used to talk about birth.
+        </p>
+
+        <p>
+          <strong>participated</strong> — regular Past Simple.
+        </p>
+
+        <p>
+          <strong>was published</strong> — Past Passive.
+        </p>
+
+        <p>
+          <strong>died</strong> — Past Simple of die.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+     STEP 7
+====================================== -->
+
+<section class="step" id="step7">
+
+  <div class="step-card">
+
+    <div class="step-heading">
+
+      <div class="step-icon">📝</div>
+
+      <div>
+        <div class="step-kicker">STEP 07 · GUIDED WRITING</div>
+        <h2>Let's Build a Biography</h2>
+        <p class="step-description">
+          Write one small part at a time. Use the helpful sentence starters.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="support-note">
+      💡 <strong>For weak learners:</strong> You do not need to write
+      everything at once. Complete the four small writing boxes.
+    </div>
+
+
+    <div class="writing-part">
+
+      <h4>🌟 Part 1 — Introduction</h4>
+
+      <p class="small-text">
+        Write his name, nationality, profession, birthplace, and birth year.
+      </p>
+
+      <div class="sentence-frame">
+        <strong>Help:</strong><br>
+        Kateb Yacine was a famous Algerian ...<br>
+        He was born in ... in ...
+      </div>
+
+      <textarea
+        class="write-box guided"
+        id="guided1"
+        rows="4"
+        placeholder="Kateb Yacine was a famous Algerian writer..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="writing-part">
+
+      <h4>📚 Part 2 — Education and Early Life</h4>
+
+      <p class="small-text">
+        Mention his education and the events of 1945.
+      </p>
+
+      <div class="sentence-frame">
+        <strong>Help:</strong><br>
+        He studied at ...<br>
+        In 1945, he ...<br>
+        He was ...
+      </div>
+
+      <textarea
+        class="write-box guided"
+        id="guided2"
+        rows="5"
+        placeholder="He studied at..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="writing-part">
+
+      <h4>📖 Part 3 — Literary Career</h4>
+
+      <p class="small-text">
+        Mention Soliloques, Nedjma, and his work as a journalist.
+      </p>
+
+      <div class="sentence-frame">
+        <strong>Help:</strong><br>
+        In 1946, he published ...<br>
+        Later, he worked ...<br>
+        In 1956, his famous novel ...
+      </div>
+
+      <textarea
+        class="write-box guided"
+        id="guided3"
+        rows="6"
+        placeholder="In 1946, he published..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="writing-part">
+
+      <h4>🏆 Part 4 — Later Life and Legacy</h4>
+
+      <p class="small-text">
+        Mention his later work, award, death, and importance.
+      </p>
+
+      <div class="sentence-frame">
+        <strong>Help:</strong><br>
+        Later, he developed ...<br>
+        In 1987, he received ...<br>
+        He died in ...<br>
+        Today, he is remembered as ...
+      </div>
+
+      <textarea
+        class="write-box guided"
+        id="guided4"
+        rows="6"
+        placeholder="Later, he developed..."
+      ></textarea>
+
+    </div>
+
+
+    <div class="btn-row">
+
+      <button class="btn btn-primary" onclick="checkGuided()">
+        ✓ Check My Draft
+      </button>
+
+      <button class="btn btn-purple" onclick="copyGuidedToFinal()">
+        ✨ Use My Draft in Final Writing
+      </button>
+
+      <button class="btn btn-secondary" onclick="toggleReveal('guidedModel')">
+        👁 Read a Model
+      </button>
+
+    </div>
+
+    <div class="feedback" id="guidedFeedback" aria-live="polite"></div>
+
+    <div class="answer-reveal" id="guidedModel">
+
+      <strong>Example of a short biography:</strong>
+
+      <div class="model-paragraph">
+
+        Kateb Yacine was a famous Algerian writer, poet,
+        journalist and playwright. He was born in Constantine
+        in 1929.
+
+        <br><br>
+
+        He studied at a Quranic school, a French school and
+        later in Sétif. In 1945, he participated in
+        demonstrations and was arrested.
+
+        <br><br>
+
+        In 1946, he published his poetry collection
+        Soliloques. Later, he worked as a journalist at
+        Alger Républicain. His famous novel Nedjma was
+        published in 1956. Another important work,
+        Le Polygone étoilé, appeared in 1966.
+
+        <br><br>
+
+        From 1971, he developed popular theatre in Algerian
+        Arabic. In 1987, he received a literary award in
+        France. He died on 28 October 1989 in France.
+        Today, he is remembered as an important figure
+        in Algerian literature.
+
+      </div>
+
+      <p class="small-text">
+        Use this model to learn how a biography is organised.
+        Try to write your own sentences.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+     STEP 8
+====================================== -->
+
+<section class="step" id="step8">
+
+  <div class="step-card">
+
+    <div class="step-heading">
+
+      <div class="step-icon">🔍</div>
+
+      <div>
+        <div class="step-kicker">STEP 08 · EDIT AND IMPROVE</div>
+        <h2>Become a Writing Detective</h2>
+        <p class="step-description">
+          Find mistakes and make sentences better.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3 class="task-title">
+        🕵️ Activity 8 — Correct the Mistakes
+      </h3>
+
+      <p class="instruction">
+        Choose the correct sentence.
+      </p>
+
+      <div class="question">
+
+        <p class="question-title">
+          1. Which sentence is correct?
+        </p>
+
+        <div class="option-grid" data-choice-group="edit1">
+
+          <button class="option" data-value="a">
+            kateb yacine was born in 1929.
+          </button>
+
+          <button class="option" data-value="b">
+            Kateb Yacine was born in 1929.
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="question">
+
+        <p class="question-title">
+          2. Which sentence is correct?
+        </p>
+
+        <div class="option-grid" data-choice-group="edit2">
+
+          <button class="option" data-value="a">
+            He publish Nedjma in 1956.
+          </button>
+
+          <button class="option" data-value="b">
+            His novel Nedjma was published in 1956.
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="question">
+
+        <p class="question-title">
+          3. Which sentence is correct?
+        </p>
+
+        <div class="option-grid" data-choice-group="edit3">
+
+          <button class="option" data-value="a">
+            He died in France in 1989.
+          </button>
+
+          <button class="option" data-value="b">
+            He die in France in 1989
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button class="btn btn-primary" onclick="checkEditing()">
+          ✓ Check Corrections
+        </button>
+
+      </div>
+
+      <div class="feedback" id="editingFeedback" aria-live="polite"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3 class="task-title">
+        ✨ My Editing Checklist
+      </h3>
+
+      <p class="instruction">
+        Tick each box after checking your writing.
+      </p>
+
+      <div class="checklist" id="editingChecklist">
+
+        <label class="check-item">
+          <input type="checkbox" class="edit-check">
+          <span>I used capital letters correctly.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="edit-check">
+          <span>I used full stops.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="edit-check">
+          <span>I used the Past Simple.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="edit-check">
+          <span>I checked names and dates.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="edit-check">
+          <span>I used time connectors.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="edit-check">
+          <span>My ideas are in chronological order.</span>
+        </label>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button class="btn btn-primary" onclick="checkEditingChecklist()">
+          ✓ Finish Editing
+        </button>
+
+      </div>
+
+      <div class="feedback" id="editingChecklistFeedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+     STEP 9
+====================================== -->
+
+<section class="step" id="step9">
+
+  <div class="step-card final-card">
+
+    <div class="step-heading">
+
+      <div class="step-icon">🏆</div>
+
+      <div>
+        <div class="step-kicker">STEP 09 · FINAL MISSION</div>
+        <h2>Write Your Biography!</h2>
+        <p class="step-description">
+          You are ready to write about Kateb Yacine.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <h3 class="task-title">
+        ✍ My Final Biography
+      </h3>
+
+      <p class="instruction">
+        Write a short biography of approximately
+        <strong>100–130 words</strong>.
+      </p>
+
+      <div class="hint">
+        🌟 <strong>Remember:</strong> You can use your guided draft
+        from Step 7. Stronger pupils can add more details.
+      </div>
+
+      <div class="sentence-frame">
+
+        <strong>Writing Plan:</strong>
+
+        <br><br>
+
+        <strong>Beginning:</strong>
+        Name + nationality + profession + birth
+
+        <br>
+
+        <strong>Middle:</strong>
+        Education + 1945 + important books
+
+        <br>
+
+        <strong>Ending:</strong>
+        Later work + award + death + legacy
+
+      </div>
+
+      <label class="writing-label" for="finalWriting">
+        Title: The Life of Kateb Yacine
+      </label>
+
+      <textarea
+        id="finalWriting"
+        class="write-box final-area"
+        placeholder="Kateb Yacine was a famous Algerian writer..."
+      ></textarea>
+
+      <div class="word-count-row">
+
+        <span>
+          Words: <strong id="wordCount">0</strong>
+        </span>
+
+        <span id="wordMessage">
+          Target: 100–130 words
+        </span>
+
+      </div>
+
+      <div class="word-progress">
+        <span id="wordProgressFill"></span>
+      </div>
+
+      <div class="btn-row">
+
+        <button class="btn btn-primary" onclick="reviewFinalWriting()">
+          🔍 Review My Writing
+        </button>
+
+        <button class="btn btn-green" onclick="downloadWriting()">
+          ⬇ Download My Biography
+        </button>
+
+        <button class="btn btn-secondary" onclick="copyFinalWriting()">
+          📋 Copy My Writing
+        </button>
+
+      </div>
+
+      <div class="feedback" id="finalFeedback" aria-live="polite"></div>
+
+      <div class="answer-reveal" id="finalReviewDetails"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3 class="task-title">
+        ⭐ Final Self-Check
+      </h3>
+
+      <p class="instruction">
+        Read your biography and tick the boxes.
+      </p>
+
+      <div class="checklist" id="finalChecklist">
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I introduced Kateb Yacine.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I mentioned his birthplace and birth year.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I wrote about his education.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I included the events of 1945.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I mentioned his famous works.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I used Past Simple verbs.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I used time connectors.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I included his death and legacy.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I checked spelling and punctuation.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox" class="final-check">
+          <span>I organised my ideas clearly.</span>
+        </label>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button class="btn btn-primary" onclick="finishLesson()">
+          🏆 Finish My Writing Mission
+        </button>
+
+      </div>
+
+      <div class="feedback" id="finishFeedback" aria-live="polite"></div>
+
+    </div>
+
+
+    <div class="celebration">
+
+      <div style="font-size:2.5rem">🌟🏆🌟</div>
+
+      <h3>Your Writing Expedition Score</h3>
+
+      <div class="score-badge">
+        <span id="finalTotalScore">0</span>/100
+      </div>
+
+      <p>
+        Every sentence you write helps you become a better writer!
+      </p>
+
+      <p class="small-text">
+        Your work is saved automatically on this device.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ======================================
+     DICTIONARY
+====================================== -->
+
+<button class="dictionary-trigger" onclick="openDictionary()">
+  📖 Mini Dictionary
+</button>
+
+<div class="dictionary-overlay" id="dictionaryOverlay">
+
+  <div class="dictionary-box"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="dictionaryTitle">
+
+    <div class="dictionary-header">
+
+      <h2 id="dictionaryTitle">📖 Mini Dictionary</h2>
+
+      <button
+        class="close-dict"
+        onclick="closeDictionary()"
+        aria-label="Close dictionary"
+      >×</button>
+
+    </div>
+
+    <p class="small-text">
+      Search in English or Arabic.
+    </p>
+
+    <input
+      type="search"
+      class="text-input"
+      id="dictionarySearch"
+      placeholder="Search a word..."
+      oninput="filterDictionary()"
+    >
+
+    <div class="dict-list" id="dictionaryList"></div>
+
+  </div>
+
+</div>
+
+
+<footer>
+  MY ENGLISH SPACE · MS4 · SEQUENCE 2 · WRITING EXPEDITION
+</footer>
+
+
+<script>
+
+/* =========================================
+   STATE AND STORAGE
+========================================= */
+
+const STORAGE_KEY = "MS4_S2_WRITING_LESSON4_V2";
+
+const MAX_POINTS = {
+  intro:10,
+  facts:10,
+  timeline:10,
+  builder:10,
+  sentences:10,
+  practice:5,
+  connectors:10,
+  grammar:10,
+  guided:5,
+  editing:10,
+  checklist:5,
+  final:5
+};
+
+// Total: 100
+
+const state = {
+  scores:{},
+  completed:{}
+};
+
+function award(activity,points,step){
+
+  const maximum = MAX_POINTS[activity] || 0;
+
+  state.scores[activity] = Math.max(
+    state.scores[activity] || 0,
+    Math.min(points,maximum)
+  );
+
+  if(step && points === maximum){
+    state.completed[step] = true;
+  }
+
+  updateDashboard();
+  saveLesson();
+}
+
+function updateDashboard(){
+
+  const total = Object.values(state.scores)
+    .reduce((sum,value)=>sum+value,0);
+
+  const done = Object.keys(state.completed)
+    .filter(key=>state.completed[key]).length;
+
+  const percent = Math.round(done/9*100);
+
+  document.getElementById("totalScore").textContent = total;
+  document.getElementById("finalTotalScore").textContent = total;
+
+  document.getElementById("completedSteps").textContent = done;
+  document.getElementById("progressPercent").textContent = percent;
+
+  document.getElementById("mainProgress").style.width =
+    percent + "%";
+
+  document.querySelectorAll(".step-link").forEach((link,index)=>{
+    link.classList.toggle(
+      "done",
+      Boolean(state.completed[index+1])
+    );
+  });
+
+}
+
+function markStep(step){
+
+  state.completed[step] = true;
+  updateDashboard();
+  saveLesson();
+
+}
+
+function showFeedback(id,message,type="info"){
+
+  const element = document.getElementById(id);
+
+  element.textContent = message;
+  element.className = "feedback show " + type;
+
+}
+
+function saveLesson(){
+
+  try{
+
+    const fields = {};
+
+    document.querySelectorAll(
+      "textarea,input[type='text'],input[type='search'],select"
+    ).forEach(element=>{
+
+      if(element.id && element.id !== "dictionarySearch"){
+        fields[element.id] = element.value;
+      }
+
+    });
+
+    const checks = [...document.querySelectorAll(
+      "input[type='checkbox']"
+    )].map(input=>input.checked);
+
+    const selections = {};
+
+    document.querySelectorAll("[data-choice-group]").forEach(group=>{
+
+      const selected = group.querySelector(".option.selected");
+
+      selections[group.dataset.choiceGroup] =
+        selected ? selected.dataset.value : "";
+
+    });
+
+    document.querySelectorAll("[data-quiz]").forEach((question,index)=>{
+
+      const selected = question.querySelector(".option.selected");
+
+      selections["intro"+index] =
+        selected ? selected.dataset.value : "";
+
+    });
+
+    const order = [...document.querySelectorAll(
+      "#orderList .order-item"
+    )].map(item=>item.dataset.year);
+
+    const data = {
+      state,
+      fields,
+      checks,
+      selections,
+      order,
+      builderSelected
+    };
+
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+
+  }catch(error){
+    // The lesson still works if local storage is unavailable.
+  }
+
+}
+
+function loadLesson(){
+
+  try{
+
+    const raw = localStorage.getItem(STORAGE_KEY);
+
+    if(!raw) return;
+
+    const data = JSON.parse(raw);
+
+    if(data.state){
+
+      state.scores = data.state.scores || {};
+      state.completed = data.state.completed || {};
+
+    }
+
+    Object.entries(data.fields || {}).forEach(([id,value])=>{
+
+      const element = document.getElementById(id);
+
+      if(element){
+        element.value = value;
+      }
+
+    });
+
+    const checks = document.querySelectorAll(
+      "input[type='checkbox']"
+    );
+
+    (data.checks || []).forEach((checked,index)=>{
+
+      if(checks[index]){
+        checks[index].checked = checked;
+      }
+
+    });
+
+    Object.entries(data.selections || {}).forEach(([key,value])=>{
+
+      let group;
+
+      if(key.startsWith("intro")){
+
+        const index = Number(key.replace("intro",""));
+
+        group = document.querySelectorAll("[data-quiz]")[index];
+
+      }else{
+
+        group = document.querySelector(
+          '[data-choice-group="'+key+'"]'
+        );
+
+      }
+
+      if(!group) return;
+
+      const button = [...group.querySelectorAll(".option")]
+        .find(item=>item.dataset.value === value);
+
+      if(button){
+        button.classList.add("selected");
+      }
+
+    });
+
+    if(data.order){
+
+      const list = document.getElementById("orderList");
+
+      data.order.forEach(year=>{
+
+        const item = [...list.children]
+          .find(element=>element.dataset.year === year);
+
+        if(item){
+          list.appendChild(item);
+        }
+
+      });
+
+    }
+
+    if(Array.isArray(data.builderSelected)){
+      builderSelected = data.builderSelected;
+    }
+
+  }catch(error){
+    // Ignore invalid or unavailable saved data.
+  }
+
+}
+
+function resetLesson(){
+
+  if(!confirm(
+    "Reset this lesson? Your saved answers and points will be cleared."
+  )){
+    return;
+  }
+
+  try{
+    localStorage.removeItem(STORAGE_KEY);
+  }catch(error){}
+
+  location.reload();
+
+}
+
+
+/* =========================================
+   OPTION BUTTONS
+========================================= */
+
+document.querySelectorAll(".option-grid").forEach(group=>{
+
+  group.addEventListener("click",event=>{
+
+    const button = event.target.closest(".option");
+
+    if(!button) return;
+
+    group.querySelectorAll(".option").forEach(item=>{
+      item.classList.remove(
+        "selected",
+        "correct-choice",
+        "wrong-choice"
+      );
+    });
+
+    button.classList.add("selected");
+
+    saveLesson();
+
+  });
+
+});
+
+function checkOptionQuestions(groups,answers){
+
+  let correct = 0;
+
+  groups.forEach((group,index)=>{
+
+    const selected = group.querySelector(".option.selected");
+
+    group.querySelectorAll(".option").forEach(button=>{
+
+      button.classList.remove(
+        "correct-choice",
+        "wrong-choice"
+      );
+
+      if(button.dataset.value === answers[index]){
+        button.classList.add("correct-choice");
+      }
+
+    });
+
+    if(selected){
+
+      if(selected.dataset.value === answers[index]){
+        correct++;
+      }else{
+        selected.classList.add("wrong-choice");
+      }
+
+    }
+
+  });
+
+  return correct;
+
+}
+
+function checkSelectQuestions(ids,answers){
+
+  let correct = 0;
+
+  ids.forEach((id,index)=>{
+
+    const input = document.getElementById(id);
+
+    const good = input.value === answers[index];
+
+    if(good){
+      correct++;
+    }
+
+    input.style.borderColor =
+      good ? "var(--green)" : "var(--red)";
+
+  });
+
+  return correct;
+
+}
+
+
+/* =========================================
+   STEP 1
+========================================= */
+
+function checkIntro(){
+
+  const groups = [
+    ...document.querySelectorAll("[data-quiz='intro']")
+  ];
+
+  const correct = checkOptionQuestions(
+    groups,
+    ["writer","Algeria","novel"]
+  );
+
+  const points = Math.round(correct/3*10);
+
+  award("intro",points,correct===3 ? 1 : null);
+
+  showFeedback(
+    "introFeedback",
+    correct===3
+      ? "🌟 Excellent! 3/3. You know who Kateb Yacine was."
+      : "You got "+correct+"/3. Look at the green answers and try again.",
+    correct===3 ? "correct" : "wrong"
+  );
+
+}
+
+
+/* =========================================
+   STEP 2
+========================================= */
+
+function checkFacts(){
+
+  const correct = checkSelectQuestions(
+    ["fact1","fact2","fact3"],
+    ["Constantine","1956","1989"]
+  );
+
+  award(
+    "facts",
+    Math.round(correct/3*10),
+    correct===3 ? 2 : null
+  );
+
+  showFeedback(
+    "factsFeedback",
+    correct===3
+      ? "🌟 Wonderful! You found all the information."
+      : "You found "+correct+"/3 facts. Read the ID card and try again.",
+    correct===3 ? "correct" : "wrong"
+  );
+
+}
+
+
+/* =========================================
+   STEP 3
+========================================= */
+
+function updateOrderNumbers(){
+
+  document.querySelectorAll("#orderList .order-item")
+    .forEach((item,index)=>{
+
+      item.querySelector(".order-number").textContent =
+        index+1;
+
+    });
+
+}
+
+function moveOrder(button,direction){
+
+  const item = button.closest(".order-item");
+  const list = document.getElementById("orderList");
+
+  if(direction===-1){
+
+    const previous = item.previousElementSibling;
+
+    if(previous){
+      list.insertBefore(item,previous);
+    }
+
+  }else{
+
+    const next = item.nextElementSibling;
+
+    if(next){
+      list.insertBefore(next,item);
+    }
+
+  }
+
+  updateOrderNumbers();
+  saveLesson();
+
+}
+
+function checkOrder(){
+
+  const years = [...document.querySelectorAll(
+    "#orderList .order-item"
+  )].map(item=>Number(item.dataset.year));
+
+  const sorted = [...years].sort((a,b)=>a-b);
+
+  const correct = years.every(
+    (year,index)=>year===sorted[index]
+  );
+
+  award("timeline",correct ? 10 : 0,correct ? 3 : null);
+
+  showFeedback(
+    "orderFeedback",
+    correct
+      ? "🏆 Perfect! You organised the events from 1929 to 1989."
+      : "Not yet. Compare the years and move the events again.",
+    correct ? "correct" : "wrong"
+  );
+
+}
+
+function showTimelineHint(){
+
+  document.getElementById("timelineHint")
+    .classList.toggle("show");
+
+}
+
+
+/* =========================================
+   STEP 4 — BUILDER
+========================================= */
+
+const BUILDER_WORDS = [
+  "Kateb Yacine",
+  "was",
+  "born",
+  "in",
+  "Constantine",
+  "in",
+  "1929."
+];
+
+const BUILDER_DISPLAY = [4,2,6,0,5,1,3];
+
+let builderSelected = [];
+
+function renderBuilder(){
+
+  const bank = document.getElementById("builderBank");
+  const output = document.getElementById("builderOutput");
+
+  bank.innerHTML = "";
+  output.innerHTML = "";
+
+  BUILDER_DISPLAY.forEach(index=>{
+
+    const button = document.createElement("button");
+
+    button.className = "word-tile";
+    button.textContent = BUILDER_WORDS[index];
+
+    if(builderSelected.includes(index)){
+      button.classList.add("used");
+      button.disabled = true;
+    }
+
+    button.onclick = ()=>{
+
+      if(builderSelected.includes(index)) return;
+
+      builderSelected.push(index);
+
+      renderBuilder();
+      saveLesson();
+
+    };
+
+    bank.appendChild(button);
+
+  });
+
+  if(builderSelected.length===0){
+
+    const placeholder = document.createElement("span");
+
+    placeholder.className = "builder-placeholder";
+    placeholder.textContent = "Click the words below...";
+
+    output.appendChild(placeholder);
+
+  }else{
+
+    builderSelected.forEach((index,position)=>{
+
+      const button = document.createElement("button");
+
+      button.className = "word-tile in-output";
+      button.textContent = BUILDER_WORDS[index];
+      button.title = "Click to remove this word";
+
+      button.onclick = ()=>{
+
+        builderSelected.splice(position,1);
+
+        renderBuilder();
+        saveLesson();
+
+      };
+
+      output.appendChild(button);
+
+    });
+
+  }
+
+}
+
+function resetBuilder(){
+
+  builderSelected = [];
+
+  renderBuilder();
+
+  document.getElementById("builderFeedback")
+    .className = "feedback";
+
+  saveLesson();
+
+}
+
+function checkBuilder(){
+
+  const correct = builderSelected.length===BUILDER_WORDS.length
+    && builderSelected.every((index,position)=>index===position);
+
+  award("builder",correct ? 10 : 0);
+
+  showFeedback(
+    "builderFeedback",
+    correct
+      ? "🌟 Excellent sentence! Kateb Yacine was born in Constantine in 1929."
+      : "Try again. Remember: Name + was born + place + year.",
+    correct ? "correct" : "wrong"
+  );
+
+}
+
+function checkSentences(){
+
+  const correct = checkSelectQuestions(
+    ["sentence1","sentence2","sentence3"],
+    ["was","published","died"]
+  );
+
+  award(
+    "sentences",
+    Math.round(correct/3*10)
+  );
+
+  showFeedback(
+    "sentencesFeedback",
+    correct===3
+      ? "✓ Great! All three sentences are correct."
+      : "You got "+correct+"/3. Check the Past Simple forms.",
+    correct===3 ? "correct" : "wrong"
+  );
+
+}
+
+function checkPracticeSentences(){
+
+  const ids = ["practiceBirth","practiceJob","practiceBook"];
+
+  const filled = ids.filter(id=>
+    document.getElementById(id).value.trim().split(/\s+/).length>=5
+  ).length;
+
+  const points = Math.round(filled/3*5);
+
+  award("practice",points);
+
+  showFeedback(
+    "practiceFeedback",
+    filled===3
+      ? "🌟 You wrote three sentences! Compare them with the model answers."
+      : "You wrote "+filled+"/3 sentences. Complete the other boxes.",
+    filled===3 ? "correct" : "info"
+  );
+
+  if(
+    state.scores.builder===10 &&
+    state.scores.sentences===10 &&
+    filled===3
+  ){
+    markStep(4);
+  }
+
+}
+
+
+/* =========================================
+   STEP 5
+========================================= */
+
+function insertConnector(text){
+
+  const area = document.getElementById("connectorPractice");
+
+  const start = area.selectionStart;
+  const end = area.selectionEnd;
+
+  area.value =
+    area.value.slice(0,start) +
+    text +
+    area.value.slice(end);
+
+  area.focus();
+
+  area.setSelectionRange(
+    start+text.length,
+    start+text.length
+  );
+
+  saveLesson();
+
+}
+
+function checkConnectors(){
+
+  const correct = checkSelectQuestions(
+    ["connector1","connector2","connector3"],
+    ["First","Later","Finally"]
+  );
+
+  award(
+    "connectors",
+    Math.round(correct/3*10),
+    correct===3 ? 5 : null
+  );
+
+  showFeedback(
+    "connectorsFeedback",
+    correct===3
+      ? "🌟 Fantastic! Your life story has a clear beginning, middle, and ending."
+      : "You got "+correct+"/3. Think about the order of events.",
+    correct===3 ? "correct" : "wrong"
+  );
+
+}
+
+
+/* =========================================
+   STEP 6
+========================================= */
+
+function checkGrammar(){
+
+  const correct = checkSelectQuestions(
+    ["grammar1","grammar2","grammar3","grammar4"],
+    ["was born","participated","was published","died"]
+  );
+
+  award(
+    "grammar",
+    Math.round(correct/4*10),
+    correct===4 ? 6 : null
+  );
+
+  showFeedback(
+    "grammarFeedback",
+    correct===4
+      ? "🏆 Excellent! 4/4. You are ready to use these forms in your biography."
+      : "You got "+correct+"/4. Study the grammar help and try again.",
+    correct===4 ? "correct" : "wrong"
+  );
+
+}
+
+
+/* =========================================
+   STEP 7
+========================================= */
+
+function checkGuided(){
+
+  const ids = ["guided1","guided2","guided3","guided4"];
+
+  const completed = ids.filter(id=>{
+
+    const text = document.getElementById(id).value.trim();
+
+    return text.split(/\s+/).filter(Boolean).length>=8;
+
+  }).length;
+
+  award(
+    "guided",
+    Math.round(completed/4*5),
+    completed===4 ? 7 : null
+  );
+
+  showFeedback(
+    "guidedFeedback",
+    completed===4
+      ? "🌟 Great work! Your four biography sections are ready. Read them carefully before the final task."
+      : "You completed "+completed+"/4 parts. Write at least one complete sentence in each box.",
+    completed===4 ? "correct" : "info"
+  );
+
+}
+
+function copyGuidedToFinal(){
+
+  const parts = [
+    "guided1",
+    "guided2",
+    "guided3",
+    "guided4"
+  ].map(id=>document.getElementById(id).value.trim())
+   .filter(Boolean);
+
+  if(parts.length===0){
+
+    showFeedback(
+      "guidedFeedback",
+      "Write something in your guided biography first.",
+      "wrong"
+    );
+
+    return;
+
+  }
+
+  const final = document.getElementById("finalWriting");
+
+  if(
+    final.value.trim() &&
+    !confirm("Replace your current final writing with your guided draft?")
+  ){
+    return;
+  }
+
+  final.value = parts.join("\n\n");
+
+  updateWordCount();
+  saveLesson();
+
+  showFeedback(
+    "guidedFeedback",
+    "✓ Your guided draft has been copied to Step 9. You can now improve it.",
+    "correct"
+  );
+
+  document.getElementById("step9").scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================
+   STEP 8
+========================================= */
+
+function checkEditing(){
+
+  const groups = ["edit1","edit2","edit3"].map(name=>
+    document.querySelector(
+      '[data-choice-group="'+name+'"]'
+    )
+  );
+
+  const correct = checkOptionQuestions(
+    groups,
+    ["b","b","a"]
+  );
+
+  award(
+    "editing",
+    Math.round(correct/3*10)
+  );
+
+  showFeedback(
+    "editingFeedback",
+    correct===3
+      ? "🌟 Excellent detective work! You found all the correct sentences."
+      : "You got "+correct+"/3. Look for capital letters, correct verbs, and full stops.",
+    correct===3 ? "correct" : "wrong"
+  );
+
+}
+
+function checkEditingChecklist(){
+
+  const checks = [...document.querySelectorAll(".edit-check")];
+
+  const checked = checks.filter(input=>input.checked).length;
+
+  award(
+    "checklist",
+    Math.round(checked/checks.length*5)
+  );
+
+  if(checked===checks.length){
+
+    markStep(8);
+
+  }
+
+  showFeedback(
+    "editingChecklistFeedback",
+    checked===checks.length
+      ? "✓ Excellent! You have checked all six writing points."
+      : "You checked "+checked+"/6 points. Review the remaining items.",
+    checked===checks.length ? "correct" : "info"
+  );
+
+}
+
+
+/* =========================================
+   STEP 9 — FINAL WRITING
+========================================= */
+
+function getWordCount(text){
+
+  const clean = text.trim();
+
+  return clean
+    ? clean.split(/\s+/).filter(Boolean).length
+    : 0;
+
+}
+
+function updateWordCount(){
+
+  const text = document.getElementById("finalWriting").value;
+
+  const count = getWordCount(text);
+
+  document.getElementById("wordCount").textContent = count;
+
+  const percent = Math.min(count/100*100,100);
+
+  document.getElementById("wordProgressFill").style.width =
+    percent+"%";
+
+  const message = document.getElementById("wordMessage");
+
+  if(count===0){
+
+    message.textContent = "Target: 100–130 words";
+
+  }else if(count<100){
+
+    message.textContent = (100-count)+" more words to reach 100";
+
+  }else if(count<=130){
+
+    message.textContent = "✓ Great length!";
+
+  }else{
+
+    message.textContent = "Try to shorten your biography a little.";
+
+  }
+
+}
+
+function reviewFinalWriting(){
+
+  const text = document.getElementById("finalWriting").value.trim();
+
+  const count = getWordCount(text);
+
+  if(count===0){
+
+    showFeedback(
+      "finalFeedback",
+      "Write your biography first. You can use your draft from Step 7.",
+      "wrong"
+    );
+
+    return;
+
+  }
+
+  const lower = text.toLowerCase();
+
+  const checks = [
+    {
+      label:"You mentioned Kateb Yacine.",
+      good:lower.includes("kateb")
+    },
+    {
+      label:"You included his birth year.",
+      good:lower.includes("1929")
+    },
+    {
+      label:"You mentioned his birthplace.",
+      good:lower.includes("constantine")
+    },
+    {
+      label:"You mentioned a famous work.",
+      good:lower.includes("nedjma") ||
+           lower.includes("soliloques")
+    },
+    {
+      label:"You included his death year.",
+      good:lower.includes("1989")
+    },
+    {
+      label:"You used time expressions.",
+      good:/\b(first|later|after that|finally|in 1945|in 1946|in 1956|in 1987)\b/i.test(text)
+    },
+    {
+      label:"You used past-tense verbs.",
+      good:/\b(was|were|worked|published|studied|died|received|developed)\b/i.test(text)
+    },
+    {
+      label:"You reached the suggested length.",
+      good:count>=100 && count<=130
+    }
+  ];
+
+  const passed = checks.filter(item=>item.good).length;
+
+  const review = document.getElementById("finalReviewDetails");
+
+  review.innerHTML = "";
+
+  const heading = document.createElement("strong");
+  heading.textContent = "Your writing review:";
+
+  review.appendChild(heading);
+
+  checks.forEach(item=>{
+
+    const p = document.createElement("p");
+
+    p.textContent =
+      (item.good ? "✓ " : "○ ") + item.label;
+
+    p.style.color = item.good ? "#23885d" : "#765092";
+
+    review.appendChild(p);
+
+  });
+
+  review.classList.add("show");
+
+  showFeedback(
+    "finalFeedback",
+    "You met "+passed+"/8 writing indicators. This is a helpful review, not an automatic grammar grade.",
+    passed>=6 ? "correct" : "info"
+  );
+
+}
+
+function finishLesson(){
+
+  const text = document.getElementById("finalWriting").value.trim();
+
+  const count = getWordCount(text);
+
+  const checks = [...document.querySelectorAll(".final-check")];
+
+  const checked = checks.filter(input=>input.checked).length;
+
+  if(count<50){
+
+    showFeedback(
+      "finishFeedback",
+      "Your biography is still short. Try to write at least 50 words before finishing.",
+      "wrong"
+    );
+
+    return;
+
+  }
+
+  if(checked<checks.length){
+
+    showFeedback(
+      "finishFeedback",
+      "Tick the remaining self-check boxes after reviewing your writing.",
+      "info"
+    );
+
+    return;
+
+  }
+
+  award("final",5,9);
+
+  showFeedback(
+    "finishFeedback",
+    "🎉 Congratulations! You completed your writing mission. Your teacher can now review your biography.",
+    "correct"
+  );
+
+}
+
+function downloadWriting(){
+
+  const text = document.getElementById("finalWriting").value.trim();
+
+  if(!text){
+
+    showFeedback(
+      "finalFeedback",
+      "Write your biography before downloading it.",
+      "wrong"
+    );
+
+    return;
+
+  }
+
+  const content =
+    "MY ENGLISH SPACE\n" +
+    "MS4 - Sequence 2 - Writing Lesson 4\n\n" +
+    "THE LIFE OF KATEB YACINE\n\n" +
+    text;
+
+  const blob = new Blob([content],{
+    type:"text/plain;charset=utf-8"
+  });
+
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "My_Kateb_Yacine_Biography.txt";
+
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+
+}
+
+async function copyFinalWriting(){
+
+  const text = document.getElementById("finalWriting").value.trim();
+
+  if(!text){
+
+    showFeedback(
+      "finalFeedback",
+      "Write something before copying.",
+      "wrong"
+    );
+
+    return;
+
+  }
+
+  try{
+
+    await navigator.clipboard.writeText(text);
+
+    showFeedback(
+      "finalFeedback",
+      "✓ Your biography has been copied.",
+      "correct"
+    );
+
+  }catch(error){
+
+    const area = document.getElementById("finalWriting");
+
+    area.focus();
+    area.select();
+
+    showFeedback(
+      "finalFeedback",
+      "Select Copy from your device menu to copy the highlighted text.",
+      "info"
+    );
+
+  }
+
+}
+
+
+/* =========================================
+   MODEL ANSWERS
+========================================= */
+
+function toggleReveal(id){
+
+  document.getElementById(id).classList.toggle("show");
+
+}
+
+
+/* =========================================
+   DICTIONARY
+========================================= */
+
+const dictionaryWords = [
+
+  ["biography","سيرة ذاتية"],
+  ["writer","كاتب"],
+  ["poet","شاعر"],
+  ["journalist","صحفي"],
+  ["playwright","كاتب مسرحي"],
+  ["novel","رواية"],
+  ["poetry","شعر"],
+  ["literature","أدب"],
+  ["famous","مشهور"],
+  ["Algerian","جزائري"],
+  ["born","وُلد"],
+  ["birthplace","مكان الميلاد"],
+  ["education","تعليم"],
+  ["school","مدرسة"],
+  ["studied","درس"],
+  ["demonstration","مظاهرة"],
+  ["arrested","اعتُقل"],
+  ["prison","سجن"],
+  ["published","نشر / نُشر"],
+  ["worked","عمل"],
+  ["career","مسيرة مهنية"],
+  ["achievement","إنجاز"],
+  ["award","جائزة"],
+  ["theatre","مسرح"],
+  ["died","توفي"],
+  ["legacy","إرث"],
+  ["identity","هوية"],
+  ["history","تاريخ"],
+  ["society","مجتمع"],
+  ["colonialism","استعمار"],
+  ["important","مهم"],
+  ["outstanding","بارز / متميز"],
+  ["contribution","مساهمة"],
+  ["remembered","يُتذكَّر"],
+  ["first","أولاً"],
+  ["later","لاحقاً"],
+  ["after that","بعد ذلك"],
+  ["finally","أخيراً"],
+  ["during","خلال"],
+  ["in addition","بالإضافة إلى ذلك"],
+  ["chronological order","الترتيب الزمني"],
+  ["sentence","جملة"],
+  ["paragraph","فقرة"],
+  ["connector","أداة ربط"],
+  ["past simple","الماضي البسيط"],
+  ["passive voice","المبني للمجهول"]
+
+];
+
+function renderDictionary(words=dictionaryWords){
+
+  const list = document.getElementById("dictionaryList");
+
+  list.innerHTML = "";
+
+  if(words.length===0){
+
+    const empty = document.createElement("p");
+
+    empty.className = "small-text";
+    empty.textContent = "No matching words found.";
+
+    list.appendChild(empty);
+
+    return;
+
+  }
+
+  words.forEach(([english,arabic])=>{
+
+    const item = document.createElement("div");
+    item.className = "dict-item";
+
+    const en = document.createElement("span");
+    en.className = "dict-en";
+    en.textContent = english;
+
+    const ar = document.createElement("span");
+    ar.className = "dict-ar";
+    ar.lang = "ar";
+    ar.textContent = arabic;
+
+    item.appendChild(en);
+    item.appendChild(ar);
+
+    list.appendChild(item);
+
+  });
+
+}
+
+function openDictionary(){
+
+  document.getElementById("dictionaryOverlay")
+    .classList.add("open");
+
+  document.getElementById("dictionarySearch").focus();
+
+}
+
+function closeDictionary(){
+
+  document.getElementById("dictionaryOverlay")
+    .classList.remove("open");
+
+}
+
+function filterDictionary(){
+
+  const query = document.getElementById("dictionarySearch")
+    .value.toLowerCase().trim();
+
+  const filtered = dictionaryWords.filter(([en,ar])=>
+    en.toLowerCase().includes(query) || ar.includes(query)
+  );
+
+  renderDictionary(filtered);
+
+}
+
+document.getElementById("dictionaryOverlay")
+  .addEventListener("click",function(event){
+
+    if(event.target===this){
+      closeDictionary();
+    }
+
+  });
+
+document.addEventListener("keydown",event=>{
+
+  if(event.key==="Escape"){
+    closeDictionary();
+  }
+
+});
+
+
+/* =========================================
+   ACTIVE STEP NAVIGATION
+========================================= */
+
+const stepObserver = new IntersectionObserver(entries=>{
+
+  entries.forEach(entry=>{
+
+    if(!entry.isIntersecting) return;
+
+    document.querySelectorAll(".step-link").forEach(link=>{
+
+      link.classList.toggle(
+        "active",
+        link.getAttribute("href")==="#"+entry.target.id
+      );
+
+    });
+
+  });
+
+},{
+  rootMargin:"-20% 0px -65% 0px",
+  threshold:0
+});
+
+document.querySelectorAll(".step").forEach(step=>{
+  stepObserver.observe(step);
+});
+
+
+/* =========================================
+   AUTOSAVE
+========================================= */
+
+document.querySelectorAll(
+  "textarea,select,input[type='checkbox']"
+).forEach(element=>{
+
+  element.addEventListener("input",()=>{
+
+    if(element.id==="finalWriting"){
+      updateWordCount();
+    }
+
+    saveLesson();
+
+  });
+
+  element.addEventListener("change",saveLesson);
+
+});
+
+
+/* =========================================
+   INITIALISE
+========================================= */
+
+loadLesson();
+
+renderBuilder();
+renderDictionary();
+updateOrderNumbers();
+updateWordCount();
+updateDashboard();
+
+</script>
+
+</body>
+</html>

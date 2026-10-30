@@ -1,0 +1,2812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102c55">
+
+<title>BEM Preparation | My English Space</title>
+
+<meta name="description"
+content="Prepare for the Algerian BEM English examination with reading comprehension, mastery of language, written expression, past papers and interactive mock examinations.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* ======================================================
+   BEM PREPARATION — MY ENGLISH SPACE
+   PREMIUM RESPONSIVE HOMEPAGE
+====================================================== */
+
+:root{
+
+  --navy:#102c55;
+  --navy-deep:#081b38;
+  --blue:#2269b2;
+  --cyan:#2bc7d4;
+  --cyan-light:#e4fbfc;
+
+  --gold:#ffd36e;
+  --gold-deep:#e7a93b;
+
+  --purple:#8758ce;
+  --green:#19a87c;
+  --orange:#f29b51;
+  --pink:#e76f9d;
+
+  --white:#ffffff;
+  --paper:#f6faff;
+  --ink:#253954;
+  --muted:#6c7e93;
+  --line:#e1eaf4;
+
+  --shadow:0 18px 45px rgba(14,47,94,.11);
+
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+}
+
+body{
+  font-family:"Nunito",Arial,sans-serif;
+  color:var(--ink);
+  background:#f1f7ff;
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4{
+  font-family:"Baloo 2",Arial,sans-serif;
+  line-height:1.2;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible{
+  outline:3px solid var(--gold-deep);
+  outline-offset:4px;
+}
+
+.container{
+  width:min(1190px,calc(100% - 34px));
+  margin:auto;
+}
+
+.section{
+  padding:78px 0;
+}
+
+.section-heading{
+  text-align:center;
+  max-width:740px;
+  margin:0 auto 39px;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+}
+
+.section-heading h2{
+  margin:12px 0;
+  color:var(--navy);
+  font-size:clamp(32px,4vw,47px);
+}
+
+.section-heading p{
+  color:var(--muted);
+  font-size:14px;
+  font-weight:700;
+  line-height:1.9;
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(9,31,65,.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.header-inner{
+  min-height:79px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:white;
+  font-weight:900;
+  font-size:19px;
+}
+
+.brand-symbol{
+  display:grid;
+  place-items:center;
+  width:47px;
+  height:47px;
+  border-radius:15px;
+  background:linear-gradient(135deg,#fff,#d9f8ff);
+  color:var(--navy);
+  font-size:25px;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.nav-links a{
+  padding:10px 14px;
+  color:#e9f6ff;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.nav-links a:hover{
+  background:rgba(255,255,255,.13);
+}
+
+.nav-links .home-link{
+  color:#203c5a;
+  background:var(--gold);
+}
+
+.nav-links .home-link:hover{
+  background:#ffe3a1;
+}
+
+/* ======================================================
+   HERO
+====================================================== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:87px 0 105px;
+  color:white;
+
+  background:
+    radial-gradient(
+      circle at 86% 18%,
+      rgba(43,199,212,.27),
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 10% 85%,
+      rgba(255,211,110,.1),
+      transparent 33%
+    ),
+    linear-gradient(
+      130deg,
+      #081b38 0%,
+      #123968 50%,
+      #176c93 100%
+    );
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.15;
+  pointer-events:none;
+  background-image:
+    radial-gradient(#ffffff 1px,transparent 1px);
+  background-size:28px 28px;
+}
+
+.hero-layout{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  align-items:center;
+  gap:55px;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:11px 17px;
+  border-radius:30px;
+  background:rgba(255,255,255,.11);
+  border:1px solid rgba(255,255,255,.25);
+  color:#f4fbff;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.6px;
+}
+
+.hero h1{
+  margin:23px 0;
+  font-size:clamp(51px,6.5vw,86px);
+  line-height:1.04;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+}
+
+.hero-description{
+  max-width:600px;
+  color:#e3f3ff;
+  font-size:15px;
+  font-weight:700;
+  line-height:2;
+}
+
+.hero-actions{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:31px;
+}
+
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:9px;
+  padding:15px 23px;
+  min-height:51px;
+  border:0;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:900;
+  transition:transform .2s,background .2s,box-shadow .2s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.btn-gold{
+  background:linear-gradient(120deg,#ffe7a8,#ffd06b);
+  color:#624516;
+  box-shadow:0 12px 25px rgba(255,211,110,.18);
+}
+
+.btn-white{
+  background:white;
+  color:var(--navy);
+}
+
+.btn-blue{
+  background:linear-gradient(120deg,#246fbb,#164e94);
+  color:white;
+}
+
+.hero-highlights{
+  display:flex;
+  flex-wrap:wrap;
+  gap:11px;
+  margin-top:30px;
+}
+
+.hero-highlights span{
+  padding:9px 13px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:25px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.hero-visual{
+  position:relative;
+  max-width:510px;
+  margin:auto;
+}
+
+.hero-photo{
+  display:block;
+  width:100%;
+  height:425px;
+  object-fit:cover;
+  border:7px solid white;
+  border-radius:30px;
+  box-shadow:0 35px 70px rgba(0,10,34,.4);
+}
+
+.hero-floating{
+  position:absolute;
+  left:-28px;
+  bottom:-22px;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:18px 23px;
+  border:4px solid white;
+  border-radius:19px;
+  background:var(--gold);
+  color:#684a1e;
+  box-shadow:var(--shadow);
+}
+
+.hero-floating-icon{
+  font-size:32px;
+}
+
+.hero-floating strong{
+  display:block;
+  font-size:14px;
+  font-weight:900;
+}
+
+.hero-floating small{
+  display:block;
+  font-size:10px;
+  font-weight:900;
+}
+
+/* ======================================================
+   STATS
+====================================================== */
+
+.stats-section{
+  position:relative;
+  z-index:2;
+  margin-top:-43px;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  padding:24px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  box-shadow:var(--shadow);
+}
+
+.stat{
+  text-align:center;
+  padding:13px 10px;
+}
+
+.stat:not(:last-child){
+  border-right:1px solid var(--line);
+}
+
+.stat strong{
+  display:block;
+  color:var(--blue);
+  font-family:"Baloo 2",sans-serif;
+  font-size:37px;
+  font-weight:800;
+  line-height:1.1;
+}
+
+.stat span{
+  color:var(--muted);
+  font-size:11px;
+  font-weight:900;
+}
+
+/* ======================================================
+   WELCOME
+====================================================== */
+
+.welcome-panel{
+  display:grid;
+  grid-template-columns:90px 1fr;
+  gap:23px;
+  align-items:center;
+  padding:30px 35px;
+  border-radius:25px;
+  background:linear-gradient(120deg,#e8f6ff,#f7fcff);
+  border:1px solid #d6e9fa;
+}
+
+.welcome-icon{
+  display:grid;
+  place-items:center;
+  width:85px;
+  height:85px;
+  border-radius:23px;
+  background:white;
+  font-size:43px;
+  box-shadow:0 10px 25px rgba(20,75,130,.08);
+}
+
+.welcome-panel h2{
+  margin-bottom:9px;
+  color:var(--navy);
+  font-size:30px;
+}
+
+.welcome-panel p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:750;
+  line-height:1.95;
+}
+
+/* ======================================================
+   LEARNING DESTINATIONS
+====================================================== */
+
+.destinations{
+  background:linear-gradient(180deg,#f1f7ff,#f9fcff);
+}
+
+.destination-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+}
+
+.destination-card{
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  box-shadow:var(--shadow);
+  transition:.3s;
+}
+
+.destination-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 25px 55px rgba(14,47,94,.17);
+}
+
+.card-image{
+  position:relative;
+  height:205px;
+  overflow:hidden;
+  background:#dcebf7;
+}
+
+.card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s;
+}
+
+.destination-card:hover .card-image img{
+  transform:scale(1.06);
+}
+
+.card-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    transparent 40%,
+    rgba(5,26,62,.47)
+  );
+}
+
+.card-number{
+  position:absolute;
+  top:15px;
+  left:16px;
+  z-index:1;
+  padding:8px 13px;
+  border-radius:30px;
+  background:white;
+  color:var(--navy);
+  font-size:10px;
+  font-weight:900;
+}
+
+.card-symbol{
+  position:absolute;
+  right:16px;
+  bottom:12px;
+  z-index:1;
+  font-size:42px;
+  filter:drop-shadow(0 4px 5px rgba(0,0,0,.2));
+}
+
+.card-content{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:25px;
+}
+
+.card-category{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.1px;
+  text-transform:uppercase;
+}
+
+.card-content h3{
+  margin:10px 0;
+  color:var(--navy);
+  font-size:27px;
+}
+
+.card-content p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:750;
+  line-height:1.95;
+}
+
+.card-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:20px 0;
+}
+
+.card-tags span{
+  padding:8px 10px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.card-link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:auto;
+  padding:15px 17px;
+  border-radius:13px;
+  font-size:12px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.card-link:hover{
+  filter:brightness(.96);
+}
+
+.card-blue .card-category{color:#2877bd}
+.card-blue .card-tags span,
+.card-blue .card-link{
+  background:#e8f3ff;
+  color:#226fb2;
+}
+
+.card-purple .card-category{color:#8556c5}
+.card-purple .card-tags span,
+.card-purple .card-link{
+  background:#f2eaff;
+  color:#7950b8;
+}
+
+.card-green .card-category{color:#1b9b73}
+.card-green .card-tags span,
+.card-green .card-link{
+  background:#e8f9f0;
+  color:#168761;
+}
+
+.card-orange .card-category{color:#d88132}
+.card-orange .card-tags span,
+.card-orange .card-link{
+  background:#fff3e4;
+  color:#bd7229;
+}
+
+.card-pink .card-category{color:#d45d8b}
+.card-pink .card-tags span,
+.card-pink .card-link{
+  background:#fff0f6;
+  color:#c84f7e;
+}
+
+.card-teal .card-category{color:#168f9e}
+.card-teal .card-tags span,
+.card-teal .card-link{
+  background:#e5f9fa;
+  color:#087d8d;
+}
+
+/* ======================================================
+   BEM STRUCTURE
+====================================================== */
+
+.structure-section{
+  background:white;
+}
+
+.structure-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.structure-card{
+  padding:30px;
+  border-radius:25px;
+  border:1px solid var(--line);
+  background:#f8fbff;
+}
+
+.structure-card h3{
+  font-size:28px;
+  color:var(--navy);
+  margin-bottom:10px;
+}
+
+.structure-card>p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+.structure-points{
+  display:inline-flex;
+  margin:13px 0 20px;
+  padding:10px 15px;
+  border-radius:25px;
+  background:#e6f2ff;
+  color:var(--blue);
+  font-size:13px;
+  font-weight:900;
+}
+
+.structure-card.writing .structure-points{
+  background:#e9f8f1;
+  color:var(--green);
+}
+
+.structure-items{
+  display:grid;
+  gap:11px;
+}
+
+.structure-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:13px 15px;
+  border-radius:13px;
+  background:white;
+  border:1px solid var(--line);
+  font-size:12px;
+  font-weight:900;
+}
+
+.structure-item span{
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  flex-shrink:0;
+  border-radius:11px;
+  background:#eaf4ff;
+  font-size:17px;
+}
+
+.structure-card.writing .structure-item span{
+  background:#e8f9f0;
+}
+
+/* ======================================================
+   ROADMAP
+====================================================== */
+
+.roadmap-section{
+  background:linear-gradient(180deg,#edf6ff,#f7fbff);
+}
+
+.roadmap-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.roadmap-card{
+  position:relative;
+  padding:28px 22px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:23px;
+  box-shadow:0 12px 30px rgba(14,47,94,.07);
+  text-align:center;
+}
+
+.roadmap-number{
+  display:grid;
+  place-items:center;
+  width:54px;
+  height:54px;
+  margin:0 auto 17px;
+  border-radius:17px;
+  background:var(--navy);
+  color:white;
+  font-family:"Baloo 2",sans-serif;
+  font-size:24px;
+  font-weight:800;
+}
+
+.roadmap-card h3{
+  margin-bottom:11px;
+  color:var(--navy);
+  font-size:21px;
+}
+
+.roadmap-card p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+/* ======================================================
+   REVISION CHECKLIST
+====================================================== */
+
+.checklist-section{
+  background:white;
+}
+
+.checklist-layout{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:30px;
+  align-items:stretch;
+}
+
+.checklist-intro{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:37px;
+  border-radius:25px;
+  background:linear-gradient(135deg,#102c55,#225b98);
+  color:white;
+}
+
+.checklist-intro .eyebrow{
+  color:var(--gold);
+}
+
+.checklist-intro h2{
+  margin:13px 0;
+  font-size:38px;
+}
+
+.checklist-intro p{
+  color:#e0f0ff;
+  font-size:13px;
+  font-weight:750;
+  line-height:2;
+}
+
+.progress-percent{
+  margin-top:27px;
+  font-family:"Baloo 2",sans-serif;
+  font-size:56px;
+  font-weight:800;
+  color:var(--gold);
+}
+
+.progress-track{
+  height:13px;
+  margin-top:10px;
+  background:rgba(255,255,255,.2);
+  border-radius:30px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+  border-radius:30px;
+  background:linear-gradient(90deg,#ffd36e,#2bd0c4);
+  transition:width .4s;
+}
+
+.progress-caption{
+  margin-top:10px;
+  color:#d7e9fa;
+  font-size:11px;
+  font-weight:900;
+}
+
+.checklist-card{
+  padding:27px;
+  border:1px solid var(--line);
+  border-radius:25px;
+  background:#f9fcff;
+}
+
+.checklist-card h3{
+  margin-bottom:18px;
+  color:var(--navy);
+  font-size:26px;
+}
+
+.checklist-items{
+  display:grid;
+  gap:11px;
+}
+
+.check-item{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:14px 15px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:white;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.check-item:hover{
+  border-color:#a8d0f1;
+}
+
+.check-item input{
+  width:20px;
+  height:20px;
+  flex-shrink:0;
+  accent-color:var(--green);
+  cursor:pointer;
+}
+
+.check-item span{
+  font-size:12px;
+  font-weight:900;
+  line-height:1.5;
+}
+
+.check-item:has(input:checked){
+  background:#ecfaf3;
+  border-color:#b9e8d0;
+}
+
+.check-item:has(input:checked) span{
+  color:#278263;
+}
+
+.reset-progress{
+  margin-top:17px;
+  padding:10px 15px;
+  border:1px solid #d7e4f0;
+  border-radius:25px;
+  background:white;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:900;
+}
+
+.reset-progress:hover{
+  background:#eef5ff;
+}
+
+/* ======================================================
+   TIPS
+====================================================== */
+
+.tips-section{
+  background:#f1f7ff;
+}
+
+.tips-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.tip-card{
+  padding:28px 25px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:23px;
+  box-shadow:0 10px 30px rgba(14,47,94,.06);
+}
+
+.tip-icon{
+  display:grid;
+  place-items:center;
+  width:64px;
+  height:64px;
+  margin-bottom:18px;
+  border-radius:18px;
+  background:#e8f4ff;
+  font-size:31px;
+}
+
+.tip-card:nth-child(2) .tip-icon{
+  background:#fff2df;
+}
+
+.tip-card:nth-child(3) .tip-icon{
+  background:#e7f8f0;
+}
+
+.tip-card h3{
+  margin-bottom:10px;
+  color:var(--navy);
+  font-size:22px;
+}
+
+.tip-card p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+/* ======================================================
+   FINAL CTA
+====================================================== */
+
+.final-section{
+  padding:75px 0;
+  background:white;
+}
+
+.final-banner{
+  position:relative;
+  overflow:hidden;
+  padding:60px 35px;
+  border-radius:30px;
+  text-align:center;
+  color:white;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(43,199,212,.2),
+      transparent 30%
+    ),
+    linear-gradient(125deg,#102c55,#2269a5);
+}
+
+.final-banner h2{
+  font-size:clamp(34px,4vw,48px);
+}
+
+.final-banner p{
+  max-width:660px;
+  margin:15px auto 27px;
+  color:#e7f4ff;
+  font-size:13px;
+  font-weight:750;
+  line-height:2;
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.site-footer{
+  padding:38px 20px;
+  background:#081b38;
+  color:#d9e9fa;
+  text-align:center;
+  font-size:12px;
+  font-weight:800;
+  line-height:2;
+}
+
+.site-footer strong{
+  color:var(--gold);
+}
+
+/* ======================================================
+   TOAST MESSAGE
+====================================================== */
+
+.toast{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translate(-50%,25px);
+  z-index:200;
+  width:min(420px,calc(100% - 30px));
+  padding:18px 23px;
+  border-radius:17px;
+  background:#102c55;
+  color:white;
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+  font-size:13px;
+  font-weight:800;
+  line-height:1.7;
+  text-align:center;
+  opacity:0;
+  visibility:hidden;
+  transition:.25s;
+  pointer-events:none;
+}
+
+.toast.show{
+  opacity:1;
+  visibility:visible;
+  transform:translate(-50%,0);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:1050px){
+
+  .hero-layout{
+    gap:30px;
+  }
+
+  .hero-photo{
+    height:360px;
+  }
+
+  .destination-grid{
+    gap:16px;
+  }
+
+  .card-content{
+    padding:21px;
+  }
+
+  .roadmap-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:850px){
+
+  .hero-layout{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-description{
+    margin:auto;
+  }
+
+  .hero-actions,
+  .hero-highlights{
+    justify-content:center;
+  }
+
+  .hero-visual{
+    width:min(520px,100%);
+    margin:18px auto 0;
+  }
+
+  .destination-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .checklist-layout{
+    grid-template-columns:1fr;
+  }
+
+  .structure-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:650px){
+
+  .header-inner{
+    flex-direction:column;
+    justify-content:center;
+    padding:15px 0;
+  }
+
+  .nav-links{
+    justify-content:center;
+  }
+
+  .hero{
+    padding:56px 0 78px;
+  }
+
+  .hero h1{
+    font-size:51px;
+  }
+
+  .hero-photo{
+    height:290px;
+  }
+
+  .hero-floating{
+    left:7px;
+    bottom:-20px;
+    padding:13px 16px;
+  }
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stat:not(:last-child){
+    border-right:0;
+  }
+
+  .stat:nth-child(odd){
+    border-right:1px solid var(--line);
+  }
+
+  .stat:nth-child(-n+2){
+    border-bottom:1px solid var(--line);
+  }
+
+  .section{
+    padding:58px 0;
+  }
+
+  .welcome-panel{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:27px;
+  }
+
+  .welcome-icon{
+    margin:auto;
+  }
+
+  .destination-grid{
+    grid-template-columns:1fr;
+  }
+
+  .card-image{
+    height:225px;
+  }
+
+  .roadmap-grid,
+  .tips-grid{
+    grid-template-columns:1fr;
+  }
+
+  .checklist-intro,
+  .checklist-card{
+    padding:26px;
+  }
+
+  .final-banner{
+    padding:43px 22px;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
+
+<header class="site-header">
+
+  <div class="container header-inner">
+
+    <a href="index.html" class="brand">
+
+      <span class="brand-symbol">
+        🎓
+      </span>
+
+      My English Space
+
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+
+      <a href="#resources">
+        Study Resources
+      </a>
+
+      <a href="#exam-structure">
+        Exam Structure
+      </a>
+
+      <a href="#revision">
+        My Progress
+      </a>
+
+      <a href="index.html" class="home-link">
+        🏠 Main Homepage
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<main>
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+  <div class="container hero-layout">
+
+    <div>
+
+      <span class="hero-badge">
+
+        ✨ MS4 · OFFICIAL EXAM PREPARATION JOURNEY
+
+      </span>
+
+      <h1>
+
+        Your BEM
+
+        <span>Success Journey!</span>
+
+      </h1>
+
+      <p class="hero-description">
+
+        Welcome to your English BEM Preparation Centre!
+
+        This is your special learning space
+        to revise, practise and prepare confidently
+        for the Brevet d'Enseignement Moyen examination.
+
+        Master reading comprehension,
+        strengthen your language skills,
+        improve your written expression
+        and challenge yourself with BEM-style papers.
+
+        Your journey to success starts today!
+
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#resources" class="btn btn-gold">
+
+          🚀 Start BEM Preparation
+
+        </a>
+
+        <a href="#revision" class="btn btn-white">
+
+          📋 My Revision Checklist
+
+        </a>
+
+      </div>
+
+      <div class="hero-highlights">
+
+        <span>📖 Read</span>
+
+        <span>🧩 Practise</span>
+
+        <span>✍️ Write</span>
+
+        <span>🏆 Succeed</span>
+
+      </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+      <img
+        class="hero-photo"
+        src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1100&q=85"
+        alt="Study notebook and school supplies ready for exam preparation"
+      >
+
+      <div class="hero-floating">
+
+        <span class="hero-floating-icon">
+          🏆
+        </span>
+
+        <div>
+
+          <strong>
+            Future BEM Champion
+          </strong>
+
+          <small>
+            DREAM · PREPARE · ACHIEVE
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ======================================================
+     STATS
+====================================================== -->
+
+<div class="container stats-section">
+
+  <div class="stats-grid">
+
+    <div class="stat">
+
+      <strong>06</strong>
+
+      <span>Preparation Sections</span>
+
+    </div>
+
+    <div class="stat">
+
+      <strong>03</strong>
+
+      <span>Essential Exam Skills</span>
+
+    </div>
+
+    <div class="stat">
+
+      <strong>20</strong>
+
+      <span>Examination Points</span>
+
+    </div>
+
+    <div class="stat">
+
+      <strong>100%</strong>
+
+      <span>Determination</span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ======================================================
+     WELCOME
+====================================================== -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="welcome-panel">
+
+      <div class="welcome-icon">
+        🌟
+      </div>
+
+      <div>
+
+        <h2>
+          Welcome, Future BEM Champions!
+        </h2>
+
+        <p>
+
+          Preparing for the BEM is not only about memorising
+          grammar rules or vocabulary.
+
+          It is about learning how to understand texts,
+          answer questions accurately,
+          express ideas clearly
+          and manage examination time.
+
+          Follow the learning journey below,
+          practise regularly
+          and develop the confidence you need
+          to succeed in your English examination.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ======================================================
+     LEARNING DESTINATIONS
+====================================================== -->
+
+<section class="section destinations" id="resources">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">
+        ✦ YOUR BEM PREPARATION LIBRARY ✦
+      </span>
+
+      <h2>
+        Choose Your Learning Destination!
+      </h2>
+
+      <p>
+
+        Explore six dedicated learning areas.
+        Each one will help you develop
+        a different examination skill.
+
+      </p>
+
+    </div>
+
+    <div class="destination-grid">
+
+      <!-- ======================================
+           CARD 01 — EXAM GUIDE
+      ======================================= -->
+
+      <article class="destination-card card-blue">
+
+        <div class="card-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=85"
+            alt="Books and notebooks"
+            loading="lazy"
+          >
+
+          <span class="card-number">
+            DESTINATION 01
+          </span>
+
+          <span class="card-symbol">
+            🧭
+          </span>
+
+        </div>
+
+        <div class="card-content">
+
+          <span class="card-category">
+            UNDERSTAND THE EXAM
+          </span>
+
+          <h3>
+            BEM Exam Guide
+          </h3>
+
+          <p>
+
+            Discover the structure of the English
+            BEM examination.
+
+            Learn how questions are organised,
+            understand the marking system
+            and explore useful examination strategies.
+
+          </p>
+
+          <div class="card-tags">
+
+            <span>Exam Format</span>
+            <span>Instructions</span>
+            <span>Strategies</span>
+
+          </div>
+
+          <a
+            href="MS4-BEM-Guide.html"
+            class="card-link"
+            data-resource="BEM Exam Guide"
+          >
+
+            Explore the Guide
+
+            <span>→</span>
+
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- ======================================
+           CARD 02 — READING
+      ======================================= -->
+
+      <article class="destination-card card-purple">
+
+        <div class="card-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=85"
+            alt="Books for reading practice"
+            loading="lazy"
+          >
+
+          <span class="card-number">
+            DESTINATION 02
+          </span>
+
+          <span class="card-symbol">
+            📖
+          </span>
+
+        </div>
+
+        <div class="card-content">
+
+          <span class="card-category">
+            READING SKILLS
+          </span>
+
+          <h3>
+            Reading Comprehension
+          </h3>
+
+          <p>
+
+            Practise understanding texts,
+            identifying information,
+            answering comprehension questions,
+            finding references
+            and working with vocabulary in context.
+
+          </p>
+
+          <div class="card-tags">
+
+            <span>True / False</span>
+            <span>Questions</span>
+            <span>Vocabulary</span>
+
+          </div>
+
+          <a
+            href="MS4-BEM-Reading.html"
+            class="card-link"
+            data-resource="Reading Comprehension"
+          >
+
+            Practise Reading
+
+            <span>→</span>
+
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- ======================================
+           CARD 03 — LANGUAGE
+      ======================================= -->
+
+      <article class="destination-card card-green">
+
+        <div class="card-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=900&q=85"
+            alt="Students learning and practising language"
+            loading="lazy"
+          >
+
+          <span class="card-number">
+            DESTINATION 03
+          </span>
+
+          <span class="card-symbol">
+            🧩
+          </span>
+
+        </div>
+
+        <div class="card-content">
+
+          <span class="card-category">
+            GRAMMAR & VOCABULARY
+          </span>
+
+          <h3>
+            Mastery of Language
+          </h3>
+
+          <p>
+
+            Strengthen your grammar,
+            vocabulary and pronunciation.
+
+            Practise sentence transformation,
+            verb forms, word formation,
+            error correction and common BEM tasks.
+
+          </p>
+
+          <div class="card-tags">
+
+            <span>Grammar</span>
+            <span>Vocabulary</span>
+            <span>Pronunciation</span>
+
+          </div>
+
+          <a
+            href="MS4-BEM-Language.html"
+            class="card-link"
+            data-resource="Mastery of Language"
+          >
+
+            Master the Language
+
+            <span>→</span>
+
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- ======================================
+           CARD 04 — WRITING
+      ======================================= -->
+
+      <article class="destination-card card-orange">
+
+        <div class="card-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=85"
+            alt="Notebook for writing practice"
+            loading="lazy"
+          >
+
+          <span class="card-number">
+            DESTINATION 04
+          </span>
+
+          <span class="card-symbol">
+            ✍️
+          </span>
+
+        </div>
+
+        <div class="card-content">
+
+          <span class="card-category">
+            WRITTEN EXPRESSION
+          </span>
+
+          <h3>
+            Writing Workshop
+          </h3>
+
+          <p>
+
+            Learn how to write effective paragraphs
+            step by step.
+
+            Practise organising ideas,
+            using linking words,
+            improving grammar
+            and checking your final written expression.
+
+          </p>
+
+          <div class="card-tags">
+
+            <span>Planning</span>
+            <span>Paragraphs</span>
+            <span>Editing</span>
+
+          </div>
+
+          <a
+            href="MS4-BEM-Writing.html"
+            class="card-link"
+            data-resource="Writing Workshop"
+          >
+
+            Improve My Writing
+
+            <span>→</span>
+
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- ======================================
+           CARD 05 — PAST PAPERS
+      ======================================= -->
+
+      <article class="destination-card card-pink">
+
+        <div class="card-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=85"
+            alt="Organised papers and study notes"
+            loading="lazy"
+          >
+
+          <span class="card-number">
+            DESTINATION 05
+          </span>
+
+          <span class="card-symbol">
+            📜
+          </span>
+
+        </div>
+
+        <div class="card-content">
+
+          <span class="card-category">
+            REAL EXAM PRACTICE
+          </span>
+
+          <h3>
+            Past BEM Papers
+          </h3>
+
+          <p>
+
+            Explore previous BEM English examinations.
+
+            Become familiar with real question types,
+            practise answering examination tasks
+            and review corrections to improve your skills.
+
+          </p>
+
+          <div class="card-tags">
+
+            <span>Past Papers</span>
+            <span>Corrections</span>
+            <span>Practice</span>
+
+          </div>
+
+          <a
+            href="MS4-BEM-Past-Papers.html"
+            class="card-link"
+            data-resource="Past BEM Papers"
+          >
+
+            Explore Past Papers
+
+            <span>→</span>
+
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- ======================================
+           CARD 06 — MOCK EXAMS
+      ======================================= -->
+
+      <article class="destination-card card-teal">
+
+        <div class="card-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=85"
+            alt="Examination preparation materials"
+            loading="lazy"
+          >
+
+          <span class="card-number">
+            DESTINATION 06
+          </span>
+
+          <span class="card-symbol">
+            🏆
+          </span>
+
+        </div>
+
+        <div class="card-content">
+
+          <span class="card-category">
+            FINAL CHALLENGE
+          </span>
+
+          <h3>
+            BEM Mock Examinations
+          </h3>
+
+          <p>
+
+            Test your knowledge with complete
+            BEM-style practice examinations.
+
+            Work independently,
+            apply your examination strategies
+            and identify the skills
+            you still need to improve.
+
+          </p>
+
+          <div class="card-tags">
+
+            <span>Full Exams</span>
+            <span>Practice</span>
+            <span>Self-Assessment</span>
+
+          </div>
+
+          <a
+            href="MS4-BEM-Mock-Exams.html"
+            class="card-link"
+            data-resource="BEM Mock Examinations"
+          >
+
+            Take the Challenge
+
+            <span>→</span>
+
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ======================================================
+     EXAM STRUCTURE
+====================================================== -->
+
+<section class="section structure-section" id="exam-structure">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">
+        ✦ KNOW YOUR EXAMINATION ✦
+      </span>
+
+      <h2>
+        Understand the BEM English Paper
+      </h2>
+
+      <p>
+
+        Knowing the examination structure
+        helps you organise your work
+        and answer more confidently.
+
+      </p>
+
+    </div>
+
+    <div class="structure-grid">
+
+      <!-- PART ONE -->
+
+      <article class="structure-card">
+
+        <h3>
+          📖 Part One — Reading & Language
+        </h3>
+
+        <p>
+
+          Read a passage carefully,
+          understand its meaning
+          and complete comprehension
+          and language activities.
+
+        </p>
+
+        <div class="structure-points">
+          14 POINTS
+        </div>
+
+        <div class="structure-items">
+
+          <div class="structure-item">
+
+            <span>📖</span>
+
+            Reading comprehension activities
+
+          </div>
+
+          <div class="structure-item">
+
+            <span>🔍</span>
+
+            Finding information and vocabulary
+
+          </div>
+
+          <div class="structure-item">
+
+            <span>🧩</span>
+
+            Grammar and sentence transformation
+
+          </div>
+
+          <div class="structure-item">
+
+            <span>🔤</span>
+
+            Word formation and pronunciation
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <!-- PART TWO -->
+
+      <article class="structure-card writing">
+
+        <h3>
+          ✍️ Part Two — Written Expression
+        </h3>
+
+        <p>
+
+          Produce a short,
+          meaningful and organised paragraph
+          according to the given situation
+          and instructions.
+
+        </p>
+
+        <div class="structure-points">
+          06 POINTS
+        </div>
+
+        <div class="structure-items">
+
+          <div class="structure-item">
+
+            <span>💡</span>
+
+            Understand the writing situation
+
+          </div>
+
+          <div class="structure-item">
+
+            <span>📝</span>
+
+            Plan and organise your ideas
+
+          </div>
+
+          <div class="structure-item">
+
+            <span>🔗</span>
+
+            Use appropriate vocabulary and linkers
+
+          </div>
+
+          <div class="structure-item">
+
+            <span>✅</span>
+
+            Check grammar, spelling and punctuation
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ======================================================
+     ROADMAP
+====================================================== -->
+
+<section class="section roadmap-section" id="roadmap">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">
+        ✦ YOUR STEP-BY-STEP JOURNEY ✦
+      </span>
+
+      <h2>
+        Your BEM Success Roadmap
+      </h2>
+
+      <p>
+
+        Follow these four stages
+        to build your examination confidence.
+
+      </p>
+
+    </div>
+
+    <div class="roadmap-grid">
+
+      <article class="roadmap-card">
+
+        <div class="roadmap-number">
+          01
+        </div>
+
+        <h3>
+          Understand
+        </h3>
+
+        <p>
+
+          Discover the examination structure,
+          instructions and common question types.
+
+        </p>
+
+      </article>
+
+      <article class="roadmap-card">
+
+        <div class="roadmap-number">
+          02
+        </div>
+
+        <h3>
+          Revise
+        </h3>
+
+        <p>
+
+          Review essential vocabulary,
+          grammar rules,
+          reading strategies
+          and writing techniques.
+
+        </p>
+
+      </article>
+
+      <article class="roadmap-card">
+
+        <div class="roadmap-number">
+          03
+        </div>
+
+        <h3>
+          Practise
+        </h3>
+
+        <p>
+
+          Complete different activities
+          and learn how to avoid
+          common examination mistakes.
+
+        </p>
+
+      </article>
+
+      <article class="roadmap-card">
+
+        <div class="roadmap-number">
+          04
+        </div>
+
+        <h3>
+          Challenge Yourself
+        </h3>
+
+        <p>
+
+          Complete full BEM-style examinations,
+          review your answers
+          and improve your performance.
+
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ======================================================
+     REVISION CHECKLIST
+====================================================== -->
+
+<section class="section checklist-section" id="revision">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">
+        ✦ YOUR PERSONAL REVISION TRACKER ✦
+      </span>
+
+      <h2>
+        My BEM Revision Checklist
+      </h2>
+
+      <p>
+
+        Tick the skills you have revised.
+        Your checklist is saved automatically
+        on this device.
+
+      </p>
+
+    </div>
+
+    <div class="checklist-layout">
+
+      <div class="checklist-intro">
+
+        <span class="eyebrow">
+          🎯 MY PREPARATION PROGRESS
+        </span>
+
+        <h2>
+          How Ready Am I?
+        </h2>
+
+        <p>
+
+          Good preparation takes time,
+          patience and regular practice.
+
+          Mark each revision topic
+          after you have studied it.
+
+          Return to this checklist
+          whenever you want to review
+          your progress.
+
+        </p>
+
+        <div
+          class="progress-percent"
+          id="progressPercent"
+        >
+          0%
+        </div>
+
+        <div
+          class="progress-track"
+          role="progressbar"
+          aria-label="Revision checklist progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          id="progressTrack"
+        >
+
+          <div
+            class="progress-fill"
+            id="progressFill"
+          ></div>
+
+        </div>
+
+        <div
+          class="progress-caption"
+          id="progressCaption"
+        >
+          0 of 10 revision topics completed
+        </div>
+
+      </div>
+
+      <div class="checklist-card">
+
+        <h3>
+          📋 My Revision Tasks
+        </h3>
+
+        <div class="checklist-items" id="checklistItems">
+
+          <label class="check-item">
+
+            <input type="checkbox" data-task="0">
+
+            <span>
+              I understand the structure of the BEM English examination.
+            </span>
+
+          </label>
+
+          <label class="check-item">
+
+            <input type="checkbox" data-task="1">
+
+            <span>
+              I can identify the main idea of a reading text.
+            </span>
+
+          </label>
+
+          <label class="check-item">
+
+            <input type="checkbox" data-task="2">
+
+            <span>
+              I can answer comprehension questions correctly.
+            </span>
+
+          </label>
+
+          <label class="check-item">
+
+            <input type="checkbox" data-task="3">
+
+            <span>
+              I can find synonyms, opposites and references.
+            </span>
+
+          </label>
+
+          <label class="check-item">
+
+            <input type="checkbox" data-task="4">
+
+            <span>
+              I have revised the main grammar points of the three sequences.
+            </span>
+
+          </label>
+
+          <label class="check-item">
+
+            <input type="checkbox" data-task="5">
+
+            <span>
+              I can complete sentence transformation activities.
+            </span>
+
+          </label>
+
+          <label class="check-item">
+
+            <input type="checkbox" data-task="6">
+
+            <span>
+              I have practised word formation and pronunciation.
+            </span>
+
+          </label>
+
+          <label class="check-item">
+
+            <input type="checkbox" data-task="7">
+
+            <span>
+              I can organise and write a clear paragraph.
+            </span>
+
+          </label>
+
+          <label class="check-item">
+
+            <input type="checkbox" data-task="8">
+
+            <span>
+              I have practised with previous BEM examination papers.
+            </span>
+
+          </label>
+
+          <label class="check-item">
+
+            <input type="checkbox" data-task="9">
+
+            <span>
+              I have completed a full BEM-style mock examination.
+            </span>
+
+          </label>
+
+        </div>
+
+        <button
+          type="button"
+          class="reset-progress"
+          id="resetProgress"
+        >
+
+          🔄 Reset My Checklist
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ======================================================
+     EXAM TIPS
+====================================================== -->
+
+<section class="section tips-section">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">
+        ✦ SMART EXAMINATION STRATEGIES ✦
+      </span>
+
+      <h2>
+        Three Golden Tips for BEM Success
+      </h2>
+
+      <p>
+
+        Use these simple strategies
+        whenever you practise an examination.
+
+      </p>
+
+    </div>
+
+    <div class="tips-grid">
+
+      <article class="tip-card">
+
+        <div class="tip-icon">
+          🔍
+        </div>
+
+        <h3>
+          Read Before You Answer
+        </h3>
+
+        <p>
+
+          Read the instructions carefully.
+
+          Underline key words
+          and look for information in the text
+          before writing your answers.
+
+        </p>
+
+      </article>
+
+      <article class="tip-card">
+
+        <div class="tip-icon">
+          ⏱️
+        </div>
+
+        <h3>
+          Manage Your Time
+        </h3>
+
+        <p>
+
+          Do not spend too much time
+          on one difficult question.
+
+          Complete the easier activities first
+          and leave time to review your work.
+
+        </p>
+
+      </article>
+
+      <article class="tip-card">
+
+        <div class="tip-icon">
+          ✍️
+        </div>
+
+        <h3>
+          Check Your Writing
+        </h3>
+
+        <p>
+
+          Before submitting,
+          check capital letters,
+          punctuation,
+          spelling,
+          verb forms
+          and the organisation of your paragraph.
+
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ======================================================
+     FINAL CALL TO ACTION
+====================================================== -->
+
+<section class="final-section">
+
+  <div class="container">
+
+    <div class="final-banner">
+
+      <h2>
+        🏆 Believe in Yourself. Your BEM Success Starts Here!
+      </h2>
+
+      <p>
+
+        Every reading text you understand,
+        every grammar activity you complete
+        and every paragraph you write
+        brings you closer to your goal.
+
+        Stay focused,
+        practise regularly
+        and never stop believing
+        in your ability to succeed!
+
+      </p>
+
+      <a href="#resources" class="btn btn-gold">
+
+        🚀 Begin My BEM Journey
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer class="site-footer">
+
+  <strong>
+    MY ENGLISH SPACE
+  </strong>
+
+  <br>
+
+  BEM Preparation Centre · MS4 English
+
+  <br>
+
+  © <span id="year"></span> My English Space
+
+  <br>
+
+  Learn · Practise · Improve · Succeed
+
+</footer>
+
+<!-- ======================================================
+     NOTIFICATION
+====================================================== -->
+
+<div
+  class="toast"
+  id="toast"
+  role="status"
+  aria-live="polite"
+></div>
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+/* ======================================================
+   CURRENT YEAR
+====================================================== */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+/* ======================================================
+   CHECKLIST PROGRESS
+====================================================== */
+
+const STORAGE_KEY = "MS4_BEM_REVISION_CHECKLIST_V1";
+
+const checkboxes = Array.from(
+  document.querySelectorAll(
+    '#checklistItems input[type="checkbox"]'
+  )
+);
+
+function loadChecklist(){
+
+  let saved = [];
+
+  try{
+
+    saved = JSON.parse(
+      localStorage.getItem(STORAGE_KEY)
+    ) || [];
+
+  }catch(error){
+
+    saved = [];
+
+  }
+
+  checkboxes.forEach(function(box,index){
+
+    box.checked = saved.includes(index);
+
+  });
+
+  updateProgress();
+
+}
+
+function saveChecklist(){
+
+  const completed = [];
+
+  checkboxes.forEach(function(box,index){
+
+    if(box.checked){
+      completed.push(index);
+    }
+
+  });
+
+  try{
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(completed)
+    );
+
+  }catch(error){
+
+    // The checklist still works during this visit.
+
+  }
+
+  updateProgress();
+
+}
+
+function updateProgress(){
+
+  const total = checkboxes.length;
+
+  const completed = checkboxes.filter(function(box){
+
+    return box.checked;
+
+  }).length;
+
+  const percent = total
+    ? Math.round((completed/total)*100)
+    : 0;
+
+  document.getElementById(
+    "progressPercent"
+  ).textContent = percent+"%";
+
+  document.getElementById(
+    "progressFill"
+  ).style.width = percent+"%";
+
+  document.getElementById(
+    "progressCaption"
+  ).textContent =
+    completed+" of "+total+
+    " revision topics completed";
+
+  document.getElementById(
+    "progressTrack"
+  ).setAttribute(
+    "aria-valuenow",
+    String(percent)
+  );
+
+}
+
+checkboxes.forEach(function(box){
+
+  box.addEventListener(
+    "change",
+    saveChecklist
+  );
+
+});
+
+document.getElementById(
+  "resetProgress"
+).addEventListener("click",function(){
+
+  const confirmed = confirm(
+    "Reset your BEM revision checklist?"
+  );
+
+  if(!confirmed){
+    return;
+  }
+
+  checkboxes.forEach(function(box){
+
+    box.checked = false;
+
+  });
+
+  saveChecklist();
+
+  showToast(
+    "Your revision checklist has been reset."
+  );
+
+});
+
+/* ======================================================
+   RESOURCE LINKS
+   Uncreated pages show a friendly message.
+====================================================== */
+
+const resourceLinks = document.querySelectorAll(
+  "[data-resource]"
+);
+
+resourceLinks.forEach(function(link){
+
+  link.addEventListener("click",function(event){
+
+    /*
+      Links work normally once the corresponding
+      HTML files exist on your website.
+
+      If you want to prevent navigation until
+      a resource is ready, add data-ready="false"
+      to that link.
+    */
+
+    if(link.dataset.ready === "false"){
+
+      event.preventDefault();
+
+      showToast(
+        "🚧 "+link.dataset.resource+
+        " is being prepared. Please check back soon!"
+      );
+
+    }
+
+  });
+
+});
+
+/* ======================================================
+   TOAST
+====================================================== */
+
+let toastTimer;
+
+function showToast(message){
+
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(function(){
+
+    toast.classList.remove("show");
+
+  },3500);
+
+}
+
+/* ======================================================
+   INITIALISE
+====================================================== */
+
+loadChecklist();
+
+</script>
+
+</body>
+</html>

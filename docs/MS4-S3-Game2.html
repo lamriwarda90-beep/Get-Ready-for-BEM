@@ -1,0 +1,3150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEON CITY: WORD RUSH | MS4 S3 Game 2</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   NEON CITY — WORD RUSH
+   MS4 · SEQUENCE 3 · GAME 02
+========================================= */
+
+:root {
+  --bg: #0b1023;
+  --panel: #18213c;
+  --line: #35466e;
+  --pink: #ff59aa;
+  --cyan: #50e7f0;
+  --yellow: #ffe276;
+  --green: #65f4af;
+  --text: #f6f7ff;
+  --muted: #b9c8e7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Nunito", Arial, sans-serif;
+
+  background:
+    radial-gradient(
+      ellipse at 10% 0%,
+      #34245c,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 95% 40%,
+      #073d5a,
+      transparent 50%
+    ),
+    var(--bg);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.shell {
+  max-width: 1120px;
+  margin: auto;
+  padding: 20px 15px 50px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(25px, 4vw, 44px);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--yellow);
+}
+
+.sub {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 800;
+  margin-top: 7px;
+}
+
+.actions {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.ghost {
+  border: 1px solid #6879a5;
+  background: #ffffff12;
+  color: white;
+  padding: 10px 13px;
+  border-radius: 12px;
+  font-weight: 900;
+}
+
+.ghost:hover {
+  background: #ffffff28;
+}
+
+/* =========================================
+   PLAYER STATISTICS
+========================================= */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0 12px;
+}
+
+.stat {
+  background: #17223fd9;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 12px;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-family: "Baloo 2", sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--yellow);
+}
+
+.stat span {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.progress {
+  height: 10px;
+  background: #253353;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.progress > div {
+  height: 100%;
+  width: 0;
+
+  background: linear-gradient(
+    90deg,
+    var(--cyan),
+    var(--pink),
+    var(--yellow)
+  );
+
+  transition: width 0.35s;
+}
+
+/* =========================================
+   GAME ARENA
+========================================= */
+
+.arena {
+  position: relative;
+  overflow: hidden;
+
+  margin-top: 17px;
+  min-height: 480px;
+
+  border: 2px solid #546ba3;
+  border-radius: 27px;
+
+  background: linear-gradient(
+    180deg,
+    #172c56 0%,
+    #352655 68%,
+    #11182e 100%
+  );
+
+  box-shadow: 0 20px 60px #0006;
+}
+
+.arena::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      transparent 96%,
+      #9fd8ff17 97%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 96%,
+      #9fd8ff14 97%
+    );
+
+  background-size: 40px 40px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* CITY SILHOUETTE */
+
+.city {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 175px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.building {
+  width: 13%;
+  height: var(--h);
+
+  background: repeating-linear-gradient(
+    180deg,
+    #17264c 0 17px,
+    #2e5b8b 18px 22px
+  );
+
+  border: 2px solid #5889ad;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.arenaHead {
+  position: relative;
+  z-index: 2;
+
+  padding: 20px 22px 0;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stagePill,
+.modePill {
+  border: 1px solid #ffffff45;
+  border-radius: 30px;
+  background: #111a37c9;
+
+  padding: 8px 12px;
+
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.stagePill {
+  color: var(--cyan);
+}
+
+/* =========================================
+   MISSION CARD
+========================================= */
+
+.missionCard {
+  position: relative;
+  z-index: 2;
+
+  margin: 22px auto 26px;
+
+  width: min(
+    730px,
+    calc(100% - 28px)
+  );
+
+  background: #131d38f5;
+  border: 1px solid #6d80b0;
+  border-radius: 23px;
+
+  padding: 24px;
+
+  box-shadow: 0 14px 45px #0005;
+}
+
+.eyebrow {
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.prompt {
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: clamp(21px, 3vw, 30px);
+
+  line-height: 1.27;
+  margin: 13px 0 15px;
+}
+
+.help {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   MULTIPLE CHOICE
+========================================= */
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    minmax(0, 1fr)
+  );
+
+  gap: 11px;
+  margin-top: 18px;
+}
+
+.answer {
+  background: #263657;
+  border: 2px solid #5774a7;
+  color: white;
+
+  border-radius: 15px;
+
+  min-height: 70px;
+  padding: 13px 14px;
+
+  text-align: left;
+  font-weight: 900;
+
+  transition:
+    transform 0.15s,
+    background 0.15s;
+}
+
+.answer:hover:not(:disabled) {
+  transform: translateY(-3px);
+  border-color: var(--cyan);
+}
+
+.answer.correct {
+  background: #125b4d;
+  border-color: var(--green);
+}
+
+.answer.wrong {
+  background: #67304d;
+  border-color: var(--pink);
+}
+
+.answer:disabled {
+  cursor: default;
+}
+
+.answer .key {
+  display: inline-grid;
+  place-items: center;
+
+  width: 27px;
+  height: 27px;
+
+  background: #ffffff1c;
+  border-radius: 8px;
+
+  margin-right: 9px;
+  color: var(--yellow);
+}
+
+/* =========================================
+   TEXT INPUT
+========================================= */
+
+.input {
+  width: 100%;
+  padding: 15px;
+
+  border: 2px solid #6484b6;
+  background: #eef8ff;
+  border-radius: 14px;
+
+  color: #11213e;
+  font-size: 17px;
+}
+
+/* =========================================
+   SENTENCE BUILDER
+========================================= */
+
+.tiles,
+.assembled {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+
+  padding: 12px;
+  border-radius: 14px;
+  min-height: 66px;
+}
+
+.tiles {
+  background: #263654;
+}
+
+.assembled {
+  border: 2px dashed #8196bc;
+  margin: 10px 0;
+}
+
+.tile {
+  border: 1px solid #8bc5ee;
+  background: #2e5880;
+  color: white;
+
+  border-radius: 10px;
+  padding: 10px 13px;
+
+  font-weight: 900;
+}
+
+.tile:hover:not(:disabled) {
+  background: #4676a4;
+}
+
+.tile:disabled {
+  opacity: 0.3;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.cta {
+  border: 0;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    120deg,
+    var(--yellow),
+    #ff9bbf
+  );
+
+  color: #1e1830;
+  font-weight: 900;
+
+  padding: 13px 19px;
+  min-height: 48px;
+}
+
+.cta:hover {
+  filter: brightness(1.08);
+}
+
+.secondary {
+  border: 1px solid #7893bc;
+  border-radius: 14px;
+
+  background: #ffffff16;
+  color: white;
+
+  font-weight: 900;
+  padding: 12px 15px;
+  min-height: 46px;
+}
+
+.secondary:hover {
+  background: #ffffff28;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 15px;
+}
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+.feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+
+  border-radius: 12px;
+  background: #2a3b61;
+
+  color: #fff3c1;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.combo {
+  position: absolute;
+  right: 22px;
+  bottom: 17px;
+  z-index: 2;
+
+  font-family: "Baloo 2", sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+
+  color: var(--yellow);
+  text-shadow: 0 3px 12px #000;
+}
+
+/* =========================================
+   DISTRICT MAP
+========================================= */
+
+.worlds {
+  display: grid;
+  grid-template-columns: repeat(
+    5,
+    minmax(0, 1fr)
+  );
+
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.world {
+  border: 1px solid #556994;
+  border-radius: 14px;
+
+  background: #17213e;
+  color: #c9d6f4;
+
+  padding: 12px 6px;
+
+  text-align: center;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.world .icon {
+  font-size: 25px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.world.active {
+  border-color: var(--yellow);
+  background: #3b315e;
+  color: white;
+}
+
+.world.done {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+/* =========================================
+   INSTRUCTIONS
+========================================= */
+
+.instructions {
+  margin-top: 15px;
+
+  background: #192643;
+  border: 1px solid #4a638f;
+  border-radius: 18px;
+
+  padding: 18px;
+}
+
+.instructions h2 {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+
+  margin: 0 0 5px;
+  color: var(--yellow);
+}
+
+.instructions p {
+  margin: 6px 0;
+  line-height: 1.6;
+  color: #dce8ff;
+}
+
+/* =========================================
+   MODAL
+========================================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: #060c1ce9;
+
+  display: grid;
+  place-items: center;
+
+  z-index: 30;
+  padding: 14px;
+}
+
+.dialog {
+  width: min(640px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+
+  background: linear-gradient(
+    145deg,
+    #263d70,
+    #201936
+  );
+
+  border: 2px solid #7895d2;
+  border-radius: 25px;
+
+  padding: 25px;
+
+  box-shadow: 0 25px 80px #000a;
+}
+
+.dialog h2 {
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(26px, 4vw, 39px);
+  font-weight: 800;
+
+  line-height: 1.1;
+  color: var(--yellow);
+
+  margin: 10px 0;
+}
+
+.dialog p {
+  line-height: 1.7;
+  color: #e6eeff;
+}
+
+.guide {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  margin: 17px 0;
+}
+
+.guide div {
+  background: #ffffff13;
+  border: 1px solid #ffffff30;
+  border-radius: 13px;
+
+  padding: 12px;
+
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.guide b {
+  color: var(--cyan);
+}
+
+.modeButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.modeButtons button {
+  flex: 1;
+  min-width: 135px;
+}
+
+.selected {
+  border-color: var(--yellow) !important;
+  background: #6a477f !important;
+}
+
+.small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* =========================================
+   TOAST AND PARTICLES
+========================================= */
+
+.toast {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 45;
+
+  background: #2e2152;
+  border: 1px solid var(--yellow);
+  border-radius: 20px;
+
+  padding: 13px 20px;
+
+  font-weight: 900;
+  box-shadow: 0 10px 30px #0008;
+
+  pointer-events: none;
+}
+
+.burst {
+  position: absolute;
+  z-index: 5;
+
+  pointer-events: none;
+  font-size: 24px;
+
+  animation: burst 1.1s ease-out forwards;
+}
+
+@keyframes burst {
+  to {
+    transform:
+      translate(var(--dx), -130px)
+      rotate(140deg);
+
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 650px) {
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .answers {
+    grid-template-columns: 1fr;
+  }
+
+  .worlds {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .arena {
+    min-height: 520px;
+  }
+
+  .missionCard {
+    padding: 17px;
+  }
+
+  .guide {
+    grid-template-columns: 1fr;
+  }
+
+  .brand {
+    font-size: 29px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="shell">
+
+  <!-- =====================================
+       HEADER
+  ====================================== -->
+
+  <header class="top">
+
+    <div>
+      <div class="brand">
+        ⚡ NEON CITY: WORD RUSH
+      </div>
+
+      <div class="sub">
+        MS4 · SEQUENCE 3 · CITIZENSHIP VOCABULARY · GAME 02
+      </div>
+    </div>
+
+    <div class="actions">
+
+      <button class="ghost" id="how">
+        ❔ How to Play
+      </button>
+
+      <button class="ghost" id="sound">
+        🔇 Sound
+      </button>
+
+      <button class="ghost" id="results">
+        📊 Results
+      </button>
+
+      <button class="ghost" id="reset">
+        ↻ Restart
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- =====================================
+       HUD
+  ====================================== -->
+
+  <div class="stats">
+
+    <div class="stat">
+      <strong id="points">0</strong>
+      <span>⚡ XP POINTS</span>
+    </div>
+
+    <div class="stat">
+      <strong id="level">1 / 65</strong>
+      <span>🎯 MISSION</span>
+    </div>
+
+    <div class="stat">
+      <strong id="streak">0</strong>
+      <span>🔥 COMBO</span>
+    </div>
+
+    <div class="stat">
+      <strong id="accuracy">100%</strong>
+      <span>🎯 ACCURACY</span>
+    </div>
+
+  </div>
+
+  <div class="progress">
+    <div id="progress"></div>
+  </div>
+
+  <!-- DISTRICTS -->
+
+  <div class="worlds" id="worlds"></div>
+
+  <!-- =====================================
+       GAME ARENA
+  ====================================== -->
+
+  <main class="arena" id="arena">
+
+    <div class="city">
+
+      <div class="building" style="--h:75%"></div>
+      <div class="building" style="--h:52%"></div>
+      <div class="building" style="--h:95%"></div>
+      <div class="building" style="--h:65%"></div>
+      <div class="building" style="--h:86%"></div>
+      <div class="building" style="--h:45%"></div>
+
+    </div>
+
+    <div class="arenaHead">
+
+      <span class="stagePill" id="stage">
+        🏙️ DISTRICT 01
+      </span>
+
+      <span class="modePill" id="modeLabel">
+        🎮 ARCADE MODE
+      </span>
+
+    </div>
+
+    <section class="missionCard">
+
+      <div class="eyebrow" id="type">
+        MISSION BRIEF
+      </div>
+
+      <h1 class="prompt" id="prompt">
+        Ready to rescue Neon City?
+      </h1>
+
+      <div class="help" id="help">
+        Read the mission.
+        Choose, build, or type your answer.
+      </div>
+
+      <div id="task"></div>
+
+      <div
+        class="feedback"
+        id="feedback"
+        hidden
+        aria-live="polite">
+      </div>
+
+      <div class="row" id="taskActions"></div>
+
+    </section>
+
+    <div class="combo" id="comboLabel">
+      ⚡ POWER UP!
+    </div>
+
+  </main>
+
+  <!-- =====================================
+       INSTRUCTIONS
+  ====================================== -->
+
+  <div class="instructions">
+
+    <h2>🎮 Your mission is simple</h2>
+
+    <p>
+      <b>1.</b> Read the challenge.
+      <b>2.</b> Tap an answer, arrange word tiles,
+      or type the missing word.
+      <b>3.</b> Earn XP and build a combo!
+      Every 13 missions unlocks a new district.
+    </p>
+
+    <p>
+      💡 Need help? Use the Hint button.
+      No character movement or searching for objects:
+      the action starts immediately.
+    </p>
+
+  </div>
+
+  <footer style="
+    text-align:center;
+    color:#aebfe5;
+    padding:20px;
+    font-size:12px;
+  ">
+
+    Made for independent MS4 learning ·
+    Progress saved on this device
+
+  </footer>
+
+</div>
+
+<!-- =====================================
+     MODAL
+====================================== -->
+
+<div class="overlay" id="overlay">
+
+  <div class="dialog">
+
+    <div
+      style="font-size:54px"
+      id="modalIcon">
+      ⚡
+    </div>
+
+    <h2 id="modalTitle">
+      Welcome to Neon City!
+    </h2>
+
+    <div id="modalBody"></div>
+
+    <div class="row" id="modalActions"></div>
+
+  </div>
+
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script>
+
+"use strict";
+
+/* =========================================
+   HELPERS
+========================================= */
+
+const $ = id => document.getElementById(id);
+
+/* =========================================
+   DISTRICTS
+========================================= */
+
+const DISTRICTS = [
+
+  {
+    icon: "🌈",
+    name: "Word Street",
+    kind: "MEANING HUNT",
+    desc: "Decode the vocabulary clues."
+  },
+
+  {
+    icon: "🏭",
+    name: "Sorting Lab",
+    kind: "CATEGORY CLASH",
+    desc: "Sort words into the right category."
+  },
+
+  {
+    icon: "🌊",
+    name: "Bubble Battle",
+    kind: "SPEEDY WORD MATCH",
+    desc: "Catch the correct meaning."
+  },
+
+  {
+    icon: "🏙️",
+    name: "Build Zone",
+    kind: "SENTENCE REMIX",
+    desc: "Tap tiles to build complete sentences."
+  },
+
+  {
+    icon: "🏆",
+    name: "Final Arena",
+    kind: "BOSS CHALLENGES",
+    desc: "Use your vocabulary in real situations."
+  }
+
+];
+
+/* =========================================
+   QUESTION BANK
+========================================= */
+
+const Q = [];
+
+function pick(w, clue, answer, wrong, why) {
+
+  Q.push({
+    w,
+    kind: "pick",
+    clue,
+    answer,
+    options: [answer, ...wrong],
+    why
+  });
+
+}
+
+function build(w, clue, answer) {
+
+  Q.push({
+    w,
+    kind: "build",
+    clue,
+    answer,
+    why: "Arrange all the words to make a correct sentence."
+  });
+
+}
+
+function type(w, clue, answer, why) {
+
+  Q.push({
+    w,
+    kind: "type",
+    clue,
+    answer,
+    why
+  });
+
+}
+
+/* =========================================
+   DISTRICT 1 — WORD STREET
+   13 MISSIONS
+========================================= */
+
+[
+  [
+    "Helping and supporting other people",
+    "Solidarity",
+    "Pollution",
+    "Password",
+    "Solidarity means helping people in need."
+  ],
+
+  [
+    "A person who helps without being paid",
+    "Volunteer",
+    "Tourist",
+    "Customer",
+    "A volunteer gives their time freely."
+  ],
+
+  [
+    "Money or goods given to help",
+    "Donation",
+    "Traffic",
+    "Tradition",
+    "A donation is something given to support a cause."
+  ],
+
+  [
+    "Traditions and monuments from the past",
+    "Heritage",
+    "Weather",
+    "Technology",
+    "Heritage connects us to our history."
+  ],
+
+  [
+    "Beliefs, customs and ways of life",
+    "Culture",
+    "Waste",
+    "Danger",
+    "Culture includes customs and traditions."
+  ],
+
+  [
+    "A member of a country",
+    "Citizen",
+    "Passenger",
+    "Robot",
+    "Citizens have rights and responsibilities."
+  ],
+
+  [
+    "Responsible membership of a community",
+    "Citizenship",
+    "Tourism",
+    "Entertainment",
+    "Citizenship includes rights and duties."
+  ],
+
+  [
+    "Harmful substances in the environment",
+    "Pollution",
+    "Respect",
+    "Cooperation",
+    "Pollution damages air, land and water."
+  ],
+
+  [
+    "Making new products from used materials",
+    "Recycling",
+    "Bullying",
+    "Wasting",
+    "Recycling helps reduce waste."
+  ],
+
+  [
+    "Treating others with consideration",
+    "Respect",
+    "Spam",
+    "Pollution",
+    "Respect means valuing others."
+  ],
+
+  [
+    "Repeated harmful behaviour online",
+    "Cyberbullying",
+    "Volunteering",
+    "Conservation",
+    "Cyberbullying happens through digital devices."
+  ],
+
+  [
+    "A secret code that protects an account",
+    "Password",
+    "Monument",
+    "Donation",
+    "Keep your password private."
+  ],
+
+  [
+    "Private details about a person",
+    "Personal information",
+    "Public garden",
+    "Cultural festival",
+    "Personal information should be protected."
+  ]
+
+].forEach(([a, b, c, d, e]) => {
+
+  pick(
+    0,
+    a,
+    b,
+    [c, d, "None of these"],
+    e
+  );
+
+});
+
+/* =========================================
+   DISTRICT 2 — SORTING LAB
+   13 MISSIONS
+========================================= */
+
+[
+  [
+    "VOLUNTEER",
+    "Solidarity",
+    "Environment",
+    "Digital safety"
+  ],
+
+  [
+    "MONUMENT",
+    "Heritage",
+    "Pollution",
+    "Digital safety"
+  ],
+
+  [
+    "PASSWORD",
+    "Digital safety",
+    "Heritage",
+    "Environment"
+  ],
+
+  [
+    "RECYCLING",
+    "Environment",
+    "Heritage",
+    "Digital safety"
+  ],
+
+  [
+    "DONATION",
+    "Solidarity",
+    "Environment",
+    "Heritage"
+  ],
+
+  [
+    "TRADITION",
+    "Heritage",
+    "Digital safety",
+    "Pollution"
+  ],
+
+  [
+    "CYBERBULLYING",
+    "Digital safety",
+    "Solidarity",
+    "Heritage"
+  ],
+
+  [
+    "POLLUTION",
+    "Environment",
+    "Heritage",
+    "Solidarity"
+  ],
+
+  [
+    "HELPING OTHERS",
+    "Solidarity",
+    "Environment",
+    "Heritage"
+  ],
+
+  [
+    "ALGERIAN CUSTOMS",
+    "Heritage",
+    "Digital safety",
+    "Environment"
+  ],
+
+  [
+    "PRIVATE ACCOUNT",
+    "Digital safety",
+    "Heritage",
+    "Environment"
+  ],
+
+  [
+    "SAVE WATER",
+    "Environment",
+    "Heritage",
+    "Solidarity"
+  ],
+
+  [
+    "RESPECT PUBLIC PLACES",
+    "Citizenship",
+    "Digital safety",
+    "Heritage"
+  ]
+
+].forEach(([a, b, c, d]) => {
+
+  pick(
+    1,
+    "Which category fits " + a + "?",
+    b,
+    [c, d, "Entertainment"],
+    "Think about what the expression describes."
+  );
+
+});
+
+/* =========================================
+   DISTRICT 3 — BUBBLE BATTLE
+   13 MISSIONS
+========================================= */
+
+[
+  [
+    "A person who offers time to help",
+    "Volunteer",
+    "Password",
+    "Pollution"
+  ],
+
+  [
+    "An important historical structure",
+    "Monument",
+    "Donation",
+    "Waste"
+  ],
+
+  [
+    "Materials we throw away",
+    "Waste",
+    "Respect",
+    "Culture"
+  ],
+
+  [
+    "Giving something to support a cause",
+    "Donation",
+    "Tradition",
+    "Pollution"
+  ],
+
+  [
+    "Control over your personal information",
+    "Privacy",
+    "Pollution",
+    "Charity"
+  ],
+
+  [
+    "Protecting natural resources",
+    "Conservation",
+    "Spam",
+    "Waste"
+  ],
+
+  [
+    "Working together for a goal",
+    "Cooperation",
+    "Danger",
+    "Pollution"
+  ],
+
+  [
+    "People connected by a place or interests",
+    "Community",
+    "Device",
+    "Password"
+  ],
+
+  [
+    "Repeated hurtful behaviour",
+    "Bullying",
+    "Recycling",
+    "Respect"
+  ],
+
+  [
+    "Traditional social practices",
+    "Customs",
+    "Factories",
+    "Devices"
+  ],
+
+  [
+    "Something you are responsible for doing",
+    "Duty",
+    "Tourism",
+    "Password"
+  ],
+
+  [
+    "Possibility of harm",
+    "Danger",
+    "Culture",
+    "Kindness"
+  ],
+
+  [
+    "Being caring and helpful",
+    "Kindness",
+    "Waste",
+    "Spam"
+  ]
+
+].forEach(([a, b, c, d]) => {
+
+  pick(
+    2,
+    a,
+    b,
+    [c, d, "No match"],
+    "Remember the definition and try again."
+  );
+
+});
+
+/* =========================================
+   DISTRICT 4 — BUILD ZONE
+   13 MISSIONS
+========================================= */
+
+const SENTENCES = [
+
+  "We should help people in need.",
+
+  "We should preserve our cultural heritage.",
+
+  "Good citizens respect public places.",
+
+  "Recycling helps protect the environment.",
+
+  "Never share your password online.",
+
+  "Volunteers help their communities.",
+
+  "Pollution harms our planet.",
+
+  "Traditions are part of our identity.",
+
+  "Cooperation makes communities stronger.",
+
+  "Kindness makes the world better.",
+
+  "Keep public places clean.",
+
+  "If we recycle, we will reduce waste.",
+
+  "If we cooperate, we will succeed."
+
+];
+
+const SENTENCE_PROMPTS = [
+
+  "Make a sentence about solidarity.",
+
+  "Make a sentence about heritage.",
+
+  "Make a sentence about citizenship.",
+
+  "Make a sentence about recycling.",
+
+  "Make an online-safety warning.",
+
+  "Make a sentence about volunteers.",
+
+  "Make a sentence about pollution.",
+
+  "Make a sentence about traditions.",
+
+  "Make a sentence about cooperation.",
+
+  "Make a sentence about kindness.",
+
+  "Make a command about public spaces.",
+
+  "Make a conditional about recycling.",
+
+  "Make a conditional about teamwork."
+
+];
+
+SENTENCES.forEach((sentence, i) => {
+
+  build(
+    3,
+    SENTENCE_PROMPTS[i],
+    sentence
+  );
+
+});
+
+/* =========================================
+   DISTRICT 5 — FINAL ARENA
+   13 MISSIONS
+========================================= */
+
+[
+  [
+    "A neighbour needs help. What do you do?",
+    "Offer your help.",
+    "Ignore them.",
+    "Damage property."
+  ],
+
+  [
+    "You visit an old monument. What do you do?",
+    "Respect and protect it.",
+    "Write on its walls.",
+    "Leave litter."
+  ],
+
+  [
+    "A stranger asks for your password.",
+    "Keep it private.",
+    "Share it publicly.",
+    "Post it online."
+  ],
+
+  [
+    "You see litter in the park.",
+    "Put it in a bin.",
+    "Throw more litter.",
+    "Damage the park."
+  ],
+
+  [
+    "Your school organises a charity event.",
+    "Volunteer to help.",
+    "Bully classmates.",
+    "Waste resources."
+  ]
+
+].forEach(([a, b, c, d]) => {
+
+  pick(
+    4,
+    a,
+    b,
+    [c, d, "Do nothing."],
+    "Choose the responsible action."
+  );
+
+});
+
+const FINAL_SENTENCES = [
+
+  "You should help people in need.",
+
+  "Don't share personal information.",
+
+  "Preserve our Algerian traditions.",
+
+  "Respect the rights of others.",
+
+  "If we save water, we will protect resources."
+
+];
+
+const FINAL_PROMPTS = [
+
+  "Give advice about solidarity.",
+
+  "Give online safety advice.",
+
+  "Give advice about traditions.",
+
+  "Give a citizenship command.",
+
+  "Build a conditional about saving water."
+
+];
+
+FINAL_SENTENCES.forEach((sentence, i) => {
+
+  build(
+    4,
+    FINAL_PROMPTS[i],
+    sentence
+  );
+
+});
+
+type(
+  4,
+  "Type the English word for: التضامن",
+  "solidarity",
+  "Solidarity means supporting others."
+);
+
+type(
+  4,
+  "Type the English word for: التراث",
+  "heritage",
+  "Heritage includes traditions and monuments."
+);
+
+type(
+  4,
+  "Type the English word for: إعادة التدوير",
+  "recycling",
+  "Recycling makes new products from used materials."
+);
+
+/* =========================================
+   GAME STATE
+========================================= */
+
+const KEY = "ms4s3_neon_word_rush_v1";
+
+let S = {
+
+  index: 0,
+
+  xp: 0,
+
+  streak: 0,
+
+  best: 0,
+
+  correct: 0,
+
+  wrong: 0,
+
+  mode: "arcade",
+
+  sound: false,
+
+  finished: false,
+
+  mistakes: [0, 0, 0, 0, 0]
+
+};
+
+/* =========================================
+   LOAD SAVED GAME
+========================================= */
+
+try {
+
+  const old = JSON.parse(
+    localStorage.getItem(KEY)
+  );
+
+  if (
+    old &&
+    Number.isInteger(old.index)
+  ) {
+
+    S = {
+      ...S,
+      ...old
+    };
+
+    S.index = Math.max(
+      0,
+      Math.min(Q.length, old.index)
+    );
+
+    if (
+      !Array.isArray(S.mistakes) ||
+      S.mistakes.length !== 5
+    ) {
+
+      S.mistakes = [0, 0, 0, 0, 0];
+
+    }
+
+  }
+
+} catch (e) {}
+
+/* =========================================
+   RUNTIME VARIABLES
+========================================= */
+
+let locked = false;
+
+let chosen = [];
+
+let currentTiles = [];
+
+let audio = null;
+
+let questionHadMistake = false;
+
+let showingIntro = true;
+
+/* =========================================
+   SAVE
+========================================= */
+
+const save = () => {
+
+  try {
+
+    localStorage.setItem(
+      KEY,
+      JSON.stringify(S)
+    );
+
+  } catch (e) {}
+
+};
+
+/* =========================================
+   SHUFFLE
+========================================= */
+
+const shuffle = a => {
+
+  const x = [...a];
+
+  for (let i = x.length - 1; i > 0; i--) {
+
+    const j = Math.floor(
+      Math.random() * (i + 1)
+    );
+
+    [x[i], x[j]] = [x[j], x[i]];
+
+  }
+
+  return x;
+
+};
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+const esc = s => String(s)
+
+  .replaceAll("&", "&amp;")
+
+  .replaceAll("<", "&lt;")
+
+  .replaceAll(">", "&gt;")
+
+  .replaceAll('"', "&quot;");
+
+/* =========================================
+   NORMALIZE ANSWERS
+========================================= */
+
+const norm = s => String(s)
+
+  .toLowerCase()
+
+  .trim()
+
+  .replace(/[.!?]+$/, "")
+
+  .replace(/\s+/g, " ");
+
+/* =========================================
+   AUDIO
+========================================= */
+
+function beep(f = 600) {
+
+  if (!S.sound) return;
+
+  try {
+
+    const AC =
+      window.AudioContext ||
+      window.webkitAudioContext;
+
+    if (!AC) return;
+
+    if (!audio) {
+      audio = new AC();
+    }
+
+    if (audio.state === "suspended") {
+      audio.resume();
+    }
+
+    const o = audio.createOscillator();
+
+    const g = audio.createGain();
+
+    o.type = "sine";
+
+    o.frequency.value = f;
+
+    g.gain.value = 0.04;
+
+    g.gain.exponentialRampToValueAtTime(
+      0.001,
+      audio.currentTime + 0.17
+    );
+
+    o.connect(g);
+
+    g.connect(audio.destination);
+
+    o.start();
+
+    o.stop(
+      audio.currentTime + 0.18
+    );
+
+  } catch (e) {}
+
+}
+
+/* =========================================
+   CELEBRATION PARTICLES
+========================================= */
+
+function burst() {
+
+  if (
+    matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+  ) return;
+
+  for (let i = 0; i < 14; i++) {
+
+    const el = document.createElement("span");
+
+    el.className = "burst";
+
+    el.textContent = [
+      "⚡",
+      "✨",
+      "⭐",
+      "💎"
+    ][i % 4];
+
+    el.style.left =
+      (20 + Math.random() * 65) + "%";
+
+    el.style.top =
+      (30 + Math.random() * 45) + "%";
+
+    el.style.setProperty(
+      "--dx",
+      (Math.random() * 230 - 115) + "px"
+    );
+
+    $("arena").appendChild(el);
+
+    setTimeout(() => {
+      el.remove();
+    }, 1150);
+
+  }
+
+}
+
+/* =========================================
+   TOAST MESSAGE
+========================================= */
+
+function toast(t) {
+
+  $("toast").textContent = t;
+
+  $("toast").hidden = false;
+
+  clearTimeout(toast.timer);
+
+  toast.timer = setTimeout(() => {
+
+    $("toast").hidden = true;
+
+  }, 1800);
+
+}
+
+/* =========================================
+   UPDATE HUD
+========================================= */
+
+function hud() {
+
+  $("points").textContent = S.xp;
+
+  $("level").textContent =
+    Math.min(S.index + 1, 65) + " / 65";
+
+  $("streak").textContent = S.streak;
+
+  const total = S.correct + S.wrong;
+
+  $("accuracy").textContent = (
+    total
+      ? Math.round(
+          100 * S.correct / total
+        )
+      : 100
+  ) + "%";
+
+  $("progress").style.width =
+    (S.index / 65 * 100) + "%";
+
+  $("sound").textContent =
+    S.sound
+      ? "🔊 Sound"
+      : "🔇 Sound";
+
+  $("worlds").innerHTML = DISTRICTS.map(
+    (d, i) => {
+
+      const completed =
+        S.index >= (i + 1) * 13;
+
+      const active =
+        Math.floor(S.index / 13) === i;
+
+      const status = completed
+        ? "✓ CLEAR"
+        : S.index >= i * 13
+          ? "LIVE"
+          : "🔒 LOCKED";
+
+      const className = completed
+        ? "done"
+        : active
+          ? "active"
+          : "";
+
+      return `
+        <div class="world ${className}">
+
+          <span class="icon">
+            ${d.icon}
+          </span>
+
+          ${esc(d.name)}
+
+          <br>
+
+          ${status}
+
+        </div>
+      `;
+
+    }
+  ).join("");
+
+}
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+function feedback(t) {
+
+  $("feedback").textContent = t;
+
+  $("feedback").hidden = false;
+
+}
+
+/* =========================================
+   RENDER CURRENT CHALLENGE
+========================================= */
+
+function render() {
+
+  hud();
+
+  locked = false;
+
+  questionHadMistake = false;
+
+  chosen = [];
+
+  if (S.index >= Q.length) {
+
+    finish();
+
+    return;
+
+  }
+
+  const q = Q[S.index];
+
+  const d = DISTRICTS[q.w];
+
+  $("stage").textContent =
+    d.icon +
+    " DISTRICT " +
+    String(q.w + 1).padStart(2, "0") +
+    " · " +
+    d.name.toUpperCase();
+
+  $("modeLabel").textContent =
+    S.mode === "chill"
+      ? "🌱 CHILL MODE"
+      : "⚡ ARCADE MODE";
+
+  $("type").textContent =
+    d.kind +
+    " · CHALLENGE " +
+    (S.index % 13 + 1) +
+    "/13";
+
+  $("prompt").textContent = q.clue;
+
+  if (q.kind === "pick") {
+
+    $("help").textContent =
+      "Tap the best answer. " +
+      "You can also use keys 1–4.";
+
+  } else if (q.kind === "build") {
+
+    $("help").textContent =
+      "Tap the word tiles in the correct order. " +
+      "Tap a placed tile to remove it.";
+
+  } else {
+
+    $("help").textContent =
+      "Type the English word, " +
+      "then press Check.";
+
+  }
+
+  $("feedback").hidden = true;
+
+  $("task").innerHTML = "";
+
+  $("taskActions").innerHTML = "";
+
+  $("comboLabel").textContent =
+    S.streak >= 3
+      ? "🔥 " + S.streak + "× COMBO!"
+      : "⚡ BUILD YOUR STREAK";
+
+  if (q.kind === "pick") {
+    renderPick(q);
+  }
+
+  if (q.kind === "build") {
+    renderBuild(q);
+  }
+
+  if (q.kind === "type") {
+    renderType(q);
+  }
+
+  const hint = document.createElement("button");
+
+  hint.className = "secondary";
+
+  hint.textContent = "💡 Hint";
+
+  hint.onclick = () => {
+    feedback(q.why);
+  };
+
+  $("taskActions").appendChild(hint);
+
+  save();
+
+}
+
+/* =========================================
+   MULTIPLE CHOICE
+========================================= */
+
+function renderPick(q) {
+
+  const grid = document.createElement("div");
+
+  grid.className = "answers";
+
+  shuffle(q.options).forEach((opt, i) => {
+
+    const b = document.createElement("button");
+
+    b.className = "answer";
+
+    b.innerHTML = `
+      <span class="key">
+        ${i + 1}
+      </span>
+
+      ${esc(opt)}
+    `;
+
+    b.onclick = () => {
+
+      if (locked || b.disabled) return;
+
+      if (opt === q.answer) {
+
+        b.classList.add("correct");
+
+        grid.querySelectorAll("button")
+          .forEach(x => {
+            x.disabled = true;
+          });
+
+        win(q);
+
+      } else {
+
+        b.classList.add("wrong");
+
+        b.disabled = true;
+
+        lose(q);
+
+      }
+
+    };
+
+    grid.appendChild(b);
+
+  });
+
+  $("task").appendChild(grid);
+
+}
+
+/* =========================================
+   SENTENCE BUILDER
+========================================= */
+
+function renderBuild(q) {
+
+  currentTiles = shuffle(
+    q.answer.split(" ").map(
+      (word, id) => ({
+        word,
+        id
+      })
+    )
+  );
+
+  const bank = document.createElement("div");
+
+  const line = document.createElement("div");
+
+  bank.className = "tiles";
+
+  line.className = "assembled";
+
+  $("task").append(line, bank);
+
+  function draw() {
+
+    bank.innerHTML = "";
+
+    line.innerHTML = "";
+
+    currentTiles.forEach(item => {
+
+      const b = document.createElement("button");
+
+      b.className = "tile";
+
+      b.textContent = item.word;
+
+      b.disabled = chosen.some(
+        x => x.id === item.id
+      );
+
+      b.onclick = () => {
+
+        if (locked) return;
+
+        chosen.push(item);
+
+        draw();
+
+      };
+
+      bank.appendChild(b);
+
+    });
+
+    chosen.forEach((item, i) => {
+
+      const b = document.createElement("button");
+
+      b.className = "tile";
+
+      b.textContent = item.word;
+
+      b.title = "Remove this word";
+
+      b.onclick = () => {
+
+        if (locked) return;
+
+        chosen.splice(i, 1);
+
+        draw();
+
+      };
+
+      line.appendChild(b);
+
+    });
+
+  }
+
+  draw();
+
+  const check = document.createElement("button");
+
+  check.className = "cta";
+
+  check.textContent = "🏗️ Check Sentence";
+
+  check.onclick = () => {
+
+    if (locked) return;
+
+    if (!chosen.length) {
+
+      feedback(
+        "Choose some word tiles first."
+      );
+
+      return;
+
+    }
+
+    const answer = chosen
+      .map(x => x.word)
+      .join(" ");
+
+    if (answer === q.answer) {
+
+      win(q);
+
+    } else {
+
+      lose(q);
+
+    }
+
+  };
+
+  const clear = document.createElement("button");
+
+  clear.className = "secondary";
+
+  clear.textContent = "↶ Clear";
+
+  clear.onclick = () => {
+
+    if (!locked) {
+
+      chosen = [];
+
+      draw();
+
+    }
+
+  };
+
+  $("taskActions").append(
+    check,
+    clear
+  );
+
+}
+
+/* =========================================
+   TYPED VOCABULARY
+========================================= */
+
+function renderType(q) {
+
+  const inp = document.createElement("input");
+
+  inp.className = "input";
+
+  inp.placeholder =
+    "Type the English word here…";
+
+  inp.autocomplete = "off";
+
+  inp.setAttribute(
+    "aria-label",
+    "English word"
+  );
+
+  const check = document.createElement("button");
+
+  check.className = "cta";
+
+  check.textContent = "✔ Check Word";
+
+  const run = () => {
+
+    if (locked) return;
+
+    if (!inp.value.trim()) {
+
+      feedback(
+        "Type a word first."
+      );
+
+      return;
+
+    }
+
+    if (
+      norm(inp.value) === norm(q.answer)
+    ) {
+
+      win(q);
+
+    } else {
+
+      lose(q);
+
+    }
+
+  };
+
+  check.onclick = run;
+
+  inp.onkeydown = e => {
+
+    if (e.key === "Enter") {
+      run();
+    }
+
+  };
+
+  $("task").append(inp);
+
+  $("taskActions").append(check);
+
+  inp.focus();
+
+}
+
+/* =========================================
+   WRONG ANSWER
+========================================= */
+
+function lose(q) {
+
+  S.wrong++;
+
+  S.streak = 0;
+
+  S.mistakes[q.w]++;
+
+  questionHadMistake = true;
+
+  feedback(
+    "Not quite! 💡 " +
+    q.why +
+    " Try again."
+  );
+
+  beep(220);
+
+  hud();
+
+  save();
+
+  if (S.mode === "chill") {
+
+    toast(
+      "💜 You can do this!"
+    );
+
+  }
+
+}
+
+/* =========================================
+   CORRECT ANSWER
+========================================= */
+
+function win(q) {
+
+  if (locked) return;
+
+  locked = true;
+
+  S.correct++;
+
+  S.streak++;
+
+  S.best = Math.max(
+    S.best,
+    S.streak
+  );
+
+  const earned = questionHadMistake
+    ? 50
+    : 100 + Math.min(
+        S.streak - 1,
+        5
+      ) * 20;
+
+  S.xp += earned;
+
+  feedback(
+    "✅ CORRECT! +" +
+    earned +
+    " XP · " +
+    q.why
+  );
+
+  beep(860);
+
+  burst();
+
+  hud();
+
+  $("taskActions").innerHTML = "";
+
+  const next = document.createElement("button");
+
+  next.className = "cta";
+
+  next.textContent =
+    S.index % 13 === 12
+      ? "🏆 Finish District →"
+      : "⚡ Next Mission →";
+
+  next.onclick = () => {
+    advance();
+  };
+
+  $("taskActions").appendChild(next);
+
+  save();
+
+  if (
+    S.streak === 3 ||
+    S.streak === 5 ||
+    S.streak === 10
+  ) {
+
+    toast(
+      "🔥 " +
+      S.streak +
+      " IN A ROW!"
+    );
+
+  }
+
+}
+
+/* =========================================
+   ADVANCE MISSION
+========================================= */
+
+function advance() {
+
+  if (!locked) return;
+
+  S.index++;
+
+  save();
+
+  if (S.index === 65) {
+
+    finish();
+
+    return;
+
+  }
+
+  if (S.index % 13 === 0) {
+
+    const d = DISTRICTS[
+      S.index / 13 - 1
+    ];
+
+    showModal(
+
+      "🏆",
+
+      "DISTRICT CLEARED!",
+
+      `
+        <p>
+          You conquered
+          <b>${esc(d.name)}</b>!
+          🎉
+        </p>
+
+        <p>
+          13 missions completed.
+          A new district is unlocked.
+        </p>
+
+        <p>
+          ⭐ Total XP:
+          <b>${S.xp}</b>
+        </p>
+      `,
+
+      [
+        {
+          label: "🚀 ENTER NEXT DISTRICT",
+
+          primary: true,
+
+          fn: () => {
+
+            closeModal();
+
+            render();
+
+          }
+        }
+      ]
+
+    );
+
+    burst();
+
+  } else {
+
+    render();
+
+  }
+
+}
+
+/* =========================================
+   MODAL SYSTEM
+========================================= */
+
+function showModal(
+  icon,
+  title,
+  html,
+  buttons
+) {
+
+  $("modalIcon").textContent = icon;
+
+  $("modalTitle").textContent = title;
+
+  $("modalBody").innerHTML = html;
+
+  $("modalActions").innerHTML = "";
+
+  buttons.forEach(x => {
+
+    const b = document.createElement("button");
+
+    b.className =
+      x.primary
+        ? "cta"
+        : "secondary";
+
+    b.textContent = x.label;
+
+    b.onclick = x.fn;
+
+    $("modalActions").appendChild(b);
+
+  });
+
+  $("overlay").hidden = false;
+
+}
+
+function closeModal() {
+
+  $("overlay").hidden = true;
+
+}
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+function intro() {
+
+  showingIntro = true;
+
+  showModal(
+
+    "⚡",
+
+    "NEON CITY NEEDS YOU!",
+
+    `
+      <p>
+        The city has lost its power!
+        Only your English vocabulary
+        skills can bring back the lights.
+      </p>
+
+      <div class="guide">
+
+        <div>
+          <b>🎯 STEP 1</b>
+          <br>
+          Read the challenge on screen.
+        </div>
+
+        <div>
+          <b>👆 STEP 2</b>
+          <br>
+          Tap an answer, build a sentence,
+          or type a word.
+        </div>
+
+        <div>
+          <b>⚡ STEP 3</b>
+          <br>
+          Earn XP and build a winning streak.
+        </div>
+
+        <div>
+          <b>🏆 STEP 4</b>
+          <br>
+          Clear 13 missions to unlock
+          the next district.
+        </div>
+
+      </div>
+
+      <p>
+        <b>Choose your style:</b>
+      </p>
+
+      <div class="modeButtons">
+
+        <button
+          class="secondary"
+          id="arcadeMode">
+          ⚡ Arcade · Bonus combo XP
+        </button>
+
+        <button
+          class="secondary"
+          id="chillMode">
+          🌱 Chill · Encouraging hints
+        </button>
+
+      </div>
+
+      <p class="small">
+        No time limit.
+        Wrong answers can be retried.
+        Your progress saves automatically.
+      </p>
+    `,
+
+    [
+      {
+        label:
+          S.index > 0
+            ? "▶ CONTINUE MY GAME"
+            : "🚀 LET’S PLAY!",
+
+        primary: true,
+
+        fn: () => {
+
+          S.mode = $("chillMode")
+            .classList.contains("selected")
+              ? "chill"
+              : "arcade";
+
+          showingIntro = false;
+
+          closeModal();
+
+          render();
+
+        }
+      }
+    ]
+
+  );
+
+  $("arcadeMode").onclick = () => {
+    setMode("arcade");
+  };
+
+  $("chillMode").onclick = () => {
+    setMode("chill");
+  };
+
+  setMode(S.mode);
+
+}
+
+/* =========================================
+   SELECT MODE
+========================================= */
+
+function setMode(m) {
+
+  $("arcadeMode").classList.toggle(
+    "selected",
+    m === "arcade"
+  );
+
+  $("chillMode").classList.toggle(
+    "selected",
+    m === "chill"
+  );
+
+}
+
+/* =========================================
+   FINISH GAME
+========================================= */
+
+function finish() {
+
+  S.finished = true;
+
+  save();
+
+  hud();
+
+  const total = S.correct + S.wrong;
+
+  const accuracy = total
+    ? Math.round(
+        100 * S.correct / total
+      )
+    : 100;
+
+  showModal(
+
+    "👑",
+
+    "YOU SAVED NEON CITY!",
+
+    `
+      <p>
+        🌈 Every district is glowing again.
+        You're a
+        <b>Vocabulary Legend!</b>
+      </p>
+
+      <p>
+        ⚡ XP:
+        <b>${S.xp}</b>
+      </p>
+
+      <p>
+        🔥 Best combo:
+        <b>${S.best}</b>
+      </p>
+
+      <p>
+        🎯 Accuracy:
+        <b>${accuracy}%</b>
+      </p>
+    `,
+
+    [
+      {
+        label: "📊 VIEW RESULTS",
+        fn: report
+      },
+
+      {
+        label: "🔄 PLAY AGAIN",
+        primary: true,
+        fn: restart
+      }
+    ]
+
+  );
+
+}
+
+/* =========================================
+   RESULTS
+========================================= */
+
+function report() {
+
+  const districtResults = DISTRICTS.map(
+    (d, i) => {
+
+      return `
+        <div>
+
+          ${d.icon}
+          ${esc(d.name)}
+
+          <br>
+
+          <b>
+            ${S.mistakes[i]} mistakes
+          </b>
+
+        </div>
+      `;
+
+    }
+  ).join("");
+
+  showModal(
+
+    "📊",
+
+    "YOUR MISSION REPORT",
+
+    `
+      <p>
+
+        <b>Completed:</b>
+        ${S.index}/65 missions
+
+        <br>
+
+        <b>XP:</b>
+        ${S.xp}
+
+        <br>
+
+        <b>Correct attempts:</b>
+        ${S.correct}
+
+        <br>
+
+        <b>Incorrect attempts:</b>
+        ${S.wrong}
+
+        <br>
+
+        <b>Best streak:</b>
+        ${S.best}
+
+      </p>
+
+      <div class="guide">
+
+        ${districtResults}
+
+      </div>
+
+      <p class="small">
+        Results are saved only
+        in this browser.
+      </p>
+    `,
+
+    [
+      {
+        label: "⬇ DOWNLOAD CSV",
+        fn: csv
+      },
+
+      {
+        label: "↩ BACK TO GAME",
+        primary: true,
+
+        fn: () => {
+
+          closeModal();
+
+          if (S.finished) {
+
+            finish();
+
+          } else {
+
+            render();
+
+          }
+
+        }
+      }
+    ]
+
+  );
+
+}
+
+/* =========================================
+   DOWNLOAD CSV
+========================================= */
+
+function csv() {
+
+  const rows = [
+
+    ["Metric", "Value"],
+
+    ["Missions", S.index],
+
+    ["XP", S.xp],
+
+    ["Correct attempts", S.correct],
+
+    ["Incorrect attempts", S.wrong],
+
+    ["Best combo", S.best],
+
+    ...DISTRICTS.map(
+      (d, i) => [
+        d.name + " mistakes",
+        S.mistakes[i]
+      ]
+    )
+
+  ];
+
+  const content = rows.map(row => {
+
+    return row.map(v => {
+
+      return '"' +
+        String(v).replaceAll('"', '""') +
+        '"';
+
+    }).join(",");
+
+  }).join("\r\n");
+
+  const blob = new Blob(
+    [content],
+    {
+      type: "text/csv;charset=utf-8"
+    }
+  );
+
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+
+  a.href = url;
+
+  a.download =
+    "MS4-S3-Game2-results.csv";
+
+  document.body.appendChild(a);
+
+  a.click();
+
+  a.remove();
+
+  setTimeout(() => {
+
+    URL.revokeObjectURL(url);
+
+  }, 1000);
+
+}
+
+/* =========================================
+   RESTART
+========================================= */
+
+function restart() {
+
+  S = {
+
+    index: 0,
+
+    xp: 0,
+
+    streak: 0,
+
+    best: 0,
+
+    correct: 0,
+
+    wrong: 0,
+
+    mode: S.mode,
+
+    sound: S.sound,
+
+    finished: false,
+
+    mistakes: [0, 0, 0, 0, 0]
+
+  };
+
+  save();
+
+  closeModal();
+
+  render();
+
+}
+
+/* =========================================
+   TOOLBAR BUTTONS
+========================================= */
+
+$("how").onclick = intro;
+
+$("sound").onclick = () => {
+
+  S.sound = !S.sound;
+
+  hud();
+
+  beep();
+
+  save();
+
+};
+
+$("results").onclick = report;
+
+$("reset").onclick = () => {
+
+  showModal(
+
+    "↻",
+
+    "RESTART THE GAME?",
+
+    `
+      <p>
+        This clears your current progress
+        and XP.
+
+        Are you sure?
+      </p>
+    `,
+
+    [
+      {
+        label: "CANCEL",
+
+        fn: () => {
+
+          closeModal();
+
+          if (S.finished) {
+            finish();
+          }
+
+        }
+      },
+
+      {
+        label: "YES, RESTART",
+
+        primary: true,
+
+        fn: restart
+      }
+    ]
+
+  );
+
+};
+
+/* =========================================
+   KEYBOARD CONTROLS
+========================================= */
+
+document.addEventListener(
+  "keydown",
+  e => {
+
+    if (!$("overlay").hidden) return;
+
+    if (locked) return;
+
+    if (
+      !["1", "2", "3", "4"].includes(
+        e.key
+      )
+    ) return;
+
+    if (
+      ["INPUT", "TEXTAREA"].includes(
+        document.activeElement.tagName
+      )
+    ) return;
+
+    const buttons = $("task")
+      .querySelectorAll(".answer");
+
+    if (buttons.length) {
+
+      buttons[
+        Number(e.key) - 1
+      ]?.click();
+
+    }
+
+  }
+);
+
+/* =========================================
+   INITIALIZE GAME
+========================================= */
+
+if (
+  S.finished ||
+  S.index >= 65
+) {
+
+  finish();
+
+} else {
+
+  render();
+
+  intro();
+
+}
+
+</script>
+
+</body>
+</html>

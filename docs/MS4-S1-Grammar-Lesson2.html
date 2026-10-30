@@ -1,0 +1,2584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#064e3b">
+<title>Checkpoint 02 | Equality & Inequality — My English Space</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --forest:#064e3b;
+  --deep:#043c2e;
+  --emerald:#059669;
+  --green:#10b981;
+  --mint:#d1fae5;
+  --pale:#ecfdf5;
+  --ink:#16352d;
+  --muted:#647d74;
+  --border:#dcebe4;
+  --shadow:0 10px 35px rgba(4,78,59,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:clip}
+body{
+  margin:0;
+  max-width:100%;
+  overflow-x:clip;
+  background:#f4f8f5;
+  color:var(--ink);
+  font-family:"DM Sans",sans-serif;
+  line-height:1.65;
+}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none}
+h1,h2,h3,h4{font-family:"Outfit",sans-serif;line-height:1.2}
+img{display:block;max-width:100%}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
+  outline:3px solid #34d399;
+  outline-offset:3px;
+}
+
+/* HEADER */
+.topbar{
+  background:var(--deep);
+  color:white;
+  padding:14px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+  font-family:"Outfit",sans-serif;
+  font-weight:900;
+  font-size:1.08rem;
+}
+.brand-logo{
+  width:44px;height:44px;
+  flex-shrink:0;
+  background:linear-gradient(135deg,#34d399,#059669);
+  border-radius:14px;
+  display:grid;place-items:center;
+  font-size:1.4rem;
+}
+.brand small{
+  display:block;
+  font-family:"DM Sans",sans-serif;
+  font-size:.71rem;
+  font-weight:500;
+  opacity:.75;
+}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-pill{
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:50px;
+  padding:9px 15px;
+  font-size:.8rem;
+  font-weight:800;
+  white-space:nowrap;
+}
+.nav-btn{
+  background:var(--green);
+  color:var(--deep);
+  border:0;
+  border-radius:11px;
+  padding:10px 16px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+/* HERO */
+.hero{
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 35%,rgba(52,211,153,.22),transparent 35%),
+    linear-gradient(125deg,#064e3b,#076b50 65%,#059669);
+  color:white;
+  padding:75px 5% 85px;
+}
+.hero-inner{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  align-items:center;
+  gap:45px;
+}
+.hero-inner>*{min-width:0}
+.hero-badge{
+  display:inline-flex;
+  max-width:100%;
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:50px;
+  padding:8px 15px;
+  font-size:.78rem;
+  font-weight:800;
+}
+.hero h1{
+  font-size:clamp(2.6rem,6vw,5.5rem);
+  font-weight:900;
+  letter-spacing:-2px;
+  margin:23px 0;
+  line-height:1.05;
+  overflow-wrap:anywhere;
+}
+.hero h1 span{color:#a7f3d0}
+.hero-desc{color:#d4f5e7;font-size:1.05rem;line-height:1.85}
+.hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}
+.hero-tag{
+  padding:8px 13px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:10px;
+  font-size:.8rem;
+  font-weight:700;
+}
+
+/* HERO PHOTOS */
+.hero-gallery{position:relative;min-height:350px;min-width:0}
+.hero-photo{
+  position:absolute;
+  overflow:hidden;
+  background:#d1fae5;
+  border:6px solid white;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo.first{
+  width:64%;height:280px;
+  left:0;top:15px;
+  transform:rotate(-6deg);
+}
+.hero-photo.second{
+  width:62%;height:270px;
+  right:0;top:65px;
+  transform:rotate(7deg);
+}
+.hero-photo span{
+  position:absolute;
+  left:10px;bottom:10px;
+  background:rgba(4,60,46,.88);
+  color:white;
+  padding:7px 12px;
+  border-radius:9px;
+  font-size:.75rem;
+  font-weight:900;
+}
+.hero-formula{
+  position:absolute;
+  left:50%;bottom:0;
+  transform:translateX(-50%);
+  z-index:5;
+  background:#fcd34d;
+  color:#78350f;
+  padding:12px 18px;
+  border-radius:12px;
+  font-weight:900;
+  text-align:center;
+  max-width:96%;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+/* MAIN */
+.layout{
+  max-width:1200px;
+  margin:-35px auto 60px;
+  padding:0 20px;
+  position:relative;
+  z-index:3;
+  display:grid;
+  grid-template-columns:240px minmax(0,1fr);
+  gap:24px;
+  align-items:start;
+}
+.layout>*{min-width:0}
+.sidebar{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:22px 16px;
+  position:sticky;
+  top:20px;
+  box-shadow:var(--shadow);
+}
+.sidebar-heading{
+  padding:0 12px 12px;
+  color:var(--muted);
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+.side-link{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:11px 12px;
+  border-radius:11px;
+  color:#48665b;
+  font-size:.81rem;
+  font-weight:750;
+  transition:.2s;
+}
+.side-link:hover,.side-link.active{
+  background:var(--pale);
+  color:var(--forest);
+}
+.side-num{
+  width:26px;height:26px;
+  border-radius:8px;
+  background:#eef5f0;
+  display:grid;place-items:center;
+  flex-shrink:0;
+  font-size:.7rem;
+  font-weight:900;
+}
+.sidebar-progress{
+  margin-top:23px;
+  padding:17px;
+  border-radius:15px;
+  background:var(--pale);
+}
+.sidebar-progress strong{display:block;font-size:.8rem;margin-bottom:9px}
+.progress-track{
+  height:9px;
+  background:#d3e9dc;
+  border-radius:20px;
+  overflow:hidden;
+}
+.progress-fill{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#059669,#34d399);
+  border-radius:20px;
+  transition:width .5s;
+}
+.progress-caption{
+  margin-top:8px;
+  color:var(--emerald);
+  font-size:.74rem;
+  font-weight:900;
+}
+
+/* SECTIONS */
+.content{min-width:0}
+.lesson-section{
+  min-width:0;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:23px;
+  padding:35px;
+  margin-bottom:22px;
+  box-shadow:var(--shadow);
+  scroll-margin-top:20px;
+}
+.section-top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.step-bubble{
+  width:43px;height:43px;
+  flex-shrink:0;
+  display:grid;place-items:center;
+  border-radius:14px;
+  background:var(--pale);
+  color:var(--emerald);
+  font-family:"Outfit",sans-serif;
+  font-size:1.1rem;
+  font-weight:900;
+}
+.step-label{
+  color:var(--emerald);
+  font-size:.71rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1.1px;
+}
+.lesson-section h2{
+  font-size:clamp(1.5rem,3vw,2.15rem);
+  margin:8px 0 11px;
+  font-weight:900;
+  overflow-wrap:anywhere;
+}
+.intro{color:var(--muted);font-size:.93rem;margin-bottom:25px}
+.level{
+  display:inline-block;
+  padding:5px 11px;
+  border-radius:30px;
+  font-size:.68rem;
+  font-weight:900;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.lots{background:#dbeafe;color:#1d4ed8}
+.apply{background:#fef3c7;color:#92400e}
+.analyse{background:#ffe4e6;color:#be123c}
+.hots{background:#ede9fe;color:#6d28d9}
+
+/* IMAGES */
+.landmark-gallery,.fact-grid,.rule-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  margin:23px 0;
+}
+.landmark-gallery>*,.fact-grid>*,.rule-grid>*{min-width:0}
+.landmark-photo,.fact-card{
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid var(--border);
+  background:white;
+  box-shadow:0 8px 22px rgba(4,78,59,.08);
+}
+.landmark-photo img{
+  width:100%;height:215px;
+  object-fit:cover;
+  background:#e7f4ec;
+}
+.photo-caption{padding:14px 17px}
+.photo-caption strong{
+  display:block;
+  color:var(--forest);
+  font-family:"Outfit",sans-serif;
+  font-size:1.08rem;
+}
+.photo-caption small{color:var(--muted);font-size:.78rem}
+.image-note{
+  color:var(--muted);
+  font-size:.78rem;
+  text-align:center;
+}
+.comparison-banner{
+  background:linear-gradient(135deg,#ecfdf5,#f0fdf4);
+  border:1px solid #bbf7d0;
+  border-radius:15px;
+  padding:18px;
+  text-align:center;
+  font-weight:800;
+  color:var(--forest);
+  margin:18px 0;
+}
+
+/* DISCOVERY */
+.discovery-box{
+  min-width:0;
+  background:linear-gradient(135deg,#f0fdf4,#ecfdf5);
+  border:1px solid #bbf7d0;
+  border-radius:19px;
+  padding:25px;
+}
+.discovery-title{
+  color:var(--forest);
+  font-size:.75rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:17px;
+}
+.sentence{
+  min-width:0;
+  background:white;
+  padding:17px;
+  border-radius:13px;
+  border:1px solid #d9efe1;
+  font-weight:800;
+  font-size:1rem;
+  line-height:2.3;
+  margin:11px 0;
+  white-space:normal;
+  overflow-wrap:break-word;
+}
+.hl-subject,.hl-aux,.hl-v3,.hl-agent{
+  border-radius:6px;
+  padding:3px 6px;
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone;
+}
+.hl-subject{background:#d1fae5;color:#065f46}
+.hl-aux{background:#dbeafe;color:#1d4ed8}
+.hl-v3{background:#fef3c7;color:#92400e}
+.hl-agent{background:#ffe4e6;color:#be123c}
+.notice{
+  margin-top:20px;
+  background:#fffbeb;
+  border:1px solid #fde68a;
+  border-left:5px solid #f59e0b;
+  padding:20px;
+  border-radius:13px;
+  font-size:.9rem;
+  line-height:1.9;
+  overflow-wrap:break-word;
+}
+.notice strong{color:#92400e}
+
+/* RULES */
+.main-rule{
+  background:linear-gradient(135deg,#064e3b,#047857);
+  border-radius:19px;
+  padding:28px;
+  color:white;
+  margin-bottom:20px;
+}
+.main-rule h3{margin:0 0 12px}
+.main-rule p{color:#d1fae5}
+.big-formula{
+  background:rgba(255,255,255,.12);
+  border:1px dashed rgba(255,255,255,.4);
+  border-radius:13px;
+  padding:19px;
+  text-align:center;
+  font-family:"Outfit",sans-serif;
+  font-size:clamp(.92rem,2vw,1.3rem);
+  font-weight:900;
+  margin:18px 0;
+  overflow-wrap:anywhere;
+}
+.rule-card{
+  min-width:0;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:21px;
+  background:white;
+  border-top:4px solid var(--emerald);
+}
+.rule-card.rose{border-top-color:#ef6277}
+.rule-card h3{margin:0 0 10px}
+.rule-card p{color:var(--muted);font-size:.87rem}
+.rule-formula{
+  display:inline-block;
+  max-width:100%;
+  background:var(--pale);
+  color:var(--forest);
+  border-radius:8px;
+  padding:8px 11px;
+  font-weight:900;
+  font-size:.78rem;
+  margin:5px 0 12px;
+  overflow-wrap:anywhere;
+}
+.example{
+  background:#f8faf9;
+  border-radius:9px;
+  padding:11px;
+  font-size:.84rem;
+  margin-top:8px;
+}
+.arabic{
+  margin-top:20px;
+  padding:20px;
+  background:#f5f3ff;
+  border:1px solid #ddd6fe;
+  border-radius:15px;
+  direction:rtl;
+  text-align:right;
+  font-weight:700;
+  line-height:2;
+  color:#5b4b82;
+  overflow-wrap:anywhere;
+}
+
+/* QUIZZES */
+.question{
+  min-width:0;
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  margin-bottom:14px;
+  background:white;
+}
+.question-text{
+  font-weight:850;
+  font-size:.96rem;
+  margin-bottom:14px;
+  overflow-wrap:break-word;
+}
+.options{display:grid;gap:9px;min-width:0}
+.option{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  width:100%;
+  min-width:0;
+  padding:13px 15px;
+  border:1.5px solid #e1ebe5;
+  border-radius:11px;
+  background:#fafcfb;
+  color:var(--ink);
+  text-align:left;
+  font-size:.88rem;
+  font-weight:650;
+  overflow-wrap:anywhere;
+  transition:.2s;
+}
+.option::before{
+  content:"";
+  width:18px;height:18px;
+  border:2px solid #b8cfc2;
+  border-radius:50%;
+  flex-shrink:0;
+}
+.option:not(:disabled):hover{
+  border-color:var(--emerald);
+  background:var(--pale);
+}
+.option.correct{
+  background:#dcfce7;
+  border-color:#22c55e;
+  color:#166534;
+}
+.option.correct::before{
+  content:"✓";
+  display:grid;place-items:center;
+  background:#22c55e;
+  border-color:#22c55e;
+  color:white;
+  font-size:.7rem;
+}
+.option.wrong{
+  background:#fff1f2;
+  border-color:#fb7185;
+  color:#9f1239;
+}
+.option.wrong::before{
+  content:"×";
+  display:grid;place-items:center;
+  background:#fb7185;
+  border-color:#fb7185;
+  color:white;
+}
+.option:disabled{cursor:default}
+.feedback{
+  display:none;
+  margin-top:12px;
+  padding:12px 15px;
+  background:#f0fdf4;
+  color:#166534;
+  border-radius:9px;
+  font-size:.85rem;
+  font-weight:700;
+}
+.feedback.show{display:block}
+.quiz-summary{
+  display:none;
+  margin-top:15px;
+  padding:15px;
+  border-radius:12px;
+  background:var(--pale);
+  color:var(--forest);
+  font-weight:850;
+}
+.quiz-summary.show{display:block}
+
+/* TASKS */
+.task-box{
+  min-width:0;
+  background:#f5fbf7;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:24px;
+  margin:20px 0;
+}
+.task-title{
+  font-size:1.18rem;
+  margin:0 0 12px;
+  color:var(--forest);
+}
+.task-instruction{
+  color:var(--muted);
+  font-size:.88rem;
+  margin-bottom:18px;
+}
+.input{
+  display:block;
+  width:100%;
+  min-width:0;
+  padding:13px 15px;
+  border:1.5px solid #cfe3d7;
+  border-radius:11px;
+  background:white;
+  color:var(--ink);
+  outline:none;
+  font-size:16px;
+  margin-top:12px;
+}
+.input:focus{
+  border-color:var(--emerald);
+  box-shadow:0 0 0 4px #d1fae5;
+}
+.input.correct-input{border-color:#16a34a;background:#f0fdf4}
+.input.wrong-input{border-color:#e11d48;background:#fff1f2}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  max-width:100%;
+  border:0;
+  border-radius:11px;
+  padding:13px 20px;
+  font-weight:900;
+  font-size:.88rem;
+  transition:.2s;
+  margin-top:14px;
+  text-align:center;
+}
+.btn-primary{
+  background:var(--emerald);
+  color:white;
+  box-shadow:0 6px 15px rgba(5,150,105,.2);
+}
+.btn-primary:hover{background:#047857}
+.btn-secondary{
+  background:white;
+  color:var(--forest);
+  border:1px solid #b7d8c8;
+}
+.result{
+  display:none;
+  margin-top:15px;
+  padding:15px;
+  border-radius:11px;
+  font-size:.88rem;
+  font-weight:800;
+  overflow-wrap:break-word;
+}
+.result.show{display:block}
+.result.correct{background:#dcfce7;color:#166534}
+.result.wrong{background:#fff1f2;color:#9f1239}
+
+/* SENTENCE BUILDER */
+.builder-bank,.build-area{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  min-width:0;
+  border-radius:15px;
+  padding:18px;
+}
+.builder-bank{background:var(--pale)}
+.word-chip{
+  border:1px solid #b7d8c8;
+  background:white;
+  color:var(--forest);
+  padding:11px 15px;
+  border-radius:10px;
+  font-weight:850;
+}
+.word-chip.used{opacity:.3;cursor:default}
+.build-area{
+  align-items:center;
+  min-height:75px;
+  margin-top:15px;
+  background:white;
+  border:2px dashed #a7dfc2;
+}
+.built-word{
+  padding:9px 12px;
+  background:#d1fae5;
+  border:1px solid #86efac;
+  border-radius:9px;
+  color:#065f46;
+  font-weight:850;
+}
+
+/* FACT FILES */
+.fact-card img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  background:#e7f4ec;
+}
+.fact-card-header{
+  padding:18px 20px;
+  background:linear-gradient(110deg,#064e3b,#059669);
+  color:white;
+}
+.fact-card-header h3{margin:0;font-size:1.35rem}
+.fact-card-header small{color:#d1fae5}
+.fact-body{padding:18px}
+.fact-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:11px 0;
+  border-bottom:1px solid var(--border);
+  font-size:.83rem;
+}
+.fact-row:last-child{border-bottom:0}
+.fact-row strong{color:var(--forest);text-align:right}
+
+/* WRITING */
+.writing-goals{
+  background:#f5fbf7;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:21px;
+  margin:20px 0;
+}
+.goal-grid,.checklist{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:15px;
+}
+.goal{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px;
+  font-size:.8rem;
+  font-weight:700;
+}
+.goal-num{
+  width:27px;height:27px;
+  display:grid;place-items:center;
+  flex-shrink:0;
+  border-radius:50%;
+  background:var(--mint);
+  color:var(--forest);
+  font-weight:900;
+}
+.writing-tools{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:18px 0;
+}
+.helper{
+  background:#fef3c7;
+  color:#92400e;
+  border-radius:9px;
+  padding:8px 12px;
+  font-size:.77rem;
+  font-weight:850;
+}
+.writing-area{
+  min-width:0;
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:22px;
+  margin-top:20px;
+}
+textarea{
+  display:block;
+  width:100%;
+  min-width:0;
+  min-height:250px;
+  resize:vertical;
+  border:1.5px solid #cfe3d7;
+  border-radius:12px;
+  padding:17px;
+  outline:none;
+  line-height:1.9;
+  font-size:16px;
+}
+textarea:focus{
+  border-color:var(--emerald);
+  box-shadow:0 0 0 4px #d1fae5;
+}
+.live-stats{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-top:16px;
+}
+.stat{
+  text-align:center;
+  padding:14px 8px;
+  background:var(--pale);
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.stat strong{
+  display:block;
+  font-family:"Outfit",sans-serif;
+  color:var(--forest);
+  font-size:1.45rem;
+}
+.stat small{
+  color:var(--muted);
+  font-size:.72rem;
+  font-weight:800;
+}
+.writing-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+.correction-panel{
+  display:none;
+  margin-top:22px;
+  padding:24px;
+  border:1px solid #a7dfc2;
+  border-radius:17px;
+  background:#f4fdf8;
+}
+.correction-panel.show{display:block}
+.correction-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:18px;
+}
+.correction-head h3{margin:0}
+.writing-score{
+  width:75px;height:75px;
+  border-radius:50%;
+  background:var(--forest);
+  color:white;
+  display:grid;place-items:center;
+  font-weight:900;
+  flex-shrink:0;
+}
+.check-item{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  min-width:0;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:11px;
+  padding:14px;
+}
+.check-item.pass{background:#ecfdf5;border-color:#86efac}
+.check-item.fail{background:#fff1f2;border-color:#fda4af}
+.check-icon{
+  width:27px;height:27px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:#edf3ef;
+  flex-shrink:0;
+  font-weight:900;
+}
+.check-item.pass .check-icon{background:#16a34a;color:white}
+.check-item.fail .check-icon{background:#e11d48;color:white}
+.check-item strong{display:block;font-size:.85rem}
+.check-item small{color:var(--muted);font-size:.74rem}
+.model-answer{
+  display:none;
+  margin-top:20px;
+  padding:22px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:14px;
+  line-height:1.9;
+}
+.model-answer.show{display:block}
+
+/* SCORE */
+.score-card{
+  background:linear-gradient(135deg,#064e3b,#059669);
+  border-radius:18px;
+  padding:24px;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  margin-top:20px;
+}
+.score-card h3{margin:0 0 8px}
+.score-card p{color:#d1fae5;font-size:.87rem}
+.big-score{
+  width:85px;height:85px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  background:white;
+  color:var(--forest);
+  font-size:1.4rem;
+  font-weight:900;
+  flex-shrink:0;
+}
+.complete{
+  background:linear-gradient(135deg,#064e3b,#059669);
+  color:white;
+  text-align:center;
+  border-radius:22px;
+  padding:45px 30px;
+  margin-bottom:30px;
+}
+.complete .trophy{font-size:3.5rem}
+.complete h2{font-size:2rem;margin:15px 0}
+.complete p{color:#d1fae5}
+.complete .btn{background:white;color:var(--forest)}
+
+/* DICTIONARY */
+.dictionary-button{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:1000;
+  background:#fcd34d;
+  color:#78350f;
+  border:0;
+  border-radius:50px;
+  padding:14px 19px;
+  font-weight:900;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+.dictionary-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(2,35,27,.7);
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+}
+.dictionary-overlay.open{display:flex}
+.dictionary{
+  background:white;
+  border-radius:23px;
+  width:min(620px,100%);
+  max-height:85dvh;
+  overflow:auto;
+  padding:25px;
+}
+.dictionary-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+.dictionary-header h2{margin:0}
+.close{
+  border:0;
+  background:var(--pale);
+  border-radius:50%;
+  width:38px;height:38px;
+  font-size:1.3rem;
+}
+.dictionary-search{
+  width:100%;
+  padding:13px;
+  border:1px solid var(--border);
+  border-radius:11px;
+  margin:18px 0;
+  font-size:16px;
+}
+.dict-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:12px;
+  padding:12px 6px;
+  border-bottom:1px solid var(--border);
+}
+.dict-en{font-weight:850;color:var(--forest)}
+.dict-ar{direction:rtl;text-align:right;color:#705b86}
+footer{
+  text-align:center;
+  padding:35px 20px;
+  color:var(--muted);
+  font-size:.75rem;
+  font-weight:800;
+}
+
+/* RESPONSIVE TABLET */
+@media(max-width:1000px){
+  .layout{
+    grid-template-columns:minmax(0,1fr);
+    max-width:850px;
+  }
+  .sidebar{position:static}
+  .side-links{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:6px;
+  }
+  .side-link{white-space:normal;min-width:0}
+  .sidebar-progress{margin-top:12px}
+}
+
+/* RESPONSIVE MOBILE */
+@media(max-width:760px){
+  .hero-inner{grid-template-columns:minmax(0,1fr);gap:28px}
+  .hero{padding:50px 5% 70px}
+  .hero-gallery{
+    min-height:300px;
+    max-width:480px;
+    width:100%;
+    margin:auto;
+  }
+  .hero-photo.first{height:235px}
+  .hero-photo.second{height:225px}
+  .rule-grid,.fact-grid,.checklist{grid-template-columns:minmax(0,1fr)}
+}
+
+@media(max-width:550px){
+  .topbar{padding:12px 4%}
+  .nav-pill{display:none}
+  .brand{font-size:.87rem;gap:8px}
+  .brand-logo{width:38px;height:38px}
+  .nav-btn{padding:9px;font-size:.75rem}
+  .hero h1{font-size:clamp(2.3rem,10vw,2.8rem);letter-spacing:-1px}
+  .hero-desc{font-size:.94rem}
+  .hero-gallery{min-height:260px;max-width:340px}
+  .hero-photo.first{height:205px}
+  .hero-photo.second{height:195px;top:45px}
+  .hero-formula{font-size:.76rem;padding:10px 12px}
+  .layout{padding:0 12px}
+  .sidebar{padding:17px 12px}
+  .side-link{font-size:.73rem;padding:9px 7px;gap:7px}
+  .side-num{width:24px;height:24px}
+  .lesson-section{padding:22px 15px;border-radius:18px}
+  .lesson-section h2{font-size:1.55rem}
+  .goal-grid,.live-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .landmark-gallery{grid-template-columns:minmax(0,1fr)}
+  .sentence{font-size:.88rem;padding:13px;line-height:2.5}
+  .main-rule,.discovery-box,.task-box{padding:18px 14px}
+  .question{padding:15px 12px}
+  .option{padding:12px;font-size:.84rem}
+  .notice{padding:16px 13px}
+  .rule-card{padding:17px}
+  .writing-area{padding:15px}
+  .correction-panel{padding:16px}
+  .score-card{flex-wrap:wrap}
+  .dictionary-button{
+    right:12px;
+    bottom:12px;
+    padding:12px 15px;
+    font-size:.78rem;
+  }
+  .complete{padding:35px 17px}
+}
+
+@media(max-width:360px){
+  .side-links{grid-template-columns:1fr}
+  .hero h1{font-size:2.2rem}
+  .lesson-section{padding:18px 11px}
+  .hero-gallery{min-height:225px}
+  .hero-photo.first{height:175px}
+  .hero-photo.second{height:165px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-logo">📗</div>
+    <div>
+      MY ENGLISH SPACE
+      <small>MS4 · Grammar Expedition</small>
+    </div>
+  </div>
+  <div class="nav-right">
+    <span class="nav-pill">✦ Sequence 01</span>
+    <button class="nav-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-badge">✦ Checkpoint 02 · Grammar Studio</span>
+      <h1>Equality<br><span>& Inequality.</span></h1>
+      <p class="hero-desc">
+        Discover how to compare famous landmarks, exciting journeys
+        and outstanding figures. Master <strong>as + adjective + as</strong>
+        and <strong>not as + adjective + as</strong> through interactive
+        grammar missions.
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag">🏛️ Landmarks</span>
+        <span class="hero-tag">✈️ Travel</span>
+        <span class="hero-tag">⭐ Outstanding Figures</span>
+        <span class="hero-tag">🧠 LOTS → HOTS</span>
+        <span class="hero-tag">✍️ BEM Writing</span>
+      </div>
+    </div>
+
+    <div class="hero-gallery">
+      <div class="hero-photo first">
+        <img data-landmark="bigben" alt="Big Ben in London">
+        <span>🇬🇧 Big Ben</span>
+      </div>
+      <div class="hero-photo second">
+        <img data-landmark="eiffel" alt="Eiffel Tower in Paris">
+        <span>🇫🇷 Eiffel Tower</span>
+      </div>
+      <div class="hero-formula">AS + ADJECTIVE + AS</div>
+    </div>
+  </div>
+</section>
+
+<div class="layout">
+
+<aside class="sidebar">
+  <div class="sidebar-heading">Your Learning Journey</div>
+  <nav class="side-links" aria-label="Lesson steps">
+    <a class="side-link" href="#step1"><span class="side-num">01</span> Discover</a>
+    <a class="side-link" href="#step2"><span class="side-num">02</span> Grammar Toolkit</a>
+    <a class="side-link" href="#step3"><span class="side-num">03</span> Equality or Inequality</a>
+    <a class="side-link" href="#step4"><span class="side-num">04</span> Sentence Builder</a>
+    <a class="side-link" href="#step5"><span class="side-num">05</span> Landmark Mission</a>
+    <a class="side-link" href="#step6"><span class="side-num">06</span> Transform</a>
+    <a class="side-link" href="#step7"><span class="side-num">07</span> Grammar Detective</a>
+    <a class="side-link" href="#step8"><span class="side-num">08</span> Analyse</a>
+    <a class="side-link" href="#step9"><span class="side-num">09</span> Master Challenge</a>
+    <a class="side-link" href="#step10"><span class="side-num">10</span> BEM Writing</a>
+  </nav>
+  <div class="sidebar-progress">
+    <strong>🎯 Mission Progress</strong>
+    <div class="progress-track"><div class="progress-fill" id="progressBar"></div></div>
+    <div class="progress-caption" id="progressText">0 / 10 activities</div>
+  </div>
+</aside>
+
+<main class="content">
+
+<!-- STEP 01 -->
+<section class="lesson-section" id="step1">
+  <div class="section-top">
+    <div class="step-bubble">01</div>
+    <div class="step-label">Notice & Discover</div>
+  </div>
+  <h2>👀 Spot the Comparison</h2>
+  <p class="intro">
+    Look at the famous landmarks. Read the sentences and discover
+    how English expresses equality.
+  </p>
+
+  <div class="landmark-gallery">
+    <div class="landmark-photo">
+      <img data-landmark="bigben" loading="lazy" alt="Big Ben, London">
+      <div class="photo-caption">
+        <strong>Big Ben</strong><small>London, United Kingdom</small>
+      </div>
+    </div>
+    <div class="landmark-photo">
+      <img data-landmark="eiffel" loading="lazy" alt="Eiffel Tower, Paris">
+      <div class="photo-caption">
+        <strong>Eiffel Tower</strong><small>Paris, France</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="comparison-banner">
+    ⭐ Big Ben is as famous as the Eiffel Tower.
+  </div>
+
+  <div class="discovery-box">
+    <div class="discovery-title">🔍 Look closely at these examples</div>
+    <div class="sentence">
+      <span class="hl-subject">Big Ben</span> is
+      <span class="hl-aux">as</span> famous
+      <span class="hl-v3">as</span> the Eiffel Tower.
+    </div>
+    <div class="sentence">
+      <span class="hl-subject">Timgad</span> is
+      <span class="hl-aux">as</span> fascinating
+      <span class="hl-v3">as</span> Djemila.
+    </div>
+    <div class="sentence">
+      <span class="hl-subject">The pyramid</span> is
+      <span class="hl-agent">not as</span> tall
+      <span class="hl-v3">as</span> the skyscraper.
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>💡 What do you notice?</strong><br><br>
+    In the first two sentences, the adjective appears between
+    two occurrences of <strong>as</strong>.<br><br>
+    This structure shows that two things have
+    <strong>the same degree of a quality</strong>.<br><br>
+    The third sentence uses <strong>not as ... as</strong>
+    to show that one thing has less of a quality.
+  </div>
+
+  <div class="task-box">
+    <h3 class="task-title">🎯 Mission 1 — Which Sentence Shows Equality?</h3>
+    <p class="task-instruction">
+      Choose the sentence that means two landmarks are equally famous.
+    </p>
+    <div id="discoveryQuiz">
+      <div class="question" data-answer="1">
+        <div class="options">
+          <button class="option">Big Ben is more famous than the Eiffel Tower.</button>
+          <button class="option">Big Ben is as famous as the Eiffel Tower.</button>
+          <button class="option">Big Ben is not as famous as the Eiffel Tower.</button>
+        </div>
+        <div class="feedback">✓ <strong>as famous as</strong> expresses equality.</div>
+      </div>
+      <div class="quiz-summary"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 02 -->
+<section class="lesson-section" id="step2">
+  <div class="section-top">
+    <div class="step-bubble">02</div>
+    <div class="step-label">Understand the Rule</div>
+  </div>
+  <h2>📚 Equality & Inequality Toolkit</h2>
+  <p class="intro">
+    We use these structures to compare people, places, landmarks and experiences.
+  </p>
+
+  <div class="main-rule">
+    <h3>🌿 The Main Rule</h3>
+    <p>
+      Use <strong>as ... as</strong> for equality
+      and <strong>not as ... as</strong> for inequality.
+    </p>
+    <div class="big-formula">AS + ADJECTIVE + AS</div>
+    <div class="big-formula">NOT AS + ADJECTIVE + AS</div>
+  </div>
+
+  <div class="rule-grid">
+    <article class="rule-card">
+      <h3>🟢 1. Equality</h3>
+      <p>Use this structure when two things share the same degree of a quality.</p>
+      <div class="rule-formula">A + be + as + adjective + as + B</div>
+      <div class="example">Timgad is <strong>as fascinating as</strong> Djemila.</div>
+      <div class="example">Trip A was <strong>as exciting as</strong> Trip B.</div>
+    </article>
+
+    <article class="rule-card rose">
+      <h3>🔴 2. Inequality</h3>
+      <p>Use this structure when the first thing has less of a quality than the second.</p>
+      <div class="rule-formula">A + be + not as + adjective + as + B</div>
+      <div class="example">The pyramid is <strong>not as tall as</strong> the skyscraper.</div>
+      <div class="example">City B was <strong>not as quiet as</strong> City A.</div>
+    </article>
+  </div>
+
+  <div class="landmark-gallery">
+    <div class="landmark-photo">
+      <img data-landmark="pyramids" loading="lazy" alt="Pyramids of Giza">
+      <div class="photo-caption">
+        <strong>Pyramids of Giza</strong>
+        <small>Egypt · Ancient monuments</small>
+      </div>
+    </div>
+    <div class="landmark-photo">
+      <img data-landmark="taj" loading="lazy" alt="Taj Mahal">
+      <div class="photo-caption">
+        <strong>Taj Mahal</strong>
+        <small>Agra, India · Historic monument</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="arabic">
+    <strong>📖 الشرح بالعربية</strong><br><br>
+    نستعمل <strong>as + adjective + as</strong>
+    عندما يكون شيئان متساويين في صفة معينة.<br><br>
+    مثال:<br>
+    Big Ben is as famous as the Eiffel Tower.<br><br>
+    ونستعمل <strong>not as + adjective + as</strong>
+    عندما يكون الشيء الأول أقل في الصفة من الشيء الثاني.<br><br>
+    مثال:<br>
+    The pyramid is not as tall as the skyscraper.
+  </div>
+
+  <div class="notice">
+    <strong>⚠️ Grammar Alert</strong><br><br>
+    The adjective does <strong>not change</strong> inside these structures.<br><br>
+    ✅ as beautiful as<br>
+    ❌ as more beautiful as<br><br>
+    ✅ not as tall as<br>
+    ❌ not as taller as
+  </div>
+</section>
+
+<!-- STEP 03 -->
+<section class="lesson-section" id="step3">
+  <span class="level lots">LOTS · Understand</span>
+  <div class="section-top">
+    <div class="step-bubble">03</div>
+    <div class="step-label">Choose the Structure</div>
+  </div>
+  <h2>🎯 Equality or Inequality?</h2>
+  <p class="intro">Read each situation and choose the correct structure.</p>
+
+  <div id="meaningQuiz">
+    <div class="question" data-answer="0">
+      <div class="question-text">1. Both landmarks are equally famous.</div>
+      <div class="options">
+        <button class="option">as famous as</button>
+        <button class="option">not as famous as</button>
+        <button class="option">more famous as</button>
+      </div>
+      <div class="feedback">✓ Equality → as famous as.</div>
+    </div>
+
+    <div class="question" data-answer="1">
+      <div class="question-text">
+        2. Building A is 80 m high. Building B is 120 m high.
+        Building A is _____ Building B.
+      </div>
+      <div class="options">
+        <button class="option">as tall as</button>
+        <button class="option">not as tall as</button>
+        <button class="option">as taller as</button>
+      </div>
+      <div class="feedback">✓ Building A is shorter, so use not as tall as.</div>
+    </div>
+
+    <div class="question" data-answer="0">
+      <div class="question-text">3. The two journeys both lasted three days.</div>
+      <div class="options">
+        <button class="option">Trip A was as long as Trip B.</button>
+        <button class="option">Trip A was not as long as Trip B.</button>
+        <button class="option">Trip A was as longer as Trip B.</button>
+      </div>
+      <div class="feedback">✓ Both journeys had the same duration.</div>
+    </div>
+
+    <div class="question" data-answer="1">
+      <div class="question-text">
+        4. This modern building is less old than the ancient monument.
+      </div>
+      <div class="options">
+        <button class="option">The modern building is as old as the monument.</button>
+        <button class="option">The modern building is not as old as the monument.</button>
+        <button class="option">The modern building is not as older as the monument.</button>
+      </div>
+      <div class="feedback">✓ Use not as old as.</div>
+    </div>
+    <div class="quiz-summary"></div>
+  </div>
+</section>
+
+<!-- STEP 04 -->
+<section class="lesson-section" id="step4">
+  <span class="level apply">Apply</span>
+  <div class="section-top">
+    <div class="step-bubble">04</div>
+    <div class="step-label">Sentence Builder</div>
+  </div>
+  <h2>🧩 Put the Words in Order</h2>
+  <p class="intro">Click the words in the correct order to build a sentence.</p>
+
+  <div class="task-box">
+    <h3 class="task-title">🏗️ Build the Sentence</h3>
+    <p class="task-instruction">
+      Meaning: Timgad and Djemila are equally fascinating.
+    </p>
+    <div class="builder-bank" id="builderBank">
+      <button class="word-chip">Djemila.</button>
+      <button class="word-chip">as</button>
+      <button class="word-chip">Timgad</button>
+      <button class="word-chip">fascinating</button>
+      <button class="word-chip">is</button>
+      <button class="word-chip">as</button>
+    </div>
+    <div class="build-area" id="buildArea">
+      <span style="color:var(--muted)">Your sentence will appear here...</span>
+    </div>
+    <button class="btn btn-primary" onclick="checkBuilder()">✓ Check Sentence</button>
+    <button class="btn btn-secondary" onclick="resetBuilder()">↻ Reset</button>
+    <div class="result" id="builderResult"></div>
+  </div>
+
+  <div class="task-box">
+    <h3 class="task-title">✏️ Complete the Pattern</h3>
+
+    <div class="question">
+      <div class="question-text">
+        1. The two museums are _____ interesting _____ each other.
+      </div>
+      <p class="task-instruction">
+        Write the complete expression, including the adjective.
+      </p>
+      <input id="fill1" class="input" placeholder="Example: as beautiful as">
+    </div>
+
+    <div class="question">
+      <div class="question-text">
+        2. This new building is _____ old _____ the ancient palace.
+      </div>
+      <p class="task-instruction">
+        The new building is less old. Write the complete expression.
+      </p>
+      <input id="fill2" class="input" placeholder="Use the inequality structure">
+    </div>
+
+    <button class="btn btn-primary" onclick="checkFill()">✓ Check Answers</button>
+    <div class="result" id="fillResult"></div>
+  </div>
+</section>
+
+<!-- STEP 05 -->
+<section class="lesson-section" id="step5">
+  <span class="level apply">Apply</span>
+  <div class="section-top">
+    <div class="step-bubble">05</div>
+    <div class="step-label">Landmark Mission</div>
+  </div>
+  <h2>🏛️ Read the Facts and Compare</h2>
+  <p class="intro">
+    Study the two imaginary monuments and choose the comparisons
+    that match their fact files. The photographs are illustrations only.
+  </p>
+
+  <div class="fact-grid">
+    <div class="fact-card">
+      <img data-landmark="taj" loading="lazy" alt="Monument A illustration">
+      <div class="fact-card-header">
+        <h3>Monument A</h3><small>Imaginary fact file</small>
+      </div>
+      <div class="fact-body">
+        <div class="fact-row"><span>Height</span><strong>90 m</strong></div>
+        <div class="fact-row"><span>Visitors</span><strong>2 million</strong></div>
+        <div class="fact-row"><span>Age</span><strong>100 years</strong></div>
+        <div class="fact-row"><span>Popularity</span><strong>★★★★★</strong></div>
+      </div>
+    </div>
+    <div class="fact-card">
+      <img data-landmark="eiffel" loading="lazy" alt="Monument B illustration">
+      <div class="fact-card-header">
+        <h3>Monument B</h3><small>Imaginary fact file</small>
+      </div>
+      <div class="fact-body">
+        <div class="fact-row"><span>Height</span><strong>120 m</strong></div>
+        <div class="fact-row"><span>Visitors</span><strong>2 million</strong></div>
+        <div class="fact-row"><span>Age</span><strong>70 years</strong></div>
+        <div class="fact-row"><span>Popularity</span><strong>★★★★★</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="image-note">
+    Educational note: These are fictional figures, not facts about the photographed landmarks.
+  </p>
+
+  <div class="task-box">
+    <div id="landmarkQuiz">
+      <div class="question" data-answer="0">
+        <div class="question-text">1. Compare their popularity.</div>
+        <div class="options">
+          <button class="option">Monument A is as popular as Monument B.</button>
+          <button class="option">Monument A is not as popular as Monument B.</button>
+        </div>
+        <div class="feedback">✓ Both monuments have five popularity stars.</div>
+      </div>
+
+      <div class="question" data-answer="1">
+        <div class="question-text">2. Compare their height.</div>
+        <div class="options">
+          <button class="option">Monument A is as tall as Monument B.</button>
+          <button class="option">Monument A is not as tall as Monument B.</button>
+        </div>
+        <div class="feedback">✓ Monument A is shorter than Monument B.</div>
+      </div>
+
+      <div class="question" data-answer="0">
+        <div class="question-text">3. Compare their number of visitors.</div>
+        <div class="options">
+          <button class="option">Monument A receives as many visitors as Monument B.</button>
+          <button class="option">Monument A does not receive as many visitors as Monument B.</button>
+        </div>
+        <div class="feedback">
+          ✓ Both monuments receive the same number of visitors.
+        </div>
+      </div>
+      <div class="quiz-summary"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 06 -->
+<section class="lesson-section" id="step6">
+  <span class="level apply">Apply</span>
+  <div class="section-top">
+    <div class="step-bubble">06</div>
+    <div class="step-label">Transform</div>
+  </div>
+  <h2>🔄 Rewrite the Sentences</h2>
+  <p class="intro">Rewrite each idea using as ... as or not as ... as.</p>
+
+  <div class="task-box">
+    <div class="question">
+      <div class="question-text">
+        1. Timgad and Djemila are equally fascinating.
+      </div>
+      <input id="transform1" class="input" placeholder="Timgad is ...">
+    </div>
+    <div class="question">
+      <div class="question-text">
+        2. The skyscraper is taller than the pyramid.
+      </div>
+      <input id="transform2" class="input" placeholder="The pyramid is ...">
+    </div>
+    <div class="question">
+      <div class="question-text">3. Both trips were equally exciting.</div>
+      <input id="transform3" class="input" placeholder="Trip A was ...">
+    </div>
+    <button class="btn btn-primary" onclick="checkTransformations()">
+      ✓ Check Transformations
+    </button>
+    <div class="result" id="transformResult"></div>
+  </div>
+</section>
+
+<!-- STEP 07 -->
+<section class="lesson-section" id="step7">
+  <span class="level analyse">Analyse</span>
+  <div class="section-top">
+    <div class="step-bubble">07</div>
+    <div class="step-label">Grammar Detective</div>
+  </div>
+  <h2>🕵️ Find and Repair the Mistakes</h2>
+  <p class="intro">
+    Each sentence contains a grammar mistake. Write the correct sentence.
+  </p>
+
+  <div class="task-box">
+    <div class="question">
+      <div class="question-text">
+        ❌ Timgad is <span style="color:#e11d48">as more fascinating as</span> Djemila.
+      </div>
+      <input id="error1" class="input" placeholder="Write the corrected sentence">
+    </div>
+    <div class="question">
+      <div class="question-text">
+        ❌ Big Ben is <span style="color:#e11d48">as famous than</span> the Eiffel Tower.
+      </div>
+      <input id="error2" class="input" placeholder="Write the corrected sentence">
+    </div>
+    <div class="question">
+      <div class="question-text">
+        ❌ The pyramid is <span style="color:#e11d48">not as taller as</span> the skyscraper.
+      </div>
+      <input id="error3" class="input" placeholder="Write the corrected sentence">
+    </div>
+    <div class="question">
+      <div class="question-text">
+        ❌ Trip A is <span style="color:#e11d48">as exciting that</span> Trip B.
+      </div>
+      <input id="error4" class="input" placeholder="Write the corrected sentence">
+    </div>
+    <button class="btn btn-primary" onclick="checkErrors()">
+      🔍 Check My Corrections
+    </button>
+    <div class="result" id="errorResult"></div>
+  </div>
+</section>
+
+<!-- STEP 08 -->
+<section class="lesson-section" id="step8">
+  <span class="level analyse">Analyse & Evaluate</span>
+  <div class="section-top">
+    <div class="step-bubble">08</div>
+    <div class="step-label">Meaning Challenge</div>
+  </div>
+  <h2>🧠 Choose the Sentence That Fits the Facts</h2>
+  <p class="intro">
+    Grammar must match both the structure and the meaning of a situation.
+  </p>
+
+  <div class="discovery-box">
+    <div class="discovery-title">📊 Travel Report</div>
+    <p>
+      Lina visited two historic cities. City A was very beautiful
+      and City B was equally beautiful. However, City A was quieter than City B.
+    </p>
+  </div>
+
+  <div class="task-box">
+    <div id="analysisQuiz">
+      <div class="question" data-answer="0">
+        <div class="question-text">
+          1. Which sentence correctly compares their beauty?
+        </div>
+        <div class="options">
+          <button class="option">City A was as beautiful as City B.</button>
+          <button class="option">City A was not as beautiful as City B.</button>
+        </div>
+        <div class="feedback">✓ Both cities were equally beautiful.</div>
+      </div>
+      <div class="question" data-answer="0">
+        <div class="question-text">
+          2. Which sentence correctly describes how quiet City B was?
+        </div>
+        <div class="options">
+          <button class="option">City B was not as quiet as City A.</button>
+          <button class="option">City B was as quiet as City A.</button>
+        </div>
+        <div class="feedback">
+          ✓ City A was quieter, so City B was not as quiet.
+        </div>
+      </div>
+      <div class="quiz-summary"></div>
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>💡 Higher-Order Thinking</strong><br><br>
+    Before choosing a structure, ask yourself:<br><br>
+    <strong>Are the two qualities equal or different?</strong>
+  </div>
+</section>
+
+<!-- STEP 09 -->
+<section class="lesson-section" id="step9">
+  <span class="level hots">Evaluate</span>
+  <div class="section-top">
+    <div class="step-bubble">09</div>
+    <div class="step-label">Master Challenge</div>
+  </div>
+  <h2>🏆 Can You Beat the Challenge?</h2>
+  <p class="intro">Answer all five questions and discover your grammar score.</p>
+
+  <div id="masterQuiz">
+    <div class="question" data-answer="0">
+      <div class="question-text">1. Both monuments are equally old.</div>
+      <div class="options">
+        <button class="option">Monument A is as old as Monument B.</button>
+        <button class="option">Monument A is not as old as Monument B.</button>
+        <button class="option">Monument A is as older as Monument B.</button>
+      </div>
+      <div class="feedback">✓ Equality uses as old as.</div>
+    </div>
+
+    <div class="question" data-answer="1">
+      <div class="question-text">
+        2. Building A is less impressive than Building B.
+      </div>
+      <div class="options">
+        <button class="option">Building A is as impressive as Building B.</button>
+        <button class="option">Building A is not as impressive as Building B.</button>
+        <button class="option">Building A is not as more impressive as Building B.</button>
+      </div>
+      <div class="feedback">✓ This sentence expresses inequality.</div>
+    </div>
+
+    <div class="question" data-answer="1">
+      <div class="question-text">3. Which structure is correct?</div>
+      <div class="options">
+        <button class="option">as + adjective + than</button>
+        <button class="option">as + adjective + as</button>
+        <button class="option">more + adjective + as</button>
+      </div>
+      <div class="feedback">✓ Correct formula!</div>
+    </div>
+
+    <div class="question" data-answer="0">
+      <div class="question-text">
+        4. The two journeys were equally memorable.
+      </div>
+      <div class="options">
+        <button class="option">Journey A was as memorable as Journey B.</button>
+        <button class="option">Journey A was as more memorable as Journey B.</button>
+        <button class="option">Journey A was memorable than Journey B.</button>
+      </div>
+      <div class="feedback">✓ Use as memorable as.</div>
+    </div>
+
+    <div class="question" data-answer="1">
+      <div class="question-text">
+        5. Which sentence is grammatically correct?
+      </div>
+      <div class="options">
+        <button class="option">This museum is not as bigger as that museum.</button>
+        <button class="option">This museum is not as big as that museum.</button>
+        <button class="option">This museum is not big as that museum.</button>
+      </div>
+      <div class="feedback">✓ Use not as big as.</div>
+    </div>
+    <div class="quiz-summary"></div>
+  </div>
+
+  <div class="score-card">
+    <div>
+      <h3>🎯 Grammar Challenge</h3>
+      <p>Complete all five questions to reveal your score.</p>
+    </div>
+    <div class="big-score" id="masterScore">0/5</div>
+  </div>
+</section>
+
+<!-- STEP 10 -->
+<section class="lesson-section" id="step10">
+  <span class="level hots">HOTS · Create</span>
+  <div class="section-top">
+    <div class="step-bubble">10</div>
+    <div class="step-label">Final BEM Writing Mission</div>
+  </div>
+  <h2>✍️ Compare Two Famous Landmarks</h2>
+  <p class="intro">
+    Study the fact files and write a short paragraph comparing two imaginary landmarks.
+  </p>
+
+  <div class="fact-grid">
+    <div class="fact-card">
+      <img data-landmark="taj" loading="lazy" alt="Landmark A illustration">
+      <div class="fact-card-header">
+        <h3>Landmark A</h3><small>Imaginary landmark</small>
+      </div>
+      <div class="fact-body">
+        <div class="fact-row"><span>Type</span><strong>Historic monument</strong></div>
+        <div class="fact-row"><span>Age</span><strong>Very old</strong></div>
+        <div class="fact-row"><span>Popularity</span><strong>★★★★★</strong></div>
+        <div class="fact-row"><span>Beauty</span><strong>★★★★★</strong></div>
+        <div class="fact-row"><span>Height</span><strong>80 m</strong></div>
+        <div class="fact-row"><span>Visitors</span><strong>Many</strong></div>
+      </div>
+    </div>
+
+    <div class="fact-card">
+      <img data-landmark="eiffel" loading="lazy" alt="Landmark B illustration">
+      <div class="fact-card-header">
+        <h3>Landmark B</h3><small>Imaginary landmark</small>
+      </div>
+      <div class="fact-body">
+        <div class="fact-row"><span>Type</span><strong>Historic monument</strong></div>
+        <div class="fact-row"><span>Age</span><strong>Very old</strong></div>
+        <div class="fact-row"><span>Popularity</span><strong>★★★★★</strong></div>
+        <div class="fact-row"><span>Beauty</span><strong>★★★★★</strong></div>
+        <div class="fact-row"><span>Height</span><strong>120 m</strong></div>
+        <div class="fact-row"><span>Visitors</span><strong>Many</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="image-note">
+    The photographs illustrate the activity only. Use the fictional fact files.
+  </p>
+
+  <div class="writing-goals">
+    <strong>🧠 Plan Your Paragraph</strong>
+    <p style="font-size:.88rem">Use the fact files to compare the landmarks.</p>
+    <div class="goal-grid">
+      <div class="goal"><span class="goal-num">1</span>Introduce the two landmarks.</div>
+      <div class="goal"><span class="goal-num">2</span>Use as ... as at least twice.</div>
+      <div class="goal"><span class="goal-num">3</span>Use not as ... as at least once.</div>
+      <div class="goal"><span class="goal-num">4</span>Finish with a conclusion.</div>
+    </div>
+  </div>
+
+  <div class="writing-tools">
+    <span class="helper">as old as</span>
+    <span class="helper">as popular as</span>
+    <span class="helper">as beautiful as</span>
+    <span class="helper">not as tall as</span>
+    <span class="helper">both</span>
+    <span class="helper">also</span>
+    <span class="helper">however</span>
+    <span class="helper">in addition</span>
+  </div>
+
+  <div class="notice">
+    <strong>💡 Suggested Organization</strong><br><br>
+    <strong>Sentence 1:</strong> Introduce the landmarks.<br>
+    <strong>Sentences 2–4:</strong> Compare their qualities.<br>
+    <strong>Final sentence:</strong> Give your opinion or conclusion.
+  </div>
+
+  <div class="writing-area">
+    <h3>📝 My Paragraph</h3>
+    <p class="intro">Write about 60–90 words.</p>
+    <textarea id="finalWriting"
+      placeholder="Landmark A and Landmark B are two interesting monuments. Both..."
+      aria-label="Write your comparison paragraph"></textarea>
+
+    <div class="live-stats">
+      <div class="stat"><strong id="wordCount">0</strong><small>Words</small></div>
+      <div class="stat"><strong id="equalityCount">0</strong><small>Equality</small></div>
+      <div class="stat"><strong id="inequalityCount">0</strong><small>Inequality</small></div>
+      <div class="stat"><strong id="connectorCount">0</strong><small>Connectors</small></div>
+    </div>
+
+    <div class="writing-actions">
+      <button class="btn btn-primary" onclick="checkWriting()">✨ Check My Paragraph</button>
+      <button class="btn btn-secondary" onclick="showModel()">👀 Show Model</button>
+      <button class="btn btn-secondary" onclick="clearWriting()">↻ Start Again</button>
+    </div>
+  </div>
+
+  <div class="correction-panel" id="correctionPanel">
+    <div class="correction-head">
+      <div>
+        <small style="color:#059669;font-weight:900">WRITING FEEDBACK</small>
+        <h3>✨ Your Writing Coach</h3>
+      </div>
+      <div class="writing-score" id="writingScore">0/6</div>
+    </div>
+    <p class="intro">
+      This automatic checklist checks selected writing goals.
+      It cannot identify every grammar or spelling mistake.
+    </p>
+    <div class="checklist" id="writingChecklist"></div>
+    <div class="notice" id="writingTip"></div>
+  </div>
+
+  <div class="model-answer" id="modelAnswer">
+    <h3 style="color:#065f46">🌟 Model Paragraph</h3>
+    <p>
+      Landmark A and Landmark B are two interesting historic monuments.
+      They are both very old and attract many visitors.
+      Landmark A is <strong>as old as</strong> Landmark B,
+      and it is <strong>as popular as</strong> it.
+      The two monuments are also <strong>as beautiful as</strong> each other.
+      However, Landmark A is <strong>not as tall as</strong> Landmark B
+      because it is only 80 metres high.
+      In my opinion, both landmarks are impressive places
+      that people would enjoy visiting.
+    </p>
+  </div>
+</section>
+
+<!-- COMPLETION -->
+<section class="complete" id="completion">
+  <div class="trophy">🏆</div>
+  <h2>Grammar Mission Complete!</h2>
+  <p id="finalScore">
+    Complete the activities to finish your grammar expedition.
+  </p>
+
+  <div style="max-width:620px;margin:25px auto;background:rgba(255,255,255,.12);padding:24px;border-radius:14px;text-align:left;line-height:2">
+    <strong>🧠 Remember:</strong><br><br>
+    🟢 Equality:<br>
+    <strong>as + adjective + as</strong><br>
+    <em>Timgad is as fascinating as Djemila.</em><br><br>
+    🔴 Inequality:<br>
+    <strong>not as + adjective + as</strong><br>
+    <em>The pyramid is not as tall as the skyscraper.</em>
+  </div>
+
+  <a class="btn" href="#step1">↑ Review the Lesson</a>
+  <a class="btn" href="MS4-S1-Grammar-Lesson3.html">Checkpoint 03 →</a>
+</section>
+
+</main>
+</div>
+
+<!-- DICTIONARY -->
+<button class="dictionary-button" onclick="openDictionary()">
+  📖 Mini Dictionary
+</button>
+
+<div class="dictionary-overlay" id="dictionaryOverlay">
+  <div class="dictionary" role="dialog" aria-modal="true"
+       aria-label="Mini Dictionary">
+    <div class="dictionary-header">
+      <h2>📖 Mini Dictionary</h2>
+      <button class="close" onclick="closeDictionary()"
+              aria-label="Close dictionary">×</button>
+    </div>
+    <input id="dictionarySearch" class="dictionary-search"
+           placeholder="Search English or Arabic..."
+           oninput="filterDictionary()">
+
+    <div id="dictionaryList">
+      <div class="dict-row"><span class="dict-en">equality</span><span class="dict-ar">المساواة</span></div>
+      <div class="dict-row"><span class="dict-en">inequality</span><span class="dict-ar">عدم المساواة</span></div>
+      <div class="dict-row"><span class="dict-en">compare</span><span class="dict-ar">يقارن</span></div>
+      <div class="dict-row"><span class="dict-en">landmark</span><span class="dict-ar">مَعْلَم</span></div>
+      <div class="dict-row"><span class="dict-en">famous</span><span class="dict-ar">مشهور</span></div>
+      <div class="dict-row"><span class="dict-en">ancient</span><span class="dict-ar">قديم / عريق</span></div>
+      <div class="dict-row"><span class="dict-en">historic</span><span class="dict-ar">تاريخي</span></div>
+      <div class="dict-row"><span class="dict-en">fascinating</span><span class="dict-ar">شيق / ساحر</span></div>
+      <div class="dict-row"><span class="dict-en">impressive</span><span class="dict-ar">مثير للإعجاب</span></div>
+      <div class="dict-row"><span class="dict-en">popular</span><span class="dict-ar">مشهور / محبوب</span></div>
+      <div class="dict-row"><span class="dict-en">tall</span><span class="dict-ar">مرتفع / طويل</span></div>
+      <div class="dict-row"><span class="dict-en">journey</span><span class="dict-ar">رحلة</span></div>
+      <div class="dict-row"><span class="dict-en">memorable</span><span class="dict-ar">لا ينسى</span></div>
+      <div class="dict-row"><span class="dict-en">outstanding</span><span class="dict-ar">بارز / متميز</span></div>
+      <div class="dict-row"><span class="dict-en">achievement</span><span class="dict-ar">إنجاز</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  MY ENGLISH SPACE · MS4 · SEQUENCE 01 · GRAMMAR EXPEDITION
+</footer>
+
+<script>
+"use strict";
+
+/* =========================================
+   IMAGE MANAGER
+========================================= */
+
+const landmarkImages={
+  pyramids:[
+    "https://i.imgur.com/xqBsG5p.png"
+  ],
+  bigben:[
+    "https://i.imgur.com/R7oMvt6.jpg",
+    "https://i.imgur.com/R7oMvt6.png",
+    "https://i.imgur.com/R7oMvt6.webp"
+  ],
+  taj:[
+    "https://i.imgur.com/37jhaA4.jpg",
+    "https://i.imgur.com/37jhaA4.png",
+    "https://i.imgur.com/37jhaA4.webp"
+  ],
+  eiffel:[
+    "https://i.imgur.com/bW7tcN3.jpg",
+    "https://i.imgur.com/bW7tcN3.png",
+    "https://i.imgur.com/bW7tcN3.webp"
+  ]
+};
+
+function imagePlaceholder(name){
+  const labels={
+    pyramids:"Pyramids of Giza",
+    bigben:"Big Ben",
+    taj:"Taj Mahal",
+    eiffel:"Eiffel Tower"
+  };
+  const label=labels[name]||"Landmark";
+  const svg=`
+    <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
+      <defs>
+        <linearGradient id="bg" x2="1" y2="1">
+          <stop stop-color="#064e3b"/>
+          <stop offset="1" stop-color="#10b981"/>
+        </linearGradient>
+      </defs>
+      <rect width="800" height="500" fill="url(#bg)"/>
+      <circle cx="650" cy="90" r="100" fill="white" opacity=".09"/>
+      <text x="400" y="205" text-anchor="middle"
+        font-size="85" fill="white">✦</text>
+      <text x="400" y="285" text-anchor="middle"
+        font-family="Arial" font-size="37"
+        font-weight="bold" fill="white">${label}</text>
+      <text x="400" y="335" text-anchor="middle"
+        font-family="Arial" font-size="21"
+        fill="#d1fae5">Landmark Photo</text>
+    </svg>`;
+  return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
+}
+
+function loadLandmarkImage(img){
+  const name=img.dataset.landmark;
+  const sources=landmarkImages[name]||[];
+  let index=0;
+
+  function tryNext(){
+    if(index>=sources.length){
+      img.onerror=null;
+      img.src=imagePlaceholder(name);
+      return;
+    }
+    img.src=sources[index++];
+  }
+
+  img.onerror=tryNext;
+  tryNext();
+}
+
+document.querySelectorAll("img[data-landmark]").forEach(loadLandmarkImage);
+
+/* =========================================
+   LOCAL PROGRESS STORAGE
+========================================= */
+
+const STORAGE_KEY="myEnglishSpace_MS4_S1_Equality_v2";
+
+const progress={
+  discovery:false,
+  meaning:false,
+  builder:false,
+  fill:false,
+  landmark:false,
+  transform:false,
+  errors:false,
+  analysis:false,
+  master:false,
+  writing:false
+};
+
+let saved={};
+
+try{
+  saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}");
+}catch(e){
+  saved={};
+}
+
+if(saved.progress){
+  Object.keys(progress).forEach(key=>{
+    progress[key]=saved.progress[key]===true;
+  });
+}
+
+function saveProgress(){
+  try{
+    const quizAnswers={};
+
+    document.querySelectorAll(
+      "#discoveryQuiz,#meaningQuiz,#landmarkQuiz,#analysisQuiz,#masterQuiz"
+    ).forEach(quiz=>{
+      quizAnswers[quiz.id]=[
+        ...quiz.querySelectorAll(".question")
+      ].map(q=>q.dataset.selected==null?null:Number(q.dataset.selected));
+    });
+
+    const inputs={};
+    document.querySelectorAll(".input").forEach(input=>{
+      inputs[input.id]=input.value;
+    });
+
+    const data={
+      progress,
+      quizAnswers,
+      inputs,
+      writing:document.getElementById("finalWriting").value
+    };
+
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+  }catch(e){
+    /* Storage may be disabled in private browsing. */
+  }
+}
+
+function updateProgress(){
+  const completed=Object.values(progress).filter(Boolean).length;
+  const total=Object.keys(progress).length;
+  const percent=Math.round(completed/total*100);
+
+  document.getElementById("progressBar").style.width=percent+"%";
+  document.getElementById("progressText").textContent=
+    completed+" / "+total+" activities";
+
+  document.getElementById("finalScore").textContent=
+    completed===total
+    ?"🌟 Excellent! You completed every grammar activity!"
+    :"You completed "+completed+" of "+total+" activities. Keep going!";
+
+  saveProgress();
+}
+
+/* =========================================
+   QUIZ ENGINE
+========================================= */
+
+function setupQuiz(id,progressKey){
+  const container=document.getElementById(id);
+  if(!container)return;
+
+  const questions=[...container.querySelectorAll(".question")];
+
+  function showAnswer(question,index){
+    const answer=Number(question.dataset.answer);
+    const options=[...question.querySelectorAll(".option")];
+
+    question.dataset.done="true";
+    question.dataset.selected=String(index);
+    question.dataset.correct=String(index===answer);
+
+    options.forEach((btn,i)=>{
+      btn.disabled=true;
+      if(i===answer)btn.classList.add("correct");
+      else if(i===index)btn.classList.add("wrong");
+    });
+
+    const feedback=question.querySelector(".feedback");
+    if(feedback)feedback.classList.add("show");
+  }
+
+  function refreshSummary(){
+    if(!questions.every(q=>q.dataset.done==="true"))return;
+
+    const score=questions.filter(q=>q.dataset.correct==="true").length;
+    const summary=container.querySelector(".quiz-summary");
+
+    if(summary){
+      summary.textContent=
+        "🎯 Activity complete! Your score: "+score+" / "+questions.length+
+        (score===questions.length
+          ?" — Excellent!"
+          :" — Review the correct answers.");
+      summary.classList.add("show");
+    }
+
+    progress[progressKey]=true;
+
+    if(id==="masterQuiz"){
+      document.getElementById("masterScore").textContent=
+        score+"/"+questions.length;
+    }
+
+    updateProgress();
+  }
+
+  questions.forEach((question,qIndex)=>{
+    const options=[...question.querySelectorAll(".option")];
+
+    options.forEach((option,index)=>{
+      option.addEventListener("click",()=>{
+        if(question.dataset.done==="true")return;
+        showAnswer(question,index);
+        refreshSummary();
+      });
+    });
+
+    const stored=saved.quizAnswers?.[id]?.[qIndex];
+
+    if(Number.isInteger(stored)&&stored>=0&&stored<options.length){
+      showAnswer(question,stored);
+    }
+  });
+
+  refreshSummary();
+}
+
+setupQuiz("discoveryQuiz","discovery");
+setupQuiz("meaningQuiz","meaning");
+setupQuiz("landmarkQuiz","landmark");
+setupQuiz("analysisQuiz","analysis");
+setupQuiz("masterQuiz","master");
+
+/* =========================================
+   NORMALIZE ANSWERS
+========================================= */
+
+function normalize(text){
+  return String(text)
+    .toLowerCase()
+    .replace(/[.,!?;:]/g,"")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function setInputState(input,correct){
+  input.classList.toggle("correct-input",correct);
+  input.classList.toggle("wrong-input",!correct);
+}
+
+function showResult(id,correct,message){
+  const el=document.getElementById(id);
+  el.textContent=message;
+  el.className="result show "+(correct?"correct":"wrong");
+}
+
+/* =========================================
+   SENTENCE BUILDER
+========================================= */
+
+const builderBank=document.getElementById("builderBank");
+const buildArea=document.getElementById("buildArea");
+let builtWords=[];
+
+builderBank.querySelectorAll(".word-chip").forEach(chip=>{
+  chip.addEventListener("click",()=>{
+    if(chip.classList.contains("used"))return;
+
+    builtWords.push({text:chip.textContent.trim(),chip});
+    chip.classList.add("used");
+    renderBuilder();
+  });
+});
+
+function renderBuilder(){
+  buildArea.replaceChildren();
+
+  if(!builtWords.length){
+    const span=document.createElement("span");
+    span.style.color="var(--muted)";
+    span.textContent="Your sentence will appear here...";
+    buildArea.appendChild(span);
+    return;
+  }
+
+  builtWords.forEach((item,index)=>{
+    const button=document.createElement("button");
+    button.className="built-word";
+    button.textContent=item.text;
+    button.title="Click to remove this word";
+
+    button.addEventListener("click",()=>{
+      item.chip.classList.remove("used");
+      builtWords.splice(index,1);
+      renderBuilder();
+    });
+
+    buildArea.appendChild(button);
+  });
+}
+
+function checkBuilder(){
+  const answer=builtWords.map(item=>item.text).join(" ");
+  const correct="Timgad is as fascinating as Djemila.";
+
+  if(normalize(answer)===normalize(correct)){
+    showResult("builderResult",true,
+      "✓ Perfect! Timgad is as fascinating as Djemila.");
+    progress.builder=true;
+    updateProgress();
+  }else{
+    showResult("builderResult",false,
+      "Try again. Use this order: subject + is + as + adjective + as + landmark.");
+  }
+}
+
+function resetBuilder(){
+  builtWords=[];
+  builderBank.querySelectorAll(".word-chip").forEach(chip=>{
+    chip.classList.remove("used");
+  });
+  renderBuilder();
+  document.getElementById("builderResult").className="result";
+}
+
+/* =========================================
+   FILL IN THE GAPS
+========================================= */
+
+function checkFill(){
+  const a=document.getElementById("fill1");
+  const b=document.getElementById("fill2");
+
+  const correctA=normalize(a.value)==="as interesting as";
+  const correctB=normalize(b.value)==="not as old as";
+
+  setInputState(a,correctA);
+  setInputState(b,correctB);
+
+  const score=Number(correctA)+Number(correctB);
+
+  if(score===2){
+    showResult("fillResult",true,
+      "🎉 Excellent! Both expressions are correct.");
+    progress.fill=true;
+    updateProgress();
+  }else{
+    showResult("fillResult",false,
+      "Score: "+score+"/2. Check your answers and try again.");
+  }
+}
+
+/* =========================================
+   TRANSFORMATIONS
+========================================= */
+
+function checkTransformations(){
+  const answers=[
+    ["transform1","timgad is as fascinating as djemila"],
+    ["transform2","the pyramid is not as tall as the skyscraper"],
+    ["transform3","trip a was as exciting as trip b"]
+  ];
+
+  let score=0;
+
+  answers.forEach(([id,answer])=>{
+    const input=document.getElementById(id);
+    const correct=normalize(input.value)===answer;
+    setInputState(input,correct);
+    if(correct)score++;
+  });
+
+  if(score===3){
+    showResult("transformResult",true,
+      "🎉 Fantastic! All three transformations are correct.");
+    progress.transform=true;
+    updateProgress();
+  }else{
+    showResult("transformResult",false,
+      "Score: "+score+"/3. Check the highlighted sentences and try again.");
+  }
+}
+
+/* =========================================
+   GRAMMAR DETECTIVE
+========================================= */
+
+function checkErrors(){
+  const answers=[
+    ["error1","timgad is as fascinating as djemila"],
+    ["error2","big ben is as famous as the eiffel tower"],
+    ["error3","the pyramid is not as tall as the skyscraper"],
+    ["error4","trip a is as exciting as trip b"]
+  ];
+
+  let score=0;
+
+  answers.forEach(([id,answer])=>{
+    const input=document.getElementById(id);
+    const correct=normalize(input.value)===answer;
+    setInputState(input,correct);
+    if(correct)score++;
+  });
+
+  if(score===4){
+    showResult("errorResult",true,
+      "🕵️ Grammar Detective Master! All four sentences are correct.");
+    progress.errors=true;
+    updateProgress();
+  }else{
+    showResult("errorResult",false,
+      "You corrected "+score+"/4 sentences. Review the structure and try again.");
+  }
+}
+
+/* =========================================
+   WRITING STATISTICS
+========================================= */
+
+const writingBox=document.getElementById("finalWriting");
+
+function getWritingData(){
+  const text=writingBox.value.trim();
+  const words=text?text.split(/\s+/):[];
+
+  const inequalityPattern=
+    /\bnot\s+as\s+[a-z]+(?:-[a-z]+)?\s+as\b/gi;
+
+  const inequalityMatches=text.match(inequalityPattern)||[];
+
+  const equalityText=text.replace(inequalityPattern," ");
+
+  const equalityMatches=
+    equalityText.match(/\bas\s+[a-z]+(?:-[a-z]+)?\s+as\b/gi)||[];
+
+  const connectors=
+    text.match(/\b(both|also|however|in addition|similarly|finally|but|and)\b/gi)||[];
+
+  return{
+    text,
+    wordCount:words.length,
+    equality:equalityMatches.length,
+    inequality:inequalityMatches.length,
+    connectors:connectors.length
+  };
+}
+
+function updateWritingStats(){
+  const data=getWritingData();
+
+  document.getElementById("wordCount").textContent=data.wordCount;
+  document.getElementById("equalityCount").textContent=data.equality;
+  document.getElementById("inequalityCount").textContent=data.inequality;
+  document.getElementById("connectorCount").textContent=data.connectors;
+}
+
+writingBox.addEventListener("input",()=>{
+  updateWritingStats();
+  saveProgress();
+});
+
+/* =========================================
+   WRITING CHECKER
+========================================= */
+
+function checkWriting(){
+  const data=getWritingData();
+  const panel=document.getElementById("correctionPanel");
+  const checklist=document.getElementById("writingChecklist");
+  const tip=document.getElementById("writingTip");
+
+  panel.classList.add("show");
+
+  if(!data.wordCount){
+    checklist.replaceChildren();
+    document.getElementById("writingScore").textContent="0/6";
+    tip.textContent="✏️ Write your paragraph first.";
+    return;
+  }
+
+  const checks=[
+    [
+      data.wordCount>=60&&data.wordCount<=90,
+      "Length",
+      "Write between 60 and 90 words."
+    ],
+    [
+      data.equality>=2,
+      "Equality",
+      "Use as + adjective + as at least twice."
+    ],
+    [
+      data.inequality>=1,
+      "Inequality",
+      "Use not as + adjective + as at least once."
+    ],
+    [
+      data.connectors>=1,
+      "Organisation",
+      "Use connectors to link your ideas."
+    ],
+    [
+      /^[A-Z]/.test(data.text),
+      "Capital Letter",
+      "Begin your paragraph with a capital letter."
+    ],
+    [
+      /[.!?]$/.test(data.text),
+      "Punctuation",
+      "Finish your paragraph with punctuation."
+    ]
+  ];
+
+  const score=checks.filter(item=>item[0]).length;
+  document.getElementById("writingScore").textContent=score+"/6";
+
+  checklist.replaceChildren();
+
+  checks.forEach(([passed,title,description])=>{
+    const item=document.createElement("div");
+    item.className="check-item "+(passed?"pass":"fail");
+
+    const icon=document.createElement("span");
+    icon.className="check-icon";
+    icon.textContent=passed?"✓":"!";
+
+    const details=document.createElement("div");
+    const heading=document.createElement("strong");
+    heading.textContent=title;
+
+    const small=document.createElement("small");
+    small.textContent=description;
+
+    details.append(heading,small);
+    item.append(icon,details);
+    checklist.appendChild(item);
+  });
+
+  if(score===6){
+    tip.textContent=
+      "🏆 Excellent! Your paragraph meets all six automatic writing goals. Read it again to check the meaning, grammar and spelling.";
+    progress.writing=true;
+    updateProgress();
+  }else if(score>=4){
+    tip.textContent=
+      "🌟 Good work! Improve the items marked with ! and check again.";
+  }else{
+    tip.textContent=
+      "🌱 Good start! Use the fact file and writing helpers to improve your paragraph.";
+  }
+
+  panel.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+function showModel(){
+  if(writingBox.value.trim().length<20){
+    alert("Try writing your own paragraph first. Then compare it with the model.");
+    return;
+  }
+
+  const model=document.getElementById("modelAnswer");
+  model.classList.add("show");
+  model.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+function clearWriting(){
+  writingBox.value="";
+  updateWritingStats();
+
+  document.getElementById("correctionPanel").classList.remove("show");
+  document.getElementById("modelAnswer").classList.remove("show");
+
+  saveProgress();
+  writingBox.focus();
+}
+
+/* =========================================
+   DICTIONARY
+========================================= */
+
+const dictionaryOverlay=document.getElementById("dictionaryOverlay");
+
+function openDictionary(){
+  dictionaryOverlay.classList.add("open");
+  document.getElementById("dictionarySearch").focus();
+}
+
+function closeDictionary(){
+  dictionaryOverlay.classList.remove("open");
+}
+
+function filterDictionary(){
+  const query=document.getElementById("dictionarySearch")
+    .value.toLowerCase().trim();
+
+  document.querySelectorAll(".dict-row").forEach(row=>{
+    row.style.display=
+      row.textContent.toLowerCase().includes(query)?"grid":"none";
+  });
+}
+
+dictionaryOverlay.addEventListener("click",event=>{
+  if(event.target===dictionaryOverlay)closeDictionary();
+});
+
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape")closeDictionary();
+});
+
+/* =========================================
+   ACTIVE SIDEBAR LINKS
+========================================= */
+
+const lessonSections=document.querySelectorAll(".lesson-section");
+const sideLinks=document.querySelectorAll(".side-link");
+
+if("IntersectionObserver" in window){
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+
+      const id=entry.target.id;
+
+      sideLinks.forEach(link=>{
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href")==="#"+id
+        );
+      });
+    });
+  },{
+    rootMargin:"-20% 0px -65% 0px"
+  });
+
+  lessonSections.forEach(section=>observer.observe(section));
+}
+
+/* =========================================
+   RESTORE SAVED ANSWERS
+========================================= */
+
+if(saved.inputs){
+  Object.entries(saved.inputs).forEach(([id,value])=>{
+    const input=document.getElementById(id);
+    if(input)input.value=value;
+  });
+}
+
+if(typeof saved.writing==="string"){
+  writingBox.value=saved.writing;
+}
+
+updateWritingStats();
+
+document.querySelectorAll(".input").forEach(input=>{
+  input.addEventListener("input",()=>{
+    input.classList.remove("correct-input","wrong-input");
+    saveProgress();
+  });
+});
+
+updateProgress();
+
+</script>
+</body>
+</html>

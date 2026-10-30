@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkpoint 03 | Reporting a Trip — MS4</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================
+   GLOBAL DESIGN
+========================================== */
+
+:root {
+  --navy: #102b3b;
+  --deep: #075a65;
+  --teal: #087e83;
+  --mint: #e5f7f2;
+  --gold: #f8bd61;
+  --paper: #f5f9fc;
+  --ink: #163342;
+  --muted: #627b88;
+  --line: #dce9ed;
+  --good: #167a57;
+  --bad: #c44552;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero {
+  background:
+    radial-gradient(
+      circle at 80% 25%,
+      #238e91,
+      transparent 42%
+    ),
+    linear-gradient(
+      125deg,
+      #102b3b,
+      #075a65
+    );
+
+  color: white;
+
+  padding:
+    24px
+    max(20px, calc((100vw - 1120px) / 2))
+    75px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: Outfit, sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+}
+
+.back {
+  color: white;
+  text-decoration: none;
+  border: 1px solid #ffffff66;
+  padding: 10px 15px;
+  border-radius: 14px;
+  font-size: 13px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 35px;
+  align-items: center;
+  margin-top: 42px;
+}
+
+.pill {
+  display: inline-block;
+  background: #ffffff24;
+  border: 1px solid #ffffff45;
+  border-radius: 99px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hero h1 {
+  font-family: Outfit, sans-serif;
+  font-size: clamp(36px, 5.5vw, 65px);
+  line-height: 1.06;
+  margin: 17px 0;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: #ffd18a;
+}
+
+.hero p {
+  line-height: 1.8;
+  color: #e0f4f2;
+  max-width: 580px;
+}
+
+.hero-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  transform: rotate(2deg);
+}
+
+.hero-photos img {
+  width: 100%;
+  height: 125px;
+  object-fit: cover;
+  border: 3px solid #ffffff88;
+  border-radius: 15px;
+  box-shadow: 0 12px 25px #0004;
+}
+
+/* ==========================================
+   PAGE LAYOUT
+========================================== */
+
+.wrap {
+  max-width: 1120px;
+  margin: -36px auto 70px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.progress {
+  position: sticky;
+  top: 8px;
+  z-index: 10;
+
+  background: #fffffff2;
+  backdrop-filter: blur(14px);
+
+  box-shadow: 0 12px 35px #143e4a16;
+
+  border: 1px solid var(--line);
+  border-radius: 18px;
+
+  padding: 14px 20px;
+
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.progress strong {
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.track {
+  height: 10px;
+  border-radius: 30px;
+  background: #e2eff0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 11%;
+  background: linear-gradient(
+    90deg,
+    #0b8789,
+    #55c3a1
+  );
+  transition: width .3s;
+}
+
+.section {
+  scroll-margin-top: 95px;
+
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+
+  padding: 30px;
+  margin-top: 22px;
+
+  box-shadow: 0 10px 35px #153b4710;
+}
+
+.heading {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.num {
+  background: #dff5ee;
+  color: #087c78;
+  padding: 8px 12px;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.heading h2 {
+  font-family: Outfit, sans-serif;
+  font-size: clamp(22px, 3vw, 29px);
+  margin: 0;
+}
+
+.desc {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 9px 0 22px;
+}
+
+.note {
+  background: #f0f8fb;
+  border-left: 5px solid var(--teal);
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 15px;
+  line-height: 1.7;
+}
+
+.btn {
+  background: var(--teal);
+  color: white;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 19px;
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.btn.alt {
+  background: #e8f2f3;
+  color: #16626b;
+  margin-left: 7px;
+}
+
+.feedback {
+  min-height: 24px;
+  font-weight: 800;
+  margin: 12px 0 0;
+}
+
+/* ==========================================
+   STEP 1 - PICTURE DICTIONARY
+========================================== */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.photo-card {
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  overflow: hidden;
+  background: white;
+  text-align: left;
+  padding: 0;
+
+  transition:
+    transform .2s,
+    box-shadow .2s;
+}
+
+.photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px #143e4a18;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 135px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-card span {
+  display: block;
+  padding: 10px 11px;
+  font-weight: 800;
+}
+
+.photo-card small {
+  display: block;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+/* ==========================================
+   STEP 2 - VOCABULARY TOOLKIT
+========================================== */
+
+.toolgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.tool {
+  background: #f0f8fb;
+  border: 1px solid #cfe7ef;
+  border-radius: 17px;
+  padding: 18px;
+}
+
+.tool:nth-child(even) {
+  background: #fff8e9;
+  border-color: #f6e3b9;
+}
+
+.tool h3 {
+  margin: 0 0 9px;
+  font-family: Outfit, sans-serif;
+}
+
+.tool p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   STEP 3 - SORTING
+========================================== */
+
+.bank {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 17px;
+}
+
+.chip {
+  border: 2px solid #cce8e5;
+  background: #eefaf6;
+  border-radius: 99px;
+  padding: 9px 13px;
+  color: #126d6c;
+  font-weight: 800;
+}
+
+.chip.active {
+  background: var(--gold);
+  border-color: #e5a544;
+}
+
+.zones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.zone {
+  border: 2px dashed #b6d9d9;
+  background: #f7fbfb;
+  border-radius: 14px;
+  min-height: 130px;
+  padding: 12px;
+}
+
+.zone h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.zone .chip {
+  margin: 3px;
+}
+
+/* ==========================================
+   STEP 4 - MATCHING
+========================================== */
+
+.matchgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.matchcol {
+  display: grid;
+  gap: 10px;
+}
+
+.matchitem {
+  border: 2px solid var(--line);
+  border-radius: 13px;
+  background: #f8fcfc;
+  padding: 14px;
+  text-align: left;
+  font-weight: 800;
+}
+
+.matchitem.selected {
+  border-color: #e5a544;
+  background: #fff7e4;
+}
+
+.matchitem.matched,
+.correct {
+  border-color: var(--good) !important;
+  background: #e8f8ef !important;
+}
+
+.incorrect {
+  border-color: var(--bad) !important;
+  background: #fff0f0 !important;
+}
+
+/* ==========================================
+   STEP 5 - LONDON MAP
+========================================== */
+
+.map {
+  width: 100%;
+  max-height: 440px;
+  object-fit: contain;
+  border-radius: 15px;
+  background: #eff8f8;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.field {
+  background: #f5fbfb;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 14px;
+}
+
+.field label {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.field select,
+.field input {
+  width: 100%;
+  padding: 11px;
+  border: 2px solid #d5e7e8;
+  border-radius: 10px;
+  background: white;
+}
+
+/* ==========================================
+   STEP 6 - READING
+========================================== */
+
+.passage {
+  display: flex;
+  gap: 18px;
+  background: #f2faf9;
+  border-radius: 18px;
+  padding: 18px;
+  line-height: 1.85;
+}
+
+.passage img {
+  width: 205px;
+  object-fit: cover;
+  border-radius: 13px;
+  align-self: flex-start;
+}
+
+.passage mark {
+  background: #ffedb9;
+  border-radius: 4px;
+  padding: 1px 4px;
+}
+
+.question {
+  border-bottom: 1px solid var(--line);
+  padding: 15px 0;
+}
+
+.question p {
+  font-weight: 800;
+}
+
+.options {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.option {
+  border: 2px solid #d4e8e8;
+  background: #f5fbfb;
+  border-radius: 10px;
+  padding: 9px 15px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* ==========================================
+   STEP 7 - PAST SIMPLE
+========================================== */
+
+.verbgrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.verb {
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 13px;
+  text-align: center;
+  background: #f7fbfb;
+}
+
+.verb b {
+  display: block;
+  color: var(--teal);
+  margin: 7px 0;
+}
+
+.verb button {
+  border: 0;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: #dceef4;
+}
+
+.exercise {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--line);
+  padding: 13px 0;
+}
+
+.exercise label {
+  flex: 1;
+  font-weight: 700;
+}
+
+.exercise input {
+  width: 180px;
+  max-width: 48%;
+  border: 2px solid #d5e7e8;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* ==========================================
+   STEP 8 - SEQUENCE & GUIDED WRITING
+========================================== */
+
+.sequence {
+  display: grid;
+  gap: 10px;
+}
+
+.seqitem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid var(--line);
+  background: #f8fcfc;
+  border-radius: 13px;
+  padding: 13px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.seqitem b {
+  display: grid;
+  place-items: center;
+  background: var(--teal);
+  color: white;
+  border-radius: 50%;
+  min-width: 30px;
+  height: 30px;
+}
+
+.seqitem.selected {
+  border-color: #e5a544;
+  background: #fff7e4;
+}
+
+.reportgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.writer {
+  width: 100%;
+  min-height: 170px;
+  border: 2px solid #cde2e4;
+  border-radius: 14px;
+  padding: 16px;
+  line-height: 1.8;
+  resize: vertical;
+  margin-top: 14px;
+}
+
+/* ==========================================
+   STEP 9 - FINAL WRITING
+========================================== */
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.choices button {
+  border: 3px solid transparent;
+  background: #f8fbfb;
+  padding: 0;
+  border-radius: 13px;
+  overflow: hidden;
+  font-weight: 800;
+}
+
+.choices button.picked {
+  border-color: #f4ac3e;
+}
+
+.choices img {
+  width: 100%;
+  height: 105px;
+  object-fit: cover;
+  display: block;
+}
+
+.choices span {
+  display: block;
+  padding: 8px;
+}
+
+.checks {
+  display: grid;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.checks label {
+  background: #f4faf9;
+  padding: 11px;
+  border-radius: 11px;
+}
+
+/* ==========================================
+   COMPLETION
+========================================== */
+
+.end {
+  text-align: center;
+  color: #e8fbf8;
+  padding: 40px 10px;
+  background: #0d4c57;
+  border-radius: 25px;
+  margin-top: 25px;
+}
+
+.end a {
+  display: inline-block;
+  background: var(--gold);
+  color: #173e42;
+  padding: 13px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+footer {
+  text-align: center;
+  color: #66818a;
+  padding: 15px;
+  font-size: 12px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media(max-width:850px) {
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photos {
+    display: none;
+  }
+
+  .gallery,
+  .choices {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .verbgrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media(max-width:550px) {
+
+  .hero {
+    padding: 20px 17px 65px;
+  }
+
+  .wrap {
+    padding: 0 11px;
+  }
+
+  .section {
+    padding: 19px 15px;
+    border-radius: 19px;
+  }
+
+  .gallery,
+  .choices,
+  .toolgrid,
+  .zones,
+  .fields,
+  .reportgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .passage {
+    flex-direction: column;
+  }
+
+  .passage img {
+    width: 100%;
+    height: 170px;
+  }
+
+  .verbgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .photo-card img {
+    height: 115px;
+  }
+
+  .progress {
+    padding: 12px;
+  }
+
+  .exercise {
+    flex-wrap: wrap;
+  }
+
+  .exercise input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<header class="hero">
+
+  <div class="top">
+
+    <div class="brand">
+      ✦ MY ENGLISH SPACE
+      <span style="opacity:.7">/ MS4</span>
+    </div>
+
+    <a href="MS4-S1-Vocabulary.html" class="back">
+      ← Vocabulary Map
+    </a>
+
+  </div>
+
+  <div class="hero-grid">
+
+    <div>
+
+      <span class="pill">
+        SEQUENCE 01 · VOCABULARY · CHECKPOINT 03
+      </span>
+
+      <h1>
+        Tell the story of
+        <em>your trip.</em>
+      </h1>
+
+      <p>
+        Pack your suitcase! Discover travel words,
+        explore London, practise the past simple
+        and write your own unforgettable journey.
+      </p>
+
+      <a
+        class="btn"
+        href="#step1"
+        style="
+          display:inline-block;
+          text-decoration:none;
+          background:var(--gold);
+          color:var(--navy);
+        "
+      >
+        Start the journey →
+      </a>
+
+    </div>
+
+    <div class="hero-photos" id="heroPhotos"></div>
+
+  </div>
+
+</header>
+
+<main class="wrap">
+
+<!-- ==========================================
+     PROGRESS TRACKER
+========================================== -->
+
+<div class="progress">
+
+  <strong id="stepLabel">
+    Step 1 of 9
+  </strong>
+
+  <div class="track">
+    <div class="fill" id="progressFill"></div>
+  </div>
+
+  <strong id="percent">
+    11%
+  </strong>
+
+</div>
+
+<!-- ==========================================
+     STEP 1 - DISCOVER
+========================================== -->
+
+<section class="section" id="step1">
+
+  <div class="heading">
+    <span class="num">01 · DISCOVER</span>
+    <h2>🧳 Travel Picture Dictionary</h2>
+  </div>
+
+  <p class="desc">
+    Tap a photograph to learn its category
+    and use in a journey.
+  </p>
+
+  <div class="gallery" id="gallery"></div>
+
+  <div class="note" id="reveal" aria-live="polite">
+    👆 Choose a picture to discover its meaning.
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 2 - VOCABULARY
+========================================== -->
+
+<section class="section" id="step2">
+
+  <div class="heading">
+    <span class="num">02 · LEARN</span>
+    <h2>📚 Travel Vocabulary Toolkit</h2>
+  </div>
+
+  <p class="desc">
+    Learn the useful words and expressions
+    you need to describe a trip.
+  </p>
+
+  <div class="toolgrid" id="toolGrid"></div>
+
+  <div class="note">
+    <b>💡 Remember:</b>
+    We usually use the
+    <b>past simple tense</b>
+    to report a completed trip.
+    <br>
+    Example:
+    <b>Last Saturday, we visited Big Ben.</b>
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 3 - SORT
+========================================== -->
+
+<section class="section" id="step3">
+
+  <div class="heading">
+    <span class="num">03 · PRACTISE</span>
+    <h2>🎯 Sort the Travel Words</h2>
+  </div>
+
+  <p class="desc">
+    Select a word, then tap its correct category.
+    Tap a placed word to return it to the bank.
+  </p>
+
+  <div class="bank" id="sortBank"></div>
+
+  <div class="zones" id="sortZones"></div>
+
+  <button class="btn" id="sortCheck">
+    ✓ Check my categories
+  </button>
+
+  <button class="btn alt" id="sortReset">
+    ↻ Start again
+  </button>
+
+  <p class="feedback" id="sortFeedback" aria-live="polite"></p>
+
+</section>
+
+<!-- ==========================================
+     STEP 4 - MATCH
+========================================== -->
+
+<section class="section" id="step4">
+
+  <div class="heading">
+    <span class="num">04 · PLAY</span>
+    <h2>🔗 Match the Place and the Action</h2>
+  </div>
+
+  <p class="desc">
+    Choose a place on the left.
+    Then choose the action that matches it.
+  </p>
+
+  <div class="matchgrid">
+
+    <div class="matchcol" id="matchLeft"></div>
+
+    <div class="matchcol" id="matchRight"></div>
+
+  </div>
+
+  <button class="btn alt" id="matchReset">
+    ↻ Play again
+  </button>
+
+  <p class="feedback" id="matchFeedback" aria-live="polite">
+    0 / 5 matched
+  </p>
+
+</section>
+
+<!-- ==========================================
+     STEP 5 - MAP
+========================================== -->
+
+<section class="section" id="step5">
+
+  <div class="heading">
+    <span class="num">05 · EXPLORE</span>
+    <h2>🗺️ London Map Mission</h2>
+  </div>
+
+  <p class="desc">
+    Study the London map and identify
+    the areas of four famous landmarks.
+  </p>
+
+  <img
+    class="map"
+    src="https://i.imgur.com/Fgskh61.png"
+    alt="London tourist map"
+  >
+
+  <div class="fields" id="mapFields" style="margin-top:20px"></div>
+
+  <button class="btn" id="mapCheck">
+    ✓ Check map answers
+  </button>
+
+  <p class="feedback" id="mapFeedback" aria-live="polite"></p>
+
+</section>
+
+<!-- ==========================================
+     STEP 6 - READING
+========================================== -->
+
+<section class="section" id="step6">
+
+  <div class="heading">
+    <span class="num">06 · READ</span>
+    <h2>📖 A Day in London</h2>
+  </div>
+
+  <p class="desc">
+    Read the trip report carefully.
+    Then answer the comprehension questions.
+  </p>
+
+  <div class="passage">
+
+    <img
+      src="https://i.imgur.com/R7oMvt6.jpeg"
+      alt="Big Ben in London"
+      loading="lazy"
+    >
+
+    <div>
+
+      Last Saturday, my classmates and I
+      <mark>travelled</mark> to London.
+
+      We <mark>took</mark> the train and
+      <mark>arrived</mark> in the city in the morning.
+
+      <br><br>
+
+      First, we <mark>visited</mark> Big Ben
+      and <mark>took</mark> lots of photographs.
+
+      Then, we <mark>walked</mark> along the River Thames
+      and <mark>crossed</mark> Westminster Bridge.
+
+      <br><br>
+
+      At lunchtime, we <mark>ate</mark>
+      at a small restaurant.
+      The food <mark>was</mark> delicious.
+
+      <br><br>
+
+      In the afternoon, we <mark>visited</mark>
+      the London Eye and <mark>enjoyed</mark>
+      the beautiful view of the city.
+
+      <br><br>
+
+      Finally, we <mark>returned</mark>
+      to the station and <mark>caught</mark>
+      our train home.
+
+      It <mark>was</mark> an unforgettable trip!
+
+    </div>
+
+  </div>
+
+  <div id="readingQuiz"></div>
+
+</section>
+
+<!-- ==========================================
+     STEP 7 - PAST SIMPLE
+========================================== -->
+
+<section class="section" id="step7">
+
+  <div class="heading">
+    <span class="num">07 · GRAMMAR</span>
+    <h2>⏳ Past Simple Travel Challenge</h2>
+  </div>
+
+  <p class="desc">
+    Study the verbs and tap the speaker
+    buttons to hear their pronunciation.
+  </p>
+
+  <div class="verbgrid" id="verbGrid"></div>
+
+  <h3 style="margin-top:28px">
+    ✏️ Complete the sentences
+  </h3>
+
+  <p class="desc">
+    Write the correct past simple form.
+  </p>
+
+  <div id="verbExercise"></div>
+
+  <button class="btn" id="verbCheck">
+    ✓ Check my answers
+  </button>
+
+  <p class="feedback" id="verbFeedback" aria-live="polite"></p>
+
+</section>
+
+<!-- ==========================================
+     STEP 8 - SEQUENCING
+========================================== -->
+
+<section class="section" id="step8">
+
+  <div class="heading">
+    <span class="num">08 · ORGANISE</span>
+    <h2>🧩 Put the Trip in Order</h2>
+  </div>
+
+  <p class="desc">
+    Tap the events in the order they happened.
+    Tap a selected event to remove its number.
+  </p>
+
+  <div class="sequence" id="sequence"></div>
+
+  <button class="btn" id="sequenceCheck">
+    ✓ Check the order
+  </button>
+
+  <button class="btn alt" id="sequenceReset">
+    ↻ Reset
+  </button>
+
+  <p class="feedback" id="sequenceFeedback" aria-live="polite"></p>
+
+  <hr style="
+    border:0;
+    border-top:1px solid var(--line);
+    margin:35px 0;
+  ">
+
+  <div class="heading">
+    <span class="num">GUIDED WRITING</span>
+    <h2>📝 Build Your Trip Report</h2>
+  </div>
+
+  <p class="desc">
+    Complete the planner.
+    Then generate a draft and improve it.
+  </p>
+
+  <div class="reportgrid" id="planner"></div>
+
+  <button class="btn" id="buildReport">
+    ✨ Build my report
+  </button>
+
+  <textarea
+    class="writer"
+    id="guidedReport"
+    aria-label="Guided trip report"
+    placeholder="Your trip report will appear here. You can also write your own."
+  ></textarea>
+
+  <button class="btn" id="guidedCheck">
+    📊 Check my writing
+  </button>
+
+  <p class="feedback" id="guidedFeedback" aria-live="polite"></p>
+
+</section>
+
+<!-- ==========================================
+     STEP 9 - FINAL WRITING
+========================================== -->
+
+<section class="section" id="step9">
+
+  <div class="heading">
+    <span class="num">09 · CREATE</span>
+    <h2>🌍 Report Your Dream Trip</h2>
+  </div>
+
+  <p class="desc">
+    Choose a destination.
+    Write 8–10 sentences about your journey.
+  </p>
+
+  <div class="choices" id="choices"></div>
+
+  <div class="note">
+    <b>Writing plan:</b>
+    When → Where → Transport → Accommodation →
+    Places → Activities → Food → Feelings.
+    <br><br>
+    <b>Useful connectors:</b>
+    First · Then · After that · Later · Finally.
+  </div>
+
+  <textarea
+    class="writer"
+    id="finalReport"
+    aria-label="Final trip report"
+    placeholder="Last summer, I travelled to...
+
+First, I...
+Then, I...
+After that, I...
+Finally, I...
+
+It was an unforgettable trip!"
+  ></textarea>
+
+  <div class="checks">
+
+    <label>
+      <input type="checkbox">
+      I used the past simple tense.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I used travel vocabulary.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I used sequence words.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I described places and activities.
+    </label>
+
+    <label>
+      <input type="checkbox">
+      I checked spelling and punctuation.
+    </label>
+
+  </div>
+
+  <button class="btn" id="finalCheck">
+    🏆 Check my trip report
+  </button>
+
+  <button class="btn alt" id="download">
+    ⬇ Download my report
+  </button>
+
+  <p class="feedback" id="finalFeedback" aria-live="polite"></p>
+
+</section>
+
+<!-- ==========================================
+     COMPLETION
+========================================== -->
+
+<div class="end">
+
+  <h2>🏆 Checkpoint 03 Complete!</h2>
+
+  <p>
+    You are now a Travel Reporter!
+    You can describe a journey and report
+    what happened during a trip.
+  </p>
+
+  <a href="MS4-S1-Vocabulary-Lesson4.html">
+    Continue to Checkpoint 04 →
+  </a>
+
+</div>
+
+</main>
+
+<footer>
+  MY ENGLISH SPACE · MS4 · SEQUENCE 1 · VOCABULARY EXPEDITION
+</footer>
+
+<script>
+
+/* ==========================================
+   HELPERS
+========================================== */
+
+const $ = selector =>
+  document.querySelector(selector);
+
+const $$ = selector =>
+  [...document.querySelectorAll(selector)];
+
+function node(tag, className = "", text = "") {
+
+  const element = document.createElement(tag);
+
+  element.className = className;
+
+  element.textContent = text;
+
+  return element;
+
+}
+
+function image(src, alt) {
+
+  const img = node("img");
+
+  img.src = src;
+  img.alt = alt;
+  img.loading = "lazy";
+
+  return img;
+
+}
+
+function message(selector, text, success) {
+
+  const element = $(selector);
+
+  element.textContent = text;
+
+  element.style.color = success
+    ? "var(--good)"
+    : "var(--bad)";
+
+}
+
+/* ==========================================
+   TRAVEL DATABASE
+========================================== */
+
+const travel = [
+
+  {
+    name: "Airplane",
+    category: "Transport",
+    description: "We travelled by airplane.",
+    image: "https://i.imgur.com/7TMONrs.jpeg"
+  },
+
+  {
+    name: "Suitcase",
+    category: "Luggage",
+    description: "I packed my suitcase.",
+    image: "https://i.imgur.com/kEYAS7g.jpeg"
+  },
+
+  {
+    name: "Train",
+    category: "Transport",
+    description: "We caught the train.",
+    image: "https://i.imgur.com/AUnEveB.jpeg"
+  },
+
+  {
+    name: "Hotel",
+    category: "Accommodation",
+    description: "We stayed at a hotel.",
+    image: "https://i.imgur.com/jaA5pxO.jpeg"
+  },
+
+  {
+    name: "Photographs",
+    category: "Activities",
+    description: "We took photographs.",
+    image: "https://i.imgur.com/H1580sL.jpeg"
+  },
+
+  {
+    name: "Restaurant",
+    category: "Food",
+    description: "We ate at a restaurant.",
+    image: "https://i.imgur.com/Ye51rsv.jpeg"
+  },
+
+  {
+    name: "Tourist map",
+    category: "Documents & Tools",
+    description: "We used a tourist map.",
+    image: "https://i.imgur.com/AHzrsu0.jpeg"
+  },
+
+  {
+    name: "Taxi",
+    category: "Transport",
+    description: "We took a taxi.",
+    image: "https://i.imgur.com/1HMasMy.jpeg"
+  },
+
+  {
+    name: "Passport",
+    category: "Documents & Tools",
+    description: "I showed my passport.",
+    image: "https://i.imgur.com/3asYyZH.jpeg"
+  },
+
+  {
+    name: "Cruise ship",
+    category: "Transport",
+    description: "They travelled by cruise ship.",
+    image: "https://i.imgur.com/O1yut3Z.jpeg"
+  }
+
+];
+
+/* ==========================================
+   HERO IMAGES
+========================================== */
+
+travel.slice(0, 6).forEach(item => {
+
+  $("#heroPhotos").append(
+    image(item.image, item.name)
+  );
+
+});
+
+/* ==========================================
+   PROGRESS TRACKER
+========================================== */
+
+const sections = $$(".section");
+
+function updateProgress() {
+
+  let current = 0;
+
+  sections.forEach((section, index) => {
+
+    if (
+      section.getBoundingClientRect().top <
+      innerHeight * .65
+    ) {
+      current = index;
+    }
+
+  });
+
+  $("#stepLabel").textContent =
+    `Step ${current + 1} of 9`;
+
+  $("#percent").textContent =
+    `${Math.round((current + 1) / 9 * 100)}%`;
+
+  $("#progressFill").style.width =
+    `${(current + 1) / 9 * 100}%`;
+
+}
+
+addEventListener(
+  "scroll",
+  updateProgress,
+  { passive: true }
+);
+
+updateProgress();
+
+/* ==========================================
+   STEP 1 - PICTURE DICTIONARY
+========================================== */
+
+travel.forEach(item => {
+
+  const card = node("button", "photo-card");
+
+  card.append(
+    image(item.image, item.name)
+  );
+
+  const label = node("span");
+
+  label.append(
+    node("b", "", item.name),
+    node("small", "", item.category)
+  );
+
+  card.append(label);
+
+  card.onclick = () => {
+
+    $("#reveal").textContent =
+      `${item.name} — ${item.category}. ${item.description}`;
+
+  };
+
+  $("#gallery").append(card);
+
+});
+
+/* ==========================================
+   STEP 2 - VOCABULARY TOOLKIT
+========================================== */
+
+const vocabulary = [
+
+  [
+    "✈️ Transport",
+    "travel by plane<br>catch a train<br>take a taxi<br>board a ship"
+  ],
+
+  [
+    "🏨 Accommodation",
+    "stay at a hotel<br>book a room<br>check in<br>check out"
+  ],
+
+  [
+    "🏛️ Sightseeing",
+    "visit landmarks<br>explore a city<br>go sightseeing<br>take photographs"
+  ],
+
+  [
+    "🍽️ Food",
+    "eat local food<br>have lunch<br>try traditional dishes<br>visit a restaurant"
+  ],
+
+  [
+    "🛂 Travel Items",
+    "pack a suitcase<br>show a passport<br>use a map<br>buy a ticket"
+  ],
+
+  [
+    "😊 Feelings",
+    "excited<br>happy<br>amazed<br>tired<br>unforgettable"
+  ]
+
+];
+
+vocabulary.forEach(([title, content]) => {
+
+  const card = node("div", "tool");
+
+  card.append(
+    node("h3", "", title)
+  );
+
+  const paragraph = node("p");
+
+  paragraph.innerHTML = content;
+
+  card.append(paragraph);
+
+  $("#toolGrid").append(card);
+
+});
+
+/* ==========================================
+   STEP 3 - SORTING GAME
+========================================== */
+
+const sortWords = [
+
+  ["airplane", "Transport"],
+  ["train", "Transport"],
+  ["taxi", "Transport"],
+  ["cruise ship", "Transport"],
+
+  ["passport", "Documents & Tools"],
+  ["tourist map", "Documents & Tools"],
+
+  ["hotel", "Accommodation"],
+
+  ["take photographs", "Activities"],
+  ["visit landmarks", "Activities"],
+
+  ["restaurant", "Food"],
+
+  ["suitcase", "Luggage"]
+
+];
+
+const zoneNames = [
+
+  "Transport",
+  "Documents & Tools",
+  "Accommodation",
+  "Activities",
+  "Food",
+  "Luggage"
+
+];
+
+let selectedWord = null;
+
+let assignments = {};
+
+function drawSort() {
+
+  const bank = $("#sortBank");
+  const zones = $("#sortZones");
+
+  bank.replaceChildren();
+  zones.replaceChildren();
+
+  sortWords.forEach(([word], index) => {
+
+    if (assignments[index] !== undefined) {
+      return;
+    }
+
+    const button = node(
+      "button",
+      "chip" + (
+        selectedWord === index
+          ? " active"
+          : ""
+      ),
+      word
+    );
+
+    button.onclick = () => {
+
+      selectedWord = index;
+
+      drawSort();
+
+    };
+
+    bank.append(button);
+
+  });
+
+  zoneNames.forEach(zoneName => {
+
+    const zone = node("div", "zone");
+
+    zone.append(
+      node("h3", "", zoneName)
+    );
+
+    zone.onclick = () => {
+
+      if (selectedWord !== null) {
+
+        assignments[selectedWord] = zoneName;
+
+        selectedWord = null;
+
+        drawSort();
+
+      }
+
+    };
+
+    sortWords.forEach(([word], index) => {
+
+      if (assignments[index] !== zoneName) {
+        return;
+      }
+
+      const button = node(
+        "button",
+        "chip",
+        word + " ×"
+      );
+
+      button.onclick = event => {
+
+        event.stopPropagation();
+
+        delete assignments[index];
+
+        drawSort();
+
+      };
+
+      zone.append(button);
+
+    });
+
+    zones.append(zone);
+
+  });
+
+}
+
+drawSort();
+
+$("#sortReset").onclick = () => {
+
+  assignments = {};
+
+  selectedWord = null;
+
+  drawSort();
+
+  $("#sortFeedback").textContent = "";
+
+};
+
+$("#sortCheck").onclick = () => {
+
+  let correct = 0;
+
+  sortWords.forEach(([word, category], index) => {
+
+    if (assignments[index] === category) {
+      correct++;
+    }
+
+  });
+
+  message(
+    "#sortFeedback",
+    `${correct}/${sortWords.length} correctly sorted. ` +
+    (
+      correct === sortWords.length
+        ? "Excellent!"
+        : "Check your categories and try again."
+    ),
+    correct === sortWords.length
+  );
+
+};
+
+/* ==========================================
+   STEP 4 - MATCHING GAME
+========================================== */
+
+const pairs = [
+
+  [
+    "✈️ At the airport",
+    "I showed my passport."
+  ],
+
+  [
+    "🏨 At the hotel",
+    "I checked into my room."
+  ],
+
+  [
+    "🏛️ At a landmark",
+    "I took photographs."
+  ],
+
+  [
+    "🍽️ At a restaurant",
+    "I ate local food."
+  ],
+
+  [
+    "🚆 At the station",
+    "I caught the train."
+  ]
+
+];
+
+let chosen = null;
+
+let matched = new Set();
+
+function drawMatch() {
+
+  const left = $("#matchLeft");
+  const right = $("#matchRight");
+
+  left.replaceChildren();
+  right.replaceChildren();
+
+  pairs.forEach((pair, index) => {
+
+    const button = node(
+      "button",
+      "matchitem" +
+      (chosen === index ? " selected" : "") +
+      (matched.has(index) ? " matched" : ""),
+      pair[0]
+    );
+
+    button.disabled = matched.has(index);
+
+    button.onclick = () => {
+
+      chosen = index;
+
+      drawMatch();
+
+    };
+
+    left.append(button);
+
+  });
+
+  [3, 1, 4, 0, 2].forEach(index => {
+
+    const button = node(
+      "button",
+      "matchitem" +
+      (matched.has(index) ? " matched" : ""),
+      pairs[index][1]
+    );
+
+    button.disabled = matched.has(index);
+
+    button.onclick = () => {
+
+      if (chosen === null) {
+        return;
+      }
+
+      if (chosen === index) {
+
+        matched.add(index);
+
+        chosen = null;
+
+        drawMatch();
+
+        message(
+          "#matchFeedback",
+          `${matched.size}/5 matched! ` +
+          (
+            matched.size === 5
+              ? "Excellent!"
+              : ""
+          ),
+          true
+        );
+
+      } else {
+
+        button.classList.add("incorrect");
+
+        setTimeout(() => {
+
+          button.classList.remove("incorrect");
+
+        }, 600);
+
+      }
+
+    };
+
+    right.append(button);
+
+  });
+
+}
+
+drawMatch();
+
+$("#matchReset").onclick = () => {
+
+  chosen = null;
+
+  matched = new Set();
+
+  drawMatch();
+
+  $("#matchFeedback").textContent =
+    "0 / 5 matched";
+
+};
+
+/* ==========================================
+   STEP 5 - MAP MISSION
+========================================== */
+
+const mapData = [
+
+  ["Big Ben", "Westminster"],
+
+  ["Buckingham Palace", "Westminster"],
+
+  ["London Eye", "South Bank"],
+
+  ["Tower of London", "Tower Hill"]
+
+];
+
+mapData.forEach(([name, answer]) => {
+
+  const field = node("div", "field");
+
+  field.append(
+    node("label", "", name)
+  );
+
+  const select = node("select");
+
+  select.dataset.answer = answer;
+
+  const areas = [
+
+    "Choose an area",
+    "Westminster",
+    "South Bank",
+    "Tower Hill",
+    "Greenwich",
+    "Camden"
+
+  ];
+
+  areas.forEach((area, index) => {
+
+    const option = node(
+      "option",
+      "",
+      area
+    );
+
+    option.value = index ? area : "";
+
+    select.append(option);
+
+  });
+
+  field.append(select);
+
+  $("#mapFields").append(field);
+
+});
+
+$("#mapCheck").onclick = () => {
+
+  let correct = 0;
+
+  $$("#mapFields select").forEach(select => {
+
+    const ok =
+      select.value === select.dataset.answer;
+
+    select.classList.toggle("correct", ok);
+
+    select.classList.toggle("incorrect", !ok);
+
+    if (ok) {
+      correct++;
+    }
+
+  });
+
+  message(
+    "#mapFeedback",
+    `${correct}/4 correct. ` +
+    (
+      correct === 4
+        ? "Wonderful map skills!"
+        : "Try changing the red answers."
+    ),
+    correct === 4
+  );
+
+};
+
+/* ==========================================
+   STEP 6 - READING QUIZ
+========================================== */
+
+const questions = [
+
+  [
+    "How did the pupils travel?",
+    [
+      "By train",
+      "By plane",
+      "By taxi"
+    ],
+    "By train"
+  ],
+
+  [
+    "Which landmark did they visit first?",
+    [
+      "London Eye",
+      "Big Ben",
+      "Tower of London"
+    ],
+    "Big Ben"
+  ],
+
+  [
+    "Where did they have lunch?",
+    [
+      "At a restaurant",
+      "At the station",
+      "At the hotel"
+    ],
+    "At a restaurant"
+  ],
+
+  [
+    "What did they enjoy at the London Eye?",
+    [
+      "The view",
+      "The food",
+      "The train"
+    ],
+    "The view"
+  ],
+
+  [
+    "How was the trip?",
+    [
+      "Unforgettable",
+      "Boring",
+      "Terrible"
+    ],
+    "Unforgettable"
+  ]
+
+];
+
+questions.forEach(([question, options, answer], index) => {
+
+  const row = node("div", "question");
+
+  row.append(
+    node(
+      "p",
+      "",
+      `${index + 1}. ${question}`
+    )
+  );
+
+  const choices = node("div", "options");
+
+  options.forEach(option => {
+
+    const button = node(
+      "button",
+      "option",
+      option
+    );
+
+    button.onclick = () => {
+
+      if (row.dataset.done) {
+        return;
+      }
+
+      row.dataset.done = "1";
+
+      [...choices.children].forEach(choice => {
+
+        choice.disabled = true;
+
+        if (choice.textContent === answer) {
+          choice.classList.add("correct");
+        }
+
+      });
+
+      if (option !== answer) {
+        button.classList.add("incorrect");
+      }
+
+      row.append(
+        node(
+          "p",
+          "feedback",
+          option === answer
+            ? "✓ Correct!"
+            : `Correct answer: ${answer}`
+        )
+      );
+
+    };
+
+    choices.append(button);
+
+  });
+
+  row.append(choices);
+
+  $("#readingQuiz").append(row);
+
+});
+
+/* ==========================================
+   STEP 7 - PAST SIMPLE VERBS
+========================================== */
+
+const verbs = [
+
+  ["travel", "travelled"],
+  ["visit", "visited"],
+  ["walk", "walked"],
+  ["take", "took"],
+  ["eat", "ate"],
+  ["see", "saw"],
+  ["go", "went"],
+  ["buy", "bought"],
+  ["have", "had"],
+  ["be", "was / were"]
+
+];
+
+verbs.forEach(([base, past]) => {
+
+  const card = node("div", "verb");
+
+  card.append(
+    node("small", "", base),
+    node("b", "", past)
+  );
+
+  const button = node(
+    "button",
+    "",
+    "🔊 Listen"
+  );
+
+  button.onclick = () => {
+
+    if ("speechSynthesis" in window) {
+
+      speechSynthesis.cancel();
+
+      const utterance =
+        new SpeechSynthesisUtterance(
+          past.split(" / ")[0]
+        );
+
+      utterance.lang = "en-GB";
+
+      speechSynthesis.speak(utterance);
+
+    }
+
+  };
+
+  card.append(button);
+
+  $("#verbGrid").append(card);
+
+});
+
+/* ==========================================
+   STEP 7 - VERB EXERCISE
+========================================== */
+
+const blanks = [
+
+  [
+    "Yesterday, we ___ the Eiffel Tower.",
+    "visited"
+  ],
+
+  [
+    "We ___ lots of photographs.",
+    "took"
+  ],
+
+  [
+    "We ___ local food.",
+    "ate"
+  ],
+
+  [
+    "We ___ to the hotel by taxi.",
+    "went"
+  ],
+
+  [
+    "The trip ___ fantastic.",
+    "was"
+  ]
+
+];
+
+blanks.forEach(([question, answer], index) => {
+
+  const row = node("div", "exercise");
+
+  row.append(
+    node(
+      "label",
+      "",
+      `${index + 1}. ${question}`
+    )
+  );
+
+  const input = node("input");
+
+  input.dataset.answer = answer;
+
+  input.setAttribute(
+    "aria-label",
+    `Answer ${index + 1}`
+  );
+
+  row.append(input);
+
+  $("#verbExercise").append(row);
+
+});
+
+$("#verbCheck").onclick = () => {
+
+  let correct = 0;
+
+  $$("#verbExercise input").forEach(input => {
+
+    const ok =
+      input.value.trim().toLowerCase() ===
+      input.dataset.answer;
+
+    input.classList.toggle("correct", ok);
+
+    input.classList.toggle("incorrect", !ok);
+
+    if (ok) {
+      correct++;
+    }
+
+  });
+
+  message(
+    "#verbFeedback",
+    `${correct}/5 correct. ` +
+    (
+      correct === 5
+        ? "Brilliant!"
+        : "Correct the red answers and try again."
+    ),
+    correct === 5
+  );
+
+};
+
+/* ==========================================
+   STEP 8 - SEQUENCE BUILDER
+========================================== */
+
+const events = [
+
+  "We arrived in Paris in the morning.",
+
+  "First, we checked into our hotel.",
+
+  "We visited the Eiffel Tower and took photographs.",
+
+  "Then, we ate lunch in a local restaurant.",
+
+  "Finally, we returned to the hotel."
+
+];
+
+let order = [];
+
+function drawSequence() {
+
+  const container = $("#sequence");
+
+  container.replaceChildren();
+
+  [2, 0, 4, 1, 3].forEach(index => {
+
+    const position = order.indexOf(index);
+
+    const button = node(
+      "button",
+      "seqitem" +
+      (position >= 0 ? " selected" : "")
+    );
+
+    button.append(
+      node(
+        "b",
+        "",
+        position >= 0
+          ? String(position + 1)
+          : "?"
+      ),
+      node("span", "", events[index])
+    );
+
+    button.onclick = () => {
+
+      if (position >= 0) {
+
+        order.splice(position, 1);
+
+      } else {
+
+        order.push(index);
+
+      }
+
+      drawSequence();
+
+    };
+
+    container.append(button);
+
+  });
+
+}
+
+drawSequence();
+
+$("#sequenceReset").onclick = () => {
+
+  order = [];
+
+  drawSequence();
+
+  $("#sequenceFeedback").textContent = "";
+
+};
+
+$("#sequenceCheck").onclick = () => {
+
+  const correct = order.filter(
+    (value, index) => value === index
+  ).length;
+
+  const complete = order.length === 5;
+
+  message(
+    "#sequenceFeedback",
+    !complete
+      ? "Choose all five events first."
+      : `${correct}/5 in the correct position. ` +
+        (
+          correct === 5
+            ? "Excellent sequencing!"
+            : "Tap selected events to reorder them."
+        ),
+    complete && correct === 5
+  );
+
+};
+
+/* ==========================================
+   STEP 8 - GUIDED REPORT PLANNER
+========================================== */
+
+const prompts = [
+
+  ["When?", "Last weekend"],
+
+  ["Where?", "London"],
+
+  ["How?", "by train"],
+
+  ["Where did you stay?", "a hotel"],
+
+  ["What did you visit?", "Big Ben"],
+
+  ["What did you eat?", "local food"],
+
+  ["What did you do?", "took photographs"],
+
+  ["How did you feel?", "happy"]
+
+];
+
+prompts.forEach(([label, placeholder], index) => {
+
+  const field = node("div", "field");
+
+  field.append(
+    node("label", "", label)
+  );
+
+  const input = node("input");
+
+  input.placeholder = placeholder;
+
+  input.dataset.index = index;
+
+  field.append(input);
+
+  $("#planner").append(field);
+
+});
+
+/* ==========================================
+   BUILD GUIDED REPORT
+========================================== */
+
+$("#buildReport").onclick = () => {
+
+  const values = $$("#planner input").map(
+    input => input.value.trim()
+  );
+
+  if (values.slice(0, 3).some(value => !value)) {
+
+    message(
+      "#guidedFeedback",
+      "Please complete at least When, Where and How first.",
+      false
+    );
+
+    return;
+
+  }
+
+  const report =
+
+    `${values[0]}, I travelled to ${values[1]} ${values[2]}. ` +
+
+    `First, I ${
+      values[3]
+        ? "stayed at " + values[3]
+        : "explored the city"
+    }. ` +
+
+    `Then, I visited ${
+      values[4] || "famous landmarks"
+    }. ` +
+
+    `After that, I ate ${
+      values[5] || "delicious food"
+    }. ` +
+
+    `Later, I ${
+      values[6] || "took photographs"
+    }. ` +
+
+    `Finally, I returned home. ` +
+
+    `I felt ${
+      values[7] || "happy"
+    }. ` +
+
+    `It was a wonderful trip!`;
+
+  $("#guidedReport").value = report;
+
+  message(
+    "#guidedFeedback",
+    "Draft created! Read it and improve the sentences.",
+    true
+  );
+
+};
+
+/* ==========================================
+   WRITING ASSESSMENT HELPER
+========================================== */
+
+function assess(text) {
+
+  const words = text.trim()
+    ? text.trim().split(/\s+/)
+    : [];
+
+  const past =
+    /\b(travelled|traveled|visited|went|took|ate|saw|was|were|enjoyed|walked|arrived|bought|had|stayed|caught|returned)\b/i
+      .test(text);
+
+  const sequence =
+    /\b(first|then|after that|later|finally)\b/i
+      .test(text);
+
+  const vocabulary =
+    /\b(hotel|train|plane|airplane|taxi|passport|suitcase|restaurant|photographs|map|landmark|bridge|tower|palace)\b/i
+      .test(text);
+
+  const punctuation =
+    /[.!?]/.test(text);
+
+  const score = [
+
+    past,
+    sequence,
+    vocabulary,
+    words.length >= 60,
+    punctuation
+
+  ].filter(Boolean).length;
+
+  return {
+
+    words: words.length,
+
+    score,
+
+    past,
+
+    sequence,
+
+    vocabulary,
+
+    punctuation
+
+  };
+
+}
+
+/* ==========================================
+   CHECK GUIDED REPORT
+========================================== */
+
+$("#guidedCheck").onclick = () => {
+
+  const result = assess(
+    $("#guidedReport").value
+  );
+
+  const features = [
+
+    result.past,
+
+    result.sequence,
+
+    result.punctuation,
+
+    result.words >= 35
+
+  ].filter(Boolean).length;
+
+  message(
+    "#guidedFeedback",
+    `${result.words} words. ` +
+    `${features}/4 writing features detected. ` +
+    "Review your grammar and facts yourself.",
+    features === 4
+  );
+
+};
+
+/* ==========================================
+   STEP 9 - DESTINATIONS
+========================================== */
+
+const destinations = [
+
+  [
+    "Dubai",
+    "https://i.imgur.com/mGTBDEc.jpeg"
+  ],
+
+  [
+    "New York",
+    "https://i.imgur.com/Z5sMXAo.jpeg"
+  ],
+
+  [
+    "China",
+    "https://i.imgur.com/2MqDLEs.jpeg"
+  ],
+
+  [
+    "Paris",
+    "https://i.imgur.com/5G4cDjn.jpeg"
+  ],
+
+  [
+    "Egypt",
+    "https://i.imgur.com/hY9lF3I.jpeg"
+  ],
+
+  [
+    "Algiers",
+    "https://i.imgur.com/CtNNwUE.png"
+  ],
+
+  [
+    "Tassili n'Ajjer",
+    "https://i.imgur.com/sFU35Xj.png"
+  ],
+
+  [
+    "The beach",
+    "https://i.imgur.com/3YAaHx9.png"
+  ],
+
+  [
+    "The mountains",
+    "https://i.imgur.com/0DTyuEa.jpeg"
+  ],
+
+  [
+    "The desert",
+    "https://i.imgur.com/HJcJFuc.png"
+  ]
+
+];
+
+let destination = "";
+
+destinations.forEach(([name, src]) => {
+
+  const button = node("button");
+
+  button.append(
+    image(src, name),
+    node("span", "", name)
+  );
+
+  button.onclick = () => {
+
+    destination = name;
+
+    $$("#choices button").forEach(choice => {
+
+      choice.classList.remove("picked");
+
+    });
+
+    button.classList.add("picked");
+
+    $("#finalReport").placeholder =
+
+      `Last summer, I travelled to ${name}...\n\n` +
+
+      "First, I...\n" +
+
+      "Then, I...\n" +
+
+      "After that, I...\n" +
+
+      "Finally, I...\n\n" +
+
+      "It was an unforgettable trip!";
+
+  };
+
+  $("#choices").append(button);
+
+});
+
+/* ==========================================
+   CHECK FINAL REPORT
+========================================== */
+
+$("#finalCheck").onclick = () => {
+
+  const text =
+    $("#finalReport").value.trim();
+
+  if (!destination) {
+
+    message(
+      "#finalFeedback",
+      "Choose a destination first.",
+      false
+    );
+
+    return;
+
+  }
+
+  if (!text) {
+
+    message(
+      "#finalFeedback",
+      "Write your trip report first.",
+      false
+    );
+
+    return;
+
+  }
+
+  const result = assess(text);
+
+  message(
+    "#finalFeedback",
+    `${result.words} words · ` +
+    `${result.score}/5 writing features detected. ` +
+    (
+      result.score >= 4
+        ? "Great progress! Check your facts and grammar before submitting."
+        : "Add details, past simple verbs and sequence words."
+    ),
+    result.score >= 4
+  );
+
+};
+
+/* ==========================================
+   DOWNLOAD TRIP REPORT
+========================================== */
+
+$("#download").onclick = () => {
+
+  const text =
+    $("#finalReport").value.trim();
+
+  if (!destination || !text) {
+
+    message(
+      "#finalFeedback",
+      "Choose a destination and write your report first.",
+      false
+    );
+
+    return;
+
+  }
+
+  const content =
+    `My Trip to ${destination}\n\n${text}\n`;
+
+  const blob = new Blob(
+    [content],
+    {
+      type: "text/plain;charset=utf-8"
+    }
+  );
+
+  const url =
+    URL.createObjectURL(blob);
+
+  const link = node("a");
+
+  link.href = url;
+
+  link.download = "my-trip-report.txt";
+
+  link.click();
+
+  setTimeout(() => {
+
+    URL.revokeObjectURL(url);
+
+  }, 1000);
+
+  message(
+    "#finalFeedback",
+    "Your trip report has been downloaded.",
+    true
+  );
+
+};
+
+</script>
+
+</body>
+</html>

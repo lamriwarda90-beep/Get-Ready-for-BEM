@@ -1,0 +1,3075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4 S2 Vocabulary Lesson 4 — Hobbies & Interests</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #e95893;
+  --pink-dark: #b93670;
+  --pink-light: #fff0f6;
+  --purple: #774b9e;
+  --deep: #562440;
+  --gold: #ffcc74;
+  --ink: #392b39;
+  --muted: #786c78;
+  --line: #f1d9e4;
+  --green: #20875c;
+  --red: #bc405c;
+  --white: #ffffff;
+  --shadow: 0 14px 32px rgba(113,61,92,.13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 4%, #fff 0, transparent 22%),
+    linear-gradient(135deg, #fff0f7, #f9d4e7 55%, #ecd9f6);
+  line-height: 1.65;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #a65adb;
+  outline-offset: 3px;
+}
+
+/* =====================================
+   TOP NAVIGATION
+===================================== */
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.top-inner {
+  max-width: 1060px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 21px;
+  color: var(--deep);
+  font-weight: 800;
+}
+
+.back {
+  color: var(--pink-dark);
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.scroll-track {
+  height: 4px;
+  background: #f8e4ee;
+}
+
+.scroll-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+  transition: width .15s;
+}
+
+/* =====================================
+   MAIN LAYOUT
+===================================== */
+
+.wrap {
+  width: min(1000px, 94%);
+  margin: 25px auto 60px;
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  background:
+    linear-gradient(120deg, #702e67, #b54386 65%, #ed799f);
+  color: white;
+  padding: 46px 36px;
+  box-shadow: 0 18px 40px rgba(128,54,90,.2);
+}
+
+.hero::after {
+  content: "✦";
+  font-size: 240px;
+  position: absolute;
+  right: -10px;
+  top: -110px;
+  color: rgba(255,255,255,.08);
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffe7b2;
+}
+
+.hero h1 {
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(38px, 6vw, 66px);
+  font-weight: 800;
+  line-height: 1;
+  margin: 12px 0;
+}
+
+.hero h1 span {
+  color: #ffe6a0;
+}
+
+.hero p {
+  max-width: 680px;
+  font-size: 17px;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0;
+}
+
+.pill {
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 30px;
+  padding: 7px 12px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(110deg, var(--pink), var(--purple));
+  color: white;
+  padding: 11px 20px;
+  font-weight: 900;
+  box-shadow: 0 7px 17px rgba(150,61,121,.2);
+  transition: .2s;
+}
+
+.btn:hover {
+  filter: brightness(1.07);
+  transform: translateY(-2px);
+}
+
+.btn.alt {
+  background: #fff1f7;
+  color: #a8376e;
+  box-shadow: none;
+  border: 1px solid #f3cada;
+}
+
+.hero .btn {
+  background: #ffdc92;
+  color: #583342;
+}
+
+/* =====================================
+   PROGRESS NAVIGATION
+===================================== */
+
+.steps-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 17px 0;
+  position: sticky;
+  top: 61px;
+  z-index: 90;
+  background: rgba(250,229,239,.95);
+  backdrop-filter: blur(9px);
+  margin: 12px 0;
+}
+
+.steps-nav a {
+  flex: none;
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #eac8db;
+  color: #9d3e6b;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.steps-nav a.active {
+  background: var(--deep);
+  color: white;
+  border-color: var(--deep);
+}
+
+/* =====================================
+   LESSON CARDS
+===================================== */
+
+.card {
+  background: rgba(255,253,254,.98);
+  border: 1px solid white;
+  box-shadow: var(--shadow);
+  border-radius: 26px;
+  margin: 24px 0;
+  padding: 27px;
+  scroll-margin-top: 128px;
+}
+
+.step-tag {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 11px;
+  color: #bb4179;
+  letter-spacing: .5px;
+}
+
+.card h2 {
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: clamp(26px, 4vw, 35px);
+  line-height: 1.12;
+  color: var(--deep);
+  margin: 6px 0 18px;
+}
+
+.intro {
+  color: var(--muted);
+  margin-top: 0;
+}
+
+/* =====================================
+   STORY
+===================================== */
+
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.story img {
+  width: 100%;
+  height: 255px;
+  object-fit: cover;
+  border-radius: 18px;
+  background: #f6d8e5;
+  box-shadow: 0 8px 20px rgba(110,57,85,.15);
+}
+
+.story-copy {
+  background: #fff6fa;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.story-copy p {
+  margin: 0 0 10px;
+}
+
+.story-copy strong {
+  color: #b43770;
+}
+
+.chips {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.chip {
+  border: 1px solid #f3c5d9;
+  background: #fff0f6;
+  border-radius: 30px;
+  padding: 7px 12px;
+  color: #a92f6a;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+/* =====================================
+   ACTIVITIES
+===================================== */
+
+.activity {
+  border-top: 2px dashed var(--line);
+  padding-top: 17px;
+  margin-top: 20px;
+}
+
+.activity h3 {
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 23px;
+  color: var(--deep);
+  margin: 0 0 8px;
+}
+
+.question {
+  background: #fff8fb;
+  border: 1px solid var(--line);
+  padding: 16px;
+  border-radius: 16px;
+  margin: 12px 0;
+}
+
+.question > p {
+  margin: 0 0 10px;
+  font-weight: 900;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.option {
+  border: 2px solid #ead5df;
+  border-radius: 13px;
+  padding: 10px 13px;
+  text-align: left;
+  background: white;
+  color: var(--deep);
+  font-weight: 800;
+  transition: .2s;
+}
+
+.option:not(:disabled):hover {
+  border-color: var(--pink);
+  background: #fff0f7;
+}
+
+.option.correct {
+  background: #e6f7ec;
+  border-color: #51ae77;
+  color: #17613d;
+}
+
+.option.wrong {
+  background: #ffe8ed;
+  border-color: #df637a;
+  color: #a32743;
+}
+
+.option:disabled {
+  cursor: default;
+}
+
+.feedback {
+  margin-top: 11px;
+  padding: 10px 13px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 13px;
+  display: none;
+}
+
+.feedback.show {
+  display: block;
+}
+
+.feedback.good {
+  background: #e7f7ed;
+  color: #17613d;
+}
+
+.feedback.bad {
+  background: #ffedf0;
+  color: #a62b4a;
+}
+
+/* =====================================
+   MATCHING
+===================================== */
+
+.select-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.select-item {
+  padding: 13px;
+  background: #fff8fb;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  font-weight: 800;
+}
+
+.select-item select {
+  width: 100%;
+  margin-top: 8px;
+  padding: 9px;
+  border: 2px solid #ead5df;
+  border-radius: 10px;
+  background: white;
+}
+
+/* =====================================
+   SORTING AND WORD BANK
+===================================== */
+
+.sort-bank,
+.word-bank {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.token {
+  border: 2px solid #f0cbdc;
+  background: white;
+  border-radius: 30px;
+  padding: 8px 13px;
+  color: #a93470;
+  font-weight: 900;
+  transition: .15s;
+}
+
+.token:not(:disabled):hover {
+  background: #fff0f6;
+  border-color: var(--pink);
+}
+
+.token.selected {
+  background: #ffe1ef;
+  border-color: var(--pink);
+}
+
+.token:disabled {
+  opacity: .4;
+  cursor: default;
+}
+
+.sort-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+}
+
+.sort-target {
+  min-height: 120px;
+  border: 2px dashed #dfb4ca;
+  border-radius: 14px;
+  padding: 12px;
+  background: #fff8fb;
+}
+
+.sort-target h4 {
+  margin: 0 0 8px;
+  text-align: center;
+  color: var(--deep);
+}
+
+.sort-target .token {
+  margin: 4px;
+}
+
+/* =====================================
+   SENTENCE BUILDER
+===================================== */
+
+.builder {
+  background: linear-gradient(135deg,#fff7fb,#fff4e8);
+  border: 1px solid #f3d6e3;
+  padding: 18px;
+  border-radius: 18px;
+  margin: 16px 0;
+}
+
+.sentence-box {
+  min-height: 66px;
+  border: 2px dashed #dbaac5;
+  border-radius: 15px;
+  padding: 13px;
+  background: #fff8fb;
+  margin: 12px 0;
+}
+
+.sentence-box button {
+  margin: 3px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.clue {
+  background: #fff5df;
+  border-left: 4px solid #e5ac51;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 12px 0;
+}
+
+/* =====================================
+   FILL BLANKS
+===================================== */
+
+.fill {
+  display: grid;
+  gap: 12px;
+}
+
+.fill label {
+  background: #fff8fb;
+  border: 1px solid var(--line);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.fill select {
+  padding: 7px;
+  border: 1px solid #d8afc3;
+  border-radius: 9px;
+  max-width: 100%;
+}
+
+/* =====================================
+   WRITING
+===================================== */
+
+textarea {
+  width: 100%;
+  min-height: 180px;
+  border: 2px solid #e9cddd;
+  border-radius: 16px;
+  padding: 14px;
+  resize: vertical;
+}
+
+.writing-guide {
+  background: #fff5e7;
+  border-radius: 16px;
+  padding: 17px;
+  margin: 15px 0;
+}
+
+.writing-guide p {
+  margin: 5px 0;
+}
+
+/* =====================================
+   SCORE
+===================================== */
+
+.score {
+  background: linear-gradient(120deg,#552342,#81436f);
+  color: white;
+  text-align: center;
+}
+
+.score h2 {
+  color: white;
+}
+
+.score-number {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 53px;
+  font-weight: 800;
+  color: #ffe4a3;
+}
+
+.meter {
+  height: 12px;
+  background: rgba(255,255,255,.2);
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 480px;
+  margin: 15px auto;
+}
+
+.meter span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg,#ffe7a3,#fcaac9);
+  transition: width .4s;
+}
+
+/* =====================================
+   LESSON NAVIGATION
+===================================== */
+
+.lesson-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.nav-card {
+  background: white;
+  padding: 17px;
+  border-radius: 17px;
+  color: var(--deep);
+  font-weight: 900;
+  box-shadow: var(--shadow);
+}
+
+.nav-card small {
+  display: block;
+  color: #b14a7b;
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+}
+
+.nav-card:last-child {
+  text-align: right;
+}
+
+/* =====================================
+   DICTIONARY
+===================================== */
+
+.dict-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 150;
+  border: 3px solid white;
+  background: linear-gradient(135deg,#ffd487,#f27fb3);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 26px;
+  box-shadow: 0 9px 25px rgba(109,62,93,.3);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(41,23,44,.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 15px;
+}
+
+.overlay.open {
+  display: flex;
+}
+
+.panel {
+  background: white;
+  width: min(520px,100%);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 22px;
+  padding: 22px;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-head h2 {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 27px;
+  margin: 0;
+  color: var(--deep);
+}
+
+.close {
+  border: 0;
+  border-radius: 50%;
+  background: #ffe4ef;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+}
+
+.search {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  margin: 12px 0;
+}
+
+.dict-list {
+  overflow-y: auto;
+}
+
+.dict-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.dict-row small {
+  display: block;
+  color: var(--muted);
+}
+
+.dict-row span {
+  font-size: 19px;
+  color: #b33d76;
+  direction: rtl;
+}
+
+footer {
+  text-align: center;
+  color: #875e79;
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 20px;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:720px) {
+
+  .story,
+  .select-grid,
+  .lesson-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .sort-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 33px 23px;
+  }
+
+  .card {
+    padding: 19px;
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+  }
+
+  .story img {
+    height: 230px;
+  }
+
+  .steps-nav {
+    top: 60px;
+  }
+
+  .nav-card:last-child {
+    text-align: left;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="top">
+
+  <div class="top-inner">
+
+    <a class="brand" href="MS4-S2-Vocabulary.html">
+      ✦ MY ENGLISH SPACE
+    </a>
+
+    <a class="back" href="MS4-S2-Vocabulary.html">
+      ← Vocabulary Map
+    </a>
+
+  </div>
+
+  <div class="scroll-track">
+    <div class="scroll-fill" id="scrollFill"></div>
+  </div>
+
+</header>
+
+<main class="wrap">
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="hero">
+
+  <div class="eyebrow">
+    MS4 · SEQUENCE 2 · VOCABULARY LESSON 04
+  </div>
+
+  <h1>
+    Hobbies <span>& Interests</span>
+  </h1>
+
+  <p>
+    Meet Lina and her friends. Discover what they love doing
+    in their free time, explore new interests, and tell
+    your own hobby story!
+  </p>
+
+  <div class="pills">
+
+    <span class="pill">🎨 Creativity</span>
+    <span class="pill">⚽ Sports</span>
+    <span class="pill">🎵 Music</span>
+    <span class="pill">💻 Technology</span>
+    <span class="pill">✍️ Writing</span>
+
+  </div>
+
+  <a class="btn" href="#step1">
+    🚀 Start Exploring
+  </a>
+
+</section>
+
+<!-- =====================================
+     PROGRESS NAVIGATION
+===================================== -->
+
+<nav class="steps-nav" aria-label="Lesson steps">
+
+  <a href="#step1" class="active">01</a>
+  <a href="#step2">02</a>
+  <a href="#step3">03</a>
+  <a href="#step4">04</a>
+  <a href="#step5">05</a>
+  <a href="#step6">06</a>
+  <a href="#step7">07</a>
+  <a href="#step8">08</a>
+  <a href="#step9">09</a>
+
+</nav>
+
+<!-- =====================================
+     STEP 1
+===================================== -->
+
+<section class="card" id="step1">
+
+  <div class="step-tag">
+    STEP 01 · DISCOVER
+  </div>
+
+  <h2>🌟 Welcome to My World of Hobbies!</h2>
+
+  <div class="story">
+
+    <img
+      src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900"
+      alt="Friends enjoying time together"
+      loading="lazy"
+    >
+
+    <div class="story-copy">
+
+      <p>
+        Meet <strong>Lina</strong>, a 14-year-old pupil.
+        She enjoys spending time with her friends.
+      </p>
+
+      <p>
+        Each friend has a different <strong>hobby</strong>.
+        Some enjoy sports, while others prefer reading,
+        music or creative activities.
+      </p>
+
+      <p>
+        A <strong>hobby</strong> is an activity we enjoy
+        doing in our free time.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="chips">
+
+    <span class="chip">hobby</span>
+    <span class="chip">interest</span>
+    <span class="chip">free time</span>
+    <span class="chip">enjoy</span>
+    <span class="chip">favourite</span>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>🔎 Meaning Detective</h3>
+
+    <div class="question">
+
+      <p>1. What is a hobby?</p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          A school examination
+        </button>
+
+        <button class="option" data-correct="true">
+          An activity we enjoy in our free time
+        </button>
+
+        <button class="option" data-correct="false">
+          A difficult problem
+        </button>
+
+        <button class="option" data-correct="false">
+          A school uniform
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="question">
+
+      <p>2. Which activity is a hobby?</p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          Taking an examination
+        </button>
+
+        <button class="option" data-correct="true">
+          Painting pictures for fun
+        </button>
+
+        <button class="option" data-correct="false">
+          Waiting for the bus
+        </button>
+
+        <button class="option" data-correct="false">
+          Doing a compulsory test
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================
+     STEP 2
+===================================== -->
+
+<section class="card" id="step2">
+
+  <div class="step-tag">
+    STEP 02 · CREATIVE HOBBIES
+  </div>
+
+  <h2>🎨 Lina's Creative World</h2>
+
+  <div class="story">
+
+    <img
+      src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900"
+      alt="Colourful art materials for drawing and painting"
+      loading="lazy"
+    >
+
+    <div class="story-copy">
+
+      <p>
+        Lina is a creative pupil. She loves
+        <strong>drawing</strong> and
+        <strong>painting</strong>.
+      </p>
+
+      <p>
+        She also enjoys <strong>reading novels</strong>
+        and <strong>writing short stories</strong>.
+      </p>
+
+      <p>
+        These activities help her express her ideas
+        and develop her imagination.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="chips">
+
+    <span class="chip">drawing</span>
+    <span class="chip">painting</span>
+    <span class="chip">reading</span>
+    <span class="chip">writing</span>
+    <span class="chip">creative</span>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>🧩 Match the Hobby with Its Meaning</h3>
+
+    <div class="select-grid">
+
+      <div class="select-item">
+
+        🎨 Painting
+
+        <select data-answer="pictures">
+
+          <option value="">Choose the meaning...</option>
+          <option value="music">Making music</option>
+          <option value="pictures">Making pictures with colours</option>
+          <option value="books">Reading books</option>
+
+        </select>
+
+      </div>
+
+      <div class="select-item">
+
+        📚 Reading
+
+        <select data-answer="books">
+
+          <option value="">Choose the meaning...</option>
+          <option value="books">Looking at and understanding written words</option>
+          <option value="pictures">Making pictures</option>
+          <option value="sports">Playing sports</option>
+
+        </select>
+
+      </div>
+
+      <div class="select-item">
+
+        ✍️ Writing stories
+
+        <select data-answer="stories">
+
+          <option value="">Choose the meaning...</option>
+          <option value="running">Running outdoors</option>
+          <option value="stories">Creating stories with words</option>
+          <option value="singing">Singing songs</option>
+
+        </select>
+
+      </div>
+
+      <div class="select-item">
+
+        ✏️ Drawing
+
+        <select data-answer="drawing">
+
+          <option value="">Choose the meaning...</option>
+          <option value="drawing">Making pictures with pencils</option>
+          <option value="swimming">Moving through water</option>
+          <option value="coding">Writing computer programs</option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+    <div class="actions">
+
+      <button class="btn" onclick="checkMatching()">
+        ✓ Check Answers
+      </button>
+
+    </div>
+
+    <div class="feedback" id="matchingFeedback"></div>
+
+  </div>
+
+</section>
+
+<!-- =====================================
+     STEP 3
+===================================== -->
+
+<section class="card" id="step3">
+
+  <div class="step-tag">
+    STEP 03 · SPORTS
+  </div>
+
+  <h2>⚽ Sports and Outdoor Adventures</h2>
+
+  <div class="story">
+
+    <img
+      src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=900"
+      alt="Football on a sports field"
+      loading="lazy"
+    >
+
+    <div class="story-copy">
+
+      <p>
+        Lina's friend <strong>Yacine</strong>
+        is interested in sports.
+      </p>
+
+      <p>
+        He enjoys <strong>playing football</strong>
+        after school.
+      </p>
+
+      <p>
+        At weekends, he likes
+        <strong>cycling</strong>,
+        <strong>running</strong> and
+        <strong>hiking</strong>.
+      </p>
+
+      <p>
+        Sports help him stay active and healthy.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="chips">
+
+    <span class="chip">football</span>
+    <span class="chip">cycling</span>
+    <span class="chip">running</span>
+    <span class="chip">hiking</span>
+    <span class="chip">swimming</span>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>🏆 Sports Challenge</h3>
+
+    <div class="question">
+
+      <p>
+        Which hobby involves riding a bicycle?
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          Swimming
+        </button>
+
+        <button class="option" data-correct="true">
+          Cycling
+        </button>
+
+        <button class="option" data-correct="false">
+          Painting
+        </button>
+
+        <button class="option" data-correct="false">
+          Singing
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="question">
+
+      <p>
+        What does "hiking" mean?
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          Playing computer games
+        </button>
+
+        <button class="option" data-correct="false">
+          Reading books
+        </button>
+
+        <button class="option" data-correct="true">
+          Walking long distances in nature
+        </button>
+
+        <button class="option" data-correct="false">
+          Playing the guitar
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================
+     STEP 4
+===================================== -->
+
+<section class="card" id="step4">
+
+  <div class="step-tag">
+    STEP 04 · MUSIC
+  </div>
+
+  <h2>🎵 The Magic of Music</h2>
+
+  <div class="story">
+
+    <img
+      src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=900"
+      alt="Musical instruments in a music studio"
+      loading="lazy"
+    >
+
+    <div class="story-copy">
+
+      <p>
+        Lina's friend <strong>Sara</strong>
+        is passionate about music.
+      </p>
+
+      <p>
+        She loves <strong>singing</strong>
+        and <strong>playing the guitar</strong>.
+      </p>
+
+      <p>
+        She also enjoys <strong>listening to music</strong>
+        in her free time.
+      </p>
+
+      <p>
+        Music makes her feel relaxed and happy.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="chips">
+
+    <span class="chip">singing</span>
+    <span class="chip">dancing</span>
+    <span class="chip">playing the guitar</span>
+    <span class="chip">listening to music</span>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>🎶 Music Quiz</h3>
+
+    <div class="question">
+
+      <p>
+        Sara loves producing music with her voice.
+        What is her hobby?
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          Singing
+        </button>
+
+        <button class="option" data-correct="false">
+          Cycling
+        </button>
+
+        <button class="option" data-correct="false">
+          Reading
+        </button>
+
+        <button class="option" data-correct="false">
+          Painting
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================
+     STEP 5
+===================================== -->
+
+<section class="card" id="step5">
+
+  <div class="step-tag">
+    STEP 05 · TECHNOLOGY
+  </div>
+
+  <h2>💻 Exploring Digital Hobbies</h2>
+
+  <div class="story">
+
+    <img
+      src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900"
+      alt="People using a laptop and digital technology"
+      loading="lazy"
+    >
+
+    <div class="story-copy">
+
+      <p>
+        <strong>Karim</strong> enjoys technology.
+      </p>
+
+      <p>
+        His favourite hobbies are
+        <strong>coding</strong>,
+        <strong>designing</strong>
+        and <strong>playing video games</strong>.
+      </p>
+
+      <p>
+        He wants to learn how to create useful
+        computer programs.
+      </p>
+
+      <p>
+        He is curious and enjoys learning
+        new digital skills.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="chips">
+
+    <span class="chip">coding</span>
+    <span class="chip">designing</span>
+    <span class="chip">video games</span>
+    <span class="chip">photography</span>
+    <span class="chip">technology</span>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>💡 Guess the Hobby</h3>
+
+    <div class="question">
+
+      <p>
+        I use a camera to take beautiful pictures.
+        What is my hobby?
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          Coding
+        </button>
+
+        <button class="option" data-correct="true">
+          Photography
+        </button>
+
+        <button class="option" data-correct="false">
+          Hiking
+        </button>
+
+        <button class="option" data-correct="false">
+          Singing
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="question">
+
+      <p>
+        I enjoy creating computer programs.
+        What is my hobby?
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          Swimming
+        </button>
+
+        <button class="option" data-correct="false">
+          Painting
+        </button>
+
+        <button class="option" data-correct="true">
+          Coding
+        </button>
+
+        <button class="option" data-correct="false">
+          Dancing
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================
+     STEP 6
+===================================== -->
+
+<section class="card" id="step6">
+
+  <div class="step-tag">
+    STEP 06 · EXPRESS INTERESTS
+  </div>
+
+  <h2>❤️ Talking About Our Interests</h2>
+
+  <p class="intro">
+    We can use different expressions to talk
+    about the activities we enjoy.
+  </p>
+
+  <div class="clue">
+
+    <strong>Remember!</strong>
+
+    <p>
+      I am interested in <strong>reading</strong>.
+    </p>
+
+    <p>
+      She is keen on <strong>painting</strong>.
+    </p>
+
+    <p>
+      He is fond of <strong>cycling</strong>.
+    </p>
+
+    <p>
+      They enjoy <strong>playing</strong> football.
+    </p>
+
+    <p>
+      I am passionate about <strong>music</strong>.
+    </p>
+
+    <strong>
+      interested in / keen on / fond of + noun or verb-ing
+    </strong>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>🧠 Choose the Correct Expression</h3>
+
+    <div class="question">
+
+      <p>
+        She is interested in ______.
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          paint
+        </button>
+
+        <button class="option" data-correct="true">
+          painting
+        </button>
+
+        <button class="option" data-correct="false">
+          paints
+        </button>
+
+        <button class="option" data-correct="false">
+          painted
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="question">
+
+      <p>
+        He is keen ______ playing basketball.
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          in
+        </button>
+
+        <button class="option" data-correct="false">
+          of
+        </button>
+
+        <button class="option" data-correct="true">
+          on
+        </button>
+
+        <button class="option" data-correct="false">
+          at
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================
+     STEP 7
+===================================== -->
+
+<section class="card" id="step7">
+
+  <div class="step-tag">
+    STEP 07 · CLASSIFY
+  </div>
+
+  <h2>🧩 Hobbies Sorting Challenge</h2>
+
+  <p class="intro">
+    Read each hobby and classify it.
+    Select a word, then choose its correct category.
+  </p>
+
+  <div class="sort-bank" id="sortBank">
+
+    <button class="token" data-category="creative">
+      drawing
+    </button>
+
+    <button class="token" data-category="sports">
+      swimming
+    </button>
+
+    <button class="token" data-category="digital">
+      coding
+    </button>
+
+    <button class="token" data-category="creative">
+      painting
+    </button>
+
+    <button class="token" data-category="sports">
+      cycling
+    </button>
+
+    <button class="token" data-category="digital">
+      video games
+    </button>
+
+  </div>
+
+  <div class="sort-grid">
+
+    <div class="sort-target" data-category="creative">
+
+      <h4>🎨 Creative</h4>
+
+    </div>
+
+    <div class="sort-target" data-category="sports">
+
+      <h4>⚽ Sports</h4>
+
+    </div>
+
+    <div class="sort-target" data-category="digital">
+
+      <h4>💻 Digital</h4>
+
+    </div>
+
+  </div>
+
+  <div class="clue">
+    <strong>How to play:</strong>
+    Click a hobby, then click the category
+    where you want to place it.
+  </div>
+
+  <div class="feedback" id="sortFeedback"></div>
+
+</section>
+
+<!-- =====================================
+     STEP 8
+===================================== -->
+
+<section class="card" id="step8">
+
+  <div class="step-tag">
+    STEP 08 · BUILD LANGUAGE
+  </div>
+
+  <h2>🧩 Build Your Sentences</h2>
+
+  <p class="intro">
+    The words are mixed up!
+    Click them in the correct order
+    to build meaningful sentences.
+  </p>
+
+  <!-- SENTENCE 1 -->
+
+  <div class="builder" id="builder0">
+
+    <h3>✏️ Sentence 1</h3>
+
+    <p>
+      Build a sentence about enjoying a sport.
+    </p>
+
+    <div class="word-bank"></div>
+
+    <div class="sentence-box">
+      Click the words above...
+    </div>
+
+    <div class="actions">
+
+      <button class="btn" onclick="checkSentence(0)">
+        ✓ Check Sentence
+      </button>
+
+      <button class="btn alt" onclick="clearSentence(0)">
+        ↺ Clear
+      </button>
+
+    </div>
+
+    <div class="feedback"></div>
+
+  </div>
+
+  <!-- SENTENCE 2 -->
+
+  <div class="builder" id="builder1">
+
+    <h3>✏️ Sentence 2</h3>
+
+    <p>
+      Build a sentence about someone's interest.
+    </p>
+
+    <div class="word-bank"></div>
+
+    <div class="sentence-box">
+      Click the words above...
+    </div>
+
+    <div class="actions">
+
+      <button class="btn" onclick="checkSentence(1)">
+        ✓ Check Sentence
+      </button>
+
+      <button class="btn alt" onclick="clearSentence(1)">
+        ↺ Clear
+      </button>
+
+    </div>
+
+    <div class="feedback"></div>
+
+  </div>
+
+  <!-- FILL BLANKS -->
+
+  <div class="activity">
+
+    <h3>🎯 Complete the Sentences</h3>
+
+    <div class="fill">
+
+      <label>
+
+        1. Lina enjoys
+
+        <select id="fill1">
+
+          <option value="">Choose...</option>
+          <option value="draw">draw</option>
+          <option value="drawing">drawing</option>
+          <option value="draws">draws</option>
+
+        </select>
+
+        pictures.
+
+      </label>
+
+      <label>
+
+        2. Yacine is keen
+
+        <select id="fill2">
+
+          <option value="">Choose...</option>
+          <option value="in">in</option>
+          <option value="of">of</option>
+          <option value="on">on</option>
+
+        </select>
+
+        playing football.
+
+      </label>
+
+      <label>
+
+        3. Sara is interested
+
+        <select id="fill3">
+
+          <option value="">Choose...</option>
+          <option value="at">at</option>
+          <option value="in">in</option>
+          <option value="on">on</option>
+
+        </select>
+
+        music.
+
+      </label>
+
+    </div>
+
+    <div class="actions">
+
+      <button class="btn" onclick="checkFill()">
+        ✓ Check Answers
+      </button>
+
+    </div>
+
+    <div class="feedback" id="fillFeedback"></div>
+
+  </div>
+
+</section>
+
+<!-- =====================================
+     STEP 9
+===================================== -->
+
+<section class="card" id="step9">
+
+  <div class="step-tag">
+    STEP 09 · FINAL MISSION
+  </div>
+
+  <h2>✍️ My Favourite Hobby</h2>
+
+  <div class="story">
+
+    <img
+      src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900"
+      alt="Art materials representing a creative hobby"
+      loading="lazy"
+    >
+
+    <div class="story-copy">
+
+      <p>
+        Lina wants to tell her classmates
+        about her favourite hobby.
+      </p>
+
+      <p>
+        She explains what she enjoys doing,
+        when she does it and why it is special.
+      </p>
+
+      <p>
+        Now it is <strong>your turn!</strong>
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="writing-guide">
+
+    <h3>🌟 Your Writing Mission</h3>
+
+    <p>
+      Write a short paragraph about your favourite hobby.
+    </p>
+
+    <p><strong>1.</strong> What is your favourite hobby?</p>
+    <p><strong>2.</strong> When do you practise it?</p>
+    <p><strong>3.</strong> Where do you practise it?</p>
+    <p><strong>4.</strong> Who do you practise it with?</p>
+    <p><strong>5.</strong> Why do you enjoy it?</p>
+
+  </div>
+
+  <div class="clue">
+
+    <strong>Useful expressions:</strong>
+
+    <p>My favourite hobby is...</p>
+    <p>I am interested in...</p>
+    <p>I usually practise it...</p>
+    <p>I enjoy it because...</p>
+    <p>It makes me feel...</p>
+
+  </div>
+
+  <textarea
+    id="writingArea"
+    placeholder="My favourite hobby is..."
+  ></textarea>
+
+  <p id="wordCount">0 words</p>
+
+  <div class="actions">
+
+    <button class="btn" onclick="checkWriting()">
+      ✨ Check My Writing
+    </button>
+
+    <button class="btn alt" onclick="clearWriting()">
+      ↺ Clear
+    </button>
+
+  </div>
+
+  <div class="feedback" id="writingFeedback"></div>
+
+</section>
+
+<!-- =====================================
+     FINAL SCORE
+===================================== -->
+
+<section class="card score">
+
+  <h2>🏆 Hobby Explorer Score</h2>
+
+  <div class="score-number">
+    <span id="score">0</span>%
+  </div>
+
+  <p id="scoreMessage">
+    Complete the activities to earn points!
+  </p>
+
+  <div class="meter">
+    <span id="scoreBar"></span>
+  </div>
+
+  <button class="btn alt" onclick="resetLesson()">
+    ↺ Reset Lesson
+  </button>
+
+</section>
+
+<!-- =====================================
+     LESSON NAVIGATION
+===================================== -->
+
+<div class="lesson-nav">
+
+  <a
+    class="nav-card"
+    href="MS4-S2-Vocabulary-Lesson3.html"
+  >
+
+    <small>← PREVIOUS LESSON</small>
+
+    📸 Life Experiences & Memories
+
+  </a>
+
+  <a
+    class="nav-card"
+    href="MS4-S2-Vocabulary.html"
+  >
+
+    <small>VOCABULARY MAP →</small>
+
+    🗺️ Explore More Lessons
+
+  </a>
+
+</div>
+
+<footer>
+  MY ENGLISH SPACE · MS4 · SEQUENCE 2
+  <br>
+  VOCABULARY LESSON 04 · HOBBIES & INTERESTS
+</footer>
+
+</main>
+
+<!-- =====================================
+     MINI DICTIONARY BUTTON
+===================================== -->
+
+<button
+  class="dict-button"
+  id="dictButton"
+  aria-label="Open mini dictionary"
+>
+  📖
+</button>
+
+<!-- =====================================
+     MINI DICTIONARY MODAL
+===================================== -->
+
+<div class="overlay" id="dictOverlay">
+
+  <div class="panel">
+
+    <div class="panel-head">
+
+      <h2>📖 Mini Dictionary</h2>
+
+      <button
+        class="close"
+        id="dictClose"
+        aria-label="Close dictionary"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <input
+      class="search"
+      id="dictSearch"
+      placeholder="Search vocabulary..."
+    >
+
+    <div class="dict-list" id="dictList"></div>
+
+  </div>
+
+</div>
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+/* =====================================
+   SCORE SYSTEM
+===================================== */
+
+const completed = new Set();
+
+const TOTAL_POINTS = 18;
+
+function awardPoint(id) {
+
+  if (completed.has(id)) {
+    return;
+  }
+
+  completed.add(id);
+
+  updateScore();
+
+}
+
+function updateScore() {
+
+  const percent = Math.round(
+    completed.size / TOTAL_POINTS * 100
+  );
+
+  document.getElementById("score").textContent =
+    percent;
+
+  document.getElementById("scoreBar").style.width =
+    percent + "%";
+
+  const message =
+    document.getElementById("scoreMessage");
+
+  if (percent === 0) {
+
+    message.textContent =
+      "Complete the activities to earn points!";
+
+  } else if (percent < 40) {
+
+    message.textContent =
+      "🌱 Good beginning! Keep exploring hobbies.";
+
+  } else if (percent < 70) {
+
+    message.textContent =
+      "🌟 Great work! Your vocabulary is growing.";
+
+  } else if (percent < 90) {
+
+    message.textContent =
+      "🚀 Excellent! You are becoming a Hobby Explorer.";
+
+  } else {
+
+    message.textContent =
+      "🏆 Outstanding! You are a Hobby Vocabulary Champion!";
+
+  }
+
+}
+
+/* =====================================
+   MULTIPLE CHOICE
+===================================== */
+
+document.querySelectorAll(".question").forEach(
+  (question, index) => {
+
+    const options =
+      question.querySelectorAll(".option");
+
+    const feedback =
+      question.querySelector(".feedback");
+
+    options.forEach(option => {
+
+      option.addEventListener("click", () => {
+
+        if (question.dataset.done === "true") {
+          return;
+        }
+
+        question.dataset.done = "true";
+
+        const correct =
+          option.dataset.correct === "true";
+
+        options.forEach(btn => {
+
+          btn.disabled = true;
+
+          if (btn.dataset.correct === "true") {
+            btn.classList.add("correct");
+          }
+
+        });
+
+        if (correct) {
+
+          feedback.textContent =
+            "✓ Excellent! Your answer is correct.";
+
+          feedback.className =
+            "feedback show good";
+
+          awardPoint("mc" + index);
+
+        } else {
+
+          option.classList.add("wrong");
+
+          feedback.textContent =
+            "✗ Not quite. The correct answer is highlighted in green.";
+
+          feedback.className =
+            "feedback show bad";
+
+        }
+
+      });
+
+    });
+
+  }
+);
+
+/* =====================================
+   MATCHING
+===================================== */
+
+function checkMatching() {
+
+  const selects =
+    document.querySelectorAll("#step2 select");
+
+  let correct = 0;
+
+  selects.forEach(select => {
+
+    if (select.value === select.dataset.answer) {
+
+      correct++;
+
+      select.style.borderColor = "#20875c";
+
+    } else {
+
+      select.style.borderColor = "#bc405c";
+
+    }
+
+  });
+
+  const feedback =
+    document.getElementById("matchingFeedback");
+
+  if (correct === selects.length) {
+
+    feedback.textContent =
+      "✓ Perfect! You matched all the hobbies correctly.";
+
+    feedback.className =
+      "feedback show good";
+
+    awardPoint("matching");
+
+  } else {
+
+    feedback.textContent =
+      "You got " + correct + " out of " +
+      selects.length + ". Try again!";
+
+    feedback.className =
+      "feedback show bad";
+
+  }
+
+}
+
+/* =====================================
+   SORTING ACTIVITY
+===================================== */
+
+let selectedSortItem = null;
+
+const sortItems =
+  document.querySelectorAll("#sortBank .token");
+
+sortItems.forEach(item => {
+
+  item.addEventListener("click", () => {
+
+    if (item.disabled) {
+      return;
+    }
+
+    if (selectedSortItem) {
+      selectedSortItem.classList.remove("selected");
+    }
+
+    selectedSortItem = item;
+
+    item.classList.add("selected");
+
+  });
+
+});
+
+document.querySelectorAll(".sort-target").forEach(
+  target => {
+
+    target.addEventListener("click", () => {
+
+      if (!selectedSortItem) {
+        return;
+      }
+
+      const correct =
+        selectedSortItem.dataset.category ===
+        target.dataset.category;
+
+      const feedback =
+        document.getElementById("sortFeedback");
+
+      if (correct) {
+
+        selectedSortItem.classList.remove("selected");
+
+        selectedSortItem.disabled = true;
+
+        target.appendChild(selectedSortItem);
+
+        selectedSortItem = null;
+
+        feedback.textContent =
+          "✓ Correct category!";
+
+        feedback.className =
+          "feedback show good";
+
+        const placed =
+          document.querySelectorAll(
+            ".sort-target .token"
+          ).length;
+
+        if (placed === sortItems.length) {
+
+          feedback.textContent =
+            "🏆 Excellent! All hobbies are correctly classified.";
+
+          awardPoint("sorting");
+
+        }
+
+      } else {
+
+        feedback.textContent =
+          "✗ Try another category.";
+
+        feedback.className =
+          "feedback show bad";
+
+      }
+
+    });
+
+  }
+);
+
+/* =====================================
+   SENTENCE BUILDER
+   CORRECTED SCRAMBLED WORDS
+===================================== */
+
+const sentences = [
+
+  [
+    "I",
+    "enjoy",
+    "playing",
+    "football",
+    "after",
+    "school."
+  ],
+
+  [
+    "She",
+    "is",
+    "interested",
+    "in",
+    "painting",
+    "landscapes."
+  ]
+
+];
+
+/*
+  These arrays determine the displayed order.
+
+  Sentence 1 appears as:
+  football / I / school. / playing / after / enjoy
+
+  Sentence 2 appears as:
+  painting / interested / She / landscapes. / is / in
+*/
+
+const scrambledOrders = [
+
+  [3, 0, 5, 2, 4, 1],
+
+  [4, 2, 0, 5, 1, 3]
+
+];
+
+const builderState = [
+  [],
+  []
+];
+
+/* =====================================
+   RENDER SENTENCE BUILDER
+===================================== */
+
+function renderBuilder(i) {
+
+  const root =
+    document.getElementById("builder" + i);
+
+  const bank =
+    root.querySelector(".word-bank");
+
+  const box =
+    root.querySelector(".sentence-box");
+
+  bank.innerHTML = "";
+
+  box.innerHTML = "";
+
+  /*
+    Render the word bank in scrambled order.
+  */
+
+  scrambledOrders[i].forEach(j => {
+
+    const word = sentences[i][j];
+
+    const button =
+      document.createElement("button");
+
+    button.className = "token";
+
+    button.textContent = word;
+
+    button.disabled =
+      builderState[i].includes(j);
+
+    button.addEventListener("click", () => {
+
+      builderState[i].push(j);
+
+      renderBuilder(i);
+
+    });
+
+    bank.appendChild(button);
+
+  });
+
+  /*
+    Show the pupil's selected words.
+  */
+
+  if (builderState[i].length === 0) {
+
+    box.textContent =
+      "Click the words above...";
+
+  }
+
+  builderState[i].forEach(j => {
+
+    const button =
+      document.createElement("button");
+
+    button.className =
+      "token selected";
+
+    button.textContent =
+      sentences[i][j];
+
+    button.title =
+      "Click to remove this word";
+
+    button.addEventListener("click", () => {
+
+      const position =
+        builderState[i].indexOf(j);
+
+      builderState[i].splice(position, 1);
+
+      renderBuilder(i);
+
+    });
+
+    box.appendChild(button);
+
+  });
+
+}
+
+/* =====================================
+   CHECK SENTENCE
+===================================== */
+
+function checkSentence(i) {
+
+  const root =
+    document.getElementById("builder" + i);
+
+  const feedback =
+    root.querySelector(".feedback");
+
+  const pupilSentence =
+    builderState[i].map(
+      index => sentences[i][index]
+    ).join(" ");
+
+  const correctSentence =
+    sentences[i].join(" ");
+
+  if (pupilSentence === correctSentence) {
+
+    feedback.textContent =
+      "✓ Fantastic! You arranged all the words correctly.";
+
+    feedback.className =
+      "feedback show good";
+
+    awardPoint("sentence" + i);
+
+  } else {
+
+    feedback.textContent =
+      "✗ Check the word order and try again.";
+
+    feedback.className =
+      "feedback show bad";
+
+  }
+
+}
+
+/* =====================================
+   CLEAR SENTENCE
+===================================== */
+
+function clearSentence(i) {
+
+  builderState[i] = [];
+
+  renderBuilder(i);
+
+  const feedback =
+    document
+      .getElementById("builder" + i)
+      .querySelector(".feedback");
+
+  feedback.className = "feedback";
+
+  feedback.textContent = "";
+
+}
+
+/* =====================================
+   INITIALISE SENTENCE BUILDERS
+===================================== */
+
+renderBuilder(0);
+
+renderBuilder(1);
+
+/* =====================================
+   FILL IN THE BLANKS
+===================================== */
+
+function checkFill() {
+
+  const answers = [
+    "drawing",
+    "on",
+    "in"
+  ];
+
+  const selects = [
+    document.getElementById("fill1"),
+    document.getElementById("fill2"),
+    document.getElementById("fill3")
+  ];
+
+  let correct = 0;
+
+  selects.forEach((select, index) => {
+
+    if (select.value === answers[index]) {
+
+      correct++;
+
+      select.style.borderColor = "#20875c";
+
+    } else {
+
+      select.style.borderColor = "#bc405c";
+
+    }
+
+  });
+
+  const feedback =
+    document.getElementById("fillFeedback");
+
+  if (correct === 3) {
+
+    feedback.textContent =
+      "✓ Perfect! All three sentences are correct.";
+
+    feedback.className =
+      "feedback show good";
+
+    awardPoint("fill");
+
+  } else {
+
+    feedback.textContent =
+      "You got " + correct +
+      " out of 3. Review the expressions and try again.";
+
+    feedback.className =
+      "feedback show bad";
+
+  }
+
+}
+
+/* =====================================
+   WRITING ACTIVITY
+===================================== */
+
+const writingArea =
+  document.getElementById("writingArea");
+
+writingArea.addEventListener("input", () => {
+
+  const text =
+    writingArea.value.trim();
+
+  const count =
+    text ? text.split(/\s+/).length : 0;
+
+  document.getElementById("wordCount").textContent =
+    count + (count === 1 ? " word" : " words");
+
+});
+
+function checkWriting() {
+
+  const text =
+    writingArea.value.trim();
+
+  const count =
+    text ? text.split(/\s+/).length : 0;
+
+  const feedback =
+    document.getElementById("writingFeedback");
+
+  if (count < 30) {
+
+    feedback.textContent =
+      "🌱 Keep writing! Try to write at least 30 words.";
+
+    feedback.className =
+      "feedback show bad";
+
+    return;
+
+  }
+
+  const vocabulary = [
+
+    "hobby",
+    "hobbies",
+    "interested",
+    "enjoy",
+    "love",
+    "like",
+    "favourite",
+    "painting",
+    "drawing",
+    "reading",
+    "football",
+    "cycling",
+    "swimming",
+    "singing",
+    "music",
+    "coding",
+    "photography"
+
+  ];
+
+  let vocabularyCount = 0;
+
+  vocabulary.forEach(word => {
+
+    const pattern = new RegExp(
+      "\\b" + word + "\\b",
+      "i"
+    );
+
+    if (pattern.test(text)) {
+      vocabularyCount++;
+    }
+
+  });
+
+  if (vocabularyCount >= 3) {
+
+    feedback.textContent =
+      "🏆 Excellent! Your paragraph is long enough " +
+      "and includes useful vocabulary from the lesson. " +
+      "Read it again to check spelling and punctuation.";
+
+  } else {
+
+    feedback.textContent =
+      "✓ Good effort! Your paragraph is long enough. " +
+      "Try using more hobby vocabulary from the lesson.";
+
+  }
+
+  feedback.className =
+    "feedback show good";
+
+  awardPoint("writing");
+
+}
+
+function clearWriting() {
+
+  writingArea.value = "";
+
+  document.getElementById("wordCount").textContent =
+    "0 words";
+
+  const feedback =
+    document.getElementById("writingFeedback");
+
+  feedback.className = "feedback";
+
+  feedback.textContent = "";
+
+}
+
+/* =====================================
+   MINI DICTIONARY
+===================================== */
+
+const dictionary = [
+
+  ["hobby", "noun", "هواية"],
+  ["interest", "noun", "اهتمام"],
+  ["free time", "noun phrase", "وقت الفراغ"],
+  ["favourite", "adjective", "مفضل"],
+  ["enjoy", "verb", "يستمتع"],
+  ["creative", "adjective", "مبدع"],
+  ["drawing", "noun", "الرسم"],
+  ["painting", "noun", "الرسم بالألوان"],
+  ["reading", "noun", "القراءة"],
+  ["writing", "noun", "الكتابة"],
+  ["novel", "noun", "رواية"],
+  ["imagination", "noun", "خيال"],
+  ["football", "noun", "كرة القدم"],
+  ["cycling", "noun", "ركوب الدراجة"],
+  ["running", "noun", "الجري"],
+  ["hiking", "noun", "المشي في الطبيعة"],
+  ["swimming", "noun", "السباحة"],
+  ["singing", "noun", "الغناء"],
+  ["dancing", "noun", "الرقص"],
+  ["guitar", "noun", "غيتار"],
+  ["music", "noun", "موسيقى"],
+  ["coding", "noun", "البرمجة"],
+  ["designing", "noun", "التصميم"],
+  ["video games", "noun", "ألعاب الفيديو"],
+  ["photography", "noun", "التصوير الفوتوغرافي"],
+  ["technology", "noun", "التكنولوجيا"],
+  ["passionate", "adjective", "شغوف"],
+  ["interested in", "expression", "مهتم بـ"],
+  ["keen on", "expression", "مولع بـ"],
+  ["fond of", "expression", "محب لـ"],
+  ["practise", "verb", "يمارس"],
+  ["relaxed", "adjective", "مسترخٍ"],
+  ["healthy", "adjective", "صحي"],
+  ["curious", "adjective", "فضولي"]
+
+];
+
+const dictButton =
+  document.getElementById("dictButton");
+
+const dictOverlay =
+  document.getElementById("dictOverlay");
+
+const dictClose =
+  document.getElementById("dictClose");
+
+const dictSearch =
+  document.getElementById("dictSearch");
+
+const dictList =
+  document.getElementById("dictList");
+
+function renderDictionary(query = "") {
+
+  dictList.innerHTML = "";
+
+  const filtered =
+    dictionary.filter(item => {
+
+      return item[0]
+        .toLowerCase()
+        .includes(query.toLowerCase());
+
+    });
+
+  if (filtered.length === 0) {
+
+    dictList.innerHTML =
+      "<p>No matching word found.</p>";
+
+    return;
+
+  }
+
+  filtered.forEach(item => {
+
+    const row =
+      document.createElement("div");
+
+    row.className = "dict-row";
+
+    const english =
+      document.createElement("div");
+
+    const word =
+      document.createElement("strong");
+
+    word.textContent = item[0];
+
+    const part =
+      document.createElement("small");
+
+    part.textContent = item[1];
+
+    english.appendChild(word);
+    english.appendChild(part);
+
+    const arabic =
+      document.createElement("span");
+
+    arabic.textContent = item[2];
+
+    arabic.lang = "ar";
+
+    row.appendChild(english);
+    row.appendChild(arabic);
+
+    dictList.appendChild(row);
+
+  });
+
+}
+
+dictButton.addEventListener("click", () => {
+
+  dictOverlay.classList.add("open");
+
+  renderDictionary();
+
+  dictSearch.focus();
+
+});
+
+dictClose.addEventListener("click", () => {
+
+  dictOverlay.classList.remove("open");
+
+});
+
+dictOverlay.addEventListener("click", event => {
+
+  if (event.target === dictOverlay) {
+
+    dictOverlay.classList.remove("open");
+
+  }
+
+});
+
+dictSearch.addEventListener("input", () => {
+
+  renderDictionary(dictSearch.value);
+
+});
+
+document.addEventListener("keydown", event => {
+
+  if (event.key === "Escape") {
+
+    dictOverlay.classList.remove("open");
+
+  }
+
+});
+
+/* =====================================
+   SCROLL PROGRESS
+===================================== */
+
+function updateScrollProgress() {
+
+  const scrollable =
+    document.documentElement.scrollHeight -
+    window.innerHeight;
+
+  const percent =
+    scrollable > 0
+      ? window.scrollY / scrollable * 100
+      : 0;
+
+  document.getElementById("scrollFill").style.width =
+    percent + "%";
+
+}
+
+window.addEventListener(
+  "scroll",
+  updateScrollProgress,
+  { passive: true }
+);
+
+/* =====================================
+   ACTIVE STEP NAVIGATION
+===================================== */
+
+const sections =
+  document.querySelectorAll("section[id]");
+
+const navLinks =
+  document.querySelectorAll(".steps-nav a");
+
+const observer =
+  new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      const current =
+        "#" + entry.target.id;
+
+      navLinks.forEach(link => {
+
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href") === current
+        );
+
+      });
+
+    });
+
+  }, {
+
+    rootMargin: "-25% 0px -55% 0px"
+
+  });
+
+sections.forEach(section => {
+
+  observer.observe(section);
+
+});
+
+/* =====================================
+   RESET LESSON
+===================================== */
+
+function resetLesson() {
+
+  if (!confirm("Restart the whole lesson?")) {
+    return;
+  }
+
+  completed.clear();
+
+  document.querySelectorAll(".question").forEach(
+    question => {
+
+      delete question.dataset.done;
+
+      question.querySelectorAll(".option").forEach(
+        option => {
+
+          option.disabled = false;
+
+          option.classList.remove(
+            "correct",
+            "wrong"
+          );
+
+        }
+      );
+
+      const feedback =
+        question.querySelector(".feedback");
+
+      if (feedback) {
+
+        feedback.className = "feedback";
+        feedback.textContent = "";
+
+      }
+
+    }
+  );
+
+  document.querySelectorAll("select").forEach(
+    select => {
+
+      select.selectedIndex = 0;
+
+      select.style.borderColor = "";
+
+    }
+  );
+
+  document.querySelectorAll(".feedback").forEach(
+    feedback => {
+
+      feedback.className = "feedback";
+      feedback.textContent = "";
+
+    }
+  );
+
+  builderState[0] = [];
+  builderState[1] = [];
+
+  renderBuilder(0);
+  renderBuilder(1);
+
+  selectedSortItem = null;
+
+  sortItems.forEach(item => {
+
+    item.disabled = false;
+
+    item.classList.remove("selected");
+
+    document
+      .getElementById("sortBank")
+      .appendChild(item);
+
+  });
+
+  clearWriting();
+
+  updateScore();
+
+  window.scrollTo({
+
+    top: 0,
+    behavior: "smooth"
+
+  });
+
+}
+
+/* =====================================
+   INITIALISE
+===================================== */
+
+renderDictionary();
+
+updateScore();
+
+updateScrollProgress();
+
+</script>
+
+</body>
+</html>

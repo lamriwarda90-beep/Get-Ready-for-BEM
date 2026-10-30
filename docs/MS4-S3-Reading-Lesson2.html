@@ -1,0 +1,3597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4 Reading 02 | Small Acts, Big Smiles</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==============================
+   DESIGN SYSTEM
+============================== */
+
+:root{
+  --purple:#7040b8;
+  --deep:#35205d;
+  --dark:#27173f;
+  --violet:#9e74dd;
+  --lavender:#f4edff;
+  --lavender2:#e9dbff;
+  --gold:#ffd47c;
+  --pink:#ff9ac3;
+  --green:#23835e;
+  --red:#c34465;
+  --white:#ffffff;
+  --ink:#332745;
+  --muted:#766b86;
+  --border:#e9def7;
+  --shadow:0 14px 40px rgba(55,28,95,.09);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 10% 12%,#f0e6ff 0,transparent 30%),
+    linear-gradient(180deg,#fcfaff,#f3edff);
+  color:var(--ink);
+  font-family:"Nunito",sans-serif;
+  line-height:1.7;
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+h1,h2,h3,h4{
+  font-family:"Baloo 2",sans-serif;
+  line-height:1.2;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible{
+  outline:3px solid #f1b948;
+  outline-offset:3px;
+}
+
+/* ==============================
+   PROGRESS BAR
+============================== */
+
+.progress-line{
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  width:0;
+  background:linear-gradient(90deg,#ffd27c,#f99fc9);
+  z-index:100;
+  transition:width .12s;
+}
+
+/* ==============================
+   NAVIGATION
+============================== */
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+  max-width:1150px;
+  margin:auto;
+  padding:13px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--deep);
+  font-weight:900;
+  font-size:17px;
+}
+
+.brand-icon{
+  width:39px;
+  height:39px;
+  display:grid;
+  place-items:center;
+  background:var(--lavender);
+  border-radius:12px;
+  font-size:21px;
+}
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.nav-badge{
+  background:#f3eaff;
+  color:var(--purple);
+  padding:7px 13px;
+  border-radius:25px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.home-btn{
+  padding:9px 15px;
+  border-radius:25px;
+  background:var(--deep);
+  color:white;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* ==============================
+   HERO
+============================== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 80% 15%,rgba(217,173,255,.35),transparent 32%),
+    radial-gradient(circle at 10% 90%,rgba(255,187,211,.20),transparent 35%),
+    linear-gradient(125deg,#35205d,#6e3eb3 60%,#9469d0);
+  color:white;
+  text-align:center;
+  padding:73px 20px 105px;
+}
+
+.hero::before{
+  content:"💜";
+  position:absolute;
+  top:30px;
+  left:7%;
+  font-size:75px;
+  opacity:.25;
+  transform:rotate(-15deg);
+}
+
+.hero::after{
+  content:"✨";
+  position:absolute;
+  right:9%;
+  bottom:45px;
+  font-size:75px;
+  opacity:.5;
+}
+
+.hero-pill{
+  display:inline-block;
+  border:1px solid rgba(255,255,255,.4);
+  background:rgba(255,255,255,.13);
+  border-radius:40px;
+  padding:8px 18px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.3px;
+}
+
+.hero h1{
+  font-size:clamp(41px,7vw,76px);
+  margin:18px 0 9px;
+  font-weight:800;
+}
+
+.hero h1 span{
+  color:var(--gold);
+}
+
+.hero-description{
+  max-width:650px;
+  margin:auto;
+  color:#f0e7ff;
+  font-size:16px;
+}
+
+.hero-tags{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:25px;
+}
+
+.hero-tags span{
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.18);
+  padding:7px 14px;
+  border-radius:25px;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* ==============================
+   MAIN LAYOUT
+============================== */
+
+main{
+  max-width:1100px;
+  margin:-46px auto 70px;
+  padding:0 19px;
+  position:relative;
+  z-index:2;
+}
+
+.lesson-section{
+  margin-bottom:30px;
+  scroll-margin-top:85px;
+}
+
+.section-heading{
+  margin-bottom:15px;
+}
+
+.eyebrow{
+  color:var(--purple);
+  font-size:11px;
+  letter-spacing:1.8px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.section-heading h2{
+  font-size:clamp(25px,4vw,33px);
+  margin:5px 0;
+  color:var(--deep);
+}
+
+.section-heading p{
+  color:var(--muted);
+  font-size:14px;
+  margin:0;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:26px;
+  box-shadow:var(--shadow);
+}
+
+.card + .card{
+  margin-top:15px;
+}
+
+/* ==============================
+   WELCOME CARD
+============================== */
+
+.welcome-card{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:25px;
+  align-items:center;
+}
+
+.welcome-image{
+  width:100%;
+  height:270px;
+  object-fit:cover;
+  border-radius:19px;
+  background:#e9ddfa;
+}
+
+.welcome-copy h2{
+  font-size:31px;
+  margin:7px 0 12px;
+  color:var(--deep);
+}
+
+.welcome-copy p{
+  margin:0 0 12px;
+}
+
+.highlight{
+  display:inline-block;
+  background:#fff1d2;
+  color:#8a5a12;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:900;
+}
+
+/* ==============================
+   TASK CARDS
+============================== */
+
+.task{
+  padding:20px;
+  border:1px solid #eee5f9;
+  background:#fdfbff;
+  border-radius:18px;
+  margin:14px 0;
+}
+
+.task:last-child{
+  margin-bottom:0;
+}
+
+.task-number{
+  display:inline-grid;
+  place-items:center;
+  width:29px;
+  height:29px;
+  border-radius:10px;
+  background:#eaddff;
+  color:var(--purple);
+  font-weight:900;
+  font-size:12px;
+  margin-bottom:8px;
+}
+
+.task h3{
+  font-size:19px;
+  margin:0 0 9px;
+  color:var(--deep);
+}
+
+.task p{
+  margin:0 0 10px;
+  font-size:14px;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+  margin-top:12px;
+}
+
+.option{
+  border:2px solid #e8def7;
+  background:white;
+  color:var(--ink);
+  padding:13px 15px;
+  text-align:left;
+  border-radius:14px;
+  font-size:13px;
+  font-weight:800;
+  transition:.2s;
+  min-height:54px;
+}
+
+.option:hover:not(:disabled){
+  border-color:var(--violet);
+  background:#f8f3ff;
+  transform:translateY(-2px);
+}
+
+.option.correct{
+  background:#e5f7ee;
+  color:#176d49;
+  border-color:#64bd93;
+}
+
+.option.wrong{
+  background:#ffedf2;
+  color:#a62e4e;
+  border-color:#e99ab0;
+}
+
+.option:disabled{
+  cursor:default;
+}
+
+.feedback{
+  display:none;
+  margin-top:12px;
+  border-radius:12px;
+  padding:11px 14px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.feedback.show{
+  display:block;
+}
+
+.feedback.success{
+  background:#e4f7ec;
+  color:#21714e;
+}
+
+.feedback.error{
+  background:#fff0f3;
+  color:#b03b59;
+}
+
+.feedback.info{
+  background:#eee5ff;
+  color:#5d3399;
+}
+
+/* ==============================
+   READING ARTICLE
+============================== */
+
+.reading-card{
+  padding:35px;
+}
+
+.reading-top{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+  border-bottom:2px dashed #e9def7;
+  padding-bottom:18px;
+  margin-bottom:12px;
+}
+
+.reading-top h2{
+  color:var(--deep);
+  font-size:35px;
+  margin:0;
+}
+
+.reading-top p{
+  margin:5px 0 0;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:800;
+}
+
+.reading-icon{
+  width:65px;
+  height:65px;
+  display:grid;
+  place-items:center;
+  border-radius:20px;
+  background:#f3eaff;
+  font-size:35px;
+  flex-shrink:0;
+}
+
+.paragraph{
+  display:grid;
+  grid-template-columns:40px 1fr;
+  gap:13px;
+  padding:20px 0;
+  border-bottom:1px solid #f0eaf8;
+}
+
+.paragraph:last-child{
+  border-bottom:0;
+}
+
+.paragraph-number{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#7443b8,#a87bdf);
+  color:white;
+  font-weight:900;
+  font-size:12px;
+}
+
+.paragraph p{
+  margin:0;
+  font-size:15.5px;
+  line-height:2;
+}
+
+.reading-quote{
+  padding:17px 22px;
+  border-left:5px solid var(--gold);
+  background:#fff8e9;
+  border-radius:0 14px 14px 0;
+  font-weight:900;
+  color:#76511e;
+  margin-top:16px;
+}
+
+/* ==============================
+   TRUE FALSE
+============================== */
+
+.tf-item{
+  display:grid;
+  grid-template-columns:1fr 145px;
+  gap:13px;
+  padding:16px 0;
+  border-bottom:1px solid var(--border);
+  align-items:center;
+}
+
+.tf-item:last-of-type{
+  border-bottom:0;
+}
+
+.tf-item strong{
+  font-size:14px;
+}
+
+.tf-item input{
+  grid-column:1/-1;
+}
+
+input[type=text],
+select,
+textarea{
+  border:2px solid #e7dcf6;
+  border-radius:12px;
+  background:white;
+  padding:12px 14px;
+  color:var(--ink);
+  width:100%;
+  outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--purple);
+}
+
+textarea{
+  resize:vertical;
+  min-height:135px;
+}
+
+.tf-item.valid{
+  background:#f0fbf5;
+}
+
+.tf-item.invalid{
+  background:#fff4f6;
+}
+
+/* ==============================
+   INFORMATION TABLE
+============================== */
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+}
+
+.info-field{
+  padding:16px;
+  border-radius:15px;
+  background:#faf7ff;
+  border:1px solid var(--border);
+}
+
+.info-field label{
+  display:block;
+  margin-bottom:9px;
+  font-weight:900;
+  font-size:13px;
+  color:var(--deep);
+}
+
+/* ==============================
+   LANGUAGE CARDS
+============================== */
+
+.language-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:15px;
+}
+
+.language-card{
+  background:#faf7ff;
+  border:1px solid #e9dcfb;
+  border-radius:19px;
+  padding:20px;
+}
+
+.language-card h3{
+  margin:8px 0 9px;
+  color:var(--deep);
+  font-size:21px;
+}
+
+.language-card p{
+  margin:0 0 10px;
+  font-size:13px;
+}
+
+.example{
+  background:white;
+  border-left:4px solid var(--violet);
+  padding:12px;
+  border-radius:0 10px 10px 0;
+  font-size:13px;
+  font-weight:800;
+  margin:10px 0;
+}
+
+.arabic-note{
+  font-family:"Noto Naskh Arabic",serif;
+  color:#6840a2;
+  direction:rtl;
+  text-align:right;
+  font-size:16px;
+}
+
+/* ==============================
+   SEQUENCING
+============================== */
+
+.sequence-list{
+  display:grid;
+  gap:10px;
+}
+
+.sequence-row{
+  display:grid;
+  grid-template-columns:75px 1fr;
+  gap:13px;
+  align-items:center;
+  background:#faf7ff;
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:11px;
+}
+
+.sequence-row select{
+  padding:8px;
+}
+
+.sequence-row span{
+  font-weight:800;
+  font-size:13px;
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+
+.btn{
+  border:0;
+  background:linear-gradient(120deg,#5a3294,#8f5ad0);
+  color:white;
+  border-radius:30px;
+  padding:12px 21px;
+  font-weight:900;
+  font-size:13px;
+  box-shadow:0 7px 18px rgba(86,43,146,.2);
+  transition:.2s;
+  margin-top:15px;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.05);
+}
+
+.btn-secondary{
+  background:white;
+  color:var(--purple);
+  border:2px solid #d8c2f3;
+  box-shadow:none;
+}
+
+.button-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* ==============================
+   WRITING
+============================== */
+
+.writing-support{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:16px 0;
+}
+
+.support-box{
+  background:#faf6ff;
+  padding:15px;
+  border-radius:14px;
+  border:1px solid var(--border);
+}
+
+.support-box strong{
+  color:var(--deep);
+  font-size:13px;
+}
+
+.support-box p{
+  margin:6px 0 0;
+  font-size:13px;
+}
+
+.checklist{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:15px;
+}
+
+.checklist label{
+  background:#faf7ff;
+  border:1px solid var(--border);
+  padding:11px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.checklist input{
+  accent-color:var(--purple);
+  margin-right:6px;
+}
+
+/* ==============================
+   SCORE PANEL
+============================== */
+
+.score-panel{
+  background:
+    radial-gradient(circle at 90% 15%,#a478db,transparent 40%),
+    linear-gradient(120deg,#39205e,#7341b4);
+  border-radius:25px;
+  color:white;
+  padding:28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-top:25px;
+}
+
+.score-panel small{
+  color:#e9d9ff;
+  font-weight:900;
+  letter-spacing:1px;
+  font-size:11px;
+}
+
+.score-panel h2{
+  font-size:37px;
+  margin:5px 0;
+}
+
+.score-panel p{
+  margin:0;
+  font-size:13px;
+  color:#e7d8ff;
+}
+
+/* ==============================
+   DICTIONARY
+============================== */
+
+.dictionary-toggle{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:80;
+  width:57px;
+  height:57px;
+  border-radius:50%;
+  border:3px solid white;
+  background:linear-gradient(135deg,#ffd77c,#a774df);
+  box-shadow:0 10px 28px rgba(48,20,90,.35);
+  font-size:27px;
+  display:grid;
+  place-items:center;
+  transition:.2s;
+}
+
+.dictionary-toggle:hover{
+  transform:scale(1.08);
+}
+
+.dictionary-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:90;
+  background:rgba(25,10,47,.7);
+  padding:16px;
+  align-items:center;
+  justify-content:center;
+}
+
+.dictionary-overlay.open{
+  display:flex;
+}
+
+.dictionary-panel{
+  background:white;
+  width:min(450px,100%);
+  max-height:80vh;
+  padding:22px;
+  border-radius:24px;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 25px 70px rgba(20,8,44,.35);
+}
+
+.dictionary-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.dictionary-header h2{
+  margin:0;
+  color:var(--deep);
+  font-size:24px;
+}
+
+.close-btn{
+  border:0;
+  background:#f0e7ff;
+  color:var(--deep);
+  border-radius:50%;
+  width:37px;
+  height:37px;
+  font-size:22px;
+}
+
+#dictionarySearch{
+  margin:15px 0;
+}
+
+.dictionary-list{
+  overflow:auto;
+}
+
+.dictionary-entry{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  padding:11px 8px;
+  border-bottom:1px solid #eee6f8;
+}
+
+.dictionary-entry strong{
+  font-size:14px;
+}
+
+.dictionary-entry span{
+  font-family:"Noto Naskh Arabic",serif;
+  direction:rtl;
+  color:var(--purple);
+  font-size:18px;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer{
+  text-align:center;
+  padding:20px 15px 85px;
+  color:#806c9d;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media(max-width:800px){
+
+  .welcome-card{
+    grid-template-columns:1fr;
+  }
+
+  .welcome-image{
+    height:230px;
+  }
+
+  .language-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:60px 17px 90px;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .nav-badge{
+    display:none;
+  }
+
+  .brand{
+    font-size:14px;
+  }
+
+  .options,
+  .info-grid,
+  .writing-support,
+  .checklist{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    padding:19px;
+  }
+
+  .reading-card{
+    padding:20px;
+  }
+
+  .reading-top h2{
+    font-size:28px;
+  }
+
+  .reading-icon{
+    display:none;
+  }
+
+  .paragraph{
+    grid-template-columns:32px 1fr;
+    gap:10px;
+  }
+
+  .paragraph p{
+    font-size:14px;
+  }
+
+  .tf-item{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .sequence-row{
+    grid-template-columns:70px 1fr;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto !important;
+    transition:none !important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="progress-line" id="progressLine"></div>
+
+<!-- ==============================
+     NAVIGATION
+============================== -->
+
+<header class="navbar">
+
+  <div class="nav-inner">
+
+    <a href="MS4-S3-Reading-Beautiful.html" class="brand">
+      <span class="brand-icon">📚</span>
+      <span>MY ENGLISH SPACE</span>
+    </a>
+
+    <div class="nav-right">
+
+      <span class="nav-badge">
+        MS4 • READING 02
+      </span>
+
+      <a
+        href="MS4-S3-Reading-Beautiful.html"
+        class="home-btn">
+        ← Reading Home
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- ==============================
+     HERO
+============================== -->
+
+<section class="hero">
+
+  <span class="hero-pill">
+    SEQUENCE 3 • ME, MY COMMUNITY AND CITIZENSHIP
+  </span>
+
+  <h1>
+    Small Acts,<br>
+    <span>Big Smiles</span> 💜
+  </h1>
+
+  <p class="hero-description">
+    Discover how a group of young volunteers
+    brought happiness to children through
+    simple acts of kindness.
+  </p>
+
+  <div class="hero-tags">
+
+    <span>🤝 Charity Work</span>
+    <span>📖 Reading</span>
+    <span>💡 Critical Thinking</span>
+    <span>✍️ Writing</span>
+
+  </div>
+
+</section>
+
+<main>
+
+<!-- ==============================
+     BEFORE READING
+============================== -->
+
+<section class="lesson-section" id="before">
+
+  <div class="card welcome-card">
+
+    <div class="welcome-copy">
+
+      <span class="eyebrow">
+        01 • BEFORE READING
+      </span>
+
+      <h2>
+        💭 Look, Think &amp; Predict
+      </h2>
+
+      <p>
+        Look at the picture.
+        What are the young people doing?
+      </p>
+
+      <span class="highlight">
+        LOOK AT THE CLUES
+      </span>
+
+      <div class="task">
+
+        <h3>
+          What will the story probably be about?
+        </h3>
+
+        <div class="options" data-question="predict">
+
+          <button class="option">
+            A school football match
+          </button>
+
+          <button class="option" data-correct="true">
+            Young people helping children in need
+          </button>
+
+          <button class="option">
+            A family holiday
+          </button>
+
+          <button class="option">
+            A science competition
+          </button>
+
+        </div>
+
+        <div class="feedback"></div>
+
+      </div>
+
+    </div>
+
+    <img
+      class="welcome-image"
+      src="https://i.imgur.com/oqP2v3f.png"
+      alt="Young volunteers doing charity work"
+      onerror="this.style.display='none'">
+
+  </div>
+
+</section>
+
+<!-- ==============================
+     READING TEXT
+============================== -->
+
+<section class="lesson-section" id="reading">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      02 • READING DISCOVERY
+    </span>
+
+    <h2>
+      📖 Read the Story
+    </h2>
+
+    <p>
+      Read carefully. The paragraph numbers will help you
+      find information later.
+    </p>
+
+  </div>
+
+  <article class="card reading-card">
+
+    <div class="reading-top">
+
+      <div>
+
+        <h2>
+          A Little Kindness Goes a Long Way
+        </h2>
+
+        <p>
+          A story from a middle-school charity club
+        </p>
+
+      </div>
+
+      <div class="reading-icon">
+        💜
+      </div>
+
+    </div>
+
+    <div class="paragraph">
+
+      <span class="paragraph-number">01</span>
+
+      <p>
+        Last winter, a group of pupils from
+        El Amal Middle School noticed that some children
+        in their town did not have enough warm clothes
+        or school supplies. The pupils felt sad,
+        but they decided to do something useful.
+        They formed a small charity club called
+        <strong>Helping Hands</strong>.
+        Their motto was simple:
+        <em>“A little kindness can make a big difference.”</em>
+      </p>
+
+    </div>
+
+    <div class="paragraph">
+
+      <span class="paragraph-number">02</span>
+
+      <p>
+        First, the club members organised a donation campaign.
+        They asked classmates, teachers and parents
+        to donate clean clothes, notebooks, pens
+        and storybooks. They placed colourful collection
+        boxes near the school entrance.
+        They also made posters to encourage more people
+        to participate.
+        Within one week, the boxes were full of donations.
+      </p>
+
+    </div>
+
+    <div class="paragraph">
+
+      <span class="paragraph-number">03</span>
+
+      <p>
+        Next, the volunteers sorted the donated items
+        and prepared small gift packages.
+        Some pupils folded clothes while others
+        packed school supplies.
+        Their teachers helped them check that everything
+        was clean and useful.
+        On Saturday morning, the volunteers delivered
+        the packages to a local community centre.
+        They wanted to support families who needed help.
+      </p>
+
+    </div>
+
+    <div class="paragraph">
+
+      <span class="paragraph-number">04</span>
+
+      <p>
+        At the centre, the pupils met several children
+        and gave them the packages.
+        One little girl smiled when she received
+        a warm coat and a storybook.
+        “Thank you! I can read a new story tonight!”
+        she said happily.
+        The volunteers felt proud because their small
+        efforts had brought happiness to others.
+        They realised that charity is not only
+        about giving things; it is also about
+        sharing love, time and attention.
+      </p>
+
+    </div>
+
+    <div class="paragraph">
+
+      <span class="paragraph-number">05</span>
+
+      <p>
+        After this experience, the club decided
+        to organise more activities.
+        The pupils planned to collect books,
+        visit elderly people and clean public spaces.
+        Their teacher encouraged them to continue.
+        “If we work together, we will help more people,”
+        she said.
+        The pupils understood that everyone can make
+        a positive change, even through small actions.
+      </p>
+
+    </div>
+
+    <div class="reading-quote">
+      ✨ Kindness becomes powerful when people work together.
+    </div>
+
+  </article>
+
+</section>
+
+<!-- ==============================
+     GLOBAL COMPREHENSION
+============================== -->
+
+<section class="lesson-section" id="global">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      03 • UNDERSTAND THE BIG PICTURE
+    </span>
+
+    <h2>
+      🌍 Discover the Main Idea
+    </h2>
+
+    <p>
+      Focus on the general meaning of the text.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <div class="task">
+
+      <span class="task-number">01</span>
+
+      <h3>
+        What is the text mainly about?
+      </h3>
+
+      <div class="options" data-question="global1">
+
+        <button class="option">
+          A school trip to the mountains
+        </button>
+
+        <button class="option">
+          A famous charity organisation
+        </button>
+
+        <button class="option" data-correct="true">
+          Pupils organising a charity project
+        </button>
+
+        <button class="option">
+          A competition between schools
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">02</span>
+
+      <h3>
+        What type of text is it?
+      </h3>
+
+      <div class="options" data-question="global2">
+
+        <button class="option">
+          A recipe
+        </button>
+
+        <button class="option" data-correct="true">
+          A narrative story
+        </button>
+
+        <button class="option">
+          A weather forecast
+        </button>
+
+        <button class="option">
+          A shopping advertisement
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">03</span>
+
+      <h3>
+        What is the main message of the story?
+      </h3>
+
+      <div class="options" data-question="global3">
+
+        <button class="option">
+          Only rich people can help others
+        </button>
+
+        <button class="option">
+          Children should never volunteer
+        </button>
+
+        <button class="option" data-correct="true">
+          Small acts of kindness can improve people's lives
+        </button>
+
+        <button class="option">
+          Charity is only about giving money
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==============================
+     DETAILED COMPREHENSION
+============================== -->
+
+<section class="lesson-section" id="details">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      04 • SEARCH FOR DETAILS
+    </span>
+
+    <h2>
+      🎯 Find the Right Information
+    </h2>
+
+    <p>
+      Return to the text to find the answers.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <div class="task">
+
+      <span class="task-number">04</span>
+
+      <h3>
+        Why did the pupils create the charity club?
+      </h3>
+
+      <div class="options" data-question="detail1">
+
+        <button class="option">
+          To become famous
+        </button>
+
+        <button class="option" data-correct="true">
+          To help children who needed clothes and school supplies
+        </button>
+
+        <button class="option">
+          To sell clothes
+        </button>
+
+        <button class="option">
+          To organise a sports event
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">05</span>
+
+      <h3>
+        What was the name of the club?
+      </h3>
+
+      <div class="options" data-question="detail2">
+
+        <button class="option">
+          Young Explorers
+        </button>
+
+        <button class="option">
+          Green Planet
+        </button>
+
+        <button class="option" data-correct="true">
+          Helping Hands
+        </button>
+
+        <button class="option">
+          Future Stars
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">06</span>
+
+      <h3>
+        Where did the pupils put the collection boxes?
+      </h3>
+
+      <div class="options" data-question="detail3">
+
+        <button class="option">
+          In the playground
+        </button>
+
+        <button class="option" data-correct="true">
+          Near the school entrance
+        </button>
+
+        <button class="option">
+          At the bus station
+        </button>
+
+        <button class="option">
+          In a supermarket
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">07</span>
+
+      <h3>
+        How long did it take to fill the collection boxes?
+      </h3>
+
+      <div class="options" data-question="detail4">
+
+        <button class="option">
+          One day
+        </button>
+
+        <button class="option">
+          One month
+        </button>
+
+        <button class="option" data-correct="true">
+          One week
+        </button>
+
+        <button class="option">
+          One year
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">08</span>
+
+      <h3>
+        Where did the volunteers deliver the packages?
+      </h3>
+
+      <div class="options" data-question="detail5">
+
+        <button class="option">
+          To a hospital
+        </button>
+
+        <button class="option">
+          To a shopping centre
+        </button>
+
+        <button class="option" data-correct="true">
+          To a local community centre
+        </button>
+
+        <button class="option">
+          To a museum
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">09</span>
+
+      <h3>
+        Why did the volunteers feel proud?
+      </h3>
+
+      <div class="options" data-question="detail6">
+
+        <button class="option">
+          They won a competition
+        </button>
+
+        <button class="option" data-correct="true">
+          Their efforts brought happiness to others
+        </button>
+
+        <button class="option">
+          They received expensive gifts
+        </button>
+
+        <button class="option">
+          They finished school early
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==============================
+     TRUE / FALSE
+============================== -->
+
+<section class="lesson-section" id="evidence">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      05 • PROVE IT WITH EVIDENCE
+    </span>
+
+    <h2>
+      🧾 True or False? Justify.
+    </h2>
+
+    <p>
+      Choose an answer and write a short phrase
+      from the text to support it.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <div class="tf-item"
+         data-answer="false"
+         data-evidence="last winter|winter">
+
+      <strong>
+        1. The pupils started their charity project last summer.
+      </strong>
+
+      <select aria-label="Statement 1">
+        <option value="">Choose...</option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+
+      <input type="text"
+             placeholder="Write evidence from paragraph 1...">
+
+    </div>
+
+    <div class="tf-item"
+         data-answer="true"
+         data-evidence="notebooks|pens|storybooks|school supplies">
+
+      <strong>
+        2. The pupils collected school supplies.
+      </strong>
+
+      <select aria-label="Statement 2">
+        <option value="">Choose...</option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+
+      <input type="text"
+             placeholder="Write evidence from paragraph 2...">
+
+    </div>
+
+    <div class="tf-item"
+         data-answer="false"
+         data-evidence="saturday|community centre">
+
+      <strong>
+        3. The volunteers delivered the packages on Sunday.
+      </strong>
+
+      <select aria-label="Statement 3">
+        <option value="">Choose...</option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+
+      <input type="text"
+             placeholder="Write evidence from paragraph 3...">
+
+    </div>
+
+    <div class="tf-item"
+         data-answer="false"
+         data-evidence="more activities|collect books|visit elderly|clean public">
+
+      <strong>
+        4. The charity club decided to stop its activities.
+      </strong>
+
+      <select aria-label="Statement 4">
+        <option value="">Choose...</option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+
+      <input type="text"
+             placeholder="Write evidence from paragraph 5...">
+
+    </div>
+
+    <button class="btn" onclick="checkTrueFalse()">
+      ✓ Check My Evidence
+    </button>
+
+    <div class="feedback" id="tfFeedback"></div>
+
+  </div>
+
+</section>
+
+<!-- ==============================
+     VOCABULARY
+============================== -->
+
+<section class="lesson-section" id="vocabulary">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      06 • VOCABULARY IN CONTEXT
+    </span>
+
+    <h2>
+      🔎 Word Detective
+    </h2>
+
+    <p>
+      Discover word meanings from the context.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <div class="task">
+
+      <span class="task-number">10</span>
+
+      <h3>
+        In paragraph 2, “donate” means ...
+      </h3>
+
+      <div class="options" data-question="vocab1">
+
+        <button class="option">
+          To buy something expensive
+        </button>
+
+        <button class="option" data-correct="true">
+          To give something to help others
+        </button>
+
+        <button class="option">
+          To borrow something
+        </button>
+
+        <button class="option">
+          To throw something away
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">11</span>
+
+      <h3>
+        Find a word in paragraph 3 meaning
+        “people who offer to help willingly”.
+      </h3>
+
+      <div class="options" data-question="vocab2">
+
+        <button class="option">
+          Teachers
+        </button>
+
+        <button class="option">
+          Families
+        </button>
+
+        <button class="option" data-correct="true">
+          Volunteers
+        </button>
+
+        <button class="option">
+          Visitors
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">12</span>
+
+      <h3>
+        Which word is closest in meaning to “encourage”?
+      </h3>
+
+      <div class="options" data-question="vocab3">
+
+        <button class="option">
+          Stop
+        </button>
+
+        <button class="option" data-correct="true">
+          Motivate
+        </button>
+
+        <button class="option">
+          Forget
+        </button>
+
+        <button class="option">
+          Punish
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">13</span>
+
+      <h3>
+        In paragraph 4, “they” in
+        “They realised that charity...” refers to ...
+      </h3>
+
+      <div class="options" data-question="vocab4">
+
+        <button class="option">
+          The teachers
+        </button>
+
+        <button class="option" data-correct="true">
+          The volunteers
+        </button>
+
+        <button class="option">
+          The parents
+        </button>
+
+        <button class="option">
+          The books
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==============================
+     INFORMATION TRANSFER
+============================== -->
+
+<section class="lesson-section" id="information">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      07 • ORGANISE WHAT YOU READ
+    </span>
+
+    <h2>
+      🗂️ Complete the Charity Project Card
+    </h2>
+
+    <p>
+      Select the correct information from the story.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <div class="info-grid">
+
+      <div class="info-field">
+
+        <label>
+          📍 School
+        </label>
+
+        <select class="info-answer" data-answer="elamal">
+          <option value="">Choose...</option>
+          <option value="elamal">El Amal Middle School</option>
+          <option value="ennour">Ennour Middle School</option>
+          <option value="elwafa">El Wafa Middle School</option>
+        </select>
+
+      </div>
+
+      <div class="info-field">
+
+        <label>
+          🤝 Charity club
+        </label>
+
+        <select class="info-answer" data-answer="hands">
+          <option value="">Choose...</option>
+          <option value="stars">Bright Stars</option>
+          <option value="hands">Helping Hands</option>
+          <option value="friends">Young Friends</option>
+        </select>
+
+      </div>
+
+      <div class="info-field">
+
+        <label>
+          🎁 Donations
+        </label>
+
+        <select class="info-answer" data-answer="supplies">
+          <option value="">Choose...</option>
+          <option value="food">Only food</option>
+          <option value="supplies">Clothes and school supplies</option>
+          <option value="money">Only money</option>
+        </select>
+
+      </div>
+
+      <div class="info-field">
+
+        <label>
+          🏠 Delivery place
+        </label>
+
+        <select class="info-answer" data-answer="centre">
+          <option value="">Choose...</option>
+          <option value="centre">Community centre</option>
+          <option value="market">Market</option>
+          <option value="stadium">Stadium</option>
+        </select>
+
+      </div>
+
+    </div>
+
+    <button class="btn" onclick="checkInformation()">
+      ✓ Check Project Card
+    </button>
+
+    <div class="feedback" id="infoFeedback"></div>
+
+  </div>
+
+</section>
+
+<!-- ==============================
+     SEQUENCING
+============================== -->
+
+<section class="lesson-section" id="sequence">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      08 • FOLLOW THE EVENTS
+    </span>
+
+    <h2>
+      🧩 Put the Events in Order
+    </h2>
+
+    <p>
+      Choose the correct position of each event
+      in the story.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <div class="sequence-list">
+
+      <div class="sequence-row" data-order="3">
+
+        <select aria-label="Order for preparing packages">
+          <option value="">Order</option>
+          <option value="1">1st</option>
+          <option value="2">2nd</option>
+          <option value="3">3rd</option>
+          <option value="4">4th</option>
+        </select>
+
+        <span>
+          The volunteers prepared gift packages.
+        </span>
+
+      </div>
+
+      <div class="sequence-row" data-order="1">
+
+        <select aria-label="Order for creating club">
+          <option value="">Order</option>
+          <option value="1">1st</option>
+          <option value="2">2nd</option>
+          <option value="3">3rd</option>
+          <option value="4">4th</option>
+        </select>
+
+        <span>
+          The pupils created Helping Hands.
+        </span>
+
+      </div>
+
+      <div class="sequence-row" data-order="4">
+
+        <select aria-label="Order for delivering packages">
+          <option value="">Order</option>
+          <option value="1">1st</option>
+          <option value="2">2nd</option>
+          <option value="3">3rd</option>
+          <option value="4">4th</option>
+        </select>
+
+        <span>
+          The pupils delivered the packages.
+        </span>
+
+      </div>
+
+      <div class="sequence-row" data-order="2">
+
+        <select aria-label="Order for collecting donations">
+          <option value="">Order</option>
+          <option value="1">1st</option>
+          <option value="2">2nd</option>
+          <option value="3">3rd</option>
+          <option value="4">4th</option>
+        </select>
+
+        <span>
+          The club collected donations.
+        </span>
+
+      </div>
+
+    </div>
+
+    <button class="btn" onclick="checkSequence()">
+      ✓ Check the Order
+    </button>
+
+    <div class="feedback" id="sequenceFeedback"></div>
+
+  </div>
+
+</section>
+
+<!-- ==============================
+     LANGUAGE IN CONTEXT
+============================== -->
+
+<section class="lesson-section" id="language">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      09 • NOTICE HOW LANGUAGE WORKS
+    </span>
+
+    <h2>
+      🧠 Language in the Story
+    </h2>
+
+    <p>
+      Discover useful language through the text.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <div class="language-grid">
+
+      <div class="language-card">
+
+        <span class="highlight">
+          PAST SIMPLE
+        </span>
+
+        <h3>
+          What happened?
+        </h3>
+
+        <p>
+          We use the past simple to talk about
+          completed past actions.
+        </p>
+
+        <div class="example">
+          The pupils collected donations.
+        </div>
+
+        <div class="example">
+          They gave the children gifts.
+        </div>
+
+        <p class="arabic-note">
+          نستعمل الماضي البسيط للحديث عن
+          أحداث وقعت وانتهت في الماضي.
+        </p>
+
+      </div>
+
+      <div class="language-card">
+
+        <span class="highlight">
+          FIRST CONDITIONAL
+        </span>
+
+        <h3>
+          What will happen?
+        </h3>
+
+        <p>
+          We use the first conditional to talk
+          about a possible future result.
+        </p>
+
+        <div class="example">
+          If we work together,
+          we will help more people.
+        </div>
+
+        <p>
+          <strong>If + present simple,
+          will + base verb</strong>
+        </p>
+
+        <p class="arabic-note">
+          نستعمل الشرط الأول للتعبير عن
+          نتيجة محتملة في المستقبل.
+        </p>
+
+      </div>
+
+      <div class="language-card">
+
+        <span class="highlight">
+          EXPRESSING PURPOSE
+        </span>
+
+        <h3>
+          Why did they do it?
+        </h3>
+
+        <p>
+          We use <strong>to</strong> or
+          <strong>in order to</strong>
+          to explain the purpose of an action.
+        </p>
+
+        <div class="example">
+          They made posters to encourage people.
+        </div>
+
+        <div class="example">
+          They collected clothes in order to help families.
+        </div>
+
+        <p class="arabic-note">
+          نستعمل هذه العبارات للتعبير
+          عن الهدف من القيام بفعل معين.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">14</span>
+
+      <h3>
+        Choose the correct past simple form.
+      </h3>
+
+      <p>
+        The pupils _______ clothes and books.
+      </p>
+
+      <div class="options" data-question="grammar1">
+
+        <button class="option">
+          collect
+        </button>
+
+        <button class="option" data-correct="true">
+          collected
+        </button>
+
+        <button class="option">
+          collecting
+        </button>
+
+        <button class="option">
+          collects
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">15</span>
+
+      <h3>
+        Complete the first conditional.
+      </h3>
+
+      <p>
+        If we donate books, children _______
+        more stories.
+      </p>
+
+      <div class="options" data-question="grammar2">
+
+        <button class="option">
+          read yesterday
+        </button>
+
+        <button class="option">
+          reading
+        </button>
+
+        <button class="option" data-correct="true">
+          will read
+        </button>
+
+        <button class="option">
+          reads
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">16</span>
+
+      <h3>
+        Choose the sentence that expresses purpose.
+      </h3>
+
+      <div class="options" data-question="grammar3">
+
+        <button class="option">
+          They were happy yesterday.
+        </button>
+
+        <button class="option" data-correct="true">
+          They collected clothes to help children.
+        </button>
+
+        <button class="option">
+          The club was small.
+        </button>
+
+        <button class="option">
+          The children smiled.
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==============================
+     INFERENCE
+============================== -->
+
+<section class="lesson-section" id="thinking">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      10 • READ BETWEEN THE LINES
+    </span>
+
+    <h2>
+      💡 Think Beyond the Words
+    </h2>
+
+    <p>
+      Use clues from the story to make reasonable conclusions.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <div class="task">
+
+      <span class="task-number">17</span>
+
+      <h3>
+        Why did the little girl smile?
+      </h3>
+
+      <div class="options" data-question="infer1">
+
+        <button class="option">
+          She won a school prize.
+        </button>
+
+        <button class="option" data-correct="true">
+          She felt happy and cared for.
+        </button>
+
+        <button class="option">
+          She was going on holiday.
+        </button>
+
+        <button class="option">
+          She received a bicycle.
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">18</span>
+
+      <h3>
+        What does the story suggest about volunteering?
+      </h3>
+
+      <div class="options" data-question="infer2">
+
+        <button class="option">
+          It is only for adults.
+        </button>
+
+        <button class="option">
+          It always requires a lot of money.
+        </button>
+
+        <button class="option" data-correct="true">
+          People can help others with time, effort and kindness.
+        </button>
+
+        <button class="option">
+          It is useful only during winter.
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <span class="task-number">19</span>
+
+      <h3>
+        Why did the pupils decide to continue
+        their charity activities?
+      </h3>
+
+      <div class="options" data-question="infer3">
+
+        <button class="option">
+          They wanted to miss lessons.
+        </button>
+
+        <button class="option" data-correct="true">
+          They saw that their actions could make a difference.
+        </button>
+
+        <button class="option">
+          They wanted to become professional athletes.
+        </button>
+
+        <button class="option">
+          They disliked their school.
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==============================
+     PROBLEM SOLVING
+============================== -->
+
+<section class="lesson-section" id="challenge">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      11 • APPLY YOUR KNOWLEDGE
+    </span>
+
+    <h2>
+      🌟 What Would You Do?
+    </h2>
+
+    <p>
+      Imagine that you are a member of a school charity club.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <div class="task">
+
+      <span class="highlight">
+        REAL-LIFE SITUATION
+      </span>
+
+      <h3 style="margin-top:12px">
+        Your school wants to help children
+        who do not have enough school supplies.
+        What is the best first step?
+      </h3>
+
+      <div class="options" data-question="challenge1">
+
+        <button class="option">
+          Ignore the problem.
+        </button>
+
+        <button class="option">
+          Buy expensive gifts for your friends.
+        </button>
+
+        <button class="option" data-correct="true">
+          Organise a collection campaign with your teacher.
+        </button>
+
+        <button class="option">
+          Wait for somebody else to help.
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <div class="task">
+
+      <h3>
+        Which action shows respect for people receiving help?
+      </h3>
+
+      <div class="options" data-question="challenge2">
+
+        <button class="option">
+          Sharing their private stories without permission
+        </button>
+
+        <button class="option">
+          Giving damaged and dirty clothes
+        </button>
+
+        <button class="option" data-correct="true">
+          Offering clean, useful items while respecting their dignity
+        </button>
+
+        <button class="option">
+          Making fun of people who need support
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==============================
+     WRITING
+============================== -->
+
+<section class="lesson-section" id="writing-section">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      12 • YOUR TURN TO CREATE
+    </span>
+
+    <h2>
+      ✍️ Become a Young Changemaker
+    </h2>
+
+    <p>
+      Use what you have learnt to create
+      your own charity project.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <span class="highlight">
+      FINAL WRITING CHALLENGE
+    </span>
+
+    <h3 style="font-size:24px;color:var(--deep)">
+      Our School Charity Project
+    </h3>
+
+    <p>
+      Imagine that your class organised a charity activity.
+      Write a short paragraph of
+      <strong>70–90 words</strong>
+      describing what you did and why it was important.
+    </p>
+
+    <div class="writing-support">
+
+      <div class="support-box">
+
+        <strong>
+          ① Introduce the project
+        </strong>
+
+        <p>
+          Last week, our class organised...
+        </p>
+
+      </div>
+
+      <div class="support-box">
+
+        <strong>
+          ② Describe your actions
+        </strong>
+
+        <p>
+          First, we collected...<br>
+          Then, we prepared...
+        </p>
+
+      </div>
+
+      <div class="support-box">
+
+        <strong>
+          ③ Explain the purpose
+        </strong>
+
+        <p>
+          We did this to help...
+        </p>
+
+      </div>
+
+      <div class="support-box">
+
+        <strong>
+          ④ Give a final message
+        </strong>
+
+        <p>
+          If we work together, we will...
+        </p>
+
+      </div>
+
+    </div>
+
+    <textarea
+      id="writingArea"
+      aria-label="Write your charity project paragraph"
+      placeholder="Last week, our class organised a charity project to help children in need. First, we collected..."></textarea>
+
+    <p id="wordCounter"
+       style="font-weight:900;color:var(--purple);font-size:13px">
+      0 words
+    </p>
+
+    <div class="checklist">
+
+      <label>
+        <input type="checkbox">
+        I introduced my project.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I used past simple verbs.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I explained the purpose.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I included a final message.
+      </label>
+
+    </div>
+
+    <div class="button-row">
+
+      <button class="btn" onclick="reviewWriting()">
+        ✨ Review My Writing
+      </button>
+
+      <button class="btn btn-secondary" onclick="saveWriting()">
+        💾 Save My Work
+      </button>
+
+      <button class="btn btn-secondary" onclick="printWriting()">
+        🖨️ Print
+      </button>
+
+    </div>
+
+    <div class="feedback" id="writingFeedback"></div>
+
+  </div>
+
+  <div class="score-panel">
+
+    <div>
+
+      <small>
+        YOUR READING JOURNEY
+      </small>
+
+      <h2>
+        ⭐ <span id="scoreValue">0</span> /
+        <span id="totalValue">0</span>
+      </h2>
+
+      <p>
+        Keep reading, thinking and learning!
+      </p>
+
+    </div>
+
+    <button class="btn btn-secondary" onclick="resetLesson()">
+      ↻ Try Again
+    </button>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+  💜 MY ENGLISH SPACE<br>
+  MS4 • SEQUENCE 3 • READING TOGETHER<br>
+  LESSON 02 — CHARITY WORK
+
+</footer>
+
+<!-- ==============================
+     FLOATING DICTIONARY
+============================== -->
+
+<button
+  class="dictionary-toggle"
+  id="dictionaryOpen"
+  title="English–Arabic dictionary"
+  aria-label="Open English Arabic dictionary">
+  📖
+</button>
+
+<div
+  class="dictionary-overlay"
+  id="dictionaryOverlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="English Arabic dictionary">
+
+  <div class="dictionary-panel">
+
+    <div class="dictionary-header">
+
+      <h2>
+        📖 English ↔ Arabic
+      </h2>
+
+      <button
+        class="close-btn"
+        id="dictionaryClose"
+        aria-label="Close dictionary">
+        ×
+      </button>
+
+    </div>
+
+    <input
+      type="text"
+      id="dictionarySearch"
+      placeholder="Search for a word...">
+
+    <div
+      class="dictionary-list"
+      id="dictionaryList">
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ==============================
+     JAVASCRIPT
+============================== -->
+
+<script>
+
+/* ==============================
+   SCORING
+============================== */
+
+const answeredQuestions = new Set();
+
+let score = 0;
+
+const choiceGroups = [
+  ...document.querySelectorAll("[data-question]")
+];
+
+const trueFalseRows = [
+  ...document.querySelectorAll(".tf-item")
+];
+
+const informationFields = [
+  ...document.querySelectorAll(".info-answer")
+];
+
+const sequenceRows = [
+  ...document.querySelectorAll(".sequence-row")
+];
+
+const totalQuestions =
+  choiceGroups.length +
+  trueFalseRows.length +
+  informationFields.length +
+  sequenceRows.length;
+
+document.getElementById("totalValue").textContent =
+  totalQuestions;
+
+function updateScore(){
+
+  document.getElementById("scoreValue").textContent =
+    score;
+
+}
+
+function awardPoint(id){
+
+  if(answeredQuestions.has(id)){
+    return;
+  }
+
+  answeredQuestions.add(id);
+
+  score++;
+
+  updateScore();
+
+}
+
+function showFeedback(element,type,message){
+
+  element.className =
+    "feedback show " + type;
+
+  element.textContent = message;
+
+}
+
+/* ==============================
+   MULTIPLE CHOICE
+============================== */
+
+choiceGroups.forEach(group=>{
+
+  const buttons = [
+    ...group.querySelectorAll(".option")
+  ];
+
+  const feedbackBox =
+    group.nextElementSibling;
+
+  buttons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+      if(group.dataset.completed === "true"){
+        return;
+      }
+
+      const correct =
+        button.dataset.correct === "true";
+
+      if(correct){
+
+        button.classList.add("correct");
+
+        group.dataset.completed = "true";
+
+        buttons.forEach(b=>{
+          b.disabled = true;
+        });
+
+        awardPoint(
+          "mcq-" + group.dataset.question
+        );
+
+        showFeedback(
+          feedbackBox,
+          "success",
+          "✓ Excellent! Your answer is correct."
+        );
+
+      }else{
+
+        button.classList.add("wrong");
+
+        showFeedback(
+          feedbackBox,
+          "error",
+          "Not quite! Return to the text and try again."
+        );
+
+      }
+
+    });
+
+  });
+
+});
+
+/* ==============================
+   TRUE / FALSE
+============================== */
+
+function checkTrueFalse(){
+
+  let correctCount = 0;
+
+  trueFalseRows.forEach((row,index)=>{
+
+    const select =
+      row.querySelector("select");
+
+    const input =
+      row.querySelector("input");
+
+    const answerCorrect =
+      select.value === row.dataset.answer;
+
+    const evidence =
+      input.value.trim().toLowerCase();
+
+    const expectedEvidence =
+      row.dataset.evidence.split("|");
+
+    const evidenceCorrect =
+      expectedEvidence.some(word=>
+        evidence.includes(word)
+      );
+
+    const correct =
+      answerCorrect && evidenceCorrect;
+
+    row.classList.remove(
+      "valid",
+      "invalid"
+    );
+
+    row.classList.add(
+      correct ? "valid" : "invalid"
+    );
+
+    if(correct){
+
+      correctCount++;
+
+      awardPoint("tf-" + index);
+
+    }
+
+  });
+
+  showFeedback(
+    document.getElementById("tfFeedback"),
+    correctCount === trueFalseRows.length
+      ? "success"
+      : "error",
+    correctCount +
+    " / " +
+    trueFalseRows.length +
+    " answers have a correct choice and supporting evidence. " +
+    (
+      correctCount === trueFalseRows.length
+        ? "Excellent reading!"
+        : "Check the relevant paragraphs and use words from the text."
+    )
+  );
+
+}
+
+/* ==============================
+   INFORMATION TRANSFER
+============================== */
+
+function checkInformation(){
+
+  let correctCount = 0;
+
+  informationFields.forEach((field,index)=>{
+
+    const correct =
+      field.value === field.dataset.answer;
+
+    field.style.borderColor =
+      correct ? "#58b889" : "#e69ab0";
+
+    if(correct){
+
+      correctCount++;
+
+      awardPoint("info-" + index);
+
+    }
+
+  });
+
+  showFeedback(
+    document.getElementById("infoFeedback"),
+    correctCount === informationFields.length
+      ? "success"
+      : "error",
+    correctCount +
+    " / " +
+    informationFields.length +
+    " correct. " +
+    (
+      correctCount === informationFields.length
+        ? "You completed the charity project card!"
+        : "Read the story again to find the missing information."
+    )
+  );
+
+}
+
+/* ==============================
+   SEQUENCING
+============================== */
+
+function checkSequence(){
+
+  let correctCount = 0;
+
+  const chosen = sequenceRows.map(row=>
+    row.querySelector("select").value
+  );
+
+  const noDuplicates =
+    chosen.filter(Boolean).length ===
+    new Set(chosen.filter(Boolean)).size;
+
+  sequenceRows.forEach((row,index)=>{
+
+    const select =
+      row.querySelector("select");
+
+    const correct =
+      select.value === row.dataset.order &&
+      noDuplicates;
+
+    row.style.borderColor =
+      correct ? "#58b889" : "#e69ab0";
+
+    if(correct){
+
+      correctCount++;
+
+      awardPoint("sequence-" + index);
+
+    }
+
+  });
+
+  let message =
+    correctCount +
+    " / " +
+    sequenceRows.length +
+    " events are correctly ordered.";
+
+  if(!noDuplicates){
+
+    message +=
+      " Use each position only once.";
+
+  }else if(correctCount === sequenceRows.length){
+
+    message +=
+      " Fantastic! You followed the story carefully.";
+
+  }else{
+
+    message +=
+      " Look for First, Next and the order of events.";
+
+  }
+
+  showFeedback(
+    document.getElementById("sequenceFeedback"),
+    correctCount === sequenceRows.length
+      ? "success"
+      : "error",
+    message
+  );
+
+}
+
+/* ==============================
+   WRITING
+============================== */
+
+const writingArea =
+  document.getElementById("writingArea");
+
+const savedWriting =
+  localStorage.getItem("ms4_s3_charity_writing");
+
+if(savedWriting){
+
+  writingArea.value = savedWriting;
+
+}
+
+function countWords(){
+
+  const text =
+    writingArea.value.trim();
+
+  const count =
+    text ? text.split(/\s+/).length : 0;
+
+  document.getElementById("wordCounter")
+    .textContent =
+    count + " words";
+
+  return count;
+
+}
+
+writingArea.addEventListener(
+  "input",
+  countWords
+);
+
+countWords();
+
+function saveWriting(){
+
+  localStorage.setItem(
+    "ms4_s3_charity_writing",
+    writingArea.value
+  );
+
+  showFeedback(
+    document.getElementById("writingFeedback"),
+    "success",
+    "✓ Your paragraph has been saved on this device."
+  );
+
+}
+
+function reviewWriting(){
+
+  const count = countWords();
+
+  const text =
+    writingArea.value;
+
+  const suggestions = [];
+
+  if(count < 70){
+
+    suggestions.push(
+      "Add more details to reach at least 70 words."
+    );
+
+  }
+
+  if(count > 90){
+
+    suggestions.push(
+      "Try to keep your paragraph within 90 words."
+    );
+
+  }
+
+  if(!/\b(collected|organised|organized|helped|donated|prepared|gave|visited|delivered)\b/i.test(text)){
+
+    suggestions.push(
+      "Use past simple verbs to describe your actions."
+    );
+
+  }
+
+  if(!/\b(to help|in order to|to support|to give|to collect)\b/i.test(text)){
+
+    suggestions.push(
+      "Explain the purpose of your project."
+    );
+
+  }
+
+  if(!/[.!?]/.test(text)){
+
+    suggestions.push(
+      "Check your punctuation."
+    );
+
+  }
+
+  if(suggestions.length === 0){
+
+    showFeedback(
+      document.getElementById("writingFeedback"),
+      "success",
+      "✓ Good progress! Your paragraph meets the basic length and language checks. Read it again to check clarity, spelling and meaning."
+    );
+
+  }else{
+
+    showFeedback(
+      document.getElementById("writingFeedback"),
+      "info",
+      suggestions.join(" ")
+    );
+
+  }
+
+}
+
+function printWriting(){
+
+  const text =
+    writingArea.value.trim();
+
+  if(!text){
+
+    showFeedback(
+      document.getElementById("writingFeedback"),
+      "error",
+      "Write your paragraph before printing."
+    );
+
+    return;
+
+  }
+
+  const printable =
+    window.open("","_blank");
+
+  if(!printable){
+
+    showFeedback(
+      document.getElementById("writingFeedback"),
+      "error",
+      "Please allow pop-ups to print your paragraph."
+    );
+
+    return;
+
+  }
+
+  const safeText =
+    text.replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;");
+
+  printable.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Our School Charity Project</title>
+      <style>
+        body{
+          font-family:Arial,sans-serif;
+          margin:45px;
+          line-height:1.8;
+        }
+        h1{color:#60389d}
+        .line{
+          border-bottom:1px solid #ccc;
+          padding:12px 0;
+        }
+        p{white-space:pre-wrap}
+      </style>
+    </head>
+    <body>
+      <h1>Our School Charity Project</h1>
+      <div class="line">Name: ____________________</div>
+      <div class="line">Class: ____________________</div>
+      <p>${safeText}</p>
+    </body>
+    </html>
+  `);
+
+  printable.document.close();
+
+  printable.focus();
+
+  printable.print();
+
+}
+
+/* ==============================
+   RESET
+============================== */
+
+function resetLesson(){
+
+  const confirmed = confirm(
+    "Reset your answers? Your saved paragraph will remain on this device."
+  );
+
+  if(!confirmed){
+    return;
+  }
+
+  score = 0;
+
+  answeredQuestions.clear();
+
+  updateScore();
+
+  choiceGroups.forEach(group=>{
+
+    delete group.dataset.completed;
+
+    group.querySelectorAll(".option")
+      .forEach(button=>{
+
+        button.disabled = false;
+
+        button.classList.remove(
+          "correct",
+          "wrong"
+        );
+
+      });
+
+    group.nextElementSibling.className =
+      "feedback";
+
+  });
+
+  trueFalseRows.forEach(row=>{
+
+    row.classList.remove(
+      "valid",
+      "invalid"
+    );
+
+    row.querySelector("select").value = "";
+
+    row.querySelector("input").value = "";
+
+  });
+
+  informationFields.forEach(field=>{
+
+    field.value = "";
+
+    field.style.borderColor = "";
+
+  });
+
+  sequenceRows.forEach(row=>{
+
+    row.querySelector("select").value = "";
+
+    row.style.borderColor = "";
+
+  });
+
+  [
+    "tfFeedback",
+    "infoFeedback",
+    "sequenceFeedback"
+  ].forEach(id=>{
+
+    document.getElementById(id).className =
+      "feedback";
+
+  });
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+/* ==============================
+   SCROLL PROGRESS
+============================== */
+
+function updateScrollProgress(){
+
+  const scrollTop =
+    document.documentElement.scrollTop;
+
+  const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+  const progress =
+    scrollHeight > 0
+      ? scrollTop / scrollHeight * 100
+      : 0;
+
+  document.getElementById("progressLine")
+    .style.width =
+    progress + "%";
+
+}
+
+window.addEventListener(
+  "scroll",
+  updateScrollProgress,
+  {passive:true}
+);
+
+updateScrollProgress();
+
+/* ==============================
+   MINI DICTIONARY
+============================== */
+
+const dictionaryWords = [
+
+  ["charity","عمل خيري"],
+  ["charity work","العمل الخيري"],
+  ["kindness","لطف / إحسان"],
+  ["volunteer","متطوع"],
+  ["volunteers","متطوعون"],
+  ["donate","يتبرع"],
+  ["donation","تبرع"],
+  ["donations","تبرعات"],
+  ["campaign","حملة"],
+  ["collection box","صندوق جمع التبرعات"],
+  ["school supplies","أدوات مدرسية"],
+  ["notebook","دفتر"],
+  ["storybook","كتاب قصص"],
+  ["warm clothes","ملابس دافئة"],
+  ["community centre","مركز اجتماعي"],
+  ["families in need","عائلات محتاجة"],
+  ["helping hands","أيادٍ مساعدة"],
+  ["motto","شعار"],
+  ["organise","ينظم"],
+  ["encourage","يشجع"],
+  ["participate","يشارك"],
+  ["sort","يفرز / يرتب"],
+  ["package","طرد / حزمة"],
+  ["deliver","يوصل / يسلم"],
+  ["effort","جهد"],
+  ["proud","فخور"],
+  ["share","يشارك / يتقاسم"],
+  ["support","يدعم / يساعد"],
+  ["elderly people","كبار السن"],
+  ["public spaces","الأماكن العامة"],
+  ["positive change","تغيير إيجابي"],
+  ["generosity","كرم"],
+  ["compassion","تعاطف"],
+  ["responsibility","مسؤولية"],
+  ["cooperation","تعاون"],
+  ["care","اهتمام / رعاية"],
+  ["in need","في حاجة"],
+  ["make a difference","يحدث فرقاً"],
+  ["in order to","من أجل / لكي"],
+  ["first conditional","الشرط الأول"],
+  ["past simple","الماضي البسيط"]
+
+];
+
+const dictionaryOverlay =
+  document.getElementById("dictionaryOverlay");
+
+const dictionarySearch =
+  document.getElementById("dictionarySearch");
+
+const dictionaryList =
+  document.getElementById("dictionaryList");
+
+function renderDictionary(){
+
+  const query =
+    dictionarySearch.value
+      .trim()
+      .toLowerCase();
+
+  const results =
+    dictionaryWords.filter(([english,arabic])=>
+      english.toLowerCase().includes(query) ||
+      arabic.includes(query)
+    );
+
+  dictionaryList.replaceChildren();
+
+  results.forEach(([english,arabic])=>{
+
+    const row =
+      document.createElement("div");
+
+    row.className =
+      "dictionary-entry";
+
+    const englishElement =
+      document.createElement("strong");
+
+    englishElement.textContent =
+      english;
+
+    const arabicElement =
+      document.createElement("span");
+
+    arabicElement.textContent =
+      arabic;
+
+    row.append(
+      englishElement,
+      arabicElement
+    );
+
+    dictionaryList.append(row);
+
+  });
+
+  if(results.length === 0){
+
+    const empty =
+      document.createElement("p");
+
+    empty.textContent =
+      "No matching word found.";
+
+    dictionaryList.append(empty);
+
+  }
+
+}
+
+function openDictionary(){
+
+  dictionaryOverlay.classList.add("open");
+
+  renderDictionary();
+
+  dictionarySearch.focus();
+
+}
+
+function closeDictionary(){
+
+  dictionaryOverlay.classList.remove("open");
+
+}
+
+document.getElementById("dictionaryOpen")
+  .addEventListener("click",openDictionary);
+
+document.getElementById("dictionaryClose")
+  .addEventListener("click",closeDictionary);
+
+dictionaryOverlay.addEventListener("click",event=>{
+
+  if(event.target === dictionaryOverlay){
+
+    closeDictionary();
+
+  }
+
+});
+
+document.addEventListener("keydown",event=>{
+
+  if(event.key === "Escape"){
+
+    closeDictionary();
+
+  }
+
+});
+
+dictionarySearch.addEventListener(
+  "input",
+  renderDictionary
+);
+
+</script>
+
+</body>
+</html>

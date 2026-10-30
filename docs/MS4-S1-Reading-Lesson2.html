@@ -1,0 +1,3905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4-S1-Reading-Lesson2 — Remarkable Lives</title>
+
+<meta name="description"
+content="Interactive MS4 reading comprehension lesson about Laarbi Ben M'hidi and William Shakespeare, with BEM-style activities and an English-Arabic dictionary.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   DESIGN SYSTEM
+===================================================== */
+
+:root{
+  --navy:#17324d;
+  --blue:#2678b8;
+  --cyan:#35b9c4;
+  --gold:#f4c65d;
+  --cream:#fff8e8;
+  --paper:#ffffff;
+  --ink:#263746;
+  --muted:#607482;
+  --line:#d8e8ee;
+  --green:#2d965b;
+  --red:#d95450;
+  --purple:#7657b8;
+  --shadow:0 12px 32px rgba(23,50,77,.10);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:155px;
+}
+
+body{
+  margin:0;
+  background:#eef7fa;
+  color:var(--ink);
+  font-family:Nunito,Arial,sans-serif;
+  line-height:1.65;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+button:disabled{
+  cursor:default;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  color:white;
+  text-align:center;
+  padding:28px 18px 38px;
+
+  background:linear-gradient(
+    135deg,
+    var(--navy),
+    var(--blue) 55%,
+    var(--cyan)
+  );
+}
+
+.hero::before,
+.hero::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,.07);
+  pointer-events:none;
+}
+
+.hero::before{
+  width:300px;
+  height:300px;
+  left:-120px;
+  top:-150px;
+}
+
+.hero::after{
+  width:350px;
+  height:350px;
+  right:-160px;
+  bottom:-210px;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:1;
+  max-width:1050px;
+  margin:auto;
+}
+
+.hero-badges{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.hero-badge{
+  padding:7px 14px;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  font-weight:800;
+  font-size:12px;
+}
+
+h1{
+  font:800 clamp(34px,7vw,58px)/1.1 "Baloo 2",sans-serif;
+  margin:15px 0 5px;
+}
+
+.hero-sub{
+  font-weight:700;
+  color:#e9fbff;
+  margin:0 auto;
+  max-width:760px;
+}
+
+.hero-icons{
+  font-size:35px;
+  margin-top:15px;
+  letter-spacing:7px;
+}
+
+.hero-home{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:18px;
+  padding:9px 17px;
+  border-radius:999px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.35);
+  color:white;
+  font-size:12px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.hero-home:hover{
+  background:white;
+  color:var(--navy);
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 5px 18px rgba(23,50,77,.05);
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  padding:9px 12px;
+  display:flex;
+  gap:7px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.nav button{
+  border:0;
+  background:var(--navy);
+  color:white;
+  border-radius:999px;
+  padding:8px 13px;
+  font-weight:800;
+  font-size:12px;
+  transition:.2s;
+}
+
+.nav button:hover{
+  transform:translateY(-1px);
+  background:var(--blue);
+}
+
+.progress{
+  max-width:1100px;
+  margin:4px auto 0;
+  padding:0 16px 10px;
+}
+
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font-size:12px;
+  font-weight:800;
+  color:var(--muted);
+  margin-bottom:5px;
+}
+
+.progressbar{
+  height:9px;
+  background:#dcebf0;
+  border-radius:99px;
+  overflow:hidden;
+}
+
+.progressfill{
+  height:100%;
+  width:0;
+  background:linear-gradient(
+    90deg,
+    var(--gold),
+    var(--cyan)
+  );
+  transition:width .4s;
+}
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:12px 16px 65px;
+}
+
+.section{
+  background:var(--paper);
+  border:2px solid var(--line);
+  border-radius:26px;
+  padding:25px;
+  margin:22px 0;
+  box-shadow:var(--shadow);
+  scroll-margin-top:155px;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:var(--cyan);
+  color:white;
+  border-radius:999px;
+  padding:5px 12px;
+  font-size:11px;
+  font-weight:900;
+}
+
+h2{
+  font:800 27px "Baloo 2",sans-serif;
+  color:var(--navy);
+  margin:0;
+}
+
+h3{
+  font:800 20px "Baloo 2",sans-serif;
+  color:var(--navy);
+  margin:0 0 9px;
+}
+
+.lead{
+  color:var(--muted);
+  font-weight:700;
+  margin:4px 0 18px;
+}
+
+.tip{
+  background:var(--cream);
+  border-left:5px solid var(--gold);
+  padding:12px 15px;
+  border-radius:12px;
+  font-weight:700;
+  margin:14px 0;
+}
+
+/* =====================================================
+   STORY CARDS
+===================================================== */
+
+.story-grid{
+  display:grid;
+  grid-template-columns:repeat(
+    auto-fit,
+    minmax(min(100%,300px),1fr)
+  );
+  gap:18px;
+}
+
+.story-card{
+  border:2px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  background:white;
+  transition:.25s;
+}
+
+.story-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+}
+
+.story-img{
+  height:235px;
+  width:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.story-content{
+  padding:18px;
+}
+
+.country{
+  font-size:12px;
+  font-weight:900;
+  color:var(--blue);
+  text-transform:uppercase;
+  letter-spacing:.8px;
+}
+
+.story-content h3{
+  font-size:24px;
+  margin:2px 0;
+}
+
+.story-content p{
+  margin:0;
+  color:var(--muted);
+  font-weight:700;
+}
+
+/* =====================================================
+   READING TEXT
+===================================================== */
+
+.text-layout{
+  display:grid;
+  grid-template-columns:240px minmax(0,1fr);
+  gap:20px;
+  align-items:start;
+}
+
+.text-layout > div{
+  min-width:0;
+}
+
+.text-portrait{
+  position:sticky;
+  top:150px;
+}
+
+.text-portrait img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:20px;
+  border:3px solid var(--line);
+  box-shadow:var(--shadow);
+  display:block;
+}
+
+.caption{
+  text-align:center;
+  font-size:12px;
+  font-weight:800;
+  color:var(--muted);
+  margin-top:7px;
+}
+
+.reading-text{
+  background:#fbfdfd;
+  border:2px solid var(--line);
+  border-radius:20px;
+  padding:20px;
+}
+
+.reading-text p{
+  margin:0 0 15px;
+}
+
+.reading-text p:last-child{
+  margin-bottom:0;
+}
+
+.key{
+  background:#fff0bc;
+  border-radius:5px;
+  padding:1px 4px;
+  font-weight:800;
+}
+
+/* =====================================================
+   ACTIVITIES
+===================================================== */
+
+.activity{
+  margin-top:19px;
+  border:2px solid var(--line);
+  border-radius:20px;
+  background:#f7fbfd;
+  padding:18px;
+}
+
+.activity-head{
+  display:flex;
+  gap:9px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+
+.activity-number{
+  min-width:34px;
+  height:34px;
+  border-radius:50%;
+  background:var(--gold);
+  color:var(--navy);
+  display:grid;
+  place-items:center;
+  font-weight:900;
+}
+
+.instructions{
+  font-weight:700;
+  color:var(--muted);
+  margin:0 0 12px;
+}
+
+.question{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:13px;
+  margin:10px 0;
+}
+
+.options{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-top:9px;
+}
+
+.option{
+  border:2px solid #c9e1e8;
+  background:#f7fcfd;
+  border-radius:999px;
+  padding:7px 13px;
+  font-weight:800;
+  transition:.2s;
+  color:var(--ink);
+}
+
+.option:hover:not(:disabled){
+  background:#e9f8f5;
+  transform:translateY(-1px);
+}
+
+.option.correct{
+  background:#dff5e6;
+  border-color:var(--green);
+  color:#23683e;
+}
+
+.option.wrong{
+  background:#fde5e2;
+  border-color:var(--red);
+  color:#913532;
+}
+
+.feedback{
+  min-height:23px;
+  margin-top:8px;
+  font-weight:900;
+}
+
+.ok{
+  color:var(--green);
+}
+
+.no{
+  color:var(--red);
+}
+
+/* =====================================================
+   TRUE / FALSE
+===================================================== */
+
+.tfrow{
+  display:flex;
+  gap:10px;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+  padding:12px 2px;
+  flex-wrap:wrap;
+}
+
+.tfrow:last-child{
+  border-bottom:0;
+}
+
+.tftext{
+  flex:1;
+  min-width:180px;
+  font-weight:700;
+}
+
+.tfbuttons{
+  display:flex;
+  gap:6px;
+}
+
+.tfbtn{
+  border:2px solid #c9e1e8;
+  background:white;
+  border-radius:999px;
+  padding:6px 12px;
+  font-weight:900;
+}
+
+.tfbtn.correct{
+  background:#dff5e6;
+  border-color:var(--green);
+  color:#23683e;
+}
+
+.tfbtn.wrong{
+  background:#fde5e2;
+  border-color:var(--red);
+  color:#913532;
+}
+
+.justify{
+  display:none;
+  flex-basis:100%;
+  margin:7px 0 0;
+  padding:9px 12px;
+  background:#fff8e8;
+  border-left:4px solid var(--gold);
+  border-radius:9px;
+  font-weight:700;
+}
+
+.justify.show{
+  display:block;
+}
+
+/* =====================================================
+   FINAL CHALLENGE
+===================================================== */
+
+.final-box{
+  background:linear-gradient(
+    135deg,
+    var(--navy),
+    var(--blue)
+  );
+  color:white;
+  border-radius:22px;
+  padding:22px;
+  text-align:center;
+}
+
+.final-box h2{
+  color:white;
+}
+
+.score{
+  font:800 30px "Baloo 2",sans-serif;
+  margin:10px 0;
+}
+
+.final-btn{
+  border:0;
+  border-radius:999px;
+  padding:11px 20px;
+  background:var(--gold);
+  color:var(--navy);
+  font-weight:900;
+  transition:.2s;
+}
+
+.final-btn:hover{
+  background:#ffe29a;
+  transform:translateY(-2px);
+}
+
+.small{
+  font-size:12px;
+  color:#dff7fb;
+  font-weight:700;
+}
+
+/* =====================================================
+   FLOATING ENGLISH-ARABIC DICTIONARY
+===================================================== */
+
+.dictionary-launcher{
+  position:fixed;
+  right:18px;
+  bottom:25px;
+  z-index:90;
+
+  display:flex;
+  align-items:center;
+  gap:9px;
+
+  border:2px solid rgba(255,255,255,.7);
+  border-radius:999px;
+
+  padding:13px 18px;
+
+  background:linear-gradient(
+    135deg,
+    var(--navy),
+    var(--blue)
+  );
+
+  color:white;
+  font-size:13px;
+  font-weight:900;
+
+  box-shadow:0 12px 35px rgba(23,50,77,.28);
+  transition:.25s;
+}
+
+.dictionary-launcher:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(23,50,77,.35);
+}
+
+.dictionary-launcher .book-icon{
+  font-size:22px;
+}
+
+.dictionary-panel{
+  position:fixed;
+  right:18px;
+  bottom:90px;
+  z-index:100;
+
+  width:min(390px,calc(100vw - 30px));
+  max-height:min(70vh,600px);
+
+  display:flex;
+  flex-direction:column;
+
+  background:white;
+  border:2px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+
+  box-shadow:0 25px 75px rgba(23,50,77,.28);
+}
+
+.dictionary-panel[hidden]{
+  display:none;
+}
+
+.dictionary-header{
+  padding:18px;
+  background:linear-gradient(
+    135deg,
+    var(--navy),
+    var(--blue)
+  );
+  color:white;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.dictionary-header h2{
+  color:white;
+  font-size:22px;
+}
+
+.dictionary-header p{
+  margin:2px 0 0;
+  font-size:11px;
+  font-weight:800;
+  color:#e1f6ff;
+}
+
+.dictionary-close{
+  width:36px;
+  height:36px;
+  border:1px solid rgba(255,255,255,.4);
+  background:rgba(255,255,255,.15);
+  border-radius:12px;
+  color:white;
+  font-size:23px;
+  line-height:1;
+}
+
+.dictionary-close:hover{
+  background:rgba(255,255,255,.3);
+}
+
+.dictionary-search-wrap{
+  padding:14px 14px 8px;
+}
+
+.dictionary-search{
+  width:100%;
+  padding:12px 14px;
+  border:2px solid var(--line);
+  border-radius:13px;
+  background:#f8fcfd;
+  outline:none;
+  font-size:13px;
+}
+
+.dictionary-search:focus{
+  border-color:var(--cyan);
+}
+
+.dictionary-filters{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  padding:0 14px 10px;
+}
+
+.dictionary-filter{
+  padding:6px 11px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#f5fafc;
+  color:var(--navy);
+  font-size:11px;
+  font-weight:900;
+}
+
+.dictionary-filter.active{
+  background:var(--navy);
+  border-color:var(--navy);
+  color:white;
+}
+
+.dictionary-list{
+  overflow-y:auto;
+  padding:0 14px 15px;
+  flex:1;
+  min-height:80px;
+  overscroll-behavior:contain;
+}
+
+.dictionary-entry{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+
+  padding:11px 9px;
+  border-bottom:1px solid var(--line);
+}
+
+.dictionary-entry:last-child{
+  border-bottom:0;
+}
+
+.dictionary-english{
+  color:var(--navy);
+  font-weight:900;
+  font-size:13px;
+}
+
+.dictionary-arabic{
+  direction:rtl;
+  text-align:right;
+  color:var(--green);
+  font-weight:800;
+  font-size:15px;
+}
+
+.dictionary-entry-main{
+  flex:1;
+  min-width:0;
+}
+
+.speak-btn{
+  flex-shrink:0;
+  width:35px;
+  height:35px;
+  border:0;
+  border-radius:11px;
+  background:#e9f6fb;
+  font-size:17px;
+  transition:.2s;
+}
+
+.speak-btn:hover{
+  background:#d4eef8;
+}
+
+.dictionary-empty{
+  text-align:center;
+  color:var(--muted);
+  font-weight:800;
+  padding:25px 10px;
+}
+
+.dictionary-footer{
+  padding:10px 14px;
+  background:#f3f9fc;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:11px;
+  font-weight:800;
+  text-align:center;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.page-footer{
+  text-align:center;
+  padding:25px 15px 110px;
+  background:white;
+  border-top:1px solid var(--line);
+}
+
+.page-footer strong{
+  display:block;
+  color:var(--navy);
+  font:800 21px "Baloo 2",sans-serif;
+}
+
+.page-footer p{
+  margin:4px 0;
+  font-size:12px;
+  color:var(--muted);
+  font-weight:800;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+  html{
+    scroll-padding-top:190px;
+  }
+
+  .section{
+    padding:18px;
+    scroll-margin-top:190px;
+  }
+
+  .text-layout{
+    grid-template-columns:1fr;
+  }
+
+  .text-portrait{
+    position:static;
+  }
+
+  .text-portrait img{
+    height:240px;
+  }
+
+  .tfrow{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .justify{
+    width:100%;
+  }
+
+  .dictionary-launcher{
+    right:12px;
+    bottom:14px;
+    padding:11px 14px;
+    font-size:12px;
+  }
+
+  .dictionary-panel{
+    right:10px;
+    bottom:77px;
+    width:calc(100vw - 20px);
+    max-height:72vh;
+  }
+
+  .nav button{
+    padding:7px 10px;
+    font-size:11px;
+  }
+
+  .hero-icons{
+    letter-spacing:3px;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+  }
+}
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@media print{
+
+  .navbar,
+  .progress,
+  .final-btn,
+  .option,
+  .tfbtn,
+  .dictionary-launcher,
+  .dictionary-panel,
+  .hero-home{
+    display:none!important;
+  }
+
+  body{
+    background:white;
+  }
+
+  .section{
+    box-shadow:none;
+    break-inside:avoid;
+  }
+
+  .text-portrait{
+    position:static;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+  <div class="hero-inner">
+
+    <div class="hero-badges">
+
+      <span class="hero-badge">
+        MS4 • SEQUENCE 1
+      </span>
+
+      <span class="hero-badge">
+        READING COMPREHENSION
+      </span>
+
+      <span class="hero-badge">
+        BEM-STYLE PRACTICE
+      </span>
+
+    </div>
+
+    <h1>Remarkable Lives</h1>
+
+    <p class="hero-sub">
+      Meet two influential figures, discover their journeys
+      and train like a BEM candidate.
+    </p>
+
+    <div class="hero-icons">
+      📖 🇩🇿 🎭 🔎 ⭐
+    </div>
+
+    <a href="MS4-S1-Reading.html" class="hero-home">
+      ← Back to Reading Homepage
+    </a>
+
+  </div>
+
+</header>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<div class="navbar">
+
+  <div class="nav">
+
+    <button type="button" onclick="go('start')">
+      🏠 Start
+    </button>
+
+    <button type="button" onclick="go('text1')">
+      🇩🇿 Ben M'hidi
+    </button>
+
+    <button type="button" onclick="go('text2')">
+      🎭 Shakespeare
+    </button>
+
+    <button type="button" onclick="go('bem')">
+      📝 Reading Tasks
+    </button>
+
+    <button type="button" onclick="go('challenge')">
+      🏆 Challenge
+    </button>
+
+  </div>
+
+  <div class="progress">
+
+    <div class="progress-top">
+      <span>Reading journey</span>
+
+      <span id="progressText" aria-live="polite">
+        0% completed
+      </span>
+    </div>
+
+    <div
+      class="progressbar"
+      role="progressbar"
+      aria-label="Reading activity progress"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="0"
+      id="progressBar"
+    >
+
+      <div
+        class="progressfill"
+        id="progressFill">
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<main id="start">
+
+<!-- =====================================================
+     WARM-UP
+===================================================== -->
+
+<section class="section">
+
+  <div class="section-title">
+
+    <span class="badge">WARM-UP</span>
+
+    <h2>
+      Two lives. Two worlds. One reading mission.
+    </h2>
+
+  </div>
+
+  <p class="lead">
+    Look at the visuals, then read the two biographies
+    carefully. All the activities below are based on the texts.
+  </p>
+
+  <div class="story-grid">
+
+    <!-- BEN M'HIDI CARD -->
+
+    <article class="story-card">
+
+      <img
+        class="story-img"
+        src="https://i.imgur.com/bUxPrpB.jpeg"
+        alt="Laarbi Ben M'hidi"
+        loading="lazy">
+
+      <div class="story-content">
+
+        <div class="country">
+          Algeria 🇩🇿
+        </div>
+
+        <h3>Laarbi Ben M'hidi</h3>
+
+        <p>
+          A courageous Algerian revolutionary and one of
+          the leaders of the national liberation movement.
+        </p>
+
+      </div>
+
+    </article>
+
+    <!-- SHAKESPEARE CARD -->
+
+    <article class="story-card">
+
+      <img
+        class="story-img"
+        src="https://i.imgur.com/7TlMigk.jpeg"
+        alt="William Shakespeare"
+        loading="lazy">
+
+      <div class="story-content">
+
+        <div class="country">
+          England 🇬🇧
+        </div>
+
+        <h3>William Shakespeare</h3>
+
+        <p>
+          A celebrated English playwright and poet whose
+          works are still read and performed around the world.
+        </p>
+
+      </div>
+
+    </article>
+
+  </div>
+
+  <div class="tip">
+    💡 <strong>Reading tip:</strong>
+    Before answering a question, return to the text and
+    look for the exact information or clue that supports
+    your answer.
+  </div>
+
+</section>
+
+<!-- =====================================================
+     TEXT 1 — BEN M'HIDI
+===================================================== -->
+
+<section class="section" id="text1">
+
+  <div class="section-title">
+
+    <span class="badge">TEXT 1</span>
+
+    <h2>
+      Laarbi Ben M'hidi — A Symbol of Courage
+    </h2>
+
+  </div>
+
+  <p class="lead">
+    Read the biography, then complete the comprehension
+    tasks. Notice the dates, places, actions and qualities
+    of the character.
+  </p>
+
+  <div class="text-layout">
+
+    <aside class="text-portrait">
+
+      <img
+        src="https://i.imgur.com/bUxPrpB.jpeg"
+        alt="Portrait of Laarbi Ben M'hidi"
+        loading="lazy">
+
+      <div class="caption">
+        Laarbi Ben M'hidi 🇩🇿
+      </div>
+
+    </aside>
+
+    <div>
+
+      <!-- READING TEXT -->
+
+      <div class="reading-text">
+
+        <p>
+          Laarbi Ben M'hidi was born in
+          <span class="key">1923</span>
+          in Aïn M'lila, in eastern Algeria. He grew up in
+          a period when Algeria was under French colonial rule.
+          From a young age, he became interested in the situation
+          of his country and believed that Algerians deserved
+          freedom and dignity.
+        </p>
+
+        <p>
+          In the 1940s, Ben M'hidi joined the nationalist movement.
+          He was an active member of the
+          <span class="key">Organisation Spéciale</span>
+          and later became one of the important figures of the
+          Algerian revolution. When the National Liberation Front
+          (FLN) began the armed struggle in 1954, he played an
+          important role in organising the movement.
+        </p>
+
+        <p>
+          During the
+          <span class="key">Battle of Algiers</span>
+          in 1956, Ben M'hidi was responsible for important
+          revolutionary activities in the capital. He was known
+          for his courage, calmness and strong sense of
+          responsibility. He encouraged people to remain united
+          and to continue the struggle for independence.
+        </p>
+
+        <p>
+          Ben M'hidi was arrested by French forces in February
+          1957. Despite difficult circumstances, he remained
+          courageous and refused to abandon his principles.
+          He was killed in March 1957. After independence,
+          he became a national symbol of sacrifice, patriotism
+          and courage.
+        </p>
+
+      </div>
+
+      <!-- TASK A -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+          <span class="activity-number">A</span>
+          <h3>Choose the correct answer</h3>
+        </div>
+
+        <p class="instructions">
+          Read the text and select the answer that best
+          completes each sentence.
+        </p>
+
+        <div class="question">
+
+          <strong>
+            1. Laarbi Ben M'hidi was born in …
+          </strong>
+
+          <div class="options">
+
+            <button class="option" data-correct="true">
+              Aïn M'lila
+            </button>
+
+            <button class="option">
+              Algiers
+            </button>
+
+            <button class="option">
+              Oran
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            2. In 1954, Ben M'hidi played an important
+            role in …
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              writing plays
+            </button>
+
+            <button class="option" data-correct="true">
+              organising the revolutionary movement
+            </button>
+
+            <button class="option">
+              teaching at a university
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            3. During the Battle of Algiers, he was known
+            for his …
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              wealth and fame
+            </button>
+
+            <button class="option">
+              love of theatre
+            </button>
+
+            <button class="option" data-correct="true">
+              courage and calmness
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+      </div>
+
+      <!-- TASK B -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+          <span class="activity-number">B</span>
+          <h3>True or False? Justify from the text.</h3>
+        </div>
+
+        <p class="instructions">
+          Choose True or False. Then read the textual
+          justification.
+        </p>
+
+        <div class="tfrow" data-answer="false">
+
+          <div class="tftext">
+            1. Ben M'hidi was born in Algiers.
+          </div>
+
+          <div class="tfbuttons">
+            <button class="tfbtn" data-choice="true">True</button>
+            <button class="tfbtn" data-choice="false">False</button>
+          </div>
+
+          <div class="justify">
+            ❌ False — He was born in Aïn M'lila,
+            in eastern Algeria.
+          </div>
+
+        </div>
+
+        <div class="tfrow" data-answer="true">
+
+          <div class="tftext">
+            2. He was an important figure in the
+            Algerian Revolution.
+          </div>
+
+          <div class="tfbuttons">
+            <button class="tfbtn" data-choice="true">True</button>
+            <button class="tfbtn" data-choice="false">False</button>
+          </div>
+
+          <div class="justify">
+            ✅ True — The text says he became one of
+            the important figures of the Algerian revolution.
+          </div>
+
+        </div>
+
+        <div class="tfrow" data-answer="false">
+
+          <div class="tftext">
+            3. He abandoned his principles after his arrest.
+          </div>
+
+          <div class="tfbuttons">
+            <button class="tfbtn" data-choice="true">True</button>
+            <button class="tfbtn" data-choice="false">False</button>
+          </div>
+
+          <div class="justify">
+            ❌ False — He remained courageous and refused
+            to abandon his principles.
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- TASK C -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+          <span class="activity-number">C</span>
+          <h3>Choose the best answer</h3>
+        </div>
+
+        <p class="instructions">
+          Select the answer that is supported by the text.
+        </p>
+
+        <div class="question">
+
+          <strong>
+            1. When was Laarbi Ben M'hidi born?
+          </strong>
+
+          <div class="options">
+
+            <button class="option" data-correct="true">
+              1923
+            </button>
+
+            <button class="option">
+              1940
+            </button>
+
+            <button class="option">
+              1957
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            2. What did he believe Algerians deserved?
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              wealth and fame
+            </button>
+
+            <button class="option" data-correct="true">
+              freedom and dignity
+            </button>
+
+            <button class="option">
+              education abroad
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            3. What happened to him in February 1957?
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              He left Algeria.
+            </button>
+
+            <button class="option" data-correct="true">
+              He was arrested.
+            </button>
+
+            <button class="option">
+              He became a teacher.
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            4. Why did he become a national symbol?
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              Because he was a famous writer.
+            </button>
+
+            <button class="option">
+              Because he was a theatre actor.
+            </button>
+
+            <button class="option" data-correct="true">
+              Because of his sacrifice, patriotism and courage.
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+      </div>
+
+      <!-- TASK D -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+          <span class="activity-number">D</span>
+          <h3>Vocabulary in context</h3>
+        </div>
+
+        <p class="instructions">
+          Choose the word closest in meaning to the expression.
+        </p>
+
+        <div class="question">
+
+          <strong>
+            1. “courage” means …
+          </strong>
+
+          <div class="options">
+
+            <button class="option" data-correct="true">
+              bravery
+            </button>
+
+            <button class="option">
+              fear
+            </button>
+
+            <button class="option">
+              sadness
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            2. The opposite of “divided” is …
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              separated
+            </button>
+
+            <button class="option" data-correct="true">
+              united
+            </button>
+
+            <button class="option">
+              arrested
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            3. “He” in the last sentence refers to …
+          </strong>
+
+          <div class="options">
+
+            <button class="option" data-correct="true">
+              Ben M'hidi
+            </button>
+
+            <button class="option">
+              the French forces
+            </button>
+
+            <button class="option">
+              the Algerian people
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     TEXT 2 — SHAKESPEARE
+===================================================== -->
+
+<section class="section" id="text2">
+
+  <div class="section-title">
+
+    <span class="badge">TEXT 2</span>
+
+    <h2>
+      William Shakespeare — The Bard of Avon
+    </h2>
+
+  </div>
+
+  <p class="lead">
+    Now travel from revolutionary Algeria to Elizabethan
+    England and discover the life of one of the world's
+    best-known writers.
+  </p>
+
+  <div class="text-layout">
+
+    <aside class="text-portrait">
+
+      <img
+        src="https://i.imgur.com/7TlMigk.jpeg"
+        alt="William Shakespeare"
+        loading="lazy">
+
+      <div class="caption">
+        William Shakespeare 🎭
+      </div>
+
+      <img
+        src="https://i.imgur.com/NK6VY9h.jpeg"
+        alt="Hamlet"
+        style="margin-top:12px;height:190px"
+        loading="lazy">
+
+      <div class="caption">
+        Hamlet — one of his famous plays
+      </div>
+
+      <img
+        src="https://i.imgur.com/WGmxnHF.jpeg"
+        alt="Romeo and Juliet"
+        style="margin-top:12px;height:190px"
+        loading="lazy">
+
+      <div class="caption">
+        Romeo and Juliet
+      </div>
+
+    </aside>
+
+    <div>
+
+      <!-- READING TEXT -->
+
+      <div class="reading-text">
+
+        <p>
+          William Shakespeare was born in
+          <span class="key">1564</span>
+          in Stratford-upon-Avon, England. He grew up in a
+          family connected with local business and public life.
+          As a young man, he developed an interest in language,
+          stories and theatre.
+        </p>
+
+        <p>
+          Shakespeare later moved to
+          <span class="key">London</span>,
+          where he became an actor and playwright. He worked
+          with theatre companies and wrote plays for audiences
+          from different social backgrounds. His works include
+          tragedies, comedies and historical plays.
+        </p>
+
+        <p>
+          Among his most famous works are
+          <span class="key">Hamlet</span>,
+          <span class="key">Romeo and Juliet</span>
+          and
+          <span class="key">Macbeth</span>.
+          His plays often explore love, ambition, jealousy,
+          power and human relationships. His language and
+          memorable characters have influenced writers and
+          artists for centuries.
+        </p>
+
+        <p>
+          Shakespeare died in
+          <span class="key">1616</span>
+          in Stratford-upon-Avon. His works did not disappear
+          after his death. They continued to be performed,
+          studied and translated in many countries. Today,
+          he is remembered as one of the most influential
+          writers in English literature.
+        </p>
+
+      </div>
+
+      <!-- TASK A -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+          <span class="activity-number">A</span>
+          <h3>Choose the correct answer</h3>
+        </div>
+
+        <p class="instructions">
+          Select the correct answer according to the biography.
+        </p>
+
+        <div class="question">
+
+          <strong>
+            1. Shakespeare was born in …
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              London
+            </button>
+
+            <button class="option" data-correct="true">
+              Stratford-upon-Avon
+            </button>
+
+            <button class="option">
+              Oxford
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            2. In London, Shakespeare worked as …
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              a soldier and teacher
+            </button>
+
+            <button class="option" data-correct="true">
+              an actor and playwright
+            </button>
+
+            <button class="option">
+              a doctor and scientist
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            3. Which of these is mentioned in the text?
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              The Great Gatsby
+            </button>
+
+            <button class="option">
+              Don Quixote
+            </button>
+
+            <button class="option" data-correct="true">
+              Hamlet
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+      </div>
+
+      <!-- TASK B -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+          <span class="activity-number">B</span>
+          <h3>True or False? Justify from the text.</h3>
+        </div>
+
+        <p class="instructions">
+          Choose True or False and check the justification.
+        </p>
+
+        <div class="tfrow" data-answer="true">
+
+          <div class="tftext">
+            1. Shakespeare moved to London.
+          </div>
+
+          <div class="tfbuttons">
+            <button class="tfbtn" data-choice="true">True</button>
+            <button class="tfbtn" data-choice="false">False</button>
+          </div>
+
+          <div class="justify">
+            ✅ True — The text says Shakespeare later
+            moved to London.
+          </div>
+
+        </div>
+
+        <div class="tfrow" data-answer="false">
+
+          <div class="tftext">
+            2. Shakespeare wrote only comedies.
+          </div>
+
+          <div class="tfbuttons">
+            <button class="tfbtn" data-choice="true">True</button>
+            <button class="tfbtn" data-choice="false">False</button>
+          </div>
+
+          <div class="justify">
+            ❌ False — He wrote tragedies, comedies
+            and historical plays.
+          </div>
+
+        </div>
+
+        <div class="tfrow" data-answer="true">
+
+          <div class="tftext">
+            3. His works continued to be studied after his death.
+          </div>
+
+          <div class="tfbuttons">
+            <button class="tfbtn" data-choice="true">True</button>
+            <button class="tfbtn" data-choice="false">False</button>
+          </div>
+
+          <div class="justify">
+            ✅ True — His works continued to be performed,
+            studied and translated.
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- TASK C -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+          <span class="activity-number">C</span>
+          <h3>Choose the best answer</h3>
+        </div>
+
+        <p class="instructions">
+          Select the answer that best matches the information
+          in the text.
+        </p>
+
+        <div class="question">
+
+          <strong>
+            1. Where and when was Shakespeare born?
+          </strong>
+
+          <div class="options">
+
+            <button class="option" data-correct="true">
+              1564, Stratford-upon-Avon
+            </button>
+
+            <button class="option">
+              1616, London
+            </button>
+
+            <button class="option">
+              1954, Stratford
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            2. Why did he become famous?
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              Because he was a soldier.
+            </button>
+
+            <button class="option" data-correct="true">
+              Because of his plays and influence on literature.
+            </button>
+
+            <button class="option">
+              Because he discovered a new country.
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            3. Which pair contains two Shakespeare plays?
+          </strong>
+
+          <div class="options">
+
+            <button class="option" data-correct="true">
+              Hamlet and Macbeth
+            </button>
+
+            <button class="option">
+              Hamlet and The Great Gatsby
+            </button>
+
+            <button class="option">
+              Macbeth and Don Quixote
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            4. What happened to Shakespeare's works after
+            his death?
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              They disappeared.
+            </button>
+
+            <button class="option" data-correct="true">
+              They continued to be performed, studied and translated.
+            </button>
+
+            <button class="option">
+              They were forgotten.
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+      </div>
+
+      <!-- TASK D -->
+
+      <div class="activity">
+
+        <div class="activity-head">
+          <span class="activity-number">D</span>
+          <h3>Vocabulary and reference</h3>
+        </div>
+
+        <p class="instructions">
+          Choose the answer that is closest to the meaning
+          found in the text.
+        </p>
+
+        <div class="question">
+
+          <strong>
+            1. “famous” means …
+          </strong>
+
+          <div class="options">
+
+            <button class="option" data-correct="true">
+              well-known
+            </button>
+
+            <button class="option">
+              unknown
+            </button>
+
+            <button class="option">
+              forgotten
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            2. “influential” means …
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              having no effect
+            </button>
+
+            <button class="option" data-correct="true">
+              having an effect on others
+            </button>
+
+            <button class="option">
+              being very young
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            3. The opposite of “death” is …
+          </strong>
+
+          <div class="options">
+
+            <button class="option">
+              power
+            </button>
+
+            <button class="option" data-correct="true">
+              life
+            </button>
+
+            <button class="option">
+              theatre
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+        <div class="question">
+
+          <strong>
+            4. “They” in the last paragraph refers to …
+          </strong>
+
+          <div class="options">
+
+            <button class="option" data-correct="true">
+              Shakespeare's works
+            </button>
+
+            <button class="option">
+              his audiences
+            </button>
+
+            <button class="option">
+              theatre companies
+            </button>
+
+          </div>
+
+          <div class="feedback" aria-live="polite"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     COMPARATIVE READING TASKS
+===================================================== -->
+
+<section class="section" id="bem">
+
+  <div class="section-title">
+
+    <span class="badge">
+      READING PRACTICE
+    </span>
+
+    <h2>
+      Compare the Two Biographies
+    </h2>
+
+  </div>
+
+  <p class="lead">
+    Use information from both texts. Choose, match and
+    identify the correct information.
+  </p>
+
+  <!-- TASK 1 -->
+
+  <div class="activity">
+
+    <div class="activity-head">
+      <span class="activity-number">1</span>
+      <h3>Who is it?</h3>
+    </div>
+
+    <p class="instructions">
+      Choose the person described in each sentence.
+    </p>
+
+    <div class="question">
+
+      <strong>
+        a. He was involved in the Algerian Revolution.
+      </strong>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          Laarbi Ben M'hidi
+        </button>
+
+        <button class="option">
+          William Shakespeare
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>
+        b. He was an actor and playwright.
+      </strong>
+
+      <div class="options">
+
+        <button class="option">
+          Laarbi Ben M'hidi
+        </button>
+
+        <button class="option" data-correct="true">
+          William Shakespeare
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>
+        c. He was born in Algeria.
+      </strong>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          Laarbi Ben M'hidi
+        </button>
+
+        <button class="option">
+          William Shakespeare
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>
+        d. His famous works include Hamlet and Macbeth.
+      </strong>
+
+      <div class="options">
+
+        <button class="option">
+          Laarbi Ben M'hidi
+        </button>
+
+        <button class="option" data-correct="true">
+          William Shakespeare
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+  <!-- TASK 2 -->
+
+  <div class="activity">
+
+    <div class="activity-head">
+      <span class="activity-number">2</span>
+      <h3>True or False?</h3>
+    </div>
+
+    <p class="instructions">
+      Decide whether each statement is True or False.
+    </p>
+
+    <div class="tfrow" data-answer="true">
+
+      <div class="tftext">
+        a. Ben M'hidi joined the nationalist movement.
+      </div>
+
+      <div class="tfbuttons">
+        <button class="tfbtn" data-choice="true">True</button>
+        <button class="tfbtn" data-choice="false">False</button>
+      </div>
+
+      <div class="justify">
+        ✅ True — The text states that he joined the
+        nationalist movement in the 1940s.
+      </div>
+
+    </div>
+
+    <div class="tfrow" data-answer="false">
+
+      <div class="tftext">
+        b. Shakespeare was born in London.
+      </div>
+
+      <div class="tfbuttons">
+        <button class="tfbtn" data-choice="true">True</button>
+        <button class="tfbtn" data-choice="false">False</button>
+      </div>
+
+      <div class="justify">
+        ❌ False — He was born in Stratford-upon-Avon.
+      </div>
+
+    </div>
+
+    <div class="tfrow" data-answer="true">
+
+      <div class="tftext">
+        c. Shakespeare's works are still performed today.
+      </div>
+
+      <div class="tfbuttons">
+        <button class="tfbtn" data-choice="true">True</button>
+        <button class="tfbtn" data-choice="false">False</button>
+      </div>
+
+      <div class="justify">
+        ✅ True — The text says his works continued
+        to be performed, studied and translated.
+      </div>
+
+    </div>
+
+    <div class="tfrow" data-answer="false">
+
+      <div class="tftext">
+        d. Ben M'hidi became a national symbol because
+        he was a famous actor.
+      </div>
+
+      <div class="tfbuttons">
+        <button class="tfbtn" data-choice="true">True</button>
+        <button class="tfbtn" data-choice="false">False</button>
+      </div>
+
+      <div class="justify">
+        ❌ False — He became a national symbol because
+        of his sacrifice, patriotism and courage.
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- TASK 3 -->
+
+  <div class="activity">
+
+    <div class="activity-head">
+      <span class="activity-number">3</span>
+      <h3>Find words in the texts</h3>
+    </div>
+
+    <p class="instructions">
+      Choose the word that completes each definition.
+    </p>
+
+    <div class="question">
+
+      <strong>a. brave = …</strong>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          courageous
+        </button>
+
+        <button class="option">
+          famous
+        </button>
+
+        <button class="option">
+          social
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>b. freedom = …</strong>
+
+      <div class="options">
+
+        <button class="option">
+          influence
+        </button>
+
+        <button class="option" data-correct="true">
+          independence
+        </button>
+
+        <button class="option">
+          ambition
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>c. known by many people = …</strong>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          famous
+        </button>
+
+        <button class="option">
+          difficult
+        </button>
+
+        <button class="option">
+          united
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>d. having an effect on others = …</strong>
+
+      <div class="options">
+
+        <button class="option">
+          historical
+        </button>
+
+        <button class="option" data-correct="true">
+          influential
+        </button>
+
+        <button class="option">
+          revolutionary
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+  <!-- TASK 4 -->
+
+  <div class="activity">
+
+    <div class="activity-head">
+      <span class="activity-number">4</span>
+      <h3>Reference words</h3>
+    </div>
+
+    <p class="instructions">
+      Choose what each word refers to.
+    </p>
+
+    <div class="question">
+
+      <strong>a. “he” — Text 1</strong>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          Ben M'hidi
+        </button>
+
+        <button class="option">
+          Shakespeare
+        </button>
+
+        <button class="option">
+          the French forces
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>b. “His works” — Text 2</strong>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          Shakespeare's works
+        </button>
+
+        <button class="option">
+          London theatres
+        </button>
+
+        <button class="option">
+          his audiences
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>c. “They” — Text 2</strong>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          his works
+        </button>
+
+        <button class="option">
+          his audiences
+        </button>
+
+        <button class="option">
+          theatre companies
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+  <!-- TASK 5 -->
+
+  <div class="activity">
+
+    <div class="activity-head">
+      <span class="activity-number">5</span>
+      <h3>Who? — Complete the comparison</h3>
+    </div>
+
+    <p class="instructions">
+      Choose the correct person for each piece of information.
+    </p>
+
+    <div class="question">
+
+      <strong>Birth year: 1923</strong>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          Laarbi Ben M'hidi
+        </button>
+
+        <button class="option">
+          William Shakespeare
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>Birth year: 1564</strong>
+
+      <div class="options">
+
+        <button class="option">
+          Laarbi Ben M'hidi
+        </button>
+
+        <button class="option" data-correct="true">
+          William Shakespeare
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>Important event: Battle of Algiers</strong>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          Laarbi Ben M'hidi
+        </button>
+
+        <button class="option">
+          William Shakespeare
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <strong>Important place: London theatre</strong>
+
+      <div class="options">
+
+        <button class="option">
+          Laarbi Ben M'hidi
+        </button>
+
+        <button class="option" data-correct="true">
+          William Shakespeare
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     FINAL CHALLENGE
+===================================================== -->
+
+<section class="section" id="challenge">
+
+  <div class="final-box">
+
+    <h2>🏆 Final Reading Challenge</h2>
+
+    <p>
+      How carefully did you read?
+      Answer the quick questions below.
+    </p>
+
+    <div
+      class="question"
+      style="color:var(--ink);text-align:left">
+
+      <strong>
+        1. Who was involved in the Algerian Revolution?
+      </strong>
+
+      <div class="options">
+
+        <button
+          class="option challenge-opt"
+          data-correct="true">
+          Ben M'hidi
+        </button>
+
+        <button class="option challenge-opt">
+          Shakespeare
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div
+      class="question"
+      style="color:var(--ink);text-align:left">
+
+      <strong>
+        2. Who was an actor and playwright?
+      </strong>
+
+      <div class="options">
+
+        <button class="option challenge-opt">
+          Ben M'hidi
+        </button>
+
+        <button
+          class="option challenge-opt"
+          data-correct="true">
+          Shakespeare
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div
+      class="question"
+      style="color:var(--ink);text-align:left">
+
+      <strong>
+        3. Which text mentions the Battle of Algiers?
+      </strong>
+
+      <div class="options">
+
+        <button
+          class="option challenge-opt"
+          data-correct="true">
+          Text 1
+        </button>
+
+        <button class="option challenge-opt">
+          Text 2
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="score" id="score" aria-live="polite">
+      ⭐ 0 / 3
+    </div>
+
+    <button
+      class="final-btn"
+      type="button"
+      onclick="resetChallenge()">
+      🔄 Try Again
+    </button>
+
+    <p class="small">
+      Excellent reading means finding evidence in the text,
+      not guessing!
+    </p>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- =====================================================
+     FLOATING DICTIONARY BUTTON
+===================================================== -->
+
+<button
+  class="dictionary-launcher"
+  id="dictionaryLauncher"
+  type="button"
+  aria-label="Open English-Arabic dictionary"
+  aria-controls="dictionaryPanel"
+  aria-expanded="false"
+  onclick="toggleDictionary()">
+
+  <span class="book-icon">📖</span>
+
+  <span>EN–AR Dictionary</span>
+
+</button>
+
+<!-- =====================================================
+     ENGLISH-ARABIC DICTIONARY PANEL
+===================================================== -->
+
+<aside
+  class="dictionary-panel"
+  id="dictionaryPanel"
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="dictionaryTitle"
+  hidden>
+
+  <div class="dictionary-header">
+
+    <div>
+
+      <h2 id="dictionaryTitle">
+        📖 Mini Dictionary
+      </h2>
+
+      <p>
+        English ↔ Arabic | قاموس إنجليزي عربي
+      </p>
+
+    </div>
+
+    <button
+      class="dictionary-close"
+      type="button"
+      aria-label="Close dictionary"
+      onclick="closeDictionary()">
+      ×
+    </button>
+
+  </div>
+
+  <div class="dictionary-search-wrap">
+
+    <input
+      class="dictionary-search"
+      type="search"
+      id="dictionarySearch"
+      placeholder="🔎 Search English or Arabic..."
+      aria-label="Search dictionary vocabulary"
+      autocomplete="off">
+
+  </div>
+
+  <div class="dictionary-filters" id="dictionaryFilters">
+
+    <button
+      class="dictionary-filter active"
+      type="button"
+      data-category="all">
+      All
+    </button>
+
+    <button
+      class="dictionary-filter"
+      type="button"
+      data-category="ben">
+      🇩🇿 Ben M'hidi
+    </button>
+
+    <button
+      class="dictionary-filter"
+      type="button"
+      data-category="shakespeare">
+      🎭 Shakespeare
+    </button>
+
+    <button
+      class="dictionary-filter"
+      type="button"
+      data-category="general">
+      📚 General
+    </button>
+
+  </div>
+
+  <div
+    class="dictionary-list"
+    id="dictionaryList"
+    aria-live="polite">
+  </div>
+
+  <div class="dictionary-footer" id="dictionaryCount">
+    Tap 🔊 to hear the English pronunciation.
+  </div>
+
+</aside>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="page-footer">
+
+  <strong>
+    📚 My English Space
+  </strong>
+
+  <p>
+    MS4 · SEQUENCE 1 · READING LESSON 2
+  </p>
+
+  <p>
+    Read • Discover • Practise • Succeed
+  </p>
+
+</footer>
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+"use strict";
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+function go(id){
+
+  const target = document.getElementById(id);
+
+  if(!target){
+    return;
+  }
+
+  const navHeight =
+    document.querySelector(".navbar").offsetHeight;
+
+  const targetPosition =
+    target.getBoundingClientRect().top +
+    window.scrollY -
+    navHeight -
+    15;
+
+  window.scrollTo({
+    top:Math.max(0,targetPosition),
+    behavior:window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches ? "auto" : "smooth"
+  });
+
+}
+
+/* =====================================================
+   PROGRESS
+   Counts normal MCQs and True/False activities.
+   Final challenge is tracked separately.
+===================================================== */
+
+function updateProgress(){
+
+  const questions = document.querySelectorAll(
+    ".question:not(#challenge .question), .tfrow"
+  );
+
+  const total = questions.length;
+
+  let completed = 0;
+
+  questions.forEach(item=>{
+
+    if(item.dataset.locked === "1"){
+      completed++;
+    }
+
+  });
+
+  const percent = total
+    ? Math.round((completed / total) * 100)
+    : 0;
+
+  document.getElementById("progressFill").style.width =
+    percent + "%";
+
+  document.getElementById("progressText").textContent =
+    percent + "% completed";
+
+  document.getElementById("progressBar").setAttribute(
+    "aria-valuenow",
+    percent
+  );
+
+}
+
+/* =====================================================
+   MULTIPLE CHOICE
+===================================================== */
+
+document.querySelectorAll(
+  ".question:not(#challenge .question) .option"
+).forEach(btn=>{
+
+  btn.addEventListener("click",()=>{
+
+    const question = btn.closest(".question");
+
+    if(question.dataset.locked === "1"){
+      return;
+    }
+
+    question.dataset.locked = "1";
+
+    const options =
+      question.querySelectorAll(".option");
+
+    options.forEach(option=>{
+      option.disabled = true;
+    });
+
+    const feedback =
+      question.querySelector(".feedback");
+
+    const isCorrect =
+      btn.dataset.correct === "true";
+
+    if(isCorrect){
+
+      btn.classList.add("correct");
+
+      feedback.textContent =
+        "✓ Correct! Well done.";
+
+      feedback.className = "feedback ok";
+
+    }else{
+
+      btn.classList.add("wrong");
+
+      const rightAnswer = question.querySelector(
+        '.option[data-correct="true"]'
+      );
+
+      if(rightAnswer){
+        rightAnswer.classList.add("correct");
+      }
+
+      feedback.textContent =
+        "✗ Not quite. Go back to the text and check the evidence.";
+
+      feedback.className = "feedback no";
+
+    }
+
+    updateProgress();
+
+  });
+
+});
+
+/* =====================================================
+   TRUE / FALSE
+===================================================== */
+
+document.querySelectorAll(".tfrow").forEach(row=>{
+
+  row.querySelectorAll(".tfbtn").forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+      if(row.dataset.locked === "1"){
+        return;
+      }
+
+      row.dataset.locked = "1";
+
+      const correct =
+        btn.dataset.choice === row.dataset.answer;
+
+      row.querySelectorAll(".tfbtn").forEach(button=>{
+        button.disabled = true;
+      });
+
+      btn.classList.add(
+        correct ? "correct" : "wrong"
+      );
+
+      if(!correct){
+
+        const rightButton = row.querySelector(
+          '.tfbtn[data-choice="' +
+          row.dataset.answer +
+          '"]'
+        );
+
+        if(rightButton){
+          rightButton.classList.add("correct");
+        }
+
+      }
+
+      const justification =
+        row.querySelector(".justify");
+
+      if(justification){
+        justification.classList.add("show");
+      }
+
+      updateProgress();
+
+    });
+
+  });
+
+});
+
+/* =====================================================
+   FINAL CHALLENGE
+===================================================== */
+
+let challengeScore = 0;
+
+document.querySelectorAll(".challenge-opt").forEach(btn=>{
+
+  btn.addEventListener("click",()=>{
+
+    const question = btn.closest(".question");
+
+    if(question.dataset.challengeLocked === "1"){
+      return;
+    }
+
+    question.dataset.challengeLocked = "1";
+
+    const correct =
+      btn.dataset.correct === "true";
+
+    question.querySelectorAll(".challenge-opt").forEach(option=>{
+      option.disabled = true;
+    });
+
+    if(correct){
+
+      btn.classList.add("correct");
+      challengeScore++;
+
+    }else{
+
+      btn.classList.add("wrong");
+
+      const rightAnswer = question.querySelector(
+        '.challenge-opt[data-correct="true"]'
+      );
+
+      if(rightAnswer){
+        rightAnswer.classList.add("correct");
+      }
+
+    }
+
+    const feedback =
+      question.querySelector(".feedback");
+
+    feedback.textContent = correct
+      ? "✓ Correct!"
+      : "✗ Check the biography again.";
+
+    feedback.className =
+      "feedback " + (correct ? "ok" : "no");
+
+    document.getElementById("score").textContent =
+      "⭐ " + challengeScore + " / 3";
+
+  });
+
+});
+
+/* =====================================================
+   RESET FINAL CHALLENGE
+===================================================== */
+
+function resetChallenge(){
+
+  challengeScore = 0;
+
+  document.getElementById("score").textContent =
+    "⭐ 0 / 3";
+
+  document.querySelectorAll(".challenge-opt").forEach(btn=>{
+
+    btn.disabled = false;
+
+    btn.classList.remove(
+      "correct",
+      "wrong"
+    );
+
+  });
+
+  document.querySelectorAll(
+    "#challenge .feedback"
+  ).forEach(feedback=>{
+
+    feedback.textContent = "";
+    feedback.className = "feedback";
+
+  });
+
+  document.querySelectorAll(
+    "#challenge .question"
+  ).forEach(question=>{
+
+    delete question.dataset.challengeLocked;
+
+  });
+
+}
+
+/* =====================================================
+   ENGLISH-ARABIC DICTIONARY DATA
+===================================================== */
+
+const dictionaryWords = [
+
+  /* BEN M'HIDI */
+
+  {
+    en:"Courage",
+    ar:"شجاعة",
+    category:"ben"
+  },
+  {
+    en:"Courageous",
+    ar:"شجاع",
+    category:"ben"
+  },
+  {
+    en:"Bravery",
+    ar:"الشجاعة",
+    category:"ben"
+  },
+  {
+    en:"Revolution",
+    ar:"ثورة",
+    category:"ben"
+  },
+  {
+    en:"Revolutionary",
+    ar:"ثوري / مناضل",
+    category:"ben"
+  },
+  {
+    en:"Independence",
+    ar:"الاستقلال",
+    category:"ben"
+  },
+  {
+    en:"Freedom",
+    ar:"الحرية",
+    category:"ben"
+  },
+  {
+    en:"Dignity",
+    ar:"الكرامة",
+    category:"ben"
+  },
+  {
+    en:"Colonial rule",
+    ar:"الحكم الاستعماري",
+    category:"ben"
+  },
+  {
+    en:"Nationalist movement",
+    ar:"الحركة الوطنية",
+    category:"ben"
+  },
+  {
+    en:"Liberation",
+    ar:"التحرير",
+    category:"ben"
+  },
+  {
+    en:"National Liberation Front",
+    ar:"جبهة التحرير الوطني",
+    category:"ben"
+  },
+  {
+    en:"Struggle",
+    ar:"الكفاح / النضال",
+    category:"ben"
+  },
+  {
+    en:"Armed struggle",
+    ar:"الكفاح المسلح",
+    category:"ben"
+  },
+  {
+    en:"Sacrifice",
+    ar:"التضحية",
+    category:"ben"
+  },
+  {
+    en:"Patriotism",
+    ar:"حب الوطن / الوطنية",
+    category:"ben"
+  },
+  {
+    en:"Arrested",
+    ar:"اعتُقل",
+    category:"ben"
+  },
+  {
+    en:"Principles",
+    ar:"المبادئ",
+    category:"ben"
+  },
+  {
+    en:"Responsibility",
+    ar:"المسؤولية",
+    category:"ben"
+  },
+  {
+    en:"United",
+    ar:"متحدون",
+    category:"ben"
+  },
+  {
+    en:"Refused",
+    ar:"رفض",
+    category:"ben"
+  },
+  {
+    en:"Abandon",
+    ar:"يتخلى عن",
+    category:"ben"
+  },
+  {
+    en:"Encouraged",
+    ar:"شجّع",
+    category:"ben"
+  },
+  {
+    en:"Calmness",
+    ar:"الهدوء",
+    category:"ben"
+  },
+  {
+    en:"Battle",
+    ar:"معركة",
+    category:"ben"
+  },
+  {
+    en:"Symbol",
+    ar:"رمز",
+    category:"ben"
+  },
+
+  /* SHAKESPEARE */
+
+  {
+    en:"Playwright",
+    ar:"كاتب مسرحي",
+    category:"shakespeare"
+  },
+  {
+    en:"Poet",
+    ar:"شاعر",
+    category:"shakespeare"
+  },
+  {
+    en:"Theatre",
+    ar:"مسرح",
+    category:"shakespeare"
+  },
+  {
+    en:"Actor",
+    ar:"ممثل",
+    category:"shakespeare"
+  },
+  {
+    en:"Audience",
+    ar:"الجمهور",
+    category:"shakespeare"
+  },
+  {
+    en:"Play",
+    ar:"مسرحية",
+    category:"shakespeare"
+  },
+  {
+    en:"Tragedy",
+    ar:"مأساة / مسرحية تراجيدية",
+    category:"shakespeare"
+  },
+  {
+    en:"Comedy",
+    ar:"كوميديا / مسرحية هزلية",
+    category:"shakespeare"
+  },
+  {
+    en:"Historical play",
+    ar:"مسرحية تاريخية",
+    category:"shakespeare"
+  },
+  {
+    en:"Ambition",
+    ar:"الطموح",
+    category:"shakespeare"
+  },
+  {
+    en:"Jealousy",
+    ar:"الغيرة",
+    category:"shakespeare"
+  },
+  {
+    en:"Power",
+    ar:"القوة / السلطة",
+    category:"shakespeare"
+  },
+  {
+    en:"Relationships",
+    ar:"العلاقات",
+    category:"shakespeare"
+  },
+  {
+    en:"Characters",
+    ar:"الشخصيات",
+    category:"shakespeare"
+  },
+  {
+    en:"Memorable",
+    ar:"لا يُنسى",
+    category:"shakespeare"
+  },
+  {
+    en:"Performed",
+    ar:"عُرضت / مُثّلت",
+    category:"shakespeare"
+  },
+  {
+    en:"Translated",
+    ar:"تُرجمت",
+    category:"shakespeare"
+  },
+  {
+    en:"Literature",
+    ar:"الأدب",
+    category:"shakespeare"
+  },
+  {
+    en:"Influential",
+    ar:"مؤثر",
+    category:"shakespeare"
+  },
+  {
+    en:"Influence",
+    ar:"تأثير",
+    category:"shakespeare"
+  },
+  {
+    en:"Writer",
+    ar:"كاتب",
+    category:"shakespeare"
+  },
+  {
+    en:"Artist",
+    ar:"فنان",
+    category:"shakespeare"
+  },
+  {
+    en:"Centuries",
+    ar:"قرون",
+    category:"shakespeare"
+  },
+
+  /* GENERAL READING VOCABULARY */
+
+  {
+    en:"Remarkable",
+    ar:"متميز / استثنائي",
+    category:"general"
+  },
+  {
+    en:"Biography",
+    ar:"سيرة ذاتية",
+    category:"general"
+  },
+  {
+    en:"Famous",
+    ar:"مشهور",
+    category:"general"
+  },
+  {
+    en:"Well-known",
+    ar:"معروف / مشهور",
+    category:"general"
+  },
+  {
+    en:"Achievement",
+    ar:"إنجاز",
+    category:"general"
+  },
+  {
+    en:"Legacy",
+    ar:"إرث",
+    category:"general"
+  },
+  {
+    en:"Born",
+    ar:"وُلِد",
+    category:"general"
+  },
+  {
+    en:"Died",
+    ar:"تُوفّي",
+    category:"general"
+  },
+  {
+    en:"Birth",
+    ar:"ميلاد",
+    category:"general"
+  },
+  {
+    en:"Death",
+    ar:"وفاة",
+    category:"general"
+  },
+  {
+    en:"Historical",
+    ar:"تاريخي",
+    category:"general"
+  },
+  {
+    en:"Important",
+    ar:"مهم",
+    category:"general"
+  },
+  {
+    en:"Leader",
+    ar:"قائد",
+    category:"general"
+  },
+  {
+    en:"Movement",
+    ar:"حركة",
+    category:"general"
+  },
+  {
+    en:"Event",
+    ar:"حدث",
+    category:"general"
+  },
+  {
+    en:"Evidence",
+    ar:"دليل",
+    category:"general"
+  },
+  {
+    en:"Justify",
+    ar:"برّر إجابتك",
+    category:"general"
+  },
+  {
+    en:"According to the text",
+    ar:"حسب النص",
+    category:"general"
+  },
+  {
+    en:"True",
+    ar:"صحيح",
+    category:"general"
+  },
+  {
+    en:"False",
+    ar:"خطأ",
+    category:"general"
+  },
+  {
+    en:"Compare",
+    ar:"قارن",
+    category:"general"
+  },
+  {
+    en:"Discover",
+    ar:"اكتشف",
+    category:"general"
+  }
+
+];
+
+/* =====================================================
+   DICTIONARY ELEMENTS
+===================================================== */
+
+const dictionaryPanel =
+  document.getElementById("dictionaryPanel");
+
+const dictionaryLauncher =
+  document.getElementById("dictionaryLauncher");
+
+const dictionarySearch =
+  document.getElementById("dictionarySearch");
+
+const dictionaryList =
+  document.getElementById("dictionaryList");
+
+const dictionaryCount =
+  document.getElementById("dictionaryCount");
+
+let activeDictionaryCategory = "all";
+
+/* =====================================================
+   OPEN / CLOSE DICTIONARY
+===================================================== */
+
+function toggleDictionary(){
+
+  if(dictionaryPanel.hidden){
+    openDictionary();
+  }else{
+    closeDictionary();
+  }
+
+}
+
+function openDictionary(){
+
+  dictionaryPanel.hidden = false;
+
+  dictionaryLauncher.setAttribute(
+    "aria-expanded",
+    "true"
+  );
+
+  renderDictionary();
+
+  dictionarySearch.focus();
+
+}
+
+function closeDictionary(){
+
+  dictionaryPanel.hidden = true;
+
+  dictionaryLauncher.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+  if("speechSynthesis" in window){
+    window.speechSynthesis.cancel();
+  }
+
+  dictionaryLauncher.focus();
+
+}
+
+/* =====================================================
+   RENDER DICTIONARY
+===================================================== */
+
+function renderDictionary(){
+
+  const searchTerm =
+    dictionarySearch.value
+      .trim()
+      .toLocaleLowerCase();
+
+  const filteredWords = dictionaryWords.filter(word=>{
+
+    const matchesCategory =
+      activeDictionaryCategory === "all" ||
+      word.category === activeDictionaryCategory;
+
+    const matchesSearch =
+      word.en.toLocaleLowerCase().includes(searchTerm) ||
+      word.ar.includes(searchTerm);
+
+    return matchesCategory && matchesSearch;
+
+  });
+
+  dictionaryList.innerHTML = "";
+
+  if(filteredWords.length === 0){
+
+    const empty = document.createElement("div");
+
+    empty.className = "dictionary-empty";
+
+    empty.textContent =
+      "No matching words found. Try another word.";
+
+    dictionaryList.appendChild(empty);
+
+  }else{
+
+    filteredWords.forEach(word=>{
+
+      const entry = document.createElement("div");
+      entry.className = "dictionary-entry";
+
+      const main = document.createElement("div");
+      main.className = "dictionary-entry-main";
+
+      const english = document.createElement("div");
+      english.className = "dictionary-english";
+      english.textContent = word.en;
+
+      const arabic = document.createElement("div");
+      arabic.className = "dictionary-arabic";
+      arabic.lang = "ar";
+      arabic.dir = "rtl";
+      arabic.textContent = word.ar;
+
+      main.appendChild(english);
+      main.appendChild(arabic);
+
+      const speak = document.createElement("button");
+
+      speak.className = "speak-btn";
+      speak.type = "button";
+      speak.textContent = "🔊";
+
+      speak.setAttribute(
+        "aria-label",
+        "Pronounce " + word.en
+      );
+
+      speak.addEventListener("click",()=>{
+        pronounceWord(word.en);
+      });
+
+      entry.appendChild(main);
+      entry.appendChild(speak);
+
+      dictionaryList.appendChild(entry);
+
+    });
+
+  }
+
+  dictionaryCount.textContent =
+    filteredWords.length +
+    " words • Tap 🔊 for English pronunciation";
+
+}
+
+/* =====================================================
+   DICTIONARY SEARCH
+===================================================== */
+
+dictionarySearch.addEventListener(
+  "input",
+  renderDictionary
+);
+
+/* =====================================================
+   DICTIONARY CATEGORY FILTERS
+===================================================== */
+
+document.querySelectorAll(
+  ".dictionary-filter"
+).forEach(button=>{
+
+  button.addEventListener("click",()=>{
+
+    activeDictionaryCategory =
+      button.dataset.category;
+
+    document.querySelectorAll(
+      ".dictionary-filter"
+    ).forEach(filter=>{
+
+      const selected =
+        filter === button;
+
+      filter.classList.toggle(
+        "active",
+        selected
+      );
+
+      filter.setAttribute(
+        "aria-pressed",
+        selected ? "true" : "false"
+      );
+
+    });
+
+    renderDictionary();
+
+    dictionaryList.scrollTop = 0;
+
+  });
+
+});
+
+/* =====================================================
+   ENGLISH PRONUNCIATION
+===================================================== */
+
+function pronounceWord(word){
+
+  if(!("speechSynthesis" in window)){
+
+    dictionaryCount.textContent =
+      "Audio pronunciation is not supported by this browser.";
+
+    return;
+
+  }
+
+  window.speechSynthesis.cancel();
+
+  const utterance =
+    new SpeechSynthesisUtterance(word);
+
+  utterance.lang = "en-GB";
+  utterance.rate = 0.85;
+  utterance.pitch = 1;
+
+  window.speechSynthesis.speak(utterance);
+
+}
+
+/* =====================================================
+   CLOSE DICTIONARY WITH ESCAPE
+===================================================== */
+
+document.addEventListener("keydown",event=>{
+
+  if(
+    event.key === "Escape" &&
+    !dictionaryPanel.hidden
+  ){
+
+    closeDictionary();
+
+  }
+
+});
+
+/* =====================================================
+   CLOSE DICTIONARY WHEN CLICKING OUTSIDE
+===================================================== */
+
+document.addEventListener("pointerdown",event=>{
+
+  if(dictionaryPanel.hidden){
+    return;
+  }
+
+  if(
+    !dictionaryPanel.contains(event.target) &&
+    !dictionaryLauncher.contains(event.target)
+  ){
+
+    closeDictionary();
+
+  }
+
+});
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+document.querySelectorAll(
+  ".dictionary-filter"
+).forEach(button=>{
+
+  button.setAttribute(
+    "aria-pressed",
+    button.dataset.category === "all"
+      ? "true"
+      : "false"
+  );
+
+});
+
+renderDictionary();
+
+updateProgress();
+
+</script>
+
+</body>
+</html>

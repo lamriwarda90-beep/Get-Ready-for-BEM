@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102c55">
+
+<title>BEM Past Papers 2021–2026 | My English Space</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#102c55;
+  --blue:#2477c4;
+  --gold:#ffcf68;
+  --purple:#7c54c9;
+  --green:#158968;
+  --red:#c44858;
+  --ink:#20334e;
+  --muted:#63778c;
+  --line:#dce7f5;
+  --bg:#f3f7ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  font-family:Nunito,Arial,sans-serif;
+  color:var(--ink);
+  line-height:1.7;
+}
+h1,h2,h3,h4{
+  font-family:"Baloo 2",Arial,sans-serif;
+  line-height:1.2;
+}
+button,textarea,input{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1120px,94%);margin:auto}
+
+.top{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#0b2342;
+  color:white;
+  box-shadow:0 8px 24px #102c5525;
+}
+.top .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  min-height:68px;
+  flex-wrap:wrap;
+}
+.brand{font-weight:900;font-size:19px}
+.back{
+  background:var(--gold);
+  color:var(--navy);
+  border-radius:30px;
+  padding:9px 15px;
+  font-weight:900;
+  font-size:12px;
+}
+.hero{
+  background:
+    radial-gradient(circle at 85% 10%,#ffffff25,transparent 35%),
+    linear-gradient(125deg,#102c55,#236da9 65%,#7555af);
+  color:white;
+  padding:74px 0 82px;
+}
+.badge{
+  display:inline-block;
+  border:1px solid #ffffff55;
+  border-radius:30px;
+  padding:7px 15px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+.hero h1{
+  font-size:clamp(38px,6vw,68px);
+  margin:18px 0 10px;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{
+  max-width:720px;
+  font-size:15px;
+  color:#e9f3ff;
+  font-weight:700;
+}
+.stats{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:25px;
+}
+.stats span{
+  background:#ffffff22;
+  border:1px solid #ffffff40;
+  border-radius:16px;
+  padding:12px 20px;
+  font-weight:900;
+}
+.section{padding:55px 0}
+.section-title{
+  text-align:center;
+  margin:0 0 25px;
+  font-size:clamp(29px,4vw,41px);
+  color:var(--navy);
+}
+.intro{
+  text-align:center;
+  color:var(--muted);
+  max-width:770px;
+  margin:-10px auto 28px;
+  font-size:13px;
+  font-weight:800;
+}
+.years{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+.year{
+  border:1px solid var(--line);
+  border-radius:21px;
+  background:white;
+  padding:23px;
+  text-align:left;
+  box-shadow:0 12px 30px #102c5510;
+  transition:.2s;
+}
+.year:hover,.year.active{
+  transform:translateY(-3px);
+  border-color:var(--blue);
+  box-shadow:0 16px 35px #2469ad22;
+}
+.year .number{
+  font:800 37px "Baloo 2";
+  color:var(--blue);
+}
+.year h3{font-size:19px;margin:5px 0}
+.year p{
+  font-size:12px;
+  color:var(--muted);
+  margin:8px 0;
+  font-weight:800;
+}
+.pill{
+  display:inline-block;
+  background:#eaf4ff;
+  color:#1d65a6;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:900;
+}
+.paper{
+  display:none;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:24px;
+  box-shadow:0 16px 50px #102c5515;
+  overflow:hidden;
+  margin-top:32px;
+}
+.paper.show{display:block}
+.paperhead{
+  padding:27px 30px;
+  background:linear-gradient(120deg,var(--navy),#316ca9);
+  color:white;
+}
+.paperhead h2{font-size:31px;margin:8px 0}
+.paperhead p{font-size:12px;font-weight:800;margin:0}
+.toolbar{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:17px;
+}
+.btn{
+  border:0;
+  border-radius:25px;
+  padding:11px 18px;
+  font-size:12px;
+  font-weight:900;
+  background:var(--blue);
+  color:white;
+}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.white{background:white;color:var(--navy)}
+.btn.green{background:var(--green)}
+.btn:focus-visible,
+.year:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+  outline:3px solid #ffbc39;
+  outline-offset:2px;
+}
+.paperbody{padding:clamp(17px,4vw,34px)}
+.examtitle{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  border-bottom:2px solid var(--line);
+  padding-bottom:11px;
+  margin:35px 0 18px;
+}
+.examtitle h3{
+  font-size:26px;
+  color:var(--navy);
+  margin:0;
+}
+.mark{
+  font-size:12px;
+  font-weight:900;
+  color:#1c659e;
+  background:#e9f3ff;
+  padding:6px 12px;
+  border-radius:25px;
+}
+.passage{
+  background:#f1f7ff;
+  border:1px solid #d8e8f9;
+  padding:25px;
+  border-radius:18px;
+}
+.passage h3{
+  text-align:center;
+  font-size:27px;
+  margin:0 0 18px;
+  color:var(--navy);
+}
+.passage p{
+  text-align:justify;
+  font-size:14px;
+  font-weight:750;
+  line-height:2;
+  margin:0 0 13px;
+}
+.activity{margin:26px 0 15px}
+.activity h4{
+  font-size:22px;
+  color:var(--navy);
+  margin:0 0 5px;
+}
+.q{
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:16px;
+  margin:12px 0;
+  background:white;
+}
+.q strong{
+  display:block;
+  font-size:13px;
+  margin-bottom:10px;
+}
+.q small{color:var(--blue);font-weight:900}
+.choices{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:8px;
+}
+.choice{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:10px;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:800;
+}
+.choice:has(input:checked){
+  background:#eaf5ff;
+  border-color:var(--blue);
+}
+.choice input{accent-color:var(--blue)}
+.feedback{
+  display:none;
+  border-radius:11px;
+  padding:10px 12px;
+  margin-top:10px;
+  font-size:12px;
+  font-weight:800;
+}
+.feedback.show{display:block}
+.feedback.good{background:#e4f8ed;color:#126544}
+.feedback.bad{background:#fff0f0;color:#a23b48}
+.writing{
+  background:#fff8e7;
+  border:1px solid #f0dbad;
+  border-radius:18px;
+  padding:23px;
+}
+.writing p,.writing li{font-size:13px;font-weight:800}
+.writing ul{padding-left:23px}
+.editor{
+  width:100%;
+  min-height:220px;
+  border:2px solid #d9e5f3;
+  border-radius:15px;
+  padding:16px;
+  resize:vertical;
+  margin-top:15px;
+  font-size:14px;
+  line-height:1.9;
+}
+.rubric{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:9px;
+  margin:17px 0;
+}
+.rubric div{
+  background:#f1f6ff;
+  border-radius:13px;
+  padding:14px;
+  text-align:center;
+  font-size:11px;
+  font-weight:900;
+}
+.rubric b{
+  display:block;
+  color:var(--blue);
+  font-size:23px;
+}
+.result{
+  display:none;
+  background:#e9f5ff;
+  border-radius:18px;
+  padding:25px;
+  margin:25px 0;
+  text-align:center;
+}
+.result strong{
+  font:800 51px "Baloo 2";
+  color:var(--blue);
+}
+.result p{font-size:13px;font-weight:800}
+.note{
+  background:#fff7e4;
+  border-left:4px solid #edab44;
+  padding:14px 18px;
+  border-radius:0 12px 12px 0;
+  font-size:12px;
+  font-weight:800;
+  margin:20px 0;
+}
+.progress{
+  padding:25px;
+  border-radius:20px;
+  background:white;
+  border:1px solid var(--line);
+}
+.progressgrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.progressitem{
+  padding:14px;
+  border-radius:13px;
+  background:#f0f6ff;
+  font-size:12px;
+  font-weight:900;
+}
+.footer{
+  text-align:center;
+  background:#0b2342;
+  color:#dceafa;
+  padding:30px;
+  font-size:12px;
+  font-weight:800;
+}
+@media(max-width:700px){
+  .years,.progressgrid{grid-template-columns:repeat(2,1fr)}
+  .rubric{grid-template-columns:repeat(2,1fr)}
+  .top .wrap{padding:10px 0}
+  .paperhead{padding:20px}
+}
+@media(max-width:440px){
+  .years,.progressgrid{grid-template-columns:1fr}
+  .hero{padding:48px 0}
+}
+@media print{
+  .top,.hero,.years,.section-title,.intro,
+  .toolbar,.result,.footer,.progress,.btn{
+    display:none!important;
+  }
+  .paper{display:block!important;border:0;box-shadow:none}
+  .paperbody{padding:0}
+  .section{padding:0}
+  .q{break-inside:avoid}
+  .feedback{display:none!important}
+}
+</style>
+</head>
+
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">🎓 My English Space</a>
+    <a class="back" href="MS4-BEM-Preparation.html">
+      ← BEM Preparation
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">
+      MS4 · BEM PREPARATION · DESTINATION 05
+    </span>
+
+    <h1>Authentic BEM <span>Past Papers</span></h1>
+
+    <p>
+      Six examination sessions · Interactive activities ·
+      Correction-model guidance · Writing practice.
+      Choose a year and work through the examination.
+    </p>
+
+    <div class="stats">
+      <span>📚 2021–2026</span>
+      <span>🧠 Reading & Language: 14 pts</span>
+      <span>✍️ Writing: 6 pts</span>
+      <span>⏱️ 1 h 30 min</span>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+
+<section class="section">
+  <h2 class="section-title">Choose Your Examination</h2>
+
+  <p class="intro">
+    The activities are based on the uploaded examination papers.
+    Answer options use the supplied correction models where available.
+    Some original tasks have been adapted for interactive practice.
+  </p>
+
+  <div id="years" class="years"></div>
+
+  <div id="paper" class="paper" aria-live="polite"></div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🏆 My Progress</h2>
+
+  <div class="progress">
+    <p class="intro">
+      Your best automatically checked score is saved on this device.
+      Written Expression is assessed separately.
+    </p>
+
+    <div id="progress" class="progressgrid"></div>
+
+    <button
+      class="btn"
+      style="margin-top:16px"
+      onclick="resetProgress()">
+      Reset Saved Scores
+    </button>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  MY ENGLISH SPACE · MS4 · BEM Past Papers Academy
+  <br>
+  Read Carefully · Answer Confidently · Learn from Corrections
+</footer>
+
+<script>
+"use strict";
+
+/*
+  DATA FORMAT
+
+  Each question is:
+  [
+    question,
+    [options],
+    correctOptionIndex,
+    points
+  ]
+
+  Official answers are used when supplied.
+  BEM 2023 uses suggested corrections.
+*/
+
+const P = {
+
+  /* =====================================
+     BEM 2021
+  ===================================== */
+
+  2021: {
+    title: "The Little Martyr",
+    source: "Official correction provided",
+
+    passages: [
+      `Omar Yacef, better known as little Omar, is an Algerian martyr.
+      He was born in 1944 in the Casbah of Algiers.
+      He was the nephew of Saadi Yacef, “The Leader of the
+      Autonomous Zone of Algiers”.
+      Omar left school at the age of eleven and joined the Algerian
+      Revolution to be a liaison agent between the fighters and
+      the FLN (National Liberation Front) leaders.`,
+
+      `Omar, the intelligent and brave child, grew up in a big
+      familial house with Saadi Yacef.
+      He could see the famous freedom fighters of the Algerian
+      Revolution such as Abane Ramdane, Krim Belkacem,
+      Colonel Ouamrane, Rabah Bitat and Ali La Pointe.
+      Omar used to visit his uncle regularly; he was a courier
+      between the militants and the FLN leaders.
+      He succeeded to cross all police roadblocks and escape
+      from the French paratroopers in the hardest moments
+      of the Battle of Algiers.`,
+
+      `In October 1957, paratrooper commandos of the first
+      French Parachutes Regiments destroyed the house where
+      Omar, Hassiba Benbouali, Ali La Pointe and Hamid Bouhamidi
+      were hiding because they refused to surrender.`
+    ],
+
+    reading: [
+      {
+        title: "Activity 1 · True / False / Not Mentioned",
+        pts: 3,
+        items: [
+          [
+            "Omar’s uncle Saadi was the leader of the Autonomous Zone of Algiers.",
+            ["True", "False", "Not Mentioned"],
+            0, 1
+          ],
+          [
+            "Omar Yacef wished to live free in his country one day.",
+            ["True", "False", "Not Mentioned"],
+            2, 1
+          ],
+          [
+            "Omar Yacef died at the age of fourteen.",
+            ["True", "False", "Not Mentioned"],
+            1, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 2 · Answer the Questions",
+        pts: 2,
+        items: [
+          [
+            "When was Omar Yacef born?",
+            [
+              "He was born in 1944.",
+              "He was born in 1957.",
+              "He was born in 1938."
+            ],
+            0, 1
+          ],
+          [
+            "Did Omar Yacef and his companions surrender?",
+            [
+              "Yes, they did.",
+              "No, they did not.",
+              "The text does not say."
+            ],
+            1, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 3 · Match Words with Equivalents",
+        pts: 2,
+        items: [
+          ["brave", ["well-known", "the most difficult", "courageous", "large"], 2, .5],
+          ["big", ["well-known", "the most difficult", "courageous", "large"], 3, .5],
+          ["famous", ["well-known", "the most difficult", "courageous", "large"], 0, .5],
+          ["the hardest", ["well-known", "the most difficult", "courageous", "large"], 1, .5]
+        ]
+      }
+    ],
+
+    language: [
+      {
+        title: "Activity 1 · Correct the Mistakes",
+        pts: 2,
+        items: [
+          [
+            'Zohra Drif studied on a French primary school. Correct "on".',
+            ["in", "at", "on"],
+            1, .5
+          ],
+          [
+            'Zohra Drif ... she were ... Correct "were".',
+            ["was", "were", "is"],
+            0, .5
+          ],
+          [
+            '... the excellentest student ... Correct "excellentest".',
+            ["more excellent", "most excellent", "excellent"],
+            1, .5
+          ],
+          [
+            '... in his class. Correct "his".',
+            ["her", "their", "its"],
+            0, .5
+          ]
+        ]
+      },
+      {
+        title: "Activity 2 · Suitable Verb Tenses",
+        pts: 3,
+        items: [
+          [
+            "Zohra Drif (not to accept) French colonialism.",
+            ["did not accept", "does not accepted", "not accepted"],
+            0, 1
+          ],
+          [
+            "She (to take) part in the Algerian Revolution.",
+            ["taked", "took", "taken"],
+            1, 1
+          ],
+          [
+            "She (to place) a bomb in the French Milk Bar Café.",
+            ["places", "place", "placed"],
+            2, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 3 · Final -ed Pronunciation",
+        pts: 2,
+        items: [
+          ["sacrificed", ["/t/", "/d/", "/ɪd/"], 0, .5],
+          ["joined", ["/t/", "/d/", "/ɪd/"], 1, .5],
+          ["died", ["/t/", "/d/", "/ɪd/"], 1, .5],
+          ["participated", ["/t/", "/d/", "/ɪd/"], 2, .5]
+        ]
+      }
+    ],
+
+    writing: {
+      context: "Your school magazine is preparing an article about Algerian heroines.",
+      task: "Write a short school magazine article about Hassiba Benbouali.",
+      hints: [
+        "Name: Hassiba Benbouali; role: militant.",
+        "Born: 18 January 1938, Chlef.",
+        "1947: moved with her parents to Algiers.",
+        "1954: joined the Scouts Movement and the General Union of Algerian Muslim Students.",
+        "1954–1957: participated in the National Revolution.",
+        "Died: October 1957, Casbah of Algiers."
+      ]
+    }
+  },
+
+  /* =====================================
+     BEM 2022
+  ===================================== */
+
+  2022: {
+    title: "World Best Architectural Design for 2021",
+    source: "Official correction provided",
+
+    passages: [
+      `The Mosque of Algiers, also known as Djemaâ El Djazaïr,
+      was inaugurated in 2019. It was chosen as one of the best
+      international architectural designs for the year 2021.
+      It won the annual award granted by the Chicago Museum
+      as was revealed by the United States Embassy in Algeria.`,
+
+      `Algiers Mosque is the largest mosque in Africa and the
+      third in the world after Al Masjid El-Haram in Mecca
+      and Al Masjid En-Nabawi in Medina.
+      This religious, scientific and tourist building extends
+      over an area of 400,000 square metres.
+      It is situated in El Mohammadia, Algiers.
+      It includes a prayer hall of 20,000 square metres
+      with a capacity of more than 120,000 worshippers.`,
+
+      `The mosque is characterized by the largest minaret
+      in the world with a height of more than 265 metres.
+      It consists of 43 floors.
+      It also includes other facilities such as a “House of Quran”
+      with a capacity of 1,500 seats, an amphitheatre,
+      a cultural centre with an exhibition hall and a library
+      that accommodates a million books, as well as a car park
+      that can contain 7,000 cars, and a large yard surrounded
+      by gardens and basins.`,
+
+      `The Mosque of Algiers is truly a masterpiece of art
+      as well as an outstanding example of rich and prospering
+      history in the religion of Islam and the country of Algeria.`
+    ],
+
+    reading: [
+      {
+        title: "Activity 1 · Complete the Information Table",
+        pts: 3,
+        items: [
+          [
+            "Name of the landmark",
+            ["Djemaâ El Djazaïr", "Eiffel Tower", "Big Ben"],
+            0, .5
+          ],
+          [
+            "Date of inauguration",
+            ["2021", "2019", "2022"],
+            1, .5
+          ],
+          [
+            "Total area",
+            ["400,000 m²", "20,000 m²", "43 m²"],
+            0, .5
+          ],
+          [
+            "Location",
+            ["Oran", "El Mohammadia, Algiers", "Constantine"],
+            1, .5
+          ],
+          [
+            "Area of prayer hall",
+            ["20,000 m²", "400,000 m²", "265 m²"],
+            0, .5
+          ],
+          [
+            "Number of floors of the minaret",
+            ["40", "43", "45"],
+            1, .5
+          ]
+        ]
+      },
+      {
+        title: "Activity 2 · Answer the Questions",
+        pts: 2,
+        items: [
+          [
+            "Is the Mosque of Algiers the largest mosque in the world?",
+            [
+              "Yes, it is.",
+              "No, it is the largest in Africa and third in the world."
+            ],
+            1, 1
+          ],
+          [
+            "Which TWO facilities does it contain?",
+            [
+              "A library and an amphitheatre",
+              "A cinema and an airport",
+              "A train station and a hotel"
+            ],
+            0, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 3 · Synonyms and Opposites",
+        pts: 2,
+        items: [
+          ["selected =", ["chosen", "hidden", "finished"], 0, .5],
+          ["located =", ["destroyed", "situated", "painted"], 1, .5],
+          ["less ≠", ["small", "more", "poor"], 1, .5],
+          ["poor ≠", ["rich", "young", "large"], 0, .5]
+        ]
+      }
+    ],
+
+    language: [
+      {
+        title: "Activity 1 · Capitalisation and Punctuation",
+        pts: 2,
+        items: [
+          [
+            "Choose the correctly punctuated sentence.",
+            [
+              "Eiffel tower is the highest landmark in paris france.",
+              "Eiffel Tower is the highest landmark in Paris, France.",
+              "eiffel Tower is the highest landmark in Paris France"
+            ],
+            1, 2
+          ]
+        ]
+      },
+      {
+        title: "Activity 2 · Superlative Adjectives",
+        pts: 3,
+        items: [
+          [
+            "Big Ben is (famous) ... one.",
+            ["the most famous", "more famous", "the famousest"],
+            0, 1
+          ],
+          [
+            "It has (heavy) ... bell in the world.",
+            ["the more heavy", "the heaviest", "the heavyest"],
+            1, 1
+          ],
+          [
+            "London Eye gives tourists (good) ... view of the city.",
+            ["the goodest", "the better", "the best"],
+            2, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 3 · Final -ed Pronunciation",
+        pts: 2,
+        items: [
+          ["finished", ["/t/", "/d/", "/ɪd/"], 0, .5],
+          ["designed", ["/t/", "/d/", "/ɪd/"], 1, .5],
+          ["constructed", ["/t/", "/d/", "/ɪd/"], 2, .5],
+          ["surrounded", ["/t/", "/d/", "/ɪd/"], 2, .5]
+        ]
+      }
+    ],
+
+    writing: {
+      context: "You are preparing a tourism web article for World Tourism Day.",
+      task: "Write an article about a famous Algerian landmark.",
+      hints: [
+        "Name and type of landmark.",
+        "Location in Algeria.",
+        "Description, size or appearance.",
+        "When it was built or completed.",
+        "Why tourists should visit it."
+      ]
+    }
+  },
+
+  /* =====================================
+     BEM 2023
+  ===================================== */
+
+  2023: {
+    title: "Childhood Memories",
+    source: "Suggested corrections; official correction not supplied",
+
+    passages: [
+      `The charm of childhood is unforgettable.
+      The childhood days are more precious and leave an everlasting
+      impression on one’s life.
+      Those days are full of fun and innocent pleasure.`,
+
+      `I was the youngest son of my parents.
+      So, they loved me very much.
+      I was carefree and without any worries at all.
+      I had a lovely friend in my childhood days,
+      we were in the same class, we often recited aloud
+      from our books, and we shared many things in common
+      such as playing, dancing freely and chatting aimlessly.
+      We used to play together and enjoy that.
+      Everything was then so simple, innocent and wonderful.
+      We made paper boats on rainy days and my mother helped
+      us float them in the rainwater.
+      We also collected flowers, caught beautiful butterflies
+      and enjoyed our activities very much.
+      We were then afraid of going into the dark as we believed
+      ghosts roamed in the darkness.`,
+
+      `My school days were the best days of my life.
+      I still remember my first day at school.
+      I can still feel how warmly I was welcomed.
+      The affection I received from my teachers,
+      especially my teacher of Arabic who inspired me,
+      and the love I had from my classmates will never be forgotten.`,
+
+      `My childhood memories are still haunting my mind
+      and I wish they would return again in my life.`
+    ],
+
+    reading: [
+      {
+        title: "Activity 1 · True / False / Not Mentioned",
+        pts: 3,
+        items: [
+          [
+            "The author had a sad childhood.",
+            ["True", "False", "Not Mentioned"],
+            1, 1
+          ],
+          [
+            "He used to play video games with his friend.",
+            ["True", "False", "Not Mentioned"],
+            2, 1
+          ],
+          [
+            "The teacher of Arabic used to be his favourite one.",
+            ["True", "False", "Not Mentioned"],
+            2, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 2 · Pronoun Reference",
+        pts: 2,
+        items: [
+          [
+            '“they” in “they loved me” refers to ...',
+            ["his parents", "his teachers", "his friends"],
+            0, 1
+          ],
+          [
+            '“them” in “float them” refers to ...',
+            ["butterflies", "paper boats", "books"],
+            1, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 3 · Match Words and Definitions",
+        pts: 2,
+        items: [
+          [
+            "remember",
+            [
+              "feel with creative power",
+              "feeling of happiness",
+              "have or keep in memory",
+              "of great value and beauty"
+            ],
+            2, .5
+          ],
+          [
+            "pleasure",
+            [
+              "feel with creative power",
+              "feeling of happiness",
+              "have or keep in memory",
+              "of great value and beauty"
+            ],
+            1, .5
+          ],
+          [
+            "precious",
+            [
+              "feel with creative power",
+              "feeling of happiness",
+              "have or keep in memory",
+              "of great value and beauty"
+            ],
+            3, .5
+          ],
+          [
+            "inspire",
+            [
+              "feel with creative power",
+              "feeling of happiness",
+              "have or keep in memory",
+              "of great value and beauty"
+            ],
+            0, .5
+          ]
+        ]
+      }
+    ],
+
+    language: [
+      {
+        title: "Activity 1 · Capitalisation and Punctuation",
+        pts: 2,
+        items: [
+          [
+            "Choose the correctly punctuated sentence.",
+            [
+              "After school, we used to play games, climb trees and fly our kites.",
+              "after school we used to play games climb trees and fly our kites",
+              "After school we used to play games climb trees and fly our kites"
+            ],
+            0, 2
+          ]
+        ]
+      },
+      {
+        title: "Activity 2 · Suitable Tenses",
+        pts: 3,
+        items: [
+          [
+            "In my primary school days, I (to record) all my events in a personal diary.",
+            ["recorded", "record", "recording"],
+            0, 1
+          ],
+          [
+            "I remember how happy my parents (to be).",
+            ["was", "were", "are"],
+            1, 1
+          ],
+          [
+            "They (to buy) me a nice blue bike.",
+            ["buyed", "buy", "bought"],
+            2, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 3 · Vowel Sounds",
+        pts: 2,
+        items: [
+          ["kite", ["/eɪ/", "/aɪ/"], 1, .5],
+          ["amazing", ["/eɪ/", "/aɪ/"], 0, .5],
+          ["favourite", ["/eɪ/", "/aɪ/"], 0, .5],
+          ["primary", ["/eɪ/", "/aɪ/"], 1, .5]
+        ]
+      }
+    ],
+
+    writing: {
+      context: "Your school is organising a World Children’s Day blog contest.",
+      task: "Write a passage about your childhood memories.",
+      hints: [
+        "Best or worst childhood memories, activities and games.",
+        "Your primary school days, first day, teachers and friends.",
+        "Your feelings and emotions about these experiences."
+      ]
+    }
+  },
+
+  /* =====================================
+     BEM 2024
+  ===================================== */
+
+  2024: {
+    title: "A Message from Gaza’s Children",
+    source: "Official correction provided",
+
+    passages: [
+      `We are children from Gaza Strip.
+      Our home is a small place with tiny streets and lots of people
+      who live close to each other.
+      Because it is so small, everywhere is dangerous and there is
+      no safe place to take shelter.`,
+
+      `We want you to know that Gaza, our home, is being destroyed.
+      Even the nice places like towers, schools, and hospitals
+      are not excluded.
+      There is no electricity for hours at a time,
+      we all have to sleep on the floor or in hallways,
+      and it is really dark and scary at night.`,
+
+      `We have a lot of questions: why is this happening to us?
+      When will this war end?
+      What are other children around the world doing?
+      We have asked our parents, but unfortunately,
+      they do not have the answers.
+      We are wondering, what to do to stop all this.`,
+
+      `We know that other children around the world lead quiet
+      and calm lives.
+      While others dream of having video games,
+      we dream of ending the fight.
+      We hope that our homes, hospitals and schools will be rebuilt.
+      Consequently, we can open our books again and write
+      in our notebooks.
+      Moreover, we can go outside and play with friends
+      rather than hiding from bombs.`,
+
+      `We want Gaza to be a safe and beautiful place
+      where we can live in peace.
+      We still have hope.
+      But above all, we want this war to be the last war.`
+    ],
+
+    reading: [
+      {
+        title: "Activity 1 · Choose the Correct Answer",
+        pts: 2,
+        items: [
+          [
+            "Gaza’s children consider Gaza their ...",
+            ["shelter", "house", "refuge", "home"],
+            3, .5
+          ],
+          [
+            "Unfortunately, their buildings are ...",
+            ["demolished", "designed", "built", "painted"],
+            0, .5
+          ],
+          [
+            "Children of Gaza hope to ... the war.",
+            ["participate", "end", "fight", "start"],
+            1, .5
+          ],
+          [
+            "Their most important need is ...",
+            ["prosperity", "games", "peace", "food"],
+            2, .5
+          ]
+        ]
+      },
+      {
+        title: "Activity 2 · Answer the Questions",
+        pts: 3,
+        items: [
+          [
+            "Is Gaza a large city?",
+            ["Yes, it is.", "No, it is small."],
+            1, 1
+          ],
+          [
+            "Why are nights dark and scary?",
+            [
+              "Because there is no electricity.",
+              "Because children like darkness.",
+              "Because it is winter."
+            ],
+            0, 1
+          ],
+          [
+            "Which paragraph mentions that Gaza’s children miss studies?",
+            ["Paragraph 2", "Paragraph 3", "Paragraph 4"],
+            2, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 3 · Lexis",
+        pts: 2,
+        items: [
+          ["lovely =", ["beautiful", "tiny", "quiet"], 0, .5],
+          ["as a result =", ["however", "consequently", "above all"], 1, .5],
+          ["starting ≠", ["ending", "living", "hoping"], 0, .5],
+          ["peace ≠", ["calm", "hope", "war / fight"], 2, .5]
+        ]
+      }
+    ],
+
+    language: [
+      {
+        title: "Activity 1 · Fill in the Gaps",
+        pts: 2,
+        items: [
+          [
+            "I have ... dreamt of travelling ...",
+            ["always", "around", "but", "of"],
+            0, .5
+          ],
+          [
+            "... travelling ... the world.",
+            ["of", "around", "but", "always"],
+            1, .5
+          ],
+          [
+            "... not to have fun ... to deliver ...",
+            ["always", "of", "but", "around"],
+            2, .5
+          ],
+          [
+            "... the message ... those children.",
+            ["around", "but", "always", "of"],
+            3, .5
+          ]
+        ]
+      },
+      {
+        title: "Activity 2 · Suitable Tenses",
+        pts: 3,
+        items: [
+          [
+            "Children strongly (to believe) in peace.",
+            ["believe", "believed", "believes"],
+            0, 1
+          ],
+          [
+            "If the war (to come) to an end ...",
+            ["will come", "comes", "came"],
+            1, 1
+          ],
+          [
+            "... children (to realize) their dreams.",
+            ["realized", "realize", "will realize"],
+            2, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 3 · Final -s Pronunciation",
+        pts: 2,
+        items: [
+          ["books", ["/s/", "/z/", "/ɪz/"], 0, .5],
+          ["dreams", ["/s/", "/z/", "/ɪz/"], 1, .5],
+          ["places", ["/s/", "/z/", "/ɪz/"], 2, .5],
+          ["wishes", ["/s/", "/z/", "/ɪz/"], 2, .5]
+        ]
+      }
+    ],
+
+    writing: {
+      context: "Your school blog invites pupils to inspire their classmates.",
+      task: "Write a short article (6–10 lines) about your personality, your dream and your efforts to achieve it.",
+      hints: [
+        "Your personality traits.",
+        "The dream you want to realise.",
+        "The efforts you make to achieve it.",
+        "Use present simple and conditional type 1."
+      ]
+    }
+  },
+
+  /* =====================================
+     BEM 2025
+  ===================================== */
+
+  2025: {
+    title: "My Ideal Teacher",
+    source: "Official correction provided",
+
+    passages: [
+      `“Life is a lesson and success depends on how we learn it”:
+      this is my favourite quote from my English teacher.
+      My teacher is one of my role models in my life;
+      I like him very much.
+      He is a mentor who has shaped many students of our school.
+      Only when I see the students shine because of him,
+      I am able to understand how much a teacher can change
+      and influence them.`,
+
+      `My English teacher is unique, we have always enjoyed his class.
+      He is sociable, patient, caring, active, responsible,
+      respectful and best of all he is always cheerful.
+      His grammar and vocabulary sessions are so helpful
+      and because of his additional efforts,
+      we have stood out from students of other schools.`,
+
+      `My English teacher is my favourite teacher because
+      he also encourages and assists us in various competitions.
+      I would definitely mark his name behind my success
+      in every stage of life since he is the one who boosted up
+      my confidence level.
+      He never bores us and we all have achieved distinction
+      in English examination.
+      Without him, our English sessions would have been
+      monotonous and less interesting.`,
+
+      `I am really grateful to have such incredible teacher.
+      Thanks to him, I feel ready to handle whatever life throws at me.`
+    ],
+
+    reading: [
+      {
+        title: "Activity 1 · Choose the Correct Answer",
+        pts: 3,
+        items: [
+          [
+            "The text is about ...",
+            ["dream career", "childhood memories", "best teacher", "best friend"],
+            2, 1
+          ],
+          [
+            "My English teacher is ...",
+            ["careful", "strict", "careless", "lazy"],
+            0, 1
+          ],
+          [
+            "The role of my teacher is to ...",
+            ["bore students", "make fun of students", "be unfair", "support students"],
+            3, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 2 · Pronoun Reference",
+        pts: 2,
+        items: [
+          [
+            '“who” refers to ...',
+            ["the mentor / English teacher", "the writer", "the competitions"],
+            0, 1
+          ],
+          [
+            '“me” refers to ...',
+            ["the teacher", "the writer / student", "the school"],
+            1, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 3 · Match Words with Definitions",
+        pts: 2,
+        items: [
+          [
+            "favourite",
+            [
+              "achievement of hoped-for results",
+              "feeling of appreciation",
+              "preferred to all others",
+              "to inspire or affect"
+            ],
+            2, .5
+          ],
+          [
+            "influence",
+            [
+              "achievement of hoped-for results",
+              "feeling of appreciation",
+              "preferred to all others",
+              "to inspire or affect"
+            ],
+            3, .5
+          ],
+          [
+            "success",
+            [
+              "achievement of hoped-for results",
+              "feeling of appreciation",
+              "preferred to all others",
+              "to inspire or affect"
+            ],
+            0, .5
+          ],
+          [
+            "grateful",
+            [
+              "achievement of hoped-for results",
+              "feeling of appreciation",
+              "preferred to all others",
+              "to inspire or affect"
+            ],
+            1, .5
+          ]
+        ]
+      }
+    ],
+
+    language: [
+      {
+        title: "Activity 1 · Correct the Mistakes",
+        pts: 2,
+        items: [
+          [
+            'my teacher ... Correct "my".',
+            ["My", "my", "Mine"],
+            0, .5
+          ],
+          [
+            'teacher of arabic ... Correct "arabic".',
+            ["arabic", "Arabic", "ARABIC"],
+            1, .5
+          ],
+          [
+            'has got a amazing personality ... Correct "a".',
+            ["an", "a", "the"],
+            0, .5
+          ],
+          [
+            'personality wich makes ... Correct "wich".',
+            ["which", "witch", "whose"],
+            0, .5
+          ]
+        ]
+      },
+      {
+        title: "Activity 2 · Superlative Adjectives",
+        pts: 3,
+        items: [
+          [
+            "One of the (good) ... teachers ...",
+            ["better", "best", "goodest"],
+            1, 1
+          ],
+          [
+            "She is (helpful) ... teacher in the school.",
+            ["the most helpful", "the helpfulest", "more helpful"],
+            0, 1
+          ],
+          [
+            "Her teaching style is (great) ... of all.",
+            ["greater", "greatest", "the greatest"],
+            2, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 3 · Vowel Sounds",
+        pts: 2,
+        items: [
+          ["shine", ["/eɪ/", "/aɪ/"], 1, .5],
+          ["favourite", ["/eɪ/", "/aɪ/"], 0, .5],
+          ["grateful", ["/eɪ/", "/aɪ/"], 0, .5],
+          ["life", ["/eɪ/", "/aɪ/"], 1, .5]
+        ]
+      }
+    ],
+
+    writing: {
+      context: "Your school blog is celebrating inspiring teachers.",
+      task: "Write an article about your ideal teacher.",
+      hints: [
+        "Subject taught by the teacher.",
+        "Personality traits.",
+        "Why you prefer that teacher.",
+        "Your feelings towards him or her."
+      ]
+    }
+  },
+
+  /* =====================================
+     BEM 2026
+  ===================================== */
+
+  2026: {
+    title: "Mike’s Adventures in Macau",
+    source: "Official correction provided; passage transcription should be checked against original scan",
+
+    passages: [
+      `Spring is always a great time for travelling.
+      Last spring holidays, I planned a trip with my friend Alex
+      to Macau and Hong Kong.
+      They are small islands near southern China.`,
+
+      `Alex and I took a flight from Beijing to Macau.
+      The flight was short and not tiring.
+      When we arrived in Macau, we had to take a taxi to the hotel.
+      It was a pleasant hotel with a swimming pool
+      and several restaurants.
+      We could see the ocean from our hotel room window.`,
+
+      `On our first day, we travelled around the small island
+      of Macau and saw many old buildings, temples
+      and very famous old churches.
+      I was happy to see ancient things there.`,
+
+      `The next day, Alex and I decided to take a boat to Hong Kong.
+      It is a big city with a large mountain.
+      The weather was not good, so we just walked around the city
+      and ate “dim sum”, a Chinese delicious food,
+      at a nice restaurant.`,
+
+      `On our final day, we visited the Macau Tower
+      which is one of the attractive landmarks there.
+      We took a lift to the sightseeing level
+      where we admired the splendid scenery.
+      In the evening, we got on an airplane
+      and returned to Beijing.`,
+
+      `It was a very relaxing holiday,
+      and I hope to visit Macau and Hong Kong again in the future.`
+    ],
+
+    reading: [
+      {
+        title: "Activity 1 · True / False / Not Mentioned",
+        pts: 3,
+        items: [
+          [
+            "Mike and Alex travelled in summer.",
+            ["True", "False", "Not Mentioned"],
+            1, 1
+          ],
+          [
+            "The flight was very expensive.",
+            ["True", "False", "Not Mentioned"],
+            2, 1
+          ],
+          [
+            "They sailed from Macau to Hong Kong on the second day.",
+            ["True", "False", "Not Mentioned"],
+            0, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 2 · Answer the Questions",
+        pts: 2,
+        items: [
+          [
+            "What did Mike and Alex see in Macau?",
+            [
+              "Old buildings, temples and famous churches.",
+              "Only modern skyscrapers.",
+              "A desert and a museum."
+            ],
+            0, 1
+          ],
+          [
+            "Did they fly back to Beijing on the last day?",
+            [
+              "No, they did not.",
+              "Yes, they did.",
+              "Not mentioned."
+            ],
+            1, 1
+          ]
+        ]
+      },
+      {
+        title: "Activity 3 · Match Words and Definitions",
+        pts: 2,
+        items: [
+          [
+            "holiday",
+            [
+              "a building where people pay to spend the night",
+              "travelling by plane",
+              "a journey to a place and back",
+              "time spent out of work or school"
+            ],
+            3, .5
+          ],
+          [
+            "flight",
+            [
+              "a building where people pay to spend the night",
+              "travelling by plane",
+              "a journey to a place and back",
+              "time spent out of work or school"
+            ],
+            1, .5
+          ],
+          [
+            "trip",
+            [
+              "a building where people pay to spend the night",
+              "travelling by plane",
+              "a journey to a place and back",
+              "time spent out of work or school"
+            ],
+            2, .5
+          ],
+          [
+            "hotel",
+            [
+              "a building where people pay to spend the night",
+              "travelling by plane",
+              "a journey to a place and back",
+              "time spent out of work or school"
+            ],
+            0, .5
+          ]
+        ]
+      }
+    ],
+
+    language: [
+      {
+        title: "Activity 1 · Correct the Mistakes",
+        pts: 2,
+        items: [
+          [
+            'I prefere travelling ... Correct "prefere".',
+            ["prefer", "preferred", "preference"],
+            0, .5
+          ],
+          [
+            'travelling buy boat ... Correct "buy".',
+            ["buy", "by", "bye"],
+            1, .5
+          ],
+          [
+            'boat becose boats ... Correct "becose".',
+            ["because", "becose", "be cause"],
+            0, .5
+          ],
+          [
+            "cheaper than planes (misspelled in exam).",
+            ["plan", "planes", "planees"],
+            1, .5
+          ]
+        ]
+      },
+      {
+        title: "Activity 2 · Suitable Tenses",
+        pts: 3,
+        items: [
+          [
+            "The Algerian Sahara (to be) fascinating.",
+            ["was", "is", "were"],
+            1, .5
+          ],
+          [
+            "My friend and I (to visit) Tamanrasset.",
+            ["visited", "visit", "visiting"],
+            0, .5
+          ],
+          [
+            "We (to watch) the amazing sunset.",
+            ["watch", "watched", "watches"],
+            1, .5
+          ],
+          [
+            "We (to have) the opportunity ...",
+            ["have", "haved", "had"],
+            2, .5
+          ],
+          [
+            "We (not to forget) to explore the museum.",
+            ["did not forget", "do not forgot", "not forget"],
+            0, .5
+          ],
+          [
+            "Its paintings (to be) painted centuries ago.",
+            ["was", "were", "are"],
+            1, .5
+          ]
+        ]
+      },
+      {
+        title: "Activity 3 · Odd Vowel Sound",
+        pts: 2,
+        items: [
+          [
+            "they – take – plan – day",
+            ["they", "take", "plan", "day"],
+            2, .5
+          ],
+          [
+            "hotel – boat – old – saw",
+            ["hotel", "boat", "old", "saw"],
+            3, .5
+          ],
+          [
+            "lift – time – final – nice",
+            ["lift", "time", "final", "nice"],
+            0, .5
+          ],
+          [
+            "trip – flight – big – city",
+            ["trip", "flight", "big", "city"],
+            1, .5
+          ]
+        ]
+      }
+    ],
+
+    writing: {
+      context: "You explored a beautiful region of Algeria and want to share your itinerary on the International Travel Forum website.",
+      task: "Write a report about your trip in Algeria.",
+      hints: [
+        "Departure, destination and stopovers.",
+        "Places of interest: landmarks and monuments.",
+        "Different activities and your feelings.",
+        "Use past simple, chronological markers and a conclusion."
+      ]
+    }
+  }
+
+};
+
+/* ==========================================
+   INTERACTIVE EXAM ENGINE
+========================================== */
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;"
+}[c]));
+
+let current = null;
+let checked = false;
+
+function selectYear(year){
+
+  current = year;
+  checked = false;
+
+  const p = P[year];
+
+  document.querySelectorAll(".year").forEach(b => {
+    b.classList.toggle(
+      "active",
+      Number(b.dataset.year) === year
+    );
+  });
+
+  let html = `
+    <div class="paperhead">
+
+      <span class="badge">
+        BEM ENGLISH · ${year} · 20 POINTS
+      </span>
+
+      <h2>${esc(p.title)}</h2>
+
+      <p>${esc(p.source)}</p>
+
+      <div class="toolbar">
+
+        <button class="btn gold" onclick="checkPaper()">
+          ✓ Check Answers
+        </button>
+
+        <button class="btn white" onclick="selectYear(${year})">
+          ↻ Restart Paper
+        </button>
+
+        <button class="btn white" onclick="window.print()">
+          🖨 Print
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="paperbody">
+
+      <div class="note">
+        Read the passage and complete the activities.
+        Multiple-choice options are interactive adaptations
+        of the original examination tasks.
+        Corrections are based on the uploaded official models
+        where available.
+      </div>
+
+      <div class="passage">
+
+        <h3>${esc(p.title)}</h3>
+
+        ${p.passages.map(t => `<p>${esc(t)}</p>`).join("")}
+
+      </div>
+  `;
+
+  let n = 0;
+
+  for(const [label,sets] of [
+    ["PART ONE · A — Reading Comprehension",p.reading],
+    ["PART ONE · B — Mastery of Language",p.language]
+  ]){
+
+    html += `
+      <div class="examtitle">
+        <h3>${label}</h3>
+        <span class="mark">7 POINTS</span>
+      </div>
+    `;
+
+    for(const a of sets){
+
+      html += `
+        <div class="activity">
+
+          <h4>
+            ${esc(a.title)}
+            <span class="mark">${a.pts} pts</span>
+          </h4>
+      `;
+
+      for(const item of a.items){
+
+        const id = n++;
+
+        html += `
+          <div class="q" data-id="${id}">
+
+            <small>
+              ${item[3]} ${item[3] === 1 ? "point" : "points"}
+            </small>
+
+            <strong>${esc(item[0])}</strong>
+
+            <div class="choices">
+
+              ${item[1].map((o,i) => `
+                <label class="choice">
+                  <input
+                    type="radio"
+                    name="q${id}"
+                    value="${i}"
+                  >
+                  ${esc(o)}
+                </label>
+              `).join("")}
+
+            </div>
+
+            <div class="feedback" role="status"></div>
+
+          </div>
+        `;
+
+      }
+
+      html += "</div>";
+    }
+  }
+
+  html += `
+    <div class="examtitle">
+      <h3>PART TWO · Situation of Integration</h3>
+      <span class="mark">6 POINTS</span>
+    </div>
+
+    <div class="writing">
+
+      <p>
+        <b>Context:</b>
+        ${esc(p.writing.context)}
+      </p>
+
+      <p>
+        <b>Task:</b>
+        ${esc(p.writing.task)}
+      </p>
+
+      <b>Support / Hints</b>
+
+      <ul>
+        ${p.writing.hints.map(x => `<li>${esc(x)}</li>`).join("")}
+      </ul>
+
+    </div>
+
+    <textarea
+      id="writing"
+      class="editor"
+      placeholder="Write your paragraph or article here..."
+      aria-label="Written Expression"
+    ></textarea>
+
+    <p id="wordcount" style="font-size:12px;font-weight:900">
+      0 words · Draft saved on this device
+    </p>
+
+    <h3>📝 Writing Assessment Grid</h3>
+
+    <div class="rubric">
+      <div>Relevance<b>2</b></div>
+      <div>Coherence<b>1.5</b></div>
+      <div>Correct Use of Language<b>1.5</b></div>
+      <div>Excellence<b>1</b></div>
+    </div>
+
+    <div class="note">
+      Written Expression requires teacher assessment.
+      Objective answers total 14/20.
+      Writing contributes the remaining 6 points.
+    </div>
+
+    <div class="toolbar">
+
+      <button class="btn green" onclick="checkPaper()">
+        ✓ Check All Answers
+      </button>
+
+      <button
+        class="btn"
+        onclick="document.getElementById('paper').scrollIntoView({behavior:'smooth'})"
+      >
+        ↑ Back to Passage
+      </button>
+
+    </div>
+
+    <div class="result" id="result" aria-live="polite"></div>
+
+    </div>
+  `;
+
+  const area = document.getElementById("paper");
+
+  area.innerHTML = html;
+  area.classList.add("show");
+
+  const editor = document.getElementById("writing");
+
+  editor.value = load("bem_draft_" + year,"");
+
+  editor.addEventListener("input", e => {
+
+    save("bem_draft_" + year,e.target.value);
+
+    const count = e.target.value.trim()
+      ? e.target.value.trim().split(/\s+/).length
+      : 0;
+
+    document.getElementById("wordcount").textContent =
+      count + " words · Draft saved on this device";
+
+  });
+
+  editor.dispatchEvent(new Event("input"));
+
+  area.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+/* ==========================================
+   AUTOMATIC CORRECTION
+========================================== */
+
+function checkPaper(){
+
+  if(!current || checked) return;
+
+  const p = P[current];
+
+  let total = 0;
+  let reading = 0;
+  let language = 0;
+  let n = 0;
+
+  for(const [kind,sets] of [
+    ["r",p.reading],
+    ["l",p.language]
+  ]){
+
+    for(const a of sets){
+
+      for(const item of a.items){
+
+        const q = document.querySelector(
+          `.q[data-id="${n}"]`
+        );
+
+        const selected = q.querySelector("input:checked");
+
+        const ok =
+          !!selected &&
+          Number(selected.value) === item[2];
+
+        const f = q.querySelector(".feedback");
+
+        f.className =
+          "feedback show " + (ok ? "good" : "bad");
+
+        f.textContent =
+          (ok ? "✓ Correct. " : "✗ Review. ") +
+          "Accepted answer: " +
+          item[1][item[2]] +
+          ". " +
+          (
+            p.source.startsWith("Official")
+              ? "Official correction-based."
+              : "Suggested correction; verify with your teacher."
+          );
+
+        q.querySelectorAll("input").forEach(x => {
+          x.disabled = true;
+        });
+
+        if(ok){
+
+          total += item[3];
+
+          if(kind === "r"){
+            reading += item[3];
+          }else{
+            language += item[3];
+          }
+
+        }
+
+        n++;
+
+      }
+    }
+  }
+
+  checked = true;
+
+  const old = load("bem_score_" + current,-1);
+
+  if(total > old){
+    save("bem_score_" + current,total);
+  }
+
+  const r = document.getElementById("result");
+
+  r.style.display = "block";
+
+  r.innerHTML = `
+    <h3>🎉 Your Results · ${current}</h3>
+
+    <strong>
+      ${total.toFixed(1).replace(".0","")} / 14
+    </strong>
+
+    <p>
+      Reading: ${reading}/7
+      <br>
+      Mastery of Language: ${language}/7
+    </p>
+
+    <p>
+      Written Expression: Not Yet Marked /6
+    </p>
+
+    <p>
+      Read the corrections under every question.
+      Try again to improve your score!
+    </p>
+  `;
+
+  updateProgress();
+
+  r.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+}
+
+/* ==========================================
+   LOCAL STORAGE
+========================================== */
+
+function save(k,v){
+
+  try{
+    localStorage.setItem(k,JSON.stringify(v));
+  }catch(e){
+    console.warn("Storage unavailable.");
+  }
+
+}
+
+function load(k,d){
+
+  try{
+
+    const v = localStorage.getItem(k);
+
+    return v === null ? d : JSON.parse(v);
+
+  }catch(e){
+
+    return d;
+
+  }
+
+}
+
+/* ==========================================
+   PROGRESS TRACKING
+========================================== */
+
+function updateProgress(){
+
+  document.getElementById("progress").innerHTML =
+    Object.keys(P).map(y => {
+
+      const s = load("bem_score_" + y,null);
+
+      return `
+        <div class="progressitem">
+
+          📘 BEM ${y}
+
+          <br>
+
+          ${
+            s === null
+              ? "Not completed"
+              : `Best objective score: ${s}/14`
+          }
+
+        </div>
+      `;
+
+    }).join("");
+
+}
+
+function resetProgress(){
+
+  if(!confirm("Reset all saved scores?")) return;
+
+  Object.keys(P).forEach(y => {
+
+    try{
+      localStorage.removeItem("bem_score_" + y);
+    }catch(e){}
+
+  });
+
+  updateProgress();
+
+}
+
+/* ==========================================
+   CREATE EXAMINATION CARDS
+========================================== */
+
+document.getElementById("years").innerHTML =
+  Object.entries(P).map(([year,p]) => `
+
+    <button
+      class="year"
+      data-year="${year}"
+      onclick="selectYear(${year})"
+    >
+
+      <span class="number">${year}</span>
+
+      <h3>${esc(p.title)}</h3>
+
+      <p>
+        Reading · Language · Writing
+      </p>
+
+      <span class="pill">
+        START EXAM →
+      </span>
+
+    </button>
+
+  `).join("");
+
+updateProgress();
+
+</script>
+
+</body>
+</html>

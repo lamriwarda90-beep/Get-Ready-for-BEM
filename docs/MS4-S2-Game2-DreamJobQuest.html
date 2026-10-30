@@ -1,0 +1,4144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#c94f7b">
+
+<title>Dream Job Quest | MS4 Sequence 2 — Game 02</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   DREAM JOB QUEST — DESIGN SYSTEM
+========================================= */
+
+:root{
+
+  --pink:#ef6197;
+  --pink-dark:#c83d77;
+  --rose:#ff91b8;
+
+  --purple:#8d55b4;
+  --purple-dark:#542d69;
+  --lavender:#eee2ff;
+
+  --gold:#ffca60;
+  --gold-light:#fff0c8;
+
+  --mint:#35bd89;
+  --mint-light:#e5fff3;
+
+  --red:#ed6176;
+  --red-light:#fff0f3;
+
+  --blue:#579ce9;
+
+  --ink:#42314e;
+  --muted:#81748d;
+
+  --white:#ffffff;
+  --cream:#fff9fc;
+
+  --line:#f1dce9;
+
+  --shadow:0 22px 60px rgba(98,43,103,.14);
+  --shadow-sm:0 9px 25px rgba(98,43,103,.09);
+
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  margin:0;
+
+  font-family:"Nunito",sans-serif;
+
+  color:var(--ink);
+
+  min-height:100vh;
+
+  overflow-x:hidden;
+
+  background:
+    radial-gradient(
+      circle at 8% 8%,
+      rgba(255,255,255,.8) 0 75px,
+      transparent 77px
+    ),
+    radial-gradient(
+      circle at 93% 24%,
+      rgba(255,255,255,.5) 0 110px,
+      transparent 112px
+    ),
+    linear-gradient(
+      145deg,
+      #ffe4ef,
+      #ffd1e5 38%,
+      #e9d5ff 78%,
+      #fff0d6
+    );
+
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+button:disabled{
+  cursor:not-allowed;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible{
+  outline:3px solid var(--purple);
+  outline-offset:3px;
+}
+
+[hidden]{
+  display:none!important;
+}
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:0;
+}
+
+.float-item{
+
+  position:absolute;
+
+  font-size:32px;
+
+  opacity:.6;
+
+  animation:float 5s ease-in-out infinite;
+
+}
+
+.float-item:nth-child(1){
+  top:10%;
+  left:3%;
+}
+
+.float-item:nth-child(2){
+  top:22%;
+  right:5%;
+  animation-delay:1s;
+}
+
+.float-item:nth-child(3){
+  top:65%;
+  left:5%;
+  animation-delay:2s;
+}
+
+.float-item:nth-child(4){
+  bottom:10%;
+  right:7%;
+  animation-delay:1.5s;
+}
+
+@keyframes float{
+
+  0%,100%{
+    transform:translateY(0) rotate(-5deg);
+  }
+
+  50%{
+    transform:translateY(-15px) rotate(7deg);
+  }
+
+}
+
+/* =========================================
+   PAGE
+========================================= */
+
+.page{
+
+  width:min(1160px,94%);
+
+  margin:auto;
+
+  padding:22px 0 55px;
+
+  position:relative;
+
+  z-index:1;
+
+}
+
+/* =========================================
+   TOPBAR
+========================================= */
+
+.topbar{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:12px;
+
+  margin-bottom:20px;
+
+}
+
+.back-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  background:rgba(255,255,255,.94);
+
+  padding:12px 19px;
+
+  border-radius:99px;
+
+  border:1px solid white;
+
+  font-weight:900;
+
+  color:var(--purple-dark);
+
+  box-shadow:var(--shadow-sm);
+
+  transition:.2s;
+
+}
+
+.back-btn:hover{
+  transform:translateY(-3px);
+}
+
+.top-actions{
+  display:flex;
+  gap:9px;
+}
+
+.icon-btn{
+
+  width:45px;
+  height:45px;
+
+  border:1px solid white;
+
+  border-radius:15px;
+
+  background:white;
+
+  font-size:21px;
+
+  box-shadow:var(--shadow-sm);
+
+  transition:.2s;
+
+}
+
+.icon-btn:hover{
+  transform:translateY(-3px);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+
+  position:relative;
+
+  overflow:hidden;
+
+  display:grid;
+
+  grid-template-columns:1.15fr .85fr;
+
+  align-items:center;
+
+  gap:25px;
+
+  padding:38px;
+
+  background:rgba(255,255,255,.95);
+
+  border:2px solid white;
+
+  border-radius:35px;
+
+  box-shadow:var(--shadow);
+
+}
+
+.hero:before{
+
+  content:"";
+
+  position:absolute;
+
+  width:320px;
+  height:320px;
+
+  border-radius:50%;
+
+  background:#fff0f7;
+
+  right:-100px;
+  top:-120px;
+
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.eyebrow{
+
+  display:inline-block;
+
+  padding:8px 14px;
+
+  border-radius:99px;
+
+  background:var(--gold-light);
+
+  color:#8b5b18;
+
+  border:1px solid #f3d99c;
+
+  font:700 .72rem "Space Mono",monospace;
+
+  margin-bottom:18px;
+
+}
+
+.hero h1{
+
+  font-family:"Baloo 2",sans-serif;
+
+  font-size:clamp(2.7rem,5vw,4.8rem);
+
+  line-height:.98;
+
+  margin:0 0 17px;
+
+  color:var(--purple-dark);
+
+}
+
+.hero h1 span{
+  color:var(--pink);
+}
+
+.hero-description{
+
+  color:var(--muted);
+
+  font-size:1.04rem;
+
+  line-height:1.75;
+
+  max-width:600px;
+
+  margin:0 0 20px;
+
+}
+
+.hero-tags{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+}
+
+.hero-tag{
+
+  padding:8px 12px;
+
+  background:#fff2f8;
+
+  border:1px solid #f3d6e4;
+
+  border-radius:99px;
+
+  font-size:.77rem;
+
+  font-weight:900;
+
+}
+
+/* =========================================
+   ROCKET MASCOT
+========================================= */
+
+.mascot-area{
+
+  position:relative;
+
+  display:grid;
+
+  place-items:center;
+
+  z-index:2;
+
+}
+
+.mascot-circle{
+
+  position:relative;
+
+  width:260px;
+  height:260px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #fff8d6,
+      #ffd6e9 55%,
+      #d8c0ff
+    );
+
+  border:9px solid white;
+
+  box-shadow:
+    0 20px 40px rgba(116,55,121,.16),
+    inset 0 0 0 3px #f7e0ed;
+
+  display:grid;
+
+  place-items:center;
+
+}
+
+.rocket{
+
+  font-size:105px;
+
+  animation:rocketMove 3s ease-in-out infinite;
+
+}
+
+@keyframes rocketMove{
+
+  0%,100%{
+    transform:translateY(0) rotate(-8deg);
+  }
+
+  50%{
+    transform:translateY(-17px) rotate(5deg);
+  }
+
+}
+
+.mascot-label{
+
+  position:absolute;
+
+  bottom:-10px;
+
+  background:var(--purple-dark);
+
+  color:white;
+
+  border:4px solid white;
+
+  border-radius:99px;
+
+  padding:9px 18px;
+
+  font-size:.8rem;
+
+  font-weight:900;
+
+  white-space:nowrap;
+
+}
+
+.sparkle{
+
+  position:absolute;
+
+  font-size:29px;
+
+  animation:float 3s infinite;
+
+}
+
+.sparkle.one{
+  top:10px;
+  left:0;
+}
+
+.sparkle.two{
+  right:0;
+  bottom:55px;
+}
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard{
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:13px;
+
+  margin-top:20px;
+
+}
+
+.stat{
+
+  background:white;
+
+  border:1px solid white;
+
+  border-radius:22px;
+
+  padding:16px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:13px;
+
+  box-shadow:var(--shadow-sm);
+
+}
+
+.stat-icon{
+
+  width:52px;
+  height:52px;
+
+  flex-shrink:0;
+
+  display:grid;
+
+  place-items:center;
+
+  background:#ffe5f0;
+
+  border-radius:17px;
+
+  font-size:25px;
+
+}
+
+.stat:nth-child(2) .stat-icon{
+  background:var(--gold-light);
+}
+
+.stat:nth-child(3) .stat-icon{
+  background:var(--lavender);
+}
+
+.stat:nth-child(4) .stat-icon{
+  background:var(--mint-light);
+}
+
+.stat-value{
+
+  display:block;
+
+  font-family:"Baloo 2";
+
+  font-size:1.8rem;
+
+  font-weight:800;
+
+  color:var(--purple-dark);
+
+  line-height:1.1;
+
+}
+
+.stat-label{
+
+  font-size:.7rem;
+
+  font-weight:900;
+
+  color:var(--muted);
+
+  letter-spacing:.05em;
+
+}
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-panel{
+
+  background:white;
+
+  border:1px solid white;
+
+  border-radius:23px;
+
+  padding:19px 22px;
+
+  margin-top:16px;
+
+  box-shadow:var(--shadow-sm);
+
+}
+
+.progress-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+  font-weight:900;
+
+  margin-bottom:11px;
+
+}
+
+.progress-top span:last-child{
+
+  color:var(--pink-dark);
+
+  font-family:"Space Mono";
+
+  font-size:.8rem;
+
+}
+
+.progress-track{
+
+  height:15px;
+
+  background:#f3dce8;
+
+  border-radius:99px;
+
+  overflow:hidden;
+
+}
+
+.progress-fill{
+
+  height:100%;
+
+  width:0%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--pink),
+      var(--purple),
+      var(--gold)
+    );
+
+  border-radius:99px;
+
+  transition:width .45s ease;
+
+}
+
+.mission-dots{
+
+  display:grid;
+
+  grid-template-columns:repeat(5,1fr);
+
+  gap:9px;
+
+  margin-top:15px;
+
+}
+
+.mission-dot{
+
+  text-align:center;
+
+  background:#fff4fa;
+
+  border:1px solid #f1dce7;
+
+  border-radius:12px;
+
+  padding:9px 5px;
+
+  font-size:.72rem;
+
+  font-weight:900;
+
+  color:var(--muted);
+
+}
+
+.mission-dot.active{
+
+  background:var(--purple);
+
+  color:white;
+
+  border-color:var(--purple);
+
+}
+
+.mission-dot.complete{
+
+  background:var(--mint-light);
+
+  color:#177a52;
+
+  border-color:#a7e8cc;
+
+}
+
+/* =========================================
+   GAME SHELL
+========================================= */
+
+.game-shell{
+
+  margin-top:24px;
+
+  padding:32px;
+
+  min-height:520px;
+
+  background:rgba(255,255,255,.97);
+
+  border:2px solid white;
+
+  border-radius:34px;
+
+  box-shadow:var(--shadow);
+
+}
+
+.round{
+  display:none;
+}
+
+.round.active{
+
+  display:block;
+
+  animation:slideIn .35s ease;
+
+}
+
+@keyframes slideIn{
+
+  from{
+    opacity:0;
+    transform:translateY(15px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+.round-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+  margin-bottom:15px;
+
+}
+
+.round-badge{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:7px;
+
+  padding:9px 15px;
+
+  border-radius:99px;
+
+  background:#ffe5f0;
+
+  color:var(--pink-dark);
+
+  font-size:.76rem;
+
+  font-weight:900;
+
+}
+
+.round-points{
+
+  background:var(--gold-light);
+
+  color:#94651a;
+
+  border-radius:99px;
+
+  padding:8px 12px;
+
+  font:700 .72rem "Space Mono",monospace;
+
+}
+
+.round h2{
+
+  font-family:"Baloo 2";
+
+  font-size:clamp(1.8rem,4vw,2.5rem);
+
+  color:var(--purple-dark);
+
+  margin:0 0 8px;
+
+  line-height:1.15;
+
+}
+
+.round-description{
+
+  color:var(--muted);
+
+  line-height:1.75;
+
+  margin:0 0 22px;
+
+}
+
+/* =========================================
+   GUIDE
+========================================= */
+
+.guide{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:13px;
+
+  padding:15px;
+
+  background:
+    linear-gradient(
+      120deg,
+      #fff0f7,
+      #f2ebff
+    );
+
+  border:1px solid #efd7ec;
+
+  border-radius:19px;
+
+  margin-bottom:22px;
+
+}
+
+.guide-avatar{
+  font-size:35px;
+}
+
+.guide strong{
+
+  color:var(--purple-dark);
+
+  font-size:.8rem;
+
+}
+
+.guide p{
+
+  color:#6e5a7b;
+
+  margin:4px 0 0;
+
+  font-size:.9rem;
+
+  line-height:1.5;
+
+}
+
+/* =========================================
+   QUESTION
+========================================= */
+
+.question-card{
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff7fb,
+      #ffffff
+    );
+
+  border:2px solid #f3dbe7;
+
+  border-radius:25px;
+
+  padding:25px;
+
+  margin-bottom:18px;
+
+}
+
+.question-illustration{
+
+  font-size:49px;
+
+  margin-bottom:12px;
+
+}
+
+.question-text{
+
+  font-family:"Baloo 2";
+
+  font-size:clamp(1.25rem,3vw,1.65rem);
+
+  font-weight:700;
+
+  line-height:1.45;
+
+  color:var(--purple-dark);
+
+}
+
+.question-counter{
+
+  display:inline-block;
+
+  margin-bottom:12px;
+
+  padding:6px 11px;
+
+  background:var(--lavender);
+
+  border-radius:99px;
+
+  color:var(--purple-dark);
+
+  font-size:.72rem;
+
+  font-weight:900;
+
+}
+
+/* =========================================
+   ANSWERS
+========================================= */
+
+.answers{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:12px;
+
+}
+
+.answer{
+
+  min-height:76px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  background:white;
+
+  border:2px solid #efdae6;
+
+  border-radius:19px;
+
+  padding:16px;
+
+  text-align:left;
+
+  font-size:1rem;
+
+  font-weight:900;
+
+  color:var(--ink);
+
+  transition:.2s;
+
+}
+
+.answer:hover:not(:disabled){
+
+  transform:translateY(-3px);
+
+  border-color:var(--pink);
+
+  box-shadow:var(--shadow-sm);
+
+}
+
+.answer-icon{
+  font-size:25px;
+}
+
+.answer.correct{
+
+  background:var(--mint-light);
+
+  border-color:var(--mint);
+
+  color:#146a49;
+
+}
+
+.answer.wrong{
+
+  background:var(--red-light);
+
+  border-color:var(--red);
+
+  color:#aa354f;
+
+}
+
+.answer:disabled{
+  opacity:.7;
+}
+
+.answer.correct:disabled{
+  opacity:1;
+}
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+.feedback{
+
+  display:none;
+
+  padding:15px 17px;
+
+  margin-top:17px;
+
+  border-radius:16px;
+
+  font-weight:800;
+
+  line-height:1.65;
+
+}
+
+.feedback.show{
+  display:block;
+}
+
+.feedback.good{
+
+  background:var(--mint-light);
+
+  color:#17734e;
+
+  border:1px solid #b7efd6;
+
+}
+
+.feedback.bad{
+
+  background:var(--red-light);
+
+  color:#ad4058;
+
+  border:1px solid #f5c5d0;
+
+}
+
+.feedback.info{
+
+  background:var(--lavender);
+
+  color:#634294;
+
+  border:1px solid #dac8f2;
+
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.action-row{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:21px;
+
+}
+
+.btn{
+
+  border:0;
+
+  border-radius:99px;
+
+  padding:13px 23px;
+
+  font-weight:900;
+
+  font-size:.95rem;
+
+  transition:.2s;
+
+}
+
+.btn:hover:not(:disabled){
+  transform:translateY(-3px);
+}
+
+.btn-primary{
+
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--pink),
+      var(--purple)
+    );
+
+  box-shadow:0 10px 22px rgba(199,59,128,.22);
+
+}
+
+.btn-secondary{
+
+  color:var(--pink-dark);
+
+  background:#fff4fa;
+
+  border:1px solid #f0cbdc;
+
+}
+
+.btn-gold{
+
+  background:var(--gold);
+
+  color:#694708;
+
+}
+
+.btn:disabled{
+  opacity:.55;
+}
+
+/* =========================================
+   MISSION 4 — DREAM BUILDER
+========================================= */
+
+.dream-section{
+
+  margin-bottom:22px;
+
+}
+
+.dream-section h3{
+
+  font-family:"Baloo 2";
+
+  font-size:1.35rem;
+
+  color:var(--purple-dark);
+
+  margin:0 0 11px;
+
+}
+
+.dream-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:12px;
+
+}
+
+.dream-choice{
+
+  min-height:130px;
+
+  background:white;
+
+  border:2px solid #efdae6;
+
+  border-radius:20px;
+
+  padding:17px 12px;
+
+  text-align:center;
+
+  transition:.2s;
+
+}
+
+.dream-choice:hover{
+
+  transform:translateY(-3px);
+
+  border-color:var(--pink);
+
+}
+
+.dream-choice.selected{
+
+  background:var(--lavender);
+
+  border-color:var(--purple);
+
+  box-shadow:var(--shadow-sm);
+
+}
+
+.dream-icon{
+
+  display:block;
+
+  font-size:36px;
+
+  margin-bottom:9px;
+
+}
+
+.dream-choice strong{
+
+  display:block;
+
+  font-size:.9rem;
+
+  color:var(--purple-dark);
+
+}
+
+.dream-preview{
+
+  margin-top:22px;
+
+  padding:22px;
+
+  border-radius:22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff0f7,
+      #f1eaff
+    );
+
+  border:2px solid #eed7ec;
+
+}
+
+.dream-preview h3{
+
+  font-family:"Baloo 2";
+
+  color:var(--purple-dark);
+
+  margin:0 0 10px;
+
+}
+
+.dream-preview p{
+
+  line-height:1.8;
+
+  color:#6e587a;
+
+  margin:0;
+
+  font-weight:800;
+
+}
+
+.dream-preview strong{
+  color:var(--pink-dark);
+}
+
+/* =========================================
+   FINAL SCREEN
+========================================= */
+
+.final-screen{
+
+  display:none;
+
+  text-align:center;
+
+  padding:20px 0 10px;
+
+}
+
+.final-screen.show{
+
+  display:block;
+
+  animation:slideIn .5s ease;
+
+}
+
+.final-trophy{
+
+  font-size:95px;
+
+  animation:rocketMove 3s infinite;
+
+}
+
+.final-screen h2{
+
+  font-family:"Baloo 2";
+
+  font-size:clamp(2.1rem,5vw,3.3rem);
+
+  line-height:1.1;
+
+  color:var(--purple-dark);
+
+  margin:10px 0;
+
+}
+
+.final-description{
+
+  max-width:650px;
+
+  margin:10px auto 25px;
+
+  color:var(--muted);
+
+  line-height:1.75;
+
+}
+
+.final-score-card{
+
+  max-width:560px;
+
+  margin:auto;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff1f7,
+      #f5edff
+    );
+
+  border:2px solid white;
+
+  border-radius:27px;
+
+  padding:29px;
+
+}
+
+.final-score-number{
+
+  font-family:"Baloo 2";
+
+  font-size:4.3rem;
+
+  font-weight:800;
+
+  color:var(--pink-dark);
+
+  line-height:1;
+
+}
+
+.final-score-label{
+
+  color:var(--muted);
+
+  font-weight:900;
+
+}
+
+.final-details{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+
+  margin-top:18px;
+
+  font-weight:900;
+
+  color:var(--purple-dark);
+
+}
+
+.achievement{
+
+  display:inline-block;
+
+  margin-top:23px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd45e,
+      #ffeaa0
+    );
+
+  border:2px solid white;
+
+  border-radius:99px;
+
+  padding:13px 23px;
+
+  color:#78520e;
+
+  font-weight:900;
+
+}
+
+.final-dream{
+
+  max-width:680px;
+
+  margin:25px auto;
+
+  padding:22px;
+
+  background:white;
+
+  border:2px solid #efd7e6;
+
+  border-radius:22px;
+
+  line-height:1.8;
+
+  font-weight:800;
+
+  color:var(--purple-dark);
+
+}
+
+/* =========================================
+   TOAST
+========================================= */
+
+.toast{
+
+  position:fixed;
+
+  top:20px;
+
+  left:50%;
+
+  transform:translate(-50%,-140px);
+
+  z-index:500;
+
+  background:var(--purple-dark);
+
+  color:white;
+
+  padding:13px 22px;
+
+  border-radius:99px;
+
+  box-shadow:0 15px 35px rgba(55,30,80,.3);
+
+  font-weight:900;
+
+  text-align:center;
+
+  transition:transform .35s;
+
+}
+
+.toast.show{
+  transform:translate(-50%,0);
+}
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+.confetti{
+
+  position:fixed;
+
+  top:-20px;
+
+  width:9px;
+  height:16px;
+
+  z-index:400;
+
+  pointer-events:none;
+
+  animation:confettiFall 3s linear forwards;
+
+}
+
+@keyframes confettiFall{
+
+  to{
+
+    transform:
+      translateY(110vh)
+      rotate(720deg);
+
+    opacity:0;
+
+  }
+
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+  text-align:center;
+
+  margin-top:28px;
+
+  font-family:"Space Mono";
+
+  font-size:.7rem;
+
+  font-weight:700;
+
+  color:var(--purple-dark);
+
+  line-height:1.9;
+
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:850px){
+
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-description{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-tags{
+    justify-content:center;
+  }
+
+  .dashboard{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .mascot-circle{
+    width:215px;
+    height:215px;
+  }
+
+  .rocket{
+    font-size:85px;
+  }
+
+}
+
+@media(max-width:620px){
+
+  .page{
+    padding-top:14px;
+  }
+
+  .hero{
+    padding:27px 19px;
+    border-radius:27px;
+  }
+
+  .hero h1{
+    font-size:2.8rem;
+  }
+
+  .hero-description{
+    font-size:.95rem;
+  }
+
+  .mascot-circle{
+    width:185px;
+    height:185px;
+  }
+
+  .rocket{
+    font-size:73px;
+  }
+
+  .stat{
+    padding:12px;
+    gap:9px;
+  }
+
+  .stat-icon{
+    width:43px;
+    height:43px;
+    font-size:21px;
+  }
+
+  .stat-value{
+    font-size:1.5rem;
+  }
+
+  .game-shell{
+    padding:21px 16px;
+    border-radius:25px;
+  }
+
+  .answers,
+  .dream-grid{
+    grid-template-columns:1fr;
+  }
+
+  .dream-choice{
+    min-height:90px;
+  }
+
+  .mission-dot{
+    font-size:.6rem;
+  }
+
+  .question-card{
+    padding:19px;
+  }
+
+  .progress-panel{
+    padding:16px;
+  }
+
+  .topbar{
+    flex-wrap:wrap;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+
+    animation:none!important;
+
+    transition:none!important;
+
+    scroll-behavior:auto!important;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="background" aria-hidden="true">
+
+  <span class="float-item">⭐</span>
+  <span class="float-item">✨</span>
+  <span class="float-item">💖</span>
+  <span class="float-item">🌟</span>
+
+</div>
+
+<!-- TOAST -->
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  ⭐ Great work!
+</div>
+
+<div class="page">
+
+<!-- =========================================
+     TOP BAR
+========================================= -->
+
+<header class="topbar">
+
+  <a
+    href="MS4-S2-Games.html"
+    class="back-btn"
+  >
+    ← Games Map
+  </a>
+
+  <div class="top-actions">
+
+    <button
+      class="icon-btn"
+      id="soundBtn"
+      type="button"
+      onclick="toggleSound()"
+      aria-label="Toggle sound"
+      aria-pressed="true"
+      title="Toggle sound"
+    >
+      🔊
+    </button>
+
+    <button
+      class="icon-btn"
+      type="button"
+      onclick="restartGame()"
+      aria-label="Restart game"
+      title="Restart game"
+    >
+      🔄
+    </button>
+
+  </div>
+
+</header>
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <span class="eyebrow">
+      🎮 MS4 · SEQUENCE 2 · GAME 02
+    </span>
+
+    <h1>
+      Dream Job<br>
+      <span>Quest!</span> 🚀
+    </h1>
+
+    <p class="hero-description">
+
+      Welcome to the Future Kingdom!
+
+      Discover exciting professions, unlock
+      English–Arabic career vocabulary,
+      practise future plans and create
+      your own dream career.
+
+      Complete five exciting missions and
+      become a
+
+      <strong>Future Champion!</strong>
+
+    </p>
+
+    <div class="hero-tags">
+
+      <span class="hero-tag">
+        🚀 5 Missions
+      </span>
+
+      <span class="hero-tag">
+        💼 Career Vocabulary
+      </span>
+
+      <span class="hero-tag">
+        🇩🇿 English + Arabic
+      </span>
+
+      <span class="hero-tag">
+        🏆 Earn XP
+      </span>
+
+    </div>
+
+  </div>
+
+  <div class="mascot-area">
+
+    <div class="mascot-circle">
+
+      <span class="sparkle one">✨</span>
+
+      <div class="rocket">🚀</div>
+
+      <span class="sparkle two">⭐</span>
+
+      <div class="mascot-label">
+        CAPTAIN FUTURE
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     DASHBOARD
+========================================= -->
+
+<section class="dashboard" aria-label="Game statistics">
+
+  <div class="stat">
+
+    <div class="stat-icon">❤️</div>
+
+    <div>
+      <span class="stat-value" id="lives">5</span>
+      <span class="stat-label">LIVES</span>
+    </div>
+
+  </div>
+
+  <div class="stat">
+
+    <div class="stat-icon">⭐</div>
+
+    <div>
+      <span class="stat-value" id="xp">0</span>
+      <span class="stat-label">XP</span>
+    </div>
+
+  </div>
+
+  <div class="stat">
+
+    <div class="stat-icon">🔥</div>
+
+    <div>
+      <span class="stat-value" id="streak">0</span>
+      <span class="stat-label">STREAK</span>
+    </div>
+
+  </div>
+
+  <div class="stat">
+
+    <div class="stat-icon">🏆</div>
+
+    <div>
+      <span class="stat-value" id="roundNumber">1/5</span>
+      <span class="stat-label">MISSION</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     PROGRESS
+========================================= -->
+
+<section class="progress-panel">
+
+  <div class="progress-top">
+
+    <span>
+      🚀 YOUR DREAM JOURNEY
+    </span>
+
+    <span id="progressText">
+      0%
+    </span>
+
+  </div>
+
+  <div class="progress-track">
+
+    <div
+      class="progress-fill"
+      id="progressFill"
+      role="progressbar"
+      aria-label="Quest progress"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="0"
+    ></div>
+
+  </div>
+
+  <div class="mission-dots" id="missionDots">
+
+    <div class="mission-dot active">
+      1 · Careers
+    </div>
+
+    <div class="mission-dot">
+      2 · Words
+    </div>
+
+    <div class="mission-dot">
+      3 · Future
+    </div>
+
+    <div class="mission-dot">
+      4 · Dreams
+    </div>
+
+    <div class="mission-dot">
+      5 · BEM
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     GAME
+========================================= -->
+
+<main class="game-shell" id="gameShell">
+
+<!-- =========================================
+     MISSION 1
+========================================= -->
+
+<section class="round active" id="round1">
+
+  <div class="round-header">
+
+    <span class="round-badge">
+      💼 MISSION 01 · CAREER DISCOVERY
+    </span>
+
+    <span class="round-points">
+      UP TO +20 XP
+    </span>
+
+  </div>
+
+  <h2>
+    Discover Your Career World!
+  </h2>
+
+  <p class="round-description">
+
+    Read the clues carefully and choose
+    the correct profession.
+
+    You will answer three career questions.
+
+  </p>
+
+  <div class="guide">
+
+    <span class="guide-avatar">🚀</span>
+
+    <div>
+
+      <strong>CAPTAIN FUTURE SAYS</strong>
+
+      <p>
+        Think about what each person does
+        and where they work!
+      </p>
+
+    </div>
+
+  </div>
+
+  <div id="questionArea1"></div>
+
+  <div
+    class="feedback"
+    id="feedback1"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <div class="action-row">
+
+    <button
+      class="btn btn-secondary"
+      type="button"
+      onclick="showHint(1)"
+    >
+      💡 Give Me a Hint
+    </button>
+
+    <button
+      class="btn btn-primary"
+      id="next1"
+      type="button"
+      onclick="nextRound(2)"
+      hidden
+    >
+      Unlock Mission 2 → 🔐
+    </button>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     MISSION 2
+========================================= -->
+
+<section class="round" id="round2">
+
+  <div class="round-header">
+
+    <span class="round-badge">
+      🔐 MISSION 02 · VOCABULARY VAULT
+    </span>
+
+    <span class="round-points">
+      UP TO +20 XP
+    </span>
+
+  </div>
+
+  <h2>
+    Unlock the Secret Career Words!
+  </h2>
+
+  <p class="round-description">
+
+    Read the English word and choose
+    its correct Arabic meaning.
+
+    Unlock all three vocabulary treasures.
+
+  </p>
+
+  <div class="guide">
+
+    <span class="guide-avatar">🚀</span>
+
+    <div>
+
+      <strong>CAPTAIN FUTURE SAYS</strong>
+
+      <p>
+        Understanding career vocabulary
+        will help you talk about your future!
+      </p>
+
+    </div>
+
+  </div>
+
+  <div id="questionArea2"></div>
+
+  <div
+    class="feedback"
+    id="feedback2"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <div class="action-row">
+
+    <button
+      class="btn btn-secondary"
+      type="button"
+      onclick="showHint(2)"
+    >
+      💡 Meaning Hint
+    </button>
+
+    <button
+      class="btn btn-primary"
+      id="next2"
+      type="button"
+      onclick="nextRound(3)"
+      hidden
+    >
+      Mission 3 → 🧭
+    </button>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     MISSION 3
+========================================= -->
+
+<section class="round" id="round3">
+
+  <div class="round-header">
+
+    <span class="round-badge">
+      🧭 MISSION 03 · FUTURE COMPASS
+    </span>
+
+    <span class="round-points">
+      UP TO +20 XP
+    </span>
+
+  </div>
+
+  <h2>
+    Choose the Correct Future Form!
+  </h2>
+
+  <p class="round-description">
+
+    Read each situation and choose
+    the correct sentence or verb form.
+
+    Pay attention to future plans
+    and predictions.
+
+  </p>
+
+  <div class="guide">
+
+    <span class="guide-avatar">🚀</span>
+
+    <div>
+
+      <strong>CAPTAIN FUTURE SAYS</strong>
+
+      <p>
+        We often use <b>be going to</b> for
+        plans and <b>will</b> for predictions.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div id="questionArea3"></div>
+
+  <div
+    class="feedback"
+    id="feedback3"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <div class="action-row">
+
+    <button
+      class="btn btn-secondary"
+      type="button"
+      onclick="showHint(3)"
+    >
+      💡 Grammar Hint
+    </button>
+
+    <button
+      class="btn btn-primary"
+      id="next3"
+      type="button"
+      onclick="nextRound(4)"
+      hidden
+    >
+      Build My Dream → ✨
+    </button>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     MISSION 4
+========================================= -->
+
+<section class="round" id="round4">
+
+  <div class="round-header">
+
+    <span class="round-badge">
+      ✨ MISSION 04 · MY DREAM PATH
+    </span>
+
+    <span class="round-points">
+      +20 XP
+    </span>
+
+  </div>
+
+  <h2>
+    Build Your Future!
+  </h2>
+
+  <p class="round-description">
+
+    Imagine your future!
+
+    Choose one learning path,
+    one dream profession,
+    and one personal quality.
+
+    There are no wrong dreams.
+
+  </p>
+
+  <div class="guide">
+
+    <span class="guide-avatar">🚀</span>
+
+    <div>
+
+      <strong>CAPTAIN FUTURE SAYS</strong>
+
+      <p>
+        Choose the future that inspires you.
+        Your choices will create a personal
+        career statement!
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- STUDY -->
+
+  <div class="dream-section">
+
+    <h3>
+      🎓 Step 1 — How will you learn?
+    </h3>
+
+    <div class="dream-grid">
+
+      <button
+        class="dream-choice"
+        data-group="study"
+        data-value="study at university"
+        onclick="chooseDream(this)"
+      >
+
+        <span class="dream-icon">🎓</span>
+
+        <strong>
+          Study at university
+        </strong>
+
+      </button>
+
+      <button
+        class="dream-choice"
+        data-group="study"
+        data-value="learn new skills"
+        onclick="chooseDream(this)"
+      >
+
+        <span class="dream-icon">🧠</span>
+
+        <strong>
+          Learn new skills
+        </strong>
+
+      </button>
+
+      <button
+        class="dream-choice"
+        data-group="study"
+        data-value="continue learning"
+        onclick="chooseDream(this)"
+      >
+
+        <span class="dream-icon">📚</span>
+
+        <strong>
+          Continue learning
+        </strong>
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- CAREER -->
+
+  <div class="dream-section">
+
+    <h3>
+      💼 Step 2 — What is your dream job?
+    </h3>
+
+    <div class="dream-grid">
+
+      <button
+        class="dream-choice"
+        data-group="career"
+        data-value="doctor"
+        onclick="chooseDream(this)"
+      >
+
+        <span class="dream-icon">👩‍⚕️</span>
+
+        <strong>Doctor</strong>
+
+      </button>
+
+      <button
+        class="dream-choice"
+        data-group="career"
+        data-value="teacher"
+        onclick="chooseDream(this)"
+      >
+
+        <span class="dream-icon">👩‍🏫</span>
+
+        <strong>Teacher</strong>
+
+      </button>
+
+      <button
+        class="dream-choice"
+        data-group="career"
+        data-value="engineer"
+        onclick="chooseDream(this)"
+      >
+
+        <span class="dream-icon">👷</span>
+
+        <strong>Engineer</strong>
+
+      </button>
+
+      <button
+        class="dream-choice"
+        data-group="career"
+        data-value="programmer"
+        onclick="chooseDream(this)"
+      >
+
+        <span class="dream-icon">💻</span>
+
+        <strong>Programmer</strong>
+
+      </button>
+
+      <button
+        class="dream-choice"
+        data-group="career"
+        data-value="pilot"
+        onclick="chooseDream(this)"
+      >
+
+        <span class="dream-icon">✈️</span>
+
+        <strong>Pilot</strong>
+
+      </button>
+
+      <button
+        class="dream-choice"
+        data-group="career"
+        data-value="artist"
+        onclick="chooseDream(this)"
+      >
+
+        <span class="dream-icon">🎨</span>
+
+        <strong>Artist</strong>
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- QUALITY -->
+
+  <div class="dream-section">
+
+    <h3>
+      💖 Step 3 — What quality will help you?
+    </h3>
+
+    <div class="dream-grid">
+
+      <button
+        class="dream-choice"
+        data-group="quality"
+        data-value="hardworking"
+        onclick="chooseDream(this)"
+      >
+
+        <span class="dream-icon">💪</span>
+
+        <strong>Hardworking</strong>
+
+      </button>
+
+      <button
+        class="dream-choice"
+        data-group="quality"
+        data-value="ambitious"
+        onclick="chooseDream(this)"
+      >
+
+        <span class="dream-icon">🚀</span>
+
+        <strong>Ambitious</strong>
+
+      </button>
+
+      <button
+        class="dream-choice"
+        data-group="quality"
+        data-value="patient"
+        onclick="chooseDream(this)"
+      >
+
+        <span class="dream-icon">🌷</span>
+
+        <strong>Patient</strong>
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- PREVIEW -->
+
+  <div class="dream-preview">
+
+    <h3>
+      🌟 My Future Dream
+    </h3>
+
+    <p id="dreamPreviewText">
+
+      Choose your learning path,
+      profession, and personal quality
+      to create your dream statement.
+
+    </p>
+
+  </div>
+
+  <div
+    class="feedback"
+    id="feedback4"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <div class="action-row">
+
+    <button
+      class="btn btn-primary"
+      id="next4"
+      type="button"
+      onclick="nextRound(5)"
+      hidden
+    >
+      My Dream Is Ready → 🚀
+    </button>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     MISSION 5
+========================================= -->
+
+<section class="round" id="round5">
+
+  <div class="round-header">
+
+    <span class="round-badge">
+      🏆 MISSION 05 · BEM CHALLENGE
+    </span>
+
+    <span class="round-points">
+      UP TO +20 XP
+    </span>
+
+  </div>
+
+  <h2>
+    The Future Champion Challenge!
+  </h2>
+
+  <p class="round-description">
+
+    Complete the final English challenge!
+
+    Read carefully and choose the
+    correct answers.
+
+    Show what you have learned about
+    careers, ambitions, and future plans.
+
+  </p>
+
+  <div class="guide">
+
+    <span class="guide-avatar">🚀</span>
+
+    <div>
+
+      <strong>CAPTAIN FUTURE SAYS</strong>
+
+      <p>
+        Use everything you have learned.
+        Your Future Champion trophy
+        is waiting!
+      </p>
+
+    </div>
+
+  </div>
+
+  <div id="questionArea5"></div>
+
+  <div
+    class="feedback"
+    id="feedback5"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <div class="action-row">
+
+    <button
+      class="btn btn-secondary"
+      type="button"
+      onclick="showHint(5)"
+    >
+      💡 Final Hint
+    </button>
+
+    <button
+      class="btn btn-gold"
+      id="next5"
+      type="button"
+      onclick="finishGame()"
+      hidden
+    >
+      Claim My Trophy → 🏆
+    </button>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     FINAL SCREEN
+========================================= -->
+
+<section class="final-screen" id="finalScreen">
+
+  <div class="final-trophy">
+    🏆
+  </div>
+
+  <h2>
+    Dream Job Quest Complete!
+  </h2>
+
+  <p class="final-description">
+
+    Congratulations!
+
+    You discovered professions,
+    learned career vocabulary,
+    practised future forms,
+    and created your own career plan.
+
+  </p>
+
+  <div class="final-score-card">
+
+    <div
+      class="final-score-number"
+      id="finalXP"
+    >
+      0
+    </div>
+
+    <div class="final-score-label">
+      TOTAL EXPERIENCE POINTS
+    </div>
+
+    <div class="final-details">
+
+      <span id="finalLives">
+        ❤️ 5 lives
+      </span>
+
+      <span id="finalBest">
+        🏆 Best: 0 XP
+      </span>
+
+    </div>
+
+  </div>
+
+  <div
+    class="achievement"
+    id="achievementBadge"
+  >
+    🚀 FUTURE EXPLORER
+  </div>
+
+  <p
+    class="final-description"
+    id="finalMessage"
+  ></p>
+
+  <div class="final-dream">
+
+    <strong>
+      🌟 MY DREAM CAREER
+    </strong>
+
+    <p id="finalDreamText"></p>
+
+  </div>
+
+  <div
+    class="action-row"
+    style="justify-content:center;"
+  >
+
+    <button
+      class="btn btn-primary"
+      type="button"
+      onclick="restartGame()"
+    >
+      🔄 Play Again
+    </button>
+
+    <a
+      class="btn btn-secondary"
+      href="MS4-S2-Games.html"
+    >
+      ← Games Map
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+
+  MY ENGLISH SPACE · MS4 · SEQUENCE 2<br>
+
+  DREAM JOB QUEST · DREAM · LEARN · ACHIEVE
+
+</footer>
+
+</div>
+
+<script>
+
+"use strict";
+
+/* =========================================
+   QUESTION BANK
+========================================= */
+
+const questionBank = {
+
+  1:[
+
+    {
+
+      icon:"👩‍⚕️",
+
+      question:
+        "Sara loves helping sick people. She wants to study medicine and work in a hospital. What does she want to become?",
+
+      options:[
+        "A chef",
+        "A doctor",
+        "An artist",
+        "A pilot"
+      ],
+
+      correct:1,
+
+      explanation:
+        "A doctor treats sick people and works in hospitals or clinics.",
+
+      hint:
+        "Think about a person who studies medicine."
+
+    },
+
+    {
+
+      icon:"💻",
+
+      question:
+        "Adam enjoys computers. He wants to create useful applications and write computer programs. His dream job is...",
+
+      options:[
+        "A programmer",
+        "A dentist",
+        "A farmer",
+        "A singer"
+      ],
+
+      correct:0,
+
+      explanation:
+        "A programmer writes computer programs and develops applications.",
+
+      hint:
+        "This person works with computer code."
+
+    },
+
+    {
+
+      icon:"✈️",
+
+      question:
+        "Lina dreams of flying aeroplanes and travelling around the world. What profession does she want to have?",
+
+      options:[
+        "A nurse",
+        "A journalist",
+        "A pilot",
+        "A teacher"
+      ],
+
+      correct:2,
+
+      explanation:
+        "A pilot flies aeroplanes and transports passengers or goods.",
+
+      hint:
+        "This person works in an aeroplane."
+
+    }
+
+  ],
+
+  2:[
+
+    {
+
+      icon:"🎓",
+
+      question:
+        "What is the Arabic meaning of the word 'profession'?",
+
+      options:[
+        "حلم",
+        "مهنة",
+        "جامعة",
+        "نجاح"
+      ],
+
+      correct:1,
+
+      explanation:
+        "Profession means مهنة. It refers to a person's job or career.",
+
+      hint:
+        "A profession is the work a person does."
+
+    },
+
+    {
+
+      icon:"🚀",
+
+      question:
+        "What is the Arabic meaning of 'ambition'?",
+
+      options:[
+        "كسل",
+        "ذكرى",
+        "طموح",
+        "هواية"
+      ],
+
+      correct:2,
+
+      explanation:
+        "Ambition means طموح. It is a strong desire to achieve something.",
+
+      hint:
+        "Think about having an important goal or dream."
+
+    },
+
+    {
+
+      icon:"🏆",
+
+      question:
+        "What is the Arabic meaning of 'achieve'?",
+
+      options:[
+        "يحقق",
+        "ينسى",
+        "يرسم",
+        "ينام"
+      ],
+
+      correct:0,
+
+      explanation:
+        "Achieve means يحقق, as in 'achieve your goals'.",
+
+      hint:
+        "You achieve something when you succeed in doing it."
+
+    }
+
+  ],
+
+  3:[
+
+    {
+
+      icon:"🎓",
+
+      question:
+        "Yacine has already decided on his career. Complete his sentence: 'I ______ study engineering at university.'",
+
+      options:[
+        "am going to",
+        "was",
+        "studied",
+        "am"
+      ],
+
+      correct:0,
+
+      explanation:
+        "'I am going to study' expresses a future plan or intention.",
+
+      hint:
+        "Use the future structure: am + going to + base verb."
+
+    },
+
+    {
+
+      icon:"🔮",
+
+      question:
+        "Choose the sentence that makes a prediction about the future.",
+
+      options:[
+        "I visited my uncle yesterday.",
+        "I am reading a book now.",
+        "I think technology will change our lives.",
+        "I used to play football."
+      ],
+
+      correct:2,
+
+      explanation:
+        "'Will change' expresses a prediction about the future.",
+
+      hint:
+        "Look for a sentence with 'will' and a future prediction."
+
+    },
+
+    {
+
+      icon:"🚀",
+
+      question:
+        "Complete the sentence correctly: 'She is going to ______ a doctor.'",
+
+      options:[
+        "became",
+        "become",
+        "becoming",
+        "becomes"
+      ],
+
+      correct:1,
+
+      explanation:
+        "After 'going to', use the base form of the verb: become.",
+
+      hint:
+        "Going to + base form of the verb."
+
+    }
+
+  ],
+
+  5:[
+
+    {
+
+      icon:"📚",
+
+      question:
+        "Choose the grammatically correct sentence.",
+
+      options:[
+        "I going to be a teacher.",
+        "I am going to be a teacher.",
+        "I am going be a teacher.",
+        "I going to becoming a teacher."
+      ],
+
+      correct:1,
+
+      explanation:
+        "'I am going to be a teacher' has the correct future structure.",
+
+      hint:
+        "Remember: subject + am/is/are + going to + base verb."
+
+    },
+
+    {
+
+      icon:"💪",
+
+      question:
+        "Choose the best sentence to express an ambition and the effort needed to achieve it.",
+
+      options:[
+        "I want to become a doctor, so I will study hard.",
+        "I want become doctor yesterday.",
+        "I am doctor last year.",
+        "I going to studying hard."
+      ],
+
+      correct:0,
+
+      explanation:
+        "This sentence clearly expresses a career ambition and the effort needed to achieve it.",
+
+      hint:
+        "Look for a sentence with a dream and a logical action."
+
+    },
+
+    {
+
+      icon:"🌟",
+
+      question:
+        "Complete the sentence: 'My dream is to become an engineer because I enjoy ______ problems.'",
+
+      options:[
+        "solve",
+        "solves",
+        "solving",
+        "solved"
+      ],
+
+      correct:2,
+
+      explanation:
+        "After 'enjoy', use the -ing form: enjoy solving.",
+
+      hint:
+        "Remember: enjoy + verb-ing."
+
+    }
+
+  ]
+
+};
+
+/* =========================================
+   GAME STATE
+========================================= */
+
+const BEST_KEY =
+  "MS4_S2_DREAM_JOB_BEST_V3";
+
+const MAX_XP = 100;
+
+let lives = 5;
+
+let xp = 0;
+
+let streak = 0;
+
+let currentRound = 1;
+
+let soundEnabled = true;
+
+let audioContext = null;
+
+let currentQuestion = {
+  1:0,
+  2:0,
+  3:0,
+  5:0
+};
+
+let questionLocked = false;
+
+let mistakeCount = {
+  1:0,
+  2:0,
+  3:0,
+  5:0
+};
+
+let completed = {
+  1:false,
+  2:false,
+  3:false,
+  4:false,
+  5:false
+};
+
+let dreamChoices = {
+  study:null,
+  career:null,
+  quality:null
+};
+
+let bestScore = 0;
+
+try{
+
+  bestScore =
+    Number(localStorage.getItem(BEST_KEY)) || 0;
+
+}catch(error){
+
+  bestScore = 0;
+
+}
+
+const $ = id =>
+  document.getElementById(id);
+
+/* =========================================
+   SOUND
+========================================= */
+
+function playSound(type="tap"){
+
+  if(!soundEnabled) return;
+
+  try{
+
+    if(!audioContext){
+
+      const AudioClass =
+        window.AudioContext ||
+        window.webkitAudioContext;
+
+      if(!AudioClass) return;
+
+      audioContext = new AudioClass();
+
+    }
+
+    if(audioContext.state==="suspended"){
+      audioContext.resume();
+    }
+
+    const notes = {
+
+      good:[523,659,784],
+
+      bad:[220,175],
+
+      tap:[440],
+
+      win:[523,659,784,1046]
+
+    };
+
+    const frequencies =
+      notes[type] || notes.tap;
+
+    frequencies.forEach((frequency,index)=>{
+
+      const oscillator =
+        audioContext.createOscillator();
+
+      const gain =
+        audioContext.createGain();
+
+      const start =
+        audioContext.currentTime + index*.09;
+
+      oscillator.type =
+        type==="bad" ? "triangle" : "sine";
+
+      oscillator.frequency.value =
+        frequency;
+
+      gain.gain.setValueAtTime(
+        .0001,
+        start
+      );
+
+      gain.gain.exponentialRampToValueAtTime(
+        .07,
+        start+.02
+      );
+
+      gain.gain.exponentialRampToValueAtTime(
+        .0001,
+        start+.18
+      );
+
+      oscillator.connect(gain);
+
+      gain.connect(audioContext.destination);
+
+      oscillator.start(start);
+
+      oscillator.stop(start+.2);
+
+    });
+
+  }catch(error){
+
+    // Sound is optional.
+
+  }
+
+}
+
+function toggleSound(){
+
+  soundEnabled = !soundEnabled;
+
+  $("soundBtn").textContent =
+    soundEnabled ? "🔊" : "🔇";
+
+  $("soundBtn").setAttribute(
+    "aria-pressed",
+    String(soundEnabled)
+  );
+
+}
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+function updateUI(){
+
+  $("lives").textContent = lives;
+
+  $("xp").textContent = xp;
+
+  $("streak").textContent = streak;
+
+  $("roundNumber").textContent =
+    currentRound+"/5";
+
+  const count =
+    Object.values(completed)
+      .filter(Boolean).length;
+
+  const percent = count*20;
+
+  $("progressFill").style.width =
+    percent+"%";
+
+  $("progressText").textContent =
+    percent+"%";
+
+  $("progressFill").setAttribute(
+    "aria-valuenow",
+    String(percent)
+  );
+
+  document.querySelectorAll(".mission-dot")
+    .forEach((dot,index)=>{
+
+      const number = index+1;
+
+      dot.classList.toggle(
+        "complete",
+        completed[number]
+      );
+
+      dot.classList.toggle(
+        "active",
+        number===currentRound &&
+        !completed[number]
+      );
+
+    });
+
+}
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+function showFeedback(round,message,type){
+
+  const element =
+    $("feedback"+round);
+
+  element.textContent = message;
+
+  element.className =
+    "feedback show "+type;
+
+}
+
+function clearFeedback(round){
+
+  const element =
+    $("feedback"+round);
+
+  element.textContent = "";
+
+  element.className = "feedback";
+
+}
+
+function showToast(message){
+
+  const toast = $("toast");
+
+  toast.textContent = message;
+
+  toast.classList.add("show");
+
+  clearTimeout(showToast.timer);
+
+  showToast.timer = setTimeout(()=>{
+
+    toast.classList.remove("show");
+
+  },2200);
+
+}
+
+/* =========================================
+   XP AND LIVES
+========================================= */
+
+function addXP(points){
+
+  xp = Math.min(
+    MAX_XP,
+    xp+points
+  );
+
+  updateUI();
+
+}
+
+function loseLife(){
+
+  if(lives>0){
+    lives--;
+  }
+
+  streak = 0;
+
+  playSound("bad");
+
+  updateUI();
+
+  if(lives===0){
+
+    showToast(
+      "💖 No hearts left — keep learning!"
+    );
+
+  }
+
+}
+
+/* =========================================
+   COMPLETE ROUND
+========================================= */
+
+function completeRound(round,points){
+
+  if(completed[round]) return;
+
+  completed[round] = true;
+
+  streak++;
+
+  addXP(points);
+
+  $("next"+round).hidden = false;
+
+  playSound("good");
+
+  celebrate(22);
+
+  showToast(
+    "⭐ Mission complete! +"+points+" XP"
+  );
+
+  updateUI();
+
+}
+
+/* =========================================
+   QUESTION RENDERING
+========================================= */
+
+function renderQuestion(round){
+
+  const questions =
+    questionBank[round];
+
+  const index =
+    currentQuestion[round];
+
+  if(index>=questions.length){
+
+    finishQuestionRound(round);
+
+    return;
+
+  }
+
+  questionLocked = false;
+
+  clearFeedback(round);
+
+  const question =
+    questions[index];
+
+  const area =
+    $("questionArea"+round);
+
+  area.innerHTML = "";
+
+  const card =
+    document.createElement("div");
+
+  card.className = "question-card";
+
+  const counter =
+    document.createElement("div");
+
+  counter.className =
+    "question-counter";
+
+  counter.textContent =
+    "QUESTION "+
+    (index+1)+
+    " OF "+
+    questions.length;
+
+  const icon =
+    document.createElement("div");
+
+  icon.className =
+    "question-illustration";
+
+  icon.textContent =
+    question.icon;
+
+  const text =
+    document.createElement("div");
+
+  text.className =
+    "question-text";
+
+  text.textContent =
+    question.question;
+
+  card.append(
+    counter,
+    icon,
+    text
+  );
+
+  const answers =
+    document.createElement("div");
+
+  answers.className = "answers";
+
+  question.options.forEach(
+    (option,optionIndex)=>{
+
+      const button =
+        document.createElement("button");
+
+      button.type = "button";
+
+      button.className = "answer";
+
+      const symbol =
+        document.createElement("span");
+
+      symbol.className =
+        "answer-icon";
+
+      symbol.textContent =
+        ["A","B","C","D"][optionIndex];
+
+      const label =
+        document.createElement("span");
+
+      label.textContent = option;
+
+      if(round===2){
+
+        label.style.fontFamily =
+          '"Noto Naskh Arabic",serif';
+
+        label.style.fontSize =
+          "1.35rem";
+
+        label.dir = "rtl";
+
+      }
+
+      button.append(
+        symbol,
+        label
+      );
+
+      button.addEventListener(
+        "click",
+        ()=>checkAnswer(
+          round,
+          optionIndex,
+          button
+        )
+      );
+
+      answers.appendChild(button);
+
+    }
+  );
+
+  area.append(
+    card,
+    answers
+  );
+
+}
+
+/* =========================================
+   CHECK ANSWERS
+========================================= */
+
+function checkAnswer(round,index,button){
+
+  if(questionLocked) return;
+
+  if(button.disabled) return;
+
+  const question =
+    questionBank[round][
+      currentQuestion[round]
+    ];
+
+  if(index===question.correct){
+
+    questionLocked = true;
+
+    button.classList.add("correct");
+
+    const allButtons =
+      $("questionArea"+round)
+        .querySelectorAll(".answer");
+
+    allButtons.forEach(item=>{
+      item.disabled = true;
+    });
+
+    showFeedback(
+      round,
+      "✅ Correct! "+question.explanation,
+      "good"
+    );
+
+    playSound("good");
+
+    celebrate(7);
+
+    setTimeout(()=>{
+
+      currentQuestion[round]++;
+
+      renderQuestion(round);
+
+    },1500);
+
+  }else{
+
+    button.classList.add("wrong");
+
+    button.disabled = true;
+
+    mistakeCount[round]++;
+
+    loseLife();
+
+    showFeedback(
+      round,
+      "❌ Not quite! "+
+      question.hint+
+      " Try another answer.",
+      "bad"
+    );
+
+  }
+
+}
+
+/* =========================================
+   QUESTION ROUND SCORING
+========================================= */
+
+function finishQuestionRound(round){
+
+  const questions =
+    questionBank[round].length;
+
+  const mistakes =
+    mistakeCount[round];
+
+  let points = 20;
+
+  if(mistakes>0){
+
+    points =
+      Math.max(
+        8,
+        20-mistakes*3
+      );
+
+  }
+
+  $("questionArea"+round).innerHTML = "";
+
+  const message =
+    document.createElement("div");
+
+  message.className =
+    "question-card";
+
+  message.style.textAlign =
+    "center";
+
+  message.innerHTML = `
+    <div class="question-illustration">
+      🎉
+    </div>
+
+    <div class="question-text">
+      Mission Completed!
+    </div>
+
+    <p style="
+      color:#81748d;
+      margin-top:12px;
+      line-height:1.7;
+    ">
+      You answered all ${questions}
+      questions.
+      <br>
+      You earned ${points} XP!
+    </p>
+  `;
+
+  $("questionArea"+round)
+    .appendChild(message);
+
+  showFeedback(
+    round,
+    "🌟 Excellent effort! "+
+    "You are ready for the next mission.",
+    "good"
+  );
+
+  completeRound(round,points);
+
+}
+
+/* =========================================
+   HINTS
+========================================= */
+
+function showHint(round){
+
+  if(completed[round]) return;
+
+  const questions =
+    questionBank[round];
+
+  if(!questions) return;
+
+  const index =
+    currentQuestion[round];
+
+  if(index>=questions.length) return;
+
+  const hint =
+    questions[index].hint;
+
+  showFeedback(
+    round,
+    "💡 "+hint,
+    "info"
+  );
+
+  playSound("tap");
+
+}
+
+/* =========================================
+   DREAM BUILDER
+========================================= */
+
+function chooseDream(button){
+
+  const group =
+    button.dataset.group;
+
+  const value =
+    button.dataset.value;
+
+  document.querySelectorAll(
+    '.dream-choice[data-group="'+group+'"]'
+  ).forEach(item=>{
+
+    item.classList.remove(
+      "selected"
+    );
+
+    item.setAttribute(
+      "aria-pressed",
+      "false"
+    );
+
+  });
+
+  button.classList.add(
+    "selected"
+  );
+
+  button.setAttribute(
+    "aria-pressed",
+    "true"
+  );
+
+  dreamChoices[group] =
+    value;
+
+  updateDreamPreview();
+
+  playSound("tap");
+
+  const ready =
+    dreamChoices.study &&
+    dreamChoices.career &&
+    dreamChoices.quality;
+
+  if(ready){
+
+    showFeedback(
+      4,
+      "🌟 Wonderful! "+
+      "Your dream path is ready. "+
+      "You can change your choices "+
+      "or continue to the final mission.",
+      "good"
+    );
+
+    completeRound(4,20);
+
+  }else{
+
+    showFeedback(
+      4,
+      "✨ Great choice! "+
+      "Complete the remaining parts "+
+      "of your career plan.",
+      "info"
+    );
+
+  }
+
+}
+
+/* =========================================
+   DREAM PREVIEW
+========================================= */
+
+function buildDreamStatement(){
+
+  const study =
+    dreamChoices.study;
+
+  const career =
+    dreamChoices.career;
+
+  const quality =
+    dreamChoices.quality;
+
+  if(!study || !career || !quality){
+
+    return "Complete your three choices "+
+      "to create your dream career statement.";
+
+  }
+
+  const article =
+    ["engineer","artist"].includes(career)
+      ? "an"
+      : "a";
+
+  return (
+    "In the future, I am going to "+
+    "become "+article+" "+career+". "+
+    "I am going to "+study+
+    " because I want to achieve my dream. "+
+    "I will be "+quality+
+    " and work hard to succeed."
+  );
+
+}
+
+function updateDreamPreview(){
+
+  $("dreamPreviewText").textContent =
+    buildDreamStatement();
+
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+function nextRound(number){
+
+  if(
+    number>1 &&
+    !completed[number-1]
+  ){
+    return;
+  }
+
+  document.querySelectorAll(".round")
+    .forEach(round=>{
+
+      round.classList.remove(
+        "active"
+      );
+
+    });
+
+  currentRound = number;
+
+  $("round"+number)
+    .classList.add("active");
+
+  updateUI();
+
+  $("gameShell").scrollIntoView({
+
+    behavior:"smooth",
+
+    block:"start"
+
+  });
+
+  playSound("tap");
+
+}
+
+/* =========================================
+   FINISH GAME
+========================================= */
+
+function finishGame(){
+
+  const allComplete =
+    Object.values(completed)
+      .every(Boolean);
+
+  if(!allComplete) return;
+
+  document.querySelectorAll(".round")
+    .forEach(round=>{
+
+      round.classList.remove(
+        "active"
+      );
+
+    });
+
+  $("finalScreen")
+    .classList.add("show");
+
+  if(xp>bestScore){
+
+    bestScore = xp;
+
+    try{
+
+      localStorage.setItem(
+        BEST_KEY,
+        String(bestScore)
+      );
+
+    }catch(error){
+
+      // Storage is optional.
+
+    }
+
+  }
+
+  $("finalXP").textContent =
+    xp;
+
+  $("finalLives").textContent =
+    "❤️ "+lives+" lives remaining";
+
+  $("finalBest").textContent =
+    "🏆 Best: "+bestScore+" XP";
+
+  $("finalDreamText").textContent =
+    buildDreamStatement();
+
+  let badge = "";
+
+  let message = "";
+
+  if(xp>=90){
+
+    badge =
+      "👑 LEGENDARY FUTURE CHAMPION";
+
+    message =
+      "Outstanding! You have excellent "+
+      "knowledge of professions, "+
+      "career vocabulary and future forms.";
+
+  }else if(xp>=75){
+
+    badge =
+      "🏆 DREAM JOB MASTER";
+
+    message =
+      "Excellent work! "+
+      "You completed the adventure "+
+      "with a very strong score.";
+
+  }else if(xp>=55){
+
+    badge =
+      "🚀 FUTURE EXPLORER";
+
+    message =
+      "Well done! "+
+      "You completed all five missions. "+
+      "Keep practising to improve.";
+
+  }else{
+
+    badge =
+      "🌈 BRAVE DREAMER";
+
+    message =
+      "Congratulations on finishing "+
+      "the adventure! "+
+      "Keep learning and never give up.";
+
+  }
+
+  $("achievementBadge").textContent =
+    badge;
+
+  $("finalMessage").textContent =
+    message;
+
+  playSound("win");
+
+  celebrate(90);
+
+  $("gameShell").scrollIntoView({
+
+    behavior:"smooth",
+
+    block:"start"
+
+  });
+
+}
+
+/* =========================================
+   RESTART GAME
+========================================= */
+
+function restartGame(){
+
+  lives = 5;
+
+  xp = 0;
+
+  streak = 0;
+
+  currentRound = 1;
+
+  questionLocked = false;
+
+  currentQuestion = {
+    1:0,
+    2:0,
+    3:0,
+    5:0
+  };
+
+  mistakeCount = {
+    1:0,
+    2:0,
+    3:0,
+    5:0
+  };
+
+  completed = {
+    1:false,
+    2:false,
+    3:false,
+    4:false,
+    5:false
+  };
+
+  dreamChoices = {
+    study:null,
+    career:null,
+    quality:null
+  };
+
+  document.querySelectorAll(".round")
+    .forEach(round=>{
+
+      round.classList.remove(
+        "active"
+      );
+
+    });
+
+  $("round1")
+    .classList.add("active");
+
+  $("finalScreen")
+    .classList.remove("show");
+
+  document.querySelectorAll(
+    ".dream-choice"
+  ).forEach(button=>{
+
+    button.classList.remove(
+      "selected"
+    );
+
+    button.setAttribute(
+      "aria-pressed",
+      "false"
+    );
+
+  });
+
+  [1,2,3,4,5].forEach(round=>{
+
+    $("next"+round).hidden = true;
+
+    clearFeedback(round);
+
+  });
+
+  updateDreamPreview();
+
+  renderQuestion(1);
+
+  renderQuestion(2);
+
+  renderQuestion(3);
+
+  renderQuestion(5);
+
+  updateUI();
+
+  window.scrollTo({
+
+    top:0,
+
+    behavior:"smooth"
+
+  });
+
+  showToast(
+    "🚀 A new dream adventure begins!"
+  );
+
+}
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+function celebrate(amount=20){
+
+  const colors = [
+
+    "#ef6197",
+    "#ffca60",
+    "#8d55b4",
+    "#35bd89",
+    "#579ce9",
+    "#ed6176"
+
+  ];
+
+  for(let i=0;i<amount;i++){
+
+    setTimeout(()=>{
+
+      const piece =
+        document.createElement("div");
+
+      piece.className =
+        "confetti";
+
+      piece.style.left =
+        Math.random()*100+"vw";
+
+      piece.style.background =
+        colors[
+          Math.floor(
+            Math.random()*colors.length
+          )
+        ];
+
+      piece.style.animationDuration =
+        (2+Math.random()*2)+"s";
+
+      piece.style.transform =
+        "rotate("+
+        Math.random()*360+
+        "deg)";
+
+      document.body.appendChild(
+        piece
+      );
+
+      setTimeout(()=>{
+
+        piece.remove();
+
+      },4200);
+
+    },i*18);
+
+  }
+
+}
+
+/* =========================================
+   INITIALISE
+========================================= */
+
+renderQuestion(1);
+
+renderQuestion(2);
+
+renderQuestion(3);
+
+renderQuestion(5);
+
+updateDreamPreview();
+
+updateUI();
+
+</script>
+
+</body>
+</html>

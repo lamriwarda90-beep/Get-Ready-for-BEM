@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073d48">
+
+<title>MS4 S1 Reading Lesson 1 | Two Remarkable Landmarks</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:#082f3f;
+  --navy-dark:#051e2a;
+  --teal:#087e84;
+  --teal-light:#17aaa5;
+  --mint:#e8f8f4;
+  --gold:#f6c566;
+  --gold-light:#fff5dc;
+  --white:#ffffff;
+  --background:#f2f8fa;
+  --ink:#193b46;
+  --muted:#617d87;
+  --line:#dce9eb;
+  --green:#17805a;
+  --red:#c54450;
+  --shadow:0 14px 36px rgba(16,55,70,.09);
+}
+
+ { box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  margin:0;
+  background:var(--background);
+  color:var(--ink);
+  font-family:"Nunito",Arial,sans-serif;
+  line-height:1.7;
+}
+
+button,input,select,textarea {
+  font:inherit;
+}
+
+button { cursor:pointer; }
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+a { color:inherit; }
+
+/* HEADER */
+
+.hero {
+  background:
+    radial-gradient(circle at 85% 15%,rgba(22,166,163,.42),transparent 43%),
+    linear-gradient(125deg,#061e2c,#075d68);
+  color:white;
+  padding:22px 6% 90px;
+  overflow:hidden;
+}
+
+.nav {
+  max-width:1160px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+}
+
+.logo {
+  font-family:"Outfit",sans-serif;
+  font-size:20px;
+  font-weight:900;
+}
+
+.logo span { color:var(--gold); }
+
+.back-link {
+  color:white;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.35);
+  padding:10px 16px;
+  border-radius:12px;
+  font-weight:800;
+  transition:.2s;
+}
+
+.back-link:hover { background:rgba(255,255,255,.13); }
+
+.hero-grid {
+  max-width:1160px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:45px;
+  padding-top:60px;
+}
+
+.eyebrow {
+  color:#ffe1a0;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.3px;
+}
+
+.hero h1 {
+  font-family:"Outfit",sans-serif;
+  font-size:clamp(39px,5.5vw,68px);
+  line-height:1.08;
+  margin:15px 0;
+  font-weight:900;
+}
+
+.hero h1 span { color:var(--gold); }
+
+.hero p {
+  color:#d7eeee;
+  font-size:16px;
+  line-height:1.9;
+  max-width:600px;
+}
+
+.hero-badges {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:22px 0;
+}
+
+.hero-badges span {
+  padding:8px 12px;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.09);
+  border-radius:30px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.start-btn {
+  display:inline-block;
+  margin-top:10px;
+  padding:14px 25px;
+  border-radius:13px;
+  background:var(--gold);
+  color:var(--navy);
+  font-weight:900;
+  text-decoration:none;
+  transition:.2s;
+}
+
+.start-btn:hover { transform:translateY(-3px); }
+
+.hero-visual {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+  align-items:stretch;
+}
+
+.hero-photo {
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
+  border:5px solid rgba(255,255,255,.2);
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+  min-height:340px;
+  background:#195f69;
+}
+
+.hero-photo:nth-child(2) { transform:translateY(22px); }
+
+.hero-photo img {
+  width:100%;
+  height:100%;
+  min-height:340px;
+  object-fit:cover;
+}
+
+.hero-photo::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 55%,rgba(0,20,30,.75));
+}
+
+.hero-photo span {
+  position:absolute;
+  bottom:18px;
+  left:14px;
+  right:14px;
+  z-index:1;
+  color:white;
+  font-weight:900;
+  font-size:14px;
+}
+
+/* MAIN */
+
+main {
+  max-width:1120px;
+  margin:-42px auto 60px;
+  padding:0 18px;
+  position:relative;
+}
+
+/* PROGRESS */
+
+.progress {
+  position:sticky;
+  top:8px;
+  z-index:40;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:15px 20px;
+  border-radius:18px;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+
+.progress strong {
+  font-size:12px;
+  white-space:nowrap;
+}
+
+.progress-track {
+  flex:1;
+  height:10px;
+  border-radius:20px;
+  background:#e0eeee;
+  overflow:hidden;
+}
+
+.progress-fill {
+  width:8.33%;
+  height:100%;
+  border-radius:20px;
+  background:linear-gradient(90deg,var(--teal),#54cda9);
+  transition:width .3s;
+}
+
+/* STAGES */
+
+.stage {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:34px;
+  margin:25px 0;
+  box-shadow:var(--shadow);
+  scroll-margin-top:105px;
+}
+
+.stage-head {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.tag {
+  background:var(--mint);
+  color:#08746c;
+  padding:7px 12px;
+  border-radius:9px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.4px;
+}
+
+.stage h2 {
+  font-family:"Outfit",sans-serif;
+  font-size:clamp(23px,3vw,31px);
+  font-weight:800;
+  margin:0;
+}
+
+.stage h3 {
+  font-family:"Outfit",sans-serif;
+  font-size:21px;
+  color:var(--teal);
+  margin:28px 0 14px;
+}
+
+.intro {
+  color:var(--muted);
+  margin:15px 0 24px;
+}
+
+.photo {
+  display:block;
+  width:100%;
+  max-height:400px;
+  object-fit:cover;
+  border-radius:19px;
+  margin-bottom:25px;
+  background:#dbeaec;
+}
+
+.text-layout {
+  display:grid;
+  grid-template-columns:250px 1fr;
+  gap:28px;
+  align-items:start;
+}
+
+.text-layout img {
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:18px;
+  background:#dbeaec;
+}
+
+.reading {
+  font-size:16px;
+  line-height:2;
+}
+
+.reading p { margin:0 0 19px; }
+
+.reading mark {
+  background:#ffefb6;
+  border-radius:5px;
+  padding:2px 5px;
+}
+
+.note {
+  margin:24px 0;
+  padding:17px 20px;
+  background:#eff9f8;
+  border-left:4px solid var(--teal);
+  border-radius:12px;
+}
+
+.vocab-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+}
+
+.vocab {
+  text-align:left;
+  background:#f1faf8;
+  border:1px solid #d1e9e5;
+  border-radius:16px;
+  padding:19px;
+  color:var(--ink);
+  transition:.2s;
+}
+
+.vocab:hover { transform:translateY(-3px); }
+
+.vocab strong {
+  display:block;
+  color:var(--teal);
+  font-size:17px;
+}
+
+.vocab small {
+  display:none;
+  color:var(--muted);
+  margin-top:9px;
+  line-height:1.6;
+}
+
+.vocab.open {
+  background:#fff6dd;
+  border-color:#ebc36e;
+}
+
+.vocab.open small { display:block; }
+
+/* QUESTIONS */
+
+.question {
+  background:#f8fbfb;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:20px;
+  margin:15px 0;
+}
+
+.question p {
+  font-weight:900;
+  margin:0 0 15px;
+}
+
+.options {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.choice {
+  background:white;
+  color:var(--ink);
+  border:2px solid #d8e9e8;
+  border-radius:12px;
+  padding:11px 16px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.choice:hover:not(:disabled) {
+  border-color:var(--teal);
+  transform:translateY(-2px);
+}
+
+.choice.selected {
+  background:#e6f6f5;
+  border-color:var(--teal);
+}
+
+.choice.correct,
+.answer-input.correct {
+  border-color:var(--green)!important;
+  background:#e4f7ec!important;
+  color:#176443!important;
+}
+
+.choice.incorrect,
+.answer-input.incorrect {
+  border-color:var(--red)!important;
+  background:#ffebed!important;
+  color:#9e2938!important;
+}
+
+.choice:disabled {
+  opacity:1;
+  cursor:default;
+}
+
+.feedback {
+  margin-top:12px;
+  font-size:14px;
+  font-weight:900;
+  min-height:20px;
+}
+
+.answer-input {
+  width:100%;
+  border:2px solid #d6e6e8;
+  background:white;
+  border-radius:12px;
+  padding:13px 15px;
+  color:var(--ink);
+}
+
+.answer-input:focus {
+  border-color:var(--teal);
+  outline:none;
+}
+
+.fact-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.check-btn {
+  border:none;
+  background:linear-gradient(135deg,#08636c,#0c9994);
+  color:white;
+  border-radius:12px;
+  padding:13px 22px;
+  font-weight:900;
+  margin-top:14px;
+  transition:.2s;
+}
+
+.check-btn:hover {
+  transform:translateY(-2px);
+  filter:brightness(1.08);
+}
+
+.result {
+  font-weight:900;
+  margin-top:14px;
+  min-height:22px;
+}
+
+.result.good { color:var(--green); }
+.result.bad { color:var(--red); }
+
+.final-score {
+  background:linear-gradient(135deg,#0a3444,#087e84);
+  border-radius:23px;
+  padding:32px;
+  margin-top:25px;
+  text-align:center;
+  color:white;
+}
+
+.final-score h3 {
+  color:white;
+  font-size:50px;
+  margin:10px 0;
+}
+
+.final-score p { color:#e0f5f3; }
+
+.final-score .check-btn {
+  background:var(--gold);
+  color:var(--navy);
+  margin:8px;
+}
+
+.final-score .reset-btn {
+  background:white;
+  color:var(--teal);
+}
+
+.completion {
+  background:linear-gradient(135deg,#e6f8f3,#ffffff);
+  text-align:center;
+}
+
+.next-link {
+  display:inline-block;
+  margin-top:15px;
+  background:var(--teal);
+  color:white;
+  padding:14px 23px;
+  border-radius:13px;
+  text-decoration:none;
+  font-weight:900;
+}
+
+/* DICTIONARY */
+
+.dictionary-button {
+  position:fixed;
+  right:20px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:100;
+  width:65px;
+  height:65px;
+  border:none;
+  border-radius:20px;
+  background:linear-gradient(135deg,#f8d47b,#f1ad42);
+  color:#173746;
+  font-size:27px;
+  box-shadow:0 10px 30px rgba(0,0,0,.22);
+  transition:.2s;
+}
+
+.dictionary-button:hover {
+  transform:translateY(-50%) scale(1.08);
+}
+
+.dictionary-button span {
+  position:absolute;
+  right:74px;
+  top:50%;
+  transform:translateY(-50%);
+  white-space:nowrap;
+  background:var(--navy);
+  color:white;
+  padding:8px 13px;
+  border-radius:9px;
+  font-size:12px;
+  font-weight:900;
+  opacity:0;
+  pointer-events:none;
+}
+
+.dictionary-button:hover span { opacity:1; }
+
+.dictionary-overlay {
+  position:fixed;
+  inset:0;
+  background:rgba(4,25,35,.5);
+  z-index:199;
+  display:none;
+}
+
+.dictionary-overlay.open { display:block; }
+
+.dictionary-panel {
+  position:fixed;
+  right:0;
+  top:0;
+  width:min(430px,100%);
+  height:100dvh;
+  background:white;
+  z-index:200;
+  box-shadow:-15px 0 50px rgba(0,0,0,.2);
+  transform:translateX(105%);
+  transition:transform .3s ease;
+  display:flex;
+  flex-direction:column;
+}
+
+.dictionary-panel.open { transform:translateX(0); }
+
+.dictionary-header {
+  background:linear-gradient(135deg,var(--navy),var(--teal));
+  padding:25px;
+  color:white;
+}
+
+.dictionary-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.dictionary-top h2 {
+  font-family:"Outfit",sans-serif;
+  font-size:24px;
+  margin:0;
+}
+
+.dictionary-close {
+  width:40px;
+  height:40px;
+  border:none;
+  border-radius:11px;
+  background:rgba(255,255,255,.17);
+  color:white;
+  font-size:24px;
+}
+
+.dictionary-header p {
+  color:#d4eeee;
+  font-size:13px;
+  margin-bottom:0;
+}
+
+.dictionary-search {
+  margin:20px;
+  padding:14px 16px;
+  border:2px solid #d9e8e8;
+  border-radius:13px;
+}
+
+.dictionary-list {
+  flex:1;
+  overflow-y:auto;
+  padding:0 20px 25px;
+}
+
+.dictionary-item {
+  padding:15px;
+  margin-bottom:10px;
+  border:1px solid #e0eeee;
+  background:#f8fbfb;
+  border-radius:13px;
+}
+
+.dictionary-item strong {
+  display:block;
+  color:var(--teal);
+  font-size:16px;
+}
+
+.dictionary-item .arabic {
+  display:block;
+  margin-top:5px;
+  color:#173b48;
+  font-size:19px;
+  font-weight:800;
+  text-align:right;
+  direction:rtl;
+}
+
+.dictionary-item small {
+  display:block;
+  color:var(--muted);
+  margin-top:7px;
+  font-size:12px;
+}
+
+.dictionary-empty {
+  text-align:center;
+  color:var(--muted);
+  padding:25px;
+}
+
+footer {
+  text-align:center;
+  color:#68828b;
+  padding:30px 15px;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+  .hero-grid { grid-template-columns:1fr; }
+  .hero-visual { max-width:600px; }
+  .text-layout { grid-template-columns:1fr; }
+  .text-layout img { height:270px; }
+  .vocab-grid { grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:550px) {
+  .hero { padding:18px 16px 75px; }
+  .hero-grid { padding-top:45px; }
+  .hero h1 { font-size:40px; }
+  .hero-visual { display:none; }
+  main { padding:0 10px; }
+  .stage { padding:21px 16px; border-radius:20px; }
+  .stage h2 { font-size:25px; }
+  .fact-grid { grid-template-columns:1fr; }
+  .options { flex-direction:column; }
+  .choice { width:100%; }
+  .progress { gap:8px; padding:12px; }
+  .progress strong { font-size:10px; }
+  .dictionary-button {
+    width:54px;
+    height:54px;
+    font-size:23px;
+    right:12px;
+    border-radius:16px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  * { transition:none!important; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+
+  <nav class="nav">
+    <div class="logo">✦ MY ENGLISH <span>SPACE</span></div>
+
+    <a class="back-link" href="MS4-S1-Reading.html">
+      ← Sequence 1 Reading
+    </a>
+  </nav>
+
+  <div class="hero-grid">
+
+    <div>
+      <div class="eyebrow">
+        MS4 · SEQUENCE 01 · READING · LESSON 01
+      </div>
+
+      <h1>
+        Two Remarkable
+        <span>Landmarks</span>
+      </h1>
+
+      <p>
+        Travel from Algeria to the United Kingdom!
+        Discover the magnificent Great Mosque of Algiers
+        and London's historic Elizabeth Tower.
+        Read, explore vocabulary, complete exciting
+        challenges and prepare for the BEM.
+      </p>
+
+      <div class="hero-badges">
+        <span>🇩🇿 Algeria</span>
+        <span>🇬🇧 United Kingdom</span>
+        <span>📖 2 Reading Texts</span>
+        <span>🏆 BEM Practice</span>
+      </div>
+
+      <a href="#step1" class="start-btn">
+        Start Reading →
+      </a>
+    </div>
+
+    <div class="hero-visual">
+
+      <div class="hero-photo">
+        <img
+          src="https://i.imgur.com/F0uLuA3.png"
+          alt="Great Mosque of Algiers"
+        >
+        <span>🇩🇿 Great Mosque of Algiers</span>
+      </div>
+
+      <div class="hero-photo">
+        <img
+          src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=900&q=85"
+          alt="Elizabeth Tower in London"
+        >
+        <span>🇬🇧 Elizabeth Tower</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- FLOATING DICTIONARY -->
+
+<button
+  class="dictionary-button"
+  id="dictionaryButton"
+  type="button"
+  onclick="openDictionary()"
+  aria-label="Open Arabic English dictionary"
+  aria-expanded="false"
+>
+  📚
+  <span>Arabic–English Dictionary</span>
+</button>
+
+<div
+  class="dictionary-overlay"
+  id="dictionaryOverlay"
+  onclick="closeDictionary()"
+></div>
+
+<aside
+  class="dictionary-panel"
+  id="dictionaryPanel"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+  aria-label="Arabic English mini dictionary"
+>
+
+  <div class="dictionary-header">
+    <div class="dictionary-top">
+      <h2>📚 Mini Dictionary</h2>
+      <button
+        class="dictionary-close"
+        type="button"
+        onclick="closeDictionary()"
+        aria-label="Close dictionary"
+      >×</button>
+    </div>
+    <p>English ↔ Arabic · Key words from the lesson</p>
+  </div>
+
+  <input
+    id="dictionarySearch"
+    class="dictionary-search"
+    type="search"
+    placeholder="🔎 Search English or Arabic..."
+    aria-label="Search dictionary"
+    oninput="filterDictionary()"
+  >
+
+  <div class="dictionary-list" id="dictionaryList"></div>
+
+</aside>
+
+<main>
+
+  <div class="progress">
+    <strong id="progressLabel">Step 1 / 12</strong>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <strong id="progressPercent">8%</strong>
+  </div>
+
+  <!-- STEP 1 -->
+
+  <section class="stage" id="step1">
+
+    <div class="stage-head">
+      <span class="tag">STEP 01 · GET READY</span>
+      <h2>🔎 Look, Think & Predict</h2>
+    </div>
+
+    <p class="intro">
+      Look at the two landmarks. Choose the correct answers.
+    </p>
+
+    <div class="fact-grid">
+
+      <img
+        class="photo"
+        src="https://i.imgur.com/F0uLuA3.png"
+        alt="Great Mosque of Algiers"
+      >
+
+      <img
+        class="photo"
+        src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=900&q=85"
+        alt="Elizabeth Tower"
+      >
+
+    </div>
+
+    <div id="prediction"></div>
+
+    <button class="check-btn" onclick="checkChoiceGroup('prediction')">
+      Check Predictions
+    </button>
+
+    <div class="result" id="predictionResult" aria-live="polite"></div>
+
+  </section>
+
+  <!-- STEP 2 -->
+
+  <section class="stage" id="step2">
+
+    <div class="stage-head">
+      <span class="tag">STEP 02 · TEXT ONE</span>
+      <h2>🕌 Read: The Great Mosque of Algiers</h2>
+    </div>
+
+    <p class="intro">
+      Read the text carefully. Discover an extraordinary Algerian landmark.
+    </p>
+
+    <div class="text-layout">
+
+      <img
+        src="https://i.imgur.com/F0uLuA3.png"
+        alt="Great Mosque of Algiers"
+        loading="lazy"
+      >
+
+      <div class="reading">
+
+        <p>
+          The <mark>Great Mosque of Algiers</mark>,
+          also called <b>Djamaa El Djazair</b>,
+          is one of Algeria's most impressive
+          landmarks. It is located in
+          <b>Mohammadia, Algiers</b>, near the
+          Mediterranean Sea. The mosque is
+          an important religious and cultural
+          symbol of the country.
+        </p>
+
+        <p>
+          Construction of the mosque began in
+          <b>2012</b>. The main building work
+          was completed in <b>2019</b>, and the
+          mosque was officially inaugurated
+          in <b>2024</b>. The complex combines
+          modern engineering with traditional
+          Algerian and Islamic architecture.
+        </p>
+
+        <p>
+          One of its most remarkable features
+          is its enormous <b>minaret</b>,
+          which is about <b>265 metres high</b>.
+          The complex also contains large
+          prayer halls, a library, a museum,
+          gardens and other facilities.
+          Visitors can admire its spacious
+          interiors and beautiful decorations.
+        </p>
+
+        <p>
+          Today, the Great Mosque of Algiers
+          is more than a place of worship.
+          It is a symbol of Algerian identity
+          and heritage. Its magnificent
+          architecture and location near
+          the sea make it a remarkable
+          landmark of the capital.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="note">
+      💡 <b>Vocabulary Discovery:</b>
+      Tap each card to reveal its meaning.
+      You can also open the 📚 dictionary on the right.
+    </div>
+
+    <div class="vocab-grid" id="mosqueVocab"></div>
+
+  </section>
+
+  <!-- STEP 3 -->
+
+  <section class="stage" id="step3">
+
+    <div class="stage-head">
+      <span class="tag">STEP 03 · EASY</span>
+      <h2>✅ Task 1 — True or False?</h2>
+    </div>
+
+    <p class="intro">
+      Read the Great Mosque text again.
+      Decide whether each statement is true or false.
+    </p>
+
+    <div id="mosqueTF"></div>
+
+  </section>
+
+  <!-- STEP 4 -->
+
+  <section class="stage" id="step4">
+
+    <div class="stage-head">
+      <span class="tag">STEP 04 · BEM PRACTICE</span>
+      <h2>🎯 Task 2 — Choose the Correct Answer</h2>
+    </div>
+
+    <p class="intro">
+      Choose the best answer according to the first text.
+    </p>
+
+    <div id="mosqueMCQ"></div>
+
+  </section>
+
+  <!-- STEP 5 -->
+
+  <section class="stage" id="step5">
+
+    <div class="stage-head">
+      <span class="tag">STEP 05 · THINK</span>
+      <h2>✏️ Task 3 — Answer the Questions</h2>
+    </div>
+
+    <p class="intro">
+      Write short answers using information from the text.
+    </p>
+
+    <div id="mosqueShort"></div>
+
+    <button class="check-btn" onclick="checkShort('mosqueShort')">
+      Check Answers
+    </button>
+
+    <div class="result" id="mosqueShortResult" aria-live="polite"></div>
+
+  </section>
+
+  <!-- STEP 6 -->
+
+  <section class="stage" id="step6">
+
+    <div class="stage-head">
+      <span class="tag">STEP 06 · LANGUAGE SKILLS</span>
+      <h2>🔗 Task 4 — Vocabulary & References</h2>
+    </div>
+
+    <h3>A. Match the Words with Their Meanings</h3>
+    <div id="mosqueSyn"></div>
+
+    <button class="check-btn" onclick="checkSelects('mosqueSyn')">
+      Check Vocabulary
+    </button>
+
+    <div class="result" id="mosqueSynResult" aria-live="polite"></div>
+
+    <h3>B. What Do the Words Refer To?</h3>
+    <div id="mosqueRef"></div>
+
+    <button class="check-btn" onclick="checkSelects('mosqueRef')">
+      Check References
+    </button>
+
+    <div class="result" id="mosqueRefResult" aria-live="polite"></div>
+
+  </section>
+
+  <!-- STEP 7 -->
+
+  <section class="stage" id="step7">
+
+    <div class="stage-head">
+      <span class="tag">STEP 07 · TEXT TWO</span>
+      <h2>🕰️ Read: Elizabeth Tower (Big Ben)</h2>
+    </div>
+
+    <p class="intro">
+      Travel to London and discover one of the most famous
+      clock towers in the world.
+    </p>
+
+    <div class="text-layout">
+
+      <img
+        src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=900&q=85"
+        alt="Elizabeth Tower in London"
+        loading="lazy"
+      >
+
+      <div class="reading">
+
+        <p>
+          <mark>Elizabeth Tower</mark> is one of
+          the most famous landmarks in
+          <b>London, England</b>. It stands at
+          the north end of the Palace of
+          Westminster, beside the River Thames.
+          Many people call the tower
+          <b>Big Ben</b>, but Big Ben is
+          actually the nickname of the
+          <b>Great Bell</b> inside it.
+        </p>
+
+        <p>
+          The tower was designed by
+          <b>Augustus Pugin</b> as part of
+          the new Palace of Westminster.
+          It was completed in <b>1859</b>.
+          Originally called the Clock Tower,
+          it was renamed <b>Elizabeth Tower
+          in 2012</b> to honour Queen
+          Elizabeth II.
+        </p>
+
+        <p>
+          Elizabeth Tower is approximately
+          <b>96 metres tall</b>. It is built
+          mainly of brick and covered with
+          stone. The tower has four large
+          clock faces, one on each side.
+          Its Gothic Revival architecture
+          makes it especially elegant
+          and recognisable.
+        </p>
+
+        <p>
+          Today, Elizabeth Tower is an
+          important symbol of London and
+          the United Kingdom. Tourists
+          from around the world visit
+          Westminster to admire the tower,
+          hear its famous bell and
+          take photographs of this
+          historic landmark.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="note">
+      📚 <b>Remember:</b> Elizabeth Tower is the tower.
+      Big Ben is the nickname of its Great Bell.
+    </div>
+
+    <div class="vocab-grid" id="towerVocab"></div>
+
+  </section>
+
+  <!-- STEP 8 -->
+
+  <section class="stage" id="step8">
+
+    <div class="stage-head">
+      <span class="tag">STEP 08 · TEXT TWO TASKS</span>
+      <h2>📖 Comprehension: Elizabeth Tower</h2>
+    </div>
+
+    <h3>A. True or False</h3>
+    <div id="towerTF"></div>
+
+    <h3>B. Choose the Correct Answer</h3>
+    <div id="towerMCQ"></div>
+
+    <h3>C. Answer the Questions</h3>
+    <div id="towerShort"></div>
+
+    <button class="check-btn" onclick="checkShort('towerShort')">
+      Check Short Answers
+    </button>
+
+    <div class="result" id="towerShortResult" aria-live="polite"></div>
+
+  </section>
+
+  <!-- STEP 9 -->
+
+  <section class="stage" id="step9">
+
+    <div class="stage-head">
+      <span class="tag">STEP 09 · LANGUAGE SKILLS</span>
+      <h2>🧩 Elizabeth Tower — Vocabulary & Reference</h2>
+    </div>
+
+    <h3>A. Match the Words with Their Meanings</h3>
+    <div id="towerSyn"></div>
+
+    <button class="check-btn" onclick="checkSelects('towerSyn')">
+      Check Meanings
+    </button>
+
+    <div class="result" id="towerSynResult" aria-live="polite"></div>
+
+    <h3>B. What Do the Words Refer To?</h3>
+    <div id="towerRef"></div>
+
+    <button class="check-btn" onclick="checkSelects('towerRef')">
+      Check References
+    </button>
+
+    <div class="result" id="towerRefResult" aria-live="polite"></div>
+
+  </section>
+
+  <!-- STEP 10 -->
+
+  <section class="stage" id="step10">
+
+    <div class="stage-head">
+      <span class="tag">STEP 10 · EXTRACT INFORMATION</span>
+      <h2>📋 Complete the Landmark Fact Files</h2>
+    </div>
+
+    <p class="intro">
+      Use information from both reading texts to complete
+      the fact files.
+    </p>
+
+    <div class="fact-grid" id="factFile"></div>
+
+    <button class="check-btn" onclick="checkShort('factFile')">
+      Check Fact Files
+    </button>
+
+    <div class="result" id="factFileResult" aria-live="polite"></div>
+
+  </section>
+
+  <!-- STEP 11 -->
+
+  <section class="stage" id="step11">
+
+    <div class="stage-head">
+      <span class="tag">STEP 11 · COMPARE & THINK</span>
+      <h2>🌍 Compare the Two Landmarks</h2>
+    </div>
+
+    <p class="intro">
+      Complete the sentences with information
+      from the texts.
+    </p>
+
+    <div id="compare"></div>
+
+    <button class="check-btn" onclick="checkShort('compare')">
+      Check Comparison
+    </button>
+
+    <div class="result" id="compareResult" aria-live="polite"></div>
+
+  </section>
+
+  <!-- STEP 12 -->
+
+  <section class="stage" id="step12">
+
+    <div class="stage-head">
+      <span class="tag">STEP 12 · FINAL CHALLENGE</span>
+      <h2>🏆 Reading Mission — Be the Examiner!</h2>
+    </div>
+
+    <p class="intro">
+      Read each clue and identify the correct landmark.
+      Complete all six questions to discover your score.
+    </p>
+
+    <div id="finalQuiz"></div>
+
+    <div class="final-score">
+
+      <div>🏆 FINAL READING SCORE</div>
+
+      <h3 id="finalScore">0 / 6</h3>
+
+      <p id="finalMessage" aria-live="polite">
+        Answer all six questions, then check your mission.
+      </p>
+
+      <button class="check-btn" onclick="checkFinal()">
+        Check Final Mission
+      </button>
+
+      <button class="check-btn reset-btn" onclick="resetFinal()">
+        🔄 Try Again
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- COMPLETION -->
+
+  <section class="stage completion">
+
+    <h2>🎉 Reading Checkpoint Complete!</h2>
+
+    <p>
+      Excellent work! You have explored two remarkable
+      landmarks, discovered useful vocabulary,
+      answered comprehension questions, identified
+      references and practised BEM-style reading tasks.
+    </p>
+
+    <a class="next-link" href="MS4-S1-Reading-Lesson2.html">
+      Continue to Lesson 2: Biographies →
+    </a>
+
+  </section>
+
+</main>
+
+<footer>
+  MY ENGLISH SPACE · MS4 · SEQUENCE 1 · READING · LESSON 01
+  <br>
+  Created & Designed by Warda Lamri
+</footer>
+
+<script>
+"use strict";
+
+/* HELPERS */
+
+const $ = selector => document.querySelector(selector);
+const $$ = selector => [...document.querySelectorAll(selector)];
+
+function normalize(text) {
+  return String(text)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"")
+    .replace(/[^a-z0-9 ]/g," ")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function create(tag,className,text) {
+  const element = document.createElement(tag);
+  if(className) element.className = className;
+  if(text !== undefined) element.textContent = text;
+  return element;
+}
+
+function showResult(id,score,total) {
+  const result = document.getElementById(id+"Result");
+  if(!result) return;
+
+  result.textContent =
+    `${score} / ${total} correct. ` +
+    (score === total
+      ? "Excellent work! 🌟"
+      : "Review your answers and try again.");
+
+  result.className =
+    "result " + (score === total ? "good" : "bad");
+}
+
+/* MULTIPLE CHOICE ENGINE */
+
+function renderChoices(id,questions,instant=true) {
+  const container = document.getElementById(id);
+
+  questions.forEach(item => {
+    const [question,options,answer] = item;
+
+    const card = create("div","question");
+    const title = create("p","",question);
+    const row = create("div","options");
+    const feedback = create("div","feedback");
+
+    card.dataset.answer = answer;
+    card.append(title,row,feedback);
+
+    options.forEach(option => {
+      const button = create("button","choice",option);
+      button.type = "button";
+      button.dataset.value = option;
+
+      button.addEventListener("click",() => {
+        if(instant && card.dataset.done === "true") return;
+
+        row.querySelectorAll("button").forEach(btn => {
+          btn.classList.remove("selected","correct","incorrect");
+        });
+
+        button.classList.add("selected");
+
+        if(instant) {
+          card.dataset.done = "true";
+
+          row.querySelectorAll("button").forEach(btn => {
+            btn.disabled = true;
+            if(btn.dataset.value === answer) {
+              btn.classList.add("correct");
+            }
+          });
+
+          if(option === answer) {
+            feedback.textContent = "✅ Correct!";
+            feedback.style.color = "var(--green)";
+          } else {
+            button.classList.add("incorrect");
+            feedback.textContent = "❌ Correct answer: " + answer;
+            feedback.style.color = "var(--red)";
+          }
+        }
+      });
+
+      row.append(button);
+    });
+
+    container.append(card);
+  });
+}
+
+/* CHECK CHOICE GROUP */
+
+function checkChoiceGroup(id) {
+  const cards = document.querySelectorAll("#"+id+" .question");
+  let score = 0;
+
+  cards.forEach(card => {
+    const answer = card.dataset.answer;
+    const selected = card.querySelector(".selected");
+    const feedback = card.querySelector(".feedback");
+
+    card.querySelectorAll(".choice").forEach(btn => {
+      btn.classList.remove("correct","incorrect");
+      if(btn.dataset.value === answer) btn.classList.add("correct");
+    });
+
+    if(!selected) {
+      feedback.textContent = "⚠️ Please choose an answer.";
+      feedback.style.color = "var(--red)";
+      return;
+    }
+
+    if(selected.dataset.value === answer) {
+      score++;
+      feedback.textContent = "✅ Correct!";
+      feedback.style.color = "var(--green)";
+    } else {
+      selected.classList.add("incorrect");
+      feedback.textContent = "❌ Correct answer: " + answer;
+      feedback.style.color = "var(--red)";
+    }
+  });
+
+  showResult(id,score,cards.length);
+}
+
+/* VOCABULARY */
+
+function renderVocabulary(id,data) {
+  const container = document.getElementById(id);
+
+  data.forEach(([word,meaning]) => {
+    const card = create("button","vocab");
+    card.type = "button";
+    card.setAttribute("aria-expanded","false");
+
+    card.append(
+      create("strong","",word),
+      create("small","",meaning)
+    );
+
+    card.addEventListener("click",() => {
+      card.classList.toggle("open");
+      card.setAttribute(
+        "aria-expanded",
+        String(card.classList.contains("open"))
+      );
+    });
+
+    container.append(card);
+  });
+}
+
+/* SHORT ANSWERS */
+
+function renderShort(id,data) {
+  const container = document.getElementById(id);
+
+  data.forEach((item,index) => {
+    const [question,answers] = item;
+    const card = create("div","question");
+    const title = create("p","",`${index+1}. ${question}`);
+    const input = create("input","answer-input");
+
+    input.type = "text";
+    input.autocomplete = "off";
+    input.placeholder = "Write your answer here...";
+    input.setAttribute("aria-label",question);
+    input.dataset.answers = JSON.stringify(answers);
+
+    card.append(title,input);
+    container.append(card);
+  });
+}
+
+function checkShort(id) {
+  const inputs = document.querySelectorAll("#"+id+" input");
+  let score = 0;
+
+  inputs.forEach(input => {
+    const user = normalize(input.value);
+    const accepted = JSON.parse(input.dataset.answers);
+
+    const correct =
+      user.length > 0 &&
+      accepted.some(answer => normalize(answer) === user);
+
+    input.classList.toggle("correct",correct);
+    input.classList.toggle("incorrect",!correct);
+
+    if(correct) score++;
+  });
+
+  showResult(id,score,inputs.length);
+}
+
+/* SELECTS */
+
+function renderSelects(id,data) {
+  const container = document.getElementById(id);
+
+  data.forEach((item,index) => {
+    const [question,choices,answer] = item;
+
+    const card = create("div","question");
+    const title = create("p","",`${index+1}. ${question}`);
+    const select = create("select","answer-input");
+
+    select.dataset.answer = answer;
+    select.setAttribute("aria-label",question);
+
+    const placeholder = create("option","","Choose an answer...");
+    placeholder.value = "";
+    select.append(placeholder);
+
+    choices.forEach(choice => {
+      const option = create("option","",choice);
+      option.value = choice;
+      select.append(option);
+    });
+
+    card.append(title,select);
+    container.append(card);
+  });
+}
+
+function checkSelects(id) {
+  const selects = document.querySelectorAll("#"+id+" select");
+  let score = 0;
+
+  selects.forEach(select => {
+    const correct = select.value === select.dataset.answer;
+    select.classList.toggle("correct",correct);
+    select.classList.toggle("incorrect",!correct);
+    if(correct) score++;
+  });
+
+  showResult(id,score,selects.length);
+}
+
+/* STEP 1 — PREDICTION */
+
+renderChoices("prediction",[
+  [
+    "1. Which landmark is located in Algeria?",
+    ["Elizabeth Tower","Great Mosque of Algiers","Eiffel Tower"],
+    "Great Mosque of Algiers"
+  ],
+  [
+    "2. Which landmark has a famous clock?",
+    ["Great Mosque of Algiers","Elizabeth Tower","A museum"],
+    "Elizabeth Tower"
+  ],
+  [
+    "3. What information will the texts probably give?",
+    ["Location, history and description","Only food","Only sports"],
+    "Location, history and description"
+  ]
+],false);
+
+/* STEP 2 — MOSQUE VOCABULARY */
+
+renderVocabulary("mosqueVocab",[
+  ["landmark","A famous or recognisable place."],
+  ["minaret","A tall tower that forms part of a mosque."],
+  ["heritage","Culture and traditions inherited from the past."],
+  ["architecture","The design and style of buildings."],
+  ["inaugurated","Officially opened."],
+  ["spacious","Having plenty of space."],
+  ["facilities","Buildings or services for a particular purpose."],
+  ["magnificent","Extremely beautiful or impressive."]
+]);
+
+/* STEP 3 — MOSQUE TRUE/FALSE */
+
+renderChoices("mosqueTF",[
+  [
+    "1. The Great Mosque of Algiers is located in Oran.",
+    ["True","False"],"False"
+  ],
+  [
+    "2. Construction began in 2012.",
+    ["True","False"],"True"
+  ],
+  [
+    "3. The mosque's minaret is about 96 metres high.",
+    ["True","False"],"False"
+  ],
+  [
+    "4. The complex contains a library and a museum.",
+    ["True","False"],"True"
+  ],
+  [
+    "5. The mosque was officially inaugurated in 2024.",
+    ["True","False"],"True"
+  ]
+]);
+
+/* STEP 4 — MOSQUE MCQ */
+
+renderChoices("mosqueMCQ",[
+  [
+    "1. Where is the Great Mosque of Algiers located?",
+    ["Mohammadia, Algiers","London","Constantine"],
+    "Mohammadia, Algiers"
+  ],
+  [
+    "2. How tall is its minaret?",
+    ["96 metres","265 metres","50 metres"],
+    "265 metres"
+  ],
+  [
+    "3. What does its architecture combine?",
+    [
+      "Modern engineering and Algerian/Islamic traditions",
+      "Only Roman architecture",
+      "Only wooden structures"
+    ],
+    "Modern engineering and Algerian/Islamic traditions"
+  ],
+  [
+    "4. What does the mosque represent?",
+    [
+      "Algerian identity and heritage",
+      "A British monument",
+      "A railway station"
+    ],
+    "Algerian identity and heritage"
+  ]
+]);
+
+/* STEP 5 — MOSQUE SHORT ANSWERS */
+
+renderShort("mosqueShort",[
+  [
+    "In which city is the mosque located?",
+    ["Algiers","in Algiers","Mohammadia Algiers"]
+  ],
+  [
+    "When did construction begin?",
+    ["2012","in 2012"]
+  ],
+  [
+    "When was the mosque officially inaugurated?",
+    ["2024","in 2024"]
+  ],
+  [
+    "What is the height of the minaret?",
+    ["265 metres","265 meters","about 265 metres","about 265 meters"]
+  ],
+  [
+    "Name two facilities in the complex.",
+    [
+      "library and museum",
+      "museum and library",
+      "library and gardens",
+      "gardens and library",
+      "museum and gardens",
+      "gardens and museum",
+      "prayer halls and library",
+      "library and prayer halls"
+    ]
+  ]
+]);
+
+/* STEP 6 — MOSQUE SYNONYMS */
+
+renderSelects("mosqueSyn",[
+  [
+    "impressive",
+    ["very remarkable","very small","ordinary"],
+    "very remarkable"
+  ],
+  [
+    "enormous",
+    ["very large","very old","very narrow"],
+    "very large"
+  ],
+  [
+    "heritage",
+    ["culture inherited from the past","a railway","a machine"],
+    "culture inherited from the past"
+  ],
+  [
+    "inaugurated",
+    ["officially opened","destroyed","forgotten"],
+    "officially opened"
+  ]
+]);
+
+renderSelects("mosqueRef",[
+  [
+    '"It" in paragraph 1 refers to...',
+    ["Algiers","The Great Mosque of Algiers","The sea"],
+    "The Great Mosque of Algiers"
+  ],
+  [
+    '"its" in "its enormous minaret" refers to...',
+    ["the mosque","the library","the museum"],
+    "the mosque"
+  ],
+  [
+    '"Its" in "Its magnificent architecture" refers to...',
+    ["the capital","the mosque","the sea"],
+    "the mosque"
+  ]
+]);
+
+/* STEP 7 — TOWER VOCABULARY */
+
+renderVocabulary("towerVocab",[
+  ["clock tower","A tall building containing a clock."],
+  ["bell","A metal object that makes a ringing sound."],
+  ["nickname","An informal or familiar name."],
+  ["completed","Finished building."],
+  ["renamed","Given a new name."],
+  ["honour","Show respect or admiration."],
+  ["clock face","The part of a clock showing the time."],
+  ["historic","Important in history."]
+]);
+
+/* STEP 8 — TOWER TRUE/FALSE */
+
+renderChoices("towerTF",[
+  [
+    "1. Elizabeth Tower is located in Paris.",
+    ["True","False"],"False"
+  ],
+  [
+    "2. Big Ben is the nickname of the Great Bell.",
+    ["True","False"],"True"
+  ],
+  [
+    "3. Elizabeth Tower was completed in 1859.",
+    ["True","False"],"True"
+  ],
+  [
+    "4. The tower has only one clock face.",
+    ["True","False"],"False"
+  ],
+  [
+    "5. Elizabeth Tower is about 96 metres tall.",
+    ["True","False"],"True"
+  ]
+]);
+
+renderChoices("towerMCQ",[
+  [
+    "1. Where does Elizabeth Tower stand?",
+    [
+      "Beside the River Thames",
+      "Beside the Mediterranean Sea",
+      "Beside the River Seine"
+    ],
+    "Beside the River Thames"
+  ],
+  [
+    "2. Who designed the tower?",
+    [
+      "Augustus Pugin",
+      "Gustave Eiffel",
+      "Leonardo da Vinci"
+    ],
+    "Augustus Pugin"
+  ],
+  [
+    "3. When was the tower renamed Elizabeth Tower?",
+    ["1859","2012","2024"],
+    "2012"
+  ],
+  [
+    "4. How many clock faces does the tower have?",
+    ["Two","Three","Four"],
+    "Four"
+  ]
+]);
+
+renderShort("towerShort",[
+  [
+    "In which city is Elizabeth Tower located?",
+    ["London","in London"]
+  ],
+  [
+    "When was the tower completed?",
+    ["1859","in 1859"]
+  ],
+  [
+    "Who designed Elizabeth Tower?",
+    ["Augustus Pugin","Pugin"]
+  ],
+  [
+    "How tall is the tower?",
+    [
+      "96 metres",
+      "96 meters",
+      "approximately 96 metres",
+      "approximately 96 meters"
+    ]
+  ],
+  [
+    "What is Big Ben?",
+    [
+      "the Great Bell",
+      "Great Bell",
+      "the nickname of the Great Bell",
+      "a bell",
+      "the bell"
+    ]
+  ]
+]);
+
+/* STEP 9 — TOWER VOCABULARY */
+
+renderSelects("towerSyn",[
+  [
+    "famous",
+    ["well-known","unknown","small"],
+    "well-known"
+  ],
+  [
+    "approximately",
+    ["about","exactly","never"],
+    "about"
+  ],
+  [
+    "historic",
+    ["important in history","modern only","unimportant"],
+    "important in history"
+  ],
+  [
+    "admire",
+    ["look at with appreciation","destroy","forget"],
+    "look at with appreciation"
+  ]
+]);
+
+renderSelects("towerRef",[
+  [
+    '"It" in "It stands at the north end..." refers to...',
+    ["The River Thames","Elizabeth Tower","The Great Bell"],
+    "Elizabeth Tower"
+  ],
+  [
+    '"it" in "inside it" refers to...',
+    ["Elizabeth Tower","London","the river"],
+    "Elizabeth Tower"
+  ],
+  [
+    '"Its" in "Its Gothic Revival architecture" refers to...',
+    ["the Palace of Westminster","Elizabeth Tower","the Great Bell"],
+    "Elizabeth Tower"
+  ]
+]);
+
+/* STEP 10 — FACT FILES */
+
+renderShort("factFile",[
+  [
+    "Great Mosque — Country",
+    ["Algeria"]
+  ],
+  [
+    "Great Mosque — City",
+    ["Algiers","Mohammadia Algiers"]
+  ],
+  [
+    "Great Mosque — Construction began",
+    ["2012"]
+  ],
+  [
+    "Great Mosque — Minaret height",
+    ["265 metres","265 meters","265"]
+  ],
+  [
+    "Elizabeth Tower — Country",
+    ["United Kingdom","UK","England"]
+  ],
+  [
+    "Elizabeth Tower — City",
+    ["London"]
+  ],
+  [
+    "Elizabeth Tower — Completion year",
+    ["1859"]
+  ],
+  [
+    "Elizabeth Tower — Height",
+    ["96 metres","96 meters","96"]
+  ]
+]);
+
+/* STEP 11 — COMPARISON */
+
+renderShort("compare",[
+  [
+    "The Great Mosque is located in ___, while Elizabeth Tower is in ___.",
+    [
+      "Algiers London",
+      "Algiers and London",
+      "Algiers / London",
+      "Algiers, London"
+    ]
+  ],
+  [
+    "The Great Mosque has a tall ___, whereas Elizabeth Tower has four clock ___.",
+    [
+      "minaret faces",
+      "minaret and faces",
+      "minaret / faces",
+      "minaret, faces"
+    ]
+  ],
+  [
+    "Elizabeth Tower was completed in ___, while the Great Mosque was inaugurated in ___.",
+    [
+      "1859 2024",
+      "1859 and 2024",
+      "1859 / 2024",
+      "1859, 2024"
+    ]
+  ],
+  [
+    "Both buildings are famous ___.",
+    ["landmarks","monuments","historic landmarks"]
+  ]
+]);
+
+/* STEP 12 — FINAL MISSION */
+
+renderChoices("finalQuiz",[
+  [
+    "1. This landmark is located beside the River Thames.",
+    ["Great Mosque of Algiers","Elizabeth Tower"],
+    "Elizabeth Tower"
+  ],
+  [
+    "2. This landmark has a minaret about 265 metres high.",
+    ["Great Mosque of Algiers","Elizabeth Tower"],
+    "Great Mosque of Algiers"
+  ],
+  [
+    "3. This landmark was completed in 1859.",
+    ["Great Mosque of Algiers","Elizabeth Tower"],
+    "Elizabeth Tower"
+  ],
+  [
+    "4. This landmark was inaugurated in 2024.",
+    ["Great Mosque of Algiers","Elizabeth Tower"],
+    "Great Mosque of Algiers"
+  ],
+  [
+    "5. This landmark has four large clock faces.",
+    ["Great Mosque of Algiers","Elizabeth Tower"],
+    "Elizabeth Tower"
+  ],
+  [
+    "6. This landmark contains prayer halls, a library and a museum.",
+    ["Great Mosque of Algiers","Elizabeth Tower"],
+    "Great Mosque of Algiers"
+  ]
+],false);
+
+/* FINAL SCORE */
+
+function checkFinal() {
+  const cards = document.querySelectorAll("#finalQuiz .question");
+  let score = 0;
+  let unanswered = 0;
+
+  cards.forEach(card => {
+    const answer = card.dataset.answer;
+    const selected = card.querySelector(".selected");
+    const feedback = card.querySelector(".feedback");
+
+    card.querySelectorAll(".choice").forEach(btn => {
+      btn.classList.remove("correct","incorrect");
+      if(btn.dataset.value === answer) {
+        btn.classList.add("correct");
+      }
+    });
+
+    if(!selected) {
+      unanswered++;
+      feedback.textContent = "⚠️ Choose an answer.";
+      feedback.style.color = "var(--red)";
+      return;
+    }
+
+    if(selected.dataset.value === answer) {
+      score++;
+      feedback.textContent = "✅ Correct!";
+      feedback.style.color = "var(--green)";
+    } else {
+      selected.classList.add("incorrect");
+      feedback.textContent = "❌ Correct answer: " + answer;
+      feedback.style.color = "var(--red)";
+    }
+  });
+
+  document.getElementById("finalScore").textContent =
+    `${score} / ${cards.length}`;
+
+  const message = document.getElementById("finalMessage");
+
+  if(unanswered > 0) {
+    message.textContent =
+      `You still have ${unanswered} unanswered question(s).`;
+  } else if(score === cards.length) {
+    message.textContent =
+      "🏆 Outstanding! Perfect reading mission!";
+
+    try {
+      localStorage.setItem(
+        "MS4_S1_READING_LESSON1_COMPLETED",
+        "true"
+      );
+    } catch(error) {
+      // Lesson works without storage.
+    }
+
+  } else if(score >= 4) {
+    message.textContent =
+      "🌟 Very good! You understood both texts well.";
+  } else {
+    message.textContent =
+      "📖 Good effort! Read the texts again and try once more.";
+  }
+}
+
+function resetFinal() {
+  document.querySelectorAll("#finalQuiz .question").forEach(card => {
+    card.querySelectorAll(".choice").forEach(button => {
+      button.classList.remove("selected","correct","incorrect");
+    });
+    card.querySelector(".feedback").textContent = "";
+  });
+
+  document.getElementById("finalScore").textContent = "0 / 6";
+  document.getElementById("finalMessage").textContent =
+    "Answer all six questions, then check your mission.";
+}
+
+/* ARABIC–ENGLISH DICTIONARY */
+
+const dictionaryWords = [
+  {en:"landmark",ar:"مَعْلَم",meaning:"A famous or recognisable place."},
+  {en:"tower",ar:"بُرْج",meaning:"A tall structure."},
+  {en:"mosque",ar:"مَسْجِد",meaning:"A place of worship for Muslims."},
+  {en:"located",ar:"يَقَع / مَوْجُود",meaning:"Situated in a place."},
+  {en:"capital",ar:"عَاصِمَة",meaning:"The main city of a country."},
+  {en:"architecture",ar:"هَنْدَسَة مِعْمَارِيَّة",meaning:"The design of buildings."},
+  {en:"engineer",ar:"مُهَنْدِس",meaning:"A person who designs or builds things."},
+  {en:"construction",ar:"بِنَاء / تَشْيِيد",meaning:"The process of building."},
+  {en:"completed",ar:"اُكْتُمِلَ / أُنْجِزَ",meaning:"Finished."},
+  {en:"inaugurated",ar:"اُفْتُتِحَ رَسْمِيًّا",meaning:"Officially opened."},
+  {en:"minaret",ar:"مِئْذَنَة",meaning:"A tall tower of a mosque."},
+  {en:"enormous",ar:"ضَخْم جِدًّا",meaning:"Extremely large."},
+  {en:"prayer hall",ar:"قَاعَة الصَّلَاة",meaning:"A room or space for prayer."},
+  {en:"library",ar:"مَكْتَبَة",meaning:"A place containing books."},
+  {en:"museum",ar:"مُتْحَف",meaning:"A place displaying historical objects."},
+  {en:"gardens",ar:"حَدَائِق",meaning:"Areas where plants and flowers grow."},
+  {en:"facilities",ar:"مَرَافِق",meaning:"Buildings or services for a purpose."},
+  {en:"heritage",ar:"تُرَاث",meaning:"Culture inherited from the past."},
+  {en:"worship",ar:"عِبَادَة",meaning:"Showing religious respect."},
+  {en:"culture",ar:"ثَقَافَة",meaning:"Traditions and way of life."},
+  {en:"spacious",ar:"وَاسِع",meaning:"Having plenty of space."},
+  {en:"magnificent",ar:"رَائِع / بَاهِر",meaning:"Extremely beautiful."},
+  {en:"Mediterranean Sea",ar:"البَحْر الأَبْيَض المُتَوَسِّط",meaning:"The sea north of Algeria."},
+  {en:"symbol",ar:"رَمْز",meaning:"Something representing a place or idea."},
+  {en:"clock tower",ar:"بُرْج السَّاعَة",meaning:"A tower containing a clock."},
+  {en:"bell",ar:"جَرَس",meaning:"An object that makes a ringing sound."},
+  {en:"nickname",ar:"لَقَب",meaning:"An informal or familiar name."},
+  {en:"renamed",ar:"أُعِيدَتْ تَسْمِيَتُهُ",meaning:"Given a new name."},
+  {en:"honour",ar:"تَكْرِيم",meaning:"Show respect or admiration."},
+  {en:"clock face",ar:"وَاجِهَة السَّاعَة",meaning:"The part of a clock showing time."},
+  {en:"historic",ar:"تَارِيخِي",meaning:"Important in history."},
+  {en:"Gothic Revival",ar:"الطِّرَاز القُوطِي المُجَدَّد",meaning:"A historical architectural style."},
+  {en:"brick",ar:"طُوب / آجُر",meaning:"A material used to build walls."},
+  {en:"stone",ar:"حَجَر",meaning:"A hard natural building material."},
+  {en:"admire",ar:"يُعْجَبُ بِـ",meaning:"Look at with appreciation."},
+  {en:"approximately",ar:"تَقْرِيبًا",meaning:"About; not exactly."},
+  {en:"remarkable",ar:"مُمَيَّز / اسْتِثْنَائِي",meaning:"Unusual and impressive."},
+  {en:"identity",ar:"هُوِيَّة",meaning:"What makes a person or nation distinctive."},
+  {en:"religious",ar:"دِينِي",meaning:"Related to religion."},
+  {en:"cultural",ar:"ثَقَافِي",meaning:"Related to culture."}
+];
+
+function renderDictionary(words) {
+  const list = document.getElementById("dictionaryList");
+  list.replaceChildren();
+
+  if(words.length === 0) {
+    list.append(
+      create("div","dictionary-empty","No matching words found.")
+    );
+    return;
+  }
+
+  words.forEach(item => {
+    const card = create("div","dictionary-item");
+    card.append(
+      create("strong","",item.en),
+      create("span","arabic",item.ar),
+      create("small","",item.meaning)
+    );
+    list.append(card);
+  });
+}
+
+function filterDictionary() {
+  const search = document.getElementById("dictionarySearch")
+    .value.trim().toLowerCase();
+
+  renderDictionary(
+    dictionaryWords.filter(item =>
+      item.en.toLowerCase().includes(search) ||
+      item.ar.includes(search) ||
+      item.meaning.toLowerCase().includes(search)
+    )
+  );
+}
+
+let dictionaryReturnFocus = null;
+
+function openDictionary() {
+  dictionaryReturnFocus = document.activeElement;
+
+  const panel = document.getElementById("dictionaryPanel");
+  panel.classList.add("open");
+  panel.setAttribute("aria-hidden","false");
+
+  document.getElementById("dictionaryOverlay").classList.add("open");
+  document.getElementById("dictionaryButton")
+    .setAttribute("aria-expanded","true");
+
+  document.body.style.overflow = "hidden";
+  document.getElementById("dictionarySearch").focus();
+}
+
+function closeDictionary() {
+  const panel = document.getElementById("dictionaryPanel");
+
+  if(!panel.classList.contains("open")) return;
+
+  panel.classList.remove("open");
+  panel.setAttribute("aria-hidden","true");
+
+  document.getElementById("dictionaryOverlay").classList.remove("open");
+  document.getElementById("dictionaryButton")
+    .setAttribute("aria-expanded","false");
+
+  document.body.style.overflow = "";
+
+  if(dictionaryReturnFocus) dictionaryReturnFocus.focus();
+}
+
+document.addEventListener("keydown",event => {
+  if(event.key === "Escape") closeDictionary();
+
+  const panel = document.getElementById("dictionaryPanel");
+
+  if(event.key === "Tab" && panel.classList.contains("open")) {
+    const focusable = [...panel.querySelectorAll("button,input")];
+    const first = focusable[0];
+    const last = focusable[focusable.length-1];
+
+    if(event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if(!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+});
+
+/* READING PROGRESS */
+
+function updateProgress() {
+  const stages = document.querySelectorAll("main > .stage[id^='step']");
+  const total = stages.length;
+  const scrollPosition = window.scrollY + window.innerHeight * .45;
+  let current = 1;
+
+  stages.forEach((stage,index) => {
+    const top = stage.getBoundingClientRect().top + window.scrollY;
+    if(scrollPosition >= top) current = index+1;
+  });
+
+  const percentage = Math.round(current / total * 100);
+
+  document.getElementById("progressLabel").textContent =
+    `Step ${current} / ${total}`;
+
+  document.getElementById("progressFill").style.width =
+    percentage + "%";
+
+  document.getElementById("progressPercent").textContent =
+    percentage + "%";
+}
+
+window.addEventListener("scroll",updateProgress,{passive:true});
+window.addEventListener("resize",updateProgress);
+
+/* INITIALISE */
+
+renderDictionary(dictionaryWords);
+updateProgress();
+
+</script>
+
+</body>
+</html>

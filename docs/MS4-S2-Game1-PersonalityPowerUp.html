@@ -1,0 +1,3269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff5795">
+
+<title>Personality Power-Up | MS4 Sequence 2</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   DESIGN SYSTEM
+===================================================== */
+
+:root{
+  --pink:#ff5795;
+  --pink-dark:#d82e72;
+  --pink-light:#ffe5f0;
+
+  --purple:#8551c8;
+  --purple-dark:#502d80;
+  --lavender:#eee2ff;
+
+  --gold:#ffc64f;
+  --gold-light:#fff3d1;
+
+  --mint:#35c98e;
+  --mint-light:#e4fff3;
+
+  --red:#f35c76;
+  --red-light:#fff0f3;
+
+  --blue:#579ff5;
+
+  --ink:#382b4e;
+  --muted:#81758e;
+
+  --white:#ffffff;
+  --cream:#fffafd;
+
+  --border:#f0dce9;
+
+  --shadow:0 22px 65px rgba(97,44,107,.13);
+  --shadow-sm:0 10px 25px rgba(97,44,107,.09);
+
+  --radius:28px;
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:"Nunito",sans-serif;
+  color:var(--ink);
+  min-height:100vh;
+  overflow-x:hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 12%,
+      rgba(255,255,255,.85) 0 75px,
+      transparent 77px
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(255,255,255,.45) 0 110px,
+      transparent 112px
+    ),
+    linear-gradient(
+      145deg,
+      #ffe4ef 0%,
+      #ffd2e5 35%,
+      #e9d5ff 75%,
+      #fff0d6 100%
+    );
+}
+
+button{
+  font-family:inherit;
+  cursor:pointer;
+}
+
+button:disabled{
+  cursor:not-allowed;
+}
+
+button:focus-visible,
+a:focus-visible{
+  outline:3px solid var(--purple);
+  outline-offset:4px;
+}
+
+a{
+  color:inherit;
+}
+
+/* =====================================================
+   BACKGROUND DECORATIONS
+===================================================== */
+
+.background-decoration{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:0;
+}
+
+.bubble{
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,.4);
+  animation:floatBubble 9s ease-in-out infinite;
+}
+
+.bubble:nth-child(1){
+  width:90px;
+  height:90px;
+  top:12%;
+  left:3%;
+}
+
+.bubble:nth-child(2){
+  width:140px;
+  height:140px;
+  top:42%;
+  right:-45px;
+  animation-delay:2s;
+}
+
+.bubble:nth-child(3){
+  width:65px;
+  height:65px;
+  bottom:14%;
+  left:8%;
+  animation-delay:4s;
+}
+
+.bubble:nth-child(4){
+  width:110px;
+  height:110px;
+  top:72%;
+  right:10%;
+  animation-delay:1s;
+}
+
+.floating-star{
+  position:absolute;
+  font-size:30px;
+  opacity:.7;
+  animation:starFloat 5s ease-in-out infinite;
+}
+
+.floating-star:nth-of-type(5){
+  top:12%;
+  right:9%;
+}
+
+.floating-star:nth-of-type(6){
+  top:55%;
+  left:3%;
+  animation-delay:2s;
+}
+
+.floating-star:nth-of-type(7){
+  bottom:12%;
+  right:5%;
+  animation-delay:1s;
+}
+
+@keyframes floatBubble{
+  50%{
+    transform:translateY(-25px);
+  }
+}
+
+@keyframes starFloat{
+  50%{
+    transform:translateY(-13px) rotate(20deg);
+  }
+}
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+  position:relative;
+  z-index:1;
+  width:min(1160px,94%);
+  margin:auto;
+  padding:25px 0 55px;
+}
+
+/* =====================================================
+   TOP NAVIGATION
+===================================================== */
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:20px;
+}
+
+.back-button{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+
+  padding:11px 18px;
+
+  background:rgba(255,255,255,.9);
+
+  border:1px solid white;
+  border-radius:99px;
+
+  color:var(--purple-dark);
+  font-weight:900;
+  text-decoration:none;
+
+  box-shadow:var(--shadow-sm);
+  transition:.2s;
+}
+
+.back-button:hover{
+  transform:translateY(-3px);
+}
+
+.top-actions{
+  display:flex;
+  gap:9px;
+}
+
+.icon-button{
+  width:45px;
+  height:45px;
+
+  display:grid;
+  place-items:center;
+
+  border:1px solid white;
+  border-radius:15px;
+
+  background:rgba(255,255,255,.9);
+
+  font-size:1.15rem;
+  box-shadow:var(--shadow-sm);
+
+  transition:.2s;
+}
+
+.icon-button:hover{
+  transform:translateY(-3px);
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+
+  background:rgba(255,255,255,.92);
+
+  border:2px solid rgba(255,255,255,.95);
+  border-radius:35px;
+
+  padding:36px;
+
+  box-shadow:var(--shadow);
+
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:25px;
+  align-items:center;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+
+  width:270px;
+  height:270px;
+
+  border-radius:50%;
+
+  background:rgba(255,87,149,.08);
+
+  right:-100px;
+  top:-120px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.eyebrow{
+  display:inline-block;
+
+  padding:8px 13px;
+
+  background:var(--gold-light);
+  border:1px solid #f3d58b;
+  border-radius:99px;
+
+  color:#94651a;
+
+  font:700 .72rem "Space Mono",monospace;
+
+  margin-bottom:17px;
+}
+
+.hero h1{
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(2.7rem,5vw,4.6rem);
+  line-height:1;
+
+  color:var(--purple-dark);
+
+  margin:0 0 16px;
+}
+
+.hero h1 span{
+  color:var(--pink);
+}
+
+.hero-description{
+  max-width:620px;
+
+  color:var(--muted);
+
+  font-size:1.04rem;
+  line-height:1.75;
+
+  margin-bottom:20px;
+}
+
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.hero-tag{
+  background:#fff6fa;
+  border:1px solid #f3d7e4;
+  border-radius:99px;
+
+  padding:8px 12px;
+
+  font-weight:900;
+  font-size:.78rem;
+}
+
+/* =====================================================
+   MASCOT
+===================================================== */
+
+.mascot-area{
+  display:grid;
+  place-items:center;
+  position:relative;
+}
+
+.mascot-circle{
+  width:250px;
+  height:250px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #fff8d8,
+      #ffd5e7 55%,
+      #d7baff
+    );
+
+  border:9px solid white;
+
+  box-shadow:
+    0 20px 40px rgba(116,55,121,.15),
+    inset 0 0 0 3px #f7e0ed;
+
+  display:grid;
+  place-items:center;
+
+  position:relative;
+}
+
+.mascot{
+  font-size:105px;
+  animation:mascotBounce 3s ease-in-out infinite;
+  user-select:none;
+}
+
+@keyframes mascotBounce{
+  0%,100%{
+    transform:translateY(0) rotate(-4deg);
+  }
+
+  50%{
+    transform:translateY(-13px) rotate(4deg);
+  }
+}
+
+.mascot-label{
+  position:absolute;
+  bottom:-10px;
+
+  background:var(--purple-dark);
+  color:white;
+
+  border:4px solid white;
+  border-radius:99px;
+
+  padding:9px 18px;
+
+  font-weight:900;
+  font-size:.85rem;
+
+  box-shadow:var(--shadow-sm);
+}
+
+.mascot-sparkle{
+  position:absolute;
+  font-size:30px;
+  animation:starFloat 3s ease-in-out infinite;
+}
+
+.mascot-sparkle.one{
+  top:10px;
+  left:0;
+}
+
+.mascot-sparkle.two{
+  right:0;
+  bottom:50px;
+  animation-delay:1s;
+}
+
+/* =====================================================
+   PLAYER DASHBOARD
+===================================================== */
+
+.dashboard{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+  margin-top:20px;
+}
+
+.stat{
+  background:rgba(255,255,255,.94);
+  border:1px solid white;
+  border-radius:22px;
+
+  padding:16px;
+
+  display:flex;
+  align-items:center;
+  gap:13px;
+
+  box-shadow:var(--shadow-sm);
+}
+
+.stat-icon{
+  width:53px;
+  height:53px;
+
+  flex-shrink:0;
+
+  display:grid;
+  place-items:center;
+
+  background:var(--pink-light);
+  border-radius:17px;
+
+  font-size:25px;
+}
+
+.stat:nth-child(2) .stat-icon{
+  background:var(--gold-light);
+}
+
+.stat:nth-child(3) .stat-icon{
+  background:var(--lavender);
+}
+
+.stat:nth-child(4) .stat-icon{
+  background:var(--mint-light);
+}
+
+.stat-number{
+  display:block;
+
+  font-family:"Baloo 2";
+  font-size:1.75rem;
+  font-weight:800;
+
+  color:var(--purple-dark);
+  line-height:1.1;
+}
+
+.stat-label{
+  font-size:.7rem;
+  font-weight:900;
+  color:var(--muted);
+  letter-spacing:.06em;
+}
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progress-panel{
+  background:rgba(255,255,255,.94);
+
+  border:1px solid white;
+  border-radius:22px;
+
+  padding:18px 22px;
+
+  margin-top:16px;
+
+  box-shadow:var(--shadow-sm);
+}
+
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.progress-top span:last-child{
+  color:var(--pink-dark);
+  font-family:"Space Mono";
+  font-size:.8rem;
+}
+
+.progress-track{
+  height:15px;
+  background:#f4dce9;
+  border-radius:99px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--pink),
+      var(--purple),
+      var(--gold)
+    );
+
+  border-radius:99px;
+
+  transition:width .45s ease;
+}
+
+.mission-dots{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:15px;
+}
+
+.mission-dot{
+  flex:1;
+  text-align:center;
+  background:#fff4fa;
+  border:1px solid #f1dce7;
+  border-radius:12px;
+
+  padding:8px 5px;
+
+  font-weight:900;
+  font-size:.72rem;
+
+  color:var(--muted);
+}
+
+.mission-dot.active{
+  background:var(--purple);
+  color:white;
+  border-color:var(--purple);
+}
+
+.mission-dot.complete{
+  background:var(--mint-light);
+  color:#17865a;
+  border-color:#a4e9cc;
+}
+
+/* =====================================================
+   GAME SHELL
+===================================================== */
+
+.game-shell{
+  background:rgba(255,255,255,.96);
+
+  border:2px solid white;
+  border-radius:34px;
+
+  box-shadow:var(--shadow);
+
+  padding:32px;
+
+  margin-top:23px;
+
+  min-height:510px;
+}
+
+.round{
+  display:none;
+}
+
+.round.active{
+  display:block;
+  animation:slideIn .35s ease;
+}
+
+@keyframes slideIn{
+  from{
+    opacity:0;
+    transform:translateY(15px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.round-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+
+  margin-bottom:13px;
+}
+
+.round-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  background:var(--pink-light);
+  color:var(--pink-dark);
+
+  border-radius:99px;
+  padding:8px 15px;
+
+  font-size:.75rem;
+  font-weight:900;
+}
+
+.round-points{
+  background:var(--gold-light);
+  color:#94651a;
+
+  padding:8px 12px;
+  border-radius:99px;
+
+  font:700 .72rem "Space Mono",monospace;
+}
+
+.round h2{
+  font-family:"Baloo 2";
+  font-size:clamp(1.8rem,4vw,2.4rem);
+  line-height:1.2;
+
+  color:var(--purple-dark);
+  margin:0 0 7px;
+}
+
+.round-description{
+  color:var(--muted);
+  margin:0 0 23px;
+  line-height:1.7;
+}
+
+/* =====================================================
+   GUIDE MESSAGE
+===================================================== */
+
+.guide{
+  display:flex;
+  align-items:center;
+  gap:13px;
+
+  background:linear-gradient(
+    120deg,
+    #fff0f7,
+    #f4edff
+  );
+
+  border:1px solid #efd7ec;
+  border-radius:18px;
+
+  padding:13px 16px;
+  margin-bottom:21px;
+}
+
+.guide-avatar{
+  font-size:35px;
+}
+
+.guide strong{
+  display:block;
+  color:var(--purple-dark);
+  font-size:.8rem;
+}
+
+.guide p{
+  margin:3px 0 0;
+  font-size:.9rem;
+  color:#6e5a7b;
+}
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.question-card{
+  background:linear-gradient(
+    135deg,
+    #fff7fb,
+    #ffffff
+  );
+
+  border:2px solid #f3dbe7;
+  border-radius:24px;
+
+  padding:25px;
+
+  margin-bottom:18px;
+}
+
+.question-illustration{
+  font-size:49px;
+  margin-bottom:10px;
+}
+
+.question-text{
+  font-family:"Baloo 2";
+  font-size:clamp(1.25rem,3vw,1.65rem);
+  font-weight:700;
+  line-height:1.45;
+
+  color:var(--purple-dark);
+}
+
+/* =====================================================
+   ANSWER BUTTONS
+===================================================== */
+
+.answers{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.answer{
+  min-height:75px;
+
+  background:white;
+  border:2px solid #efdae6;
+  border-radius:19px;
+
+  padding:16px;
+
+  display:flex;
+  align-items:center;
+  gap:11px;
+
+  text-align:left;
+
+  font-size:1rem;
+  font-weight:900;
+  color:var(--ink);
+
+  transition:.2s;
+}
+
+.answer:hover:not(:disabled){
+  border-color:var(--pink);
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-sm);
+}
+
+.answer .answer-icon{
+  font-size:25px;
+}
+
+.answer.correct{
+  background:var(--mint-light);
+  border-color:var(--mint);
+  color:#146a49;
+  animation:pop .3s ease;
+}
+
+.answer.wrong{
+  background:var(--red-light);
+  border-color:var(--red);
+  color:#aa354f;
+  animation:shake .3s ease;
+}
+
+.answer:disabled{
+  opacity:.75;
+}
+
+.answer.correct:disabled{
+  opacity:1;
+}
+
+@keyframes pop{
+  50%{
+    transform:scale(1.03);
+  }
+}
+
+@keyframes shake{
+  25%{transform:translateX(-6px)}
+  75%{transform:translateX(6px)}
+}
+
+/* =====================================================
+   FEEDBACK
+===================================================== */
+
+.feedback{
+  display:none;
+
+  border-radius:16px;
+  padding:14px 17px;
+
+  margin-top:17px;
+
+  font-weight:800;
+  line-height:1.6;
+}
+
+.feedback.show{
+  display:block;
+}
+
+.feedback.good{
+  background:var(--mint-light);
+  color:#17734e;
+  border:1px solid #b7efd6;
+}
+
+.feedback.bad{
+  background:var(--red-light);
+  color:#ad4058;
+  border:1px solid #f5c5d0;
+}
+
+.feedback.info{
+  background:var(--lavender);
+  color:#634294;
+  border:1px solid #dac8f2;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.action-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+
+.btn{
+  border:0;
+  border-radius:99px;
+
+  padding:13px 22px;
+
+  font-weight:900;
+  font-size:.95rem;
+
+  transition:.2s;
+}
+
+.btn:hover:not(:disabled){
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:linear-gradient(
+    135deg,
+    var(--pink),
+    var(--purple)
+  );
+
+  color:white;
+
+  box-shadow:0 10px 22px rgba(199,59,128,.22);
+}
+
+.btn-secondary{
+  background:#fff4fa;
+  color:var(--pink-dark);
+  border:1px solid #f0cbdc;
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#6e4b08;
+}
+
+.next-button{
+  display:none;
+}
+
+.next-button.show{
+  display:inline-block;
+}
+
+/* =====================================================
+   ROUND 2 — ARABIC
+===================================================== */
+
+.meaning-layout{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:18px;
+}
+
+.vault-card{
+  background:linear-gradient(
+    145deg,
+    #f9e7ff,
+    #ffe4f0
+  );
+
+  border:2px solid white;
+  border-radius:25px;
+
+  padding:28px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+  min-height:260px;
+}
+
+.vault-icon{
+  font-size:65px;
+  margin-bottom:10px;
+  animation:mascotBounce 3s infinite;
+}
+
+.vault-word{
+  font-family:"Baloo 2";
+  font-size:2.5rem;
+  font-weight:800;
+
+  color:var(--purple-dark);
+}
+
+.vault-subtitle{
+  color:var(--muted);
+  font-size:.85rem;
+}
+
+.arabic-options{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.arabic-option{
+  border:2px solid #eed7e4;
+  border-radius:19px;
+
+  background:white;
+
+  font-family:"Noto Naskh Arabic",serif;
+  font-size:1.4rem;
+  font-weight:700;
+
+  min-height:105px;
+
+  transition:.2s;
+}
+
+.arabic-option:hover:not(:disabled){
+  transform:translateY(-3px);
+  border-color:var(--pink);
+}
+
+.arabic-option.correct{
+  background:var(--mint-light);
+  border-color:var(--mint);
+}
+
+.arabic-option.wrong{
+  background:var(--red-light);
+  border-color:var(--red);
+}
+
+/* =====================================================
+   MATCHING
+===================================================== */
+
+.match-instructions{
+  background:var(--gold-light);
+  border:1px solid #f4dda1;
+  color:#825c21;
+
+  border-radius:15px;
+  padding:12px 15px;
+
+  font-weight:800;
+  margin-bottom:18px;
+}
+
+.match-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
+}
+
+.match-column{
+  display:grid;
+  gap:11px;
+}
+
+.match-item{
+  background:white;
+
+  border:2px solid #efdae6;
+  border-radius:17px;
+
+  min-height:68px;
+
+  padding:14px 17px;
+
+  font-size:1rem;
+  font-weight:900;
+
+  color:var(--ink);
+
+  text-align:left;
+
+  transition:.2s;
+}
+
+.match-item:hover:not(:disabled){
+  border-color:var(--purple);
+  transform:translateY(-2px);
+}
+
+.match-item.selected{
+  background:var(--lavender);
+  border-color:var(--purple);
+}
+
+.match-item.matched{
+  background:var(--mint-light);
+  border-color:var(--mint);
+  color:#16724d;
+  opacity:1;
+}
+
+.match-item.wrong{
+  background:var(--red-light);
+  border-color:var(--red);
+}
+
+.match-item.arabic{
+  text-align:center;
+  font-family:"Noto Naskh Arabic";
+  font-size:1.3rem;
+}
+
+/* =====================================================
+   DETECTIVE
+===================================================== */
+
+.detective-card{
+  background:linear-gradient(
+    135deg,
+    #fff4e2,
+    #fff8fc
+  );
+
+  border:2px solid #f2e0bf;
+  border-radius:24px;
+
+  padding:23px;
+
+  margin-bottom:18px;
+}
+
+.detective-title{
+  font-family:"Baloo 2";
+  font-size:1.65rem;
+  font-weight:800;
+
+  color:var(--purple-dark);
+
+  margin-bottom:15px;
+}
+
+.clue-list{
+  display:grid;
+  gap:11px;
+}
+
+.clue{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+
+  background:white;
+
+  padding:13px 15px;
+  border-radius:14px;
+
+  font-weight:800;
+  line-height:1.6;
+}
+
+.clue-number{
+  background:var(--gold);
+  color:#714a08;
+
+  width:29px;
+  height:29px;
+
+  border-radius:10px;
+
+  display:grid;
+  place-items:center;
+
+  font-family:"Space Mono";
+  font-size:.75rem;
+
+  flex-shrink:0;
+}
+
+/* =====================================================
+   SENTENCE BUILDER
+===================================================== */
+
+.builder-area{
+  background:linear-gradient(
+    145deg,
+    #fff6fa,
+    #f8f0ff
+  );
+
+  border:2px solid #f0d8e9;
+  border-radius:24px;
+
+  padding:23px;
+}
+
+.builder-label{
+  font-size:.76rem;
+  font-weight:900;
+  color:var(--purple-dark);
+  letter-spacing:.06em;
+
+  margin-bottom:10px;
+}
+
+.sentence-display{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:9px;
+
+  min-height:105px;
+
+  background:white;
+  border:2px dashed #e5b9d5;
+  border-radius:18px;
+
+  padding:17px;
+
+  margin-bottom:20px;
+}
+
+.sentence-placeholder{
+  color:#ad9bae;
+  font-weight:800;
+}
+
+.placed-word{
+  background:var(--purple);
+  color:white;
+
+  border:0;
+  border-radius:12px;
+
+  padding:10px 13px;
+
+  font-weight:900;
+
+  animation:pop .25s ease;
+}
+
+.placed-word:hover{
+  background:var(--pink-dark);
+}
+
+.word-bank{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.word-chip{
+  background:white;
+
+  border:2px solid #e7cce1;
+  border-radius:99px;
+
+  padding:11px 16px;
+
+  color:var(--purple-dark);
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.word-chip:hover:not(:disabled){
+  background:var(--pink-light);
+  border-color:var(--pink);
+  transform:translateY(-2px);
+}
+
+.word-chip:disabled{
+  opacity:.35;
+}
+
+.builder-hint{
+  color:var(--muted);
+  font-size:.86rem;
+  margin-top:14px;
+}
+
+/* =====================================================
+   FINAL SCREEN
+===================================================== */
+
+.final-screen{
+  display:none;
+  text-align:center;
+  padding:20px 0 10px;
+}
+
+.final-screen.show{
+  display:block;
+  animation:slideIn .5s ease;
+}
+
+.final-trophy{
+  font-size:95px;
+  animation:mascotBounce 2.5s infinite;
+}
+
+.final-screen h2{
+  font-family:"Baloo 2";
+  font-size:clamp(2.1rem,5vw,3.2rem);
+  line-height:1.1;
+
+  color:var(--purple-dark);
+
+  margin:10px 0;
+}
+
+.final-description{
+  max-width:650px;
+  margin:10px auto 25px;
+
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.final-score-card{
+  max-width:540px;
+  margin:auto;
+
+  background:linear-gradient(
+    145deg,
+    #fff1f7,
+    #f5edff
+  );
+
+  border:2px solid white;
+  border-radius:26px;
+
+  padding:27px;
+}
+
+.final-score-number{
+  font-family:"Baloo 2";
+  font-size:4rem;
+  font-weight:800;
+  color:var(--pink-dark);
+  line-height:1;
+}
+
+.final-score-label{
+  color:var(--muted);
+  font-weight:900;
+}
+
+.final-details{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+
+  margin-top:17px;
+
+  font-weight:900;
+  color:var(--purple-dark);
+}
+
+.achievement{
+  display:inline-block;
+
+  margin-top:23px;
+
+  background:linear-gradient(
+    135deg,
+    #ffd45e,
+    #ffeaa0
+  );
+
+  border:2px solid white;
+  border-radius:99px;
+
+  padding:13px 23px;
+
+  color:#78520e;
+  font-weight:900;
+
+  box-shadow:0 10px 25px rgba(255,190,61,.25);
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translate(-50%,-130px);
+
+  z-index:500;
+
+  background:var(--purple-dark);
+  color:white;
+
+  padding:13px 22px;
+
+  border-radius:99px;
+
+  box-shadow:0 15px 35px rgba(55,30,80,.3);
+
+  font-weight:900;
+  text-align:center;
+
+  transition:transform .35s ease;
+}
+
+.toast.show{
+  transform:translate(-50%,0);
+}
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+.confetti{
+  position:fixed;
+  top:-20px;
+
+  width:9px;
+  height:16px;
+
+  z-index:400;
+  pointer-events:none;
+
+  animation:confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+    opacity:0;
+  }
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+  text-align:center;
+
+  margin-top:27px;
+
+  font-family:"Space Mono";
+  font-size:.7rem;
+  font-weight:700;
+
+  color:var(--purple-dark);
+  letter-spacing:.04em;
+
+  line-height:1.8;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:850px){
+
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-description{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-tags{
+    justify-content:center;
+  }
+
+  .mascot-circle{
+    width:210px;
+    height:210px;
+  }
+
+  .mascot{
+    font-size:85px;
+  }
+
+  .dashboard{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:620px){
+
+  .page{
+    width:94%;
+    padding-top:14px;
+  }
+
+  .hero{
+    padding:26px 19px;
+    border-radius:27px;
+  }
+
+  .hero h1{
+    font-size:2.7rem;
+  }
+
+  .hero-description{
+    font-size:.95rem;
+  }
+
+  .mascot-circle{
+    width:180px;
+    height:180px;
+  }
+
+  .mascot{
+    font-size:72px;
+  }
+
+  .mascot-label{
+    font-size:.75rem;
+  }
+
+  .stat{
+    padding:12px;
+    gap:9px;
+  }
+
+  .stat-icon{
+    width:43px;
+    height:43px;
+    font-size:21px;
+  }
+
+  .stat-number{
+    font-size:1.45rem;
+  }
+
+  .game-shell{
+    padding:20px 16px;
+    border-radius:25px;
+  }
+
+  .answers,
+  .meaning-layout,
+  .match-grid{
+    grid-template-columns:1fr;
+  }
+
+  .arabic-options{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .mission-dot{
+    font-size:.63rem;
+  }
+
+  .question-card{
+    padding:19px;
+  }
+
+  .round-header{
+    flex-wrap:wrap;
+  }
+
+  .progress-panel{
+    padding:15px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="background-decoration" aria-hidden="true">
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+
+  <div class="floating-star">✦</div>
+  <div class="floating-star">⭐</div>
+  <div class="floating-star">✧</div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  ⭐ Amazing!
+</div>
+
+<div class="page">
+
+  <!-- TOP BAR -->
+
+  <header class="topbar">
+
+    <a href="MS4-Sequence2-Games.html" class="back-button">
+      ← Games Map
+    </a>
+
+    <div class="top-actions">
+
+      <button
+        class="icon-button"
+        id="soundButton"
+        onclick="toggleSound()"
+        title="Toggle sound"
+        aria-label="Toggle sound"
+        aria-pressed="true">
+        🔊
+      </button>
+
+      <button
+        class="icon-button"
+        onclick="restartGame()"
+        title="Restart game"
+        aria-label="Restart game">
+        🔄
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        🎮 MS4 · SEQUENCE 2 · GAME 01
+      </div>
+
+      <h1>
+        Personality<br>
+        <span>Power-Up!</span> ⚡
+      </h1>
+
+      <p class="hero-description">
+        Welcome to the Personality Kingdom!
+        Discover character traits, unlock Arabic meanings,
+        solve mysteries and build powerful sentences.
+        Complete all five missions and become a
+        <strong>Personality Master!</strong>
+      </p>
+
+      <div class="hero-tags">
+        <span class="hero-tag">🌟 5 Missions</span>
+        <span class="hero-tag">🧩 Interactive Challenges</span>
+        <span class="hero-tag">🇩🇿 English + Arabic</span>
+        <span class="hero-tag">🏆 Earn XP</span>
+      </div>
+
+    </div>
+
+    <div class="mascot-area">
+
+      <div class="mascot-circle">
+
+        <span class="mascot-sparkle one">✨</span>
+
+        <div class="mascot" id="mascot">
+          🦊
+        </div>
+
+        <span class="mascot-sparkle two">⭐</span>
+
+        <div class="mascot-label">
+          PIP THE FOX
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DASHBOARD -->
+
+  <section class="dashboard" aria-label="Game statistics">
+
+    <div class="stat">
+      <div class="stat-icon">❤️</div>
+      <div>
+        <span class="stat-number" id="lives">5</span>
+        <span class="stat-label">LIVES</span>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-icon">⭐</div>
+      <div>
+        <span class="stat-number" id="xp">0</span>
+        <span class="stat-label">XP</span>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-icon">🔥</div>
+      <div>
+        <span class="stat-number" id="streak">0</span>
+        <span class="stat-label">STREAK</span>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-icon">🏆</div>
+      <div>
+        <span class="stat-number" id="roundNumber">1/5</span>
+        <span class="stat-label">MISSION</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PROGRESS -->
+
+  <section class="progress-panel">
+
+    <div class="progress-top">
+      <span>⚡ YOUR ADVENTURE PROGRESS</span>
+      <span id="progressText">0%</span>
+    </div>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="mission-dots" id="missionDots">
+      <div class="mission-dot active">1 · Power</div>
+      <div class="mission-dot">2 · Vault</div>
+      <div class="mission-dot">3 · Match</div>
+      <div class="mission-dot">4 · Mystery</div>
+      <div class="mission-dot">5 · Build</div>
+    </div>
+
+  </section>
+
+  <!-- GAME -->
+
+  <main class="game-shell" id="gameShell">
+
+    <!-- ================================================
+         ROUND 1
+    ================================================= -->
+
+    <section class="round active" id="round1">
+
+      <div class="round-header">
+        <span class="round-badge">🌟 MISSION 01 · PERSONALITY POWER</span>
+        <span class="round-points">UP TO +20 XP</span>
+      </div>
+
+      <h2>Discover the Personality Power!</h2>
+
+      <p class="round-description">
+        Read the situation and choose the personality
+        adjective that describes the person best.
+      </p>
+
+      <div class="guide">
+        <span class="guide-avatar">🦊</span>
+        <div>
+          <strong>PIP SAYS</strong>
+          <p>
+            Read carefully! Think about what the person does,
+            not just what the person looks like.
+          </p>
+        </div>
+      </div>
+
+      <div class="question-card">
+
+        <div class="question-illustration">
+          👧🤝👦
+        </div>
+
+        <div class="question-text">
+          Lina always helps her classmates.
+          She shares her school things with others
+          and enjoys giving presents.
+          <br><br>
+          Lina is...
+        </div>
+
+      </div>
+
+      <div class="answers" id="answers1">
+
+        <button class="answer" data-correct="true"
+          onclick="handleChoice(1,this,true)">
+
+          <span class="answer-icon">💝</span>
+          Generous
+
+        </button>
+
+        <button class="answer"
+          onclick="handleChoice(1,this,false)">
+
+          <span class="answer-icon">😴</span>
+          Lazy
+
+        </button>
+
+        <button class="answer"
+          onclick="handleChoice(1,this,false)">
+
+          <span class="answer-icon">😎</span>
+          Self-confident
+
+        </button>
+
+        <button class="answer"
+          onclick="handleChoice(1,this,false)">
+
+          <span class="answer-icon">🚀</span>
+          Ambitious
+
+        </button>
+
+      </div>
+
+      <div class="feedback" id="feedback1" role="status"></div>
+
+      <div class="action-row">
+
+        <button class="btn btn-secondary"
+          onclick="showHint(1)">
+          💡 Give Me a Hint
+        </button>
+
+        <button class="btn btn-primary next-button"
+          id="next1"
+          onclick="nextRound(2)">
+          Mission 2 → 🔐
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================
+         ROUND 2
+    ================================================= -->
+
+    <section class="round" id="round2">
+
+      <div class="round-header">
+        <span class="round-badge">🔐 MISSION 02 · WORD VAULT</span>
+        <span class="round-points">UP TO +20 XP</span>
+      </div>
+
+      <h2>Unlock the Secret Meaning!</h2>
+
+      <p class="round-description">
+        A special personality word is hidden in the vault.
+        Choose its correct Arabic meaning to unlock the next mission.
+      </p>
+
+      <div class="guide">
+        <span class="guide-avatar">🦊</span>
+        <div>
+          <strong>PIP SAYS</strong>
+          <p>
+            Ambitious people have big dreams and work
+            towards their goals!
+          </p>
+        </div>
+      </div>
+
+      <div class="meaning-layout">
+
+        <div class="vault-card">
+
+          <div class="vault-icon" id="vaultIcon">
+            🔒
+          </div>
+
+          <div class="vault-word">
+            Ambitious
+          </div>
+
+          <div class="vault-subtitle">
+            /æmˈbɪʃəs/
+          </div>
+
+        </div>
+
+        <div class="arabic-options" id="answers2">
+
+          <button class="arabic-option"
+            onclick="handleChoice(2,this,false)">
+            هادئ
+          </button>
+
+          <button class="arabic-option" data-correct="true"
+            onclick="handleChoice(2,this,true)">
+            طموح
+          </button>
+
+          <button class="arabic-option"
+            onclick="handleChoice(2,this,false)">
+            كريم
+          </button>
+
+          <button class="arabic-option"
+            onclick="handleChoice(2,this,false)">
+            كسول
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="feedback" id="feedback2" role="status"></div>
+
+      <div class="action-row">
+
+        <button class="btn btn-secondary"
+          onclick="showHint(2)">
+          💡 Meaning Hint
+        </button>
+
+        <button class="btn btn-primary next-button"
+          id="next2"
+          onclick="nextRound(3)">
+          Unlock Mission 3 → 🧩
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================
+         ROUND 3
+    ================================================= -->
+
+    <section class="round" id="round3">
+
+      <div class="round-header">
+        <span class="round-badge">🧩 MISSION 03 · MATCHING MAGIC</span>
+        <span class="round-points">UP TO +20 XP</span>
+      </div>
+
+      <h2>Match the Personality Powers!</h2>
+
+      <p class="round-description">
+        Match every English adjective with its Arabic meaning.
+        Complete all four pairs to unlock the treasure!
+      </p>
+
+      <div class="guide">
+        <span class="guide-avatar">🦊</span>
+        <div>
+          <strong>PIP SAYS</strong>
+          <p>
+            First choose an English word, then tap
+            its matching Arabic meaning.
+          </p>
+        </div>
+      </div>
+
+      <div class="match-instructions" id="matchCounter">
+        💎 Treasure pieces collected: 0/4
+      </div>
+
+      <div class="match-grid">
+
+        <div class="match-column">
+
+          <button class="match-item"
+            data-word="calm"
+            onclick="selectEnglish(this,'calm')">
+            🧘 Calm
+          </button>
+
+          <button class="match-item"
+            data-word="hardworking"
+            onclick="selectEnglish(this,'hardworking')">
+            💪 Hardworking
+          </button>
+
+          <button class="match-item"
+            data-word="self-confident"
+            onclick="selectEnglish(this,'self-confident')">
+            😎 Self-confident
+          </button>
+
+          <button class="match-item"
+            data-word="ambitious"
+            onclick="selectEnglish(this,'ambitious')">
+            🚀 Ambitious
+          </button>
+
+        </div>
+
+        <div class="match-column">
+
+          <button class="match-item arabic"
+            data-match="hardworking"
+            onclick="selectArabic(this,'hardworking')">
+            مجتهد
+          </button>
+
+          <button class="match-item arabic"
+            data-match="ambitious"
+            onclick="selectArabic(this,'ambitious')">
+            طموح
+          </button>
+
+          <button class="match-item arabic"
+            data-match="calm"
+            onclick="selectArabic(this,'calm')">
+            هادئ
+          </button>
+
+          <button class="match-item arabic"
+            data-match="self-confident"
+            onclick="selectArabic(this,'self-confident')">
+            واثق من نفسه
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="feedback" id="feedback3" role="status"></div>
+
+      <div class="action-row">
+
+        <button class="btn btn-secondary"
+          onclick="showHint(3)">
+          💡 Matching Hint
+        </button>
+
+        <button class="btn btn-primary next-button"
+          id="next3"
+          onclick="nextRound(4)">
+          Open Mission 4 → 🕵️
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================
+         ROUND 4
+    ================================================= -->
+
+    <section class="round" id="round4">
+
+      <div class="round-header">
+        <span class="round-badge">🕵️ MISSION 04 · DETECTIVE</span>
+        <span class="round-points">UP TO +20 XP</span>
+      </div>
+
+      <h2>Solve the Personality Mystery!</h2>
+
+      <p class="round-description">
+        Read the three clues and discover
+        the mystery person's personality trait.
+      </p>
+
+      <div class="guide">
+        <span class="guide-avatar">🦊</span>
+        <div>
+          <strong>PIP SAYS</strong>
+          <p>
+            A good detective looks at all the clues
+            before choosing an answer.
+          </p>
+        </div>
+      </div>
+
+      <div class="detective-card">
+
+        <div class="detective-title">
+          🔎 Case File: The Mystery Pupil
+        </div>
+
+        <div class="clue-list">
+
+          <div class="clue">
+            <span class="clue-number">01</span>
+            <span>
+              He studies every day and always
+              finishes his homework.
+            </span>
+          </div>
+
+          <div class="clue">
+            <span class="clue-number">02</span>
+            <span>
+              He never gives up when an exercise
+              is difficult.
+            </span>
+          </div>
+
+          <div class="clue">
+            <span class="clue-number">03</span>
+            <span>
+              He makes a great effort to
+              achieve his goals.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="answers" id="answers4">
+
+        <button class="answer"
+          onclick="handleChoice(4,this,false)">
+          <span class="answer-icon">😴</span>
+          Lazy
+        </button>
+
+        <button class="answer" data-correct="true"
+          onclick="handleChoice(4,this,true)">
+          <span class="answer-icon">💪</span>
+          Hardworking
+        </button>
+
+        <button class="answer"
+          onclick="handleChoice(4,this,false)">
+          <span class="answer-icon">😤</span>
+          Impatient
+        </button>
+
+        <button class="answer"
+          onclick="handleChoice(4,this,false)">
+          <span class="answer-icon">🤫</span>
+          Shy
+        </button>
+
+      </div>
+
+      <div class="feedback" id="feedback4" role="status"></div>
+
+      <div class="action-row">
+
+        <button class="btn btn-secondary"
+          onclick="showHint(4)">
+          💡 Detective Hint
+        </button>
+
+        <button class="btn btn-primary next-button"
+          id="next4"
+          onclick="nextRound(5)">
+          Final Mission → 🚀
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================
+         ROUND 5
+    ================================================= -->
+
+    <section class="round" id="round5">
+
+      <div class="round-header">
+        <span class="round-badge">🚀 MISSION 05 · SENTENCE BUILDER</span>
+        <span class="round-points">UP TO +20 XP</span>
+      </div>
+
+      <h2>Build the Power Sentence!</h2>
+
+      <p class="round-description">
+        Tap the words in the correct order to create
+        a meaningful sentence about personality.
+      </p>
+
+      <div class="guide">
+        <span class="guide-avatar">🦊</span>
+        <div>
+          <strong>PIP SAYS</strong>
+          <p>
+            Remember the order:
+            subject + verb + adjectives.
+            Tap a purple word to remove it!
+          </p>
+        </div>
+      </div>
+
+      <div class="builder-area">
+
+        <div class="builder-label">
+          ✍️ YOUR SENTENCE
+        </div>
+
+        <div class="sentence-display" id="sentenceDisplay">
+          <span class="sentence-placeholder">
+            Tap the words below to start...
+          </span>
+        </div>
+
+        <div class="builder-label">
+          🧩 WORD BANK
+        </div>
+
+        <div class="word-bank" id="wordBank">
+
+          <button class="word-chip" data-word="is"
+            onclick="addWord(this)">
+            is
+          </button>
+
+          <button class="word-chip" data-word="My"
+            onclick="addWord(this)">
+            My
+          </button>
+
+          <button class="word-chip" data-word="ambitious"
+            onclick="addWord(this)">
+            ambitious
+          </button>
+
+          <button class="word-chip" data-word="brother"
+            onclick="addWord(this)">
+            brother
+          </button>
+
+          <button class="word-chip" data-word="and"
+            onclick="addWord(this)">
+            and
+          </button>
+
+          <button class="word-chip" data-word="hardworking"
+            onclick="addWord(this)">
+            hardworking
+          </button>
+
+        </div>
+
+        <p class="builder-hint">
+          💡 Tip: Click a word in your sentence to remove it.
+          You can change the order at any time.
+        </p>
+
+      </div>
+
+      <div class="feedback" id="feedback5" role="status"></div>
+
+      <div class="action-row">
+
+        <button class="btn btn-secondary"
+          onclick="clearSentence()">
+          ↻ Clear Sentence
+        </button>
+
+        <button class="btn btn-secondary"
+          onclick="showHint(5)">
+          💡 Sentence Hint
+        </button>
+
+        <button class="btn btn-gold"
+          onclick="checkSentence()">
+          ✓ Check Sentence
+        </button>
+
+        <button class="btn btn-primary next-button"
+          id="next5"
+          onclick="finishGame()">
+          Claim My Trophy → 🏆
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================
+         FINAL SCREEN
+    ================================================= -->
+
+    <section class="final-screen" id="finalScreen">
+
+      <div class="final-trophy">
+        🏆
+      </div>
+
+      <h2>
+        Personality Power Unlocked!
+      </h2>
+
+      <p class="final-description">
+        You completed all five missions!
+        You discovered personality traits,
+        learned Arabic meanings, solved a mystery
+        and built a complete English sentence.
+      </p>
+
+      <div class="final-score-card">
+
+        <div class="final-score-number" id="finalXP">
+          0
+        </div>
+
+        <div class="final-score-label">
+          TOTAL EXPERIENCE POINTS
+        </div>
+
+        <div class="final-details">
+          <span id="finalLives">❤️ 5 lives</span>
+          <span id="finalBest">🏆 Best: 0 XP</span>
+        </div>
+
+      </div>
+
+      <div class="achievement" id="achievementBadge">
+        🌟 PERSONALITY EXPLORER
+      </div>
+
+      <p class="final-description" id="finalMessage"></p>
+
+      <div class="action-row" style="justify-content:center;">
+
+        <button class="btn btn-primary"
+          onclick="restartGame()">
+          🔄 Play Again
+        </button>
+
+        <a class="btn btn-secondary"
+          href="MS4-Sequence2-Games.html"
+          style="text-decoration:none;">
+          ← Games Map
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    MY ENGLISH SPACE · MS4 · SEQUENCE 2<br>
+    PERSONALITY POWER-UP · LEARN · PLAY · GROW
+  </footer>
+
+</div>
+
+<script>
+"use strict";
+
+/* =====================================================
+   GAME STATE
+===================================================== */
+
+const BEST_KEY = "MS4_S2_PERSONALITY_POWERUP_BEST_V2";
+
+const MAX_XP = 100;
+
+let lives = 5;
+let xp = 0;
+let streak = 0;
+let currentRound = 1;
+
+let soundEnabled = true;
+let audioContext = null;
+
+let selectedEnglish = null;
+let matchedPairs = 0;
+
+let sentenceWords = [];
+
+let roundCompleted = {
+  1:false,
+  2:false,
+  3:false,
+  4:false,
+  5:false
+};
+
+let mistakes = {
+  1:0,
+  2:0,
+  3:0,
+  4:0,
+  5:0
+};
+
+let bestScore = 0;
+
+try{
+  bestScore = Number(localStorage.getItem(BEST_KEY)) || 0;
+}catch(error){
+  bestScore = 0;
+}
+
+const $ = id => document.getElementById(id);
+
+/* =====================================================
+   SOUND ENGINE
+===================================================== */
+
+function playSound(type="tap"){
+
+  if(!soundEnabled) return;
+
+  try{
+
+    if(!audioContext){
+      const AudioClass =
+        window.AudioContext || window.webkitAudioContext;
+
+      if(!AudioClass) return;
+
+      audioContext = new AudioClass();
+    }
+
+    if(audioContext.state==="suspended"){
+      audioContext.resume();
+    }
+
+    const notes = {
+      good:[523,659,784],
+      bad:[220,175],
+      tap:[440],
+      win:[523,659,784,1046]
+    };
+
+    const frequencies = notes[type] || notes.tap;
+
+    frequencies.forEach((frequency,index)=>{
+
+      const oscillator = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+
+      const start =
+        audioContext.currentTime + index*.085;
+
+      oscillator.type =
+        type==="bad" ? "triangle" : "sine";
+
+      oscillator.frequency.value = frequency;
+
+      gain.gain.setValueAtTime(.0001,start);
+      gain.gain.exponentialRampToValueAtTime(
+        .07,
+        start+.02
+      );
+      gain.gain.exponentialRampToValueAtTime(
+        .0001,
+        start+.18
+      );
+
+      oscillator.connect(gain);
+      gain.connect(audioContext.destination);
+
+      oscillator.start(start);
+      oscillator.stop(start+.2);
+
+    });
+
+  }catch(error){
+    // Sound is optional. The game works without audio.
+  }
+}
+
+function toggleSound(){
+
+  soundEnabled = !soundEnabled;
+
+  $("soundButton").textContent =
+    soundEnabled ? "🔊" : "🔇";
+
+  $("soundButton").setAttribute(
+    "aria-pressed",
+    String(soundEnabled)
+  );
+
+}
+
+/* =====================================================
+   UPDATE DASHBOARD
+===================================================== */
+
+function updateUI(){
+
+  $("lives").textContent = lives;
+  $("xp").textContent = xp;
+  $("streak").textContent = streak;
+
+  $("roundNumber").textContent =
+    currentRound + "/5";
+
+  const completed = Object.values(
+    roundCompleted
+  ).filter(Boolean).length;
+
+  const percent = completed * 20;
+
+  $("progressFill").style.width = percent + "%";
+  $("progressText").textContent = percent + "%";
+
+  document.querySelectorAll(".mission-dot")
+    .forEach((dot,index)=>{
+
+      const round = index+1;
+
+      dot.classList.toggle(
+        "complete",
+        roundCompleted[round]
+      );
+
+      dot.classList.toggle(
+        "active",
+        round===currentRound &&
+        !roundCompleted[round]
+      );
+
+    });
+
+}
+
+/* =====================================================
+   FEEDBACK
+===================================================== */
+
+function showFeedback(round,message,type){
+
+  const element = $("feedback"+round);
+
+  element.textContent = message;
+  element.className = "feedback show "+type;
+
+}
+
+function showToast(message){
+
+  const toast = $("toast");
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(showToast.timer);
+
+  showToast.timer = setTimeout(()=>{
+    toast.classList.remove("show");
+  },2100);
+
+}
+
+/* =====================================================
+   XP AND LIVES
+===================================================== */
+
+function addXP(points){
+
+  xp = Math.min(MAX_XP,xp+points);
+
+  updateUI();
+
+}
+
+function loseLife(){
+
+  if(lives>1){
+    lives--;
+  }
+
+  streak = 0;
+
+  playSound("bad");
+
+  updateUI();
+
+  if(lives===1){
+    showToast(
+      "💗 One heart left! Keep trying!"
+    );
+  }
+
+}
+
+/* =====================================================
+   COMPLETE MISSION
+===================================================== */
+
+function completeRound(round,points){
+
+  if(roundCompleted[round]) return;
+
+  roundCompleted[round] = true;
+
+  streak++;
+
+  addXP(points);
+
+  $("next"+round).classList.add("show");
+
+  playSound("good");
+
+  celebrate(20);
+
+  if(streak>=3){
+    showToast("🔥 Amazing! "+streak+" mission streak!");
+  }else{
+    showToast("⭐ Mission complete! +"+points+" XP");
+  }
+
+  updateUI();
+
+}
+
+/* =====================================================
+   MULTIPLE CHOICE
+===================================================== */
+
+function handleChoice(round,button,correct){
+
+  if(roundCompleted[round]) return;
+
+  if(button.disabled) return;
+
+  if(correct){
+
+    button.classList.add("correct");
+
+    const container = $("answers"+round);
+
+    container.querySelectorAll("button")
+      .forEach(item=>{
+        item.disabled = true;
+      });
+
+    let message = "";
+
+    if(round===1){
+      message =
+        "🌟 Correct! Generous people enjoy sharing and helping others.";
+    }
+
+    if(round===2){
+      message =
+        "🔓 Vault unlocked! Ambitious means طموح.";
+      $("vaultIcon").textContent = "🔓";
+    }
+
+    if(round===4){
+      message =
+        "🕵️ Mystery solved! A hardworking person makes a great effort and does not give up.";
+    }
+
+    showFeedback(round,message,"good");
+
+    const points = mistakes[round]===0 ? 20 : 12;
+
+    completeRound(round,points);
+
+  }else{
+
+    button.classList.add("wrong");
+    button.disabled = true;
+
+    mistakes[round]++;
+
+    loseLife();
+
+    let message = "";
+
+    if(round===1){
+      message =
+        "Not quite! Think about someone who enjoys giving and sharing. Try another answer.";
+    }
+
+    if(round===2){
+      message =
+        "That is not the correct Arabic meaning. Think about someone who has big dreams.";
+    }
+
+    if(round===4){
+      message =
+        "Look at the clues again. The pupil studies, works hard and never gives up.";
+    }
+
+    showFeedback(round,message,"bad");
+
+  }
+
+}
+
+/* =====================================================
+   HINTS
+===================================================== */
+
+const hints = {
+  1:"💡 A generous person likes sharing and giving things to others.",
+  2:"💡 Ambitious = someone who wants to achieve important goals.",
+  3:"💡 Calm means هادئ. Hardworking means مجتهد.",
+  4:"💡 Think about the adjective that describes a person who works hard.",
+  5:"💡 Begin with: My brother is..."
+};
+
+function showHint(round){
+
+  showFeedback(
+    round,
+    hints[round],
+    "info"
+  );
+
+  playSound("tap");
+
+}
+
+/* =====================================================
+   MATCHING GAME
+===================================================== */
+
+function selectEnglish(button,word){
+
+  if(roundCompleted[3]) return;
+
+  if(button.classList.contains("matched")) return;
+
+  document.querySelectorAll("[data-word]")
+    .forEach(item=>{
+      item.classList.remove("selected");
+    });
+
+  selectedEnglish = word;
+
+  button.classList.add("selected");
+
+  showFeedback(
+    3,
+    "Now choose the Arabic meaning of "+word+".",
+    "info"
+  );
+
+  playSound("tap");
+
+}
+
+function selectArabic(button,meaning){
+
+  if(roundCompleted[3]) return;
+
+  if(button.classList.contains("matched")) return;
+
+  if(!selectedEnglish){
+
+    showFeedback(
+      3,
+      "👆 Choose an English word first!",
+      "info"
+    );
+
+    return;
+  }
+
+  if(selectedEnglish===meaning){
+
+    const english = document.querySelector(
+      '[data-word="'+meaning+'"]'
+    );
+
+    english.classList.remove("selected");
+    english.classList.add("matched");
+    english.disabled = true;
+
+    button.classList.add("matched");
+    button.disabled = true;
+
+    matchedPairs++;
+
+    $("matchCounter").textContent =
+      "💎 Treasure pieces collected: "+
+      matchedPairs+"/4";
+
+    selectedEnglish = null;
+
+    playSound("good");
+
+    celebrate(8);
+
+    if(matchedPairs===4){
+
+      showFeedback(
+        3,
+        "💎 Treasure unlocked! You matched all four personality adjectives!",
+        "good"
+      );
+
+      const points = mistakes[3]===0 ? 20 : 12;
+
+      completeRound(3,points);
+
+    }else{
+
+      showFeedback(
+        3,
+        "✨ Perfect match! Keep going.",
+        "good"
+      );
+
+    }
+
+  }else{
+
+    mistakes[3]++;
+
+    loseLife();
+
+    button.classList.add("wrong");
+
+    setTimeout(()=>{
+      button.classList.remove("wrong");
+    },550);
+
+    showFeedback(
+      3,
+      "🔍 These words do not match. Try again!",
+      "bad"
+    );
+
+  }
+
+}
+
+/* =====================================================
+   SENTENCE BUILDER
+===================================================== */
+
+const correctSentence = [
+  "My",
+  "brother",
+  "is",
+  "ambitious",
+  "and",
+  "hardworking"
+];
+
+function addWord(button){
+
+  if(roundCompleted[5]) return;
+
+  if(button.disabled) return;
+
+  const word = button.dataset.word;
+
+  sentenceWords.push(word);
+
+  button.disabled = true;
+
+  renderSentence();
+
+  playSound("tap");
+
+}
+
+function removeWord(index){
+
+  if(roundCompleted[5]) return;
+
+  const word = sentenceWords[index];
+
+  sentenceWords.splice(index,1);
+
+  const chip = [...document.querySelectorAll(".word-chip")]
+    .find(item=>item.dataset.word===word);
+
+  if(chip){
+    chip.disabled = false;
+  }
+
+  renderSentence();
+
+  playSound("tap");
+
+}
+
+function renderSentence(){
+
+  const display = $("sentenceDisplay");
+
+  display.innerHTML = "";
+
+  if(sentenceWords.length===0){
+
+    const placeholder = document.createElement("span");
+
+    placeholder.className = "sentence-placeholder";
+    placeholder.textContent =
+      "Tap the words below to start...";
+
+    display.appendChild(placeholder);
+
+    return;
+  }
+
+  sentenceWords.forEach((word,index)=>{
+
+    const button = document.createElement("button");
+
+    button.className = "placed-word";
+    button.textContent = word;
+
+    button.title = "Remove this word";
+
+    button.addEventListener("click",()=>{
+      removeWord(index);
+    });
+
+    display.appendChild(button);
+
+  });
+
+}
+
+function clearSentence(){
+
+  if(roundCompleted[5]) return;
+
+  sentenceWords = [];
+
+  document.querySelectorAll(".word-chip")
+    .forEach(button=>{
+      button.disabled = false;
+    });
+
+  renderSentence();
+
+  $("feedback5").className = "feedback";
+
+  playSound("tap");
+
+}
+
+function checkSentence(){
+
+  if(roundCompleted[5]) return;
+
+  if(sentenceWords.length!==correctSentence.length){
+
+    showFeedback(
+      5,
+      "🧩 Use all six words to complete the sentence.",
+      "info"
+    );
+
+    return;
+  }
+
+  const correct = sentenceWords.every(
+    (word,index)=>word===correctSentence[index]
+  );
+
+  if(correct){
+
+    showFeedback(
+      5,
+      "🚀 Fantastic! My brother is ambitious and hardworking. Your sentence has the correct word order!",
+      "good"
+    );
+
+    document.querySelectorAll(".word-chip")
+      .forEach(button=>{
+        button.disabled = true;
+      });
+
+    const points = mistakes[5]===0 ? 20 : 12;
+
+    completeRound(5,points);
+
+  }else{
+
+    mistakes[5]++;
+
+    loseLife();
+
+    showFeedback(
+      5,
+      "Almost! Check the sentence structure: subject + verb + adjective + and + adjective. You can remove words and try again.",
+      "bad"
+    );
+
+  }
+
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+function nextRound(number){
+
+  if(number>1 && !roundCompleted[number-1]){
+    return;
+  }
+
+  document.querySelectorAll(".round")
+    .forEach(round=>{
+      round.classList.remove("active");
+    });
+
+  currentRound = number;
+
+  $("round"+number).classList.add("active");
+
+  updateUI();
+
+  $("gameShell").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+  playSound("tap");
+
+}
+
+/* =====================================================
+   FINISH GAME
+===================================================== */
+
+function finishGame(){
+
+  if(!Object.values(roundCompleted).every(Boolean)){
+    return;
+  }
+
+  document.querySelectorAll(".round")
+    .forEach(round=>{
+      round.classList.remove("active");
+    });
+
+  $("finalScreen").classList.add("show");
+
+  if(xp>bestScore){
+
+    bestScore=xp;
+
+    try{
+      localStorage.setItem(
+        BEST_KEY,
+        String(bestScore)
+      );
+    }catch(error){
+      // Best score storage is optional.
+    }
+
+  }
+
+  $("finalXP").textContent = xp;
+
+  $("finalLives").textContent =
+    "❤️ "+lives+" lives remaining";
+
+  $("finalBest").textContent =
+    "🏆 Best: "+bestScore+" XP";
+
+  let badge = "";
+  let message = "";
+
+  if(xp>=90){
+
+    badge = "👑 LEGENDARY PERSONALITY MASTER";
+
+    message =
+      "Outstanding! You have shown excellent knowledge of personality adjectives and sentence structure.";
+
+  }else if(xp>=70){
+
+    badge = "🌟 PERSONALITY MASTER";
+
+    message =
+      "Excellent work! You completed the adventure with a strong score.";
+
+  }else if(xp>=50){
+
+    badge = "💎 PERSONALITY EXPLORER";
+
+    message =
+      "Well done! You completed all five missions. Keep practising to improve your score.";
+
+  }else{
+
+    badge = "🌈 BRAVE LEARNER";
+
+    message =
+      "Congratulations on finishing the adventure! Play again to strengthen your vocabulary.";
+
+  }
+
+  $("achievementBadge").textContent = badge;
+  $("finalMessage").textContent = message;
+
+  playSound("win");
+  celebrate(90);
+
+  $("gameShell").scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+/* =====================================================
+   RESTART GAME
+===================================================== */
+
+function restartGame(){
+
+  lives = 5;
+  xp = 0;
+  streak = 0;
+  currentRound = 1;
+
+  selectedEnglish = null;
+  matchedPairs = 0;
+  sentenceWords = [];
+
+  roundCompleted = {
+    1:false,
+    2:false,
+    3:false,
+    4:false,
+    5:false
+  };
+
+  mistakes = {
+    1:0,
+    2:0,
+    3:0,
+    4:0,
+    5:0
+  };
+
+  document.querySelectorAll(".round")
+    .forEach(round=>{
+      round.classList.remove("active");
+    });
+
+  $("round1").classList.add("active");
+
+  $("finalScreen").classList.remove("show");
+
+  document.querySelectorAll(".answer")
+    .forEach(button=>{
+      button.disabled = false;
+      button.classList.remove("correct","wrong");
+    });
+
+  document.querySelectorAll(".arabic-option")
+    .forEach(button=>{
+      button.disabled = false;
+      button.classList.remove("correct","wrong");
+    });
+
+  document.querySelectorAll(".match-item")
+    .forEach(button=>{
+      button.disabled = false;
+      button.classList.remove(
+        "selected",
+        "matched",
+        "wrong"
+      );
+    });
+
+  document.querySelectorAll(".word-chip")
+    .forEach(button=>{
+      button.disabled = false;
+    });
+
+  document.querySelectorAll(".next-button")
+    .forEach(button=>{
+      button.classList.remove("show");
+    });
+
+  document.querySelectorAll(".feedback")
+    .forEach(element=>{
+      element.className = "feedback";
+      element.textContent = "";
+    });
+
+  $("vaultIcon").textContent = "🔒";
+
+  $("matchCounter").textContent =
+    "💎 Treasure pieces collected: 0/4";
+
+  renderSentence();
+  updateUI();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+  showToast("🦊 A new adventure begins!");
+
+}
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+function celebrate(amount=20){
+
+  const colors = [
+    "#ff5795",
+    "#ffc64f",
+    "#8551c8",
+    "#35c98e",
+    "#579ff5",
+    "#f35c76"
+  ];
+
+  for(let i=0;i<amount;i++){
+
+    setTimeout(()=>{
+
+      const piece = document.createElement("div");
+
+      piece.className = "confetti";
+
+      piece.style.left =
+        Math.random()*100+"vw";
+
+      piece.style.background =
+        colors[Math.floor(Math.random()*colors.length)];
+
+      piece.style.animationDuration =
+        (2+Math.random()*2)+"s";
+
+      piece.style.transform =
+        "rotate("+Math.random()*360+"deg)";
+
+      document.body.appendChild(piece);
+
+      setTimeout(()=>{
+        piece.remove();
+      },4200);
+
+    },i*18);
+
+  }
+
+}
+
+/* =====================================================
+   INITIALISE
+===================================================== */
+
+renderSentence();
+updateUI();
+
+</script>
+
+</body>
+</html>

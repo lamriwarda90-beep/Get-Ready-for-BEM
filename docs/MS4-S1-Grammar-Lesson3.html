@@ -1,0 +1,3288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#087c85">
+
+<title>Checkpoint 03 | Superiority & Inferiority | MS4</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   GLOBAL DESIGN
+========================================= */
+
+:root{
+  --deep:#073e49;
+  --dark:#075b67;
+  --teal:#0d9ba6;
+  --aqua:#3bd0c7;
+  --gold:#ffc857;
+  --orange:#ff995c;
+  --green:#16a36b;
+  --red:#db5555;
+  --ink:#173b46;
+  --muted:#607985;
+  --soft:#effbfc;
+  --shadow:0 18px 45px rgba(3,55,68,.14);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:"Nunito",Arial,sans-serif;
+  background:#e9f8f9;
+  color:var(--ink);
+}
+
+button,textarea,select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+h1,h2,h3,h4{
+  font-family:"Baloo 2",Arial,sans-serif;
+}
+
+.container{
+  width:92%;
+  max-width:1080px;
+  margin:auto;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(75,220,211,.3),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #073e49,
+      #087c85 65%,
+      #0ba6a5
+    );
+
+  color:white;
+  padding:24px 0 65px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.brand{
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.back{
+  padding:11px 18px;
+  border-radius:30px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.4);
+  font-size:12px;
+  font-weight:900;
+  transition:.25s;
+}
+
+.back:hover{
+  background:rgba(255,255,255,.25);
+}
+
+.hero-content{
+  text-align:center;
+  max-width:850px;
+  margin:55px auto 0;
+}
+
+.eyebrow{
+  display:inline-block;
+  background:var(--gold);
+  color:#533b08;
+  padding:9px 18px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.hero h1{
+  font-size:clamp(40px,7vw,75px);
+  line-height:1.05;
+  margin:20px 0 14px;
+}
+
+.hero h1 span{
+  display:block;
+  color:#ffe09b;
+}
+
+.hero-description{
+  font-size:15px;
+  font-weight:700;
+  line-height:1.8;
+}
+
+.hero-chips{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:23px;
+}
+
+.hero-chip{
+  padding:9px 15px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:30px;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.progress-wrap{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid #c8e9e9;
+  box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.progress-inner{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:13px 0;
+}
+
+.progress-label,
+.progress-number{
+  white-space:nowrap;
+  color:var(--dark);
+  font-size:11px;
+  font-weight:900;
+}
+
+.progress-track{
+  flex:1;
+  height:10px;
+  background:#d9eff0;
+  border-radius:30px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,#0d9ba6,#ffc857);
+  transition:width .3s;
+}
+
+/* =========================================
+   LESSON SECTIONS
+========================================= */
+
+main{
+  padding:35px 0 55px;
+}
+
+.stage{
+  background:white;
+  border-radius:26px;
+  margin-bottom:28px;
+  padding:32px;
+  border:1px solid #d8eded;
+  box-shadow:var(--shadow);
+  scroll-margin-top:90px;
+}
+
+.stage-top{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.stage-number{
+  display:grid;
+  place-items:center;
+  width:45px;
+  height:45px;
+  background:var(--gold);
+  border-radius:14px;
+  font-weight:900;
+  color:#58400b;
+}
+
+.stage-label{
+  background:#e2f7f7;
+  color:var(--dark);
+  padding:8px 13px;
+  border-radius:25px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.level{
+  margin-left:auto;
+  background:#e8f8ee;
+  color:#158152;
+  border-radius:25px;
+  padding:7px 12px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.level.medium{
+  background:#fff2da;
+  color:#9a6a10;
+}
+
+.level.hard{
+  background:#ffe6e3;
+  color:#b94e48;
+}
+
+.stage h2{
+  font-size:clamp(25px,4vw,35px);
+  color:var(--deep);
+  margin:5px 0 10px;
+  line-height:1.2;
+}
+
+.stage-description{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8;
+  font-weight:700;
+  margin-bottom:23px;
+}
+
+.subheading{
+  color:var(--dark);
+  font-size:23px;
+  margin:25px 0 12px;
+}
+
+/* =========================================
+   REAL LANDMARK PHOTOGRAPHS
+========================================= */
+
+.landmark-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.landmark-card{
+  border:2px solid #d9efef;
+  border-radius:21px;
+  overflow:hidden;
+  background:#f2fbfb;
+  transition:.3s;
+}
+
+.landmark-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+
+.landmark-photo{
+  height:320px;
+  background:linear-gradient(
+    135deg,
+    #dff2f2,
+    #a7d7df
+  );
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.landmark-photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.landmark-photo.cover img{
+  object-fit:cover;
+}
+
+.landmark-body{
+  padding:19px;
+}
+
+.landmark-body h3{
+  margin:0 0 7px;
+  color:var(--dark);
+  font-size:22px;
+}
+
+.landmark-body p{
+  font-size:13px;
+  font-weight:700;
+  line-height:1.8;
+  margin:5px 0;
+}
+
+.photo-credit{
+  font-size:10px;
+  color:var(--muted);
+  padding:0 16px 12px;
+}
+
+.highlight-sup{
+  background:#fff0bd;
+  color:#7c5600;
+  padding:2px 6px;
+  border-radius:5px;
+  font-weight:900;
+}
+
+.highlight-inf{
+  background:#ffe0d3;
+  color:#ad4f30;
+  padding:2px 6px;
+  border-radius:5px;
+  font-weight:900;
+}
+
+.notice{
+  background:#fff8e7;
+  border-left:5px solid var(--gold);
+  padding:18px;
+  border-radius:13px;
+  margin-top:20px;
+  font-weight:800;
+  line-height:1.9;
+}
+
+/* =========================================
+   RULE CARDS
+========================================= */
+
+.rule-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
+}
+
+.rule-card{
+  padding:22px;
+  border-radius:20px;
+  border:2px solid;
+}
+
+.rule-card.superior{
+  background:#fff9e9;
+  border-color:#f6d58a;
+}
+
+.rule-card.inferior{
+  background:#fff0e9;
+  border-color:#f6b79b;
+}
+
+.rule-card h3{
+  font-size:25px;
+  margin:0 0 10px;
+}
+
+.rule-card p{
+  font-size:14px;
+  font-weight:700;
+  line-height:1.8;
+}
+
+.formula{
+  background:white;
+  border-radius:12px;
+  padding:14px;
+  font-weight:900;
+  color:var(--deep);
+  line-height:1.9;
+  margin:12px 0;
+}
+
+.example{
+  background:rgba(255,255,255,.8);
+  padding:12px;
+  border-radius:12px;
+  margin:10px 0;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.8;
+}
+
+.arabic{
+  direction:rtl;
+  text-align:right;
+  background:#e9f7f2;
+  border-right:5px solid var(--green);
+  border-radius:12px;
+  padding:17px;
+  font-size:14px;
+  line-height:2.1;
+  font-weight:800;
+  margin-top:18px;
+}
+
+.tip{
+  background:#eaf7ff;
+  border-left:5px solid #48a7d4;
+  padding:16px;
+  border-radius:12px;
+  margin-top:17px;
+  font-weight:800;
+  line-height:1.8;
+}
+
+/* =========================================
+   TABLES
+========================================= */
+
+.table-wrap{
+  overflow-x:auto;
+  border-radius:16px;
+  border:1px solid #d6ecec;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:500px;
+  font-size:13px;
+}
+
+th{
+  background:var(--dark);
+  color:white;
+  padding:14px;
+  text-align:left;
+}
+
+td{
+  padding:13px 14px;
+  border-bottom:1px solid #e4eeee;
+  font-weight:700;
+}
+
+tr:nth-child(even) td{
+  background:#f1fafa;
+}
+
+.bad{
+  color:#c64747;
+  font-weight:900;
+}
+
+.good{
+  color:#168357;
+  font-weight:900;
+}
+
+/* =========================================
+   QUIZZES
+========================================= */
+
+.question{
+  background:#f3fbfb;
+  border:2px solid #d8eded;
+  border-radius:17px;
+  padding:18px;
+  margin:13px 0;
+}
+
+.question-title{
+  font-weight:900;
+  font-size:14px;
+  line-height:1.8;
+  margin:0 0 12px;
+}
+
+.options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.option{
+  background:white;
+  color:var(--dark);
+  border:2px solid #cce7e7;
+  border-radius:12px;
+  padding:11px 15px;
+  font-weight:900;
+  font-size:13px;
+  transition:.2s;
+}
+
+.option:hover{
+  background:#e7f9f8;
+}
+
+.option.selected{
+  background:#fff0bd;
+  border-color:#e8ad30;
+}
+
+.option.correct{
+  background:#d9f7e5;
+  border-color:#159b63;
+  color:#087548;
+}
+
+.option.wrong{
+  background:#ffe3e3;
+  border-color:#dc6666;
+  color:#b53c3c;
+}
+
+.question-feedback{
+  min-height:20px;
+  font-size:12px;
+  font-weight:900;
+  margin-top:10px;
+}
+
+.controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+
+.btn{
+  border:0;
+  padding:13px 22px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:linear-gradient(
+    135deg,
+    #0c9ba6,
+    #087581
+  );
+  color:white;
+}
+
+.btn-secondary{
+  background:#e7f3f3;
+  color:var(--dark);
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#503909;
+}
+
+.result{
+  margin-top:15px;
+  padding:14px 17px;
+  background:#eaf7f7;
+  border-radius:12px;
+  font-weight:900;
+  color:var(--dark);
+  line-height:1.8;
+  min-height:50px;
+}
+
+/* =========================================
+   SORTING GAME
+========================================= */
+
+.sort-bank{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  padding:18px;
+  background:#f0fafa;
+  border-radius:18px;
+  margin-bottom:18px;
+  min-height:80px;
+}
+
+.sort-chip{
+  border:2px solid #cde5e5;
+  background:white;
+  border-radius:25px;
+  padding:10px 15px;
+  font-weight:900;
+  color:var(--dark);
+  font-size:13px;
+}
+
+.sort-chip.active{
+  background:var(--gold);
+  border-color:#dfaa38;
+}
+
+.sort-chip.placed{
+  background:#def5f2;
+}
+
+.sort-zones{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.sort-zone{
+  min-height:160px;
+  padding:18px;
+  border-radius:19px;
+  border:3px dashed #c1e3e3;
+  background:#f5fbfb;
+  text-align:center;
+  cursor:pointer;
+}
+
+.sort-zone h3{
+  margin:0 0 12px;
+  color:var(--dark);
+}
+
+.zone-items{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+}
+
+/* =========================================
+   READING
+========================================= */
+
+.reading{
+  background:linear-gradient(
+    135deg,
+    #f1fbfb,
+    #fff8eb
+  );
+  border:2px solid #d7ebeb;
+  padding:23px;
+  border-radius:20px;
+  font-size:15px;
+  line-height:2.1;
+  font-weight:700;
+}
+
+.reading h3{
+  margin-top:0;
+  font-size:25px;
+  color:var(--dark);
+}
+
+/* =========================================
+   FACT FILES
+========================================= */
+
+.fact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.fact-card{
+  background:#f2fbfb;
+  border:2px solid #d4eded;
+  border-radius:19px;
+  overflow:hidden;
+}
+
+.fact-photo{
+  height:250px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#dff2f2;
+}
+
+.fact-photo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.fact-content{
+  padding:17px;
+}
+
+.fact-content h3{
+  margin:0 0 9px;
+  color:var(--dark);
+  font-size:21px;
+}
+
+.fact-content p{
+  margin:7px 0;
+  font-size:13px;
+  font-weight:800;
+}
+
+/* =========================================
+   WRITING
+========================================= */
+
+.writing-guide{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-bottom:22px;
+}
+
+.guide-card{
+  background:#eaf8f8;
+  border-radius:16px;
+  padding:18px;
+  border:2px solid #d4eeee;
+}
+
+.guide-card:nth-child(2){
+  background:#fff5e0;
+  border-color:#f4e0b0;
+}
+
+.guide-card:nth-child(3){
+  background:#f1ebff;
+  border-color:#dfd3fa;
+}
+
+.guide-card h3{
+  margin:0 0 8px;
+  font-size:20px;
+}
+
+.guide-card p{
+  font-size:13px;
+  line-height:1.8;
+  font-weight:700;
+}
+
+textarea{
+  width:100%;
+  min-height:165px;
+  resize:vertical;
+  padding:18px;
+  border:2px solid #cce5e5;
+  border-radius:16px;
+  background:#fbffff;
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.9;
+}
+
+textarea:focus{
+  outline:none;
+  border-color:var(--teal);
+}
+
+.checklist{
+  display:grid;
+  gap:10px;
+  margin-top:18px;
+}
+
+.check-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#f1fbfb;
+  padding:13px;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.check-item input{
+  width:18px;
+  height:18px;
+  accent-color:var(--teal);
+}
+
+/* =========================================
+   ACHIEVEMENT
+========================================= */
+
+.achievement{
+  text-align:center;
+  background:linear-gradient(
+    135deg,
+    #074854,
+    #0c9fa7
+  );
+  color:white;
+  padding:40px 25px;
+  border-radius:26px;
+  box-shadow:var(--shadow);
+}
+
+.achievement-icon{
+  font-size:65px;
+}
+
+.achievement h2{
+  font-size:37px;
+  color:#ffe09b;
+  margin:10px 0;
+}
+
+.achievement p{
+  font-size:14px;
+  font-weight:700;
+  line-height:1.8;
+}
+
+.next-link{
+  display:inline-block;
+  background:var(--gold);
+  color:#49370b;
+  border-radius:30px;
+  padding:15px 26px;
+  font-weight:900;
+  margin-top:20px;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  color:#567880;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:900px){
+
+  .landmark-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .fact-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .writing-guide{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:650px){
+
+  .container{
+    width:94%;
+  }
+
+  .hero-content{
+    margin-top:45px;
+  }
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .hero-description{
+    font-size:13px;
+  }
+
+  .stage{
+    padding:22px 17px;
+    border-radius:21px;
+  }
+
+  .landmark-grid,
+  .rule-grid,
+  .sort-zones,
+  .fact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .landmark-photo{
+    height:320px;
+  }
+
+  .stage h2{
+    font-size:26px;
+  }
+
+  .level{
+    margin-left:0;
+  }
+
+  .progress-inner{
+    gap:8px;
+  }
+
+  .progress-label,
+  .progress-number{
+    font-size:10px;
+  }
+
+  .option{
+    flex:1;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<header class="hero">
+
+<div class="container">
+
+  <div class="topbar">
+
+    <div class="brand">
+      📚 MY ENGLISH SPACE · MS4
+    </div>
+
+    <a href="MS4-S1-Grammar.html" class="back">
+      ← Grammar Map
+    </a>
+
+  </div>
+
+  <div class="hero-content">
+
+    <span class="eyebrow">
+      ✦ SEQUENCE 01 · GRAMMAR CHECKPOINT 03 ✦
+    </span>
+
+    <h1>
+      Superiority
+      <span>&amp; Inferiority</span>
+    </h1>
+
+    <p class="hero-description">
+      Explore the world's most fascinating landmarks,
+      discover how to compare them,
+      and become a confident English writer!
+    </p>
+
+    <div class="hero-chips">
+
+      <span class="hero-chip">🌍 Discover</span>
+      <span class="hero-chip">📖 Learn</span>
+      <span class="hero-chip">🧠 Understand</span>
+      <span class="hero-chip">🎮 Practise</span>
+      <span class="hero-chip">✍️ Write</span>
+      <span class="hero-chip">🏆 Achieve</span>
+
+    </div>
+
+  </div>
+
+</div>
+
+</header>
+
+<!-- =====================================
+     PROGRESS
+===================================== -->
+
+<div class="progress-wrap">
+
+<div class="container progress-inner">
+
+  <span class="progress-label" id="progressLabel">
+    STEP 1 / 9
+  </span>
+
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <span class="progress-number" id="progressNumber">
+    11%
+  </span>
+
+</div>
+
+</div>
+
+<main class="container">
+
+<!-- =====================================
+     STEP 1
+===================================== -->
+
+<section class="stage" id="stage1">
+
+<div class="stage-top">
+
+  <span class="stage-number">01</span>
+
+  <span class="stage-label">
+    NOTICE & DISCOVER
+  </span>
+
+  <span class="level">
+    ⭐ EASY
+  </span>
+
+</div>
+
+<h2>🌍 Let's Compare Famous Landmarks!</h2>
+
+<p class="stage-description">
+Look at the photographs of three world-famous landmarks.
+Read their fact files and discover how we compare them.
+</p>
+
+<div class="landmark-grid">
+
+<!-- BURJ KHALIFA -->
+
+<article class="landmark-card">
+
+  <div class="landmark-photo">
+
+    <img
+      src="https://i.imgur.com/mGTBDEc.jpeg"
+      alt="Burj Khalifa Tower in Dubai"
+      loading="eager">
+
+  </div>
+
+  <div class="landmark-body">
+
+    <h3>🏙️ Burj Khalifa</h3>
+
+    <p>📍 Dubai, UAE</p>
+    <p>📏 Height: 828 metres</p>
+    <p>📅 Completed: 2010</p>
+
+    <p>
+      The Burj Khalifa is
+      <span class="highlight-sup">taller than</span>
+      the Eiffel Tower.
+    </p>
+
+  </div>
+
+</article>
+
+<!-- EIFFEL TOWER -->
+
+<article class="landmark-card">
+
+  <div class="landmark-photo cover">
+
+    <img
+      src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=900&q=85"
+      alt="The Eiffel Tower in Paris"
+      loading="lazy">
+
+  </div>
+
+  <div class="landmark-body">
+
+    <h3>🗼 Eiffel Tower</h3>
+
+    <p>📍 Paris, France</p>
+    <p>📏 Height: about 330 metres</p>
+    <p>📅 Completed: 1889</p>
+
+    <p>
+      The Eiffel Tower is
+      <span class="highlight-inf">less tall than</span>
+      the Burj Khalifa.
+    </p>
+
+  </div>
+
+</article>
+
+<!-- GREAT PYRAMIDS -->
+
+<article class="landmark-card">
+
+  <div class="landmark-photo">
+
+    <!-- YOUR NEW GREAT PYRAMIDS IMAGE -->
+
+    <img
+      src="https://i.imgur.com/xqBsG5p.jpeg"
+      alt="The Great Pyramids of Giza in Egypt"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='https://i.imgur.com/xqBsG5p.jpg';">
+
+  </div>
+
+  <div class="landmark-body">
+
+    <h3>🔺 Great Pyramids of Giza</h3>
+
+    <p>📍 Giza, Egypt</p>
+    <p>📏 Great Pyramid: originally about 146.6 m</p>
+    <p>📅 Great Pyramid: around 2560 BCE</p>
+
+    <p>
+      The Great Pyramid is
+      <span class="highlight-sup">older than</span>
+      the Eiffel Tower.
+    </p>
+
+  </div>
+
+</article>
+
+</div>
+
+<div class="notice">
+
+  🔎 <b>What do you notice?</b>
+
+  <br><br>
+
+  🥇 The Burj Khalifa is
+  <span class="highlight-sup">taller than</span>
+  the Eiffel Tower.
+
+  <br>
+
+  🥈 The Eiffel Tower is
+  <span class="highlight-inf">less tall than</span>
+  the Burj Khalifa.
+
+  <br>
+
+  🏛️ The Great Pyramid is
+  <span class="highlight-sup">older than</span>
+  both towers.
+
+  <br><br>
+
+  We use comparative adjectives to compare
+  two people, places, or things.
+
+</div>
+
+<h3 class="subheading">
+🧠 Think & Choose
+</h3>
+
+<div id="noticeQuiz"></div>
+
+<div class="controls">
+
+  <button class="btn btn-primary" onclick="checkQuiz('notice')">
+    ✓ Check Answers
+  </button>
+
+  <button class="btn btn-secondary" onclick="resetQuiz('notice')">
+    ↻ Try Again
+  </button>
+
+</div>
+
+<div class="result" id="noticeResult" aria-live="polite">
+Choose your answers, then check.
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 2
+===================================== -->
+
+<section class="stage" id="stage2">
+
+<div class="stage-top">
+
+  <span class="stage-number">02</span>
+
+  <span class="stage-label">
+    LEARN THE RULES
+  </span>
+
+  <span class="level">
+    ⭐ EASY
+  </span>
+
+</div>
+
+<h2>📜 Superiority & Inferiority Rules</h2>
+
+<p class="stage-description">
+We use comparative adjectives to compare
+two people, places, objects, or landmarks.
+</p>
+
+<div class="rule-grid">
+
+<!-- SUPERIORITY -->
+
+<div class="rule-card superior">
+
+  <h3>🥇 Superiority</h3>
+
+  <p>
+    Superiority means that one thing has
+    <b>more</b> of a quality than another.
+  </p>
+
+  <div class="formula">
+
+    SHORT ADJECTIVE
+
+    <br>
+
+    adjective + ER + THAN
+
+  </div>
+
+  <div class="example">
+
+    The Burj Khalifa is
+    <span class="highlight-sup">taller than</span>
+    the Eiffel Tower.
+
+  </div>
+
+  <div class="example">
+
+    The Great Pyramid is
+    <span class="highlight-sup">older than</span>
+    the Eiffel Tower.
+
+  </div>
+
+  <div class="formula">
+
+    LONG ADJECTIVE
+
+    <br>
+
+    MORE + adjective + THAN
+
+  </div>
+
+  <div class="example">
+
+    The Burj Khalifa is
+    <span class="highlight-sup">more modern than</span>
+    the Great Pyramid.
+
+  </div>
+
+</div>
+
+<!-- INFERIORITY -->
+
+<div class="rule-card inferior">
+
+  <h3>🥈 Inferiority</h3>
+
+  <p>
+    Inferiority means that one thing has
+    <b>less</b> of a quality than another.
+  </p>
+
+  <div class="formula">
+
+    LESS + adjective + THAN
+
+  </div>
+
+  <div class="example">
+
+    The Eiffel Tower is
+    <span class="highlight-inf">less tall than</span>
+    the Burj Khalifa.
+
+  </div>
+
+  <div class="example">
+
+    The Great Pyramid is
+    <span class="highlight-inf">less modern than</span>
+    the Eiffel Tower.
+
+  </div>
+
+  <p>
+    We can use <b>less</b> with both
+    short and long adjectives.
+  </p>
+
+</div>
+
+</div>
+
+<div class="arabic">
+
+  📘 الشرح بالعربية:
+
+  <br><br>
+
+  <b>المقارنة بالتفوق:</b>
+
+  <br>
+
+  نستعملها عندما يكون الشيء الأول أكثر من
+  الشيء الثاني في صفة معينة.
+
+  <br>
+
+  taller than = أطول من
+
+  <br>
+
+  older than = أقدم من
+
+  <br>
+
+  more famous than = أكثر شهرة من
+
+  <br><br>
+
+  <b>المقارنة بالدونية:</b>
+
+  <br>
+
+  نستعملها عندما يكون الشيء الأول أقل من
+  الشيء الثاني في صفة معينة.
+
+  <br>
+
+  less tall than = أقل طولاً من
+
+  <br>
+
+  less modern than = أقل حداثة من
+
+  <br><br>
+
+  نستعمل THAN عند المقارنة بين شيئين.
+
+</div>
+
+<div class="tip">
+
+  💡 <b>Remember:</b>
+
+  <br><br>
+
+  Use <b>-er</b> with most short adjectives.
+
+  <br>
+
+  Use <b>more</b> with most longer adjectives.
+
+  <br>
+
+  Use <b>less + adjective + than</b>
+  for inferiority.
+
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 3
+===================================== -->
+
+<section class="stage" id="stage3">
+
+<div class="stage-top">
+
+  <span class="stage-number">03</span>
+
+  <span class="stage-label">
+    GRAMMAR TOOLKIT
+  </span>
+
+  <span class="level medium">
+    ⭐⭐ LEARN
+  </span>
+
+</div>
+
+<h2>🧠 Comparative Adjective Toolkit</h2>
+
+<p class="stage-description">
+Study the spelling rules, irregular forms,
+and common mistakes.
+</p>
+
+<h3 class="subheading">
+✨ Regular Comparatives
+</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Adjective</th>
+<th>Comparative</th>
+<th>Rule</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>tall</td>
+<td>taller</td>
+<td>Add -er</td>
+</tr>
+
+<tr>
+<td>small</td>
+<td>smaller</td>
+<td>Add -er</td>
+</tr>
+
+<tr>
+<td>large</td>
+<td>larger</td>
+<td>Add -r</td>
+</tr>
+
+<tr>
+<td>big</td>
+<td>bigger</td>
+<td>Double the final consonant</td>
+</tr>
+
+<tr>
+<td>heavy</td>
+<td>heavier</td>
+<td>Change y to i + er</td>
+</tr>
+
+<tr>
+<td>famous</td>
+<td>more famous</td>
+<td>Use more</td>
+</tr>
+
+<tr>
+<td>beautiful</td>
+<td>more beautiful</td>
+<td>Use more</td>
+</tr>
+
+<tr>
+<td>interesting</td>
+<td>more interesting</td>
+<td>Use more</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<h3 class="subheading">
+⚡ Irregular Comparatives
+</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Adjective</th>
+<th>Comparative</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>good</td>
+<td>better</td>
+<td>This design is better than that one.</td>
+</tr>
+
+<tr>
+<td>bad</td>
+<td>worse</td>
+<td>This road is worse than the other road.</td>
+</tr>
+
+<tr>
+<td>far</td>
+<td>farther / further</td>
+<td>The museum is farther away than the theatre.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<h3 class="subheading">
+🚫 Common Mistakes
+</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Incorrect ❌</th>
+<th>Correct ✅</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td class="bad">more taller</td>
+<td class="good">taller</td>
+</tr>
+
+<tr>
+<td class="bad">more bigger</td>
+<td class="good">bigger</td>
+</tr>
+
+<tr>
+<td class="bad">famouser</td>
+<td class="good">more famous</td>
+</tr>
+
+<tr>
+<td class="bad">less more beautiful</td>
+<td class="good">less beautiful</td>
+</tr>
+
+<tr>
+<td class="bad">better that</td>
+<td class="good">better than</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="arabic">
+
+  ⚠️ تذكّر:
+
+  <br><br>
+
+  لا نستعمل MORE مع الصفة التي أضفنا إليها ER.
+
+  <br>
+
+  ❌ more taller
+
+  <br>
+
+  ✅ taller
+
+  <br><br>
+
+  بعض الصفات تتغير تماماً:
+
+  <br>
+
+  good → better
+
+  <br>
+
+  bad → worse
+
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 4
+===================================== -->
+
+<section class="stage" id="stage4">
+
+<div class="stage-top">
+
+  <span class="stage-number">04</span>
+
+  <span class="stage-label">
+    INTERACTIVE GAME
+  </span>
+
+  <span class="level">
+    ⭐ EASY
+  </span>
+
+</div>
+
+<h2>🎮 Sort the Comparative Phrases</h2>
+
+<p class="stage-description">
+Tap a phrase, then tap the correct category.
+Tap a placed phrase to return it to the word bank.
+</p>
+
+<div class="sort-bank" id="sortBank"></div>
+
+<div class="sort-zones">
+
+  <div class="sort-zone" id="superiorZone">
+
+    <h3>🥇 Superiority</h3>
+
+    <div class="zone-items" id="superiorItems"></div>
+
+  </div>
+
+  <div class="sort-zone" id="inferiorZone">
+
+    <h3>🥈 Inferiority</h3>
+
+    <div class="zone-items" id="inferiorItems"></div>
+
+  </div>
+
+</div>
+
+<div class="controls">
+
+  <button class="btn btn-primary" onclick="checkSorting()">
+    ✓ Check Sorting
+  </button>
+
+  <button class="btn btn-secondary" onclick="resetSorting()">
+    ↻ Play Again
+  </button>
+
+</div>
+
+<div class="result" id="sortResult" aria-live="polite">
+Sort all the phrases to earn your score.
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 5
+===================================== -->
+
+<section class="stage" id="stage5">
+
+<div class="stage-top">
+
+  <span class="stage-number">05</span>
+
+  <span class="stage-label">
+    READ & UNDERSTAND
+  </span>
+
+  <span class="level medium">
+    ⭐⭐ MEDIUM
+  </span>
+
+</div>
+
+<h2>📖 A Journey Around the World</h2>
+
+<p class="stage-description">
+Read the text carefully.
+Then answer the comprehension questions.
+</p>
+
+<div class="reading">
+
+<h3>🌍 Amazing Landmarks</h3>
+
+<p>
+The world is full of wonderful landmarks.
+Some are ancient, while others are modern.
+</p>
+
+<p>
+The Burj Khalifa in Dubai is
+<span class="highlight-sup">taller than</span>
+the Eiffel Tower in Paris.
+It is also
+<span class="highlight-sup">more modern than</span>
+the Great Pyramid of Giza.
+</p>
+
+<p>
+The Great Pyramid is
+<span class="highlight-sup">much older than</span>
+the Burj Khalifa.
+However, it is
+<span class="highlight-inf">less tall than</span>
+the famous skyscraper.
+</p>
+
+<p>
+The Eiffel Tower is
+<span class="highlight-sup">older than</span>
+the Burj Khalifa, but it is
+<span class="highlight-sup">newer than</span>
+the Great Pyramid.
+</p>
+
+<p>
+Some local monuments are
+<span class="highlight-inf">less famous than</span>
+these world-famous landmarks,
+but they are still important to their communities.
+</p>
+
+<p>
+Every landmark has a special history
+and deserves to be protected.
+</p>
+
+</div>
+
+<h3 class="subheading">
+🔍 Reading Detective Challenge
+</h3>
+
+<div id="readingQuiz"></div>
+
+<div class="controls">
+
+  <button class="btn btn-primary" onclick="checkQuiz('reading')">
+    ✓ Check Reading
+  </button>
+
+  <button class="btn btn-secondary" onclick="resetQuiz('reading')">
+    ↻ Try Again
+  </button>
+
+</div>
+
+<div class="result" id="readingResult" aria-live="polite">
+Read carefully and choose your answers.
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 6
+===================================== -->
+
+<section class="stage" id="stage6">
+
+<div class="stage-top">
+
+  <span class="stage-number">06</span>
+
+  <span class="stage-label">
+    CONTROLLED PRACTICE
+  </span>
+
+  <span class="level medium">
+    ⭐⭐ MEDIUM
+  </span>
+
+</div>
+
+<h2>🎯 Choose the Correct Comparative</h2>
+
+<p class="stage-description">
+Choose the correct answer to complete each sentence.
+Watch out for double comparatives!
+</p>
+
+<div id="grammarQuiz"></div>
+
+<div class="controls">
+
+  <button class="btn btn-primary" onclick="checkQuiz('grammar')">
+    ✓ Check My Answers
+  </button>
+
+  <button class="btn btn-secondary" onclick="resetQuiz('grammar')">
+    ↻ Retry
+  </button>
+
+</div>
+
+<div class="result" id="grammarResult" aria-live="polite">
+Complete all the questions to check your score.
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 7
+===================================== -->
+
+<section class="stage" id="stage7">
+
+<div class="stage-top">
+
+  <span class="stage-number">07</span>
+
+  <span class="stage-label">
+    THINK & CORRECT
+  </span>
+
+  <span class="level medium">
+    ⭐⭐ MEDIUM
+  </span>
+
+</div>
+
+<h2>🔧 Grammar Repair Workshop</h2>
+
+<p class="stage-description">
+Each sentence contains a grammar mistake.
+Choose the correct sentence.
+</p>
+
+<div id="repairQuiz"></div>
+
+<div class="controls">
+
+  <button class="btn btn-primary" onclick="checkQuiz('repair')">
+    ✓ Check Corrections
+  </button>
+
+  <button class="btn btn-secondary" onclick="resetQuiz('repair')">
+    ↻ Try Again
+  </button>
+
+</div>
+
+<div class="result" id="repairResult" aria-live="polite">
+Find and repair the mistakes.
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 8
+===================================== -->
+
+<section class="stage" id="stage8">
+
+<div class="stage-top">
+
+  <span class="stage-number">08</span>
+
+  <span class="stage-label">
+    LANDMARK WRITING LAB
+  </span>
+
+  <span class="level hard">
+    ⭐⭐⭐ CHALLENGE
+  </span>
+
+</div>
+
+<h2>✍️ From Facts to a Paragraph</h2>
+
+<p class="stage-description">
+Use the fact files to compare famous landmarks.
+First write sentences, then organise them into a paragraph.
+</p>
+
+<div class="fact-grid">
+
+<!-- BURJ KHALIFA FACT FILE -->
+
+<article class="fact-card">
+
+  <div class="fact-photo">
+
+    <img
+      src="https://i.imgur.com/mGTBDEc.jpeg"
+      alt="Burj Khalifa Tower in Dubai"
+      loading="lazy">
+
+  </div>
+
+  <div class="fact-content">
+
+    <h3>Burj Khalifa</h3>
+
+    <p>📍 Dubai, UAE</p>
+    <p>📏 Height: 828 m</p>
+    <p>📅 Completed: 2010</p>
+    <p>🏙️ Type: Skyscraper</p>
+
+  </div>
+
+</article>
+
+<!-- EIFFEL TOWER FACT FILE -->
+
+<article class="fact-card">
+
+  <div class="fact-photo">
+
+    <img
+      src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=700&q=85"
+      alt="Eiffel Tower in Paris"
+      loading="lazy"
+      style="object-fit:cover">
+
+  </div>
+
+  <div class="fact-content">
+
+    <h3>Eiffel Tower</h3>
+
+    <p>📍 Paris, France</p>
+    <p>📏 Height: about 330 m</p>
+    <p>📅 Completed: 1889</p>
+    <p>🗼 Type: Tower</p>
+
+  </div>
+
+</article>
+
+<!-- GREAT PYRAMID FACT FILE -->
+
+<article class="fact-card">
+
+  <div class="fact-photo">
+
+    <!-- YOUR SELECTED PYRAMIDS PICTURE -->
+
+    <img
+      src="https://i.imgur.com/xqBsG5p.jpeg"
+      alt="Great Pyramids of Giza"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='https://i.imgur.com/xqBsG5p.jpg';">
+
+  </div>
+
+  <div class="fact-content">
+
+    <h3>Great Pyramid of Giza</h3>
+
+    <p>📍 Giza, Egypt</p>
+
+    <p>
+      📏 Original height: about 146.6 m
+    </p>
+
+    <p>
+      📅 Built: around 2560 BCE
+    </p>
+
+    <p>
+      🔺 Type: Pyramid
+    </p>
+
+  </div>
+
+</article>
+
+</div>
+
+<h3 class="subheading">
+🪜 Your Writing Steps
+</h3>
+
+<div class="writing-guide">
+
+  <div class="guide-card">
+
+    <h3>1️⃣ Topic Sentence</h3>
+
+    <p>
+      Introduce the landmarks.
+    </p>
+
+    <p>
+      The Burj Khalifa, the Eiffel Tower,
+      and the Great Pyramid are
+      three famous landmarks.
+    </p>
+
+  </div>
+
+  <div class="guide-card">
+
+    <h3>2️⃣ Supporting Details</h3>
+
+    <p>
+      Compare their height, age,
+      and other characteristics.
+    </p>
+
+    <p>
+      Use:
+      taller than,
+      older than,
+      more modern than,
+      less tall than.
+    </p>
+
+  </div>
+
+  <div class="guide-card">
+
+    <h3>3️⃣ Conclusion</h3>
+
+    <p>
+      End with your opinion.
+    </p>
+
+    <p>
+      All three landmarks are amazing
+      and attract many visitors.
+    </p>
+
+  </div>
+
+</div>
+
+<div class="tip">
+
+💡 <b>Model paragraph:</b>
+
+<br><br>
+
+The Burj Khalifa, the Eiffel Tower,
+and the Great Pyramid are three famous landmarks.
+The Burj Khalifa is taller than the Eiffel Tower.
+It is also more modern than the Great Pyramid.
+The Great Pyramid is older than both towers.
+However, it is less tall than the Burj Khalifa.
+All three landmarks are impressive
+and attract visitors from around the world.
+
+</div>
+
+<h3 class="subheading">
+✍️ Now It's Your Turn!
+</h3>
+
+<p>
+Write a short paragraph comparing two or three landmarks.
+Use at least three comparative expressions.
+</p>
+
+<textarea
+  id="writingArea"
+  placeholder="The Burj Khalifa, the Eiffel Tower and the Great Pyramid are famous landmarks..."
+  aria-label="Write your comparative paragraph"></textarea>
+
+<div class="controls">
+
+  <button class="btn btn-primary" onclick="checkWriting()">
+    ✓ Check My Writing
+  </button>
+
+  <button class="btn btn-secondary" onclick="clearWriting()">
+    ↻ Clear Writing
+  </button>
+
+</div>
+
+<div class="result" id="writingResult" aria-live="polite">
+Write your paragraph, then check the writing reminders.
+</div>
+
+<h3 class="subheading">
+✅ My Writing Checklist
+</h3>
+
+<div class="checklist">
+
+  <label class="check-item">
+    <input type="checkbox">
+    I wrote a topic sentence.
+  </label>
+
+  <label class="check-item">
+    <input type="checkbox">
+    I used superiority correctly.
+  </label>
+
+  <label class="check-item">
+    <input type="checkbox">
+    I used inferiority correctly.
+  </label>
+
+  <label class="check-item">
+    <input type="checkbox">
+    I used THAN in my comparisons.
+  </label>
+
+  <label class="check-item">
+    <input type="checkbox">
+    I checked capital letters and punctuation.
+  </label>
+
+  <label class="check-item">
+    <input type="checkbox">
+    I wrote a concluding sentence.
+  </label>
+
+</div>
+
+<div class="arabic">
+
+📝 نصيحة:
+
+<br><br>
+
+ابدأ بجملة تقدم فيها المعالم.
+
+<br>
+
+ثم اكتب جملتين أو ثلاث جمل للمقارنة.
+
+<br>
+
+استعمل كلمات الربط مثل:
+
+<br>
+
+Also / However / Both
+
+<br><br>
+
+أخيراً، اختم بذكر رأيك أو أهمية المعالم.
+
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 9
+===================================== -->
+
+<section class="stage" id="stage9">
+
+<div class="stage-top">
+
+  <span class="stage-number">09</span>
+
+  <span class="stage-label">
+    FINAL MISSION
+  </span>
+
+  <span class="level hard">
+    ⭐⭐⭐ FINAL
+  </span>
+
+</div>
+
+<h2>🏆 Comparative Champion Challenge</h2>
+
+<p class="stage-description">
+Show what you have learned!
+Answer all ten questions to earn your final score.
+</p>
+
+<div id="finalQuiz"></div>
+
+<div class="controls">
+
+  <button class="btn btn-gold" onclick="checkQuiz('final')">
+    🏆 Reveal My Score
+  </button>
+
+  <button class="btn btn-secondary" onclick="resetQuiz('final')">
+    ↻ Play Again
+  </button>
+
+</div>
+
+<div class="result" id="finalResult" aria-live="polite">
+Your final challenge is waiting!
+</div>
+
+</section>
+
+<!-- =====================================
+     ACHIEVEMENT
+===================================== -->
+
+<section class="achievement">
+
+  <div class="achievement-icon">
+    🏆
+  </div>
+
+  <h2>
+    Amazing Progress!
+  </h2>
+
+  <p>
+    You have explored superiority and inferiority,
+    practised comparative adjectives,
+    corrected common mistakes,
+    and written about famous landmarks.
+  </p>
+
+  <p>
+    Keep practising and become
+    a confident English learner!
+  </p>
+
+  <a href="MS4-S1-Grammar-Lesson4.html" class="next-link">
+    🚀 Next Checkpoint: Passive Voice →
+  </a>
+
+</section>
+
+</main>
+
+<footer>
+
+MY ENGLISH SPACE · MS4 · SEQUENCE 1
+
+<br><br>
+
+LEARN · PRACTISE · IMPROVE · SUCCEED
+
+</footer>
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+"use strict";
+
+/* =====================================
+   QUIZ DATA
+===================================== */
+
+const quizzes = {
+
+notice: [
+
+{
+q:"1. The Burj Khalifa is taller than the Eiffel Tower. This expresses...",
+options:[
+"Superiority",
+"Inferiority",
+"Equality"
+],
+answer:0,
+hint:"TALLER THAN expresses superiority."
+},
+
+{
+q:"2. The Eiffel Tower is less tall than the Burj Khalifa. This expresses...",
+options:[
+"Superiority",
+"Inferiority",
+"Equality"
+],
+answer:1,
+hint:"LESS expresses inferiority."
+},
+
+{
+q:"3. Which landmark is the oldest?",
+options:[
+"Burj Khalifa",
+"Eiffel Tower",
+"Great Pyramid"
+],
+answer:2,
+hint:"The Great Pyramid was built thousands of years ago."
+},
+
+{
+q:"4. Which word follows comparative adjectives?",
+options:[
+"That",
+"Then",
+"Than"
+],
+answer:2,
+hint:"We say taller THAN."
+}
+
+],
+
+reading: [
+
+{
+q:"1. The Burj Khalifa is taller than the Eiffel Tower.",
+options:["True","False"],
+answer:0,
+hint:"The text compares their heights."
+},
+
+{
+q:"2. The Great Pyramid is more modern than the Burj Khalifa.",
+options:["True","False"],
+answer:1,
+hint:"The pyramid is much older."
+},
+
+{
+q:"3. The Great Pyramid is less tall than the Burj Khalifa.",
+options:["True","False"],
+answer:0,
+hint:"The Burj Khalifa is much taller."
+},
+
+{
+q:"4. The Eiffel Tower is older than the Burj Khalifa.",
+options:["True","False"],
+answer:0,
+hint:"1889 is earlier than 2010."
+},
+
+{
+q:"5. Local monuments are never important.",
+options:["True","False"],
+answer:1,
+hint:"The text says they are important."
+},
+
+{
+q:"6. Which phrase expresses inferiority?",
+options:[
+"much older than",
+"less famous than",
+"more modern than"
+],
+answer:1,
+hint:"Look for LESS + adjective + THAN."
+}
+
+],
+
+grammar: [
+
+{
+q:"1. The Burj Khalifa is ___ than the Eiffel Tower.",
+options:[
+"taller",
+"more taller",
+"tallest"
+],
+answer:0,
+hint:"Tall is a short adjective."
+},
+
+{
+q:"2. The Eiffel Tower is ___ than many local towers.",
+options:[
+"famouser",
+"more famous",
+"most famous"
+],
+answer:1,
+hint:"Use MORE with famous."
+},
+
+{
+q:"3. The Great Pyramid is ___ than the Eiffel Tower.",
+options:[
+"older",
+"more older",
+"oldest"
+],
+answer:0,
+hint:"Old becomes older."
+},
+
+{
+q:"4. This museum is ___ than the Louvre.",
+options:[
+"less famous",
+"less famouser",
+"less more famous"
+],
+answer:0,
+hint:"LESS + adjective."
+},
+
+{
+q:"5. Big →",
+options:[
+"biger",
+"more big",
+"bigger"
+],
+answer:2,
+hint:"Double the final consonant."
+},
+
+{
+q:"6. Heavy →",
+options:[
+"heavyer",
+"heavier",
+"more heavyer"
+],
+answer:1,
+hint:"Change y to i."
+},
+
+{
+q:"7. Good →",
+options:[
+"gooder",
+"more good",
+"better"
+],
+answer:2,
+hint:"Good is irregular."
+},
+
+{
+q:"8. The Burj Khalifa is ___ than the Great Pyramid.",
+options:[
+"more modern",
+"moderner",
+"most modern"
+],
+answer:0,
+hint:"Use MORE with modern."
+},
+
+{
+q:"9. The Great Pyramid is ___ than the Burj Khalifa.",
+options:[
+"less tall",
+"less taller",
+"more less tall"
+],
+answer:0,
+hint:"LESS + adjective."
+},
+
+{
+q:"10. The Eiffel Tower is ___ than the Burj Khalifa.",
+options:[
+"old",
+"older",
+"oldest"
+],
+answer:1,
+hint:"Use OLDER THAN."
+}
+
+],
+
+repair: [
+
+{
+q:"1. Incorrect: The Burj Khalifa is more taller than the Eiffel Tower.",
+options:[
+"The Burj Khalifa is taller than the Eiffel Tower.",
+"The Burj Khalifa is more tall than the Eiffel Tower."
+],
+answer:0,
+hint:"Do not use MORE and -ER together."
+},
+
+{
+q:"2. Incorrect: This museum is famouser than that one.",
+options:[
+"This museum is more famous than that one.",
+"This museum is famous more than that one."
+],
+answer:0,
+hint:"Famous takes MORE."
+},
+
+{
+q:"3. Incorrect: The tower is bigger that the museum.",
+options:[
+"The tower is bigger then the museum.",
+"The tower is bigger than the museum."
+],
+answer:1,
+hint:"Use THAN."
+},
+
+{
+q:"4. Incorrect: This building is less more modern than that one.",
+options:[
+"This building is less modern than that one.",
+"This building is less moderner than that one."
+],
+answer:0,
+hint:"Use LESS + adjective."
+},
+
+{
+q:"5. Incorrect: This design is gooder than the old one.",
+options:[
+"This design is better than the old one.",
+"This design is more better than the old one."
+],
+answer:0,
+hint:"Good becomes BETTER."
+},
+
+{
+q:"6. Incorrect: The pyramid is more older than the Eiffel Tower.",
+options:[
+"The pyramid is older than the Eiffel Tower.",
+"The pyramid is oldest than the Eiffel Tower."
+],
+answer:0,
+hint:"Use OLDER THAN."
+}
+
+],
+
+final: [
+
+{
+q:"1. Tall →",
+options:[
+"taller",
+"more taller",
+"tallest"
+],
+answer:0,
+hint:"Short adjective + er."
+},
+
+{
+q:"2. Beautiful →",
+options:[
+"beautifuller",
+"more beautiful",
+"most beautiful"
+],
+answer:1,
+hint:"Use MORE."
+},
+
+{
+q:"3. Bad →",
+options:[
+"badder",
+"worse",
+"more bad"
+],
+answer:1,
+hint:"Irregular comparative."
+},
+
+{
+q:"4. Which phrase expresses inferiority?",
+options:[
+"older than",
+"less famous than",
+"more modern than"
+],
+answer:1,
+hint:"Look for LESS."
+},
+
+{
+q:"5. Which sentence is correct?",
+options:[
+"The tower is more bigger than the museum.",
+"The tower is bigger than the museum."
+],
+answer:1,
+hint:"Avoid double comparatives."
+},
+
+{
+q:"6. Large →",
+options:[
+"larger",
+"largeer",
+"more larger"
+],
+answer:0,
+hint:"Add r to large."
+},
+
+{
+q:"7. Heavy →",
+options:[
+"heavier",
+"heavyer",
+"more heavier"
+],
+answer:0,
+hint:"Change y to i."
+},
+
+{
+q:"8. The museum is older ___ the tower.",
+options:[
+"then",
+"that",
+"than"
+],
+answer:2,
+hint:"Comparatives use THAN."
+},
+
+{
+q:"9. A local monument may be ___ famous than the Eiffel Tower.",
+options:[
+"less",
+"lesser",
+"least"
+],
+answer:0,
+hint:"LESS + adjective + THAN."
+},
+
+{
+q:"10. Which sentence is correct?",
+options:[
+"The pyramid is more ancient than the skyscraper.",
+"The pyramid is ancienter than the skyscraper.",
+"The pyramid is more ancienter than the skyscraper."
+],
+answer:0,
+hint:"Ancient normally takes MORE."
+}
+
+]
+
+};
+
+/* =====================================
+   BUILD QUIZZES
+===================================== */
+
+function buildQuiz(name){
+
+const container=document.getElementById(name+"Quiz");
+
+if(!container)return;
+
+container.innerHTML="";
+
+quizzes[name].forEach(function(item,index){
+
+const card=document.createElement("div");
+
+card.className="question";
+
+card.dataset.answer=String(item.answer);
+
+card.dataset.selected="";
+
+const title=document.createElement("p");
+
+title.className="question-title";
+
+title.textContent=item.q;
+
+card.appendChild(title);
+
+const options=document.createElement("div");
+
+options.className="options";
+
+item.options.forEach(function(option,i){
+
+const button=document.createElement("button");
+
+button.type="button";
+
+button.className="option";
+
+button.textContent=option;
+
+button.dataset.index=String(i);
+
+button.addEventListener("click",function(){
+
+options.querySelectorAll(".option").forEach(function(b){
+
+b.classList.remove(
+"selected",
+"correct",
+"wrong"
+);
+
+});
+
+button.classList.add("selected");
+
+card.dataset.selected=String(i);
+
+card.querySelector(".question-feedback").textContent="";
+
+});
+
+options.appendChild(button);
+
+});
+
+card.appendChild(options);
+
+const feedback=document.createElement("div");
+
+feedback.className="question-feedback";
+
+feedback.setAttribute("aria-live","polite");
+
+card.appendChild(feedback);
+
+container.appendChild(card);
+
+});
+
+document.getElementById(name+"Result").textContent=
+"Choose your answers, then check.";
+
+}
+
+/* =====================================
+   CHECK QUIZZES
+===================================== */
+
+function checkQuiz(name){
+
+const container=document.getElementById(name+"Quiz");
+
+const cards=container.querySelectorAll(".question");
+
+let score=0;
+
+let missing=0;
+
+cards.forEach(function(card,index){
+
+const selected=card.dataset.selected;
+
+const answer=card.dataset.answer;
+
+const feedback=card.querySelector(".question-feedback");
+
+const buttons=card.querySelectorAll(".option");
+
+buttons.forEach(function(button){
+
+button.classList.remove(
+"correct",
+"wrong"
+);
+
+});
+
+if(selected===""){
+
+missing++;
+
+feedback.textContent="Please choose an answer.";
+
+feedback.style.color="#c64747";
+
+return;
+
+}
+
+if(selected===answer){
+
+score++;
+
+feedback.textContent="✓ Correct!";
+
+feedback.style.color="#168357";
+
+}else{
+
+feedback.textContent=
+"Not quite! Hint: "+quizzes[name][index].hint;
+
+feedback.style.color="#c64747";
+
+}
+
+buttons.forEach(function(button){
+
+if(button.dataset.index===answer){
+
+button.classList.add("correct");
+
+}else if(button.dataset.index===selected){
+
+button.classList.add("wrong");
+
+}
+
+});
+
+});
+
+const result=document.getElementById(name+"Result");
+
+if(missing>0){
+
+result.textContent=
+"📌 "+missing+" unanswered question(s). Current score: "+
+score+"/"+cards.length;
+
+}else if(score===cards.length){
+
+result.textContent=
+"🏆 Perfect! "+score+"/"+cards.length+
+" — Excellent work!";
+
+}else{
+
+result.textContent=
+"⭐ Your score: "+score+"/"+cards.length+
+". Read the hints and try again!";
+
+}
+
+if(name==="final" && missing===0){
+
+result.textContent+=score>=8
+?" 🎉 You are a Comparative Champion!"
+:" Keep practising. You can improve!";
+
+}
+
+}
+
+function resetQuiz(name){
+
+buildQuiz(name);
+
+}
+
+/* =====================================
+   SORTING GAME
+===================================== */
+
+const sortingWords=[
+
+{text:"taller than",type:"sup"},
+
+{text:"less famous than",type:"inf"},
+
+{text:"more beautiful than",type:"sup"},
+
+{text:"less modern than",type:"inf"},
+
+{text:"bigger than",type:"sup"},
+
+{text:"less impressive than",type:"inf"},
+
+{text:"older than",type:"sup"},
+
+{text:"less crowded than",type:"inf"},
+
+{text:"more interesting than",type:"sup"},
+
+{text:"less ancient than",type:"inf"}
+
+];
+
+let selectedSortChip=null;
+
+function resetSorting(){
+
+const bank=document.getElementById("sortBank");
+
+const superior=document.getElementById("superiorItems");
+
+const inferior=document.getElementById("inferiorItems");
+
+bank.innerHTML="";
+
+superior.innerHTML="";
+
+inferior.innerHTML="";
+
+selectedSortChip=null;
+
+sortingWords.forEach(function(item,index){
+
+const button=document.createElement("button");
+
+button.type="button";
+
+button.className="sort-chip";
+
+button.textContent=item.text;
+
+button.dataset.type=item.type;
+
+button.dataset.id=String(index);
+
+button.addEventListener("click",function(event){
+
+event.stopPropagation();
+
+if(button.parentElement.id!=="sortBank"){
+
+bank.appendChild(button);
+
+button.classList.remove("placed","active");
+
+button.dataset.placed="";
+
+button.style.background="";
+
+button.style.borderColor="";
+
+selectedSortChip=null;
+
+return;
+
+}
+
+document.querySelectorAll(".sort-chip").forEach(function(chip){
+
+chip.classList.remove("active");
+
+});
+
+selectedSortChip=button;
+
+button.classList.add("active");
+
+});
+
+bank.appendChild(button);
+
+});
+
+document.getElementById("sortResult").textContent=
+"Tap a phrase, then choose its category.";
+
+}
+
+function placeSort(type){
+
+if(!selectedSortChip)return;
+
+const destination=type==="sup"
+?document.getElementById("superiorItems")
+:document.getElementById("inferiorItems");
+
+selectedSortChip.dataset.placed=type;
+
+selectedSortChip.classList.remove("active");
+
+selectedSortChip.classList.add("placed");
+
+destination.appendChild(selectedSortChip);
+
+selectedSortChip=null;
+
+}
+
+document.getElementById("superiorZone").addEventListener("click",function(){
+
+placeSort("sup");
+
+});
+
+document.getElementById("inferiorZone").addEventListener("click",function(){
+
+placeSort("inf");
+
+});
+
+function checkSorting(){
+
+const remaining=document
+.getElementById("sortBank")
+.querySelectorAll(".sort-chip").length;
+
+if(remaining>0){
+
+document.getElementById("sortResult").textContent=
+"📌 Sort all 10 phrases first. "+remaining+" remaining.";
+
+return;
+
+}
+
+let score=0;
+
+document.querySelectorAll(".sort-chip").forEach(function(chip){
+
+const correct=chip.dataset.type===chip.dataset.placed;
+
+if(correct){
+
+score++;
+
+chip.style.background="#d9f7e5";
+
+chip.style.borderColor="#159b63";
+
+}else{
+
+chip.style.background="#ffe3e3";
+
+chip.style.borderColor="#dc6666";
+
+}
+
+});
+
+document.getElementById("sortResult").textContent=
+score===10
+?"🏆 Perfect sorting! 10/10!"
+:"⭐ "+score+"/10 correct. Tap the red phrases to return them to the bank and try again.";
+
+}
+
+/* =====================================
+   WRITING CHECK
+===================================== */
+
+function checkWriting(){
+
+const text=document.getElementById("writingArea").value.trim();
+
+const result=document.getElementById("writingResult");
+
+if(text.length<40){
+
+result.textContent=
+"✏️ Write a longer paragraph. Try at least three sentences.";
+
+return;
+
+}
+
+const sentences=text.split(/[.!?]+/)
+.map(function(s){
+return s.trim();
+})
+.filter(Boolean);
+
+const hasComparative=
+/\b(?:more|less)\s+[a-z-]+\s+than\b|\b[a-z]+er\s+than\b|\b(?:better|worse|farther|further)\s+than\b/i.test(text);
+
+const hasInferiority=
+/\bless\s+[a-z-]+\s+than\b/i.test(text);
+
+const hasThan=/\bthan\b/i.test(text);
+
+const hasCapital=/^[A-Z]/.test(text);
+
+const hasPunctuation=/[.!?]\s*$/.test(text);
+
+let reminders=[];
+
+if(sentences.length<3){
+
+reminders.push("Write at least three sentences.");
+
+}
+
+if(!hasComparative){
+
+reminders.push("Include a comparative expression.");
+
+}
+
+if(!hasInferiority){
+
+reminders.push("Try adding an inferiority comparison using LESS.");
+
+}
+
+if(!hasThan){
+
+reminders.push("Remember THAN.");
+
+}
+
+if(!hasCapital){
+
+reminders.push("Start with a capital letter.");
+
+}
+
+if(!hasPunctuation){
+
+reminders.push("Finish with punctuation.");
+
+}
+
+if(reminders.length===0){
+
+result.textContent=
+"🌟 Good work! Your paragraph includes important writing features. Read it again to check your grammar and meaning.";
+
+}else{
+
+result.textContent=
+"📝 Writing reminders: "+reminders.join(" ");
+
+}
+
+}
+
+function clearWriting(){
+
+document.getElementById("writingArea").value="";
+
+document.getElementById("writingResult").textContent=
+"Write your paragraph, then check the writing reminders.";
+
+document.querySelectorAll(".check-item input").forEach(function(box){
+
+box.checked=false;
+
+});
+
+}
+
+/* =====================================
+   PROGRESS
+===================================== */
+
+const stages=[
+"stage1",
+"stage2",
+"stage3",
+"stage4",
+"stage5",
+"stage6",
+"stage7",
+"stage8",
+"stage9"
+];
+
+function updateProgress(){
+
+let current=0;
+
+stages.forEach(function(id,index){
+
+const element=document.getElementById(id);
+
+if(element){
+
+const rect=element.getBoundingClientRect();
+
+if(rect.top<window.innerHeight*.65){
+
+current=index;
+
+}
+
+}
+
+});
+
+const percentage=Math.round(
+((current+1)/stages.length)*100
+);
+
+document.getElementById("progressLabel").textContent=
+"STEP "+(current+1)+" / 9";
+
+document.getElementById("progressFill").style.width=
+percentage+"%";
+
+document.getElementById("progressNumber").textContent=
+percentage+"%";
+
+}
+
+window.addEventListener(
+"scroll",
+updateProgress,
+{passive:true}
+);
+
+/* =====================================
+   INITIALISE
+===================================== */
+
+Object.keys(quizzes).forEach(function(name){
+
+buildQuiz(name);
+
+});
+
+resetSorting();
+
+updateProgress();
+
+</script>
+
+</body>
+</html>

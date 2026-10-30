@@ -1,0 +1,3115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#148b79">
+
+<title>MS4 Third Term Tests & Exams | My English Space</title>
+
+<meta name="description"
+content="Five interactive MS4 third term English examinations about citizenship, volunteering, charity, the environment and globalisation.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================
+   DESIGN SYSTEM
+========================================== */
+
+:root{
+  --green:#148b79;
+  --green-dark:#08645a;
+  --green-light:#e6f8f2;
+
+  --teal:#22b7a3;
+  --blue:#3989cb;
+  --gold:#ffd77e;
+  --purple:#8057bd;
+
+  --ink:#25434c;
+  --muted:#69818a;
+  --white:#ffffff;
+
+  --line:#dcece8;
+  --red:#db5866;
+
+  --shadow:0 16px 42px rgba(12,91,80,.13);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:25px;
+}
+
+body{
+  font-family:"Nunito",Arial,sans-serif;
+  background:#f2fbf8;
+  color:var(--ink);
+  line-height:1.7;
+}
+
+h1,h2,h3,h4{
+  font-family:"Baloo 2",Arial,sans-serif;
+  line-height:1.2;
+}
+
+button,input,textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1160px,calc(100% - 32px));
+  margin:auto;
+}
+
+.hidden{
+  display:none!important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+  outline:3px solid #f5bd51;
+  outline-offset:3px;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.site-header{
+  background:#075b53;
+  color:white;
+  border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.header-inner{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.logo{
+  font-size:18px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-icon{
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  background:white;
+  color:var(--green);
+  border-radius:13px;
+  font-size:23px;
+}
+
+.header-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.header-links a{
+  padding:10px 15px;
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:30px;
+  font-size:12px;
+  font-weight:900;
+  background:rgba(255,255,255,.1);
+  transition:.2s;
+}
+
+.header-links a:hover{
+  background:white;
+  color:var(--green-dark);
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(255,216,126,.22),
+      transparent 32%
+    ),
+    linear-gradient(
+      125deg,
+      #075b53,
+      #148b79,
+      #38b99d
+    );
+
+  color:white;
+  padding:75px 0 90px;
+}
+
+.hero-layout{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:55px;
+  align-items:center;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  padding:10px 17px;
+  background:white;
+  color:var(--green-dark);
+  border-radius:30px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.3px;
+}
+
+.hero h1{
+  margin:23px 0 18px;
+  font-size:clamp(45px,6vw,75px);
+  font-weight:800;
+  line-height:1.05;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+}
+
+.hero-description{
+  max-width:560px;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.95;
+  color:#effffb;
+}
+
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:26px;
+}
+
+.hero-tags span{
+  padding:9px 13px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:25px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.hero-visual{
+  position:relative;
+}
+
+.hero-visual img{
+  width:100%;
+  height:355px;
+  object-fit:cover;
+  border:7px solid white;
+  border-radius:29px;
+  box-shadow:0 25px 50px rgba(0,49,43,.35);
+}
+
+.hero-sticker{
+  position:absolute;
+  right:-10px;
+  bottom:-17px;
+
+  padding:14px 19px;
+  background:var(--gold);
+  color:#70501d;
+
+  border:4px solid white;
+  border-radius:17px;
+
+  font-size:14px;
+  font-weight:900;
+}
+
+/* ==========================================
+   WELCOME / INSTRUCTIONS
+========================================== */
+
+.instructions{
+  position:relative;
+  margin-top:-35px;
+  padding:30px;
+
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  box-shadow:var(--shadow);
+}
+
+.instructions h2{
+  color:var(--green-dark);
+  font-size:29px;
+  margin-bottom:18px;
+}
+
+.instructions-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+}
+
+.instruction-card{
+  padding:17px;
+  background:#ebfaf5;
+  border-radius:16px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.instruction-card strong{
+  display:block;
+  color:var(--green-dark);
+  margin-bottom:6px;
+  font-size:13px;
+}
+
+/* ==========================================
+   SECTION HEADINGS
+========================================== */
+
+.section-heading{
+  text-align:center;
+  margin:68px 0 30px;
+}
+
+.section-heading small{
+  color:var(--green);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.4px;
+}
+
+.section-heading h2{
+  margin:10px 0;
+  color:var(--green-dark);
+  font-size:clamp(32px,4vw,45px);
+}
+
+.section-heading p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:800;
+}
+
+/* ==========================================
+   EXAM CARDS
+========================================== */
+
+.exam-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:15px;
+}
+
+.exam-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  padding:22px 14px;
+
+  background:white;
+  border:2px solid #dcefe9;
+  border-radius:22px;
+
+  text-align:center;
+  color:var(--ink);
+
+  box-shadow:var(--shadow);
+  transition:.25s;
+}
+
+.exam-card:hover{
+  transform:translateY(-6px);
+  border-color:var(--green);
+}
+
+.exam-card.active{
+  background:linear-gradient(145deg,#087365,#23a58f);
+  color:white;
+  border-color:#087365;
+}
+
+.exam-icon{
+  display:grid;
+  place-items:center;
+
+  width:65px;
+  height:65px;
+  margin-bottom:14px;
+
+  background:#e8f9f2;
+  border-radius:20px;
+  font-size:31px;
+}
+
+.exam-card.active .exam-icon{
+  background:rgba(255,255,255,.2);
+}
+
+.exam-card h3{
+  font-size:21px;
+  margin-bottom:8px;
+}
+
+.exam-card p{
+  font-size:11px;
+  font-weight:800;
+  min-height:53px;
+}
+
+.exam-card small{
+  display:block;
+  margin-top:auto;
+  padding-top:15px;
+  font-size:10px;
+  font-weight:900;
+  color:var(--green);
+}
+
+.exam-card.active small{
+  color:var(--gold);
+}
+
+/* ==========================================
+   EXAM PAPER
+========================================== */
+
+.exam-paper{
+  margin:42px 0 60px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:26px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.paper-header{
+  padding:30px;
+  background:linear-gradient(120deg,#08665b,#1c9d88);
+  color:white;
+}
+
+.paper-header-top{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.4px;
+}
+
+.paper-header h2{
+  font-size:37px;
+  margin:17px 0 7px;
+}
+
+.paper-header p{
+  font-size:12px;
+  font-weight:800;
+  color:#e6fff6;
+}
+
+.paper-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:22px;
+}
+
+.paper-stats span{
+  padding:9px 13px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:22px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.paper-body{
+  padding:34px;
+}
+
+/* ==========================================
+   PART HEADINGS
+========================================== */
+
+.part-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+
+  margin:27px 0 21px;
+  padding:17px 20px;
+
+  background:#e8f8f1;
+  border-left:5px solid var(--green);
+  border-radius:13px;
+}
+
+.part-heading h3{
+  color:var(--green-dark);
+  font-size:23px;
+}
+
+.part-heading span{
+  color:var(--green);
+  font-size:12px;
+  font-weight:900;
+}
+
+.sub-heading{
+  margin:26px 0 15px;
+  color:var(--green-dark);
+  font-size:22px;
+}
+
+/* ==========================================
+   READING PASSAGE
+========================================== */
+
+.reading-text{
+  padding:29px;
+  background:linear-gradient(145deg,#fff,#f1fcf7);
+  border:1px solid #d8eee5;
+  border-radius:19px;
+}
+
+.reading-text h3{
+  text-align:center;
+  color:var(--green-dark);
+  font-size:28px;
+  margin-bottom:19px;
+}
+
+.reading-text p{
+  margin-bottom:15px;
+  font-size:14px;
+  line-height:2.1;
+  text-align:justify;
+}
+
+.reading-text p:last-child{
+  margin-bottom:0;
+}
+
+/* ==========================================
+   ACTIVITIES
+========================================== */
+
+.activity{
+  margin:26px 0;
+  padding:24px;
+
+  background:white;
+  border:1px solid #e0eee8;
+  border-radius:19px;
+}
+
+.activity-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+
+.activity-title h4{
+  color:var(--ink);
+  font-size:19px;
+}
+
+.points{
+  padding:7px 12px;
+  background:#e7f7f0;
+  color:var(--green);
+  border-radius:25px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.activity>p{
+  margin-bottom:13px;
+  font-size:13px;
+  font-weight:700;
+}
+
+.question{
+  padding:16px 0;
+  border-bottom:1px dashed #dcebe5;
+}
+
+.question:last-child{
+  border-bottom:0;
+}
+
+.question-label{
+  display:block;
+  margin-bottom:11px;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.7;
+}
+
+.options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.option{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:10px 14px;
+
+  background:#f0faf6;
+  border:1px solid #d8eee4;
+  border-radius:12px;
+
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.option:has(input:checked){
+  background:#d6f4e8;
+  border-color:var(--green);
+}
+
+.option input{
+  accent-color:var(--green);
+}
+
+.answer-input{
+  width:100%;
+  padding:13px 15px;
+
+  background:white;
+  color:var(--ink);
+
+  border:2px solid #dcebe5;
+  border-radius:12px;
+
+  outline:none;
+  font-size:13px;
+}
+
+.answer-input:focus{
+  border-color:var(--green);
+}
+
+textarea.answer-input{
+  min-height:225px;
+  resize:vertical;
+  line-height:1.9;
+}
+
+.answer-feedback{
+  display:none;
+  margin-top:11px;
+  padding:12px 14px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.answer-feedback.correct{
+  display:block;
+  background:#e4f8ed;
+  color:#117a56;
+}
+
+.answer-feedback.incorrect{
+  display:block;
+  background:#fff0f1;
+  color:#b73948;
+}
+
+/* ==========================================
+   WRITING
+========================================== */
+
+.fact-file{
+  margin:20px 0;
+  padding:21px;
+
+  background:#fff9e9;
+  border:1px solid #f2dfab;
+  border-radius:17px;
+}
+
+.fact-file h4{
+  margin-bottom:11px;
+  color:#936b26;
+  font-size:20px;
+}
+
+.fact-file p{
+  font-size:13px;
+  line-height:2;
+}
+
+.writing-checklist{
+  margin:17px 0;
+  padding:20px;
+
+  background:#eaf8f2;
+  border-radius:15px;
+
+  font-size:12px;
+  line-height:2;
+}
+
+.word-count{
+  margin-top:9px;
+  text-align:right;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:900;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.exam-actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  padding:27px 0 10px;
+}
+
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:9px;
+
+  padding:15px 23px;
+
+  border:0;
+  border-radius:30px;
+
+  font-size:13px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:linear-gradient(120deg,#0c8976,#25b39a);
+  color:white;
+}
+
+.btn-secondary{
+  background:#e6f6ef;
+  color:var(--green-dark);
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#72521c;
+}
+
+.btn:disabled{
+  opacity:.65;
+  cursor:not-allowed;
+  transform:none;
+}
+
+/* ==========================================
+   RESULTS
+========================================== */
+
+.result-panel{
+  margin:32px 0;
+  padding:32px;
+
+  background:linear-gradient(130deg,#e9faf2,#f6fffb);
+  border:2px solid #b6e7d3;
+  border-radius:23px;
+
+  text-align:center;
+}
+
+.result-panel h2{
+  color:var(--green-dark);
+  font-size:32px;
+}
+
+.result-score{
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-size:60px;
+  font-weight:800;
+  color:var(--green);
+}
+
+.result-panel>p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:800;
+}
+
+.score-note{
+  margin-top:13px;
+  line-height:1.9;
+}
+
+.model-answer{
+  margin-top:27px;
+  padding:24px;
+
+  background:white;
+  border:1px solid #d5ebdf;
+  border-radius:18px;
+
+  text-align:left;
+}
+
+.model-answer h3{
+  color:var(--green-dark);
+  margin-bottom:12px;
+  font-size:23px;
+}
+
+.model-answer p{
+  font-size:13px;
+  line-height:2;
+  white-space:pre-line;
+}
+
+.model-answer ul{
+  margin-top:12px;
+  padding-left:21px;
+  font-size:12px;
+  line-height:2;
+}
+
+/* ==========================================
+   PROGRESS
+========================================== */
+
+.progress-section{
+  margin-bottom:70px;
+  padding:31px;
+
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  box-shadow:var(--shadow);
+}
+
+.progress-section h2{
+  color:var(--green-dark);
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.progress-section p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:800;
+}
+
+.progress-track{
+  height:15px;
+  margin:23px 0;
+  background:#e3f1eb;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,#24b39c,#ffd77e);
+  transition:width .4s;
+}
+
+.progress-label{
+  font-size:12px;
+  font-weight:900;
+  color:var(--green);
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+  padding:35px 20px;
+  background:#075b53;
+  color:white;
+  text-align:center;
+  font-size:12px;
+  font-weight:800;
+}
+
+footer strong{
+  color:var(--gold);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1050px){
+
+  .hero-layout{
+    gap:30px;
+  }
+
+  .exam-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
+@media(max-width:780px){
+
+  .hero-layout{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-description{
+    margin:auto;
+  }
+
+  .hero-tags{
+    justify-content:center;
+  }
+
+  .hero-visual{
+    width:min(520px,100%);
+    margin:auto;
+  }
+
+  .hero-visual img{
+    height:300px;
+  }
+
+  .instructions-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .exam-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:540px){
+
+  .header-inner{
+    justify-content:center;
+    padding:12px 0;
+  }
+
+  .header-links{
+    justify-content:center;
+  }
+
+  .hero{
+    padding:48px 0 75px;
+  }
+
+  .hero h1{
+    font-size:46px;
+  }
+
+  .hero-description{
+    font-size:13px;
+  }
+
+  .hero-visual img{
+    height:260px;
+  }
+
+  .instructions{
+    padding:21px;
+  }
+
+  .instructions-grid{
+    grid-template-columns:1fr;
+  }
+
+  .exam-grid{
+    gap:10px;
+  }
+
+  .exam-card{
+    padding:18px 10px;
+  }
+
+  .exam-card h3{
+    font-size:18px;
+  }
+
+  .paper-header{
+    padding:23px;
+  }
+
+  .paper-header h2{
+    font-size:29px;
+  }
+
+  .paper-body{
+    padding:17px;
+  }
+
+  .reading-text{
+    padding:18px;
+  }
+
+  .activity{
+    padding:17px;
+  }
+
+  .option{
+    width:100%;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .result-panel{
+    padding:20px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="site-header">
+
+  <div class="container header-inner">
+
+    <a href="index.html" class="logo">
+
+      <span class="logo-icon">📚</span>
+
+      My English Space
+
+    </a>
+
+    <nav class="header-links">
+
+      <a href="index.html">
+        🏠 Home
+      </a>
+
+      <a href="MS4-Tests and exams.html">
+        ← Tests & Exams
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="hero">
+
+  <div class="container hero-layout">
+
+    <div>
+
+      <span class="hero-badge">
+        🌍 MS4 · SEQUENCE 3 · THIRD TERM
+      </span>
+
+      <h1>
+
+        Third Term
+
+        <span>Exam Challenge!</span>
+
+      </h1>
+
+      <p class="hero-description">
+
+        Welcome to your Third Term Examination Centre!
+
+        Discover five exciting BEM-style English examinations
+        about good citizenship, volunteering,
+        charity organisations, environmental protection
+        and globalisation.
+
+        Read, think, write and become
+        a confident English learner!
+
+      </p>
+
+      <div class="hero-tags">
+
+        <span>📖 Reading</span>
+
+        <span>🧩 Language</span>
+
+        <span>✍️ Writing</span>
+
+        <span>🏆 5 Exams</span>
+
+      </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+      <img
+        src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1100&q=85"
+        alt="Volunteers working together for their community"
+      >
+
+      <div class="hero-sticker">
+        ⭐ 5 Exam Challenges
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<main class="container">
+
+<!-- ==========================================
+     INSTRUCTIONS
+========================================== -->
+
+<section class="instructions">
+
+  <h2>
+    🎯 How to Complete Your Exams
+  </h2>
+
+  <div class="instructions-grid">
+
+    <div class="instruction-card">
+
+      <strong>
+        1. Choose an Exam
+      </strong>
+
+      Select one of the five challenges.
+
+    </div>
+
+    <div class="instruction-card">
+
+      <strong>
+        2. Read Carefully
+      </strong>
+
+      Understand the passage and instructions.
+
+    </div>
+
+    <div class="instruction-card">
+
+      <strong>
+        3. Answer Independently
+      </strong>
+
+      Complete reading, language and writing.
+
+    </div>
+
+    <div class="instruction-card">
+
+      <strong>
+        4. Submit & Learn
+      </strong>
+
+      Check your corrections and improve.
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     EXAM SELECTOR
+========================================== -->
+
+<section id="choose">
+
+  <div class="section-heading">
+
+    <small>
+      ✦ CHOOSE YOUR CHALLENGE ✦
+    </small>
+
+    <h2>
+      Five Exams — Five Missions!
+    </h2>
+
+    <p>
+      Choose an examination and begin your
+      Third Term success journey.
+    </p>
+
+  </div>
+
+  <div class="exam-grid" id="examGrid"></div>
+
+</section>
+
+<!-- ==========================================
+     EXAM PAPER
+========================================== -->
+
+<section class="exam-paper" id="examPaper">
+
+  <div class="paper-header">
+
+    <div class="paper-header-top">
+
+      <span>
+        🇩🇿 MS4 ENGLISH EXAMINATION
+      </span>
+
+      <span>
+        THIRD TERM · SEQUENCE 3
+      </span>
+
+    </div>
+
+    <h2 id="paperTitle">
+      Examination One
+    </h2>
+
+    <p id="paperSubtitle"></p>
+
+    <div class="paper-stats">
+
+      <span>📖 Reading: 7 pts</span>
+
+      <span>🧩 Language: 7 pts</span>
+
+      <span>✍️ Writing: 6 pts</span>
+
+      <span>🏆 Total: 20 pts</span>
+
+    </div>
+
+  </div>
+
+  <div class="paper-body" id="paperBody"></div>
+
+</section>
+
+<!-- ==========================================
+     PROGRESS
+========================================== -->
+
+<section class="progress-section">
+
+  <h2>
+    🏆 My Third Term Progress
+  </h2>
+
+  <p>
+    Your completed examinations are saved
+    automatically on this device.
+  </p>
+
+  <div class="progress-track">
+
+    <div
+      class="progress-fill"
+      id="progressFill"
+    ></div>
+
+  </div>
+
+  <div class="progress-label" id="progressLabel">
+    0 / 5 Exams Completed
+  </div>
+
+</section>
+
+</main>
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+  <strong>MY ENGLISH SPACE</strong>
+
+  <br><br>
+
+  MS4 · Third Term Tests & Exams
+
+  <br>
+
+  © <span id="year"></span> My English Space
+
+</footer>
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+/* ==========================================
+   FIVE COMPLETE EXAMINATIONS
+========================================== */
+
+const exams = [
+
+/* ==========================================
+   EXAM 01 — GOOD CITIZENSHIP
+========================================== */
+
+{
+
+  title:"A Good Citizen",
+
+  icon:"🤝",
+
+  subtitle:"Exam 01 · Rights, Duties and Good Citizenship",
+
+  passageTitle:"Being a Responsible Citizen",
+
+  passage:[
+
+    "A good citizen is someone who respects the law, helps other people and takes care of the community. Good citizenship begins with small actions in our everyday lives. We can all make our neighbourhoods better places to live.",
+
+    "In Algeria, many young people participate in activities that improve their communities. Some volunteers clean public gardens, while others help elderly people or collect clothes for families in need. These actions show kindness, solidarity and responsibility.",
+
+    "Last year, a group of pupils from a middle school in Sétif organised a cleaning campaign. First, they collected rubbish from the school playground. Next, they planted flowers and small trees. Finally, they made posters to encourage their classmates to protect the environment.",
+
+    "Their teacher was extremely proud of them. She explained that responsible citizens should respect public property, follow rules and help others. If everyone makes a small effort, our communities will become cleaner, safer and more beautiful."
+
+  ],
+
+  tf:[
+
+    {
+      q:"A good citizen respects the law and helps others.",
+      a:"True"
+    },
+
+    {
+      q:"The pupils organised a campaign to collect money.",
+      a:"False"
+    },
+
+    {
+      q:"The pupils planted twenty trees.",
+      a:"Not Mentioned"
+    }
+
+  ],
+
+  comprehension:[
+
+    {
+      q:"Where did the pupils organise their cleaning campaign?",
+      answers:[
+        "at their school",
+        "in their school",
+        "in the school playground",
+        "at school"
+      ],
+      display:"They organised it at their school."
+    },
+
+    {
+      q:"What did the pupils make to encourage their classmates?",
+      answers:[
+        "posters",
+        "they made posters"
+      ],
+      display:"They made posters."
+    }
+
+  ],
+
+  vocabulary:[
+
+    {
+      q:"Find in the text a word meaning 'people who work without payment'.",
+      a:["volunteers"],
+      display:"volunteers"
+    },
+
+    {
+      q:"Find in the text the opposite of 'dirtier'.",
+      a:["cleaner"],
+      display:"cleaner"
+    }
+
+  ],
+
+  language:[
+
+    {
+      q:"Complete with the imperative: '_____ (respect) public property.'",
+      a:["respect"],
+      display:"Respect"
+    },
+
+    {
+      q:"Complete: 'If we protect our environment, our city _____ (become) cleaner.'",
+      a:["will become"],
+      display:"will become"
+    },
+
+    {
+      q:"Complete: 'If you see rubbish, _____ (pick) it up.'",
+      a:["pick"],
+      display:"pick"
+    },
+
+    {
+      q:"Put the verb in the correct form: 'They enjoy (help) _____ others.'",
+      a:["helping"],
+      display:"helping"
+    },
+
+    {
+      q:"Complete with the correct word: 'We _____ respect school rules.'",
+      a:["must","should"],
+      display:"must / should"
+    },
+
+    {
+      q:"Complete with a discourse marker: 'First, clean the area. _____, plant trees.'",
+      a:["next","then","second"],
+      display:"Next / Then"
+    },
+
+    {
+      q:"Correct the mistake: 'If everyone help, the city will be clean.'",
+      a:[
+        "if everyone helps the city will be clean"
+      ],
+      display:"If everyone helps, the city will be clean."
+    }
+
+  ],
+
+  writingTitle:"How to Be a Good Citizen",
+
+  writingTask:
+    "Write a paragraph of 8–10 sentences explaining how young people can become good citizens. Use advice, examples and at least one first conditional sentence.",
+
+  factFile:
+    "Useful ideas: respect the law — help elderly people — protect public property — keep streets clean — volunteer — respect others — plant trees — follow school rules.",
+
+  model:
+    "A good citizen is a responsible person who respects others and helps the community. We should always respect the law and follow school rules. We must protect public property and keep our streets clean. Young people can help elderly people and families in need. They can also volunteer in charity activities. First, we should collect rubbish and recycle waste. Moreover, we should plant trees and protect nature. If everyone works together, our neighbourhoods will become better places. In my opinion, good citizenship begins with small positive actions."
+
+},
+
+/* ==========================================
+   EXAM 02 — VOLUNTEERING
+========================================== */
+
+{
+
+  title:"Young Volunteers",
+
+  icon:"💚",
+
+  subtitle:"Exam 02 · Volunteering and Community Service",
+
+  passageTitle:"A Day of Volunteering",
+
+  passage:[
+
+    "Volunteering means giving your time and energy to help other people without expecting money. It is an important way to show kindness and solidarity. Many teenagers enjoy volunteering because it allows them to learn new skills and make new friends.",
+
+    "Last Saturday, Salma and her classmates visited a home for elderly people. Their English teacher organised the visit as part of a school charity project. The pupils prepared small gifts, collected books and brought flowers.",
+
+    "When they arrived, the volunteers greeted the elderly residents warmly. First, they cleaned the garden. Then, they helped prepare lunch. After that, they read stories and talked to the residents about their childhood memories. Everyone enjoyed the visit.",
+
+    "At the end of the day, Salma felt happy and proud. She realised that helping others does not always require money. Sometimes, a smile, a kind word or a little time can make a big difference. She hopes to organise another visit soon."
+
+  ],
+
+  tf:[
+
+    {
+      q:"Volunteers help people without expecting money.",
+      a:"True"
+    },
+
+    {
+      q:"Salma visited a hospital with her classmates.",
+      a:"False"
+    },
+
+    {
+      q:"The elderly home had fifty residents.",
+      a:"Not Mentioned"
+    }
+
+  ],
+
+  comprehension:[
+
+    {
+      q:"Who organised the charity visit?",
+      answers:[
+        "their english teacher",
+        "the english teacher",
+        "salmas english teacher"
+      ],
+      display:"Their English teacher organised the visit."
+    },
+
+    {
+      q:"What did the pupils do after preparing lunch?",
+      answers:[
+        "they read stories",
+        "they read stories and talked to the residents",
+        "read stories",
+        "they talked to the residents about their childhood memories"
+      ],
+      display:"They read stories and talked to the residents."
+    }
+
+  ],
+
+  vocabulary:[
+
+    {
+      q:"Find in the text a word meaning 'people living in a particular place'.",
+      a:["residents"],
+      display:"residents"
+    },
+
+    {
+      q:"Find in the text the opposite of 'sad'.",
+      a:["happy"],
+      display:"happy"
+    }
+
+  ],
+
+  language:[
+
+    {
+      q:"Complete: 'Salma enjoys _____ (help) elderly people.'",
+      a:["helping"],
+      display:"helping"
+    },
+
+    {
+      q:"Complete: 'If you volunteer, you _____ (learn) new skills.'",
+      a:["will learn"],
+      display:"will learn"
+    },
+
+    {
+      q:"Complete the imperative: '_____ (be) kind to elderly people.'",
+      a:["be"],
+      display:"Be"
+    },
+
+    {
+      q:"Complete: 'They prefer _____ (work) together.'",
+      a:["working"],
+      display:"working"
+    },
+
+    {
+      q:"Complete: 'First, we cleaned the garden. _____, we prepared lunch.'",
+      a:["then","next","second"],
+      display:"Then / Next"
+    },
+
+    {
+      q:"Complete: 'Volunteering is useful. _____, it helps people make friends.'",
+      a:["moreover","in addition","furthermore","also"],
+      display:"Moreover / In addition"
+    },
+
+    {
+      q:"Correct the mistake: 'If she volunteers, she make new friends.'",
+      a:[
+        "if she volunteers she will make new friends"
+      ],
+      display:"If she volunteers, she will make new friends."
+    }
+
+  ],
+
+  writingTitle:"My Volunteering Experience",
+
+  writingTask:
+    "Imagine that you participated in a volunteering activity. Write 8–10 sentences describing the activity, the place, the people, what you did and how you felt.",
+
+  factFile:
+    "Place: local neighbourhood | People: classmates and teacher | Activities: clean streets, collect rubbish, plant trees, distribute food | Feelings: happy, proud, useful.",
+
+  model:
+    "Last Friday, I participated in a volunteering activity in my neighbourhood. Our teacher encouraged us to help our community. First, we met near our school. Then, we collected rubbish from the streets and public gardens. After that, we planted small trees and flowers. Some pupils distributed food to families in need. We enjoyed working together because we were helping others. Moreover, we learned the importance of solidarity. At the end of the day, I felt very happy and proud. I hope to participate in more volunteering activities in the future."
+
+},
+
+/* ==========================================
+   EXAM 03 — CHARITY ORGANISATIONS
+========================================== */
+
+{
+
+  title:"Charity Heroes",
+
+  icon:"❤️",
+
+  subtitle:"Exam 03 · Charity Organisations and Solidarity",
+
+  passageTitle:"Helping People Around the World",
+
+  passage:[
+
+    "Charity organisations play an important role in helping people who face difficult situations. They provide food, clean water, medical care and education to those who need support. Some organisations work locally, while others help people in different countries.",
+
+    "UNICEF is an international organisation that works to protect children's rights. It supports children's health, education and safety. The Algerian Red Crescent also carries out humanitarian activities. Its volunteers help vulnerable people and provide assistance during emergencies.",
+
+    "In many Algerian towns, young volunteers organise charity campaigns. They collect clothes, school supplies and food for families in need. Some pupils prefer collecting books, whereas others enjoy preparing food parcels.",
+
+    "Charity work teaches people the values of kindness, cooperation and solidarity. If more young people participate in charity activities, more families will receive help. Even small contributions can make a positive difference."
+
+  ],
+
+  tf:[
+
+    {
+      q:"Charity organisations help people in difficult situations.",
+      a:"True"
+    },
+
+    {
+      q:"UNICEF works only in Algeria.",
+      a:"False"
+    },
+
+    {
+      q:"The Algerian Red Crescent was founded in 1962.",
+      a:"Not Mentioned"
+    }
+
+  ],
+
+  comprehension:[
+
+    {
+      q:"What does UNICEF work to protect?",
+      answers:[
+        "childrens rights",
+        "the rights of children"
+      ],
+      display:"It works to protect children's rights."
+    },
+
+    {
+      q:"What do young volunteers collect for families in need?",
+      answers:[
+        "clothes school supplies and food",
+        "clothes school supplies food",
+        "clothes and school supplies and food"
+      ],
+      display:"They collect clothes, school supplies and food."
+    }
+
+  ],
+
+  vocabulary:[
+
+    {
+      q:"Find in the text a word meaning 'help or support'.",
+      a:["assistance"],
+      display:"assistance"
+    },
+
+    {
+      q:"Find in the text the opposite of 'negative'.",
+      a:["positive"],
+      display:"positive"
+    }
+
+  ],
+
+  language:[
+
+    {
+      q:"Complete: 'If people donate food, poor families _____ (receive) help.'",
+      a:["will receive"],
+      display:"will receive"
+    },
+
+    {
+      q:"Complete: 'Some pupils enjoy _____ (collect) books.'",
+      a:["collecting"],
+      display:"collecting"
+    },
+
+    {
+      q:"Complete: '_____ (donate) clothes to families in need.'",
+      a:["donate"],
+      display:"Donate"
+    },
+
+    {
+      q:"Complete: 'Some volunteers collect clothes, _____ others prepare food.'",
+      a:["while","whereas"],
+      display:"while / whereas"
+    },
+
+    {
+      q:"Complete: 'Charities provide food. _____, they offer medical care.'",
+      a:["moreover","in addition","furthermore","also"],
+      display:"Moreover / In addition"
+    },
+
+    {
+      q:"Complete: 'If you want to help, _____ (join) a charity organisation.'",
+      a:["join"],
+      display:"join"
+    },
+
+    {
+      q:"Correct the mistake: 'She prefers donate clothes to poor people.'",
+      a:[
+        "she prefers donating clothes to poor people"
+      ],
+      display:"She prefers donating clothes to poor people."
+    }
+
+  ],
+
+  writingTitle:"Why Charity Work Matters",
+
+  writingTask:
+    "Write a paragraph of 8–10 sentences explaining the importance of charity organisations. Mention what they do, who they help and how young people can support them.",
+
+  factFile:
+    "Useful vocabulary: charity organisations — volunteers — donations — food — clothes — medicine — education — solidarity — families in need — humanitarian aid.",
+
+  model:
+    "Charity organisations are very important in our society. They help poor families and people in difficult situations. For example, UNICEF supports children's rights and education. The Algerian Red Crescent also helps vulnerable people during emergencies. Charity organisations provide food, clothes and medical assistance. Young people can participate by donating books or school supplies. Moreover, they can volunteer and organise charity campaigns. If we work together, we will help more families in need. I believe that charity work makes our society kinder and stronger."
+
+},
+
+/* ==========================================
+   EXAM 04 — ENVIRONMENT
+========================================== */
+
+{
+
+  title:"Save Our Planet",
+
+  icon:"🌳",
+
+  subtitle:"Exam 04 · Environmental Protection and Responsibility",
+
+  passageTitle:"Small Actions, Big Changes",
+
+  passage:[
+
+    "Our planet faces many environmental problems, including pollution, deforestation and climate change. These problems affect animals, plants and human beings. However, everyone can contribute to protecting the environment through simple everyday actions.",
+
+    "At Green Valley Middle School, a group of pupils created an environmental club. Their aim was to make their school cleaner and encourage responsible behaviour. They organised recycling activities, planted trees and designed posters about saving water.",
+
+    "Every Wednesday, club members collect paper and plastic bottles from classrooms. They separate recyclable materials and put them into special bins. They also remind pupils to switch off lights when they leave classrooms.",
+
+    "The club believes that environmental protection is everyone's responsibility. If we reduce waste, recycle materials and save energy, we will protect natural resources. Together, we can build a cleaner and healthier future."
+
+  ],
+
+  tf:[
+
+    {
+      q:"The pupils created an environmental club.",
+      a:"True"
+    },
+
+    {
+      q:"Club members collect rubbish every Monday.",
+      a:"False"
+    },
+
+    {
+      q:"The club has thirty members.",
+      a:"Not Mentioned"
+    }
+
+  ],
+
+  comprehension:[
+
+    {
+      q:"What was the aim of the environmental club?",
+      answers:[
+        "to make their school cleaner",
+        "to make their school cleaner and encourage responsible behaviour",
+        "make their school cleaner",
+        "to encourage responsible behaviour"
+      ],
+      display:"Its aim was to make the school cleaner and encourage responsible behaviour."
+    },
+
+    {
+      q:"When do club members collect paper and plastic bottles?",
+      answers:[
+        "every wednesday",
+        "on wednesdays",
+        "wednesday"
+      ],
+      display:"Every Wednesday."
+    }
+
+  ],
+
+  vocabulary:[
+
+    {
+      q:"Find in the text a word meaning 'using materials again after processing them'.",
+      a:["recycling","recycle"],
+      display:"recycling / recycle"
+    },
+
+    {
+      q:"Find in the text the opposite of 'dirtier'.",
+      a:["cleaner"],
+      display:"cleaner"
+    }
+
+  ],
+
+  language:[
+
+    {
+      q:"Complete: 'If we recycle paper, we _____ (save) trees.'",
+      a:["will save"],
+      display:"will save"
+    },
+
+    {
+      q:"Complete the negative imperative: '_____ (throw) rubbish in the street.'",
+      a:["dont throw","do not throw"],
+      display:"Don't throw"
+    },
+
+    {
+      q:"Complete: 'We enjoy _____ (plant) trees.'",
+      a:["planting"],
+      display:"planting"
+    },
+
+    {
+      q:"Complete: 'If you leave the classroom, _____ (switch) off the lights.'",
+      a:["switch"],
+      display:"switch"
+    },
+
+    {
+      q:"Complete: 'First, collect plastic bottles. _____, put them into recycling bins.'",
+      a:["then","next","second"],
+      display:"Then / Next"
+    },
+
+    {
+      q:"Complete: 'We should save water. _____, we should reduce waste.'",
+      a:["moreover","in addition","furthermore","also"],
+      display:"Moreover / In addition"
+    },
+
+    {
+      q:"Correct the mistake: 'If we will plant trees, the air will be cleaner.'",
+      a:[
+        "if we plant trees the air will be cleaner"
+      ],
+      display:"If we plant trees, the air will be cleaner."
+    }
+
+  ],
+
+  writingTitle:"How to Protect the Environment",
+
+  writingTask:
+    "Write a paragraph of 8–10 sentences giving advice about protecting the environment. Use imperatives, discourse markers and at least one first conditional sentence.",
+
+  factFile:
+    "Useful ideas: recycle paper — save water — switch off lights — plant trees — avoid plastic bags — use public transport — keep streets clean — protect animals.",
+
+  model:
+    "Protecting the environment is everyone's responsibility. We should take simple actions to keep our planet clean. First, recycle paper, glass and plastic materials. Next, save water and do not waste electricity. Moreover, plant trees and protect green spaces. Avoid throwing rubbish in streets and public gardens. We should also use reusable bags instead of plastic ones. If we reduce pollution, our cities will become healthier places. In addition, we must teach young people to respect nature. Together, we can protect our planet for future generations."
+
+},
+
+/* ==========================================
+   EXAM 05 — GLOBALISATION
+========================================== */
+
+{
+
+  title:"Our Connected World",
+
+  icon:"🌍",
+
+  subtitle:"Exam 05 · Globalisation and Cultural Exchange",
+
+  passageTitle:"Living in a Global Village",
+
+  passage:[
+
+    "Today, the world is more connected than ever before. People can communicate with others in different countries through the internet, social media and modern technology. This growing connection between countries is often called globalisation.",
+
+    "Globalisation offers many opportunities. Students can learn foreign languages, discover new cultures and exchange ideas with people around the world. For example, an Algerian pupil can communicate with a student in Japan or watch educational videos made in another country.",
+
+    "However, globalisation also brings challenges. Some people worry that local traditions and languages may become less popular. Others believe that too much time on social media can reduce face-to-face communication.",
+
+    "For these reasons, young people should use technology responsibly. They can learn about other cultures while respecting their own identity and traditions. If we use global connections wisely, we will enjoy their benefits without losing our cultural values."
+
+  ],
+
+  tf:[
+
+    {
+      q:"Globalisation connects people from different countries.",
+      a:"True"
+    },
+
+    {
+      q:"Globalisation has only positive effects.",
+      a:"False"
+    },
+
+    {
+      q:"The first social media website appeared in 1997.",
+      a:"Not Mentioned"
+    }
+
+  ],
+
+  comprehension:[
+
+    {
+      q:"How can people communicate with others in different countries?",
+      answers:[
+        "through the internet social media and modern technology",
+        "through the internet",
+        "through social media",
+        "using the internet",
+        "using modern technology"
+      ],
+      display:"Through the internet, social media and modern technology."
+    },
+
+    {
+      q:"What should young people respect while learning about other cultures?",
+      answers:[
+        "their own identity and traditions",
+        "their identity and traditions",
+        "their own traditions",
+        "their cultural values"
+      ],
+      display:"They should respect their own identity and traditions."
+    }
+
+  ],
+
+  vocabulary:[
+
+    {
+      q:"Find in the text a word meaning 'possibilities or chances'.",
+      a:["opportunities"],
+      display:"opportunities"
+    },
+
+    {
+      q:"Find in the text the opposite of 'advantages'.",
+      a:["challenges"],
+      display:"challenges"
+    }
+
+  ],
+
+  language:[
+
+    {
+      q:"Complete: 'If we use technology wisely, we _____ (benefit) from it.'",
+      a:["will benefit"],
+      display:"will benefit"
+    },
+
+    {
+      q:"Complete: 'Many pupils enjoy _____ (learn) foreign languages.'",
+      a:["learning"],
+      display:"learning"
+    },
+
+    {
+      q:"Complete the imperative: '_____ (respect) other cultures.'",
+      a:["respect"],
+      display:"Respect"
+    },
+
+    {
+      q:"Complete: 'Technology connects people. _____, it helps pupils learn.'",
+      a:["moreover","in addition","furthermore","also"],
+      display:"Moreover / In addition"
+    },
+
+    {
+      q:"Complete: 'Some pupils prefer _____ (study) online.'",
+      a:["studying"],
+      display:"studying"
+    },
+
+    {
+      q:"Complete: 'If you want to protect your identity, _____ (respect) your traditions.'",
+      a:["respect"],
+      display:"respect"
+    },
+
+    {
+      q:"Correct the mistake: 'If people uses technology wisely, they will learn more.'",
+      a:[
+        "if people use technology wisely they will learn more"
+      ],
+      display:"If people use technology wisely, they will learn more."
+    }
+
+  ],
+
+  writingTitle:"Advantages and Disadvantages of Globalisation",
+
+  writingTask:
+    "Write a paragraph of 8–10 sentences about globalisation. Mention its advantages, disadvantages and how young people can benefit from it while protecting their cultural identity.",
+
+  factFile:
+    "Advantages: communication — education — cultural exchange — learning languages. Disadvantages: loss of traditions — too much screen time — misinformation. Advice: use technology wisely — respect local culture.",
+
+  model:
+    "Globalisation has made our world more connected. It allows people from different countries to communicate easily. First, students can learn foreign languages and discover new cultures. Moreover, they can exchange ideas and find useful educational information online. However, globalisation also has some disadvantages. Too much screen time can affect communication with family and friends. In addition, some young people may forget their local traditions. We should use technology responsibly and respect our cultural identity. If we make good choices, we will enjoy the advantages of globalisation. In my opinion, globalisation is useful when we use it wisely."
+
+}
+
+];
+
+/* ==========================================
+   APPLICATION STATE
+========================================== */
+
+let currentExam = 0;
+
+let submitted = false;
+
+const STORAGE_KEY = "MS4_TERM3_EXAMS_V1";
+
+let progress = {};
+
+try{
+
+  progress =
+    JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+
+}catch(error){
+
+  progress = {};
+
+}
+
+/* ==========================================
+   UTILITIES
+========================================== */
+
+function escapeHTML(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#39;");
+
+}
+
+function normalize(value){
+
+  return String(value)
+    .toLowerCase()
+    .trim()
+    .replace(/[’']/g,"")
+    .replace(/[.,!?;:]/g,"")
+    .replace(/\s+/g," ");
+
+}
+
+function isCorrect(value,answers){
+
+  const response = normalize(value);
+
+  return answers.some(function(answer){
+
+    return response === normalize(answer);
+
+  });
+
+}
+
+function saveProgress(){
+
+  try{
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(progress)
+    );
+
+  }catch(error){
+
+    /* Continue without local storage. */
+
+  }
+
+}
+
+function scrollToPaper(){
+
+  document.getElementById("examPaper")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+}
+
+/* ==========================================
+   RENDER EXAM SELECTOR
+========================================== */
+
+function renderExamSelector(){
+
+  const grid =
+    document.getElementById("examGrid");
+
+  grid.innerHTML = exams.map(function(exam,index){
+
+    const completed =
+      progress[index] !== undefined;
+
+    return `
+
+      <button
+        type="button"
+        class="exam-card ${index===currentExam?"active":""}"
+        onclick="selectExam(${index})"
+        aria-pressed="${index===currentExam}"
+      >
+
+        <span class="exam-icon">
+          ${exam.icon}
+        </span>
+
+        <h3>
+          Exam ${index+1}
+        </h3>
+
+        <p>
+          ${escapeHTML(exam.title)}
+        </p>
+
+        <small>
+          ${completed?"✅ COMPLETED":"🚀 START CHALLENGE"}
+        </small>
+
+      </button>
+
+    `;
+
+  }).join("");
+
+}
+
+/* ==========================================
+   RENDER TRUE / FALSE QUESTIONS
+========================================== */
+
+function renderTF(exam){
+
+  return exam.tf.map(function(item,index){
+
+    return `
+
+      <div
+        class="question"
+        data-type="tf"
+        data-index="${index}"
+      >
+
+        <span class="question-label">
+
+          ${index+1}.
+          ${escapeHTML(item.q)}
+
+        </span>
+
+        <div class="options">
+
+          ${["True","False","Not Mentioned"].map(function(option){
+
+            return `
+
+              <label class="option">
+
+                <input
+                  type="radio"
+                  name="tf${index}"
+                  value="${option}"
+                >
+
+                ${option}
+
+              </label>
+
+            `;
+
+          }).join("")}
+
+        </div>
+
+        <div class="answer-feedback"></div>
+
+      </div>
+
+    `;
+
+  }).join("");
+
+}
+
+/* ==========================================
+   RENDER TEXT QUESTIONS
+========================================== */
+
+function renderTextQuestions(items,type){
+
+  return items.map(function(item,index){
+
+    return `
+
+      <div
+        class="question"
+        data-type="${type}"
+        data-index="${index}"
+      >
+
+        <label
+          class="question-label"
+          for="${type}${index}"
+        >
+
+          ${index+1}.
+          ${escapeHTML(item.q)}
+
+        </label>
+
+        <input
+          class="answer-input"
+          id="${type}${index}"
+          type="text"
+          autocomplete="off"
+          placeholder="Write your answer here..."
+        >
+
+        <div class="answer-feedback"></div>
+
+      </div>
+
+    `;
+
+  }).join("");
+
+}
+
+/* ==========================================
+   RENDER EXAMINATION
+========================================== */
+
+function renderExam(){
+
+  submitted = false;
+
+  const exam = exams[currentExam];
+
+  document.getElementById("paperTitle").textContent =
+    exam.icon+" "+exam.title;
+
+  document.getElementById("paperSubtitle").textContent =
+    exam.subtitle;
+
+  document.getElementById("paperBody").innerHTML = `
+
+    <!-- PART ONE -->
+
+    <div class="part-heading">
+
+      <h3>
+        PART ONE — Reading & Language
+      </h3>
+
+      <span>
+        14 POINTS
+      </span>
+
+    </div>
+
+    <h3 class="sub-heading">
+      A / Reading Comprehension
+    </h3>
+
+    <div class="reading-text">
+
+      <h3>
+        ${escapeHTML(exam.passageTitle)}
+      </h3>
+
+      ${exam.passage.map(function(paragraph){
+
+        return `
+          <p>${escapeHTML(paragraph)}</p>
+        `;
+
+      }).join("")}
+
+    </div>
+
+    <!-- READING ACTIVITY 1 -->
+
+    <div class="activity">
+
+      <div class="activity-title">
+
+        <h4>
+          Activity 1 — True, False or Not Mentioned
+        </h4>
+
+        <span class="points">
+          03 pts
+        </span>
+
+      </div>
+
+      <p>
+        Read the statements and choose the correct answer.
+      </p>
+
+      ${renderTF(exam)}
+
+    </div>
+
+    <!-- READING ACTIVITY 2 -->
+
+    <div class="activity">
+
+      <div class="activity-title">
+
+        <h4>
+          Activity 2 — Answer the Questions
+        </h4>
+
+        <span class="points">
+          02 pts
+        </span>
+
+      </div>
+
+      <p>
+        Answer using information from the text.
+      </p>
+
+      ${renderTextQuestions(
+        exam.comprehension,
+        "comprehension"
+      )}
+
+    </div>
+
+    <!-- READING ACTIVITY 3 -->
+
+    <div class="activity">
+
+      <div class="activity-title">
+
+        <h4>
+          Activity 3 — Vocabulary
+        </h4>
+
+        <span class="points">
+          02 pts
+        </span>
+
+      </div>
+
+      <p>
+        Find the appropriate words in the reading passage.
+      </p>
+
+      ${renderTextQuestions(
+        exam.vocabulary,
+        "vocabulary"
+      )}
+
+    </div>
+
+    <!-- LANGUAGE -->
+
+    <h3 class="sub-heading">
+      B / Mastery of Language
+    </h3>
+
+    <div class="activity">
+
+      <div class="activity-title">
+
+        <h4>
+          Language Activities
+        </h4>
+
+        <span class="points">
+          07 pts
+        </span>
+
+      </div>
+
+      <p>
+        Complete the following language activities.
+      </p>
+
+      ${renderTextQuestions(
+        exam.language,
+        "language"
+      )}
+
+    </div>
+
+    <!-- PART TWO -->
+
+    <div class="part-heading">
+
+      <h3>
+        PART TWO — Written Expression
+      </h3>
+
+      <span>
+        06 POINTS
+      </span>
+
+    </div>
+
+    <div class="activity">
+
+      <div class="activity-title">
+
+        <h4>
+          ✍️ ${escapeHTML(exam.writingTitle)}
+        </h4>
+
+        <span class="points">
+          06 pts
+        </span>
+
+      </div>
+
+      <p>
+        ${escapeHTML(exam.writingTask)}
+      </p>
+
+      <div class="fact-file">
+
+        <h4>
+          📋 Fact File / Writing Support
+        </h4>
+
+        <p>
+          ${escapeHTML(exam.factFile)}
+        </p>
+
+      </div>
+
+      <div class="writing-checklist">
+
+        <strong>
+          💡 Writing Checklist
+        </strong>
+
+        <br>
+
+        ✓ Write a clear opening sentence.
+
+        <br>
+
+        ✓ Organise your ideas logically.
+
+        <br>
+
+        ✓ Use suitable grammar and vocabulary.
+
+        <br>
+
+        ✓ Use linking words.
+
+        <br>
+
+        ✓ Check spelling, punctuation and capital letters.
+
+      </div>
+
+      <label
+        for="writingArea"
+        class="question-label"
+      >
+
+        Your Written Expression:
+
+      </label>
+
+      <textarea
+        id="writingArea"
+        class="answer-input"
+        placeholder="Write your paragraph here..."
+      ></textarea>
+
+      <div
+        class="word-count"
+        id="wordCount"
+      >
+        0 words
+      </div>
+
+    </div>
+
+    <!-- BUTTONS -->
+
+    <div class="exam-actions">
+
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="submitBtn"
+        onclick="submitExam()"
+      >
+
+        ✅ Submit My Examination
+
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-secondary"
+        onclick="resetExam()"
+      >
+
+        🔄 Try Again
+
+      </button>
+
+    </div>
+
+    <!-- RESULTS -->
+
+    <div
+      class="result-panel hidden"
+      id="resultPanel"
+      aria-live="polite"
+    ></div>
+
+  `;
+
+  document.getElementById("writingArea")
+    .addEventListener("input",updateWordCount);
+
+  renderExamSelector();
+
+}
+
+/* ==========================================
+   SELECT EXAM
+========================================== */
+
+function selectExam(index){
+
+  if(index<0 || index>=exams.length){
+    return;
+  }
+
+  currentExam = index;
+
+  renderExam();
+
+  scrollToPaper();
+
+}
+
+/* ==========================================
+   WORD COUNT
+========================================== */
+
+function updateWordCount(){
+
+  const value =
+    document.getElementById("writingArea")
+      .value.trim();
+
+  const count = value
+    ? value.split(/\s+/).length
+    : 0;
+
+  document.getElementById("wordCount")
+    .textContent =
+      count+" words";
+
+}
+
+/* ==========================================
+   MARK QUESTION
+========================================== */
+
+function markQuestion(element,correct,answer){
+
+  const feedback =
+    element.querySelector(".answer-feedback");
+
+  feedback.className =
+    "answer-feedback "+
+    (correct?"correct":"incorrect");
+
+  feedback.textContent = correct
+    ? "✅ Correct!"
+    : "❌ Correct answer: "+answer;
+
+}
+
+/* ==========================================
+   SUBMIT EXAM
+========================================== */
+
+function submitExam(){
+
+  if(submitted){
+    return;
+  }
+
+  const exam = exams[currentExam];
+
+  let score = 0;
+
+  let answered = 0;
+
+  const total = 14;
+
+  /* TRUE / FALSE */
+
+  document.querySelectorAll(
+    '[data-type="tf"]'
+  ).forEach(function(element){
+
+    const index =
+      Number(element.dataset.index);
+
+    const selected =
+      element.querySelector(
+        'input[type="radio"]:checked'
+      );
+
+    const value =
+      selected ? selected.value : "";
+
+    if(value){
+      answered++;
+    }
+
+    const correct =
+      value === exam.tf[index].a;
+
+    if(correct){
+      score++;
+    }
+
+    markQuestion(
+      element,
+      correct,
+      exam.tf[index].a
+    );
+
+  });
+
+  /* COMPREHENSION */
+
+  document.querySelectorAll(
+    '[data-type="comprehension"]'
+  ).forEach(function(element){
+
+    const index =
+      Number(element.dataset.index);
+
+    const value =
+      element.querySelector("input").value;
+
+    if(value.trim()){
+      answered++;
+    }
+
+    const item =
+      exam.comprehension[index];
+
+    const correct =
+      isCorrect(value,item.answers);
+
+    if(correct){
+      score++;
+    }
+
+    markQuestion(
+      element,
+      correct,
+      item.display
+    );
+
+  });
+
+  /* VOCABULARY */
+
+  document.querySelectorAll(
+    '[data-type="vocabulary"]'
+  ).forEach(function(element){
+
+    const index =
+      Number(element.dataset.index);
+
+    const value =
+      element.querySelector("input").value;
+
+    if(value.trim()){
+      answered++;
+    }
+
+    const item =
+      exam.vocabulary[index];
+
+    const correct =
+      isCorrect(value,item.a);
+
+    if(correct){
+      score++;
+    }
+
+    markQuestion(
+      element,
+      correct,
+      item.display
+    );
+
+  });
+
+  /* LANGUAGE */
+
+  document.querySelectorAll(
+    '[data-type="language"]'
+  ).forEach(function(element){
+
+    const index =
+      Number(element.dataset.index);
+
+    const value =
+      element.querySelector("input").value;
+
+    if(value.trim()){
+      answered++;
+    }
+
+    const item =
+      exam.language[index];
+
+    const correct =
+      isCorrect(value,item.a);
+
+    if(correct){
+      score++;
+    }
+
+    markQuestion(
+      element,
+      correct,
+      item.display
+    );
+
+  });
+
+  /* WRITING */
+
+  const writing =
+    document.getElementById("writingArea")
+      .value.trim();
+
+  if(answered===0 && writing===""){
+
+    alert(
+      "Please answer at least one question before submitting."
+    );
+
+    return;
+
+  }
+
+  submitted = true;
+
+  /* LOCK ANSWERS */
+
+  document.querySelectorAll(
+    "#paperBody input"
+  ).forEach(function(input){
+
+    input.disabled = true;
+
+  });
+
+  document.getElementById("writingArea")
+    .readOnly = true;
+
+  document.getElementById("submitBtn")
+    .disabled = true;
+
+  document.getElementById("submitBtn")
+    .textContent =
+      "✅ Examination Submitted";
+
+  /* SAVE PROGRESS */
+
+  progress[currentExam] = {
+
+    score:score,
+
+    total:total,
+
+    date:new Date().toISOString()
+
+  };
+
+  saveProgress();
+
+  updateProgress();
+
+  renderExamSelector();
+
+  /* RESULT MESSAGE */
+
+  let message = "";
+
+  if(score>=12){
+
+    message =
+      "Excellent work! You are making wonderful progress.";
+
+  }
+  else if(score>=9){
+
+    message =
+      "Very good! Keep practising to improve even more.";
+
+  }
+  else if(score>=6){
+
+    message =
+      "Good effort! Review your mistakes and try again.";
+
+  }
+  else{
+
+    message =
+      "Keep learning! Every mistake helps you improve.";
+
+  }
+
+  const model =
+    escapeHTML(exam.model);
+
+  const result =
+    document.getElementById("resultPanel");
+
+  result.innerHTML = `
+
+    <h2>
+      🏆 Your Examination Results
+    </h2>
+
+    <div class="result-score">
+      ${score} / ${total}
+    </div>
+
+    <p>
+      ${message}
+    </p>
+
+    <p class="score-note">
+
+      This is your automatically marked score
+      for Reading Comprehension
+      and Mastery of Language.
+
+      <br>
+
+      Your Written Expression is worth
+      another 6 points and must
+      be assessed separately.
+
+    </p>
+
+    <div class="model-answer">
+
+      <h3>
+        ✍️ Model Written Expression
+      </h3>
+
+      <p>
+        ${model}
+      </p>
+
+      <h3 style="margin-top:23px;">
+        📋 Writing Assessment
+      </h3>
+
+      <ul>
+
+        <li>
+          <strong>Relevance — 2 pts:</strong>
+          Did you answer the task?
+        </li>
+
+        <li>
+          <strong>Coherence — 1.5 pts:</strong>
+          Are your ideas organised?
+        </li>
+
+        <li>
+          <strong>Language — 1.5 pts:</strong>
+          Did you use correct grammar and vocabulary?
+        </li>
+
+        <li>
+          <strong>Excellence — 1 pt:</strong>
+          Is your paragraph clear and well presented?
+        </li>
+
+      </ul>
+
+      <p style="margin-top:15px;">
+
+        <strong>Remember:</strong>
+
+        The model paragraph is only an example.
+        Your own correct paragraph may be different.
+
+      </p>
+
+    </div>
+
+    <div class="exam-actions">
+
+      <button
+        class="btn btn-secondary"
+        onclick="resetExam()"
+      >
+        🔄 Try Again
+      </button>
+
+      ${
+        currentExam<exams.length-1
+
+        ? `
+
+          <button
+            class="btn btn-primary"
+            onclick="selectExam(${currentExam+1})"
+          >
+            Next Examination →
+          </button>
+
+        `
+
+        : `
+
+          <button
+            class="btn btn-gold"
+            onclick="selectExam(0)"
+          >
+            🏆 Review All Exams
+          </button>
+
+        `
+      }
+
+    </div>
+
+  `;
+
+  result.classList.remove("hidden");
+
+  result.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+/* ==========================================
+   RESET EXAM
+========================================== */
+
+function resetExam(){
+
+  if(!submitted){
+
+    const confirmed = confirm(
+      "Restart this examination? Your current answers will be cleared."
+    );
+
+    if(!confirmed){
+      return;
+    }
+
+  }
+
+  renderExam();
+
+  scrollToPaper();
+
+}
+
+/* ==========================================
+   UPDATE PROGRESS
+========================================== */
+
+function updateProgress(){
+
+  const completed =
+    Object.keys(progress).filter(function(key){
+
+      const index = Number(key);
+
+      return Number.isInteger(index)
+        && index>=0
+        && index<exams.length;
+
+    }).length;
+
+  const percentage =
+    completed/exams.length*100;
+
+  document.getElementById("progressFill")
+    .style.width =
+      percentage+"%";
+
+  document.getElementById("progressLabel")
+    .textContent =
+      completed+" / "+exams.length+
+      " Exams Completed";
+
+}
+
+/* ==========================================
+   INITIALISE
+========================================== */
+
+document.getElementById("year")
+  .textContent =
+    new Date().getFullYear();
+
+renderExam();
+
+updateProgress();
+
+</script>
+
+</body>
+</html>

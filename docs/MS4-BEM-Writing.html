@@ -1,0 +1,4243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102c55">
+
+<title>BEM Written Expression Academy | My English Space</title>
+
+<meta name="description"
+content="A comprehensive interactive BEM Written Expression Academy for Algerian MS4 pupils. Learn to plan, write and improve BEM English paragraphs.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==================================================
+   BEM WRITTEN EXPRESSION ACADEMY
+   MY ENGLISH SPACE
+================================================== */
+
+:root{
+  --navy:#102c55;
+  --deep:#081b38;
+  --blue:#2878c4;
+  --cyan:#22b8ca;
+  --gold:#ffd36e;
+  --purple:#8758c9;
+  --green:#19a77b;
+  --orange:#ee9849;
+  --pink:#e76b9c;
+  --red:#d84e61;
+  --ink:#253a55;
+  --muted:#687d93;
+  --paper:#f3f8ff;
+  --white:#ffffff;
+  --line:#dfe8f4;
+  --shadow:0 16px 42px rgba(15,45,90,.10);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:105px;
+}
+
+body{
+  font-family:"Nunito",Arial,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4{
+  font-family:"Baloo 2",Arial,sans-serif;
+  line-height:1.2;
+}
+
+button,input,textarea,select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button:focus-visible,
+a:focus-visible,
+textarea:focus-visible,
+input:focus-visible,
+select:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+.container{
+  width:min(1160px,calc(100% - 32px));
+  margin:auto;
+}
+
+.section{
+  padding:75px 0;
+}
+
+.section.white{
+  background:white;
+}
+
+.section.soft{
+  background:#edf5ff;
+}
+
+.section-heading{
+  max-width:790px;
+  margin:0 auto 39px;
+  text-align:center;
+}
+
+.eyebrow{
+  display:inline-block;
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.section-heading h2{
+  color:var(--navy);
+  font-size:clamp(30px,4vw,46px);
+  margin:12px 0;
+}
+
+.section-heading p{
+  color:var(--muted);
+  font-size:14px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:46px;
+  padding:12px 20px;
+  border:0;
+  border-radius:28px;
+  font-size:12px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn.gold{
+  background:var(--gold);
+  color:#614719;
+}
+
+.btn.blue{
+  background:var(--blue);
+  color:white;
+}
+
+.btn.green{
+  background:var(--green);
+  color:white;
+}
+
+.btn.white{
+  background:white;
+  color:var(--navy);
+}
+
+.btn.outline{
+  background:white;
+  color:var(--navy);
+  border:1px solid var(--line);
+}
+
+.btn.purple{
+  background:var(--purple);
+  color:white;
+}
+
+.btn:disabled{
+  opacity:.55;
+  cursor:not-allowed;
+  transform:none;
+}
+
+.note{
+  padding:17px 20px;
+  background:#eaf5ff;
+  border-left:4px solid var(--blue);
+  border-radius:0 13px 13px 0;
+  margin-top:18px;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.9;
+}
+
+.note.gold{
+  background:#fff7e5;
+  border-color:var(--orange);
+}
+
+.note.green{
+  background:#e9f9f0;
+  border-color:var(--green);
+}
+
+.note.purple{
+  background:#f3edff;
+  border-color:var(--purple);
+}
+
+.tag{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:20px;
+  background:#e8f3ff;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:900;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.scroll-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  width:0;
+  height:4px;
+  background:var(--gold);
+  z-index:300;
+}
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(8,27,56,.97);
+  backdrop-filter:blur(15px);
+}
+
+.header-inner{
+  min-height:77px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:white;
+  font-size:18px;
+  font-weight:900;
+}
+
+.brand-icon{
+  display:grid;
+  place-items:center;
+  width:46px;
+  height:46px;
+  background:#e6f7ff;
+  border-radius:15px;
+  font-size:25px;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.nav a{
+  padding:10px 12px;
+  color:#e8f4ff;
+  border-radius:22px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.nav a:hover{
+  background:rgba(255,255,255,.12);
+}
+
+.nav .back{
+  background:var(--gold);
+  color:var(--navy);
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:85px 0 110px;
+  color:white;
+  background:
+    radial-gradient(circle at 83% 12%,rgba(231,107,156,.27),transparent 34%),
+    linear-gradient(130deg,#081b38,#153d70 56%,#6250a5);
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.12;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:29px 29px;
+  pointer-events:none;
+}
+
+.hero-layout{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:48px;
+}
+
+.hero-badge{
+  display:inline-block;
+  padding:10px 16px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:30px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.hero h1{
+  font-size:clamp(47px,6vw,76px);
+  margin:23px 0;
+  line-height:1.08;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+}
+
+.hero p{
+  color:#e1eeff;
+  font-size:15px;
+  font-weight:750;
+  line-height:2;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+
+.hero-visual{
+  position:relative;
+  height:365px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:5px solid white;
+  border-radius:30px;
+  background:linear-gradient(135deg,#8d64d3,#d66eaa);
+  box-shadow:0 30px 65px rgba(0,0,0,.26);
+  overflow:hidden;
+}
+
+.hero-visual:before{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  border:55px solid rgba(255,255,255,.08);
+  border-radius:50%;
+  top:-190px;
+  right:-160px;
+}
+
+.paper-illustration{
+  position:relative;
+  width:230px;
+  height:265px;
+  padding:30px 24px;
+  background:white;
+  border-radius:15px;
+  box-shadow:0 20px 35px rgba(32,22,80,.25);
+  transform:rotate(-7deg);
+}
+
+.paper-illustration:before{
+  content:"";
+  position:absolute;
+  top:27px;
+  left:25px;
+  width:100px;
+  height:15px;
+  background:var(--gold);
+  border-radius:10px;
+}
+
+.paper-line{
+  height:9px;
+  margin-top:18px;
+  background:#dce6f5;
+  border-radius:10px;
+}
+
+.paper-line.short{
+  width:65%;
+}
+
+.paper-line.medium{
+  width:83%;
+}
+
+.paper-pencil{
+  position:absolute;
+  right:-31px;
+  bottom:25px;
+  font-size:96px;
+  transform:rotate(18deg);
+}
+
+.hero-sticker{
+  position:absolute;
+  left:-17px;
+  bottom:-20px;
+  padding:17px 21px;
+  background:var(--gold);
+  color:#624719;
+  border:4px solid white;
+  border-radius:17px;
+  font-size:12px;
+  font-weight:900;
+  box-shadow:var(--shadow);
+}
+
+/* ==================================================
+   QUICK NAV
+================================================== */
+
+.quick-wrap{
+  position:relative;
+  z-index:3;
+  margin-top:-28px;
+}
+
+.quick{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  padding:14px;
+  background:white;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+}
+
+.quick a{
+  padding:10px 13px;
+  border-radius:22px;
+  background:#edf5ff;
+  color:var(--navy);
+  font-size:11px;
+  font-weight:900;
+}
+
+.quick a:hover{
+  background:var(--gold);
+}
+
+/* ==================================================
+   EXAM INTRODUCTION
+================================================== */
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.intro-card{
+  padding:28px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+}
+
+.intro-icon{
+  font-size:42px;
+  margin-bottom:13px;
+}
+
+.intro-card h3{
+  color:var(--navy);
+  font-size:25px;
+  margin-bottom:10px;
+}
+
+.intro-card p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+.marks-banner{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:25px;
+  margin-top:26px;
+  padding:29px;
+  background:linear-gradient(110deg,#e8f5ff,#fff);
+  border:1px solid #d7e9fa;
+  border-radius:23px;
+}
+
+.marks-banner h3{
+  font-size:29px;
+  color:var(--navy);
+  margin-bottom:9px;
+}
+
+.marks-banner p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+.marks-number{
+  color:var(--blue);
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-size:67px;
+}
+
+/* ==================================================
+   RUBRIC
+================================================== */
+
+.rubric-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
+}
+
+.rubric-card{
+  padding:24px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:var(--shadow);
+}
+
+.rubric-card:nth-child(1){
+  border-top:5px solid var(--blue);
+}
+
+.rubric-card:nth-child(2){
+  border-top:5px solid var(--purple);
+}
+
+.rubric-card:nth-child(3){
+  border-top:5px solid var(--green);
+}
+
+.rubric-card:nth-child(4){
+  border-top:5px solid var(--orange);
+}
+
+.rubric-icon{
+  font-size:37px;
+  margin-bottom:12px;
+}
+
+.rubric-card h3{
+  color:var(--navy);
+  font-size:22px;
+}
+
+.rubric-marks{
+  display:inline-block;
+  margin:11px 0;
+  padding:7px 12px;
+  background:#edf5ff;
+  color:var(--blue);
+  border-radius:15px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.rubric-card p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+.rubric-total{
+  margin-top:23px;
+  padding:20px;
+  background:var(--navy);
+  color:white;
+  border-radius:16px;
+  text-align:center;
+  font-size:15px;
+  font-weight:900;
+}
+
+/* ==================================================
+   WRITING TASK
+================================================== */
+
+.task-guide{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.task-card{
+  padding:27px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+}
+
+.task-card h3{
+  font-size:25px;
+  color:var(--navy);
+  margin-bottom:13px;
+}
+
+.task-card p{
+  font-size:13px;
+  font-weight:750;
+  line-height:1.9;
+  color:var(--muted);
+}
+
+.task-example{
+  margin-top:16px;
+  padding:15px;
+  background:#edf5ff;
+  border-radius:13px;
+  color:var(--ink);
+  font-size:12px;
+  font-weight:850;
+  line-height:1.9;
+}
+
+.task-card:nth-child(2) .task-example{
+  background:#f2edff;
+}
+
+.task-card:nth-child(3) .task-example{
+  background:#e9f9f0;
+}
+
+/* ==================================================
+   PARAGRAPH STRUCTURE
+================================================== */
+
+.structure-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.structure-card{
+  padding:28px;
+  background:white;
+  border-radius:22px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+
+.structure-number{
+  display:grid;
+  place-items:center;
+  width:47px;
+  height:47px;
+  border-radius:15px;
+  background:var(--gold);
+  color:var(--navy);
+  font-size:23px;
+  font-weight:900;
+}
+
+.structure-card h3{
+  color:var(--navy);
+  font-size:26px;
+  margin:16px 0 10px;
+}
+
+.structure-card p{
+  font-size:13px;
+  font-weight:750;
+  color:var(--muted);
+  line-height:1.9;
+}
+
+.structure-example{
+  margin-top:15px;
+  padding:15px;
+  background:#f1f6ff;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:850;
+  line-height:1.9;
+}
+
+/* ==================================================
+   MODEL PARAGRAPH
+================================================== */
+
+.model-layout{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:24px;
+  align-items:stretch;
+}
+
+.model-visual{
+  min-height:350px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:15px;
+  border-radius:25px;
+  color:white;
+  background:linear-gradient(135deg,#204e88,#8657c8);
+  box-shadow:var(--shadow);
+}
+
+.model-visual span{
+  font-size:105px;
+}
+
+.model-visual strong{
+  font-size:24px;
+  font-family:"Baloo 2",Arial,sans-serif;
+}
+
+.model-content{
+  padding:30px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  box-shadow:var(--shadow);
+}
+
+.model-content h3{
+  font-size:30px;
+  color:var(--navy);
+  margin-bottom:20px;
+}
+
+.model-line{
+  padding:13px 16px;
+  margin-bottom:12px;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.9;
+}
+
+.model-line.introduction{
+  background:#e7f3ff;
+  border-left:4px solid var(--blue);
+}
+
+.model-line.details{
+  background:#f2edff;
+  border-left:4px solid var(--purple);
+}
+
+.model-line.conclusion{
+  background:#e7f9f0;
+  border-left:4px solid var(--green);
+}
+
+/* ==================================================
+   PRACTICE LAB
+================================================== */
+
+.practice-shell{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.practice-header{
+  padding:27px;
+  color:white;
+  background:linear-gradient(120deg,var(--navy),#2878c4);
+}
+
+.practice-header h3{
+  font-size:31px;
+}
+
+.practice-header p{
+  color:#e2f0ff;
+  font-size:12px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+.practice-body{
+  padding:29px;
+}
+
+.practice-tabs{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
+
+.practice-tab{
+  padding:12px 16px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#edf5ff;
+  color:var(--navy);
+  font-size:11px;
+  font-weight:900;
+}
+
+.practice-tab.active{
+  background:var(--navy);
+  color:white;
+}
+
+.exercise{
+  padding:19px;
+  margin-bottom:15px;
+  border:1px solid var(--line);
+  border-radius:16px;
+}
+
+.exercise h4{
+  font-size:18px;
+  color:var(--navy);
+  line-height:1.6;
+  margin-bottom:13px;
+}
+
+.options{
+  display:grid;
+  gap:9px;
+}
+
+.option{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:850;
+  line-height:1.7;
+}
+
+.option:hover{
+  background:#eff7ff;
+}
+
+.option input{
+  flex-shrink:0;
+  accent-color:var(--blue);
+}
+
+.feedback{
+  display:none;
+  margin-top:12px;
+  padding:13px;
+  border-radius:11px;
+  font-size:12px;
+  font-weight:850;
+  line-height:1.8;
+}
+
+.feedback.show{
+  display:block;
+}
+
+.feedback.correct{
+  background:#e8f9f0;
+  color:#147c58;
+}
+
+.feedback.wrong{
+  background:#fff0f2;
+  color:#a83b50;
+}
+
+.practice-result{
+  display:none;
+  padding:23px;
+  margin-top:20px;
+  border-radius:17px;
+  text-align:center;
+  background:#eaf5ff;
+}
+
+.practice-result h3{
+  font-size:28px;
+  color:var(--navy);
+}
+
+.practice-result strong{
+  display:block;
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-size:53px;
+  color:var(--blue);
+}
+
+.practice-result p{
+  font-size:12px;
+  font-weight:800;
+  line-height:1.9;
+}
+
+/* ==================================================
+   MISSIONS
+================================================== */
+
+.mission-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.mission-card{
+  padding:27px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:23px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+}
+
+.mission-icon{
+  font-size:46px;
+  margin-bottom:14px;
+}
+
+.mission-card h3{
+  color:var(--navy);
+  font-size:26px;
+  margin-bottom:10px;
+}
+
+.mission-card p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:750;
+  line-height:1.9;
+  margin-bottom:15px;
+}
+
+.mission-card .btn{
+  margin-top:auto;
+}
+
+.mission-label{
+  font-size:10px;
+  font-weight:900;
+  color:var(--blue);
+  letter-spacing:1px;
+  margin-bottom:9px;
+}
+
+/* ==================================================
+   WRITING STUDIO
+================================================== */
+
+.studio-layout{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:24px;
+  align-items:start;
+}
+
+.studio-main,
+.studio-side{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:27px;
+  box-shadow:var(--shadow);
+}
+
+.studio-main h3,
+.studio-side h3{
+  color:var(--navy);
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.studio-prompt{
+  padding:19px;
+  margin-bottom:18px;
+  background:#edf5ff;
+  border-radius:15px;
+}
+
+.studio-prompt h4{
+  font-size:21px;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+
+.studio-prompt p{
+  font-size:12px;
+  font-weight:800;
+  line-height:1.9;
+}
+
+.studio-prompt ul{
+  padding-left:20px;
+  margin-top:10px;
+}
+
+.studio-prompt li{
+  font-size:12px;
+  font-weight:800;
+  line-height:1.9;
+}
+
+.editor{
+  width:100%;
+  min-height:300px;
+  resize:vertical;
+  padding:19px;
+  border:2px solid var(--line);
+  border-radius:15px;
+  background:#fbfdff;
+  color:var(--ink);
+  font-size:14px;
+  font-weight:750;
+  line-height:2;
+}
+
+.editor:focus{
+  outline:none;
+  border-color:var(--blue);
+}
+
+.editor-stats{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.editor-stat{
+  padding:11px 15px;
+  background:#edf5ff;
+  border-radius:12px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.studio-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:19px;
+}
+
+.check-item{
+  display:flex;
+  align-items:flex-start;
+  gap:11px;
+  padding:13px;
+  margin-bottom:9px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  cursor:pointer;
+}
+
+.check-item input{
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+  margin-top:2px;
+  accent-color:var(--green);
+}
+
+.check-item span{
+  font-size:12px;
+  font-weight:850;
+  line-height:1.7;
+}
+
+.check-item:has(input:checked){
+  background:#e9f9f0;
+  border-color:#b9e6d1;
+}
+
+.writing-feedback{
+  margin-top:20px;
+  padding:20px;
+  background:#f1f7ff;
+  border-radius:15px;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.9;
+}
+
+.writing-feedback h4{
+  color:var(--navy);
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.writing-feedback ul{
+  padding-left:19px;
+}
+
+.writing-feedback li{
+  margin-bottom:8px;
+}
+
+.self-rubric{
+  display:grid;
+  gap:13px;
+  margin-top:20px;
+}
+
+.rubric-field{
+  display:grid;
+  gap:7px;
+}
+
+.rubric-field label{
+  color:var(--navy);
+  font-size:12px;
+  font-weight:900;
+}
+
+.rubric-field select{
+  width:100%;
+  padding:11px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:#f8fbff;
+  color:var(--ink);
+  font-size:12px;
+  font-weight:800;
+}
+
+.self-total{
+  padding:20px;
+  margin-top:18px;
+  background:var(--navy);
+  color:white;
+  border-radius:15px;
+  text-align:center;
+}
+
+.self-total strong{
+  display:block;
+  font-size:36px;
+  font-family:"Baloo 2",Arial,sans-serif;
+  color:var(--gold);
+}
+
+.self-total p{
+  font-size:11px;
+  font-weight:800;
+  line-height:1.8;
+}
+
+/* ==================================================
+   PROGRESS
+================================================== */
+
+.progress-layout{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:24px;
+}
+
+.progress-intro{
+  padding:31px;
+  background:linear-gradient(130deg,#102c55,#6651aa);
+  color:white;
+  border-radius:23px;
+}
+
+.progress-intro h3{
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.progress-intro p{
+  color:#e1eeff;
+  font-size:13px;
+  font-weight:750;
+  line-height:2;
+}
+
+.progress-percent{
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-size:62px;
+  color:var(--gold);
+  margin-top:20px;
+}
+
+.progress-track{
+  height:13px;
+  border-radius:20px;
+  background:rgba(255,255,255,.2);
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,var(--gold),var(--cyan));
+  transition:.3s;
+}
+
+.progress-caption{
+  margin-top:12px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.progress-items{
+  padding:26px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:23px;
+}
+
+.progress-items h3{
+  color:var(--navy);
+  font-size:26px;
+  margin-bottom:16px;
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.final{
+  padding:65px 0;
+  background:white;
+}
+
+.final-box{
+  padding:52px 25px;
+  background:linear-gradient(125deg,#102c55,#6651aa);
+  color:white;
+  border-radius:28px;
+  text-align:center;
+}
+
+.final-box h2{
+  font-size:clamp(30px,4vw,44px);
+}
+
+.final-box p{
+  max-width:670px;
+  margin:15px auto 25px;
+  color:#e3eeff;
+  font-size:13px;
+  font-weight:750;
+  line-height:2;
+}
+
+.footer{
+  padding:36px 20px;
+  background:#081b38;
+  color:#dce9f8;
+  text-align:center;
+  font-size:12px;
+  font-weight:800;
+  line-height:2;
+}
+
+.footer strong{
+  color:var(--gold);
+}
+
+.top-btn{
+  display:none;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:47px;
+  height:47px;
+  border:0;
+  border-radius:15px;
+  background:var(--navy);
+  color:white;
+  font-size:24px;
+  box-shadow:var(--shadow);
+  z-index:90;
+}
+
+.top-btn.show{
+  display:block;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media(max-width:1000px){
+
+  .hero-layout{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-actions{
+    justify-content:center;
+  }
+
+  .hero-visual{
+    max-width:520px;
+    width:100%;
+    margin:auto;
+  }
+
+  .rubric-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .mission-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:760px){
+
+  .header-inner{
+    flex-direction:column;
+    padding:14px 0;
+  }
+
+  .nav{
+    justify-content:center;
+  }
+
+  .intro-grid,
+  .task-guide,
+  .structure-grid,
+  .model-layout,
+  .studio-layout,
+  .progress-layout{
+    grid-template-columns:1fr;
+  }
+
+  .marks-banner{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+}
+
+@media(max-width:540px){
+
+  .container{
+    width:calc(100% - 26px);
+  }
+
+  .section{
+    padding:55px 0;
+  }
+
+  .hero{
+    padding:55px 0 80px;
+  }
+
+  .hero h1{
+    font-size:46px;
+  }
+
+  .hero-visual{
+    height:285px;
+  }
+
+  .rubric-grid,
+  .mission-grid{
+    grid-template-columns:1fr;
+  }
+
+  .practice-body,
+  .studio-main,
+  .studio-side{
+    padding:20px;
+  }
+
+  .practice-tabs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *:before,
+  *:after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+
+}
+
+@media print{
+
+  .header,
+  .quick-wrap,
+  .hero,
+  .final,
+  .footer,
+  .top-btn,
+  .studio-actions,
+  .studio-side{
+    display:none!important;
+  }
+
+  .section{
+    padding:15px 0;
+  }
+
+  .studio-layout{
+    display:block;
+  }
+
+  .studio-main{
+    box-shadow:none;
+    border:1px solid #ccc;
+  }
+
+  .editor{
+    min-height:450px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header class="header">
+
+<div class="container header-inner">
+
+<a href="index.html" class="brand">
+
+<span class="brand-icon">🎓</span>
+
+My English Space
+
+</a>
+
+<nav class="nav" aria-label="Main navigation">
+
+<a href="#introduction">BEM Guide</a>
+
+<a href="#rubric">Marking Grid</a>
+
+<a href="#practice">Practice</a>
+
+<a href="#missions">Writing Missions</a>
+
+<a href="#studio">Writing Studio</a>
+
+<a href="MS4-BEM-Preparation.html" class="back">
+← BEM Centre
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main>
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="hero">
+
+<div class="container hero-layout">
+
+<div>
+
+<span class="hero-badge">
+
+✍️ DESTINATION 04 · BEM WRITING ACADEMY
+
+</span>
+
+<h1>
+
+Write with
+
+<span>Confidence!</span>
+
+</h1>
+
+<p>
+
+Welcome to the BEM Written Expression Academy!
+
+Discover how to understand examination prompts,
+organise your ideas, write effective paragraphs
+and improve your English writing step by step.
+
+Your journey from a simple sentence
+to a successful BEM paragraph starts here.
+
+</p>
+
+<div class="hero-actions">
+
+<a href="#introduction" class="btn gold">
+
+🚀 Start Learning
+
+</a>
+
+<a href="#studio" class="btn white">
+
+✍️ Open Writing Studio
+
+</a>
+
+</div>
+
+</div>
+
+<div style="position:relative">
+
+<div class="hero-visual">
+
+<div class="paper-illustration">
+
+<div class="paper-line" style="margin-top:40px"></div>
+<div class="paper-line medium"></div>
+<div class="paper-line"></div>
+<div class="paper-line short"></div>
+<div class="paper-line"></div>
+<div class="paper-line medium"></div>
+
+<div class="paper-pencil">✏️</div>
+
+</div>
+
+</div>
+
+<div class="hero-sticker">
+
+🌟 6 MARKS · UNLIMITED PRACTICE
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+     QUICK NAVIGATION
+================================================== -->
+
+<div class="container quick-wrap">
+
+<nav class="quick">
+
+<a href="#introduction">📘 Exam Guide</a>
+
+<a href="#rubric">📊 Marking Grid</a>
+
+<a href="#task">🔎 Understand the Task</a>
+
+<a href="#structure">🧱 Paragraph Structure</a>
+
+<a href="#practice">🧩 Practice</a>
+
+<a href="#missions">🎯 Missions</a>
+
+<a href="#studio">✍️ Writing Studio</a>
+
+</nav>
+
+</div>
+
+<!-- ==================================================
+     INTRODUCTION
+================================================== -->
+
+<section class="section" id="introduction">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 01 · KNOW YOUR EXAMINATION
+</span>
+
+<h2>What Is Written Expression?</h2>
+
+<p>
+
+Written Expression is the second part of the BEM English examination.
+
+It assesses your ability to communicate ideas clearly
+and produce a meaningful, organised piece of writing.
+
+</p>
+
+</div>
+
+<div class="intro-grid">
+
+<div class="intro-card">
+
+<div class="intro-icon">💡</div>
+
+<h3>Generate Ideas</h3>
+
+<p>
+
+Understand the topic and select useful information
+before starting your paragraph.
+
+</p>
+
+</div>
+
+<div class="intro-card">
+
+<div class="intro-icon">🧱</div>
+
+<h3>Organise Ideas</h3>
+
+<p>
+
+Arrange your sentences logically
+and use suitable linking words.
+
+</p>
+
+</div>
+
+<div class="intro-card">
+
+<div class="intro-icon">✍️</div>
+
+<h3>Write Correctly</h3>
+
+<p>
+
+Use appropriate vocabulary, correct grammar,
+spelling and punctuation.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="marks-banner">
+
+<div>
+
+<h3>📊 Written Expression Is Worth 6 Points</h3>
+
+<p>
+
+According to the BEM framework supplied for this project,
+Written Expression represents 6 points out of 20.
+
+Your paragraph is assessed through relevance,
+coherence, correct use of language and excellence.
+
+</p>
+
+</div>
+
+<div class="marks-number">6/20</div>
+
+</div>
+
+<div class="note gold">
+
+<strong>Remember:</strong>
+The practice missions in this academy use an 8–10 sentence
+target to help you develop a complete paragraph.
+Always follow the exact instructions of the examination task.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+     RUBRIC
+================================================== -->
+
+<section class="section white" id="rubric">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 02 · BEM ASSESSMENT
+</span>
+
+<h2>Understand the 6-Point Marking Grid</h2>
+
+<p>
+
+Knowing how writing is assessed
+helps you focus on the qualities of a successful paragraph.
+
+</p>
+
+</div>
+
+<div class="rubric-grid">
+
+<div class="rubric-card">
+
+<div class="rubric-icon">🎯</div>
+
+<h3>Relevance</h3>
+
+<span class="rubric-marks">2 POINTS</span>
+
+<p>
+
+Respond to the task, respect the topic
+and include the required information.
+
+</p>
+
+</div>
+
+<div class="rubric-card">
+
+<div class="rubric-icon">🔗</div>
+
+<h3>Coherence</h3>
+
+<span class="rubric-marks">1.5 POINTS</span>
+
+<p>
+
+Organise ideas logically and connect sentences
+using appropriate linking words.
+
+</p>
+
+</div>
+
+<div class="rubric-card">
+
+<div class="rubric-icon">📝</div>
+
+<h3>Correct Use of Language</h3>
+
+<span class="rubric-marks">1.5 POINTS</span>
+
+<p>
+
+Use appropriate grammar, vocabulary,
+spelling and punctuation.
+
+</p>
+
+</div>
+
+<div class="rubric-card">
+
+<div class="rubric-icon">🌟</div>
+
+<h3>Excellence</h3>
+
+<span class="rubric-marks">1 POINT</span>
+
+<p>
+
+Produce effective, thoughtful writing
+with suitable expressions and careful presentation.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="rubric-total">
+
+TOTAL = 2 + 1.5 + 1.5 + 1 = 6 POINTS
+
+</div>
+
+<div class="note">
+
+<strong>Important:</strong>
+The interactive self-assessment later in this lesson
+is a reflection tool. It cannot replace a teacher's
+evaluation of your actual writing.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+     UNDERSTANDING THE TASK
+================================================== -->
+
+<section class="section soft" id="task">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 03 · BEFORE YOU WRITE
+</span>
+
+<h2>Understand the Writing Task</h2>
+
+<p>
+
+Before writing, identify the context,
+the task and the support.
+
+</p>
+
+</div>
+
+<div class="task-guide">
+
+<div class="task-card">
+
+<h3>🌍 01 · Context</h3>
+
+<p>
+
+The context introduces the situation
+and explains why you are writing.
+
+</p>
+
+<div class="task-example">
+
+Your school is organising an exhibition
+about famous landmarks.
+
+</div>
+
+</div>
+
+<div class="task-card">
+
+<h3>🎯 02 · Task</h3>
+
+<p>
+
+The task tells you exactly what you must produce.
+
+Look for the instruction verb and the expected text.
+
+</p>
+
+<div class="task-example">
+
+Write a short descriptive paragraph
+about a famous landmark.
+
+</div>
+
+</div>
+
+<div class="task-card">
+
+<h3>📋 03 · Support</h3>
+
+<p>
+
+The support provides information or ideas
+that help you complete the task.
+
+</p>
+
+<div class="task-example">
+
+Name: Big Ben<br>
+Location: London<br>
+Completion: 1859<br>
+Height: about 96 metres
+
+</div>
+
+</div>
+
+</div>
+
+<div class="note green">
+
+<strong>Writing strategy:</strong>
+Underline the instruction verb, circle the topic
+and identify every detail you need to include.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+     PARAGRAPH STRUCTURE
+================================================== -->
+
+<section class="section white" id="structure">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 04 · BUILD A PARAGRAPH
+</span>
+
+<h2>The Three Parts of a Good Paragraph</h2>
+
+<p>
+
+A successful paragraph has a clear beginning,
+a developed middle and an effective ending.
+
+</p>
+
+</div>
+
+<div class="structure-grid">
+
+<div class="structure-card">
+
+<div class="structure-number">01</div>
+
+<h3>Introduction</h3>
+
+<p>
+
+Introduce the main topic.
+
+Tell the reader what or who you are describing.
+
+</p>
+
+<div class="structure-example">
+
+Big Ben is one of the most famous landmarks in London.
+
+</div>
+
+</div>
+
+<div class="structure-card">
+
+<div class="structure-number">02</div>
+
+<h3>Supporting Details</h3>
+
+<p>
+
+Develop your paragraph with useful facts,
+descriptions and examples.
+
+</p>
+
+<div class="structure-example">
+
+It is part of the Palace of Westminster.
+The tower is about 96 metres tall.
+
+</div>
+
+</div>
+
+<div class="structure-card">
+
+<div class="structure-number">03</div>
+
+<h3>Conclusion</h3>
+
+<p>
+
+End your paragraph with a final thought
+about the topic.
+
+</p>
+
+<div class="structure-example">
+
+Today, it remains an important symbol of London.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="note purple">
+
+<strong>Useful linking words:</strong>
+First · Next · Then · After that · Finally · Moreover ·
+In addition · Also · However · Therefore
+
+Choose linking words according to the relationship between your ideas.
+Do not use them randomly.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+     MODEL PARAGRAPH
+================================================== -->
+
+<section class="section soft" id="model">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 05 · LEARN FROM A MODEL
+</span>
+
+<h2>Explore a Model Paragraph</h2>
+
+<p>
+
+Notice how the introduction,
+supporting details and conclusion work together.
+
+</p>
+
+</div>
+
+<div class="model-layout">
+
+<div class="model-visual">
+
+<span>🕰️</span>
+
+<strong>BIG BEN · LONDON</strong>
+
+</div>
+
+<div class="model-content">
+
+<h3>🏛️ A Famous London Landmark</h3>
+
+<div class="model-line introduction">
+
+<strong>INTRODUCTION</strong><br>
+
+Big Ben is one of the most famous landmarks in London, England.
+
+</div>
+
+<div class="model-line details">
+
+<strong>SUPPORTING DETAILS</strong><br>
+
+It is part of the Palace of Westminster.
+The famous clock tower is officially called Elizabeth Tower.
+It was completed in 1859.
+It is about 96 metres tall.
+The tower has a beautiful clock on each of its four sides.
+It attracts many visitors every year.
+People around the world recognise its impressive appearance.
+
+</div>
+
+<div class="model-line conclusion">
+
+<strong>CONCLUSION</strong><br>
+
+Today, Big Ben remains an important symbol of London
+and British history.
+
+</div>
+
+<div class="note">
+
+<strong>Observe:</strong>
+The paragraph introduces the landmark,
+provides facts and descriptions,
+and ends with a concluding sentence.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+     INTERACTIVE PRACTICE
+================================================== -->
+
+<section class="section white" id="practice">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 06 · INTERACTIVE WRITING PRACTICE
+</span>
+
+<h2>Train Your Writing Skills!</h2>
+
+<p>
+
+Complete five short activities
+before moving to your writing missions.
+
+</p>
+
+</div>
+
+<div class="practice-shell">
+
+<div class="practice-header">
+
+<h3>🧩 Writing Skills Laboratory</h3>
+
+<p>
+
+Choose a practice activity, answer the questions
+and check your work.
+
+</p>
+
+</div>
+
+<div class="practice-body">
+
+<div class="practice-tabs" id="practiceTabs"></div>
+
+<div id="practiceQuestions"></div>
+
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
+
+<button class="btn blue" type="button" id="checkPracticeBtn">
+
+✅ Check My Answers
+
+</button>
+
+<button class="btn outline" type="button" id="retryPracticeBtn">
+
+🔄 Try Again
+
+</button>
+
+</div>
+
+<div class="practice-result" id="practiceResult" aria-live="polite">
+
+<h3>🎉 Activity Completed!</h3>
+
+<strong id="practiceScore">0/5</strong>
+
+<p id="practiceMessage"></p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+     WRITING MISSIONS
+================================================== -->
+
+<section class="section soft" id="missions">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 07 · BEM WRITING MISSIONS
+</span>
+
+<h2>Choose Your Writing Challenge!</h2>
+
+<p>
+
+Practise writing about topics related
+to the three MS4 sequences.
+
+</p>
+
+</div>
+
+<div class="mission-grid">
+
+<div class="mission-card">
+
+<div class="mission-icon">🏛️</div>
+
+<div class="mission-label">SEQUENCE 1</div>
+
+<h3>Landmark Explorer</h3>
+
+<p>
+
+Describe a famous landmark
+using factual information,
+qualifiers, past simple
+and past passive voice.
+
+</p>
+
+<button class="btn blue" type="button" onclick="selectMission(0)">
+
+✍️ Start Writing
+
+</button>
+
+</div>
+
+<div class="mission-card">
+
+<div class="mission-icon">👩‍🏫</div>
+
+<div class="mission-label">SEQUENCE 2</div>
+
+<h3>Biography Writer</h3>
+
+<p>
+
+Write about an outstanding person
+using biographical facts,
+past events and character traits.
+
+</p>
+
+<button class="btn purple" type="button" onclick="selectMission(1)">
+
+✍️ Start Writing
+
+</button>
+
+</div>
+
+<div class="mission-card">
+
+<div class="mission-icon">🌱</div>
+
+<div class="mission-label">SEQUENCE 3</div>
+
+<h3>Good Citizen</h3>
+
+<p>
+
+Write about responsible citizenship,
+volunteering and protecting
+your community.
+
+</p>
+
+<button class="btn green" type="button" onclick="selectMission(2)">
+
+✍️ Start Writing
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+     WRITING STUDIO
+================================================== -->
+
+<section class="section white" id="studio">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 08 · PERSONAL WRITING WORKSPACE
+</span>
+
+<h2>My BEM Writing Studio</h2>
+
+<p>
+
+Read your mission, plan your ideas,
+write your paragraph and assess your work.
+
+Your writing is saved automatically on this device
+when browser storage is available.
+
+</p>
+
+</div>
+
+<div class="studio-layout">
+
+<div class="studio-main">
+
+<h3>✍️ My Writing Desk</h3>
+
+<div class="studio-prompt" id="studioPrompt"></div>
+
+<label for="writingEditor" class="tag" style="margin-bottom:12px">
+
+MY WRITTEN EXPRESSION
+
+</label>
+
+<textarea
+  id="writingEditor"
+  class="editor"
+  spellcheck="true"
+  placeholder="Start writing your paragraph here..."
+  aria-label="Write your BEM paragraph"
+></textarea>
+
+<div class="editor-stats">
+
+<div class="editor-stat">
+
+📝 Words:
+<span id="wordCount">0</span>
+
+</div>
+
+<div class="editor-stat">
+
+📖 Sentences:
+<span id="sentenceCount">0</span>
+
+</div>
+
+<div class="editor-stat">
+
+💾 <span id="saveStatus">Ready</span>
+
+</div>
+
+</div>
+
+<div class="studio-actions">
+
+<button class="btn blue" type="button" id="analyseWritingBtn">
+
+🔎 Review My Draft
+
+</button>
+
+<button class="btn green" type="button" id="downloadWritingBtn">
+
+📥 Save as Text
+
+</button>
+
+<button class="btn outline" type="button" onclick="window.print()">
+
+🖨️ Print
+
+</button>
+
+<button class="btn outline" type="button" id="clearWritingBtn">
+
+🗑️ Clear Draft
+
+</button>
+
+</div>
+
+<div class="writing-feedback" id="writingFeedback" aria-live="polite">
+
+<h4>💡 Writing Coach</h4>
+
+<p>
+
+Write your paragraph, then click
+<strong>Review My Draft</strong>
+to receive helpful revision reminders.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="studio-side">
+
+<h3>✅ Writer's Checklist</h3>
+
+<div id="writingChecklist"></div>
+
+<div class="note gold">
+
+<strong>Before submitting:</strong>
+Read your paragraph aloud.
+
+Check whether every sentence contributes
+to the topic.
+
+</div>
+
+<h3 style="margin-top:29px">
+📊 My Self-Assessment
+</h3>
+
+<p style="font-size:12px;font-weight:800;color:var(--muted);line-height:1.9">
+
+Choose the score that best describes your work.
+
+This is your own estimate,
+not an official examination mark.
+
+</p>
+
+<div class="self-rubric">
+
+<div class="rubric-field">
+
+<label for="rubricRelevance">
+🎯 Relevance / 2
+</label>
+
+<select id="rubricRelevance" class="rubric-select">
+
+<option value="0">0 — Not achieved</option>
+<option value="0.5">0.5 — Limited</option>
+<option value="1">1 — Developing</option>
+<option value="1.5">1.5 — Good</option>
+<option value="2">2 — Excellent</option>
+
+</select>
+
+</div>
+
+<div class="rubric-field">
+
+<label for="rubricCoherence">
+🔗 Coherence / 1.5
+</label>
+
+<select id="rubricCoherence" class="rubric-select">
+
+<option value="0">0 — Not achieved</option>
+<option value="0.5">0.5 — Developing</option>
+<option value="1">1 — Good</option>
+<option value="1.5">1.5 — Excellent</option>
+
+</select>
+
+</div>
+
+<div class="rubric-field">
+
+<label for="rubricLanguage">
+📝 Correct Use of Language / 1.5
+</label>
+
+<select id="rubricLanguage" class="rubric-select">
+
+<option value="0">0 — Not achieved</option>
+<option value="0.5">0.5 — Developing</option>
+<option value="1">1 — Good</option>
+<option value="1.5">1.5 — Excellent</option>
+
+</select>
+
+</div>
+
+<div class="rubric-field">
+
+<label for="rubricExcellence">
+🌟 Excellence / 1
+</label>
+
+<select id="rubricExcellence" class="rubric-select">
+
+<option value="0">0 — Not achieved</option>
+<option value="0.5">0.5 — Good effort</option>
+<option value="1">1 — Excellent</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="self-total">
+
+MY ESTIMATED SCORE
+
+<strong id="selfScore">0/6</strong>
+
+<p>
+
+Self-assessment only
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+     PROGRESS
+================================================== -->
+
+<section class="section soft" id="progress">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 09 · MY WRITING PROGRESS
+</span>
+
+<h2>My BEM Writing Checklist</h2>
+
+<p>
+
+Track your revision goals
+and prepare confidently for your examination.
+
+</p>
+
+</div>
+
+<div class="progress-layout">
+
+<div class="progress-intro">
+
+<h3>🎯 My Writing Journey</h3>
+
+<p>
+
+Every paragraph you write
+is an opportunity to improve.
+
+Practise regularly, correct mistakes
+and celebrate your progress.
+
+</p>
+
+<div class="progress-percent" id="progressPercent">
+
+0%
+
+</div>
+
+<div class="progress-track">
+
+<div class="progress-fill" id="progressFill"></div>
+
+</div>
+
+<div class="progress-caption" id="progressCaption">
+
+0 goals completed
+
+</div>
+
+</div>
+
+<div class="progress-items">
+
+<h3>📋 My Revision Goals</h3>
+
+<div id="progressChecklist"></div>
+
+<button class="btn outline" type="button" id="resetProgressBtn" style="margin-top:14px">
+
+🔄 Reset My Checklist
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+     FINAL
+================================================== -->
+
+<section class="final">
+
+<div class="container">
+
+<div class="final-box">
+
+<h2>🌟 Keep Writing, Future BEM Champion!</h2>
+
+<p>
+
+You have learned how to understand a writing task,
+organise a paragraph and review your work.
+
+Keep practising until writing
+becomes a confident and enjoyable skill.
+
+</p>
+
+<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+
+<a href="MS4-BEM-Preparation.html" class="btn white">
+
+← BEM Preparation Centre
+
+</a>
+
+<a href="MS4-BEM-Past-Papers.html" class="btn gold">
+
+📚 Destination 05: Past BEM Papers →
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+<strong>MY ENGLISH SPACE</strong>
+
+<br>
+
+MS4 · BEM Preparation · Destination 04
+
+<br>
+
+Written Expression Academy
+
+<br>
+
+© <span id="year"></span> My English Space
+
+<br>
+
+Learn · Practise · Improve · Succeed
+
+</footer>
+
+<button
+  class="top-btn"
+  id="topBtn"
+  type="button"
+  aria-label="Back to top"
+>
+
+↑
+
+</button>
+
+<script>
+
+"use strict";
+
+/* ==================================================
+   GENERAL UTILITIES
+================================================== */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+const scrollProgress =
+  document.getElementById("scrollProgress");
+
+const topBtn =
+  document.getElementById("topBtn");
+
+function updateScroll(){
+
+  const total =
+    document.documentElement.scrollHeight -
+    window.innerHeight;
+
+  const percent =
+    total > 0
+      ? window.scrollY / total * 100
+      : 0;
+
+  scrollProgress.style.width =
+    percent + "%";
+
+  topBtn.classList.toggle(
+    "show",
+    window.scrollY > 500
+  );
+
+}
+
+window.addEventListener(
+  "scroll",
+  updateScroll,
+  {passive:true}
+);
+
+window.addEventListener("resize",updateScroll);
+
+topBtn.addEventListener("click",function(){
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+});
+
+updateScroll();
+
+/* ==================================================
+   LOCAL STORAGE
+================================================== */
+
+function getSaved(key,fallback=null){
+
+  try{
+
+    const value =
+      localStorage.getItem(key);
+
+    return value === null
+      ? fallback
+      : JSON.parse(value);
+
+  }catch(error){
+
+    return fallback;
+
+  }
+
+}
+
+function saveData(key,value){
+
+  try{
+
+    localStorage.setItem(
+      key,
+      JSON.stringify(value)
+    );
+
+    return true;
+
+  }catch(error){
+
+    return false;
+
+  }
+
+}
+
+/* ==================================================
+   PRACTICE DATA
+================================================== */
+
+const practiceActivities = [
+
+/* ----------------------------------------------
+   ACTIVITY 01
+---------------------------------------------- */
+
+{
+  title:"01 · Understanding the Task",
+
+  questions:[
+
+    {
+      q:"In a BEM writing prompt, the context usually tells you...",
+      options:[
+        "the situation in which you are writing.",
+        "the exact number of spelling mistakes.",
+        "the final examination score."
+      ],
+      answer:0,
+      explanation:"The context introduces the writing situation."
+    },
+
+    {
+      q:"The task tells you...",
+      options:[
+        "the examiner's name.",
+        "what you must write.",
+        "your previous examination results."
+      ],
+      answer:1,
+      explanation:"The task explains the expected written production."
+    },
+
+    {
+      q:"A fact file in a writing task is usually...",
+      options:[
+        "a punishment.",
+        "a grammar test.",
+        "support containing useful information."
+      ],
+      answer:2,
+      explanation:"Support helps you develop the required text."
+    },
+
+    {
+      q:"The instruction 'Describe a landmark' asks you to...",
+      options:[
+        "write a descriptive paragraph.",
+        "write an unrelated dialogue.",
+        "list irregular verbs only."
+      ],
+      answer:0,
+      explanation:"Describe means to give information about characteristics."
+    },
+
+    {
+      q:"Before writing, you should first...",
+      options:[
+        "ignore the support.",
+        "identify the topic and required details.",
+        "copy an unrelated paragraph."
+      ],
+      answer:1,
+      explanation:"Understanding the task is the first step."
+    }
+
+  ]
+},
+
+/* ----------------------------------------------
+   ACTIVITY 02
+---------------------------------------------- */
+
+{
+  title:"02 · Paragraph Organisation",
+
+  questions:[
+
+    {
+      q:"Which sentence is the best introduction to a paragraph about Big Ben?",
+      options:[
+        "It is about 96 metres tall.",
+        "Big Ben is a famous landmark in London.",
+        "It was completed in 1859."
+      ],
+      answer:1,
+      explanation:"An introduction clearly presents the main topic."
+    },
+
+    {
+      q:"Which sentence gives a supporting detail?",
+      options:[
+        "The tower was completed in 1859.",
+        "I will describe a landmark.",
+        "That is why it is special to me."
+      ],
+      answer:0,
+      explanation:"The completion date is a factual detail."
+    },
+
+    {
+      q:"Which sentence works best as a conclusion?",
+      options:[
+        "The tower has four clock faces.",
+        "It is located in London.",
+        "Today, it remains an important symbol of London."
+      ],
+      answer:2,
+      explanation:"The sentence closes the paragraph with a final thought."
+    },
+
+    {
+      q:"Choose the best order for a paragraph.",
+      options:[
+        "Details → Conclusion → Introduction",
+        "Introduction → Details → Conclusion",
+        "Conclusion → Introduction → Details"
+      ],
+      answer:1,
+      explanation:"A paragraph should develop ideas in a logical order."
+    },
+
+    {
+      q:"Which detail is most relevant to a paragraph about a landmark?",
+      options:[
+        "Its location and history.",
+        "The writer's favourite meal.",
+        "An unrelated sports result."
+      ],
+      answer:0,
+      explanation:"Relevant details must support the topic."
+    }
+
+  ]
+},
+
+/* ----------------------------------------------
+   ACTIVITY 03
+---------------------------------------------- */
+
+{
+  title:"03 · Linking Words",
+
+  questions:[
+
+    {
+      q:"___, I will introduce the famous landmark.",
+      options:[
+        "First",
+        "However",
+        "Because"
+      ],
+      answer:0,
+      explanation:"First introduces an initial step."
+    },
+
+    {
+      q:"The organisation collects clothes. ___, it provides food.",
+      options:[
+        "Although",
+        "Moreover",
+        "But"
+      ],
+      answer:1,
+      explanation:"Moreover adds another supporting idea."
+    },
+
+    {
+      q:"Karim is shy. ___, he is very helpful.",
+      options:[
+        "First",
+        "Also",
+        "However"
+      ],
+      answer:2,
+      explanation:"However introduces contrast."
+    },
+
+    {
+      q:"___, I believe volunteering makes our community better.",
+      options:[
+        "In conclusion",
+        "Before",
+        "Whereas"
+      ],
+      answer:0,
+      explanation:"In conclusion introduces a closing thought."
+    },
+
+    {
+      q:"The volunteers cleaned the park. ___, they planted trees.",
+      options:[
+        "Unlike",
+        "Then",
+        "Although"
+      ],
+      answer:1,
+      explanation:"Then shows the next event in a sequence."
+    }
+
+  ]
+},
+
+/* ----------------------------------------------
+   ACTIVITY 04
+---------------------------------------------- */
+
+{
+  title:"04 · Grammar & Accuracy",
+
+  questions:[
+
+    {
+      q:"Choose the correct sentence.",
+      options:[
+        "The Eiffel Tower were built in 1889.",
+        "The Eiffel Tower was built in 1889.",
+        "The Eiffel Tower built in 1889."
+      ],
+      answer:1,
+      explanation:"Use was + past participle for a singular subject."
+    },
+
+    {
+      q:"Choose the correct past simple sentence.",
+      options:[
+        "She visited her grandparents last year.",
+        "She visit her grandparents last year.",
+        "She visiting her grandparents last year."
+      ],
+      answer:0,
+      explanation:"Visited is the correct past simple form."
+    },
+
+    {
+      q:"Choose the correct conditional sentence.",
+      options:[
+        "If we will recycle, we protect nature.",
+        "If we recycled, we will protect nature.",
+        "If we recycle, we will protect nature."
+      ],
+      answer:2,
+      explanation:"Use if + present simple, will + base verb."
+    },
+
+    {
+      q:"Choose the correct sentence about preferences.",
+      options:[
+        "I enjoy help others.",
+        "I enjoy helping others.",
+        "I enjoy helped others."
+      ],
+      answer:1,
+      explanation:"Enjoy is followed by a gerund."
+    },
+
+    {
+      q:"Choose the correct comparative.",
+      options:[
+        "Sara is more patient than Ali.",
+        "Sara is patient than Ali.",
+        "Sara is most patient than Ali."
+      ],
+      answer:0,
+      explanation:"Use more + adjective + than."
+    }
+
+  ]
+},
+
+/* ----------------------------------------------
+   ACTIVITY 05
+---------------------------------------------- */
+
+{
+  title:"05 · Punctuation & Editing",
+
+  questions:[
+
+    {
+      q:"Choose the correctly punctuated sentence.",
+      options:[
+        "big ben is in london.",
+        "Big ben is in London",
+        "Big Ben is in London."
+      ],
+      answer:2,
+      explanation:"Capitalise proper nouns and add a full stop."
+    },
+
+    {
+      q:"Which sentence uses a comma correctly?",
+      options:[
+        "First, we visited the museum.",
+        "First we, visited the museum.",
+        "First we visited, the museum."
+      ],
+      answer:0,
+      explanation:"A comma may follow an introductory sequencing word."
+    },
+
+    {
+      q:"Choose the correct sentence.",
+      options:[
+        "my friend is kind and helpful.",
+        "My friend is kind and helpful.",
+        "My friend is kind and helpful"
+      ],
+      answer:1,
+      explanation:"Begin with a capital letter and end with a full stop."
+    },
+
+    {
+      q:"Which sentence is correctly written?",
+      options:[
+        "The monument is very beautiful.",
+        "The monument is very beautifully.",
+        "The monument very beautiful."
+      ],
+      answer:0,
+      explanation:"Use an adjective after is."
+    },
+
+    {
+      q:"Which sentence uses the correct apostrophe?",
+      options:[
+        "The teachers book is interesting.",
+        "The teacher's book is interesting.",
+        "The teacher book's is interesting."
+      ],
+      answer:1,
+      explanation:"Teacher's shows singular possession."
+    }
+
+  ]
+}
+
+];
+
+/* ==================================================
+   PRACTICE ENGINE
+================================================== */
+
+let activePractice = 0;
+let practiceChecked = false;
+
+const practiceTabs =
+  document.getElementById("practiceTabs");
+
+practiceActivities.forEach(function(activity,index){
+
+  const button =
+    document.createElement("button");
+
+  button.type = "button";
+
+  button.className =
+    "practice-tab";
+
+  button.textContent =
+    activity.title;
+
+  button.addEventListener("click",function(){
+
+    openPractice(index);
+
+  });
+
+  practiceTabs.appendChild(button);
+
+});
+
+function openPractice(index){
+
+  activePractice = index;
+  practiceChecked = false;
+
+  const buttons =
+    practiceTabs.querySelectorAll("button");
+
+  buttons.forEach(function(button,i){
+
+    button.classList.toggle(
+      "active",
+      i === index
+    );
+
+  });
+
+  const container =
+    document.getElementById("practiceQuestions");
+
+  container.innerHTML = "";
+
+  const activity =
+    practiceActivities[index];
+
+  activity.questions.forEach(function(question,qIndex){
+
+    const card =
+      document.createElement("div");
+
+    card.className = "exercise";
+
+    const heading =
+      document.createElement("h4");
+
+    heading.textContent =
+      (qIndex+1) + ". " + question.q;
+
+    const options =
+      document.createElement("div");
+
+    options.className = "options";
+
+    question.options.forEach(function(option,optionIndex){
+
+      const label =
+        document.createElement("label");
+
+      label.className = "option";
+
+      const input =
+        document.createElement("input");
+
+      input.type = "radio";
+
+      input.name =
+        "practice_" + index + "_" + qIndex;
+
+      input.value = optionIndex;
+
+      const span =
+        document.createElement("span");
+
+      span.textContent = option;
+
+      label.append(input,span);
+
+      options.appendChild(label);
+
+    });
+
+    const feedback =
+      document.createElement("div");
+
+    feedback.className = "feedback";
+    feedback.setAttribute("role","status");
+
+    card.append(
+      heading,
+      options,
+      feedback
+    );
+
+    container.appendChild(card);
+
+  });
+
+  document.getElementById("practiceResult").style.display =
+    "none";
+
+  const button =
+    document.getElementById("checkPracticeBtn");
+
+  button.disabled = false;
+
+  button.textContent =
+    "✅ Check My Answers";
+
+}
+
+function checkPractice(){
+
+  if(practiceChecked){
+    return;
+  }
+
+  const activity =
+    practiceActivities[activePractice];
+
+  const cards =
+    document.querySelectorAll(
+      "#practiceQuestions .exercise"
+    );
+
+  let score = 0;
+
+  activity.questions.forEach(function(question,index){
+
+    const card = cards[index];
+
+    const selected =
+      card.querySelector(
+        'input[type="radio"]:checked'
+      );
+
+    const correct =
+      selected &&
+      Number(selected.value) === question.answer;
+
+    if(correct){
+      score++;
+    }
+
+    const feedback =
+      card.querySelector(".feedback");
+
+    feedback.className =
+      "feedback show " +
+      (correct ? "correct" : "wrong");
+
+    feedback.textContent =
+      (correct ? "✓ Correct! " : "✗ Review: ") +
+      question.explanation;
+
+    card.querySelectorAll("input").forEach(function(input){
+
+      input.disabled = true;
+
+    });
+
+  });
+
+  practiceChecked = true;
+
+  const result =
+    document.getElementById("practiceResult");
+
+  result.style.display = "block";
+
+  document.getElementById("practiceScore").textContent =
+    score + "/5";
+
+  let message;
+
+  if(score === 5){
+
+    message =
+      "Outstanding! You have mastered this writing skill.";
+
+  }else if(score >= 3){
+
+    message =
+      "Good work! Review the explanations and try again.";
+
+  }else{
+
+    message =
+      "Keep practising! Read the examples carefully.";
+
+  }
+
+  document.getElementById("practiceMessage").textContent =
+    message;
+
+  const button =
+    document.getElementById("checkPracticeBtn");
+
+  button.disabled = true;
+
+  button.textContent =
+    "✓ Answers Checked";
+
+  const key =
+    "MS4_BEM_WRITING_PRACTICE_" + activePractice;
+
+  const previous =
+    Number(getSaved(key,0));
+
+  saveData(
+    key,
+    Math.max(previous,score)
+  );
+
+  result.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+}
+
+document.getElementById("checkPracticeBtn")
+.addEventListener("click",checkPractice);
+
+document.getElementById("retryPracticeBtn")
+.addEventListener("click",function(){
+
+  openPractice(activePractice);
+
+});
+
+openPractice(0);
+
+/* ==================================================
+   WRITING MISSIONS
+================================================== */
+
+const missions = [
+
+/* ----------------------------------------------
+   MISSION 01
+---------------------------------------------- */
+
+{
+  title:"Mission 01 · Describe a Famous Landmark",
+
+  context:
+    "Your school is organising an exhibition about famous landmarks around the world.",
+
+  task:
+    "Write a short descriptive paragraph about the Eiffel Tower using the information below. Aim for 8–10 sentences.",
+
+  support:[
+    "Name: Eiffel Tower",
+    "Type: Iron tower",
+    "Location: Paris, France",
+    "Designer: Gustave Eiffel's company",
+    "Completion: 1889",
+    "Original height: about 300 metres",
+    "Appearance: Tall, impressive, beautiful",
+    "Importance: Famous symbol of Paris"
+  ],
+
+  tips:[
+    "Begin by introducing the landmark.",
+    "Use the past passive voice for construction facts.",
+    "Use qualifiers to describe its appearance.",
+    "Finish with a concluding sentence."
+  ]
+
+},
+
+/* ----------------------------------------------
+   MISSION 02
+---------------------------------------------- */
+
+{
+  title:"Mission 02 · Write a Short Biography",
+
+  context:
+    "Your English teacher is preparing a classroom display about outstanding figures in literature.",
+
+  task:
+    "Write a short biographical paragraph about William Shakespeare using the information below. Aim for 8–10 sentences.",
+
+  support:[
+    "Name: William Shakespeare",
+    "Nationality: English",
+    "Birth: 1564",
+    "Birthplace: Stratford-upon-Avon",
+    "Occupation: Playwright and poet",
+    "Famous works: Romeo and Juliet, Hamlet",
+    "Death: 1616",
+    "Importance: Influential figure in English literature"
+  ],
+
+  tips:[
+    "Introduce the person and his occupation.",
+    "Use the past simple for life events.",
+    "Arrange events in a logical order.",
+    "End by explaining his importance."
+  ]
+
+},
+
+/* ----------------------------------------------
+   MISSION 03
+---------------------------------------------- */
+
+{
+  title:"Mission 03 · Be a Good Citizen",
+
+  context:
+    "Your school is organising a citizenship awareness campaign.",
+
+  task:
+    "Write a short paragraph explaining how pupils can become responsible citizens. Aim for 8–10 sentences.",
+
+  support:[
+    "Respect school rules",
+    "Help elderly people",
+    "Keep the environment clean",
+    "Take part in charity activities",
+    "Protect public property",
+    "Volunteer in the community",
+    "Use first conditional sentences",
+    "End with a positive message"
+  ],
+
+  tips:[
+    "Begin with a clear definition of a good citizen.",
+    "Use the imperative to give advice.",
+    "Use if + present simple, will + base verb.",
+    "Use linking words to connect ideas."
+  ]
+
+}
+
+];
+
+let currentMission = 0;
+
+const writingEditor =
+  document.getElementById("writingEditor");
+
+const DRAFT_PREFIX =
+  "MS4_BEM_WRITING_DRAFT_";
+
+function renderMission(){
+
+  const mission =
+    missions[currentMission];
+
+  const container =
+    document.getElementById("studioPrompt");
+
+  container.innerHTML = "";
+
+  const title =
+    document.createElement("h4");
+
+  title.textContent =
+    mission.title;
+
+  const context =
+    document.createElement("p");
+
+  context.textContent =
+    "🌍 Context: " + mission.context;
+
+  const task =
+    document.createElement("p");
+
+  task.style.marginTop = "12px";
+
+  task.textContent =
+    "🎯 Task: " + mission.task;
+
+  const supportTitle =
+    document.createElement("p");
+
+  supportTitle.style.marginTop = "12px";
+
+  supportTitle.textContent =
+    "📋 Support:";
+
+  const list =
+    document.createElement("ul");
+
+  mission.support.forEach(function(item){
+
+    const li =
+      document.createElement("li");
+
+    li.textContent = item;
+
+    list.appendChild(li);
+
+  });
+
+  container.append(
+    title,
+    context,
+    task,
+    supportTitle,
+    list
+  );
+
+  const saved =
+    getSaved(
+      DRAFT_PREFIX + currentMission,
+      ""
+    );
+
+  writingEditor.value =
+    typeof saved === "string" ? saved : "";
+
+  document.getElementById("saveStatus").textContent =
+    "Draft loaded";
+
+  updateEditorStats();
+
+  document.getElementById("writingFeedback").innerHTML =
+    "<h4>💡 Writing Coach</h4>" +
+    "<p>Write your paragraph, then click " +
+    "<strong>Review My Draft</strong> " +
+    "to receive revision reminders.</p>";
+
+  resetSelfAssessment();
+
+}
+
+function selectMission(index){
+
+  currentMission = index;
+
+  renderMission();
+
+  document.getElementById("studio").scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+/* ==================================================
+   EDITOR
+================================================== */
+
+function getWords(text){
+
+  const trimmed =
+    text.trim();
+
+  if(!trimmed){
+    return [];
+  }
+
+  return trimmed.split(/\s+/).filter(Boolean);
+
+}
+
+function getSentences(text){
+
+  const trimmed =
+    text.trim();
+
+  if(!trimmed){
+    return [];
+  }
+
+  return trimmed
+    .split(/[.!?]+/)
+    .map(function(sentence){
+      return sentence.trim();
+    })
+    .filter(Boolean);
+
+}
+
+function updateEditorStats(){
+
+  const text =
+    writingEditor.value;
+
+  document.getElementById("wordCount").textContent =
+    getWords(text).length;
+
+  document.getElementById("sentenceCount").textContent =
+    getSentences(text).length;
+
+}
+
+writingEditor.addEventListener("input",function(){
+
+  updateEditorStats();
+
+  const saved =
+    saveData(
+      DRAFT_PREFIX + currentMission,
+      writingEditor.value
+    );
+
+  document.getElementById("saveStatus").textContent =
+    saved ? "Saved automatically" : "Storage unavailable";
+
+});
+
+/* ==================================================
+   WRITING COACH
+================================================== */
+
+function analyseWriting(){
+
+  const text =
+    writingEditor.value.trim();
+
+  const feedback =
+    document.getElementById("writingFeedback");
+
+  if(!text){
+
+    feedback.innerHTML =
+      "<h4>✍️ Start Writing</h4>" +
+      "<p>Write your paragraph first, then review your draft.</p>";
+
+    return;
+
+  }
+
+  const words =
+    getWords(text);
+
+  const sentences =
+    getSentences(text);
+
+  const suggestions = [];
+
+  if(sentences.length < 8){
+
+    suggestions.push(
+      "Your draft has fewer than 8 detected sentences. " +
+      "Consider adding relevant supporting details."
+    );
+
+  }else if(sentences.length > 10){
+
+    suggestions.push(
+      "Your draft has more than 10 detected sentences. " +
+      "Check the task instructions and remove unnecessary repetition."
+    );
+
+  }else{
+
+    suggestions.push(
+      "Your detected sentence count is within the practice target of 8–10."
+    );
+
+  }
+
+  if(!/^[A-Z]/.test(text)){
+
+    suggestions.push(
+      "Check the capital letter at the beginning of your paragraph."
+    );
+
+  }
+
+  if(!/[.!?]$/.test(text)){
+
+    suggestions.push(
+      "Check the punctuation at the end of your paragraph."
+    );
+
+  }
+
+  if(words.length < 45){
+
+    suggestions.push(
+      "Your paragraph is quite short. " +
+      "Make sure you have included the important information."
+    );
+
+  }
+
+  const lower =
+    text.toLowerCase();
+
+  const linkers = [
+    "first",
+    "next",
+    "then",
+    "after that",
+    "finally",
+    "moreover",
+    "in addition",
+    "also",
+    "however",
+    "therefore",
+    "because",
+    "today"
+  ];
+
+  const hasLinker =
+    linkers.some(function(linker){
+
+      return lower.includes(linker);
+
+    });
+
+  if(!hasLinker){
+
+    suggestions.push(
+      "Consider using a suitable linking word to connect your ideas."
+    );
+
+  }
+
+  const mission =
+    missions[currentMission];
+
+  suggestions.push(
+    "Review the task support and confirm that your paragraph answers: " +
+    mission.task
+  );
+
+  suggestions.push(
+    "Read every sentence and check grammar, spelling and punctuation."
+  );
+
+  feedback.innerHTML = "";
+
+  const heading =
+    document.createElement("h4");
+
+  heading.textContent =
+    "🔎 Writing Coach Feedback";
+
+  const intro =
+    document.createElement("p");
+
+  intro.textContent =
+    "Your draft contains " +
+    words.length +
+    " words and approximately " +
+    sentences.length +
+    " sentences.";
+
+  const list =
+    document.createElement("ul");
+
+  list.style.marginTop = "12px";
+
+  suggestions.forEach(function(suggestion){
+
+    const li =
+      document.createElement("li");
+
+    li.textContent = suggestion;
+
+    list.appendChild(li);
+
+  });
+
+  const reminder =
+    document.createElement("p");
+
+  reminder.style.marginTop = "12px";
+
+  reminder.textContent =
+    "This is a basic writing checklist, not an automatic " +
+    "grammar checker or an official BEM mark.";
+
+  feedback.append(
+    heading,
+    intro,
+    list,
+    reminder
+  );
+
+}
+
+document.getElementById("analyseWritingBtn")
+.addEventListener("click",analyseWriting);
+
+/* ==================================================
+   DOWNLOAD WRITING
+================================================== */
+
+document.getElementById("downloadWritingBtn")
+.addEventListener("click",function(){
+
+  const text =
+    writingEditor.value.trim();
+
+  if(!text){
+
+    alert("Write your paragraph before saving it.");
+
+    return;
+
+  }
+
+  const mission =
+    missions[currentMission];
+
+  const content =
+    mission.title +
+    "\n\n" +
+    text +
+    "\n\nMy English Space · BEM Written Expression";
+
+  const blob =
+    new Blob(
+      [content],
+      {type:"text/plain;charset=utf-8"}
+    );
+
+  const url =
+    URL.createObjectURL(blob);
+
+  const link =
+    document.createElement("a");
+
+  link.href = url;
+
+  link.download =
+    "BEM-Writing-Mission-" +
+    (currentMission+1) +
+    ".txt";
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  link.remove();
+
+  setTimeout(function(){
+
+    URL.revokeObjectURL(url);
+
+  },1000);
+
+});
+
+/* ==================================================
+   CLEAR WRITING
+================================================== */
+
+document.getElementById("clearWritingBtn")
+.addEventListener("click",function(){
+
+  if(!confirm("Clear this mission's writing draft?")){
+    return;
+  }
+
+  writingEditor.value = "";
+
+  saveData(
+    DRAFT_PREFIX + currentMission,
+    ""
+  );
+
+  updateEditorStats();
+
+  document.getElementById("saveStatus").textContent =
+    "Draft cleared";
+
+  document.getElementById("writingFeedback").innerHTML =
+    "<h4>💡 Writing Coach</h4>" +
+    "<p>Your writing desk is ready for a new draft.</p>";
+
+});
+
+/* ==================================================
+   WRITER'S CHECKLIST
+================================================== */
+
+const writingChecks = [
+
+  "I understood the writing task.",
+
+  "I included the required information.",
+
+  "I wrote a clear introduction.",
+
+  "I developed my paragraph with supporting details.",
+
+  "I used suitable linking words.",
+
+  "I used correct verb tenses.",
+
+  "I checked spelling and punctuation.",
+
+  "I wrote a suitable conclusion."
+
+];
+
+const writingChecklist =
+  document.getElementById("writingChecklist");
+
+writingChecks.forEach(function(item){
+
+  const label =
+    document.createElement("label");
+
+  label.className = "check-item";
+
+  const input =
+    document.createElement("input");
+
+  input.type = "checkbox";
+
+  const span =
+    document.createElement("span");
+
+  span.textContent = item;
+
+  label.append(input,span);
+
+  writingChecklist.appendChild(label);
+
+});
+
+/* ==================================================
+   SELF-ASSESSMENT
+================================================== */
+
+const rubricSelects =
+  Array.from(
+    document.querySelectorAll(".rubric-select")
+  );
+
+function updateSelfScore(){
+
+  const total =
+    rubricSelects.reduce(function(sum,select){
+
+      return sum + Number(select.value);
+
+    },0);
+
+  document.getElementById("selfScore").textContent =
+    total.toFixed(1).replace(".0","") + "/6";
+
+}
+
+function resetSelfAssessment(){
+
+  rubricSelects.forEach(function(select){
+
+    select.value = "0";
+
+  });
+
+  updateSelfScore();
+
+}
+
+rubricSelects.forEach(function(select){
+
+  select.addEventListener(
+    "change",
+    updateSelfScore
+  );
+
+});
+
+/* ==================================================
+   PROGRESS CHECKLIST
+================================================== */
+
+const progressGoals = [
+
+  "I understand the BEM Written Expression section.",
+
+  "I know the four assessment criteria.",
+
+  "I can identify context, task and support.",
+
+  "I can write a clear introduction.",
+
+  "I can develop supporting details.",
+
+  "I can write a suitable conclusion.",
+
+  "I can use linking words correctly.",
+
+  "I can correct grammar and punctuation mistakes.",
+
+  "I completed the Landmark Writing Mission.",
+
+  "I completed the Biography Writing Mission.",
+
+  "I completed the Citizenship Writing Mission.",
+
+  "I reviewed and improved a complete paragraph."
+
+];
+
+const progressContainer =
+  document.getElementById("progressChecklist");
+
+progressGoals.forEach(function(goal){
+
+  const label =
+    document.createElement("label");
+
+  label.className = "check-item";
+
+  const input =
+    document.createElement("input");
+
+  input.type = "checkbox";
+
+  const span =
+    document.createElement("span");
+
+  span.textContent = goal;
+
+  label.append(input,span);
+
+  progressContainer.appendChild(label);
+
+});
+
+const progressBoxes =
+  Array.from(
+    progressContainer.querySelectorAll(
+      'input[type="checkbox"]'
+    )
+  );
+
+const PROGRESS_KEY =
+  "MS4_BEM_WRITING_PROGRESS_V1";
+
+function updateProgress(){
+
+  const completed =
+    progressBoxes.filter(function(box){
+
+      return box.checked;
+
+    }).length;
+
+  const percent =
+    Math.round(
+      completed / progressBoxes.length * 100
+    );
+
+  document.getElementById("progressPercent").textContent =
+    percent + "%";
+
+  document.getElementById("progressFill").style.width =
+    percent + "%";
+
+  document.getElementById("progressCaption").textContent =
+    completed +
+    " of " +
+    progressBoxes.length +
+    " goals completed";
+
+}
+
+function saveProgress(){
+
+  saveData(
+    PROGRESS_KEY,
+    progressBoxes.map(function(box){
+
+      return box.checked;
+
+    })
+  );
+
+  updateProgress();
+
+}
+
+function loadProgress(){
+
+  const saved =
+    getSaved(PROGRESS_KEY,[]);
+
+  progressBoxes.forEach(function(box,index){
+
+    box.checked =
+      saved[index] === true;
+
+  });
+
+  updateProgress();
+
+}
+
+progressBoxes.forEach(function(box){
+
+  box.addEventListener(
+    "change",
+    saveProgress
+  );
+
+});
+
+document.getElementById("resetProgressBtn")
+.addEventListener("click",function(){
+
+  if(!confirm("Reset your writing progress checklist?")){
+    return;
+  }
+
+  progressBoxes.forEach(function(box){
+
+    box.checked = false;
+
+  });
+
+  saveProgress();
+
+});
+
+/* ==================================================
+   INITIALISE
+================================================== */
+
+renderMission();
+
+loadProgress();
+
+updateSelfScore();
+
+</script>
+
+</body>
+</html>

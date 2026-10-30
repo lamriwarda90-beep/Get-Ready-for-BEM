@@ -1,0 +1,2370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MS4 Reading | How to Be a Good Citizen</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&family=Noto+Naskh+Arabic:wght@600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --deep:#3d206a;
+  --purple:#7142b3;
+  --violet:#9b70d9;
+  --pale:#f5efff;
+  --gold:#f5bd58;
+  --ink:#2d2440;
+  --muted:#716782;
+  --green:#237a55;
+  --red:#b83956;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:linear-gradient(135deg,#f9f6ff,#eee5ff);
+  font-family:Nunito,sans-serif;
+  color:var(--ink);
+  line-height:1.65;
+}
+
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#fffffff0;
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #e9ddfb;
+}
+
+nav{
+  max-width:1100px;
+  margin:auto;
+  padding:12px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.logo{
+  font-family:"Baloo 2";
+  font-weight:800;
+  color:var(--deep);
+  font-size:19px;
+}
+
+.home{
+  background:var(--pale);
+  padding:8px 13px;
+  border-radius:22px;
+  font-weight:800;
+  color:var(--purple);
+  font-size:13px;
+}
+
+.hero{
+  text-align:center;
+  color:white;
+  background:
+    radial-gradient(circle at 80% 10%,#a67be7,transparent 35%),
+    linear-gradient(125deg,#3d206a,#7142b3);
+  padding:67px 20px 74px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before,
+.hero:after{
+  content:"✦";
+  position:absolute;
+  color:#ffffff35;
+  font-size:150px;
+  top:-55px;
+  left:6%;
+}
+
+.hero:after{
+  left:auto;
+  right:5%;
+  top:45px;
+  font-size:100px;
+}
+
+.pill{
+  display:inline-block;
+  background:#ffffff23;
+  border:1px solid #ffffff50;
+  border-radius:30px;
+  padding:7px 17px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.07em;
+}
+
+h1,h2,h3{
+  font-family:"Baloo 2";
+  line-height:1.2;
+}
+
+h1{
+  font-size:clamp(40px,7vw,72px);
+  margin:16px 0 8px;
+}
+
+h1 span{color:#ffdc8c}
+
+.hero p{
+  max-width:660px;
+  margin:0 auto;
+  color:#f0e6ff;
+}
+
+main{
+  max-width:1100px;
+  margin:-27px auto 60px;
+  padding:0 18px;
+  position:relative;
+}
+
+.section{
+  margin-bottom:30px;
+  scroll-margin-top:85px;
+}
+
+.section-title{
+  margin:0 0 13px;
+  color:var(--deep);
+  font-size:29px;
+}
+
+.kicker{
+  font-size:11px;
+  letter-spacing:.12em;
+  color:var(--purple);
+  font-weight:900;
+}
+
+.card{
+  background:white;
+  border:1px solid #e9ddfa;
+  border-radius:24px;
+  padding:25px;
+  box-shadow:0 12px 35px #45257512;
+}
+
+.intro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  align-items:center;
+}
+
+.intro img{
+  width:100%;
+  height:245px;
+  object-fit:cover;
+  border-radius:19px;
+}
+
+.intro h2{
+  font-size:30px;
+  color:var(--deep);
+  margin:0 0 8px;
+}
+
+.choice-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:14px;
+}
+
+.choice{
+  border:2px solid #e8def7;
+  border-radius:13px;
+  padding:12px 14px;
+  text-align:left;
+  background:#fcfaff;
+  color:var(--ink);
+  font-weight:800;
+  transition:.2s;
+}
+
+.choice:hover:not(:disabled){
+  border-color:var(--violet);
+  transform:translateY(-2px);
+}
+
+.choice:disabled{
+  cursor:default;
+  opacity:1;
+}
+
+.choice.correct{
+  background:#e5f8ed;
+  border-color:#56b98a;
+  color:#196744;
+}
+
+.choice.wrong{
+  background:#ffedf1;
+  border-color:#e790a1;
+  color:#a62c49;
+}
+
+.reading-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.55fr) minmax(245px,.75fr);
+  gap:20px;
+  align-items:start;
+}
+
+.paper{
+  background:#fff;
+  border-radius:24px;
+  padding:30px;
+  border:1px solid #e6daf8;
+  box-shadow:0 12px 35px #45257512;
+}
+
+.paper h3{
+  font-size:31px;
+  color:var(--deep);
+  margin:0;
+}
+
+.paper .sub{
+  color:var(--muted);
+  font-size:13px;
+  margin:0 0 17px;
+  padding-bottom:15px;
+  border-bottom:2px dashed #e8d9f8;
+}
+
+.para{
+  position:relative;
+  padding:14px 0 16px 51px;
+  border-bottom:1px solid #f0eafa;
+}
+
+.para:last-child{border:0}
+
+.para p{
+  margin:0;
+  font-size:15.5px;
+  line-height:1.92;
+}
+
+.num{
+  position:absolute;
+  top:17px;
+  left:0;
+  background:linear-gradient(130deg,#7b4fba,#ae8ae7);
+  color:white;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:12px;
+  font-weight:900;
+}
+
+.side{
+  position:sticky;
+  top:85px;
+}
+
+.side img{
+  width:100%;
+  border-radius:17px;
+  display:block;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+
+.side .card{
+  padding:11px;
+  margin-bottom:14px;
+}
+
+.side p{
+  padding:0 8px;
+  font-size:13px;
+  color:var(--muted);
+  margin:10px 0;
+}
+
+.task{
+  background:#fcfaff;
+  border:1px solid #ebdff8;
+  border-radius:18px;
+  padding:18px;
+  margin:13px 0;
+}
+
+.task h3{
+  font-size:19px;
+  margin:0 0 5px;
+  color:var(--deep);
+}
+
+.task p{margin:0 0 8px}
+
+.feedback{
+  display:none;
+  padding:10px 13px;
+  border-radius:12px;
+  margin-top:10px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.feedback.show{display:block}
+
+.feedback.good{
+  background:#e5f8ed;
+  color:var(--green);
+}
+
+.feedback.bad{
+  background:#ffedf1;
+  color:var(--red);
+}
+
+input[type=text],
+select,
+textarea{
+  width:100%;
+  padding:11px 12px;
+  border:2px solid #e6d9f6;
+  border-radius:12px;
+  background:white;
+  color:var(--ink);
+  outline:0;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--purple);
+}
+
+textarea{
+  min-height:115px;
+  resize:vertical;
+}
+
+.tf-row,
+.fill-row{
+  padding:14px 0;
+  border-bottom:1px solid #eee5f9;
+}
+
+.tf-row:last-child,
+.fill-row:last-child{
+  border:0;
+}
+
+.tf-top{
+  display:grid;
+  grid-template-columns:1fr 145px;
+  gap:12px;
+  align-items:center;
+}
+
+.tf-row input{margin-top:9px}
+
+.action{
+  border:0;
+  background:linear-gradient(120deg,#55308d,#8c59cc);
+  color:white;
+  font-weight:900;
+  padding:12px 20px;
+  border-radius:25px;
+  margin-top:15px;
+  box-shadow:0 6px 15px #4a257b26;
+}
+
+.action:hover{filter:brightness(1.08)}
+
+.outline{
+  background:white;
+  color:var(--deep);
+  border:2px solid #d6bdec;
+  box-shadow:none;
+}
+
+.grid2{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px;
+}
+
+.mini{
+  padding:15px;
+  border:1px solid #ebdff8;
+  border-radius:15px;
+  background:#fcfaff;
+}
+
+.mini label{
+  font-size:13px;
+  font-weight:800;
+  display:block;
+  margin-bottom:7px;
+}
+
+.badge{
+  display:inline-block;
+  background:#fff2d5;
+  color:#8d5915;
+  padding:4px 11px;
+  border-radius:15px;
+  font-size:11px;
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+.score{
+  background:linear-gradient(120deg,#40216f,#8550c8);
+  color:white;
+  border-radius:22px;
+  padding:22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-top:24px;
+}
+
+.score strong{
+  font-family:"Baloo 2";
+  font-size:29px;
+}
+
+.score small{
+  display:block;
+  color:#eadbff;
+  font-weight:800;
+}
+
+.dict-button{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:31;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#f6c567,#9660ce);
+  border:3px solid white;
+  box-shadow:0 8px 25px #38205c55;
+  font-size:25px;
+  display:grid;
+  place-items:center;
+}
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#1d0d35a8;
+  z-index:40;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+}
+
+.overlay.open{display:flex}
+
+.dictionary{
+  background:white;
+  width:min(440px,100%);
+  max-height:80vh;
+  border-radius:23px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 25px 70px #180a3455;
+}
+
+.dict-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.dict-head h3{
+  margin:0;
+  color:var(--deep);
+}
+
+.close{
+  background:#f1e7ff;
+  border:0;
+  border-radius:50%;
+  width:35px;
+  height:35px;
+  font-size:18px;
+}
+
+#dictSearch{margin:12px 0}
+
+.dict-list{overflow:auto}
+
+.dict-item{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px;
+  border-bottom:1px solid #eee7f7;
+}
+
+.arabic{
+  font-family:"Noto Naskh Arabic",serif;
+  font-size:18px;
+  color:var(--purple);
+  direction:rtl;
+}
+
+footer{
+  text-align:center;
+  color:#765b99;
+  padding:10px 20px 70px;
+  font-size:12px;
+  font-weight:800;
+}
+
+@media(max-width:760px){
+  .intro,
+  .reading-layout{
+    grid-template-columns:1fr;
+  }
+
+  .side{
+    position:static;
+    display:none;
+  }
+
+  .choice-grid,
+  .grid2{
+    grid-template-columns:1fr;
+  }
+
+  .card,
+  .paper{
+    padding:19px;
+  }
+
+  .tf-top{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:48px 16px 60px;
+  }
+
+  .score{flex-wrap:wrap}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="MS4-S3-Reading-Beautiful.html">
+      📚 MY ENGLISH SPACE
+    </a>
+
+    <a class="home" href="MS4-S3-Reading-Beautiful.html">
+      ← Reading Home
+    </a>
+  </nav>
+</header>
+
+<div class="hero">
+  <span class="pill">
+    MS4 • SEQUENCE 3 • READING LESSON 01
+  </span>
+
+  <h1>
+    How to Be a <span>Good Citizen</span>
+  </h1>
+
+  <p>
+    Read, discover and think about the small actions
+    that can make our community a better place.
+  </p>
+</div>
+
+<main>
+
+<!-- =====================================
+     STEP 1 — BEFORE READING
+===================================== -->
+
+<section class="section">
+
+  <div class="card intro">
+
+    <div>
+
+      <span class="kicker">
+        01 • BEFORE READING
+      </span>
+
+      <h2>🔮 Look &amp; Predict</h2>
+
+      <p>
+        Look at the picture and the title.
+        What will the text mainly discuss?
+      </p>
+
+      <div class="choice-grid" data-question="prediction">
+
+        <button class="choice" data-right="1">
+          Helping people and protecting our community
+        </button>
+
+        <button class="choice">
+          Winning a sports competition
+        </button>
+
+        <button class="choice">
+          Planning a holiday
+        </button>
+
+        <button class="choice">
+          Learning to drive
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+    <img
+      src="https://i.imgur.com/Ue0hC4b.jpeg"
+      alt="Young citizens working together in their neighbourhood">
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     STEP 2 — READING TEXT
+===================================== -->
+
+<section class="section" id="reading">
+
+  <div class="kicker">
+    02 • READ
+  </div>
+
+  <h2 class="section-title">
+    📖 Read the Text
+  </h2>
+
+  <div class="reading-layout">
+
+    <article class="paper">
+
+      <h3>A Good Citizen Starts with You</h3>
+
+      <p class="sub">
+        An article written for the school citizenship club
+      </p>
+
+      <div class="para">
+
+        <span class="num">01</span>
+
+        <p>
+          What makes a person a good citizen?
+          Is it enough to love your country?
+          A good citizen does more than say kind words.
+          Good citizens respect other people, follow rules
+          and take care of their community.
+          They know that everyone has rights,
+          but everyone also has responsibilities.
+          If we all do our part, our neighbourhoods
+          will become safer and happier places.
+        </p>
+
+      </div>
+
+      <div class="para">
+
+        <span class="num">02</span>
+
+        <p>
+          Start with your surroundings.
+          Keep your classroom, school and streets clean.
+          Never throw rubbish on the ground.
+          Put it in a bin and encourage your friends
+          to do the same.
+          If you see litter in the playground,
+          pick it up safely and put it in the right place.
+          Save water, switch off unnecessary lights
+          and protect public property.
+          These small actions can make a big difference.
+        </p>
+
+      </div>
+
+      <div class="para">
+
+        <span class="num">03</span>
+
+        <p>
+          Good citizens also care about people.
+          Be polite to your neighbours and respect older people.
+          Offer help to someone who needs it.
+          If an elderly neighbour needs help carrying shopping bags,
+          offer a hand.
+          If a new pupil feels lonely,
+          invite them to join your group.
+          Listen to different opinions
+          and never make fun of others.
+          Kindness and respect help everyone feel welcome.
+        </p>
+
+      </div>
+
+      <div class="para">
+
+        <span class="num">04</span>
+
+        <p>
+          Last month, pupils from our middle school
+          organised a community day.
+          They cleaned a small park,
+          planted flowers and collected books
+          for children who needed them.
+          At first, only ten pupils volunteered.
+          Soon, more classmates joined.
+          By the end of the day, the park looked beautiful
+          and the children had received many books.
+          The pupils discovered that working together
+          can change lives.
+        </p>
+
+      </div>
+
+      <div class="para">
+
+        <span class="num">05</span>
+
+        <p>
+          You do not need to be famous or rich
+          to help your country.
+          Begin with one useful action today.
+          Respect the rules, speak kindly
+          and help whenever you can.
+          If every young person takes responsibility,
+          our community will grow stronger.
+          Remember: citizenship is not only
+          about what you receive;
+          it is also about what you give.
+        </p>
+
+      </div>
+
+    </article>
+
+    <aside class="side">
+
+      <div class="card">
+
+        <img
+          src="https://i.imgur.com/Ue0hC4b.jpeg"
+          alt="Pupils caring for their community">
+
+        <p>
+          🌱 Every small action matters.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <span class="badge">
+          READING TIP
+        </span>
+
+        <p>
+          Read the whole text first.
+          Then return to the numbered paragraphs
+          to find evidence.
+        </p>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     STEP 3 — GLOBAL COMPREHENSION
+===================================== -->
+
+<section class="section" id="global">
+
+  <div class="kicker">
+    03 • GLOBAL UNDERSTANDING
+  </div>
+
+  <h2 class="section-title">
+    🌍 Understand the Main Idea
+  </h2>
+
+  <div class="card">
+
+    <div class="task">
+
+      <h3>
+        1. What is the writer's main purpose?
+      </h3>
+
+      <div class="choice-grid" data-question="main">
+
+        <button class="choice">
+          To describe a famous person
+        </button>
+
+        <button class="choice" data-right="1">
+          To advise young people how to be good citizens
+        </button>
+
+        <button class="choice">
+          To advertise a new park
+        </button>
+
+        <button class="choice">
+          To explain a science experiment
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3>
+        2. Choose the best alternative title.
+      </h3>
+
+      <div class="choice-grid" data-question="title">
+
+        <button class="choice">
+          A Day at the Shopping Centre
+        </button>
+
+        <button class="choice">
+          My Favourite School Subject
+        </button>
+
+        <button class="choice" data-right="1">
+          Small Actions, Stronger Communities
+        </button>
+
+        <button class="choice">
+          The History of Our Town
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3>
+        3. Who is the text mainly written for?
+      </h3>
+
+      <div class="choice-grid" data-question="audience">
+
+        <button class="choice" data-right="1">
+          Young people who want to help their community
+        </button>
+
+        <button class="choice">
+          Professional athletes
+        </button>
+
+        <button class="choice">
+          Tourists visiting Algeria
+        </button>
+
+        <button class="choice">
+          Only school principals
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     STEP 4 — DETAILED COMPREHENSION
+===================================== -->
+
+<section class="section" id="details">
+
+  <div class="kicker">
+    04 • DETAILED UNDERSTANDING
+  </div>
+
+  <h2 class="section-title">
+    🎯 Find the Information
+  </h2>
+
+  <div class="card">
+
+    <div class="task">
+
+      <h3>
+        4. According to paragraph 1, good citizens ...
+      </h3>
+
+      <div class="choice-grid" data-question="q4">
+
+        <button class="choice">
+          only talk about loving their country
+        </button>
+
+        <button class="choice" data-right="1">
+          respect others and take responsibility
+        </button>
+
+        <button class="choice">
+          avoid helping their neighbours
+        </button>
+
+        <button class="choice">
+          have rights but no duties
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3>
+        5. What should you do when you see litter
+        in the playground?
+      </h3>
+
+      <div class="choice-grid" data-question="q5">
+
+        <button class="choice">
+          Leave it where it is
+        </button>
+
+        <button class="choice">
+          Hide it behind a tree
+        </button>
+
+        <button class="choice" data-right="1">
+          Pick it up safely and put it in the right place
+        </button>
+
+        <button class="choice">
+          Ask your friend to throw more rubbish
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3>
+        6. How can pupils welcome a lonely new classmate?
+      </h3>
+
+      <div class="choice-grid" data-question="q6">
+
+        <button class="choice">
+          Ignore the pupil
+        </button>
+
+        <button class="choice" data-right="1">
+          Invite the pupil to join their group
+        </button>
+
+        <button class="choice">
+          Make fun of the pupil
+        </button>
+
+        <button class="choice">
+          Tell the pupil to go home
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3>
+        7. What did the pupils collect during community day?
+      </h3>
+
+      <div class="choice-grid" data-question="q7">
+
+        <button class="choice">
+          Old bicycles
+        </button>
+
+        <button class="choice">
+          School uniforms
+        </button>
+
+        <button class="choice" data-right="1">
+          Books for children
+        </button>
+
+        <button class="choice">
+          Plastic toys for sale
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3>
+        8. How many pupils volunteered at first?
+      </h3>
+
+      <div class="choice-grid" data-question="q8">
+
+        <button class="choice">
+          Five
+        </button>
+
+        <button class="choice" data-right="1">
+          Ten
+        </button>
+
+        <button class="choice">
+          Twenty
+        </button>
+
+        <button class="choice">
+          Fifty
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     STEP 5 — TRUE / FALSE + EVIDENCE
+===================================== -->
+
+<section class="section" id="evidence">
+
+  <div class="kicker">
+    05 • PROVE YOUR ANSWER
+  </div>
+
+  <h2 class="section-title">
+    🧾 True or False? Justify.
+  </h2>
+
+  <div class="card">
+
+    <p>
+      Choose <strong>True</strong> or <strong>False</strong>.
+      Then copy a short sentence or phrase from the text
+      to justify your choice.
+    </p>
+
+    <div
+      class="tf-row"
+      data-answer="false"
+      data-evidence="responsibilities|do our part|rights">
+
+      <div class="tf-top">
+
+        <strong>
+          1. A good citizen has rights but no responsibilities.
+        </strong>
+
+        <select>
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+
+      </div>
+
+      <input
+        type="text"
+        placeholder="Evidence from paragraph 1...">
+
+    </div>
+
+
+    <div
+      class="tf-row"
+      data-answer="true"
+      data-evidence="switch off|save water|protect public">
+
+      <div class="tf-top">
+
+        <strong>
+          2. Protecting the environment is part of citizenship.
+        </strong>
+
+        <select>
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+
+      </div>
+
+      <input
+        type="text"
+        placeholder="Evidence from paragraph 2...">
+
+    </div>
+
+
+    <div
+      class="tf-row"
+      data-answer="false"
+      data-evidence="more classmates joined|only ten|soon">
+
+      <div class="tf-top">
+
+        <strong>
+          3. No other pupils joined the community project later.
+        </strong>
+
+        <select>
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+
+      </div>
+
+      <input
+        type="text"
+        placeholder="Evidence from paragraph 4...">
+
+    </div>
+
+
+    <div
+      class="tf-row"
+      data-answer="false"
+      data-evidence="do not need|not need|famous or rich">
+
+      <div class="tf-top">
+
+        <strong>
+          4. Only rich or famous people can help their country.
+        </strong>
+
+        <select>
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+
+      </div>
+
+      <input
+        type="text"
+        placeholder="Evidence from paragraph 5...">
+
+    </div>
+
+    <button class="action" onclick="checkTF()">
+      ✓ Check My Answers
+    </button>
+
+    <div class="feedback" id="tfResult"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     STEP 6 — VOCABULARY IN CONTEXT
+===================================== -->
+
+<section class="section" id="vocab">
+
+  <div class="kicker">
+    06 • WORDS IN CONTEXT
+  </div>
+
+  <h2 class="section-title">
+    🔎 Become a Word Detective
+  </h2>
+
+  <div class="card">
+
+    <div class="task">
+
+      <h3>
+        9. In paragraph 2, “surroundings” means ...
+      </h3>
+
+      <div class="choice-grid" data-question="v1">
+
+        <button class="choice" data-right="1">
+          the places around you
+        </button>
+
+        <button class="choice">
+          your future plans
+        </button>
+
+        <button class="choice">
+          your school marks
+        </button>
+
+        <button class="choice">
+          your family history
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3>
+        10. Find a word in paragraph 4 meaning
+        “offered to help willingly”.
+      </h3>
+
+      <div class="choice-grid" data-question="v2">
+
+        <button class="choice">
+          received
+        </button>
+
+        <button class="choice">
+          collected
+        </button>
+
+        <button class="choice" data-right="1">
+          volunteered
+        </button>
+
+        <button class="choice">
+          planted
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3>
+        11. In paragraph 3, “them” in
+        “invite them to join your group” refers to ...
+      </h3>
+
+      <div class="choice-grid" data-question="v3">
+
+        <button class="choice">
+          older people
+        </button>
+
+        <button class="choice" data-right="1">
+          a new pupil who feels lonely
+        </button>
+
+        <button class="choice">
+          shopping bags
+        </button>
+
+        <button class="choice">
+          different opinions
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3>
+        12. Which word is the opposite of “kindness”?
+      </h3>
+
+      <div class="choice-grid" data-question="v4">
+
+        <button class="choice">
+          respect
+        </button>
+
+        <button class="choice">
+          helpfulness
+        </button>
+
+        <button class="choice" data-right="1">
+          cruelty
+        </button>
+
+        <button class="choice">
+          friendship
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     STEP 7 — INFORMATION TRANSFER
+===================================== -->
+
+<section class="section" id="transfer">
+
+  <div class="kicker">
+    07 • ORGANISE INFORMATION
+  </div>
+
+  <h2 class="section-title">
+    🗂️ Complete the Information
+  </h2>
+
+  <div class="card">
+
+    <p>
+      Use information from paragraph 4
+      to complete the project report.
+    </p>
+
+    <div class="grid2">
+
+      <div class="mini">
+
+        <label>
+          Who organised the event?
+        </label>
+
+        <select class="transfer" data-answer="pupils">
+
+          <option value="">Choose...</option>
+
+          <option value="teachers">
+            University teachers
+          </option>
+
+          <option value="pupils">
+            Middle-school pupils
+          </option>
+
+          <option value="tourists">
+            Tourists
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="mini">
+
+        <label>
+          Where did they work?
+        </label>
+
+        <select class="transfer" data-answer="park">
+
+          <option value="">Choose...</option>
+
+          <option value="park">
+            A small park
+          </option>
+
+          <option value="library">
+            A library
+          </option>
+
+          <option value="stadium">
+            A stadium
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="mini">
+
+        <label>
+          What did they plant?
+        </label>
+
+        <select class="transfer" data-answer="flowers">
+
+          <option value="">Choose...</option>
+
+          <option value="trees">
+            Fruit trees
+          </option>
+
+          <option value="flowers">
+            Flowers
+          </option>
+
+          <option value="vegetables">
+            Vegetables
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="mini">
+
+        <label>
+          Who received the collected books?
+        </label>
+
+        <select class="transfer" data-answer="children">
+
+          <option value="">Choose...</option>
+
+          <option value="shops">
+            Local shops
+          </option>
+
+          <option value="children">
+            Children who needed them
+          </option>
+
+          <option value="drivers">
+            Bus drivers
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+    <button class="action" onclick="checkTransfer()">
+      ✓ Check Information
+    </button>
+
+    <div class="feedback" id="transferResult"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     STEP 8 — INFERENCE
+===================================== -->
+
+<section class="section" id="infer">
+
+  <div class="kicker">
+    08 • THINK DEEPER
+  </div>
+
+  <h2 class="section-title">
+    💡 Read Between the Lines
+  </h2>
+
+  <div class="card">
+
+    <div class="task">
+
+      <h3>
+        13. Why did more pupils join the community day?
+      </h3>
+
+      <div class="choice-grid" data-question="i1">
+
+        <button class="choice">
+          They wanted to avoid lessons
+        </button>
+
+        <button class="choice" data-right="1">
+          They were probably inspired by their classmates' actions
+        </button>
+
+        <button class="choice">
+          They wanted to sell the books
+        </button>
+
+        <button class="choice">
+          They were forced to work
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3>
+        14. Which message best expresses the conclusion?
+      </h3>
+
+      <div class="choice-grid" data-question="i2">
+
+        <button class="choice">
+          Citizenship is only about getting benefits
+        </button>
+
+        <button class="choice">
+          Young people cannot change society
+        </button>
+
+        <button class="choice" data-right="1">
+          Everyone can contribute through everyday actions
+        </button>
+
+        <button class="choice">
+          Only adults should volunteer
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+
+    <div class="task">
+
+      <h3>
+        15. What could happen if everyone followed
+        the writer's advice?
+      </h3>
+
+      <div class="choice-grid" data-question="i3">
+
+        <button class="choice">
+          People would stop communicating
+        </button>
+
+        <button class="choice" data-right="1">
+          Communities would become cleaner, kinder and safer
+        </button>
+
+        <button class="choice">
+          Schools would close
+        </button>
+
+        <button class="choice">
+          Parks would disappear
+        </button>
+
+      </div>
+
+      <div class="feedback"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
+     STEP 9 — WRITTEN RESPONSE
+===================================== -->
+
+<section class="section" id="writing">
+
+  <div class="kicker">
+    09 • YOUR RESPONSE
+  </div>
+
+  <h2 class="section-title">
+    ✍️ Your Community, Your Voice
+  </h2>
+
+  <div class="card">
+
+    <span class="badge">
+      FINAL CHALLENGE
+    </span>
+
+    <h3>
+      What advice would you give to a new member of your school?
+    </h3>
+
+    <p>
+      Write a short paragraph of
+      <strong>60–80 words</strong>
+      explaining how to be a good citizen
+      at school and in the neighbourhood.
+      Use ideas from the text and add one idea of your own.
+    </p>
+
+    <textarea
+      id="writing"
+      placeholder="A good citizen respects other people and protects public places. If we ..."></textarea>
+
+    <p
+      id="wordCount"
+      style="font-weight:800;color:var(--purple)">
+      0 words
+    </p>
+
+    <div class="grid2">
+
+      <label class="mini">
+        <input type="checkbox" class="checklist">
+        I gave useful advice.
+      </label>
+
+      <label class="mini">
+        <input type="checkbox" class="checklist">
+        I mentioned helping others.
+      </label>
+
+      <label class="mini">
+        <input type="checkbox" class="checklist">
+        I included an example.
+      </label>
+
+      <label class="mini">
+        <input type="checkbox" class="checklist">
+        I checked spelling and punctuation.
+      </label>
+
+    </div>
+
+    <button class="action" onclick="checkWriting()">
+      ✍️ Review My Paragraph
+    </button>
+
+    <button class="action outline" onclick="saveWriting()">
+      💾 Save
+    </button>
+
+    <div class="feedback" id="writingResult"></div>
+
+  </div>
+
+  <div class="score">
+
+    <div>
+
+      <small>
+        READING COMPREHENSION PROGRESS
+      </small>
+
+      <strong>
+        ⭐ <span id="score">0</span> /
+        <span id="total">0</span>
+      </strong>
+
+    </div>
+
+    <button class="action outline" onclick="resetLesson()">
+      ↻ Try Again
+    </button>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+  MY ENGLISH SPACE • MS4 • SEQUENCE 3 • READING TOGETHER
+</footer>
+
+
+<!-- =====================================
+     MINI DICTIONARY
+===================================== -->
+
+<button
+  class="dict-button"
+  id="dictOpen"
+  aria-label="Open English Arabic dictionary"
+  title="English–Arabic dictionary">
+  📖
+</button>
+
+<div
+  class="overlay"
+  id="overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="English Arabic mini dictionary">
+
+  <div class="dictionary">
+
+    <div class="dict-head">
+
+      <h3>
+        📖 English ↔ Arabic
+      </h3>
+
+      <button
+        class="close"
+        id="dictClose"
+        aria-label="Close">
+        ×
+      </button>
+
+    </div>
+
+    <input
+      id="dictSearch"
+      type="text"
+      placeholder="Search for a word...">
+
+    <div class="dict-list" id="dictList"></div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+/* =====================================
+   SCORE SYSTEM
+===================================== */
+
+const answered = new Set();
+
+const allChoices = [
+  ...document.querySelectorAll('[data-question]')
+];
+
+const total =
+  allChoices.length +
+  document.querySelectorAll('.tf-row').length +
+  document.querySelectorAll('.transfer').length;
+
+let points = 0;
+
+document.getElementById('total').textContent = total;
+
+
+function award(key){
+
+  if(!answered.has(key)){
+
+    answered.add(key);
+
+    points++;
+
+    document.getElementById('score').textContent = points;
+
+  }
+
+}
+
+
+function feedback(el,good,message){
+
+  el.className =
+    'feedback show ' + (good ? 'good' : 'bad');
+
+  el.textContent = message;
+
+}
+
+
+/* =====================================
+   MULTIPLE CHOICE QUESTIONS
+===================================== */
+
+allChoices.forEach(group=>{
+
+  const buttons = [
+    ...group.querySelectorAll('.choice')
+  ];
+
+  buttons.forEach(button=>{
+
+    button.addEventListener('click',()=>{
+
+      if(group.dataset.done){
+        return;
+      }
+
+      const correct =
+        button.dataset.right === '1';
+
+      buttons.forEach(b=>{
+        b.classList.remove('wrong');
+      });
+
+      if(correct){
+
+        button.classList.add('correct');
+
+        buttons.forEach(b=>{
+          b.disabled = true;
+        });
+
+        group.dataset.done = '1';
+
+        award(group.dataset.question);
+
+        feedback(
+          group.nextElementSibling,
+          true,
+          '✓ Correct! Well done.'
+        );
+
+      }else{
+
+        button.classList.add('wrong');
+
+        feedback(
+          group.nextElementSibling,
+          false,
+          'Not quite. Read the text again and try another answer.'
+        );
+
+      }
+
+    });
+
+  });
+
+});
+
+
+/* =====================================
+   TRUE / FALSE + JUSTIFICATION
+===================================== */
+
+function checkTF(){
+
+  let count = 0;
+
+  document.querySelectorAll('.tf-row')
+    .forEach((row,i)=>{
+
+      const select = row.querySelector('select');
+
+      const input = row.querySelector('input');
+
+      const words = row.dataset.evidence.split('|');
+
+      const evidence =
+        input.value.trim().toLowerCase();
+
+      const ok =
+        select.value === row.dataset.answer &&
+        words.some(w=>evidence.includes(w));
+
+      row.style.background =
+        ok ? '#eaf8f0' : '#fff0f3';
+
+      if(ok){
+
+        count++;
+
+        award('tf'+i);
+
+      }
+
+    });
+
+  feedback(
+    document.getElementById('tfResult'),
+    count === 4,
+    count + ' / 4 answers have a correct choice and supporting evidence. ' +
+    (count === 4
+      ? 'Excellent!'
+      : 'Use exact ideas from the numbered paragraphs.')
+  );
+
+}
+
+
+/* =====================================
+   INFORMATION TRANSFER
+===================================== */
+
+function checkTransfer(){
+
+  let count = 0;
+
+  document.querySelectorAll('.transfer')
+    .forEach((s,i)=>{
+
+      const ok =
+        s.value === s.dataset.answer;
+
+      s.style.borderColor =
+        ok ? '#57b88b' : '#e18ba0';
+
+      if(ok){
+
+        count++;
+
+        award('transfer'+i);
+
+      }
+
+    });
+
+  feedback(
+    document.getElementById('transferResult'),
+    count === 4,
+    count + ' / 4 correct. ' +
+    (count === 4
+      ? 'Excellent reading!'
+      : 'Return to paragraph 4.')
+  );
+
+}
+
+
+/* =====================================
+   WRITING TASK
+===================================== */
+
+const writing =
+  document.getElementById('writing');
+
+writing.value =
+  localStorage.getItem('ms4_citizen_writing') || '';
+
+
+function wordCount(){
+
+  const n = writing.value.trim()
+    ? writing.value.trim().split(/\s+/).length
+    : 0;
+
+  document.getElementById('wordCount')
+    .textContent = n + ' words';
+
+  return n;
+
+}
+
+
+writing.addEventListener('input',wordCount);
+
+wordCount();
+
+
+function saveWriting(){
+
+  localStorage.setItem(
+    'ms4_citizen_writing',
+    writing.value
+  );
+
+  feedback(
+    document.getElementById('writingResult'),
+    true,
+    'Your paragraph was saved on this device.'
+  );
+
+}
+
+
+function checkWriting(){
+
+  const n = wordCount();
+
+  let tips = [];
+
+  if(n < 60){
+
+    tips.push(
+      'Add more details to reach 60 words.'
+    );
+
+  }
+
+  if(n > 80){
+
+    tips.push(
+      'Try to stay within 80 words.'
+    );
+
+  }
+
+  if(
+    !/help|kind|respect|neighbou?r|community/i
+      .test(writing.value)
+  ){
+
+    tips.push(
+      'Include a clear idea about helping or respecting others.'
+    );
+
+  }
+
+  if(!/[.!?]/.test(writing.value)){
+
+    tips.push(
+      'Check punctuation.'
+    );
+
+  }
+
+  feedback(
+    document.getElementById('writingResult'),
+    tips.length === 0,
+    tips.length
+      ? tips.join(' ')
+      : 'Good work! You have written a relevant paragraph. Read it once more to check your ideas and language.'
+  );
+
+}
+
+
+/* =====================================
+   RESET LESSON
+===================================== */
+
+function resetLesson(){
+
+  if(!confirm(
+    'Reset your answers? Your saved writing will stay on this device.'
+  )){
+    return;
+  }
+
+  answered.clear();
+
+  points = 0;
+
+  document.getElementById('score')
+    .textContent = '0';
+
+  allChoices.forEach(g=>{
+
+    delete g.dataset.done;
+
+    g.querySelectorAll('button')
+      .forEach(b=>{
+
+        b.disabled = false;
+
+        b.classList.remove(
+          'correct',
+          'wrong'
+        );
+
+      });
+
+    g.nextElementSibling.className =
+      'feedback';
+
+  });
+
+  document.querySelectorAll('.tf-row')
+    .forEach(r=>{
+
+      r.style.background = '';
+
+      r.querySelector('select').value = '';
+
+      r.querySelector('input').value = '';
+
+    });
+
+  document.querySelectorAll('.transfer')
+    .forEach(s=>{
+
+      s.value = '';
+
+      s.style.borderColor = '';
+
+    });
+
+  document.querySelectorAll(
+    '#tfResult,#transferResult'
+  ).forEach(f=>{
+
+    f.className = 'feedback';
+
+  });
+
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  });
+
+}
+
+
+/* =====================================
+   ENGLISH–ARABIC DICTIONARY
+===================================== */
+
+const words = [
+
+  ['citizen','مواطن'],
+
+  ['citizenship','المواطنة'],
+
+  ['community','المجتمع المحلي'],
+
+  ['responsibility','مسؤولية'],
+
+  ['rights','حقوق'],
+
+  ['duties','واجبات'],
+
+  ['respect','احترام'],
+
+  ['neighbourhood','حيّ سكني'],
+
+  ['litter','نفايات مرمية'],
+
+  ['rubbish','قمامة'],
+
+  ['bin','سلة مهملات'],
+
+  ['surroundings','المحيط'],
+
+  ['public property','ممتلكات عامة'],
+
+  ['protect','يحمي'],
+
+  ['save water','يقتصد في الماء'],
+
+  ['elderly','مسنّ'],
+
+  ['lonely','وحيد'],
+
+  ['invite','يدعو'],
+
+  ['kindness','لطف'],
+
+  ['volunteer','يتطوع'],
+
+  ['organise','ينظّم'],
+
+  ['collect','يجمع'],
+
+  ['plant flowers','يغرس الأزهار'],
+
+  ['offer a hand','يقدّم المساعدة'],
+
+  ['encourage','يشجّع'],
+
+  ['follow rules','يحترم القواعد'],
+
+  ['safe','آمن'],
+
+  ['stronger','أقوى'],
+
+  ['contribute','يساهم'],
+
+  ['difference','فرق / تغيير']
+
+];
+
+
+const overlay =
+  document.getElementById('overlay');
+
+const search =
+  document.getElementById('dictSearch');
+
+const list =
+  document.getElementById('dictList');
+
+
+function renderDict(){
+
+  const q =
+    search.value.trim().toLowerCase();
+
+  const matches = words.filter(([en,ar])=>
+    en.includes(q) || ar.includes(q)
+  );
+
+  list.replaceChildren();
+
+  matches.forEach(([en,ar])=>{
+
+    const row =
+      document.createElement('div');
+
+    row.className = 'dict-item';
+
+    const a =
+      document.createElement('strong');
+
+    const b =
+      document.createElement('span');
+
+    a.textContent = en;
+
+    b.textContent = ar;
+
+    b.className = 'arabic';
+
+    row.append(a,b);
+
+    list.append(row);
+
+  });
+
+  if(!matches.length){
+
+    const p =
+      document.createElement('p');
+
+    p.textContent =
+      'No matching word found.';
+
+    list.append(p);
+
+  }
+
+}
+
+
+document.getElementById('dictOpen')
+  .onclick = ()=>{
+
+    overlay.classList.add('open');
+
+    renderDict();
+
+    search.focus();
+
+  };
+
+
+function closeDict(){
+
+  overlay.classList.remove('open');
+
+}
+
+
+document.getElementById('dictClose')
+  .onclick = closeDict;
+
+
+overlay.addEventListener('click',e=>{
+
+  if(e.target === overlay){
+
+    closeDict();
+
+  }
+
+});
+
+
+document.addEventListener('keydown',e=>{
+
+  if(e.key === 'Escape'){
+
+    closeDict();
+
+  }
+
+});
+
+
+search.addEventListener(
+  'input',
+  renderDict
+);
+
+</script>
+
+</body>
+</html>

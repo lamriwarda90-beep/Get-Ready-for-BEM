@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4 Writing Studio | Lesson 3 — Be a Good Citizen!</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --deep:#30184f;
+  --purple:#7643bd;
+  --violet:#a579e7;
+  --gold:#ffd77c;
+  --bg:#faf7ff;
+  --ink:#34234a;
+  --muted:#746784;
+  --line:#e7dcf4;
+  --green:#17785b;
+  --red:#b74258;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:radial-gradient(circle at top left,#f1e6ff,transparent 35%),var(--bg);
+  color:var(--ink);
+  font-family:Nunito,Arial,sans-serif;
+}
+h1,h2,h3{
+  font-family:"Baloo 2",sans-serif;
+  line-height:1.15;
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible{
+  outline:3px solid #e4a332;
+  outline-offset:3px;
+}
+.wrap{width:min(1080px,93%);margin:auto}
+
+/* NAVIGATION */
+.top{
+  background:white;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.topinner{
+  min-height:66px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.brand{
+  font-family:"Baloo 2",sans-serif;
+  font-size:21px;
+  font-weight:800;
+  color:var(--deep);
+}
+.top a.small{
+  font-size:12px;
+  font-weight:900;
+  padding:10px 14px;
+  border-radius:22px;
+  background:#f1e8ff;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(120deg,#30184f,#7546b5);
+  color:white;
+  padding:58px 0 85px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:35px;
+  align-items:center;
+}
+.pill{
+  display:inline-block;
+  border:1px solid #ffffff70;
+  border-radius:30px;
+  padding:8px 13px;
+  font-size:11px;
+  letter-spacing:1px;
+  font-weight:900;
+}
+.hero h1{
+  font-size:clamp(39px,5.8vw,70px);
+  margin:15px 0;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{
+  line-height:1.85;
+  color:#f0e7ff;
+}
+.hero-images{position:relative}
+.hero-images img{
+  width:100%;
+  height:305px;
+  object-fit:cover;
+  border:6px solid #ffffff3d;
+  border-radius:25px;
+  box-shadow:0 20px 50px #1c0e3266;
+}
+.hero-caption{
+  position:absolute;
+  bottom:-14px;
+  left:18px;
+  background:var(--gold);
+  color:var(--deep);
+  padding:10px 16px;
+  border-radius:15px;
+  font-weight:900;
+  font-size:12px;
+}
+
+/* BUTTONS */
+.primary,.secondary,.quiet{
+  border:0;
+  border-radius:24px;
+  padding:12px 19px;
+  font-weight:900;
+  font-size:13px;
+  transition:.2s;
+}
+.primary{background:var(--purple);color:white}
+.primary:hover{background:#5d329a;transform:translateY(-2px)}
+.secondary{background:var(--gold);color:var(--deep)}
+.quiet{background:#eee3fc;color:var(--deep)}
+.hero .secondary{
+  display:inline-block;
+  margin-top:12px;
+}
+
+/* PROGRESS */
+.progress-wrap{
+  margin:-30px auto 28px;
+  position:relative;
+  background:white;
+  border-radius:20px;
+  padding:20px 24px;
+  box-shadow:0 10px 35px #39215819;
+  border:1px solid var(--line);
+}
+.progress-head{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  font-size:13px;
+  font-weight:900;
+}
+.track{
+  height:12px;
+  background:#eee5f8;
+  border-radius:20px;
+  margin-top:12px;
+  overflow:hidden;
+}
+.fill{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#7943c0,#d1a2ff,#ffd77c);
+  transition:width .3s;
+}
+
+/* INTRO */
+.intro{
+  margin:35px 0 25px;
+  text-align:center;
+}
+.intro h2{font-size:37px;margin:5px}
+.intro p{color:var(--muted);line-height:1.8}
+
+/* LESSON CARDS */
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:28px;
+  margin:23px 0;
+  box-shadow:0 12px 36px #3921580c;
+  scroll-margin-top:85px;
+}
+.stephead{
+  display:flex;
+  gap:13px;
+  align-items:center;
+  margin-bottom:12px;
+}
+.stepnum{
+  width:48px;
+  height:48px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  background:#efe4ff;
+  color:#60359e;
+  border-radius:16px;
+  font-weight:900;
+}
+.stephead h2{font-size:28px;margin:0}
+.lead{color:var(--muted);line-height:1.85}
+
+/* SITUATION */
+.situation{
+  background:#fff6df;
+  border:2px solid #f8d891;
+  border-radius:18px;
+  padding:22px;
+  line-height:1.9;
+}
+.situation strong{color:#6b4210}
+
+/* ACTIVITIES */
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.choice{
+  display:block;
+  background:#faf7ff;
+  border:2px solid #e8dcf7;
+  border-radius:14px;
+  padding:13px;
+  margin:9px 0;
+  font-weight:800;
+  cursor:pointer;
+}
+.choice:has(input:checked){
+  border-color:#8954c8;
+  background:#f0e4ff;
+}
+.choice input{
+  accent-color:var(--purple);
+  margin-right:8px;
+}
+.feedback{
+  margin-top:12px;
+  font-weight:900;
+  min-height:22px;
+}
+.ok{color:var(--green)}
+.bad{color:var(--red)}
+.task{
+  background:#fcfaff;
+  border:1px dashed #d5c2eb;
+  border-radius:17px;
+  padding:19px;
+  margin:18px 0;
+}
+.task h3{font-size:20px;margin:0 0 10px}
+.task p{line-height:1.7}
+.row{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin:10px 0;
+}
+.row label{font-weight:800}
+.row select,.builder select{
+  background:white;
+  border:2px solid #e4d6f2;
+  border-radius:11px;
+  padding:10px;
+  color:var(--ink);
+  max-width:100%;
+}
+.row select{flex:1;min-width:160px}
+
+/* VOCABULARY */
+.wordbank{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+}
+.wordbank span{
+  background:#fff0c8;
+  border:1px solid #f3d68e;
+  border-radius:20px;
+  padding:8px 13px;
+  font-weight:900;
+  font-size:13px;
+}
+
+/* LETTER PARTS */
+.letter-part{
+  display:block;
+  background:white;
+  border:1px solid #e4d6f3;
+  border-radius:10px;
+  margin:9px 0;
+  padding:12px;
+  line-height:1.7;
+}
+.tag{
+  display:inline-block;
+  background:#e9dbfb;
+  border-radius:10px;
+  padding:4px 9px;
+  font-size:11px;
+  font-weight:900;
+  color:#542c85;
+  margin-right:6px;
+}
+
+/* IMAGES */
+.image-pair{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+  margin:18px 0;
+}
+.image-pair img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:16px;
+  border:3px solid white;
+  box-shadow:0 8px 22px #30184f18;
+}
+
+/* SENTENCE BUILDERS */
+.builder{
+  background:#f9f5ff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:20px;
+  margin:15px 0;
+}
+.builder h3{font-size:21px;margin:0 0 12px}
+.builder label{
+  display:block;
+  font-size:13px;
+  font-weight:900;
+  margin:10px 0 5px;
+}
+.builder select{width:100%}
+.output{
+  background:white;
+  border-left:4px solid #e6b957;
+  border-radius:10px;
+  padding:13px 16px;
+  margin-top:13px;
+  min-height:47px;
+  line-height:1.8;
+}
+
+/* WRITING */
+.finalarea{
+  width:100%;
+  min-height:320px;
+  resize:vertical;
+  border:2px solid #d9c5ed;
+  border-radius:16px;
+  padding:20px;
+  font-size:15px;
+  line-height:1.9;
+  color:var(--ink);
+  background:white;
+}
+.checks{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.checks label{
+  background:#f8f2ff;
+  border:1px solid var(--line);
+  padding:12px;
+  border-radius:12px;
+  font-weight:800;
+  font-size:13px;
+}
+.checks input{accent-color:var(--purple)}
+.mini{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.7;
+}
+.status{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+  font-weight:900;
+}
+.tools{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:15px;
+}
+.arabic{
+  direction:rtl;
+  text-align:right;
+  color:#66527f;
+  font-size:13px;
+  background:#f7f0ff;
+  padding:10px 14px;
+  border-radius:10px;
+  margin-top:10px;
+}
+.note{
+  padding:14px 17px;
+  border-left:4px solid var(--purple);
+  background:#f6eeff;
+  border-radius:10px;
+  margin:15px 0;
+  line-height:1.8;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  background:var(--deep);
+  color:#eee3ff;
+  padding:35px 15px;
+  margin-top:65px;
+}
+
+/* NOTIFICATIONS */
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#342052;
+  color:white;
+  padding:13px 20px;
+  border-radius:20px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s;
+  z-index:120;
+  font-weight:900;
+  text-align:center;
+}
+.toast.show{opacity:1}
+
+/* MINI DICTIONARY */
+.dict-fab{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:90;
+  width:65px;
+  height:65px;
+  border:0;
+  border-radius:22px;
+  background:linear-gradient(135deg,#6433a6,#a77be7);
+  color:white;
+  font-size:28px;
+  box-shadow:0 12px 30px #45247777;
+  transition:transform .2s;
+}
+.dict-fab:hover{transform:translateY(-4px)}
+.dict-fab span{
+  position:absolute;
+  right:0;
+  bottom:70px;
+  font-size:11px;
+  white-space:nowrap;
+  background:#30184f;
+  padding:6px 10px;
+  border-radius:9px;
+  font-weight:900;
+}
+.dict-overlay{
+  position:fixed;
+  inset:0;
+  background:#160a2bc9;
+  z-index:100;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+}
+.dict-overlay.open{display:flex}
+.dict-panel{
+  width:min(610px,100%);
+  max-height:88vh;
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 24px 65px #0006;
+}
+.dict-header{
+  background:linear-gradient(120deg,#30184f,#8653c6);
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:18px 22px;
+}
+.dict-header h2{margin:0;font-size:25px}
+.dict-close{
+  background:#ffffff33;
+  color:white;
+  border:0;
+  border-radius:50%;
+  width:38px;
+  height:38px;
+  font-size:24px;
+}
+.dict-body{
+  padding:18px 20px;
+  overflow-y:auto;
+}
+.dict-search{
+  width:100%;
+  padding:13px 15px;
+  border:2px solid #e4d6f2;
+  border-radius:13px;
+  margin:10px 0 15px;
+}
+.dict-list{display:grid;gap:8px}
+.dict-entry{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  background:#faf7ff;
+  border:1px solid #e7dcf4;
+  border-radius:12px;
+  padding:12px 14px;
+}
+.dict-entry b{color:#30184f}
+.dict-entry span{
+  color:#7643bd;
+  direction:rtl;
+  text-align:right;
+  font-weight:800;
+}
+.dict-note{
+  font-size:12px;
+  color:#746784;
+  line-height:1.7;
+}
+
+/* MOBILE */
+@media(max-width:720px){
+  .hero-grid,.grid2,.checks,.image-pair{
+    grid-template-columns:1fr;
+  }
+  .hero{padding:35px 0 70px}
+  .hero img{height:220px}
+  .image-pair img{height:180px}
+  .card{padding:19px}
+  .stephead h2{font-size:24px}
+  .topinner{justify-content:center}
+  .progress-wrap{padding:17px}
+  .dict-fab{
+    width:57px;
+    height:57px;
+    right:14px;
+    bottom:14px;
+  }
+}
+@media print{
+  .top,.hero,.progress-wrap,.intro,.card,.footer,
+  .toast,.dict-fab,.dict-overlay{
+    display:none!important;
+  }
+  #step5{
+    display:block!important;
+    border:0;
+    box-shadow:none;
+    padding:0;
+    margin:0;
+  }
+  #step5 .tools,#step5 .task,#step5 .lead,
+  #step5 .status,#step5 .mini,#step5 .feedback{
+    display:none!important;
+  }
+  .finalarea{border:0;min-height:650px}
+  body{background:white}
+}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;transition:none!important}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="top">
+  <div class="wrap topinner">
+    <a class="brand" href="MS4-S3-Writing-Homepage.html">
+      ✍️ Writing Studio
+    </a>
+    <span style="font-size:12px;font-weight:900">
+      MS4 · Sequence 3 · Lesson 03
+    </span>
+    <a class="small" href="MS4-S3-Writing-Homepage.html">
+      ← Writing Homepage
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill">
+        🤝 GUIDED WRITING · BEGINNER FRIENDLY
+      </span>
+      <h1>
+        Be a Good<br>
+        <span>Citizen!</span>
+      </h1>
+      <p>
+        Small actions make a big difference!
+        Learn how to encourage people to
+        protect the environment, help others,
+        and make our community a better place.
+      </p>
+      <a class="secondary" href="#step1">
+        🚀 Let's Start Writing ↓
+      </a>
+    </div>
+
+    <div class="hero-images">
+      <img
+        src="https://i.imgur.com/flUcXvM.jpeg"
+        alt="Young people practising responsible citizenship"
+      >
+      <div class="hero-caption">
+        🌍 Together We Make a Difference
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- PROGRESS -->
+<div class="progress-wrap">
+  <div class="progress-head">
+    <span>🌟 My writing journey</span>
+    <span id="progressText">0 / 6 steps completed</span>
+  </div>
+  <div class="track">
+    <div class="fill" id="progressFill"></div>
+  </div>
+</div>
+
+<div class="intro">
+  <span style="color:#7946c2;font-weight:900;letter-spacing:2px;font-size:11px">
+    READ · THINK · BUILD · WRITE
+  </span>
+  <h2>Every Good Action Counts! ✨</h2>
+  <p>
+    Follow six simple steps to write an open letter.
+    Choose your ideas, build your sentences,
+    and encourage others to be good citizens.
+  </p>
+</div>
+
+<!-- STEP 1 -->
+<section class="card" id="step1">
+
+  <div class="stephead">
+    <span class="stepnum">01</span>
+    <h2>Read the situation 🎯</h2>
+  </div>
+
+  <div class="situation">
+    <strong>Situation of Integration — Writing Task</strong>
+    <br><br>
+    Your school is organising a
+    <strong>Good Citizenship Week</strong>.
+
+    You notice that some people throw litter
+    in the streets, damage public places,
+    and do not help their neighbours.
+
+    <br><br>
+
+    You want to encourage your schoolmates
+    to become responsible citizens.
+
+    <br><br>
+
+    <strong>
+      Write an open letter (about 70–90 words)
+    </strong>
+    for your school noticeboard.
+
+    Explain why good citizenship is important,
+    suggest three positive actions,
+    and encourage your schoolmates
+    to participate.
+
+    <br><br>
+
+    <strong>Use:</strong>
+    a greeting, the problem,
+    suggestions, and a polite ending.
+  </div>
+
+  <div class="arabic">
+    الوضعية: تنظم مدرستك أسبوع المواطنة الصالحة.
+    لاحظت أن بعض الأشخاص يرمون النفايات
+    ويتلفون الأماكن العامة ولا يساعدون الآخرين.
+    اكتب رسالة مفتوحة لتشجيع زملائك على
+    أن يكونوا مواطنين صالحين، مع تقديم
+    ثلاثة اقتراحات وخاتمة مناسبة.
+  </div>
+
+  <div class="task">
+    <h3>🔎 Check that you understand</h3>
+
+    <p><strong>1.</strong> Who will read your letter?</p>
+
+    <label class="choice">
+      <input type="radio" name="q1" value="1">
+      Your schoolmates
+    </label>
+    <label class="choice">
+      <input type="radio" name="q1" value="0">
+      Tourists
+    </label>
+
+    <p><strong>2.</strong> Why are you writing?</p>
+
+    <label class="choice">
+      <input type="radio" name="q2" value="0">
+      To describe a famous monument
+    </label>
+    <label class="choice">
+      <input type="radio" name="q2" value="1">
+      To encourage responsible citizenship
+    </label>
+
+    <button class="primary" onclick="checkSituation()">
+      ✓ Check my answers
+    </button>
+    <div class="feedback" id="f1" aria-live="polite"></div>
+  </div>
+
+</section>
+
+<!-- STEP 2 -->
+<section class="card" id="step2">
+
+  <div class="stephead">
+    <span class="stepnum">02</span>
+    <h2>Discover the letter 📨</h2>
+  </div>
+
+  <p class="lead">
+    An open letter has different parts.
+    Discover each part through short expressions.
+    You do not need to read a complete letter.
+  </p>
+
+  <div class="grid2">
+
+    <div class="task">
+      <h3>💌 Greeting</h3>
+      <p>Begin by addressing your readers.</p>
+      <div class="letter-part">
+        <span class="tag">GREETING</span>
+        Dear schoolmates,
+      </div>
+      <div class="arabic">التحية الافتتاحية</div>
+    </div>
+
+    <div class="task">
+      <h3>⚠️ Problem</h3>
+      <p>Explain what needs to change.</p>
+      <div class="letter-part">
+        <span class="tag">PROBLEM</span>
+        Our streets need to be cleaner.
+      </div>
+      <div class="arabic">عرض المشكلة</div>
+    </div>
+
+    <div class="task">
+      <h3>🤝 Suggestions</h3>
+      <p>Tell people what they can do.</p>
+      <div class="letter-part">
+        <span class="tag">SUGGESTION</span>
+        We should put litter in bins.
+      </div>
+      <div class="arabic">تقديم الاقتراحات</div>
+    </div>
+
+    <div class="task">
+      <h3>🌟 Ending</h3>
+      <p>Encourage people to take action.</p>
+      <div class="letter-part">
+        <span class="tag">ENDING</span>
+        Let's work together!
+      </div>
+      <div class="arabic">التشجيع والخاتمة</div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    ✨ Remember the order:
+    <strong>
+      Greeting → Problem → Suggestions →
+      Call to action → Sign-off
+    </strong>
+  </div>
+
+  <div class="task">
+    <h3>🧩 Match each expression to its job</h3>
+
+    <div class="row">
+      <label for="m1">“Dear friends,”</label>
+      <select id="m1">
+        <option value="">Choose...</option>
+        <option value="end">Ending</option>
+        <option value="greeting">Greeting</option>
+        <option value="problem">Problem</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="m2">“Our parks are dirty.”</label>
+      <select id="m2">
+        <option value="">Choose...</option>
+        <option value="problem">Problem</option>
+        <option value="greeting">Greeting</option>
+        <option value="suggestion">Suggestion</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="m3">“We should plant trees.”</label>
+      <select id="m3">
+        <option value="">Choose...</option>
+        <option value="end">Ending</option>
+        <option value="suggestion">Suggestion</option>
+        <option value="problem">Problem</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="m4">“Please join our campaign!”</label>
+      <select id="m4">
+        <option value="">Choose...</option>
+        <option value="greeting">Greeting</option>
+        <option value="end">Call to action</option>
+        <option value="problem">Problem</option>
+      </select>
+    </div>
+
+    <button class="primary" onclick="checkParts()">
+      ✓ Check the parts
+    </button>
+    <div class="feedback" id="f2" aria-live="polite"></div>
+  </div>
+
+</section>
+
+<!-- STEP 3 -->
+<section class="card" id="step3">
+
+  <div class="stephead">
+    <span class="stepnum">03</span>
+    <h2>Collect easy words 🧺</h2>
+  </div>
+
+  <p class="lead">
+    Look at the pictures.
+    Think about actions that make
+    our school and neighbourhood better.
+  </p>
+
+  <div class="image-pair">
+    <img
+      src="https://i.imgur.com/flUcXvM.jpeg"
+      alt="Pupils taking part in community activities"
+      loading="lazy"
+    >
+    <img
+      src="https://i.imgur.com/2xysJ0c.jpeg"
+      alt="Responsible citizenship and community service"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="grid2">
+    <div class="task">
+      <h3>🌍 Our Community</h3>
+      <div class="wordbank">
+        <span>streets</span>
+        <span>parks</span>
+        <span>school</span>
+        <span>neighbours</span>
+        <span>environment</span>
+        <span>public places</span>
+      </div>
+    </div>
+
+    <div class="task">
+      <h3>🤝 Good Actions</h3>
+      <div class="wordbank">
+        <span>clean</span>
+        <span>help</span>
+        <span>respect</span>
+        <span>volunteer</span>
+        <span>plant</span>
+        <span>protect</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="task">
+    <h3>💡 Choose three good actions</h3>
+
+    <label class="choice">
+      <input type="checkbox" class="idea">
+      Keep our streets clean.
+    </label>
+    <label class="choice">
+      <input type="checkbox" class="idea">
+      Plant trees and flowers.
+    </label>
+    <label class="choice">
+      <input type="checkbox" class="idea">
+      Help elderly neighbours.
+    </label>
+    <label class="choice">
+      <input type="checkbox" class="idea">
+      Respect public places.
+    </label>
+    <label class="choice">
+      <input type="checkbox" class="idea">
+      Volunteer in community activities.
+    </label>
+
+    <button class="primary" onclick="checkIdeas()">
+      ✓ Save my ideas
+    </button>
+    <div class="feedback" id="f3" aria-live="polite"></div>
+  </div>
+
+  <div class="arabic">
+    مفردات مفيدة:
+    citizen = مواطن،
+    citizenship = المواطنة،
+    volunteer = يتطوع،
+    environment = البيئة،
+    respect = يحترم،
+    protect = يحمي.
+  </div>
+
+  <p class="mini">
+    📖 Use the floating mini-dictionary
+    to find more English–Arabic words.
+  </p>
+
+</section>
+
+<!-- STEP 4 -->
+<section class="card" id="step4">
+
+  <div class="stephead">
+    <span class="stepnum">04</span>
+    <h2>Build your sentences 🧱</h2>
+  </div>
+
+  <p class="lead">
+    Choose an expression in each box.
+    Read your new sentence carefully.
+    Then use your sentences to write your letter.
+  </p>
+
+  <div class="note">
+    💡 Useful language:
+    <strong>
+      We should + verb
+    </strong>
+    and
+    <strong>
+      We must + verb
+    </strong>
+    help us give advice.
+    <div class="arabic">
+      نستعمل We should و We must متبوعتين بالفعل
+      في صيغته الأصلية لتقديم النصائح.
+    </div>
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 1 — Explain the problem ⚠️</h3>
+    <label for="problem">Choose a problem.</label>
+    <select id="problem" onchange="updatePreview()">
+      <option value="Some people throw litter in our streets.">
+        Some people throw litter in our streets.
+      </option>
+      <option value="Some public places are dirty.">
+        Some public places are dirty.
+      </option>
+      <option value="Our neighbourhood needs more care.">
+        Our neighbourhood needs more care.
+      </option>
+    </select>
+    <div class="output" id="out1"></div>
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 2 — Give your opinion 💬</h3>
+    <label for="opinion">Choose your opinion.</label>
+    <select id="opinion" onchange="updatePreview()">
+      <option value="I believe that everyone should be a good citizen.">
+        I believe that everyone should be a good citizen.
+      </option>
+      <option value="In my opinion, we must protect our community.">
+        In my opinion, we must protect our community.
+      </option>
+      <option value="I think we should all help our neighbourhood.">
+        I think we should all help our neighbourhood.
+      </option>
+    </select>
+    <div class="output" id="out2"></div>
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 3 — First suggestion 🌱</h3>
+    <label for="action1">Choose an action.</label>
+    <select id="action1" onchange="updatePreview()">
+      <option value="keep our streets clean">
+        keep our streets clean
+      </option>
+      <option value="put litter in bins">
+        put litter in bins
+      </option>
+      <option value="plant trees in our neighbourhood">
+        plant trees in our neighbourhood
+      </option>
+    </select>
+    <div class="output" id="out3"></div>
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 4 — Second suggestion 🤝</h3>
+    <label for="action2">Choose another action.</label>
+    <select id="action2" onchange="updatePreview()">
+      <option value="help elderly neighbours">
+        help elderly neighbours
+      </option>
+      <option value="respect public places">
+        respect public places
+      </option>
+      <option value="volunteer in community activities">
+        volunteer in community activities
+      </option>
+    </select>
+    <div class="output" id="out4"></div>
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 5 — Third suggestion 💜</h3>
+    <label for="action3">Choose a third action.</label>
+    <select id="action3" onchange="updatePreview()">
+      <option value="work together to protect our environment">
+        work together to protect our environment
+      </option>
+      <option value="take care of our school">
+        take care of our school
+      </option>
+      <option value="organise a clean-up campaign">
+        organise a clean-up campaign
+      </option>
+    </select>
+    <div class="output" id="out5"></div>
+  </div>
+
+  <div class="builder">
+    <h3>Sentence 6 — Encourage your readers 🌟</h3>
+    <label for="ending">Choose an ending.</label>
+    <select id="ending" onchange="updatePreview()">
+      <option value="Please join us! Together, we can make a difference.">
+        Please join us! Together, we can make a difference.
+      </option>
+      <option value="Let's work together for a cleaner and better community.">
+        Let's work together for a cleaner and better community.
+      </option>
+      <option value="Be a good citizen today and help build a better tomorrow!">
+        Be a good citizen today and help build a better tomorrow!
+      </option>
+    </select>
+    <div class="output" id="out6"></div>
+  </div>
+
+  <button class="primary" onclick="finishBuilder()">
+    ✓ My sentences are ready!
+  </button>
+  <div class="feedback" id="f4" aria-live="polite"></div>
+
+</section>
+
+<!-- STEP 5 -->
+<section class="card" id="step5">
+
+  <div class="stephead">
+    <span class="stepnum">05</span>
+    <h2>Put it all together ✍️</h2>
+  </div>
+
+  <p class="lead">
+    You are ready to write your open letter!
+    Click <strong>Build my letter</strong>
+    to combine your chosen sentences.
+    Then edit the text to make it your own.
+  </p>
+
+  <div class="tools">
+    <button class="primary" onclick="makeDraft()">
+      ✨ Build my letter
+    </button>
+    <button class="quiet" onclick="saveDraft()">
+      💾 Save my writing
+    </button>
+    <button class="quiet" onclick="loadDraft()">
+      📂 Load saved writing
+    </button>
+  </div>
+
+  <p class="mini">
+    Your sentences give you a starting point.
+    Read your draft and improve it.
+    Aim for 70–90 words.
+  </p>
+
+  <textarea
+    class="finalarea"
+    id="draft"
+    aria-label="My open letter about citizenship"
+    placeholder="Write your open letter here..."
+    oninput="updateWordCount()"
+  ></textarea>
+
+  <div class="status">
+    <span id="wordCount">0 words</span>
+    <span id="lengthAdvice">Aim for 70–90 words.</span>
+  </div>
+
+  <div class="task">
+    <h3>💡 Need another sentence?</h3>
+    <p>Use one of these ideas to improve your letter:</p>
+    <div class="wordbank">
+      <span>Every small action is important.</span>
+      <span>A good citizen respects others.</span>
+      <span>Our community is our responsibility.</span>
+      <span>Helping others makes us happy.</span>
+    </div>
+  </div>
+
+  <div class="arabic">
+    اقرأ رسالتك وأضف أفكارك الخاصة.
+    تأكد من وجود التحية والمشكلة
+    وثلاثة اقتراحات والخاتمة.
+  </div>
+
+  <button class="primary" onclick="finishDraft()">
+    ✓ My letter is ready
+  </button>
+  <div class="feedback" id="f5" aria-live="polite"></div>
+
+</section>
+
+<!-- STEP 6 -->
+<section class="card" id="step6">
+
+  <div class="stephead">
+    <span class="stepnum">06</span>
+    <h2>Check & celebrate! 🏆</h2>
+  </div>
+
+  <p class="lead">
+    Read your letter again.
+    Tick each box only if your writing includes it.
+  </p>
+
+  <div class="checks">
+    <label>
+      <input type="checkbox" class="review">
+      I wrote a greeting.
+    </label>
+    <label>
+      <input type="checkbox" class="review">
+      I explained the problem.
+    </label>
+    <label>
+      <input type="checkbox" class="review">
+      I gave three suggestions.
+    </label>
+    <label>
+      <input type="checkbox" class="review">
+      I used First, In addition, and Finally.
+    </label>
+    <label>
+      <input type="checkbox" class="review">
+      I encouraged my readers and wrote a sign-off.
+    </label>
+    <label>
+      <input type="checkbox" class="review">
+      I checked capitals, spelling and punctuation.
+    </label>
+  </div>
+
+  <div class="tools">
+    <button class="primary" onclick="finishReview()">
+      🏅 Check my work
+    </button>
+    <button class="secondary" onclick="printLetter()">
+      🖨️ Print my letter
+    </button>
+    <button class="quiet" onclick="resetLesson()">
+      ↺ Start again
+    </button>
+  </div>
+
+  <div class="feedback" id="f6" aria-live="polite"></div>
+
+  <p class="mini">
+    The checklist helps you review your writing.
+    It does not automatically correct grammar or spelling.
+  </p>
+
+</section>
+
+</main>
+
+<footer class="footer">
+  <strong>💜 MS4 Writing Studio — Lesson 03</strong>
+  <p>Good citizens. Good actions. A better community.</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- MINI DICTIONARY -->
+<button
+  class="dict-fab"
+  id="dictOpen"
+  type="button"
+  aria-label="Open English Arabic mini dictionary"
+>
+  📖
+  <span>Mini Dictionary · قاموس</span>
+</button>
+
+<div
+  class="dict-overlay"
+  id="dictOverlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="dictTitle"
+  aria-hidden="true"
+>
+  <div class="dict-panel">
+    <div class="dict-header">
+      <h2 id="dictTitle">
+        📖 English–Arabic Mini Dictionary
+      </h2>
+      <button
+        class="dict-close"
+        id="dictClose"
+        type="button"
+        aria-label="Close dictionary"
+      >×</button>
+    </div>
+    <div class="dict-body">
+      <p class="dict-note" lang="ar" dir="rtl">
+        ابحث عن كلمة أو عبارة بالإنجليزية أو العربية.
+      </p>
+      <input
+        id="dictSearch"
+        class="dict-search"
+        type="search"
+        placeholder="Search a word / ابحث عن كلمة"
+        aria-label="Search dictionary"
+      >
+      <div class="dict-list" id="dictList"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+const $ = id => document.getElementById(id);
+const done = new Set();
+
+/* PROGRESS */
+function complete(n){
+  done.add(n);
+  $("progressText").textContent =
+    `${done.size} / 6 steps completed`;
+  $("progressFill").style.width =
+    (done.size / 6 * 100) + "%";
+}
+
+function feedback(n,good,message){
+  const el = $("f"+n);
+  el.className = "feedback " + (good ? "ok" : "bad");
+  el.textContent = message;
+  if(good) complete(n);
+}
+
+/* STEP 1 */
+function checkSituation(){
+  const a = document.querySelector('input[name="q1"]:checked');
+  const b = document.querySelector('input[name="q2"]:checked');
+  const correct = a?.value==="1" && b?.value==="1";
+
+  feedback(
+    1,correct,
+    correct
+      ? "🌟 Excellent! You understand the writing task."
+      : "Try again. Think about who will read your letter and why."
+  );
+}
+
+/* STEP 2 */
+function checkParts(){
+  const expected=["greeting","problem","suggestion","end"];
+  const correct=expected.every(
+    (answer,index)=>$("m"+(index+1)).value===answer
+  );
+  feedback(
+    2,correct,
+    correct
+      ? "🌟 Great! You know the parts of an open letter."
+      : "Think about the purpose of each expression and try again."
+  );
+}
+
+/* STEP 3 */
+function checkIdeas(){
+  const count=document.querySelectorAll(".idea:checked").length;
+  feedback(
+    3,count>=3,
+    count>=3
+      ? "🌟 Great! You chose at least three good actions."
+      : "Choose at least three positive actions."
+  );
+}
+
+/* STEP 4 */
+function val(id){return $(id).value}
+
+function sentences(){
+  return [
+    val("problem"),
+    val("opinion"),
+    `First, we should ${val("action1")}.`,
+    `In addition, we must ${val("action2")}.`,
+    `Finally, we can ${val("action3")}.`,
+    val("ending")
+  ];
+}
+
+function updatePreview(){
+  sentences().forEach((sentence,index)=>{
+    $("out"+(index+1)).textContent=sentence;
+  });
+}
+
+function finishBuilder(){
+  feedback(
+    4,true,
+    "🌟 Excellent! You built six clear sentences."
+  );
+}
+
+/* STEP 5 */
+function makeDraft(){
+  if(
+    val("draft").trim() &&
+    !confirm("Replace your current writing with a new draft?")
+  ) return;
+
+  const s=sentences();
+
+  $("draft").value=[
+    "Dear schoolmates,",
+    "",
+    s[0]+" "+s[1],
+    s[2]+" "+s[3]+" "+s[4],
+    "Every small action is important.",
+    s[5],
+    "",
+    "Yours sincerely,",
+    "A responsible pupil"
+  ].join("\n");
+
+  updateWordCount();
+  toast("✨ Your draft is ready. Now improve it!");
+}
+
+function countWords(text){
+  return text.trim() ? text.trim().split(/\s+/).length : 0;
+}
+
+function updateWordCount(){
+  const n=countWords(val("draft"));
+  $("wordCount").textContent=n+" words";
+  $("lengthAdvice").textContent=
+    n<70
+      ? "Add more detail (aim for 70–90 words)."
+      : n>90
+        ? "Make your letter shorter (aim for 70–90 words)."
+        : "🌟 Good length!";
+}
+
+function finishDraft(){
+  const n=countWords(val("draft"));
+  feedback(
+    5,n>=40,
+    n>=40
+      ? "🌟 Good! Read and improve your letter."
+      : "Write your letter first. Use the sentence builder for help."
+  );
+}
+
+/* STEP 6 */
+function finishReview(){
+  const checked=document.querySelectorAll(".review:checked").length;
+  const ready=checked===6 && countWords(val("draft"))>=40;
+
+  feedback(
+    6,ready,
+    ready
+      ? "🏆 Well done! You have reviewed your open letter."
+      : "Read your letter carefully and tick all six points when they are true."
+  );
+}
+
+/* NOTIFICATIONS */
+function toast(message){
+  const el=$("toast");
+  el.textContent=message;
+  el.classList.add("show");
+  clearTimeout(window.toastTimer);
+  window.toastTimer=setTimeout(
+    ()=>el.classList.remove("show"),2800
+  );
+}
+
+/* SAVE AND LOAD */
+function saveDraft(){
+  try{
+    localStorage.setItem("ms4-s3-writing-lesson3",val("draft"));
+    toast("💾 Your letter was saved on this device.");
+  }catch(e){
+    toast("Saving is unavailable. Copy your writing to keep it.");
+  }
+}
+
+function loadDraft(){
+  try{
+    const saved=localStorage.getItem("ms4-s3-writing-lesson3");
+    if(saved===null){
+      toast("No saved letter found.");
+      return;
+    }
+    if(
+      val("draft").trim() &&
+      !confirm("Replace your current writing with the saved letter?")
+    ) return;
+
+    $("draft").value=saved;
+    updateWordCount();
+    toast("📂 Saved letter loaded.");
+  }catch(e){
+    toast("Loading is unavailable.");
+  }
+}
+
+/* PRINT */
+function printLetter(){
+  const text=val("draft").trim();
+
+  if(!text){
+    toast("Write your letter first.");
+    return;
+  }
+
+  const printWindow=window.open(
+    "","_blank","width=800,height=700"
+  );
+
+  if(!printWindow){
+    toast("Please allow pop-ups to print.");
+    return;
+  }
+
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>My Open Letter</title>
+      <style>
+        body{
+          font-family:Arial,sans-serif;
+          padding:45px;
+          line-height:1.9;
+        }
+        h1{color:#60359e;font-size:24px}
+        article{white-space:pre-wrap;font-size:17px}
+      </style>
+    </head>
+    <body>
+      <h1>My Open Letter — Be a Good Citizen!</h1>
+      <article id="printContent"></article>
+    </body>
+    </html>
+  `);
+
+  printWindow.document.close();
+  printWindow.document.getElementById("printContent").textContent=text;
+  printWindow.focus();
+
+  setTimeout(()=>printWindow.print(),300);
+}
+
+/* RESET */
+function resetLesson(){
+  if(!confirm("Start again? Your current unsaved writing will be cleared.")){
+    return;
+  }
+
+  done.clear();
+  $("progressText").textContent="0 / 6 steps completed";
+  $("progressFill").style.width="0%";
+
+  document.querySelectorAll(
+    'input[type="radio"],input[type="checkbox"]'
+  ).forEach(input=>input.checked=false);
+
+  document.querySelectorAll("select").forEach(
+    select=>select.selectedIndex=0
+  );
+
+  for(let i=1;i<=6;i++){
+    $("f"+i).textContent="";
+    $("f"+i).className="feedback";
+  }
+
+  $("draft").value="";
+  updatePreview();
+  updateWordCount();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ENGLISH–ARABIC DICTIONARY */
+const dictionaryEntries=[
+  ["citizen","مواطن"],
+  ["citizenship","مواطنة"],
+  ["good citizen","مواطن صالح"],
+  ["responsible","مسؤول"],
+  ["responsibility","مسؤولية"],
+  ["community","مجتمع"],
+  ["neighbourhood","حي"],
+  ["neighbour","جار"],
+  ["neighbours","جيران"],
+  ["schoolmates","زملاء المدرسة"],
+  ["environment","بيئة"],
+  ["nature","طبيعة"],
+  ["street","شارع"],
+  ["streets","شوارع"],
+  ["park","حديقة"],
+  ["public places","أماكن عامة"],
+  ["public property","ممتلكات عامة"],
+  ["litter","نفايات"],
+  ["rubbish","قمامة"],
+  ["bin","سلة مهملات"],
+  ["recycling","إعادة التدوير"],
+  ["pollution","تلوث"],
+  ["clean","نظيف / ينظف"],
+  ["dirty","متسخ"],
+  ["tree","شجرة"],
+  ["trees","أشجار"],
+  ["flowers","زهور"],
+  ["plant","يزرع"],
+  ["protect","يحمي"],
+  ["respect","يحترم"],
+  ["help","يساعد"],
+  ["share","يشارك / يتقاسم"],
+  ["volunteer","يتطوع"],
+  ["volunteering","تطوع"],
+  ["organise","ينظم"],
+  ["participate","يشارك"],
+  ["join","ينضم"],
+  ["campaign","حملة"],
+  ["clean-up campaign","حملة تنظيف"],
+  ["good citizenship week","أسبوع المواطنة الصالحة"],
+  ["elderly people","كبار السن"],
+  ["elderly neighbours","الجيران المسنون"],
+  ["children","أطفال"],
+  ["kindness","لطف"],
+  ["cooperation","تعاون"],
+  ["solidarity","تضامن"],
+  ["honesty","صدق / أمانة"],
+  ["respect others","يحترم الآخرين"],
+  ["keep clean","يحافظ على النظافة"],
+  ["throw litter","يرمي النفايات"],
+  ["put litter in bins","يضع النفايات في السلال"],
+  ["make a difference","يحدث فرقًا"],
+  ["work together","يعمل مع الآخرين"],
+  ["take care of","يعتني بـ"],
+  ["open letter","رسالة مفتوحة"],
+  ["greeting","تحية افتتاحية"],
+  ["problem","مشكلة"],
+  ["suggestion","اقتراح"],
+  ["ending","خاتمة"],
+  ["sign-off","صيغة الختام"],
+  ["school noticeboard","لوحة إعلانات المدرسة"],
+  ["dear schoolmates","زملائي الأعزاء"],
+  ["yours sincerely","مع خالص التحية"],
+  ["we should","ينبغي علينا"],
+  ["we must","يجب علينا"],
+  ["we can","يمكننا"],
+  ["I believe","أعتقد"],
+  ["in my opinion","في رأيي"],
+  ["first","أولًا"],
+  ["in addition","بالإضافة إلى ذلك"],
+  ["finally","أخيرًا"],
+  ["because","لأن"],
+  ["please","رجاءً"],
+  ["together","معًا"],
+  ["everyone","الجميع"],
+  ["better","أفضل"],
+  ["important","مهم"],
+  ["future","مستقبل"]
+];
+
+function renderDictionary(){
+  const query=$("dictSearch").value.trim().toLowerCase();
+  const list=$("dictList");
+  list.replaceChildren();
+
+  let count=0;
+
+  for(const [english,arabic] of dictionaryEntries){
+    if(
+      !english.toLowerCase().includes(query) &&
+      !arabic.includes(query)
+    ) continue;
+
+    count++;
+
+    const row=document.createElement("div");
+    row.className="dict-entry";
+
+    const en=document.createElement("b");
+    en.textContent=english;
+
+    const ar=document.createElement("span");
+    ar.lang="ar";
+    ar.textContent=arabic;
+
+    row.append(en,ar);
+    list.appendChild(row);
+  }
+
+  if(count===0){
+    const empty=document.createElement("p");
+    empty.className="dict-note";
+    empty.textContent="No matching word / لا توجد نتائج";
+    list.appendChild(empty);
+  }
+}
+
+let returnFocus=null;
+
+function openDictionary(){
+  returnFocus=document.activeElement;
+  $("dictOverlay").classList.add("open");
+  $("dictOverlay").setAttribute("aria-hidden","false");
+  document.body.style.overflow="hidden";
+  renderDictionary();
+  $("dictSearch").focus();
+}
+
+function closeDictionary(){
+  $("dictOverlay").classList.remove("open");
+  $("dictOverlay").setAttribute("aria-hidden","true");
+  document.body.style.overflow="";
+  if(returnFocus) returnFocus.focus();
+}
+
+$("dictOpen").addEventListener("click",openDictionary);
+$("dictClose").addEventListener("click",closeDictionary);
+$("dictSearch").addEventListener("input",renderDictionary);
+
+$("dictOverlay").addEventListener("click",event=>{
+  if(event.target===$("dictOverlay")){
+    closeDictionary();
+  }
+});
+
+document.addEventListener("keydown",event=>{
+  if(!$("dictOverlay").classList.contains("open")) return;
+
+  if(event.key==="Escape"){
+    closeDictionary();
+    return;
+  }
+
+  if(event.key==="Tab"){
+    const first=$("dictClose");
+    const last=$("dictSearch");
+
+    if(event.shiftKey && document.activeElement===first){
+      event.preventDefault();
+      last.focus();
+    }else if(!event.shiftKey && document.activeElement===last){
+      event.preventDefault();
+      first.focus();
+    }
+  }
+});
+
+/* INITIALISE */
+updatePreview();
+updateWordCount();
+renderDictionary();
+</script>
+
+</body>
+</html>

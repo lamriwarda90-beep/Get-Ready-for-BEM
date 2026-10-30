@@ -1,0 +1,2531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#8054c9">
+
+<title>Grammar Expedition | MS4 Sequence 3</title>
+
+<meta name="description"
+content="Explore four grammar checkpoints for MS4 Sequence 3: Imperative, Conditional Type 1, Gerunds and Discourse Markers.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* ============================================
+   SEQUENCE 3 — LIGHT PURPLE DESIGN SYSTEM
+============================================ */
+
+:root {
+
+    --purple-dark: #281747;
+    --purple-deep: #493078;
+    --purple: #8054c9;
+    --purple-bright: #a17ce2;
+
+    --lavender: #d7c2ff;
+    --lavender-light: #ebdfff;
+    --lavender-pale: #f7f1ff;
+
+    --white: #ffffff;
+    --muted: rgba(255,255,255,.82);
+
+    --blue: #b4e0ff;
+    --pink: #ffc1df;
+    --green: #baf1d8;
+    --orange: #ffdbb6;
+
+    --border: rgba(255,255,255,.25);
+
+    --shadow: 0 25px 65px rgba(48,24,87,.20);
+
+}
+
+/* ============================================
+   RESET
+============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    color: white;
+
+    overflow-x: hidden;
+
+    /* LIGHTER SEQUENCE 3 PURPLE BACKGROUND */
+
+    background:
+
+        radial-gradient(
+            circle at 12% 5%,
+            rgba(230,209,255,.55),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 88% 15%,
+            rgba(255,226,251,.25),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(167,124,255,.35),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            145deg,
+            #a77de7 0%,
+            #9165d8 35%,
+            #7347b7 65%,
+            #493078 100%
+        );
+
+}
+
+/* SUBTLE DOT PATTERN */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    z-index: 0;
+
+    opacity: .18;
+
+    background-image:
+        radial-gradient(
+            rgba(255,255,255,.3) 1px,
+            transparent 1px
+        );
+
+    background-size: 30px 30px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 80%
+        );
+
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+h1, h2, h3 {
+    font-family: "Sora", sans-serif;
+}
+
+.container {
+    width: min(1180px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+::selection {
+    background: var(--lavender-light);
+    color: var(--purple-dark);
+}
+
+a:focus-visible,
+button:focus-visible {
+
+    outline: 3px solid var(--lavender-light);
+    outline-offset: 5px;
+
+}
+
+/* ============================================
+   SCROLL PROGRESS
+============================================ */
+
+.scroll-progress {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    height: 4px;
+    width: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--lavender-light),
+            white
+        );
+
+    z-index: 1000;
+
+}
+
+/* ============================================
+   NAVIGATION
+============================================ */
+
+.site-header {
+    position: relative;
+    z-index: 20;
+}
+
+.navbar {
+
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+.brand {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+
+    font-family: "Sora", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+
+    letter-spacing: -.5px;
+
+}
+
+.brand-mark {
+
+    position: relative;
+
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(255,255,255,.16);
+    border: 1px solid rgba(255,255,255,.28);
+
+    border-radius: 14px;
+
+    font-size: 16px;
+
+    backdrop-filter: blur(12px);
+
+}
+
+.brand-mark::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -3px;
+    right: -3px;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: var(--lavender-light);
+
+    border: 2px solid var(--purple);
+
+}
+
+.brand-accent {
+    color: var(--lavender-light);
+}
+
+.nav-right {
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+.nav-link {
+
+    font-size: 12px;
+    font-weight: 800;
+
+    color: rgba(255,255,255,.88);
+
+    transition: .25s;
+
+}
+
+.nav-link:hover {
+    color: var(--lavender-light);
+}
+
+.back-button {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 18px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.28);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    backdrop-filter: blur(12px);
+
+    transition: .3s;
+
+}
+
+.back-button:hover {
+
+    background: white;
+    color: var(--purple-dark);
+
+    transform: translateY(-2px);
+
+}
+
+/* ============================================
+   HERO
+============================================ */
+
+.hero {
+
+    position: relative;
+
+    padding: 85px 0 95px;
+
+    text-align: center;
+
+}
+
+.hero-inner {
+
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+    margin: auto;
+
+}
+
+.eyebrow {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 28px;
+
+    color: var(--lavender-light);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+.eyebrow-line {
+
+    width: 28px;
+    height: 3px;
+
+    background: var(--lavender-light);
+    border-radius: 10px;
+
+}
+
+.hero h1 {
+
+    font-size: clamp(48px, 7vw, 88px);
+
+    line-height: 1.12;
+    letter-spacing: -4px;
+
+    font-weight: 800;
+
+}
+
+.hero h1 span {
+    color: var(--lavender-light);
+}
+
+.hero-description {
+
+    max-width: 680px;
+
+    margin: 30px auto 0;
+
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.95;
+
+}
+
+.hero-description strong {
+    color: white;
+}
+
+.hero-tags {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+}
+
+.hero-tag {
+
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.26);
+
+    font-size: 11px;
+    font-weight: 800;
+
+}
+
+.hero-button {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-top: 35px;
+
+    padding: 17px 26px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--lavender-pale),
+            var(--lavender-light)
+        );
+
+    color: var(--purple-dark);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    box-shadow:
+        0 15px 35px rgba(48,24,87,.18);
+
+    transition: .3s;
+
+}
+
+.hero-button:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 20px 45px rgba(48,24,87,.28);
+
+}
+
+/* ============================================
+   JOURNEY SECTION
+============================================ */
+
+.journey {
+
+    position: relative;
+
+    padding: 85px 0 110px;
+
+    border-top: 1px solid rgba(255,255,255,.18);
+
+}
+
+.section-heading {
+
+    max-width: 780px;
+
+    margin: 0 auto 75px;
+
+    text-align: center;
+
+}
+
+.section-kicker {
+
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--lavender-light);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+.section-title {
+
+    font-size: clamp(34px, 4.5vw, 55px);
+
+    line-height: 1.2;
+    letter-spacing: -2px;
+
+}
+
+.section-title span {
+    color: var(--lavender-light);
+}
+
+.section-description {
+
+    max-width: 620px;
+
+    margin: 20px auto 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.9;
+
+}
+
+/* ============================================
+   GRAMMAR ROADMAP
+============================================ */
+
+.roadmap {
+
+    position: relative;
+
+    max-width: 1050px;
+    margin: auto;
+
+}
+
+/* VERTICAL PATH */
+
+.roadmap::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 20px;
+    bottom: 20px;
+
+    width: 2px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(235,223,255,.15),
+            var(--lavender-light),
+            rgba(235,223,255,.15)
+        );
+
+    opacity: .8;
+
+}
+
+/* ============================================
+   CHECKPOINT ROW
+============================================ */
+
+.checkpoint {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1fr 80px 1fr;
+
+    align-items: center;
+
+    margin-bottom: 45px;
+
+}
+
+.checkpoint:last-child {
+    margin-bottom: 0;
+}
+
+.checkpoint.left .checkpoint-card {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.checkpoint.right .checkpoint-card {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+/* ============================================
+   CENTRAL NODE
+============================================ */
+
+.checkpoint-node {
+
+    position: relative;
+    z-index: 3;
+
+    grid-column: 2;
+    grid-row: 1;
+
+    width: 56px;
+    height: 56px;
+
+    margin: auto;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--lavender-light);
+
+    color: var(--purple-dark);
+
+    border: 5px solid #7347b7;
+
+    box-shadow:
+        0 0 0 5px rgba(235,223,255,.2),
+        0 10px 25px rgba(48,24,87,.25);
+
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+
+}
+
+/* ============================================
+   CHECKPOINT CARD
+============================================ */
+
+.checkpoint-card {
+
+    --accent: var(--lavender-light);
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 320px;
+
+    padding: 30px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.21),
+            rgba(255,255,255,.09)
+        );
+
+    border: 1px solid rgba(255,255,255,.28);
+
+    box-shadow:
+        0 18px 45px rgba(48,24,87,.16);
+
+    overflow: hidden;
+
+    transition: .35s;
+
+}
+
+.checkpoint-card:hover {
+
+    transform: translateY(-7px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.28),
+            rgba(255,255,255,.13)
+        );
+
+    border-color: rgba(255,255,255,.5);
+
+    box-shadow:
+        0 30px 60px rgba(48,24,87,.25);
+
+}
+
+/* TOP ACCENT */
+
+.checkpoint-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: var(--accent);
+
+}
+
+/* DECORATIVE CIRCLE */
+
+.checkpoint-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -80px;
+    right: -80px;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    opacity: .13;
+
+    transition: .4s;
+
+    pointer-events: none;
+
+}
+
+.checkpoint-card:hover::after {
+    transform: scale(1.5);
+}
+
+/* ============================================
+   CARD CONTENT
+============================================ */
+
+.card-top {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+}
+
+.card-number {
+
+    color: var(--accent);
+
+    font-family: "Sora", sans-serif;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+.card-label {
+
+    color: rgba(255,255,255,.78);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-align: right;
+
+}
+
+.checkpoint-card h3 {
+
+    margin-top: 28px;
+
+    font-size: clamp(20px, 2.4vw, 25px);
+
+    line-height: 1.35;
+    letter-spacing: -.8px;
+
+}
+
+.checkpoint-card p {
+
+    margin-top: 15px;
+
+    color: rgba(255,255,255,.86);
+
+    font-size: 13px;
+    line-height: 1.85;
+
+}
+
+.formula {
+
+    align-self: flex-start;
+
+    margin-top: 19px;
+
+    padding: 10px 13px;
+
+    border-radius: 9px;
+
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.22);
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1.7;
+
+}
+
+.card-bottom {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: auto;
+    padding-top: 27px;
+
+    color: var(--accent);
+
+    font-size: 12px;
+    font-weight: 800;
+
+}
+
+.card-arrow {
+
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.3);
+
+    color: white;
+
+    font-size: 19px;
+
+    transition: .3s;
+
+}
+
+.checkpoint-card:hover .card-arrow {
+
+    background: var(--accent);
+    color: var(--purple-dark);
+
+    border-color: transparent;
+
+    transform: translateX(4px);
+
+}
+
+/* ============================================
+   CHECKPOINT COLOURS
+============================================ */
+
+.checkpoint-1 {
+    --accent: var(--blue);
+}
+
+.checkpoint-2 {
+    --accent: var(--pink);
+}
+
+.checkpoint-3 {
+    --accent: var(--green);
+}
+
+.checkpoint-4 {
+    --accent: var(--orange);
+}
+
+/* ============================================
+   COMPLETION
+============================================ */
+
+.checkpoint-card.completed {
+    border-color: rgba(186,241,216,.8);
+}
+
+.completed-label {
+
+    display: none;
+
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 14px;
+
+    color: #e1ffef;
+
+    font-size: 11px;
+    font-weight: 800;
+
+}
+
+.checkpoint-card.completed .completed-label {
+    display: inline-flex;
+}
+
+/* ============================================
+   PROGRESS PANEL
+============================================ */
+
+.progress-panel {
+
+    max-width: 700px;
+
+    margin: 65px auto 0;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.26);
+
+    text-align: center;
+
+}
+
+.progress-panel h3 {
+    font-size: 18px;
+}
+
+.progress-panel p {
+
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.7;
+
+}
+
+.progress-count {
+
+    margin-top: 20px;
+
+    font-family: "Sora", sans-serif;
+
+    font-size: 24px;
+    font-weight: 800;
+
+    color: var(--lavender-light);
+
+}
+
+.progress-track {
+
+    width: 100%;
+    height: 9px;
+
+    margin-top: 15px;
+
+    border-radius: 100px;
+
+    background: rgba(48,24,87,.25);
+
+    overflow: hidden;
+
+}
+
+.progress-fill {
+
+    width: 0;
+    height: 100%;
+
+    border-radius: 100px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--lavender-light),
+            white
+        );
+
+    transition: width .5s;
+
+}
+
+.complete-button {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 15px;
+
+    padding: 9px 14px;
+
+    border-radius: 9px;
+
+    border: 1px solid rgba(255,255,255,.28);
+
+    background: rgba(255,255,255,.14);
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+.complete-button:hover {
+    background: rgba(255,255,255,.25);
+}
+
+.complete-button[aria-pressed="true"] {
+
+    background: #e1ffef;
+    color: #145c39;
+
+    border-color: #e1ffef;
+
+}
+
+/* ============================================
+   LEARNING OUTCOMES
+============================================ */
+
+.outcomes {
+    padding: 0 0 115px;
+}
+
+.outcomes-panel {
+
+    position: relative;
+
+    padding: 55px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(235,223,255,.2),
+            rgba(255,255,255,.09)
+        );
+
+    border: 1px solid rgba(255,255,255,.26);
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
+}
+
+.outcomes-panel::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -150px;
+    bottom: -200px;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    pointer-events: none;
+
+}
+
+.outcomes-header {
+
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    max-width: 670px;
+    margin: auto;
+
+}
+
+.outcomes-header h2 {
+
+    font-size: clamp(28px, 3.8vw, 43px);
+
+    letter-spacing: -1.5px;
+    line-height: 1.25;
+
+}
+
+.outcomes-header h2 span {
+    color: var(--lavender-light);
+}
+
+.outcomes-header p {
+
+    margin-top: 17px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.85;
+
+}
+
+.outcomes-grid {
+
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 13px;
+
+    margin-top: 40px;
+
+}
+
+.outcome-item {
+
+    padding: 24px 15px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,.13);
+    border: 1px solid rgba(255,255,255,.22);
+
+    text-align: center;
+
+    transition: .3s;
+
+}
+
+.outcome-item:hover {
+
+    background: rgba(255,255,255,.21);
+    transform: translateY(-4px);
+
+}
+
+.outcome-number {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--lavender-light);
+
+    font-family: "Sora", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+
+}
+
+.outcome-item strong {
+
+    display: block;
+
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+
+}
+
+.outcome-item small {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: rgba(255,255,255,.78);
+
+    font-size: 11px;
+    line-height: 1.6;
+
+}
+
+/* ============================================
+   CLOSING
+============================================ */
+
+.closing {
+
+    padding: 0 0 110px;
+
+    text-align: center;
+
+}
+
+.closing h2 {
+
+    font-size: clamp(33px, 4vw, 48px);
+
+    letter-spacing: -2px;
+    line-height: 1.3;
+
+}
+
+.closing h2 span {
+    color: var(--lavender-light);
+}
+
+.closing p {
+
+    max-width: 600px;
+
+    margin: 20px auto 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.9;
+
+}
+
+.closing-button {
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    padding: 16px 24px;
+
+    border-radius: 12px;
+
+    background: var(--lavender-light);
+
+    color: var(--purple-dark);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    transition: .3s;
+
+}
+
+.closing-button:hover {
+
+    background: white;
+    transform: translateY(-3px);
+
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+
+footer {
+
+    border-top: 1px solid rgba(255,255,255,.2);
+
+    padding: 35px 0;
+
+}
+
+.footer-content {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+}
+
+.footer-brand {
+
+    font-family: "Sora", sans-serif;
+
+    font-size: 13px;
+    font-weight: 800;
+
+}
+
+.footer-brand span {
+    color: var(--lavender-light);
+}
+
+.footer-note {
+
+    color: rgba(255,255,255,.78);
+
+    font-size: 11px;
+    line-height: 1.7;
+
+}
+
+/* ============================================
+   SCROLL REVEAL
+============================================ */
+
+.reveal {
+
+    opacity: 0;
+
+    transform: translateY(24px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+.reveal.visible {
+
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+/* ============================================
+   TABLET
+============================================ */
+
+@media(max-width: 950px) {
+
+    .outcomes-panel {
+        padding: 40px;
+    }
+
+}
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media(max-width: 760px) {
+
+    .container {
+        width: calc(100% - 36px);
+    }
+
+    .navbar {
+        min-height: 76px;
+    }
+
+    .brand {
+        font-size: 13px;
+    }
+
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    .back-button {
+        padding: 11px 13px;
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 60px 0 75px;
+    }
+
+    .hero h1 {
+        font-size: clamp(43px, 10vw, 65px);
+        letter-spacing: -2.5px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-button {
+        width: 100%;
+    }
+
+    .journey {
+        padding: 70px 0 85px;
+    }
+
+    .section-heading {
+        margin-bottom: 55px;
+    }
+
+    .roadmap::before {
+        left: 25px;
+    }
+
+    .checkpoint {
+
+        grid-template-columns: 52px minmax(0, 1fr);
+
+        gap: 15px;
+
+        margin-bottom: 28px;
+
+    }
+
+    .checkpoint-node {
+
+        grid-column: 1;
+        grid-row: 1;
+
+        width: 49px;
+        height: 49px;
+
+        font-size: 12px;
+
+        border-width: 4px;
+
+        align-self: start;
+
+        margin-top: 25px;
+
+    }
+
+    .checkpoint.left .checkpoint-card,
+    .checkpoint.right .checkpoint-card {
+
+        grid-column: 2;
+        grid-row: 1;
+
+    }
+
+    .checkpoint-card {
+
+        min-height: 300px;
+        padding: 25px;
+
+    }
+
+    .checkpoint-card h3 {
+        font-size: 21px;
+    }
+
+    .outcomes {
+        padding-bottom: 80px;
+    }
+
+    .outcomes-panel {
+        padding: 35px 23px;
+    }
+
+    .closing {
+        padding-bottom: 80px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+/* ============================================
+   SMALL PHONES
+============================================ */
+
+@media(max-width: 420px) {
+
+    .brand-text {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-tag {
+        font-size: 10px;
+    }
+
+    .checkpoint-card {
+        padding: 21px;
+    }
+
+    .checkpoint-card h3 {
+        font-size: 19px;
+    }
+
+    .checkpoint-card p {
+        font-size: 12px;
+    }
+
+    .formula {
+        font-size: 10px;
+    }
+
+    .outcomes-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ============================================
+   REDUCED MOTION
+============================================ */
+
+@media(prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ============================================
+     SCROLL PROGRESS
+============================================ -->
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============================================
+     NAVIGATION
+============================================ -->
+
+<header class="site-header">
+
+    <nav class="navbar container" aria-label="Main navigation">
+
+        <a href="MS4.html" class="brand">
+
+            <span class="brand-mark">
+                ES
+            </span>
+
+            <span class="brand-text">
+                MY ENGLISH
+                <span class="brand-accent">SPACE</span>
+            </span>
+
+        </a>
+
+        <div class="nav-right">
+
+            <a href="#journey" class="nav-link">
+                Grammar Checkpoints
+            </a>
+
+            <a href="MS4-Sequence3.html" class="back-button">
+
+                <span>←</span>
+
+                Back to Sequence 3
+
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<main>
+
+<!-- ============================================
+     HERO
+============================================ -->
+
+<section class="hero">
+
+    <div class="container hero-inner">
+
+        <div class="eyebrow">
+
+            <span class="eyebrow-line"></span>
+
+            MS4 / SEQUENCE 03 / GRAMMAR
+
+        </div>
+
+        <h1>
+
+            Your Grammar<br>
+
+            <span>Expedition.</span>
+
+        </h1>
+
+        <p class="hero-description">
+
+            Explore four exciting grammar checkpoints
+            and master the language you need to
+            <strong>give instructions</strong>,
+            <strong>express conditions</strong>,
+            talk about <strong>preferences</strong>,
+            and <strong>connect your ideas</strong>.
+
+            Build your confidence in English while
+            learning about community life and citizenship.
+
+        </p>
+
+        <div class="hero-tags">
+
+            <span class="hero-tag">
+                Citizenship
+            </span>
+
+            <span class="hero-tag">
+                Community
+            </span>
+
+            <span class="hero-tag">
+                Responsibilities
+            </span>
+
+            <span class="hero-tag">
+                Communication
+            </span>
+
+        </div>
+
+        <a href="#journey" class="hero-button">
+
+            Explore the Checkpoints
+
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ============================================
+     GRAMMAR JOURNEY
+============================================ -->
+
+<section class="journey" id="journey">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span class="section-kicker">
+                03 / YOUR LEARNING JOURNEY
+            </span>
+
+            <h2 class="section-title">
+
+                Four Checkpoints.<br>
+
+                <span>One Great Adventure.</span>
+
+            </h2>
+
+            <p class="section-description">
+
+                Move through four carefully designed
+                grammar checkpoints.
+
+                Discover the rules, practise with
+                interactive activities, and learn
+                how to use English to talk about
+                your community, responsibilities
+                and citizenship.
+
+            </p>
+
+        </div>
+
+        <!-- ====================================
+             ROADMAP
+        ===================================== -->
+
+        <div class="roadmap">
+
+            <!-- ================================
+                 CHECKPOINT 01
+            ================================= -->
+
+            <div class="checkpoint right reveal">
+
+                <span class="checkpoint-node">
+                    01
+                </span>
+
+                <div class="checkpoint-card checkpoint-1" data-lesson="1">
+
+                    <div class="card-top">
+
+                        <span class="card-number">
+                            CHECKPOINT 01
+                        </span>
+
+                        <span class="card-label">
+                            INSTRUCTIONS & ADVICE
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        The Imperative
+                    </h3>
+
+                    <p>
+
+                        Learn how to give commands,
+                        instructions, advice and
+                        recommendations.
+
+                        Use English to express civic rules,
+                        promote responsible behaviour,
+                        and encourage positive actions
+                        in your community.
+
+                    </p>
+
+                    <span class="formula">
+
+                        Verb + ...<br>
+                        Don't + verb + ...
+
+                    </span>
+
+                    <a
+                        href="MS4-S3-Grammar-Lesson1.html"
+                        class="card-bottom"
+                    >
+
+                        <span>
+                            Enter Checkpoint 01
+                        </span>
+
+                        <span class="card-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                    <button
+                        class="complete-button"
+                        data-lesson="1"
+                        type="button"
+                        aria-pressed="false"
+                    >
+                        Mark as Completed
+                    </button>
+
+                    <span class="completed-label">
+                        ✓ Checkpoint Completed
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- ================================
+                 CHECKPOINT 02
+            ================================= -->
+
+            <div class="checkpoint left reveal">
+
+                <span class="checkpoint-node">
+                    02
+                </span>
+
+                <div class="checkpoint-card checkpoint-2" data-lesson="2">
+
+                    <div class="card-top">
+
+                        <span class="card-number">
+                            CHECKPOINT 02
+                        </span>
+
+                        <span class="card-label">
+                            REAL CONDITIONS
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Conditional Type 1
+                    </h3>
+
+                    <p>
+
+                        Learn how to connect a real
+                        condition with a possible result.
+
+                        Practise the Present Simple
+                        with the Future Simple
+                        and the Imperative to express
+                        consequences and give advice.
+
+                    </p>
+
+                    <span class="formula">
+
+                        If + Present Simple, will + verb<br>
+                        If + Present Simple, Imperative
+
+                    </span>
+
+                    <a
+                        href="MS4-S3-Grammar-Lesson2.html"
+                        class="card-bottom"
+                    >
+
+                        <span>
+                            Enter Checkpoint 02
+                        </span>
+
+                        <span class="card-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                    <button
+                        class="complete-button"
+                        data-lesson="2"
+                        type="button"
+                        aria-pressed="false"
+                    >
+                        Mark as Completed
+                    </button>
+
+                    <span class="completed-label">
+                        ✓ Checkpoint Completed
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- ================================
+                 CHECKPOINT 03
+            ================================= -->
+
+            <div class="checkpoint right reveal">
+
+                <span class="checkpoint-node">
+                    03
+                </span>
+
+                <div class="checkpoint-card checkpoint-3" data-lesson="3">
+
+                    <div class="card-top">
+
+                        <span class="card-number">
+                            CHECKPOINT 03
+                        </span>
+
+                        <span class="card-label">
+                            LIKES & PREFERENCES
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        The -ing Form
+                    </h3>
+
+                    <p>
+
+                        Learn how to talk about
+                        activities, likes and dislikes.
+
+                        Practise the gerund after
+                        verbs of preference such as
+                        <strong>enjoy, prefer, love,
+                        hate, like</strong> and
+                        <strong>dislike</strong>.
+
+                    </p>
+
+                    <span class="formula">
+
+                        enjoy / prefer / love / hate + verb-ing
+
+                    </span>
+
+                    <a
+                        href="MS4-S3-Grammar-Lesson3.html"
+                        class="card-bottom"
+                    >
+
+                        <span>
+                            Enter Checkpoint 03
+                        </span>
+
+                        <span class="card-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                    <button
+                        class="complete-button"
+                        data-lesson="3"
+                        type="button"
+                        aria-pressed="false"
+                    >
+                        Mark as Completed
+                    </button>
+
+                    <span class="completed-label">
+                        ✓ Checkpoint Completed
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- ================================
+                 CHECKPOINT 04
+            ================================= -->
+
+            <div class="checkpoint left reveal">
+
+                <span class="checkpoint-node">
+                    04
+                </span>
+
+                <div class="checkpoint-card checkpoint-4" data-lesson="4">
+
+                    <div class="card-top">
+
+                        <span class="card-number">
+                            CHECKPOINT 04
+                        </span>
+
+                        <span class="card-label">
+                            ORGANISING IDEAS
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Discourse Markers
+                    </h3>
+
+                    <p>
+
+                        Learn how to connect your ideas,
+                        organise opinions and make
+                        your writing more coherent.
+
+                        Use linking expressions such as
+                        <strong>First, Moreover,
+                        In addition</strong> and
+                        other useful discourse markers.
+
+                    </p>
+
+                    <span class="formula">
+
+                        First · Moreover · In addition · Finally
+
+                    </span>
+
+                    <a
+                        href="MS4-S3-Grammar-Lesson4.html"
+                        class="card-bottom"
+                    >
+
+                        <span>
+                            Enter Checkpoint 04
+                        </span>
+
+                        <span class="card-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                    <button
+                        class="complete-button"
+                        data-lesson="4"
+                        type="button"
+                        aria-pressed="false"
+                    >
+                        Mark as Completed
+                    </button>
+
+                    <span class="completed-label">
+                        ✓ Checkpoint Completed
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ====================================
+             LEARNING PROGRESS
+        ===================================== -->
+
+        <div class="progress-panel reveal">
+
+            <h3>
+                Your Grammar Expedition Progress
+            </h3>
+
+            <p>
+
+                Mark each checkpoint as completed
+                after finishing its lesson.
+
+                Your progress is saved
+                on this device.
+
+            </p>
+
+            <div class="progress-count" id="progressCount">
+                0 / 4 Completed
+            </div>
+
+            <div
+                class="progress-track"
+                role="progressbar"
+                aria-label="Grammar checkpoints completed"
+                aria-valuemin="0"
+                aria-valuemax="4"
+                aria-valuenow="0"
+                id="progressTrack"
+            >
+
+                <div
+                    class="progress-fill"
+                    id="progressFill"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ============================================
+     LEARNING OUTCOMES
+============================================ -->
+
+<section class="outcomes">
+
+    <div class="container">
+
+        <div class="outcomes-panel reveal">
+
+            <div class="outcomes-header">
+
+                <span class="section-kicker">
+                    YOUR GRAMMAR TOOLKIT
+                </span>
+
+                <h2>
+
+                    Four Skills.<br>
+
+                    <span>Endless Possibilities.</span>
+
+                </h2>
+
+                <p>
+
+                    Each checkpoint helps you develop
+                    a useful communication skill.
+
+                    Complete the grammar journey
+                    and become more confident
+                    when talking about citizenship,
+                    community life, responsibilities
+                    and personal preferences.
+
+                </p>
+
+            </div>
+
+            <div class="outcomes-grid">
+
+                <div class="outcome-item">
+
+                    <span class="outcome-number">
+                        01
+                    </span>
+
+                    <strong>
+                        Instruct
+                    </strong>
+
+                    <small>
+                        Commands & Advice
+                    </small>
+
+                </div>
+
+                <div class="outcome-item">
+
+                    <span class="outcome-number">
+                        02
+                    </span>
+
+                    <strong>
+                        Predict
+                    </strong>
+
+                    <small>
+                        Conditions & Consequences
+                    </small>
+
+                </div>
+
+                <div class="outcome-item">
+
+                    <span class="outcome-number">
+                        03
+                    </span>
+
+                    <strong>
+                        Express
+                    </strong>
+
+                    <small>
+                        Likes & Preferences
+                    </small>
+
+                </div>
+
+                <div class="outcome-item">
+
+                    <span class="outcome-number">
+                        04
+                    </span>
+
+                    <strong>
+                        Connect
+                    </strong>
+
+                    <small>
+                        Ideas & Opinions
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ============================================
+     CLOSING
+============================================ -->
+
+<section class="closing">
+
+    <div class="container reveal">
+
+        <h2>
+
+            Great Citizens<br>
+
+            <span>Communicate Great Ideas.</span>
+
+        </h2>
+
+        <p>
+
+            Start with the Imperative
+            and continue through all four checkpoints.
+
+            Learn how to give instructions,
+            express conditions, talk about preferences
+            and organise your ideas.
+
+            Every grammar skill brings you
+            one step closer to confident communication.
+
+        </p>
+
+        <a
+            href="MS4-S3-Grammar-Lesson1.html"
+            class="closing-button"
+        >
+
+            Begin Checkpoint 01
+
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div class="footer-brand">
+
+            MY ENGLISH
+
+            <span>
+                SPACE
+            </span>
+
+        </div>
+
+        <div class="footer-note">
+
+            MS4 · SEQUENCE 03 — GRAMMAR EXPEDITION
+            <br>
+            Created &amp; designed by Warda Lamri
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- ============================================
+     JAVASCRIPT
+============================================ -->
+
+<script>
+
+/* ============================================
+   SCROLL PROGRESS
+============================================ */
+
+const progressBar =
+    document.getElementById("scrollProgress");
+
+function updateScrollProgress() {
+
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress =
+        scrollHeight > 0
+            ? (window.scrollY / scrollHeight) * 100
+            : 0;
+
+    progressBar.style.width = progress + "%";
+
+}
+
+window.addEventListener(
+    "scroll",
+    updateScrollProgress,
+    { passive: true }
+);
+
+updateScrollProgress();
+
+/* ============================================
+   SCROLL REVEAL
+============================================ */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const prefersReducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+if (
+    "IntersectionObserver" in window &&
+    !prefersReducedMotion
+) {
+
+    const observer = new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.08,
+            rootMargin: "0px 0px -20px 0px"
+        }
+
+    );
+
+    revealElements.forEach((element) => {
+        observer.observe(element);
+    });
+
+} else {
+
+    revealElements.forEach((element) => {
+        element.classList.add("visible");
+    });
+
+}
+
+/* ============================================
+   GRAMMAR COMPLETION TRACKING
+============================================ */
+
+const storageKey = "MS4_S3_GRAMMAR_PROGRESS";
+
+const totalLessons = 4;
+
+function getCompleted() {
+
+    try {
+
+        const saved = JSON.parse(
+            localStorage.getItem(storageKey)
+        );
+
+        if (!Array.isArray(saved)) {
+            return [];
+        }
+
+        return [...new Set(
+            saved.filter(number =>
+                Number.isInteger(number) &&
+                number >= 1 &&
+                number <= totalLessons
+            )
+        )];
+
+    } catch (error) {
+
+        return [];
+
+    }
+
+}
+
+function saveCompleted(completed) {
+
+    try {
+
+        localStorage.setItem(
+            storageKey,
+            JSON.stringify(completed)
+        );
+
+    } catch (error) {
+
+        // The page still works if browser storage
+        // is unavailable.
+
+    }
+
+}
+
+function updateGrammarProgress() {
+
+    const completed = getCompleted();
+
+    document.querySelectorAll(
+        ".checkpoint-card"
+    ).forEach(card => {
+
+        const lessonNumber = Number(
+            card.dataset.lesson
+        );
+
+        const isCompleted =
+            completed.includes(lessonNumber);
+
+        card.classList.toggle(
+            "completed",
+            isCompleted
+        );
+
+        const button = card.querySelector(
+            ".complete-button"
+        );
+
+        button.setAttribute(
+            "aria-pressed",
+            String(isCompleted)
+        );
+
+        button.textContent = isCompleted
+            ? "✓ Completed — Undo"
+            : "Mark as Completed";
+
+    });
+
+    const count = completed.length;
+
+    document.getElementById(
+        "progressCount"
+    ).textContent =
+        `${count} / ${totalLessons} Completed`;
+
+    document.getElementById(
+        "progressFill"
+    ).style.width =
+        `${(count / totalLessons) * 100}%`;
+
+    document.getElementById(
+        "progressTrack"
+    ).setAttribute(
+        "aria-valuenow",
+        String(count)
+    );
+
+}
+
+document.querySelectorAll(
+    ".complete-button"
+).forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const lessonNumber = Number(
+            button.dataset.lesson
+        );
+
+        const completed = getCompleted();
+
+        const index = completed.indexOf(
+           lessonNumber
+        );
+
+        if (index === -1) {
+
+            completed.push(lessonNumber);
+
+        } else {
+
+            completed.splice(index, 1);
+
+        }
+
+        saveCompleted(completed);
+
+        updateGrammarProgress();
+
+    });
+
+});
+
+window.addEventListener(
+    "pageshow",
+    updateGrammarProgress
+);
+
+updateGrammarProgress();
+
+</script>
+
+</body>
+</html>

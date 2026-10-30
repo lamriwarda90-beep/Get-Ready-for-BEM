@@ -1,0 +1,3911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7445b7">
+
+<title>MS4-S2-Vocabulary-Lesson2 | Dreams & Career Prospects</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   MS4 SEQUENCE 2 — VOCABULARY LESSON 02
+   DREAMS & CAREER PROSPECTS
+========================================= */
+
+:root{
+  --purple:#7445b7;
+  --purple-dark:#482477;
+  --purple-soft:#f0e8ff;
+
+  --pink:#d63c88;
+  --pink-dark:#ac2b70;
+  --pink-soft:#fff0f8;
+
+  --gold:#f5bd54;
+  --green:#228b66;
+  --red:#c7445e;
+
+  --ink:#34283c;
+  --muted:#776c80;
+  --line:#f0dfea;
+  --white:#ffffff;
+
+  --shadow:0 18px 50px rgba(113,60,116,.10);
+  --shadow-hover:0 24px 55px rgba(113,60,116,.16);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:"Nunito",sans-serif;
+  color:var(--ink);
+
+  background:
+    radial-gradient(
+      circle at 8% 5%,
+      #ffe1ef,
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 95% 20%,
+      #e6d9ff,
+      transparent 40%
+    ),
+    #fbf8ff;
+
+  min-height:100vh;
+}
+
+button,
+select,
+textarea,
+input{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+button:disabled{
+  cursor:default;
+}
+
+button:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible{
+  outline:3px solid #b788f8;
+  outline-offset:3px;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+h1,h2,h3{
+  font-family:"Baloo 2",sans-serif;
+}
+
+p{
+  line-height:1.85;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.muted{
+  color:var(--muted);
+}
+
+/* =========================================
+   TOP NAVIGATION
+========================================= */
+
+.top{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  background:rgba(255,255,255,.9);
+
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+
+  border-bottom:1px solid var(--line);
+}
+
+.top-inner{
+  max-width:1160px;
+  margin:auto;
+
+  padding:13px 22px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  font-family:"Baloo 2",sans-serif;
+  font-size:1.35rem;
+  font-weight:800;
+  color:var(--purple);
+}
+
+.top-right{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.lesson-label{
+  font-family:"Space Mono",monospace;
+  font-size:.7rem;
+  font-weight:700;
+  color:var(--muted);
+}
+
+.back-link{
+  color:var(--pink-dark);
+  font-weight:900;
+  font-size:.85rem;
+}
+
+.back-link:hover{
+  text-decoration:underline;
+}
+
+.track{
+  height:4px;
+  background:#f5e5f1;
+}
+
+.track-fill{
+  height:100%;
+  width:0;
+
+  background:linear-gradient(
+    90deg,
+    var(--pink),
+    var(--purple)
+  );
+
+  transition:width .2s;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.wrap{
+  max-width:1120px;
+  margin:30px auto 80px;
+  padding:0 18px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+  border-radius:34px;
+
+  background:linear-gradient(
+    125deg,
+    #692f9f,
+    #ae3e91 70%,
+    #d8619a
+  );
+
+  color:white;
+
+  position:relative;
+  overflow:hidden;
+
+  padding:60px 54px;
+
+  box-shadow:var(--shadow);
+}
+
+.hero::after{
+  content:"✦";
+
+  position:absolute;
+  right:4%;
+  top:-75px;
+
+  font-size:310px;
+  color:rgba(255,255,255,.08);
+
+  pointer-events:none;
+}
+
+.kicker{
+  font-family:"Space Mono",monospace;
+
+  font-size:.75rem;
+  font-weight:700;
+
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  font-size:clamp(2.5rem,6vw,5rem);
+  line-height:1.03;
+
+  margin:14px 0;
+
+  font-weight:800;
+}
+
+.hero h1 span{
+  color:#ffe5a0;
+}
+
+.hero p{
+  max-width:670px;
+  color:#fff0fa;
+  font-size:1.08rem;
+}
+
+.pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+
+  margin-top:25px;
+}
+
+.pill{
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:30px;
+
+  padding:8px 14px;
+
+  background:rgba(255,255,255,.12);
+
+  font-size:.83rem;
+  font-weight:800;
+}
+
+/* =========================================
+   STORY INTRO
+========================================= */
+
+.intro,
+.step,
+.result{
+  background:white;
+
+  border:1px solid #f2e8f0;
+  border-radius:28px;
+
+  margin-top:25px;
+  overflow:hidden;
+
+  box-shadow:var(--shadow);
+}
+
+.intro{
+  padding:28px;
+}
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:30px;
+  align-items:center;
+}
+
+.intro-image,
+.story-image{
+  width:100%;
+  display:block;
+
+  border-radius:21px;
+  object-fit:cover;
+
+  box-shadow:0 12px 28px rgba(70,30,80,.10);
+}
+
+.intro-image{
+  max-height:450px;
+}
+
+.intro h2,
+.step h2{
+  font-size:clamp(1.65rem,3vw,2.25rem);
+  line-height:1.15;
+
+  color:#923c94;
+
+  margin:8px 0 14px;
+}
+
+.quote{
+  background:#fff6e3;
+
+  border-left:4px solid var(--gold);
+
+  padding:16px;
+  border-radius:12px;
+
+  font-style:italic;
+}
+
+/* =========================================
+   LESSON STEPS
+========================================= */
+
+.step{
+  scroll-margin-top:90px;
+}
+
+.step-head{
+  background:linear-gradient(
+    90deg,
+    #fff0f8,
+    #f6f0ff
+  );
+
+  padding:16px 28px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+
+  border-bottom:1px solid var(--line);
+}
+
+.step-head b{
+  font-family:"Space Mono",monospace;
+
+  font-size:.76rem;
+  color:#9c3579;
+
+  letter-spacing:.09em;
+}
+
+.level{
+  font-size:.73rem;
+
+  background:white;
+
+  border-radius:25px;
+  padding:7px 12px;
+
+  color:var(--purple);
+  font-weight:900;
+}
+
+.body{
+  padding:30px;
+}
+
+.story-layout{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:30px;
+  align-items:center;
+}
+
+.story-image{
+  max-height:420px;
+}
+
+.image-caption{
+  text-align:center;
+  color:var(--muted);
+
+  font-size:.8rem;
+  font-style:italic;
+
+  margin-top:10px;
+}
+
+.story-text{
+  font-size:1rem;
+  line-height:1.9;
+}
+
+.highlight{
+  background:#fff0bd;
+
+  padding:1px 5px;
+  border-radius:5px;
+
+  font-weight:900;
+}
+
+.name{
+  display:inline-block;
+
+  padding:8px 15px;
+
+  background:#fce8f4;
+  color:#a02c72;
+
+  border-radius:30px;
+
+  font-weight:900;
+
+  margin-bottom:10px;
+}
+
+/* =========================================
+   VOCABULARY CHIPS
+========================================= */
+
+.vocab-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(145px,1fr));
+
+  gap:12px;
+
+  margin-top:22px;
+}
+
+.vocab-chip{
+  background:#fff6fb;
+
+  border:2px solid #f2dce9;
+  border-radius:17px;
+
+  padding:16px 12px;
+
+  text-align:center;
+
+  transition:.2s;
+}
+
+.vocab-chip:hover{
+  border-color:var(--pink);
+  transform:translateY(-3px);
+}
+
+.vocab-chip strong{
+  display:block;
+
+  color:var(--pink-dark);
+
+  font-weight:900;
+  font-size:1rem;
+}
+
+.vocab-chip small{
+  display:block;
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:.82rem;
+}
+
+.vocab-chip button{
+  border:0;
+  background:transparent;
+
+  color:var(--purple);
+
+  font-size:.75rem;
+  font-weight:900;
+
+  margin-top:9px;
+}
+
+/* =========================================
+   INTERACTIVE TASKS
+========================================= */
+
+.task{
+  background:#fffbfe;
+
+  border:1.5px solid #f0dbe8;
+  border-radius:20px;
+
+  padding:22px;
+
+  margin-top:24px;
+}
+
+.task-title{
+  font-family:"Space Mono",monospace;
+
+  font-size:.73rem;
+  font-weight:700;
+
+  color:#a63480;
+
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.question{
+  font-weight:900;
+  font-size:1.08rem;
+
+  margin:9px 0 15px;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.option{
+  border:2px solid #eadfe9;
+  border-radius:13px;
+
+  padding:13px 15px;
+
+  text-align:left;
+
+  background:white;
+  color:var(--ink);
+
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.option:hover:not(:disabled){
+  border-color:#d68ab9;
+  transform:translateY(-2px);
+}
+
+.option.correct{
+  background:#e3f7ed;
+
+  border-color:var(--green);
+  color:#136744;
+}
+
+.option.wrong{
+  background:#ffedf0;
+
+  border-color:var(--red);
+  color:#a32f4b;
+}
+
+.feedback{
+  display:none;
+
+  margin-top:14px;
+
+  padding:13px 15px;
+  border-radius:13px;
+
+  font-weight:800;
+}
+
+.feedback.show{
+  display:block;
+}
+
+.feedback.good{
+  background:#e5f7ee;
+  color:#176a4b;
+}
+
+.feedback.bad{
+  background:#fff0f1;
+  color:#a33752;
+}
+
+/* =========================================
+   MATCHING
+========================================= */
+
+.match{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.match-item{
+  padding:16px;
+
+  background:white;
+
+  border:1px solid var(--line);
+  border-radius:14px;
+
+  font-weight:800;
+}
+
+select{
+  display:block;
+  width:100%;
+
+  padding:11px;
+
+  border:2px solid #e7dbe8;
+  border-radius:11px;
+
+  margin-top:10px;
+
+  background:white;
+  color:var(--ink);
+}
+
+select.correct{
+  border-color:var(--green);
+  background:#f0fbf5;
+}
+
+select.wrong{
+  border-color:var(--red);
+  background:#fff4f5;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn{
+  background:linear-gradient(
+    110deg,
+    #c93f8d,
+    #8744b7
+  );
+
+  color:white;
+
+  border:0;
+  border-radius:13px;
+
+  padding:12px 20px;
+
+  font-weight:900;
+
+  box-shadow:0 7px 18px rgba(165,66,136,.16);
+
+  transition:.2s;
+}
+
+.btn:hover:not(:disabled){
+  filter:brightness(1.07);
+  transform:translateY(-2px);
+}
+
+.btn.secondary{
+  background:#f3e9ff;
+  color:var(--purple-dark);
+}
+
+.btn-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+
+  margin-top:18px;
+}
+
+/* =========================================
+   SENTENCE BUILDER
+========================================= */
+
+.builder{
+  background:#fcf8ff;
+
+  border:1px solid var(--line);
+  border-radius:20px;
+
+  padding:22px;
+
+  margin:18px 0;
+}
+
+.builder h3{
+  color:var(--purple);
+  margin-top:0;
+}
+
+.word-bank{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+
+  margin:16px 0;
+}
+
+.word{
+  padding:10px 15px;
+
+  background:#ffe8f2;
+
+  border:2px solid #ffc5da;
+  border-radius:12px;
+
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.word:hover:not(:disabled){
+  background:#ffd4e5;
+  transform:translateY(-2px);
+}
+
+.word.used{
+  opacity:.35;
+  cursor:default;
+}
+
+.sentence-box{
+  min-height:85px;
+
+  border:2px dashed #dcb2d2;
+  border-radius:17px;
+
+  padding:15px;
+
+  background:white;
+
+  display:flex;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.sentence-word{
+  background:var(--purple);
+
+  color:white;
+
+  border:0;
+  border-radius:10px;
+
+  padding:8px 12px;
+
+  font-weight:900;
+}
+
+.sentence-word:hover{
+  background:var(--pink);
+}
+
+/* =========================================
+   WRITING
+========================================= */
+
+.prompt{
+  background:#f7edff;
+
+  padding:20px;
+  border-radius:18px;
+}
+
+.prompt h3{
+  color:var(--purple);
+  margin-top:0;
+}
+
+textarea{
+  width:100%;
+  min-height:190px;
+
+  resize:vertical;
+
+  border:2px solid #e8d9e8;
+  border-radius:17px;
+
+  padding:17px;
+
+  line-height:1.8;
+
+  margin-top:18px;
+}
+
+.word-count{
+  text-align:right;
+
+  color:var(--muted);
+
+  font-size:.8rem;
+  font-weight:800;
+
+  margin-top:8px;
+}
+
+.checks{
+  display:grid;
+  gap:10px;
+
+  margin-top:17px;
+}
+
+.checks label{
+  background:#fff7fc;
+
+  padding:11px;
+  border-radius:11px;
+
+  font-weight:700;
+}
+
+/* =========================================
+   SCORE
+========================================= */
+
+.result{
+  text-align:center;
+
+  padding:35px;
+
+  background:linear-gradient(
+    125deg,
+    #773caa,
+    #c13c88
+  );
+
+  color:white;
+}
+
+.result h2{
+  font-size:2.2rem;
+  margin:0;
+}
+
+.score{
+  font-family:"Baloo 2",sans-serif;
+
+  font-weight:800;
+  font-size:3.4rem;
+
+  margin:5px;
+}
+
+.bar{
+  max-width:600px;
+  height:14px;
+
+  border-radius:30px;
+
+  background:rgba(255,255,255,.25);
+
+  overflow:hidden;
+
+  margin:18px auto;
+}
+
+.fill{
+  height:100%;
+  width:0;
+
+  background:white;
+
+  transition:width .3s;
+}
+
+/* =========================================
+   DICTIONARY
+========================================= */
+
+.float{
+  position:fixed;
+
+  bottom:20px;
+  left:20px;
+
+  z-index:30;
+
+  background:var(--gold);
+
+  border:0;
+  border-radius:50px;
+
+  padding:15px 18px;
+
+  font-weight:900;
+
+  box-shadow:var(--shadow);
+}
+
+.modal{
+  display:none;
+
+  position:fixed;
+  inset:0;
+
+  background:rgba(44,23,57,.65);
+
+  z-index:200;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:15px;
+}
+
+.modal.open{
+  display:flex;
+}
+
+.modal-box{
+  background:white;
+
+  width:min(620px,100%);
+  max-height:85vh;
+
+  overflow:auto;
+
+  border-radius:24px;
+
+  padding:25px;
+}
+
+.modal-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.modal-top h2{
+  color:var(--purple);
+}
+
+.close{
+  border:0;
+
+  background:#f9e6f2;
+
+  border-radius:50%;
+
+  width:42px;
+  height:42px;
+
+  font-size:1.4rem;
+}
+
+.dictionary-input{
+  width:100%;
+
+  padding:13px;
+
+  border:2px solid var(--line);
+  border-radius:13px;
+
+  margin:15px 0;
+}
+
+.dictionary-result{
+  background:#fff5fb;
+
+  border-radius:15px;
+
+  padding:18px;
+
+  min-height:110px;
+}
+
+.dictionary-result h3{
+  color:var(--pink-dark);
+  margin:0 0 8px;
+}
+
+.arabic{
+  font-family:"Noto Naskh Arabic",serif;
+  font-size:1.2rem;
+  direction:rtl;
+}
+
+/* =========================================
+   PROGRESS RAIL
+========================================= */
+
+.rail{
+  position:fixed;
+
+  right:13px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  z-index:15;
+
+  display:grid;
+  gap:7px;
+}
+
+.rail a{
+  width:29px;
+  height:29px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  border:1px solid #e8c4dc;
+
+  background:white;
+  color:#a53980;
+
+  font-weight:900;
+  font-size:.7rem;
+}
+
+.rail a.active{
+  background:var(--purple);
+  color:white;
+}
+
+.rail a.done{
+  background:var(--green);
+  color:white;
+}
+
+/* =========================================
+   LESSON NAVIGATION
+========================================= */
+
+.lesson-nav{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:15px;
+
+  margin-top:25px;
+}
+
+.nav-card{
+  background:white;
+
+  border:1px solid var(--line);
+  border-radius:20px;
+
+  padding:20px;
+
+  box-shadow:var(--shadow);
+
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.nav-card:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-hover);
+}
+
+.nav-card small{
+  display:block;
+
+  font-family:"Space Mono",monospace;
+
+  color:var(--muted);
+
+  font-size:.65rem;
+
+  margin-bottom:8px;
+}
+
+.nav-card.next{
+  text-align:right;
+}
+
+footer{
+  text-align:center;
+
+  color:var(--muted);
+
+  padding:25px;
+
+  font-size:.8rem;
+  font-weight:800;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:850px){
+
+  .rail{
+    display:none;
+  }
+
+  .intro-grid,
+  .story-layout{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:42px 27px;
+  }
+
+  .body{
+    padding:22px;
+  }
+
+  .intro{
+    padding:18px;
+  }
+
+  .story-image{
+    max-height:350px;
+  }
+
+}
+
+@media(max-width:540px){
+
+  .options,
+  .match,
+  .lesson-nav{
+    grid-template-columns:1fr;
+  }
+
+  .top-inner{
+    flex-wrap:wrap;
+  }
+
+  .hero{
+    border-radius:23px;
+  }
+
+  .step,
+  .intro{
+    border-radius:20px;
+  }
+
+  .step-head{
+    padding:14px 18px;
+  }
+
+  .level{
+    font-size:.65rem;
+  }
+
+  .nav-card.next{
+    text-align:left;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================
+     TOP BAR
+========================================= -->
+
+<header class="top">
+
+  <div class="top-inner">
+
+    <div class="logo">
+      ✦ MY ENGLISH SPACE
+    </div>
+
+    <div class="top-right">
+
+      <span class="lesson-label">
+        MS4 / SEQUENCE 2 / VOCABULARY 02
+      </span>
+
+      <a
+        class="back-link"
+        href="MS4-S2-Vocabulary.html">
+
+        ← Vocabulary Map
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="track">
+    <div class="track-fill" id="scrollFill"></div>
+  </div>
+
+</header>
+
+<!-- =========================================
+     PROGRESS RAIL
+========================================= -->
+
+<nav class="rail" id="rail" aria-label="Lesson steps">
+
+  <a href="#step1">1</a>
+  <a href="#step2">2</a>
+  <a href="#step3">3</a>
+  <a href="#step4">4</a>
+  <a href="#step5">5</a>
+  <a href="#step6">6</a>
+  <a href="#step7">7</a>
+  <a href="#step8">8</a>
+  <a href="#step9">9</a>
+
+</nav>
+
+<main class="wrap">
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+  <div class="kicker">
+    Vocabulary Expedition · Lesson 02
+  </div>
+
+  <h1>
+    Dreams &<br>
+    <span>Career Prospects</span>
+  </h1>
+
+  <p>
+    Follow a pupil as he imagines his future,
+    explores different professions, discovers
+    higher education and works towards his dream.
+  </p>
+
+  <div class="pills">
+
+    <span class="pill">🌟 Dreams</span>
+    <span class="pill">🎓 Education</span>
+    <span class="pill">💼 Careers</span>
+    <span class="pill">💪 Ambition</span>
+    <span class="pill">🏆 Success</span>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     INTRODUCTION
+========================================= -->
+
+<section class="intro">
+
+  <div class="intro-grid">
+
+    <img
+      class="intro-image"
+      src="https://i.imgur.com/iezC91b.png"
+      alt="A pupil thinking about his future">
+
+    <div>
+
+      <div
+        class="kicker"
+        style="color:#b03982">
+
+        THE FUTURE JOURNAL
+
+      </div>
+
+      <h2>
+        A Dream Begins 🌟
+      </h2>
+
+      <p>
+        One evening, a pupil sat at his desk
+        and opened his notebook.
+      </p>
+
+      <p>
+        He started thinking about his
+        <strong>future</strong>.
+
+        He had a big
+        <strong>dream</strong>
+        and an important
+        <strong>goal</strong>.
+      </p>
+
+      <p>
+        He wanted to build a successful
+        <strong>career</strong>.
+      </p>
+
+      <div class="quote">
+
+        “Every great achievement begins
+        with a dream and a plan.”
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     STEP 1
+========================================= -->
+
+<section class="step" id="step1">
+
+  <div class="step-head">
+
+    <b>01 / DISCOVER</b>
+
+    <span class="level">
+      REMEMBER
+    </span>
+
+  </div>
+
+  <div class="body">
+
+    <h2>
+      What Will I Become?
+    </h2>
+
+    <p class="muted">
+      Discover the important words
+      we use when talking about the future.
+    </p>
+
+    <p class="story-text">
+
+      The pupil knew that achieving his dream
+      would require a good
+      <span class="highlight">plan</span>,
+      hard work and determination.
+
+      His
+      <span class="highlight">ambition</span>
+      motivated him to keep learning.
+
+    </p>
+
+    <div class="vocab-grid">
+
+      <div class="vocab-chip">
+        <strong>dream</strong>
+        <small lang="ar">حلم</small>
+        <button onclick="showWord('dream')">
+          Meaning ↗
+        </button>
+      </div>
+
+      <div class="vocab-chip">
+        <strong>future</strong>
+        <small lang="ar">المستقبل</small>
+        <button onclick="showWord('future')">
+          Meaning ↗
+        </button>
+      </div>
+
+      <div class="vocab-chip">
+        <strong>goal</strong>
+        <small lang="ar">هدف</small>
+        <button onclick="showWord('goal')">
+          Meaning ↗
+        </button>
+      </div>
+
+      <div class="vocab-chip">
+        <strong>ambition</strong>
+        <small lang="ar">طموح</small>
+        <button onclick="showWord('ambition')">
+          Meaning ↗
+        </button>
+      </div>
+
+      <div class="vocab-chip">
+        <strong>career</strong>
+        <small lang="ar">مسار مهني</small>
+        <button onclick="showWord('career')">
+          Meaning ↗
+        </button>
+      </div>
+
+      <div class="vocab-chip">
+        <strong>plan</strong>
+        <small lang="ar">خطة</small>
+        <button onclick="showWord('plan')">
+          Meaning ↗
+        </button>
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <div class="task-title">
+        Quick Check
+      </div>
+
+      <div class="question">
+        Which word means something
+        you want to achieve?
+      </div>
+
+      <div
+        class="options"
+        data-quiz="q1"
+        data-answer="Goal">
+
+        <button class="option">Career</button>
+        <button class="option">Goal</button>
+        <button class="option">University</button>
+        <button class="option">Profession</button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="f-q1"
+        role="status">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     STEP 2
+========================================= -->
+
+<section class="step" id="step2">
+
+  <div class="step-head">
+
+    <b>02 / DREAM JOB</b>
+
+    <span class="level">
+      RECOGNISE
+    </span>
+
+  </div>
+
+  <div class="body">
+
+    <div class="story-layout">
+
+      <div>
+
+        <img
+          class="story-image"
+          src="https://i.imgur.com/Cd0DAwY.png"
+          alt="A pupil imagining different professions">
+
+        <div class="image-caption">
+          Exploring different professions
+        </div>
+
+      </div>
+
+      <div>
+
+        <span class="name">
+          💼 My Dream Job
+        </span>
+
+        <p class="story-text">
+
+          The pupil imagined different
+          <span class="highlight">
+            professions
+          </span>.
+
+          Perhaps he could become a
+          doctor and help people.
+
+          Perhaps he could become an
+          engineer and design useful things.
+
+        </p>
+
+        <p class="story-text">
+
+          Maybe he could be a teacher,
+          architect, pilot or programmer.
+
+          Every
+          <span class="highlight">
+            job
+          </span>
+          looked interesting.
+
+          He needed to discover which
+          <span class="highlight">
+            dream job
+          </span>
+          was right for him.
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <div class="task-title">
+        Challenge 01
+      </div>
+
+      <div class="question">
+        What is a profession?
+      </div>
+
+      <div
+        class="options"
+        data-quiz="q2a"
+        data-answer="A job or occupation">
+
+        <button class="option">
+          A school subject
+        </button>
+
+        <button class="option">
+          A job or occupation
+        </button>
+
+        <button class="option">
+          A hobby
+        </button>
+
+        <button class="option">
+          A holiday
+        </button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="f-q2a"
+        role="status">
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <div class="task-title">
+        Challenge 02
+      </div>
+
+      <div class="question">
+        Which expression means
+        the job you really want?
+      </div>
+
+      <div
+        class="options"
+        data-quiz="q2b"
+        data-answer="Dream job">
+
+        <button class="option">
+          Career path
+        </button>
+
+        <button class="option">
+          Dream job
+        </button>
+
+        <button class="option">
+          Degree
+        </button>
+
+        <button class="option">
+          Opportunity
+        </button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="f-q2b"
+        role="status">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     STEP 3
+========================================= -->
+
+<section class="step" id="step3">
+
+  <div class="step-head">
+
+    <b>03 / EDUCATION</b>
+
+    <span class="level">
+      UNDERSTAND
+    </span>
+
+  </div>
+
+  <div class="body">
+
+    <div class="story-layout">
+
+      <div>
+
+        <img
+          class="story-image"
+          src="https://i.imgur.com/KiNStVk.png"
+          alt="A pupil imagining university and higher education">
+
+        <div class="image-caption">
+          Studying for a better future
+        </div>
+
+      </div>
+
+      <div>
+
+        <span class="name">
+          🎓 My Path to Higher Education
+        </span>
+
+        <p class="story-text">
+
+          The pupil knew that some careers
+          require
+          <span class="highlight">
+            higher education
+          </span>.
+
+          He imagined himself at a
+          <span class="highlight">
+            university
+          </span>,
+          studying in a library
+          and learning new things.
+
+        </p>
+
+        <p class="story-text">
+
+          He would need to study seriously
+          and work towards a
+          <span class="highlight">
+            degree
+          </span>.
+
+          Education could give him
+          more knowledge and new
+          <span class="highlight">
+            opportunities
+          </span>.
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="task" id="education">
+
+      <div class="task-title">
+        Match the Meanings
+      </div>
+
+      <div class="question">
+        Match each word with its meaning.
+      </div>
+
+      <div class="match">
+
+        <div class="match-item">
+
+          🎓 University
+
+          <select data-answer="higher">
+
+            <option value="">
+              Choose...
+            </option>
+
+            <option value="sport">
+              A place for sport
+            </option>
+
+            <option value="higher">
+              A place for higher education
+            </option>
+
+            <option value="job">
+              A type of profession
+            </option>
+
+          </select>
+
+        </div>
+
+        <div class="match-item">
+
+          📚 Degree
+
+          <select data-answer="qualification">
+
+            <option value="">
+              Choose...
+            </option>
+
+            <option value="qualification">
+              A qualification earned after study
+            </option>
+
+            <option value="choice">
+              A career choice
+            </option>
+
+            <option value="hobby">
+              A hobby
+            </option>
+
+          </select>
+
+        </div>
+
+        <div class="match-item">
+
+          🌱 Opportunity
+
+          <select data-answer="chance">
+
+            <option value="">
+              Choose...
+            </option>
+
+            <option value="problem">
+              A problem
+            </option>
+
+            <option value="chance">
+              A chance to achieve something
+            </option>
+
+            <option value="uniform">
+              A school uniform
+            </option>
+
+          </select>
+
+        </div>
+
+        <div class="match-item">
+
+          🎓 Higher Education
+
+          <select data-answer="after">
+
+            <option value="">
+              Choose...
+            </option>
+
+            <option value="primary">
+              Primary school
+            </option>
+
+            <option value="after">
+              Education after secondary school
+            </option>
+
+            <option value="holiday">
+              A summer holiday
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button
+          class="btn"
+          onclick="checkSelects('education')">
+
+          Check matching →
+
+        </button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="f-education"
+        role="status">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     STEP 4
+========================================= -->
+
+<section class="step" id="step4">
+
+  <div class="step-head">
+
+    <b>04 / CAREER PATH</b>
+
+    <span class="level">
+      UNDERSTAND
+    </span>
+
+  </div>
+
+  <div class="body">
+
+    <div class="story-layout">
+
+      <div>
+
+        <img
+          class="story-image"
+          src="https://i.imgur.com/CWFsrN4.png"
+          alt="A pupil choosing his future career path">
+
+        <div class="image-caption">
+          Making an important decision
+        </div>
+
+      </div>
+
+      <div>
+
+        <span class="name">
+          🧭 Choosing My Career Path
+        </span>
+
+        <p class="story-text">
+
+          There were many possible directions.
+
+          He had to
+          <span class="highlight">
+            choose
+          </span>
+          carefully.
+
+          Making a
+          <span class="highlight">
+            choice
+          </span>
+          about his future was not easy.
+
+        </p>
+
+        <p class="story-text">
+
+          He thought about his interests,
+          abilities and dreams.
+
+          Finally, he understood that
+          choosing a
+          <span class="highlight">
+            career path
+          </span>
+          meant deciding what he wanted
+          to do in the future.
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <div class="task-title">
+        Meaning in Context
+      </div>
+
+      <div class="question">
+        Which sentence uses
+        "career path" correctly?
+      </div>
+
+      <div
+        class="options"
+        data-quiz="q4a"
+        data-answer="She is thinking about her career path.">
+
+        <button class="option">
+          I walked along my career path to school.
+        </button>
+
+        <button class="option">
+          She is thinking about her career path.
+        </button>
+
+        <button class="option">
+          My career path is my favourite sport.
+        </button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="f-q4a"
+        role="status">
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <div class="task-title">
+        Complete the Sentence
+      </div>
+
+      <div class="question">
+        I must ______ which career is best for me.
+      </div>
+
+      <div
+        class="options"
+        data-quiz="q4b"
+        data-answer="Choose">
+
+        <button class="option">Choose</button>
+        <button class="option">Degree</button>
+        <button class="option">Profession</button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="f-q4b"
+        role="status">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     STEP 5
+========================================= -->
+
+<section class="step" id="step5">
+
+  <div class="step-head">
+
+    <b>05 / HARD WORK</b>
+
+    <span class="level">
+      APPLY
+    </span>
+
+  </div>
+
+  <div class="body">
+
+    <div class="story-layout">
+
+      <div>
+
+        <img
+          class="story-image"
+          src="https://i.imgur.com/cYPsp7G.png"
+          alt="A pupil working hard towards his dream">
+
+        <div class="image-caption">
+          Effort, determination and hard work
+        </div>
+
+      </div>
+
+      <div>
+
+        <span class="name">
+          💪 Working Towards My Dream
+        </span>
+
+        <p class="story-text">
+
+          The pupil knew that dreams
+          do not come true by themselves.
+
+          He needed to be
+          <span class="highlight">
+            hardworking
+          </span>
+          and
+          <span class="highlight">
+            determined
+          </span>.
+
+        </p>
+
+        <p class="story-text">
+
+          He studied every day,
+          practised his skills and
+          prepared for the future.
+
+          He understood that
+          <span class="highlight">
+            effort
+          </span>
+          could help him
+          <span class="highlight">
+            achieve
+          </span>
+          his goal and eventually
+          <span class="highlight">
+            succeed
+          </span>.
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="vocab-grid">
+
+      <div class="vocab-chip">
+        <strong>hardworking</strong>
+        <small lang="ar">مجتهد</small>
+        <button onclick="showWord('hardworking')">
+          Meaning ↗
+        </button>
+      </div>
+
+      <div class="vocab-chip">
+        <strong>determined</strong>
+        <small lang="ar">مصمم / عازم</small>
+        <button onclick="showWord('determined')">
+          Meaning ↗
+        </button>
+      </div>
+
+      <div class="vocab-chip">
+        <strong>effort</strong>
+        <small lang="ar">جهد</small>
+        <button onclick="showWord('effort')">
+          Meaning ↗
+        </button>
+      </div>
+
+      <div class="vocab-chip">
+        <strong>practise</strong>
+        <small lang="ar">يتدرب</small>
+        <button onclick="showWord('practise')">
+          Meaning ↗
+        </button>
+      </div>
+
+      <div class="vocab-chip">
+        <strong>prepare</strong>
+        <small lang="ar">يستعد</small>
+        <button onclick="showWord('prepare')">
+          Meaning ↗
+        </button>
+      </div>
+
+      <div class="vocab-chip">
+        <strong>achieve</strong>
+        <small lang="ar">يحقق</small>
+        <button onclick="showWord('achieve')">
+          Meaning ↗
+        </button>
+      </div>
+
+      <div class="vocab-chip">
+        <strong>succeed</strong>
+        <small lang="ar">ينجح</small>
+        <button onclick="showWord('succeed')">
+          Meaning ↗
+        </button>
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <div class="task-title">
+        Choose the Best Word
+      </div>
+
+      <div class="question">
+        A ______ person does not give up easily.
+      </div>
+
+      <div
+        class="options"
+        data-quiz="q5"
+        data-answer="Determined">
+
+        <button class="option">
+          Lazy
+        </button>
+
+        <button class="option">
+          Determined
+        </button>
+
+        <button class="option">
+          Careless
+        </button>
+
+        <button class="option">
+          Impatient
+        </button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="f-q5"
+        role="status">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     STEP 6
+========================================= -->
+
+<section class="step" id="step6">
+
+  <div class="step-head">
+
+    <b>06 / SUCCESS</b>
+
+    <span class="level">
+      APPLY
+    </span>
+
+  </div>
+
+  <div class="body">
+
+    <div class="story-layout">
+
+      <div>
+
+        <img
+          class="story-image"
+          src="https://i.imgur.com/wmSdZI0.png"
+          alt="The pupil as a successful young professional">
+
+        <div class="image-caption">
+          A successful future
+        </div>
+
+      </div>
+
+      <div>
+
+        <span class="name">
+          🏆 I Achieved My Dream!
+        </span>
+
+        <p class="story-text">
+
+          Years later, the pupil's
+          hard work had paid off.
+
+          He had
+          <span class="highlight">
+            achieved
+          </span>
+          his goal.
+
+          He had become a
+          <span class="highlight">
+            successful
+          </span>
+          professional and was proud
+          of his
+          <span class="highlight">
+            career
+          </span>.
+
+        </p>
+
+        <p class="story-text">
+
+          His dream had become reality
+          because he had studied,
+          worked hard and never stopped
+          believing in himself.
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="task" id="success">
+
+      <div class="task-title">
+        Complete the Sentences
+      </div>
+
+      <div class="question">
+        Choose the correct words.
+      </div>
+
+      <p>
+
+        1. She worked hard and
+
+        <select
+          class="inline-select"
+          data-answer="achieved">
+
+          <option value="">Choose...</option>
+          <option>achieved</option>
+          <option>degree</option>
+          <option>career</option>
+
+        </select>
+
+        her dream.
+
+      </p>
+
+      <p>
+
+        2. He is very
+
+        <select
+          class="inline-select"
+          data-answer="successful">
+
+          <option value="">Choose...</option>
+          <option>successful</option>
+          <option>opportunity</option>
+          <option>goal</option>
+
+        </select>
+
+        in his new profession.
+
+      </p>
+
+      <p>
+
+        3. She wants to
+
+        <select
+          class="inline-select"
+          data-answer="become">
+
+          <option value="">Choose...</option>
+          <option>become</option>
+          <option>effort</option>
+          <option>degree</option>
+
+        </select>
+
+        a doctor one day.
+
+      </p>
+
+      <div class="btn-row">
+
+        <button
+          class="btn"
+          onclick="checkSelects('success')">
+
+          Check answers →
+
+        </button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="f-success"
+        role="status">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     STEP 7
+========================================= -->
+
+<section class="step" id="step7">
+
+  <div class="step-head">
+
+    <b>07 / REFLECT</b>
+
+    <span class="level">
+      ANALYSE
+    </span>
+
+  </div>
+
+  <div class="body">
+
+    <div class="story-layout">
+
+      <div>
+
+        <img
+          class="story-image"
+          src="https://i.imgur.com/OrO9bU7.png"
+          alt="A pupil looking confidently towards his future">
+
+        <div class="image-caption">
+          Looking ahead with confidence
+        </div>
+
+      </div>
+
+      <div>
+
+        <span class="name">
+          🌟 My Dream, My Future
+        </span>
+
+        <p class="story-text">
+
+          The pupil closed his notebook
+          and smiled.
+
+          He knew that his
+          <span class="highlight">
+            dream
+          </span>
+          would require
+          <span class="highlight">
+            confidence
+          </span>,
+          patience and determination.
+
+        </p>
+
+        <p class="story-text">
+
+          His future was still waiting
+          for him.
+
+          He had a clear
+          <span class="highlight">
+            goal
+          </span>
+          and a plan.
+
+          Now it was time to keep learning
+          and move towards his dream.
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="task">
+
+      <div class="task-title">
+        Reflect on the Story
+      </div>
+
+      <div class="question">
+        Which three words are most closely
+        connected with the pupil's future?
+      </div>
+
+      <div
+        class="options"
+        data-quiz="q7"
+        data-answer="Dream · Goal · Ambition">
+
+        <button class="option">
+          Holiday · Game · Food
+        </button>
+
+        <button class="option">
+          Dream · Goal · Ambition
+        </button>
+
+        <button class="option">
+          Classroom · Pencil · Chair
+        </button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="f-q7"
+        role="status">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     STEP 8
+========================================= -->
+
+<section class="step" id="step8">
+
+  <div class="step-head">
+
+    <b>08 / SENTENCE LAB</b>
+
+    <span class="level">
+      CREATE
+    </span>
+
+  </div>
+
+  <div class="body">
+
+    <h2>
+      Build Your Future Sentences 🧩
+    </h2>
+
+    <p class="muted">
+      Click the words in the correct order.
+      You can remove a word by clicking it
+      in your sentence.
+    </p>
+
+    <!-- SENTENCE BUILDER 1 -->
+
+    <div class="builder" id="builder1">
+
+      <h3>
+        Sentence 01
+      </h3>
+
+      <p>
+        Build a sentence about your dream job.
+      </p>
+
+      <div class="word-bank">
+
+        <button class="word" data-word="doctor">
+          doctor
+        </button>
+
+        <button class="word" data-word="to">
+          to
+        </button>
+
+        <button class="word" data-word="I">
+          I
+        </button>
+
+        <button class="word" data-word="one day.">
+          one day.
+        </button>
+
+        <button class="word" data-word="a">
+          a
+        </button>
+
+        <button class="word" data-word="become">
+          become
+        </button>
+
+        <button class="word" data-word="want">
+          want
+        </button>
+
+      </div>
+
+      <div
+        class="sentence-box"
+        id="sentenceBox1">
+
+        <span class="muted">
+          Click the words above...
+        </span>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button
+          class="btn"
+          onclick="checkBuilder(1)">
+
+          Check sentence ✓
+
+        </button>
+
+        <button
+          class="btn secondary"
+          onclick="clearBuilder(1)">
+
+          Clear ↺
+
+        </button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="f-builder1"
+        role="status">
+      </div>
+
+    </div>
+
+    <!-- SENTENCE BUILDER 2 -->
+
+    <div class="builder" id="builder2">
+
+      <h3>
+        Sentence 02
+      </h3>
+
+      <p>
+        Build a sentence about determination.
+      </p>
+
+      <div class="word-bank">
+
+        <button class="word" data-word="goal.">
+          goal.
+        </button>
+
+        <button class="word" data-word="determined">
+          determined
+        </button>
+
+        <button class="word" data-word="She">
+          She
+        </button>
+
+        <button class="word" data-word="achieve">
+          achieve
+        </button>
+
+        <button class="word" data-word="her">
+          her
+        </button>
+
+        <button class="word" data-word="is">
+          is
+        </button>
+
+        <button class="word" data-word="to">
+          to
+        </button>
+
+      </div>
+
+      <div
+        class="sentence-box"
+        id="sentenceBox2">
+
+        <span class="muted">
+          Click the words above...
+        </span>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button
+          class="btn"
+          onclick="checkBuilder(2)">
+
+          Check sentence ✓
+
+        </button>
+
+        <button
+          class="btn secondary"
+          onclick="clearBuilder(2)">
+
+          Clear ↺
+
+        </button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="f-builder2"
+        role="status">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     STEP 9
+========================================= -->
+
+<section class="step" id="step9">
+
+  <div class="step-head">
+
+    <b>09 / WRITING MISSION</b>
+
+    <span class="level">
+      CREATE
+    </span>
+
+  </div>
+
+  <div class="body">
+
+    <h2>
+      My Dream Career ✍️
+    </h2>
+
+    <p class="muted">
+      Imagine your future and describe
+      the career you would like to have.
+    </p>
+
+    <div class="prompt">
+
+      <h3>
+        Your Writing Mission
+      </h3>
+
+      <p>
+        Write a short paragraph about
+        your dream career.
+      </p>
+
+      <p>
+        Explain:
+      </p>
+
+      <p>
+        💼 What job you want to have.<br>
+        ❤️ Why you like this profession.<br>
+        🎓 What you need to study.<br>
+        💪 What you will do to achieve your goal.
+      </p>
+
+      <p>
+        <strong>
+          Try to use at least six words
+          from this lesson.
+        </strong>
+      </p>
+
+      <p style="color:#923c94;font-weight:900;">
+
+        dream · ambition · goal · career ·
+        profession · university · degree ·
+        opportunity · hardworking ·
+        determined · effort · achieve · succeed
+
+      </p>
+
+    </div>
+
+    <textarea
+      id="writingArea"
+      placeholder="My dream career is..."
+      aria-label="Write about your dream career"></textarea>
+
+    <div class="word-count">
+
+      Words:
+      <span id="wordCount">0</span>
+
+    </div>
+
+    <div class="checks">
+
+      <label>
+        <input type="checkbox">
+        I introduced my dream job.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I explained why I chose it.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I mentioned education or training.
+      </label>
+
+      <label>
+        <input type="checkbox">
+        I explained how I will achieve my goal.
+      </label>
+
+    </div>
+
+    <div class="btn-row">
+
+      <button
+        class="btn"
+        onclick="checkWriting()">
+
+        Check my writing ⭐
+
+      </button>
+
+    </div>
+
+    <div
+      class="feedback"
+      id="f-writing"
+      role="status">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     FINAL SCORE
+========================================= -->
+
+<section class="result">
+
+  <h2>
+    🏆 Vocabulary Mission
+  </h2>
+
+  <div class="score">
+
+    <span id="score">0</span>
+    / 50
+
+  </div>
+
+  <p id="scoreMessage">
+    Complete the challenges and
+    create your dream career paragraph!
+  </p>
+
+  <div class="bar">
+
+    <div class="fill" id="scoreFill"></div>
+
+  </div>
+
+  <button
+    class="btn"
+    style="background:white;color:#833c99"
+    onclick="document.getElementById('step1').scrollIntoView({behavior:'smooth'})">
+
+    Review lesson ↑
+
+  </button>
+
+</section>
+
+<!-- =========================================
+     LESSON NAVIGATION
+========================================= -->
+
+<div class="lesson-nav">
+
+  <a
+    href="MS4-S2-Vocabulary-Lesson1.html"
+    class="nav-card">
+
+    <small>
+      ← PREVIOUS LESSON
+    </small>
+
+    👤 Personality & Character Traits
+
+  </a>
+
+  <a
+    href="MS4-S2-Vocabulary-Lesson3.html"
+    class="nav-card next">
+
+    <small>
+      NEXT LESSON →
+    </small>
+
+    📸 Life Experiences & Memories
+
+  </a>
+
+</div>
+
+</main>
+
+<!-- =========================================
+     DICTIONARY BUTTON
+========================================= -->
+
+<button
+  class="float"
+  onclick="openDictionary()"
+  aria-label="Open English Arabic dictionary">
+
+  📖 Dictionary
+
+</button>
+
+<!-- =========================================
+     DICTIONARY MODAL
+========================================= -->
+
+<div
+  class="modal"
+  id="dictionaryModal"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mini dictionary">
+
+  <div class="modal-box">
+
+    <div class="modal-top">
+
+      <h2>
+        📖 Mini Dictionary
+      </h2>
+
+      <button
+        class="close"
+        onclick="closeDictionary()"
+        aria-label="Close dictionary">
+
+        ×
+
+      </button>
+
+    </div>
+
+    <p class="muted">
+      Search for a word from this lesson.
+    </p>
+
+    <input
+      class="dictionary-input"
+      id="dictionaryInput"
+      placeholder="Type a word..."
+      oninput="searchDictionary()">
+
+    <div
+      class="dictionary-result"
+      id="dictionaryResult"
+      aria-live="polite">
+
+      Try: dream, ambition, career,
+      degree, achieve...
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+
+  MY ENGLISH SPACE ✦
+  MS4 · SEQUENCE 2 · VOCABULARY LESSON 02
+
+</footer>
+
+<script>
+
+/* =========================================
+   SCORE SYSTEM — 50 POINTS
+========================================= */
+
+const completedTasks = new Set();
+
+let score = 0;
+
+const points = {
+
+  q1:4,
+
+  q2a:3,
+  q2b:3,
+
+  education:6,
+
+  q4a:3,
+  q4b:3,
+
+  q5:4,
+
+  success:5,
+
+  q7:3,
+
+  builder1:4,
+  builder2:4,
+
+  writing:8
+
+};
+
+/* TOTAL: 50 POINTS */
+
+function award(id){
+
+  if(completedTasks.has(id)){
+    return;
+  }
+
+  completedTasks.add(id);
+
+  score += points[id] || 0;
+
+  document.getElementById("score").textContent =
+    score;
+
+  document.getElementById("scoreFill").style.width =
+    (score / 50 * 100) + "%";
+
+  const message =
+    document.getElementById("scoreMessage");
+
+  if(score === 50){
+
+    message.textContent =
+      "🏆 Perfect score! You are a Future Vocabulary Champion!";
+
+  }else if(score >= 40){
+
+    message.textContent =
+      "🌟 Outstanding! Your career vocabulary is excellent!";
+
+  }else if(score >= 25){
+
+    message.textContent =
+      "👏 Great progress! Keep exploring your future!";
+
+  }else{
+
+    message.textContent =
+      "🚀 Every challenge brings you closer to success!";
+
+  }
+
+  updateRail();
+
+}
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+function feedback(id,good,message){
+
+  const element =
+    document.getElementById("f-" + id);
+
+  if(!element){
+    return;
+  }
+
+  element.className =
+    "feedback show " +
+    (good ? "good" : "bad");
+
+  element.textContent = message;
+
+}
+
+/* =========================================
+   MULTIPLE CHOICE
+========================================= */
+
+document
+  .querySelectorAll("[data-quiz]")
+  .forEach(group=>{
+
+    group
+      .querySelectorAll("button")
+      .forEach(button=>{
+
+        button.addEventListener("click",()=>{
+
+          if(group.dataset.locked){
+            return;
+          }
+
+          const correct =
+            button.textContent.trim() ===
+            group.dataset.answer;
+
+          button.classList.add(
+            correct ? "correct" : "wrong"
+          );
+
+          if(correct){
+
+            group.dataset.locked = "1";
+
+            group
+              .querySelectorAll("button")
+              .forEach(b=>{
+                b.disabled = true;
+              });
+
+            award(group.dataset.quiz);
+
+            feedback(
+              group.dataset.quiz,
+              true,
+              "✅ Correct! Excellent thinking."
+            );
+
+          }else{
+
+            button.disabled = true;
+
+            feedback(
+              group.dataset.quiz,
+              false,
+              "Not quite. Read the story and try again!"
+            );
+
+          }
+
+        });
+
+      });
+
+  });
+
+/* =========================================
+   DROPDOWN ACTIVITIES
+========================================= */
+
+function checkSelects(id){
+
+  if(completedTasks.has(id)){
+    return;
+  }
+
+  const selects = [
+    ...document.querySelectorAll(
+      "#" + id + " select"
+    )
+  ];
+
+  let correct = 0;
+
+  selects.forEach(select=>{
+
+    const good =
+      select.value === select.dataset.answer;
+
+    if(good){
+      correct++;
+    }
+
+    select.classList.toggle("correct",good);
+
+    select.classList.toggle("wrong",!good);
+
+  });
+
+  if(correct === selects.length){
+
+    award(id);
+
+    selects.forEach(select=>{
+      select.disabled = true;
+    });
+
+    feedback(
+      id,
+      true,
+      "🎉 Perfect! All " +
+      correct +
+      " answers are correct."
+    );
+
+  }else{
+
+    feedback(
+      id,
+      false,
+      "You got " +
+      correct +
+      "/" +
+      selects.length +
+      ". Correct the highlighted choices and try again."
+    );
+
+  }
+
+}
+
+/* =========================================
+   SENTENCE BUILDERS
+========================================= */
+
+const builderAnswers = {
+
+  1:[
+    "I",
+    "want",
+    "to",
+    "become",
+    "a",
+    "doctor",
+    "one day."
+  ],
+
+  2:[
+    "She",
+    "is",
+    "determined",
+    "to",
+    "achieve",
+    "her",
+    "goal."
+  ]
+
+};
+
+const builderSelections = {
+
+  1:[],
+  2:[]
+
+};
+
+function initialiseBuilders(){
+
+  [1,2].forEach(number=>{
+
+    const builder =
+      document.getElementById(
+        "builder" + number
+      );
+
+    const buttons =
+      builder.querySelectorAll(".word");
+
+    buttons.forEach((button,index)=>{
+
+      button.dataset.index = index;
+
+      button.addEventListener("click",()=>{
+
+        if(completedTasks.has("builder" + number)){
+          return;
+        }
+
+        if(button.disabled){
+          return;
+        }
+
+        builderSelections[number].push({
+          word:button.dataset.word,
+          index:index
+        });
+
+        button.disabled = true;
+        button.classList.add("used");
+
+        renderBuilder(number);
+
+      });
+
+    });
+
+  });
+
+}
+
+function renderBuilder(number){
+
+  const box =
+    document.getElementById(
+      "sentenceBox" + number
+    );
+
+  const selected =
+    builderSelections[number];
+
+  if(selected.length === 0){
+
+    box.innerHTML =
+      '<span class="muted">Click the words above...</span>';
+
+    return;
+  }
+
+  box.innerHTML = "";
+
+  selected.forEach((item,position)=>{
+
+    const button =
+      document.createElement("button");
+
+    button.type = "button";
+
+    button.className =
+      "sentence-word";
+
+    button.textContent =
+      item.word;
+
+    button.title =
+      "Click to remove this word";
+
+    button.addEventListener("click",()=>{
+
+      if(completedTasks.has("builder" + number)){
+        return;
+      }
+
+      const removed =
+        builderSelections[number].splice(
+          position,1
+        )[0];
+
+      const original =
+        document.querySelectorAll(
+          "#builder" + number + " .word"
+        )[removed.index];
+
+      original.disabled = false;
+
+      original.classList.remove("used");
+
+      renderBuilder(number);
+
+    });
+
+    box.appendChild(button);
+
+  });
+
+}
+
+function clearBuilder(number){
+
+  if(completedTasks.has("builder" + number)){
+    return;
+  }
+
+  builderSelections[number] = [];
+
+  document
+    .querySelectorAll(
+      "#builder" + number + " .word"
+    )
+    .forEach(button=>{
+
+      button.disabled = false;
+      button.classList.remove("used");
+
+    });
+
+  renderBuilder(number);
+
+  const message =
+    document.getElementById(
+      "f-builder" + number
+    );
+
+  message.className = "feedback";
+  message.textContent = "";
+
+}
+
+function checkBuilder(number){
+
+  const id =
+    "builder" + number;
+
+  if(completedTasks.has(id)){
+    return;
+  }
+
+  const selected =
+    builderSelections[number].map(
+      item=>item.word
+    );
+
+  const expected =
+    builderAnswers[number];
+
+  const correct =
+    selected.length === expected.length &&
+    selected.every(
+      (word,index)=>word === expected[index]
+    );
+
+  if(correct){
+
+    award(id);
+
+    feedback(
+      id,
+      true,
+      "🌟 Perfect sentence! Great word order."
+    );
+
+    document
+      .querySelectorAll(
+        "#" + id + " .word"
+      )
+      .forEach(button=>{
+        button.disabled = true;
+      });
+
+  }else{
+
+    feedback(
+      id,
+      false,
+      "Not quite! Check the word order and try again."
+    );
+
+  }
+
+}
+
+initialiseBuilders();
+
+/* =========================================
+   WRITING MISSION
+========================================= */
+
+const writingArea =
+  document.getElementById("writingArea");
+
+writingArea.addEventListener("input",()=>{
+
+  const text =
+    writingArea.value.trim();
+
+  const count =
+    text
+      ? text.split(/\s+/).length
+      : 0;
+
+  document.getElementById("wordCount").textContent =
+    count;
+
+});
+
+function checkWriting(){
+
+  const text =
+    writingArea.value.trim();
+
+  const lower =
+    text.toLowerCase();
+
+  const wordCount =
+    text
+      ? text.split(/\s+/).length
+      : 0;
+
+  const vocabulary = [
+
+    "dream",
+    "ambition",
+    "goal",
+    "career",
+    "profession",
+    "university",
+    "degree",
+    "opportunity",
+    "hardworking",
+    "determined",
+    "effort",
+    "achieve",
+    "succeed",
+    "successful",
+    "future",
+    "prepare"
+
+  ];
+
+  const found = vocabulary.filter(word=>{
+
+    const pattern =
+      new RegExp(
+        "\\b" + word + "\\b",
+        "i"
+      );
+
+    return pattern.test(lower);
+
+  });
+
+  if(wordCount < 30){
+
+    feedback(
+      "writing",
+      false,
+      "✍️ Keep writing! Try to write at least 30 words."
+    );
+
+    return;
+
+  }
+
+  if(found.length < 6){
+
+    feedback(
+      "writing",
+      false,
+      "Good start! You used " +
+      found.length +
+      " lesson vocabulary words. Try to use at least six."
+    );
+
+    return;
+
+  }
+
+  award("writing");
+
+  feedback(
+    "writing",
+    true,
+    "🏆 Excellent! Your paragraph has enough words and uses at least six vocabulary items. Now check your grammar, ideas and punctuation."
+  );
+
+}
+
+/* =========================================
+   MINI DICTIONARY
+========================================= */
+
+const dictionary = {
+
+  dream:{
+    pos:"noun",
+    ar:"حلم",
+    definition:"Something you strongly hope to achieve."
+  },
+
+  future:{
+    pos:"noun",
+    ar:"المستقبل",
+    definition:"The time that is still to come."
+  },
+
+  goal:{
+    pos:"noun",
+    ar:"هدف",
+    definition:"Something you want to achieve."
+  },
+
+  ambition:{
+    pos:"noun",
+    ar:"طموح",
+    definition:"A strong desire to achieve something."
+  },
+
+  career:{
+    pos:"noun",
+    ar:"مسار مهني",
+    definition:"The jobs and professional experiences someone has during life."
+  },
+
+  profession:{
+    pos:"noun",
+    ar:"مهنة",
+    definition:"A type of job that usually requires particular skills or training."
+  },
+
+  university:{
+    pos:"noun",
+    ar:"جامعة",
+    definition:"An institution where students receive higher education."
+  },
+
+  degree:{
+    pos:"noun",
+    ar:"شهادة جامعية",
+    definition:"A qualification received after completing a course of study."
+  },
+
+  opportunity:{
+    pos:"noun",
+    ar:"فرصة",
+    definition:"A good chance to do or achieve something."
+  },
+
+  determined:{
+    pos:"adjective",
+    ar:"مصمم / عازم",
+    definition:"Having a strong decision to do something."
+  },
+
+  hardworking:{
+    pos:"adjective",
+    ar:"مجتهد",
+    definition:"Working with a lot of effort and care."
+  },
+
+  effort:{
+    pos:"noun",
+    ar:"جهد",
+    definition:"The physical or mental energy used to do something."
+  },
+
+  achieve:{
+    pos:"verb",
+    ar:"يحقق",
+    definition:"To successfully reach a goal."
+  },
+
+  succeed:{
+    pos:"verb",
+    ar:"ينجح",
+    definition:"To achieve what you wanted or planned."
+  },
+
+  successful:{
+    pos:"adjective",
+    ar:"ناجح",
+    definition:"Having achieved a desired result."
+  },
+
+  become:{
+    pos:"verb",
+    ar:"يصبح",
+    definition:"To start to be something or someone."
+  },
+
+  choose:{
+    pos:"verb",
+    ar:"يختار",
+    definition:"To decide between different possibilities."
+  },
+
+  prepare:{
+    pos:"verb",
+    ar:"يستعد",
+    definition:"To get ready for something."
+  },
+
+  plan:{
+    pos:"noun",
+    ar:"خطة",
+    definition:"A set of actions you intend to follow."
+  },
+
+  practise:{
+    pos:"verb",
+    ar:"يتدرب",
+    definition:"To do something repeatedly to improve your skills."
+  },
+
+  confidence:{
+    pos:"noun",
+    ar:"الثقة بالنفس",
+    definition:"Belief in your own abilities."
+  },
+
+  "career path":{
+    pos:"noun phrase",
+    ar:"مسار مهني",
+    definition:"The direction your working life may take."
+  },
+
+  "higher education":{
+    pos:"noun phrase",
+    ar:"التعليم العالي",
+    definition:"Education after secondary school."
+  },
+
+  "dream job":{
+    pos:"noun phrase",
+    ar:"مهنة الأحلام",
+    definition:"The job you would most like to have."
+  }
+
+};
+
+function openDictionary(){
+
+  document
+    .getElementById("dictionaryModal")
+    .classList.add("open");
+
+  document
+    .getElementById("dictionaryInput")
+    .focus();
+
+}
+
+function closeDictionary(){
+
+  document
+    .getElementById("dictionaryModal")
+    .classList.remove("open");
+
+}
+
+function showWord(word){
+
+  openDictionary();
+
+  document.getElementById("dictionaryInput").value =
+    word;
+
+  searchDictionary();
+
+}
+
+function searchDictionary(){
+
+  const input =
+    document
+      .getElementById("dictionaryInput")
+      .value
+      .toLowerCase()
+      .trim();
+
+  const result =
+    document.getElementById("dictionaryResult");
+
+  if(!input){
+
+    result.textContent =
+      "Try: dream, ambition, career, degree, achieve...";
+
+    return;
+
+  }
+
+  const word =
+    dictionary[input];
+
+  result.innerHTML = "";
+
+  if(word){
+
+    const heading =
+      document.createElement("h3");
+
+    heading.textContent = input;
+
+    const part =
+      document.createElement("p");
+
+    part.textContent =
+      "Part of speech: " + word.pos;
+
+    const arabic =
+      document.createElement("p");
+
+    arabic.className = "arabic";
+    arabic.lang = "ar";
+    arabic.textContent = word.ar;
+
+    const definition =
+      document.createElement("p");
+
+    definition.textContent =
+      word.definition;
+
+    result.append(
+      heading,
+      part,
+      arabic,
+      definition
+    );
+
+  }else{
+
+    result.textContent =
+      "🔎 This word is not in the mini dictionary yet.";
+
+  }
+
+}
+
+document
+  .getElementById("dictionaryModal")
+  .addEventListener("click",event=>{
+
+    if(event.target.id === "dictionaryModal"){
+
+      closeDictionary();
+
+    }
+
+  });
+
+document.addEventListener("keydown",event=>{
+
+  if(event.key === "Escape"){
+
+    closeDictionary();
+
+  }
+
+});
+
+/* =========================================
+   PROGRESS RAIL
+========================================= */
+
+const rail =
+  document.getElementById("rail");
+
+function updateRail(){
+
+  const mapping = [
+
+    ["q1"],
+
+    ["q2a","q2b"],
+
+    ["education"],
+
+    ["q4a","q4b"],
+
+    ["q5"],
+
+    ["success"],
+
+    ["q7"],
+
+    ["builder1","builder2"],
+
+    ["writing"]
+
+  ];
+
+  [...rail.children].forEach((link,index)=>{
+
+    const completed =
+      mapping[index].every(
+        task=>completedTasks.has(task)
+      );
+
+    link.classList.toggle(
+      "done",
+      completed
+    );
+
+  });
+
+}
+
+/* =========================================
+   ACTIVE SECTION TRACKING
+========================================= */
+
+const observer =
+  new IntersectionObserver(
+
+    entries=>{
+
+      entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+          [...rail.children].forEach(link=>{
+
+            link.classList.remove("active");
+
+          });
+
+          const number =
+            Number(
+              entry.target.id.replace("step","")
+            );
+
+          const active =
+            rail.children[number-1];
+
+          if(active){
+
+            active.classList.add("active");
+
+          }
+
+        }
+
+      });
+
+    },
+
+    {
+      rootMargin:"-25% 0px -55% 0px"
+    }
+
+  );
+
+document
+  .querySelectorAll(".step")
+  .forEach(step=>{
+
+    observer.observe(step);
+
+  });
+
+/* =========================================
+   SCROLL PROGRESS BAR
+========================================= */
+
+function scrollProgress(){
+
+  const total =
+    document.documentElement.scrollHeight -
+    window.innerHeight;
+
+  const percentage =
+    total > 0
+      ? window.scrollY / total * 100
+      : 0;
+
+  document
+    .getElementById("scrollFill")
+    .style.width =
+      percentage + "%";
+
+}
+
+window.addEventListener(
+  "scroll",
+  scrollProgress,
+  {passive:true}
+);
+
+scrollProgress();
+
+</script>
+
+</body>
+</html>

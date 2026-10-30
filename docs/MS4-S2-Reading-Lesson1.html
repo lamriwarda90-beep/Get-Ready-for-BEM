@@ -1,0 +1,6272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#8b4cb7">
+
+<title>My Best Childhood Friend | MS4 Reading Lesson 1</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================================
+   DESIGN SYSTEM
+========================================================== */
+
+:root {
+  --purple:#8650bd;
+  --purple-dark:#4c2878;
+  --purple-deep:#31184f;
+
+  --rose:#ec669b;
+  --rose-dark:#be3875;
+  --rose-soft:#fff0f6;
+
+  --lavender:#eee3ff;
+  --lavender-light:#f8f3ff;
+
+  --gold:#f5ba55;
+  --gold-soft:#fff4d8;
+
+  --green:#22996c;
+  --green-soft:#e9f9f0;
+
+  --red:#d85166;
+  --red-soft:#fff0f2;
+
+  --blue:#4588c8;
+
+  --ink:#32233f;
+  --muted:#786c83;
+  --white:#ffffff;
+
+  --line:#eadfed;
+
+  --shadow:
+    0 18px 55px rgba(70,35,104,.11);
+
+  --shadow-sm:
+    0 8px 25px rgba(70,35,104,.08);
+
+  --radius:26px;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:110px;
+}
+
+body {
+  margin:0;
+  font-family:"Nunito",sans-serif;
+  color:var(--ink);
+
+  background:
+    radial-gradient(circle at 8% 3%,#ffe6f0 0,transparent 28%),
+    radial-gradient(circle at 96% 15%,#eadbff 0,transparent 30%),
+    radial-gradient(circle at 15% 80%,#fff2db 0,transparent 25%),
+    #faf7ff;
+
+  min-height:100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font:inherit;
+}
+
+button {
+  cursor:pointer;
+}
+
+button:disabled {
+  cursor:not-allowed;
+  opacity:.65;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+img {
+  max-width:100%;
+}
+
+::selection {
+  background:#f7bed9;
+  color:var(--purple-deep);
+}
+
+:focus-visible {
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+.hidden {
+  display:none!important;
+}
+
+/* ==========================================================
+   SCROLL PROGRESS
+========================================================== */
+
+.scroll-track {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:5px;
+  background:#f0e8f5;
+  z-index:1000;
+}
+
+.scroll-fill {
+  width:0%;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    var(--rose),
+    var(--purple),
+    var(--gold)
+  );
+  transition:width .12s;
+}
+
+/* ==========================================================
+   TOP NAVIGATION
+========================================================== */
+
+.topbar {
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  background:rgba(255,255,255,.91);
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid #eee2f2;
+}
+
+.topbar-inner {
+  width:min(1190px,calc(100% - 36px));
+  margin:auto;
+
+  min-height:75px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:11px;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:20px;
+  font-weight:800;
+  color:var(--purple-deep);
+}
+
+.brand-icon {
+  width:44px;
+  height:44px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:15px;
+  color:white;
+  font-size:23px;
+
+  background:linear-gradient(
+    135deg,
+    var(--purple),
+    var(--rose)
+  );
+
+  box-shadow:0 7px 18px rgba(134,80,189,.25);
+}
+
+.nav-right {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.nav-label {
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  font-weight:700;
+
+  padding:10px 14px;
+  border-radius:999px;
+
+  color:var(--purple);
+  background:#f5edff;
+}
+
+.back-btn {
+  padding:11px 17px;
+  border-radius:999px;
+
+  color:white;
+  background:var(--purple-dark);
+
+  font-size:12px;
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.back-btn:hover {
+  transform:translateY(-2px);
+  background:var(--rose-dark);
+}
+
+/* ==========================================================
+   LAYOUT
+========================================================== */
+
+main {
+  width:min(1100px,calc(100% - 34px));
+  margin:auto;
+  padding:35px 0 75px;
+}
+
+section {
+  scroll-margin-top:115px;
+}
+
+.step {
+  margin-top:30px;
+}
+
+.card {
+  padding:34px;
+  background:rgba(255,255,255,.97);
+
+  border:1px solid rgba(234,223,237,.8);
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow);
+}
+
+.step-header {
+  display:flex;
+  align-items:center;
+  gap:16px;
+
+  margin-bottom:25px;
+}
+
+.step-number {
+  flex:none;
+
+  width:58px;
+  height:58px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:19px;
+
+  color:white;
+  background:linear-gradient(
+    135deg,
+    var(--purple),
+    var(--rose)
+  );
+
+  font-family:"Space Mono",monospace;
+  font-size:14px;
+  font-weight:700;
+
+  box-shadow:0 9px 19px rgba(134,80,189,.24);
+}
+
+.step-title {
+  margin:0;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:31px;
+  font-weight:800;
+  line-height:1.1;
+
+  color:var(--purple-deep);
+}
+
+.step-subtitle {
+  margin:5px 0 0;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.section-tag {
+  display:inline-block;
+
+  margin-bottom:10px;
+  padding:6px 11px;
+
+  border-radius:999px;
+
+  background:var(--lavender-light);
+  color:var(--purple);
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  font-weight:700;
+}
+
+.instruction {
+  padding:15px 18px;
+  margin-bottom:22px;
+
+  border-left:5px solid var(--gold);
+  border-radius:0 15px 15px 0;
+
+  background:#fff9ec;
+
+  font-size:14px;
+  line-height:1.7;
+}
+
+.instruction strong {
+  color:var(--purple-dark);
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero {
+  position:relative;
+  overflow:hidden;
+
+  padding:50px;
+
+  border-radius:34px;
+
+  background:
+    radial-gradient(circle at 90% 15%,rgba(255,255,255,.16),transparent 28%),
+    radial-gradient(circle at 10% 100%,rgba(255,196,222,.17),transparent 35%),
+    linear-gradient(
+      125deg,
+      #472477,
+      #8650bd 55%,
+      #e15e9c
+    );
+
+  color:white;
+
+  box-shadow:0 24px 60px rgba(93,49,137,.25);
+}
+
+.hero::before,
+.hero::after {
+  content:"";
+  position:absolute;
+  border:2px solid rgba(255,255,255,.11);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.hero::before {
+  width:360px;
+  height:360px;
+  right:-120px;
+  top:-170px;
+}
+
+.hero::after {
+  width:250px;
+  height:250px;
+  right:70px;
+  bottom:-180px;
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+}
+
+.hero-kicker {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:9px 14px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:999px;
+
+  background:rgba(255,255,255,.14);
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.03em;
+}
+
+.hero h1 {
+  margin:22px 0 14px;
+
+  max-width:850px;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(43px,7vw,78px);
+  font-weight:800;
+  line-height:.99;
+  letter-spacing:-1.5px;
+}
+
+.hero h1 span {
+  color:#ffe19d;
+}
+
+.hero-description {
+  max-width:700px;
+
+  font-size:16px;
+  line-height:1.85;
+
+  color:#f8ebff;
+}
+
+.hero-pills {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:23px;
+}
+
+.hero-pill {
+  padding:9px 13px;
+
+  border-radius:999px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.25);
+
+  font-size:11px;
+  font-weight:800;
+}
+
+.hero-bottom {
+  position:relative;
+  z-index:2;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;
+
+  margin-top:35px;
+}
+
+.hero-feature {
+  padding:18px;
+
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:19px;
+
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(8px);
+}
+
+.hero-feature .feature-icon {
+  font-size:25px;
+}
+
+.hero-feature strong {
+  display:block;
+  margin-top:8px;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:18px;
+}
+
+.hero-feature p {
+  margin:4px 0 0;
+  font-size:12px;
+  line-height:1.6;
+  color:#f4e9ff;
+}
+
+/* ==========================================================
+   STICKY LESSON NAVIGATION
+========================================================== */
+
+.lesson-rail {
+  position:sticky;
+  top:75px;
+  z-index:90;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  width:max-content;
+  max-width:100%;
+
+  margin:19px auto 0;
+  padding:9px 12px;
+
+  border:1px solid #eadfed;
+  border-radius:999px;
+
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(15px);
+
+  box-shadow:var(--shadow-sm);
+}
+
+.rail-link {
+  width:35px;
+  height:35px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+  background:#f5effa;
+
+  color:var(--purple-dark);
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  font-weight:700;
+
+  transition:.2s;
+}
+
+.rail-link:hover,
+.rail-link.active {
+  color:white;
+  background:linear-gradient(
+    135deg,
+    var(--purple),
+    var(--rose)
+  );
+  transform:scale(1.07);
+}
+
+.rail-link.completed {
+  background:var(--green);
+  color:white;
+}
+
+.rail-label {
+  padding:0 9px;
+
+  font-size:11px;
+  font-weight:900;
+  color:var(--muted);
+}
+
+/* ==========================================================
+   STEP 1 — PREDICTION
+========================================================== */
+
+.prediction-layout {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+  align-items:start;
+}
+
+.photo-frame {
+  position:relative;
+
+  padding:9px 9px 13px;
+
+  background:white;
+  border:1px solid #eee1eb;
+  border-radius:24px;
+
+  box-shadow:0 15px 32px rgba(72,34,104,.13);
+
+  transform:rotate(-1deg);
+}
+
+.photo-frame img {
+  display:block;
+
+  width:100%;
+  aspect-ratio:16/11;
+  object-fit:cover;
+
+  border-radius:17px;
+}
+
+.photo-caption {
+  padding:12px 7px 2px;
+
+  color:var(--rose-dark);
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  font-weight:700;
+}
+
+.prediction-intro h3 {
+  margin:0 0 10px;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:25px;
+  color:var(--purple-deep);
+}
+
+.prediction-intro p {
+  margin:0 0 16px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+/* ==========================================================
+   READING EXPERIENCE
+========================================================== */
+
+.reading-top {
+  text-align:center;
+  margin-bottom:26px;
+}
+
+.reading-top h2 {
+  margin:8px 0;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(29px,5vw,42px);
+  line-height:1.15;
+
+  color:var(--purple-deep);
+}
+
+.reading-top p {
+  max-width:680px;
+  margin:0 auto;
+
+  color:var(--muted);
+  line-height:1.75;
+}
+
+.reading-toolbar {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  margin:25px 0;
+  padding:15px;
+
+  border-radius:19px;
+  background:#f8f2ff;
+  border:1px solid #ecdefb;
+}
+
+.tool-btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+
+  padding:10px 14px;
+
+  border:1px solid #e4d1f5;
+  border-radius:12px;
+
+  background:white;
+  color:var(--purple-dark);
+
+  font-size:12px;
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.tool-btn:hover {
+  transform:translateY(-2px);
+  border-color:var(--purple);
+}
+
+.tool-btn.active {
+  background:var(--purple);
+  color:white;
+}
+
+.speed-select {
+  padding:10px 12px;
+
+  border:1px solid #e4d1f5;
+  border-radius:12px;
+
+  background:white;
+  color:var(--purple-dark);
+
+  font-size:12px;
+  font-weight:800;
+}
+
+.reading-hint {
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  margin-bottom:20px;
+}
+
+.reading-hint strong {
+  color:var(--rose-dark);
+}
+
+/* READING PAPER */
+
+.reading-paper {
+  max-width:950px;
+  margin:auto;
+
+  padding:34px 38px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #fffcff
+    );
+
+  border:1px solid #efdfed;
+  border-radius:27px;
+
+  box-shadow:0 12px 35px rgba(72,34,104,.07);
+}
+
+.story-paragraph {
+  position:relative;
+
+  min-height:190px;
+
+  margin:0;
+  padding:26px 0;
+
+  border-bottom:1px dashed #e9d9e8;
+
+  font-size:16px;
+  line-height:2;
+
+  color:#493d51;
+
+  transition:background .25s;
+}
+
+.story-paragraph:last-child {
+  border-bottom:none;
+}
+
+.story-paragraph.highlighted {
+  background:#fff9e9;
+  border-radius:15px;
+  padding-left:12px;
+  padding-right:12px;
+}
+
+.story-paragraph::after {
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.story-paragraph::first-letter {
+  float:left;
+
+  padding:5px 8px 0 0;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:43px;
+  font-weight:800;
+  line-height:.8;
+
+  color:var(--rose);
+}
+
+.story-visual {
+  float:right;
+
+  width:245px;
+  margin:0 0 15px 25px;
+
+  padding:7px;
+
+  background:white;
+  border:1px solid #ead8e7;
+  border-radius:18px;
+
+  box-shadow:0 9px 25px rgba(70,35,104,.13);
+
+  transform:rotate(1deg);
+  transition:.25s;
+}
+
+.story-paragraph:nth-child(even) .story-visual {
+  float:left;
+  margin:0 25px 15px 0;
+  transform:rotate(-1deg);
+}
+
+.story-visual:hover {
+  transform:rotate(0) translateY(-3px);
+}
+
+.story-visual img {
+  display:block;
+
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+
+  border-radius:12px;
+}
+
+.story-caption {
+  display:block;
+  padding:9px 4px 3px;
+
+  font-family:"Space Mono",monospace;
+  font-size:9px;
+  font-weight:700;
+  line-height:1.5;
+
+  color:var(--rose-dark);
+}
+
+.memory-label {
+  display:inline-block;
+
+  padding:5px 9px;
+  margin-right:5px;
+
+  border-radius:999px;
+
+  background:#fff0f7;
+  color:var(--rose-dark);
+
+  font-family:"Space Mono",monospace;
+  font-size:9px;
+  font-weight:700;
+}
+
+.vocab {
+  display:inline;
+
+  padding:1px 3px;
+
+  border:none;
+  border-bottom:2px dotted var(--rose);
+
+  background:#fff0f7;
+  color:var(--rose-dark);
+
+  border-radius:4px;
+
+  font-weight:900;
+
+  cursor:pointer;
+}
+
+.vocab:hover {
+  background:#ffe0ed;
+}
+
+.grammar-mark {
+  color:var(--purple-dark);
+  font-weight:900;
+}
+
+.reading-large .story-paragraph {
+  font-size:19px;
+}
+
+.reading-large .story-visual {
+  width:235px;
+}
+
+.story-complete {
+  margin-top:22px;
+  padding:20px;
+
+  border-radius:18px;
+  background:var(--green-soft);
+  border:1px solid #bde8d2;
+
+  text-align:center;
+}
+
+.story-complete strong {
+  display:block;
+  font-family:"Baloo 2",sans-serif;
+  font-size:22px;
+  color:var(--green);
+}
+
+.story-complete p {
+  margin:5px 0 0;
+  color:#43735b;
+  font-size:13px;
+}
+
+/* ==========================================================
+   QUESTIONS
+========================================================== */
+
+.question {
+  margin:15px 0;
+  padding:19px;
+
+  border:2px solid #efe3f1;
+  border-radius:19px;
+
+  background:#fffaff;
+
+  transition:.2s;
+}
+
+.question:hover {
+  border-color:#dfc7ed;
+}
+
+.question.correct {
+  border-color:#9ed7b8;
+  background:#f1fbf5;
+}
+
+.question.incorrect {
+  border-color:#edb4c0;
+  background:#fff5f6;
+}
+
+.question-title {
+  font-size:14px;
+  font-weight:900;
+  line-height:1.65;
+
+  color:var(--purple-deep);
+}
+
+.q-number {
+  display:inline-grid;
+  place-items:center;
+
+  width:29px;
+  height:29px;
+
+  margin-right:7px;
+
+  border-radius:10px;
+
+  background:#f2e6ff;
+  color:var(--purple);
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+}
+
+.options {
+  display:grid;
+  gap:9px;
+  margin-top:14px;
+}
+
+.option {
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+
+  padding:12px 14px;
+
+  border:2px solid #eee2f1;
+  border-radius:13px;
+
+  background:white;
+
+  font-size:13px;
+  line-height:1.6;
+
+  transition:.2s;
+  cursor:pointer;
+}
+
+.option:hover {
+  border-color:#c9a8e7;
+  background:#fbf7ff;
+  transform:translateX(3px);
+}
+
+.option input {
+  flex:none;
+  margin-top:4px;
+  accent-color:var(--purple);
+}
+
+.option:has(input:checked) {
+  border-color:var(--purple);
+  background:#f4eaff;
+}
+
+.option.answer-correct {
+  border-color:var(--green)!important;
+  background:var(--green-soft)!important;
+}
+
+.option.answer-wrong {
+  border-color:var(--red)!important;
+  background:var(--red-soft)!important;
+}
+
+.question-note {
+  display:none;
+
+  margin-top:12px;
+  padding:11px 13px;
+
+  border-radius:12px;
+
+  background:#f4efff;
+  color:var(--purple-dark);
+
+  font-size:12px;
+  line-height:1.65;
+}
+
+.question-note.show {
+  display:block;
+}
+
+/* ==========================================================
+   BUTTONS AND FEEDBACK
+========================================================== */
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  padding:12px 20px;
+
+  border:none;
+  border-radius:13px;
+
+  font-size:13px;
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.btn:hover:not(:disabled) {
+  transform:translateY(-2px);
+}
+
+.btn-primary {
+  color:white;
+
+  background:linear-gradient(
+    135deg,
+    var(--purple),
+    var(--rose)
+  );
+
+  box-shadow:0 8px 20px rgba(134,80,189,.22);
+}
+
+.btn-secondary {
+  color:var(--purple-dark);
+  background:#f2e8ff;
+  border:1px solid #dfcaf1;
+}
+
+.btn-gold {
+  color:#68440c;
+  background:var(--gold-soft);
+  border:1px solid #f2d590;
+}
+
+.actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+
+.feedback {
+  display:none;
+
+  margin-top:16px;
+  padding:15px 18px;
+
+  border-radius:15px;
+
+  font-size:13px;
+  font-weight:800;
+  line-height:1.7;
+}
+
+.feedback.show {
+  display:block;
+}
+
+.feedback.good {
+  background:var(--green-soft);
+  border:1px solid #b6e3ca;
+  color:#197b52;
+}
+
+.feedback.try {
+  background:var(--red-soft);
+  border:1px solid #edc1c9;
+  color:#a44253;
+}
+
+.feedback.info {
+  background:#f2ebff;
+  border:1px solid #d9c4f3;
+  color:var(--purple-dark);
+}
+
+/* ==========================================================
+   SELECT ACTIVITIES
+========================================================== */
+
+.table-wrap {
+  overflow-x:auto;
+  border-radius:17px;
+  border:1px solid #eadfeb;
+}
+
+.activity-table {
+  width:100%;
+  min-width:550px;
+  border-collapse:collapse;
+}
+
+.activity-table th {
+  padding:15px;
+
+  background:var(--purple-dark);
+  color:white;
+
+  text-align:left;
+  font-size:13px;
+}
+
+.activity-table td {
+  padding:13px 15px;
+
+  border-bottom:1px solid #eee4ef;
+
+  background:white;
+
+  font-size:13px;
+  line-height:1.6;
+}
+
+.activity-table tr:last-child td {
+  border-bottom:none;
+}
+
+.activity-table tr:nth-child(even) td {
+  background:#fcf9ff;
+}
+
+.activity-table select,
+.match-card select,
+.sequence-row select {
+  width:100%;
+
+  padding:10px 12px;
+
+  border:2px solid #e8d9ed;
+  border-radius:11px;
+
+  background:white;
+  color:var(--ink);
+
+  font-size:12px;
+  outline:none;
+}
+
+.activity-table select:focus,
+.match-card select:focus,
+.sequence-row select:focus {
+  border-color:var(--purple);
+}
+
+select.correct-field {
+  border-color:var(--green)!important;
+  background:var(--green-soft)!important;
+}
+
+select.wrong-field {
+  border-color:var(--red)!important;
+  background:var(--red-soft)!important;
+}
+
+/* ==========================================================
+   TRUE / FALSE
+========================================================== */
+
+.tf-item {
+  padding:17px;
+  margin:12px 0;
+
+  border:2px solid #eee1f1;
+  border-radius:17px;
+
+  background:#fffaff;
+}
+
+.tf-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.tf-statement {
+  font-size:13px;
+  font-weight:800;
+  line-height:1.65;
+}
+
+.tf-actions {
+  display:flex;
+  flex:none;
+  gap:7px;
+}
+
+.tf-btn {
+  padding:9px 14px;
+
+  border:2px solid #e5d7ec;
+  border-radius:999px;
+
+  background:white;
+  color:var(--purple-dark);
+
+  font-size:11px;
+  font-weight:900;
+}
+
+.tf-btn.selected {
+  background:var(--purple);
+  color:white;
+  border-color:var(--purple);
+}
+
+.tf-evidence {
+  display:none;
+
+  margin-top:12px;
+  padding:12px;
+
+  border-radius:11px;
+
+  background:#f4eeff;
+  color:var(--purple-dark);
+
+  font-size:12px;
+  line-height:1.7;
+}
+
+.tf-evidence.show {
+  display:block;
+}
+
+/* ==========================================================
+   MATCHING
+========================================================== */
+
+.match-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+.match-card {
+  padding:18px;
+
+  border:2px solid #eee1f1;
+  border-radius:17px;
+
+  background:#fffaff;
+}
+
+.match-card strong {
+  display:block;
+  margin-bottom:7px;
+
+  color:var(--purple-dark);
+}
+
+.match-card p {
+  min-height:43px;
+  margin:0 0 12px;
+
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+}
+
+/* ==========================================================
+   STORY SEQUENCING
+========================================================== */
+
+.sequence-list {
+  display:grid;
+  gap:10px;
+}
+
+.sequence-row {
+  display:grid;
+  grid-template-columns:40px 1fr 130px;
+  gap:12px;
+  align-items:center;
+
+  padding:13px;
+
+  border:2px solid #eee1f1;
+  border-radius:15px;
+
+  background:white;
+}
+
+.sequence-letter {
+  display:grid;
+  place-items:center;
+
+  width:35px;
+  height:35px;
+
+  border-radius:11px;
+
+  background:#f4eaff;
+  color:var(--purple);
+
+  font-family:"Space Mono",monospace;
+  font-weight:700;
+}
+
+.sequence-text {
+  font-size:13px;
+  line-height:1.6;
+}
+
+/* ==========================================================
+   SUBSECTION TITLES
+========================================================== */
+
+.subheading {
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  margin:30px 0 15px;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:24px;
+  color:var(--purple-deep);
+}
+
+.subheading:first-child {
+  margin-top:0;
+}
+
+.subheading span {
+  width:37px;
+  height:37px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:12px;
+
+  background:#f4eaff;
+}
+
+/* ==========================================================
+   GRAMMAR
+========================================================== */
+
+.grammar-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:11px;
+  margin:20px 0;
+}
+
+.grammar-card {
+  padding:16px;
+
+  border:1px solid #e9dcf0;
+  border-radius:16px;
+
+  background:linear-gradient(
+    135deg,
+    #fcf8ff,
+    #fff8fb
+  );
+}
+
+.grammar-card strong {
+  display:block;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:16px;
+
+  color:var(--purple-dark);
+}
+
+.grammar-card p {
+  margin:5px 0 0;
+
+  font-size:11px;
+  line-height:1.5;
+  color:var(--muted);
+}
+
+.grammar-hunt {
+  padding:22px;
+  margin-top:25px;
+
+  border:2px dashed #eac36e;
+  border-radius:20px;
+
+  background:#fffaf0;
+}
+
+.grammar-hunt h3 {
+  margin:0 0 8px;
+
+  font-family:"Baloo 2",sans-serif;
+  color:var(--purple-deep);
+  font-size:22px;
+}
+
+.grammar-hunt p {
+  margin:0 0 15px;
+  color:#756245;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.hunt-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+
+.hunt-item {
+  display:flex;
+  align-items:center;
+  gap:9px;
+
+  padding:10px;
+
+  border-radius:10px;
+  background:white;
+
+  font-size:12px;
+  font-weight:800;
+}
+
+.hunt-item input {
+  accent-color:var(--purple);
+}
+
+/* ==========================================================
+   INFERENCE
+========================================================== */
+
+.detective-box {
+  padding:23px;
+
+  border:1px solid #e7d4f5;
+  border-radius:20px;
+
+  background:linear-gradient(
+    135deg,
+    #f6efff,
+    #fff5f9
+  );
+}
+
+.detective-box strong {
+  display:block;
+  color:var(--purple-deep);
+  font-family:"Baloo 2",sans-serif;
+  font-size:21px;
+}
+
+.detective-box p {
+  margin:7px 0 15px;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:13px;
+}
+
+.clue-list {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.clue {
+  padding:8px 12px;
+
+  border-radius:999px;
+
+  background:white;
+  border:1px solid #e7d4f5;
+
+  color:var(--purple);
+  font-size:11px;
+  font-weight:900;
+}
+
+/* ==========================================================
+   BEM CHALLENGE
+========================================================== */
+
+.bem-card {
+  position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fff8ee 60%,
+      #fff1f8
+    );
+
+  border:2px solid #f2dba3;
+}
+
+.bem-card::before {
+  content:"BEM";
+
+  position:absolute;
+  right:-20px;
+  top:-48px;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:170px;
+  font-weight:800;
+
+  color:rgba(235,174,69,.09);
+
+  pointer-events:none;
+}
+
+.bem-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+
+  padding:9px 14px;
+
+  border-radius:999px;
+
+  background:#fff0c8;
+  color:#94620e;
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  font-weight:700;
+}
+
+/* ==========================================================
+   WRITING STUDIO
+========================================================== */
+
+.writing-studio {
+  margin-top:35px;
+  padding:25px;
+
+  border:1px solid #e9d8ee;
+  border-radius:23px;
+
+  background:white;
+}
+
+.writing-studio h3 {
+  margin:0 0 7px;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:28px;
+
+  color:var(--purple-deep);
+}
+
+.writing-studio p {
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.75;
+}
+
+.word-bank {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:18px 0;
+}
+
+.word-chip {
+  padding:8px 12px;
+
+  border:1px solid #e7d2ef;
+  border-radius:999px;
+
+  background:#f8efff;
+  color:var(--purple-dark);
+
+  font-size:11px;
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.word-chip:hover {
+  background:var(--purple);
+  color:white;
+}
+
+.writing-textarea {
+  display:block;
+
+  width:100%;
+  min-height:220px;
+
+  padding:20px;
+
+  border:2px solid #e7d9ee;
+  border-radius:17px;
+
+  background:#fffaff;
+
+  outline:none;
+  resize:vertical;
+
+  font-size:14px;
+  line-height:1.9;
+
+  color:var(--ink);
+}
+
+.writing-textarea:focus {
+  border-color:var(--purple);
+  background:white;
+}
+
+.writing-meta {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+
+  margin:13px 0;
+}
+
+.word-counter {
+  color:var(--purple-dark);
+  font-size:12px;
+  font-weight:900;
+}
+
+.save-status {
+  color:var(--green);
+  font-size:11px;
+  font-weight:800;
+}
+
+.writing-checklist {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+
+  margin:20px 0;
+}
+
+.checklist-item {
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:12px;
+
+  border:1px solid #e9d9ee;
+  border-radius:12px;
+
+  background:#faf6ff;
+
+  font-size:12px;
+  font-weight:800;
+}
+
+.checklist-item input {
+  accent-color:var(--purple);
+}
+
+/* ==========================================================
+   SCORE DASHBOARD
+========================================================== */
+
+.score-dashboard {
+  position:relative;
+  overflow:hidden;
+
+  margin-top:30px;
+  padding:36px;
+
+  border-radius:29px;
+
+  background:linear-gradient(
+    130deg,
+    #3c2064,
+    #7844ac 55%,
+    #d95c98
+  );
+
+  color:white;
+  text-align:center;
+
+  box-shadow:0 22px 50px rgba(76,40,120,.25);
+}
+
+.score-dashboard h2 {
+  margin:0;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:33px;
+}
+
+.score-number {
+  margin:13px 0 8px;
+
+  font-family:"Space Mono",monospace;
+  font-size:clamp(35px,6vw,50px);
+  font-weight:700;
+}
+
+.score-number small {
+  font-size:20px;
+  opacity:.7;
+}
+
+.score-progress {
+  width:min(500px,100%);
+  height:13px;
+
+  margin:20px auto;
+
+  border-radius:999px;
+  background:rgba(255,255,255,.22);
+
+  overflow:hidden;
+}
+
+.score-progress-fill {
+  width:0%;
+  height:100%;
+
+  border-radius:999px;
+
+  background:linear-gradient(
+    90deg,
+    #ffe6a6,
+    #ffffff
+  );
+
+  transition:width .5s ease;
+}
+
+.score-message {
+  max-width:550px;
+  margin:0 auto;
+
+  color:#f5eaff;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.achievement-row {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+
+  margin-top:22px;
+}
+
+.achievement {
+  padding:9px 13px;
+
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:999px;
+
+  background:rgba(255,255,255,.13);
+
+  color:#f8eaff;
+  font-size:11px;
+  font-weight:900;
+}
+
+.achievement.unlocked {
+  background:#ffe5a3;
+  border-color:#ffe5a3;
+  color:#77500d;
+}
+
+/* ==========================================================
+   LESSON NAVIGATION
+========================================================== */
+
+.lesson-navigation {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:30px;
+}
+
+.nav-card {
+  padding:21px;
+
+  border:1px solid #eaddec;
+  border-radius:19px;
+
+  background:white;
+
+  box-shadow:var(--shadow-sm);
+
+  transition:.2s;
+}
+
+.nav-card:hover {
+  transform:translateY(-3px);
+  border-color:var(--purple);
+}
+
+.nav-card small {
+  display:block;
+  margin-bottom:5px;
+
+  color:var(--rose-dark);
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+}
+
+.nav-card strong {
+  font-family:"Baloo 2",sans-serif;
+  font-size:19px;
+  color:var(--purple-deep);
+}
+
+/* ==========================================================
+   DICTIONARY BUTTON
+========================================================== */
+
+.dict-float {
+  position:fixed;
+  right:24px;
+  bottom:25px;
+  z-index:150;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:12px 17px;
+
+  border:3px solid white;
+  border-radius:999px;
+
+  background:linear-gradient(
+    135deg,
+    var(--purple),
+    var(--rose)
+  );
+
+  color:white;
+
+  box-shadow:0 12px 32px rgba(76,40,120,.32);
+
+  font-size:13px;
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.dict-float:hover {
+  transform:translateY(-4px);
+}
+
+.dict-float span {
+  font-size:23px;
+}
+
+/* ==========================================================
+   DICTIONARY MODAL
+========================================================== */
+
+.modal-overlay {
+  position:fixed;
+  inset:0;
+  z-index:500;
+
+  display:none;
+  align-items:center;
+  justify-content:center;
+
+  padding:15px;
+
+  background:rgba(35,18,53,.65);
+  backdrop-filter:blur(5px);
+}
+
+.modal-overlay.open {
+  display:flex;
+}
+
+.modal-panel {
+  width:min(520px,100%);
+  max-height:85vh;
+
+  display:flex;
+  flex-direction:column;
+
+  padding:25px;
+
+  border-radius:25px;
+  background:white;
+
+  box-shadow:0 30px 70px rgba(0,0,0,.25);
+
+  animation:modalIn .25s ease;
+}
+
+@keyframes modalIn {
+  from {
+    opacity:0;
+    transform:translateY(20px) scale(.97);
+  }
+
+  to {
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+.modal-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+
+  margin-bottom:15px;
+}
+
+.modal-head h3 {
+  margin:0;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:25px;
+
+  color:var(--purple-deep);
+}
+
+.modal-close {
+  width:37px;
+  height:37px;
+
+  border:none;
+  border-radius:50%;
+
+  background:#f6edff;
+  color:var(--purple-dark);
+
+  font-weight:900;
+}
+
+.dict-search {
+  width:100%;
+  padding:13px 15px;
+
+  margin-bottom:15px;
+
+  border:2px solid #e8d9ef;
+  border-radius:13px;
+
+  outline:none;
+  background:#fdfaff;
+}
+
+.dict-search:focus {
+  border-color:var(--purple);
+}
+
+.dict-list {
+  display:grid;
+  gap:9px;
+
+  overflow-y:auto;
+}
+
+.dict-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+
+  padding:12px 14px;
+
+  border:1px solid #eee2f1;
+  border-radius:13px;
+
+  background:#fffaff;
+}
+
+.dict-english {
+  font-family:"Baloo 2",sans-serif;
+  font-size:16px;
+  font-weight:800;
+  color:var(--purple-dark);
+}
+
+.dict-pos {
+  display:block;
+
+  font-family:"Space Mono",monospace;
+  font-size:9px;
+  font-weight:400;
+
+  color:var(--muted);
+}
+
+.dict-arabic {
+  direction:rtl;
+  text-align:right;
+
+  font-family:"Noto Naskh Arabic",sans-serif;
+  font-size:19px;
+  font-weight:700;
+
+  color:var(--rose-dark);
+}
+
+/* ==========================================================
+   VOCABULARY POPUP
+========================================================== */
+
+.vocab-popup {
+  position:fixed;
+  z-index:600;
+
+  display:none;
+
+  max-width:260px;
+
+  padding:13px 18px;
+
+  border:1px solid #e4d1f0;
+  border-radius:15px;
+
+  background:white;
+
+  box-shadow:0 12px 35px rgba(40,20,60,.2);
+
+  pointer-events:none;
+}
+
+.vocab-popup.show {
+  display:block;
+}
+
+.vocab-popup strong {
+  display:block;
+  color:var(--purple-dark);
+  font-size:15px;
+}
+
+.vocab-popup span {
+  display:block;
+  margin-top:4px;
+
+  direction:rtl;
+
+  font-family:"Noto Naskh Arabic",sans-serif;
+  font-size:18px;
+
+  color:var(--rose-dark);
+}
+
+/* ==========================================================
+   TOAST NOTIFICATIONS
+========================================================== */
+
+.toast {
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  z-index:700;
+
+  transform:translate(-50%,100px);
+
+  padding:13px 20px;
+
+  border-radius:999px;
+
+  background:var(--purple-deep);
+  color:white;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+  font-size:12px;
+  font-weight:900;
+
+  opacity:0;
+  pointer-events:none;
+
+  transition:.3s;
+}
+
+.toast.show {
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer {
+  padding:30px 15px 45px;
+  text-align:center;
+
+  color:var(--muted);
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  line-height:1.8;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+@media(max-width:850px) {
+
+  .hero {
+    padding:35px 27px;
+  }
+
+  .hero-bottom {
+    grid-template-columns:1fr;
+  }
+
+  .prediction-layout {
+    grid-template-columns:1fr;
+  }
+
+  .grammar-grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .story-visual {
+    width:215px;
+  }
+
+  .nav-label {
+    display:none;
+  }
+
+}
+
+@media(max-width:650px) {
+
+  main {
+    width:calc(100% - 20px);
+    padding-top:18px;
+  }
+
+  .topbar-inner {
+    width:calc(100% - 20px);
+    min-height:66px;
+  }
+
+  .brand {
+    font-size:15px;
+  }
+
+  .brand-icon {
+    width:36px;
+    height:36px;
+    font-size:19px;
+  }
+
+  .back-btn {
+    padding:9px 11px;
+    font-size:10px;
+  }
+
+  .hero {
+    padding:31px 21px;
+    border-radius:25px;
+  }
+
+  .hero h1 {
+    font-size:43px;
+  }
+
+  .hero-description {
+    font-size:14px;
+  }
+
+  .card {
+    padding:22px 16px;
+    border-radius:21px;
+  }
+
+  .step-title {
+    font-size:24px;
+  }
+
+  .step-number {
+    width:47px;
+    height:47px;
+    border-radius:15px;
+  }
+
+  .lesson-rail {
+    top:66px;
+    gap:4px;
+    padding:7px;
+  }
+
+  .rail-link {
+    width:28px;
+    height:28px;
+    font-size:9px;
+  }
+
+  .rail-label {
+    display:none;
+  }
+
+  .reading-paper {
+    padding:20px 17px;
+  }
+
+  .story-paragraph {
+    min-height:0;
+    font-size:15px;
+    line-height:1.9;
+  }
+
+  .story-visual,
+  .story-paragraph:nth-child(even) .story-visual {
+    float:none;
+
+    display:block;
+
+    width:100%;
+    max-width:420px;
+
+    margin:0 auto 20px;
+
+    transform:none;
+  }
+
+  .reading-large .story-visual {
+    width:100%;
+  }
+
+  .match-grid,
+  .grammar-grid,
+  .hunt-grid,
+  .writing-checklist,
+  .lesson-navigation {
+    grid-template-columns:1fr;
+  }
+
+  .tf-top {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .sequence-row {
+    grid-template-columns:35px 1fr;
+  }
+
+  .sequence-row select {
+    grid-column:2;
+  }
+
+  .score-dashboard {
+    padding:30px 20px;
+  }
+
+  .dict-float {
+    right:15px;
+    bottom:15px;
+    padding:12px;
+  }
+
+  .dict-float .dict-label {
+    display:none;
+  }
+
+  .modal-panel {
+    padding:20px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior:auto!important;
+    animation:none!important;
+    transition:none!important;
+  }
+
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print {
+
+  body {
+    background:white;
+  }
+
+  .topbar,
+  .scroll-track,
+  .lesson-rail,
+  .reading-toolbar,
+  .dict-float,
+  .actions,
+  .lesson-navigation,
+  .toast,
+  .modal-overlay,
+  .vocab-popup {
+    display:none!important;
+  }
+
+  main {
+    width:100%;
+    padding:0;
+  }
+
+  .hero {
+    background:#eee5f7!important;
+    color:#302040!important;
+    box-shadow:none;
+  }
+
+  .hero h1,
+  .hero h1 span {
+    color:#302040!important;
+  }
+
+  .hero-description,
+  .hero-feature p {
+    color:#302040!important;
+  }
+
+  .card {
+    box-shadow:none;
+    border:1px solid #ddd;
+  }
+
+  .step {
+    break-inside:avoid-page;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ==========================================================
+     SCROLL PROGRESS
+========================================================== -->
+
+<div class="scroll-track">
+  <div class="scroll-fill" id="scrollFill"></div>
+</div>
+
+<!-- ==========================================================
+     TOP NAVIGATION
+========================================================== -->
+
+<header class="topbar">
+
+  <div class="topbar-inner">
+
+    <a href="MS4-Sequence2.html" class="brand">
+      <span class="brand-icon">📖</span>
+      <span>MY ENGLISH SPACE</span>
+    </a>
+
+    <div class="nav-right">
+
+      <span class="nav-label">
+        MS4 / S2 / READING 01
+      </span>
+
+      <a href="MS4-S2-Reading.html" class="back-btn">
+        ← Reading Map
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+<main>
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-kicker">
+      ✦ MS4 · SEQUENCE 2 · READING EXPEDITION
+    </div>
+
+    <h1>
+      My Best<br>
+      <span>Childhood Friend</span>
+    </h1>
+
+    <p class="hero-description">
+      Welcome to Adam's memory album!
+
+      Travel back to his childhood, discover his special
+      friendship with Samir, explore unforgettable memories
+      and become a brilliant reading detective.
+    </p>
+
+    <div class="hero-pills">
+
+      <span class="hero-pill">📖 Reading</span>
+      <span class="hero-pill">🧠 Comprehension</span>
+      <span class="hero-pill">🔍 Grammar</span>
+      <span class="hero-pill">🏆 BEM Challenge</span>
+      <span class="hero-pill">✍️ Writing</span>
+
+    </div>
+
+  </div>
+
+  <div class="hero-bottom">
+
+    <div class="hero-feature">
+
+      <div class="feature-icon">👀</div>
+
+      <strong>Read & Discover</strong>
+
+      <p>
+        Explore seven illustrated memories and understand
+        the main ideas.
+      </p>
+
+    </div>
+
+    <div class="hero-feature">
+
+      <div class="feature-icon">🕵️</div>
+
+      <strong>Think & Investigate</strong>
+
+      <p>
+        Find evidence, interpret clues and discover
+        grammar inside the story.
+      </p>
+
+    </div>
+
+    <div class="hero-feature">
+
+      <div class="feature-icon">🏆</div>
+
+      <strong>Challenge Yourself</strong>
+
+      <p>
+        Complete interactive tasks, earn points and
+        prepare for the BEM.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     LESSON NAVIGATION
+========================================================== -->
+
+<nav class="lesson-rail" aria-label="Lesson navigation">
+
+  <span class="rail-label">STEPS</span>
+
+  <a href="#step1" class="rail-link active" title="Prediction">01</a>
+  <a href="#step2" class="rail-link" title="Reading">02</a>
+  <a href="#step3" class="rail-link" title="Global comprehension">03</a>
+  <a href="#step4" class="rail-link" title="Specific details">04</a>
+  <a href="#step5" class="rail-link" title="True or false">05</a>
+  <a href="#step6" class="rail-link" title="Text detective">06</a>
+  <a href="#step7" class="rail-link" title="Grammar">07</a>
+  <a href="#step8" class="rail-link" title="Inference">08</a>
+  <a href="#step9" class="rail-link" title="BEM and writing">09</a>
+
+</nav>
+
+<!-- ==========================================================
+     STEP 1 — PREDICTION
+========================================================== -->
+
+<section class="step" id="step1">
+
+  <div class="card">
+
+    <div class="step-header">
+
+      <div class="step-number">01</div>
+
+      <div>
+        <div class="section-tag">BEFORE READING</div>
+        <h2 class="step-title">Look, Think & Predict</h2>
+        <p class="step-subtitle">Activate your imagination.</p>
+      </div>
+
+    </div>
+
+    <div class="instruction">
+      👀 <strong>Your mission:</strong>
+      Look at the picture and read the title.
+      What do you think Adam's story is about?
+    </div>
+
+    <div class="prediction-layout">
+
+      <div>
+
+        <div class="photo-frame">
+
+          <img
+            src="https://i.imgur.com/5s6cYX1.png"
+            alt="Adam and his best childhood friend"
+            loading="eager">
+
+          <div class="photo-caption">
+            📸 MEMORY ALBUM · CHILDHOOD FRIENDSHIP
+          </div>
+
+        </div>
+
+        <div class="detective-box" style="margin-top:22px;">
+
+          <strong>💭 Think Like a Reader</strong>
+
+          <p>
+            Good readers make predictions before they read.
+            A prediction is a smart guess based on clues.
+          </p>
+
+          <div class="clue-list">
+            <span class="clue">Picture</span>
+            <span class="clue">Title</span>
+            <span class="clue">People</span>
+            <span class="clue">Setting</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div>
+
+        <div id="predictionQuestions"></div>
+
+        <div class="actions">
+
+          <button class="btn btn-primary"
+                  onclick="checkSection('prediction')">
+            ✓ Check Predictions
+          </button>
+
+        </div>
+
+        <div id="predictionFeedback" class="feedback"
+             aria-live="polite"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     STEP 2 — READING STORY
+========================================================== -->
+
+<section class="step" id="step2">
+
+  <div class="card">
+
+    <div class="reading-top">
+
+      <span class="section-tag">
+        📸 SEVEN MEMORIES · ONE SPECIAL FRIENDSHIP
+      </span>
+
+      <h2>My Best Childhood Friend</h2>
+
+      <p>
+        Read Adam's story carefully. Click the pink vocabulary
+        words to discover their meanings in Arabic.
+      </p>
+
+    </div>
+
+    <!-- READING TOOLS -->
+
+    <div class="reading-toolbar">
+
+      <button class="tool-btn" id="readBtn"
+              onclick="startReading()">
+        🔊 Read Aloud
+      </button>
+
+      <button class="tool-btn" onclick="stopReading()">
+        ⏹ Stop
+      </button>
+
+      <button class="tool-btn" id="fontBtn"
+              onclick="toggleFontSize()">
+        A+ Larger Text
+      </button>
+
+      <button class="tool-btn" onclick="toggleHighlights()">
+        ✨ Highlight Keywords
+      </button>
+
+      <select id="readingSpeed"
+              class="speed-select"
+              aria-label="Reading speed">
+
+        <option value="0.75">Slow</option>
+        <option value="0.9" selected>Normal</option>
+        <option value="1.1">Fast</option>
+
+      </select>
+
+    </div>
+
+    <p class="reading-hint">
+      💡 <strong>Reading tip:</strong>
+      Read the whole story once before answering the questions.
+    </p>
+
+    <!-- MAIN READING PAPER -->
+
+    <article class="reading-paper" id="readingPaper">
+
+      <!-- MEMORY 1 -->
+
+      <p class="story-paragraph">
+
+        <span class="story-visual">
+
+          <img
+            src="https://i.imgur.com/5s6cYX1.png"
+            alt="Adam remembering Samir"
+            loading="lazy">
+
+          <span class="story-caption">
+            MEMORY 01 · MY BEST CHILDHOOD FRIEND
+          </span>
+
+        </span>
+
+        <span class="memory-label">MEMORY 01</span>
+
+        My best childhood friend is <strong>Samir</strong>.
+        We met when we were eight, and we quickly became close.
+
+        Samir
+        <button class="vocab" data-word="calm">is calm</button>,
+        <button class="vocab" data-word="cheerful">cheerful</button>
+        and
+        <button class="vocab" data-word="patient">patient</button>.
+
+        He always listens when someone has a problem, and he is very
+        <button class="vocab" data-word="helpful">helpful</button>.
+
+        I am more talkative,
+        <span class="grammar-mark">whereas</span>
+        Samir usually thinks before he speaks.
+
+        He never laughs at people who make mistakes.
+        Instead, he encourages them and tries to make
+        them feel better.
+
+      </p>
+
+      <!-- MEMORY 2 -->
+
+      <p class="story-paragraph">
+
+        <span class="story-visual">
+
+          <img
+            src="https://i.imgur.com/muCWj55.png"
+            alt="Adam and Samir on their first day at school"
+            loading="lazy">
+
+          <span class="story-caption">
+            MEMORY 02 · OUR FIRST DAY AT SCHOOL
+          </span>
+
+        </span>
+
+        <span class="memory-label">MEMORY 02</span>
+
+        I still remember our first day at school.
+
+        I was feeling
+        <button class="vocab" data-word="nervous">nervous</button>
+        while Samir
+        <span class="grammar-mark">was talking</span>
+        to another boy near the classroom door.
+
+        Suddenly, the teacher called us inside.
+
+        I looked lost, but Samir smiled and showed me
+        where to sit.
+
+        At break time, we discovered that we lived in the
+        same
+        <button class="vocab" data-word="neighbourhood">
+          neighbourhood
+        </button>.
+
+        That small discovery made me feel less nervous,
+        and we started talking about our families,
+        our favourite subjects and the games we enjoyed.
+
+      </p>
+
+      <!-- MEMORY 3 -->
+
+      <p class="story-paragraph">
+
+        <span class="story-visual">
+
+          <img
+            src="https://i.imgur.com/cb0tR6M.png"
+            alt="Adam and Samir becoming best friends"
+            loading="lazy">
+
+          <span class="story-caption">
+            MEMORY 03 · HOW WE BECAME BEST FRIENDS
+          </span>
+
+        </span>
+
+        <span class="memory-label">MEMORY 03</span>
+
+        During the first months, Samir often helped me
+        with difficult exercises.
+
+        I also helped him when he needed ideas for
+        school projects.
+
+        We were different,
+        <span class="grammar-mark">but</span>
+        our differences made our friendship stronger.
+
+        <span class="grammar-mark">Unlike</span>
+        some children who only wanted to win,
+        Samir was
+        <button class="vocab" data-word="unselfish">
+          unselfish
+        </button>.
+
+        He was also
+        <button class="vocab" data-word="hardworking">
+          hardworking
+        </button>
+        and
+        <button class="vocab" data-word="determined">
+          determined
+        </button>.
+
+        When something was difficult, he did not give up.
+
+        Little by little, we became the closest of friends.
+
+      </p>
+
+      <!-- MEMORY 4 -->
+
+      <p class="story-paragraph">
+
+        <span class="story-visual">
+
+          <img
+            src="https://i.imgur.com/Dd37r9a.png"
+            alt="Adam and Samir playing football"
+            loading="lazy">
+
+          <span class="story-caption">
+            MEMORY 04 · OUR FAVOURITE AFTER-SCHOOL HOBBY
+          </span>
+
+        </span>
+
+        <span class="memory-label">MEMORY 04</span>
+
+        After school, we usually played football with
+        our classmates.
+
+        We <span class="grammar-mark">liked</span>
+        spending time outside because it helped us relax.
+
+        I was usually the more energetic player,
+        <span class="grammar-mark">whereas</span>
+        Samir was careful and strategic.
+
+        We practised together and encouraged each other.
+
+        Sometimes I was too confident and made a
+        <button class="vocab" data-word="careless">
+          careless
+        </button>
+        mistake, but Samir never became angry.
+
+        He simply told me to try again.
+
+      </p>
+
+      <!-- MEMORY 5 -->
+
+      <p class="story-paragraph">
+
+        <span class="story-visual">
+
+          <img
+            src="https://i.imgur.com/raNxkgr.png"
+            alt="Samir helping Adam on a rainy day"
+            loading="lazy">
+
+          <span class="story-caption">
+            MEMORY 05 · THE DAY WE HELPED EACH OTHER
+          </span>
+
+        </span>
+
+        <span class="memory-label">MEMORY 05</span>
+
+        One rainy afternoon, we were walking home
+        when I slipped on the wet pavement.
+
+        My schoolbag fell into a puddle,
+        and several notebooks became wet.
+
+        While I
+        <span class="grammar-mark">was trying</span>
+        to collect them, Samir came back to help me.
+
+        He carried my books and walked with me
+        all the way home.
+
+        I felt
+        <button class="vocab" data-word="embarrassed">
+          embarrassed
+        </button>,
+        but his kind words made me feel better.
+
+        That simple moment taught me that a true friend
+        is there when life is difficult.
+
+      </p>
+
+      <!-- MEMORY 6 -->
+
+      <p class="story-paragraph">
+
+        <span class="story-visual">
+
+          <img
+            src="https://i.imgur.com/QolulFM.png"
+            alt="Adam and Samir winning a school competition"
+            loading="lazy">
+
+          <span class="story-caption">
+            MEMORY 06 · AN UNFORGETTABLE ACHIEVEMENT
+          </span>
+
+        </span>
+
+        <span class="memory-label">MEMORY 06</span>
+
+        Another
+        <button class="vocab" data-word="unforgettable">
+          unforgettable
+        </button>
+        memory happened a year later.
+
+        Our class entered a school
+        <button class="vocab" data-word="competition">
+          competition
+        </button>.
+
+        Samir and I prepared together for several weeks.
+
+        We were tired sometimes, but we continued
+        because we wanted to do our best.
+
+        On the final day, Samir was the
+        <span class="grammar-mark">most determined</span>
+        member of our team.
+
+        We answered the questions successfully
+        and won first place.
+
+        I was extremely
+        <button class="vocab" data-word="proud">
+          proud
+        </button>
+        of us.
+
+        It was one of the
+        <span class="grammar-mark">happiest</span>
+        days of my childhood.
+
+      </p>
+
+      <!-- MEMORY 7 -->
+
+      <p class="story-paragraph">
+
+        <span class="story-visual">
+
+          <img
+            src="https://i.imgur.com/ONyXdPy.png"
+            alt="Adam remembering his friendship today"
+            loading="lazy">
+
+          <span class="story-caption">
+            MEMORY 07 · FRIENDS THEN AND NOW
+          </span>
+
+        </span>
+
+        <span class="memory-label">MEMORY 07</span>
+
+        Today, Samir and I are older,
+        and our lives are changing.
+
+        We do not see each other every day
+        like we did when we were children,
+        but our friendship is still important.
+
+        Unlike me, Samir wants to become an
+        <button class="vocab" data-word="engineer">
+          engineer
+        </button>,
+        while I am interested in medicine.
+
+        He <span class="grammar-mark">will study</span>
+        hard at university,
+        and I <span class="grammar-mark">will work</span>
+        towards my own goals too.
+
+        I know that our future paths may be different,
+        but I hope we
+        <span class="grammar-mark">will always remember</span>
+        where our friendship began.
+
+        Looking at the old photographs,
+        I realize that the best friendships
+        are not measured by time;
+        they are measured by the moments we share.
+
+      </p>
+
+    </article>
+
+    <div class="story-complete">
+
+      <strong>🌟 You Reached the Final Memory!</strong>
+
+      <p>
+        Now use the story to solve the reading challenges below.
+        Remember: a good reader always looks for evidence.
+      </p>
+
+      <div class="actions" style="justify-content:center;">
+
+        <a href="#step3" class="btn btn-primary">
+          Start Reading Challenges →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     STEP 3 — GLOBAL COMPREHENSION
+========================================================== -->
+
+<section class="step" id="step3">
+
+  <div class="card">
+
+    <div class="step-header">
+
+      <div class="step-number">03</div>
+
+      <div>
+        <div class="section-tag">LEVEL 1 · UNDERSTAND</div>
+        <h2 class="step-title">Catch the Big Picture</h2>
+        <p class="step-subtitle">Global comprehension</p>
+      </div>
+
+    </div>
+
+    <div class="instruction">
+      🎯 <strong>Mission:</strong>
+      Think about the whole story.
+      Choose the best answer for each question.
+    </div>
+
+    <div id="globalQuestions"></div>
+
+    <div class="actions">
+
+      <button class="btn btn-primary"
+              onclick="checkSection('global')">
+        ✓ Check Understanding
+      </button>
+
+      <a href="#step4" class="btn btn-secondary">
+        Next Challenge →
+      </a>
+
+    </div>
+
+    <div id="globalFeedback" class="feedback"
+         aria-live="polite"></div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     STEP 4 — SPECIFIC INFORMATION
+========================================================== -->
+
+<section class="step" id="step4">
+
+  <div class="card">
+
+    <div class="step-header">
+
+      <div class="step-number">04</div>
+
+      <div>
+        <div class="section-tag">LEVEL 2 · FIND</div>
+        <h2 class="step-title">Find the Evidence</h2>
+        <p class="step-subtitle">Specific information</p>
+      </div>
+
+    </div>
+
+    <div class="instruction">
+      🔍 <strong>Mission:</strong>
+      Go back to the reading and find the exact
+      information needed to complete the table.
+    </div>
+
+    <div class="table-wrap">
+
+      <table class="activity-table">
+
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Your Answer</th>
+          </tr>
+        </thead>
+
+        <tbody id="detailsTable"></tbody>
+
+      </table>
+
+    </div>
+
+    <div class="actions">
+
+      <button class="btn btn-primary"
+              onclick="checkSection('details')">
+        ✓ Check Evidence
+      </button>
+
+    </div>
+
+    <div id="detailsFeedback" class="feedback"
+         aria-live="polite"></div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     STEP 5 — TRUE OR FALSE
+========================================================== -->
+
+<section class="step" id="step5">
+
+  <div class="card">
+
+    <div class="step-header">
+
+      <div class="step-number">05</div>
+
+      <div>
+        <div class="section-tag">LEVEL 3 · VERIFY</div>
+        <h2 class="step-title">True, False or Prove It!</h2>
+        <p class="step-subtitle">Read carefully and justify.</p>
+      </div>
+
+    </div>
+
+    <div class="instruction">
+      🕵️ <strong>Mission:</strong>
+      Decide whether each statement is TRUE or FALSE.
+      Then check the evidence from the story.
+    </div>
+
+    <div id="tfQuestions"></div>
+
+    <div class="actions">
+
+      <button class="btn btn-primary"
+              onclick="checkSection('tf')">
+        ✓ Check True / False
+      </button>
+
+    </div>
+
+    <div id="tfFeedback" class="feedback"
+         aria-live="polite"></div>
+
+    <div class="grammar-hunt">
+
+      <h3>💡 BEM Reading Tip</h3>
+
+      <p>
+        In the BEM, a strong answer is supported by
+        information from the text.
+        Never guess when you can find evidence.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     STEP 6 — TEXT DETECTIVE
+========================================================== -->
+
+<section class="step" id="step6">
+
+  <div class="card">
+
+    <div class="step-header">
+
+      <div class="step-number">06</div>
+
+      <div>
+        <div class="section-tag">LEVEL 4 · INVESTIGATE</div>
+        <h2 class="step-title">Become a Text Detective</h2>
+        <p class="step-subtitle">
+          References · Vocabulary · Story order
+        </p>
+      </div>
+
+    </div>
+
+    <h3 class="subheading">
+      <span>🔗</span>
+      A. Reference Words
+    </h3>
+
+    <div class="instruction">
+      What does each underlined word or expression refer to?
+    </div>
+
+    <div class="match-grid" id="referenceQuestions"></div>
+
+    <h3 class="subheading">
+      <span>🧠</span>
+      B. Vocabulary Detective
+    </h3>
+
+    <div id="lexicalQuestions"></div>
+
+    <h3 class="subheading">
+      <span>🕰️</span>
+      C. Put the Memories in Order
+    </h3>
+
+    <div class="instruction">
+      The events below are mixed up.
+      Select their correct chronological positions.
+    </div>
+
+    <div class="sequence-list" id="sequenceQuestions"></div>
+
+    <div class="actions">
+
+      <button class="btn btn-primary"
+              onclick="checkSection('detective')">
+        ✓ Check Detective Work
+      </button>
+
+    </div>
+
+    <div id="detectiveFeedback" class="feedback"
+         aria-live="polite"></div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     STEP 7 — GRAMMAR
+========================================================== -->
+
+<section class="step" id="step7">
+
+  <div class="card">
+
+    <div class="step-header">
+
+      <div class="step-number">07</div>
+
+      <div>
+        <div class="section-tag">LEVEL 5 · ANALYSE</div>
+        <h2 class="step-title">Grammar Inside the Story</h2>
+        <p class="step-subtitle">
+          Discover grammar in meaningful contexts.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="instruction">
+      ✨ <strong>Mission:</strong>
+      Read the examples carefully and discover
+      how grammar helps Adam tell his story.
+    </div>
+
+    <div class="grammar-grid">
+
+      <div class="grammar-card">
+        <strong>Present Simple</strong>
+        <p>Habits and characteristics</p>
+      </div>
+
+      <div class="grammar-card">
+        <strong>Past Simple</strong>
+        <p>Completed past events</p>
+      </div>
+
+      <div class="grammar-card">
+        <strong>Past Continuous</strong>
+        <p>Actions in progress in the past</p>
+      </div>
+
+      <div class="grammar-card">
+        <strong>Future with Will</strong>
+        <p>Future actions and hopes</p>
+      </div>
+
+      <div class="grammar-card">
+        <strong>Comparisons</strong>
+        <p>Unlike · Whereas</p>
+      </div>
+
+      <div class="grammar-card">
+        <strong>Superlatives</strong>
+        <p>Most determined · Happiest</p>
+      </div>
+
+      <div class="grammar-card">
+        <strong>Negative Prefixes</strong>
+        <p>Unselfish · Unforgettable</p>
+      </div>
+
+      <div class="grammar-card">
+        <strong>Adjective Suffixes</strong>
+        <p>Helpful · Careless</p>
+      </div>
+
+      <div class="grammar-card">
+        <strong>Preferences</strong>
+        <p>Liked spending time outside</p>
+      </div>
+
+    </div>
+
+    <div id="grammarQuestions"></div>
+
+    <div class="actions">
+
+      <button class="btn btn-primary"
+              onclick="checkSection('grammar')">
+        ✓ Check Grammar
+      </button>
+
+    </div>
+
+    <div id="grammarFeedback" class="feedback"
+         aria-live="polite"></div>
+
+    <div class="grammar-hunt">
+
+      <h3>🔎 Bonus: Grammar Hunting Mission</h3>
+
+      <p>
+        Return to the reading.
+        Find one example of each structure and tick it.
+      </p>
+
+      <div class="hunt-grid">
+
+        <label class="hunt-item">
+          <input type="checkbox">
+          Present Simple
+        </label>
+
+        <label class="hunt-item">
+          <input type="checkbox">
+          Past Simple
+        </label>
+
+        <label class="hunt-item">
+          <input type="checkbox">
+          Past Continuous
+        </label>
+
+        <label class="hunt-item">
+          <input type="checkbox">
+          Future with will
+        </label>
+
+        <label class="hunt-item">
+          <input type="checkbox">
+          Superlative
+        </label>
+
+        <label class="hunt-item">
+          <input type="checkbox">
+          Whereas / Unlike
+        </label>
+
+        <label class="hunt-item">
+          <input type="checkbox">
+          Negative prefix un-
+        </label>
+
+        <label class="hunt-item">
+          <input type="checkbox">
+          Suffix -ful
+        </label>
+
+        <label class="hunt-item">
+          <input type="checkbox">
+          Suffix -less
+        </label>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     STEP 8 — INFERENCE
+========================================================== -->
+
+<section class="step" id="step8">
+
+  <div class="card">
+
+    <div class="step-header">
+
+      <div class="step-number">08</div>
+
+      <div>
+        <div class="section-tag">LEVEL 6 · THINK DEEPLY</div>
+        <h2 class="step-title">Read Between the Lines</h2>
+        <p class="step-subtitle">
+          Inference and information transfer
+        </p>
+      </div>
+
+    </div>
+
+    <div class="detective-box">
+
+      <strong>🕵️ The Detective's Secret</strong>
+
+      <p>
+        Some answers are not written directly.
+        Use the characters' actions, feelings
+        and experiences to discover the hidden meaning.
+      </p>
+
+      <div class="clue-list">
+        <span class="clue">Actions</span>
+        <span class="clue">Feelings</span>
+        <span class="clue">Personality</span>
+        <span class="clue">Memories</span>
+        <span class="clue">Future Plans</span>
+      </div>
+
+    </div>
+
+    <div style="margin-top:25px;" id="inferenceQuestions"></div>
+
+    <h3 class="subheading">
+      <span>📊</span>
+      Information Transfer
+    </h3>
+
+    <div class="instruction">
+      Compare Adam and Samir.
+      Complete the table using information from the text.
+    </div>
+
+    <div class="table-wrap">
+
+      <table class="activity-table">
+
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Adam</th>
+            <th>Samir</th>
+          </tr>
+        </thead>
+
+        <tbody id="transferTable"></tbody>
+
+      </table>
+
+    </div>
+
+    <div class="actions">
+
+      <button class="btn btn-primary"
+              onclick="checkSection('inference')">
+        ✓ Check My Thinking
+      </button>
+
+    </div>
+
+    <div id="inferenceFeedback" class="feedback"
+         aria-live="polite"></div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     STEP 9 — BEM + WRITING
+========================================================== -->
+
+<section class="step" id="step9">
+
+  <div class="card bem-card">
+
+    <div class="step-header">
+
+      <div class="step-number">09</div>
+
+      <div>
+        <div class="section-tag">FINAL LEVEL · CREATE</div>
+        <h2 class="step-title">The Final BEM Challenge</h2>
+        <p class="step-subtitle">
+          Connect ideas and demonstrate your reading skills.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="bem-badge">
+      🏆 BEM-STYLE READING CHALLENGE
+    </div>
+
+    <div class="instruction" style="margin-top:20px;">
+      🎯 <strong>Final mission:</strong>
+      Read carefully and choose the best answer.
+      Use the whole text, not just one paragraph.
+    </div>
+
+    <div id="bemQuestions"></div>
+
+    <div class="actions">
+
+      <button class="btn btn-primary"
+              onclick="checkSection('bem')">
+        🏆 Complete BEM Challenge
+      </button>
+
+    </div>
+
+    <div id="bemFeedback" class="feedback"
+         aria-live="polite"></div>
+
+    <!-- WRITING STUDIO -->
+
+    <div class="writing-studio">
+
+      <span class="section-tag">
+        ✍️ CREATIVE WRITING STUDIO
+      </span>
+
+      <h3>A Special Friend</h3>
+
+      <p>
+        Write a paragraph of about 80 words about
+        your best friend or a special friend.
+
+        Describe your friend's personality,
+        explain how you met,
+        tell an unforgettable memory
+        and mention your hopes for the future.
+      </p>
+
+      <div class="instruction">
+        💡 <strong>Writing tip:</strong>
+        Begin with a topic sentence.
+        Add supporting details.
+        Finish with a meaningful concluding sentence.
+      </div>
+
+      <h4 style="color:var(--purple-dark);margin-bottom:8px;">
+        🌸 Helpful Vocabulary
+      </h4>
+
+      <p style="margin-top:0;">
+        Click a word to add it to your paragraph.
+      </p>
+
+      <div class="word-bank" id="wordBank"></div>
+
+      <textarea
+        id="writing"
+        class="writing-textarea"
+        placeholder="My best friend is... We met when... He/She is... Unlike me... One unforgettable memory was... In the future, I hope..."
+        aria-label="Write about your special friend"></textarea>
+
+      <div class="writing-meta">
+
+        <span class="word-counter">
+          ✍️ Words: <span id="wordCount">0</span> / 80
+        </span>
+
+        <span class="save-status" id="saveStatus">
+          Your writing is saved automatically.
+        </span>
+
+      </div>
+
+      <h4 style="color:var(--purple-dark);">
+        ✅ My Writing Checklist
+      </h4>
+
+      <div class="writing-checklist">
+
+        <label class="checklist-item">
+          <input type="checkbox">
+          I introduced my friend.
+        </label>
+
+        <label class="checklist-item">
+          <input type="checkbox">
+          I described personality.
+        </label>
+
+        <label class="checklist-item">
+          <input type="checkbox">
+          I mentioned a past memory.
+        </label>
+
+        <label class="checklist-item">
+          <input type="checkbox">
+          I used a comparison.
+        </label>
+
+        <label class="checklist-item">
+          <input type="checkbox">
+          I mentioned the future.
+        </label>
+
+        <label class="checklist-item">
+          <input type="checkbox">
+          I checked spelling and punctuation.
+        </label>
+
+      </div>
+
+      <div class="actions">
+
+        <button class="btn btn-primary"
+                onclick="checkWriting()">
+          ✨ Check My Writing
+        </button>
+
+        <button class="btn btn-secondary"
+                onclick="downloadWriting()">
+          📄 Save My Paragraph
+        </button>
+
+        <button class="btn btn-gold"
+                onclick="clearWriting()">
+          ↺ Clear
+        </button>
+
+      </div>
+
+      <div id="writingFeedback" class="feedback"
+           aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     SCORE DASHBOARD
+========================================================== -->
+
+<section class="score-dashboard" id="scoreDashboard">
+
+  <h2>🌟 Your Reading Achievement</h2>
+
+  <div class="score-number">
+    <span id="score">0</span>
+    <small>/ 48</small>
+  </div>
+
+  <div class="score-progress">
+    <div class="score-progress-fill"
+         id="scoreProgressFill"></div>
+  </div>
+
+  <p class="score-message" id="scoreMessage">
+    Complete the reading challenges to earn your points.
+  </p>
+
+  <div class="achievement-row">
+
+    <span class="achievement" id="badgeReader">
+      📖 Reading Explorer
+    </span>
+
+    <span class="achievement" id="badgeDetective">
+      🔍 Text Detective
+    </span>
+
+    <span class="achievement" id="badgeGrammar">
+      🧠 Grammar Expert
+    </span>
+
+    <span class="achievement" id="badgeBEM">
+      🏆 BEM Champion
+    </span>
+
+  </div>
+
+  <div class="actions" style="justify-content:center;">
+
+    <button class="btn btn-gold"
+            onclick="resetActivities()">
+      ↺ Restart Activities
+    </button>
+
+    <button class="btn btn-secondary"
+            onclick="window.print()">
+      🖨️ Print Lesson
+    </button>
+
+  </div>
+
+</section>
+
+<!-- ==========================================================
+     LESSON NAVIGATION
+========================================================== -->
+
+<div class="lesson-navigation">
+
+  <a href="MS4-S2-Reading.html" class="nav-card">
+
+    <small>← BACK TO</small>
+
+    <strong>Reading Explorers' Map</strong>
+
+  </a>
+
+  <a href="MS4-S2-Reading-Lesson2.html"
+     class="nav-card"
+     style="text-align:right;">
+
+    <small>NEXT READING LESSON →</small>
+
+    <strong>The Ideal Teacher</strong>
+
+  </a>
+
+</div>
+
+</main>
+
+<!-- ==========================================================
+     FLOATING DICTIONARY
+========================================================== -->
+
+<button class="dict-float"
+        id="dictFloat"
+        onclick="openDictionary()"
+        aria-label="Open English Arabic dictionary">
+
+  <span>📖</span>
+  <span class="dict-label">ENGLISH · ARABIC</span>
+
+</button>
+
+<!-- ==========================================================
+     DICTIONARY MODAL
+========================================================== -->
+
+<div class="modal-overlay" id="dictionaryModal">
+
+  <div class="modal-panel"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="dictionaryTitle">
+
+    <div class="modal-head">
+
+      <h3 id="dictionaryTitle">
+        📖 Mini Dictionary
+      </h3>
+
+      <button class="modal-close"
+              onclick="closeDictionary()"
+              aria-label="Close dictionary">
+        ✕
+      </button>
+
+    </div>
+
+    <input
+      type="search"
+      class="dict-search"
+      id="dictionarySearch"
+      placeholder="🔍 Search English or Arabic..."
+      aria-label="Search dictionary">
+
+    <div class="dict-list" id="dictionaryList"></div>
+
+  </div>
+
+</div>
+
+<!-- VOCABULARY POPUP -->
+
+<div class="vocab-popup" id="vocabPopup">
+  <strong id="popupEnglish"></strong>
+  <span id="popupArabic"></span>
+</div>
+
+<!-- TOAST -->
+
+<div class="toast" id="toast" role="status"></div>
+
+<footer>
+  ✦ MY ENGLISH SPACE ✦<br>
+  MS4 · SEQUENCE 2 · READING EXPEDITION<br>
+  Learn · Explore · Practise · Succeed
+</footer>
+
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script>
+
+/* ==========================================================
+   LESSON DATA
+========================================================== */
+
+const questions = {
+
+  prediction: [
+
+    {
+      id:"pre1",
+      question:"What is the most likely topic of the story?",
+      options:[
+        "A special childhood friendship.",
+        "A science experiment.",
+        "A family recipe."
+      ],
+      answer:0,
+      explanation:
+        "The title and picture suggest a story about childhood friendship."
+    },
+
+    {
+      id:"pre2",
+      question:"Which information will probably appear in the text?",
+      options:[
+        "Personality, school memories, hobbies and friendship.",
+        "Weather forecasts and geography.",
+        "Instructions for playing a computer game."
+      ],
+      answer:0,
+      explanation:
+        "A childhood friendship story often includes memories, personality and shared experiences."
+    }
+
+  ],
+
+  global: [
+
+    {
+      id:"global1",
+      question:"What is the main purpose of the text?",
+      options:[
+        "To describe how Adam's childhood friendship developed over time.",
+        "To explain how to become a professional football player.",
+        "To describe Samir's university life."
+      ],
+      answer:0,
+      explanation:
+        "The text follows Adam and Samir's friendship from childhood to the present."
+    },
+
+    {
+      id:"global2",
+      question:"Which title best represents the whole text?",
+      options:[
+        "The Biggest School Competition",
+        "A Friendship Through the Years",
+        "My Future University"
+      ],
+      answer:1,
+      explanation:
+        "The story describes a friendship that continues as the boys grow older."
+    },
+
+    {
+      id:"global3",
+      question:"What is the central idea of the final paragraph?",
+      options:[
+        "Friends must always live in the same neighbourhood.",
+        "People cannot remain friends when they grow older.",
+        "A strong friendship can remain meaningful even when life changes."
+      ],
+      answer:2,
+      explanation:
+        "Adam believes that shared memories keep their friendship meaningful."
+    }
+
+  ],
+
+  lexical: [
+
+    {
+      id:"lex1",
+      question:"Which expression is closest in meaning to determined?",
+      options:[
+        "Ready to give up.",
+        "Strongly decided to continue.",
+        "Unable to decide."
+      ],
+      answer:1,
+      explanation:
+        "A determined person continues trying despite difficulties."
+    },
+
+    {
+      id:"lex2",
+      question:"What is the opposite of careless?",
+      options:[
+        "Careful",
+        "Cheerful",
+        "Nervous"
+      ],
+      answer:0,
+      explanation:
+        "Careful is the opposite of careless."
+    },
+
+    {
+      id:"lex3",
+      question:"Which word describes someone who feels happy and satisfied with an achievement?",
+      options:[
+        "Proud",
+        "Embarrassed",
+        "Nervous"
+      ],
+      answer:0,
+      explanation:
+        "Proud describes feeling pleased about an achievement."
+    }
+
+  ],
+
+  grammar: [
+
+    {
+      id:"gram1",
+      question:"Why does Adam use the Present Simple in 'Samir is calm, cheerful and patient'?",
+      options:[
+        "To describe a general characteristic.",
+        "To describe something happening yesterday.",
+        "To describe a future event."
+      ],
+      answer:0,
+      explanation:
+        "The Present Simple describes Samir's personality."
+    },
+
+    {
+      id:"gram2",
+      question:"In 'I was feeling nervous while Samir was talking', which tense describes actions in progress?",
+      options:[
+        "Past Simple",
+        "Past Continuous",
+        "Future with will"
+      ],
+      answer:1,
+      explanation:
+        "Was/were + verb-ing forms the Past Continuous."
+    },
+
+    {
+      id:"gram3",
+      question:"What does 'the most determined member' mean?",
+      options:[
+        "He had the highest degree of determination in the team.",
+        "He was less determined than everyone else.",
+        "He will become determined later."
+      ],
+      answer:0,
+      explanation:
+        "The superlative expresses the highest degree within a group."
+    },
+
+    {
+      id:"gram4",
+      question:"What is the function of whereas in the story?",
+      options:[
+        "To show contrast.",
+        "To show sequence.",
+        "To show cause."
+      ],
+      answer:0,
+      explanation:
+        "Whereas introduces a difference between Adam and Samir."
+    },
+
+    {
+      id:"gram5",
+      question:"Which word contains the negative prefix un-?",
+      options:[
+        "Helpful",
+        "Unselfish",
+        "Cheerful"
+      ],
+      answer:1,
+      explanation:
+        "Unselfish = un- + selfish."
+    },
+
+    {
+      id:"gram6",
+      question:"Which word contains the adjective suffix -ful?",
+      options:[
+        "Helpful",
+        "Careless",
+        "Unselfish"
+      ],
+      answer:0,
+      explanation:
+        "Helpful = help + -ful."
+    },
+
+    {
+      id:"gram7",
+      question:"Which sentence refers to the future?",
+      options:[
+        "We usually played football.",
+        "He will study hard at university.",
+        "I was feeling nervous."
+      ],
+      answer:1,
+      explanation:
+        "Will + base verb can express future actions."
+    }
+
+  ],
+
+  inference: [
+
+    {
+      id:"infer1",
+      question:"Why did Adam feel less nervous after discovering that Samir lived in the same neighbourhood?",
+      options:[
+        "He realized they had something in common.",
+        "He wanted to leave school.",
+        "He discovered that Samir was his teacher."
+      ],
+      answer:0,
+      explanation:
+        "Having something in common helped Adam feel more comfortable."
+    },
+
+    {
+      id:"infer2",
+      question:"What can we infer about Samir from the rainy-day event?",
+      options:[
+        "He is caring and supportive.",
+        "He dislikes helping others.",
+        "He helps people only when he wins something."
+      ],
+      answer:0,
+      explanation:
+        "Samir returned to help Adam and carried his books."
+    },
+
+    {
+      id:"infer3",
+      question:"Why did their differences make their friendship stronger?",
+      options:[
+        "They could support each other in different ways.",
+        "They never spent time together.",
+        "They always wanted exactly the same things."
+      ],
+      answer:0,
+      explanation:
+        "Their different strengths helped them support each other."
+    },
+
+    {
+      id:"infer4",
+      question:"What does Adam's final sentence suggest?",
+      options:[
+        "Meaningful moments can keep a friendship strong.",
+        "Friendships are only useful during childhood.",
+        "Friends must choose the same career."
+      ],
+      answer:0,
+      explanation:
+        "Adam values shared experiences more than the amount of time friends spend together."
+    }
+
+  ],
+
+  bem: [
+
+    {
+      id:"bem1",
+      question:"Why does Adam consider Samir his best childhood friend?",
+      options:[
+        "Samir supported him, shared experiences with him and accepted their differences.",
+        "Samir always agreed with Adam.",
+        "Samir was simply the best football player."
+      ],
+      answer:0,
+      explanation:
+        "Their friendship is based on kindness, support and shared memories."
+    },
+
+    {
+      id:"bem2",
+      question:"Which conclusion is supported by the final paragraph?",
+      options:[
+        "Their friendship is no longer important.",
+        "Their future careers will be identical.",
+        "Their lives may change, but their friendship can remain meaningful."
+      ],
+      answer:2,
+      explanation:
+        "Adam hopes their friendship will remain important despite different future paths."
+    },
+
+    {
+      id:"bem3",
+      question:"Which sentence best combines the ideas of the text?",
+      options:[
+        "Although Adam and Samir were different, their shared experiences helped them build a strong friendship.",
+        "Adam and Samir were different, so they never became friends.",
+        "Their friendship existed only because they played football."
+      ],
+      answer:0,
+      explanation:
+        "Their differences and shared experiences strengthened their friendship."
+    },
+
+    {
+      id:"bem4",
+      question:"Which sentence correctly connects their past and future?",
+      options:[
+        "They shared many childhood memories, and they will continue to remember them.",
+        "They will never remember their childhood.",
+        "They are studying at university when they were eight."
+      ],
+      answer:0,
+      explanation:
+        "The sentence correctly combines past experiences and future expectations."
+    }
+
+  ]
+
+};
+
+/* ==========================================================
+   TABLE DATA
+========================================================== */
+
+const details = [
+
+  {
+    id:"detail1",
+    question:"How old were Adam and Samir when they met?",
+    options:["Seven","Eight","Ten"],
+    answer:"Eight"
+  },
+
+  {
+    id:"detail2",
+    question:"Where did they discover they both lived?",
+    options:[
+      "At school",
+      "In the same neighbourhood",
+      "In another city"
+    ],
+    answer:"In the same neighbourhood"
+  },
+
+  {
+    id:"detail3",
+    question:"What hobby did they usually enjoy after school?",
+    options:["Football","Tennis","Cycling"],
+    answer:"Football"
+  },
+
+  {
+    id:"detail4",
+    question:"What happened to Adam's notebooks?",
+    options:[
+      "They were lost.",
+      "They became wet.",
+      "They were burned."
+    ],
+    answer:"They became wet."
+  },
+
+  {
+    id:"detail5",
+    question:"What did the class win?",
+    options:[
+      "Second place",
+      "First place",
+      "A trophy only"
+    ],
+    answer:"First place"
+  },
+
+  {
+    id:"detail6",
+    question:"What does Samir want to become?",
+    options:[
+      "A doctor",
+      "An engineer",
+      "A teacher"
+    ],
+    answer:"An engineer"
+  }
+
+];
+
+/* ==========================================================
+   TRUE / FALSE DATA
+========================================================== */
+
+const tfData = [
+
+  {
+    id:"tf1",
+    statement:
+      "Samir is calm, cheerful, patient and helpful.",
+    answer:true,
+    evidence:
+      "Memory 01: Samir is calm, cheerful, patient and very helpful."
+  },
+
+  {
+    id:"tf2",
+    statement:
+      "Adam and Samir became friends because their personalities were exactly the same.",
+    answer:false,
+    evidence:
+      "Memory 03: They were different, but their differences made their friendship stronger."
+  },
+
+  {
+    id:"tf3",
+    statement:
+      "Samir helped Adam after he slipped on the wet pavement.",
+    answer:true,
+    evidence:
+      "Memory 05: Samir came back to help Adam and carried his books."
+  },
+
+  {
+    id:"tf4",
+    statement:
+      "Adam and Samir stopped being friends when they became older.",
+    answer:false,
+    evidence:
+      "Memory 07: Their friendship is still important."
+  },
+
+  {
+    id:"tf5",
+    statement:
+      "Samir wants to become an engineer.",
+    answer:true,
+    evidence:
+      "Memory 07: Samir wants to become an engineer."
+  },
+
+  {
+    id:"tf6",
+    statement:
+      "The rainy-day event showed Adam that Samir was a supportive friend.",
+    answer:true,
+    evidence:
+      "Memory 05: Samir helped Adam when he slipped and his notebooks became wet."
+  }
+
+];
+
+/* ==========================================================
+   REFERENCE WORDS
+========================================================== */
+
+const referenceData = [
+
+  {
+    id:"ref1",
+    word:"That",
+    context:
+      "That small discovery made me feel less nervous.",
+    options:[
+      "Discovering the same neighbourhood",
+      "Playing football",
+      "Winning the competition"
+    ],
+    answer:0
+  },
+
+  {
+    id:"ref2",
+    word:"them",
+    context:
+      "He encourages them and tries to make them feel better.",
+    options:[
+      "People who make mistakes",
+      "Teachers",
+      "Football players"
+    ],
+    answer:0
+  },
+
+  {
+    id:"ref3",
+    word:"our",
+    context:"Our friendship",
+    options:[
+      "Adam and Samir's",
+      "The teacher's",
+      "The team's"
+    ],
+    answer:0
+  },
+
+  {
+    id:"ref4",
+    word:"That simple moment",
+    context:
+      "What moment is being referred to?",
+    options:[
+      "Samir helping Adam on the rainy day",
+      "The football game",
+      "The first school lesson"
+    ],
+    answer:0
+  }
+
+];
+
+/* ==========================================================
+   SEQUENCING DATA
+========================================================== */
+
+const sequenceData = [
+
+  {
+    id:"seq1",
+    letter:"A",
+    text:"Adam and Samir win the school competition.",
+    answer:"5"
+  },
+
+  {
+    id:"seq2",
+    letter:"B",
+    text:"Adam and Samir meet at school.",
+    answer:"1"
+  },
+
+  {
+    id:"seq3",
+    letter:"C",
+    text:"They play football after school.",
+    answer:"3"
+  },
+
+  {
+    id:"seq4",
+    letter:"D",
+    text:"Adam slips on the wet pavement.",
+    answer:"4"
+  },
+
+  {
+    id:"seq5",
+    letter:"E",
+    text:"They discover that they live in the same neighbourhood.",
+    answer:"2"
+  }
+
+];
+
+/* ==========================================================
+   INFORMATION TRANSFER
+========================================================== */
+
+const transferData = [
+
+  {
+    id:"transfer1",
+    answer:"talkative"
+  },
+
+  {
+    id:"transfer2",
+    answer:"calm"
+  },
+
+  {
+    id:"transfer3",
+    answer:"medicine"
+  },
+
+  {
+    id:"transfer4",
+    answer:"engineering"
+  }
+
+];
+
+/* ==========================================================
+   SCORE SYSTEM
+   EXACT MAXIMUM: 48
+========================================================== */
+
+const sectionMaximums = {
+  prediction:2,
+  global:3,
+  details:6,
+  tf:6,
+  detective:12,
+  grammar:7,
+  inference:8,
+  bem:4
+};
+
+const sectionScores = {
+  prediction:0,
+  global:0,
+  details:0,
+  tf:0,
+  detective:0,
+  grammar:0,
+  inference:0,
+  bem:0
+};
+
+const completedSections = new Set();
+
+const MAX_SCORE = Object.values(
+  sectionMaximums
+).reduce((a,b)=>a+b,0);
+
+/* ==========================================================
+   SAFE HTML HELPER
+========================================================== */
+
+function escapeHTML(text) {
+
+  return String(text)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#39;");
+
+}
+
+/* ==========================================================
+   GENERATE MULTIPLE CHOICE QUESTIONS
+========================================================== */
+
+function renderMCQ(containerId,data) {
+
+  const container = document.getElementById(containerId);
+
+  container.innerHTML = data.map((q,index)=>`
+
+    <div class="question"
+         id="question-${q.id}">
+
+      <div class="question-title">
+
+        <span class="q-number">
+          ${index+1}
+        </span>
+
+        ${escapeHTML(q.question)}
+
+      </div>
+
+      <div class="options">
+
+        ${q.options.map((option,i)=>`
+
+          <label class="option">
+
+            <input
+              type="radio"
+              name="${q.id}"
+              value="${i}">
+
+            <span>
+              ${escapeHTML(option)}
+            </span>
+
+          </label>
+
+        `).join("")}
+
+      </div>
+
+      <div class="question-note"
+           id="note-${q.id}"></div>
+
+    </div>
+
+  `).join("");
+
+}
+
+/* ==========================================================
+   GENERATE DETAILS TABLE
+========================================================== */
+
+function renderDetails() {
+
+  const tbody = document.getElementById("detailsTable");
+
+  tbody.innerHTML = details.map(item=>`
+
+    <tr>
+
+      <td>
+        ${escapeHTML(item.question)}
+      </td>
+
+      <td>
+
+        <select id="${item.id}"
+                aria-label="${escapeHTML(item.question)}">
+
+          <option value="">
+            Choose...
+          </option>
+
+          ${item.options.map(option=>`
+
+            <option value="${escapeHTML(option)}">
+              ${escapeHTML(option)}
+            </option>
+
+          `).join("")}
+
+        </select>
+
+      </td>
+
+    </tr>
+
+  `).join("");
+
+}
+
+/* ==========================================================
+   GENERATE TRUE / FALSE
+========================================================== */
+
+const tfSelections = {};
+
+function renderTF() {
+
+  document.getElementById("tfQuestions").innerHTML =
+    tfData.map((item,index)=>`
+
+      <div class="tf-item" id="${item.id}">
+
+        <div class="tf-top">
+
+          <div class="tf-statement">
+            ${index+1}.
+            ${escapeHTML(item.statement)}
+          </div>
+
+          <div class="tf-actions">
+
+            <button
+              type="button"
+              class="tf-btn"
+              data-tf="${item.id}"
+              data-value="true"
+              onclick="selectTF('${item.id}',true)">
+              TRUE
+            </button>
+
+            <button
+              type="button"
+              class="tf-btn"
+              data-tf="${item.id}"
+              data-value="false"
+              onclick="selectTF('${item.id}',false)">
+              FALSE
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="tf-evidence"
+             id="evidence-${item.id}"></div>
+
+      </div>
+
+    `).join("");
+
+}
+
+function selectTF(id,value) {
+
+  tfSelections[id] = value;
+
+  const buttons = document.querySelectorAll(
+    `[data-tf="${id}"]`
+  );
+
+  buttons.forEach(button=>{
+
+    button.classList.toggle(
+      "selected",
+      button.dataset.value === String(value)
+    );
+
+  });
+
+}
+
+/* ==========================================================
+   GENERATE REFERENCE QUESTIONS
+========================================================== */
+
+function renderReferences() {
+
+  document.getElementById("referenceQuestions").innerHTML =
+    referenceData.map(item=>`
+
+      <div class="match-card">
+
+        <strong>
+          "${escapeHTML(item.word)}"
+        </strong>
+
+        <p>
+          ${escapeHTML(item.context)}
+        </p>
+
+        <select id="${item.id}"
+                aria-label="Reference: ${escapeHTML(item.word)}">
+
+          <option value="">
+            Choose...
+          </option>
+
+          ${item.options.map((option,i)=>`
+
+            <option value="${i}">
+              ${escapeHTML(option)}
+            </option>
+
+          `).join("")}
+
+        </select>
+
+      </div>
+
+    `).join("");
+
+}
+
+/* ==========================================================
+   GENERATE SEQUENCING
+========================================================== */
+
+function renderSequence() {
+
+  document.getElementById("sequenceQuestions").innerHTML =
+    sequenceData.map(item=>`
+
+      <div class="sequence-row">
+
+        <span class="sequence-letter">
+          ${item.letter}
+        </span>
+
+        <span class="sequence-text">
+          ${escapeHTML(item.text)}
+        </span>
+
+        <select id="${item.id}"
+                aria-label="Position of event ${item.letter}">
+
+          <option value="">
+            Position
+          </option>
+
+          <option value="1">1st</option>
+          <option value="2">2nd</option>
+          <option value="3">3rd</option>
+          <option value="4">4th</option>
+          <option value="5">5th</option>
+
+        </select>
+
+      </div>
+
+    `).join("");
+
+}
+
+/* ==========================================================
+   GENERATE INFORMATION TRANSFER
+========================================================== */
+
+function renderTransfer() {
+
+  document.getElementById("transferTable").innerHTML = `
+
+    <tr>
+
+      <td>
+        <strong>Personality</strong>
+      </td>
+
+      <td>
+
+        <select id="transfer1"
+                aria-label="Adam's personality">
+
+          <option value="">Choose...</option>
+          <option value="talkative">
+            More talkative and energetic
+          </option>
+          <option value="calm">
+            Calm and patient
+          </option>
+
+        </select>
+
+      </td>
+
+      <td>
+
+        <select id="transfer2"
+                aria-label="Samir's personality">
+
+          <option value="">Choose...</option>
+          <option value="talkative">
+            More talkative and energetic
+          </option>
+          <option value="calm">
+            Calm and patient
+          </option>
+
+        </select>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td>
+        <strong>Future Interest</strong>
+      </td>
+
+      <td>
+
+        <select id="transfer3"
+                aria-label="Adam's future interest">
+
+          <option value="">Choose...</option>
+          <option value="medicine">Medicine</option>
+          <option value="engineering">Engineering</option>
+
+        </select>
+
+      </td>
+
+      <td>
+
+        <select id="transfer4"
+                aria-label="Samir's future interest">
+
+          <option value="">Choose...</option>
+          <option value="medicine">Medicine</option>
+          <option value="engineering">Engineering</option>
+
+        </select>
+
+      </td>
+
+    </tr>
+
+  `;
+
+}
+
+/* ==========================================================
+   CHECK MULTIPLE CHOICE
+========================================================== */
+
+function checkMCQ(data) {
+
+  let correct = 0;
+
+  data.forEach(q=>{
+
+    const selected = document.querySelector(
+      `input[name="${q.id}"]:checked`
+    );
+
+    const questionBox = document.getElementById(
+      `question-${q.id}`
+    );
+
+    const note = document.getElementById(
+      `note-${q.id}`
+    );
+
+    const isCorrect =
+      selected &&
+      Number(selected.value) === q.answer;
+
+    questionBox.classList.remove(
+      "correct",
+      "incorrect"
+    );
+
+    questionBox.classList.add(
+      isCorrect ? "correct" : "incorrect"
+    );
+
+    questionBox.querySelectorAll(".option")
+      .forEach((label,index)=>{
+
+        label.classList.remove(
+          "answer-correct",
+          "answer-wrong"
+        );
+
+        if(index === q.answer) {
+          label.classList.add("answer-correct");
+        }
+
+        if(
+          selected &&
+          label.contains(selected) &&
+          !isCorrect
+        ) {
+          label.classList.add("answer-wrong");
+        }
+
+      });
+
+    note.classList.add("show");
+
+    note.textContent =
+      (isCorrect ? "✓ Correct! " : "💡 ") +
+      q.explanation;
+
+    if(isCorrect) {
+      correct++;
+    }
+
+  });
+
+  return correct;
+
+}
+
+/* ==========================================================
+   CHECK SELECT ELEMENTS
+========================================================== */
+
+function checkSelect(id,answer) {
+
+  const select = document.getElementById(id);
+
+  if(!select) return false;
+
+  const correct =
+    String(select.value) === String(answer);
+
+  select.classList.remove(
+    "correct-field",
+    "wrong-field"
+  );
+
+  select.classList.add(
+    correct ? "correct-field" : "wrong-field"
+  );
+
+  return correct;
+
+}
+
+/* ==========================================================
+   CHECK SECTION
+========================================================== */
+
+function checkSection(section) {
+
+  let score = 0;
+
+  if(questions[section]) {
+
+    score = checkMCQ(questions[section]);
+
+  }
+
+  if(section === "details") {
+
+    details.forEach(item=>{
+
+      if(checkSelect(item.id,item.answer)) {
+        score++;
+      }
+
+    });
+
+  }
+
+  if(section === "tf") {
+
+    tfData.forEach(item=>{
+
+      const correct =
+        tfSelections[item.id] === item.answer;
+
+      if(correct) score++;
+
+      const evidence = document.getElementById(
+        `evidence-${item.id}`
+      );
+
+      evidence.classList.add("show");
+
+      evidence.textContent =
+        (correct ? "✓ Correct. " : "💡 ") +
+        item.evidence;
+
+      const box = document.getElementById(item.id);
+
+      box.style.borderColor =
+        correct ? "#8ed5af" : "#e8a7b6";
+
+    });
+
+  }
+
+  if(section === "detective") {
+
+    referenceData.forEach(item=>{
+
+      if(checkSelect(item.id,item.answer)) {
+        score++;
+      }
+
+    });
+
+    score += checkMCQ(questions.lexical);
+
+    sequenceData.forEach(item=>{
+
+      if(checkSelect(item.id,item.answer)) {
+        score++;
+      }
+
+    });
+
+  }
+
+  if(section === "inference") {
+
+    score = checkMCQ(questions.inference);
+
+    transferData.forEach(item=>{
+
+      if(checkSelect(item.id,item.answer)) {
+        score++;
+      }
+
+    });
+
+  }
+
+  sectionScores[section] = score;
+
+  const maximum = sectionMaximums[section];
+
+  const feedback = document.getElementById(
+    `${section}Feedback`
+  );
+
+  feedback.className = "feedback show";
+
+  if(score === maximum) {
+
+    feedback.classList.add("good");
+
+    feedback.innerHTML = `
+      🏆 <strong>Perfect!</strong>
+      You earned ${score} out of ${maximum} points.
+      Excellent reading work!
+    `;
+
+    completedSections.add(section);
+
+    showToast("🌟 Perfect score! Well done!");
+
+  } else {
+
+    feedback.classList.add("try");
+
+    feedback.innerHTML = `
+      💪 You earned
+      <strong>${score} / ${maximum}</strong>
+      points.
+      Re-read the relevant part of the story,
+      correct your answers and try again.
+    `;
+
+    completedSections.delete(section);
+
+  }
+
+  updateScore();
+
+  updateRail();
+
+}
+
+/* ==========================================================
+   UPDATE SCORE
+========================================================== */
+
+function updateScore() {
+
+  const total = Object.values(
+    sectionScores
+  ).reduce((a,b)=>a+b,0);
+
+  const percentage = Math.round(
+    total / MAX_SCORE * 100
+  );
+
+  document.getElementById("score").textContent =
+    total;
+
+  document.getElementById(
+    "scoreProgressFill"
+  ).style.width = percentage + "%";
+
+  const message = document.getElementById(
+    "scoreMessage"
+  );
+
+  if(total === MAX_SCORE) {
+
+    message.textContent =
+      "🏆 Outstanding! You mastered every reading challenge. You are a true reading champion!";
+
+  } else if(percentage >= 75) {
+
+    message.textContent =
+      "🌟 Excellent progress! Your comprehension and reading skills are very strong.";
+
+  } else if(percentage >= 50) {
+
+    message.textContent =
+      "💪 Good work! Revisit the difficult activities and improve your score.";
+
+  } else {
+
+    message.textContent =
+      "🌱 Every great reader starts somewhere. Read carefully, search for clues and keep practising.";
+
+  }
+
+  updateBadges();
+
+}
+
+/* ==========================================================
+   ACHIEVEMENT BADGES
+========================================================== */
+
+function updateBadges() {
+
+  const reader =
+    sectionScores.global === 3 &&
+    sectionScores.details === 6;
+
+  const detective =
+    sectionScores.detective === 12;
+
+  const grammar =
+    sectionScores.grammar === 7;
+
+  const bem =
+    sectionScores.bem === 4;
+
+  document.getElementById("badgeReader")
+    .classList.toggle("unlocked",reader);
+
+  document.getElementById("badgeDetective")
+    .classList.toggle("unlocked",detective);
+
+  document.getElementById("badgeGrammar")
+    .classList.toggle("unlocked",grammar);
+
+  document.getElementById("badgeBEM")
+    .classList.toggle("unlocked",bem);
+
+}
+
+/* ==========================================================
+   PROGRESS NAVIGATION
+========================================================== */
+
+function updateRail() {
+
+  const map = {
+    prediction:1,
+    global:3,
+    details:4,
+    tf:5,
+    detective:6,
+    grammar:7,
+    inference:8,
+    bem:9
+  };
+
+  document.querySelectorAll(".rail-link")
+    .forEach(link=>{
+
+      const number = Number(
+        link.textContent.trim()
+      );
+
+      const completed = Object.keys(map).some(
+        section=>
+          map[section] === number &&
+          completedSections.has(section)
+      );
+
+      link.classList.toggle(
+        "completed",
+        completed
+      );
+
+    });
+
+}
+
+/* ==========================================================
+   ENGLISH-ARABIC DICTIONARY
+========================================================== */
+
+const dictionary = [
+
+  {en:"childhood",pos:"noun",ar:"الطفولة"},
+  {en:"friendship",pos:"noun",ar:"الصداقة"},
+  {en:"friend",pos:"noun",ar:"صديق"},
+  {en:"memory",pos:"noun",ar:"ذكرى"},
+  {en:"experience",pos:"noun",ar:"تجربة"},
+  {en:"personality",pos:"noun",ar:"الشخصية"},
+
+  {en:"calm",pos:"adjective",ar:"هادئ"},
+  {en:"patient",pos:"adjective",ar:"صبور"},
+  {en:"cheerful",pos:"adjective",ar:"مرح"},
+  {en:"helpful",pos:"adjective",ar:"متعاون / مساعد"},
+  {en:"hardworking",pos:"adjective",ar:"مجتهد"},
+  {en:"determined",pos:"adjective",ar:"مصمم / ذو عزيمة"},
+  {en:"unselfish",pos:"adjective",ar:"غير أناني"},
+  {en:"careless",pos:"adjective",ar:"مهمل"},
+  {en:"careful",pos:"adjective",ar:"حذر"},
+  {en:"generous",pos:"adjective",ar:"كريم"},
+
+  {en:"nervous",pos:"adjective",ar:"متوتر"},
+  {en:"embarrassed",pos:"adjective",ar:"محرج"},
+  {en:"proud",pos:"adjective",ar:"فخور"},
+  {en:"unforgettable",pos:"adjective",ar:"لا يُنسى"},
+
+  {en:"encourage",pos:"verb",ar:"يشجع"},
+  {en:"support",pos:"verb",ar:"يدعم"},
+  {en:"share",pos:"verb",ar:"يشارك"},
+  {en:"achieve",pos:"verb",ar:"يحقق"},
+
+  {en:"achievement",pos:"noun",ar:"إنجاز"},
+  {en:"competition",pos:"noun",ar:"مسابقة"},
+  {en:"neighbourhood",pos:"noun",ar:"حي"},
+  {en:"future",pos:"noun",ar:"المستقبل"},
+  {en:"career",pos:"noun",ar:"المهنة / المسار المهني"},
+  {en:"engineer",pos:"noun",ar:"مهندس"},
+  {en:"university",pos:"noun",ar:"الجامعة"},
+  {en:"goal",pos:"noun",ar:"هدف"},
+  {en:"difference",pos:"noun",ar:"اختلاف"},
+  {en:"determination",pos:"noun",ar:"العزيمة"},
+
+  {en:"talkative",pos:"adjective",ar:"كثير الكلام"},
+  {en:"energetic",pos:"adjective",ar:"نشيط"},
+  {en:"strategic",pos:"adjective",ar:"يخطط بحكمة"},
+  {en:"pavement",pos:"noun",ar:"الرصيف"},
+  {en:"puddle",pos:"noun",ar:"بركة ماء صغيرة"},
+  {en:"slip",pos:"verb",ar:"ينزلق"},
+  {en:"whereas",pos:"connector",ar:"بينما / في حين"},
+  {en:"unlike",pos:"preposition",ar:"على عكس"},
+  {en:"memorable",pos:"adjective",ar:"لا يُنسى / مميز"}
+
+];
+
+/* ==========================================================
+   RENDER DICTIONARY
+========================================================== */
+
+function renderDictionary(search="") {
+
+  const list = document.getElementById(
+    "dictionaryList"
+  );
+
+  const query = search.toLowerCase().trim();
+
+  const filtered = dictionary.filter(word=>
+
+    word.en.toLowerCase().includes(query) ||
+    word.ar.includes(query)
+
+  );
+
+  if(filtered.length === 0) {
+
+    list.innerHTML = `
+      <p style="text-align:center;color:#786c83;">
+        No matching words found.
+      </p>
+    `;
+
+    return;
+
+  }
+
+  list.innerHTML = filtered.map(word=>`
+
+    <div class="dict-row">
+
+      <div class="dict-english">
+
+        ${escapeHTML(word.en)}
+
+        <span class="dict-pos">
+          ${escapeHTML(word.pos)}
+        </span>
+
+      </div>
+
+      <div class="dict-arabic" lang="ar">
+        ${escapeHTML(word.ar)}
+      </div>
+
+    </div>
+
+  `).join("");
+
+}
+
+/* ==========================================================
+   DICTIONARY MODAL
+========================================================== */
+
+function openDictionary() {
+
+  document.getElementById(
+    "dictionaryModal"
+  ).classList.add("open");
+
+  document.body.style.overflow = "hidden";
+
+  document.getElementById(
+    "dictionarySearch"
+  ).focus();
+
+}
+
+function closeDictionary() {
+
+  document.getElementById(
+    "dictionaryModal"
+  ).classList.remove("open");
+
+  document.body.style.overflow = "";
+
+}
+
+document.getElementById("dictionarySearch")
+  .addEventListener("input",function(){
+
+    renderDictionary(this.value);
+
+  });
+
+document.getElementById("dictionaryModal")
+  .addEventListener("click",function(event){
+
+    if(event.target === this) {
+      closeDictionary();
+    }
+
+  });
+
+document.addEventListener("keydown",function(event){
+
+  if(event.key === "Escape") {
+
+    closeDictionary();
+
+    document.getElementById(
+      "vocabPopup"
+    ).classList.remove("show");
+
+  }
+
+});
+
+/* ==========================================================
+   CLICKABLE VOCABULARY
+========================================================== */
+
+let popupTimer;
+
+document.querySelectorAll(".vocab")
+  .forEach(button=>{
+
+    button.addEventListener("click",function(){
+
+      const word = this.dataset.word;
+
+      const entry = dictionary.find(
+        item=>item.en === word
+      );
+
+      if(!entry) return;
+
+      const popup = document.getElementById(
+        "vocabPopup"
+      );
+
+      document.getElementById(
+        "popupEnglish"
+      ).textContent = entry.en;
+
+      document.getElementById(
+        "popupArabic"
+      ).textContent = entry.ar;
+
+      const rect = this.getBoundingClientRect();
+
+      const popupWidth = 230;
+
+      const left = Math.max(
+        10,
+        Math.min(
+          window.innerWidth-popupWidth-10,
+          rect.left
+        )
+      );
+
+      const top = Math.max(
+        10,
+        rect.top > 110
+          ? rect.top-95
+          : rect.bottom+10
+      );
+
+      popup.style.left = left + "px";
+      popup.style.top = top + "px";
+
+      popup.classList.add("show");
+
+      clearTimeout(popupTimer);
+
+      popupTimer = setTimeout(()=>{
+        popup.classList.remove("show");
+      },3200);
+
+    });
+
+  });
+
+/* ==========================================================
+   READ ALOUD
+========================================================== */
+
+let currentUtterance = null;
+
+function getReadingText() {
+
+  const paper = document.getElementById(
+    "readingPaper"
+  );
+
+  const paragraphs = paper.querySelectorAll(
+    ".story-paragraph"
+  );
+
+  return Array.from(paragraphs)
+    .map(p=>{
+
+      const clone = p.cloneNode(true);
+
+      clone.querySelectorAll(
+        ".story-visual,.memory-label"
+      ).forEach(el=>el.remove());
+
+      return clone.textContent.trim();
+
+    })
+    .join("\n\n");
+
+}
+
+function startReading() {
+
+  if(!("speechSynthesis" in window)) {
+
+    showToast(
+      "Read aloud is not supported in this browser."
+    );
+
+    return;
+
+  }
+
+  stopReading();
+
+  const text = getReadingText();
+
+  currentUtterance =
+    new SpeechSynthesisUtterance(text);
+
+  currentUtterance.lang = "en-GB";
+
+  currentUtterance.rate = Number(
+    document.getElementById(
+      "readingSpeed"
+    ).value
+  );
+
+  currentUtterance.pitch = 1;
+
+  currentUtterance.onend = function(){
+
+    document.getElementById(
+      "readBtn"
+    ).classList.remove("active");
+
+  };
+
+  currentUtterance.onerror = function(){
+
+    document.getElementById(
+      "readBtn"
+    ).classList.remove("active");
+
+  };
+
+  window.speechSynthesis.speak(
+    currentUtterance
+  );
+
+  document.getElementById(
+    "readBtn"
+  ).classList.add("active");
+
+  showToast("🔊 Reading the story...");
+
+}
+
+function stopReading() {
+
+  if("speechSynthesis" in window) {
+
+    window.speechSynthesis.cancel();
+
+  }
+
+  currentUtterance = null;
+
+  document.getElementById(
+    "readBtn"
+  ).classList.remove("active");
+
+}
+
+/* ==========================================================
+   FONT SIZE
+========================================================== */
+
+function toggleFontSize() {
+
+  const paper = document.getElementById(
+    "readingPaper"
+  );
+
+  paper.classList.toggle("reading-large");
+
+  const active = paper.classList.contains(
+    "reading-large"
+  );
+
+  document.getElementById(
+    "fontBtn"
+  ).textContent =
+    active ? "A− Normal Text" : "A+ Larger Text";
+
+}
+
+/* ==========================================================
+   KEYWORD HIGHLIGHTING
+========================================================== */
+
+let keywordsHighlighted = false;
+
+function toggleHighlights() {
+
+  keywordsHighlighted = !keywordsHighlighted;
+
+  document.querySelectorAll(
+    ".story-paragraph"
+  ).forEach(paragraph=>{
+
+    paragraph.classList.toggle(
+      "highlighted",
+      keywordsHighlighted
+    );
+
+  });
+
+  showToast(
+    keywordsHighlighted
+      ? "✨ Story paragraphs highlighted."
+      : "Highlighting removed."
+  );
+
+}
+
+/* ==========================================================
+   WRITING WORD BANK
+========================================================== */
+
+const writingWords = [
+
+  "calm",
+  "patient",
+  "helpful",
+  "generous",
+  "cheerful",
+  "hardworking",
+  "determined",
+  "unselfish",
+  "memorable",
+  "experience",
+  "whereas",
+  "unlike",
+  "future"
+
+];
+
+function renderWordBank() {
+
+  const bank = document.getElementById(
+    "wordBank"
+  );
+
+  bank.innerHTML = writingWords.map(word=>`
+
+    <button
+      type="button"
+      class="word-chip"
+      onclick="insertWord('${word}')">
+
+      + ${word}
+
+    </button>
+
+  `).join("");
+
+}
+
+function insertWord(word) {
+
+  const textarea = document.getElementById(
+    "writing"
+  );
+
+  const start = textarea.selectionStart;
+  const end = textarea.selectionEnd;
+
+  const before = textarea.value.slice(0,start);
+  const after = textarea.value.slice(end);
+
+  const prefix =
+    before && !/\s$/.test(before)
+      ? " "
+      : "";
+
+  const insertion = prefix + word + " ";
+
+  textarea.value =
+    before + insertion + after;
+
+  textarea.focus();
+
+  const cursor =
+    start + insertion.length;
+
+  textarea.setSelectionRange(cursor,cursor);
+
+  updateWordCount();
+  saveWriting();
+
+}
+
+/* ==========================================================
+   WRITING WORD COUNT
+========================================================== */
+
+function getWordCount(text) {
+
+  const trimmed = text.trim();
+
+  return trimmed
+    ? trimmed.split(/\s+/).length
+    : 0;
+
+}
+
+function updateWordCount() {
+
+  const text = document.getElementById(
+    "writing"
+  ).value;
+
+  const count = getWordCount(text);
+
+  const counter = document.getElementById(
+    "wordCount"
+  );
+
+  counter.textContent = count;
+
+  counter.style.color =
+    count >= 80
+      ? "#22996c"
+      : "#8650bd";
+
+}
+
+/* ==========================================================
+   WRITING CHECK
+========================================================== */
+
+function checkWriting() {
+
+  const text = document.getElementById(
+    "writing"
+  ).value.trim();
+
+  const count = getWordCount(text);
+
+  const feedback = document.getElementById(
+    "writingFeedback"
+  );
+
+  feedback.className = "feedback show";
+
+  if(count === 0) {
+
+    feedback.classList.add("try");
+
+    feedback.textContent =
+      "✍️ Start writing your paragraph first.";
+
+    return;
+
+  }
+
+  const suggestions = [];
+
+  if(count < 60) {
+
+    suggestions.push(
+      "Add more details about your friend and your memories."
+    );
+
+  }
+
+  if(!/\b(was|were|met|played|helped|went|had|did|became|shared)\b/i.test(text)) {
+
+    suggestions.push(
+      "Try to include a past event."
+    );
+
+  }
+
+  if(!/\b(whereas|unlike|but|while|although)\b/i.test(text)) {
+
+    suggestions.push(
+      "Try adding a comparison or contrast."
+    );
+
+  }
+
+  if(!/\b(will|hope|future|want|dream)\b/i.test(text)) {
+
+    suggestions.push(
+      "Mention a future hope."
+    );
+
+  }
+
+  if(suggestions.length === 0) {
+
+    feedback.classList.add("good");
+
+    feedback.innerHTML = `
+      🌟 <strong>Well done!</strong>
+      You wrote ${count} words and included
+      important elements of the task.
+      Now check your grammar, spelling,
+      punctuation and paragraph organization.
+    `;
+
+  } else {
+
+    feedback.classList.add("info");
+
+    feedback.innerHTML = `
+      ✍️ You wrote <strong>${count} words</strong>.
+      <br><br>
+      <strong>Suggestions:</strong>
+      <br>
+      ${suggestions.map(s=>
+        "• " + escapeHTML(s)
+      ).join("<br>")}
+      <br><br>
+      Keep improving your paragraph!
+    `;
+
+  }
+
+}
+
+/* ==========================================================
+   AUTOMATIC WRITING SAVE
+========================================================== */
+
+const WRITING_KEY =
+  "ms4_s2_reading_lesson1_writing";
+
+function saveWriting() {
+
+  try {
+
+    localStorage.setItem(
+      WRITING_KEY,
+      document.getElementById(
+        "writing"
+      ).value
+    );
+
+    document.getElementById(
+      "saveStatus"
+    ).textContent = "✓ Saved on this device";
+
+  } catch(error) {
+
+    document.getElementById(
+      "saveStatus"
+    ).textContent = "Automatic saving unavailable";
+
+  }
+
+}
+
+function loadWriting() {
+
+  try {
+
+    const saved = localStorage.getItem(
+      WRITING_KEY
+    );
+
+    if(saved !== null) {
+
+      document.getElementById(
+        "writing"
+      ).value = saved;
+
+    }
+
+  } catch(error) {
+
+    // Continue without stored writing.
+
+  }
+
+  updateWordCount();
+
+}
+
+document.getElementById("writing")
+  .addEventListener("input",function(){
+
+    updateWordCount();
+    saveWriting();
+
+  });
+
+/* ==========================================================
+   DOWNLOAD WRITING
+========================================================== */
+
+function downloadWriting() {
+
+  const text = document.getElementById(
+    "writing"
+  ).value.trim();
+
+  if(!text) {
+
+    showToast("✍️ Write your paragraph first.");
+
+    return;
+
+  }
+
+  const content =
+    "MY ENGLISH SPACE\n" +
+    "MS4 - SEQUENCE 2\n" +
+    "Reading Lesson 1\n\n" +
+    "A Special Friend\n\n" +
+    text;
+
+  const blob = new Blob(
+    [content],
+    {type:"text/plain;charset=utf-8"}
+  );
+
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "My-Special-Friend.txt";
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  link.remove();
+
+  setTimeout(()=>{
+    URL.revokeObjectURL(url);
+  },1000);
+
+  showToast("📄 Your paragraph was saved.");
+
+}
+
+/* ==========================================================
+   CLEAR WRITING
+========================================================== */
+
+function clearWriting() {
+
+  const confirmed = confirm(
+    "Clear your paragraph? This cannot be undone."
+  );
+
+  if(!confirmed) return;
+
+  document.getElementById(
+    "writing"
+  ).value = "";
+
+  document.getElementById(
+    "writingFeedback"
+  ).className = "feedback";
+
+  updateWordCount();
+
+  saveWriting();
+
+}
+
+/* ==========================================================
+   RESET ACTIVITIES
+========================================================== */
+
+function resetActivities() {
+
+  const confirmed = confirm(
+    "Restart all reading activities? Your writing will be kept."
+  );
+
+  if(!confirmed) return;
+
+  stopReading();
+
+  Object.keys(sectionScores).forEach(section=>{
+
+    sectionScores[section] = 0;
+
+    const feedback = document.getElementById(
+      `${section}Feedback`
+    );
+
+    if(feedback) {
+      feedback.className = "feedback";
+    }
+
+  });
+
+  completedSections.clear();
+
+  Object.keys(tfSelections).forEach(id=>{
+    delete tfSelections[id];
+  });
+
+  document.querySelectorAll(
+    'input[type="radio"]'
+  ).forEach(input=>{
+    input.checked = false;
+  });
+
+  document.querySelectorAll(
+    "select"
+  ).forEach(select=>{
+
+    if(
+      select.id !== "readingSpeed"
+    ) {
+      select.selectedIndex = 0;
+    }
+
+    select.classList.remove(
+      "correct-field",
+      "wrong-field"
+    );
+
+  });
+
+  document.querySelectorAll(
+    ".question"
+  ).forEach(question=>{
+
+    question.classList.remove(
+      "correct",
+      "incorrect"
+    );
+
+  });
+
+  document.querySelectorAll(
+    ".option"
+  ).forEach(option=>{
+
+    option.classList.remove(
+      "answer-correct",
+      "answer-wrong"
+    );
+
+  });
+
+  document.querySelectorAll(
+    ".question-note,.tf-evidence"
+  ).forEach(element=>{
+
+    element.classList.remove("show");
+
+  });
+
+  document.querySelectorAll(
+    ".tf-item"
+  ).forEach(item=>{
+
+    item.style.borderColor = "";
+
+  });
+
+  document.querySelectorAll(
+    ".tf-btn"
+  ).forEach(button=>{
+
+    button.classList.remove("selected");
+
+  });
+
+  document.querySelectorAll(
+    ".grammar-hunt input[type='checkbox']"
+  ).forEach(input=>{
+
+    input.checked = false;
+
+  });
+
+  updateScore();
+  updateRail();
+
+  document.getElementById(
+    "step1"
+  ).scrollIntoView({
+    behavior:"smooth"
+  });
+
+  showToast("↺ Reading activities restarted.");
+
+}
+
+/* ==========================================================
+   SCROLL PROGRESS
+========================================================== */
+
+function updateScrollProgress() {
+
+  const scrollTop =
+    document.documentElement.scrollTop ||
+    document.body.scrollTop;
+
+  const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+  const percentage =
+    scrollHeight > 0
+      ? scrollTop / scrollHeight * 100
+      : 0;
+
+  document.getElementById(
+    "scrollFill"
+  ).style.width = percentage + "%";
+
+}
+
+window.addEventListener(
+  "scroll",
+  updateScrollProgress,
+  {passive:true}
+);
+
+/* ==========================================================
+   ACTIVE LESSON NAVIGATION
+========================================================== */
+
+const observedSections = document.querySelectorAll(
+  ".step"
+);
+
+const sectionObserver = new IntersectionObserver(
+  entries=>{
+
+    entries.forEach(entry=>{
+
+      if(entry.isIntersecting) {
+
+        const id = entry.target.id;
+
+        document.querySelectorAll(
+          ".rail-link"
+        ).forEach(link=>{
+
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + id
+          );
+
+        });
+
+      }
+
+    });
+
+  },
+  {
+    rootMargin:"-120px 0px -55% 0px",
+    threshold:0
+  }
+);
+
+observedSections.forEach(section=>{
+  sectionObserver.observe(section);
+});
+
+/* ==========================================================
+   TOAST
+========================================================== */
+
+let toastTimer;
+
+function showToast(message) {
+
+  const toast = document.getElementById(
+    "toast"
+  );
+
+  toast.textContent = message;
+
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(()=>{
+
+    toast.classList.remove("show");
+
+  },2800);
+
+}
+
+/* ==========================================================
+   IMAGE FALLBACK
+========================================================== */
+
+document.querySelectorAll("img")
+  .forEach(img=>{
+
+    img.addEventListener("error",function(){
+
+      if(this.dataset.fallbackApplied) return;
+
+      this.dataset.fallbackApplied = "true";
+
+      this.style.display = "none";
+
+      const fallback = document.createElement(
+        "div"
+      );
+
+      fallback.style.cssText = `
+        min-height:150px;
+        display:grid;
+        place-items:center;
+        padding:25px;
+        border-radius:13px;
+        background:linear-gradient(
+          135deg,
+          #f5eaff,
+          #fff0f6
+        );
+        color:#8650bd;
+        text-align:center;
+        font-weight:900;
+        font-size:13px;
+      `;
+
+      fallback.textContent =
+        "📸 Childhood Memory";
+
+      this.parentNode.insertBefore(
+        fallback,
+        this.nextSibling
+      );
+
+    });
+
+  });
+
+/* ==========================================================
+   INITIALIZE ALL ACTIVITIES
+========================================================== */
+
+function initializeLesson() {
+
+  renderMCQ(
+    "predictionQuestions",
+    questions.prediction
+  );
+
+  renderMCQ(
+    "globalQuestions",
+    questions.global
+  );
+
+  renderMCQ(
+    "lexicalQuestions",
+    questions.lexical
+  );
+
+  renderMCQ(
+    "grammarQuestions",
+    questions.grammar
+  );
+
+  renderMCQ(
+    "inferenceQuestions",
+    questions.inference
+  );
+
+  renderMCQ(
+    "bemQuestions",
+    questions.bem
+  );
+
+  renderDetails();
+
+  renderTF();
+
+  renderReferences();
+
+  renderSequence();
+
+  renderTransfer();
+
+  renderDictionary();
+
+  renderWordBank();
+
+  loadWriting();
+
+  updateScore();
+
+  updateScrollProgress();
+
+}
+
+initializeLesson();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,3174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102c55">
+
+<title>BEM Mastery of Language Lab | My English Space</title>
+
+<meta name="description"
+content="Interactive BEM English Mastery of Language preparation for MS4 pupils. Grammar, vocabulary, pronunciation and BEM-style examinations.">
+
+<style>
+
+/* ==========================================
+   DESIGN SYSTEM
+========================================== */
+
+:root{
+  --navy:#102c55;
+  --deep:#081b38;
+  --blue:#2878c4;
+  --cyan:#23bdca;
+  --gold:#ffd36e;
+  --purple:#8656c8;
+  --green:#18a77c;
+  --orange:#ed994a;
+  --pink:#e76f9d;
+  --red:#d64c61;
+
+  --ink:#253a55;
+  --muted:#687d93;
+  --paper:#f3f8ff;
+  --white:#ffffff;
+  --line:#dfe8f4;
+
+  --shadow:0 16px 42px rgba(15,45,90,.10);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+}
+
+body{
+  font-family:"Nunito","Segoe UI",Arial,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4{
+  font-family:"Baloo 2","Trebuchet MS",Arial,sans-serif;
+  line-height:1.2;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,input,select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+.container{
+  width:min(1160px,calc(100% - 32px));
+  margin:auto;
+}
+
+.section{
+  padding:75px 0;
+}
+
+.section.white{
+  background:white;
+}
+
+.section.soft{
+  background:#edf5ff;
+}
+
+.section-heading{
+  text-align:center;
+  max-width:790px;
+  margin:0 auto 38px;
+}
+
+.eyebrow{
+  display:inline-block;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  color:var(--blue);
+  text-transform:uppercase;
+}
+
+.section-heading h2{
+  font-size:clamp(30px,4vw,46px);
+  color:var(--navy);
+  margin:12px 0;
+}
+
+.section-heading p{
+  color:var(--muted);
+  font-size:14px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:47px;
+  padding:13px 21px;
+  border:0;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn.gold{
+  background:var(--gold);
+  color:#61461b;
+}
+
+.btn.blue{
+  background:var(--blue);
+  color:white;
+}
+
+.btn.white{
+  background:white;
+  color:var(--navy);
+}
+
+.btn.outline{
+  background:white;
+  color:var(--navy);
+  border:1px solid var(--line);
+}
+
+.tag{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:20px;
+  background:#e8f3ff;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:900;
+}
+
+.note{
+  padding:17px 20px;
+  background:#eaf5ff;
+  border-left:4px solid var(--blue);
+  border-radius:0 13px 13px 0;
+  margin-top:18px;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.9;
+}
+
+.note.green{
+  background:#e9f9f0;
+  border-color:var(--green);
+}
+
+.note.gold{
+  background:#fff7e5;
+  border-color:var(--orange);
+}
+
+.note.purple{
+  background:#f3edff;
+  border-color:var(--purple);
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.scroll-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  width:0;
+  height:4px;
+  background:var(--gold);
+  z-index:300;
+}
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(8,27,56,.97);
+  backdrop-filter:blur(15px);
+}
+
+.header-inner{
+  min-height:77px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:white;
+  font-size:18px;
+  font-weight:900;
+}
+
+.brand-icon{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border-radius:15px;
+  background:#e5f7ff;
+  font-size:25px;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.nav a{
+  padding:10px 12px;
+  border-radius:25px;
+  color:#e8f4ff;
+  font-size:11px;
+  font-weight:900;
+}
+
+.nav a:hover{
+  background:rgba(255,255,255,.12);
+}
+
+.nav .back{
+  background:var(--gold);
+  color:var(--navy);
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:83px 0 105px;
+  color:white;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(35,189,202,.27),transparent 33%),
+    linear-gradient(130deg,#081b38,#123b6e 57%,#176b94);
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.12;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:29px 29px;
+  pointer-events:none;
+}
+
+.hero-layout{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:45px;
+  align-items:center;
+}
+
+.hero-badge{
+  display:inline-block;
+  padding:10px 16px;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:30px;
+  background:rgba(255,255,255,.12);
+  font-size:11px;
+  font-weight:900;
+}
+
+.hero h1{
+  font-size:clamp(48px,6vw,76px);
+  margin:23px 0;
+  line-height:1.07;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+}
+
+.hero p{
+  color:#e0f0ff;
+  font-size:15px;
+  font-weight:750;
+  line-height:2;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:27px;
+}
+
+.hero-visual{
+  position:relative;
+  height:360px;
+  border:5px solid rgba(255,255,255,.9);
+  border-radius:30px;
+  background:linear-gradient(135deg,#3264a9,#1d9da6);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  box-shadow:0 30px 65px rgba(0,0,0,.27);
+  overflow:hidden;
+}
+
+.hero-visual:before{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  border:48px solid rgba(255,255,255,.08);
+  border-radius:50%;
+  top:-180px;
+  right:-150px;
+}
+
+.hero-symbol{
+  position:relative;
+  font-size:108px;
+}
+
+.hero-visual strong{
+  position:relative;
+  font-size:25px;
+  font-family:"Baloo 2",Arial,sans-serif;
+}
+
+.hero-sticker{
+  position:absolute;
+  bottom:-19px;
+  left:-16px;
+  padding:17px 20px;
+  background:var(--gold);
+  color:#624719;
+  border:4px solid white;
+  border-radius:17px;
+  font-size:12px;
+  font-weight:900;
+  box-shadow:var(--shadow);
+}
+
+/* ==========================================
+   QUICK NAVIGATION
+========================================== */
+
+.quick-wrap{
+  position:relative;
+  z-index:3;
+  margin-top:-28px;
+}
+
+.quick{
+  background:white;
+  border-radius:22px;
+  padding:14px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+}
+
+.quick a{
+  padding:10px 13px;
+  border-radius:22px;
+  background:#edf5ff;
+  color:var(--navy);
+  font-size:11px;
+  font-weight:900;
+}
+
+.quick a:hover{
+  background:var(--gold);
+}
+
+/* ==========================================
+   INTRODUCTION
+========================================== */
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.intro-card{
+  padding:27px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+}
+
+.intro-icon{
+  font-size:39px;
+  margin-bottom:14px;
+}
+
+.intro-card h3{
+  color:var(--navy);
+  font-size:24px;
+  margin-bottom:11px;
+}
+
+.intro-card p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+.marks-banner{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:25px;
+  margin-top:25px;
+  padding:27px;
+  border:1px solid #d7e9fa;
+  border-radius:23px;
+  background:linear-gradient(110deg,#e8f5ff,#fff);
+}
+
+.marks-banner h3{
+  font-size:27px;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+
+.marks-banner p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+.marks-number{
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-size:65px;
+  color:var(--blue);
+}
+
+/* ==========================================
+   LEARNING TOPICS
+========================================== */
+
+.topic-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.topic-card{
+  display:flex;
+  flex-direction:column;
+  padding:27px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:23px;
+  box-shadow:var(--shadow);
+  transition:.25s;
+}
+
+.topic-card:hover{
+  transform:translateY(-5px);
+}
+
+.topic-icon{
+  font-size:42px;
+  margin-bottom:14px;
+}
+
+.topic-card h3{
+  color:var(--navy);
+  font-size:24px;
+  margin-bottom:9px;
+}
+
+.topic-card p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:750;
+  line-height:1.9;
+  margin-bottom:15px;
+}
+
+.topic-card .btn{
+  margin-top:auto;
+}
+
+.topic-sequence{
+  color:var(--blue);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+  margin-bottom:10px;
+}
+
+/* ==========================================
+   LESSON WORKSPACE
+========================================== */
+
+.lesson-shell{
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:25px;
+  background:white;
+  box-shadow:var(--shadow);
+}
+
+.lesson-top{
+  padding:27px;
+  color:white;
+  background:linear-gradient(120deg,var(--navy),#246ba6);
+}
+
+.lesson-top h3{
+  font-size:31px;
+}
+
+.lesson-top p{
+  font-size:12px;
+  font-weight:750;
+  color:#dbeeff;
+  line-height:1.8;
+}
+
+.lesson-body{
+  padding:29px;
+}
+
+.rule-box{
+  padding:24px;
+  background:#edf6ff;
+  border:1px solid #d5e9fa;
+  border-radius:19px;
+  margin-bottom:22px;
+}
+
+.rule-box h4{
+  color:var(--navy);
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.rule-box p{
+  font-size:13px;
+  font-weight:800;
+  line-height:2;
+  margin-bottom:10px;
+}
+
+.rule-box p:last-child{
+  margin-bottom:0;
+}
+
+.rule-example{
+  display:block;
+  background:white;
+  padding:12px 15px;
+  border-radius:11px;
+  margin-top:10px;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.8;
+}
+
+.practice-title{
+  font-size:26px;
+  color:var(--navy);
+  margin:24px 0 16px;
+}
+
+.question-list{
+  display:grid;
+  gap:15px;
+}
+
+.question-card{
+  padding:19px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+}
+
+.question-card h4{
+  font-size:17px;
+  color:var(--navy);
+  line-height:1.6;
+  margin-bottom:12px;
+}
+
+.options{
+  display:grid;
+  gap:9px;
+}
+
+.option{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:850;
+  line-height:1.6;
+}
+
+.option:hover{
+  background:#eff7ff;
+}
+
+.option input{
+  accent-color:var(--blue);
+  flex-shrink:0;
+}
+
+.feedback{
+  display:none;
+  margin-top:13px;
+  padding:13px;
+  border-radius:11px;
+  font-size:12px;
+  font-weight:850;
+  line-height:1.8;
+}
+
+.feedback.show{
+  display:block;
+}
+
+.feedback.correct{
+  background:#e8f9f0;
+  color:#147c58;
+}
+
+.feedback.wrong{
+  background:#fff0f2;
+  color:#aa4051;
+}
+
+.lesson-actions{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+  border-top:1px solid var(--line);
+  padding-top:22px;
+  margin-top:25px;
+}
+
+.lesson-result{
+  display:none;
+  text-align:center;
+  margin-top:22px;
+  padding:25px;
+  background:#eff8ff;
+  border-radius:19px;
+}
+
+.lesson-result h3{
+  font-size:29px;
+  color:var(--navy);
+}
+
+.lesson-result strong{
+  display:block;
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-size:58px;
+  color:var(--blue);
+}
+
+.lesson-result p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:850;
+  line-height:1.8;
+}
+
+/* ==========================================
+   EXAM CHALLENGE
+========================================== */
+
+.exam-card{
+  max-width:940px;
+  margin:auto;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+
+.exam-header{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:center;
+  flex-wrap:wrap;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--line);
+}
+
+.exam-header h3{
+  font-size:29px;
+  color:var(--navy);
+}
+
+.exam-header p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:800;
+  line-height:1.8;
+}
+
+.exam-badge{
+  padding:12px 18px;
+  background:var(--gold);
+  border-radius:22px;
+  font-size:13px;
+  font-weight:900;
+  color:#61471c;
+}
+
+.exam-questions{
+  display:grid;
+  gap:17px;
+  margin-top:23px;
+}
+
+.exam-group-title{
+  padding:14px 17px;
+  border-radius:12px;
+  background:#e8f3ff;
+  font-size:15px;
+  font-weight:900;
+  color:var(--navy);
+}
+
+.exam-group-title span{
+  float:right;
+  color:var(--blue);
+}
+
+.exam-result{
+  display:none;
+  margin-top:23px;
+  padding:25px;
+  text-align:center;
+  background:#eaf5ff;
+  border-radius:19px;
+}
+
+.exam-result h3{
+  font-size:29px;
+  color:var(--navy);
+}
+
+.exam-result strong{
+  display:block;
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-size:60px;
+  color:var(--blue);
+}
+
+.exam-result p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:850;
+  line-height:1.9;
+}
+
+/* ==========================================
+   PROGRESS
+========================================== */
+
+.progress-layout{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:24px;
+}
+
+.progress-intro{
+  padding:31px;
+  background:linear-gradient(130deg,#102c55,#246ba7);
+  color:white;
+  border-radius:23px;
+}
+
+.progress-intro h3{
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.progress-intro p{
+  color:#e0efff;
+  font-size:13px;
+  font-weight:750;
+  line-height:2;
+}
+
+.progress-percent{
+  font-family:"Baloo 2",Arial,sans-serif;
+  font-size:61px;
+  color:var(--gold);
+  margin-top:20px;
+}
+
+.progress-track{
+  height:13px;
+  border-radius:20px;
+  background:rgba(255,255,255,.2);
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,var(--gold),var(--cyan));
+  transition:.3s;
+}
+
+.progress-caption{
+  margin-top:12px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.progress-items{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:23px;
+  padding:25px;
+}
+
+.progress-items h3{
+  color:var(--navy);
+  font-size:25px;
+  margin-bottom:16px;
+}
+
+.check-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:13px;
+  margin-bottom:9px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  cursor:pointer;
+}
+
+.check-item input{
+  width:19px;
+  height:19px;
+  accent-color:var(--green);
+  flex-shrink:0;
+}
+
+.check-item span{
+  font-size:12px;
+  font-weight:900;
+  line-height:1.6;
+}
+
+.check-item:has(input:checked){
+  background:#e8f9f0;
+  border-color:#b8e7d1;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.final{
+  padding:65px 0;
+  background:white;
+}
+
+.final-box{
+  padding:52px 25px;
+  border-radius:28px;
+  background:linear-gradient(125deg,#102c55,#246ba7);
+  color:white;
+  text-align:center;
+}
+
+.final-box h2{
+  font-size:clamp(30px,4vw,44px);
+}
+
+.final-box p{
+  max-width:670px;
+  margin:15px auto 25px;
+  color:#e2f0ff;
+  font-size:13px;
+  font-weight:750;
+  line-height:2;
+}
+
+.footer{
+  padding:36px 20px;
+  background:#081b38;
+  color:#dce9f8;
+  text-align:center;
+  font-size:12px;
+  font-weight:800;
+  line-height:2;
+}
+
+.footer strong{
+  color:var(--gold);
+}
+
+.top-btn{
+  display:none;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:47px;
+  height:47px;
+  border:0;
+  border-radius:15px;
+  background:var(--navy);
+  color:white;
+  font-size:24px;
+  box-shadow:var(--shadow);
+  z-index:90;
+}
+
+.top-btn.show{
+  display:block;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1000px){
+
+  .hero-layout{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-actions{
+    justify-content:center;
+  }
+
+  .hero-visual{
+    max-width:520px;
+    width:100%;
+    margin:auto;
+  }
+
+  .topic-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:720px){
+
+  .header-inner{
+    flex-direction:column;
+    padding:14px 0;
+  }
+
+  .nav{
+    justify-content:center;
+  }
+
+  .intro-grid,
+  .topic-grid,
+  .progress-layout{
+    grid-template-columns:1fr;
+  }
+
+  .marks-banner{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+}
+
+@media(max-width:520px){
+
+  .container{
+    width:calc(100% - 26px);
+  }
+
+  .section{
+    padding:55px 0;
+  }
+
+  .hero{
+    padding:55px 0 80px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero-visual{
+    height:265px;
+  }
+
+  .hero-symbol{
+    font-size:82px;
+  }
+
+  .lesson-body,
+  .exam-card{
+    padding:20px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *:before,
+  *:after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="header">
+
+<div class="container header-inner">
+
+<a href="index.html" class="brand">
+
+<span class="brand-icon">🎓</span>
+
+My English Space
+
+</a>
+
+<nav class="nav" aria-label="Main navigation">
+
+<a href="#introduction">Introduction</a>
+
+<a href="#topics">Language Topics</a>
+
+<a href="#exam">BEM Challenge</a>
+
+<a href="#progress">My Progress</a>
+
+<a href="MS4-BEM-Preparation.html" class="back">
+← BEM Centre
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main>
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="hero">
+
+<div class="container hero-layout">
+
+<div>
+
+<span class="hero-badge">
+
+🧩 DESTINATION 03 · BEM LANGUAGE ACADEMY
+
+</span>
+
+<h1>
+
+Become a
+
+<span>Language Master!</span>
+
+</h1>
+
+<p>
+
+Welcome to the BEM Mastery of Language Lab!
+
+Revise essential grammar rules, practise vocabulary,
+discover word formation and improve pronunciation.
+
+Complete interactive exercises and prepare confidently
+for the language section of your BEM examination.
+
+</p>
+
+<div class="hero-actions">
+
+<a href="#topics" class="btn gold">
+
+🚀 Start Learning
+
+</a>
+
+<a href="#exam" class="btn white">
+
+🏆 Take the BEM Challenge
+
+</a>
+
+</div>
+
+</div>
+
+<div style="position:relative">
+
+<div class="hero-visual">
+
+<div class="hero-symbol">🧩</div>
+
+<strong>LEARN · PRACTISE · MASTER</strong>
+
+</div>
+
+<div class="hero-sticker">
+
+✨ 9 TOPICS · 1 BEM CHALLENGE
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     QUICK NAVIGATION
+========================================== -->
+
+<div class="container quick-wrap">
+
+<nav class="quick">
+
+<a href="#introduction">🌟 Introduction</a>
+
+<a href="#topics">📚 Grammar & Vocabulary</a>
+
+<a href="#lessonWorkspace">✏️ Practice</a>
+
+<a href="#exam">🏆 BEM Exam</a>
+
+<a href="#progress">✅ Progress</a>
+
+</nav>
+
+</div>
+
+<!-- ==========================================
+     INTRODUCTION
+========================================== -->
+
+<section class="section" id="introduction">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 01 · MASTERY OF LANGUAGE
+</span>
+
+<h2>What Is Mastery of Language?</h2>
+
+<p>
+
+This part of the BEM examination assesses your ability
+to use English grammar, vocabulary, word forms
+and language conventions correctly.
+
+</p>
+
+</div>
+
+<div class="intro-grid">
+
+<div class="intro-card">
+
+<div class="intro-icon">🧠</div>
+
+<h3>Morphology</h3>
+
+<p>
+
+Use correct verb forms, word formation,
+prefixes, suffixes and grammatical structures.
+
+</p>
+
+</div>
+
+<div class="intro-card">
+
+<div class="intro-icon">🔄</div>
+
+<h3>Syntax</h3>
+
+<p>
+
+Build meaningful sentences, transform structures
+and connect ideas correctly.
+
+</p>
+
+</div>
+
+<div class="intro-card">
+
+<div class="intro-icon">🔤</div>
+
+<h3>Mechanics & Sounds</h3>
+
+<p>
+
+Practise spelling, capital letters, punctuation,
+word stress and pronunciation.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="marks-banner">
+
+<div>
+
+<h3>📊 Mastery of Language Is Worth 7 Points</h3>
+
+<p>
+
+In the BEM examination framework supplied for this project,
+the Mastery of Language section is allocated 7 points.
+
+The practice activities below help you revise language skills
+through short exercises and sentence transformations.
+
+</p>
+
+</div>
+
+<div class="marks-number">7/20</div>
+
+</div>
+
+<div class="note purple">
+
+<strong>Teacher's note:</strong>
+The exercises on this page are original BEM-style practice items.
+They are organised around the MS4 Sequence 1, Sequence 2
+and Sequence 3 language points.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     TOPICS
+========================================== -->
+
+<section class="section white" id="topics">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 02 · LANGUAGE LEARNING LIBRARY
+</span>
+
+<h2>Choose Your Language Mission!</h2>
+
+<p>
+
+Explore nine interactive lessons.
+Read the rules, study examples,
+answer questions and receive immediate explanations.
+
+</p>
+
+</div>
+
+<div class="topic-grid" id="topicGrid"></div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     LESSON WORKSPACE
+========================================== -->
+
+<section class="section soft" id="lessonWorkspace" hidden>
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+INTERACTIVE LANGUAGE PRACTICE
+</span>
+
+<h2 id="workspaceHeading">
+Language Mission
+</h2>
+
+<p>
+
+Study the rule, complete the activities
+and check your answers.
+
+</p>
+
+</div>
+
+<div class="lesson-shell">
+
+<div class="lesson-top">
+
+<h3 id="lessonTitle"></h3>
+
+<p id="lessonSubtitle"></p>
+
+</div>
+
+<div class="lesson-body">
+
+<div class="rule-box">
+
+<h4>📘 Remember the Rule</h4>
+
+<div id="lessonRule"></div>
+
+</div>
+
+<h3 class="practice-title">
+✏️ Let's Practise!
+</h3>
+
+<div class="question-list" id="lessonQuestions"></div>
+
+<div class="lesson-actions">
+
+<button class="btn outline" type="button" onclick="closeLesson()">
+
+← Choose Another Topic
+
+</button>
+
+<button class="btn blue" type="button" id="checkLessonBtn" onclick="checkLesson()">
+
+✅ Check My Answers
+
+</button>
+
+</div>
+
+<div class="lesson-result" id="lessonResult" aria-live="polite">
+
+<h3>🎉 Mission Completed!</h3>
+
+<strong id="lessonScore">0/5</strong>
+
+<p id="lessonMessage"></p>
+
+<button class="btn gold" type="button" style="margin-top:17px" onclick="retryLesson()">
+
+🔄 Try Again
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     BEM CHALLENGE
+========================================== -->
+
+<section class="section white" id="exam">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 03 · BEM LANGUAGE EXAMINATION
+</span>
+
+<h2>The 7-Point Language Challenge</h2>
+
+<p>
+
+Complete this BEM-style language test.
+Each activity is automatically corrected,
+and explanations appear after submission.
+
+</p>
+
+</div>
+
+<div class="exam-card">
+
+<div class="exam-header">
+
+<div>
+
+<h3>📝 Mastery of Language</h3>
+
+<p>
+Read each instruction carefully before choosing your answer.
+</p>
+
+</div>
+
+<div class="exam-badge">
+
+TOTAL: 07 POINTS
+
+</div>
+
+</div>
+
+<div class="exam-questions" id="examQuestions"></div>
+
+<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:26px">
+
+<button class="btn blue" type="button" id="checkExamBtn" onclick="checkExam()">
+
+✅ Correct My Examination
+
+</button>
+
+<button class="btn outline" type="button" onclick="resetExam()">
+
+🔄 Start Again
+
+</button>
+
+</div>
+
+<div class="exam-result" id="examResult" aria-live="polite">
+
+<h3>🏆 Examination Completed!</h3>
+
+<strong id="examScore">0/7</strong>
+
+<p id="examMessage"></p>
+
+<p id="examBest" style="margin-top:10px"></p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     PROGRESS
+========================================== -->
+
+<section class="section soft" id="progress">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 04 · MY LANGUAGE PROGRESS
+</span>
+
+<h2>My Mastery Checklist</h2>
+
+<p>
+
+Tick the language skills you have revised.
+Your progress is saved on this device
+when browser storage is available.
+
+</p>
+
+</div>
+
+<div class="progress-layout">
+
+<div class="progress-intro">
+
+<h3>🎯 My Language Journey</h3>
+
+<p>
+
+Learning grammar requires regular practice.
+
+Complete each learning goal
+and keep improving your accuracy.
+
+</p>
+
+<div class="progress-percent" id="progressPercent">
+
+0%
+
+</div>
+
+<div class="progress-track">
+
+<div class="progress-fill" id="progressFill"></div>
+
+</div>
+
+<div class="progress-caption" id="progressCaption">
+
+0 topics completed
+
+</div>
+
+</div>
+
+<div class="progress-items">
+
+<h3>📋 My Revision Goals</h3>
+
+<div id="checklistItems"></div>
+
+<button class="btn outline" type="button" id="resetProgress" style="margin-top:13px">
+
+🔄 Reset My Checklist
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     FINAL
+========================================== -->
+
+<section class="final">
+
+<div class="container">
+
+<div class="final-box">
+
+<h2>🌟 Excellent Work, Language Champion!</h2>
+
+<p>
+
+You have explored grammar, vocabulary,
+word formation and pronunciation.
+
+Keep practising your language skills
+and move to the next BEM preparation destination
+to improve your written expression.
+
+</p>
+
+<div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px">
+
+<a href="MS4-BEM-Preparation.html" class="btn white">
+
+← BEM Preparation Centre
+
+</a>
+
+<a href="MS4-BEM-Writing.html" class="btn gold">
+
+✍️ Destination 04: Writing Workshop →
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+<strong>MY ENGLISH SPACE</strong>
+
+<br>
+
+MS4 · BEM Preparation · Destination 03
+
+<br>
+
+Mastery of Language Lab
+
+<br>
+
+© <span id="year"></span> My English Space
+
+<br>
+
+Learn · Practise · Improve · Succeed
+
+</footer>
+
+<button class="top-btn" id="topBtn" type="button" aria-label="Back to top">
+
+↑
+
+</button>
+
+<script>
+
+"use strict";
+
+/* ==========================================
+   GENERAL
+========================================== */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+const scrollProgress =
+  document.getElementById("scrollProgress");
+
+const topBtn =
+  document.getElementById("topBtn");
+
+function updateScroll(){
+
+  const total =
+    document.documentElement.scrollHeight -
+    window.innerHeight;
+
+  const percent =
+    total > 0
+      ? window.scrollY / total * 100
+      : 0;
+
+  scrollProgress.style.width =
+    percent + "%";
+
+  topBtn.classList.toggle(
+    "show",
+    window.scrollY > 500
+  );
+
+}
+
+window.addEventListener(
+  "scroll",
+  updateScroll,
+  {passive:true}
+);
+
+window.addEventListener("resize",updateScroll);
+
+topBtn.addEventListener("click",function(){
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+});
+
+updateScroll();
+
+/* ==========================================
+   STORAGE
+========================================== */
+
+function getSaved(key,fallback=null){
+
+  try{
+
+    const value = localStorage.getItem(key);
+
+    return value === null
+      ? fallback
+      : JSON.parse(value);
+
+  }catch(error){
+
+    return fallback;
+
+  }
+
+}
+
+function saveData(key,value){
+
+  try{
+
+    localStorage.setItem(
+      key,
+      JSON.stringify(value)
+    );
+
+  }catch(error){
+
+    // The activities still work without storage.
+
+  }
+
+}
+
+/* ==========================================
+   LESSON DATA
+========================================== */
+
+const lessons = [
+
+/* 01 */
+
+{
+  icon:"🏛️",
+  title:"Past Simple Tense",
+  sequence:"SEQUENCE 1 · LANDMARKS & BIOGRAPHIES",
+  description:"Practise regular and irregular past simple verbs.",
+  rule:[
+    "Use the past simple to describe completed actions in the past.",
+    "Affirmative: Subject + past form.",
+    "Negative: Subject + did not + base verb.",
+    "Question: Did + subject + base verb?"
+  ],
+  examples:[
+    "William Shakespeare wrote famous plays.",
+    "The tourists visited London last year.",
+    "They did not visit Paris."
+  ],
+  questions:[
+    {
+      q:"Shakespeare ___ many famous plays.",
+      options:["write","wrote","written"],
+      answer:1,
+      explanation:"Wrote is the past simple of write."
+    },
+    {
+      q:"The tourists ___ Big Ben yesterday.",
+      options:["visited","visit","visiting"],
+      answer:0,
+      explanation:"Yesterday indicates a completed past action."
+    },
+    {
+      q:"She did not ___ the museum.",
+      options:["visited","visiting","visit"],
+      answer:2,
+      explanation:"After did not, use the base form."
+    },
+    {
+      q:"___ they travel to London last year?",
+      options:["Do","Did","Does"],
+      answer:1,
+      explanation:"Use Did to form past simple questions."
+    },
+    {
+      q:"The architect ___ the monument in 1890.",
+      options:["designed","design","designing"],
+      answer:0,
+      explanation:"Designed is the regular past simple form."
+    }
+  ]
+},
+
+/* 02 */
+
+{
+  icon:"🏗️",
+  title:"Past Passive Voice",
+  sequence:"SEQUENCE 1 · LANDMARKS",
+  description:"Transform active sentences into the past passive voice.",
+  rule:[
+    "Use the past passive when the action or its receiver is more important than the person who performed it.",
+    "Form: was / were + past participle.",
+    "Use was with singular subjects and were with plural subjects."
+  ],
+  examples:[
+    "The Eiffel Tower was built in 1889.",
+    "The monuments were restored.",
+    "The bridge was designed by an engineer."
+  ],
+  questions:[
+    {
+      q:"The Eiffel Tower ___ built in 1889.",
+      options:["is","was","were"],
+      answer:1,
+      explanation:"The singular subject takes was."
+    },
+    {
+      q:"The ancient monuments ___ restored.",
+      options:["were","was","is"],
+      answer:0,
+      explanation:"The plural subject takes were."
+    },
+    {
+      q:"The museum was ___ in 1950.",
+      options:["open","opening","opened"],
+      answer:2,
+      explanation:"The passive requires a past participle."
+    },
+    {
+      q:"Choose the correct passive form: They built the bridge.",
+      options:[
+        "The bridge built.",
+        "The bridge was built.",
+        "The bridge were built."
+      ],
+      answer:1,
+      explanation:"The singular subject takes was + past participle."
+    },
+    {
+      q:"The paintings ___ created by famous artists.",
+      options:["were","was","is"],
+      answer:0,
+      explanation:"Paintings is plural, so use were."
+    }
+  ]
+},
+
+/* 03 */
+
+{
+  icon:"📏",
+  title:"Comparatives & Qualifiers",
+  sequence:"SEQUENCES 1 & 2 · DESCRIPTION",
+  description:"Compare people and landmarks and use qualifiers.",
+  rule:[
+    "Use adjective + er + than with many short adjectives.",
+    "Use more + adjective + than with many longer adjectives.",
+    "Irregular forms include good → better and bad → worse.",
+    "Qualifiers include very, extremely, quite, a little and a bit."
+  ],
+  examples:[
+    "Big Ben is taller than many nearby buildings.",
+    "Amira is more patient than her brother.",
+    "The monument is extremely impressive."
+  ],
+  questions:[
+    {
+      q:"This tower is ___ than that building.",
+      options:["tall","taller","tallest"],
+      answer:1,
+      explanation:"Use taller than."
+    },
+    {
+      q:"Salima is ___ patient than Karim.",
+      options:["more","most","very"],
+      answer:0,
+      explanation:"Use more + adjective + than."
+    },
+    {
+      q:"My English is ___ than last year.",
+      options:["good","better","best"],
+      answer:1,
+      explanation:"Better is the irregular comparative of good."
+    },
+    {
+      q:"The museum is ___ beautiful.",
+      options:["extremely","than","more"],
+      answer:0,
+      explanation:"Extremely is a qualifier."
+    },
+    {
+      q:"This task is ___ difficult than the previous one.",
+      options:["more","most","very"],
+      answer:0,
+      explanation:"Use more difficult than."
+    }
+  ]
+},
+
+/* 04 */
+
+{
+  icon:"🕰️",
+  title:"Past & Present Narration",
+  sequence:"SEQUENCE 2 · MEMORIES & BIOGRAPHIES",
+  description:"Distinguish past events from present descriptions.",
+  rule:[
+    "Use the past simple for completed events and childhood memories.",
+    "Use the present simple for habits, general facts and current descriptions.",
+    "Pay attention to time markers such as yesterday, ago, now and every day."
+  ],
+  examples:[
+    "When I was young, I played football.",
+    "Today, I enjoy reading.",
+    "My teacher is kind and helpful."
+  ],
+  questions:[
+    {
+      q:"When I was a child, I ___ in a small village.",
+      options:["live","lived","living"],
+      answer:1,
+      explanation:"A childhood memory requires the past simple."
+    },
+    {
+      q:"Today, my friend ___ in Algiers.",
+      options:["lives","lived","living"],
+      answer:0,
+      explanation:"Use the present simple for a current fact."
+    },
+    {
+      q:"Last year, we ___ our grandparents.",
+      options:["visit","visits","visited"],
+      answer:2,
+      explanation:"Last year indicates the past."
+    },
+    {
+      q:"My English teacher ___ very patient.",
+      options:["is","was","were"],
+      answer:0,
+      explanation:"Use is for a present description."
+    },
+    {
+      q:"Two years ago, she ___ a new school.",
+      options:["joins","joined","join"],
+      answer:1,
+      explanation:"Ago indicates a past event."
+    }
+  ]
+},
+
+/* 05 */
+
+{
+  icon:"🔤",
+  title:"Prefixes & Suffixes",
+  sequence:"SEQUENCE 2 · CHARACTER TRAITS",
+  description:"Form opposites and adjectives correctly.",
+  rule:[
+    "Negative prefixes include un-, in-, im-, il-, ir- and dis-.",
+    "Examples: unhappy, incorrect, impossible, illegal, irregular, dishonest.",
+    "The suffix -ful often means 'full of'.",
+    "The suffix -less often means 'without'."
+  ],
+  examples:[
+    "Honest → dishonest.",
+    "Responsible → irresponsible.",
+    "Care → careful / careless."
+  ],
+  questions:[
+    {
+      q:"Choose the opposite of honest.",
+      options:["unhonest","dishonest","inhonest"],
+      answer:1,
+      explanation:"The correct opposite is dishonest."
+    },
+    {
+      q:"Choose the opposite of possible.",
+      options:["impossible","unpossible","dispossible"],
+      answer:0,
+      explanation:"Possible becomes impossible."
+    },
+    {
+      q:"A person who takes care is ___.",
+      options:["careless","careful","uncare"],
+      answer:1,
+      explanation:"Careful means showing care."
+    },
+    {
+      q:"Choose the opposite of regular.",
+      options:["inregular","disregular","irregular"],
+      answer:2,
+      explanation:"Regular becomes irregular."
+    },
+    {
+      q:"A person without hope may feel ___.",
+      options:["hopeless","hopeful","unhope"],
+      answer:0,
+      explanation:"Hopeless means without hope."
+    }
+  ]
+},
+
+/* 06 */
+
+{
+  icon:"⚖️",
+  title:"Like, Unlike & Whereas",
+  sequence:"SEQUENCE 2 · COMPARING PEOPLE",
+  description:"Express similarities and differences.",
+  rule:[
+    "Use like + noun or pronoun to show similarity.",
+    "Use unlike + noun or pronoun to show difference.",
+    "Use whereas to connect two contrasting clauses."
+  ],
+  examples:[
+    "Like her sister, Amira is generous.",
+    "Unlike Karim, Sami is shy.",
+    "Lina is outgoing, whereas her brother is reserved."
+  ],
+  questions:[
+    {
+      q:"___ her mother, Salima is patient.",
+      options:["Like","Whereas","But"],
+      answer:0,
+      explanation:"Like introduces a similarity."
+    },
+    {
+      q:"___ his brother, Ali dislikes noisy places.",
+      options:["Like","Unlike","Too"],
+      answer:1,
+      explanation:"Unlike introduces a difference."
+    },
+    {
+      q:"Sara is friendly, ___ her sister is shy.",
+      options:["like","unlike","whereas"],
+      answer:2,
+      explanation:"Whereas joins contrasting clauses."
+    },
+    {
+      q:"___ her friend, Amina enjoys reading.",
+      options:["Like","Whereas","Although"],
+      answer:0,
+      explanation:"Like can show that two people share a preference."
+    },
+    {
+      q:"Karim is hardworking, ___ Sami is lazy.",
+      options:["whereas","like","too"],
+      answer:0,
+      explanation:"Whereas introduces contrast."
+    }
+  ]
+},
+
+/* 07 */
+
+{
+  icon:"🌍",
+  title:"Conditional Type 1",
+  sequence:"SEQUENCE 3 · CITIZENSHIP",
+  description:"Express possible future results and give advice.",
+  rule:[
+    "Use if + present simple, will + base verb for possible future results.",
+    "Use if + present simple, imperative to give instructions or advice.",
+    "Do not normally use will directly after if in these patterns."
+  ],
+  examples:[
+    "If we recycle, we will protect nature.",
+    "If you see litter, pick it up.",
+    "If pupils volunteer, they will help the community."
+  ],
+  questions:[
+    {
+      q:"If we plant trees, our city ___ greener.",
+      options:["becomes","will become","became"],
+      answer:1,
+      explanation:"Use will + base verb in the result clause."
+    },
+    {
+      q:"If you ___ hard, you will succeed.",
+      options:["study","studied","will study"],
+      answer:0,
+      explanation:"Use present simple after if."
+    },
+    {
+      q:"If you see litter, ___ it up.",
+      options:["picked","picking","pick"],
+      answer:2,
+      explanation:"Use the imperative to give an instruction."
+    },
+    {
+      q:"If people volunteer, they ___ others.",
+      options:["helped","will help","helping"],
+      answer:1,
+      explanation:"Use will help for a possible future result."
+    },
+    {
+      q:"If you want to be a good citizen, ___ the rules.",
+      options:["respect","respected","respecting"],
+      answer:0,
+      explanation:"Respect is the imperative form."
+    }
+  ]
+},
+
+/* 08 */
+
+{
+  icon:"🤝",
+  title:"Imperative & Gerund",
+  sequence:"SEQUENCE 3 · COMMUNITY",
+  description:"Give instructions and express preferences.",
+  rule:[
+    "Use the base verb to give affirmative instructions.",
+    "Use Don't + base verb for negative instructions.",
+    "After enjoy, love, like, hate and prefer, use a gerund (-ing) when the complement is an activity."
+  ],
+  examples:[
+    "Respect your neighbours.",
+    "Don't throw litter.",
+    "I enjoy helping people.",
+    "She prefers reading."
+  ],
+  questions:[
+    {
+      q:"___ the environment!",
+      options:["Protect","Protecting","Protected"],
+      answer:0,
+      explanation:"Use the base verb in the affirmative imperative."
+    },
+    {
+      q:"___ waste water!",
+      options:["Not","Don't","Doesn't"],
+      answer:1,
+      explanation:"Use Don't + base verb."
+    },
+    {
+      q:"I enjoy ___ in charity activities.",
+      options:["participate","participated","participating"],
+      answer:2,
+      explanation:"Enjoy is followed by a gerund."
+    },
+    {
+      q:"She prefers ___ books.",
+      options:["reading","read","reads"],
+      answer:0,
+      explanation:"Prefer can be followed by a gerund."
+    },
+    {
+      q:"___ kind to elderly people.",
+      options:["Being","Be","Been"],
+      answer:1,
+      explanation:"Use Be for the imperative of be."
+    }
+  ]
+},
+
+/* 09 */
+
+{
+  icon:"🔊",
+  title:"Pronunciation & Mechanics",
+  sequence:"ALL THREE SEQUENCES",
+  description:"Practise final -ed, final -s, word stress and punctuation.",
+  rule:[
+    "Final -ed: /t/ after many voiceless sounds, /d/ after many voiced sounds, and /ɪd/ after /t/ or /d/.",
+    "Final -s: /s/ after many voiceless sounds, /z/ after many voiced sounds, and /ɪz/ after sibilant sounds.",
+    "Use capital letters at the beginning of sentences and for proper nouns.",
+    "Use punctuation marks correctly."
+  ],
+  examples:[
+    "Visited → /ɪd/.",
+    "Worked → /t/.",
+    "Played → /d/.",
+    "She visited London in July."
+  ],
+  questions:[
+    {
+      q:"Which word ends with /ɪd/?",
+      options:["worked","visited","played"],
+      answer:1,
+      explanation:"Visited ends with /ɪd/ because the base verb ends in /t/."
+    },
+    {
+      q:"Which word ends with /t/?",
+      options:["helped","played","needed"],
+      answer:0,
+      explanation:"Helped ends with /t/."
+    },
+    {
+      q:"Which word ends with /d/?",
+      options:["wanted","washed","cleaned"],
+      answer:2,
+      explanation:"Cleaned ends with /d/."
+    },
+    {
+      q:"Choose the correctly punctuated sentence.",
+      options:[
+        "we visited london.",
+        "We visited London.",
+        "We visited london"
+      ],
+      answer:1,
+      explanation:"Capitalise the first word and London; add a full stop."
+    },
+    {
+      q:"Which plural noun ends with /ɪz/?",
+      options:["books","bags","buses"],
+      answer:2,
+      explanation:"Buses ends with /ɪz/."
+    }
+  ]
+}
+
+];
+
+/* ==========================================
+   TOPIC CARDS
+========================================== */
+
+const topicGrid =
+  document.getElementById("topicGrid");
+
+lessons.forEach(function(lesson,index){
+
+  const card =
+    document.createElement("article");
+
+  card.className = "topic-card";
+
+  const icon =
+    document.createElement("div");
+
+  icon.className = "topic-icon";
+  icon.textContent = lesson.icon;
+
+  const sequence =
+    document.createElement("span");
+
+  sequence.className = "topic-sequence";
+  sequence.textContent = lesson.sequence;
+
+  const title =
+    document.createElement("h3");
+
+  title.textContent = lesson.title;
+
+  const description =
+    document.createElement("p");
+
+  description.textContent = lesson.description;
+
+  const button =
+    document.createElement("button");
+
+  button.className = "btn blue";
+  button.type = "button";
+  button.textContent = "🚀 Start Practice";
+
+  button.addEventListener("click",function(){
+    openLesson(index);
+  });
+
+  card.append(
+    icon,
+    sequence,
+    title,
+    description,
+    button
+  );
+
+  topicGrid.appendChild(card);
+
+});
+
+/* ==========================================
+   LESSON ENGINE
+========================================== */
+
+let activeLesson = null;
+let lessonChecked = false;
+
+function openLesson(index){
+
+  activeLesson = index;
+  lessonChecked = false;
+
+  const lesson = lessons[index];
+
+  const workspace =
+    document.getElementById("lessonWorkspace");
+
+  workspace.hidden = false;
+
+  document.getElementById("workspaceHeading").textContent =
+    lesson.title;
+
+  document.getElementById("lessonTitle").textContent =
+    lesson.icon + " " + lesson.title;
+
+  document.getElementById("lessonSubtitle").textContent =
+    lesson.sequence;
+
+  const ruleContainer =
+    document.getElementById("lessonRule");
+
+  ruleContainer.innerHTML = "";
+
+  lesson.rule.forEach(function(rule){
+
+    const p = document.createElement("p");
+
+    p.textContent = "✓ " + rule;
+
+    ruleContainer.appendChild(p);
+
+  });
+
+  lesson.examples.forEach(function(example){
+
+    const span =
+      document.createElement("span");
+
+    span.className = "rule-example";
+
+    span.textContent = "💡 " + example;
+
+    ruleContainer.appendChild(span);
+
+  });
+
+  renderQuestions(
+    lesson.questions,
+    "lessonQuestions",
+    "lesson"
+  );
+
+  document.getElementById("lessonResult").style.display =
+    "none";
+
+  const checkButton =
+    document.getElementById("checkLessonBtn");
+
+  checkButton.disabled = false;
+  checkButton.textContent = "✅ Check My Answers";
+
+  workspace.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+function closeLesson(){
+
+  document.getElementById("lessonWorkspace").hidden =
+    true;
+
+  activeLesson = null;
+
+  document.getElementById("topics").scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+function retryLesson(){
+
+  if(activeLesson !== null){
+    openLesson(activeLesson);
+  }
+
+}
+
+/* ==========================================
+   QUESTION RENDERER
+========================================== */
+
+function renderQuestions(questions,containerId,prefix){
+
+  const container =
+    document.getElementById(containerId);
+
+  container.innerHTML = "";
+
+  questions.forEach(function(question,index){
+
+    const card =
+      document.createElement("div");
+
+    card.className = "question-card";
+
+    const heading =
+      document.createElement("h4");
+
+    heading.textContent =
+      (index+1) + ". " + question.q;
+
+    const options =
+      document.createElement("div");
+
+    options.className = "options";
+
+    question.options.forEach(function(option,optionIndex){
+
+      const label =
+        document.createElement("label");
+
+      label.className = "option";
+
+      const input =
+        document.createElement("input");
+
+      input.type = "radio";
+
+      input.name =
+        prefix + "_question_" + index;
+
+      input.value = optionIndex;
+
+      const span =
+        document.createElement("span");
+
+      span.textContent = option;
+
+      label.append(input,span);
+
+      options.appendChild(label);
+
+    });
+
+    const feedback =
+      document.createElement("div");
+
+    feedback.className = "feedback";
+    feedback.setAttribute("role","status");
+
+    card.append(
+      heading,
+      options,
+      feedback
+    );
+
+    container.appendChild(card);
+
+  });
+
+}
+
+/* ==========================================
+   QUESTION CHECKER
+========================================== */
+
+function gradeQuestions(questions,containerId){
+
+  const cards =
+    document.querySelectorAll(
+      "#" + containerId + " .question-card"
+    );
+
+  let earned = 0;
+  let total = 0;
+
+  questions.forEach(function(question,index){
+
+    const card = cards[index];
+
+    const selected =
+      card.querySelector(
+        'input[type="radio"]:checked'
+      );
+
+    const feedback =
+      card.querySelector(".feedback");
+
+    const points =
+      question.points === undefined
+        ? 1
+        : question.points;
+
+    total += points;
+
+    const correct =
+      selected &&
+      Number(selected.value) === question.answer;
+
+    if(correct){
+      earned += points;
+    }
+
+    feedback.className =
+      "feedback show " +
+      (correct ? "correct" : "wrong");
+
+    feedback.textContent =
+      (correct ? "✓ Correct! " : "✗ Review: ") +
+      question.explanation;
+
+    card.querySelectorAll("input").forEach(function(input){
+      input.disabled = true;
+    });
+
+  });
+
+  return {
+    earned:earned,
+    total:total
+  };
+
+}
+
+/* ==========================================
+   LESSON CORRECTION
+========================================== */
+
+function checkLesson(){
+
+  if(activeLesson === null || lessonChecked){
+    return;
+  }
+
+  const lesson = lessons[activeLesson];
+
+  const result =
+    gradeQuestions(
+      lesson.questions,
+      "lessonQuestions"
+    );
+
+  lessonChecked = true;
+
+  const resultBox =
+    document.getElementById("lessonResult");
+
+  resultBox.style.display = "block";
+
+  document.getElementById("lessonScore").textContent =
+    result.earned + "/" + result.total;
+
+  let message;
+
+  if(result.earned === result.total){
+
+    message =
+      "Outstanding! You have mastered this language topic.";
+
+  }else if(result.earned >= 4){
+
+    message =
+      "Excellent work! Review the explanations and keep practising.";
+
+  }else if(result.earned >= 3){
+
+    message =
+      "Good progress! Revise the rule and try again.";
+
+  }else{
+
+    message =
+      "Keep learning! Read the rule carefully and practise again.";
+
+  }
+
+  document.getElementById("lessonMessage").textContent =
+    message;
+
+  const button =
+    document.getElementById("checkLessonBtn");
+
+  button.disabled = true;
+  button.textContent = "✓ Answers Checked";
+
+  const key =
+    "MS4_BEM_LANGUAGE_TOPIC_" + activeLesson;
+
+  const previous =
+    Number(getSaved(key,0));
+
+  saveData(
+    key,
+    Math.max(previous,result.earned)
+  );
+
+  resultBox.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+}
+
+/* ==========================================
+   BEM EXAMINATION DATA
+========================================== */
+
+const examGroups = [
+
+{
+  title:"Activity 01 · Grammar",
+  marks:3,
+  questions:[
+
+    {
+      q:"The Eiffel Tower ___ built in 1889.",
+      options:["was","were","is"],
+      answer:0,
+      points:0.5,
+      explanation:"Use was + past participle for the singular subject."
+    },
+
+    {
+      q:"If pupils volunteer, they ___ their community.",
+      options:["helped","will help","helping"],
+      answer:1,
+      points:0.5,
+      explanation:"First conditional: if + present simple, will + base verb."
+    },
+
+    {
+      q:"She enjoys ___ elderly people.",
+      options:["help","helps","helping"],
+      answer:2,
+      points:0.5,
+      explanation:"Enjoy is followed by a gerund."
+    },
+
+    {
+      q:"The tourists ___ the museum yesterday.",
+      options:["visited","visit","visiting"],
+      answer:0,
+      points:0.5,
+      explanation:"Yesterday indicates the past simple."
+    },
+
+    {
+      q:"The monuments ___ restored last year.",
+      options:["was","were","is"],
+      answer:1,
+      points:0.5,
+      explanation:"The plural subject requires were."
+    },
+
+    {
+      q:"Sara is friendly, ___ her sister is shy.",
+      options:["like","whereas","unlike"],
+      answer:1,
+      points:0.5,
+      explanation:"Whereas joins two contrasting clauses."
+    }
+
+  ]
+},
+
+{
+  title:"Activity 02 · Vocabulary & Word Formation",
+  marks:2,
+  questions:[
+
+    {
+      q:"Choose the opposite of honest.",
+      options:["dishonest","unhonest","inhonest"],
+      answer:0,
+      points:0.5,
+      explanation:"Honest becomes dishonest."
+    },
+
+    {
+      q:"Choose the adjective meaning 'without care'.",
+      options:["careful","careless","uncare"],
+      answer:1,
+      points:0.5,
+      explanation:"Careless means without care."
+    },
+
+    {
+      q:"Choose the opposite of possible.",
+      options:["dispossible","unpossible","impossible"],
+      answer:2,
+      points:0.5,
+      explanation:"Possible becomes impossible."
+    },
+
+    {
+      q:"A person who gives to others is ___.",
+      options:["generous","selfish","careless"],
+      answer:0,
+      points:0.5,
+      explanation:"Generous describes someone willing to give."
+    }
+
+  ]
+},
+
+{
+  title:"Activity 03 · Pronunciation & Mechanics",
+  marks:2,
+  questions:[
+
+    {
+      q:"Which word has the final -ed sound /ɪd/?",
+      options:["worked","visited","played"],
+      answer:1,
+      points:0.5,
+      explanation:"Visited ends in /ɪd/."
+    },
+
+    {
+      q:"Which word has the final -ed sound /t/?",
+      options:["helped","cleaned","needed"],
+      answer:0,
+      points:0.5,
+      explanation:"Helped ends in /t/."
+    },
+
+    {
+      q:"Which word has the final -s sound /ɪz/?",
+      options:["books","bags","buses"],
+      answer:2,
+      points:0.5,
+      explanation:"Buses ends in /ɪz/."
+    },
+
+    {
+      q:"Choose the correctly punctuated sentence.",
+      options:[
+        "we visited algeria last year.",
+        "We visited Algeria last year.",
+        "We visited algeria last year"
+      ],
+      answer:1,
+      points:0.5,
+      explanation:"Use capitals for We and Algeria, and end with a full stop."
+    }
+
+  ]
+}
+
+];
+
+let examChecked = false;
+
+function renderExam(){
+
+  examChecked = false;
+
+  const container =
+    document.getElementById("examQuestions");
+
+  container.innerHTML = "";
+
+  let questionNumber = 0;
+
+  examGroups.forEach(function(group,groupIndex){
+
+    const heading =
+      document.createElement("div");
+
+    heading.className = "exam-group-title";
+
+    heading.textContent = group.title;
+
+    const marks =
+      document.createElement("span");
+
+    marks.textContent =
+      group.marks + " pts";
+
+    heading.appendChild(marks);
+
+    container.appendChild(heading);
+
+    group.questions.forEach(function(question,questionIndex){
+
+      questionNumber++;
+
+      const card =
+        document.createElement("div");
+
+      card.className = "question-card";
+
+      const title =
+        document.createElement("h4");
+
+      title.textContent =
+        questionNumber + ". " + question.q;
+
+      const options =
+        document.createElement("div");
+
+      options.className = "options";
+
+      question.options.forEach(function(option,index){
+
+        const label =
+          document.createElement("label");
+
+        label.className = "option";
+
+        const input =
+          document.createElement("input");
+
+        input.type = "radio";
+
+        input.name =
+          "exam_" + groupIndex +
+          "_" + questionIndex;
+
+        input.value = index;
+
+        const span =
+          document.createElement("span");
+
+        span.textContent = option;
+
+        label.append(input,span);
+
+        options.appendChild(label);
+
+      });
+
+      const feedback =
+        document.createElement("div");
+
+      feedback.className = "feedback";
+      feedback.setAttribute("role","status");
+
+      card.append(
+        title,
+        options,
+        feedback
+      );
+
+      container.appendChild(card);
+
+    });
+
+  });
+
+  document.getElementById("examResult").style.display =
+    "none";
+
+  const button =
+    document.getElementById("checkExamBtn");
+
+  button.disabled = false;
+  button.textContent = "✅ Correct My Examination";
+
+}
+
+function checkExam(){
+
+  if(examChecked){
+    return;
+  }
+
+  const allQuestions =
+    examGroups.flatMap(function(group){
+      return group.questions;
+    });
+
+  const result =
+    gradeQuestions(
+      allQuestions,
+      "examQuestions"
+    );
+
+  examChecked = true;
+
+  const resultBox =
+    document.getElementById("examResult");
+
+  resultBox.style.display = "block";
+
+  document.getElementById("examScore").textContent =
+    result.earned.toFixed(1).replace(".0","") +
+    "/" +
+    result.total.toFixed(1).replace(".0","");
+
+  let message;
+
+  if(result.earned === 7){
+
+    message =
+      "Outstanding! A perfect score in Mastery of Language!";
+
+  }else if(result.earned >= 5.5){
+
+    message =
+      "Excellent performance! Review your remaining mistakes.";
+
+  }else if(result.earned >= 3.5){
+
+    message =
+      "Good progress! Continue revising your language lessons.";
+
+  }else{
+
+    message =
+      "Keep practising! Review the grammar rules and try again.";
+
+  }
+
+  document.getElementById("examMessage").textContent =
+    message;
+
+  const previous =
+    Number(
+      getSaved(
+        "MS4_BEM_LANGUAGE_EXAM_BEST",
+        0
+      )
+    );
+
+  const best =
+    Math.max(previous,result.earned);
+
+  saveData(
+    "MS4_BEM_LANGUAGE_EXAM_BEST",
+    best
+  );
+
+  document.getElementById("examBest").textContent =
+    "🏅 Best score on this device: " +
+    best + "/7";
+
+  const button =
+    document.getElementById("checkExamBtn");
+
+  button.disabled = true;
+  button.textContent = "✓ Examination Checked";
+
+  resultBox.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+}
+
+function resetExam(){
+
+  if(!confirm("Start the BEM language examination again?")){
+    return;
+  }
+
+  renderExam();
+
+  document.getElementById("exam").scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+/* ==========================================
+   CHECKLIST
+========================================== */
+
+const checklistTopics = [
+
+  "I can use the past simple tense correctly.",
+
+  "I can transform sentences into the past passive voice.",
+
+  "I can use comparatives and qualifiers.",
+
+  "I can distinguish past narration from present description.",
+
+  "I can form opposites using prefixes.",
+
+  "I can form adjectives using -ful and -less.",
+
+  "I can express similarities and differences.",
+
+  "I can use conditional type 1.",
+
+  "I can use the imperative and gerunds.",
+
+  "I can classify final -ed and final -s sounds.",
+
+  "I can use capital letters and punctuation.",
+
+  "I have completed the BEM language challenge."
+
+];
+
+const checklistContainer =
+  document.getElementById("checklistItems");
+
+checklistTopics.forEach(function(topic){
+
+  const label =
+    document.createElement("label");
+
+  label.className = "check-item";
+
+  const input =
+    document.createElement("input");
+
+  input.type = "checkbox";
+
+  const span =
+    document.createElement("span");
+
+  span.textContent = topic;
+
+  label.append(input,span);
+
+  checklistContainer.appendChild(label);
+
+});
+
+const CHECK_KEY =
+  "MS4_BEM_LANGUAGE_CHECKLIST_V1";
+
+const checkboxes =
+  Array.from(
+    document.querySelectorAll(
+      '#checklistItems input[type="checkbox"]'
+    )
+  );
+
+function updateProgress(){
+
+  const completed =
+    checkboxes.filter(function(box){
+      return box.checked;
+    }).length;
+
+  const percent =
+    Math.round(
+      completed / checkboxes.length * 100
+    );
+
+  document.getElementById("progressPercent").textContent =
+    percent + "%";
+
+  document.getElementById("progressFill").style.width =
+    percent + "%";
+
+  document.getElementById("progressCaption").textContent =
+    completed + " of " +
+    checkboxes.length +
+    " revision goals completed";
+
+}
+
+function saveChecklist(){
+
+  saveData(
+    CHECK_KEY,
+    checkboxes.map(function(box){
+      return box.checked;
+    })
+  );
+
+  updateProgress();
+
+}
+
+function loadChecklist(){
+
+  const saved =
+    getSaved(CHECK_KEY,[]);
+
+  checkboxes.forEach(function(box,index){
+
+    box.checked =
+      saved[index] === true;
+
+  });
+
+  updateProgress();
+
+}
+
+checkboxes.forEach(function(box){
+
+  box.addEventListener(
+    "change",
+    saveChecklist
+  );
+
+});
+
+document.getElementById("resetProgress")
+.addEventListener("click",function(){
+
+  if(!confirm("Reset your language revision checklist?")){
+    return;
+  }
+
+  checkboxes.forEach(function(box){
+    box.checked = false;
+  });
+
+  saveChecklist();
+
+});
+
+/* ==========================================
+   INITIALISE
+========================================== */
+
+renderExam();
+
+loadChecklist();
+
+</script>
+
+</body>
+</html>

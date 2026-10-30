@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#086cb6">
+
+<title>MS4 Reading Practice | My English Space</title>
+
+<meta name="description"
+content="Reading Detectives: MS4 reading comprehension practice for Sequences 1, 2 and 3.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================
+   RESET AND GLOBAL DESIGN
+========================================== */
+
+:root{
+    --blue:#087bc6;
+    --deep:#073d78;
+    --navy:#103c70;
+    --sky:#41b7eb;
+    --gold:#ffe3a0;
+    --cream:#fffaf0;
+    --white:#ffffff;
+    --ink:#173b5e;
+    --muted:#607a92;
+    --purple:#8a48ac;
+    --green:#148b69;
+    --shadow:0 20px 50px rgba(0,30,80,.3);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:110px;
+}
+
+body{
+    font-family:"Nunito",Arial,sans-serif;
+    color:var(--ink);
+    background:#086cb6;
+    overflow-x:hidden;
+}
+
+h1,h2,h3{
+    font-family:"Baloo 2",Arial,sans-serif;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font:inherit;
+    cursor:pointer;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+a:focus-visible,
+button:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:4px;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,92,164,.52),
+            rgba(2,51,112,.78)
+        ),
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+}
+
+.wrapper{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+    padding:24px 0;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+    font-weight:900;
+    font-size:15px;
+}
+
+.brand-icon{
+    width:48px;
+    height:48px;
+    display:grid;
+    place-items:center;
+    background:#07569e;
+    border:2px solid var(--gold);
+    border-radius:50%;
+    font-size:23px;
+}
+
+.header-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.header-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 17px;
+    background:linear-gradient(180deg,#53c5ee,#0876c2);
+    border:1px solid white;
+    border-radius:30px;
+    color:white;
+    font-size:12px;
+    font-weight:900;
+    box-shadow:0 7px 18px rgba(0,38,86,.3);
+    transition:.2s;
+}
+
+.header-btn:hover{
+    background:#07569e;
+    transform:translateY(-2px);
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+    position:relative;
+    min-height:520px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:65px 15px 45px;
+    isolation:isolate;
+}
+
+.hero-content{
+    position:relative;
+    z-index:4;
+    max-width:790px;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:10px 20px;
+    background:white;
+    color:#07569e;
+    border-radius:30px;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
+    box-shadow:0 7px 20px rgba(0,38,86,.3);
+}
+
+.hero h1{
+    margin:22px 0 12px;
+    font-size:clamp(54px,9vw,100px);
+    font-weight:800;
+    line-height:.97;
+    letter-spacing:-2px;
+    text-shadow:
+        0 5px 0 #158bc8,
+        0 9px 0 #075c9c,
+        0 16px 22px rgba(0,30,80,.55);
+}
+
+.hero h1 span{
+    display:block;
+    color:var(--gold);
+    text-shadow:
+        0 5px 0 #d6a34a,
+        0 9px 0 #9e702d,
+        0 16px 22px rgba(0,30,80,.55);
+}
+
+.hero-subtitle{
+    font-size:17px;
+    font-weight:900;
+    text-shadow:0 3px 10px rgba(0,30,80,.6);
+}
+
+.hero-description{
+    max-width:630px;
+    margin:15px auto 0;
+    font-size:14px;
+    line-height:1.85;
+    font-weight:700;
+    text-shadow:0 2px 8px rgba(0,30,80,.8);
+}
+
+.hero-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:25px;
+    padding:16px 28px;
+    background:linear-gradient(180deg,#ffe7ae,#ffc45e);
+    color:#493319;
+    border:2px solid #fff3d6;
+    border-radius:35px;
+    font-weight:900;
+    font-size:14px;
+    box-shadow:0 10px 25px rgba(0,30,80,.4);
+    transition:.2s;
+}
+
+.hero-cta:hover{
+    transform:translateY(-4px);
+}
+
+.floating{
+    position:absolute;
+    z-index:1;
+    font-size:42px;
+    pointer-events:none;
+    animation:float 4s ease-in-out infinite;
+}
+
+.float-one{top:35px;left:8%}
+.float-two{top:65px;right:9%;animation-delay:1s}
+.float-three{bottom:55px;left:7%;animation-delay:2s}
+.float-four{bottom:45px;right:8%;animation-delay:1.5s}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-13px)}
+}
+
+/* ==========================================
+   STATISTICS
+========================================== */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    max-width:790px;
+    margin:32px auto 0;
+}
+
+.stat{
+    padding:18px 12px;
+    background:rgba(3,67,127,.86);
+    border:1px solid rgba(255,255,255,.75);
+    border-radius:18px;
+    box-shadow:0 7px 20px rgba(0,30,80,.3);
+}
+
+.stat strong{
+    display:block;
+    color:var(--gold);
+    font-family:"Baloo 2",sans-serif;
+    font-size:30px;
+    line-height:1;
+}
+
+.stat span{
+    display:block;
+    margin-top:7px;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.5px;
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.navbar{
+    position:sticky;
+    top:8px;
+    z-index:50;
+    max-width:950px;
+    margin:20px auto 35px;
+    padding:7px;
+    background:linear-gradient(180deg,#42b6e8,#075aab);
+    border:2px solid white;
+    border-radius:40px;
+    box-shadow:0 12px 30px rgba(0,30,80,.45);
+}
+
+.nav-links{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:6px;
+}
+
+.nav-links a{
+    display:block;
+    padding:13px 7px;
+    border-radius:30px;
+    text-align:center;
+    color:white;
+    font-size:12px;
+    font-weight:900;
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    background:rgba(255,255,255,.2);
+}
+
+.nav-links .active{
+    background:linear-gradient(180deg,#ffe8aa,#ffc35d);
+    color:#493319;
+}
+
+/* ==========================================
+   INTRODUCTION
+========================================== */
+
+.intro{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:25px;
+    align-items:center;
+    padding:32px;
+    background:rgba(255,255,255,.97);
+    border:2px solid white;
+    border-radius:27px;
+    box-shadow:var(--shadow);
+}
+
+.intro-art{
+    width:105px;
+    height:105px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(145deg,#e2f6ff,#b6e8ff);
+    border-radius:28px;
+    font-size:56px;
+    box-shadow:inset 0 -5px 10px rgba(0,90,150,.08);
+}
+
+.intro-badge{
+    display:inline-block;
+    padding:7px 14px;
+    background:#087bc6;
+    color:white;
+    border-radius:30px;
+    font-size:10px;
+    font-weight:900;
+}
+
+.intro h2{
+    margin:12px 0 8px;
+    font-size:clamp(25px,4vw,34px);
+    line-height:1.15;
+}
+
+.intro p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.85;
+    font-weight:700;
+}
+
+/* ==========================================
+   SECTION HEADINGS
+========================================== */
+
+.section-heading{
+    padding:53px 0 28px;
+    text-align:center;
+    color:white;
+}
+
+.section-heading small{
+    color:var(--gold);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.section-heading h2{
+    margin:10px 0;
+    font-size:clamp(32px,4vw,45px);
+    text-shadow:0 4px 12px rgba(0,30,80,.6);
+}
+
+.section-heading p{
+    max-width:700px;
+    margin:auto;
+    font-size:13px;
+    line-height:1.8;
+    font-weight:700;
+}
+
+/* ==========================================
+   SEQUENCE CARDS
+========================================== */
+
+.reading-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:24px;
+}
+
+.reading-card{
+    --accent:#087bc6;
+    --accent-dark:#07569e;
+    --soft:#eaf5ff;
+
+    display:flex;
+    flex-direction:column;
+    background:white;
+    border:3px solid white;
+    border-radius:26px;
+    overflow:hidden;
+    box-shadow:0 22px 55px rgba(0,30,80,.35);
+    transition:transform .3s,box-shadow .3s;
+}
+
+.reading-card:hover{
+    transform:translateY(-9px);
+    box-shadow:0 30px 65px rgba(0,30,80,.45);
+}
+
+.reading-card.sequence-two{
+    --accent:#9251bb;
+    --accent-dark:#7040a3;
+    --soft:#f4eaff;
+}
+
+.reading-card.sequence-three{
+    --accent:#179b78;
+    --accent-dark:#107c60;
+    --soft:#e6f8f0;
+}
+
+.card-image{
+    position:relative;
+    height:245px;
+    overflow:hidden;
+    background:var(--soft);
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .5s;
+}
+
+.reading-card:hover .card-image img{
+    transform:scale(1.07);
+}
+
+.card-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        180deg,
+        transparent 30%,
+        rgba(0,30,70,.78)
+    );
+    pointer-events:none;
+}
+
+.sequence-number{
+    position:absolute;
+    top:15px;
+    left:15px;
+    z-index:2;
+    padding:9px 15px;
+    background:white;
+    color:var(--accent);
+    border-radius:30px;
+    font-size:11px;
+    font-weight:900;
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
+}
+
+.card-image-title{
+    position:absolute;
+    z-index:2;
+    bottom:20px;
+    left:20px;
+    right:20px;
+    color:white;
+    font-family:"Baloo 2",sans-serif;
+    font-size:25px;
+    font-weight:800;
+    line-height:1.1;
+    text-shadow:0 3px 10px rgba(0,0,0,.45);
+}
+
+.card-image-title span{
+    display:block;
+    margin-bottom:5px;
+    font-family:"Nunito",sans-serif;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.card-body{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    padding:25px;
+}
+
+.card-category{
+    color:var(--accent);
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.card-body h3{
+    margin:10px 0;
+    color:#103c70;
+    font-size:29px;
+    line-height:1.15;
+}
+
+.card-body p{
+    margin-bottom:19px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.85;
+    font-weight:700;
+}
+
+.passage-list{
+    display:grid;
+    gap:10px;
+    margin-bottom:22px;
+}
+
+.passage-item{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding:12px;
+    background:var(--soft);
+    border-radius:13px;
+    color:#345570;
+    font-size:12px;
+    font-weight:800;
+    line-height:1.5;
+}
+
+.passage-item span{
+    flex-shrink:0;
+    font-size:17px;
+}
+
+.card-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:24px;
+}
+
+.card-tags span{
+    padding:7px 11px;
+    background:var(--soft);
+    color:var(--accent);
+    border-radius:25px;
+    font-size:10px;
+    font-weight:900;
+}
+
+.reading-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-top:auto;
+    padding:16px 12px;
+    background:linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent-dark)
+    );
+    color:white;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:900;
+    box-shadow:0 8px 18px rgba(0,40,90,.17);
+    transition:.2s;
+}
+
+.reading-btn:hover{
+    transform:translateY(-3px);
+    filter:brightness(1.08);
+}
+
+/* ==========================================
+   READING SKILLS
+========================================== */
+
+.skills-panel{
+    margin-top:38px;
+    padding:35px;
+    background:rgba(255,255,255,.97);
+    border:2px solid white;
+    border-radius:28px;
+    box-shadow:var(--shadow);
+}
+
+.skills-heading{
+    text-align:center;
+    margin-bottom:27px;
+}
+
+.skills-heading h2{
+    font-size:clamp(27px,4vw,36px);
+    color:#103c70;
+}
+
+.skills-heading p{
+    max-width:650px;
+    margin:8px auto 0;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.8;
+    font-weight:700;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:14px;
+}
+
+.skill-box{
+    padding:22px 14px;
+    text-align:center;
+    background:#eaf5ff;
+    border-radius:19px;
+    transition:transform .2s;
+}
+
+.skill-box:nth-child(2){background:#f3eaff}
+.skill-box:nth-child(3){background:#e6f8f0}
+.skill-box:nth-child(4){background:#fff0d7}
+.skill-box:nth-child(5){background:#fff0f6}
+.skill-box:nth-child(6){background:#e7f4fa}
+.skill-box:nth-child(7){background:#f0ecff}
+.skill-box:nth-child(8){background:#fff4df}
+
+.skill-box:hover{
+    transform:translateY(-5px);
+}
+
+.skill-icon{
+    font-size:33px;
+}
+
+.skill-box h3{
+    margin:9px 0 5px;
+    color:#173b5e;
+    font-size:17px;
+}
+
+.skill-box p{
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.6;
+    font-weight:700;
+}
+
+/* ==========================================
+   PRACTICE TIPS
+========================================== */
+
+.tips-panel{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    align-items:center;
+    margin-top:35px;
+    padding:35px;
+    background:linear-gradient(125deg,#fff5dc,#fffdf6);
+    border:3px solid #f9d99e;
+    border-radius:27px;
+    box-shadow:var(--shadow);
+}
+
+.tips-panel h2{
+    color:#67431e;
+    font-size:30px;
+}
+
+.tips-panel p{
+    margin-top:10px;
+    color:#78694d;
+    font-size:13px;
+    line-height:1.85;
+    font-weight:700;
+}
+
+.tips-list{
+    display:grid;
+    gap:11px;
+}
+
+.tip{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    padding:12px 15px;
+    background:white;
+    border-radius:13px;
+    font-size:12px;
+    font-weight:900;
+    color:#68502c;
+}
+
+.tip span{
+    display:grid;
+    place-items:center;
+    width:31px;
+    height:31px;
+    flex-shrink:0;
+    background:#ffe5a7;
+    border-radius:50%;
+    color:#7a4f19;
+}
+
+/* ==========================================
+   FINAL CHALLENGE
+========================================== */
+
+.final-panel{
+    margin-top:38px;
+    padding:48px 25px;
+    text-align:center;
+    color:white;
+    background:linear-gradient(135deg,#073d78,#0b9bd0);
+    border:2px solid white;
+    border-radius:28px;
+    box-shadow:var(--shadow);
+}
+
+.final-icon{
+    width:85px;
+    height:85px;
+    display:grid;
+    place-items:center;
+    margin:auto;
+    background:linear-gradient(145deg,#fff0c5,#e9b95b);
+    border:4px solid #fff0c5;
+    border-radius:50%;
+    font-size:42px;
+    box-shadow:0 9px 22px rgba(0,30,80,.35);
+}
+
+.final-panel h2{
+    margin:17px 0 10px;
+    color:var(--gold);
+    font-size:clamp(30px,4vw,42px);
+}
+
+.final-panel p{
+    max-width:670px;
+    margin:auto;
+    font-size:14px;
+    line-height:1.85;
+    font-weight:700;
+}
+
+.final-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:25px;
+    padding:16px 30px;
+    background:linear-gradient(180deg,#ffe7ae,#ffc45e);
+    color:#493319;
+    border:2px solid #fff3d6;
+    border-radius:35px;
+    font-weight:900;
+    font-size:14px;
+    transition:.2s;
+}
+
+.final-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+    padding:45px 15px 40px;
+    text-align:center;
+    color:white;
+    font-size:11px;
+    font-weight:900;
+    line-height:2;
+    letter-spacing:.5px;
+    text-shadow:0 2px 7px rgba(0,30,80,.7);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1000px){
+    .reading-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .reading-card:last-child{
+        grid-column:1/-1;
+        max-width:520px;
+        width:100%;
+        justify-self:center;
+    }
+
+    .skills-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+}
+
+@media(max-width:750px){
+    .reading-grid{
+        grid-template-columns:1fr;
+        max-width:540px;
+        margin:auto;
+    }
+
+    .reading-card:last-child{
+        grid-column:auto;
+    }
+
+    .tips-panel{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:470px;
+    }
+
+    .floating{
+        font-size:30px;
+    }
+}
+
+@media(max-width:550px){
+    .wrapper{
+        width:94%;
+    }
+
+    .topbar{
+        padding:17px 0;
+    }
+
+    .brand{
+        font-size:11px;
+    }
+
+    .brand-icon{
+        width:40px;
+        height:40px;
+        font-size:20px;
+    }
+
+    .header-btn{
+        font-size:10px;
+        padding:10px 12px;
+    }
+
+    .hero{
+        padding:60px 8px 35px;
+    }
+
+    .hero h1{
+        font-size:clamp(52px,12vw,70px);
+    }
+
+    .hero-subtitle{
+        font-size:13px;
+    }
+
+    .hero-description{
+        font-size:12px;
+    }
+
+    .floating{
+        display:none;
+    }
+
+    .stats{
+        gap:7px;
+    }
+
+    .stat{
+        padding:12px 6px;
+    }
+
+    .stat strong{
+        font-size:23px;
+    }
+
+    .stat span{
+        font-size:8px;
+    }
+
+    .navbar{
+        border-radius:23px;
+    }
+
+    .nav-links{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .nav-links a{
+        font-size:11px;
+        padding:11px 6px;
+    }
+
+    .intro{
+        grid-template-columns:1fr;
+        padding:25px 20px;
+        text-align:center;
+    }
+
+    .intro-art{
+        margin:auto;
+    }
+
+    .card-image{
+        height:220px;
+    }
+
+    .card-body{
+        padding:22px;
+    }
+
+    .skills-panel{
+        padding:25px 15px;
+    }
+
+    .skills-grid{
+        gap:10px;
+    }
+
+    .skill-box{
+        padding:18px 10px;
+    }
+
+    .skill-box h3{
+        font-size:15px;
+    }
+
+    .tips-panel{
+        padding:25px 18px;
+    }
+
+    .tips-panel h2{
+        font-size:26px;
+    }
+
+    .final-panel{
+        padding:38px 18px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,
+    *::before,
+    *::after{
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important;
+    }
+}
+
+</style>
+</head>
+
+<body id="home">
+
+<div class="background" aria-hidden="true"></div>
+
+<div class="wrapper">
+
+<!-- ==========================================
+     TOP BAR
+========================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+        <span class="brand-icon">📖</span>
+        MY ENGLISH SPACE
+    </div>
+
+    <div class="header-actions">
+
+        <a href="MS4-PracticeMore.html" class="header-btn">
+            ← Practice More
+        </a>
+
+        <a href="index.html" class="header-btn">
+            🏠 MS4 Home
+        </a>
+
+    </div>
+
+</header>
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="hero">
+
+    <span class="floating float-one">📚</span>
+    <span class="floating float-two">✨</span>
+    <span class="floating float-three">🔎</span>
+    <span class="floating float-four">🌍</span>
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            📖 MS4 · READING PRACTICE ZONE
+        </span>
+
+        <h1>
+            Reading
+            <span>Detectives!</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            Read • Discover • Understand • Succeed
+        </p>
+
+        <p class="hero-description">
+            Welcome, Reading Detective!
+            Your mission is to explore interesting texts,
+            discover important information, solve comprehension
+            challenges and become a confident English reader.
+            Choose your sequence and start investigating!
+        </p>
+
+        <a href="#challenges" class="hero-cta">
+            🔎 Explore Reading Challenges ↓
+        </a>
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>03</strong>
+                <span>SEQUENCES</span>
+            </div>
+
+            <div class="stat">
+                <strong>09</strong>
+                <span>READING PASSAGES</span>
+            </div>
+
+            <div class="stat">
+                <strong>93</strong>
+                <span>COMPREHENSION QUESTIONS</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<nav class="navbar" aria-label="Reading practice navigation">
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            🏠 Home
+        </a>
+
+        <a href="MS4-PracticeMore.html">
+            ⭐ Practice More
+        </a>
+
+        <a href="#challenges" class="active">
+            📖 Challenges
+        </a>
+
+        <a href="#skills">
+            🧠 Reading Skills
+        </a>
+
+    </div>
+
+</nav>
+
+<main>
+
+<!-- ==========================================
+     INTRODUCTION
+========================================== -->
+
+<section class="intro">
+
+    <div class="intro-art">
+        🔎
+    </div>
+
+    <div>
+
+        <span class="intro-badge">
+            YOUR READING ADVENTURE STARTS HERE
+        </span>
+
+        <h2>
+            Become an Excellent Reading Detective!
+        </h2>
+
+        <p>
+            Reading is more than recognising words.
+            It means understanding ideas, finding information,
+            making connections and discovering meaning.
+
+            In this special practice zone, you will explore
+            texts from all three MS4 sequences.
+
+            Read carefully, complete the activities,
+            check your answers and learn from your mistakes.
+
+            Every challenge brings you closer to BEM success!
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     CHALLENGES HEADING
+========================================== -->
+
+<section id="challenges">
+
+    <div class="section-heading">
+
+        <small>
+            ✦ CHOOSE YOUR READING MISSION ✦
+        </small>
+
+        <h2>
+            Three Sequences. Three Adventures.
+        </h2>
+
+        <p>
+            Explore famous landmarks, discover personal stories
+            and learn how people can make the world a better place.
+        </p>
+
+    </div>
+
+    <!-- ======================================
+         THREE READING CARDS
+    ======================================= -->
+
+    <div class="reading-grid">
+
+        <!-- ==================================
+             SEQUENCE 1
+        =================================== -->
+
+        <article class="reading-card sequence-one">
+
+            <div class="card-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1000&q=85"
+                    alt="The Great Wall of China"
+                    loading="lazy">
+
+                <span class="sequence-number">
+                    SEQUENCE 01
+                </span>
+
+                <div class="card-image-title">
+                    <span>🌍 EXPLORE THE WORLD</span>
+                    Landmarks &amp; Great Figures
+                </div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-category">
+                    LANDMARKS · TRAVELLING · BIOGRAPHIES
+                </span>
+
+                <h3>
+                    Discover the World
+                </h3>
+
+                <p>
+                    Travel through fascinating places,
+                    follow an exciting journey and discover
+                    the life of an inspiring Algerian heroine.
+                </p>
+
+                <div class="passage-list">
+
+                    <div class="passage-item">
+                        <span>🏯</span>
+                        <div>
+                            <strong>Text 1:</strong>
+                            The Great Wall of China
+                        </div>
+                    </div>
+
+                    <div class="passage-item">
+                        <span>✈️</span>
+                        <div>
+                            <strong>Text 2:</strong>
+                            Amine's Journey to London
+                        </div>
+                    </div>
+
+                    <div class="passage-item">
+                        <span>🇩🇿</span>
+                        <div>
+                            <strong>Text 3:</strong>
+                            Lalla Fatma N'Soumer
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-tags">
+
+                    <span>📚 3 Passages</span>
+                    <span>✍️ 27 Questions</span>
+                    <span>🎯 BEM Skills</span>
+
+                </div>
+
+                <a
+                    href="MS4-Reading-Practice-S1.html"
+                    class="reading-btn">
+
+                    🚀 Start Sequence 1 Reading →
+
+                </a>
+
+            </div>
+
+        </article>
+
+        <!-- ==================================
+             SEQUENCE 2
+        =================================== -->
+
+        <article class="reading-card sequence-two">
+
+            <div class="card-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=85"
+                    alt="Friends enjoying time together"
+                    loading="lazy">
+
+                <span class="sequence-number">
+                    SEQUENCE 02
+                </span>
+
+                <div class="card-image-title">
+                    <span>💜 DISCOVER YOUR STORY</span>
+                    Personality &amp; Memories
+                </div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-category">
+                    PERSONALITY · MEMORIES · DREAMS
+                </span>
+
+                <h3>
+                    My Life, My Story
+                </h3>
+
+                <p>
+                    Discover wonderful childhood memories,
+                    learn about friendship and follow
+                    inspiring dreams and ambitions.
+                </p>
+
+                <div class="passage-list">
+
+                    <div class="passage-item">
+                        <span>🤝</span>
+                        <div>
+                            <strong>Text 1:</strong>
+                            My Best Childhood Friend
+                        </div>
+                    </div>
+
+                    <div class="passage-item">
+                        <span>🚌</span>
+                        <div>
+                            <strong>Text 2:</strong>
+                            An Unforgettable School Trip
+                        </div>
+                    </div>
+
+                    <div class="passage-item">
+                        <span>🌟</span>
+                        <div>
+                            <strong>Text 3:</strong>
+                            From Childhood Dreams to Success
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-tags">
+
+                    <span>📚 3 Passages</span>
+                    <span>✍️ 30 Questions</span>
+                    <span>🎯 BEM Skills</span>
+
+                </div>
+
+                <a
+                    href="MS4-Reading-Practice-S2.html"
+                    class="reading-btn">
+
+                    💜 Start Sequence 2 Reading →
+
+                </a>
+
+            </div>
+
+        </article>
+
+        <!-- ==================================
+             SEQUENCE 3
+        =================================== -->
+
+        <article class="reading-card sequence-three">
+
+            <div class="card-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1000&q=85"
+                    alt="Volunteers working together"
+                    loading="lazy">
+
+                <span class="sequence-number">
+                    SEQUENCE 03
+                </span>
+
+                <div class="card-image-title">
+                    <span>🌱 MAKE A DIFFERENCE</span>
+                    Community &amp; Citizenship
+                </div>
+
+            </div>
+
+            <div class="card-body">
+
+                <span class="card-category">
+                    CITIZENSHIP · CHARITY · GLOBALISATION
+                </span>
+
+                <h3>
+                    Together We Make a Difference
+                </h3>
+
+                <p>
+                    Discover what makes a good citizen,
+                    explore volunteering and charity work,
+                    and understand our connected world.
+                </p>
+
+                <div class="passage-list">
+
+                    <div class="passage-item">
+                        <span>🤲</span>
+                        <div>
+                            <strong>Text 1:</strong>
+                            Being a Good Citizen
+                        </div>
+                    </div>
+
+                    <div class="passage-item">
+                        <span>❤️</span>
+                        <div>
+                            <strong>Text 2:</strong>
+                            Charity and Voluntary Work
+                        </div>
+                    </div>
+
+                    <div class="passage-item">
+                        <span>🌍</span>
+                        <div>
+                            <strong>Text 3:</strong>
+                            Globalisation: A Connected World
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-tags">
+
+                    <span>📚 3 Passages</span>
+                    <span>✍️ 36 Questions</span>
+                    <span>🎯 BEM Skills</span>
+
+                </div>
+
+                <a
+                    href="MS4-Reading-Practice-S3.html"
+                    class="reading-btn">
+
+                    🌱 Start Sequence 3 Reading →
+
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     READING SKILLS
+========================================== -->
+
+<section class="skills-panel" id="skills">
+
+    <div class="skills-heading">
+
+        <h2>
+            🧠 Train Your Reading Detective Skills!
+        </h2>
+
+        <p>
+            Each reading challenge helps you practise
+            important comprehension skills used in
+            classroom assessments and BEM examinations.
+        </p>
+
+    </div>
+
+    <div class="skills-grid">
+
+        <div class="skill-box">
+            <div class="skill-icon">🎯</div>
+            <h3>Main Idea</h3>
+            <p>Understand what a text is mainly about.</p>
+        </div>
+
+        <div class="skill-box">
+            <div class="skill-icon">🔍</div>
+            <h3>Specific Details</h3>
+            <p>Find important information in a text.</p>
+        </div>
+
+        <div class="skill-box">
+            <div class="skill-icon">✅</div>
+            <h3>True or False</h3>
+            <p>Decide whether statements match the text.</p>
+        </div>
+
+        <div class="skill-box">
+            <div class="skill-icon">❓</div>
+            <h3>WH-Questions</h3>
+            <p>Answer who, what, where, when and why.</p>
+        </div>
+
+        <div class="skill-box">
+            <div class="skill-icon">📖</div>
+            <h3>Vocabulary</h3>
+            <p>Understand words from their context.</p>
+        </div>
+
+        <div class="skill-box">
+            <div class="skill-icon">🔗</div>
+            <h3>Reference Words</h3>
+            <p>Identify what pronouns refer to.</p>
+        </div>
+
+        <div class="skill-box">
+            <div class="skill-icon">💡</div>
+            <h3>Inference</h3>
+            <p>Understand ideas that are not directly stated.</p>
+        </div>
+
+        <div class="skill-box">
+            <div class="skill-icon">🏆</div>
+            <h3>BEM Practice</h3>
+            <p>Develop useful examination skills.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     READING TIPS
+========================================== -->
+
+<section class="tips-panel">
+
+    <div>
+
+        <h2>
+            ⭐ A Smart Reader's Secret
+        </h2>
+
+        <p>
+            You do not need to understand every word
+            to understand a text.
+
+            Begin with the general meaning.
+            Read the questions carefully.
+            Look for clues in the passage.
+
+            When you finish, check your answers
+            and discover what you can improve.
+        </p>
+
+    </div>
+
+    <div class="tips-list">
+
+        <div class="tip">
+            <span>1</span>
+            Read the title and predict the topic.
+        </div>
+
+        <div class="tip">
+            <span>2</span>
+            Read the passage for the general idea.
+        </div>
+
+        <div class="tip">
+            <span>3</span>
+            Read each question carefully.
+        </div>
+
+        <div class="tip">
+            <span>4</span>
+            Find evidence in the text.
+        </div>
+
+        <div class="tip">
+            <span>5</span>
+            Check your answers and improve.
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     FINAL MESSAGE
+========================================== -->
+
+<section class="final-panel">
+
+    <div class="final-icon">
+        🏆
+    </div>
+
+    <h2>
+        Every Great Reader Starts Somewhere!
+    </h2>
+
+    <p>
+        Every passage you read makes you stronger.
+        Every question you answer develops your thinking.
+        Every mistake teaches you something new.
+
+        Keep reading, keep discovering
+        and become a Reading Champion!
+    </p>
+
+    <a href="#challenges" class="final-btn">
+        🚀 Choose My Reading Mission ↑
+    </a>
+
+</section>
+
+</main>
+
+<footer>
+
+    <strong>MY ENGLISH SPACE</strong>
+
+    <br>
+
+    MS4 · READING DETECTIVES · PRACTICE MORE
+
+    <br>
+
+    Read • Discover • Understand • Succeed
+
+</footer>
+
+</div>
+
+</body>
+</html>

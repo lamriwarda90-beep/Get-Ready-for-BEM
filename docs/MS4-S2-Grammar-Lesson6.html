@@ -1,0 +1,4022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkpoint 06 | Adjective Formation -ful & -less | MS4 Sequence 2</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   DESIGN SYSTEM
+========================================= */
+
+:root{
+  --pink:#ed5992;
+  --pink-dark:#c63875;
+  --pink-light:#ffe6f0;
+  --pink-pale:#fff5f9;
+
+  --purple:#7946b7;
+  --purple-dark:#48236c;
+  --purple-light:#f3eaff;
+
+  --gold:#ffc766;
+  --gold-dark:#e7a32f;
+
+  --green:#19865b;
+  --green-light:#e7f8ef;
+
+  --red:#cb425c;
+  --red-light:#ffe9ee;
+
+  --blue:#3685c9;
+  --blue-light:#eaf5ff;
+
+  --ink:#30243c;
+  --muted:#74697e;
+  --white:#ffffff;
+  --line:#f4dce8;
+
+  --shadow:0 15px 45px rgba(128,46,92,.12);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:"Nunito",Arial,sans-serif;
+  background:#fff6fa;
+  color:var(--ink);
+}
+
+button,
+input,
+textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+a{
+  color:inherit;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(255,255,255,.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 5% 85%,
+      rgba(255,200,220,.15),
+      transparent 35%
+    ),
+    linear-gradient(
+      125deg,
+      #743481,
+      #c94083 55%,
+      #f27da4
+    );
+
+  color:white;
+  padding:28px 20px 95px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before,
+.hero::after{
+  content:"";
+  position:absolute;
+  border:2px solid rgba(255,255,255,.15);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.hero::before{
+  width:400px;
+  height:400px;
+  right:-150px;
+  top:-180px;
+}
+
+.hero::after{
+  width:270px;
+  height:270px;
+  left:-150px;
+  bottom:-160px;
+}
+
+.hero-inner{
+  max-width:1100px;
+  margin:auto;
+  position:relative;
+  z-index:1;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.brand{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.2px;
+  color:#ffe9b9;
+}
+
+.back{
+  color:white;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:30px;
+  padding:10px 17px;
+  font-weight:800;
+  font-size:13px;
+  transition:.2s;
+}
+
+.back:hover{
+  background:rgba(255,255,255,.15);
+}
+
+.hero-content{
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+  align-items:center;
+  gap:30px;
+  padding-top:55px;
+}
+
+.eyebrow{
+  display:inline-block;
+  padding:8px 15px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:30px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.hero h1{
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(37px,6vw,65px);
+  line-height:1.08;
+  margin:18px 0;
+}
+
+.hero h1 span{
+  color:#ffe29b;
+}
+
+.hero p{
+  font-size:16px;
+  line-height:1.8;
+  max-width:630px;
+  color:#fff0f6;
+}
+
+.hero-button{
+  display:inline-block;
+  margin-top:12px;
+  padding:14px 25px;
+  background:var(--gold);
+  color:#60305b;
+  text-decoration:none;
+  border:none;
+  border-radius:30px;
+  font-weight:900;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  transition:.2s;
+}
+
+.hero-button:hover{
+  transform:translateY(-3px);
+}
+
+.hero-visual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  min-height:250px;
+}
+
+.visual-circle{
+  width:235px;
+  height:235px;
+  border-radius:50%;
+  background:rgba(255,255,255,.13);
+  border:2px solid rgba(255,255,255,.35);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 25px 50px rgba(62,15,72,.2);
+  animation:float 4s ease-in-out infinite;
+}
+
+.visual-circle .suffix-symbol{
+  font-family:"Baloo 2",sans-serif;
+  font-size:54px;
+  font-weight:800;
+  line-height:1.1;
+  color:#ffe29b;
+}
+
+.visual-circle .suffix-caption{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-align:center;
+  padding:0 12px;
+}
+
+.visual-label{
+  position:absolute;
+  background:white;
+  color:var(--purple-dark);
+  padding:9px 15px;
+  border-radius:25px;
+  font-weight:900;
+  font-size:12px;
+  box-shadow:0 8px 22px rgba(0,0,0,.15);
+}
+
+.label-one{
+  top:10px;
+  left:0;
+}
+
+.label-two{
+  bottom:12px;
+  right:0;
+}
+
+@keyframes float{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.container{
+  max-width:1100px;
+  margin:-48px auto 70px;
+  padding:0 18px;
+  position:relative;
+}
+
+.progress-box{
+  background:white;
+  padding:18px 23px;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+  position:sticky;
+  top:8px;
+  z-index:20;
+}
+
+.progress-label{
+  font-weight:900;
+  color:var(--purple-dark);
+}
+
+.progress-track{
+  flex:1;
+  min-width:110px;
+  height:12px;
+  background:#ffe3ee;
+  border-radius:30px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(
+    90deg,
+    var(--pink),
+    var(--purple)
+  );
+  border-radius:30px;
+  transition:width .4s;
+}
+
+#progressText{
+  color:var(--pink-dark);
+  font-weight:900;
+  font-size:13px;
+}
+
+.lesson-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:22px 0;
+}
+
+.lesson-nav a{
+  background:white;
+  border:1px solid var(--line);
+  color:var(--pink-dark);
+  border-radius:25px;
+  padding:9px 14px;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.lesson-nav a:hover{
+  background:var(--pink-light);
+  transform:translateY(-2px);
+}
+
+/* =========================================
+   STAGES
+========================================= */
+
+.stage{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:clamp(20px,3vw,34px);
+  margin:24px 0;
+  box-shadow:var(--shadow);
+  scroll-margin-top:115px;
+}
+
+.stage-header{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  flex-wrap:wrap;
+}
+
+.badge{
+  background:var(--pink-light);
+  color:var(--pink-dark);
+  padding:7px 13px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.difficulty{
+  padding:6px 11px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:900;
+  background:#e6f7ed;
+  color:var(--green);
+}
+
+.difficulty.medium{
+  background:#fff1d7;
+  color:#98651b;
+}
+
+.difficulty.hard{
+  background:#ffe5eb;
+  color:var(--red);
+}
+
+.stage h2{
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(23px,3vw,30px);
+  color:var(--purple-dark);
+  margin:10px 0;
+}
+
+.stage h3{
+  font-family:"Baloo 2",sans-serif;
+  color:var(--purple-dark);
+  font-size:20px;
+  margin:24px 0 12px;
+}
+
+.description{
+  color:var(--muted);
+  line-height:1.8;
+  margin:0 0 22px;
+}
+
+/* =========================================
+   DISCOVERY
+========================================= */
+
+.discovery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin:20px 0;
+}
+
+.discovery-card{
+  background:#fff2f7;
+  border:1px solid #ffd7e7;
+  border-radius:20px;
+  padding:22px;
+  text-align:center;
+}
+
+.discovery-card:nth-child(2){
+  background:#f5edff;
+  border-color:#e8d8ff;
+}
+
+.discovery-avatar{
+  font-size:60px;
+  margin-bottom:10px;
+}
+
+.discovery-card h3{
+  margin:6px 0;
+}
+
+.discovery-card p{
+  line-height:1.8;
+  font-size:14px;
+}
+
+.word-change{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  padding:20px;
+  background:#fff4f8;
+  border-radius:18px;
+  margin:14px 0;
+  font-weight:900;
+}
+
+.word-change .base{
+  color:var(--green);
+  font-size:22px;
+}
+
+.word-change .derived{
+  color:var(--pink-dark);
+  font-size:22px;
+}
+
+.word-change .arrow{
+  font-size:28px;
+  color:var(--purple);
+}
+
+.suffix-highlight{
+  color:var(--pink-dark);
+  background:#ffe1ec;
+  border-radius:6px;
+  padding:1px 5px;
+}
+
+/* =========================================
+   RULE CARDS
+========================================= */
+
+.rule-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:17px;
+}
+
+.rule-card{
+  padding:22px;
+  border-radius:20px;
+  background:#fff1f7;
+  border:1px solid #ffd7e7;
+}
+
+.rule-card.purple{
+  background:#f7f0ff;
+  border-color:#e8d8ff;
+}
+
+.rule-card.gold{
+  background:#fff9ea;
+  border-color:#ffe7a6;
+}
+
+.rule-card.blue{
+  background:#eff8ff;
+  border-color:#d8ebff;
+}
+
+.rule-card.green{
+  background:#eefaf3;
+  border-color:#d3f0df;
+}
+
+.rule-card h3{
+  color:var(--purple-dark);
+  font-family:"Baloo 2",sans-serif;
+  font-size:21px;
+  margin:0 0 12px;
+}
+
+.rule-card p{
+  font-size:14px;
+  line-height:1.8;
+}
+
+.formula{
+  background:white;
+  color:var(--pink-dark);
+  padding:12px 13px;
+  border-radius:11px;
+  font-weight:900;
+  display:block;
+  margin:12px 0;
+  font-size:13px;
+}
+
+.example{
+  background:rgba(255,255,255,.85);
+  padding:13px;
+  border-radius:11px;
+  font-size:14px;
+  line-height:2;
+  margin-top:12px;
+}
+
+.example strong{
+  color:var(--pink-dark);
+}
+
+.arabic{
+  display:none;
+  direction:rtl;
+  text-align:right;
+  background:white;
+  padding:15px;
+  border-radius:12px;
+  color:var(--purple-dark);
+  line-height:2.1;
+  margin-top:12px;
+  font-size:16px;
+  font-family:"Noto Naskh Arabic",serif;
+}
+
+.arabic.visible{
+  display:block;
+}
+
+.arabic-button{
+  border:1px solid #e7c8f5;
+  background:white;
+  color:var(--purple);
+  border-radius:30px;
+  padding:9px 14px;
+  font-size:12px;
+  font-weight:900;
+  margin-top:14px;
+}
+
+.arabic-button:hover{
+  background:#f7f0ff;
+}
+
+/* =========================================
+   TIPS
+========================================= */
+
+.tip{
+  background:#fff3f8;
+  border-left:5px solid var(--pink);
+  border-radius:13px;
+  padding:17px;
+  margin:13px 0;
+  line-height:1.9;
+  font-size:14px;
+}
+
+.tip strong{
+  color:var(--pink-dark);
+}
+
+.tip.purple{
+  background:#f7f0ff;
+  border-color:var(--purple);
+}
+
+.tip.gold{
+  background:#fff9ea;
+  border-color:var(--gold-dark);
+}
+
+.tip.blue{
+  background:#eef7ff;
+  border-color:var(--blue);
+}
+
+.correct-example{
+  color:var(--green);
+  font-weight:900;
+}
+
+.wrong-example{
+  color:var(--red);
+  font-weight:900;
+}
+
+.table-wrap{
+  overflow-x:auto;
+  margin:20px 0;
+}
+
+table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:540px;
+}
+
+th,
+td{
+  border:1px solid #f0d9e5;
+  padding:13px;
+  text-align:left;
+  font-size:13px;
+  line-height:1.7;
+}
+
+th{
+  background:var(--pink);
+  color:white;
+}
+
+tr:nth-child(even){
+  background:#fff7fa;
+}
+
+/* =========================================
+   QUIZZES
+========================================= */
+
+.question{
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:19px;
+  margin:15px 0;
+  background:#fffdfd;
+}
+
+.question-title{
+  font-size:14px;
+  font-weight:900;
+  line-height:1.8;
+  margin:0 0 13px;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(150px,1fr));
+  gap:10px;
+}
+
+.option{
+  background:#fff3f8;
+  border:2px solid #f7dbe8;
+  border-radius:12px;
+  padding:12px;
+  color:var(--purple-dark);
+  font-weight:800;
+  text-align:center;
+  transition:.2s;
+}
+
+.option:hover:not(:disabled){
+  background:#ffe2ef;
+  transform:translateY(-2px);
+}
+
+.option.correct{
+  background:#e4f8ec;
+  border-color:#24a873;
+  color:#126c4b;
+}
+
+.option.incorrect{
+  background:#ffe6eb;
+  border-color:#e35d7c;
+  color:#a32e4b;
+}
+
+.option:disabled{
+  cursor:default;
+}
+
+.feedback{
+  font-size:13px;
+  font-weight:900;
+  margin-top:12px;
+  min-height:18px;
+  line-height:1.7;
+}
+
+.success{
+  color:var(--green);
+}
+
+.error{
+  color:var(--red);
+}
+
+/* =========================================
+   READING
+========================================= */
+
+.reading{
+  background:#fff4f8;
+  border:1px dashed #ed9fbd;
+  border-radius:18px;
+  padding:24px;
+  line-height:2.2;
+  font-size:15px;
+  margin-bottom:20px;
+}
+
+.reading strong{
+  color:var(--pink-dark);
+  background:#ffe1ec;
+  padding:2px 5px;
+  border-radius:5px;
+}
+
+/* =========================================
+   WRITTEN TASKS
+========================================= */
+
+.task{
+  border-bottom:1px solid var(--line);
+  padding:18px 0;
+}
+
+.task:last-child{
+  border-bottom:none;
+}
+
+.task label{
+  display:block;
+  font-weight:800;
+  line-height:1.8;
+  margin-bottom:10px;
+}
+
+.task input{
+  width:100%;
+  padding:13px;
+  border:2px solid #f0dbe7;
+  border-radius:12px;
+  background:#fffbfd;
+}
+
+.task input.correct{
+  border-color:var(--green);
+  background:#ecfbf3;
+}
+
+.task input.incorrect{
+  border-color:var(--red);
+  background:#fff0f2;
+}
+
+.hint{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:7px;
+  line-height:1.7;
+}
+
+.answer-feedback{
+  font-size:13px;
+  font-weight:800;
+  margin-top:9px;
+  line-height:1.7;
+}
+
+.primary{
+  border:none;
+  border-radius:30px;
+  padding:13px 25px;
+  background:linear-gradient(
+    110deg,
+    var(--pink),
+    var(--pink-dark)
+  );
+  color:white;
+  font-weight:900;
+  margin-top:17px;
+}
+
+.primary:hover{
+  filter:brightness(1.06);
+}
+
+.secondary{
+  border:2px solid #f1c8dc;
+  background:white;
+  color:var(--pink-dark);
+  border-radius:30px;
+  padding:11px 19px;
+  font-weight:900;
+  margin-top:17px;
+}
+
+/* =========================================
+   WORD SORTING
+========================================= */
+
+.sort-card{
+  background:#fffafd;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:20px;
+  margin:16px 0;
+}
+
+.sort-word{
+  font-size:22px;
+  font-weight:900;
+  color:var(--purple-dark);
+  margin-bottom:13px;
+}
+
+.sort-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.sort-buttons button{
+  border:2px solid #f4d4e3;
+  background:#fff0f6;
+  color:var(--purple-dark);
+  border-radius:25px;
+  padding:10px 22px;
+  font-weight:900;
+}
+
+.sort-buttons button.correct{
+  background:var(--green-light);
+  border-color:var(--green);
+  color:var(--green);
+}
+
+.sort-buttons button.incorrect{
+  background:var(--red-light);
+  border-color:var(--red);
+  color:var(--red);
+}
+
+/* =========================================
+   SENTENCE BUILDER
+========================================= */
+
+.word-bank,
+.answer-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  padding:14px;
+  border-radius:15px;
+  min-height:62px;
+  align-items:center;
+}
+
+.word-bank{
+  background:#fff0f6;
+}
+
+.answer-strip{
+  border:2px dashed #efaac6;
+  margin:12px 0;
+  background:#fffafd;
+}
+
+.word-chip{
+  border:none;
+  border-radius:30px;
+  padding:9px 14px;
+  background:var(--pink);
+  color:white;
+  font-weight:900;
+}
+
+.word-chip:disabled{
+  opacity:.3;
+}
+
+.answer-strip .word-chip{
+  background:var(--purple);
+}
+
+/* =========================================
+   WRITING
+========================================= */
+
+.writing-card{
+  background:#fff4f8;
+  border:1px solid var(--line);
+  padding:18px;
+  border-radius:17px;
+  margin:16px 0;
+}
+
+.writing-card label{
+  display:block;
+  font-weight:900;
+  color:var(--purple-dark);
+  margin-bottom:10px;
+}
+
+.writing-card textarea{
+  width:100%;
+  min-height:95px;
+  border:2px solid #f1d3e3;
+  border-radius:13px;
+  padding:13px;
+  resize:vertical;
+  background:white;
+}
+
+.checklist{
+  margin-top:22px;
+  display:grid;
+  gap:10px;
+}
+
+.checklist label{
+  background:#fff5f9;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.checklist input{
+  accent-color:var(--pink);
+}
+
+/* =========================================
+   CERTIFICATE
+========================================= */
+
+.certificate{
+  text-align:center;
+  background:linear-gradient(
+    125deg,
+    #823b91,
+    #e85b96
+  );
+  color:white;
+  padding:35px;
+  border-radius:25px;
+  margin:25px 0;
+  box-shadow:var(--shadow);
+}
+
+.certificate h2{
+  font-family:"Baloo 2",sans-serif;
+  font-size:32px;
+  margin:10px 0;
+}
+
+.certificate p{
+  line-height:1.8;
+}
+
+.certificate .icon{
+  font-size:75px;
+}
+
+.end-links{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:25px 0;
+}
+
+.end-links a{
+  text-decoration:none;
+  padding:14px 22px;
+  background:white;
+  border-radius:30px;
+  color:var(--pink-dark);
+  font-weight:900;
+  border:1px solid var(--line);
+}
+
+footer{
+  text-align:center;
+  padding:0 20px 35px;
+  font-size:12px;
+  font-weight:800;
+  color:var(--muted);
+}
+
+/* =========================================
+   DICTIONARY
+========================================= */
+
+.dict-button{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  z-index:40;
+  border:3px solid white;
+  border-radius:50px;
+  background:var(--gold);
+  padding:15px 18px;
+  box-shadow:0 10px 28px rgba(91,30,74,.25);
+  font-size:22px;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(40,15,43,.65);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:50;
+  padding:15px;
+}
+
+.overlay.open{
+  display:flex;
+}
+
+.dictionary{
+  width:min(480px,100%);
+  max-height:85vh;
+  background:white;
+  border-radius:25px;
+  padding:23px;
+  display:flex;
+  flex-direction:column;
+}
+
+.dictionary-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.dictionary h2{
+  font-family:"Baloo 2",sans-serif;
+  color:var(--purple-dark);
+  margin:0;
+}
+
+.close-button{
+  background:#ffe6ef;
+  border:none;
+  border-radius:50%;
+  width:36px;
+  height:36px;
+  color:var(--pink-dark);
+  font-weight:900;
+}
+
+.dictionary-search{
+  width:100%;
+  padding:12px;
+  border:2px solid #efd9e6;
+  border-radius:12px;
+  margin:17px 0;
+}
+
+.dictionary-list{
+  overflow-y:auto;
+}
+
+.dictionary-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  padding:12px;
+  border-bottom:1px solid var(--line);
+}
+
+.dictionary-row strong{
+  color:var(--purple-dark);
+}
+
+.dictionary-row span{
+  direction:rtl;
+  text-align:right;
+  color:var(--pink-dark);
+  font-weight:800;
+  font-family:"Noto Naskh Arabic",serif;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:700px){
+
+  .hero-content,
+  .rule-grid,
+  .discovery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-visual{
+    min-height:165px;
+  }
+
+  .visual-circle{
+    width:145px;
+    height:145px;
+  }
+
+  .visual-circle .suffix-symbol{
+    font-size:36px;
+  }
+
+  .visual-label{
+    font-size:10px;
+  }
+
+  .hero{
+    padding-bottom:75px;
+  }
+
+  .hero-content{
+    padding-top:35px;
+  }
+
+  .container{
+    padding:0 11px;
+  }
+
+  .progress-box{
+    top:0;
+    border-radius:0 0 18px 18px;
+  }
+
+  .stage{
+    border-radius:19px;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  .visual-circle{
+    animation:none;
+  }
+
+  *{
+    transition:none!important;
+  }
+
+}
+
+@media print{
+
+  .hero,
+  .progress-box,
+  .lesson-nav,
+  .dict-button,
+  .overlay,
+  .primary,
+  .secondary,
+  .end-links{
+    display:none!important;
+  }
+
+  body{
+    background:white;
+  }
+
+  .container{
+    margin:0;
+    max-width:100%;
+  }
+
+  .stage{
+    box-shadow:none;
+    break-inside:avoid;
+  }
+
+  .certificate{
+    color:black;
+    background:white;
+    border:2px solid black;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<header class="hero">
+
+<div class="hero-inner">
+
+<div class="topbar">
+
+<span class="brand">
+✦ MY ENGLISH SPACE · MS4 · SEQUENCE 2
+</span>
+
+<a href="MS4-S2-Grammar-Lesson5.html" class="back">
+← Checkpoint 05
+</a>
+
+</div>
+
+<div class="hero-content">
+
+<div>
+
+<span class="eyebrow">
+GRAMMAR EXPEDITION · CHECKPOINT 06
+</span>
+
+<h1>
+Adjective<br>
+<span>Formation</span> ✨
+</h1>
+
+<p>
+Discover how to form adjectives with
+<strong>-ful</strong> and <strong>-less</strong>
+to describe personalities, feelings,
+childhood memories, and life experiences.
+</p>
+
+<p>
+Learn the difference between
+<strong>hopeful</strong> and
+<strong>hopeless</strong>,
+<strong>careful</strong> and
+<strong>careless</strong>,
+and many more!
+</p>
+
+<a href="#stage1" class="hero-button">
+Start Learning ↗
+</a>
+
+</div>
+
+<div class="hero-visual" aria-hidden="true">
+
+<div class="visual-circle">
+
+<div class="suffix-symbol">
+-ful<br>-less
+</div>
+
+<div class="suffix-caption">
+CHANGE THE WORD
+</div>
+
+</div>
+
+<div class="visual-label label-one">
+💖 HOPEFUL
+</div>
+
+<div class="visual-label label-two">
+🌧 HOPELESS
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="container">
+
+<!-- PROGRESS -->
+
+<div class="progress-box">
+
+<span class="progress-label">
+🏆 Your Progress
+</span>
+
+<div class="progress-track">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+
+<span id="progressText">
+0 / 7 missions
+</span>
+
+</div>
+
+<!-- NAVIGATION -->
+
+<nav class="lesson-nav" aria-label="Lesson sections">
+
+<a href="#stage1">Discover</a>
+<a href="#stage2">Rules</a>
+<a href="#stage3">Spelling</a>
+<a href="#stage4">Recognise</a>
+<a href="#stage5">Reading</a>
+<a href="#stage6">Choose</a>
+<a href="#stage7">Form</a>
+<a href="#stage8">Sort</a>
+<a href="#stage9">Build</a>
+<a href="#stage10">Correct</a>
+<a href="#stage11">Write</a>
+
+</nav>
+
+<!-- =========================================
+     STAGE 1
+========================================= -->
+
+<section class="stage" id="stage1">
+
+<div class="stage-header">
+<span class="badge">DISCOVER · 01</span>
+</div>
+
+<h2>👀 Look, Think & Discover</h2>
+
+<p class="description">
+Read the descriptions of two pupils.
+Notice how their personalities are described.
+</p>
+
+<div class="discovery-grid">
+
+<div class="discovery-card">
+
+<div class="discovery-avatar">👩🏻‍🎓</div>
+
+<h3>Sara</h3>
+
+<p>
+Sara is a <strong>careful</strong>
+and <strong>helpful</strong> pupil.
+</p>
+
+<p>
+She is always <strong>hopeful</strong>
+about her future.
+</p>
+
+<p>
+She is <strong>thoughtful</strong>
+and kind to others.
+</p>
+
+</div>
+
+<div class="discovery-card">
+
+<div class="discovery-avatar">👦🏽</div>
+
+<h3>Amir</h3>
+
+<p>
+Amir was sometimes <strong>careless</strong>
+when he was younger.
+</p>
+
+<p>
+He occasionally felt
+<strong>hopeless</strong>
+after making mistakes.
+</p>
+
+<p>
+Sometimes, he was
+<strong>thoughtless</strong>
+and hurt his friends' feelings.
+</p>
+
+</div>
+
+</div>
+
+<h3>💡 What Do You Notice?</h3>
+
+<div class="word-change">
+
+<span class="base">care</span>
+
+<span class="arrow">→</span>
+
+<span class="derived">
+care<span class="suffix-highlight">ful</span>
+</span>
+
+<span class="arrow">/</span>
+
+<span class="derived">
+care<span class="suffix-highlight">less</span>
+</span>
+
+</div>
+
+<div class="word-change">
+
+<span class="base">hope</span>
+
+<span class="arrow">→</span>
+
+<span class="derived">
+hope<span class="suffix-highlight">ful</span>
+</span>
+
+<span class="arrow">/</span>
+
+<span class="derived">
+hope<span class="suffix-highlight">less</span>
+</span>
+
+</div>
+
+<div class="word-change">
+
+<span class="base">thought</span>
+
+<span class="arrow">→</span>
+
+<span class="derived">
+thought<span class="suffix-highlight">ful</span>
+</span>
+
+<span class="arrow">/</span>
+
+<span class="derived">
+thought<span class="suffix-highlight">less</span>
+</span>
+
+</div>
+
+<div class="tip">
+
+<strong>Discover the Rule!</strong>
+
+<br><br>
+
+The letters <strong>-ful</strong>
+and <strong>-less</strong> are added
+to the <strong>end</strong> of certain words.
+
+<br><br>
+
+They are called <strong>SUFFIXES</strong>.
+
+<br><br>
+
+They help us form adjectives.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arDiscovery')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arDiscovery">
+
+اللاحقة (Suffix) هي حرف أو مجموعة
+حروف نضيفها في نهاية الكلمة
+لتكوين كلمة جديدة.
+
+<br><br>
+
+مثال:
+
+<br>
+
+care = عناية / اهتمام
+
+<br>
+
+careful = حذر
+
+<br>
+
+careless = مهمل
+
+<br><br>
+
+نستعمل اللاحقتين
+-ful و -less
+لتكوين صفات تصف الأشخاص
+والمشاعر والسلوك.
+
+</div>
+
+</section>
+
+<!-- =========================================
+     STAGE 2
+========================================= -->
+
+<section class="stage" id="stage2">
+
+<div class="stage-header">
+<span class="badge">LEARN · 02</span>
+</div>
+
+<h2>🧠 Understanding -ful and -less</h2>
+
+<p class="description">
+These two suffixes often create
+adjectives with contrasting meanings.
+</p>
+
+<div class="rule-grid">
+
+<div class="rule-card">
+
+<h3>🌸 Suffix -FUL</h3>
+
+<p>
+The suffix <strong>-ful</strong>
+often means:
+</p>
+
+<span class="formula">
+full of / having / showing
+</span>
+
+<p>
+We add it to certain nouns
+to form adjectives.
+</p>
+
+<div class="example">
+
+care → <strong>careful</strong>
+
+<br>
+
+hope → <strong>hopeful</strong>
+
+<br>
+
+help → <strong>helpful</strong>
+
+<br>
+
+use → <strong>useful</strong>
+
+<br>
+
+thought → <strong>thoughtful</strong>
+
+<br>
+
+success → <strong>successful</strong>
+
+</div>
+
+<p>
+<strong>Sequence 2 examples:</strong>
+</p>
+
+<div class="example">
+
+When I was younger,
+my mother was always
+<strong>helpful</strong>.
+
+<br><br>
+
+Today, I am
+<strong>hopeful</strong>
+about achieving my dreams.
+
+<br><br>
+
+My childhood was full
+of <strong>joyful</strong> moments.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arFul')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arFul">
+
+اللاحقة -ful تدل غالباً
+على الامتلاك أو الاتصاف بشيء.
+
+<br><br>
+
+careful = حذر
+
+<br>
+
+helpful = متعاون / مساعد
+
+<br>
+
+hopeful = متفائل / مفعم بالأمل
+
+<br>
+
+useful = مفيد
+
+<br>
+
+successful = ناجح
+
+<br><br>
+
+نستعمل هذه الصفات
+لوصف الشخصية والمشاعر والتجارب.
+
+</div>
+
+</div>
+
+<div class="rule-card purple">
+
+<h3>💜 Suffix -LESS</h3>
+
+<p>
+The suffix <strong>-less</strong>
+often means:
+</p>
+
+<span class="formula">
+without / lacking
+</span>
+
+<p>
+We add it to certain nouns
+to form adjectives.
+</p>
+
+<div class="example">
+
+care → <strong>careless</strong>
+
+<br>
+
+hope → <strong>hopeless</strong>
+
+<br>
+
+help → <strong>helpless</strong>
+
+<br>
+
+use → <strong>useless</strong>
+
+<br>
+
+thought → <strong>thoughtless</strong>
+
+<br>
+
+fear → <strong>fearless</strong>
+
+</div>
+
+<p>
+<strong>Sequence 2 examples:</strong>
+</p>
+
+<div class="example">
+
+When I was a child,
+I was sometimes
+<strong>careless</strong>
+with my school things.
+
+<br><br>
+
+After failing the competition,
+I felt <strong>hopeless</strong>.
+
+<br><br>
+
+My grandfather was
+<strong>fearless</strong>
+when facing difficulties.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arLess')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arLess">
+
+اللاحقة -less تدل غالباً
+على غياب الشيء أو عدم امتلاكه.
+
+<br><br>
+
+careless = مهمل
+
+<br>
+
+hopeless = فاقد الأمل
+
+<br>
+
+helpless = عاجز / لا حول له
+
+<br>
+
+useless = عديم الفائدة
+
+<br>
+
+thoughtless = غير مراعي لمشاعر الآخرين
+
+<br>
+
+fearless = شجاع / لا يخاف
+
+</div>
+
+</div>
+
+</div>
+
+<h3>⚖️ Compare the Meanings</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Base Word</th>
+<th>-FUL Adjective</th>
+<th>-LESS Adjective</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>care</td>
+<td>careful</td>
+<td>careless</td>
+</tr>
+
+<tr>
+<td>hope</td>
+<td>hopeful</td>
+<td>hopeless</td>
+</tr>
+
+<tr>
+<td>help</td>
+<td>helpful</td>
+<td>helpless</td>
+</tr>
+
+<tr>
+<td>use</td>
+<td>useful</td>
+<td>useless</td>
+</tr>
+
+<tr>
+<td>thought</td>
+<td>thoughtful</td>
+<td>thoughtless</td>
+</tr>
+
+<tr>
+<td>meaning</td>
+<td>meaningful</td>
+<td>meaningless</td>
+</tr>
+
+<tr>
+<td>harm</td>
+<td>harmful</td>
+<td>harmless</td>
+</tr>
+
+<tr>
+<td>power</td>
+<td>powerful</td>
+<td>powerless</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="tip">
+
+<strong>Important:</strong>
+
+<br><br>
+
+Words ending in <strong>-ful</strong>
+and <strong>-less</strong>
+are not always exact opposites
+in every situation.
+
+<br><br>
+
+For example:
+
+<br>
+
+<strong>helpful</strong> =
+willing or able to help.
+
+<br>
+
+<strong>helpless</strong> =
+unable to help yourself.
+
+<br><br>
+
+Their meanings are related,
+but they are not simple opposites.
+
+</div>
+
+</section>
+
+<!-- =========================================
+     STAGE 3
+========================================= -->
+
+<section class="stage" id="stage3">
+
+<div class="stage-header">
+<span class="badge">LEARN · 03</span>
+</div>
+
+<h2>⚠️ Spelling Rules & Exceptions</h2>
+
+<p class="description">
+Learn how to spell adjectives correctly
+when adding -ful and -less.
+</p>
+
+<div class="tip">
+
+<strong>1. The suffix -ful has only ONE L.</strong>
+
+<br><br>
+
+<span class="correct-example">
+✓ helpful
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ helpfull
+</span>
+
+<br><br>
+
+<span class="correct-example">
+✓ beautiful
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ beautifull
+</span>
+
+</div>
+
+<div class="tip purple">
+
+<strong>2. The suffix -less has TWO letters S at the end.</strong>
+
+<br><br>
+
+<span class="correct-example">
+✓ careless
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ careles
+</span>
+
+<br><br>
+
+<span class="correct-example">
+✓ hopeless
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ hopeles
+</span>
+
+</div>
+
+<div class="tip gold">
+
+<strong>3. Some base words change their spelling.</strong>
+
+<br><br>
+
+beauty → <strong>beautiful</strong>
+
+<br>
+
+pity → <strong>pitiful</strong>
+
+<br><br>
+
+The final <strong>y</strong>
+changes to <strong>i</strong>
+in these words.
+
+</div>
+
+<div class="tip blue">
+
+<strong>4. Not every noun takes both suffixes.</strong>
+
+<br><br>
+
+<strong>successful</strong>
+is a common adjective.
+
+<br>
+
+But <strong>successless</strong>
+is not a standard everyday adjective.
+
+<br><br>
+
+Use <strong>unsuccessful</strong>
+instead.
+
+<br><br>
+
+Also:
+
+<br>
+
+<strong>beautiful</strong>
+is correct.
+
+<br>
+
+<strong>beautyless</strong>
+is not a standard adjective.
+
+<br><br>
+
+Use <strong>unattractive</strong>
+or another suitable adjective.
+
+</div>
+
+<div class="tip">
+
+<strong>5. Some adjectives have special meanings.</strong>
+
+<br><br>
+
+<strong>fearless</strong>
+means very brave,
+not simply a person who has no fear at all.
+
+<br><br>
+
+<strong>priceless</strong>
+means extremely valuable,
+not necessarily worthless.
+
+<br><br>
+
+Always learn the meaning
+of the whole adjective.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arSpelling')">
+🇩🇿 Arabic Summary
+</button>
+
+<div class="arabic" id="arSpelling">
+
+قواعد مهمة:
+
+<br><br>
+
+1. اللاحقة -ful تنتهي بحرف L واحد فقط.
+
+<br>
+
+helpful وليس helpfull
+
+<br><br>
+
+2. اللاحقة -less تنتهي بحرفي S.
+
+<br>
+
+careless وليس careles
+
+<br><br>
+
+3. بعض الكلمات تتغير كتابتها:
+
+<br>
+
+beauty → beautiful
+
+<br><br>
+
+4. لا يمكن إضافة اللاحقتين
+إلى جميع الأسماء.
+
+<br><br>
+
+5. يجب حفظ معنى الصفة كاملة
+لأن المعنى قد يكون خاصاً.
+
+</div>
+
+</section>
+
+<!-- =========================================
+     STAGE 4
+========================================= -->
+
+<section class="stage" id="stage4">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 01</span>
+
+<span class="difficulty">
+⭐ EASY
+</span>
+
+</div>
+
+<h2>🔎 True or False?</h2>
+
+<p class="description">
+Read each statement and decide
+whether it is true or false.
+</p>
+
+<div id="quiz1"></div>
+
+</section>
+
+<!-- =========================================
+     STAGE 5
+========================================= -->
+
+<section class="stage" id="stage5">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 02</span>
+
+<span class="difficulty">
+⭐ EASY
+</span>
+
+</div>
+
+<h2>📖 My Childhood Memories</h2>
+
+<p class="description">
+Read the passage about Sara's childhood,
+then answer the questions.
+</p>
+
+<div class="reading">
+
+When I was a little girl,
+I was sometimes <strong>careless</strong>
+with my school things.
+
+<br><br>
+
+I often lost my pencils and books,
+but my mother was always
+<strong>helpful</strong>.
+
+<br><br>
+
+She taught me to be more
+<strong>careful</strong>
+and responsible.
+
+<br><br>
+
+My childhood was full of
+<strong>joyful</strong>
+memories.
+
+<br><br>
+
+I remember spending
+<strong>wonderful</strong>
+summer holidays with my grandparents.
+
+<br><br>
+
+My grandfather was a
+<strong>thoughtful</strong>
+person who always listened to me.
+
+<br><br>
+
+Sometimes, I felt
+<strong>hopeless</strong>
+when I failed a test.
+
+<br><br>
+
+However, my family encouraged me
+to remain <strong>hopeful</strong>
+and work harder.
+
+<br><br>
+
+Today, I am more confident,
+and I believe that every experience
+can teach us something
+<strong>useful</strong>.
+
+</div>
+
+<div id="quiz2"></div>
+
+</section>
+
+<!-- =========================================
+     STAGE 6
+========================================= -->
+
+<section class="stage" id="stage6">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 03</span>
+
+<span class="difficulty">
+⭐ EASY
+</span>
+
+</div>
+
+<h2>🎯 Choose the Correct Adjective</h2>
+
+<p class="description">
+Choose the adjective that best
+completes each sentence.
+</p>
+
+<div id="quiz3"></div>
+
+</section>
+
+<!-- =========================================
+     STAGE 7
+========================================= -->
+
+<section class="stage" id="stage7">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 04</span>
+
+<span class="difficulty medium">
+⭐⭐ MEDIUM
+</span>
+
+</div>
+
+<h2>✏️ Form the Adjective</h2>
+
+<p class="description">
+Add -ful or -less to the base word.
+Write the complete adjective.
+</p>
+
+<div class="tip">
+
+<strong>Example:</strong>
+
+<br><br>
+
+care + ful → <strong>careful</strong>
+
+<br>
+
+hope + less → <strong>hopeless</strong>
+
+</div>
+
+<div id="wordTasks"></div>
+
+<button class="primary"
+onclick="checkWritten('word')">
+✓ Check My Answers
+</button>
+
+<button class="secondary"
+onclick="resetWritten('word')">
+↺ Try Again
+</button>
+
+<p class="feedback" id="wordResult"></p>
+
+</section>
+
+<!-- =========================================
+     STAGE 8
+========================================= -->
+
+<section class="stage" id="stage8">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 05</span>
+
+<span class="difficulty medium">
+⭐⭐ MEDIUM
+</span>
+
+</div>
+
+<h2>🗂 Sort the Adjectives</h2>
+
+<p class="description">
+Read each adjective and decide
+whether it ends in -ful or -less.
+</p>
+
+<div id="sortArea"></div>
+
+</section>
+
+<!-- =========================================
+     STAGE 9
+========================================= -->
+
+<section class="stage" id="stage9">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 06</span>
+
+<span class="difficulty medium">
+⭐⭐ MEDIUM
+</span>
+
+</div>
+
+<h2>🧩 Build a Sentence</h2>
+
+<p class="description">
+Tap the word chips in the correct order
+to build meaningful sentences.
+</p>
+
+<div id="builderArea"></div>
+
+</section>
+
+<!-- =========================================
+     STAGE 10
+========================================= -->
+
+<section class="stage" id="stage10">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 07</span>
+
+<span class="difficulty hard">
+⭐⭐⭐ HARD
+</span>
+
+</div>
+
+<h2>🔍 Grammar Detective</h2>
+
+<p class="description">
+Find the misspelled adjective
+in each sentence and correct it.
+</p>
+
+<div id="repairTasks"></div>
+
+<button class="primary"
+onclick="checkWritten('repair')">
+✓ Check My Answers
+</button>
+
+<button class="secondary"
+onclick="resetWritten('repair')">
+↺ Try Again
+</button>
+
+<p class="feedback" id="repairResult"></p>
+
+</section>
+
+<!-- =========================================
+     STAGE 11
+========================================= -->
+
+<section class="stage" id="stage11">
+
+<div class="stage-header">
+
+<span class="badge">FINAL WRITING MISSION</span>
+
+<span class="difficulty hard">
+⭐⭐⭐ CREATE
+</span>
+
+</div>
+
+<h2>✍️ My Childhood and Personality</h2>
+
+<p class="description">
+Write a short paragraph describing
+your childhood personality,
+your memories, and how you have changed.
+Use at least three adjectives ending
+in -ful or -less.
+</p>
+
+<div class="tip">
+
+<strong>Writing Guide:</strong>
+
+<br><br>
+
+1. Introduce your childhood personality.
+
+<br>
+
+2. Describe your childhood experiences.
+
+<br>
+
+3. Explain how you have changed.
+
+<br>
+
+4. Finish with a positive thought
+about your future.
+
+</div>
+
+<div class="writing-card">
+
+<label for="writing1">
+🌸 Step 1 — My Childhood Personality
+</label>
+
+<p class="hint">
+Example:
+When I was younger, I was sometimes careless, but I was always cheerful.
+</p>
+
+<textarea id="writing1"
+placeholder="When I was younger, I was..."></textarea>
+
+</div>
+
+<div class="writing-card">
+
+<label for="writing2">
+💜 Step 2 — My Childhood Memories
+</label>
+
+<p class="hint">
+Example:
+I had many wonderful memories with my helpful grandparents.
+</p>
+
+<textarea id="writing2"
+placeholder="I remember..."></textarea>
+
+</div>
+
+<div class="writing-card">
+
+<label for="writing3">
+🌟 Step 3 — My Personality Today
+</label>
+
+<p class="hint">
+Example:
+Today, I am more careful and hopeful about my future.
+</p>
+
+<textarea id="writing3"
+placeholder="Today, I am..."></textarea>
+
+</div>
+
+<h3>💡 Useful Vocabulary</h3>
+
+<div class="tip purple">
+
+<strong>-FUL adjectives:</strong>
+
+<br>
+
+careful · helpful · hopeful ·
+thoughtful · joyful · wonderful ·
+useful · successful · cheerful
+
+<br><br>
+
+<strong>-LESS adjectives:</strong>
+
+<br>
+
+careless · hopeless · helpless ·
+thoughtless · useless · fearless ·
+harmless
+
+<br><br>
+
+<strong>Useful expressions:</strong>
+
+<br>
+
+When I was younger...
+
+<br>
+
+In the past...
+
+<br>
+
+I remember...
+
+<br>
+
+As I grew older...
+
+<br>
+
+Today, I am...
+
+<br>
+
+I hope to become...
+
+</div>
+
+<h3>✅ My Writing Checklist</h3>
+
+<div class="checklist">
+
+<label>
+<input type="checkbox">
+I described my childhood personality.
+</label>
+
+<label>
+<input type="checkbox">
+I used at least three adjectives ending in -ful or -less.
+</label>
+
+<label>
+<input type="checkbox">
+I included childhood memories.
+</label>
+
+<label>
+<input type="checkbox">
+I checked my spelling and punctuation.
+</label>
+
+</div>
+
+<button class="primary"
+onclick="checkWriting()">
+🏆 Check My Writing
+</button>
+
+<button class="secondary"
+onclick="window.print()">
+🖨 Print My Work
+</button>
+
+<p class="feedback" id="writingResult"></p>
+
+</section>
+
+<!-- =========================================
+     CERTIFICATE
+========================================= -->
+
+<section class="certificate">
+
+<div class="icon">🏆</div>
+
+<h2 id="certificateTitle">
+Become a Suffix Champion!
+</h2>
+
+<p id="certificateMessage">
+Complete all seven interactive missions
+to earn your achievement.
+</p>
+
+<button class="hero-button"
+onclick="showAchievement()">
+View My Achievement
+</button>
+
+</section>
+
+<div class="end-links">
+
+<a href="MS4-S2-Grammar-Lesson5.html">
+← Previous Checkpoint
+</a>
+
+<a href="MS4-S2-Grammar.html">
+Back to Grammar Homepage →
+</a>
+
+</div>
+
+</main>
+
+<footer>
+MY ENGLISH SPACE — MS4 · SEQUENCE 2 · GRAMMAR EXPEDITION
+</footer>
+
+<!-- =========================================
+     DICTIONARY
+========================================= -->
+
+<button
+class="dict-button"
+id="dictionaryButton"
+aria-label="Open English Arabic dictionary">
+📖
+</button>
+
+<div class="overlay" id="dictionaryOverlay">
+
+<div class="dictionary"
+role="dialog"
+aria-modal="true"
+aria-labelledby="dictionaryTitle">
+
+<div class="dictionary-head">
+
+<h2 id="dictionaryTitle">
+📖 Mini Dictionary
+</h2>
+
+<button
+class="close-button"
+id="dictionaryClose"
+aria-label="Close dictionary">
+✕
+</button>
+
+</div>
+
+<input
+type="search"
+class="dictionary-search"
+id="dictionarySearch"
+placeholder="Search in English or Arabic..."
+>
+
+<div class="dictionary-list"
+id="dictionaryList"></div>
+
+</div>
+
+</div>
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+/* =========================================
+   UTILITIES
+========================================= */
+
+function toggleArabic(id){
+
+  document.getElementById(id)
+  .classList.toggle("visible");
+
+}
+
+function normalize(text){
+
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[.!?]+$/,"")
+    .replace(/\s+/g," ");
+
+}
+
+function shuffle(array){
+
+  const result=[...array];
+
+  for(let i=result.length-1;i>0;i--){
+
+    const j=Math.floor(Math.random()*(i+1));
+
+    [result[i],result[j]]=
+    [result[j],result[i]];
+
+  }
+
+  return result;
+
+}
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+const completedMissions=new Set();
+
+const totalMissions=7;
+
+function completeMission(number){
+
+  completedMissions.add(number);
+
+  const count=completedMissions.size;
+
+  document.getElementById("progressFill")
+  .style.width=(count/totalMissions*100)+"%";
+
+  document.getElementById("progressText")
+  .textContent=count+" / "+totalMissions+" missions";
+
+  if(count===totalMissions){
+
+    document.getElementById("certificateTitle")
+    .textContent="🏆 Suffix Champion!";
+
+    document.getElementById("certificateMessage")
+    .textContent=
+    "Congratulations! You completed all seven interactive missions!";
+
+  }
+
+}
+
+function showAchievement(){
+
+  const count=completedMissions.size;
+
+  if(count===totalMissions){
+
+    alert(
+      "🏆 SUFFIX CHAMPION!\n\n"+
+      "Excellent work!\n"+
+      "You completed all seven missions."
+    );
+
+  }else{
+
+    alert(
+      "You completed "+count+" out of 7 missions.\n\n"+
+      "Keep practising!"
+    );
+
+  }
+
+}
+
+/* =========================================
+   QUIZ DATA
+========================================= */
+
+const quizzes={
+
+quiz1:[
+
+{
+  q:"The suffix -ful is added to the end of certain words.",
+  options:["True","False"],
+  answer:0,
+  explanation:"A suffix is added to the end of a word."
+},
+
+{
+  q:'"Careless" means "full of care".',
+  options:["True","False"],
+  answer:1,
+  explanation:"Careless means not giving enough care or attention."
+},
+
+{
+  q:'"Helpful" is formed from help + ful.',
+  options:["True","False"],
+  answer:0,
+  explanation:"HELP + FUL = HELPFUL."
+},
+
+{
+  q:'The correct spelling is "hopefull".',
+  options:["True","False"],
+  answer:1,
+  explanation:"The correct spelling is HOPEFUL, with one L at the end."
+},
+
+{
+  q:'"Hopeless" means without hope.',
+  options:["True","False"],
+  answer:0,
+  explanation:"-LESS often means without."
+},
+
+{
+  q:"Every noun can take both -ful and -less.",
+  options:["True","False"],
+  answer:1,
+  explanation:"Not every noun can take both suffixes."
+}
+
+],
+
+quiz2:[
+
+{
+  q:"How did Sara sometimes behave when she was younger?",
+  options:[
+    "Carelessly",
+    "Always carefully",
+    "Fearlessly"
+  ],
+  answer:0,
+  explanation:"Sara says she was sometimes careless."
+},
+
+{
+  q:"Who helped Sara when she lost her school things?",
+  options:[
+    "Her teacher",
+    "Her mother",
+    "Her cousin"
+  ],
+  answer:1,
+  explanation:"Her mother was always helpful."
+},
+
+{
+  q:"How does Sara describe her childhood memories?",
+  options:[
+    "Hopeless",
+    "Useless",
+    "Joyful"
+  ],
+  answer:2,
+  explanation:"She says her childhood was full of joyful memories."
+},
+
+{
+  q:"What kind of person was Sara's grandfather?",
+  options:[
+    "Thoughtful",
+    "Thoughtless",
+    "Careless"
+  ],
+  answer:0,
+  explanation:"Her grandfather was thoughtful and listened to her."
+},
+
+{
+  q:"How did Sara sometimes feel after failing a test?",
+  options:[
+    "Powerful",
+    "Hopeless",
+    "Cheerful"
+  ],
+  answer:1,
+  explanation:"She sometimes felt hopeless."
+},
+
+{
+  q:"What does Sara believe today?",
+  options:[
+    "Every experience is useless",
+    "Mistakes are always harmful",
+    "Every experience can teach something useful"
+  ],
+  answer:2,
+  explanation:"Sara believes experiences can teach us something useful."
+}
+
+],
+
+quiz3:[
+
+{
+  q:"My mother always helps me. She is very ____.",
+  options:[
+    "helpful",
+    "helpless",
+    "careless"
+  ],
+  answer:0,
+  explanation:"HELPFUL means willing or able to help."
+},
+
+{
+  q:"Amir often loses his books. He is ____.",
+  options:[
+    "careful",
+    "careless",
+    "hopeful"
+  ],
+  answer:1,
+  explanation:"CARELESS means not paying enough attention."
+},
+
+{
+  q:"I believe I can achieve my dreams. I am ____.",
+  options:[
+    "hopeless",
+    "useless",
+    "hopeful"
+  ],
+  answer:2,
+  explanation:"HOPEFUL means full of hope."
+},
+
+{
+  q:"My grandfather never gives up easily. He is ____.",
+  options:[
+    "fearless",
+    "careless",
+    "useless"
+  ],
+  answer:0,
+  explanation:"FEARLESS means very brave."
+},
+
+{
+  q:"This dictionary helps me learn English. It is ____.",
+  options:[
+    "useless",
+    "useful",
+    "thoughtless"
+  ],
+  answer:1,
+  explanation:"USEFUL means helpful for a purpose."
+},
+
+{
+  q:"He did not think about his friend's feelings. He was ____.",
+  options:[
+    "thoughtful",
+    "hopeful",
+    "thoughtless"
+  ],
+  answer:2,
+  explanation:"THOUGHTLESS means not considering other people's feelings."
+},
+
+{
+  q:"The holiday was amazing. It was ____.",
+  options:[
+    "wonderful",
+    "careless",
+    "helpless"
+  ],
+  answer:0,
+  explanation:"WONDERFUL means very good or enjoyable."
+},
+
+{
+  q:"The broken pen cannot write. It is ____.",
+  options:[
+    "useful",
+    "useless",
+    "hopeful"
+  ],
+  answer:1,
+  explanation:"USELESS means not useful."
+}
+
+]
+
+};
+
+/* =========================================
+   RENDER QUIZZES
+========================================= */
+
+function renderQuiz(id,missionNumber){
+
+  const container=document.getElementById(id);
+
+  const questions=quizzes[id];
+
+  const solved=new Set();
+
+  questions.forEach((question,index)=>{
+
+    const box=document.createElement("div");
+    box.className="question";
+
+    const title=document.createElement("p");
+    title.className="question-title";
+
+    title.textContent=
+      (index+1)+". "+question.q;
+
+    const options=document.createElement("div");
+    options.className="options";
+
+    const feedback=document.createElement("div");
+    feedback.className="feedback";
+    feedback.setAttribute("role","status");
+
+    question.options.forEach((option,optionIndex)=>{
+
+      const button=document.createElement("button");
+
+      button.className="option";
+      button.textContent=option;
+
+      button.addEventListener("click",()=>{
+
+        if(solved.has(index))return;
+
+        if(optionIndex===question.answer){
+
+          button.classList.add("correct");
+
+          feedback.className="feedback success";
+
+          feedback.textContent=
+            "✓ Excellent! "+question.explanation;
+
+          solved.add(index);
+
+          options.querySelectorAll("button")
+          .forEach(btn=>btn.disabled=true);
+
+          if(solved.size===questions.length){
+
+            completeMission(missionNumber);
+
+          }
+
+        }else{
+
+          button.classList.add("incorrect");
+          button.disabled=true;
+
+          feedback.className="feedback error";
+
+          feedback.textContent=
+            "Not quite. Try another answer!";
+
+        }
+
+      });
+
+      options.appendChild(button);
+
+    });
+
+    box.appendChild(title);
+    box.appendChild(options);
+    box.appendChild(feedback);
+
+    container.appendChild(box);
+
+  });
+
+}
+
+renderQuiz("quiz1",1);
+renderQuiz("quiz2",2);
+renderQuiz("quiz3",3);
+
+/* =========================================
+   WRITTEN TASKS
+========================================= */
+
+const writtenTasks={
+
+word:[
+
+{
+  sentence:"care + ful → ______",
+  answers:["careful"],
+  hint:"The suffix -ful has one L.",
+  model:"careful"
+},
+
+{
+  sentence:"care + less → ______",
+  answers:["careless"],
+  hint:"The suffix -less has two S letters.",
+  model:"careless"
+},
+
+{
+  sentence:"hope + ful → ______",
+  answers:["hopeful"],
+  hint:"Keep the E in hope.",
+  model:"hopeful"
+},
+
+{
+  sentence:"hope + less → ______",
+  answers:["hopeless"],
+  hint:"Keep the E in hope.",
+  model:"hopeless"
+},
+
+{
+  sentence:"help + ful → ______",
+  answers:["helpful"],
+  hint:"Use -ful.",
+  model:"helpful"
+},
+
+{
+  sentence:"help + less → ______",
+  answers:["helpless"],
+  hint:"Use -less.",
+  model:"helpless"
+},
+
+{
+  sentence:"thought + ful → ______",
+  answers:["thoughtful"],
+  hint:"Use -ful.",
+  model:"thoughtful"
+},
+
+{
+  sentence:"thought + less → ______",
+  answers:["thoughtless"],
+  hint:"Use -less.",
+  model:"thoughtless"
+},
+
+{
+  sentence:"use + ful → ______",
+  answers:["useful"],
+  hint:"Keep the E in use.",
+  model:"useful"
+},
+
+{
+  sentence:"use + less → ______",
+  answers:["useless"],
+  hint:"Keep the E in use.",
+  model:"useless"
+},
+
+{
+  sentence:"joy + ful → ______",
+  answers:["joyful"],
+  hint:"Use -ful.",
+  model:"joyful"
+},
+
+{
+  sentence:"fear + less → ______",
+  answers:["fearless"],
+  hint:"Use -less.",
+  model:"fearless"
+}
+
+],
+
+repair:[
+
+{
+  sentence:
+    "My mother is always <u>helpfull</u>.",
+  answers:["helpful"],
+  hint:"The suffix -ful has only one L.",
+  model:"helpful"
+},
+
+{
+  sentence:
+    "I felt <u>hopeles</u> after failing my test.",
+  answers:["hopeless"],
+  hint:"The suffix -less ends in double S.",
+  model:"hopeless"
+},
+
+{
+  sentence:
+    "Sara is a <u>carefull</u> pupil.",
+  answers:["careful"],
+  hint:"Check the final L.",
+  model:"careful"
+},
+
+{
+  sentence:
+    "Amir was sometimes <u>careles</u>.",
+  answers:["careless"],
+  hint:"Check the final S.",
+  model:"careless"
+},
+
+{
+  sentence:
+    "My childhood was full of <u>joyfull</u> moments.",
+  answers:["joyful"],
+  hint:"The suffix -ful has one L.",
+  model:"joyful"
+},
+
+{
+  sentence:
+    "This old pen is <u>useles</u>.",
+  answers:["useless"],
+  hint:"The suffix -less ends in double S.",
+  model:"useless"
+},
+
+{
+  sentence:
+    "My grandfather was a <u>thoughtfull</u> person.",
+  answers:["thoughtful"],
+  hint:"Check the suffix -ful.",
+  model:"thoughtful"
+},
+
+{
+  sentence:
+    "She is a <u>fearles</u> girl.",
+  answers:["fearless"],
+  hint:"Check the suffix -less.",
+  model:"fearless"
+}
+
+]
+
+};
+
+/* =========================================
+   RENDER WRITTEN TASKS
+========================================= */
+
+function renderWrittenTasks(type){
+
+  const container=
+    document.getElementById(type+"Tasks");
+
+  writtenTasks[type].forEach((task,index)=>{
+
+    const wrapper=document.createElement("div");
+    wrapper.className="task";
+
+    const label=document.createElement("label");
+    label.htmlFor=type+index;
+
+    label.innerHTML=
+      (index+1)+". "+task.sentence;
+
+    const input=document.createElement("input");
+
+    input.type="text";
+    input.id=type+index;
+    input.autocomplete="off";
+
+    input.placeholder=
+      "Write the correct adjective...";
+
+    const hint=document.createElement("p");
+    hint.className="hint";
+
+    hint.textContent="💡 Hint: "+task.hint;
+
+    const feedback=document.createElement("div");
+    feedback.className="answer-feedback";
+    feedback.setAttribute("role","status");
+
+    wrapper.appendChild(label);
+    wrapper.appendChild(input);
+    wrapper.appendChild(hint);
+    wrapper.appendChild(feedback);
+
+    container.appendChild(wrapper);
+
+  });
+
+}
+
+renderWrittenTasks("word");
+renderWrittenTasks("repair");
+
+/* =========================================
+   CHECK WRITTEN ANSWERS
+========================================= */
+
+function checkWritten(type){
+
+  const tasks=writtenTasks[type];
+
+  const rows=document.querySelectorAll(
+    "#"+type+"Tasks .task"
+  );
+
+  let correctCount=0;
+
+  rows.forEach((row,index)=>{
+
+    const input=row.querySelector("input");
+
+    const feedback=
+      row.querySelector(".answer-feedback");
+
+    const answer=normalize(input.value);
+
+    const accepted=
+      tasks[index].answers.map(normalize);
+
+    input.classList.remove(
+      "correct",
+      "incorrect"
+    );
+
+    if(accepted.includes(answer)){
+
+      correctCount++;
+
+      input.classList.add("correct");
+
+      feedback.className=
+        "answer-feedback success";
+
+      feedback.textContent=
+        "✓ Excellent!";
+
+    }else{
+
+      input.classList.add("incorrect");
+
+      feedback.className=
+        "answer-feedback error";
+
+      if(answer===""){
+
+        feedback.textContent=
+          "Please write an answer.";
+
+      }else{
+
+        feedback.textContent=
+          "Check your spelling. Correct answer: "+
+          tasks[index].model;
+
+      }
+
+    }
+
+  });
+
+  const result=
+    document.getElementById(type+"Result");
+
+  result.textContent=
+    correctCount+" / "+tasks.length+" correct.";
+
+  result.className=
+    "feedback "+
+    (correctCount===tasks.length
+      ?"success"
+      :"error");
+
+  if(correctCount===tasks.length){
+
+    completeMission(type==="word"?4:7);
+
+    result.textContent+=
+      " Mission complete! 🎉";
+
+  }
+
+}
+
+/* =========================================
+   RESET WRITTEN TASKS
+========================================= */
+
+function resetWritten(type){
+
+  document.querySelectorAll(
+    "#"+type+"Tasks .task"
+  ).forEach(row=>{
+
+    const input=row.querySelector("input");
+
+    input.value="";
+
+    input.classList.remove(
+      "correct",
+      "incorrect"
+    );
+
+    row.querySelector(".answer-feedback")
+    .textContent="";
+
+  });
+
+  document.getElementById(type+"Result")
+  .textContent="";
+
+}
+
+/* =========================================
+   SORTING GAME
+========================================= */
+
+const sortWords=[
+
+  ["helpful","ful"],
+  ["careless","less"],
+  ["hopeful","ful"],
+  ["thoughtless","less"],
+  ["joyful","ful"],
+  ["hopeless","less"],
+  ["useful","ful"],
+  ["fearless","less"],
+  ["careful","ful"],
+  ["useless","less"]
+
+];
+
+const sortCompleted=new Set();
+
+function renderSorting(){
+
+  const container=
+    document.getElementById("sortArea");
+
+  shuffle(sortWords).forEach((item,index)=>{
+
+    const card=document.createElement("div");
+    card.className="sort-card";
+
+    const word=document.createElement("div");
+    word.className="sort-word";
+    word.textContent=item[0];
+
+    const buttons=document.createElement("div");
+    buttons.className="sort-buttons";
+
+    const feedback=document.createElement("p");
+    feedback.className="feedback";
+    feedback.setAttribute("role","status");
+
+    ["ful","less"].forEach(choice=>{
+
+      const button=document.createElement("button");
+
+      button.textContent="-"+choice;
+
+      button.onclick=()=>{
+
+        if(sortCompleted.has(index))return;
+
+        if(choice===item[1]){
+
+          button.classList.add("correct");
+
+          feedback.className="feedback success";
+          feedback.textContent="✓ Correct!";
+
+          sortCompleted.add(index);
+
+          buttons.querySelectorAll("button")
+          .forEach(btn=>btn.disabled=true);
+
+          if(sortCompleted.size===sortWords.length){
+
+            completeMission(5);
+
+          }
+
+        }else{
+
+          button.classList.add("incorrect");
+          button.disabled=true;
+
+          feedback.className="feedback error";
+
+          feedback.textContent=
+            "Try the other suffix.";
+
+        }
+
+      };
+
+      buttons.appendChild(button);
+
+    });
+
+    card.appendChild(word);
+    card.appendChild(buttons);
+    card.appendChild(feedback);
+
+    container.appendChild(card);
+
+  });
+
+}
+
+renderSorting();
+
+/* =========================================
+   SENTENCE BUILDER
+========================================= */
+
+const builderSentences=[
+
+  "My mother was always helpful",
+
+  "I was careless when I was younger",
+
+  "My childhood was full of joyful memories",
+
+  "Today I am hopeful about my future"
+
+];
+
+const builderCompleted=new Set();
+
+function createSentenceBuilder(sentence,index){
+
+  const container=
+    document.getElementById("builderArea");
+
+  const box=document.createElement("div");
+  box.className="question";
+
+  const title=document.createElement("p");
+  title.className="question-title";
+
+  title.textContent="Sentence "+(index+1);
+
+  const answerStrip=document.createElement("div");
+  answerStrip.className="answer-strip";
+
+  const wordBank=document.createElement("div");
+  wordBank.className="word-bank";
+
+  const feedback=document.createElement("p");
+  feedback.className="feedback";
+  feedback.setAttribute("role","status");
+
+  const tiles=shuffle(
+    sentence.split(" ").map((word,id)=>({
+      word,
+      id
+    }))
+  );
+
+  let selected=[];
+
+  function render(){
+
+    answerStrip.innerHTML="";
+    wordBank.innerHTML="";
+
+    if(selected.length===0){
+
+      answerStrip.textContent=
+        "Tap the words below to build your sentence...";
+
+    }
+
+    selected.forEach((tile,selectedIndex)=>{
+
+      const button=document.createElement("button");
+
+      button.className="word-chip";
+      button.textContent=tile.word;
+
+      button.onclick=()=>{
+
+        selected.splice(selectedIndex,1);
+
+        render();
+
+      };
+
+      answerStrip.appendChild(button);
+
+    });
+
+    tiles.forEach(tile=>{
+
+      const button=document.createElement("button");
+
+      button.className="word-chip";
+      button.textContent=tile.word;
+
+      button.disabled=selected.includes(tile);
+
+      button.onclick=()=>{
+
+        selected.push(tile);
+        render();
+
+      };
+
+      wordBank.appendChild(button);
+
+    });
+
+  }
+
+  const checkButton=document.createElement("button");
+
+  checkButton.className="primary";
+  checkButton.textContent="✓ Check Sentence";
+
+  checkButton.onclick=()=>{
+
+    const answer=
+      selected.map(tile=>tile.word).join(" ");
+
+    if(answer===sentence){
+
+      feedback.className="feedback success";
+
+      feedback.textContent=
+        "✓ Perfect sentence!";
+
+      builderCompleted.add(index);
+
+      if(builderCompleted.size===builderSentences.length){
+
+        completeMission(6);
+
+      }
+
+    }else{
+
+      feedback.className="feedback error";
+
+      feedback.textContent=
+        "Not yet. Check the word order.";
+
+    }
+
+  };
+
+  const clearButton=document.createElement("button");
+
+  clearButton.className="secondary";
+  clearButton.textContent="↺ Clear";
+
+  clearButton.onclick=()=>{
+
+    selected=[];
+    feedback.textContent="";
+    render();
+
+  };
+
+  box.appendChild(title);
+  box.appendChild(answerStrip);
+  box.appendChild(wordBank);
+  box.appendChild(checkButton);
+  box.appendChild(clearButton);
+  box.appendChild(feedback);
+
+  container.appendChild(box);
+
+  render();
+
+}
+
+builderSentences.forEach(createSentenceBuilder);
+
+/* =========================================
+   WRITING CHECK
+========================================= */
+
+const adjectiveVocabulary=[
+
+  "careful",
+  "careless",
+
+  "helpful",
+  "helpless",
+
+  "hopeful",
+  "hopeless",
+
+  "thoughtful",
+  "thoughtless",
+
+  "useful",
+  "useless",
+
+  "joyful",
+  "cheerful",
+
+  "wonderful",
+  "successful",
+
+  "fearless",
+  "harmful",
+  "harmless",
+
+  "meaningful",
+  "meaningless",
+
+  "powerful",
+  "powerless",
+
+  "beautiful",
+  "peaceful",
+  "colourful",
+  "colorful",
+
+  "painful",
+  "painless"
+
+];
+
+function checkWriting(){
+
+  const writing1=
+    document.getElementById("writing1").value.trim();
+
+  const writing2=
+    document.getElementById("writing2").value.trim();
+
+  const writing3=
+    document.getElementById("writing3").value.trim();
+
+  const sections=[
+    writing1,
+    writing2,
+    writing3
+  ];
+
+  const combined=
+    sections.join(" ").toLowerCase();
+
+  const foundWords=
+    adjectiveVocabulary.filter(word=>{
+
+      const pattern=
+        new RegExp("\\b"+word+"\\b","i");
+
+      return pattern.test(combined);
+
+    });
+
+  const enoughWords=
+    sections.every(section=>
+      section.split(/\s+/).filter(Boolean).length>=7
+    );
+
+  const result=
+    document.getElementById("writingResult");
+
+  if(enoughWords && foundWords.length>=3){
+
+    result.className="feedback success";
+
+    result.textContent=
+      "🎉 Excellent effort! You used "+
+      foundWords.length+
+      " different -ful/-less adjectives: "+
+      foundWords.join(", ")+
+      ". Read your paragraph again to check "+
+      "grammar, meaning, spelling and punctuation.";
+
+  }else{
+
+    result.className="feedback error";
+
+    result.textContent=
+      "Keep improving! Write at least seven words "+
+      "in each section and use at least three "+
+      "different -ful/-less adjectives. "+
+      "You have used "+
+      foundWords.length+
+      " recognised adjectives so far.";
+
+  }
+
+}
+
+/* =========================================
+   MINI DICTIONARY
+========================================= */
+
+const vocabulary=[
+
+  ["suffix","لاحقة"],
+  ["adjective","صفة"],
+  ["noun","اسم"],
+  ["base word","الكلمة الأصلية"],
+  ["word formation","تكوين الكلمات"],
+
+  ["care","عناية / اهتمام"],
+  ["careful","حذر"],
+  ["careless","مهمل"],
+
+  ["hope","أمل"],
+  ["hopeful","متفائل / مفعم بالأمل"],
+  ["hopeless","فاقد الأمل"],
+
+  ["help","مساعدة"],
+  ["helpful","متعاون / مساعد"],
+  ["helpless","عاجز"],
+
+  ["thought","فكرة / تفكير"],
+  ["thoughtful","مراعٍ لمشاعر الآخرين"],
+  ["thoughtless","غير مراعي لمشاعر الآخرين"],
+
+  ["use","استعمال / فائدة"],
+  ["useful","مفيد"],
+  ["useless","عديم الفائدة"],
+
+  ["joy","فرح"],
+  ["joyful","مليء بالفرح"],
+
+  ["cheerful","مرح / بشوش"],
+  ["wonderful","رائع"],
+
+  ["success","نجاح"],
+  ["successful","ناجح"],
+
+  ["fear","خوف"],
+  ["fearless","شجاع / لا يخاف"],
+
+  ["harm","ضرر"],
+  ["harmful","ضار"],
+  ["harmless","غير ضار"],
+
+  ["meaning","معنى"],
+  ["meaningful","ذو معنى"],
+  ["meaningless","بلا معنى"],
+
+  ["power","قوة"],
+  ["powerful","قوي"],
+  ["powerless","عاجز / بلا قوة"],
+
+  ["beauty","جمال"],
+  ["beautiful","جميل"],
+
+  ["peaceful","هادئ / مسالم"],
+  ["colourful","ملون / زاهٍ"],
+
+  ["personality","شخصية"],
+  ["personality traits","صفات الشخصية"],
+
+  ["childhood","طفولة"],
+  ["memory","ذكرى"],
+  ["memories","ذكريات"],
+
+  ["experience","تجربة"],
+  ["confidence","ثقة بالنفس"],
+
+  ["behaviour","سلوك"],
+  ["responsible","مسؤول"],
+
+  ["mistake","خطأ"],
+  ["improve","يتحسن"],
+
+  ["dream","حلم"],
+  ["future","مستقبل"],
+
+  ["encourage","يشجع"],
+  ["achievement","إنجاز"]
+
+];
+
+const dictionaryButton=
+  document.getElementById("dictionaryButton");
+
+const dictionaryOverlay=
+  document.getElementById("dictionaryOverlay");
+
+const dictionaryClose=
+  document.getElementById("dictionaryClose");
+
+const dictionarySearch=
+  document.getElementById("dictionarySearch");
+
+const dictionaryList=
+  document.getElementById("dictionaryList");
+
+function renderDictionary(){
+
+  const searchText=
+    dictionarySearch.value.toLowerCase().trim();
+
+  dictionaryList.innerHTML="";
+
+  const filtered=vocabulary.filter(
+    ([english,arabic])=>
+
+      english.toLowerCase().includes(searchText) ||
+      arabic.includes(searchText)
+
+  );
+
+  filtered.forEach(([english,arabic])=>{
+
+    const row=document.createElement("div");
+    row.className="dictionary-row";
+
+    const englishWord=document.createElement("strong");
+    englishWord.textContent=english;
+
+    const arabicWord=document.createElement("span");
+    arabicWord.textContent=arabic;
+
+    row.appendChild(englishWord);
+    row.appendChild(arabicWord);
+
+    dictionaryList.appendChild(row);
+
+  });
+
+  if(filtered.length===0){
+
+    dictionaryList.textContent=
+      "No matching words found.";
+
+  }
+
+}
+
+function openDictionary(){
+
+  dictionaryOverlay.classList.add("open");
+
+  renderDictionary();
+
+  dictionarySearch.focus();
+
+}
+
+function closeDictionary(){
+
+  dictionaryOverlay.classList.remove("open");
+
+  dictionaryButton.focus();
+
+}
+
+dictionaryButton.addEventListener(
+  "click",
+  openDictionary
+);
+
+dictionaryClose.addEventListener(
+  "click",
+  closeDictionary
+);
+
+dictionarySearch.addEventListener(
+  "input",
+  renderDictionary
+);
+
+dictionaryOverlay.addEventListener("click",event=>{
+
+  if(event.target===dictionaryOverlay){
+
+    closeDictionary();
+
+  }
+
+});
+
+document.addEventListener("keydown",event=>{
+
+  if(
+    event.key==="Escape" &&
+    dictionaryOverlay.classList.contains("open")
+  ){
+
+    closeDictionary();
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>

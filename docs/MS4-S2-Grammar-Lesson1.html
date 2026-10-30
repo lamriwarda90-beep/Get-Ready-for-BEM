@@ -1,0 +1,2619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4 Sequence 2 | My Life Across Time</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --navy: #182544;
+  --navy-light: #293b65;
+  --purple: #7157d9;
+  --purple-light: #eee9ff;
+  --pink: #e45c99;
+  --pink-light: #fff0f7;
+  --teal: #159c96;
+  --teal-light: #e7faf7;
+  --orange: #f4a340;
+  --gold: #ffd166;
+  --green: #22966b;
+  --red: #dc5268;
+  --white: #ffffff;
+  --background: #f5f6fc;
+  --text: #26334c;
+  --muted: #738099;
+  --border: #e4e8f3;
+  --shadow: 0 12px 35px rgba(30,40,85,.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+h1,h2,h3,h4 {
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.25;
+}
+
+button,input,textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: .2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* HEADER */
+
+.hero {
+  background:
+    radial-gradient(circle at 85% 15%,rgba(218,151,255,.35),transparent 30%),
+    linear-gradient(130deg,#172544,#453681 65%,#8e4c99);
+  color: white;
+  padding: 28px 20px 85px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.back {
+  color: white;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.4);
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 800;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  align-items: center;
+  gap: 30px;
+  margin-top: 45px;
+}
+
+.label {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+  padding: 7px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: clamp(38px,6vw,68px);
+  margin: 18px 0;
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: #ffc6e2;
+}
+
+.hero p {
+  max-width: 600px;
+  font-size: 17px;
+  color: #eee9ff;
+}
+
+.hero-visual {
+  text-align: center;
+  padding: 35px 20px;
+  border-radius: 30px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+}
+
+.hero-visual .clock {
+  font-size: 100px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% { transform: translateY(-12px); }
+}
+
+.hero-visual strong {
+  display: block;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.tags span {
+  padding: 7px 13px;
+  background: rgba(255,255,255,.15);
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* PROGRESS */
+
+.progress-card {
+  max-width: 1080px;
+  margin: -35px auto 25px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.progress-track {
+  flex: 1;
+  min-width: 150px;
+  height: 13px;
+  border-radius: 20px;
+  background: #ebe8f8;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg,var(--purple),var(--pink));
+  transition: .5s;
+}
+
+.xp {
+  padding: 8px 15px;
+  border-radius: 25px;
+  background: #fff4d7;
+  color: #936000;
+  font-weight: 900;
+}
+
+/* NAVIGATION */
+
+nav {
+  max-width: 1080px;
+  margin: 0 auto 25px;
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 10px 16px;
+  color: var(--navy);
+  font-weight: 900;
+  font-size: 13px;
+}
+
+nav a:hover {
+  background: var(--purple-light);
+  color: var(--purple);
+}
+
+/* MAIN */
+
+main {
+  max-width: 1080px;
+  margin: auto;
+  padding: 0 15px 70px;
+}
+
+.section {
+  background: white;
+  border-radius: 25px;
+  padding: clamp(20px,4vw,35px);
+  margin-bottom: 25px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  scroll-margin-top: 20px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.section-number {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: var(--purple-light);
+  color: var(--purple);
+  font-weight: 900;
+}
+
+.section-label {
+  font-size: 11px;
+  color: var(--purple);
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.section h2 {
+  margin: 4px 0;
+  font-size: clamp(24px,3vw,33px);
+}
+
+.lead {
+  color: var(--muted);
+}
+
+/* INTRO */
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.intro-card {
+  padding: 22px 15px;
+  border-radius: 18px;
+  text-align: center;
+  background: #f8f7ff;
+  border: 1px solid var(--border);
+}
+
+.intro-card span {
+  display: block;
+  font-size: 40px;
+}
+
+.intro-card strong {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.intro-card small {
+  color: var(--muted);
+}
+
+/* GRAMMAR CARDS */
+
+.tense {
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  overflow: hidden;
+  margin: 25px 0;
+}
+
+.tense-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 22px;
+  color: white;
+}
+
+.tense-header span {
+  font-size: 40px;
+}
+
+.tense-header h3 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.tense-header p {
+  margin: 4px 0 0;
+  opacity: .9;
+  font-size: 13px;
+}
+
+.present .tense-header {
+  background: linear-gradient(110deg,#6650c8,#9985e9);
+}
+
+.past .tense-header {
+  background: linear-gradient(110deg,#c54b83,#ec8bac);
+}
+
+.continuous .tense-header {
+  background: linear-gradient(110deg,#277da2,#56b4d1);
+}
+
+.future .tense-header {
+  background: linear-gradient(110deg,#128476,#51baa5);
+}
+
+.tense-body {
+  padding: 24px;
+}
+
+.use-box {
+  padding: 20px;
+  background: #f7f5ff;
+  border-left: 5px solid var(--purple);
+  border-radius: 13px;
+  margin-bottom: 20px;
+}
+
+.past .use-box {
+  background: #fff3f8;
+  border-color: var(--pink);
+}
+
+.continuous .use-box {
+  background: #edfaff;
+  border-color: #379fbe;
+}
+
+.future .use-box {
+  background: #eafaf6;
+  border-color: var(--teal);
+}
+
+.use-box h4 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.use-box ul {
+  margin: 8px 0;
+  padding-left: 22px;
+}
+
+.use-box li {
+  margin: 8px 0;
+}
+
+/* FORMS */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.form-card {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.form-card h4 {
+  margin: 0 0 12px;
+  color: var(--purple);
+}
+
+.formula {
+  display: block;
+  padding: 12px;
+  background: #f0edff;
+  border-radius: 10px;
+  color: #5140a6;
+  font-size: 13px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.form-card p {
+  font-size: 14px;
+}
+
+.example {
+  color: var(--navy);
+  font-weight: 800;
+}
+
+/* NOTES */
+
+.note {
+  padding: 18px;
+  border-radius: 14px;
+  background: #fff8e9;
+  border: 1px solid #f5dcaa;
+  margin: 15px 0;
+}
+
+.note h4 {
+  margin: 0 0 8px;
+}
+
+.mistake {
+  background: #fff0f3;
+  border-color: #f3cbd4;
+}
+
+.time-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.time-words span {
+  background: #f0edff;
+  color: #5744ac;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+/* ARABIC */
+
+.arabic {
+  display: none;
+  background: #edf9f4;
+  border: 1px solid #bfe6d7;
+  padding: 20px;
+  border-radius: 14px;
+  margin-top: 15px;
+  direction: rtl;
+  text-align: right;
+  font-family: Arial,sans-serif;
+  line-height: 2;
+}
+
+.arabic.show {
+  display: block;
+}
+
+.arabic-btn {
+  background: var(--teal-light);
+  color: #087e72;
+  border: 0;
+  padding: 11px 17px;
+  border-radius: 12px;
+  font-weight: 900;
+}
+
+/* BUTTONS */
+
+.btn {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 19px;
+  font-weight: 900;
+  margin: 5px 5px 5px 0;
+}
+
+.primary {
+  background: linear-gradient(120deg,var(--purple),#a16bd9);
+  color: white;
+}
+
+.secondary {
+  background: #f0edff;
+  color: var(--purple);
+}
+
+/* ACTIVITIES */
+
+.activity {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 22px;
+  margin: 20px 0;
+  background: #fcfcff;
+}
+
+.activity h3 {
+  color: var(--purple);
+  margin-top: 0;
+}
+
+.question {
+  background: white;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  margin: 15px 0;
+}
+
+.question strong {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.option {
+  border: 2px solid #dfe0f1;
+  background: white;
+  border-radius: 11px;
+  padding: 10px 16px;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.option.correct {
+  background: #dff8eb;
+  border-color: var(--green);
+  color: #116c4d;
+}
+
+.option.wrong {
+  background: #ffe7eb;
+  border-color: var(--red);
+  color: #a72b42;
+}
+
+.feedback {
+  margin-top: 10px;
+  font-weight: 900;
+  min-height: 20px;
+}
+
+.good {
+  color: var(--green);
+}
+
+.bad {
+  color: var(--red);
+}
+
+.input {
+  width: 100%;
+  border: 2px solid #dfe3f0;
+  border-radius: 12px;
+  padding: 13px;
+  background: white;
+}
+
+.input:focus {
+  border-color: var(--purple);
+  outline: none;
+}
+
+/* CLASSIFICATION */
+
+.bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  background: #f5f2ff;
+  border: 2px dashed #b9a9ed;
+  border-radius: 16px;
+  margin: 20px 0;
+}
+
+.bank button {
+  border: 2px solid #d5c9f3;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: 900;
+}
+
+.bank button.selected {
+  background: #ded6ff;
+  border-color: var(--purple);
+}
+
+.bank button.used {
+  opacity: .3;
+  pointer-events: none;
+}
+
+.class-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.class-box {
+  border: 2px dashed #c9c5e4;
+  border-radius: 16px;
+  padding: 18px;
+  min-height: 130px;
+  cursor: pointer;
+}
+
+.class-box:hover {
+  border-color: var(--purple);
+  background: #faf8ff;
+}
+
+.class-box h4 {
+  margin-top: 0;
+}
+
+.placed {
+  display: inline-block;
+  background: #def6e9;
+  color: #15744e;
+  padding: 7px 11px;
+  margin: 4px;
+  border-radius: 9px;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+/* WRITING */
+
+.writing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.writing-card {
+  padding: 20px;
+  background: #faf9ff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.writing-card h3 {
+  color: var(--purple);
+}
+
+.starter {
+  padding: 12px;
+  background: #ede9ff;
+  border-radius: 10px;
+  color: #5142a0;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 110px;
+  resize: vertical;
+  padding: 13px;
+  border: 2px solid #dfe3f0;
+  border-radius: 12px;
+}
+
+/* CERTIFICATE */
+
+.certificate {
+  background: linear-gradient(120deg,#222e56,#6854bd);
+  color: white;
+  text-align: center;
+  border-radius: 23px;
+  padding: 35px 20px;
+}
+
+.certificate h2 {
+  font-size: 34px;
+}
+
+.certificate .medal {
+  font-size: 65px;
+}
+
+/* DICTIONARY */
+
+.dict-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(120deg,#e45c99,#b453ad);
+  color: white;
+  border: 3px solid white;
+  border-radius: 40px;
+  padding: 15px 20px;
+  font-weight: 900;
+  box-shadow: 0 10px 30px #38234a55;
+  z-index: 20;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(18,26,52,.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 20px;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 22px;
+}
+
+.dict-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid var(--border);
+  padding: 12px 5px;
+}
+
+.dict-row span {
+  direction: rtl;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:750px) {
+  .hero-content,
+  .form-grid,
+  .writing-grid,
+  .class-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .progress-card {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .tense-body {
+    padding: 15px;
+  }
+
+  .tense-header h3 {
+    font-size: 22px;
+  }
+
+  .section {
+    padding: 18px;
+  }
+}
+
+@media print {
+  .hero {
+    background: white;
+    color: black;
+    padding: 20px;
+  }
+
+  .hero p {
+    color: black;
+  }
+
+  nav,.progress-card,.dict-btn,.btn,.arabic-btn {
+    display: none;
+  }
+
+  .section {
+    box-shadow: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="container">
+
+    <div class="topbar">
+      <div class="logo">✦ MY ENGLISH SPACE · MS4</div>
+      <a class="back" href="MS4-Sequence2.html">← Sequence 2</a>
+    </div>
+
+    <div class="hero-content">
+
+      <div>
+        <span class="label">
+          SEQUENCE 02 · GRAMMAR · LESSON 01
+        </span>
+
+        <h1>
+          My Life<br>
+          <span>Across Time.</span>
+        </h1>
+
+        <p>
+          Discover how to describe your personality,
+          talk about your childhood and life experiences,
+          remember past events and express your future ambitions.
+        </p>
+
+        <div class="tags">
+          <span>🌱 My Personality</span>
+          <span>📖 My Life Experiences</span>
+          <span>🚀 My Future Dreams</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="clock">⏳</div>
+        <strong>PAST · PRESENT · FUTURE</strong>
+        <p>Every life has a story.</p>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<div class="progress-card">
+  <strong>🧭 My Learning Journey</strong>
+
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <strong id="progressText">0 / 4 Missions</strong>
+
+  <span class="xp" id="xp">⭐ 0 XP</span>
+</div>
+
+<nav>
+  <a href="#discover">🚀 Discover</a>
+  <a href="#rules">📚 Grammar Rules</a>
+  <a href="#classify">🧩 Time Clues</a>
+  <a href="#quiz">🎯 Quiz</a>
+  <a href="#correct">🔎 Detective</a>
+  <a href="#writing">✍️ Writing</a>
+</nav>
+
+<main>
+
+<!-- DISCOVER -->
+
+<section class="section" id="discover">
+
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <div>
+      <div class="section-label">START YOUR JOURNEY</div>
+      <h2>🚀 Discover the Four Tenses</h2>
+    </div>
+  </div>
+
+  <p class="lead">
+    We use different verb tenses to talk about different
+    moments in our lives.
+  </p>
+
+  <div class="intro-grid">
+
+    <div class="intro-card">
+      <span>🌱</span>
+      <strong>Present Simple</strong>
+      <small>My habits and personality</small>
+    </div>
+
+    <div class="intro-card">
+      <span>📜</span>
+      <strong>Past Simple</strong>
+      <small>My childhood and experiences</small>
+    </div>
+
+    <div class="intro-card">
+      <span>⏳</span>
+      <strong>Past Continuous</strong>
+      <small>My past memories</small>
+    </div>
+
+    <div class="intro-card">
+      <span>🚀</span>
+      <strong>Future with WILL</strong>
+      <small>My dreams and ambitions</small>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <h4>💡 Remember!</h4>
+    <p>
+      <strong>Yesterday:</strong> I visited my grandparents.<br>
+      <strong>Every day:</strong> I help my parents.<br>
+      <strong>Yesterday at 8:</strong> I was studying.<br>
+      <strong>Tomorrow:</strong> I will study harder.
+    </p>
+  </div>
+
+</section>
+
+<!-- GRAMMAR RULES -->
+
+<section class="section" id="rules">
+
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <div>
+      <div class="section-label">LEARN THE RULES</div>
+      <h2>📚 The Four Grammar Powers</h2>
+    </div>
+  </div>
+
+  <p class="lead">
+    Read each rule carefully. Study the examples before
+    moving to the activities.
+  </p>
+
+  <!-- PRESENT SIMPLE -->
+
+  <article class="tense present">
+
+    <div class="tense-header">
+      <span>🌱</span>
+      <div>
+        <h3>1. Present Simple</h3>
+        <p>HABITS · ROUTINES · PERSONALITY · FACTS</p>
+      </div>
+    </div>
+
+    <div class="tense-body">
+
+      <div class="use-box">
+        <h4>🎯 When do we use the Present Simple?</h4>
+
+        <p>
+          We use the Present Simple to describe:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Daily habits:</strong><br>
+            I usually read books after school.
+          </li>
+
+          <li>
+            <strong>Routines:</strong><br>
+            My sister studies English every evening.
+          </li>
+
+          <li>
+            <strong>Personality traits:</strong><br>
+            My best friend always helps people.
+          </li>
+
+          <li>
+            <strong>Preferences:</strong><br>
+            I enjoy reading biographies.
+          </li>
+
+          <li>
+            <strong>Permanent situations:</strong><br>
+            I live with my family in Algeria.
+          </li>
+        </ul>
+      </div>
+
+      <h3>🧱 The Three Forms</h3>
+
+      <div class="form-grid">
+
+        <div class="form-card">
+          <h4>✅ Affirmative</h4>
+
+          <span class="formula">
+            Subject + Verb
+          </span>
+
+          <p>I <b>help</b> my friends.</p>
+          <p>She <b>helps</b> her friends.</p>
+
+          <p>
+            <strong>Remember:</strong>
+            He / She / It + verb-s
+          </p>
+        </div>
+
+        <div class="form-card">
+          <h4>❌ Negative</h4>
+
+          <span class="formula">
+            Subject + don't / doesn't + Verb
+          </span>
+
+          <p>I <b>don't like</b> violence.</p>
+          <p>She <b>doesn't give up</b> easily.</p>
+
+          <p>
+            After doesn't, use the base verb.
+          </p>
+        </div>
+
+        <div class="form-card">
+          <h4>❓ Interrogative</h4>
+
+          <span class="formula">
+            Do / Does + Subject + Verb?
+          </span>
+
+          <p><b>Do</b> you enjoy reading?</p>
+          <p><b>Does</b> she help others?</p>
+
+          <p>
+            Yes, she does.<br>
+            No, she doesn't.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="note">
+        <h4>⚠️ Spelling Rules</h4>
+
+        <p>
+          Most verbs take <b>-s</b>:<br>
+          help → helps<br>
+          read → reads
+        </p>
+
+        <p>
+          Verbs ending in -ch, -sh, -s, -x or -o
+          usually take <b>-es</b>:<br>
+          watch → watches<br>
+          go → goes
+        </p>
+
+        <p>
+          Consonant + y → <b>-ies</b>:<br>
+          study → studies<br>
+          try → tries
+        </p>
+
+        <p>
+          Vowel + y → <b>-s</b>:<br>
+          play → plays
+        </p>
+
+        <p>
+          Special verb:<br>
+          have → has
+        </p>
+      </div>
+
+      <div class="note mistake">
+        <h4>🚫 Common Mistakes</h4>
+
+        ❌ She don't like reading.<br>
+        ✅ She doesn't like reading.<br><br>
+
+        ❌ My brother study hard.<br>
+        ✅ My brother studies hard.<br><br>
+
+        ❌ Does she likes English?<br>
+        ✅ Does she like English?
+      </div>
+
+      <h4>⏰ Time Expressions</h4>
+
+      <div class="time-words">
+        <span>always</span>
+        <span>usually</span>
+        <span>often</span>
+        <span>sometimes</span>
+        <span>never</span>
+        <span>every day</span>
+        <span>every weekend</span>
+      </div>
+
+      <br>
+
+      <button class="arabic-btn" onclick="toggleArabic(this)">
+        🌍 Explain in Arabic
+      </button>
+
+      <div class="arabic">
+        <h3>شرح المضارع البسيط</h3>
+
+        نستعمل المضارع البسيط للتعبير عن العادات اليومية
+        والروتين والصفات الشخصية والحقائق.
+
+        <p>
+          مثال:<br>
+          I usually help my mother.<br>
+          أنا عادة أساعد أمي.
+        </p>
+
+        <p>
+          في الجملة المثبتة نضيف s أو es إلى الفعل
+          مع He و She و It.
+        </p>
+
+        <p>
+          في النفي نستعمل don't أو doesn't
+          ثم الفعل في صورته الأصلية.
+        </p>
+
+        <p>
+          في السؤال نبدأ بـ Do أو Does.
+        </p>
+
+        <p>
+          انتبه: بعد Does و Doesn't لا نضيف s إلى الفعل.
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- PAST SIMPLE -->
+
+  <article class="tense past">
+
+    <div class="tense-header">
+      <span>📜</span>
+      <div>
+        <h3>2. Past Simple</h3>
+        <p>CHILDHOOD · MEMORIES · LIFE EXPERIENCES</p>
+      </div>
+    </div>
+
+    <div class="tense-body">
+
+      <div class="use-box">
+        <h4>🎯 When do we use the Past Simple?</h4>
+
+        <p>
+          We use the Past Simple for actions or situations
+          that happened and finished in the past.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Childhood memories:</strong><br>
+            When I was six, I learned to ride a bicycle.
+          </li>
+
+          <li>
+            <strong>Life experiences:</strong><br>
+            I visited a science exhibition last year.
+          </li>
+
+          <li>
+            <strong>Achievements:</strong><br>
+            My sister won a school competition.
+          </li>
+
+          <li>
+            <strong>Past situations:</strong><br>
+            I was very shy when I was young.
+          </li>
+        </ul>
+      </div>
+
+      <h3>🧱 The Three Forms</h3>
+
+      <div class="form-grid">
+
+        <div class="form-card">
+          <h4>✅ Affirmative</h4>
+
+          <span class="formula">
+            Subject + Past Verb
+          </span>
+
+          <p>I <b>visited</b> my uncle.</p>
+          <p>She <b>won</b> a prize.</p>
+
+          <p>
+            Use the past form of the verb.
+          </p>
+        </div>
+
+        <div class="form-card">
+          <h4>❌ Negative</h4>
+
+          <span class="formula">
+            Subject + didn't + Base Verb
+          </span>
+
+          <p>I <b>didn't visit</b> London.</p>
+          <p>She <b>didn't win</b> the prize.</p>
+
+          <p>
+            After didn't, use the base verb.
+          </p>
+        </div>
+
+        <div class="form-card">
+          <h4>❓ Interrogative</h4>
+
+          <span class="formula">
+            Did + Subject + Base Verb?
+          </span>
+
+          <p><b>Did</b> you visit Algiers?</p>
+          <p><b>Did</b> she win a prize?</p>
+
+          <p>
+            Yes, she did.<br>
+            No, she didn't.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="note">
+        <h4>📌 Regular Verbs</h4>
+
+        <p>
+          Most regular verbs take <b>-ed</b>.
+        </p>
+
+        visit → visited<br>
+        help → helped<br>
+        work → worked<br>
+        start → started
+
+        <p>
+          Verbs ending in consonant + y:
+        </p>
+
+        study → studied<br>
+        try → tried
+
+        <p>
+          Verbs ending in -e take -d:
+        </p>
+
+        live → lived
+      </div>
+
+      <div class="note">
+        <h4>📌 Irregular Verbs</h4>
+
+        <p>
+          Some verbs have special past forms.
+        </p>
+
+        go → <b>went</b><br>
+        see → <b>saw</b><br>
+        meet → <b>met</b><br>
+        write → <b>wrote</b><br>
+        become → <b>became</b><br>
+        win → <b>won</b><br>
+        have → <b>had</b><br>
+        be → <b>was / were</b>
+      </div>
+
+      <div class="note">
+        <h4>⭐ Special Verb: BE</h4>
+
+        <p>
+          I / He / She / It → <b>was</b><br>
+          You / We / They → <b>were</b>
+        </p>
+
+        <p>
+          Affirmative: I was shy.<br>
+          Negative: I wasn't shy.<br>
+          Question: Were you shy?
+        </p>
+
+        <p>
+          Do not use did with the past forms of BE.
+        </p>
+      </div>
+
+      <div class="note mistake">
+        <h4>🚫 Common Mistakes</h4>
+
+        ❌ Did you visited your grandparents?<br>
+        ✅ Did you visit your grandparents?<br><br>
+
+        ❌ I didn't went to school.<br>
+        ✅ I didn't go to school.<br><br>
+
+        ❌ She was very shy? (Yes/No question)<br>
+        ✅ Was she very shy?
+      </div>
+
+      <h4>⏰ Time Expressions</h4>
+
+      <div class="time-words">
+        <span>yesterday</span>
+        <span>last year</span>
+        <span>last weekend</span>
+        <span>two years ago</span>
+        <span>when I was young</span>
+        <span>in 2020</span>
+      </div>
+
+      <br>
+
+      <button class="arabic-btn" onclick="toggleArabic(this)">
+        🌍 Explain in Arabic
+      </button>
+
+      <div class="arabic">
+        <h3>شرح الماضي البسيط</h3>
+
+        نستعمل الماضي البسيط للتعبير عن أحداث
+        وقعت وانتهت في الماضي.
+
+        <p>
+          مثال:<br>
+          I visited my grandparents yesterday.<br>
+          زرت جدي وجدتي أمس.
+        </p>
+
+        <p>
+          في الإثبات نستعمل الفعل في الماضي.
+          الأفعال المنتظمة تأخذ ed، أما الأفعال الشاذة
+          فلها تصريف خاص.
+        </p>
+
+        <p>
+          في النفي نستعمل didn't مع الفعل الأصلي.
+        </p>
+
+        <p>
+          في السؤال نستعمل Did ثم الفاعل ثم الفعل الأصلي.
+        </p>
+
+        <p>
+          الفعل be في الماضي هو was أو were،
+          ونستعمله دون did.
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- PAST CONTINUOUS -->
+
+  <article class="tense continuous">
+
+    <div class="tense-header">
+      <span>⏳</span>
+      <div>
+        <h3>3. Past Continuous</h3>
+        <p>ACTIONS IN PROGRESS · PAST MEMORIES</p>
+      </div>
+    </div>
+
+    <div class="tense-body">
+
+      <div class="use-box">
+        <h4>🎯 When do we use the Past Continuous?</h4>
+
+        <p>
+          We use the Past Continuous to describe an action
+          that was happening at a particular moment in the past.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Action in progress:</strong><br>
+            I was reading a biography at 8 p.m.
+          </li>
+
+          <li>
+            <strong>Interrupted action:</strong><br>
+            I was studying when my friend called.
+          </li>
+
+          <li>
+            <strong>Two simultaneous actions:</strong><br>
+            While I was reading, my sister was drawing.
+          </li>
+        </ul>
+      </div>
+
+      <h3>🧱 The Three Forms</h3>
+
+      <div class="form-grid">
+
+        <div class="form-card">
+          <h4>✅ Affirmative</h4>
+
+          <span class="formula">
+            Subject + was/were + Verb-ing
+          </span>
+
+          <p>I <b>was reading</b>.</p>
+          <p>They <b>were studying</b>.</p>
+        </div>
+
+        <div class="form-card">
+          <h4>❌ Negative</h4>
+
+          <span class="formula">
+            Subject + wasn't/weren't + Verb-ing
+          </span>
+
+          <p>I <b>wasn't sleeping</b>.</p>
+          <p>They <b>weren't playing</b>.</p>
+        </div>
+
+        <div class="form-card">
+          <h4>❓ Interrogative</h4>
+
+          <span class="formula">
+            Was/Were + Subject + Verb-ing?
+          </span>
+
+          <p><b>Were</b> you studying?</p>
+          <p><b>Was</b> she reading?</p>
+        </div>
+
+      </div>
+
+      <div class="note">
+        <h4>⭐ WAS or WERE?</h4>
+
+        I / He / She / It → <b>was</b><br>
+        You / We / They → <b>were</b>
+      </div>
+
+      <div class="note">
+        <h4>🧠 Past Continuous + Past Simple</h4>
+
+        <p>
+          We often use the Past Continuous for the
+          longer action and the Past Simple for the
+          shorter action that interrupts it.
+        </p>
+
+        <p>
+          <b>I was preparing my project</b>
+          when the teacher <b>called</b>.
+        </p>
+
+        <p>
+          Long action: was preparing<br>
+          Short action: called
+        </p>
+      </div>
+
+      <div class="note">
+        <h4>✍️ Spelling Rules for -ING</h4>
+
+        read → reading<br>
+        study → studying<br>
+        write → writing<br>
+        make → making<br>
+        run → running<br>
+        sit → sitting
+      </div>
+
+      <div class="note mistake">
+        <h4>🚫 Common Mistakes</h4>
+
+        ❌ I was study English.<br>
+        ✅ I was studying English.<br><br>
+
+        ❌ They was playing.<br>
+        ✅ They were playing.<br><br>
+
+        ❌ I were reading.<br>
+        ✅ I was reading.
+      </div>
+
+      <h4>⏰ Time Expressions</h4>
+
+      <div class="time-words">
+        <span>while</span>
+        <span>at that moment</span>
+        <span>at 8 p.m. yesterday</span>
+        <span>when</span>
+      </div>
+
+      <br>
+
+      <button class="arabic-btn" onclick="toggleArabic(this)">
+        🌍 Explain in Arabic
+      </button>
+
+      <div class="arabic">
+        <h3>شرح الماضي المستمر</h3>
+
+        نستعمل الماضي المستمر للتعبير عن حدث
+        كان مستمراً في وقت معين في الماضي.
+
+        <p>
+          الصيغة:<br>
+          was / were + verb-ing
+        </p>
+
+        <p>
+          مثال:<br>
+          I was reading at 8 p.m.<br>
+          كنت أقرأ على الساعة الثامنة مساءً.
+        </p>
+
+        <p>
+          نستعمل was مع I و He و She و It،
+          ونستعمل were مع You و We و They.
+        </p>
+
+        <p>
+          يمكن أن نستعمل الماضي المستمر مع الماضي البسيط
+          للتعبير عن حدث قصير قاطع حدثاً مستمراً.
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- FUTURE -->
+
+  <article class="tense future">
+
+    <div class="tense-header">
+      <span>🚀</span>
+      <div>
+        <h3>4. Future with WILL</h3>
+        <p>DREAMS · AMBITIONS · PROMISES · PREDICTIONS</p>
+      </div>
+    </div>
+
+    <div class="tense-body">
+
+      <div class="use-box">
+        <h4>🎯 When do we use WILL?</h4>
+
+        <p>
+          We use WILL to talk about:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Future ambitions:</strong><br>
+            One day, I will become an engineer.
+          </li>
+
+          <li>
+            <strong>Predictions:</strong><br>
+            I think my sister will be successful.
+          </li>
+
+          <li>
+            <strong>Promises:</strong><br>
+            I will always help my parents.
+          </li>
+
+          <li>
+            <strong>Instant decisions:</strong><br>
+            I will help you with your homework.
+          </li>
+        </ul>
+      </div>
+
+      <h3>🧱 The Three Forms</h3>
+
+      <div class="form-grid">
+
+        <div class="form-card">
+          <h4>✅ Affirmative</h4>
+
+          <span class="formula">
+            Subject + will + Base Verb
+          </span>
+
+          <p>I <b>will study</b> harder.</p>
+          <p>She <b>will become</b> a doctor.</p>
+        </div>
+
+        <div class="form-card">
+          <h4>❌ Negative</h4>
+
+          <span class="formula">
+            Subject + will not + Base Verb
+          </span>
+
+          <p>I <b>will not give up</b>.</p>
+          <p>She <b>won't fail</b>.</p>
+        </div>
+
+        <div class="form-card">
+          <h4>❓ Interrogative</h4>
+
+          <span class="formula">
+            Will + Subject + Base Verb?
+          </span>
+
+          <p><b>Will</b> you work hard?</p>
+          <p><b>Will</b> she become a doctor?</p>
+
+          <p>
+            Yes, she will.<br>
+            No, she won't.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="note">
+        <h4>⭐ Important Rules</h4>
+
+        <p>
+          WILL is the same with all subjects.
+        </p>
+
+        I will<br>
+        You will<br>
+        He will<br>
+        She will<br>
+        We will<br>
+        They will
+
+        <p>
+          The verb after WILL is always in its base form.
+        </p>
+
+        <p>
+          will not = won't
+        </p>
+      </div>
+
+      <div class="note mistake">
+        <h4>🚫 Common Mistakes</h4>
+
+        ❌ I will to become a scientist.<br>
+        ✅ I will become a scientist.<br><br>
+
+        ❌ She will studies harder.<br>
+        ✅ She will study harder.<br><br>
+
+        ❌ He wills become a doctor.<br>
+        ✅ He will become a doctor.
+      </div>
+
+      <h4>⏰ Time Expressions</h4>
+
+      <div class="time-words">
+        <span>tomorrow</span>
+        <span>next year</span>
+        <span>next week</span>
+        <span>one day</span>
+        <span>in the future</span>
+      </div>
+
+      <br>
+
+      <button class="arabic-btn" onclick="toggleArabic(this)">
+        🌍 Explain in Arabic
+      </button>
+
+      <div class="arabic">
+        <h3>شرح المستقبل باستعمال WILL</h3>
+
+        نستعمل will للتعبير عن التوقعات والوعود
+        والقرارات اللحظية والطموحات المستقبلية.
+
+        <p>
+          مثال:<br>
+          I will become a doctor.<br>
+          سأصبح طبيباً.
+        </p>
+
+        <p>
+          الإثبات:<br>
+          Subject + will + verb
+        </p>
+
+        <p>
+          النفي:<br>
+          Subject + won't + verb
+        </p>
+
+        <p>
+          السؤال:<br>
+          Will + subject + verb?
+        </p>
+
+        <p>
+          مهم: بعد will نستعمل الفعل الأصلي
+          دون to ودون s.
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+</section>
+
+<!-- CLASSIFICATION -->
+
+<section class="section" id="classify">
+
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <div>
+      <div class="section-label">MISSION 01 · REMEMBER</div>
+      <h2>🧩 Classify the Time Expressions</h2>
+    </div>
+  </div>
+
+  <p class="lead">
+    Click a time expression, then click the correct tense box.
+  </p>
+
+  <div class="bank" id="wordBank"></div>
+
+  <div class="class-grid" id="classGrid"></div>
+
+  <p class="feedback" id="classFeedback" aria-live="polite"></p>
+
+  <button class="btn secondary" onclick="resetClassification()">
+    🔄 Try Again
+  </button>
+
+</section>
+
+<!-- QUIZ -->
+
+<section class="section" id="quiz">
+
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <div>
+      <div class="section-label">MISSION 02 · APPLY</div>
+      <h2>🎯 Choose the Correct Verb</h2>
+    </div>
+  </div>
+
+  <p class="lead">
+    Read each sentence and choose the correct answer.
+    Use the time expression to help you.
+  </p>
+
+  <div id="quizArea"></div>
+
+  <p class="feedback" id="quizFeedback" aria-live="polite"></p>
+
+  <button class="btn secondary" onclick="resetQuiz()">
+    🔄 Restart Quiz
+  </button>
+
+</section>
+
+<!-- CORRECT MISTAKES -->
+
+<section class="section" id="correct">
+
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <div>
+      <div class="section-label">MISSION 03 · ANALYSE</div>
+      <h2>🔎 Grammar Detective</h2>
+    </div>
+  </div>
+
+  <p class="lead">
+    Each sentence contains a grammar mistake.
+    Rewrite the sentence correctly.
+  </p>
+
+  <div id="correctionArea"></div>
+
+  <button class="btn primary" onclick="checkCorrections()">
+    ✅ Check Corrections
+  </button>
+
+  <button class="btn secondary" onclick="resetCorrections()">
+    🔄 Reset
+  </button>
+
+</section>
+
+<!-- WRITING -->
+
+<section class="section" id="writing">
+
+  <div class="section-header">
+    <div class="section-number">06</div>
+    <div>
+      <div class="section-label">MISSION 04 · CREATE</div>
+      <h2>✍️ My Life Story</h2>
+    </div>
+  </div>
+
+  <p class="lead">
+    Write four sentences about yourself.
+    Use the sentence starters if you need help.
+  </p>
+
+  <div class="writing-grid">
+
+    <div class="writing-card">
+      <h3>🌱 My Personality</h3>
+
+      <p>
+        Write about your personality or daily habits.
+      </p>
+
+      <div class="starter">
+        💡 I am ... and I usually ...
+      </div>
+
+      <textarea id="writing1"
+        placeholder="I am kind and I usually help my friends."></textarea>
+    </div>
+
+    <div class="writing-card">
+      <h3>📜 My Childhood</h3>
+
+      <p>
+        Write about a childhood memory.
+      </p>
+
+      <div class="starter">
+        💡 When I was young, I ...
+      </div>
+
+      <textarea id="writing2"
+        placeholder="When I was young, I played football."></textarea>
+    </div>
+
+    <div class="writing-card">
+      <h3>⏳ My Past Memory</h3>
+
+      <p>
+        Write about an action in progress in the past.
+      </p>
+
+      <div class="starter">
+        💡 Yesterday at 8 p.m., I was ...
+      </div>
+
+      <textarea id="writing3"
+        placeholder="Yesterday at 8 p.m., I was studying."></textarea>
+    </div>
+
+    <div class="writing-card">
+      <h3>🚀 My Future Dream</h3>
+
+      <p>
+        Write about your future ambition.
+      </p>
+
+      <div class="starter">
+        💡 In the future, I will ...
+      </div>
+
+      <textarea id="writing4"
+        placeholder="In the future, I will become a doctor."></textarea>
+    </div>
+
+  </div>
+
+  <br>
+
+  <button class="btn primary" onclick="checkWriting()">
+    🌟 Check My Writing
+  </button>
+
+  <button class="btn secondary" onclick="window.print()">
+    🖨️ Print My Work
+  </button>
+
+  <p class="feedback" id="writingFeedback" aria-live="polite"></p>
+
+  <div class="note">
+    <strong>Teacher's note:</strong>
+    The writing activity checks whether pupils have written
+    their sentences. Open-ended answers should also be
+    checked by the teacher for grammar and meaning.
+  </div>
+
+</section>
+
+<!-- CERTIFICATE -->
+
+<section class="section">
+
+  <div class="certificate">
+
+    <div class="medal">🏅</div>
+
+    <h2>Time Master Certificate</h2>
+
+    <p id="certificateText">
+      Complete the four missions to unlock your badge!
+    </p>
+
+    <button class="btn primary" onclick="checkCertificate()">
+      🏆 Check My Achievement
+    </button>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- DICTIONARY -->
+
+<button class="dict-btn" onclick="openDictionary()">
+  📖 Dictionary
+</button>
+
+<div class="modal" id="dictionaryModal"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Mini dictionary">
+
+  <div class="modal-content">
+
+    <h2>📖 English–Arabic Dictionary</h2>
+
+    <p>Sequence 2 vocabulary</p>
+
+    <input class="input"
+           id="dictionarySearch"
+           placeholder="Search a word..."
+           oninput="renderDictionary()">
+
+    <div id="dictionaryList"></div>
+
+    <br>
+
+    <button class="btn secondary" onclick="closeDictionary()">
+      ✕ Close
+    </button>
+
+  </div>
+
+</div>
+
+<footer>
+  MY ENGLISH SPACE · MS4 · SEQUENCE 2<br>
+  Me, My Personality and Life Experiences
+</footer>
+
+<script>
+
+/* ======================================
+   PROGRESS SYSTEM
+====================================== */
+
+const completedMissions = new Set();
+
+function completeMission(name) {
+  completedMissions.add(name);
+  updateProgress();
+}
+
+function updateProgress() {
+  const count = completedMissions.size;
+  const percent = count * 25;
+
+  document.getElementById("progressFill").style.width =
+    percent + "%";
+
+  document.getElementById("progressText").textContent =
+    count + " / 4 Missions";
+
+  document.getElementById("xp").textContent =
+    "⭐ " + (count * 25) + " XP";
+}
+
+/* ======================================
+   ARABIC EXPLANATIONS
+====================================== */
+
+function toggleArabic(button) {
+  const box = button.nextElementSibling;
+
+  box.classList.toggle("show");
+
+  button.textContent = box.classList.contains("show")
+    ? "🌍 Hide Arabic Explanation"
+    : "🌍 Explain in Arabic";
+}
+
+/* ======================================
+   MISSION 1 — CLASSIFICATION
+====================================== */
+
+const expressions = [
+  ["always", "present"],
+  ["every weekend", "present"],
+  ["yesterday", "past"],
+  ["last year", "past"],
+  ["at 8 p.m. yesterday", "continuous"],
+  ["at that moment yesterday", "continuous"],
+  ["next year", "future"],
+  ["one day", "future"]
+];
+
+const tenseNames = {
+  present: "🌱 Present Simple",
+  past: "📜 Past Simple",
+  continuous: "⏳ Past Continuous",
+  future: "🚀 Future with WILL"
+};
+
+let selectedExpression = null;
+let classified = new Set();
+
+function resetClassification() {
+  selectedExpression = null;
+  classified = new Set();
+
+  const bank = document.getElementById("wordBank");
+  const grid = document.getElementById("classGrid");
+
+  bank.innerHTML = "";
+  grid.innerHTML = "";
+
+  expressions.forEach((item, index) => {
+    const button = document.createElement("button");
+
+    button.textContent = item[0];
+    button.dataset.index = index;
+
+    button.onclick = () => {
+      if (classified.has(index)) return;
+
+      selectedExpression = index;
+
+      bank.querySelectorAll("button").forEach(b => {
+        b.classList.remove("selected");
+      });
+
+      button.classList.add("selected");
+
+      document.getElementById("classFeedback").textContent =
+        "Now click the correct tense box.";
+    };
+
+    bank.appendChild(button);
+  });
+
+  Object.keys(tenseNames).forEach(key => {
+    const box = document.createElement("div");
+
+    box.className = "class-box";
+
+    box.innerHTML =
+      "<h4>" + tenseNames[key] + "</h4>" +
+      '<div class="placed-area"></div>';
+
+    box.onclick = () => classifyWord(key, box);
+
+    grid.appendChild(box);
+  });
+
+  document.getElementById("classFeedback").textContent =
+    "Choose a time expression to begin.";
+}
+
+function classifyWord(tense, box) {
+  if (selectedExpression === null) return;
+
+  const index = selectedExpression;
+  const expression = expressions[index];
+
+  if (expression[1] === tense) {
+    classified.add(index);
+
+    const word = document.createElement("span");
+    word.className = "placed";
+    word.textContent = expression[0];
+
+    box.querySelector(".placed-area").appendChild(word);
+
+    const button = document.querySelector(
+      '#wordBank button[data-index="' + index + '"]'
+    );
+
+    button.classList.remove("selected");
+    button.classList.add("used");
+
+    selectedExpression = null;
+
+    document.getElementById("classFeedback").innerHTML =
+      '<span class="good">✅ Correct! ' +
+      classified.size + " / 8</span>";
+
+    if (classified.size === 8) {
+      completeMission("classification");
+
+      document.getElementById("classFeedback").innerHTML =
+        '<span class="good">🏆 Excellent! Mission completed!</span>';
+    }
+  } else {
+    document.getElementById("classFeedback").innerHTML =
+      '<span class="bad">❌ Try again. Look at the time expression.</span>';
+  }
+}
+
+resetClassification();
+
+/* ======================================
+   MISSION 2 — MULTIPLE CHOICE
+====================================== */
+
+const questions = [
+  {
+    q: "My sister always ___ other people.",
+    options: ["help", "helps", "helped"],
+    answer: 1,
+    hint: "Always = habit. My sister = she."
+  },
+  {
+    q: "When I was young, I ___ very shy.",
+    options: ["am", "was", "will be"],
+    answer: 1,
+    hint: "When I was young = past."
+  },
+  {
+    q: "Last year, I ___ a school competition.",
+    options: ["win", "won", "will win"],
+    answer: 1,
+    hint: "Last year = Past Simple."
+  },
+  {
+    q: "While I ___ a biography, my friend called.",
+    options: ["read", "was reading", "will read"],
+    answer: 1,
+    hint: "The action was in progress."
+  },
+  {
+    q: "My brother ___ reading science books.",
+    options: ["enjoy", "enjoys", "enjoying"],
+    answer: 1,
+    hint: "My brother = he. Add -s."
+  },
+  {
+    q: "Next year, I ___ harder to achieve my dream.",
+    options: ["studied", "was studying", "will study"],
+    answer: 2,
+    hint: "Next year = future."
+  },
+  {
+    q: "Did you ___ your grandparents yesterday?",
+    options: ["visit", "visited", "visiting"],
+    answer: 0,
+    hint: "After did, use the base verb."
+  },
+  {
+    q: "At 8 p.m. yesterday, I ___ my homework.",
+    options: ["do", "was doing", "will do"],
+    answer: 1,
+    hint: "An action in progress at a past moment."
+  }
+];
+
+let answered = new Set();
+
+function renderQuiz() {
+  const area = document.getElementById("quizArea");
+  area.innerHTML = "";
+
+  questions.forEach((question, index) => {
+    const box = document.createElement("div");
+    box.className = "question";
+
+    const title = document.createElement("strong");
+    title.textContent = (index + 1) + ". " + question.q;
+    box.appendChild(title);
+
+    const options = document.createElement("div");
+    options.className = "options";
+
+    question.options.forEach((option, optionIndex) => {
+      const button = document.createElement("button");
+
+      button.className = "option";
+      button.textContent = option;
+
+      button.onclick = () => {
+        answerQuestion(index, optionIndex, button);
+      };
+
+      options.appendChild(button);
+    });
+
+    box.appendChild(options);
+
+    const feedback = document.createElement("div");
+    feedback.className = "feedback";
+    feedback.id = "quizFeedback" + index;
+
+    box.appendChild(feedback);
+    area.appendChild(box);
+  });
+}
+
+function answerQuestion(index, optionIndex, button) {
+  if (answered.has(index)) return;
+
+  const question = questions[index];
+  const feedback = document.getElementById("quizFeedback" + index);
+
+  if (optionIndex === question.answer) {
+    answered.add(index);
+
+    button.classList.add("correct");
+
+    button.parentElement.querySelectorAll("button").forEach(b => {
+      b.disabled = true;
+    });
+
+    feedback.innerHTML =
+      '<span class="good">✅ Excellent! ' +
+      question.hint + "</span>";
+
+    if (answered.size === questions.length) {
+      completeMission("quiz");
+
+      document.getElementById("quizFeedback").innerHTML =
+        '<span class="good">🏆 All questions completed!</span>';
+    }
+  } else {
+    button.classList.add("wrong");
+
+    feedback.innerHTML =
+      '<span class="bad">💡 Not quite. ' +
+      question.hint + " Try again.</span>";
+  }
+}
+
+function resetQuiz() {
+  answered = new Set();
+  renderQuiz();
+
+  document.getElementById("quizFeedback").textContent = "";
+}
+
+renderQuiz();
+
+/* ======================================
+   MISSION 3 — CORRECT MISTAKES
+====================================== */
+
+const corrections = [
+  {
+    wrong: "She don't like reading biographies.",
+    correct: "She doesn't like reading biographies.",
+    alternatives: [
+      "She does not like reading biographies."
+    ]
+  },
+  {
+    wrong: "Did you visited your grandparents yesterday?",
+    correct: "Did you visit your grandparents yesterday?"
+  },
+  {
+    wrong: "I was write my life story when the bell rang.",
+    correct: "I was writing my life story when the bell rang."
+  },
+  {
+    wrong: "In the future, I will to become a scientist.",
+    correct: "In the future, I will become a scientist."
+  }
+];
+
+function normalize(text) {
+  return text
+    .toLowerCase()
+    .replace(/’/g, "'")
+    .replace(/[^a-z0-9' ]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function renderCorrections() {
+  const area = document.getElementById("correctionArea");
+  area.innerHTML = "";
+
+  corrections.forEach((item, index) => {
+    const box = document.createElement("div");
+    box.className = "question";
+
+    const title = document.createElement("strong");
+    title.textContent = (index + 1) + ". " + item.wrong;
+
+    const input = document.createElement("input");
+    input.className = "input";
+    input.id = "correction" + index;
+    input.placeholder = "Write the correct sentence...";
+
+    const feedback = document.createElement("div");
+    feedback.className = "feedback";
+    feedback.id = "correctionFeedback" + index;
+
+    box.appendChild(title);
+    box.appendChild(input);
+    box.appendChild(feedback);
+
+    area.appendChild(box);
+  });
+}
+
+function checkCorrections() {
+  let score = 0;
+
+  corrections.forEach((item, index) => {
+    const value = document.getElementById(
+      "correction" + index
+    ).value;
+
+    const answers = [
+      item.correct,
+      ...(item.alternatives || [])
+    ];
+
+    const correct = answers.some(answer =>
+      normalize(answer) === normalize(value)
+    );
+
+    const feedback = document.getElementById(
+      "correctionFeedback" + index
+    );
+
+    if (correct) {
+      score++;
+      feedback.innerHTML =
+        '<span class="good">✅ Correct!</span>';
+    } else {
+      feedback.innerHTML =
+        '<span class="bad">💡 Model answer: ' +
+        item.correct + "</span>";
+    }
+  });
+
+  if (score === corrections.length) {
+    completeMission("corrections");
+  }
+}
+
+function resetCorrections() {
+  renderCorrections();
+}
+
+renderCorrections();
+
+/* ======================================
+   MISSION 4 — WRITING
+====================================== */
+
+function checkWriting() {
+  const ids = [
+    "writing1",
+    "writing2",
+    "writing3",
+    "writing4"
+  ];
+
+  let completed = 0;
+
+  ids.forEach(id => {
+    const text = document.getElementById(id).value.trim();
+
+    if (text.split(/\s+/).length >= 4) {
+      completed++;
+    }
+  });
+
+  const feedback = document.getElementById("writingFeedback");
+
+  if (completed === 4) {
+    completeMission("writing");
+
+    feedback.innerHTML =
+      '<span class="good">' +
+      '🌟 Wonderful! You completed your four sentences. ' +
+      'Ask your teacher to check their grammar.' +
+      '</span>';
+  } else {
+    feedback.innerHTML =
+      '<span class="bad">' +
+      '✏️ You completed ' + completed +
+      ' / 4 sentences. Write at least four words in each.' +
+      '</span>';
+  }
+}
+
+/* ======================================
+   CERTIFICATE
+====================================== */
+
+function checkCertificate() {
+  const text = document.getElementById("certificateText");
+
+  if (completedMissions.size === 4) {
+    text.textContent =
+      "🎉 Congratulations! You completed all four missions " +
+      "and earned 100 XP. You are a Time Master!";
+  } else {
+    text.textContent =
+      "You completed " + completedMissions.size +
+      " / 4 missions. Keep practising!";
+  }
+}
+
+/* ======================================
+   MINI DICTIONARY
+====================================== */
+
+const dictionary = [
+  ["personality", "الشخصية"],
+  ["childhood", "الطفولة"],
+  ["experience", "تجربة"],
+  ["memory", "ذكرى"],
+  ["ambition", "طموح"],
+  ["dream", "حلم"],
+  ["goal", "هدف"],
+  ["achievement", "إنجاز"],
+  ["confident", "واثق من نفسه"],
+  ["shy", "خجول"],
+  ["kind", "لطيف"],
+  ["generous", "كريم"],
+  ["honest", "صادق"],
+  ["hard-working", "مجتهد"],
+  ["responsible", "مسؤول"],
+  ["creative", "مبدع"],
+  ["patient", "صبور"],
+  ["determined", "مصمم"],
+  ["successful", "ناجح"],
+  ["biography", "سيرة ذاتية"],
+  ["scientist", "عالم"],
+  ["writer", "كاتب"],
+  ["artist", "فنان"],
+  ["engineer", "مهندس"],
+  ["teacher", "أستاذ"],
+  ["future", "المستقبل"],
+  ["past", "الماضي"],
+  ["present", "الحاضر"],
+  ["habit", "عادة"],
+  ["routine", "روتين"],
+  ["promise", "وعد"],
+  ["prediction", "توقع"],
+  ["succeed", "ينجح"],
+  ["become", "يصبح"],
+  ["improve", "يحسن"],
+  ["give up", "يستسلم"],
+  ["achieve", "يحقق"],
+  ["usually", "عادة"],
+  ["always", "دائما"],
+  ["sometimes", "أحيانا"],
+  ["yesterday", "أمس"],
+  ["tomorrow", "غدا"],
+  ["while", "بينما"],
+  ["when", "عندما"]
+];
+
+function openDictionary() {
+  document.getElementById("dictionaryModal")
+    .classList.add("show");
+
+  renderDictionary();
+
+  document.getElementById("dictionarySearch").focus();
+}
+
+function closeDictionary() {
+  document.getElementById("dictionaryModal")
+    .classList.remove("show");
+}
+
+function renderDictionary() {
+  const query = document.getElementById(
+    "dictionarySearch"
+  ).value.toLowerCase().trim();
+
+  const area = document.getElementById("dictionaryList");
+  area.innerHTML = "";
+
+  const results = dictionary.filter(item =>
+    item[0].includes(query) || item[1].includes(query)
+  );
+
+  results.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "dict-row";
+
+    const english = document.createElement("strong");
+    english.textContent = item[0];
+
+    const arabic = document.createElement("span");
+    arabic.textContent = item[1];
+
+    row.appendChild(english);
+    row.appendChild(arabic);
+
+    area.appendChild(row);
+  });
+
+  if (results.length === 0) {
+    area.textContent = "No matching word found.";
+  }
+}
+
+document.getElementById("dictionaryModal")
+  .addEventListener("click", function(event) {
+    if (event.target === this) {
+      closeDictionary();
+    }
+  });
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeDictionary();
+  }
+});
+
+</script>
+
+</body>
+</html>

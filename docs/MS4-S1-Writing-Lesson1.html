@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS4-S1-Writing-Lesson1 | Describing a Famous Landmark</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --deep:#30184f;
+  --purple:#7643bd;
+  --violet:#a67add;
+  --gold:#ffd77c;
+  --bg:#faf7ff;
+  --ink:#34234a;
+  --muted:#746784;
+  --line:#e7dcf4;
+  --green:#17785b;
+  --red:#b74258;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:radial-gradient(circle at top left,#f1e6ff,transparent 35%),var(--bg);
+  color:var(--ink);
+  font-family:Nunito,Arial,sans-serif;
+}
+h1,h2,h3{font-family:"Baloo 2",sans-serif;line-height:1.16}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1080px,93%);margin:auto}
+
+/* NAVIGATION */
+.top{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.topinner{
+  min-height:66px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.brand{
+  font:800 21px "Baloo 2",sans-serif;
+  color:var(--deep);
+}
+.small-link{
+  font-size:12px;
+  font-weight:900;
+  padding:10px 15px;
+  border-radius:24px;
+  background:#f1e8ff;
+  transition:.2s;
+}
+.small-link:hover{background:#e1cdfa}
+
+/* HERO */
+.hero{
+  background:linear-gradient(120deg,#30184f,#7546b5);
+  color:#fff;
+  padding:58px 0 85px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:35px;
+  align-items:center;
+}
+.pill{
+  display:inline-block;
+  border:1px solid #ffffff70;
+  border-radius:30px;
+  padding:8px 13px;
+  font-size:11px;
+  letter-spacing:1px;
+  font-weight:900;
+}
+.hero h1{
+  font-size:clamp(38px,5.8vw,68px);
+  margin:15px 0;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{line-height:1.85;color:#f0e7ff}
+.hero-images{position:relative}
+.hero-images img{
+  width:100%;
+  height:305px;
+  object-fit:cover;
+  border:6px solid #ffffff3d;
+  border-radius:25px;
+  box-shadow:0 20px 50px #1c0e3266;
+}
+.hero-caption{
+  position:absolute;
+  bottom:-14px;
+  left:18px;
+  background:var(--gold);
+  color:var(--deep);
+  padding:10px 16px;
+  border-radius:15px;
+  font-weight:900;
+  font-size:12px;
+}
+
+/* BUTTONS */
+.primary,.secondary,.quiet{
+  border:0;
+  border-radius:24px;
+  padding:12px 19px;
+  font-weight:900;
+  font-size:13px;
+  transition:.2s;
+}
+.primary{background:var(--purple);color:#fff}
+.secondary{background:var(--gold);color:var(--deep)}
+.quiet{background:#eee3fc;color:var(--deep)}
+.primary:hover,.secondary:hover,.quiet:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.05);
+}
+.hero .secondary{display:inline-block;margin-top:12px}
+
+/* PROGRESS */
+.progress-wrap{
+  margin:-30px auto 28px;
+  position:relative;
+  background:#fff;
+  border-radius:20px;
+  padding:20px 24px;
+  box-shadow:0 10px 35px #39215819;
+  border:1px solid var(--line);
+}
+.progress-head,.status{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  font-size:13px;
+  font-weight:900;
+}
+.track{
+  height:12px;
+  background:#eee5f8;
+  border-radius:20px;
+  margin-top:12px;
+  overflow:hidden;
+}
+.fill{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#7943c0,#d1a2ff,#ffd77c);
+  transition:width .3s;
+}
+
+/* LESSON */
+.intro{text-align:center;margin:35px 0 25px}
+.intro h2{font-size:37px;margin:5px}
+.lead,.intro p{color:var(--muted);line-height:1.85}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:28px;
+  margin:23px 0;
+  box-shadow:0 12px 36px #3921580c;
+  scroll-margin-top:85px;
+}
+.stephead{
+  display:flex;
+  gap:13px;
+  align-items:center;
+  margin-bottom:12px;
+}
+.stepnum{
+  width:48px;
+  height:48px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  background:#efe4ff;
+  color:#60359e;
+  border-radius:16px;
+  font-weight:900;
+}
+.stephead h2{font-size:28px;margin:0}
+.situation{
+  background:#fff6df;
+  border:2px solid #f8d891;
+  border-radius:18px;
+  padding:22px;
+  line-height:1.9;
+}
+.task,.builder{
+  background:#fcfaff;
+  border:1px dashed #d5c2eb;
+  border-radius:17px;
+  padding:19px;
+  margin:18px 0;
+}
+.task h3,.builder h3{font-size:21px;margin:0 0 10px}
+.task p{line-height:1.7}
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+/* ACTIVITIES */
+.choice{
+  display:block;
+  background:#faf7ff;
+  border:2px solid #e8dcf7;
+  border-radius:14px;
+  padding:13px;
+  margin:9px 0;
+  font-weight:800;
+  cursor:pointer;
+}
+.choice:has(input:checked){
+  border-color:#8954c8;
+  background:#f0e4ff;
+}
+.choice input,.checks input{
+  accent-color:var(--purple);
+  margin-right:8px;
+}
+.feedback{
+  margin-top:12px;
+  font-weight:900;
+  min-height:22px;
+}
+.ok{color:var(--green)}
+.bad{color:var(--red)}
+.note{
+  padding:14px 17px;
+  border-left:4px solid var(--purple);
+  background:#f6eeff;
+  border-radius:10px;
+  margin:15px 0;
+  line-height:1.8;
+}
+.arabic{
+  direction:rtl;
+  text-align:right;
+  color:#66527f;
+  font-size:13px;
+  background:#f7f0ff;
+  padding:10px 14px;
+  border-radius:10px;
+  margin-top:10px;
+}
+.mini{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+/* MODEL */
+.photo{
+  width:100%;
+  max-height:340px;
+  object-fit:cover;
+  border-radius:18px;
+}
+.model{
+  background:#fffdf8;
+  border:1px solid #eeddb6;
+  border-radius:17px;
+  padding:23px;
+  line-height:2.1;
+  font-size:17px;
+}
+.model .sentence{
+  cursor:pointer;
+  border-radius:6px;
+  padding:2px 3px;
+}
+.topic{background:#dceeff}
+.detail{background:#e8f5ed}
+.conclusion{background:#f0e8fa}
+.linker{background:#fff0c9}
+.legend,.wordbank,.tools{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin:14px 0;
+}
+.legend span,.wordbank span{
+  padding:8px 12px;
+  border-radius:18px;
+  background:#f0e5ff;
+  font-weight:900;
+  font-size:12px;
+}
+
+/* FACT FILE */
+.fact{
+  background:#faf7ff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:14px;
+}
+.fact strong{
+  display:block;
+  color:var(--deep);
+  margin-bottom:5px;
+}
+
+/* SELECTS */
+.row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:12px 0;
+}
+.row label{
+  font-weight:800;
+  flex:1;
+  min-width:160px;
+}
+.row select,.builder select{
+  background:#fff;
+  border:2px solid #e4d6f2;
+  border-radius:11px;
+  padding:10px;
+  color:var(--ink);
+  max-width:100%;
+}
+.row select{flex:1;min-width:170px}
+.builder label{
+  display:block;
+  font-size:13px;
+  font-weight:900;
+  margin:10px 0 5px;
+}
+.builder select{width:100%}
+.output{
+  background:#fff;
+  border-left:4px solid #e6b957;
+  border-radius:10px;
+  padding:13px 16px;
+  margin-top:13px;
+  min-height:47px;
+  line-height:1.8;
+}
+
+/* WRITING EDITOR */
+.finalarea{
+  width:100%;
+  min-height:300px;
+  resize:vertical;
+  border:2px solid #d9c5ed;
+  border-radius:16px;
+  padding:20px;
+  font-size:16px;
+  line-height:1.9;
+  color:var(--ink);
+}
+.checks{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.checks label{
+  background:#f8f2ff;
+  border:1px solid var(--line);
+  padding:12px;
+  border-radius:12px;
+  font-weight:800;
+  font-size:13px;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  background:var(--deep);
+  color:#eee3ff;
+  padding:35px 15px;
+  margin-top:65px;
+}
+
+/* TOAST */
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#342052;
+  color:#fff;
+  padding:13px 20px;
+  border-radius:20px;
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+  z-index:120;
+  font-weight:900;
+}
+.toast.show{opacity:1}
+
+/* DICTIONARY */
+.dict-fab{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:90;
+  width:65px;
+  height:65px;
+  border:0;
+  border-radius:22px;
+  background:linear-gradient(135deg,#6433a6,#a77be7);
+  color:#fff;
+  font-size:28px;
+  box-shadow:0 12px 30px #45247777;
+}
+.dict-fab span{
+  position:absolute;
+  right:0;
+  bottom:70px;
+  font-size:11px;
+  white-space:nowrap;
+  background:#30184f;
+  padding:6px 10px;
+  border-radius:9px;
+  font-weight:900;
+}
+.dict-overlay{
+  position:fixed;
+  inset:0;
+  background:#160a2bc9;
+  z-index:100;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+}
+.dict-overlay.open{display:flex}
+.dict-panel{
+  width:min(610px,100%);
+  max-height:88vh;
+  background:#fff;
+  border-radius:24px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.dict-header{
+  background:linear-gradient(120deg,#30184f,#8653c6);
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+}
+.dict-header h2{margin:0;font-size:25px}
+.dict-close{
+  background:#ffffff33;
+  color:#fff;
+  border:0;
+  border-radius:50%;
+  width:38px;
+  height:38px;
+  font-size:24px;
+}
+.dict-body{padding:18px 20px;overflow-y:auto}
+.dict-search{
+  width:100%;
+  padding:13px;
+  border:2px solid #e4d6f2;
+  border-radius:13px;
+  margin:10px 0 15px;
+}
+.dict-list{display:grid;gap:8px}
+.dict-entry{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  background:#faf7ff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px 14px;
+}
+.dict-entry span{
+  color:var(--purple);
+  direction:rtl;
+  font-weight:800;
+}
+
+/* ACCESSIBILITY */
+button:focus-visible,
+a:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+input:focus-visible{
+  outline:3px solid #e4a332;
+  outline-offset:3px;
+}
+
+/* MOBILE */
+@media(max-width:720px){
+  .hero-grid,.grid2,.checks{grid-template-columns:1fr}
+  .hero{padding:35px 0 70px}
+  .hero-images img{height:220px}
+  .card{padding:19px}
+  .stephead h2{font-size:24px}
+  .topinner{justify-content:center}
+  .dict-fab{
+    width:57px;
+    height:57px;
+    right:14px;
+    bottom:14px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation:none!important;
+    transition:none!important;
+  }
+}
+
+/* PRINT */
+@media print{
+  .top,.hero,.progress-wrap,.intro,.dict-fab,
+  .tools,.toast,.dict-overlay{display:none!important}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="top">
+  <div class="wrap topinner">
+
+    <a class="brand" href="MS4-S1-Writing.html">
+      ✍️ Writing Studio
+    </a>
+
+    <span style="font-size:12px;font-weight:900">
+      MS4 · Sequence 1 · Lesson 01
+    </span>
+
+    <a class="small-link" href="MS4-S1-Writing.html">
+      ← Writing Homepage
+    </a>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+
+    <div>
+      <span class="pill">
+        🏛️ GUIDED WRITING · BEGINNER FRIENDLY
+      </span>
+
+      <h1>
+        Describe a<br>
+        <span>Famous Landmark</span>
+      </h1>
+
+      <p>
+        Explore a model, collect facts, build sentences
+        and create a beautiful paragraph about the
+        Leaning Tower of Pisa.
+      </p>
+
+      <a class="secondary" href="#step1">
+        🚀 Let's Start Writing ↓
+      </a>
+    </div>
+
+    <div class="hero-images">
+      <img
+        src="https://i.imgur.com/meVjYyL.jpeg"
+        alt="Leaning Tower of Pisa">
+
+      <div class="hero-caption">
+        🌍 Explore · Discover · Describe
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- PROGRESS -->
+<div class="progress-wrap">
+
+  <div class="progress-head">
+    <span>🌟 My writing journey</span>
+    <span id="progressText">0 / 6 steps completed</span>
+  </div>
+
+  <div class="track">
+    <div class="fill" id="progressFill"></div>
+  </div>
+
+</div>
+
+<div class="intro">
+  <span style="color:#7946c2;font-weight:900;letter-spacing:2px;font-size:11px">
+    READ · NOTICE · BUILD · WRITE
+  </span>
+
+  <h2>Become a Landmark Writer! ✨</h2>
+
+  <p>
+    Follow six small steps.
+    You do not need to write the whole paragraph at once.
+  </p>
+</div>
+
+<!-- STEP 1 -->
+<section class="card" id="step1">
+
+  <div class="stephead">
+    <span class="stepnum">01</span>
+    <h2>Understand Your Mission 🎯</h2>
+  </div>
+
+  <div class="situation">
+    <strong>Situation of Integration — BEM-style Writing</strong>
+
+    <p>
+      Your English club is preparing a travel guide called
+      <strong>“Discover the World's Amazing Landmarks”.</strong>
+      You want to introduce a famous place to foreign visitors.
+    </p>
+
+    <strong>
+      Write one organised paragraph of about 8–10 sentences
+    </strong>
+
+    describing the Leaning Tower of Pisa using the fact file.
+
+    <p>
+      Mention its name, location, construction dates,
+      height, weight, material, appearance and importance.
+    </p>
+  </div>
+
+  <div class="arabic">
+    اكتب فقرة وصفية من 8 إلى 10 جمل حول برج بيزا المائل
+    باستعمال بطاقة المعلومات. اذكر الموقع وتاريخ البناء
+    والارتفاع والوزن والمواد والشكل والأهمية.
+  </div>
+
+  <div class="task">
+    <h3>🔎 Check Your Understanding</h3>
+
+    <p>1. What are you writing?</p>
+
+    <label class="choice">
+      <input type="radio" name="q1" value="0">
+      A story about your holiday
+    </label>
+
+    <label class="choice">
+      <input type="radio" name="q1" value="1">
+      A descriptive paragraph about a landmark
+    </label>
+
+    <p>2. Who will read it?</p>
+
+    <label class="choice">
+      <input type="radio" name="q2" value="1">
+      Visitors reading the travel guide
+    </label>
+
+    <label class="choice">
+      <input type="radio" name="q2" value="0">
+      Only your family
+    </label>
+
+    <button class="primary" onclick="checkSituation()">
+      ✓ Check My Answers
+    </button>
+
+    <div class="feedback" id="f1" aria-live="polite"></div>
+  </div>
+
+</section>
+
+<!-- STEP 2 -->
+<section class="card" id="step2">
+
+  <div class="stephead">
+    <span class="stepnum">02</span>
+    <h2>Discover a Model Paragraph 🔎</h2>
+  </div>
+
+  <p class="lead">
+    Read about the Eiffel Tower.
+    Tap any coloured sentence to discover its role.
+  </p>
+
+  <img
+    class="photo"
+    src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=85"
+    alt="Eiffel Tower in Paris">
+
+  <div class="model" style="margin-top:18px;text-indent:35px">
+
+    <span class="sentence topic"
+      data-explain="Topic sentence: introduces the landmark.">
+      The Eiffel Tower is one of the most famous landmarks
+      in the world.
+    </span>
+
+    <span class="sentence detail"
+      data-explain="Detail: tells us the location.">
+      It is located in Paris, the capital city of France.
+    </span>
+
+    <span class="sentence detail"
+      data-explain="Detail: tells us when it was built.">
+      It was built between 1887 and 1889 for the World's Fair.
+    </span>
+
+    <span class="sentence detail"
+      data-explain="Detail: gives height and weight.">
+      The tower is about 330 metres high and weighs
+      approximately 10,100 tonnes.
+    </span>
+
+    <span class="sentence detail"
+      data-explain="Detail: describes material and structure.">
+      <span class="linker">Moreover,</span>
+      it is made mainly of iron and consists of four large
+      legs joined by a remarkable metal structure.
+    </span>
+
+    <span class="sentence detail"
+      data-explain="Detail: describes the appearance.">
+      Its unusual shape makes it easy to recognise
+      from a distance.
+    </span>
+
+    <span class="sentence detail"
+      data-explain="Detail: describes its popularity.">
+      <span class="linker">In addition,</span>
+      millions of visitors come to admire it every year.
+    </span>
+
+    <span class="sentence conclusion"
+      data-explain="Conclusion: gives a final overall idea.">
+      For these reasons, the Eiffel Tower remains a symbol
+      of Paris and an extraordinary achievement in architecture.
+    </span>
+
+  </div>
+
+  <div class="legend">
+    <span style="background:#dceeff">🔵 Topic</span>
+    <span style="background:#e8f5ed">🟢 Details</span>
+    <span style="background:#fff0c9">🟡 Linkers</span>
+    <span style="background:#f0e8fa">🟣 Conclusion</span>
+  </div>
+
+  <div class="note" id="explain">
+    👆 Tap a coloured sentence to learn its job.
+  </div>
+
+  <div class="task">
+    <h3>🧩 Match the Sentence to Its Role</h3>
+
+    <div class="row">
+      <label for="m1">
+        “The Eiffel Tower is one of the most famous landmarks...”
+      </label>
+
+      <select id="m1">
+        <option value="">Choose...</option>
+        <option value="topic">Topic sentence</option>
+        <option value="detail">Detail</option>
+        <option value="conclusion">Conclusion</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="m2">“It is located in Paris...”</label>
+
+      <select id="m2">
+        <option value="">Choose...</option>
+        <option value="conclusion">Conclusion</option>
+        <option value="detail">Detail</option>
+        <option value="topic">Topic sentence</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="m3">“Moreover...”</label>
+
+      <select id="m3">
+        <option value="">Choose...</option>
+        <option value="linker">Linking word</option>
+        <option value="topic">Topic sentence</option>
+        <option value="detail">Detail</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="m4">
+        “For these reasons, the Eiffel Tower remains...”
+      </label>
+
+      <select id="m4">
+        <option value="">Choose...</option>
+        <option value="detail">Detail</option>
+        <option value="conclusion">Conclusion</option>
+        <option value="linker">Linking word</option>
+      </select>
+    </div>
+
+    <button class="primary" onclick="checkParts()">
+      ✓ Check the Parts
+    </button>
+
+    <div class="feedback" id="f2" aria-live="polite"></div>
+  </div>
+
+</section>
+
+<!-- STEP 3 -->
+<section class="card" id="step3">
+
+  <div class="stephead">
+    <span class="stepnum">03</span>
+    <h2>Collect Facts and Useful Words 🧺</h2>
+  </div>
+
+  <p class="lead">
+    This is your landmark.
+    Read the fact file before building sentences.
+  </p>
+
+  <div class="grid2">
+
+    <div>
+      <img
+        class="photo"
+        src="https://i.imgur.com/meVjYyL.jpeg"
+        alt="Leaning Tower of Pisa">
+
+      <p class="mini">
+        The Leaning Tower of Pisa — Italy
+      </p>
+    </div>
+
+    <div class="grid2" id="facts"></div>
+
+  </div>
+
+  <div class="note">
+    <strong>Useful Grammar</strong>
+
+    <p>It <b>is located</b> in Pisa.</p>
+    <p>Construction <b>began</b> in 1173.</p>
+    <p>It <b>was completed</b> in 1372.</p>
+    <p>It <b>is made</b> of marble.</p>
+  </div>
+
+  <div class="grid2">
+
+    <div class="task">
+      <h3>🟡 Linking Words</h3>
+
+      <div class="wordbank">
+        <span>Moreover</span>
+        <span>In addition</span>
+        <span>Also</span>
+        <span>For these reasons</span>
+      </div>
+    </div>
+
+    <div class="task">
+      <h3>✨ Qualifiers</h3>
+
+      <div class="wordbank">
+        <span>very</span>
+        <span>extremely</span>
+        <span>quite</span>
+        <span>remarkably</span>
+        <span>about</span>
+        <span>approximately</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="task">
+    <h3>💡 Select the Correct Facts</h3>
+
+    <p>1. Where is the Leaning Tower?</p>
+
+    <label class="choice">
+      <input type="radio" name="q3" value="1">
+      Pisa, Italy
+    </label>
+
+    <label class="choice">
+      <input type="radio" name="q3" value="0">
+      Paris, France
+    </label>
+
+    <p>2. What makes it unusual?</p>
+
+    <label class="choice">
+      <input type="radio" name="q4" value="0">
+      It is made of glass.
+    </label>
+
+    <label class="choice">
+      <input type="radio" name="q4" value="1">
+      It has a noticeable tilt.
+    </label>
+
+    <button class="primary" onclick="checkFacts()">
+      ✓ Check the Facts
+    </button>
+
+    <div class="feedback" id="f3" aria-live="polite"></div>
+  </div>
+
+  <div class="arabic">
+    استعمل المضارع لوصف البرج، والماضي عند الحديث عن تاريخ بنائه.
+    استعمل أدوات الربط لجعل الفقرة متماسكة.
+  </div>
+
+</section>
+
+<!-- STEP 4 -->
+<section class="card" id="step4">
+
+  <div class="stephead">
+    <span class="stepnum">04</span>
+    <h2>Build Your Sentences 🧱</h2>
+  </div>
+
+  <p class="lead">
+    Choose one option for each sentence.
+    Your paragraph will be created from your choices.
+  </p>
+
+  <div id="builders"></div>
+
+  <button class="primary" onclick="finishBuilder()">
+    ✓ My Sentences Are Ready!
+  </button>
+
+  <div class="feedback" id="f4" aria-live="polite"></div>
+
+</section>
+
+<!-- STEP 5 -->
+<section class="card" id="step5">
+
+  <div class="stephead">
+    <span class="stepnum">05</span>
+    <h2>Put It All Together ✍️</h2>
+  </div>
+
+  <p class="lead">
+    Build your paragraph, then improve it with your own words.
+    Keep it as <strong>one paragraph</strong> with a topic sentence,
+    details and a conclusion.
+  </p>
+
+  <div class="tools">
+    <button class="primary" onclick="makeDraft()">
+      ✨ Build My Paragraph
+    </button>
+
+    <button class="quiet" onclick="saveDraft()">
+      💾 Save My Writing
+    </button>
+
+    <button class="quiet" onclick="loadDraft()">
+      📂 Load Saved Writing
+    </button>
+  </div>
+
+  <textarea
+    class="finalarea"
+    id="draft"
+    aria-label="My landmark paragraph"
+    placeholder="Write your paragraph here..."
+    oninput="updateWordCount()"></textarea>
+
+  <div class="status">
+    <span id="wordCount">0 words</span>
+    <span id="lengthAdvice">Aim for 8–10 sentences.</span>
+  </div>
+
+  <div class="task">
+    <h3>💡 Improve Your Paragraph</h3>
+
+    <div class="wordbank">
+      <span>one of the most famous landmarks</span>
+      <span>Moreover,</span>
+      <span>In addition,</span>
+      <span>approximately</span>
+      <span>For these reasons,</span>
+    </div>
+
+    <p class="mini">
+      The generated sentences are a starting point.
+      Add your own ideas and check grammar,
+      capital letters and punctuation.
+    </p>
+  </div>
+
+  <button class="primary" onclick="finishDraft()">
+    ✓ My Paragraph Is Ready
+  </button>
+
+  <div class="feedback" id="f5" aria-live="polite"></div>
+
+</section>
+
+<!-- STEP 6 -->
+<section class="card" id="step6">
+
+  <div class="stephead">
+    <span class="stepnum">06</span>
+    <h2>Check & Celebrate! 🏆</h2>
+  </div>
+
+  <p class="lead">
+    Read your paragraph again.
+    Tick only the statements that are true.
+  </p>
+
+  <div class="checks" id="checks"></div>
+
+  <div class="tools">
+    <button class="primary" onclick="finishReview()">
+      🏅 Check My Work
+    </button>
+
+    <button class="secondary" onclick="printParagraph()">
+      🖨️ Print My Paragraph
+    </button>
+
+    <button class="quiet" onclick="resetLesson()">
+      ↺ Start Again
+    </button>
+  </div>
+
+  <div class="feedback" id="f6" aria-live="polite"></div>
+
+  <p class="mini">
+    This checklist supports self-assessment.
+    It does not automatically verify all grammar or factual accuracy.
+  </p>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <strong>
+    💜 MS4 Writing Studio — Sequence 1 · Lesson 01
+  </strong>
+
+  <p>Explore · Discover · Describe · Write</p>
+
+  <a
+    href="MS4-S1-Writing.html"
+    style="display:inline-block;margin-top:10px;color:#ffd77c;font-weight:900">
+    ← Return to Writing Journey
+  </a>
+
+</footer>
+
+<!-- NOTIFICATIONS -->
+<div
+  class="toast"
+  id="toast"
+  role="status"
+  aria-live="polite"></div>
+
+<!-- DICTIONARY BUTTON -->
+<button
+  class="dict-fab"
+  id="dictOpen"
+  type="button"
+  aria-label="Open English Arabic dictionary">
+  📖
+  <span>Mini Dictionary · قاموس</span>
+</button>
+
+<!-- DICTIONARY MODAL -->
+<div
+  class="dict-overlay"
+  id="dictOverlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="dictTitle"
+  aria-hidden="true">
+
+  <div class="dict-panel">
+
+    <div class="dict-header">
+      <h2 id="dictTitle">
+        📖 English–Arabic Mini Dictionary
+      </h2>
+
+      <button
+        class="dict-close"
+        id="dictClose"
+        aria-label="Close dictionary">
+        ×
+      </button>
+    </div>
+
+    <div class="dict-body">
+      <p class="mini" lang="ar" dir="rtl">
+        ابحث عن كلمة أو عبارة بالإنجليزية أو العربية.
+      </p>
+
+      <input
+        id="dictSearch"
+        class="dict-search"
+        type="search"
+        placeholder="Search a word / ابحث عن كلمة">
+
+      <div class="dict-list" id="dictList"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+"use strict";
+
+/* HELPERS */
+const $ = id => document.getElementById(id);
+const done = new Set();
+const storeKey = "ms4-s1-writing-lesson1";
+
+function complete(n) {
+  done.add(n);
+
+  $("progressText").textContent =
+    done.size + " / 6 steps completed";
+
+  $("progressFill").style.width =
+    (done.size / 6 * 100) + "%";
+}
+
+function feedback(n, good, message) {
+  const element = $("f" + n);
+
+  element.className =
+    "feedback " + (good ? "ok" : "bad");
+
+  element.textContent = message;
+
+  if (good) {
+    complete(n);
+  }
+}
+
+function selected(name) {
+  const input = document.querySelector(
+    'input[name="' + name + '"]:checked'
+  );
+
+  return input ? input.value : null;
+}
+
+/* STEP 1 */
+function checkSituation() {
+  const good =
+    selected("q1") === "1" &&
+    selected("q2") === "1";
+
+  feedback(
+    1,
+    good,
+    good
+      ? "🌟 Excellent! You understand the task."
+      : "Try again. What must you write, and for whom?"
+  );
+}
+
+/* STEP 2 */
+document.querySelectorAll(".sentence").forEach(function(element) {
+  element.addEventListener("click", function() {
+    $("explain").textContent =
+      "✨ " + element.dataset.explain;
+  });
+});
+
+function checkParts() {
+  const answers = [
+    "topic",
+    "detail",
+    "linker",
+    "conclusion"
+  ];
+
+  const good = answers.every(function(answer, index) {
+    return $("m" + (index + 1)).value === answer;
+  });
+
+  feedback(
+    2,
+    good,
+    good
+      ? "🌟 Great! You understand paragraph structure."
+      : "Look at the model and try again."
+  );
+}
+
+/* STEP 3: FACT FILE */
+const facts = [
+  ["🏛️ Name", "Leaning Tower of Pisa"],
+  ["📍 Location", "Pisa, Italy"],
+  ["📅 Began", "1173"],
+  ["🏁 Completed", "1372"],
+  ["📏 Height", "About 56.7 metres"],
+  ["⚖️ Weight", "About 14,500 tonnes"],
+  ["🧱 Material", "White and grey marble"],
+  ["🏗️ Type", "Eight-storey bell tower"],
+  ["👀 Appearance", "Noticeable tilt"],
+  ["⭐ Importance", "Symbol of Pisa"],
+  ["🌍 Visitors", "Tourists from around the world"],
+  ["🏰 Complex", "Piazza dei Miracoli"]
+];
+
+facts.forEach(function(fact) {
+  const div = document.createElement("div");
+  div.className = "fact";
+
+  const strong = document.createElement("strong");
+  strong.textContent = fact[0];
+
+  div.appendChild(strong);
+  div.appendChild(document.createTextNode(fact[1]));
+
+  $("facts").appendChild(div);
+});
+
+function checkFacts() {
+  const good =
+    selected("q3") === "1" &&
+    selected("q4") === "1";
+
+  feedback(
+    3,
+    good,
+    good
+      ? "🌟 Excellent! You know the landmark."
+      : "Check the location and appearance in the fact file."
+  );
+}
+
+/* STEP 4: SENTENCE BUILDERS */
+const builders = [
+  {
+    title: "Topic Sentence 🔵",
+    options: [
+      "The Leaning Tower of Pisa is one of Italy's most famous landmarks.",
+      "The Leaning Tower of Pisa is a remarkable historical landmark in Italy."
+    ]
+  },
+  {
+    title: "Location 📍",
+    options: [
+      "It is located in Pisa, Italy.",
+      "This famous tower stands in the Italian city of Pisa."
+    ]
+  },
+  {
+    title: "Construction Date 📅",
+    options: [
+      "Construction began in 1173, and the tower was completed in 1372.",
+      "The tower was started in 1173 and finished in 1372."
+    ]
+  },
+  {
+    title: "Height and Weight 📏",
+    options: [
+      "It is about 56.7 metres high and weighs approximately 14,500 tonnes.",
+      "The tower is approximately 56.7 metres tall and weighs about 14,500 tonnes."
+    ]
+  },
+  {
+    title: "Material and Type 🧱",
+    options: [
+      "Moreover, it is an eight-storey bell tower made mainly of white and grey marble.",
+      "In addition, this eight-storey bell tower is made mainly of marble."
+    ]
+  },
+  {
+    title: "Appearance 👀",
+    options: [
+      "It is especially famous for its noticeable tilt.",
+      "Its unusual leaning shape makes it easy to recognise."
+    ]
+  },
+  {
+    title: "Visitors and Importance 🌍",
+    options: [
+      "In addition, it is part of Piazza dei Miracoli and attracts tourists from around the world.",
+      "Moreover, visitors from around the world admire this famous symbol of Pisa."
+    ]
+  },
+  {
+    title: "Concluding Sentence 🟣",
+    options: [
+      "For these reasons, the Leaning Tower of Pisa is a remarkable symbol of Italian architecture.",
+      "In conclusion, this extraordinary tower remains one of Italy's most interesting landmarks."
+    ]
+  }
+];
+
+builders.forEach(function(builder, index) {
+  const box = document.createElement("div");
+  box.className = "builder";
+
+  const heading = document.createElement("h3");
+  heading.textContent =
+    "Sentence " + (index + 1) + " — " + builder.title;
+
+  const label = document.createElement("label");
+  label.htmlFor = "s" + index;
+  label.textContent = "Choose your sentence.";
+
+  const select = document.createElement("select");
+  select.id = "s" + index;
+
+  builder.options.forEach(function(sentence) {
+    const option = document.createElement("option");
+    option.value = sentence;
+    option.textContent = sentence;
+    select.appendChild(option);
+  });
+
+  const output = document.createElement("div");
+  output.className = "output";
+  output.id = "out" + index;
+  output.textContent = select.value;
+
+  select.addEventListener("change", function() {
+    output.textContent = select.value;
+  });
+
+  box.appendChild(heading);
+  box.appendChild(label);
+  box.appendChild(select);
+  box.appendChild(output);
+
+  $("builders").appendChild(box);
+});
+
+function sentences() {
+  return builders.map(function(builder, index) {
+    return $("s" + index).value;
+  });
+}
+
+function finishBuilder() {
+  feedback(
+    4,
+    true,
+    "🌟 Your eight sentences are ready."
+  );
+}
+
+/* STEP 5: PARAGRAPH */
+function makeDraft() {
+  if (
+    $("draft").value.trim() &&
+    !confirm("Replace your current paragraph?")
+  ) {
+    return;
+  }
+
+  $("draft").value = sentences().join(" ");
+  updateWordCount();
+
+  toast("✨ Draft created! Now improve it.");
+}
+
+function wordCount(text) {
+  const clean = text.trim();
+
+  if (!clean) {
+    return 0;
+  }
+
+  return clean.split(/\s+/).length;
+}
+
+function sentenceCount(text) {
+  const matches = text.match(/[.!?](?=\s|$)/g);
+  return matches ? matches.length : 0;
+}
+
+function updateWordCount() {
+  const text = $("draft").value;
+  const words = wordCount(text);
+  const count = sentenceCount(text);
+
+  $("wordCount").textContent =
+    words + " words · " + count + " sentences";
+
+  if (count < 8) {
+    $("lengthAdvice").textContent =
+      "Aim for 8–10 sentences.";
+  } else if (count > 10) {
+    $("lengthAdvice").textContent =
+      "Try to keep 8–10 sentences.";
+  } else {
+    $("lengthAdvice").textContent =
+      "🌟 Good sentence count!";
+  }
+}
+
+function finishDraft() {
+  const text = $("draft").value.trim();
+  const count = sentenceCount(text);
+
+  const good =
+    wordCount(text) >= 55 &&
+    count >= 8 &&
+    count <= 10;
+
+  feedback(
+    5,
+    good,
+    good
+      ? "🌟 Good draft! Review it carefully for accuracy and organisation."
+      : "Write 8–10 complete sentences using your fact file and sentence builders."
+  );
+}
+
+/* STEP 6: SELF-ASSESSMENT */
+const checks = [
+  "I introduced the landmark in a topic sentence.",
+  "I mentioned its location.",
+  "I included construction dates.",
+  "I described height and weight.",
+  "I mentioned the material.",
+  "I described its appearance.",
+  "I used linking words.",
+  "I finished with a concluding sentence.",
+  "I checked capital letters and punctuation.",
+  "I wrote one organised paragraph."
+];
+
+checks.forEach(function(text) {
+  const label = document.createElement("label");
+  const input = document.createElement("input");
+
+  input.type = "checkbox";
+  input.className = "review";
+
+  label.appendChild(input);
+  label.appendChild(document.createTextNode(text));
+
+  $("checks").appendChild(label);
+});
+
+function finishReview() {
+  const checked =
+    document.querySelectorAll(".review:checked").length;
+
+  const text = $("draft").value;
+
+  const good =
+    checked === checks.length &&
+    wordCount(text) >= 55 &&
+    sentenceCount(text) >= 8 &&
+    sentenceCount(text) <= 10;
+
+  feedback(
+    6,
+    good,
+    good
+      ? "🏆 Wonderful! You completed your writing journey."
+      : "Review your paragraph and tick all ten points when they are true."
+  );
+}
+
+/* NOTIFICATIONS */
+let toastTimer;
+
+function toast(message) {
+  $("toast").textContent = message;
+  $("toast").classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(function() {
+    $("toast").classList.remove("show");
+  }, 2800);
+}
+
+/* SAVE WRITING */
+function saveDraft() {
+  try {
+    localStorage.setItem(
+      storeKey,
+      $("draft").value
+    );
+
+    toast("💾 Saved on this device.");
+  } catch (error) {
+    toast("Saving unavailable. Copy your paragraph.");
+  }
+}
+
+/* LOAD WRITING */
+function loadDraft() {
+  try {
+    const saved = localStorage.getItem(storeKey);
+
+    if (saved === null) {
+      toast("No saved paragraph found.");
+      return;
+    }
+
+    if (
+      $("draft").value.trim() &&
+      !confirm("Replace your current writing?")
+    ) {
+      return;
+    }
+
+    $("draft").value = saved;
+    updateWordCount();
+
+    toast("📂 Saved paragraph loaded.");
+  } catch (error) {
+    toast("Loading unavailable.");
+  }
+}
+
+/* PRINT PARAGRAPH */
+function printParagraph() {
+  const text = $("draft").value.trim();
+
+  if (!text) {
+    toast("Write your paragraph first.");
+    return;
+  }
+
+  const printWindow = window.open(
+    "",
+    "_blank",
+    "width=800,height=700"
+  );
+
+  if (!printWindow) {
+    toast("Please allow pop-ups to print.");
+    return;
+  }
+
+  const doc = printWindow.document;
+
+  doc.open();
+  doc.write("<!DOCTYPE html>");
+  doc.write('<html lang="en">');
+  doc.write("<head>");
+  doc.write('<meta charset="UTF-8">');
+  doc.write("<title>My Landmark Paragraph</title>");
+
+  doc.write(
+    "<style>" +
+    "body{font:18px/2 Georgia,serif;margin:55px}" +
+    "article{white-space:pre-wrap;text-indent:35px}" +
+    "</style>"
+  );
+
+  doc.write("</head>");
+  doc.write("<body>");
+  doc.write("<h2>My Landmark Paragraph</h2>");
+  doc.write('<article id="printContent"></article>');
+  doc.write("</body>");
+  doc.write("</html>");
+
+  doc.close();
+
+  doc.getElementById("printContent").textContent = text;
+
+  printWindow.focus();
+
+  setTimeout(function() {
+    printWindow.print();
+  }, 300);
+}
+
+/* RESET LESSON */
+function resetLesson() {
+  if (
+    !confirm(
+      "Start again? Unsaved writing will be cleared."
+    )
+  ) {
+    return;
+  }
+
+  done.clear();
+
+  $("progressText").textContent =
+    "0 / 6 steps completed";
+
+  $("progressFill").style.width = "0%";
+
+  document.querySelectorAll(
+    'input[type="radio"],input[type="checkbox"]'
+  ).forEach(function(input) {
+    input.checked = false;
+  });
+
+  document.querySelectorAll("select").forEach(function(select) {
+    select.selectedIndex = 0;
+  });
+
+  builders.forEach(function(builder, index) {
+    $("out" + index).textContent =
+      $("s" + index).value;
+  });
+
+  for (let i = 1; i <= 6; i++) {
+    $("f" + i).textContent = "";
+    $("f" + i).className = "feedback";
+  }
+
+  $("draft").value = "";
+  updateWordCount();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+/* ENGLISH–ARABIC DICTIONARY */
+const dictionary = [
+  ["landmark", "معلم مشهور"],
+  ["tower", "برج"],
+  ["leaning", "مائل"],
+  ["tilt", "ميلان"],
+  ["location", "موقع"],
+  ["located", "يقع"],
+  ["construction", "بناء"],
+  ["constructed", "شُيّد"],
+  ["completed", "اكتمل"],
+  ["height", "ارتفاع"],
+  ["weight", "وزن"],
+  ["metre", "متر"],
+  ["tonne", "طن"],
+  ["approximately", "تقريبًا"],
+  ["about", "حوالي"],
+  ["material", "مادة"],
+  ["marble", "رخام"],
+  ["iron", "حديد"],
+  ["stone", "حجر"],
+  ["bell tower", "برج أجراس"],
+  ["storey", "طابق"],
+  ["appearance", "مظهر"],
+  ["structure", "هيكل"],
+  ["symbol", "رمز"],
+  ["architecture", "هندسة معمارية"],
+  ["visitor", "زائر"],
+  ["tourist", "سائح"],
+  ["famous", "مشهور"],
+  ["remarkable", "مميز"],
+  ["extraordinary", "استثنائي"],
+  ["ancient", "قديم"],
+  ["historical", "تاريخي"],
+  ["description", "وصف"],
+  ["paragraph", "فقرة"],
+  ["topic sentence", "جملة افتتاحية"],
+  ["detail", "تفصيل"],
+  ["conclusion", "خاتمة"],
+  ["linking word", "أداة ربط"],
+  ["moreover", "علاوة على ذلك"],
+  ["in addition", "بالإضافة إلى ذلك"],
+  ["for these reasons", "لهذه الأسباب"],
+  ["more than", "أكثر من"],
+  ["made of", "مصنوع من"],
+  ["was built", "بُني"],
+  ["was completed", "اكتمل بناؤه"],
+  ["capital city", "عاصمة"],
+  ["world", "العالم"],
+  ["fact file", "بطاقة معلومات"],
+  ["punctuation", "علامات الترقيم"],
+  ["indentation", "ترك مسافة في بداية الفقرة"]
+];
+
+/* RENDER DICTIONARY */
+function renderDictionary() {
+  const query = $("dictSearch").value
+    .trim()
+    .toLowerCase();
+
+  const list = $("dictList");
+  list.replaceChildren();
+
+  let count = 0;
+
+  dictionary.forEach(function(entryData) {
+    const english = entryData[0];
+    const arabic = entryData[1];
+
+    if (
+      !english.includes(query) &&
+      !arabic.includes(query)
+    ) {
+      return;
+    }
+
+    count++;
+
+    const entry = document.createElement("div");
+    entry.className = "dict-entry";
+
+    const word = document.createElement("b");
+    word.textContent = english;
+
+    const translation = document.createElement("span");
+    translation.lang = "ar";
+    translation.textContent = arabic;
+
+    entry.appendChild(word);
+    entry.appendChild(translation);
+
+    list.appendChild(entry);
+  });
+
+  if (count === 0) {
+    list.textContent =
+      "No matching word / لا توجد نتائج";
+  }
+}
+
+/* OPEN AND CLOSE DICTIONARY */
+let previousFocus = null;
+
+function openDict() {
+  previousFocus = document.activeElement;
+
+  $("dictOverlay").classList.add("open");
+
+  $("dictOverlay").setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow = "hidden";
+
+  renderDictionary();
+  $("dictSearch").focus();
+}
+
+function closeDict() {
+  $("dictOverlay").classList.remove("open");
+
+  $("dictOverlay").setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow = "";
+
+  if (previousFocus) {
+    previousFocus.focus();
+  }
+}
+
+/* DICTIONARY EVENTS */
+$("dictOpen").addEventListener("click", openDict);
+
+$("dictClose").addEventListener("click", closeDict);
+
+$("dictSearch").addEventListener(
+  "input",
+  renderDictionary
+);
+
+$("dictOverlay").addEventListener(
+  "click",
+  function(event) {
+    if (event.target === $("dictOverlay")) {
+      closeDict();
+    }
+  }
+);
+
+/* KEYBOARD ACCESSIBILITY */
+document.addEventListener(
+  "keydown",
+  function(event) {
+    if (
+      !$("dictOverlay").classList.contains("open")
+    ) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      closeDict();
+      return;
+    }
+
+    if (event.key === "Tab") {
+      const first = $("dictClose");
+      const last = $("dictSearch");
+
+      if (
+        event.shiftKey &&
+        document.activeElement === first
+      ) {
+        event.preventDefault();
+        last.focus();
+      } else if (
+        !event.shiftKey &&
+        document.activeElement === last
+      ) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  }
+);
+
+/* INITIALISE */
+updateWordCount();
+renderDictionary();
+
+</script>
+
+</body>
+</html>

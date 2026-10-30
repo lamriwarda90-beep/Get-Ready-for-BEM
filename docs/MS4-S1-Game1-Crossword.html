@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#092f38">
+<title>Explorer's Crossword | MS4 Sequence 1</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#092f38;
+  --deep:#06232b;
+  --teal:#087f87;
+  --mint:#b8f2dd;
+  --gold:#ffc969;
+  --paper:#f5f8f6;
+  --ink:#17363d;
+  --muted:#71868b;
+  --red:#e85e69;
+  --green:#168e69;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:linear-gradient(160deg,#06242e,#0b5360 65%,#087b80);
+  font-family:"DM Sans",sans-serif;
+  color:var(--ink);
+  min-height:100vh;
+}
+
+button,input{font:inherit}
+button{cursor:pointer}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:2px;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:radial-gradient(#fff2 1px,transparent 1px);
+  background-size:30px 30px;
+  pointer-events:none;
+}
+
+.wrap{
+  position:relative;
+  width:min(1200px,94%);
+  margin:auto;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:23px 0;
+  color:white;
+  gap:15px;
+}
+
+.brand{
+  font:800 13px Sora,sans-serif;
+  letter-spacing:1px;
+}
+
+.brand small{
+  display:block;
+  color:#a5c9c8;
+  font:600 10px "DM Sans";
+  margin-top:6px;
+  letter-spacing:2px;
+}
+
+.back{
+  color:white;
+  text-decoration:none;
+  border:1px solid #ffffff4a;
+  background:#ffffff18;
+  border-radius:50px;
+  padding:12px 19px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.hero{
+  border:1px solid #ffffff30;
+  background:
+    linear-gradient(100deg,#082e3acb,#114855aa),
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+  border-radius:29px;
+  padding:45px 45px 50px;
+  color:white;
+  box-shadow:0 24px 70px #001c2770;
+}
+
+.kicker{
+  font-size:11px;
+  letter-spacing:2px;
+  color:var(--gold);
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  font:800 clamp(36px,5.7vw,68px)/1.1 Sora,sans-serif;
+  letter-spacing:-2px;
+  margin:15px 0;
+}
+
+.hero h1 span{color:var(--gold)}
+
+.hero p{
+  max-width:650px;
+  color:#d1e7e5;
+  line-height:1.8;
+  font-weight:500;
+}
+
+.steps{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:22px;
+}
+
+.steps span{
+  background:#ffffff17;
+  border:1px solid #ffffff35;
+  padding:10px 14px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin:20px 0;
+}
+
+.stat{
+  border:1px solid #ffffff30;
+  background:#ffffff16;
+  color:white;
+  border-radius:17px;
+  padding:17px 20px;
+}
+
+.stat b{
+  display:block;
+  font:800 25px Sora,sans-serif;
+}
+
+.stat small{
+  font-size:10px;
+  letter-spacing:1.5px;
+  color:#b8d9d6;
+  font-weight:800;
+}
+
+.game{
+  background:var(--paper);
+  border-radius:27px;
+  overflow:hidden;
+  box-shadow:0 25px 75px #00252d80;
+  margin-bottom:22px;
+}
+
+.gamehead{
+  padding:24px 30px;
+  background:white;
+  border-bottom:1px solid #e2eae8;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.gamehead h2{
+  font:800 23px Sora;
+  margin:0;
+  color:var(--navy);
+}
+
+.gamehead p{
+  color:var(--muted);
+  margin:7px 0 0;
+  font-size:13px;
+}
+
+.progressbar{
+  height:7px;
+  background:#dce9e7;
+}
+
+.progressbar div{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#20b6a1,var(--gold));
+  transition:width .3s;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) minmax(290px,.85fr);
+  gap:22px;
+  padding:24px;
+}
+
+.boardpanel{min-width:0}
+
+.activeclue{
+  padding:15px 17px;
+  background:#e6f4f1;
+  border-radius:15px;
+  font-size:13px;
+  line-height:1.6;
+  font-weight:700;
+  margin-bottom:15px;
+  border-left:4px solid #18a39c;
+}
+
+.activeclue b{color:var(--teal)}
+
+.boardscroll{
+  max-width:100%;
+  overflow:auto;
+  border-radius:18px;
+  background:#dce8e7;
+  padding:12px;
+  display:flex;
+  justify-content:safe center;
+}
+
+#board{
+  display:grid;
+  gap:2px;
+  width:max-content;
+  flex-shrink:0;
+  --cell:clamp(24px,2.6vw,37px);
+}
+
+.cell{
+  width:var(--cell);
+  height:var(--cell);
+  position:relative;
+  background:white;
+  border-radius:3px;
+}
+
+.cell.block{background:#164e58}
+
+.cell input{
+  width:100%;
+  height:100%;
+  border:0;
+  background:transparent;
+  text-align:center;
+  font:800 clamp(12px,1.7vw,18px) Sora;
+  color:#0b5057;
+  text-transform:uppercase;
+  padding:5px 0 0;
+  border-radius:3px;
+}
+
+.cell.word{background:#d6f2e9}
+
+.cell.active{
+  background:#ffe4a2;
+  box-shadow:inset 0 0 0 2px #f2b847;
+}
+
+.cell.correct{background:#c6f1db}
+.cell.wrong{background:#ffd5d8}
+
+.cell .num{
+  position:absolute;
+  top:1px;
+  left:2px;
+  font-size:8px;
+  font-weight:800;
+  color:#587b7c;
+  pointer-events:none;
+}
+
+.controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:18px;
+}
+
+.btn{
+  border:1px solid #d7e5e3;
+  background:white;
+  border-radius:12px;
+  padding:12px 15px;
+  color:var(--navy);
+  font-weight:800;
+  font-size:12px;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 5px 13px #1234;
+}
+
+.btn.primary{
+  background:var(--teal);
+  border-color:var(--teal);
+  color:white;
+}
+
+.btn.gold{
+  background:var(--gold);
+  border-color:var(--gold);
+  color:#533b11;
+}
+
+.clues{
+  display:grid;
+  gap:16px;
+  align-content:start;
+}
+
+.cluebox{
+  background:white;
+  border:1px solid #e2eae8;
+  border-radius:19px;
+  padding:18px;
+}
+
+.cluebox h3{
+  font:800 15px Sora;
+  color:var(--navy);
+  margin:0 0 13px;
+}
+
+.clue{
+  display:block;
+  width:100%;
+  text-align:left;
+  border:0;
+  border-radius:10px;
+  background:transparent;
+  padding:11px;
+  color:#3e5960;
+  font-size:12px;
+  font-weight:600;
+  line-height:1.6;
+}
+
+.clue:hover,
+.clue.selected{
+  background:#fff0cb;
+}
+
+.clue.solved{color:var(--green)}
+
+.clue strong{
+  color:var(--teal);
+  margin-right:5px;
+}
+
+.feedback{
+  margin:0 24px 24px;
+  padding:15px 18px;
+  background:#e5f3f0;
+  border-left:4px solid #15a18b;
+  border-radius:12px;
+  font-weight:700;
+  font-size:13px;
+  line-height:1.6;
+  display:none;
+}
+
+.feedback.show{display:block}
+
+.feedback.error{
+  background:#fff0f1;
+  border-color:var(--red);
+}
+
+.feedback.info{
+  background:#fff3d9;
+  border-color:var(--gold);
+}
+
+.dictionary{
+  background:white;
+  border-radius:22px;
+  padding:26px;
+  margin-bottom:35px;
+}
+
+.dictionary h2{
+  font:800 22px Sora;
+  margin:0 0 6px;
+}
+
+.dictionary p{
+  font-size:13px;
+  color:var(--muted);
+  margin:0 0 19px;
+}
+
+.dictgrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+.dictword{
+  border:1px solid #e4eeeb;
+  border-radius:12px;
+  background:#f6faf8;
+  padding:13px;
+}
+
+.dictword b{
+  display:block;
+  color:#075e66;
+  font-size:13px;
+}
+
+.dictword span{
+  font-family:"Noto Naskh Arabic",serif;
+  color:#61777b;
+  font-size:17px;
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:20;
+  background:#021e27dc;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.show{display:flex}
+
+.result{
+  background:white;
+  border-radius:26px;
+  padding:36px;
+  text-align:center;
+  max-width:480px;
+  width:100%;
+  box-shadow:0 20px 70px #0007;
+}
+
+.result h2{
+  font:800 28px Sora;
+  color:var(--navy);
+}
+
+.result p{
+  line-height:1.8;
+  color:#607b80;
+}
+
+.result .medal{font-size:65px}
+
+.result .final{
+  font:800 39px Sora;
+  color:var(--teal);
+}
+
+footer{
+  text-align:center;
+  color:#b6d2d1;
+  padding:0 0 30px;
+  font-size:11px;
+  letter-spacing:1px;
+}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .dictgrid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:560px){
+  .hero{padding:28px 22px}
+  .hero h1{letter-spacing:-1px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .layout{padding:13px}
+  .gamehead{padding:20px}
+  .boardscroll{justify-content:flex-start}
+  #board{--cell:26px}
+  .dictionary{padding:19px}
+  .nav{padding:15px 0}
+  .back{font-size:10px;padding:10px}
+  .stat{padding:13px}
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<nav class="nav">
+  <div class="brand">
+    MY ENGLISH SPACE
+    <small>MS4 / SEQUENCE 01 / GAME 01</small>
+  </div>
+  <a class="back" href="MS4-S1-Games.html">
+    ← Back to Games
+  </a>
+</nav>
+
+<header class="hero">
+  <div class="kicker">
+    THE EXPLORER SERIES · VOCABULARY CHALLENGE
+  </div>
+
+  <h1>
+    Explorer's<br>
+    <span>Crossword.</span>
+  </h1>
+
+  <p>
+    Explore literature, world-famous art and remarkable landmarks.
+    Solve a real, connected crossword and unlock your explorer's badge.
+  </p>
+
+  <div class="steps">
+    <span>01 · Select a clue</span>
+    <span>02 · Type the letters</span>
+    <span>03 · Check your answers</span>
+    <span>04 · Complete the journey</span>
+  </div>
+</header>
+
+<section class="stats">
+  <div class="stat">
+    <b id="score">100</b>
+    <small>YOUR SCORE</small>
+  </div>
+
+  <div class="stat">
+    <b id="timer">00:00</b>
+    <small>JOURNEY TIME</small>
+  </div>
+
+  <div class="stat">
+    <b id="hints">3</b>
+    <small>FREE HINTS</small>
+  </div>
+
+  <div class="stat">
+    <b id="progress">0%</b>
+    <small>WORDS SOLVED</small>
+  </div>
+</section>
+
+<main class="game">
+
+  <div class="gamehead">
+    <div>
+      <h2>The Crossword Challenge</h2>
+      <p>
+        Tap any clue or square. At a crossing, tap again
+        to change direction.
+      </p>
+    </div>
+
+    <span class="kicker" style="color:#087f87">
+      13 HIDDEN WORDS
+    </span>
+  </div>
+
+  <div class="progressbar">
+    <div id="progressFill"></div>
+  </div>
+
+  <div class="layout">
+
+    <section class="boardpanel">
+
+      <div class="activeclue" id="activeClue" aria-live="polite">
+        Select a clue to begin.
+      </div>
+
+      <div class="boardscroll">
+        <div
+          id="board"
+          aria-label="Interactive crossword puzzle">
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn primary" onclick="checkAnswers()">
+          ✓ Check Answers
+        </button>
+
+        <button class="btn gold" onclick="useHint()">
+          Hint
+        </button>
+
+        <button class="btn" onclick="revealLetter()">
+          Reveal Letter −10
+        </button>
+
+        <button class="btn" onclick="clearBoard()">
+          Clear
+        </button>
+
+        <button class="btn" onclick="resetGame()">
+          Restart
+        </button>
+      </div>
+
+    </section>
+
+    <aside class="clues">
+
+      <div class="cluebox">
+        <h3>→ ACROSS</h3>
+        <div id="acrossClues"></div>
+      </div>
+
+      <div class="cluebox">
+        <h3>↓ DOWN</h3>
+        <div id="downClues"></div>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <div
+    class="feedback"
+    id="feedback"
+    role="status"
+    aria-live="polite">
+  </div>
+
+</main>
+
+<section class="dictionary">
+
+  <h2>Explorer's Mini Dictionary</h2>
+
+  <p>
+    Helpful English–Arabic vocabulary from Sequence 1.
+  </p>
+
+  <div class="dictgrid">
+
+    <div class="dictword">
+      <b>landmark</b>
+      <span lang="ar">معلم</span>
+    </div>
+
+    <div class="dictword">
+      <b>painting</b>
+      <span lang="ar">لوحة فنية</span>
+    </div>
+
+    <div class="dictword">
+      <b>sculpture</b>
+      <span lang="ar">منحوتة</span>
+    </div>
+
+    <div class="dictword">
+      <b>novelist</b>
+      <span lang="ar">روائي</span>
+    </div>
+
+    <div class="dictword">
+      <b>playwright</b>
+      <span lang="ar">كاتب مسرحي</span>
+    </div>
+
+    <div class="dictword">
+      <b>palace</b>
+      <span lang="ar">قصر</span>
+    </div>
+
+    <div class="dictword">
+      <b>museum</b>
+      <span lang="ar">متحف</span>
+    </div>
+
+    <div class="dictword">
+      <b>journey</b>
+      <span lang="ar">رحلة</span>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  MY ENGLISH SPACE · CREATED BY WARDA LAMRI · MS4 SEQUENCE 1
+</footer>
+
+</div>
+
+<div
+  class="modal"
+  id="completion"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="resultTitle">
+
+  <div class="result">
+
+    <div class="medal">🏆</div>
+
+    <div class="kicker" style="color:#087f87">
+      EXPLORER'S BADGE UNLOCKED
+    </div>
+
+    <h2 id="resultTitle">Journey Complete!</h2>
+
+    <div class="final" id="finalScore"></div>
+
+    <p id="resultMessage"></p>
+
+    <button class="btn primary" onclick="closeResult()">
+      Continue Exploring
+    </button>
+
+    <button class="btn" onclick="resetGame();closeResult()">
+      Play Again
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+"use strict";
+
+/* ============================================
+   CROSSWORD WORDS
+============================================ */
+
+const entries = [
+  [
+    "MONALISA",16,12,"across",
+    "Leonardo da Vinci's painting of a woman with a mysterious smile."
+  ],
+  [
+    "MATERIAL",16,12,"down",
+    "The substance used to make a statue or building."
+  ],
+  [
+    "MONUMENT",14,14,"down",
+    "A structure built to remember a person or historical event."
+  ],
+  [
+    "DIMENSION",14,12,"across",
+    "A measurement such as height, width or length."
+  ],
+  [
+    "ARTIST",16,19,"down",
+    "A person who creates paintings or other works of art."
+  ],
+  [
+    "WRITER",18,16,"across",
+    "A person who writes books, poems or stories."
+  ],
+  [
+    "LANDMARK",23,12,"across",
+    "A famous place or structure that visitors come to see."
+  ],
+  [
+    "PALACE",20,17,"down",
+    "A grand residence of a king or queen."
+  ],
+  [
+    "MUSEUM",25,14,"across",
+    "A building where objects of art or history are displayed."
+  ],
+  [
+    "PAINTING",8,20,"down",
+    "A work of art made using paint."
+  ],
+  [
+    "NOVELIST",10,15,"across",
+    "A person who writes novels."
+  ],
+  [
+    "PLAYWRIGHT",8,20,"across",
+    "A person who writes plays for the theatre."
+  ],
+  [
+    "JOURNEY",6,15,"down",
+    "Travel from one place to another."
+  ]
+];
+
+/* ============================================
+   BOARD SETUP
+============================================ */
+
+const minR = Math.min(...entries.map(w => w[1]));
+const minC = Math.min(...entries.map(w => w[2]));
+
+const words = entries.map(
+  ([answer,row,col,direction,clue]) => ({
+    answer,
+    row:row-minR,
+    col:col-minC,
+    direction,
+    clue
+  })
+);
+
+const ROWS = Math.max(
+  ...words.map(w =>
+    w.row + (w.direction==="down" ? w.answer.length : 1)
+  )
+);
+
+const COLS = Math.max(
+  ...words.map(w =>
+    w.col + (w.direction==="across" ? w.answer.length : 1)
+  )
+);
+
+const map = new Map();
+const cells = new Map();
+
+const key = (r,c) => r+","+c;
+
+for(const w of words){
+
+  for(let i=0;i<w.answer.length;i++){
+
+    const r = w.row +
+      (w.direction==="down" ? i : 0);
+
+    const c = w.col +
+      (w.direction==="across" ? i : 0);
+
+    const k = key(r,c);
+
+    if(!map.has(k)){
+      map.set(k,{
+        letter:w.answer[i],
+        words:[]
+      });
+    }
+
+    if(map.get(k).letter !== w.answer[i]){
+      throw Error("Invalid crossing at "+k);
+    }
+
+    map.get(k).words.push(w);
+  }
+}
+
+/* ============================================
+   CROSSWORD NUMBERING
+============================================ */
+
+let nextNumber = 1;
+
+for(let r=0;r<ROWS;r++){
+
+  for(let c=0;c<COLS;c++){
+
+    const starters = words.filter(
+      w => w.row===r && w.col===c
+    );
+
+    if(starters.length){
+
+      starters.forEach(
+        w => w.number=nextNumber
+      );
+
+      nextNumber++;
+    }
+  }
+}
+
+/* ============================================
+   BUILD CROSSWORD
+============================================ */
+
+const board = document.getElementById("board");
+
+board.style.gridTemplateColumns =
+  `repeat(${COLS},var(--cell))`;
+
+for(let r=0;r<ROWS;r++){
+
+  for(let c=0;c<COLS;c++){
+
+    const k = key(r,c);
+    const data = map.get(k);
+
+    const box = document.createElement("div");
+
+    box.className = "cell" + (data ? "" : " block");
+
+    if(data){
+
+      const starts = words.filter(
+        w => w.row===r && w.col===c
+      );
+
+      if(starts.length){
+
+        const n = document.createElement("span");
+
+        n.className = "num";
+        n.textContent = starts[0].number;
+
+        box.append(n);
+      }
+
+      const input = document.createElement("input");
+
+      input.maxLength = 1;
+      input.autocomplete = "off";
+      input.autocapitalize = "characters";
+      input.spellcheck = false;
+
+      input.setAttribute(
+        "aria-label",
+        `Crossword row ${r+1}, column ${c+1}`
+      );
+
+      input.addEventListener(
+        "focus",
+        () => onFocus(r,c)
+      );
+
+      input.addEventListener(
+        "click",
+        () => onClick(r,c)
+      );
+
+      input.addEventListener("input",()=>{
+
+        input.value = input.value
+          .replace(/[^a-z]/gi,"")
+          .slice(-1)
+          .toUpperCase();
+
+        clearMarks();
+        updateProgress();
+
+        if(input.value){
+          moveInWord(r,c,1);
+        }
+      });
+
+      input.addEventListener("keydown",e=>{
+
+        if(e.key==="Backspace" && !input.value){
+
+          e.preventDefault();
+
+          moveInWord(r,c,-1);
+        }
+
+        if(e.key===" "){
+
+          e.preventDefault();
+
+          toggleDirection(r,c);
+        }
+
+        const delta = {
+          ArrowUp:[-1,0],
+          ArrowDown:[1,0],
+          ArrowLeft:[0,-1],
+          ArrowRight:[0,1]
+        }[e.key];
+
+        if(delta){
+
+          e.preventDefault();
+
+          cells.get(
+            key(r+delta[0],c+delta[1])
+          )?.input.focus();
+        }
+      });
+
+      box.append(input);
+
+      cells.set(k,{
+        box,
+        input,
+        data,
+        r,
+        c
+      });
+    }
+
+    board.append(box);
+  }
+}
+
+/* ============================================
+   CREATE CLUES
+============================================ */
+
+function makeClues(){
+
+  for(const direction of ["across","down"]){
+
+    const root = document.getElementById(
+      direction+"Clues"
+    );
+
+    words
+      .filter(w => w.direction===direction)
+      .sort((a,b) => a.number-b.number)
+      .forEach(w=>{
+
+        const b = document.createElement("button");
+
+        b.className = "clue";
+        b.type = "button";
+
+        b.innerHTML = `
+          <strong>${w.number}.</strong>
+          ${w.clue}
+          <small>(${w.answer.length} letters)</small>
+        `;
+
+        b.dataset.direction = direction;
+        b.dataset.number = w.number;
+
+        b.addEventListener(
+          "click",
+          () => selectWord(w,true)
+        );
+
+        root.append(b);
+      });
+  }
+}
+
+/* ============================================
+   GAME STATE
+============================================ */
+
+let active = null;
+let score = 100;
+let hints = 3;
+let elapsed = 0;
+let timerId = null;
+let finished = false;
+
+/* ============================================
+   WORD POSITIONS
+============================================ */
+
+function positions(w){
+
+  return Array.from(
+    {length:w.answer.length},
+    (_,i) => key(
+      w.row+(w.direction==="down" ? i : 0),
+      w.col+(w.direction==="across" ? i : 0)
+    )
+  );
+}
+
+/* ============================================
+   SELECT WORD
+============================================ */
+
+function selectWord(w,focus=false){
+
+  active = w;
+
+  document.querySelectorAll(".cell").forEach(el=>{
+    el.classList.remove("word","active");
+  });
+
+  document.querySelectorAll(".clue").forEach(el=>{
+
+    el.classList.toggle(
+      "selected",
+      el.dataset.direction===w.direction &&
+      Number(el.dataset.number)===w.number
+    );
+  });
+
+  for(const k of positions(w)){
+
+    cells.get(k).box.classList.add("word");
+  }
+
+  const first = cells.get(positions(w)[0]);
+
+  first.box.classList.add("active");
+
+  document.getElementById("activeClue").innerHTML = `
+    <b>
+      ${w.number} ${w.direction.toUpperCase()}
+      · ${w.answer.length} letters
+    </b>
+    <br>
+    ${w.clue}
+  `;
+
+  if(focus){
+    first.input.focus();
+  }
+}
+
+/* ============================================
+   CELL FOCUS
+============================================ */
+
+function onFocus(r,c){
+
+  const candidates = map.get(key(r,c)).words;
+
+  if(!active || !candidates.includes(active)){
+
+    selectWord(
+      candidates.find(
+        w => w.direction==="across"
+      ) || candidates[0]
+    );
+  }
+
+  document.querySelectorAll(".cell.active").forEach(
+    el => el.classList.remove("active")
+  );
+
+  cells.get(key(r,c)).box.classList.add("active");
+}
+
+function onClick(r,c){
+
+  const candidates = map.get(key(r,c)).words;
+
+  if(
+    candidates.length>1 &&
+    active &&
+    candidates.includes(active)
+  ){
+
+    selectWord(
+      candidates.find(w=>w!==active)
+    );
+
+  }else if(
+    !active ||
+    !candidates.includes(active)
+  ){
+
+    selectWord(candidates[0]);
+  }
+
+  cells.get(key(r,c)).box.classList.add("active");
+}
+
+function toggleDirection(r,c){
+
+  const choices = map.get(key(r,c)).words;
+
+  if(choices.length>1){
+
+    selectWord(
+      choices.find(w=>w!==active) || choices[0]
+    );
+  }
+}
+
+/* ============================================
+   KEYBOARD MOVEMENT
+============================================ */
+
+function moveInWord(r,c,step){
+
+  if(!active)return;
+
+  const list = positions(active);
+
+  const index = list.indexOf(key(r,c));
+
+  if(
+    index>=0 &&
+    index+step>=0 &&
+    index+step<list.length
+  ){
+
+    cells.get(
+      list[index+step]
+    ).input.focus();
+  }
+}
+
+/* ============================================
+   CHECKING AND PROGRESS
+============================================ */
+
+function clearMarks(){
+
+  cells.forEach(cell=>{
+    cell.box.classList.remove("correct","wrong");
+  });
+}
+
+function wordSolved(w){
+
+  return positions(w).every(
+    (k,i) =>
+      cells.get(k).input.value===w.answer[i]
+  );
+}
+
+function updateProgress(){
+
+  const solved = words.filter(wordSolved).length;
+
+  const pct = Math.round(
+    solved/words.length*100
+  );
+
+  document.getElementById("progress").textContent =
+    pct+"%";
+
+  document.getElementById("progressFill").style.width =
+    pct+"%";
+
+  document.querySelectorAll(".clue").forEach(el=>{
+
+    const w = words.find(
+      w =>
+        w.direction===el.dataset.direction &&
+        w.number===Number(el.dataset.number)
+    );
+
+    el.classList.toggle(
+      "solved",
+      wordSolved(w)
+    );
+  });
+
+  if(solved===words.length && !finished){
+    complete();
+  }
+}
+
+/* ============================================
+   FEEDBACK
+============================================ */
+
+function message(type,text){
+
+  const el = document.getElementById("feedback");
+
+  el.className = "feedback show "+type;
+  el.textContent = text;
+}
+
+function updateStats(){
+
+  document.getElementById("score").textContent = score;
+
+  document.getElementById("hints").textContent = hints;
+}
+
+/* ============================================
+   CHECK ANSWERS
+============================================ */
+
+function checkAnswers(){
+
+  if(finished)return;
+
+  let wrong=0;
+  let correct=0;
+  let filled=0;
+
+  cells.forEach(({box,input,data})=>{
+
+    box.classList.remove("correct","wrong");
+
+    if(input.value){
+
+      filled++;
+
+      if(input.value===data.letter){
+
+        correct++;
+        box.classList.add("correct");
+
+      }else{
+
+        wrong++;
+        box.classList.add("wrong");
+      }
+    }
+  });
+
+  if(!filled){
+
+    message(
+      "info",
+      "Select a clue and type your first letter."
+    );
+
+    return;
+  }
+
+  if(wrong){
+
+    score = Math.max(
+      0,
+      score-Math.min(10,wrong*2)
+    );
+
+    updateStats();
+
+    message(
+      "error",
+      `${wrong} incorrect letter${wrong===1?"":"s"}.
+       Red squares show what to review.`
+    );
+
+  }else{
+
+    message(
+      "success",
+      `${correct} correct letters. Keep exploring!`
+    );
+  }
+
+  updateProgress();
+}
+
+/* ============================================
+   HINTS
+============================================ */
+
+function findTarget(onlyEmpty){
+
+  if(!active){
+
+    message(
+      "info",
+      "Select a clue first."
+    );
+
+    return null;
+  }
+
+  for(let i=0;i<active.answer.length;i++){
+
+    const cell = cells.get(
+      positions(active)[i]
+    );
+
+    if(
+      onlyEmpty
+        ? !cell.input.value
+        : cell.input.value!==active.answer[i]
+    ){
+
+      return {
+        cell,
+        letter:active.answer[i]
+      };
+    }
+  }
+
+  message(
+    "info",
+    "This word is already complete."
+  );
+
+  return null;
+}
+
+function fillTarget(target){
+
+  target.cell.input.value = target.letter;
+
+  clearMarks();
+  updateProgress();
+}
+
+function useHint(){
+
+  if(finished)return;
+
+  if(hints<=0){
+
+    message(
+      "error",
+      "You have no free hints left."
+    );
+
+    return;
+  }
+
+  const target = findTarget(false);
+
+  if(!target)return;
+
+  hints--;
+
+  score = Math.max(0,score-5);
+
+  updateStats();
+  fillTarget(target);
+
+  message(
+    "success",
+    "One correct letter revealed. Hint used: −5 points."
+  );
+}
+
+function revealLetter(){
+
+  if(finished)return;
+
+  const target = findTarget(false);
+
+  if(!target)return;
+
+  score = Math.max(0,score-10);
+
+  updateStats();
+  fillTarget(target);
+
+  message(
+    "info",
+    "Letter revealed: −10 points."
+  );
+}
+
+/* ============================================
+   CLEAR BOARD
+============================================ */
+
+function clearBoard(){
+
+  if(finished)return;
+
+  cells.forEach(({input})=>{
+    input.value="";
+  });
+
+  clearMarks();
+  updateProgress();
+
+  message(
+    "info",
+    "Board cleared. Your timer and score have been kept."
+  );
+}
+
+/* ============================================
+   RESET GAME
+============================================ */
+
+function resetGame(){
+
+  if(
+    !confirm(
+      "Restart this crossword from the beginning?"
+    )
+  ){
+    return;
+  }
+
+  finished=false;
+
+  cells.forEach(({input})=>{
+    input.value="";
+    input.readOnly=false;
+  });
+
+  clearMarks();
+
+  score=100;
+  hints=3;
+  elapsed=0;
+
+  updateStats();
+  updateProgress();
+
+  document.getElementById("feedback").className =
+    "feedback";
+
+  document.getElementById("timer").textContent =
+    "00:00";
+
+  clearInterval(timerId);
+  startTimer();
+
+  selectWord(
+    words.find(w=>w.answer==="MONALISA")
+  );
+}
+
+/* ============================================
+   TIMER
+============================================ */
+
+function formatTime(s){
+
+  return (
+    String(Math.floor(s/60)).padStart(2,"0")
+    +":"
+    +String(s%60).padStart(2,"0")
+  );
+}
+
+function startTimer(){
+
+  timerId = setInterval(()=>{
+
+    if(!finished){
+
+      elapsed++;
+
+      document.getElementById("timer").textContent =
+        formatTime(elapsed);
+    }
+
+  },1000);
+}
+
+/* ============================================
+   COMPLETION
+============================================ */
+
+function complete(){
+
+  finished=true;
+
+  clearInterval(timerId);
+
+  score+=50;
+
+  updateStats();
+
+  document.getElementById("finalScore").textContent =
+    score+" POINTS";
+
+  document.getElementById("resultMessage").textContent =
+    `You solved all ${words.length} words in
+     ${formatTime(elapsed)}.
+     Your vocabulary passport has been stamped!`;
+
+  document.getElementById("completion").classList.add(
+    "show"
+  );
+
+  cells.forEach(({input})=>{
+    input.readOnly=true;
+  });
+
+  // Record completion on the Games homepage.
+
+  try{
+
+    const k="MS4_S1_GAMES_PROGRESS";
+
+    const a=JSON.parse(
+      localStorage.getItem(k)||"[]"
+    );
+
+    if(
+      Array.isArray(a) &&
+      !a.includes(1)
+    ){
+
+      a.push(1);
+
+      localStorage.setItem(
+        k,
+        JSON.stringify(a)
+      );
+    }
+
+  }catch(e){}
+}
+
+function closeResult(){
+
+  document.getElementById("completion").classList.remove(
+    "show"
+  );
+}
+
+/* ============================================
+   INITIALISE
+============================================ */
+
+makeClues();
+
+updateStats();
+updateProgress();
+
+selectWord(
+  words.find(w=>w.answer==="MONALISA")
+);
+
+startTimer();
+
+</script>
+</body>
+</html>

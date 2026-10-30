@@ -1,0 +1,3703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102c55">
+
+<title>BEM Reading Comprehension Mastery | My English Space</title>
+
+<meta name="description"
+content="An interactive BEM Reading Comprehension Academy for Algerian MS4 pupils. Learn reading strategies and practise authentic BEM-style activities.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   DESIGN SYSTEM
+===================================================== */
+
+:root{
+    --navy:#102c55;
+    --navy-dark:#081b38;
+    --blue:#2878c4;
+    --cyan:#20bfc9;
+    --gold:#ffd36e;
+    --purple:#8655ca;
+    --green:#18a77c;
+    --orange:#ef9948;
+    --pink:#e56e9c;
+    --red:#d64b60;
+
+    --ink:#253a55;
+    --muted:#667c94;
+    --paper:#f4f8ff;
+    --white:#ffffff;
+    --line:#dfe8f4;
+
+    --shadow:0 16px 45px rgba(15,45,90,.10);
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:100px;
+}
+
+body{
+    font-family:"Nunito",Arial,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    overflow-x:hidden;
+}
+
+h1,h2,h3,h4{
+    font-family:"Baloo 2",Arial,sans-serif;
+    line-height:1.2;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,input,textarea,select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:3px;
+}
+
+.container{
+    width:min(1160px,calc(100% - 34px));
+    margin:auto;
+}
+
+.section{
+    padding:76px 0;
+}
+
+.section.white{
+    background:white;
+}
+
+.section.soft{
+    background:#edf5ff;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:790px;
+    margin:0 auto 39px;
+}
+
+.eyebrow{
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1.7px;
+    color:var(--blue);
+    text-transform:uppercase;
+}
+
+.section-heading h2{
+    font-size:clamp(30px,4vw,46px);
+    color:var(--navy);
+    margin:12px 0;
+}
+
+.section-heading p{
+    color:var(--muted);
+    font-size:14px;
+    font-weight:750;
+    line-height:1.9;
+}
+
+.card{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:23px;
+    padding:27px;
+    box-shadow:var(--shadow);
+}
+
+.card h3{
+    color:var(--navy);
+    font-size:24px;
+    margin-bottom:11px;
+}
+
+.card p{
+    font-size:13px;
+    font-weight:700;
+    line-height:1.9;
+    color:var(--muted);
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:13px 21px;
+    border-radius:30px;
+    border:0;
+    font-size:12px;
+    font-weight:900;
+    transition:.2s;
+    min-height:47px;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn.gold{
+    background:var(--gold);
+    color:#5d4218;
+}
+
+.btn.blue{
+    background:var(--blue);
+    color:white;
+}
+
+.btn.white{
+    background:white;
+    color:var(--navy);
+}
+
+.btn.outline{
+    border:1px solid var(--line);
+    background:white;
+    color:var(--navy);
+}
+
+.tag{
+    display:inline-flex;
+    padding:7px 11px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:900;
+    background:#eaf4ff;
+    color:var(--blue);
+}
+
+.note{
+    background:#eaf5ff;
+    border-left:4px solid var(--blue);
+    border-radius:0 13px 13px 0;
+    padding:17px 20px;
+    margin-top:17px;
+    font-size:13px;
+    font-weight:800;
+    line-height:1.8;
+}
+
+.note.green{
+    background:#eaf9f1;
+    border-color:var(--green);
+}
+
+.note.gold{
+    background:#fff7e3;
+    border-color:var(--orange);
+}
+
+.note.purple{
+    background:#f3edff;
+    border-color:var(--purple);
+}
+
+.small{
+    font-size:12px;
+    color:var(--muted);
+    font-weight:800;
+    line-height:1.8;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.progress-line{
+    height:4px;
+    background:var(--gold);
+    width:0;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:300;
+}
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(8,27,56,.97);
+    backdrop-filter:blur(15px);
+}
+
+.header-inner{
+    min-height:77px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+    font-size:18px;
+    font-weight:900;
+}
+
+.brand-icon{
+    width:46px;
+    height:46px;
+    display:grid;
+    place-items:center;
+    background:#e6f7ff;
+    border-radius:15px;
+    font-size:25px;
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.nav a{
+    padding:10px 13px;
+    border-radius:25px;
+    color:#e8f4ff;
+    font-size:11px;
+    font-weight:900;
+}
+
+.nav a:hover{
+    background:rgba(255,255,255,.12);
+}
+
+.nav .back{
+    background:var(--gold);
+    color:var(--navy);
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 85% 15%,rgba(43,199,212,.26),transparent 34%),
+        linear-gradient(130deg,#081b38,#123b6e 58%,#176d93);
+    color:white;
+    padding:82px 0 110px;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:radial-gradient(#fff 1px,transparent 1px);
+    background-size:29px 29px;
+    opacity:.12;
+}
+
+.hero-layout{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.08fr .92fr;
+    gap:44px;
+    align-items:center;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:30px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    font-size:11px;
+    font-weight:900;
+}
+
+.hero h1{
+    font-size:clamp(48px,6vw,77px);
+    margin:23px 0;
+    line-height:1.06;
+}
+
+.hero h1 span{
+    color:var(--gold);
+    display:block;
+}
+
+.hero p{
+    color:#e2f0ff;
+    line-height:2;
+    font-size:15px;
+    font-weight:750;
+}
+
+.hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:26px;
+}
+
+.hero-art{
+    height:360px;
+    border:5px solid rgba(255,255,255,.85);
+    border-radius:30px;
+    position:relative;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,#275d9a,#1b9ea9);
+    box-shadow:0 30px 70px rgba(0,0,0,.3);
+    overflow:hidden;
+}
+
+.hero-art:before,
+.hero-art:after{
+    content:"";
+    position:absolute;
+    width:270px;
+    height:270px;
+    border:45px solid rgba(255,255,255,.08);
+    border-radius:50%;
+}
+
+.hero-art:before{
+    top:-130px;
+    right:-120px;
+}
+
+.hero-art:after{
+    bottom:-160px;
+    left:-140px;
+}
+
+.hero-book{
+    font-size:110px;
+    filter:drop-shadow(0 15px 15px rgba(0,0,0,.2));
+    z-index:1;
+}
+
+.hero-art strong{
+    position:absolute;
+    bottom:28px;
+    left:0;
+    right:0;
+    text-align:center;
+    font-family:"Baloo 2";
+    font-size:25px;
+    z-index:1;
+    color:white;
+}
+
+.hero-sticker{
+    position:absolute;
+    bottom:-23px;
+    left:-18px;
+    background:var(--gold);
+    color:#67481c;
+    border:4px solid white;
+    padding:17px;
+    border-radius:17px;
+    font-size:13px;
+    font-weight:900;
+    box-shadow:var(--shadow);
+}
+
+/* =====================================================
+   QUICK NAVIGATION
+===================================================== */
+
+.quick-wrap{
+    position:relative;
+    margin-top:-28px;
+    z-index:4;
+}
+
+.quick{
+    background:white;
+    padding:14px;
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.quick a{
+    padding:10px 13px;
+    background:#edf5ff;
+    color:var(--navy);
+    border-radius:22px;
+    font-size:11px;
+    font-weight:900;
+}
+
+.quick a:hover{
+    background:var(--gold);
+}
+
+/* =====================================================
+   INTRODUCTION
+===================================================== */
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.intro-card{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:23px;
+    padding:28px;
+    box-shadow:var(--shadow);
+}
+
+.intro-card .icon{
+    font-size:38px;
+    margin-bottom:14px;
+}
+
+.intro-card h3{
+    font-size:24px;
+    color:var(--navy);
+    margin-bottom:12px;
+}
+
+.intro-card p{
+    font-size:13px;
+    line-height:1.9;
+    font-weight:750;
+    color:var(--muted);
+}
+
+.mark-banner{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:25px;
+    align-items:center;
+    margin-top:27px;
+    background:linear-gradient(110deg,#e7f4ff,#fff);
+    border:1px solid #d6e8fa;
+    padding:28px;
+    border-radius:23px;
+}
+
+.mark-banner h3{
+    color:var(--navy);
+    font-size:27px;
+    margin-bottom:7px;
+}
+
+.mark-banner p{
+    color:var(--muted);
+    font-size:13px;
+    font-weight:750;
+    line-height:1.9;
+}
+
+.mark-number{
+    font-family:"Baloo 2";
+    font-size:65px;
+    color:var(--blue);
+    white-space:nowrap;
+}
+
+/* =====================================================
+   STRATEGIES
+===================================================== */
+
+.strategy-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.strategy-card{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:21px;
+    padding:25px;
+    position:relative;
+    overflow:hidden;
+}
+
+.strategy-number{
+    font-family:"Baloo 2";
+    font-size:40px;
+    color:#d2e7fb;
+    margin-bottom:9px;
+}
+
+.strategy-card h3{
+    font-size:23px;
+    color:var(--navy);
+    margin-bottom:10px;
+}
+
+.strategy-card p{
+    font-size:12px;
+    font-weight:750;
+    line-height:1.9;
+    color:var(--muted);
+}
+
+.strategy-card .tip{
+    display:block;
+    margin-top:15px;
+    padding:12px;
+    background:#eff6ff;
+    border-radius:12px;
+    font-size:11px;
+    font-weight:900;
+    line-height:1.8;
+    color:#315d87;
+}
+
+/* =====================================================
+   QUESTION TYPES
+===================================================== */
+
+.type-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.type-card{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:21px;
+    padding:25px;
+}
+
+.type-card h3{
+    font-size:23px;
+    color:var(--navy);
+    margin-bottom:10px;
+}
+
+.type-card p{
+    font-size:12px;
+    font-weight:750;
+    line-height:1.9;
+    color:var(--muted);
+}
+
+.example{
+    margin-top:15px;
+    padding:16px;
+    background:#f1f7ff;
+    border-radius:14px;
+    font-size:12px;
+    line-height:1.9;
+    font-weight:800;
+}
+
+.example strong{
+    color:var(--blue);
+}
+
+.answer-toggle{
+    margin-top:12px;
+    padding:10px 15px;
+    border:0;
+    border-radius:20px;
+    background:#e8f8ef;
+    color:#157b59;
+    font-size:11px;
+    font-weight:900;
+}
+
+.answer-content{
+    display:none;
+    margin-top:12px;
+    background:#e9f9f1;
+    color:#176c50;
+    padding:14px;
+    border-radius:12px;
+    font-size:12px;
+    font-weight:850;
+    line-height:1.9;
+}
+
+.answer-content.show{
+    display:block;
+}
+
+/* =====================================================
+   MISSION CARDS
+===================================================== */
+
+.mission-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.mission-card{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:23px;
+    padding:27px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+}
+
+.mission-icon{
+    font-size:45px;
+    margin-bottom:14px;
+}
+
+.mission-card h3{
+    font-size:26px;
+    color:var(--navy);
+    margin-bottom:9px;
+}
+
+.mission-card p{
+    font-size:12px;
+    font-weight:750;
+    line-height:1.9;
+    color:var(--muted);
+    margin-bottom:16px;
+}
+
+.mission-card .btn{
+    margin-top:auto;
+}
+
+.mission-label{
+    display:inline-block;
+    font-size:10px;
+    letter-spacing:1px;
+    font-weight:900;
+    color:var(--blue);
+    margin-bottom:10px;
+}
+
+.mission-score{
+    margin:12px 0 18px;
+    font-size:12px;
+    font-weight:900;
+    color:var(--green);
+}
+
+/* =====================================================
+   EXAM WORKSPACE
+===================================================== */
+
+.exam-shell{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:26px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+}
+
+.exam-top{
+    background:linear-gradient(120deg,var(--navy),#2369a3);
+    color:white;
+    padding:29px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.exam-top h3{
+    font-size:30px;
+}
+
+.exam-top p{
+    font-size:12px;
+    line-height:1.9;
+    color:#dbeeff;
+    font-weight:750;
+}
+
+.exam-top .tag{
+    background:var(--gold);
+    color:#64471c;
+}
+
+.exam-body{
+    padding:30px;
+}
+
+.exam-layout{
+    display:grid;
+    grid-template-columns:.94fr 1.06fr;
+    gap:25px;
+    align-items:start;
+}
+
+.reading-passage{
+    background:#f6faff;
+    border:1px solid #dceaf8;
+    border-radius:21px;
+    padding:25px;
+    position:sticky;
+    top:105px;
+}
+
+.reading-passage h4{
+    font-size:27px;
+    color:var(--navy);
+    margin:13px 0;
+}
+
+.reading-passage p{
+    font-size:13px;
+    font-weight:750;
+    line-height:2.1;
+    margin-bottom:15px;
+}
+
+.reading-passage p:last-child{
+    margin-bottom:0;
+}
+
+.passage-source{
+    border-top:1px solid var(--line);
+    padding-top:12px;
+    color:var(--muted);
+    font-size:11px !important;
+}
+
+.question-panel{
+    display:grid;
+    gap:15px;
+}
+
+.activity-heading{
+    padding:15px 18px;
+    border-radius:13px;
+    background:#e8f3ff;
+    color:var(--navy);
+    font-size:16px;
+    font-weight:900;
+}
+
+.activity-heading span{
+    float:right;
+    color:var(--blue);
+}
+
+.question-box{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:17px;
+    padding:19px;
+}
+
+.question-box h4{
+    color:var(--navy);
+    font-size:18px;
+    margin-bottom:13px;
+    line-height:1.5;
+}
+
+.question-box select,
+.question-box input[type="text"]{
+    width:100%;
+    padding:12px;
+    border:2px solid #dbe6f2;
+    border-radius:11px;
+    background:#fbfdff;
+    color:var(--ink);
+    font-size:12px;
+    font-weight:800;
+}
+
+.question-box select:focus,
+.question-box input:focus{
+    border-color:var(--blue);
+    outline:none;
+}
+
+.question-box .options{
+    display:grid;
+    gap:9px;
+}
+
+.radio-option{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px;
+    border:1px solid var(--line);
+    border-radius:11px;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:800;
+    line-height:1.6;
+}
+
+.radio-option:hover{
+    background:#f0f7ff;
+}
+
+.radio-option input{
+    accent-color:var(--blue);
+    flex-shrink:0;
+}
+
+.question-feedback{
+    display:none;
+    margin-top:12px;
+    padding:13px;
+    border-radius:11px;
+    font-size:12px;
+    font-weight:800;
+    line-height:1.8;
+}
+
+.question-feedback.show{
+    display:block;
+}
+
+.question-feedback.correct{
+    background:#e8f9f0;
+    color:#137b58;
+}
+
+.question-feedback.wrong{
+    background:#fff0f1;
+    color:#a23e4d;
+}
+
+.exam-actions{
+    margin-top:26px;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+    display:flex;
+    gap:12px;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.exam-result{
+    display:none;
+    background:#eff8ff;
+    border:1px solid #d8eaf8;
+    border-radius:20px;
+    padding:25px;
+    margin-top:23px;
+    text-align:center;
+}
+
+.exam-result h3{
+    color:var(--navy);
+    font-size:28px;
+}
+
+.exam-result strong{
+    display:block;
+    font-family:"Baloo 2";
+    font-size:58px;
+    color:var(--blue);
+}
+
+.exam-result p{
+    font-size:13px;
+    font-weight:800;
+    color:var(--muted);
+    line-height:1.9;
+}
+
+/* =====================================================
+   FINAL QUIZ
+===================================================== */
+
+.quiz-box{
+    max-width:850px;
+    margin:auto;
+    background:white;
+    border:1px solid var(--line);
+    border-radius:25px;
+    padding:32px;
+    box-shadow:var(--shadow);
+}
+
+.quiz-top{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    font-size:12px;
+    font-weight:900;
+    color:var(--muted);
+}
+
+.quiz-track{
+    height:11px;
+    background:#e9f0f8;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:12px;
+}
+
+.quiz-fill{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,var(--blue),var(--cyan));
+    transition:.3s;
+}
+
+.quiz-question{
+    font-size:26px;
+    color:var(--navy);
+    margin:24px 0;
+}
+
+.quiz-options{
+    display:grid;
+    gap:11px;
+}
+
+.quiz-option{
+    padding:16px;
+    text-align:left;
+    background:#f8fbff;
+    border:2px solid var(--line);
+    border-radius:14px;
+    font-size:13px;
+    font-weight:900;
+    color:var(--ink);
+}
+
+.quiz-option:hover:not(:disabled){
+    background:#edf6ff;
+    border-color:#8abce8;
+}
+
+.quiz-option.correct{
+    background:#e6f9ef;
+    border-color:var(--green);
+    color:#137b58;
+}
+
+.quiz-option.wrong{
+    background:#fff0f1;
+    border-color:var(--red);
+    color:#b94352;
+}
+
+.quiz-option:disabled{
+    cursor:default;
+}
+
+.quiz-feedback{
+    display:none;
+    padding:17px;
+    border-radius:13px;
+    margin-top:18px;
+    font-size:13px;
+    font-weight:800;
+    line-height:1.8;
+}
+
+.quiz-feedback.show{
+    display:block;
+}
+
+.quiz-feedback.good{
+    background:#e8f9f0;
+    color:#137b58;
+}
+
+.quiz-feedback.bad{
+    background:#fff1f1;
+    color:#a33c49;
+}
+
+.quiz-actions{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:20px;
+}
+
+.quiz-result{
+    text-align:center;
+    display:none;
+    padding:30px 0;
+}
+
+.quiz-result h3{
+    font-size:33px;
+    color:var(--navy);
+}
+
+.result-score{
+    font-family:"Baloo 2";
+    font-size:70px;
+    color:var(--blue);
+    margin:15px;
+}
+
+/* =====================================================
+   CHECKLIST
+===================================================== */
+
+.checklist-layout{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:23px;
+}
+
+.check-intro{
+    background:linear-gradient(130deg,#102c55,#246ca7);
+    border-radius:23px;
+    padding:30px;
+    color:white;
+}
+
+.check-intro h3{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.check-intro p{
+    font-size:13px;
+    line-height:2;
+    color:#e2efff;
+    font-weight:750;
+}
+
+.check-percent{
+    font-family:"Baloo 2";
+    font-size:60px;
+    color:var(--gold);
+    margin-top:18px;
+}
+
+.check-track{
+    height:13px;
+    border-radius:20px;
+    background:rgba(255,255,255,.2);
+    overflow:hidden;
+}
+
+.check-fill{
+    width:0;
+    height:100%;
+    background:linear-gradient(90deg,var(--gold),var(--cyan));
+    transition:.3s;
+}
+
+.check-items{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:23px;
+    padding:25px;
+}
+
+.check-items h3{
+    color:var(--navy);
+    font-size:25px;
+    margin-bottom:17px;
+}
+
+.check-label{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    padding:13px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    margin-bottom:9px;
+    cursor:pointer;
+}
+
+.check-label input{
+    width:19px;
+    height:19px;
+    accent-color:var(--green);
+    flex-shrink:0;
+}
+
+.check-label span{
+    font-size:12px;
+    font-weight:900;
+    line-height:1.6;
+}
+
+.check-label:has(input:checked){
+    background:#e9f9f0;
+    border-color:#b6e6d0;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.final{
+    padding:65px 0;
+    background:white;
+}
+
+.final-box{
+    padding:52px 25px;
+    background:linear-gradient(125deg,#102c55,#246ca7);
+    border-radius:28px;
+    color:white;
+    text-align:center;
+}
+
+.final-box h2{
+    font-size:clamp(30px,4vw,44px);
+}
+
+.final-box p{
+    max-width:650px;
+    margin:14px auto 25px;
+    font-size:13px;
+    font-weight:750;
+    line-height:2;
+    color:#e3f0ff;
+}
+
+.footer{
+    background:#081b38;
+    color:#d9e8f9;
+    padding:34px 20px;
+    text-align:center;
+    font-size:12px;
+    line-height:2;
+    font-weight:800;
+}
+
+.footer strong{
+    color:var(--gold);
+}
+
+.top-btn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:90;
+    border:0;
+    background:var(--navy);
+    color:white;
+    width:47px;
+    height:47px;
+    border-radius:15px;
+    font-size:23px;
+    box-shadow:var(--shadow);
+    display:none;
+}
+
+.top-btn.show{
+    display:block;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .hero-layout{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-actions{
+        justify-content:center;
+    }
+
+    .hero-art{
+        max-width:520px;
+        width:100%;
+        margin:auto;
+    }
+
+    .intro-grid,
+    .mission-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .strategy-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .exam-layout{
+        grid-template-columns:1fr;
+    }
+
+    .reading-passage{
+        position:static;
+    }
+
+}
+
+@media(max-width:720px){
+
+    .header-inner{
+        flex-direction:column;
+        padding:13px 0;
+    }
+
+    .nav{
+        justify-content:center;
+    }
+
+    .intro-grid,
+    .mission-grid,
+    .type-grid,
+    .checklist-layout{
+        grid-template-columns:1fr;
+    }
+
+    .mark-banner{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:520px){
+
+    .container{
+        width:calc(100% - 26px);
+    }
+
+    .section{
+        padding:55px 0;
+    }
+
+    .hero{
+        padding:55px 0 80px;
+    }
+
+    .hero h1{
+        font-size:49px;
+    }
+
+    .hero-art{
+        height:270px;
+    }
+
+    .hero-book{
+        font-size:83px;
+    }
+
+    .hero-art strong{
+        font-size:20px;
+    }
+
+    .strategy-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card,
+    .quiz-box,
+    .exam-body{
+        padding:21px;
+    }
+
+    .quiz-question{
+        font-size:22px;
+    }
+
+    .exam-top{
+        padding:22px;
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *:before,
+    *:after{
+        scroll-behavior:auto!important;
+        transition:none!important;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="progress-line" id="scrollProgress"></div>
+
+<!-- HEADER -->
+
+<header class="header">
+<div class="container header-inner">
+
+<a href="index.html" class="brand">
+<span class="brand-icon">🎓</span>
+My English Space
+</a>
+
+<nav class="nav" aria-label="Main navigation">
+<a href="#strategies">Strategies</a>
+<a href="#types">Question Types</a>
+<a href="#missions">Reading Missions</a>
+<a href="#challenge">Challenge</a>
+<a href="MS4-BEM-Preparation.html" class="back">← BEM Centre</a>
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-layout">
+
+<div>
+
+<span class="hero-badge">
+📖 DESTINATION 02 · BEM READING ACADEMY
+</span>
+
+<h1>
+Become a
+<span>Reading Master!</span>
+</h1>
+
+<p>
+Learn to understand texts, find important information, recognise vocabulary in context and answer BEM reading questions with confidence.
+</p>
+
+<div class="hero-actions">
+
+<a href="#strategies" class="btn gold">
+🚀 Start Learning
+</a>
+
+<a href="#missions" class="btn white">
+🎯 Explore Reading Missions
+</a>
+
+</div>
+
+</div>
+
+<div style="position:relative">
+
+<div class="hero-art">
+<div class="hero-book">📖</div>
+<strong>READ · THINK · DISCOVER</strong>
+</div>
+
+<div class="hero-sticker">
+✨ 3 MISSIONS · 21 POINTS
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- QUICK NAV -->
+
+<div class="container quick-wrap">
+
+<nav class="quick">
+
+<a href="#introduction">🌟 Introduction</a>
+<a href="#strategies">🧠 Strategies</a>
+<a href="#types">📚 Question Types</a>
+<a href="#missions">🎯 Missions</a>
+<a href="#challenge">🏆 Challenge</a>
+<a href="#checklist">✅ Progress</a>
+
+</nav>
+
+</div>
+
+<!-- INTRODUCTION -->
+
+<section class="section" id="introduction">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 01 · READING COMPREHENSION
+</span>
+
+<h2>What Does Reading Comprehension Mean?</h2>
+
+<p>
+Reading comprehension is the ability to understand, interpret and use information from a written text.
+</p>
+
+</div>
+
+<div class="intro-grid">
+
+<div class="intro-card">
+
+<div class="icon">🔎</div>
+
+<h3>Understand</h3>
+
+<p>
+Identify the topic, main idea and important details in a passage.
+</p>
+
+</div>
+
+<div class="intro-card">
+
+<div class="icon">🎯</div>
+
+<h3>Find Information</h3>
+
+<p>
+Locate names, dates, places, events and explanations to answer questions accurately.
+</p>
+
+</div>
+
+<div class="intro-card">
+
+<div class="icon">🧠</div>
+
+<h3>Interpret</h3>
+
+<p>
+Understand vocabulary in context, identify references and make reasonable inferences.
+</p>
+
+</div>
+
+</div>
+
+<div class="mark-banner">
+
+<div>
+
+<h3>📊 Reading Is Worth 7 Points</h3>
+
+<p>
+According to the 2018 BEM English examination construction guide, Reading Comprehension includes two comprehension activities and one lexis activity.
+</p>
+
+<p>
+<strong>Activity 1: 3 points · Activity 2: 2 points · Lexis: 2 points</strong>
+</p>
+
+</div>
+
+<div class="mark-number">
+7/20
+</div>
+
+</div>
+
+<div class="note purple">
+
+<strong>About the practice materials:</strong>
+The activity types and marking distribution are based on the supplied BEM guide. The texts and questions in this lesson are original educational examples designed for your MS4 pupils.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- STRATEGIES -->
+
+<section class="section white" id="strategies">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 02 · READING STRATEGIES
+</span>
+
+<h2>The Four Reading Superpowers</h2>
+
+<p>
+Use these strategies to understand passages more effectively and answer examination questions accurately.
+</p>
+
+</div>
+
+<div class="strategy-grid">
+
+<div class="strategy-card">
+
+<div class="strategy-number">01</div>
+
+<h3>Skimming</h3>
+
+<p>
+Read quickly to understand the general topic and main idea.
+</p>
+
+<span class="tip">
+💡 Ask: What is this text mainly about?
+</span>
+
+</div>
+
+<div class="strategy-card">
+
+<div class="strategy-number">02</div>
+
+<h3>Scanning</h3>
+
+<p>
+Search for specific information such as names, dates, places and numbers.
+</p>
+
+<span class="tip">
+💡 Ask: Where can I find this information?
+</span>
+
+</div>
+
+<div class="strategy-card">
+
+<div class="strategy-number">03</div>
+
+<h3>Detailed Reading</h3>
+
+<p>
+Read carefully to understand relationships, explanations and important facts.
+</p>
+
+<span class="tip">
+💡 Ask: What exactly does this sentence mean?
+</span>
+
+</div>
+
+<div class="strategy-card">
+
+<div class="strategy-number">04</div>
+
+<h3>Inference</h3>
+
+<p>
+Use clues in the passage to understand ideas that are not stated directly.
+</p>
+
+<span class="tip">
+💡 Ask: What can I understand from these clues?
+</span>
+
+</div>
+
+</div>
+
+<div class="note green">
+
+<strong>Reading method:</strong>
+First, skim the passage. Next, read the questions. Then, scan for the relevant information. Finally, reread carefully before answering.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- QUESTION TYPES -->
+
+<section class="section soft" id="types">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 03 · BEM QUESTION TYPES
+</span>
+
+<h2>Discover the Reading Activities</h2>
+
+<p>
+These are the main reading activity types identified in the 2018 BEM guide, illustrated with simple examples.
+</p>
+
+</div>
+
+<div class="type-grid">
+
+<div class="type-card">
+
+<h3>01 · Multiple Choice</h3>
+
+<p>
+Choose the correct answer from the proposed options.
+</p>
+
+<div class="example">
+<strong>Text:</strong> Sara joined a charity club to help poor families.<br><br>
+<strong>Question:</strong> Why did Sara join the club?<br>
+a) To travel abroad<br>
+b) To help poor families<br>
+c) To buy new clothes
+</div>
+
+<button class="answer-toggle" type="button">
+👁 Show Answer
+</button>
+
+<div class="answer-content">
+b) To help poor families.
+</div>
+
+</div>
+
+<div class="type-card">
+
+<h3>02 · True / False / Not Mentioned</h3>
+
+<p>
+Decide whether each statement agrees with the text, contradicts it or is not discussed.
+</p>
+
+<div class="example">
+<strong>Text:</strong> Karim visited Constantine in July.<br><br>
+1. Karim visited Constantine.<br>
+2. He travelled in December.<br>
+3. He travelled with his brother.
+</div>
+
+<button class="answer-toggle" type="button">
+👁 Show Answer
+</button>
+
+<div class="answer-content">
+1. True.<br>
+2. False — he travelled in July.<br>
+3. Not mentioned.
+</div>
+
+</div>
+
+<div class="type-card">
+
+<h3>03 · Open Questions</h3>
+
+<p>
+Answer questions beginning with who, what, where, when, why or how.
+</p>
+
+<div class="example">
+<strong>Text:</strong> Lina planted trees to make her neighbourhood greener.<br><br>
+<strong>Question:</strong> Why did Lina plant trees?
+</div>
+
+<button class="answer-toggle" type="button">
+👁 Show Answer
+</button>
+
+<div class="answer-content">
+To make her neighbourhood greener.
+</div>
+
+</div>
+
+<div class="type-card">
+
+<h3>04 · Information Transfer</h3>
+
+<p>
+Complete a table, chart or fact file with information from the text.
+</p>
+
+<div class="example">
+<strong>Text:</strong> The Eiffel Tower is in Paris. It was completed in 1889.<br><br>
+<strong>Complete:</strong><br>
+Location: ______<br>
+Completion year: ______
+</div>
+
+<button class="answer-toggle" type="button">
+👁 Show Answer
+</button>
+
+<div class="answer-content">
+Location: Paris.<br>
+Completion year: 1889.
+</div>
+
+</div>
+
+<div class="type-card">
+
+<h3>05 · Matching</h3>
+
+<p>
+Match headings with paragraphs, dates with events or questions with answers.
+</p>
+
+<div class="example">
+<strong>Match:</strong><br>
+1. 1889 → a. Location<br>
+2. Paris → b. Completion year
+</div>
+
+<button class="answer-toggle" type="button">
+👁 Show Answer
+</button>
+
+<div class="answer-content">
+1 → b<br>
+2 → a
+</div>
+
+</div>
+
+<div class="type-card">
+
+<h3>06 · Main Idea / Best Title</h3>
+
+<p>
+Choose the title or sentence that best summarises the passage.
+</p>
+
+<div class="example">
+<strong>Text:</strong> Pupils cleaned their school, planted flowers and recycled paper.<br><br>
+<strong>Choose:</strong><br>
+a) A Football Match<br>
+b) Caring for Our School<br>
+c) A Family Holiday
+</div>
+
+<button class="answer-toggle" type="button">
+👁 Show Answer
+</button>
+
+<div class="answer-content">
+b) Caring for Our School.
+</div>
+
+</div>
+
+<div class="type-card">
+
+<h3>07 · Pronoun Reference</h3>
+
+<p>
+Identify the person, place or thing represented by a pronoun.
+</p>
+
+<div class="example">
+<strong>Text:</strong> Amira is a talented pupil. She enjoys reading.<br><br>
+<strong>Question:</strong> What does "She" refer to?
+</div>
+
+<button class="answer-toggle" type="button">
+👁 Show Answer
+</button>
+
+<div class="answer-content">
+"She" refers to Amira.
+</div>
+
+</div>
+
+<div class="type-card">
+
+<h3>08 · Synonyms and Opposites</h3>
+
+<p>
+Find words with similar or opposite meanings.
+</p>
+
+<div class="example">
+<strong>Text:</strong> Yasmine is a generous girl. She always helps people.<br><br>
+<strong>Question:</strong> Find a word meaning "willing to give".
+</div>
+
+<button class="answer-toggle" type="button">
+👁 Show Answer
+</button>
+
+<div class="answer-content">
+Generous.
+</div>
+
+</div>
+
+<div class="type-card">
+
+<h3>09 · Listing Information</h3>
+
+<p>
+Identify several details, examples, similarities or differences from the text.
+</p>
+
+<div class="example">
+<strong>Text:</strong> Volunteers collected clothes, prepared meals and cleaned the park.<br><br>
+<strong>Question:</strong> List two activities.
+</div>
+
+<button class="answer-toggle" type="button">
+👁 Show Answer
+</button>
+
+<div class="answer-content">
+Any two:<br>
+Collected clothes.<br>
+Prepared meals.<br>
+Cleaned the park.
+</div>
+
+</div>
+
+<div class="type-card">
+
+<h3>10 · Inference</h3>
+
+<p>
+Use clues in the text to understand something that is not stated directly.
+</p>
+
+<div class="example">
+<strong>Text:</strong> The pupils carried umbrellas and their shoes became wet.<br><br>
+<strong>Question:</strong> What was the weather probably like?
+</div>
+
+<button class="answer-toggle" type="button">
+👁 Show Answer
+</button>
+
+<div class="answer-content">
+It was probably raining. The umbrellas and wet shoes provide clues.
+</div>
+
+</div>
+
+</div>
+
+<div class="note gold">
+
+<strong>Important:</strong>
+The BEM guide recommends that comprehension questions cover the whole text and follow the order in which the relevant information appears. This helps pupils work through the passage logically.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MISSIONS -->
+
+<section class="section white" id="missions">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 04 · PRACTISE READING
+</span>
+
+<h2>Choose Your Reading Mission</h2>
+
+<p>
+Each mission contains an original reading text and BEM-style activities worth 7 points.
+</p>
+
+</div>
+
+<div class="mission-grid">
+
+<div class="mission-card">
+
+<div class="mission-icon">🗼</div>
+
+<span class="mission-label">SEQUENCE 1 · LANDMARKS</span>
+
+<h3>Mission 01</h3>
+
+<p>
+Discover the story of the Eiffel Tower and practise reading for factual information.
+</p>
+
+<div class="mission-score" id="missionScore1">
+🏅 Best score: Not attempted
+</div>
+
+<button class="btn blue" type="button" onclick="openMission(0)">
+🚀 Start Mission
+</button>
+
+</div>
+
+<div class="mission-card">
+
+<div class="mission-icon">👩‍🏫</div>
+
+<span class="mission-label">SEQUENCE 2 · PERSONALITY</span>
+
+<h3>Mission 02</h3>
+
+<p>
+Read about an inspiring teacher and identify character traits, actions and ideas.
+</p>
+
+<div class="mission-score" id="missionScore2">
+🏅 Best score: Not attempted
+</div>
+
+<button class="btn blue" type="button" onclick="openMission(1)">
+🚀 Start Mission
+</button>
+
+</div>
+
+<div class="mission-card">
+
+<div class="mission-icon">🤝</div>
+
+<span class="mission-label">SEQUENCE 3 · CITIZENSHIP</span>
+
+<h3>Mission 03</h3>
+
+<p>
+Explore how young volunteers help their community and become responsible citizens.
+</p>
+
+<div class="mission-score" id="missionScore3">
+🏅 Best score: Not attempted
+</div>
+
+<button class="btn blue" type="button" onclick="openMission(2)">
+🚀 Start Mission
+</button>
+
+</div>
+
+</div>
+
+<div class="note purple">
+<strong>Marking:</strong> Each mission contains three activities: comprehension (3 points), comprehension (2 points) and lexis (2 points). The questions are divided into smaller automatically marked items whose values add up to 7 points.
+</div>
+
+</div>
+
+</section>
+
+<!-- EXAM WORKSPACE -->
+
+<section class="section soft" id="examWorkspace" hidden>
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+INTERACTIVE BEM READING MISSION
+</span>
+
+<h2 id="workspaceHeading">
+Your Reading Mission
+</h2>
+
+<p>
+Read the passage carefully, answer the questions and check your score.
+</p>
+
+</div>
+
+<div class="exam-shell">
+
+<div class="exam-top">
+
+<div>
+<h3 id="examTitle">Reading Mission</h3>
+<p id="examSubtitle">Sequence · Topic</p>
+</div>
+
+<span class="tag">TOTAL: 07 POINTS</span>
+
+</div>
+
+<div class="exam-body">
+
+<div class="exam-layout">
+
+<article class="reading-passage">
+
+<span class="tag">
+📖 READING TEXT
+</span>
+
+<h4 id="passageTitle"></h4>
+
+<div id="passageContent"></div>
+
+<p class="passage-source">
+Source: Original educational passage written for My English Space.
+</p>
+
+</article>
+
+<div class="question-panel" id="missionQuestions"></div>
+
+</div>
+
+<div class="exam-actions">
+
+<button class="btn outline" type="button" onclick="closeMission()">
+← Choose Another Mission
+</button>
+
+<button class="btn blue" type="button" id="checkMissionBtn" onclick="checkMission()">
+✅ Check My Answers
+</button>
+
+</div>
+
+<div class="exam-result" id="examResult" aria-live="polite">
+
+<h3>🎉 Mission Completed!</h3>
+
+<strong id="examResultScore">0/7</strong>
+
+<p id="examResultMessage"></p>
+
+<button class="btn gold" type="button" style="margin-top:18px" onclick="retryMission()">
+🔄 Try Again
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FINAL QUIZ -->
+
+<section class="section white" id="challenge">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 05 · FINAL READING CHALLENGE
+</span>
+
+<h2>Are You a Reading Expert?</h2>
+
+<p>
+Test your understanding of reading strategies and BEM question types.
+</p>
+
+</div>
+
+<div class="quiz-box">
+
+<div id="quizGame">
+
+<div class="quiz-top">
+
+<span id="quizCounter">
+Question 1
+</span>
+
+<span id="quizScore">
+Score: 0
+</span>
+
+</div>
+
+<div class="quiz-track">
+<div class="quiz-fill" id="quizFill"></div>
+</div>
+
+<h3 class="quiz-question" id="quizQuestion"></h3>
+
+<div class="quiz-options" id="quizOptions"></div>
+
+<div class="quiz-feedback" id="quizFeedback" role="status" aria-live="polite"></div>
+
+<div class="quiz-actions">
+
+<button class="btn blue" type="button" id="quizNext" hidden>
+Next Question →
+</button>
+
+</div>
+
+</div>
+
+<div class="quiz-result" id="quizResult">
+
+<div style="font-size:70px">🏆</div>
+
+<h3>Reading Challenge Completed!</h3>
+
+<div class="result-score" id="quizResultScore">0/10</div>
+
+<p class="small" id="quizResultMessage"></p>
+
+<p class="small" id="quizBest" style="margin-top:10px"></p>
+
+<button class="btn gold" type="button" id="restartQuiz" style="margin-top:22px">
+🔄 Try Again
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CHECKLIST -->
+
+<section class="section soft" id="checklist">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+CHAPTER 06 · MY READING PROGRESS
+</span>
+
+<h2>My Reading Mastery Checklist</h2>
+
+<p>
+Tick the skills you have learned. Your progress is saved locally when browser storage is available.
+</p>
+
+</div>
+
+<div class="checklist-layout">
+
+<div class="check-intro">
+
+<h3>🎯 My Reading Journey</h3>
+
+<p>
+Complete each learning goal to strengthen your reading comprehension skills.
+</p>
+
+<div class="check-percent" id="checkPercent">0%</div>
+
+<div class="check-track">
+<div class="check-fill" id="checkFill"></div>
+</div>
+
+<p id="checkCaption" style="margin-top:12px;font-size:11px">
+0 skills completed
+</p>
+
+</div>
+
+<div class="check-items">
+
+<h3>📋 My Learning Goals</h3>
+
+<div id="checklistItems">
+
+<label class="check-label">
+<input type="checkbox">
+<span>I can identify the main idea of a text.</span>
+</label>
+
+<label class="check-label">
+<input type="checkbox">
+<span>I can use skimming and scanning.</span>
+</label>
+
+<label class="check-label">
+<input type="checkbox">
+<span>I can answer comprehension questions.</span>
+</label>
+
+<label class="check-label">
+<input type="checkbox">
+<span>I can distinguish True, False and Not Mentioned.</span>
+</label>
+
+<label class="check-label">
+<input type="checkbox">
+<span>I can complete an information table.</span>
+</label>
+
+<label class="check-label">
+<input type="checkbox">
+<span>I can identify pronoun references.</span>
+</label>
+
+<label class="check-label">
+<input type="checkbox">
+<span>I can find synonyms and opposites.</span>
+</label>
+
+<label class="check-label">
+<input type="checkbox">
+<span>I can make reasonable inferences.</span>
+</label>
+
+<label class="check-label">
+<input type="checkbox">
+<span>I have completed at least one reading mission.</span>
+</label>
+
+<label class="check-label">
+<input type="checkbox">
+<span>I have completed the final reading challenge.</span>
+</label>
+
+</div>
+
+<button class="btn outline" type="button" id="resetChecklist" style="margin-top:13px">
+🔄 Reset My Progress
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FINAL -->
+
+<section class="final">
+
+<div class="container">
+
+<div class="final-box">
+
+<h2>🌟 Keep Going, Reading Champion!</h2>
+
+<p>
+You have explored reading strategies, question types and BEM-style practice texts. Continue your preparation by mastering grammar, vocabulary and pronunciation.
+</p>
+
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+
+<a href="MS4-BEM-Preparation.html" class="btn white">
+← BEM Preparation Centre
+</a>
+
+<a href="MS4-BEM-Language-Lab.html" class="btn gold">
+🧩 Destination 03: Language Lab →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+<strong>MY ENGLISH SPACE</strong><br>
+
+MS4 · BEM Preparation · Destination 02<br>
+
+Reading Comprehension Mastery<br>
+
+Based on the activity typology and marking framework of the October 2018 BEM English examination construction guide<br>
+
+© <span id="year"></span> My English Space<br>
+
+Read · Understand · Practise · Succeed
+
+</footer>
+
+<button class="top-btn" id="topBtn" aria-label="Back to top" type="button">
+↑
+</button>
+
+<script>
+"use strict";
+
+/* =====================================================
+   PAGE FUNCTIONS
+===================================================== */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+const scrollProgress =
+    document.getElementById("scrollProgress");
+
+const topBtn =
+    document.getElementById("topBtn");
+
+function updateScroll(){
+
+    const total =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const percent =
+        total > 0
+            ? window.scrollY / total * 100
+            : 0;
+
+    scrollProgress.style.width = percent + "%";
+
+    topBtn.classList.toggle(
+        "show",
+        window.scrollY > 500
+    );
+
+}
+
+window.addEventListener(
+    "scroll",
+    updateScroll,
+    {passive:true}
+);
+
+window.addEventListener("resize",updateScroll);
+
+topBtn.addEventListener("click",()=>{
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+updateScroll();
+
+/* =====================================================
+   ANSWER REVEAL
+===================================================== */
+
+document.querySelectorAll(".answer-toggle").forEach(button=>{
+
+    button.setAttribute("aria-expanded","false");
+
+    button.addEventListener("click",()=>{
+
+        const answer = button.nextElementSibling;
+
+        const open =
+            answer.classList.toggle("show");
+
+        button.setAttribute(
+            "aria-expanded",
+            String(open)
+        );
+
+        button.textContent = open
+            ? "🙈 Hide Answer"
+            : "👁 Show Answer";
+
+    });
+
+});
+
+/* =====================================================
+   STORAGE HELPERS
+===================================================== */
+
+function getSaved(key,fallback=null){
+
+    try{
+
+        const value = localStorage.getItem(key);
+
+        return value === null
+            ? fallback
+            : JSON.parse(value);
+
+    }catch(error){
+
+        return fallback;
+
+    }
+
+}
+
+function saveData(key,value){
+
+    try{
+
+        localStorage.setItem(
+            key,
+            JSON.stringify(value)
+        );
+
+    }catch(error){
+
+        // The activities remain usable without storage.
+
+    }
+
+}
+
+/* =====================================================
+   READING MISSIONS
+===================================================== */
+
+const missions = [
+
+/* -----------------------------------------------------
+   MISSION 1 · SEQUENCE 1
+----------------------------------------------------- */
+
+{
+    title:"The Eiffel Tower",
+    subtitle:"Sequence 1 · Landmarks and Travelling",
+
+    paragraphs:[
+        "The Eiffel Tower is one of the most famous landmarks in the world. It stands in Paris, the capital of France, and attracts millions of visitors.",
+        "The tower was designed by engineers working for Gustave Eiffel's company. It was built for the 1889 World's Fair and became an important symbol of Paris.",
+        "The tower is about 330 metres tall, including its antenna. It is made mainly of iron and has three levels accessible to visitors.",
+        "Today, tourists visit the Eiffel Tower to admire the views of Paris. Many people take photographs, enjoy the scenery and learn about the monument's history.",
+        "Although some people criticised its unusual appearance when it was first built, the Eiffel Tower eventually became one of France's best-known attractions."
+    ],
+
+    activities:[
+
+        {
+            title:"Activity 1 · Reading Comprehension",
+            marks:3,
+            questions:[
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"Where is the Eiffel Tower located?",
+                    options:[
+                        "London",
+                        "Paris",
+                        "Rome"
+                    ],
+                    answer:1,
+                    explanation:"The first paragraph states that the tower stands in Paris."
+                },
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"Why was the Eiffel Tower originally built?",
+                    options:[
+                        "For the 1889 World's Fair",
+                        "For a football competition",
+                        "For a royal wedding"
+                    ],
+                    answer:0,
+                    explanation:"The second paragraph states that it was built for the 1889 World's Fair."
+                },
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"What is the tower mainly made of?",
+                    options:[
+                        "Wood",
+                        "Glass",
+                        "Iron"
+                    ],
+                    answer:2,
+                    explanation:"The third paragraph says it is made mainly of iron."
+                }
+
+            ]
+        },
+
+        {
+            title:"Activity 2 · Detailed Comprehension",
+            marks:2,
+            questions:[
+
+                {
+                    type:"select",
+                    points:1,
+                    question:"The tower is about 330 metres tall.",
+                    options:[
+                        "True",
+                        "False",
+                        "Not mentioned"
+                    ],
+                    answer:0,
+                    explanation:"The third paragraph gives this approximate height."
+                },
+
+                {
+                    type:"select",
+                    points:1,
+                    question:"Everyone admired the tower when it was first built.",
+                    options:[
+                        "True",
+                        "False",
+                        "Not mentioned"
+                    ],
+                    answer:1,
+                    explanation:"The final paragraph says some people criticised its appearance."
+                }
+
+            ]
+        },
+
+        {
+            title:"Activity 3 · Lexis",
+            marks:2,
+            questions:[
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"Find a word in the text meaning 'well-known'.",
+                    options:[
+                        "Famous",
+                        "Unusual",
+                        "Accessible"
+                    ],
+                    answer:0,
+                    explanation:"Famous means well-known."
+                },
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"Find a word in the text meaning 'people who travel for pleasure'.",
+                    options:[
+                        "Engineers",
+                        "Tourists",
+                        "Critics"
+                    ],
+                    answer:1,
+                    explanation:"Tourists are people who travel for pleasure."
+                }
+
+            ]
+        }
+
+    ]
+},
+
+/* -----------------------------------------------------
+   MISSION 2 · SEQUENCE 2
+----------------------------------------------------- */
+
+{
+    title:"The Teacher Who Inspired Us",
+    subtitle:"Sequence 2 · Personality and Character Traits",
+
+    paragraphs:[
+        "Mrs Salima was an English teacher in a middle school in eastern Algeria. Her pupils admired her because she was patient, friendly and hardworking.",
+        "Every morning, she welcomed her pupils with a warm smile. She believed that every child could improve with encouragement and regular practice.",
+        "When pupils made mistakes, she did not embarrass them. Instead, she explained the lesson again and helped them understand their difficulties.",
+        "Mrs Salima also encouraged creativity. She organised reading clubs, classroom games and small writing competitions to make learning enjoyable.",
+        "Years later, many former pupils still remembered her kindness. Some became teachers themselves because she had inspired them to love learning."
+    ],
+
+    activities:[
+
+        {
+            title:"Activity 1 · Reading Comprehension",
+            marks:3,
+            questions:[
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"What subject did Mrs Salima teach?",
+                    options:[
+                        "English",
+                        "Science",
+                        "History"
+                    ],
+                    answer:0,
+                    explanation:"The first paragraph identifies Mrs Salima as an English teacher."
+                },
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"Why did her pupils admire her?",
+                    options:[
+                        "She was strict and impatient",
+                        "She was patient, friendly and hardworking",
+                        "She never organised activities"
+                    ],
+                    answer:1,
+                    explanation:"These character traits appear in the first paragraph."
+                },
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"What did Mrs Salima do when pupils made mistakes?",
+                    options:[
+                        "She embarrassed them",
+                        "She ignored them",
+                        "She explained the lesson again"
+                    ],
+                    answer:2,
+                    explanation:"The third paragraph says she explained the lesson again."
+                }
+
+            ]
+        },
+
+        {
+            title:"Activity 2 · Detailed Comprehension",
+            marks:2,
+            questions:[
+
+                {
+                    type:"select",
+                    points:1,
+                    question:"Mrs Salima organised reading clubs and classroom games.",
+                    options:[
+                        "True",
+                        "False",
+                        "Not mentioned"
+                    ],
+                    answer:0,
+                    explanation:"These activities are mentioned in the fourth paragraph."
+                },
+
+                {
+                    type:"select",
+                    points:1,
+                    question:"Mrs Salima taught at the same school for exactly thirty years.",
+                    options:[
+                        "True",
+                        "False",
+                        "Not mentioned"
+                    ],
+                    answer:2,
+                    explanation:"The passage does not state how many years she taught at the school."
+                }
+
+            ]
+        },
+
+        {
+            title:"Activity 3 · Lexis",
+            marks:2,
+            questions:[
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"Find a word in the text meaning 'gentleness and care towards others'.",
+                    options:[
+                        "Creativity",
+                        "Kindness",
+                        "Difficulty"
+                    ],
+                    answer:1,
+                    explanation:"Kindness means showing care and consideration for others."
+                },
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"Find a word in the text meaning 'motivated or encouraged'.",
+                    options:[
+                        "Inspired",
+                        "Embarrassed",
+                        "Remembered"
+                    ],
+                    answer:0,
+                    explanation:"Inspired means motivated or encouraged."
+                }
+
+            ]
+        }
+
+    ]
+},
+
+/* -----------------------------------------------------
+   MISSION 3 · SEQUENCE 3
+----------------------------------------------------- */
+
+{
+    title:"Young Citizens, Big Changes",
+    subtitle:"Sequence 3 · Citizenship and Volunteering",
+
+    paragraphs:[
+        "Last spring, a group of middle school pupils started a volunteer club called Helping Hands. Their goal was to make their neighbourhood cleaner and support people in need.",
+        "First, the members organised a recycling campaign at school. They collected paper and plastic bottles and explained why recycling was important.",
+        "Next, they visited an elderly care centre. They talked to the residents, read stories and helped organise enjoyable activities.",
+        "Later, the club worked with local volunteers to collect clothes and school supplies for families who needed assistance.",
+        "The pupils discovered that small actions could make a big difference. They learned to cooperate, respect others and become more responsible citizens.",
+        "Today, Helping Hands continues to organise activities. Its members hope that more young people will join them and contribute to a better community."
+    ],
+
+    activities:[
+
+        {
+            title:"Activity 1 · Reading Comprehension",
+            marks:3,
+            questions:[
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"What was the name of the volunteer club?",
+                    options:[
+                        "Helping Hands",
+                        "Young Travellers",
+                        "Future Artists"
+                    ],
+                    answer:0,
+                    explanation:"The club was called Helping Hands."
+                },
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"What was the club's first activity?",
+                    options:[
+                        "A sports competition",
+                        "A recycling campaign",
+                        "A school trip"
+                    ],
+                    answer:1,
+                    explanation:"The second paragraph describes the recycling campaign."
+                },
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"Where did the pupils go after the recycling campaign?",
+                    options:[
+                        "A museum",
+                        "A shopping centre",
+                        "An elderly care centre"
+                    ],
+                    answer:2,
+                    explanation:"The third paragraph says they visited an elderly care centre."
+                }
+
+            ]
+        },
+
+        {
+            title:"Activity 2 · Detailed Comprehension",
+            marks:2,
+            questions:[
+
+                {
+                    type:"select",
+                    points:1,
+                    question:"The club collected clothes and school supplies for families.",
+                    options:[
+                        "True",
+                        "False",
+                        "Not mentioned"
+                    ],
+                    answer:0,
+                    explanation:"The fourth paragraph mentions collecting these items."
+                },
+
+                {
+                    type:"select",
+                    points:1,
+                    question:"The pupils learned to cooperate and respect others.",
+                    options:[
+                        "True",
+                        "False",
+                        "Not mentioned"
+                    ],
+                    answer:0,
+                    explanation:"The fifth paragraph mentions these values."
+                }
+
+            ]
+        },
+
+        {
+            title:"Activity 3 · Lexis",
+            marks:2,
+            questions:[
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"Find a word in the text meaning 'help'.",
+                    options:[
+                        "Support",
+                        "Discover",
+                        "Continue"
+                    ],
+                    answer:0,
+                    explanation:"Support means help."
+                },
+
+                {
+                    type:"mcq",
+                    points:1,
+                    question:"Find a word in the text meaning 'work together'.",
+                    options:[
+                        "Organise",
+                        "Cooperate",
+                        "Contribute"
+                    ],
+                    answer:1,
+                    explanation:"Cooperate means work together."
+                }
+
+            ]
+        }
+
+    ]
+}
+
+];
+
+/* =====================================================
+   MISSION ENGINE
+===================================================== */
+
+let activeMissionIndex = null;
+let missionChecked = false;
+
+function createElement(tag,className,text){
+
+    const element = document.createElement(tag);
+
+    if(className){
+        element.className = className;
+    }
+
+    if(text !== undefined){
+        element.textContent = text;
+    }
+
+    return element;
+
+}
+
+function openMission(index){
+
+    activeMissionIndex = index;
+    missionChecked = false;
+
+    const mission = missions[index];
+
+    const workspace =
+        document.getElementById("examWorkspace");
+
+    workspace.hidden = false;
+
+    document.getElementById("workspaceHeading").textContent =
+        "Mission " + String(index+1).padStart(2,"0");
+
+    document.getElementById("examTitle").textContent =
+        mission.title;
+
+    document.getElementById("examSubtitle").textContent =
+        mission.subtitle;
+
+    document.getElementById("passageTitle").textContent =
+        mission.title;
+
+    const passage =
+        document.getElementById("passageContent");
+
+    passage.innerHTML = "";
+
+    mission.paragraphs.forEach(paragraph=>{
+
+        passage.appendChild(
+            createElement("p","",paragraph)
+        );
+
+    });
+
+    const questionContainer =
+        document.getElementById("missionQuestions");
+
+    questionContainer.innerHTML = "";
+
+    let questionNumber = 0;
+
+    mission.activities.forEach((activity,activityIndex)=>{
+
+        const heading =
+            createElement(
+                "div",
+                "activity-heading",
+                activity.title
+            );
+
+        const mark =
+            createElement(
+                "span",
+                "",
+                activity.marks + " pts"
+            );
+
+        heading.appendChild(mark);
+
+        questionContainer.appendChild(heading);
+
+        activity.questions.forEach((question,questionIndex)=>{
+
+            questionNumber++;
+
+            const box =
+                createElement(
+                    "div",
+                    "question-box"
+                );
+
+            box.dataset.activity = activityIndex;
+            box.dataset.question = questionIndex;
+
+            const title =
+                createElement(
+                    "h4",
+                    "",
+                    questionNumber + ". " + question.question
+                );
+
+            box.appendChild(title);
+
+            const options =
+                createElement(
+                    "div",
+                    "options"
+                );
+
+            question.options.forEach((option,optionIndex)=>{
+
+                const label =
+                    createElement(
+                        "label",
+                        "radio-option"
+                    );
+
+                const input =
+                    document.createElement("input");
+
+                input.type = "radio";
+
+                input.name =
+                    "mission_" + activityIndex +
+                    "_" + questionIndex;
+
+                input.value = optionIndex;
+
+                const text =
+                    createElement(
+                        "span",
+                        "",
+                        option
+                    );
+
+                label.append(input,text);
+
+                options.appendChild(label);
+
+            });
+
+            box.appendChild(options);
+
+            const feedback =
+                createElement(
+                    "div",
+                    "question-feedback"
+                );
+
+            feedback.setAttribute("role","status");
+
+            box.appendChild(feedback);
+
+            questionContainer.appendChild(box);
+
+        });
+
+    });
+
+    document.getElementById("examResult").style.display =
+        "none";
+
+    document.getElementById("checkMissionBtn").disabled =
+        false;
+
+    document.getElementById("checkMissionBtn").textContent =
+        "✅ Check My Answers";
+
+    workspace.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+
+}
+
+function checkMission(){
+
+    if(activeMissionIndex === null || missionChecked){
+        return;
+    }
+
+    const mission = missions[activeMissionIndex];
+
+    let total = 0;
+    let earned = 0;
+
+    const boxes =
+        document.querySelectorAll(
+            "#missionQuestions .question-box"
+        );
+
+    let boxIndex = 0;
+
+    mission.activities.forEach(activity=>{
+
+        activity.questions.forEach(question=>{
+
+            total += question.points;
+
+            const box = boxes[boxIndex++];
+
+            const selected =
+                box.querySelector(
+                    'input[type="radio"]:checked'
+                );
+
+            const feedback =
+                box.querySelector(".question-feedback");
+
+            const correct =
+                selected &&
+                Number(selected.value) === question.answer;
+
+            if(correct){
+                earned += question.points;
+            }
+
+            feedback.className =
+                "question-feedback show " +
+                (correct ? "correct" : "wrong");
+
+            feedback.textContent =
+                (correct ? "✓ Correct! " : "✗ Not quite. ") +
+                question.explanation;
+
+            box.querySelectorAll("input").forEach(input=>{
+                input.disabled = true;
+            });
+
+        });
+
+    });
+
+    missionChecked = true;
+
+    const result =
+        document.getElementById("examResult");
+
+    result.style.display = "block";
+
+    document.getElementById("examResultScore").textContent =
+        earned + "/" + total;
+
+    let message;
+
+    if(earned === total){
+
+        message =
+            "Outstanding! You answered every question correctly.";
+
+    }else if(earned >= 5){
+
+        message =
+            "Excellent reading! Review the corrections to improve further.";
+
+    }else if(earned >= 3){
+
+        message =
+            "Good effort! Read the passage again and study the explanations.";
+
+    }else{
+
+        message =
+            "Keep practising! Use skimming, scanning and careful reading.";
+
+    }
+
+    document.getElementById("examResultMessage").textContent =
+        message;
+
+    document.getElementById("checkMissionBtn").disabled =
+        true;
+
+    document.getElementById("checkMissionBtn").textContent =
+        "✓ Mission Checked";
+
+    const key =
+        "MS4_BEM_READING_MISSION_" + activeMissionIndex;
+
+    const previous =
+        Number(getSaved(key,0));
+
+    saveData(
+        key,
+        Math.max(previous,earned)
+    );
+
+    updateMissionScores();
+
+    result.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+function closeMission(){
+
+    document.getElementById("examWorkspace").hidden =
+        true;
+
+    activeMissionIndex = null;
+
+    document.getElementById("missions").scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+function retryMission(){
+
+    if(activeMissionIndex !== null){
+        openMission(activeMissionIndex);
+    }
+
+}
+
+function updateMissionScores(){
+
+    missions.forEach((mission,index)=>{
+
+        const saved =
+            getSaved(
+                "MS4_BEM_READING_MISSION_" + index,
+                null
+            );
+
+        const element =
+            document.getElementById(
+                "missionScore" + (index+1)
+            );
+
+        element.textContent =
+            saved === null
+                ? "🏅 Best score: Not attempted"
+                : "🏅 Best score: " + saved + "/7";
+
+    });
+
+}
+
+updateMissionScores();
+
+/* =====================================================
+   FINAL READING QUIZ
+===================================================== */
+
+const quizQuestions = [
+
+{
+    q:"Which reading strategy helps you understand the general idea quickly?",
+    options:[
+        "Skimming",
+        "Scanning",
+        "Copying",
+        "Guessing"
+    ],
+    answer:0,
+    explanation:"Skimming helps you identify the general topic and main idea."
+},
+
+{
+    q:"Which strategy helps you find a specific date in a text?",
+    options:[
+        "Memorising",
+        "Scanning",
+        "Rewriting",
+        "Translating"
+    ],
+    answer:1,
+    explanation:"Scanning is used to locate specific information."
+},
+
+{
+    q:"What does 'Not mentioned' mean?",
+    options:[
+        "The statement is false",
+        "The statement is true",
+        "The text does not provide the information",
+        "The sentence contains a spelling mistake"
+    ],
+    answer:2,
+    explanation:"Not mentioned means the information is not provided in the passage."
+},
+
+{
+    q:"What should you do before answering a reading question?",
+    options:[
+        "Invent an answer",
+        "Find relevant evidence in the text",
+        "Ignore the passage",
+        "Choose the longest option"
+    ],
+    answer:1,
+    explanation:"Good answers should be supported by information in the text."
+},
+
+{
+    q:"Which question asks for pronoun reference?",
+    options:[
+        "When was the monument built?",
+        "What does 'she' refer to?",
+        "Choose the correct verb",
+        "Classify the vowel sounds"
+    ],
+    answer:1,
+    explanation:"Pronoun-reference questions ask what a pronoun represents."
+},
+
+{
+    q:"What is a synonym?",
+    options:[
+        "A word with a similar meaning",
+        "A word with an opposite meaning",
+        "A punctuation mark",
+        "A grammatical tense"
+    ],
+    answer:0,
+    explanation:"Synonyms are words with similar meanings."
+},
+
+{
+    q:"What is an antonym?",
+    options:[
+        "A word with the same spelling",
+        "A word with an opposite meaning",
+        "A type of paragraph",
+        "A pronunciation symbol"
+    ],
+    answer:1,
+    explanation:"Antonyms are words with opposite meanings."
+},
+
+{
+    q:"Which activity involves completing a table from a text?",
+    options:[
+        "Information transfer",
+        "Sentence transformation",
+        "Punctuation",
+        "Pronunciation"
+    ],
+    answer:0,
+    explanation:"Information-transfer activities require moving details from a text into another format."
+},
+
+{
+    q:"What is inference?",
+    options:[
+        "Copying every sentence",
+        "Understanding an idea from clues",
+        "Ignoring unfamiliar words",
+        "Reading only the title"
+    ],
+    answer:1,
+    explanation:"Inference means using evidence and clues to understand an implied idea."
+},
+
+{
+    q:"How many points are allocated to Reading Comprehension in the 2018 BEM guide?",
+    options:[
+        "3",
+        "5",
+        "7",
+        "10"
+    ],
+    answer:2,
+    explanation:"Reading Comprehension is worth 7 points: 3 + 2 + 2."
+}
+
+];
+
+let quizIndex = 0;
+let quizScore = 0;
+let quizAnswered = false;
+
+const quizQuestionElement =
+    document.getElementById("quizQuestion");
+
+const quizOptionsElement =
+    document.getElementById("quizOptions");
+
+const quizFeedbackElement =
+    document.getElementById("quizFeedback");
+
+const quizNextButton =
+    document.getElementById("quizNext");
+
+function showQuizQuestion(){
+
+    quizAnswered = false;
+
+    const question =
+        quizQuestions[quizIndex];
+
+    quizQuestionElement.textContent =
+        question.q;
+
+    quizOptionsElement.innerHTML = "";
+
+    quizFeedbackElement.className =
+        "quiz-feedback";
+
+    quizFeedbackElement.textContent = "";
+
+    quizNextButton.hidden = true;
+
+    document.getElementById("quizCounter").textContent =
+        "Question " + (quizIndex+1) +
+        " of " + quizQuestions.length;
+
+    document.getElementById("quizScore").textContent =
+        "Score: " + quizScore;
+
+    document.getElementById("quizFill").style.width =
+        (quizIndex / quizQuestions.length * 100) + "%";
+
+    question.options.forEach((option,index)=>{
+
+        const button =
+            document.createElement("button");
+
+        button.type = "button";
+
+        button.className =
+            "quiz-option";
+
+        button.textContent =
+            String.fromCharCode(65+index) +
+            ". " + option;
+
+        button.addEventListener("click",()=>{
+            checkQuizAnswer(index);
+        });
+
+        quizOptionsElement.appendChild(button);
+
+    });
+
+}
+
+function checkQuizAnswer(index){
+
+    if(quizAnswered){
+        return;
+    }
+
+    quizAnswered = true;
+
+    const question =
+        quizQuestions[quizIndex];
+
+    const buttons =
+        quizOptionsElement.querySelectorAll("button");
+
+    buttons.forEach((button,i)=>{
+
+        button.disabled = true;
+
+        if(i === question.answer){
+            button.classList.add("correct");
+        }
+
+        if(i === index && index !== question.answer){
+            button.classList.add("wrong");
+        }
+
+    });
+
+    if(index === question.answer){
+
+        quizScore++;
+
+        quizFeedbackElement.className =
+            "quiz-feedback show good";
+
+        quizFeedbackElement.textContent =
+            "🌟 Correct! " + question.explanation;
+
+    }else{
+
+        quizFeedbackElement.className =
+            "quiz-feedback show bad";
+
+        quizFeedbackElement.textContent =
+            "💡 Review this point. " + question.explanation;
+
+    }
+
+    document.getElementById("quizScore").textContent =
+        "Score: " + quizScore;
+
+    document.getElementById("quizFill").style.width =
+        ((quizIndex+1) / quizQuestions.length * 100) + "%";
+
+    quizNextButton.textContent =
+        quizIndex === quizQuestions.length-1
+            ? "🏆 See My Results"
+            : "Next Question →";
+
+    quizNextButton.hidden = false;
+
+}
+
+quizNextButton.addEventListener("click",()=>{
+
+    if(!quizAnswered){
+        return;
+    }
+
+    quizIndex++;
+
+    if(quizIndex < quizQuestions.length){
+
+        showQuizQuestion();
+
+    }else{
+
+        showQuizResults();
+
+    }
+
+});
+
+function showQuizResults(){
+
+    document.getElementById("quizGame").style.display =
+        "none";
+
+    document.getElementById("quizResult").style.display =
+        "block";
+
+    document.getElementById("quizResultScore").textContent =
+        quizScore + "/" + quizQuestions.length;
+
+    let message;
+
+    if(quizScore === quizQuestions.length){
+
+        message =
+            "Outstanding! You have mastered the reading strategies and question types.";
+
+    }else if(quizScore >= 8){
+
+        message =
+            "Excellent! You understand most reading strategies.";
+
+    }else if(quizScore >= 5){
+
+        message =
+            "Good progress! Review the guide and practise again.";
+
+    }else{
+
+        message =
+            "Keep learning! Explore the strategies and question types again.";
+
+    }
+
+    document.getElementById("quizResultMessage").textContent =
+        message;
+
+    const oldBest =
+        Number(getSaved("MS4_BEM_READING_QUIZ_BEST",0));
+
+    const best =
+        Math.max(oldBest,quizScore);
+
+    saveData(
+        "MS4_BEM_READING_QUIZ_BEST",
+        best
+    );
+
+    document.getElementById("quizBest").textContent =
+        "🏅 Best score on this device: " +
+        best + "/" + quizQuestions.length;
+
+}
+
+document.getElementById("restartQuiz")
+.addEventListener("click",()=>{
+
+    quizIndex = 0;
+    quizScore = 0;
+    quizAnswered = false;
+
+    document.getElementById("quizGame").style.display =
+        "block";
+
+    document.getElementById("quizResult").style.display =
+        "none";
+
+    showQuizQuestion();
+
+});
+
+/* =====================================================
+   PERSONAL CHECKLIST
+===================================================== */
+
+const CHECK_KEY =
+    "MS4_BEM_READING_CHECKLIST_V2";
+
+const boxes = Array.from(
+    document.querySelectorAll(
+        '#checklistItems input[type="checkbox"]'
+    )
+);
+
+function updateChecklist(){
+
+    const completed =
+        boxes.filter(box=>box.checked).length;
+
+    const percent =
+        Math.round(completed / boxes.length * 100);
+
+    document.getElementById("checkPercent").textContent =
+        percent + "%";
+
+    document.getElementById("checkFill").style.width =
+        percent + "%";
+
+    document.getElementById("checkCaption").textContent =
+        completed + " of " + boxes.length +
+        " learning goals completed";
+
+}
+
+function saveChecklist(){
+
+    saveData(
+        CHECK_KEY,
+        boxes.map(box=>box.checked)
+    );
+
+    updateChecklist();
+
+}
+
+function loadChecklist(){
+
+    const saved =
+        getSaved(CHECK_KEY,[]);
+
+    boxes.forEach((box,index)=>{
+
+        box.checked =
+            saved[index] === true;
+
+    });
+
+    updateChecklist();
+
+}
+
+boxes.forEach(box=>{
+
+    box.addEventListener(
+        "change",
+        saveChecklist
+    );
+
+});
+
+document.getElementById("resetChecklist")
+.addEventListener("click",()=>{
+
+    if(!confirm("Reset your reading progress?")){
+        return;
+    }
+
+    boxes.forEach(box=>{
+        box.checked = false;
+    });
+
+    saveChecklist();
+
+});
+
+/* =====================================================
+   INITIALISE
+===================================================== */
+
+showQuizQuestion();
+loadChecklist();
+
+</script>
+
+</body>
+</html>

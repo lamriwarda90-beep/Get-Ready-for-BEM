@@ -1,0 +1,4732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#064e3b">
+
+<title>Checkpoint 01 | Past Simple Passive — My English Space</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================
+   DESIGN SYSTEM
+========================================== */
+
+:root{
+  --forest:#064e3b;
+  --deep:#043c2e;
+  --emerald:#059669;
+  --green:#10b981;
+  --mint:#d1fae5;
+  --pale:#ecfdf5;
+  --cream:#f8faf7;
+  --white:#ffffff;
+  --ink:#16352d;
+  --muted:#647d74;
+  --border:#dcebe4;
+  --blue:#3b82f6;
+  --amber:#f59e0b;
+  --rose:#ef6277;
+  --purple:#8b5cf6;
+  --shadow:0 10px 35px rgba(4,78,59,.07);
+  --shadow-lg:0 25px 65px rgba(3,52,39,.16);
+}
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:20px;
+  max-width:100%;
+}
+
+body{
+  margin:0;
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+  font-family:"DM Sans",Arial,sans-serif;
+  color:var(--ink);
+  background:#f4f8f5;
+  line-height:1.65;
+  -webkit-text-size-adjust:100%;
+}
+
+button,
+input,
+textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+  outline:3px solid #34d399;
+  outline-offset:3px;
+}
+
+a{
+  text-decoration:none;
+}
+
+h1,h2,h3,h4{
+  font-family:"Outfit",Arial,sans-serif;
+  line-height:1.2;
+  overflow-wrap:break-word;
+}
+
+p,
+li,
+strong,
+small{
+  overflow-wrap:break-word;
+}
+
+.page{
+  width:100%;
+  max-width:100%;
+  min-height:100vh;
+  overflow-x:clip;
+}
+
+/* ==========================================
+   TOP NAVIGATION
+========================================== */
+
+.topbar{
+  background:var(--deep);
+  color:white;
+  padding:14px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+  font-family:"Outfit",sans-serif;
+  font-weight:900;
+  font-size:1.08rem;
+  letter-spacing:.2px;
+}
+
+.brand-logo{
+  width:44px;
+  height:44px;
+  flex-shrink:0;
+  background:linear-gradient(135deg,#34d399,#059669);
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  font-size:1.4rem;
+  box-shadow:0 5px 15px rgba(16,185,129,.3);
+}
+
+.brand small{
+  display:block;
+  font-family:"DM Sans",sans-serif;
+  font-weight:500;
+  font-size:.71rem;
+  opacity:.7;
+}
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-shrink:0;
+}
+
+.nav-pill{
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.15);
+  color:white;
+  border-radius:50px;
+  padding:9px 15px;
+  font-size:.8rem;
+  font-weight:700;
+}
+
+.nav-btn{
+  background:var(--green);
+  border:0;
+  color:#043c2e;
+  border-radius:11px;
+  padding:10px 16px;
+  font-weight:800;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(
+      circle at 82% 35%,
+      rgba(52,211,153,.22),
+      transparent 35%
+    ),
+    linear-gradient(125deg,#064e3b,#076b50 65%,#059669);
+
+  color:white;
+  padding:75px 5% 85px;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:430px;
+  height:430px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:50%;
+  right:-100px;
+  top:-140px;
+  pointer-events:none;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:50%;
+  right:70px;
+  top:-80px;
+  pointer-events:none;
+}
+
+.hero-inner{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);
+  align-items:center;
+  gap:45px;
+  position:relative;
+  z-index:2;
+}
+
+.hero-inner > div{
+  min-width:0;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  max-width:100%;
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:50px;
+  padding:8px 15px;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  font-size:clamp(2.9rem,6vw,5.5rem);
+  font-weight:900;
+  letter-spacing:-2px;
+  margin:23px 0;
+  line-height:1.03;
+}
+
+.hero h1 span{
+  color:#a7f3d0;
+}
+
+.hero-desc{
+  color:#d4f5e7;
+  max-width:650px;
+  font-size:1.05rem;
+  line-height:1.85;
+}
+
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:25px;
+}
+
+.hero-tag{
+  padding:8px 13px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:10px;
+  font-size:.8rem;
+  font-weight:700;
+}
+
+.hero-visual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+}
+
+.grammar-card{
+  width:100%;
+  max-width:370px;
+  background:white;
+  border-radius:25px;
+  padding:28px;
+  box-shadow:var(--shadow-lg);
+  color:var(--ink);
+  transform:rotate(2deg);
+  position:relative;
+}
+
+.grammar-card::before{
+  content:"";
+  position:absolute;
+  width:90px;
+  height:90px;
+  border-radius:22px;
+  background:#fcd34d;
+  right:-15px;
+  top:-20px;
+  transform:rotate(18deg);
+  z-index:-1;
+}
+
+.grammar-card-label{
+  color:var(--emerald);
+  font-weight:900;
+  font-size:.72rem;
+  letter-spacing:1.3px;
+  text-transform:uppercase;
+}
+
+.grammar-card h3{
+  margin:12px 0 20px;
+  font-size:1.55rem;
+}
+
+.formula-pieces{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px;
+}
+
+.piece{
+  border-radius:10px;
+  padding:11px 13px;
+  font-weight:900;
+  font-size:.86rem;
+}
+
+.p-subject{
+  background:#d1fae5;
+  color:#065f46;
+}
+
+.p-aux{
+  background:#dbeafe;
+  color:#1d4ed8;
+}
+
+.p-v3{
+  background:#fef3c7;
+  color:#92400e;
+}
+
+.p-agent{
+  background:#ffe4e6;
+  color:#be123c;
+}
+
+.plus{
+  color:#9ca3af;
+  font-weight:900;
+}
+
+.grammar-card-example{
+  margin-top:22px;
+  padding:16px;
+  border-radius:13px;
+  background:#f0fdf4;
+  font-size:.87rem;
+  font-weight:700;
+  line-height:1.9;
+  overflow-wrap:break-word;
+}
+
+.card-stamp{
+  display:inline-block;
+  margin-top:13px;
+  color:#059669;
+  font-size:.75rem;
+  font-weight:900;
+}
+
+/* ==========================================
+   MAIN LAYOUT
+========================================== */
+
+.layout{
+  max-width:1200px;
+  width:100%;
+  margin:-35px auto 60px;
+  padding:0 20px;
+  position:relative;
+  z-index:3;
+
+  display:grid;
+  grid-template-columns:240px minmax(0,1fr);
+  gap:24px;
+  align-items:start;
+}
+
+.sidebar{
+  min-width:0;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:22px 16px;
+  position:sticky;
+  top:20px;
+  box-shadow:var(--shadow);
+}
+
+.sidebar-heading{
+  padding:0 12px 12px;
+  color:var(--muted);
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+.mobile-menu-toggle{
+  display:none;
+}
+
+.side-links{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+
+.side-link{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:11px 12px;
+  border-radius:11px;
+  color:#48665b;
+  font-size:.81rem;
+  font-weight:750;
+  transition:.2s;
+  min-width:0;
+}
+
+.side-link:hover{
+  background:var(--pale);
+  color:var(--forest);
+}
+
+.side-num{
+  width:26px;
+  height:26px;
+  border-radius:8px;
+  background:#eef5f0;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  font-size:.7rem;
+  font-weight:900;
+}
+
+.sidebar-progress{
+  margin-top:23px;
+  padding:17px;
+  border-radius:15px;
+  background:var(--pale);
+}
+
+.sidebar-progress strong{
+  display:block;
+  font-size:.8rem;
+  margin-bottom:9px;
+}
+
+.progress-track{
+  height:9px;
+  background:#d3e9dc;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#059669,#34d399);
+  border-radius:20px;
+  transition:width .5s ease;
+}
+
+.progress-caption{
+  margin-top:8px;
+  color:var(--emerald);
+  font-size:.74rem;
+  font-weight:900;
+}
+
+/* ==========================================
+   LESSON SECTIONS
+========================================== */
+
+.content{
+  min-width:0;
+  width:100%;
+}
+
+.lesson-section{
+  width:100%;
+  min-width:0;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:23px;
+  padding:35px;
+  margin-bottom:22px;
+  box-shadow:var(--shadow);
+  scroll-margin-top:20px;
+}
+
+.section-top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:10px;
+}
+
+.step-bubble{
+  width:43px;
+  height:43px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:var(--pale);
+  color:var(--emerald);
+  font-family:"Outfit",sans-serif;
+  font-size:1.1rem;
+  font-weight:900;
+}
+
+.step-label{
+  color:var(--emerald);
+  font-size:.71rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1.1px;
+}
+
+.lesson-section h2{
+  font-size:clamp(1.55rem,3vw,2.15rem);
+  margin:8px 0 11px;
+  font-weight:900;
+  letter-spacing:-.5px;
+}
+
+.intro{
+  color:var(--muted);
+  font-size:.93rem;
+  margin-bottom:25px;
+}
+
+.level{
+  display:inline-block;
+  padding:5px 11px;
+  border-radius:30px;
+  font-size:.68rem;
+  font-weight:900;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.lots{
+  background:#dbeafe;
+  color:#1d4ed8;
+}
+
+.apply{
+  background:#fef3c7;
+  color:#92400e;
+}
+
+.analyse{
+  background:#ffe4e6;
+  color:#be123c;
+}
+
+.hots{
+  background:#ede9fe;
+  color:#6d28d9;
+}
+
+/* ==========================================
+   DISCOVERY
+========================================== */
+
+.discovery-box{
+  width:100%;
+  min-width:0;
+  background:linear-gradient(135deg,#f0fdf4,#ecfdf5);
+  border:1px solid #bbf7d0;
+  border-radius:19px;
+  padding:25px;
+}
+
+.discovery-title{
+  color:var(--forest);
+  font-size:.75rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:17px;
+}
+
+.sentence{
+  display:block;
+  width:100%;
+  min-width:0;
+  background:white;
+  padding:17px;
+  border-radius:13px;
+  border:1px solid #d9efe1;
+  font-weight:800;
+  font-size:1rem;
+  line-height:2.2;
+  margin:11px 0;
+
+  white-space:normal;
+  overflow-wrap:break-word;
+  word-wrap:break-word;
+}
+
+.sentence span{
+  white-space:normal;
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone;
+}
+
+.hl-subject{
+  background:#d1fae5;
+  color:#065f46;
+  border-radius:6px;
+  padding:3px 6px;
+}
+
+.hl-aux{
+  background:#dbeafe;
+  color:#1d4ed8;
+  border-radius:6px;
+  padding:3px 6px;
+}
+
+.hl-v3{
+  background:#fef3c7;
+  color:#92400e;
+  border-radius:6px;
+  padding:3px 6px;
+}
+
+.hl-agent{
+  background:#ffe4e6;
+  color:#be123c;
+  border-radius:6px;
+  padding:3px 6px;
+}
+
+.legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:20px;
+}
+
+.legend span{
+  font-size:.73rem;
+  font-weight:800;
+}
+
+.notice{
+  width:100%;
+  min-width:0;
+  margin-top:20px;
+  background:#fffbeb;
+  border:1px solid #fde68a;
+  border-left:5px solid #f59e0b;
+  padding:20px;
+  border-radius:13px;
+  font-size:.9rem;
+  line-height:1.9;
+  overflow-wrap:break-word;
+}
+
+.notice strong{
+  color:#92400e;
+}
+
+/* ==========================================
+   RULES
+========================================== */
+
+.main-rule{
+  background:linear-gradient(135deg,#064e3b,#047857);
+  border-radius:19px;
+  padding:28px;
+  color:white;
+  margin-bottom:20px;
+  min-width:0;
+}
+
+.main-rule h3{
+  font-size:1.3rem;
+  margin:0 0 12px;
+}
+
+.main-rule p{
+  color:#d1fae5;
+}
+
+.big-formula{
+  background:rgba(255,255,255,.12);
+  border:1px dashed rgba(255,255,255,.4);
+  border-radius:13px;
+  padding:19px;
+  text-align:center;
+  font-family:"Outfit",sans-serif;
+  font-size:clamp(.95rem,2vw,1.3rem);
+  font-weight:900;
+  margin:18px 0;
+
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+
+.rule-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+}
+
+.rule-card{
+  min-width:0;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:21px;
+  background:#fff;
+  border-top:4px solid var(--emerald);
+}
+
+.rule-card.blue{
+  border-top-color:var(--blue);
+}
+
+.rule-card.amber{
+  border-top-color:var(--amber);
+}
+
+.rule-card.rose{
+  border-top-color:var(--rose);
+}
+
+.rule-card h3{
+  margin:0 0 10px;
+  font-size:1.13rem;
+}
+
+.rule-card p{
+  color:var(--muted);
+  font-size:.87rem;
+}
+
+.rule-formula{
+  display:inline-block;
+  max-width:100%;
+  background:var(--pale);
+  color:var(--forest);
+  border-radius:8px;
+  padding:8px 11px;
+  font-weight:900;
+  font-size:.78rem;
+  margin:5px 0 12px;
+  overflow-wrap:anywhere;
+}
+
+.example{
+  background:#f8faf9;
+  border-radius:9px;
+  padding:11px;
+  font-size:.84rem;
+  margin-top:8px;
+  overflow-wrap:break-word;
+}
+
+/* ==========================================
+   GRAMMAR TABLE
+========================================== */
+
+.table-wrap{
+  width:100%;
+  max-width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  margin-top:20px;
+  border-radius:13px;
+  border:1px solid var(--border);
+}
+
+.verb-table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:450px;
+  font-size:.87rem;
+}
+
+.verb-table th{
+  background:var(--forest);
+  color:white;
+  text-align:left;
+  padding:13px 17px;
+}
+
+.verb-table td{
+  padding:12px 17px;
+  border-bottom:1px solid var(--border);
+}
+
+.verb-table tr:nth-child(even){
+  background:#f3faf6;
+}
+
+/* ==========================================
+   TRANSFORMATION
+========================================== */
+
+.transform-box{
+  width:100%;
+  min-width:0;
+  background:#f5fbf7;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:24px;
+}
+
+.transform-sentence{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:22px;
+  text-align:center;
+  font-size:1.05rem;
+  font-weight:800;
+  overflow-wrap:break-word;
+}
+
+.transform-label{
+  display:inline-block;
+  font-size:.7rem;
+  letter-spacing:1px;
+  color:var(--emerald);
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+.transform-arrow{
+  text-align:center;
+  font-size:2rem;
+  color:var(--emerald);
+  padding:8px;
+}
+
+.transform-steps{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin-top:19px;
+}
+
+.transform-step{
+  min-width:0;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:11px;
+  padding:15px;
+  text-align:center;
+  font-size:.78rem;
+}
+
+.transform-step strong{
+  display:block;
+  font-size:1.2rem;
+  color:var(--emerald);
+  margin-bottom:7px;
+}
+
+/* ==========================================
+   QUIZZES
+========================================== */
+
+.question{
+  width:100%;
+  min-width:0;
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  margin-bottom:14px;
+  background:#fff;
+}
+
+.question-text{
+  font-weight:850;
+  font-size:.96rem;
+  margin-bottom:14px;
+  overflow-wrap:break-word;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:9px;
+}
+
+.option{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  width:100%;
+  min-width:0;
+  min-height:48px;
+  padding:13px 15px;
+  border:1.5px solid #e1ebe5;
+  border-radius:11px;
+  background:#fafcfb;
+  color:var(--ink);
+  text-align:left;
+  font-size:.88rem;
+  font-weight:650;
+  line-height:1.5;
+  transition:.2s;
+
+  white-space:normal;
+  overflow-wrap:break-word;
+}
+
+.option::before{
+  content:"";
+  width:18px;
+  height:18px;
+  border:2px solid #b8cfc2;
+  border-radius:50%;
+  flex-shrink:0;
+}
+
+.option:not(:disabled):hover{
+  border-color:var(--emerald);
+  background:var(--pale);
+  transform:translateX(3px);
+}
+
+.option.correct{
+  background:#dcfce7;
+  border-color:#22c55e;
+  color:#166534;
+}
+
+.option.correct::before{
+  content:"✓";
+  display:grid;
+  place-items:center;
+  background:#22c55e;
+  border-color:#22c55e;
+  color:white;
+  font-size:.7rem;
+}
+
+.option.wrong{
+  background:#fff1f2;
+  border-color:#fb7185;
+  color:#9f1239;
+}
+
+.option.wrong::before{
+  content:"×";
+  display:grid;
+  place-items:center;
+  background:#fb7185;
+  border-color:#fb7185;
+  color:white;
+}
+
+.option:disabled{
+  cursor:default;
+}
+
+.feedback{
+  display:none;
+  margin-top:12px;
+  padding:12px 15px;
+  background:#f0fdf4;
+  color:#166534;
+  border-radius:9px;
+  font-size:.85rem;
+  font-weight:700;
+}
+
+.feedback.show{
+  display:block;
+}
+
+.quiz-summary{
+  margin-top:15px;
+  padding:15px;
+  border-radius:12px;
+  background:var(--pale);
+  color:var(--forest);
+  font-weight:850;
+  display:none;
+}
+
+.quiz-summary.show{
+  display:block;
+}
+
+/* ==========================================
+   FILL IN THE BLANKS
+========================================== */
+
+.fill-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:12px;
+}
+
+.fill-item{
+  background:#f8fbf9;
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:17px;
+  font-size:.91rem;
+  font-weight:700;
+  line-height:2.2;
+  overflow-wrap:break-word;
+}
+
+.fill-input{
+  width:130px;
+  max-width:100%;
+  border:0;
+  border-bottom:2px solid var(--emerald);
+  background:white;
+  padding:7px;
+  text-align:center;
+  color:var(--forest);
+  font-weight:900;
+  border-radius:5px 5px 0 0;
+}
+
+.fill-input.correct{
+  background:#dcfce7;
+  border-color:#16a34a;
+}
+
+.fill-input.wrong{
+  background:#ffe4e6;
+  border-color:#e11d48;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:46px;
+  border:0;
+  border-radius:11px;
+  padding:13px 20px;
+  font-weight:900;
+  font-size:.88rem;
+  text-align:center;
+  transition:.2s;
+}
+
+.btn-primary{
+  background:var(--emerald);
+  color:white;
+  box-shadow:0 6px 15px rgba(5,150,105,.2);
+}
+
+.btn-primary:hover{
+  background:#047857;
+  transform:translateY(-2px);
+}
+
+.btn-secondary{
+  background:white;
+  color:var(--forest);
+  border:1px solid #b7d8c8;
+}
+
+.btn-secondary:hover{
+  background:var(--pale);
+}
+
+.result{
+  margin-top:14px;
+  font-size:.88rem;
+  font-weight:850;
+}
+
+/* ==========================================
+   FACT FILE
+========================================== */
+
+.fact-file{
+  border:1px solid var(--border);
+  border-radius:19px;
+  overflow:hidden;
+  margin:20px 0;
+  min-width:0;
+}
+
+.fact-header{
+  display:flex;
+  align-items:center;
+  gap:17px;
+  padding:25px;
+  background:linear-gradient(110deg,#064e3b,#059669);
+  color:white;
+}
+
+.fact-icon{
+  width:64px;
+  height:64px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  border-radius:17px;
+  background:rgba(255,255,255,.16);
+  font-size:2.3rem;
+}
+
+.fact-header small{
+  font-size:.69rem;
+  letter-spacing:1px;
+  font-weight:900;
+  opacity:.75;
+}
+
+.fact-header h3{
+  margin:5px 0 0;
+  font-size:1.7rem;
+}
+
+.fact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+
+.fact-item{
+  min-width:0;
+  padding:20px;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.fact-item .emoji{
+  font-size:1.35rem;
+  flex-shrink:0;
+}
+
+.fact-item small{
+  display:block;
+  color:var(--muted);
+  font-size:.68rem;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.fact-item strong{
+  font-size:.86rem;
+  color:var(--forest);
+  overflow-wrap:break-word;
+}
+
+/* ==========================================
+   WRITING
+========================================== */
+
+.writing-goals{
+  background:#f5fbf7;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:21px;
+  margin-bottom:20px;
+}
+
+.goal-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:15px;
+}
+
+.goal{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px;
+  font-size:.8rem;
+  font-weight:700;
+  min-width:0;
+}
+
+.goal-num{
+  width:27px;
+  height:27px;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  border-radius:50%;
+  background:var(--mint);
+  color:var(--forest);
+  font-weight:900;
+}
+
+.writing-area{
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:22px;
+  min-width:0;
+}
+
+.writing-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:13px;
+  font-size:.87rem;
+}
+
+.word-count{
+  background:var(--pale);
+  color:var(--emerald);
+  border-radius:20px;
+  padding:4px 11px;
+  font-size:.73rem;
+  font-weight:900;
+}
+
+textarea{
+  display:block;
+  width:100%;
+  max-width:100%;
+  min-height:220px;
+  resize:vertical;
+  border:1.5px solid #cfe3d7;
+  border-radius:12px;
+  padding:17px;
+  outline:none;
+  line-height:1.9;
+  font-size:16px;
+}
+
+textarea:focus{
+  border-color:var(--emerald);
+  box-shadow:0 0 0 4px #d1fae5;
+}
+
+.writing-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:16px;
+}
+
+.correction-panel{
+  display:none;
+  margin-top:22px;
+  padding:24px;
+  border:1px solid #a7dfc2;
+  border-radius:17px;
+  background:#f4fdf8;
+  min-width:0;
+}
+
+.correction-panel.show{
+  display:block;
+}
+
+.correction-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:16px;
+}
+
+.correction-head h3{
+  margin:0;
+}
+
+.writing-score{
+  width:70px;
+  height:70px;
+  display:grid;
+  place-items:center;
+  background:var(--forest);
+  border-radius:50%;
+  color:white;
+  font-size:1.1rem;
+  font-weight:900;
+  flex-shrink:0;
+}
+
+.feedback-message{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:11px;
+  padding:15px;
+  margin-bottom:15px;
+  font-size:.88rem;
+}
+
+.checklist{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:9px;
+}
+
+.check-item{
+  display:flex;
+  gap:12px;
+  padding:13px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:11px;
+  min-width:0;
+}
+
+.check-icon{
+  width:27px;
+  height:27px;
+  border-radius:50%;
+  background:#edf3ef;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  flex-shrink:0;
+}
+
+.check-item strong{
+  display:block;
+  font-size:.86rem;
+}
+
+.check-item small{
+  color:var(--muted);
+  font-size:.75rem;
+}
+
+.check-item.success{
+  background:#ecfdf5;
+  border-color:#86efac;
+}
+
+.check-item.success .check-icon{
+  background:#16a34a;
+  color:white;
+}
+
+.check-item.needs-work{
+  background:#fff1f2;
+  border-color:#fda4af;
+}
+
+.check-item.needs-work .check-icon{
+  background:#e11d48;
+  color:white;
+}
+
+.teacher-tip{
+  margin-top:17px;
+  padding:16px;
+  background:#fffbeb;
+  border:1px solid #fde68a;
+  border-radius:11px;
+  font-size:.85rem;
+}
+
+.model-answer{
+  display:none;
+  margin-top:17px;
+  background:white;
+  padding:19px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  line-height:1.9;
+  font-size:.89rem;
+}
+
+.model-answer.show{
+  display:block;
+}
+
+/* ==========================================
+   COMPLETION
+========================================== */
+
+.complete{
+  background:linear-gradient(135deg,#064e3b,#059669);
+  color:white;
+  text-align:center;
+  border-radius:22px;
+  padding:45px 30px;
+  margin-bottom:30px;
+  width:100%;
+  min-width:0;
+}
+
+.complete .trophy{
+  font-size:3.5rem;
+}
+
+.complete h2{
+  font-size:2rem;
+  margin:15px 0;
+}
+
+.complete p{
+  color:#d1fae5;
+}
+
+.remember{
+  text-align:left;
+  background:rgba(255,255,255,.11);
+  border:1px solid rgba(255,255,255,.2);
+  padding:23px;
+  border-radius:14px;
+  max-width:650px;
+  margin:25px auto;
+  font-size:.91rem;
+  line-height:2;
+}
+
+.complete .btn{
+  background:white;
+  color:var(--forest);
+}
+
+/* ==========================================
+   TABLET RESPONSIVENESS
+========================================== */
+
+@media(max-width:1000px){
+
+  .layout{
+    grid-template-columns:minmax(0,1fr);
+    gap:18px;
+  }
+
+  .sidebar{
+    position:relative;
+    top:auto;
+    display:block;
+  }
+
+  .mobile-menu-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:100%;
+    min-height:48px;
+    padding:12px 14px;
+    border:0;
+    border-radius:12px;
+    background:var(--forest);
+    color:white;
+    font-weight:900;
+    font-size:.9rem;
+    text-align:left;
+  }
+
+  .menu-arrow{
+    transition:transform .25s;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] .menu-arrow{
+    transform:rotate(180deg);
+  }
+
+  .side-links{
+    display:none;
+    flex-direction:column;
+    overflow:visible;
+    margin-top:12px;
+    padding:0;
+    gap:5px;
+  }
+
+  .side-links.open{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .side-link{
+    white-space:normal;
+    background:#f6faf7;
+    border:1px solid var(--border);
+    min-height:46px;
+  }
+
+  .sidebar-progress{
+    margin-top:15px;
+  }
+
+}
+
+/* ==========================================
+   SMALL TABLETS
+========================================== */
+
+@media(max-width:760px){
+
+  .hero-inner{
+    grid-template-columns:minmax(0,1fr);
+    gap:30px;
+  }
+
+  .hero{
+    padding:45px 5% 70px;
+  }
+
+  .hero-visual{
+    display:flex;
+  }
+
+  .grammar-card{
+    max-width:500px;
+    transform:none;
+  }
+
+  .grammar-card::before{
+    display:none;
+  }
+
+  .rule-grid{
+    grid-template-columns:minmax(0,1fr);
+  }
+
+  .fact-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .transform-steps{
+    grid-template-columns:minmax(0,1fr);
+  }
+
+}
+
+/* ==========================================
+   PHONE RESPONSIVENESS
+========================================== */
+
+@media(max-width:550px){
+
+  html{
+    scroll-padding-top:12px;
+  }
+
+  body{
+    font-size:14px;
+  }
+
+  .topbar{
+    padding:12px 4%;
+    gap:8px;
+  }
+
+  .brand{
+    font-size:.82rem;
+    gap:8px;
+    line-height:1.2;
+  }
+
+  .brand small{
+    font-size:.62rem;
+    margin-top:4px;
+  }
+
+  .brand-logo{
+    width:37px;
+    height:37px;
+    border-radius:11px;
+    font-size:1.15rem;
+  }
+
+  .nav-pill{
+    display:none;
+  }
+
+  .nav-btn{
+    padding:9px 12px;
+    font-size:.75rem;
+    white-space:nowrap;
+  }
+
+  /* HERO */
+
+  .hero{
+    padding:34px 16px 58px;
+  }
+
+  .hero-inner{
+    gap:25px;
+  }
+
+  .hero-badge{
+    font-size:.62rem;
+    padding:8px 12px;
+    letter-spacing:.3px;
+  }
+
+  .hero h1{
+    font-size:clamp(2.15rem,10vw,3.1rem);
+    letter-spacing:-1px;
+    line-height:1.08;
+    margin:19px 0;
+  }
+
+  .hero-desc{
+    font-size:.88rem;
+    line-height:1.75;
+  }
+
+  .hero-tags{
+    gap:7px;
+    margin-top:20px;
+  }
+
+  .hero-tag{
+    font-size:.69rem;
+    padding:7px 10px;
+    border-radius:9px;
+  }
+
+  .grammar-card{
+    width:100%;
+    padding:19px;
+    border-radius:18px;
+  }
+
+  .grammar-card h3{
+    font-size:1.2rem;
+    margin:9px 0 15px;
+  }
+
+  .grammar-card-label{
+    font-size:.64rem;
+  }
+
+  .formula-pieces{
+    gap:6px;
+  }
+
+  .piece{
+    padding:8px 9px;
+    font-size:.72rem;
+    border-radius:7px;
+  }
+
+  .plus{
+    font-size:.8rem;
+  }
+
+  .grammar-card-example{
+    padding:13px;
+    font-size:.79rem;
+    line-height:2;
+  }
+
+  .card-stamp{
+    font-size:.65rem;
+  }
+
+  /* MAIN LAYOUT */
+
+  .layout{
+    padding:0 10px;
+    margin:-20px auto 35px;
+    gap:14px;
+  }
+
+  /* LESSON MENU */
+
+  .sidebar{
+    padding:14px;
+    border-radius:17px;
+  }
+
+  .sidebar-heading{
+    font-size:.68rem;
+    padding:0 4px 10px;
+  }
+
+  .side-links.open{
+    grid-template-columns:minmax(0,1fr);
+    max-height:350px;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+  }
+
+  .side-link{
+    padding:10px 12px;
+    font-size:.8rem;
+  }
+
+  .sidebar-progress{
+    padding:14px;
+    border-radius:12px;
+  }
+
+  .sidebar-progress strong{
+    font-size:.82rem;
+  }
+
+  /* LESSON SECTIONS */
+
+  .lesson-section{
+    padding:21px 14px;
+    border-radius:17px;
+    margin-bottom:15px;
+  }
+
+  .section-top{
+    gap:9px;
+  }
+
+  .step-bubble{
+    width:37px;
+    height:37px;
+    border-radius:11px;
+    font-size:1rem;
+  }
+
+  .step-label{
+    font-size:.64rem;
+    letter-spacing:.7px;
+  }
+
+  .lesson-section h2{
+    font-size:clamp(1.4rem,6vw,1.8rem);
+    line-height:1.25;
+    letter-spacing:-.3px;
+  }
+
+  .intro{
+    font-size:.85rem;
+    line-height:1.75;
+    margin-bottom:18px;
+  }
+
+  /* DISCOVERY */
+
+  .discovery-box{
+    padding:13px;
+    border-radius:14px;
+  }
+
+  .discovery-title{
+    font-size:.7rem;
+    line-height:1.6;
+    letter-spacing:.5px;
+    margin-bottom:12px;
+  }
+
+  .sentence{
+    width:100%;
+    padding:13px 11px;
+    font-size:.83rem;
+    line-height:2.4;
+    border-radius:10px;
+    margin:10px 0;
+
+    white-space:normal;
+    overflow-wrap:break-word;
+  }
+
+  .sentence span{
+    padding:3px 5px;
+    line-height:2.2;
+    -webkit-box-decoration-break:clone;
+    box-decoration-break:clone;
+  }
+
+  .legend{
+    gap:8px;
+    margin-top:15px;
+  }
+
+  .legend span{
+    font-size:.67rem;
+    padding:5px 7px;
+  }
+
+  .notice{
+    padding:15px 13px;
+    font-size:.83rem;
+    line-height:1.8;
+    margin-top:15px;
+  }
+
+  /* RULES */
+
+  .main-rule{
+    padding:18px 14px;
+    border-radius:14px;
+  }
+
+  .main-rule h3{
+    font-size:1.1rem;
+  }
+
+  .main-rule p{
+    font-size:.84rem;
+  }
+
+  .big-formula{
+    padding:13px 10px;
+    font-size:.86rem;
+    line-height:1.9;
+    overflow-wrap:anywhere;
+  }
+
+  .rule-grid{
+    gap:12px;
+  }
+
+  .rule-card{
+    padding:17px 14px;
+    border-radius:13px;
+  }
+
+  .rule-card h3{
+    font-size:1.05rem;
+  }
+
+  .rule-card p{
+    font-size:.84rem;
+  }
+
+  .rule-formula{
+    font-size:.72rem;
+  }
+
+  .example{
+    font-size:.8rem;
+    line-height:1.8;
+  }
+
+  /* MOBILE TABLE */
+
+  .table-wrap{
+    overflow:visible;
+    border:0;
+    border-radius:0;
+  }
+
+  .verb-table{
+    min-width:0;
+    width:100%;
+    table-layout:fixed;
+    font-size:.72rem;
+  }
+
+  .verb-table th{
+    padding:11px 5px;
+    text-align:center;
+    font-size:.67rem;
+    line-height:1.5;
+    overflow-wrap:anywhere;
+  }
+
+  .verb-table td{
+    padding:11px 5px;
+    text-align:center;
+    overflow-wrap:anywhere;
+  }
+
+  /* TRANSFORMATION */
+
+  .transform-box{
+    padding:13px;
+    border-radius:14px;
+  }
+
+  .transform-sentence{
+    padding:16px 11px;
+    font-size:.88rem;
+    line-height:1.8;
+  }
+
+  .transform-step{
+    padding:13px;
+    font-size:.8rem;
+  }
+
+  /* QUIZZES */
+
+  .question{
+    padding:14px 12px;
+    border-radius:12px;
+  }
+
+  .question-text{
+    font-size:.88rem;
+    line-height:1.7;
+  }
+
+  .options{
+    gap:8px;
+  }
+
+  .option{
+    padding:13px 11px;
+    font-size:.82rem;
+    line-height:1.6;
+    min-height:50px;
+    gap:9px;
+  }
+
+  .option::before{
+    width:17px;
+    height:17px;
+  }
+
+  .feedback,
+  .quiz-summary{
+    font-size:.8rem;
+    line-height:1.7;
+  }
+
+  /* FILL */
+
+  .fill-item{
+    padding:14px 12px;
+    font-size:.84rem;
+    line-height:2.5;
+  }
+
+  .fill-input{
+    width:105px;
+    min-height:42px;
+    padding:6px;
+    font-size:16px;
+  }
+
+  .btn{
+    padding:13px 15px;
+    font-size:.82rem;
+    min-height:48px;
+  }
+
+  /* FACT FILE */
+
+  .fact-header{
+    padding:18px 14px;
+    gap:11px;
+  }
+
+  .fact-icon{
+    width:49px;
+    height:49px;
+    border-radius:12px;
+    font-size:1.8rem;
+  }
+
+  .fact-header h3{
+    font-size:1.3rem;
+  }
+
+  .fact-header small{
+    font-size:.62rem;
+  }
+
+  .fact-grid{
+    grid-template-columns:minmax(0,1fr);
+  }
+
+  .fact-item{
+    padding:13px 15px;
+    border-right:0;
+    gap:11px;
+  }
+
+  .fact-item .emoji{
+    font-size:1.25rem;
+  }
+
+  .fact-item small{
+    font-size:.64rem;
+  }
+
+  .fact-item strong{
+    font-size:.83rem;
+  }
+
+  /* WRITING */
+
+  .writing-goals{
+    padding:15px;
+  }
+
+  .goal-grid{
+    grid-template-columns:minmax(0,1fr);
+  }
+
+  .goal{
+    font-size:.8rem;
+    padding:11px;
+  }
+
+  .writing-area{
+    padding:14px;
+  }
+
+  textarea{
+    min-height:230px;
+    padding:13px;
+    font-size:16px;
+    line-height:1.8;
+  }
+
+  .writing-actions{
+    flex-direction:column;
+  }
+
+  .writing-actions .btn{
+    width:100%;
+  }
+
+  .correction-panel{
+    padding:14px;
+  }
+
+  .correction-head{
+    align-items:flex-start;
+  }
+
+  .correction-head h3{
+    font-size:1.1rem;
+  }
+
+  .writing-score{
+    width:55px;
+    height:55px;
+    font-size:.9rem;
+  }
+
+  .check-item{
+    padding:11px;
+    gap:9px;
+  }
+
+  .check-item strong{
+    font-size:.8rem;
+  }
+
+  .check-item small{
+    font-size:.72rem;
+  }
+
+  .teacher-tip,
+  .model-answer{
+    padding:13px;
+    font-size:.8rem;
+  }
+
+  /* COMPLETION */
+
+  .complete{
+    padding:30px 16px;
+    border-radius:17px;
+  }
+
+  .complete h2{
+    font-size:1.6rem;
+  }
+
+  .complete p{
+    font-size:.85rem;
+  }
+
+  .remember{
+    padding:16px;
+    font-size:.83rem;
+    line-height:1.9;
+  }
+
+}
+
+/* ==========================================
+   VERY SMALL PHONES
+========================================== */
+
+@media(max-width:360px){
+
+  .hero h1{
+    font-size:2.1rem;
+  }
+
+  .hero-tag{
+    font-size:.63rem;
+  }
+
+  .layout{
+    padding:0 7px;
+  }
+
+  .lesson-section{
+    padding:18px 11px;
+  }
+
+  .sentence{
+    font-size:.78rem;
+  }
+
+  .verb-table{
+    font-size:.67rem;
+  }
+
+  .verb-table th{
+    font-size:.61rem;
+  }
+
+  .option{
+    font-size:.78rem;
+  }
+
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="topbar">
+
+  <div class="brand">
+
+    <div class="brand-logo">📗</div>
+
+    <div>
+      MY ENGLISH SPACE
+      <small>MS4 · Grammar Expedition</small>
+    </div>
+
+  </div>
+
+  <div class="nav-right">
+
+    <span class="nav-pill">
+      ✦ Sequence 01
+    </span>
+
+    <button
+      class="nav-btn"
+      type="button"
+      onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      ↑ Top
+    </button>
+
+  </div>
+
+</header>
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div>
+
+      <span class="hero-badge">
+        ✦ Checkpoint 01 · Grammar Studio
+      </span>
+
+      <h1>
+        The Past<br>
+        <span>Simple Passive.</span>
+      </h1>
+
+      <p class="hero-desc">
+        Discover how we use the
+        <strong>passive voice</strong>
+        to describe famous landmarks,
+        works of art, books and historical achievements.
+
+        Master
+        <strong>was / were + past participle</strong>
+        and learn how to acknowledge the agent using
+        <strong>by</strong>.
+      </p>
+
+      <div class="hero-tags">
+
+        <span class="hero-tag">🏛️ Landmarks</span>
+        <span class="hero-tag">🎨 Arts</span>
+        <span class="hero-tag">📚 Literature</span>
+        <span class="hero-tag">👤 Outstanding Figures</span>
+        <span class="hero-tag">📝 BEM Practice</span>
+
+      </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+      <div class="grammar-card">
+
+        <span class="grammar-card-label">
+          ✦ The Magic Formula
+        </span>
+
+        <h3>Build a passive sentence</h3>
+
+        <div class="formula-pieces">
+
+          <span class="piece p-subject">Subject</span>
+          <span class="plus">+</span>
+
+          <span class="piece p-aux">was / were</span>
+          <span class="plus">+</span>
+
+          <span class="piece p-v3">V3</span>
+          <span class="plus">+</span>
+
+          <span class="piece p-agent">by + agent</span>
+
+        </div>
+
+        <div class="grammar-card-example">
+
+          🗼 The Eiffel Tower<br>
+
+          <span class="hl-aux">was</span>
+          <span class="hl-v3">designed</span>
+          <span class="hl-agent">by Gustave Eiffel</span>.
+
+        </div>
+
+        <span class="card-stamp">
+          ✓ YOUR GRAMMAR SUPERPOWER
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     MAIN LAYOUT
+========================================== -->
+
+<div class="layout">
+
+<!-- ==========================================
+     LESSON NAVIGATION
+========================================== -->
+
+<aside class="sidebar">
+
+  <div class="sidebar-heading">
+    Your Learning Journey
+  </div>
+
+  <button
+    class="mobile-menu-toggle"
+    id="menuToggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="lessonMenu">
+
+    <span>📚 Explore Lesson Checkpoints</span>
+    <span class="menu-arrow">▼</span>
+
+  </button>
+
+  <nav
+    class="side-links"
+    id="lessonMenu"
+    aria-label="Lesson steps">
+
+    <a class="side-link" href="#step1">
+      <span class="side-num">01</span>
+      Discover
+    </a>
+
+    <a class="side-link" href="#step2">
+      <span class="side-num">02</span>
+      Grammar Toolkit
+    </a>
+
+    <a class="side-link" href="#step3">
+      <span class="side-num">03</span>
+      Active → Passive
+    </a>
+
+    <a class="side-link" href="#step4">
+      <span class="side-num">04</span>
+      Identify
+    </a>
+
+    <a class="side-link" href="#step5">
+      <span class="side-num">05</span>
+      Was or Were?
+    </a>
+
+    <a class="side-link" href="#step6">
+      <span class="side-num">06</span>
+      Choose V3
+    </a>
+
+    <a class="side-link" href="#step7">
+      <span class="side-num">07</span>
+      Complete
+    </a>
+
+    <a class="side-link" href="#step8">
+      <span class="side-num">08</span>
+      Transform
+    </a>
+
+    <a class="side-link" href="#step9">
+      <span class="side-num">09</span>
+      Grammar Editor
+    </a>
+
+    <a class="side-link" href="#step10">
+      <span class="side-num">10</span>
+      BEM Writing
+    </a>
+
+  </nav>
+
+  <div class="sidebar-progress">
+
+    <strong>🎯 Mission Progress</strong>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressBar"></div>
+    </div>
+
+    <div class="progress-caption" id="progressText">
+      0 / 7 activities
+    </div>
+
+  </div>
+
+</aside>
+
+<main class="content">
+
+<!-- ==========================================
+     STEP 01
+========================================== -->
+
+<section class="lesson-section" id="step1">
+
+  <div class="section-top">
+
+    <div class="step-bubble">01</div>
+
+    <div class="step-label">
+      Notice & Discover
+    </div>
+
+  </div>
+
+  <h2>👀 Discover the Passive Voice</h2>
+
+  <p class="intro">
+    Read these sentences. Pay attention to the highlighted parts.
+  </p>
+
+  <div class="discovery-box">
+
+    <div class="discovery-title">
+      🔍 Look closely at these examples
+    </div>
+
+    <div class="sentence">
+
+      <span class="hl-subject">The Eiffel Tower</span>
+      <span class="hl-aux">was</span>
+      <span class="hl-v3">designed</span>
+      <span class="hl-agent">by Gustave Eiffel</span>.
+
+    </div>
+
+    <div class="sentence">
+
+      <span class="hl-subject">The Mona Lisa</span>
+      <span class="hl-aux">was</span>
+      <span class="hl-v3">painted</span>
+      <span class="hl-agent">by Leonardo da Vinci</span>.
+
+    </div>
+
+    <div class="sentence">
+
+      <span class="hl-subject">The pyramids</span>
+      <span class="hl-aux">were</span>
+      <span class="hl-v3">built</span>
+      thousands of years ago.
+
+    </div>
+
+    <div class="legend">
+
+      <span class="hl-subject">Subject</span>
+      <span class="hl-aux">Auxiliary</span>
+      <span class="hl-v3">Past Participle</span>
+      <span class="hl-agent">Agent</span>
+
+    </div>
+
+  </div>
+
+  <div class="notice">
+
+    <strong>💡 What do you notice?</strong>
+
+    <br><br>
+
+    The sentences contain
+    <strong>was</strong> or <strong>were</strong>
+    followed by a
+    <strong>past participle (V3)</strong>.
+
+    <br><br>
+
+    The monument or work of art is placed first because
+    it is the main focus of the sentence.
+
+    <br><br>
+
+    👉 This structure is called the
+    <strong>Past Simple Passive</strong>.
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 02
+========================================== -->
+
+<section class="lesson-section" id="step2">
+
+  <div class="section-top">
+
+    <div class="step-bubble">02</div>
+
+    <div class="step-label">
+      Understand the Rule
+    </div>
+
+  </div>
+
+  <h2>📚 The Passive Voice Toolkit</h2>
+
+  <p class="intro">
+    We often use the passive when describing landmarks,
+    inventions, books, works of art and historical achievements.
+  </p>
+
+  <div class="main-rule">
+
+    <h3>🌿 When do we use the passive?</h3>
+
+    <p>
+      We use the passive voice when we want to focus on
+      the person, monument, object or achievement that
+      <strong>receives the action</strong>.
+    </p>
+
+    <div class="big-formula">
+      SUBJECT + WAS / WERE + PAST PARTICIPLE (V3) + (BY + AGENT)
+    </div>
+
+    <p>
+      The person who performs the action is called
+      the <strong>agent</strong>.
+
+      We use <strong>by + agent</strong>
+      when that information is important.
+    </p>
+
+  </div>
+
+  <div class="rule-grid">
+
+    <article class="rule-card">
+
+      <h3>🟢 1. WAS</h3>
+
+      <p>
+        Use <strong>was</strong> with a singular subject.
+      </p>
+
+      <div class="rule-formula">
+        SINGULAR + WAS + V3
+      </div>
+
+      <div class="example">
+        The Eiffel Tower
+        <strong>was designed</strong>
+        by Gustave Eiffel.
+      </div>
+
+      <div class="example">
+        Hamlet
+        <strong>was written</strong>
+        by Shakespeare.
+      </div>
+
+    </article>
+
+    <article class="rule-card blue">
+
+      <h3>🔵 2. WERE</h3>
+
+      <p>
+        Use <strong>were</strong> with a plural subject.
+      </p>
+
+      <div class="rule-formula">
+        PLURAL + WERE + V3
+      </div>
+
+      <div class="example">
+        The pyramids
+        <strong>were built</strong>
+        thousands of years ago.
+      </div>
+
+      <div class="example">
+        Many monuments
+        <strong>were restored</strong>.
+      </div>
+
+    </article>
+
+    <article class="rule-card amber">
+
+      <h3>🟠 3. Past Participle — V3</h3>
+
+      <p>
+        After <strong>was / were</strong>,
+        always use the past participle.
+      </p>
+
+      <div class="rule-formula">
+        WAS / WERE + V3
+      </div>
+
+      <div class="example">
+        design → <strong>designed</strong>
+      </div>
+
+      <div class="example">
+        paint → <strong>painted</strong>
+      </div>
+
+      <div class="example">
+        write → <strong>written</strong>
+      </div>
+
+      <div class="example">
+        build → <strong>built</strong>
+      </div>
+
+    </article>
+
+    <article class="rule-card rose">
+
+      <h3>🔴 4. BY + Agent</h3>
+
+      <p>
+        Use <strong>by</strong> when you want to mention
+        who performed the action.
+      </p>
+
+      <div class="rule-formula">
+        BY + AGENT
+      </div>
+
+      <div class="example">
+        The Mona Lisa was painted
+        <strong>by Leonardo da Vinci</strong>.
+      </div>
+
+      <div class="example">
+        Hamlet was written
+        <strong>by Shakespeare</strong>.
+      </div>
+
+    </article>
+
+  </div>
+
+  <div class="notice">
+
+    <strong>⚠️ Grammar Alert</strong>
+
+    <br><br>
+
+    After <strong>was / were</strong>, use V3.
+
+    <br><br>
+
+    ❌ Hamlet was <strong>wrote</strong> by Shakespeare.
+
+    <br>
+
+    ✅ Hamlet was <strong>written</strong> by Shakespeare.
+
+    <br><br>
+
+    ❌ The pyramids were <strong>build</strong> long ago.
+
+    <br>
+
+    ✅ The pyramids were <strong>built</strong> long ago.
+
+  </div>
+
+  <h3 style="margin-top:30px">
+    📖 Useful Past Participles
+  </h3>
+
+  <div class="table-wrap">
+
+    <table class="verb-table">
+
+      <thead>
+
+        <tr>
+          <th>Base Verb</th>
+          <th>Past Simple</th>
+          <th>Past Participle (V3)</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>design</td>
+          <td>designed</td>
+          <td><strong>designed</strong></td>
+        </tr>
+
+        <tr>
+          <td>paint</td>
+          <td>painted</td>
+          <td><strong>painted</strong></td>
+        </tr>
+
+        <tr>
+          <td>build</td>
+          <td>built</td>
+          <td><strong>built</strong></td>
+        </tr>
+
+        <tr>
+          <td>write</td>
+          <td>wrote</td>
+          <td><strong>written</strong></td>
+        </tr>
+
+        <tr>
+          <td>make</td>
+          <td>made</td>
+          <td><strong>made</strong></td>
+        </tr>
+
+        <tr>
+          <td>take</td>
+          <td>took</td>
+          <td><strong>taken</strong></td>
+        </tr>
+
+        <tr>
+          <td>give</td>
+          <td>gave</td>
+          <td><strong>given</strong></td>
+        </tr>
+
+        <tr>
+          <td>see</td>
+          <td>saw</td>
+          <td><strong>seen</strong></td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 03
+========================================== -->
+
+<section class="lesson-section" id="step3">
+
+  <div class="section-top">
+
+    <div class="step-bubble">03</div>
+
+    <div class="step-label">
+      Active → Passive
+    </div>
+
+  </div>
+
+  <h2>🔄 How Does the Sentence Change?</h2>
+
+  <p class="intro">
+    Follow these three simple steps to transform
+    an active sentence into a passive one.
+  </p>
+
+  <div class="transform-box">
+
+    <div class="transform-sentence">
+
+      <span class="transform-label">
+        ACTIVE VOICE
+      </span>
+
+      <br>
+
+      Gustave Eiffel
+      <span style="color:#d97706">designed</span>
+      the Eiffel Tower.
+
+    </div>
+
+    <div class="transform-arrow">↓</div>
+
+    <div class="transform-sentence">
+
+      <span class="transform-label">
+        PASSIVE VOICE
+      </span>
+
+      <br>
+
+      <span style="color:#059669">
+        The Eiffel Tower
+      </span>
+
+      <strong>was designed</strong>
+      by Gustave Eiffel.
+
+    </div>
+
+    <div class="transform-steps">
+
+      <div class="transform-step">
+
+        <strong>01</strong>
+
+        The active <b>object</b> becomes
+        the passive <b>subject</b>.
+
+      </div>
+
+      <div class="transform-step">
+
+        <strong>02</strong>
+
+        The verb changes to
+        <b>was / were + V3</b>.
+
+      </div>
+
+      <div class="transform-step">
+
+        <strong>03</strong>
+
+        The active subject can become
+        <b>by + agent</b>.
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="notice">
+
+    <strong>🧠 Why use the passive?</strong>
+
+    <br><br>
+
+    <strong>
+      Gustave Eiffel designed the Eiffel Tower.
+    </strong>
+
+    <br>
+
+    → Focus: Gustave Eiffel.
+
+    <br><br>
+
+    <strong>
+      The Eiffel Tower was designed by Gustave Eiffel.
+    </strong>
+
+    <br>
+
+    → Focus: the Eiffel Tower.
+
+    <br><br>
+
+    This is why the passive is very useful when describing
+    <strong>landmarks and achievements</strong>.
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 04
+========================================== -->
+
+<section class="lesson-section" id="step4">
+
+  <span class="level lots">
+    LOTS · Remember
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-bubble">04</div>
+
+    <div class="step-label">
+      Identify
+    </div>
+
+  </div>
+
+  <h2>🕵️ Passive Voice Detective</h2>
+
+  <p class="intro">
+    Read carefully and choose the passive sentence.
+  </p>
+
+  <div id="identifyQuiz">
+
+    <div class="question" data-answer="1">
+
+      <div class="question-text">
+        1. Which sentence is passive?
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">
+          Gustave Eiffel designed the Eiffel Tower.
+        </button>
+
+        <button class="option" type="button">
+          The Eiffel Tower was designed by Gustave Eiffel.
+        </button>
+
+        <button class="option" type="button">
+          Gustave Eiffel was an engineer.
+        </button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ <strong>was designed</strong> is a passive form.
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="0">
+
+      <div class="question-text">
+        2. Which sentence is passive?
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">
+          The Mona Lisa was painted by Leonardo da Vinci.
+        </button>
+
+        <button class="option" type="button">
+          Leonardo da Vinci painted the Mona Lisa.
+        </button>
+
+        <button class="option" type="button">
+          Leonardo da Vinci was Italian.
+        </button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ <strong>was painted</strong> is passive.
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="2">
+
+      <div class="question-text">
+        3. Which sentence is passive?
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">
+          Shakespeare wrote Hamlet.
+        </button>
+
+        <button class="option" type="button">
+          Shakespeare was a famous writer.
+        </button>
+
+        <button class="option" type="button">
+          Hamlet was written by Shakespeare.
+        </button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ <strong>was written</strong> is passive.
+      </div>
+
+    </div>
+
+    <div class="quiz-summary"></div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 05
+========================================== -->
+
+<section class="lesson-section" id="step5">
+
+  <span class="level lots">
+    LOTS · Understand
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-bubble">05</div>
+
+    <div class="step-label">
+      Was or Were?
+    </div>
+
+  </div>
+
+  <h2>🎯 Choose the Correct Auxiliary</h2>
+
+  <p class="intro">
+    Choose <strong>was</strong> or <strong>were</strong>
+    to complete each sentence.
+  </p>
+
+  <div id="auxQuiz">
+
+    <div class="question" data-answer="0">
+
+      <div class="question-text">
+        1. The Eiffel Tower ___ completed in 1889.
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">was</button>
+        <button class="option" type="button">were</button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ Singular → <strong>was</strong>.
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="1">
+
+      <div class="question-text">
+        2. The pyramids ___ built thousands of years ago.
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">was</button>
+        <button class="option" type="button">were</button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ Plural → <strong>were</strong>.
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="0">
+
+      <div class="question-text">
+        3. The Mona Lisa ___ painted by Leonardo da Vinci.
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">was</button>
+        <button class="option" type="button">were</button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ Singular → <strong>was</strong>.
+      </div>
+
+    </div>
+
+    <div class="quiz-summary"></div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 06
+========================================== -->
+
+<section class="lesson-section" id="step6">
+
+  <span class="level apply">
+    Apply
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-bubble">06</div>
+
+    <div class="step-label">
+      Choose V3
+    </div>
+
+  </div>
+
+  <h2>⚡ Past Participle Challenge</h2>
+
+  <p class="intro">
+    Choose the correct past participle
+    to complete the passive sentence.
+  </p>
+
+  <div id="v3Quiz">
+
+    <div class="question" data-answer="2">
+
+      <div class="question-text">
+        1. Hamlet was ___ by Shakespeare.
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">write</button>
+        <button class="option" type="button">wrote</button>
+        <button class="option" type="button">written</button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ write → wrote → <strong>written</strong>
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="1">
+
+      <div class="question-text">
+        2. The pyramids were ___ long ago.
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">build</button>
+        <button class="option" type="button">built</button>
+        <button class="option" type="button">building</button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ build → <strong>built</strong>
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="2">
+
+      <div class="question-text">
+        3. Many photographs were ___ during the visit.
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">take</button>
+        <button class="option" type="button">took</button>
+        <button class="option" type="button">taken</button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ take → took → <strong>taken</strong>
+      </div>
+
+    </div>
+
+    <div class="quiz-summary"></div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 07
+========================================== -->
+
+<section class="lesson-section" id="step7">
+
+  <span class="level apply">
+    Apply
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-bubble">07</div>
+
+    <div class="step-label">
+      Complete
+    </div>
+
+  </div>
+
+  <h2>✏️ Build the Passive</h2>
+
+  <p class="intro">
+    Type the missing word. Then check your answers.
+  </p>
+
+  <div class="fill-grid">
+
+    <div class="fill-item">
+
+      1. The Eiffel Tower
+
+      <input
+        class="fill-input"
+        data-answer="was"
+        aria-label="Answer 1"
+        autocomplete="off">
+
+      designed by Gustave Eiffel.
+
+    </div>
+
+    <div class="fill-item">
+
+      2. The pyramids
+
+      <input
+        class="fill-input"
+        data-answer="were"
+        aria-label="Answer 2"
+        autocomplete="off">
+
+      built thousands of years ago.
+
+    </div>
+
+    <div class="fill-item">
+
+      3. Hamlet was
+
+      <input
+        class="fill-input"
+        data-answer="written"
+        aria-label="Answer 3"
+        autocomplete="off">
+
+      by Shakespeare.
+
+    </div>
+
+    <div class="fill-item">
+
+      4. The Mona Lisa was
+
+      <input
+        class="fill-input"
+        data-answer="painted"
+        aria-label="Answer 4"
+        autocomplete="off">
+
+      by Leonardo da Vinci.
+
+    </div>
+
+    <div class="fill-item">
+
+      5. Many photographs were
+
+      <input
+        class="fill-input"
+        data-answer="taken"
+        aria-label="Answer 5"
+        autocomplete="off">
+
+      during the visit.
+
+    </div>
+
+  </div>
+
+  <button
+    class="btn btn-primary"
+    type="button"
+    style="margin-top:18px"
+    onclick="checkFill()">
+
+    ✓ Check Answers
+
+  </button>
+
+  <div
+    class="result"
+    id="fillResult"
+    aria-live="polite">
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 08
+========================================== -->
+
+<section class="lesson-section" id="step8">
+
+  <span class="level apply">
+    Apply
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-bubble">08</div>
+
+    <div class="step-label">
+      Transform
+    </div>
+
+  </div>
+
+  <h2>🔄 Active → Passive Mission</h2>
+
+  <p class="intro">
+    Choose the correct passive transformation.
+  </p>
+
+  <div id="transformQuiz">
+
+    <div class="question" data-answer="1">
+
+      <div class="question-text">
+        1. Gustave Eiffel designed the Eiffel Tower.
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">
+          The Eiffel Tower were designed by Gustave Eiffel.
+        </button>
+
+        <button class="option" type="button">
+          The Eiffel Tower was designed by Gustave Eiffel.
+        </button>
+
+        <button class="option" type="button">
+          The Eiffel Tower was design by Gustave Eiffel.
+        </button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ Singular → <strong>was designed</strong>.
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="2">
+
+      <div class="question-text">
+        2. Leonardo da Vinci painted the Mona Lisa.
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">
+          The Mona Lisa painted by Leonardo da Vinci.
+        </button>
+
+        <button class="option" type="button">
+          The Mona Lisa were painted by Leonardo da Vinci.
+        </button>
+
+        <button class="option" type="button">
+          The Mona Lisa was painted by Leonardo da Vinci.
+        </button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ Correct transformation!
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="0">
+
+      <div class="question-text">
+        3. Shakespeare wrote Hamlet.
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">
+          Hamlet was written by Shakespeare.
+        </button>
+
+        <button class="option" type="button">
+          Hamlet was wrote by Shakespeare.
+        </button>
+
+        <button class="option" type="button">
+          Hamlet were written by Shakespeare.
+        </button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ write → wrote → <strong>written</strong>.
+      </div>
+
+    </div>
+
+    <div class="quiz-summary"></div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 09
+========================================== -->
+
+<section class="lesson-section" id="step9">
+
+  <span class="level analyse">
+    Analyse & Evaluate
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-bubble">09</div>
+
+    <div class="step-label">
+      Grammar Editor
+    </div>
+
+  </div>
+
+  <h2>🔎 Find and Correct the Mistake</h2>
+
+  <p class="intro">
+    Be a grammar editor! Choose the correct sentence.
+  </p>
+
+  <div id="editorQuiz">
+
+    <div class="question" data-answer="0">
+
+      <div class="question-text">
+        1. ❌ “The Eiffel Tower were designed by Gustave Eiffel.”
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">
+          The Eiffel Tower was designed by Gustave Eiffel.
+        </button>
+
+        <button class="option" type="button">
+          The Eiffel Tower was design by Gustave Eiffel.
+        </button>
+
+        <button class="option" type="button">
+          The Eiffel Tower were design by Gustave Eiffel.
+        </button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ Singular subject → <strong>was</strong>.
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="1">
+
+      <div class="question-text">
+        2. ❌ “Hamlet was wrote by Shakespeare.”
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">
+          Hamlet were written by Shakespeare.
+        </button>
+
+        <button class="option" type="button">
+          Hamlet was written by Shakespeare.
+        </button>
+
+        <button class="option" type="button">
+          Hamlet was write by Shakespeare.
+        </button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ We need V3: <strong>written</strong>.
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="2">
+
+      <div class="question-text">
+        3. ❌ “The pyramids was built long ago.”
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">
+          The pyramids was build long ago.
+        </button>
+
+        <button class="option" type="button">
+          The pyramids were build long ago.
+        </button>
+
+        <button class="option" type="button">
+          The pyramids were built long ago.
+        </button>
+
+      </div>
+
+      <div class="feedback">
+        ✓ Plural → <strong>were built</strong>.
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="1">
+
+      <div class="question-text">
+
+        4. You are writing about the Eiffel Tower.
+        Which sentence puts the focus on the monument?
+
+      </div>
+
+      <div class="options">
+
+        <button class="option" type="button">
+          Gustave Eiffel designed the Eiffel Tower.
+        </button>
+
+        <button class="option" type="button">
+          The Eiffel Tower was designed by Gustave Eiffel.
+        </button>
+
+      </div>
+
+      <div class="feedback">
+
+        ✓ The passive puts
+        <strong>The Eiffel Tower</strong>
+        at the beginning.
+
+      </div>
+
+    </div>
+
+    <div class="quiz-summary"></div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     STEP 10
+========================================== -->
+
+<section class="lesson-section" id="step10">
+
+  <span class="level hots">
+    HOTS · Create
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-bubble">10</div>
+
+    <div class="step-label">
+      Final BEM Writing Mission
+    </div>
+
+  </div>
+
+  <h2>🏆 Write About a Famous Landmark</h2>
+
+  <p class="intro">
+
+    Your teacher asks you to write a short paragraph
+    about the <strong>Eiffel Tower</strong>.
+
+    Study the fact file carefully.
+
+    Then use the information to write your paragraph.
+
+  </p>
+
+  <!-- FACT FILE -->
+
+  <div class="fact-file">
+
+    <div class="fact-header">
+
+      <div class="fact-icon">🗼</div>
+
+      <div>
+
+        <small>LANDMARK FACT FILE</small>
+
+        <h3>The Eiffel Tower</h3>
+
+      </div>
+
+    </div>
+
+    <div class="fact-grid">
+
+      <div class="fact-item">
+
+        <span class="emoji">📍</span>
+
+        <div>
+          <small>Location</small>
+          <strong>Paris, France</strong>
+        </div>
+
+      </div>
+
+      <div class="fact-item">
+
+        <span class="emoji">👨‍💼</span>
+
+        <div>
+          <small>Designer</small>
+          <strong>Gustave Eiffel</strong>
+        </div>
+
+      </div>
+
+      <div class="fact-item">
+
+        <span class="emoji">📅</span>
+
+        <div>
+          <small>Completed</small>
+          <strong>1889</strong>
+        </div>
+
+      </div>
+
+      <div class="fact-item">
+
+        <span class="emoji">🏗️</span>
+
+        <div>
+          <small>Material</small>
+          <strong>Iron</strong>
+        </div>
+
+      </div>
+
+      <div class="fact-item">
+
+        <span class="emoji">🎪</span>
+
+        <div>
+          <small>Built for</small>
+          <strong>1889 World's Fair</strong>
+        </div>
+
+      </div>
+
+      <div class="fact-item">
+
+        <span class="emoji">📏</span>
+
+        <div>
+          <small>Height</small>
+          <strong>About 330 metres</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- WRITING GOALS -->
+
+  <div class="writing-goals">
+
+    <strong>✍️ Your Task</strong>
+
+    <p style="font-size:.88rem">
+
+      Write a short paragraph of about
+      <strong>4–6 sentences</strong>.
+
+      Use the information from the fact file.
+
+    </p>
+
+    <div class="goal-grid">
+
+      <div class="goal">
+
+        <span class="goal-num">1</span>
+
+        Introduce the landmark and its location.
+
+      </div>
+
+      <div class="goal">
+
+        <span class="goal-num">2</span>
+
+        Use <strong>was designed by</strong>.
+
+      </div>
+
+      <div class="goal">
+
+        <span class="goal-num">3</span>
+
+        Mention when it <strong>was completed</strong>.
+
+      </div>
+
+      <div class="goal">
+
+        <span class="goal-num">4</span>
+
+        Use at least <strong>3 passive forms</strong>.
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- WRITING AREA -->
+
+  <div class="writing-area">
+
+    <div class="writing-top">
+
+      <strong>📝 My Paragraph</strong>
+
+      <span class="word-count" id="wordCount">
+        0 words
+      </span>
+
+    </div>
+
+    <textarea
+      id="studentParagraph"
+      placeholder="The Eiffel Tower is a famous landmark in Paris, France. It was designed by..."
+      aria-label="Write your paragraph about the Eiffel Tower"></textarea>
+
+    <div class="writing-actions">
+
+      <button
+        class="btn btn-primary"
+        type="button"
+        onclick="checkParagraph()">
+
+        ✓ Check My Paragraph
+
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        type="button"
+        onclick="clearParagraph()">
+
+        ↻ Start Again
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- AUTOMATIC CORRECTION -->
+
+  <div
+    class="correction-panel"
+    id="correctionPanel"
+    aria-live="polite">
+
+    <div class="correction-head">
+
+      <div>
+
+        <small style="color:#059669;font-weight:900">
+          WRITING FEEDBACK
+        </small>
+
+        <h3 id="correctionTitle">
+          Let's check your paragraph!
+        </h3>
+
+      </div>
+
+      <div class="writing-score" id="writingScore">
+        0/6
+      </div>
+
+    </div>
+
+    <p style="font-size:.77rem;color:#647d74">
+
+      This automatic checklist checks selected words
+      and structures.
+
+      It cannot detect every grammar or spelling mistake.
+
+    </p>
+
+    <div
+      class="feedback-message"
+      id="feedbackMessage">
+    </div>
+
+    <div class="checklist" id="writingChecklist">
+
+      <div class="check-item" id="checkLocation">
+
+        <span class="check-icon">○</span>
+
+        <div>
+
+          <strong>Introduction & Location</strong>
+
+          <small>
+            Mention the Eiffel Tower and Paris or France.
+          </small>
+
+        </div>
+
+      </div>
+
+      <div class="check-item" id="checkDesigned">
+
+        <span class="check-icon">○</span>
+
+        <div>
+
+          <strong>Designer</strong>
+
+          <small>
+            Use “was designed by Gustave Eiffel”.
+          </small>
+
+        </div>
+
+      </div>
+
+      <div class="check-item" id="checkCompleted">
+
+        <span class="check-icon">○</span>
+
+        <div>
+
+          <strong>Completion Date</strong>
+
+          <small>
+            Mention that it was completed in 1889.
+          </small>
+
+        </div>
+
+      </div>
+
+      <div class="check-item" id="checkPassive">
+
+        <span class="check-icon">○</span>
+
+        <div>
+
+          <strong>Passive Voice</strong>
+
+          <small>
+            Use at least three past passive forms.
+          </small>
+
+        </div>
+
+      </div>
+
+      <div class="check-item" id="checkLength">
+
+        <span class="check-icon">○</span>
+
+        <div>
+
+          <strong>Paragraph Length</strong>
+
+          <small>
+            Write at least four complete sentences.
+          </small>
+
+        </div>
+
+      </div>
+
+      <div class="check-item" id="checkMechanics">
+
+        <span class="check-icon">○</span>
+
+        <div>
+
+          <strong>Capital Letters & Punctuation</strong>
+
+          <small>
+            Start correctly and use sentence punctuation.
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="teacher-tip" id="teacherTip"></div>
+
+    <div class="model-answer" id="modelAnswer">
+
+      <strong style="color:#065f46">
+        🌟 Model Paragraph
+      </strong>
+
+      <p>
+
+        The Eiffel Tower is a famous landmark in Paris, France.
+
+        It <strong>was designed by Gustave Eiffel</strong>.
+
+        It <strong>was built of iron</strong>
+        for the 1889 World's Fair
+        and <strong>was completed in 1889</strong>.
+
+        The tower is about 330 metres high.
+
+        Today, it is one of the most famous
+        landmarks in the world.
+
+      </p>
+
+      <small style="color:#647d74">
+
+        Compare the model with your paragraph.
+
+        You do not need to use exactly the same words.
+
+      </small>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     COMPLETION
+========================================== -->
+
+<section class="complete" id="completion">
+
+  <div class="trophy">🏆</div>
+
+  <h2>Grammar Mission Complete!</h2>
+
+  <p id="finalScore">
+
+    Complete all seven practice activities
+    to finish your grammar expedition.
+
+  </p>
+
+  <div class="remember">
+
+    <strong>🧠 Remember:</strong>
+
+    <br><br>
+
+    🟢 <strong>Past Simple Passive:</strong>
+
+    <br>
+
+    Subject + was / were + V3
+
+    <br>
+
+    <em>The tower was built in 1889.</em>
+
+    <br><br>
+
+    🔵 <strong>Singular:</strong> was + V3
+
+    <br>
+
+    🟣 <strong>Plural:</strong> were + V3
+
+    <br>
+
+    🔴 <strong>Agent:</strong> by + person
+
+    <br><br>
+
+    <em>
+      The Mona Lisa was painted by Leonardo da Vinci.
+    </em>
+
+    <br><br>
+
+    💡 Use the passive when you want to focus on the
+
+    <strong>
+      monument, person, object, work or achievement
+      receiving the action
+    </strong>.
+
+  </div>
+
+  <a class="btn" href="#step1">
+    ↑ Review the Lesson
+  </a>
+
+</section>
+
+</main>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+"use strict";
+
+/* ==========================================
+   MOBILE LESSON MENU
+========================================== */
+
+const menuToggle = document.getElementById("menuToggle");
+const lessonMenu = document.getElementById("lessonMenu");
+
+menuToggle.addEventListener("click",function(){
+
+  const isOpen = lessonMenu.classList.toggle("open");
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+
+});
+
+document.querySelectorAll(".side-link").forEach(link=>{
+
+  link.addEventListener("click",function(){
+
+    if(window.innerWidth <= 1000){
+
+      lessonMenu.classList.remove("open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    }
+
+  });
+
+});
+
+/* ==========================================
+   PROGRESS ENGINE
+========================================== */
+
+const progress = {
+
+  identify:false,
+  auxiliary:false,
+  participle:false,
+  fill:false,
+  transform:false,
+  editor:false,
+  writing:false
+
+};
+
+function updateProgress(){
+
+  const completed = Object.values(progress)
+    .filter(Boolean).length;
+
+  const total = Object.keys(progress).length;
+
+  const percent = Math.round(
+    completed / total * 100
+  );
+
+  document.getElementById("progressBar").style.width =
+    percent + "%";
+
+  document.getElementById("progressText").textContent =
+    completed + " / " + total + " activities";
+
+  const finalScore = document.getElementById("finalScore");
+
+  if(completed === total){
+
+    finalScore.innerHTML =
+      "🌟 <strong>Excellent work!</strong> " +
+      "You completed all seven practice activities " +
+      "in the Past Simple Passive checkpoint.";
+
+  }else{
+
+    finalScore.textContent =
+      "You have completed " + completed +
+      " of " + total +
+      " activities. Keep going!";
+
+  }
+
+}
+
+updateProgress();
+
+/* ==========================================
+   QUIZ ENGINE
+========================================== */
+
+function setupQuiz(id,progressKey){
+
+  const container = document.getElementById(id);
+
+  if(!container) return;
+
+  const questions = [
+    ...container.querySelectorAll(".question")
+  ];
+
+  questions.forEach(question=>{
+
+    const answer = Number(question.dataset.answer);
+
+    const options = [
+      ...question.querySelectorAll(".option")
+    ];
+
+    const feedback = question.querySelector(".feedback");
+
+    options.forEach((option,index)=>{
+
+      option.addEventListener("click",()=>{
+
+        if(question.dataset.done === "true"){
+          return;
+        }
+
+        question.dataset.done = "true";
+
+        question.dataset.correct =
+          String(index === answer);
+
+        options.forEach(btn=>{
+          btn.disabled = true;
+        });
+
+        if(index === answer){
+
+          option.classList.add("correct");
+
+        }else{
+
+          option.classList.add("wrong");
+
+          options[answer].classList.add("correct");
+
+        }
+
+        if(feedback){
+
+          feedback.classList.add("show");
+
+        }
+
+        const finished = questions.every(
+          q=>q.dataset.done === "true"
+        );
+
+        if(finished){
+
+          const score = questions.filter(
+            q=>q.dataset.correct === "true"
+          ).length;
+
+          const summary =
+            container.querySelector(".quiz-summary");
+
+          if(summary){
+
+            summary.textContent =
+              "🎯 Activity complete! Your score: " +
+              score + " / " + questions.length +
+              (
+                score === questions.length
+                ? " — Excellent!"
+                : " — Review the highlighted correct answers."
+              );
+
+            summary.classList.add("show");
+
+          }
+
+          progress[progressKey] = true;
+
+          updateProgress();
+
+        }
+
+      });
+
+    });
+
+  });
+
+}
+
+setupQuiz("identifyQuiz","identify");
+
+setupQuiz("auxQuiz","auxiliary");
+
+setupQuiz("v3Quiz","participle");
+
+setupQuiz("transformQuiz","transform");
+
+setupQuiz("editorQuiz","editor");
+
+/* ==========================================
+   FILL IN THE BLANKS
+========================================== */
+
+function checkFill(){
+
+  const inputs = [
+    ...document.querySelectorAll(".fill-input")
+  ];
+
+  let correct = 0;
+
+  inputs.forEach(input=>{
+
+    const expected =
+      input.dataset.answer.toLowerCase().trim();
+
+    const actual =
+      input.value.toLowerCase().trim();
+
+    input.classList.remove("correct","wrong");
+
+    if(actual === expected){
+
+      input.classList.add("correct");
+
+      correct++;
+
+    }else{
+
+      input.classList.add("wrong");
+
+    }
+
+  });
+
+  const result = document.getElementById("fillResult");
+
+  if(correct === inputs.length){
+
+    result.innerHTML =
+      "🎉 <strong>Excellent!</strong> " +
+      "All answers are correct.";
+
+    result.style.color = "#047857";
+
+    progress.fill = true;
+
+  }else{
+
+    result.innerHTML =
+      "You have <strong>" +
+      correct + " / " + inputs.length +
+      "</strong> correct. " +
+      "Check the highlighted answers and try again.";
+
+    result.style.color = "#be123c";
+
+  }
+
+  updateProgress();
+
+}
+
+document.querySelectorAll(".fill-input")
+  .forEach((input,index,all)=>{
+
+    input.addEventListener("keydown",event=>{
+
+      if(event.key === "Enter"){
+
+        event.preventDefault();
+
+        if(all[index+1]){
+
+          all[index+1].focus();
+
+        }else{
+
+          checkFill();
+
+        }
+
+      }
+
+    });
+
+  });
+
+/* ==========================================
+   WRITING CHECKER
+========================================== */
+
+const paragraphBox =
+  document.getElementById("studentParagraph");
+
+paragraphBox.addEventListener(
+  "input",
+  updateWordCount
+);
+
+function updateWordCount(){
+
+  const text = paragraphBox.value.trim();
+
+  const words = text
+    ? text.split(/\s+/).length
+    : 0;
+
+  document.getElementById("wordCount").textContent =
+    words + (words === 1 ? " word" : " words");
+
+}
+
+function countSentences(text){
+
+  const matches = text.match(/[^.!?]+[.!?]+/g);
+
+  return matches ? matches.length : 0;
+
+}
+
+function countPassiveForms(text){
+
+  const participles = [
+
+    "designed",
+    "built",
+    "completed",
+    "constructed",
+    "created",
+    "painted",
+    "written",
+    "made",
+    "invented",
+    "opened",
+    "located",
+    "visited",
+    "restored",
+    "established",
+    "founded",
+    "used",
+    "called",
+    "known"
+
+  ];
+
+  const regex = new RegExp(
+
+    "\\b(?:was|were)\\s+(?:" +
+    participles.join("|") +
+    ")\\b",
+
+    "gi"
+
+  );
+
+  const matches = text.match(regex);
+
+  return matches ? matches.length : 0;
+
+}
+
+function updateCheck(id,passed){
+
+  const item = document.getElementById(id);
+
+  const icon = item.querySelector(".check-icon");
+
+  item.classList.remove(
+    "success",
+    "needs-work"
+  );
+
+  if(passed){
+
+    item.classList.add("success");
+
+    icon.textContent = "✓";
+
+  }else{
+
+    item.classList.add("needs-work");
+
+    icon.textContent = "!";
+
+  }
+
+}
+
+function checkParagraph(){
+
+  const text = paragraphBox.value.trim();
+
+  const panel =
+    document.getElementById("correctionPanel");
+
+  const message =
+    document.getElementById("feedbackMessage");
+
+  const tipBox =
+    document.getElementById("teacherTip");
+
+  const model =
+    document.getElementById("modelAnswer");
+
+  panel.classList.add("show");
+
+  if(!text){
+
+    message.textContent =
+      "✏️ Write your paragraph before checking it.";
+
+    document.getElementById("writingScore").textContent =
+      "0/6";
+
+    tipBox.textContent =
+      "Start by introducing the Eiffel Tower.";
+
+    model.classList.remove("show");
+
+    document.querySelectorAll(
+      "#writingChecklist .check-item"
+    ).forEach(item=>{
+
+      item.classList.remove(
+        "success",
+        "needs-work"
+      );
+
+      item.querySelector(".check-icon").textContent =
+        "○";
+
+    });
+
+    panel.scrollIntoView({
+      behavior:"smooth",
+      block:"nearest"
+    });
+
+    return;
+
+  }
+
+  const lower = text.toLowerCase();
+
+  const locationOK =
+
+    lower.includes("eiffel tower") &&
+
+    (
+      lower.includes("paris") ||
+      lower.includes("france")
+    );
+
+  const designedOK =
+
+    /was\s+designed\s+by\s+gustave\s+eiffel/i
+      .test(text);
+
+  const completedOK =
+
+    /was\s+completed/i.test(text) &&
+
+    lower.includes("1889");
+
+  const passiveCount = countPassiveForms(text);
+
+  const passiveOK = passiveCount >= 3;
+
+  const sentenceCount = countSentences(text);
+
+  const lengthOK = sentenceCount >= 4;
+
+  const startsCapital = /^[A-Z]/.test(text);
+
+  const endsCorrectly = /[.!?]$/.test(text);
+
+  const mechanicsOK =
+    startsCapital && endsCorrectly;
+
+  const checks = [
+
+    ["checkLocation",locationOK],
+
+    ["checkDesigned",designedOK],
+
+    ["checkCompleted",completedOK],
+
+    ["checkPassive",passiveOK],
+
+    ["checkLength",lengthOK],
+
+    ["checkMechanics",mechanicsOK]
+
+  ];
+
+  checks.forEach(([id,passed])=>{
+
+    updateCheck(id,passed);
+
+  });
+
+  const score = checks.filter(
+    ([,passed])=>passed
+  ).length;
+
+  document.getElementById("writingScore").textContent =
+    score + "/6";
+
+  if(score === 6){
+
+    message.innerHTML =
+
+      "🏆 <strong>Excellent!</strong> " +
+      "Your paragraph meets all six automatic " +
+      "checklist criteria. Read it once more " +
+      "to check your grammar and spelling.";
+
+  }else if(score >= 4){
+
+    message.innerHTML =
+
+      "🌟 <strong>Good work!</strong> " +
+      "Your paragraph is nearly complete. " +
+      "Improve the items marked with ! " +
+      "and check again.";
+
+  }else{
+
+    message.innerHTML =
+
+      "🌱 <strong>Good start!</strong> " +
+      "Study the fact file again and " +
+      "improve the items marked with !.";
+
+  }
+
+  const tips = [];
+
+  if(!locationOK){
+
+    tips.push(
+      "Introduce the Eiffel Tower and mention Paris or France."
+    );
+
+  }
+
+  if(!designedOK){
+
+    tips.push(
+      'Try: "It was designed by Gustave Eiffel."'
+    );
+
+  }
+
+  if(!completedOK){
+
+    tips.push(
+      'Mention the date using "was completed in 1889".'
+    );
+
+  }
+
+  if(!passiveOK){
+
+    tips.push(
+      "Use at least three structures with was/were + past participle."
+    );
+
+  }
+
+  if(!lengthOK){
+
+    tips.push(
+      "Write at least four complete sentences."
+    );
+
+  }
+
+  if(!mechanicsOK){
+
+    tips.push(
+      "Check the first capital letter and final punctuation."
+    );
+
+  }
+
+  tipBox.replaceChildren();
+
+  const tipHeading = document.createElement("strong");
+
+  tipHeading.textContent = tips.length
+    ? "💡 How to improve:"
+    : "🎯 Well done!";
+
+  tipBox.appendChild(tipHeading);
+
+  if(tips.length){
+
+    const list = document.createElement("ul");
+
+    tips.forEach(tip=>{
+
+      const li = document.createElement("li");
+
+      li.textContent = tip;
+
+      list.appendChild(li);
+
+    });
+
+    tipBox.appendChild(list);
+
+  }else{
+
+    tipBox.appendChild(
+
+      document.createTextNode(
+        " Read your paragraph once more and check your spelling."
+      )
+
+    );
+
+  }
+
+  model.classList.add("show");
+
+  if(score >= 5){
+
+    progress.writing = true;
+
+    updateProgress();
+
+  }
+
+  panel.scrollIntoView({
+
+    behavior:"smooth",
+
+    block:"nearest"
+
+  });
+
+}
+
+function clearParagraph(){
+
+  paragraphBox.value = "";
+
+  updateWordCount();
+
+  document.getElementById("correctionPanel")
+    .classList.remove("show");
+
+  document.getElementById("modelAnswer")
+    .classList.remove("show");
+
+  document.querySelectorAll(
+    "#writingChecklist .check-item"
+  ).forEach(item=>{
+
+    item.classList.remove(
+      "success",
+      "needs-work"
+    );
+
+    item.querySelector(".check-icon").textContent =
+      "○";
+
+  });
+
+  paragraphBox.focus();
+
+}
+
+</script>
+
+</body>
+</html>

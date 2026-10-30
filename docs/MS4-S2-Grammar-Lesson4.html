@@ -1,0 +1,3455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS4 Sequence 2 | Checkpoint 04 — Like, Unlike & Whereas</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================
+   DESIGN SYSTEM
+========================================== */
+
+:root{
+--pink:#ed5992;
+--pink-dark:#c63875;
+--pink-light:#ffe6f0;
+--pink-pale:#fff5f9;
+
+--purple:#7946b7;
+--purple-dark:#48236c;
+--purple-light:#f3eaff;
+
+--gold:#ffc766;
+--gold-dark:#e7a32f;
+
+--green:#19865b;
+--green-light:#e7f8ef;
+
+--red:#cb425c;
+--red-light:#ffe9ee;
+
+--blue:#3685c9;
+--blue-light:#eaf5ff;
+
+--ink:#30243c;
+--muted:#74697e;
+--white:#ffffff;
+--line:#f4dce8;
+
+--shadow:0 15px 45px rgba(128,46,92,.12);
+}
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:"Nunito",Arial,sans-serif;
+background:#fff6fa;
+color:var(--ink);
+}
+
+button,
+input,
+textarea{
+font:inherit;
+}
+
+button{
+cursor:pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+outline:3px solid var(--gold);
+outline-offset:3px;
+}
+
+a{
+color:inherit;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+background:
+radial-gradient(circle at 90% 20%,rgba(255,255,255,.18),transparent 30%),
+radial-gradient(circle at 5% 85%,rgba(255,200,220,.15),transparent 35%),
+linear-gradient(125deg,#743481,#c94083 55%,#f27da4);
+
+color:white;
+padding:28px 20px 95px;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before,
+.hero::after{
+content:"";
+position:absolute;
+border:2px solid rgba(255,255,255,.15);
+border-radius:50%;
+pointer-events:none;
+}
+
+.hero::before{
+width:400px;
+height:400px;
+right:-150px;
+top:-180px;
+}
+
+.hero::after{
+width:270px;
+height:270px;
+left:-150px;
+bottom:-160px;
+}
+
+.hero-inner{
+max-width:1100px;
+margin:auto;
+position:relative;
+z-index:1;
+}
+
+.topbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.brand{
+font-size:12px;
+font-weight:900;
+letter-spacing:1.2px;
+color:#ffe9b9;
+}
+
+.back{
+color:white;
+text-decoration:none;
+border:1px solid rgba(255,255,255,.5);
+border-radius:30px;
+padding:10px 17px;
+font-weight:800;
+font-size:13px;
+transition:.2s;
+}
+
+.back:hover{
+background:rgba(255,255,255,.15);
+}
+
+.hero-content{
+display:grid;
+grid-template-columns:1.4fr .6fr;
+align-items:center;
+gap:30px;
+padding-top:55px;
+}
+
+.eyebrow{
+display:inline-block;
+padding:8px 15px;
+background:rgba(255,255,255,.16);
+border:1px solid rgba(255,255,255,.35);
+border-radius:30px;
+font-size:11px;
+font-weight:900;
+letter-spacing:1px;
+}
+
+.hero h1{
+font-family:"Baloo 2",sans-serif;
+font-size:clamp(37px,6vw,65px);
+line-height:1.08;
+margin:18px 0;
+}
+
+.hero h1 span{
+color:#ffe29b;
+}
+
+.hero p{
+font-size:16px;
+line-height:1.8;
+max-width:630px;
+color:#fff0f6;
+}
+
+.hero-button{
+display:inline-block;
+margin-top:12px;
+padding:14px 25px;
+background:var(--gold);
+color:#60305b;
+text-decoration:none;
+border:none;
+border-radius:30px;
+font-weight:900;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+transition:.2s;
+}
+
+.hero-button:hover{
+transform:translateY(-3px);
+}
+
+.hero-visual{
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+min-height:240px;
+}
+
+.visual-circle{
+width:235px;
+height:235px;
+border-radius:50%;
+background:rgba(255,255,255,.13);
+border:2px solid rgba(255,255,255,.35);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:115px;
+box-shadow:0 25px 50px rgba(62,15,72,.2);
+animation:float 4s ease-in-out infinite;
+}
+
+.visual-label{
+position:absolute;
+background:white;
+color:var(--purple-dark);
+padding:9px 15px;
+border-radius:25px;
+font-weight:900;
+font-size:12px;
+box-shadow:0 8px 22px rgba(0,0,0,.15);
+}
+
+.label-one{
+top:10px;
+left:0;
+}
+
+.label-two{
+bottom:12px;
+right:0;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+}
+
+/* ==========================================
+   MAIN LAYOUT
+========================================== */
+
+.container{
+max-width:1100px;
+margin:-48px auto 70px;
+padding:0 18px;
+position:relative;
+}
+
+.progress-box{
+background:white;
+padding:18px 23px;
+border-radius:22px;
+box-shadow:var(--shadow);
+border:1px solid var(--line);
+display:flex;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+position:sticky;
+top:8px;
+z-index:20;
+}
+
+.progress-label{
+font-weight:900;
+color:var(--purple-dark);
+}
+
+.progress-track{
+flex:1;
+min-width:110px;
+height:12px;
+background:#ffe3ee;
+border-radius:30px;
+overflow:hidden;
+}
+
+.progress-fill{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,var(--pink),var(--purple));
+border-radius:30px;
+transition:width .4s;
+}
+
+#progressText{
+color:var(--pink-dark);
+font-weight:900;
+font-size:13px;
+}
+
+.lesson-nav{
+display:flex;
+flex-wrap:wrap;
+gap:9px;
+margin:22px 0;
+}
+
+.lesson-nav a{
+background:white;
+border:1px solid var(--line);
+color:var(--pink-dark);
+border-radius:25px;
+padding:9px 14px;
+text-decoration:none;
+font-size:12px;
+font-weight:900;
+transition:.2s;
+}
+
+.lesson-nav a:hover{
+background:var(--pink-light);
+transform:translateY(-2px);
+}
+
+/* ==========================================
+   STAGES
+========================================== */
+
+.stage{
+background:white;
+border:1px solid var(--line);
+border-radius:25px;
+padding:clamp(20px,3vw,34px);
+margin:24px 0;
+box-shadow:var(--shadow);
+scroll-margin-top:115px;
+}
+
+.stage-header{
+display:flex;
+align-items:center;
+gap:11px;
+flex-wrap:wrap;
+}
+
+.badge{
+background:var(--pink-light);
+color:var(--pink-dark);
+padding:7px 13px;
+border-radius:30px;
+font-size:11px;
+font-weight:900;
+}
+
+.difficulty{
+padding:6px 11px;
+border-radius:30px;
+font-size:11px;
+font-weight:900;
+background:#e6f7ed;
+color:var(--green);
+}
+
+.difficulty.medium{
+background:#fff1d7;
+color:#98651b;
+}
+
+.difficulty.hard{
+background:#ffe5eb;
+color:var(--red);
+}
+
+.stage h2{
+font-family:"Baloo 2",sans-serif;
+font-size:clamp(23px,3vw,30px);
+color:var(--purple-dark);
+margin:10px 0;
+}
+
+.stage h3{
+font-family:"Baloo 2",sans-serif;
+color:var(--purple-dark);
+font-size:20px;
+margin:24px 0 12px;
+}
+
+.description{
+color:var(--muted);
+line-height:1.8;
+margin:0 0 22px;
+}
+
+/* ==========================================
+   GRAMMAR RULES
+========================================== */
+
+.rule-grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:17px;
+}
+
+.rule-card{
+padding:22px;
+border-radius:20px;
+background:#fff1f7;
+border:1px solid #ffd7e7;
+}
+
+.rule-card.purple{
+background:#f7f0ff;
+border-color:#e8d8ff;
+}
+
+.rule-card.gold{
+background:#fff9ea;
+border-color:#ffe7a6;
+}
+
+.rule-card.blue{
+background:#eff8ff;
+border-color:#d8ebff;
+}
+
+.rule-card h3{
+color:var(--purple-dark);
+font-family:"Baloo 2",sans-serif;
+font-size:20px;
+margin:0 0 12px;
+}
+
+.rule-card p{
+font-size:14px;
+line-height:1.8;
+}
+
+.formula{
+background:white;
+color:var(--pink-dark);
+padding:12px 13px;
+border-radius:11px;
+font-weight:900;
+display:block;
+margin:12px 0;
+font-size:13px;
+}
+
+.example{
+background:rgba(255,255,255,.8);
+padding:13px;
+border-radius:11px;
+font-size:13px;
+line-height:1.9;
+margin-top:12px;
+}
+
+.example strong{
+color:var(--pink-dark);
+}
+
+.arabic{
+display:none;
+direction:rtl;
+text-align:right;
+background:white;
+padding:15px;
+border-radius:12px;
+color:var(--purple-dark);
+line-height:2.1;
+margin-top:12px;
+font-size:15px;
+font-family:"Noto Naskh Arabic",serif;
+}
+
+.arabic.visible{
+display:block;
+}
+
+.arabic-button{
+border:1px solid #e7c8f5;
+background:white;
+color:var(--purple);
+border-radius:30px;
+padding:9px 14px;
+font-size:12px;
+font-weight:900;
+margin-top:14px;
+}
+
+.arabic-button:hover{
+background:#f7f0ff;
+}
+
+/* ==========================================
+   COMPARISON DIAGRAM
+========================================== */
+
+.comparison-board{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+margin:20px 0;
+}
+
+.person-card{
+border-radius:19px;
+padding:22px;
+text-align:center;
+background:#fff1f7;
+border:2px solid #ffd7e7;
+}
+
+.person-card:nth-child(2){
+background:#f3edff;
+border-color:#e5d4ff;
+}
+
+.person-avatar{
+font-size:60px;
+margin-bottom:8px;
+}
+
+.person-card h3{
+margin:5px 0;
+font-size:20px;
+}
+
+.person-card p{
+font-size:13px;
+line-height:1.8;
+}
+
+.marker-examples{
+display:grid;
+gap:12px;
+margin:20px 0;
+}
+
+.marker-example{
+border-left:5px solid var(--pink);
+background:#fff4f8;
+padding:15px 18px;
+border-radius:12px;
+line-height:1.9;
+font-size:14px;
+}
+
+.marker-example:nth-child(2){
+border-color:var(--purple);
+background:#f7f1ff;
+}
+
+.marker-example:nth-child(3){
+border-color:var(--gold-dark);
+background:#fff9e9;
+}
+
+.marker-example strong{
+color:var(--pink-dark);
+}
+
+/* ==========================================
+   TIPS AND EXCEPTIONS
+========================================== */
+
+.tip{
+background:#fff3f8;
+border-left:5px solid var(--pink);
+border-radius:13px;
+padding:17px;
+margin:13px 0;
+line-height:1.9;
+font-size:14px;
+}
+
+.tip strong{
+color:var(--pink-dark);
+}
+
+.tip.purple{
+background:#f7f0ff;
+border-color:var(--purple);
+}
+
+.tip.gold{
+background:#fff9ea;
+border-color:var(--gold-dark);
+}
+
+.tip.blue{
+background:#eef7ff;
+border-color:var(--blue);
+}
+
+.correct-example{
+color:var(--green);
+font-weight:900;
+}
+
+.wrong-example{
+color:var(--red);
+font-weight:900;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin:20px 0;
+}
+
+table{
+border-collapse:collapse;
+width:100%;
+min-width:500px;
+}
+
+th,td{
+border:1px solid #f0d9e5;
+padding:13px;
+text-align:left;
+font-size:13px;
+line-height:1.7;
+}
+
+th{
+background:var(--pink);
+color:white;
+}
+
+tr:nth-child(even){
+background:#fff7fa;
+}
+
+/* ==========================================
+   QUIZZES
+========================================== */
+
+.question{
+border:1px solid var(--line);
+border-radius:17px;
+padding:19px;
+margin:15px 0;
+background:#fffdfd;
+}
+
+.question-title{
+font-size:14px;
+font-weight:900;
+line-height:1.8;
+margin:0 0 13px;
+}
+
+.options{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:10px;
+}
+
+.option{
+background:#fff3f8;
+border:2px solid #f7dbe8;
+border-radius:12px;
+padding:12px;
+color:var(--purple-dark);
+font-weight:800;
+text-align:left;
+transition:.2s;
+}
+
+.option:hover:not(:disabled){
+background:#ffe2ef;
+transform:translateY(-2px);
+}
+
+.option.correct{
+background:#e4f8ec;
+border-color:#24a873;
+color:#126c4b;
+}
+
+.option.incorrect{
+background:#ffe6eb;
+border-color:#e35d7c;
+color:#a32e4b;
+}
+
+.option:disabled{
+cursor:default;
+}
+
+.feedback{
+font-size:13px;
+font-weight:900;
+margin-top:12px;
+min-height:18px;
+line-height:1.7;
+}
+
+.success{
+color:var(--green);
+}
+
+.error{
+color:var(--red);
+}
+
+/* ==========================================
+   READING PASSAGE
+========================================== */
+
+.reading{
+background:#fff4f8;
+border:1px dashed #ed9fbd;
+border-radius:18px;
+padding:24px;
+line-height:2.2;
+font-size:15px;
+margin-bottom:20px;
+}
+
+.reading strong{
+color:var(--pink-dark);
+background:#ffe1ec;
+padding:2px 5px;
+border-radius:5px;
+}
+
+/* ==========================================
+   WRITTEN TASKS
+========================================== */
+
+.task{
+border-bottom:1px solid var(--line);
+padding:18px 0;
+}
+
+.task:last-child{
+border-bottom:none;
+}
+
+.task label{
+display:block;
+font-weight:800;
+line-height:1.8;
+margin-bottom:10px;
+}
+
+.task input{
+width:100%;
+padding:13px;
+border:2px solid #f0dbe7;
+border-radius:12px;
+background:#fffbfd;
+}
+
+.task input.correct{
+border-color:var(--green);
+background:#ecfbf3;
+}
+
+.task input.incorrect{
+border-color:var(--red);
+background:#fff0f2;
+}
+
+.hint{
+color:var(--muted);
+font-size:12px;
+margin-top:7px;
+line-height:1.7;
+}
+
+.answer-feedback{
+font-size:13px;
+font-weight:800;
+margin-top:9px;
+line-height:1.7;
+}
+
+.primary{
+border:none;
+border-radius:30px;
+padding:13px 25px;
+background:linear-gradient(110deg,var(--pink),var(--pink-dark));
+color:white;
+font-weight:900;
+margin-top:17px;
+}
+
+.primary:hover{
+filter:brightness(1.06);
+}
+
+.secondary{
+border:2px solid #f1c8dc;
+background:white;
+color:var(--pink-dark);
+border-radius:30px;
+padding:11px 19px;
+font-weight:900;
+margin-top:17px;
+}
+
+/* ==========================================
+   SENTENCE BUILDER
+========================================== */
+
+.word-bank,
+.answer-strip{
+display:flex;
+flex-wrap:wrap;
+gap:9px;
+padding:14px;
+border-radius:15px;
+min-height:62px;
+align-items:center;
+}
+
+.word-bank{
+background:#fff0f6;
+}
+
+.answer-strip{
+border:2px dashed #efaac6;
+margin:12px 0;
+background:#fffafd;
+}
+
+.word-chip{
+border:none;
+border-radius:30px;
+padding:9px 14px;
+background:var(--pink);
+color:white;
+font-weight:900;
+}
+
+.word-chip:disabled{
+opacity:.3;
+}
+
+.answer-strip .word-chip{
+background:var(--purple);
+}
+
+/* ==========================================
+   WRITING
+========================================== */
+
+.writing-card{
+background:#fff4f8;
+border:1px solid var(--line);
+padding:18px;
+border-radius:17px;
+margin:16px 0;
+}
+
+.writing-card label{
+display:block;
+font-weight:900;
+color:var(--purple-dark);
+margin-bottom:10px;
+}
+
+.writing-card textarea{
+width:100%;
+min-height:95px;
+border:2px solid #f1d3e3;
+border-radius:13px;
+padding:13px;
+resize:vertical;
+background:white;
+}
+
+.checklist{
+margin-top:22px;
+display:grid;
+gap:10px;
+}
+
+.checklist label{
+background:#fff5f9;
+border:1px solid var(--line);
+border-radius:12px;
+padding:12px;
+font-size:13px;
+font-weight:800;
+cursor:pointer;
+}
+
+.checklist input{
+accent-color:var(--pink);
+}
+
+/* ==========================================
+   CERTIFICATE
+========================================== */
+
+.certificate{
+text-align:center;
+background:linear-gradient(125deg,#823b91,#e85b96);
+color:white;
+padding:35px;
+border-radius:25px;
+margin:25px 0;
+box-shadow:var(--shadow);
+}
+
+.certificate h2{
+font-family:"Baloo 2",sans-serif;
+font-size:32px;
+margin:10px 0;
+}
+
+.certificate p{
+line-height:1.8;
+}
+
+.certificate .icon{
+font-size:75px;
+}
+
+.end-links{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin:25px 0;
+}
+
+.end-links a{
+text-decoration:none;
+padding:14px 22px;
+background:white;
+border-radius:30px;
+color:var(--pink-dark);
+font-weight:900;
+border:1px solid var(--line);
+}
+
+/* ==========================================
+   DICTIONARY
+========================================== */
+
+.dict-button{
+position:fixed;
+bottom:24px;
+right:24px;
+z-index:40;
+border:3px solid white;
+border-radius:50px;
+background:var(--gold);
+padding:15px 18px;
+box-shadow:0 10px 28px rgba(91,30,74,.25);
+font-size:22px;
+}
+
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(40,15,43,.65);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:50;
+padding:15px;
+}
+
+.overlay.open{
+display:flex;
+}
+
+.dictionary{
+width:min(480px,100%);
+max-height:85vh;
+background:white;
+border-radius:25px;
+padding:23px;
+display:flex;
+flex-direction:column;
+}
+
+.dictionary-head{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.dictionary h2{
+font-family:"Baloo 2",sans-serif;
+color:var(--purple-dark);
+margin:0;
+}
+
+.close-button{
+background:#ffe6ef;
+border:none;
+border-radius:50%;
+width:36px;
+height:36px;
+color:var(--pink-dark);
+font-weight:900;
+}
+
+.dictionary-search{
+width:100%;
+padding:12px;
+border:2px solid #efd9e6;
+border-radius:12px;
+margin:17px 0;
+}
+
+.dictionary-list{
+overflow-y:auto;
+}
+
+.dictionary-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+padding:12px;
+border-bottom:1px solid var(--line);
+}
+
+.dictionary-row strong{
+color:var(--purple-dark);
+}
+
+.dictionary-row span{
+direction:rtl;
+text-align:right;
+color:var(--pink-dark);
+font-weight:800;
+font-family:"Noto Naskh Arabic",serif;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:700px){
+
+.hero-content,
+.rule-grid,
+.comparison-board{
+grid-template-columns:1fr;
+}
+
+.hero-visual{
+min-height:160px;
+}
+
+.visual-circle{
+width:145px;
+height:145px;
+font-size:70px;
+}
+
+.visual-label{
+font-size:10px;
+}
+
+.hero{
+padding-bottom:75px;
+}
+
+.hero-content{
+padding-top:35px;
+}
+
+.container{
+padding:0 11px;
+}
+
+.progress-box{
+top:0;
+border-radius:0 0 18px 18px;
+}
+
+.stage{
+border-radius:19px;
+}
+
+}
+
+@media(prefers-reduced-motion:reduce){
+html{
+scroll-behavior:auto;
+}
+
+.visual-circle{
+animation:none;
+}
+
+*{
+transition:none!important;
+}
+}
+
+@media print{
+
+.hero,
+.progress-box,
+.lesson-nav,
+.dict-button,
+.overlay,
+.primary,
+.secondary,
+.end-links{
+display:none!important;
+}
+
+body{
+background:white;
+}
+
+.container{
+margin:0;
+max-width:100%;
+}
+
+.stage{
+box-shadow:none;
+break-inside:avoid;
+}
+
+.certificate{
+color:black;
+background:white;
+border:2px solid black;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<header class="hero">
+
+<div class="hero-inner">
+
+<div class="topbar">
+
+<span class="brand">
+✦ MY ENGLISH SPACE · MS4 · SEQUENCE 2
+</span>
+
+<a href="MS4-S2-Grammar-Lesson3.html" class="back">
+← Checkpoint 03
+</a>
+
+</div>
+
+<div class="hero-content">
+
+<div>
+
+<span class="eyebrow">
+GRAMMAR EXPEDITION · CHECKPOINT 04
+</span>
+
+<h1>
+Like, Unlike<br>
+<span>& Whereas</span> 🔀
+</h1>
+
+<p>
+Discover how to describe similarities and differences
+between people, personalities, habits, preferences,
+and life experiences.
+</p>
+
+<p>
+Learn the rules, compare people, solve grammar challenges,
+and become a Comparison Champion!
+</p>
+
+<a href="#stage1" class="hero-button">
+Start Learning ↗
+</a>
+
+</div>
+
+<div class="hero-visual" aria-hidden="true">
+
+<div class="visual-circle">
+⚖️
+</div>
+
+<div class="visual-label label-one">
+🪞 SIMILARITY
+</div>
+
+<div class="visual-label label-two">
+🔀 CONTRAST
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
+<main class="container">
+
+<!-- PROGRESS -->
+
+<div class="progress-box">
+
+<span class="progress-label">
+🏆 Your Progress
+</span>
+
+<div class="progress-track">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+
+<span id="progressText">
+0 / 7 missions
+</span>
+
+</div>
+
+<!-- NAVIGATION -->
+
+<nav class="lesson-nav" aria-label="Lesson sections">
+
+<a href="#stage1">Discover</a>
+<a href="#stage2">Grammar Rules</a>
+<a href="#stage3">Exceptions</a>
+<a href="#stage4">Spot It</a>
+<a href="#stage5">Reading</a>
+<a href="#stage6">Choose</a>
+<a href="#stage7">Combine</a>
+<a href="#stage8">Build</a>
+<a href="#stage9">Correct</a>
+<a href="#stage10">Write</a>
+
+</nav>
+
+<!-- ==========================================
+     STAGE 1: DISCOVER
+========================================== -->
+
+<section class="stage" id="stage1">
+
+<div class="stage-header">
+<span class="badge">DISCOVER · 01</span>
+</div>
+
+<h2>👀 Look, Think & Compare</h2>
+
+<p class="description">
+Meet Sara and Lina. Read their descriptions.
+What do they have in common? How are they different?
+</p>
+
+<div class="comparison-board">
+
+<div class="person-card">
+
+<div class="person-avatar">👩🏻‍🎓</div>
+
+<h3>Sara</h3>
+
+<p>
+Sara is 15 years old.
+</p>
+
+<p>
+She is friendly and hardworking.
+</p>
+
+<p>
+She enjoys reading books.
+</p>
+
+<p>
+She dreams of becoming a doctor.
+</p>
+
+</div>
+
+<div class="person-card">
+
+<div class="person-avatar">👩🏽‍🎓</div>
+
+<h3>Lina</h3>
+
+<p>
+Lina is 15 years old.
+</p>
+
+<p>
+She is friendly but rather shy.
+</p>
+
+<p>
+She prefers playing sports.
+</p>
+
+<p>
+She dreams of becoming a teacher.
+</p>
+
+</div>
+
+</div>
+
+<h3>💡 Notice the Three Sentences</h3>
+
+<div class="marker-examples">
+
+<div class="marker-example">
+
+<strong>LIKE</strong> — Similarity
+
+<br>
+
+<strong>Like</strong> Sara, Lina is 15 years old.
+
+</div>
+
+<div class="marker-example">
+
+<strong>UNLIKE</strong> — Difference
+
+<br>
+
+<strong>Unlike</strong> Sara, Lina prefers playing sports.
+
+</div>
+
+<div class="marker-example">
+
+<strong>WHEREAS</strong> — Contrast
+
+<br>
+
+Sara dreams of becoming a doctor,
+<strong>whereas</strong> Lina wants to become a teacher.
+
+</div>
+
+</div>
+
+<div class="tip">
+
+<strong>Remember!</strong>
+
+<br>
+
+We use these words to compare people, things,
+personalities, habits, and experiences.
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 2: RULES
+========================================== -->
+
+<section class="stage" id="stage2">
+
+<div class="stage-header">
+<span class="badge">LEARN · 02</span>
+</div>
+
+<h2>🧠 Understanding the Grammar Rules</h2>
+
+<p class="description">
+Each comparison marker has a different meaning
+and grammatical structure.
+</p>
+
+<div class="rule-grid">
+
+<!-- LIKE -->
+
+<div class="rule-card">
+
+<h3>🪞 Rule 1: LIKE</h3>
+
+<p>
+We use <strong>like</strong> to show that
+two people or things are similar.
+</p>
+
+<span class="formula">
+Like + noun/pronoun, + subject + verb
+</span>
+
+<div class="example">
+
+<strong>Like</strong> her mother,
+Sara is very patient.
+
+<br><br>
+
+<strong>Like</strong> my brother,
+I enjoy playing football.
+
+</div>
+
+<p>
+We can also put <strong>like</strong>
+after the verb.
+</p>
+
+<span class="formula">
+Subject + verb + like + noun/pronoun
+</span>
+
+<div class="example">
+
+She sings <strong>like</strong> her mother.
+
+<br><br>
+
+He behaves <strong>like</strong> his father.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arLike')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arLike">
+
+نستعمل <strong>like</strong> للتعبير عن التشابه
+بين شخصين أو شيئين.
+
+<br>
+
+معناها: مثل أو يشبه.
+
+<br><br>
+
+مثال:
+
+<br>
+
+Like her mother, Sara is patient.
+
+<br>
+
+سارة صبورة مثل أمها.
+
+<br><br>
+
+بعد like نستعمل عادة اسماً أو ضميراً.
+
+</div>
+
+</div>
+
+<!-- UNLIKE -->
+
+<div class="rule-card purple">
+
+<h3>🔄 Rule 2: UNLIKE</h3>
+
+<p>
+We use <strong>unlike</strong>
+to show that two people or things
+are different.
+</p>
+
+<span class="formula">
+Unlike + noun/pronoun, + subject + verb
+</span>
+
+<div class="example">
+
+<strong>Unlike</strong> his brother,
+Amir is very shy.
+
+<br><br>
+
+<strong>Unlike</strong> my sister,
+I enjoy reading.
+
+</div>
+
+<p>
+Unlike can also appear after a verb.
+</p>
+
+<span class="formula">
+Subject + verb + unlike + noun/pronoun
+</span>
+
+<div class="example">
+
+I prefer quiet places,
+<strong>unlike</strong> my friends.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arUnlike')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arUnlike">
+
+نستعمل <strong>unlike</strong>
+للتعبير عن الاختلاف.
+
+<br>
+
+معناها: على عكس أو بخلاف.
+
+<br><br>
+
+مثال:
+
+<br>
+
+Unlike her sister, Lina is shy.
+
+<br>
+
+على عكس أختها، لينا خجولة.
+
+<br><br>
+
+إذا بدأنا الجملة بـ unlike
+نضع فاصلة بعد الاسم أو الضمير الذي يليها.
+
+</div>
+
+</div>
+
+<!-- WHEREAS -->
+
+<div class="rule-card gold">
+
+<h3>⚖️ Rule 3: WHEREAS</h3>
+
+<p>
+We use <strong>whereas</strong>
+to connect two contrasting ideas.
+</p>
+
+<span class="formula">
+Clause 1, whereas + Clause 2
+</span>
+
+<div class="example">
+
+Sara is outgoing,
+<strong>whereas</strong>
+Lina is shy.
+
+<br><br>
+
+I love reading,
+<strong>whereas</strong>
+my brother prefers sports.
+
+</div>
+
+<p>
+A clause normally contains
+a subject and a verb.
+</p>
+
+<span class="formula">
+Whereas + Clause 1, + Clause 2
+</span>
+
+<div class="example">
+
+<strong>Whereas</strong>
+Sara is outgoing,
+Lina is shy.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arWhereas')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arWhereas">
+
+نستعمل <strong>whereas</strong>
+للربط بين فكرتين متناقضتين أو مختلفتين.
+
+<br>
+
+معناها: بينما أو في حين أن.
+
+<br><br>
+
+مثال:
+
+<br>
+
+Sara is active, whereas Lina is quiet.
+
+<br>
+
+سارة نشيطة، بينما لينا هادئة.
+
+<br><br>
+
+بعد whereas نستعمل جملة تحتوي
+عادة على فاعل وفعل.
+
+</div>
+
+</div>
+
+<!-- LIKE VS AS -->
+
+<div class="rule-card blue">
+
+<h3>🎭 Rule 4: LIKE vs AS</h3>
+
+<p>
+Do not confuse <strong>like</strong>
+with <strong>as</strong>.
+</p>
+
+<p>
+<strong>Like</strong> means
+"similar to".
+</p>
+
+<div class="example">
+
+He works <strong>like</strong> a robot.
+
+<br>
+
+He works in a way that resembles a robot.
+
+</div>
+
+<p>
+<strong>As</strong> can describe
+a person's real job or role.
+</p>
+
+<div class="example">
+
+He works <strong>as</strong> a teacher.
+
+<br>
+
+Teaching is his actual profession.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arAs')">
+🇩🇿 Explain in Arabic
+</button>
+
+<div class="arabic" id="arAs">
+
+نستعمل like للتشبيه.
+
+<br>
+
+He works like a robot.
+
+<br>
+
+يعمل مثل الروبوت.
+
+<br><br>
+
+أما as فنستعملها هنا للتعبير
+عن وظيفة أو دور حقيقي.
+
+<br>
+
+He works as a teacher.
+
+<br>
+
+يعمل أستاذاً.
+
+</div>
+
+</div>
+
+</div>
+
+<h3>📊 Grammar Comparison Table</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Marker</th>
+<th>Meaning</th>
+<th>What follows?</th>
+<th>Example</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><strong>Like</strong></td>
+<td>Similarity</td>
+<td>Noun / pronoun</td>
+<td>Like her father, she is kind.</td>
+</tr>
+
+<tr>
+<td><strong>Unlike</strong></td>
+<td>Difference</td>
+<td>Noun / pronoun</td>
+<td>Unlike Ali, I am shy.</td>
+</tr>
+
+<tr>
+<td><strong>Whereas</strong></td>
+<td>Contrast</td>
+<td>Clause</td>
+<td>I am calm, whereas he is nervous.</td>
+</tr>
+
+<tr>
+<td><strong>As</strong></td>
+<td>Real role / job</td>
+<td>Noun / noun phrase</td>
+<td>She works as a nurse.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 3: EXCEPTIONS
+========================================== -->
+
+<section class="stage" id="stage3">
+
+<div class="stage-header">
+<span class="badge">LEARN · 03</span>
+</div>
+
+<h2>⚠️ Important Rules & Common Mistakes</h2>
+
+<p class="description">
+These small details will help you write
+more accurate comparison sentences.
+</p>
+
+<div class="tip">
+
+<strong>1. Use a comma after an opening LIKE phrase.</strong>
+
+<br><br>
+
+<span class="correct-example">
+✓ Like her mother, Sara is patient.
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ Like her mother Sara is patient.
+</span>
+
+</div>
+
+<div class="tip purple">
+
+<strong>2. Use a comma after an opening UNLIKE phrase.</strong>
+
+<br><br>
+
+<span class="correct-example">
+✓ Unlike his brother, Amir is shy.
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ Unlike his brother Amir is shy.
+</span>
+
+</div>
+
+<div class="tip gold">
+
+<strong>3. WHEREAS connects two clauses.</strong>
+
+<br><br>
+
+<span class="correct-example">
+✓ Sara is confident, whereas Lina is shy.
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ Sara is confident, whereas Lina.
+</span>
+
+<br><br>
+
+The second part needs a verb.
+
+</div>
+
+<div class="tip blue">
+
+<strong>4. LIKE and ALIKE are different.</strong>
+
+<br><br>
+
+<span class="correct-example">
+✓ The twins look alike.
+</span>
+
+<br>
+
+<span class="correct-example">
+✓ Sara looks like her sister.
+</span>
+
+<br>
+
+<span class="wrong-example">
+✗ The twins look like.
+</span>
+
+</div>
+
+<div class="tip">
+
+<strong>5. Do not confuse LIKE and UNLIKE.</strong>
+
+<br><br>
+
+LIKE = similarity.
+
+<br>
+
+UNLIKE = difference.
+
+<br><br>
+
+<strong>Example:</strong>
+
+<br>
+
+Like her sister, Sara is friendly.
+
+<br>
+
+Unlike her sister, Sara is shy.
+
+</div>
+
+<button class="arabic-button"
+onclick="toggleArabic('arExceptions')">
+🇩🇿 Arabic Summary
+</button>
+
+<div class="arabic" id="arExceptions">
+
+ملخص القواعد المهمة:
+
+<br><br>
+
+1. نستعمل like للتشابه.
+
+<br>
+
+2. نستعمل unlike للاختلاف.
+
+<br>
+
+3. نستعمل whereas للربط بين جملتين متناقضتين.
+
+<br>
+
+4. بعد like و unlike يأتي غالباً اسم أو ضمير.
+
+<br>
+
+5. بعد whereas تأتي جملة تحتوي على فاعل وفعل.
+
+<br>
+
+6. انتبه إلى استعمال الفاصلة في المكان الصحيح.
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 4: MISSION 1
+========================================== -->
+
+<section class="stage" id="stage4">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 01</span>
+
+<span class="difficulty">
+⭐ EASY
+</span>
+
+</div>
+
+<h2>🔎 True or False?</h2>
+
+<p class="description">
+Read each statement carefully.
+Choose True or False.
+</p>
+
+<div id="quiz1"></div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 5: MISSION 2
+========================================== -->
+
+<section class="stage" id="stage5">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 02</span>
+
+<span class="difficulty">
+⭐ EASY
+</span>
+
+</div>
+
+<h2>📖 My Cousin Amir</h2>
+
+<p class="description">
+Read the passage carefully,
+then answer the questions.
+</p>
+
+<div class="reading">
+
+My cousin Amir and I are very close,
+but our personalities are quite different.
+
+<br><br>
+
+<strong>Like me</strong>,
+Amir loves playing football
+and enjoys spending time with his family.
+
+<br><br>
+
+However,
+<strong>unlike me</strong>,
+he dislikes reading books.
+He prefers watching videos and playing games.
+
+<br><br>
+
+I am organised and hardworking,
+<strong>whereas</strong>
+Amir is sometimes careless
+and often forgets his homework.
+
+<br><br>
+
+We also have different ambitions.
+I dream of becoming a doctor,
+<strong>whereas</strong>
+Amir wants to become a professional footballer.
+
+<br><br>
+
+Despite our differences,
+we are good friends
+and always help each other.
+
+</div>
+
+<div id="quiz2"></div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 6: MISSION 3
+========================================== -->
+
+<section class="stage" id="stage6">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 03</span>
+
+<span class="difficulty">
+⭐ EASY
+</span>
+
+</div>
+
+<h2>🎯 Choose the Correct Marker</h2>
+
+<p class="description">
+Choose the correct word to complete
+each sentence.
+</p>
+
+<div id="quiz3"></div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 7: MISSION 4
+========================================== -->
+
+<section class="stage" id="stage7">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 04</span>
+
+<span class="difficulty medium">
+⭐⭐ MEDIUM
+</span>
+
+</div>
+
+<h2>✏️ Combine the Sentences</h2>
+
+<p class="description">
+Join each pair of sentences using
+the marker in brackets.
+Write one complete sentence.
+</p>
+
+<div class="tip">
+
+<strong>Example:</strong>
+
+<br>
+
+Sara is friendly.
+Her mother is friendly too.
+(LIKE)
+
+<br><br>
+
+<strong>Answer:</strong>
+
+<br>
+
+Like her mother, Sara is friendly.
+
+</div>
+
+<div id="combineTasks"></div>
+
+<button class="primary"
+onclick="checkWritten('combine')">
+✓ Check My Answers
+</button>
+
+<button class="secondary"
+onclick="resetWritten('combine')">
+↺ Try Again
+</button>
+
+<p class="feedback" id="combineResult"></p>
+
+</section>
+
+<!-- ==========================================
+     STAGE 8: MISSION 5
+========================================== -->
+
+<section class="stage" id="stage8">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 05</span>
+
+<span class="difficulty medium">
+⭐⭐ MEDIUM
+</span>
+
+</div>
+
+<h2>🧩 Build a Comparison Sentence</h2>
+
+<p class="description">
+Tap the words in the correct order.
+Tap a word in your answer to remove it.
+</p>
+
+<div id="builderArea"></div>
+
+</section>
+
+<!-- ==========================================
+     STAGE 9: MISSION 6
+========================================== -->
+
+<section class="stage" id="stage9">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 06</span>
+
+<span class="difficulty hard">
+⭐⭐⭐ HARD
+</span>
+
+</div>
+
+<h2>🔍 Grammar Detective</h2>
+
+<p class="description">
+Each sentence contains an incorrect marker.
+Write only the correct word.
+</p>
+
+<div id="repairTasks"></div>
+
+<button class="primary"
+onclick="checkWritten('repair')">
+✓ Check My Answers
+</button>
+
+<button class="secondary"
+onclick="resetWritten('repair')">
+↺ Try Again
+</button>
+
+<p class="feedback" id="repairResult"></p>
+
+</section>
+
+<!-- ==========================================
+     STAGE 10: MISSION 7
+========================================== -->
+
+<section class="stage" id="stage10">
+
+<div class="stage-header">
+
+<span class="badge">MISSION 07</span>
+
+<span class="difficulty hard">
+⭐⭐⭐ HARD
+</span>
+
+</div>
+
+<h2>✍️ Compare Yourself to Someone You Know</h2>
+
+<p class="description">
+Write three original sentences comparing
+your personality, habits, preferences,
+or ambitions with a friend or family member.
+</p>
+
+<!-- SENTENCE 1 -->
+
+<div class="writing-card">
+
+<label for="sentence1">
+
+🪞 Sentence 1 — Use LIKE to show similarity.
+
+</label>
+
+<p class="hint">
+
+Example:
+Like my mother, I am very patient.
+
+</p>
+
+<textarea id="sentence1"
+placeholder="Write a sentence using LIKE..."></textarea>
+
+</div>
+
+<!-- SENTENCE 2 -->
+
+<div class="writing-card">
+
+<label for="sentence2">
+
+🔄 Sentence 2 — Use UNLIKE to show difference.
+
+</label>
+
+<p class="hint">
+
+Example:
+Unlike my brother, I enjoy reading books.
+
+</p>
+
+<textarea id="sentence2"
+placeholder="Write a sentence using UNLIKE..."></textarea>
+
+</div>
+
+<!-- SENTENCE 3 -->
+
+<div class="writing-card">
+
+<label for="sentence3">
+
+⚖️ Sentence 3 — Use WHEREAS to show contrast.
+
+</label>
+
+<p class="hint">
+
+Example:
+I am hardworking, whereas my cousin is rather lazy.
+
+</p>
+
+<textarea id="sentence3"
+placeholder="Write a sentence using WHEREAS..."></textarea>
+
+</div>
+
+<h3>✅ My Writing Checklist</h3>
+
+<div class="checklist">
+
+<label>
+<input type="checkbox">
+I used LIKE to show similarity.
+</label>
+
+<label>
+<input type="checkbox">
+I used UNLIKE to show difference.
+</label>
+
+<label>
+<input type="checkbox">
+I used WHEREAS to connect two contrasting clauses.
+</label>
+
+<label>
+<input type="checkbox">
+I checked my capital letters, commas, and full stops.
+</label>
+
+</div>
+
+<button class="primary"
+onclick="checkWriting()">
+🏆 Check My Writing
+</button>
+
+<button class="secondary"
+onclick="window.print()">
+🖨 Print My Work
+</button>
+
+<p class="feedback" id="writingResult"></p>
+
+</section>
+
+<!-- ==========================================
+     CERTIFICATE
+========================================== -->
+
+<section class="certificate">
+
+<div class="icon">🏆</div>
+
+<h2 id="certificateTitle">
+Become a Comparison Champion!
+</h2>
+
+<p id="certificateMessage">
+Complete the seven interactive missions
+to earn your achievement.
+</p>
+
+<button class="hero-button"
+onclick="showAchievement()">
+View My Achievement
+</button>
+
+</section>
+
+<!-- NEXT LESSON -->
+
+<div class="end-links">
+
+<a href="MS4-S2-Grammar-Lesson3.html">
+← Previous Checkpoint
+</a>
+
+<a href="MS4-S2-Grammar-Lesson5.html">
+Checkpoint 05: Word Formation →
+</a>
+
+</div>
+
+</main>
+
+<!-- ==========================================
+     MINI DICTIONARY
+========================================== -->
+
+<button class="dict-button"
+id="dictionaryButton"
+aria-label="Open English Arabic dictionary">
+📖
+</button>
+
+<div class="overlay" id="dictionaryOverlay">
+
+<div class="dictionary"
+role="dialog"
+aria-modal="true"
+aria-labelledby="dictionaryTitle">
+
+<div class="dictionary-head">
+
+<h2 id="dictionaryTitle">
+📖 Mini Dictionary
+</h2>
+
+<button class="close-button"
+id="dictionaryClose"
+aria-label="Close dictionary">
+✕
+</button>
+
+</div>
+
+<input
+type="search"
+class="dictionary-search"
+id="dictionarySearch"
+placeholder="Search in English or Arabic..."
+>
+
+<div class="dictionary-list"
+id="dictionaryList"></div>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+/* ==========================================
+   GENERAL UTILITIES
+========================================== */
+
+function toggleArabic(id){
+
+document.getElementById(id)
+.classList.toggle("visible");
+
+}
+
+function normalize(text){
+
+return text
+.toLowerCase()
+.trim()
+.replace(/[.!?]+$/,"")
+.replace(/\s+/g," ")
+.replace(/\s+,/g,",");
+
+}
+
+function shuffle(array){
+
+const result=[...array];
+
+for(let i=result.length-1;i>0;i--){
+
+const j=Math.floor(Math.random()*(i+1));
+
+[result[i],result[j]]=
+[result[j],result[i]];
+
+}
+
+return result;
+
+}
+
+/* ==========================================
+   PROGRESS SYSTEM
+========================================== */
+
+const completedMissions=new Set();
+
+const totalMissions=7;
+
+function completeMission(number){
+
+completedMissions.add(number);
+
+const count=completedMissions.size;
+
+document.getElementById("progressFill")
+.style.width=(count/totalMissions*100)+"%";
+
+document.getElementById("progressText")
+.textContent=count+" / "+totalMissions+" missions";
+
+if(count===totalMissions){
+
+document.getElementById("certificateTitle")
+.textContent="🏆 Comparison Champion!";
+
+document.getElementById("certificateMessage")
+.textContent=
+"Congratulations! You completed all seven missions!";
+
+}
+
+}
+
+function showAchievement(){
+
+const count=completedMissions.size;
+
+if(count===totalMissions){
+
+alert(
+"🏆 COMPARISON CHAMPION!\n\n"+
+"Excellent work!\n"+
+"You completed all seven missions."
+);
+
+}else{
+
+alert(
+"You completed "+count+" out of 7 missions.\n\n"+
+"Keep practising!"
+);
+
+}
+
+}
+
+/* ==========================================
+   QUIZ DATA
+========================================== */
+
+const quizzes={
+
+quiz1:[
+
+{
+q:'"Like her mother, Sara is patient" shows similarity.',
+options:["True","False"],
+answer:0,
+explanation:"LIKE shows similarity."
+},
+
+{
+q:'"Unlike his brother, Amir is shy" means both brothers are shy.',
+options:["True","False"],
+answer:1,
+explanation:"UNLIKE shows difference."
+},
+
+{
+q:'"Sara is calm, whereas Lina is nervous" shows contrast.',
+options:["True","False"],
+answer:0,
+explanation:"WHEREAS connects contrasting ideas."
+},
+
+{
+q:'WHEREAS is normally followed by a clause.',
+options:["True","False"],
+answer:0,
+explanation:"A clause contains a subject and a verb."
+},
+
+{
+q:'"He works as a teacher" describes his real profession.',
+options:["True","False"],
+answer:0,
+explanation:"AS can introduce a person's actual role or job."
+}
+
+],
+
+quiz2:[
+
+{
+q:"What do Amir and the writer have in common?",
+options:[
+"They both enjoy football.",
+"They both love reading.",
+"They both forget homework."
+],
+answer:0,
+explanation:"Both enjoy playing football."
+},
+
+{
+q:"How is Amir different from the writer?",
+options:[
+"He is more organised.",
+"He dislikes reading.",
+"He wants to become a doctor."
+],
+answer:1,
+explanation:"Amir dislikes reading books."
+},
+
+{
+q:"Which word connects the contrasting personalities?",
+options:[
+"Like",
+"Unlike",
+"Whereas"
+],
+answer:2,
+explanation:"WHEREAS connects the two contrasting clauses."
+},
+
+{
+q:"What does Amir want to become?",
+options:[
+"A teacher",
+"A doctor",
+"A professional footballer"
+],
+answer:2,
+explanation:"Amir dreams of becoming a footballer."
+}
+
+],
+
+quiz3:[
+
+{
+q:"___ her mother, Sara is very patient.",
+options:[
+"Like",
+"Unlike",
+"Whereas"
+],
+answer:0,
+explanation:"The sentence expresses similarity."
+},
+
+{
+q:"___ his brother, Amir is shy.",
+options:[
+"Whereas",
+"Unlike",
+"As"
+],
+answer:1,
+explanation:"UNLIKE introduces a difference."
+},
+
+{
+q:"Sara is outgoing, ___ Lina is shy.",
+options:[
+"like",
+"unlike",
+"whereas"
+],
+answer:2,
+explanation:"WHEREAS connects two clauses."
+},
+
+{
+q:"He works ___ a teacher.",
+options:[
+"as",
+"unlike",
+"whereas"
+],
+answer:0,
+explanation:"AS introduces his real profession."
+},
+
+{
+q:"The twins look ___.",
+options:[
+"like",
+"alike",
+"whereas"
+],
+answer:1,
+explanation:"ALIKE can follow the linking verb look."
+},
+
+{
+q:"___ my sister, I prefer quiet places.",
+options:[
+"Unlike",
+"Whereas",
+"As"
+],
+answer:0,
+explanation:"UNLIKE shows that your preference is different."
+},
+
+{
+q:"I enjoy reading, ___ my brother prefers sports.",
+options:[
+"like",
+"whereas",
+"unlike"
+],
+answer:1,
+explanation:"WHEREAS contrasts two preferences."
+},
+
+{
+q:"She sings ___ her mother.",
+options:[
+"whereas",
+"as",
+"like"
+],
+answer:2,
+explanation:"LIKE compares the way they sing."
+}
+
+]
+
+};
+
+/* ==========================================
+   RENDER MULTIPLE CHOICE
+========================================== */
+
+function renderQuiz(id,missionNumber){
+
+const container=document.getElementById(id);
+
+const questions=quizzes[id];
+
+const solved=new Set();
+
+questions.forEach((question,index)=>{
+
+const box=document.createElement("div");
+box.className="question";
+
+const title=document.createElement("p");
+title.className="question-title";
+
+title.textContent=
+(index+1)+". "+question.q;
+
+const options=document.createElement("div");
+options.className="options";
+
+const feedback=document.createElement("div");
+feedback.className="feedback";
+feedback.setAttribute("role","status");
+
+question.options.forEach((option,optionIndex)=>{
+
+const button=document.createElement("button");
+
+button.className="option";
+button.textContent=option;
+
+button.addEventListener("click",()=>{
+
+if(solved.has(index))return;
+
+if(optionIndex===question.answer){
+
+button.classList.add("correct");
+
+feedback.className="feedback success";
+
+feedback.textContent=
+"✓ Excellent! "+question.explanation;
+
+solved.add(index);
+
+options.querySelectorAll("button")
+.forEach(btn=>btn.disabled=true);
+
+if(solved.size===questions.length){
+
+completeMission(missionNumber);
+
+}
+
+}else{
+
+button.classList.add("incorrect");
+button.disabled=true;
+
+feedback.className="feedback error";
+
+feedback.textContent=
+"Not quite. Try another answer!";
+
+}
+
+});
+
+options.appendChild(button);
+
+});
+
+box.appendChild(title);
+box.appendChild(options);
+box.appendChild(feedback);
+
+container.appendChild(box);
+
+});
+
+}
+
+renderQuiz("quiz1",1);
+renderQuiz("quiz2",2);
+renderQuiz("quiz3",3);
+
+/* ==========================================
+   COMBINE AND CORRECT TASKS
+========================================== */
+
+const writtenTasks={
+
+combine:[
+
+{
+sentence:
+"Sara is friendly. Her mother is friendly too. (LIKE)",
+answers:[
+"Like her mother, Sara is friendly",
+"Sara is friendly like her mother"
+],
+hint:"Both people share the same quality.",
+model:"Like her mother, Sara is friendly."
+},
+
+{
+sentence:
+"My mother is patient. My father is impatient. (WHEREAS)",
+answers:[
+"My mother is patient, whereas my father is impatient",
+"My father is impatient, whereas my mother is patient",
+"Whereas my mother is patient, my father is impatient",
+"Whereas my father is impatient, my mother is patient"
+],
+hint:"Connect two contrasting clauses.",
+model:
+"My mother is patient, whereas my father is impatient."
+},
+
+{
+sentence:
+"Most students like maths. Ali doesn't like maths. (UNLIKE)",
+answers:[
+"Unlike most students, Ali doesn't like maths",
+"Ali doesn't like maths, unlike most students"
+],
+hint:"Ali is different from most students.",
+model:
+"Unlike most students, Ali doesn't like maths."
+},
+
+{
+sentence:
+"I enjoy reading. My sister prefers watching films. (WHEREAS)",
+answers:[
+"I enjoy reading, whereas my sister prefers watching films",
+"My sister prefers watching films, whereas I enjoy reading",
+"Whereas I enjoy reading, my sister prefers watching films",
+"Whereas my sister prefers watching films, I enjoy reading"
+],
+hint:"Compare two different preferences.",
+model:
+"I enjoy reading, whereas my sister prefers watching films."
+}
+
+],
+
+repair:[
+
+{
+sentence:
+"He sings <u>as</u> his favourite singer.",
+answers:["like"],
+hint:"We are comparing the way two people sing.",
+model:"like"
+},
+
+{
+sentence:
+"<u>Unlike</u> her mother, she has the same curly hair.",
+answers:["like"],
+hint:"The sentence expresses similarity.",
+model:"like"
+},
+
+{
+sentence:
+"Sara is hardworking, <u>like</u> her brother is lazy.",
+answers:["whereas"],
+hint:"Connect two contrasting clauses.",
+model:"whereas"
+},
+
+{
+sentence:
+"My father works <u>like</u> a doctor. That is his real job.",
+answers:["as"],
+hint:"Use the word for a real profession.",
+model:"as"
+},
+
+{
+sentence:
+"<u>Whereas</u> my brother, I enjoy reading books.",
+answers:["unlike"],
+hint:"A noun phrase follows the correct marker.",
+model:"unlike"
+}
+
+]
+
+};
+
+/* ==========================================
+   RENDER WRITTEN TASKS
+========================================== */
+
+function renderWrittenTasks(type){
+
+const container=
+document.getElementById(type+"Tasks");
+
+writtenTasks[type].forEach((task,index)=>{
+
+const wrapper=document.createElement("div");
+wrapper.className="task";
+
+const label=document.createElement("label");
+label.htmlFor=type+index;
+
+label.innerHTML=
+(index+1)+". "+task.sentence;
+
+const input=document.createElement("input");
+
+input.type="text";
+input.id=type+index;
+input.autocomplete="off";
+
+input.placeholder=
+type==="combine"
+?"Write one complete sentence..."
+:"Write the correct word...";
+
+const hint=document.createElement("p");
+hint.className="hint";
+
+hint.textContent="💡 Hint: "+task.hint;
+
+const feedback=document.createElement("div");
+feedback.className="answer-feedback";
+feedback.setAttribute("role","status");
+
+wrapper.appendChild(label);
+wrapper.appendChild(input);
+wrapper.appendChild(hint);
+wrapper.appendChild(feedback);
+
+container.appendChild(wrapper);
+
+});
+
+}
+
+renderWrittenTasks("combine");
+renderWrittenTasks("repair");
+
+/* ==========================================
+   CHECK WRITTEN ANSWERS
+========================================== */
+
+function checkWritten(type){
+
+const tasks=writtenTasks[type];
+
+const rows=document.querySelectorAll(
+"#"+type+"Tasks .task"
+);
+
+let correctCount=0;
+
+rows.forEach((row,index)=>{
+
+const input=row.querySelector("input");
+
+const feedback=
+row.querySelector(".answer-feedback");
+
+const answer=normalize(input.value);
+
+const accepted=tasks[index].answers.map(normalize);
+
+input.classList.remove("correct","incorrect");
+
+if(accepted.includes(answer)){
+
+correctCount++;
+
+input.classList.add("correct");
+
+feedback.className="answer-feedback success";
+
+feedback.textContent="✓ Excellent!";
+
+}else{
+
+input.classList.add("incorrect");
+
+feedback.className="answer-feedback error";
+
+if(answer===""){
+
+feedback.textContent=
+"Please write an answer.";
+
+}else{
+
+feedback.textContent=
+"Check your sentence. Model answer: "+
+tasks[index].model;
+
+}
+
+}
+
+});
+
+const result=
+document.getElementById(type+"Result");
+
+result.textContent=
+correctCount+" / "+tasks.length+" correct.";
+
+result.className=
+"feedback "+
+(correctCount===tasks.length?"success":"error");
+
+if(correctCount===tasks.length){
+
+completeMission(type==="combine"?4:6);
+
+result.textContent+=" Mission complete! 🎉";
+
+}
+
+}
+
+/* ==========================================
+   RESET WRITTEN ANSWERS
+========================================== */
+
+function resetWritten(type){
+
+document.querySelectorAll(
+"#"+type+"Tasks .task"
+).forEach(row=>{
+
+const input=row.querySelector("input");
+
+input.value="";
+
+input.classList.remove("correct","incorrect");
+
+row.querySelector(".answer-feedback")
+.textContent="";
+
+});
+
+document.getElementById(type+"Result")
+.textContent="";
+
+}
+
+/* ==========================================
+   SENTENCE BUILDER
+========================================== */
+
+const builderSentences=[
+
+"Like her mother, Sara is very patient",
+
+"Unlike his brother, Amir enjoys reading books",
+
+"Sara is confident, whereas Lina is shy"
+
+];
+
+const builderCompleted=new Set();
+
+function createSentenceBuilder(sentence,index){
+
+const container=
+document.getElementById("builderArea");
+
+const box=document.createElement("div");
+box.className="question";
+
+const title=document.createElement("p");
+title.className="question-title";
+
+title.textContent="Sentence "+(index+1);
+
+const answerStrip=document.createElement("div");
+answerStrip.className="answer-strip";
+
+const wordBank=document.createElement("div");
+wordBank.className="word-bank";
+
+const feedback=document.createElement("p");
+feedback.className="feedback";
+feedback.setAttribute("role","status");
+
+const tiles=shuffle(
+sentence.split(" ").map((word,id)=>({
+word,
+id
+}))
+);
+
+let selected=[];
+
+function render(){
+
+answerStrip.innerHTML="";
+wordBank.innerHTML="";
+
+if(selected.length===0){
+
+answerStrip.textContent=
+"Tap the words below to build your sentence...";
+
+}
+
+selected.forEach((tile,selectedIndex)=>{
+
+const button=document.createElement("button");
+
+button.className="word-chip";
+button.textContent=tile.word;
+
+button.onclick=()=>{
+
+selected.splice(selectedIndex,1);
+render();
+
+};
+
+answerStrip.appendChild(button);
+
+});
+
+tiles.forEach(tile=>{
+
+const button=document.createElement("button");
+
+button.className="word-chip";
+button.textContent=tile.word;
+
+button.disabled=selected.includes(tile);
+
+button.onclick=()=>{
+
+selected.push(tile);
+render();
+
+};
+
+wordBank.appendChild(button);
+
+});
+
+}
+
+const checkButton=document.createElement("button");
+
+checkButton.className="primary";
+checkButton.textContent="✓ Check Sentence";
+
+checkButton.onclick=()=>{
+
+const answer=
+selected.map(tile=>tile.word).join(" ");
+
+if(answer===sentence){
+
+feedback.className="feedback success";
+
+feedback.textContent=
+"✓ Perfect sentence!";
+
+builderCompleted.add(index);
+
+if(builderCompleted.size===builderSentences.length){
+
+completeMission(5);
+
+}
+
+}else{
+
+feedback.className="feedback error";
+
+feedback.textContent=
+"Not yet. Check the word order and punctuation.";
+
+}
+
+};
+
+const clearButton=document.createElement("button");
+
+clearButton.className="secondary";
+clearButton.textContent="↺ Clear";
+
+clearButton.onclick=()=>{
+
+selected=[];
+feedback.textContent="";
+render();
+
+};
+
+box.appendChild(title);
+box.appendChild(answerStrip);
+box.appendChild(wordBank);
+box.appendChild(checkButton);
+box.appendChild(clearButton);
+box.appendChild(feedback);
+
+container.appendChild(box);
+
+render();
+
+}
+
+builderSentences.forEach(createSentenceBuilder);
+
+/* ==========================================
+   WRITING CHECK
+========================================== */
+
+function checkWriting(){
+
+const sentence1=
+document.getElementById("sentence1").value.trim();
+
+const sentence2=
+document.getElementById("sentence2").value.trim();
+
+const sentence3=
+document.getElementById("sentence3").value.trim();
+
+const sentences=[
+sentence1,
+sentence2,
+sentence3
+];
+
+const enoughWords=sentences.every(sentence=>
+sentence.split(/\s+/).length>=6
+);
+
+const likeForm=
+/\bLike\s+\w+/i.test(sentence1);
+
+const unlikeForm=
+/\bUnlike\s+\w+/i.test(sentence2);
+
+const whereasForm=
+/\bwhereas\b/i.test(sentence3);
+
+const result=
+document.getElementById("writingResult");
+
+if(
+enoughWords &&
+likeForm &&
+unlikeForm &&
+whereasForm
+){
+
+result.className="feedback success";
+
+result.textContent=
+"🎉 Excellent effort! You used LIKE, UNLIKE and WHEREAS. "+
+"Read your sentences again to check meaning, "+
+"grammar, spelling and punctuation.";
+
+completeMission(7);
+
+}else{
+
+result.className="feedback error";
+
+result.textContent=
+"Keep improving! Sentence 1 needs LIKE, "+
+"sentence 2 needs UNLIKE, and sentence 3 "+
+"needs WHEREAS. Write at least six words "+
+"in each sentence.";
+
+}
+
+}
+
+/* ==========================================
+   MINI DICTIONARY
+========================================== */
+
+const vocabulary=[
+
+["like","مثل / يشبه"],
+["unlike","على عكس / بخلاف"],
+["whereas","بينما / في حين أن"],
+["as","بصفة / كـ"],
+["alike","متشابهان"],
+["similarity","تشابه"],
+["difference","اختلاف"],
+["contrast","تباين / اختلاف"],
+["comparison","مقارنة"],
+["resemble","يشبه"],
+["personality","شخصية"],
+["personality traits","صفات الشخصية"],
+["patient","صبور"],
+["impatient","غير صبور"],
+["friendly","ودود"],
+["shy","خجول"],
+["outgoing","اجتماعي"],
+["confident","واثق من نفسه"],
+["nervous","متوتر"],
+["hardworking","مجتهد"],
+["lazy","كسول"],
+["organised","منظم"],
+["careless","مهمل"],
+["ambition","طموح"],
+["dream","حلم"],
+["preference","تفضيل"],
+["habit","عادة"],
+["experience","تجربة"],
+["childhood","طفولة"],
+["cousin","ابن أو بنت العم أو الخال"],
+["twins","توأمان"],
+["profession","مهنة"],
+["doctor","طبيب"],
+["teacher","أستاذ"],
+["footballer","لاعب كرة قدم"],
+["reading","القراءة"],
+["similar","متشابه"],
+["different","مختلف"],
+["however","لكن / مع ذلك"],
+["despite","رغم"],
+["in contrast","بالمقابل"],
+["similarly","بالمثل"]
+
+];
+
+const dictionaryButton=
+document.getElementById("dictionaryButton");
+
+const dictionaryOverlay=
+document.getElementById("dictionaryOverlay");
+
+const dictionaryClose=
+document.getElementById("dictionaryClose");
+
+const dictionarySearch=
+document.getElementById("dictionarySearch");
+
+const dictionaryList=
+document.getElementById("dictionaryList");
+
+function renderDictionary(){
+
+const searchText=
+dictionarySearch.value.toLowerCase().trim();
+
+dictionaryList.innerHTML="";
+
+const filtered=vocabulary.filter(([english,arabic])=>
+
+english.toLowerCase().includes(searchText)||
+arabic.includes(searchText)
+
+);
+
+filtered.forEach(([english,arabic])=>{
+
+const row=document.createElement("div");
+row.className="dictionary-row";
+
+const englishWord=document.createElement("strong");
+englishWord.textContent=english;
+
+const arabicWord=document.createElement("span");
+arabicWord.textContent=arabic;
+
+row.appendChild(englishWord);
+row.appendChild(arabicWord);
+
+dictionaryList.appendChild(row);
+
+});
+
+if(filtered.length===0){
+
+dictionaryList.textContent=
+"No matching words found.";
+
+}
+
+}
+
+function openDictionary(){
+
+dictionaryOverlay.classList.add("open");
+
+renderDictionary();
+
+dictionarySearch.focus();
+
+}
+
+function closeDictionary(){
+
+dictionaryOverlay.classList.remove("open");
+
+dictionaryButton.focus();
+
+}
+
+dictionaryButton.addEventListener(
+"click",
+openDictionary
+);
+
+dictionaryClose.addEventListener(
+"click",
+closeDictionary
+);
+
+dictionarySearch.addEventListener(
+"input",
+renderDictionary
+);
+
+dictionaryOverlay.addEventListener("click",event=>{
+
+if(event.target===dictionaryOverlay){
+
+closeDictionary();
+
+}
+
+});
+
+document.addEventListener("keydown",event=>{
+
+if(
+event.key==="Escape" &&
+dictionaryOverlay.classList.contains("open")
+){
+
+closeDictionary();
+
+}
+
+});
+
+/* ==========================================
+   INITIALISATION COMPLETE
+========================================== */
+
+</script>
+
+</body>
+</html>

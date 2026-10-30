@@ -1,0 +1,2396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#9d3f85">
+
+<title>MS4 · Reading Lesson 03 | All About Me</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --rose:#eb5b9a;
+  --rose-deep:#b52d72;
+  --rose-pale:#fff0f7;
+  --purple:#7854c5;
+  --purple-deep:#4c327b;
+  --lavender:#f0e9ff;
+  --gold:#f6bd60;
+  --mint:#daf8ed;
+  --green:#238b63;
+  --red:#c84361;
+  --ink:#30263c;
+  --muted:#766d80;
+  --line:#f0e4ef;
+  --paper:#ffffff;
+  --shadow:0 18px 55px rgba(88,43,92,.11);
+  --radius:27px;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:"Nunito",sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 4% 7%,#ffd7e8 0,transparent 29%),
+    radial-gradient(circle at 95% 17%,#e5d9ff 0,transparent 30%),
+    linear-gradient(180deg,#fff5fa,#fffaf6 55%,#f8f2ff);
+  min-height:100vh;
+}
+
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:3px solid var(--purple);
+  outline-offset:3px;
+}
+
+a{color:inherit}
+::selection{background:#ffd0e5}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:85px 20px 115px;
+  text-align:center;
+  background:
+    radial-gradient(circle at 15% 22%,rgba(255,255,255,.26),transparent 25%),
+    radial-gradient(circle at 85% 70%,rgba(255,210,235,.24),transparent 30%),
+    linear-gradient(125deg,#7a3d91,#c34c91 55%,#f28b98);
+  color:white;
+}
+
+.hero:before,.hero:after{
+  content:"";
+  position:absolute;
+  border:2px solid rgba(255,255,255,.15);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-1;
+}
+
+.hero:before{width:470px;height:470px;top:-260px;left:-180px}
+.hero:after{width:540px;height:540px;right:-260px;bottom:-350px}
+
+.hero-content{max-width:900px;margin:auto;position:relative}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.15);
+  padding:10px 18px;
+  border-radius:100px;
+  font:700 .72rem "Space Mono",monospace;
+  letter-spacing:.7px;
+}
+
+.hero h1{
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(3.5rem,9vw,7.5rem);
+  letter-spacing:-3px;
+  line-height:1;
+  margin:27px 0 15px;
+}
+
+.hero h1 span{color:#ffe2a1}
+
+.hero p{
+  max-width:700px;
+  margin:0 auto;
+  font-size:1.1rem;
+  line-height:1.85;
+  color:#fff3fb;
+}
+
+.hero-tags{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:29px;
+}
+
+.hero-tags span{
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:100px;
+  padding:9px 15px;
+  font-size:.8rem;
+  font-weight:900;
+}
+
+.hero-decoration{
+  position:absolute;
+  font-size:3.2rem;
+  opacity:.7;
+  animation:float 5s ease-in-out infinite;
+}
+
+.d1{left:9%;top:30%}
+.d2{right:10%;top:24%;animation-delay:1s}
+.d3{right:16%;bottom:17%;animation-delay:2s}
+
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(-8deg)}
+  50%{transform:translateY(-15px) rotate(7deg)}
+}
+
+/* NAVIGATION */
+
+.lesson-nav{
+  position:sticky;
+  top:10px;
+  z-index:50;
+  width:min(960px,calc(100% - 24px));
+  margin:-45px auto 36px;
+  padding:11px;
+  border:1px solid rgba(255,255,255,.85);
+  border-radius:22px;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(16px);
+  box-shadow:var(--shadow);
+}
+
+.nav-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:3px 8px 10px;
+  font-size:.77rem;
+  font-weight:900;
+  color:var(--purple-deep);
+}
+
+.nav-top strong{color:var(--rose-deep)}
+
+.progress-track{
+  height:6px;
+  background:#f2e5f0;
+  border-radius:100px;
+  overflow:hidden;
+  margin-bottom:11px;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--rose),var(--purple));
+  border-radius:100px;
+  transition:width .5s;
+}
+
+.nav-links{
+  display:grid;
+  grid-template-columns:repeat(9,1fr);
+  gap:5px;
+}
+
+.nav-links a{
+  display:grid;
+  place-items:center;
+  min-height:38px;
+  text-decoration:none;
+  border-radius:11px;
+  font:700 .7rem "Space Mono",monospace;
+  color:#8b7790;
+  background:#faf4fa;
+  transition:.2s;
+}
+
+.nav-links a:hover,.nav-links a.active{
+  background:var(--rose);
+  color:white;
+}
+
+.nav-links a.done{
+  background:var(--mint);
+  color:var(--green);
+}
+
+/* MAIN */
+
+main{
+  width:min(1060px,calc(100% - 28px));
+  margin:auto;
+}
+
+.step{
+  margin-bottom:34px;
+  scroll-margin-top:155px;
+}
+
+.section-heading{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.step-number{
+  width:58px;
+  height:58px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  color:white;
+  background:linear-gradient(135deg,var(--rose),var(--purple));
+  box-shadow:0 9px 19px rgba(185,69,140,.2);
+  font:700 1rem "Space Mono",monospace;
+}
+
+.section-heading small{
+  display:block;
+  color:var(--rose-deep);
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-weight:900;
+  font-size:.69rem;
+}
+
+.section-heading h2{
+  margin:3px 0 0;
+  font:800 clamp(1.6rem,4vw,2.2rem) "Baloo 2",sans-serif;
+  line-height:1.15;
+}
+
+.card{
+  padding:clamp(20px,4vw,35px);
+  border-radius:var(--radius);
+  background:var(--paper);
+  box-shadow:var(--shadow);
+  border:1px solid #fff;
+}
+
+.instruction{
+  font-size:1.05rem;
+  font-weight:900;
+  line-height:1.7;
+  margin:0 0 24px;
+}
+
+.instruction:before{
+  content:"✦";
+  color:var(--rose);
+  margin-right:9px;
+}
+
+.note{
+  color:var(--muted);
+  font-size:.88rem;
+  line-height:1.7;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:13px 22px;
+  border:0;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--rose),var(--rose-deep));
+  color:white;
+  font-weight:900;
+  box-shadow:0 9px 19px rgba(210,63,129,.18);
+  transition:.2s;
+}
+
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+
+.btn.secondary{
+  background:#f3ebf6;
+  color:var(--purple-deep);
+  box-shadow:none;
+}
+
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+.feedback{
+  display:none;
+  margin-top:19px;
+  padding:16px 19px;
+  border-radius:15px;
+  line-height:1.65;
+  font-weight:800;
+}
+
+.feedback.show{display:block}
+.feedback.good{background:#e7f9f0;color:#197650}
+.feedback.bad{background:#fff0f3;color:#a73553}
+
+.question{
+  background:#fffbfe;
+  border:1px solid var(--line);
+  border-radius:19px;
+  padding:20px;
+  margin-bottom:15px;
+  transition:border-color .2s;
+}
+
+.question:last-child{margin-bottom:0}
+.question p{margin:0 0 14px;font-weight:900;line-height:1.6}
+
+.options{display:grid;gap:9px}
+
+.option{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:13px 15px;
+  border:2px solid #f1e6ee;
+  border-radius:13px;
+  background:white;
+  cursor:pointer;
+  transition:.2s;
+  line-height:1.5;
+  font-weight:700;
+}
+
+.option:hover{border-color:#e9a1c6;background:#fff7fb}
+.option:has(input:checked){border-color:var(--rose);background:var(--rose-pale)}
+.option input{margin-top:4px;accent-color:var(--rose);flex-shrink:0}
+
+input[type=text],select,textarea,input[type=search]{
+  width:100%;
+  padding:13px 15px;
+  border:2px solid #eadee9;
+  border-radius:13px;
+  background:white;
+  color:var(--ink);
+  outline:none;
+}
+
+input:focus,select:focus,textarea:focus{
+  border-color:var(--rose);
+}
+
+textarea{
+  min-height:145px;
+  resize:vertical;
+  line-height:1.75;
+}
+
+.correct-field{border-color:var(--green)!important;background:#f1fff7!important}
+.wrong-field{border-color:#ed8ba0!important;background:#fff7f8!important}
+
+/* PREDICTION */
+
+.prediction-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:13px;
+}
+
+.prediction{
+  text-align:left;
+  padding:20px;
+  border:2px solid #f2e2ed;
+  border-radius:18px;
+  background:#fffafd;
+  color:var(--ink);
+  font-weight:900;
+  transition:.2s;
+}
+
+.prediction:hover{transform:translateY(-3px);border-color:var(--rose)}
+.prediction.selected{background:#ffe8f3;border-color:var(--rose)}
+.prediction .emoji{font-size:1.8rem;display:block;margin-bottom:10px}
+
+/* READING */
+
+.reading-tools{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:22px;
+  padding:13px 16px;
+  border-radius:15px;
+  background:#fff2f8;
+}
+
+.reading-tools span{font-size:.85rem;font-weight:900;color:var(--rose-deep)}
+
+.reading-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.6fr) minmax(220px,.65fr);
+  gap:22px;
+  align-items:start;
+}
+
+.reading-paper{
+  background:#fffdf9;
+  border:1px solid #f1e6dc;
+  border-radius:21px;
+  padding:clamp(20px,4vw,33px);
+}
+
+.reading-paper h3{
+  margin:0 0 24px;
+  color:var(--rose-deep);
+  font:800 2.3rem "Baloo 2",sans-serif;
+}
+
+.paragraph{
+  position:relative;
+  padding:16px 16px 16px 59px;
+  margin:0 0 15px;
+  border-radius:15px;
+  line-height:2;
+  font-size:1rem;
+  transition:.25s;
+}
+
+.paragraph:last-child{margin-bottom:0}
+.paragraph.active{background:#fff0f6}
+
+.para-number{
+  position:absolute;
+  left:12px;
+  top:18px;
+  width:33px;
+  height:33px;
+  display:grid;
+  place-items:center;
+  background:#fbe2ed;
+  border-radius:11px;
+  color:var(--rose-deep);
+  font:700 .7rem "Space Mono",monospace;
+}
+
+.visual-rail{
+  position:sticky;
+  top:155px;
+  display:grid;
+  gap:13px;
+}
+
+.visual-card{
+  padding:9px;
+  border-radius:18px;
+  background:white;
+  box-shadow:0 8px 25px rgba(80,30,70,.08);
+  opacity:.58;
+  transform:scale(.98);
+  transition:.3s;
+}
+
+.visual-card.active{
+  opacity:1;
+  transform:scale(1);
+  outline:3px solid #f4b0d0;
+}
+
+.visual-card img{
+  display:block;
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  border-radius:12px;
+  background:#f7e8f1;
+}
+
+.visual-card small{
+  display:block;
+  padding:8px 5px 3px;
+  color:var(--purple-deep);
+  font-size:.75rem;
+  font-weight:900;
+}
+
+/* TABLES */
+
+.tf-row{
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) 130px minmax(0,1.4fr);
+  gap:12px;
+  align-items:center;
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.tf-row:last-child{border:0}
+.tf-row strong{line-height:1.6;font-size:.92rem}
+
+.order-list{display:grid;gap:11px}
+
+.order-item{
+  display:grid;
+  grid-template-columns:45px 1fr;
+  align-items:center;
+  gap:12px;
+}
+
+.order-item span{
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  background:var(--lavender);
+  color:var(--purple);
+  font-weight:900;
+}
+
+.table-wrap{overflow-x:auto}
+
+.language-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:480px;
+}
+
+.language-table th{
+  background:#f9e9f3;
+  color:var(--rose-deep);
+  text-align:left;
+}
+
+.language-table th,.language-table td{
+  padding:13px;
+  border-bottom:1px solid var(--line);
+}
+
+.language-table td:first-child{font-weight:900;width:35%}
+
+.profile{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.profile-item{
+  background:#fff8fc;
+  border:1px solid var(--line);
+  padding:16px;
+  border-radius:16px;
+}
+
+.profile-item label{
+  display:block;
+  margin-bottom:9px;
+  font-size:.76rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.6px;
+  color:var(--purple);
+}
+
+.subheading{
+  font:800 1.65rem "Baloo 2",sans-serif;
+  margin:30px 0 15px;
+  color:var(--purple-deep);
+}
+
+/* WRITING */
+
+.writing-tips{
+  padding:20px;
+  border-radius:18px;
+  background:var(--lavender);
+  margin:18px 0;
+}
+
+.writing-tips strong{color:var(--purple-deep)}
+.writing-tips p{margin:8px 0 0;line-height:1.7}
+
+.word-count{
+  text-align:right;
+  color:var(--muted);
+  font-size:.8rem;
+  font-weight:900;
+  margin-top:6px;
+}
+
+.completion{
+  display:none;
+  margin-top:22px;
+  text-align:center;
+  padding:30px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#fff0f8,#f1eaff);
+}
+
+.completion.show{display:block}
+.completion .trophy{font-size:4rem}
+.completion h3{font:800 2rem "Baloo 2",sans-serif;margin:10px 0}
+
+/* FLOATING TOOLS */
+
+.score-panel{
+  position:fixed;
+  right:15px;
+  bottom:15px;
+  z-index:80;
+  padding:13px 19px;
+  border-radius:19px;
+  background:rgba(255,255,255,.96);
+  box-shadow:0 10px 35px rgba(72,27,70,.18);
+  text-align:center;
+  border:1px solid #f5e4ed;
+}
+
+.score-panel small{
+  display:block;
+  font:700 .65rem "Space Mono",monospace;
+  color:var(--muted);
+}
+
+.score-panel strong{
+  display:block;
+  font:800 1.8rem "Baloo 2",sans-serif;
+  color:var(--rose-deep);
+  line-height:1.2;
+}
+
+.dictionary-button{
+  position:fixed;
+  left:15px;
+  bottom:15px;
+  z-index:80;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  border:0;
+  border-radius:17px;
+  background:var(--gold);
+  color:#62410c;
+  padding:15px 18px;
+  font-weight:900;
+  box-shadow:0 10px 25px rgba(120,80,0,.2);
+}
+
+.dictionary-overlay{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  display:none;
+  place-items:center;
+  padding:15px;
+  background:rgba(32,18,40,.55);
+  backdrop-filter:blur(7px);
+}
+
+.dictionary-overlay.open{display:grid}
+
+.dictionary{
+  width:min(610px,100%);
+  max-height:85vh;
+  overflow:auto;
+  padding:25px;
+  background:white;
+  border-radius:25px;
+  box-shadow:0 25px 75px rgba(0,0,0,.22);
+}
+
+.dictionary-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.dictionary h2{
+  margin:0;
+  font:800 2rem "Baloo 2",sans-serif;
+  color:var(--rose-deep);
+}
+
+.close-btn{
+  border:0;
+  background:#f4eaf1;
+  border-radius:50%;
+  width:42px;
+  height:42px;
+  font-size:1.2rem;
+}
+
+.dictionary-search{margin:15px 0}
+
+.word{
+  padding:13px 4px;
+  border-bottom:1px solid var(--line);
+}
+
+.word strong{color:var(--rose-deep)}
+.word small{color:var(--muted);margin-left:8px}
+.word .arabic{
+  display:block;
+  direction:rtl;
+  text-align:left;
+  font:600 1.15rem "Noto Naskh Arabic",serif;
+  margin-top:5px;
+}
+
+footer{
+  margin-top:70px;
+  padding:35px 20px 105px;
+  text-align:center;
+  color:#806a81;
+  background:#f7edf5;
+  font-size:.8rem;
+  font-weight:900;
+  letter-spacing:.6px;
+}
+
+@media(max-width:850px){
+  .reading-layout{grid-template-columns:1fr}
+  .visual-rail{
+    position:static;
+    grid-template-columns:repeat(2,1fr);
+  }
+  .tf-row{grid-template-columns:1fr}
+}
+
+@media(max-width:600px){
+  .hero{padding:65px 15px 95px}
+  .hero h1{letter-spacing:-1px}
+  .hero-decoration{display:none}
+  .lesson-nav{top:5px}
+  .nav-links a{min-height:33px;font-size:.61rem}
+  .prediction-grid,.profile{grid-template-columns:1fr}
+  .section-heading{gap:11px}
+  .step-number{width:49px;height:49px}
+  .visual-rail{grid-template-columns:1fr 1fr}
+  .visual-card small{font-size:.65rem}
+  .paragraph{padding-left:48px}
+  .para-number{left:7px}
+  .dictionary-button{padding:13px}
+  .dictionary-button span{display:none}
+  .score-panel{padding:10px 13px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
+
+@media print{
+  .hero{padding:25px;background:white;color:black}
+  .hero p{color:black}
+  .lesson-nav,.score-panel,.dictionary-button,.actions{display:none!important}
+  body{background:white}
+  .card{box-shadow:none;border:1px solid #ddd}
+  .step{break-inside:avoid}
+  .visual-rail{position:static}
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="hero-decoration d1">✦</div>
+  <div class="hero-decoration d2">✎</div>
+  <div class="hero-decoration d3">★</div>
+
+  <div class="hero-content">
+    <div class="eyebrow">✦ MS4 · SEQUENCE 02 · READING 03</div>
+
+    <h1>All <span>About Me</span></h1>
+
+    <p>
+      Every person has a unique story. Discover Adam's personality,
+      friendships, school experiences, challenges and dreams.
+      Read, explore, practise and tell your own story!
+    </p>
+
+    <div class="hero-tags">
+      <span>📖 Reading</span>
+      <span>🧠 Comprehension</span>
+      <span>🔤 Language</span>
+      <span>✍️ Writing</span>
+      <span>⭐ 100 Points</span>
+    </div>
+  </div>
+</header>
+
+<nav class="lesson-nav" aria-label="Lesson navigation">
+  <div class="nav-top">
+    <span>YOUR READING JOURNEY</span>
+    <strong id="progressLabel">0 / 8 activities completed</strong>
+  </div>
+
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#step1" class="active" title="Predict">01</a>
+    <a href="#step2" title="Read">02</a>
+    <a href="#step3" title="Global understanding">03</a>
+    <a href="#step4" title="Details">04</a>
+    <a href="#step5" title="True or false">05</a>
+    <a href="#step6" title="Language">06</a>
+    <a href="#step7" title="Grammar">07</a>
+    <a href="#step8" title="Vocabulary">08</a>
+    <a href="#step9" title="Writing">09</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- STEP 1 -->
+
+<section class="step" id="step1">
+  <div class="section-heading">
+    <div class="step-number">01</div>
+    <div>
+      <small>Before reading · Predict</small>
+      <h2>What Will You Discover?</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="instruction">
+      Look at the title “All About Me”. Select all the topics
+      you think the text will discuss.
+    </p>
+
+    <div class="prediction-grid" id="predictions">
+      <button class="prediction" data-correct="true" aria-pressed="false">
+        <span class="emoji">👤</span>
+        A person's character and personality
+      </button>
+
+      <button class="prediction" data-correct="true" aria-pressed="false">
+        <span class="emoji">🎯</span>
+        Hobbies, experiences and future plans
+      </button>
+
+      <button class="prediction" data-correct="false" aria-pressed="false">
+        <span class="emoji">🌋</span>
+        A scientific experiment about volcanoes
+      </button>
+
+      <button class="prediction" data-correct="true" aria-pressed="false">
+        <span class="emoji">🏫</span>
+        School and family experiences
+      </button>
+    </div>
+
+    <div class="actions">
+      <button class="btn" onclick="checkPrediction()">✓ Check Prediction</button>
+    </div>
+
+    <div class="feedback" id="predictionFeedback" role="status"></div>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+
+<section class="step" id="step2">
+  <div class="section-heading">
+    <div class="step-number">02</div>
+    <div>
+      <small>Reading time · Discover</small>
+      <h2>Meet Adam</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="instruction">
+      Read Adam's story carefully. Pay attention to his character,
+      experiences, feelings, comparisons and future ambitions.
+    </p>
+
+    <div class="reading-tools">
+      <span>📚 SIX PARAGRAPHS · ONE PERSONAL STORY</span>
+
+      <div>
+        <button class="btn secondary" onclick="changeFont(-1)" aria-label="Decrease reading font size">A−</button>
+        <button class="btn secondary" onclick="changeFont(1)" aria-label="Increase reading font size">A+</button>
+      </div>
+    </div>
+
+    <div class="reading-layout">
+      <article class="reading-paper" id="readingPaper">
+        <h3>All About Me</h3>
+
+        <div class="paragraph active" data-picture="0">
+          <span class="para-number">01</span>
+          My name is Adam, and I am fourteen years old. I am a
+          middle-school pupil who lives with my family in a small town.
+          People who know me well usually describe me as calm, friendly
+          and hardworking. I am not always confident when I meet new
+          people, but I become more talkative when I feel comfortable.
+          I try to be honest with others, and I believe that being
+          respectful is one of the most important qualities a person can
+          have. My friends sometimes say that I am ambitious because I
+          like setting goals and working hard to achieve them.
+        </div>
+
+        <div class="paragraph" data-picture="1">
+          <span class="para-number">02</span>
+          At school, English is one of my favourite subjects. I enjoy
+          learning new words and expressing my ideas in English. I also
+          like science because I am curious about how things work. Last
+          year, I was not very confident when I had to speak in front of
+          the class. While my classmates were preparing a presentation,
+          I was worrying about making mistakes. My English teacher
+          encouraged me to participate, and I slowly became more
+          comfortable. I discovered that mistakes are not always
+          negative; sometimes they help us learn.
+        </div>
+
+        <div class="paragraph" data-picture="2">
+          <span class="para-number">03</span>
+          Outside school, I have several hobbies. I enjoy playing
+          football with my friends, reading adventure stories and
+          listening to music. I also spend some time using digital
+          devices, but I try not to spend the whole day online. My best
+          friend and I often play football after school. Unlike me, he is
+          very patient and prefers quiet activities such as reading and
+          drawing. Whereas I usually make decisions quickly, he thinks
+          carefully before choosing what to do. We are different, but
+          these differences make our friendship interesting.
+        </div>
+
+        <div class="paragraph" data-picture="3">
+          <span class="para-number">04</span>
+          My family is also very important to me. My parents always
+          encourage me to work hard and believe in myself. My older
+          sister is especially helpful when I have a difficult school
+          task. When I was younger, I sometimes thought that asking for
+          help was a sign of weakness. One day, however, I had a
+          difficult project and did not know how to organise my ideas.
+          My sister helped me make a plan, and I finally completed the
+          project successfully. That experience taught me that asking
+          for help can be a strength, not a weakness.
+        </div>
+
+        <div class="paragraph" data-picture="4">
+          <span class="para-number">05</span>
+          I have also learned a lot from difficult experiences. Two years
+          ago, I entered a school competition, but I did not win. At
+          first, I felt disappointed and wanted to give up. Then my
+          teacher told me that unsuccessful attempts can teach us
+          valuable lessons. I listened to her advice and decided to try
+          again. The following year, I prepared more carefully and won a
+          prize. It was one of the most important experiences of my
+          school life because it taught me to be determined.
+        </div>
+
+        <div class="paragraph" data-picture="5">
+          <span class="para-number">06</span>
+          In the future, I will continue working towards my goals. I
+          would like to study at university and perhaps become an
+          engineer. I know that the road will not always be easy, but I
+          am ready to work hard. I want to become a responsible,
+          independent and successful person who can help others. I also
+          hope to keep my friendships and continue learning new things.
+          I do not know exactly what the future will bring, but I know
+          that my choices, experiences and efforts will help shape the
+          person I become.
+        </div>
+      </article>
+
+      <aside class="visual-rail" id="visualRail">
+        <div class="visual-card active">
+          <img src="https://i.imgur.com/3VS3JcQ.png" alt="Adam introducing himself" loading="lazy">
+          <small>01 · My personality</small>
+        </div>
+
+        <div class="visual-card">
+          <img src="https://i.imgur.com/aqqeF1t.png" alt="Learning in the classroom" loading="lazy">
+          <small>02 · My school life</small>
+        </div>
+
+        <div class="visual-card">
+          <img src="https://i.imgur.com/iSq7ycG.png" alt="School activities" loading="lazy">
+          <small>03 · My interests</small>
+        </div>
+
+        <div class="visual-card">
+          <img src="https://i.imgur.com/NZROUge.png" alt="People helping one another" loading="lazy">
+          <small>04 · My family</small>
+        </div>
+
+        <div class="visual-card">
+          <img src="https://i.imgur.com/CBshzDa.png" alt="Learning from challenges" loading="lazy">
+          <small>05 · My experiences</small>
+        </div>
+
+        <div class="visual-card">
+          <img src="https://i.imgur.com/5s6cYX1.png" alt="Thinking about the future" loading="lazy">
+          <small>06 · My dreams</small>
+        </div>
+      </aside>
+    </div>
+
+    <p class="note">
+      ✨ Reading tip: Read once for the general meaning.
+      Read again to find specific information.
+    </p>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+
+<section class="step" id="step3">
+  <div class="section-heading">
+    <div class="step-number">03</div>
+    <div>
+      <small>Comprehension · General meaning</small>
+      <h2>The Big Picture</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="instruction">Choose the best answer.</p>
+
+    <div id="globalQuestions"></div>
+
+    <div class="actions">
+      <button class="btn" onclick="checkGlobal()">✓ Check Answers</button>
+    </div>
+
+    <div id="globalFeedback" class="feedback" role="status"></div>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+
+<section class="step" id="step4">
+  <div class="section-heading">
+    <div class="step-number">04</div>
+    <div>
+      <small>Comprehension · Specific information</small>
+      <h2>Reading Detective</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="instruction">
+      Read the text again and find the correct information.
+    </p>
+
+    <div id="detailQuestions"></div>
+
+    <div class="actions">
+      <button class="btn" onclick="checkDetails()">✓ Check Answers</button>
+    </div>
+
+    <div id="detailsFeedback" class="feedback" role="status"></div>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+
+<section class="step" id="step5">
+  <div class="section-heading">
+    <div class="step-number">05</div>
+    <div>
+      <small>Critical reading · Evidence</small>
+      <h2>True or False?</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="instruction">
+      Decide whether each statement is true or false.
+      Correct false statements and give evidence from the text.
+    </p>
+
+    <div id="tfQuestions"></div>
+
+    <div class="actions">
+      <button class="btn" onclick="checkTF()">✓ Check Answers</button>
+    </div>
+
+    <div id="tfFeedback" class="feedback" role="status"></div>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+
+<section class="step" id="step6">
+  <div class="section-heading">
+    <div class="step-number">06</div>
+    <div>
+      <small>Language · Vocabulary in context</small>
+      <h2>Word Explorer</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="instruction">
+      Explore pronouns, synonyms and antonyms in Adam's story.
+    </p>
+
+    <div id="languageQuestions"></div>
+
+    <h3 class="subheading">🧩 Put the Events in Order</h3>
+
+    <p class="note">
+      Arrange the events in the order they are mentioned in the text.
+    </p>
+
+    <div class="order-list" id="orderQuestions"></div>
+
+    <div class="actions">
+      <button class="btn" onclick="checkLanguage()">✓ Check Answers</button>
+    </div>
+
+    <div id="languageFeedback" class="feedback" role="status"></div>
+  </div>
+</section>
+
+<!-- STEP 7 -->
+
+<section class="step" id="step7">
+  <div class="section-heading">
+    <div class="step-number">07</div>
+    <div>
+      <small>Grammar · Language awareness</small>
+      <h2>Grammar Detective</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="instruction">
+      Identify the tense or grammatical structure used in each sentence.
+    </p>
+
+    <div id="grammarQuestions"></div>
+
+    <h3 class="subheading">🔍 Grammar Treasure Hunt</h3>
+
+    <p class="note">
+      Find and copy an example of each language point from Adam's story.
+    </p>
+
+    <div class="table-wrap">
+      <table class="language-table">
+        <thead>
+          <tr>
+            <th>Language Point</th>
+            <th>Your Example from the Text</th>
+          </tr>
+        </thead>
+        <tbody id="grammarHunt"></tbody>
+      </table>
+    </div>
+
+    <div class="actions">
+      <button class="btn" onclick="checkGrammar()">✓ Check Answers</button>
+    </div>
+
+    <div id="grammarFeedback" class="feedback" role="status"></div>
+  </div>
+</section>
+
+<!-- STEP 8 -->
+
+<section class="step" id="step8">
+  <div class="section-heading">
+    <div class="step-number">08</div>
+    <div>
+      <small>Vocabulary · Inference</small>
+      <h2>Beyond the Words</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="instruction">
+      Complete the vocabulary tasks and make logical inferences.
+    </p>
+
+    <div id="vocabularyQuestions"></div>
+
+    <h3 class="subheading">👤 Adam's Personal Profile</h3>
+
+    <p class="note">
+      Complete the profile using information from the reading passage.
+    </p>
+
+    <div class="profile" id="profileQuestions"></div>
+
+    <div class="actions">
+      <button class="btn" onclick="checkStep8()">✓ Check Answers</button>
+    </div>
+
+    <div id="step8Feedback" class="feedback" role="status"></div>
+  </div>
+</section>
+
+<!-- STEP 9 -->
+
+<section class="step" id="step9">
+  <div class="section-heading">
+    <div class="step-number">09</div>
+    <div>
+      <small>Higher-order thinking · Production</small>
+      <h2>Now It's Your Turn!</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="instruction">
+      Think about Adam's message. Then write your own personal story.
+    </p>
+
+    <div class="question">
+      <p>1. Which statement best expresses the writer's message?</p>
+
+      <div class="options" id="finalOptions">
+        <label class="option">
+          <input type="radio" name="final1" value="a">
+          Our experiences, choices and efforts help shape who we become.
+        </label>
+
+        <label class="option">
+          <input type="radio" name="final1" value="b">
+          Successful people never experience failure.
+        </label>
+
+        <label class="option">
+          <input type="radio" name="final1" value="c">
+          People should avoid asking others for help.
+        </label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. Explain your answer using at least two ideas from the text.</p>
+
+      <textarea id="explain"
+        placeholder="I think the writer wants to show that... For example, Adam... Another example is..."></textarea>
+
+      <div class="word-count">
+        <span id="explainCount">0</span> words
+      </div>
+    </div>
+
+    <h3 class="subheading">✍️ My Personal Story</h3>
+
+    <div class="writing-tips">
+      <strong>🌟 Writing Guide</strong>
+      <p>
+        Introduce yourself. Describe your personality and interests.
+        Write about an experience that taught you something.
+        Finally, explain one of your future ambitions.
+      </p>
+    </div>
+
+    <div class="question">
+      <p>3. Write a short paragraph about yourself.</p>
+
+      <textarea id="production" style="min-height:230px"
+        placeholder="My name is... I am... years old. I am a ... person. I enjoy... Last year, I... This experience taught me... In the future, I would like to..."></textarea>
+
+      <div class="word-count">
+        <span id="productionCount">0</span> words
+      </div>
+    </div>
+
+    <div class="question">
+      <p>4. Check your writing before finishing.</p>
+
+      <div class="options" id="writingChecklist">
+        <label class="option"><input type="checkbox" id="checklist1"> I described at least three qualities.</label>
+        <label class="option"><input type="checkbox" id="checklist2"> I mentioned an experience or memory.</label>
+        <label class="option"><input type="checkbox" id="checklist3"> I used appropriate past and present tenses.</label>
+        <label class="option"><input type="checkbox" id="checklist4"> I used a comparison or contrast.</label>
+        <label class="option"><input type="checkbox" id="checklist5"> I mentioned a future ambition.</label>
+        <label class="option"><input type="checkbox" id="checklist6"> I checked spelling, punctuation and verb forms.</label>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" onclick="checkFinal()">🏆 Finish My Lesson</button>
+      <button class="btn secondary" onclick="window.print()">🖨 Print My Work</button>
+    </div>
+
+    <div id="finalFeedback" class="feedback" role="status"></div>
+
+    <div class="completion" id="completion">
+      <div class="trophy">🏆</div>
+      <h3>Reading Adventure Complete!</h3>
+      <p>You have explored Adam's story and written about yourself.</p>
+      <p><strong>Your current score: <span id="finalScore">0</span>/100</strong></p>
+      <p class="note">
+        Your written answers may need your teacher's feedback.
+        The automatic score is a practice score, not a final writing grade.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- SCORE -->
+
+<div class="score-panel" aria-live="polite">
+  <small>YOUR SCORE</small>
+  <strong><span id="score">0</span>/100</strong>
+</div>
+
+<!-- DICTIONARY -->
+
+<button class="dictionary-button" onclick="openDictionary()" aria-label="Open English Arabic dictionary">
+  📖 <span>Dictionary</span>
+</button>
+
+<div class="dictionary-overlay" id="dictionaryOverlay" onclick="closeDictionaryOutside(event)">
+  <div class="dictionary" role="dialog" aria-modal="true" aria-labelledby="dictionaryTitle">
+    <div class="dictionary-head">
+      <h2 id="dictionaryTitle">📖 Mini Dictionary</h2>
+      <button class="close-btn" onclick="closeDictionary()" aria-label="Close dictionary">✕</button>
+    </div>
+
+    <p class="note">Search for a word and discover its Arabic meaning.</p>
+
+    <input type="search" id="dictionarySearch" class="dictionary-search"
+      placeholder="Search vocabulary..." oninput="filterDictionary()"
+      aria-label="Search dictionary">
+
+    <div id="dictionaryWords"></div>
+  </div>
+</div>
+
+<footer>
+  MY ENGLISH SPACE · MS4 · SEQUENCE 02<br>
+  READING EXPEDITION · LESSON 03
+</footer>
+
+<script>
+"use strict";
+
+/* =========================================================
+   LESSON DATA
+========================================================= */
+
+const globalData = [
+  {
+    id:"q3_1",
+    question:"What is the main purpose of the text?",
+    options:[
+      "To describe Adam's personality, experiences and ambitions.",
+      "To explain how to become a professional football player.",
+      "To describe only Adam's school subjects."
+    ],
+    answer:0
+  },
+  {
+    id:"q3_2",
+    question:"Which title is the most suitable for the text?",
+    options:[
+      "My Favourite School Subject",
+      "My Life, Experiences and Future",
+      "A Day at School"
+    ],
+    answer:1
+  },
+  {
+    id:"q3_3",
+    question:"How does Adam feel about his future?",
+    options:[
+      "He is determined to work towards his goals.",
+      "He has no interest in the future.",
+      "He believes success is impossible."
+    ],
+    answer:0
+  }
+];
+
+const detailData = [
+  {
+    id:"q4_1",
+    question:"How do people usually describe Adam?",
+    options:[
+      "Calm, friendly and hardworking",
+      "Angry, careless and impatient",
+      "Quiet, dishonest and lazy"
+    ],
+    answer:0
+  },
+  {
+    id:"q4_2",
+    question:"Why does Adam like science?",
+    options:[
+      "Because his friends play football.",
+      "Because he is curious about how things work.",
+      "Because he wants to become a teacher."
+    ],
+    answer:1
+  },
+  {
+    id:"q4_3",
+    question:"What does Adam's best friend prefer?",
+    options:[
+      "Quiet activities such as reading and drawing",
+      "Only digital games",
+      "Travelling alone"
+    ],
+    answer:0
+  },
+  {
+    id:"q4_4",
+    question:"What did Adam learn from not winning the competition?",
+    options:[
+      "He should give up after failure.",
+      "Unsuccessful attempts can teach valuable lessons.",
+      "Competitions are not useful."
+    ],
+    answer:1
+  }
+];
+
+const tfData = [
+  {
+    statement:"Adam is always confident when he meets new people.",
+    answer:"false",
+    evidence:[
+      "not always confident",
+      "not always",
+      "become more talkative",
+      "when i feel comfortable"
+    ],
+    sample:"He is not always confident when he meets new people."
+  },
+  {
+    statement:"Adam was worrying about making mistakes while his classmates were preparing a presentation.",
+    answer:"true",
+    evidence:[
+      "preparing a presentation",
+      "worrying about making mistakes",
+      "classmates were preparing"
+    ],
+    sample:"While his classmates were preparing a presentation, Adam was worrying about making mistakes."
+  },
+  {
+    statement:"Adam's best friend is exactly like him.",
+    answer:"false",
+    evidence:[
+      "different",
+      "unlike",
+      "whereas",
+      "very patient",
+      "quiet activities",
+      "thinks carefully"
+    ],
+    sample:"They are different. His friend is patient and prefers quiet activities."
+  },
+  {
+    statement:"Adam won a prize after trying again the following year.",
+    answer:"true",
+    evidence:[
+      "following year",
+      "won a prize",
+      "prepared more carefully"
+    ],
+    sample:"The following year, he prepared more carefully and won a prize."
+  }
+];
+
+const languageData = [
+  {
+    id:"ref1",
+    question:'In "People who know me well usually describe me...", what does "me" refer to?',
+    options:["Adam","Adam's sister","Adam's best friend"],
+    answer:0
+  },
+  {
+    id:"ref2",
+    question:'In "he thinks carefully before choosing...", who does "he" refer to?',
+    options:["Adam's teacher","Adam's best friend","Adam's father"],
+    answer:1
+  },
+  {
+    id:"syn1",
+    question:'Choose the closest meaning of "ambitious".',
+    options:["Having strong goals","Feeling tired","Being careless"],
+    answer:0
+  },
+  {
+    id:"syn2",
+    question:'Choose the closest meaning of "determined".',
+    options:["Ready to continue and achieve a goal","Afraid of trying","Unable to decide"],
+    answer:0
+  },
+  {
+    id:"opp1",
+    question:'Choose the opposite of "successful".',
+    options:["Independent","Unsuccessful","Responsible"],
+    answer:1
+  },
+  {
+    id:"opp2",
+    question:'Choose the opposite of "confident".',
+    options:["Insecure","Ambitious","Respectful"],
+    answer:0
+  }
+];
+
+const orderEvents = [
+  {value:"B",text:"Adam's teacher encouraged him to participate."},
+  {value:"C",text:"Adam's sister helped him organise a project."},
+  {value:"A",text:"Adam entered a school competition."},
+  {value:"D",text:"Adam thought about his future goals."}
+];
+
+const grammarData = [
+  {
+    id:"gram1",
+    question:'"I enjoy learning new words."',
+    options:["Present Simple","Past Simple","Future with will"],
+    answer:0
+  },
+  {
+    id:"gram2",
+    question:'"Two years ago, I entered a school competition."',
+    options:["Present Simple","Past Simple","Future with will"],
+    answer:1
+  },
+  {
+    id:"gram3",
+    question:'"While my classmates were preparing a presentation, I was worrying about making mistakes."',
+    options:["Present Simple","Past Continuous","Future with will"],
+    answer:1
+  },
+  {
+    id:"gram4",
+    question:'"In the future, I will continue working towards my goals."',
+    options:["Past Simple","Present Continuous","Future with will"],
+    answer:2
+  },
+  {
+    id:"gram5",
+    question:'"It was one of the most important experiences of my school life."',
+    options:["Superlative","Comparative","Possessive"],
+    answer:0
+  },
+  {
+    id:"gram6",
+    question:'"Unlike me, he is very patient."',
+    options:["Contrast","Cause","Purpose"],
+    answer:0
+  }
+];
+
+const huntData = [
+  {label:"Present Simple",examples:["i enjoy","i am","i like","i have","i try","i believe","i want","he thinks","he is","i know"]},
+  {label:"Past Simple",examples:["i entered","i felt","i listened","i decided","i prepared","i won","my sister helped","i discovered","i was","i did not win"]},
+  {label:"Past Continuous",examples:["were preparing","was worrying"]},
+  {label:"Future with will",examples:["i will continue","will help shape","will bring","will not always"]},
+  {label:"Superlative",examples:["most important"]},
+  {label:"Contrast",examples:["unlike me","whereas","but we are different","we are different, but"]}
+];
+
+const vocabularyData = [
+  {
+    id:"word1",
+    question:"The opposite of successful is:",
+    options:["unsuccessful","dissuccessful","insuccessful"],
+    answer:0
+  },
+  {
+    id:"word2",
+    question:"The opposite of responsible is:",
+    options:["unresponsible","irresponsible","inresponsible"],
+    answer:1
+  },
+  {
+    id:"word3",
+    question:"Someone who helps other people is:",
+    options:["helpful","helpless","helpingless"],
+    answer:0
+  },
+  {
+    id:"word4",
+    question:"Someone who does not take enough care is:",
+    options:["careful","careless","uncareful"],
+    answer:1
+  },
+  {
+    id:"infer1",
+    question:"Why did Adam's difficult experiences become useful?",
+    options:[
+      "Because he learned from them and tried again.",
+      "Because he decided never to work again.",
+      "Because he stopped having goals."
+    ],
+    answer:0
+  },
+  {
+    id:"infer2",
+    question:"Why does Adam say that he and his best friend are different?",
+    options:[
+      "They have different personalities and preferences.",
+      "They dislike each other.",
+      "They never spend time together."
+    ],
+    answer:0
+  }
+];
+
+const profileData = [
+  {label:"Age",placeholder:"How old is Adam?",answer:["14","fourteen"]},
+  {label:"Personality",placeholder:"Give two qualities...",answer:["calm","friendly","hardworking","honest","respectful","ambitious"]},
+  {label:"Favourite subjects",placeholder:"Name both subjects...",answer:["english","science"]},
+  {label:"Hobbies",placeholder:"Give two hobbies...",answer:["football","reading","music","listening","playing"]},
+  {label:"Important lesson",placeholder:"What did Adam learn?",answer:["learn","failure","experience","help","determined","give up","strength","mistake"]},
+  {label:"Future ambition",placeholder:"What does Adam want to become?",answer:["engineer"]}
+];
+
+const dictionaryData = [
+  ["ambitious","adjective","طموح"],
+  ["confident","adjective","واثق من نفسه"],
+  ["hardworking","adjective","مجتهد"],
+  ["respectful","adjective","محترم"],
+  ["curious","adjective","فضولي / محب للاستطلاع"],
+  ["encourage","verb","يشجع"],
+  ["experience","noun","تجربة / خبرة"],
+  ["strength","noun","قوة / نقطة قوة"],
+  ["weakness","noun","نقطة ضعف"],
+  ["determined","adjective","مصمم / عازم"],
+  ["successful","adjective","ناجح"],
+  ["unsuccessful","adjective","غير ناجح"],
+  ["independent","adjective","مستقل"],
+  ["responsible","adjective","مسؤول"],
+  ["irresponsible","adjective","غير مسؤول"],
+  ["helpful","adjective","متعاون / مفيد"],
+  ["careful","adjective","حذر"],
+  ["careless","adjective","مهمل / غير حذر"],
+  ["achievement","noun","إنجاز"],
+  ["goal","noun","هدف"],
+  ["future","noun","المستقبل"],
+  ["personality","noun","الشخصية"],
+  ["competition","noun","مسابقة"],
+  ["disappointed","adjective","خائب الأمل"],
+  ["patient","adjective","صبور"],
+  ["mistake","noun","خطأ"],
+  ["participate","verb","يشارك"],
+  ["organise","verb","ينظم"],
+  ["friendship","noun","صداقة"],
+  ["decision","noun","قرار"],
+  ["effort","noun","جهد"],
+  ["unlike","preposition","على خلاف"],
+  ["whereas","conjunction","بينما / في حين أن"]
+];
+
+/* =========================================================
+   RENDER HELPERS
+========================================================= */
+
+const $ = id => document.getElementById(id);
+
+function escapeHTML(value){
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#39;");
+}
+
+function renderSelectQuestions(containerId,data){
+  $(containerId).innerHTML=data.map((item,index)=>`
+    <div class="question">
+      <p>${index+1}. ${escapeHTML(item.question)}</p>
+      <select id="${item.id}" aria-label="Answer question ${index+1}">
+        <option value="">Choose your answer...</option>
+        ${item.options.map((option,i)=>`
+          <option value="${i}">${escapeHTML(option)}</option>
+        `).join("")}
+      </select>
+    </div>
+  `).join("");
+}
+
+function renderRadioQuestions(containerId,data){
+  $(containerId).innerHTML=data.map((item,index)=>`
+    <div class="question">
+      <p>${index+1}. ${escapeHTML(item.question)}</p>
+      <div class="options">
+        ${item.options.map((option,i)=>`
+          <label class="option">
+            <input type="radio" name="${item.id}" value="${i}">
+            ${escapeHTML(option)}
+          </label>
+        `).join("")}
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderTF(){
+  $("tfQuestions").innerHTML=tfData.map((item,index)=>`
+    <div class="tf-row">
+      <strong>${index+1}. ${escapeHTML(item.statement)}</strong>
+      <select id="tf${index+1}" aria-label="True or false question ${index+1}">
+        <option value="">Choose...</option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+      <input type="text" id="evidence${index+1}"
+        placeholder="Correction / evidence...">
+    </div>
+  `).join("");
+}
+
+function renderOrder(){
+  const choices=[
+    {value:"A",text:"Adam entered a school competition."},
+    {value:"B",text:"Adam's teacher encouraged him to participate."},
+    {value:"C",text:"Adam's sister helped him organise a project."},
+    {value:"D",text:"Adam thought about his future goals."}
+  ];
+
+  $("orderQuestions").innerHTML=Array.from({length:4},(_,i)=>`
+    <div class="order-item">
+      <span>${i+1}</span>
+      <select id="order${i+1}" aria-label="Event in position ${i+1}">
+        <option value="">Choose the event...</option>
+        ${choices.map(choice=>`
+          <option value="${choice.value}">${escapeHTML(choice.text)}</option>
+        `).join("")}
+      </select>
+    </div>
+  `).join("");
+}
+
+function renderHunt(){
+  $("grammarHunt").innerHTML=huntData.map((item,i)=>`
+    <tr>
+      <td>${escapeHTML(item.label)}</td>
+      <td>
+        <input type="text" id="hunt${i+1}"
+          placeholder="Copy an example from the text...">
+      </td>
+    </tr>
+  `).join("");
+}
+
+function renderProfile(){
+  $("profileQuestions").innerHTML=profileData.map((item,i)=>`
+    <div class="profile-item">
+      <label for="profile${i+1}">${escapeHTML(item.label)}</label>
+      <input type="text" id="profile${i+1}"
+        placeholder="${escapeHTML(item.placeholder)}">
+    </div>
+  `).join("");
+}
+
+/* =========================================================
+   SCORE SYSTEM
+   Each section is weighted.
+   Total maximum = 100 points.
+========================================================= */
+
+const sectionWeights={
+  prediction:5,
+  global:10,
+  details:12,
+  tf:12,
+  language:16,
+  grammar:16,
+  step8:19,
+  final:10
+};
+
+const sectionResults={};
+
+function recordResult(section,correct,total){
+  sectionResults[section]={
+    correct,
+    total,
+    points:total>0
+      ?sectionWeights[section]*correct/total
+      :0
+  };
+
+  updateScore();
+  updateProgress();
+}
+
+function updateScore(){
+  const total=Object.values(sectionResults)
+    .reduce((sum,item)=>sum+item.points,0);
+
+  const displayed=Math.round(total);
+
+  $("score").textContent=displayed;
+  $("finalScore").textContent=displayed;
+}
+
+function updateProgress(){
+  const count=Object.keys(sectionResults).length;
+
+  $("progressLabel").textContent=
+    `${count} / 8 activities completed`;
+
+  $("progressFill").style.width=
+    `${count/8*100}%`;
+
+  const map={
+    prediction:1,
+    global:3,
+    details:4,
+    tf:5,
+    language:6,
+    grammar:7,
+    step8:8,
+    final:9
+  };
+
+  document.querySelectorAll(".nav-links a").forEach(link=>{
+    link.classList.remove("done");
+  });
+
+  Object.keys(sectionResults).forEach(key=>{
+    const number=map[key];
+    const link=document.querySelector(
+      `.nav-links a[href="#step${number}"]`
+    );
+    if(link)link.classList.add("done");
+  });
+}
+
+function showFeedback(id,correct,total,message){
+  const box=$(id);
+
+  box.className="feedback show "+
+    (correct===total?"good":"bad");
+
+  box.textContent=
+    `${correct}/${total} correct. ${message}`;
+}
+
+function markField(element,correct){
+  element.classList.toggle("correct-field",correct);
+  element.classList.toggle("wrong-field",!correct);
+}
+
+function checkSelectData(data){
+  let correct=0;
+
+  data.forEach(item=>{
+    const field=$(item.id);
+    const ok=field.value===String(item.answer);
+
+    markField(field,ok);
+    if(ok)correct++;
+  });
+
+  return correct;
+}
+
+function checkRadioData(data){
+  let correct=0;
+
+  data.forEach(item=>{
+    const selected=document.querySelector(
+      `input[name="${item.id}"]:checked`
+    );
+
+    const ok=selected &&
+      selected.value===String(item.answer);
+
+    if(ok)correct++;
+
+    const container=document.querySelector(
+      `input[name="${item.id}"]`
+    )?.closest(".question");
+
+    if(container){
+      container.style.borderColor=
+        ok?"#72cba4":"#ed9aaf";
+    }
+  });
+
+  return correct;
+}
+
+function normalize(value){
+  return value.toLowerCase()
+    .replace(/[’']/g,"'")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function includesAny(value,keywords){
+  const text=normalize(value);
+  return keywords.some(word=>
+    text.includes(normalize(word))
+  );
+}
+
+function countWords(value){
+  return value.trim()
+    ?value.trim().split(/\s+/).length
+    :0;
+}
+
+/* =========================================================
+   STEP 1
+========================================================= */
+
+document.querySelectorAll(".prediction").forEach(button=>{
+  button.addEventListener("click",()=>{
+    button.classList.toggle("selected");
+    button.setAttribute(
+      "aria-pressed",
+      button.classList.contains("selected")
+    );
+  });
+});
+
+function checkPrediction(){
+  let correct=0;
+
+  document.querySelectorAll(".prediction").forEach(button=>{
+    const selected=button.classList.contains("selected");
+    const expected=button.dataset.correct==="true";
+
+    if(selected===expected)correct++;
+
+    button.style.borderColor=
+      selected===expected?"#63bd96":"#e47d9c";
+  });
+
+  recordResult("prediction",correct,4);
+
+  showFeedback(
+    "predictionFeedback",
+    correct,4,
+    "The title suggests a personal text about character, experiences, interests and future plans."
+  );
+}
+
+/* =========================================================
+   STEP 3
+========================================================= */
+
+function checkGlobal(){
+  const correct=checkRadioData(globalData);
+
+  recordResult("global",correct,3);
+
+  showFeedback(
+    "globalFeedback",
+    correct,3,
+    "The text is about Adam's life, personal development and ambitions."
+  );
+}
+
+/* =========================================================
+   STEP 4
+========================================================= */
+
+function checkDetails(){
+  const correct=checkSelectData(detailData);
+
+  recordResult("details",correct,4);
+
+  showFeedback(
+    "detailsFeedback",
+    correct,4,
+    "Read the relevant paragraphs again to verify your answers."
+  );
+}
+
+/* =========================================================
+   STEP 5
+========================================================= */
+
+function checkTF(){
+  let correct=0;
+
+  tfData.forEach((item,index)=>{
+    const number=index+1;
+    const select=$("tf"+number);
+    const evidence=$("evidence"+number);
+
+    const choiceCorrect=select.value===item.answer;
+
+    const evidenceCorrect=includesAny(
+      evidence.value,
+      item.evidence
+    );
+
+    if(choiceCorrect)correct++;
+    if(evidenceCorrect)correct++;
+
+    markField(select,choiceCorrect);
+    markField(evidence,evidenceCorrect);
+  });
+
+  recordResult("tf",correct,8);
+
+  showFeedback(
+    "tfFeedback",
+    correct,8,
+    "Each statement earns one point for the correct choice and one for relevant evidence. Other valid explanations may need teacher review."
+  );
+
+  if(correct<8){
+    const samples=tfData.map((item,i)=>
+      `${i+1}. ${item.answer.toUpperCase()} — ${item.sample}`
+    ).join("\n");
+
+    const feedback=$("tfFeedback");
+    const details=document.createElement("details");
+    details.style.marginTop="12px";
+
+    const summary=document.createElement("summary");
+    summary.textContent="Show suggested corrections";
+
+    const pre=document.createElement("p");
+    pre.style.whiteSpace="pre-line";
+    pre.textContent=samples;
+
+    details.append(summary,pre);
+    feedback.appendChild(details);
+  }
+}
+
+/* =========================================================
+   STEP 6
+========================================================= */
+
+function checkLanguage(){
+  let correct=checkSelectData(languageData);
+
+  orderEvents.forEach((event,i)=>{
+    const field=$("order"+(i+1));
+    const ok=field.value===event.value;
+
+    markField(field,ok);
+    if(ok)correct++;
+  });
+
+  recordResult("language",correct,10);
+
+  showFeedback(
+    "languageFeedback",
+    correct,10,
+    "The ordering task follows the order of mention in the passage, not necessarily the real-life dates of the events."
+  );
+}
+
+/* =========================================================
+   STEP 7
+========================================================= */
+
+function checkGrammar(){
+  let correct=checkSelectData(grammarData);
+
+  huntData.forEach((item,i)=>{
+    const field=$("hunt"+(i+1));
+
+    const ok=includesAny(
+      field.value,
+      item.examples
+    );
+
+    markField(field,ok);
+
+    if(ok)correct++;
+  });
+
+  recordResult("grammar",correct,12);
+
+  showFeedback(
+    "grammarFeedback",
+    correct,12,
+    "Check verb forms, time expressions and the functions of language structures. The example checker accepts common answers from the text."
+  );
+}
+
+/* =========================================================
+   STEP 8
+========================================================= */
+
+function checkStep8(){
+  let correct=checkSelectData(vocabularyData);
+
+  profileData.forEach((item,i)=>{
+    const field=$("profile"+(i+1));
+    const value=normalize(field.value);
+
+    let ok=false;
+
+    if(i===2){
+      ok=value.includes("english") &&
+         value.includes("science");
+    }
+    else if(i===1 || i===3){
+      const matches=item.answer.filter(word=>
+        value.includes(word)
+      );
+      ok=matches.length>=2;
+    }
+    else{
+      ok=includesAny(value,item.answer);
+    }
+
+    markField(field,ok);
+    if(ok)correct++;
+  });
+
+  recordResult("step8",correct,12);
+
+  showFeedback(
+    "step8Feedback",
+    correct,12,
+    "The personal profile should contain information supported by the text. Some correct alternative wording may require teacher review."
+  );
+}
+
+/* =========================================================
+   STEP 9
+========================================================= */
+
+function checkFinal(){
+  let correct=0;
+
+  const selected=document.querySelector(
+    'input[name="final1"]:checked'
+  );
+
+  if(selected?.value==="a")correct+=2;
+
+  const explanation=$("explain").value;
+  const production=$("production").value;
+
+  if(countWords(explanation)>=15)correct+=2;
+  if(countWords(production)>=50)correct+=3;
+
+  const checked=Array.from(
+    document.querySelectorAll(
+      '#writingChecklist input[type="checkbox"]'
+    )
+  ).filter(input=>input.checked).length;
+
+  if(checked>=4)correct+=1;
+  if(checked===6)correct+=2;
+
+  recordResult("final",correct,10);
+
+  showFeedback(
+    "finalFeedback",
+    correct,10,
+    "Your writing has been submitted for self-review. The automatic points reward completion and checklist use, not grammatical accuracy or writing quality."
+  );
+
+  $("completion").classList.add("show");
+
+  $("completion").scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+}
+
+/* =========================================================
+   READING INTERACTION
+========================================================= */
+
+let readingFontSize=1;
+
+function changeFont(direction){
+  readingFontSize=Math.max(
+    .85,
+    Math.min(1.35,readingFontSize+direction*.1)
+  );
+
+  document.querySelectorAll(".paragraph").forEach(p=>{
+    p.style.fontSize=readingFontSize+"rem";
+  });
+}
+
+const paragraphs=document.querySelectorAll(".paragraph");
+const visualCards=document.querySelectorAll(".visual-card");
+
+function activateParagraph(index){
+  paragraphs.forEach((p,i)=>{
+    p.classList.toggle("active",i===index);
+  });
+
+  visualCards.forEach((card,i)=>{
+    card.classList.toggle("active",i===index);
+  });
+}
+
+if("IntersectionObserver" in window){
+  const observer=new IntersectionObserver(entries=>{
+    const visible=entries
+      .filter(entry=>entry.isIntersecting)
+      .sort((a,b)=>
+        b.intersectionRatio-a.intersectionRatio
+      );
+
+    if(visible.length){
+      activateParagraph(
+        Number(visible[0].target.dataset.picture)
+      );
+    }
+  },{
+    rootMargin:"-15% 0px -40% 0px",
+    threshold:[0,.15,.35,.6]
+  });
+
+  paragraphs.forEach(p=>observer.observe(p));
+}
+
+paragraphs.forEach((p,i)=>{
+  p.addEventListener("click",()=>activateParagraph(i));
+});
+
+/* =========================================================
+   DICTIONARY
+========================================================= */
+
+function renderDictionary(filter=""){
+  const search=normalize(filter);
+
+  const results=dictionaryData.filter(item=>
+    normalize(item[0]).includes(search) ||
+    item[2].includes(filter.trim())
+  );
+
+  $("dictionaryWords").innerHTML=results.length
+    ?results.map(item=>`
+      <div class="word">
+        <strong>${escapeHTML(item[0])}</strong>
+        <small>${escapeHTML(item[1])}</small>
+        <span class="arabic" lang="ar">${escapeHTML(item[2])}</span>
+      </div>
+    `).join("")
+    :'<p class="note">No matching words found.</p>';
+}
+
+function filterDictionary(){
+  renderDictionary($("dictionarySearch").value);
+}
+
+let dictionaryTrigger=null;
+
+function openDictionary(){
+  dictionaryTrigger=document.activeElement;
+  $("dictionaryOverlay").classList.add("open");
+  document.body.style.overflow="hidden";
+  $("dictionarySearch").focus();
+}
+
+function closeDictionary(){
+  $("dictionaryOverlay").classList.remove("open");
+  document.body.style.overflow="";
+  if(dictionaryTrigger)dictionaryTrigger.focus();
+}
+
+function closeDictionaryOutside(event){
+  if(event.target===$("dictionaryOverlay")){
+    closeDictionary();
+  }
+}
+
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape")closeDictionary();
+});
+
+/* =========================================================
+   WORD COUNTERS
+========================================================= */
+
+function setupWordCounter(textareaId,countId){
+  $(textareaId).addEventListener("input",()=>{
+    $(countId).textContent=countWords(
+      $(textareaId).value
+    );
+  });
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+const steps=document.querySelectorAll(".step");
+const navLinks=document.querySelectorAll(".nav-links a");
+
+if("IntersectionObserver" in window){
+  const navObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        navLinks.forEach(link=>
+          link.classList.remove("active")
+        );
+
+        const link=document.querySelector(
+          `.nav-links a[href="#${entry.target.id}"]`
+        );
+
+        if(link)link.classList.add("active");
+      }
+    });
+  },{
+    rootMargin:"-25% 0px -60% 0px"
+  });
+
+  steps.forEach(step=>navObserver.observe(step));
+}
+
+/* =========================================================
+   INITIALISE
+========================================================= */
+
+function initialise(){
+  renderRadioQuestions("globalQuestions",globalData);
+  renderSelectQuestions("detailQuestions",detailData);
+  renderTF();
+
+  renderSelectQuestions(
+    "languageQuestions",
+    languageData
+  );
+
+  renderOrder();
+
+  renderSelectQuestions(
+    "grammarQuestions",
+    grammarData
+  );
+
+  renderHunt();
+
+  renderSelectQuestions(
+    "vocabularyQuestions",
+    vocabularyData
+  );
+
+  renderProfile();
+  renderDictionary();
+
+  setupWordCounter("explain","explainCount");
+  setupWordCounter("production","productionCount");
+
+  updateScore();
+  updateProgress();
+}
+
+initialise();
+
+</script>
+
+</body>
+</html>

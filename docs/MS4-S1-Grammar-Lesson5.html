@@ -1,0 +1,6610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#047857">
+
+<title>Checkpoint 05 | Chronological Markers — My English Space</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   MY ENGLISH SPACE
+   MS4 — SEQUENCE 01
+   CHECKPOINT 05 — CHRONOLOGICAL MARKERS
+========================================================= */
+
+:root{
+
+  --forest:#064e3b;
+  --deep:#043c2e;
+  --emerald:#059669;
+  --green:#10b981;
+  --bright:#34d399;
+  --mint:#d1fae5;
+  --pale:#ecfdf5;
+
+  --ink:#16352d;
+  --muted:#647d74;
+  --border:#dcebe4;
+
+  --white:#ffffff;
+  --gold:#fcd34d;
+  --rose:#fb7185;
+  --blue:#60a5fa;
+
+  --shadow:0 12px 35px rgba(4,78,59,.08);
+
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  overflow-x:clip;
+}
+
+body{
+
+  margin:0;
+
+  background:#f4f8f5;
+
+  color:var(--ink);
+
+  font-family:"DM Sans",sans-serif;
+
+  line-height:1.7;
+
+  overflow-x:clip;
+
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+}
+
+h1,h2,h3,h4{
+
+  font-family:"Outfit",sans-serif;
+
+  line-height:1.2;
+
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+
+  outline:3px solid var(--bright);
+  outline-offset:3px;
+
+}
+
+/* =========================================================
+   TOP NAVIGATION
+========================================================= */
+
+.topbar{
+
+  background:var(--deep);
+
+  color:white;
+
+  padding:14px 5%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:15px;
+
+}
+
+.brand{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  min-width:0;
+
+  font-family:"Outfit",sans-serif;
+
+  font-weight:900;
+
+  font-size:1.05rem;
+
+}
+
+.brand-icon{
+
+  width:45px;
+  height:45px;
+
+  flex-shrink:0;
+
+  display:grid;
+  place-items:center;
+
+  background:linear-gradient(135deg,#34d399,#059669);
+
+  border-radius:14px;
+
+  font-size:1.4rem;
+
+}
+
+.brand small{
+
+  display:block;
+
+  font-family:"DM Sans",sans-serif;
+
+  font-size:.72rem;
+
+  font-weight:500;
+
+  opacity:.75;
+
+}
+
+.top-actions{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+}
+
+.sequence-pill{
+
+  background:rgba(255,255,255,.1);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  padding:9px 15px;
+
+  border-radius:50px;
+
+  font-size:.8rem;
+
+  font-weight:800;
+
+}
+
+.top-button{
+
+  background:var(--green);
+
+  color:var(--deep);
+
+  border:0;
+
+  border-radius:11px;
+
+  padding:10px 16px;
+
+  font-weight:900;
+
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(110,231,183,.18),
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(52,211,153,.16),
+      transparent 35%
+    ),
+
+    linear-gradient(
+      135deg,
+      #064e3b,
+      #08775a 60%,
+      #059669
+    );
+
+  padding:75px 5% 100px;
+
+  color:white;
+
+}
+
+.hero-inner{
+
+  max-width:1150px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:1.15fr .85fr;
+
+  align-items:center;
+
+  gap:45px;
+
+}
+
+.hero-copy,
+.hero-visual{
+  min-width:0;
+}
+
+.hero-badge{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  padding:9px 17px;
+
+  border-radius:50px;
+
+  background:rgba(255,255,255,.12);
+
+  border:1px solid rgba(255,255,255,.2);
+
+  font-size:.78rem;
+
+  font-weight:900;
+
+  letter-spacing:.5px;
+
+}
+
+.hero h1{
+
+  font-size:clamp(2.6rem,5.5vw,5rem);
+
+  font-weight:900;
+
+  letter-spacing:-2px;
+
+  margin:25px 0;
+
+  line-height:1.08;
+
+}
+
+.hero h1 span{
+  color:#a7f3d0;
+}
+
+.hero-description{
+
+  color:#d1fae5;
+
+  font-size:1.05rem;
+
+  line-height:1.9;
+
+  max-width:650px;
+
+}
+
+.hero-tags{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:9px;
+
+  margin-top:25px;
+
+}
+
+.hero-tag{
+
+  background:rgba(255,255,255,.1);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  border-radius:10px;
+
+  padding:9px 13px;
+
+  font-size:.79rem;
+
+  font-weight:800;
+
+}
+
+/* =========================================================
+   HERO TIMELINE CARD
+========================================================= */
+
+.hero-visual{
+
+  position:relative;
+
+  background:rgba(255,255,255,.1);
+
+  border:1px solid rgba(255,255,255,.2);
+
+  border-radius:28px;
+
+  padding:30px;
+
+  box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+  backdrop-filter:blur(10px);
+
+}
+
+.hero-visual-title{
+
+  font-family:"Outfit",sans-serif;
+
+  font-weight:900;
+
+  font-size:1.2rem;
+
+  margin-bottom:25px;
+
+}
+
+.hero-timeline{
+
+  position:relative;
+
+  padding-left:35px;
+
+}
+
+.hero-timeline::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:11px;
+
+  top:12px;
+
+  bottom:12px;
+
+  width:3px;
+
+  background:rgba(255,255,255,.25);
+
+}
+
+.hero-time-item{
+
+  position:relative;
+
+  background:rgba(255,255,255,.1);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  border-radius:13px;
+
+  padding:13px 15px;
+
+  margin-bottom:15px;
+
+  font-size:.86rem;
+
+}
+
+.hero-time-item::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:-31px;
+
+  top:18px;
+
+  width:16px;
+
+  height:16px;
+
+  border-radius:50%;
+
+  background:var(--gold);
+
+  border:4px solid var(--forest);
+
+}
+
+.hero-time-item strong{
+
+  display:block;
+
+  color:#fcd34d;
+
+  font-size:.78rem;
+
+  text-transform:uppercase;
+
+  margin-bottom:3px;
+
+}
+
+.hero-time-item:last-child{
+  margin-bottom:0;
+}
+
+.hero-bottom{
+
+  margin-top:25px;
+
+  text-align:center;
+
+  font-size:.85rem;
+
+  font-weight:800;
+
+  color:#d1fae5;
+
+}
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.layout{
+
+  max-width:1200px;
+
+  margin:-40px auto 60px;
+
+  padding:0 20px;
+
+  position:relative;
+
+  z-index:5;
+
+  display:grid;
+
+  grid-template-columns:240px minmax(0,1fr);
+
+  gap:24px;
+
+  align-items:start;
+
+}
+
+.layout>*{
+  min-width:0;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar{
+
+  position:sticky;
+
+  top:20px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:22px;
+
+  padding:22px 16px;
+
+  box-shadow:var(--shadow);
+
+}
+
+.sidebar-heading{
+
+  color:var(--muted);
+
+  padding:0 12px 12px;
+
+  font-size:.72rem;
+
+  font-weight:900;
+
+  letter-spacing:1.2px;
+
+  text-transform:uppercase;
+
+}
+
+.side-links{
+
+  display:grid;
+
+  gap:3px;
+
+}
+
+.side-link{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:11px;
+
+  padding:11px 12px;
+
+  border-radius:11px;
+
+  color:#48665b;
+
+  font-size:.81rem;
+
+  font-weight:800;
+
+  transition:.2s;
+
+}
+
+.side-link:hover,
+.side-link.active{
+
+  background:var(--pale);
+
+  color:var(--forest);
+
+}
+
+.side-number{
+
+  width:27px;
+  height:27px;
+
+  flex-shrink:0;
+
+  display:grid;
+
+  place-items:center;
+
+  background:#eef5f0;
+
+  border-radius:8px;
+
+  font-size:.7rem;
+
+  font-weight:900;
+
+}
+
+.sidebar-progress{
+
+  margin-top:22px;
+
+  padding:17px;
+
+  background:var(--pale);
+
+  border-radius:15px;
+
+}
+
+.sidebar-progress strong{
+
+  display:block;
+
+  font-size:.8rem;
+
+  margin-bottom:10px;
+
+}
+
+.progress-track{
+
+  height:10px;
+
+  background:#d3e9dc;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+}
+
+.progress-fill{
+
+  height:100%;
+
+  width:0;
+
+  background:linear-gradient(90deg,#059669,#34d399);
+
+  transition:width .4s;
+
+}
+
+.progress-text{
+
+  margin-top:8px;
+
+  color:var(--emerald);
+
+  font-size:.75rem;
+
+  font-weight:900;
+
+}
+
+/* =========================================================
+   LESSON SECTIONS
+========================================================= */
+
+.content{
+  min-width:0;
+}
+
+.lesson-section{
+
+  min-width:0;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:23px;
+
+  padding:35px;
+
+  margin-bottom:22px;
+
+  box-shadow:var(--shadow);
+
+  scroll-margin-top:20px;
+
+}
+
+.section-top{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  margin-bottom:10px;
+
+}
+
+.step-number{
+
+  width:44px;
+  height:44px;
+
+  flex-shrink:0;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:14px;
+
+  background:var(--pale);
+
+  color:var(--emerald);
+
+  font-family:"Outfit",sans-serif;
+
+  font-size:1.1rem;
+
+  font-weight:900;
+
+}
+
+.step-label{
+
+  color:var(--emerald);
+
+  font-size:.71rem;
+
+  font-weight:900;
+
+  letter-spacing:1.1px;
+
+  text-transform:uppercase;
+
+}
+
+.lesson-section h2{
+
+  font-size:clamp(1.5rem,3vw,2.15rem);
+
+  font-weight:900;
+
+  margin:8px 0 12px;
+
+  overflow-wrap:anywhere;
+
+}
+
+.intro{
+
+  color:var(--muted);
+
+  font-size:.93rem;
+
+  margin-bottom:25px;
+
+}
+
+.level{
+
+  display:inline-block;
+
+  padding:5px 11px;
+
+  border-radius:30px;
+
+  font-size:.68rem;
+
+  font-weight:900;
+
+  text-transform:uppercase;
+
+  margin-bottom:8px;
+
+}
+
+.lots{
+  background:#dbeafe;
+  color:#1d4ed8;
+}
+
+.apply{
+  background:#fef3c7;
+  color:#92400e;
+}
+
+.analyse{
+  background:#ffe4e6;
+  color:#be123c;
+}
+
+.hots{
+  background:#ede9fe;
+  color:#6d28d9;
+}
+
+/* =========================================================
+   DISCOVERY BOX
+========================================================= */
+
+.discovery-box{
+
+  background:linear-gradient(135deg,#f0fdf4,#ecfdf5);
+
+  border:1px solid #bbf7d0;
+
+  border-radius:19px;
+
+  padding:25px;
+
+  min-width:0;
+
+}
+
+.discovery-title{
+
+  color:var(--forest);
+
+  font-size:.76rem;
+
+  font-weight:900;
+
+  text-transform:uppercase;
+
+  letter-spacing:1px;
+
+  margin-bottom:18px;
+
+}
+
+.story-card{
+
+  background:white;
+
+  border:1px solid #d9efe1;
+
+  border-radius:15px;
+
+  padding:22px;
+
+  line-height:2.1;
+
+  font-size:.96rem;
+
+  overflow-wrap:break-word;
+
+}
+
+.marker{
+
+  background:#fcd34d;
+
+  color:#78350f;
+
+  border-radius:7px;
+
+  padding:3px 7px;
+
+  font-weight:900;
+
+  -webkit-box-decoration-break:clone;
+
+  box-decoration-break:clone;
+
+}
+
+.notice{
+
+  margin-top:20px;
+
+  background:#fffbeb;
+
+  border:1px solid #fde68a;
+
+  border-left:5px solid #f59e0b;
+
+  padding:20px;
+
+  border-radius:13px;
+
+  font-size:.9rem;
+
+  line-height:1.9;
+
+}
+
+/* =========================================================
+   GRAMMAR RULES
+========================================================= */
+
+.main-rule{
+
+  background:linear-gradient(135deg,#064e3b,#047857);
+
+  border-radius:19px;
+
+  padding:28px;
+
+  color:white;
+
+  margin-bottom:20px;
+
+}
+
+.main-rule h3{
+  margin:0 0 12px;
+}
+
+.main-rule p{
+  color:#d1fae5;
+}
+
+.big-formula{
+
+  background:rgba(255,255,255,.12);
+
+  border:1px dashed rgba(255,255,255,.4);
+
+  border-radius:13px;
+
+  padding:19px;
+
+  text-align:center;
+
+  font-family:"Outfit",sans-serif;
+
+  font-size:clamp(.9rem,2vw,1.25rem);
+
+  font-weight:900;
+
+  margin:18px 0;
+
+  overflow-wrap:anywhere;
+
+}
+
+.marker-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,minmax(0,1fr));
+
+  gap:13px;
+
+  margin:22px 0;
+
+}
+
+.marker-card{
+
+  border:1px solid var(--border);
+
+  border-top:4px solid var(--emerald);
+
+  border-radius:15px;
+
+  padding:20px;
+
+  background:white;
+
+  min-width:0;
+
+}
+
+.marker-card:nth-child(2){
+  border-top-color:#f59e0b;
+}
+
+.marker-card:nth-child(3){
+  border-top-color:#3b82f6;
+}
+
+.marker-card:nth-child(4){
+  border-top-color:#8b5cf6;
+}
+
+.marker-card:nth-child(5){
+  border-top-color:#ec4899;
+}
+
+.marker-card:nth-child(6){
+  border-top-color:#ef4444;
+}
+
+.marker-card h3{
+
+  margin:0 0 8px;
+
+  color:var(--forest);
+
+  font-size:1.15rem;
+
+}
+
+.marker-card p{
+
+  color:var(--muted);
+
+  font-size:.83rem;
+
+  margin:0;
+
+}
+
+.marker-example{
+
+  background:var(--pale);
+
+  padding:11px;
+
+  border-radius:9px;
+
+  margin-top:12px;
+
+  font-size:.83rem;
+
+  font-weight:700;
+
+}
+
+.arabic{
+
+  margin-top:20px;
+
+  padding:20px;
+
+  background:#f5f3ff;
+
+  border:1px solid #ddd6fe;
+
+  border-radius:15px;
+
+  direction:rtl;
+
+  text-align:right;
+
+  font-weight:700;
+
+  line-height:2.1;
+
+  color:#5b4b82;
+
+}
+
+/* =========================================================
+   QUIZZES
+========================================================= */
+
+.question{
+
+  min-width:0;
+
+  padding:20px;
+
+  border:1px solid var(--border);
+
+  border-radius:15px;
+
+  margin-bottom:14px;
+
+  background:white;
+
+}
+
+.question-text{
+
+  font-weight:850;
+
+  font-size:.95rem;
+
+  margin-bottom:14px;
+
+  overflow-wrap:break-word;
+
+}
+
+.options{
+
+  display:grid;
+
+  gap:9px;
+
+}
+
+.option{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:11px;
+
+  width:100%;
+
+  min-width:0;
+
+  padding:13px 15px;
+
+  border:1.5px solid #e1ebe5;
+
+  border-radius:11px;
+
+  background:#fafcfb;
+
+  color:var(--ink);
+
+  text-align:left;
+
+  font-size:.88rem;
+
+  font-weight:700;
+
+  overflow-wrap:anywhere;
+
+  transition:.2s;
+
+}
+
+.option::before{
+
+  content:"";
+
+  width:18px;
+  height:18px;
+
+  border:2px solid #b8cfc2;
+
+  border-radius:50%;
+
+  flex-shrink:0;
+
+}
+
+.option:not(:disabled):hover{
+
+  border-color:var(--emerald);
+
+  background:var(--pale);
+
+}
+
+.option.correct{
+
+  background:#dcfce7;
+
+  border-color:#22c55e;
+
+  color:#166534;
+
+}
+
+.option.correct::before{
+
+  content:"✓";
+
+  display:grid;
+
+  place-items:center;
+
+  background:#22c55e;
+
+  border-color:#22c55e;
+
+  color:white;
+
+  font-size:.7rem;
+
+}
+
+.option.wrong{
+
+  background:#fff1f2;
+
+  border-color:#fb7185;
+
+  color:#9f1239;
+
+}
+
+.option.wrong::before{
+
+  content:"×";
+
+  display:grid;
+
+  place-items:center;
+
+  background:#fb7185;
+
+  border-color:#fb7185;
+
+  color:white;
+
+}
+
+.option:disabled{
+  cursor:default;
+}
+
+.feedback{
+
+  display:none;
+
+  margin-top:12px;
+
+  padding:12px 15px;
+
+  background:#f0fdf4;
+
+  color:#166534;
+
+  border-radius:9px;
+
+  font-size:.85rem;
+
+  font-weight:800;
+
+}
+
+.feedback.show{
+  display:block;
+}
+
+.quiz-summary{
+
+  display:none;
+
+  margin-top:15px;
+
+  padding:15px;
+
+  border-radius:12px;
+
+  background:var(--pale);
+
+  color:var(--forest);
+
+  font-weight:900;
+
+}
+
+.quiz-summary.show{
+  display:block;
+}
+
+/* =========================================================
+   TASK BOX
+========================================================= */
+
+.task-box{
+
+  min-width:0;
+
+  background:#f5fbf7;
+
+  border:1px solid var(--border);
+
+  border-radius:18px;
+
+  padding:24px;
+
+  margin:20px 0;
+
+}
+
+.task-title{
+
+  font-size:1.18rem;
+
+  margin:0 0 12px;
+
+  color:var(--forest);
+
+}
+
+.task-instruction{
+
+  color:var(--muted);
+
+  font-size:.88rem;
+
+  margin-bottom:18px;
+
+}
+
+.input{
+
+  display:block;
+
+  width:100%;
+
+  min-width:0;
+
+  padding:13px 15px;
+
+  border:1.5px solid #cfe3d7;
+
+  border-radius:11px;
+
+  background:white;
+
+  color:var(--ink);
+
+  outline:none;
+
+  font-size:16px;
+
+  margin-top:12px;
+
+}
+
+.input:focus{
+
+  border-color:var(--emerald);
+
+  box-shadow:0 0 0 4px #d1fae5;
+
+}
+
+.input.correct-input{
+
+  border-color:#16a34a;
+
+  background:#f0fdf4;
+
+}
+
+.input.wrong-input{
+
+  border-color:#e11d48;
+
+  background:#fff1f2;
+
+}
+
+.btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:8px;
+
+  max-width:100%;
+
+  border:0;
+
+  border-radius:11px;
+
+  padding:13px 20px;
+
+  font-weight:900;
+
+  font-size:.88rem;
+
+  margin-top:14px;
+
+  text-align:center;
+
+  transition:.2s;
+
+}
+
+.btn-primary{
+
+  background:var(--emerald);
+
+  color:white;
+
+  box-shadow:0 6px 15px rgba(5,150,105,.2);
+
+}
+
+.btn-primary:hover{
+
+  background:#047857;
+
+  transform:translateY(-2px);
+
+}
+
+.btn-secondary{
+
+  background:white;
+
+  color:var(--forest);
+
+  border:1px solid #b7d8c8;
+
+}
+
+.btn-secondary:hover{
+  background:var(--pale);
+}
+
+.result{
+
+  display:none;
+
+  margin-top:15px;
+
+  padding:15px;
+
+  border-radius:11px;
+
+  font-size:.88rem;
+
+  font-weight:800;
+
+}
+
+.result.show{
+  display:block;
+}
+
+.result.correct{
+
+  background:#dcfce7;
+
+  color:#166534;
+
+}
+
+.result.wrong{
+
+  background:#fff1f2;
+
+  color:#9f1239;
+
+}
+
+/* =========================================================
+   INTERACTIVE TIMELINE
+========================================================= */
+
+.timeline{
+
+  position:relative;
+
+  padding-left:36px;
+
+  margin:25px 0;
+
+}
+
+.timeline::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:13px;
+
+  top:15px;
+
+  bottom:15px;
+
+  width:3px;
+
+  background:#a7f3d0;
+
+}
+
+.timeline-item{
+
+  position:relative;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:15px;
+
+  padding:19px;
+
+  margin-bottom:15px;
+
+  box-shadow:0 5px 15px rgba(4,78,59,.04);
+
+}
+
+.timeline-item::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:-31px;
+
+  top:23px;
+
+  width:16px;
+  height:16px;
+
+  background:var(--emerald);
+
+  border:4px solid #d1fae5;
+
+  border-radius:50%;
+
+}
+
+.timeline-label{
+
+  display:inline-block;
+
+  background:var(--mint);
+
+  color:var(--forest);
+
+  border-radius:7px;
+
+  padding:5px 10px;
+
+  font-size:.75rem;
+
+  font-weight:900;
+
+  margin-bottom:8px;
+
+}
+
+.timeline-item p{
+  margin:0;
+}
+
+/* =========================================================
+   SENTENCE BUILDER
+========================================================= */
+
+.builder-bank{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  background:var(--pale);
+
+  border-radius:15px;
+
+  padding:18px;
+
+}
+
+.word-chip{
+
+  border:1px solid #b7d8c8;
+
+  background:white;
+
+  color:var(--forest);
+
+  padding:11px 15px;
+
+  border-radius:10px;
+
+  font-weight:850;
+
+}
+
+.word-chip:hover:not(:disabled){
+  background:#d1fae5;
+}
+
+.word-chip.used{
+
+  opacity:.3;
+
+  cursor:default;
+
+}
+
+.build-area{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:9px;
+
+  align-items:center;
+
+  min-height:75px;
+
+  padding:17px;
+
+  margin-top:15px;
+
+  background:white;
+
+  border:2px dashed #a7dfc2;
+
+  border-radius:14px;
+
+}
+
+.built-word{
+
+  padding:9px 12px;
+
+  background:#d1fae5;
+
+  border:1px solid #86efac;
+
+  border-radius:9px;
+
+  color:#065f46;
+
+  font-weight:850;
+
+}
+
+/* =========================================================
+   ORDERING GAME
+========================================================= */
+
+.order-list{
+
+  display:grid;
+
+  gap:11px;
+
+  margin:20px 0;
+
+}
+
+.order-item{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  padding:14px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:12px;
+
+}
+
+.order-position{
+
+  width:32px;
+  height:32px;
+
+  flex-shrink:0;
+
+  display:grid;
+
+  place-items:center;
+
+  background:var(--mint);
+
+  color:var(--forest);
+
+  border-radius:9px;
+
+  font-weight:900;
+
+}
+
+.order-text{
+
+  flex:1;
+
+  font-size:.88rem;
+
+  font-weight:700;
+
+}
+
+.order-controls{
+
+  display:flex;
+
+  gap:5px;
+
+}
+
+.move-btn{
+
+  width:35px;
+  height:35px;
+
+  border:1px solid var(--border);
+
+  border-radius:9px;
+
+  background:var(--pale);
+
+  color:var(--forest);
+
+  font-weight:900;
+
+}
+
+.move-btn:hover{
+  background:#d1fae5;
+}
+
+.move-btn:disabled{
+  opacity:.35;
+  cursor:default;
+}
+
+/* =========================================================
+   FACT FILES
+========================================================= */
+
+.fact-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  gap:15px;
+
+  margin:22px 0;
+
+}
+
+.fact-card{
+
+  min-width:0;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:17px;
+
+  overflow:hidden;
+
+}
+
+.fact-header{
+
+  background:linear-gradient(110deg,#064e3b,#059669);
+
+  color:white;
+
+  padding:18px 20px;
+
+}
+
+.fact-header h3{
+
+  margin:0;
+
+  font-size:1.2rem;
+
+}
+
+.fact-body{
+  padding:18px;
+}
+
+.fact-row{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  padding:11px 0;
+
+  border-bottom:1px solid var(--border);
+
+  font-size:.84rem;
+
+}
+
+.fact-row:last-child{
+  border-bottom:0;
+}
+
+.fact-row strong{
+  color:var(--forest);
+}
+
+/* =========================================================
+   WRITING
+========================================================= */
+
+.writing-goals{
+
+  background:#f5fbf7;
+
+  border:1px solid var(--border);
+
+  border-radius:16px;
+
+  padding:21px;
+
+  margin:20px 0;
+
+}
+
+.goal-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  gap:10px;
+
+  margin-top:15px;
+
+}
+
+.goal{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:10px;
+
+  padding:12px;
+
+  font-size:.8rem;
+
+  font-weight:750;
+
+}
+
+.goal-num{
+
+  width:27px;
+  height:27px;
+
+  display:grid;
+
+  place-items:center;
+
+  flex-shrink:0;
+
+  border-radius:50%;
+
+  background:var(--mint);
+
+  color:var(--forest);
+
+  font-weight:900;
+
+}
+
+.writing-tools{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:9px;
+
+  margin:18px 0;
+
+}
+
+.helper{
+
+  background:#fef3c7;
+
+  color:#92400e;
+
+  border-radius:9px;
+
+  padding:8px 12px;
+
+  font-size:.77rem;
+
+  font-weight:850;
+
+}
+
+.writing-area{
+
+  border:1px solid var(--border);
+
+  border-radius:17px;
+
+  padding:22px;
+
+  margin-top:20px;
+
+}
+
+textarea{
+
+  display:block;
+
+  width:100%;
+
+  min-height:260px;
+
+  resize:vertical;
+
+  border:1.5px solid #cfe3d7;
+
+  border-radius:12px;
+
+  padding:17px;
+
+  outline:none;
+
+  line-height:1.9;
+
+  font-size:16px;
+
+}
+
+textarea:focus{
+
+  border-color:var(--emerald);
+
+  box-shadow:0 0 0 4px #d1fae5;
+
+}
+
+.live-stats{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,minmax(0,1fr));
+
+  gap:10px;
+
+  margin-top:16px;
+
+}
+
+.stat{
+
+  text-align:center;
+
+  padding:14px 8px;
+
+  background:var(--pale);
+
+  border:1px solid var(--border);
+
+  border-radius:12px;
+
+}
+
+.stat strong{
+
+  display:block;
+
+  font-family:"Outfit",sans-serif;
+
+  color:var(--forest);
+
+  font-size:1.45rem;
+
+}
+
+.stat small{
+
+  color:var(--muted);
+
+  font-size:.72rem;
+
+  font-weight:800;
+
+}
+
+.writing-actions{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:15px;
+
+}
+
+.correction-panel{
+
+  display:none;
+
+  margin-top:22px;
+
+  padding:24px;
+
+  border:1px solid #a7dfc2;
+
+  border-radius:17px;
+
+  background:#f4fdf8;
+
+}
+
+.correction-panel.show{
+  display:block;
+}
+
+.correction-head{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:15px;
+
+  margin-bottom:18px;
+
+}
+
+.correction-head h3{
+  margin:0;
+}
+
+.writing-score{
+
+  width:75px;
+  height:75px;
+
+  flex-shrink:0;
+
+  border-radius:50%;
+
+  background:var(--forest);
+
+  color:white;
+
+  display:grid;
+
+  place-items:center;
+
+  font-weight:900;
+
+}
+
+.checklist{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  gap:10px;
+
+}
+
+.check-item{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:10px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:11px;
+
+  padding:14px;
+
+}
+
+.check-item.pass{
+
+  background:#ecfdf5;
+
+  border-color:#86efac;
+
+}
+
+.check-item.fail{
+
+  background:#fff1f2;
+
+  border-color:#fda4af;
+
+}
+
+.check-icon{
+
+  width:27px;
+  height:27px;
+
+  flex-shrink:0;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:50%;
+
+  background:#edf3ef;
+
+  font-weight:900;
+
+}
+
+.check-item.pass .check-icon{
+
+  background:#16a34a;
+
+  color:white;
+
+}
+
+.check-item.fail .check-icon{
+
+  background:#e11d48;
+
+  color:white;
+
+}
+
+.check-item strong{
+
+  display:block;
+
+  font-size:.85rem;
+
+}
+
+.check-item small{
+
+  color:var(--muted);
+
+  font-size:.74rem;
+
+}
+
+.model-answer{
+
+  display:none;
+
+  margin-top:20px;
+
+  padding:22px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  border-radius:14px;
+
+  line-height:1.9;
+
+}
+
+.model-answer.show{
+  display:block;
+}
+
+/* =========================================================
+   FINAL SCORE
+========================================================= */
+
+.score-card{
+
+  background:linear-gradient(135deg,#064e3b,#059669);
+
+  border-radius:18px;
+
+  padding:24px;
+
+  color:white;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:20px;
+
+  margin-top:20px;
+
+}
+
+.score-card h3{
+  margin:0 0 8px;
+}
+
+.score-card p{
+
+  color:#d1fae5;
+
+  font-size:.87rem;
+
+}
+
+.big-score{
+
+  width:85px;
+  height:85px;
+
+  flex-shrink:0;
+
+  border-radius:50%;
+
+  display:grid;
+
+  place-items:center;
+
+  background:white;
+
+  color:var(--forest);
+
+  font-size:1.4rem;
+
+  font-weight:900;
+
+}
+
+.complete{
+
+  background:linear-gradient(135deg,#064e3b,#059669);
+
+  color:white;
+
+  text-align:center;
+
+  border-radius:22px;
+
+  padding:45px 30px;
+
+  margin-bottom:30px;
+
+}
+
+.complete .trophy{
+  font-size:3.5rem;
+}
+
+.complete h2{
+
+  font-size:2rem;
+
+  margin:15px 0;
+
+}
+
+.complete p{
+  color:#d1fae5;
+}
+
+.complete .btn{
+
+  background:white;
+
+  color:var(--forest);
+
+}
+
+/* =========================================================
+   DICTIONARY
+========================================================= */
+
+.dictionary-button{
+
+  position:fixed;
+
+  right:20px;
+
+  bottom:20px;
+
+  z-index:1000;
+
+  background:var(--gold);
+
+  color:#78350f;
+
+  border:0;
+
+  border-radius:50px;
+
+  padding:14px 19px;
+
+  font-weight:900;
+
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+}
+
+.dictionary-overlay{
+
+  display:none;
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:2000;
+
+  background:rgba(2,35,27,.7);
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:15px;
+
+}
+
+.dictionary-overlay.open{
+  display:flex;
+}
+
+.dictionary{
+
+  background:white;
+
+  border-radius:23px;
+
+  width:min(620px,100%);
+
+  max-height:85dvh;
+
+  overflow:auto;
+
+  padding:25px;
+
+}
+
+.dictionary-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:15px;
+
+}
+
+.dictionary-header h2{
+  margin:0;
+}
+
+.close{
+
+  border:0;
+
+  background:var(--pale);
+
+  border-radius:50%;
+
+  width:38px;
+  height:38px;
+
+  font-size:1.3rem;
+
+}
+
+.dictionary-search{
+
+  width:100%;
+
+  padding:13px;
+
+  border:1px solid var(--border);
+
+  border-radius:11px;
+
+  margin:18px 0;
+
+  font-size:16px;
+
+}
+
+.dict-row{
+
+  display:grid;
+
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+
+  gap:12px;
+
+  padding:12px 6px;
+
+  border-bottom:1px solid var(--border);
+
+}
+
+.dict-en{
+
+  font-weight:850;
+
+  color:var(--forest);
+
+}
+
+.dict-ar{
+
+  direction:rtl;
+
+  text-align:right;
+
+  color:#705b86;
+
+}
+
+footer{
+
+  text-align:center;
+
+  padding:35px 20px;
+
+  color:var(--muted);
+
+  font-size:.75rem;
+
+  font-weight:800;
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+  .layout{
+    grid-template-columns:minmax(0,1fr);
+    max-width:850px;
+  }
+
+  .sidebar{
+    position:static;
+  }
+
+  .side-links{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:6px;
+
+  }
+
+}
+
+@media(max-width:800px){
+
+  .hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .hero-visual{
+    max-width:550px;
+  }
+
+  .marker-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+}
+
+@media(max-width:600px){
+
+  .topbar{
+    padding:12px 4%;
+  }
+
+  .brand{
+    font-size:.86rem;
+  }
+
+  .brand-icon{
+    width:38px;
+    height:38px;
+  }
+
+  .sequence-pill{
+    display:none;
+  }
+
+  .top-button{
+    padding:9px;
+    font-size:.75rem;
+  }
+
+  .hero{
+    padding:50px 5% 75px;
+  }
+
+  .hero h1{
+
+    font-size:clamp(2.2rem,9vw,3rem);
+
+    letter-spacing:-1px;
+
+  }
+
+  .hero-description{
+    font-size:.94rem;
+  }
+
+  .hero-visual{
+    padding:20px;
+  }
+
+  .layout{
+    padding:0 12px;
+  }
+
+  .sidebar{
+    padding:17px 12px;
+  }
+
+  .side-link{
+
+    font-size:.75rem;
+
+    padding:9px 7px;
+
+    gap:7px;
+
+  }
+
+  .side-number{
+    width:24px;
+    height:24px;
+  }
+
+  .lesson-section{
+
+    padding:22px 15px;
+
+    border-radius:18px;
+
+  }
+
+  .lesson-section h2{
+    font-size:1.55rem;
+  }
+
+  .marker-grid,
+  .fact-grid,
+  .goal-grid,
+  .checklist{
+    grid-template-columns:1fr;
+  }
+
+  .discovery-box,
+  .task-box,
+  .main-rule{
+    padding:18px 14px;
+  }
+
+  .question{
+    padding:15px 12px;
+  }
+
+  .option{
+
+    padding:12px;
+
+    font-size:.84rem;
+
+  }
+
+  .notice{
+    padding:16px 13px;
+  }
+
+  .writing-area{
+    padding:15px;
+  }
+
+  .correction-panel{
+    padding:16px;
+  }
+
+  .score-card{
+    flex-wrap:wrap;
+  }
+
+  .dictionary-button{
+
+    right:12px;
+
+    bottom:12px;
+
+    padding:12px 15px;
+
+    font-size:.78rem;
+
+  }
+
+}
+
+@media(max-width:370px){
+
+  .side-links{
+    grid-template-columns:1fr;
+  }
+
+  .lesson-section{
+    padding:18px 11px;
+  }
+
+  .live-stats{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+
+    scroll-behavior:auto!important;
+
+    transition:none!important;
+
+    animation:none!important;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     TOPBAR
+========================================================= -->
+
+<header class="topbar">
+
+  <div class="brand">
+
+    <div class="brand-icon">⏳</div>
+
+    <div>
+
+      MY ENGLISH SPACE
+
+      <small>MS4 · Grammar Expedition</small>
+
+    </div>
+
+  </div>
+
+  <div class="top-actions">
+
+    <span class="sequence-pill">
+      ✦ Sequence 01
+    </span>
+
+    <button
+      class="top-button"
+      onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+      ↑ Top
+
+    </button>
+
+  </div>
+
+</header>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <div class="hero-copy">
+
+      <span class="hero-badge">
+
+        ✦ CHECKPOINT 05 · RECOUNT
+
+      </span>
+
+      <h1>
+
+        Chronological
+
+        <br>
+
+        <span>Markers.</span>
+
+      </h1>
+
+      <p class="hero-description">
+
+        Organise events in the correct chronological order.
+
+        Use sequencing expressions to recount biographies,
+
+        describe historical events and organise travel itineraries.
+
+      </p>
+
+      <div class="hero-tags">
+
+        <span class="hero-tag">🏛️ Landmarks</span>
+
+        <span class="hero-tag">👤 Biographies</span>
+
+        <span class="hero-tag">✈️ Travel</span>
+
+        <span class="hero-tag">📜 History</span>
+
+        <span class="hero-tag">✍️ BEM Writing</span>
+
+      </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+      <div class="hero-visual-title">
+
+        ⏳ The Sequence of Events
+
+      </div>
+
+      <div class="hero-timeline">
+
+        <div class="hero-time-item">
+
+          <strong>First</strong>
+
+          The journey began.
+
+        </div>
+
+        <div class="hero-time-item">
+
+          <strong>Then</strong>
+
+          We visited a famous landmark.
+
+        </div>
+
+        <div class="hero-time-item">
+
+          <strong>After that</strong>
+
+          We took photographs.
+
+        </div>
+
+        <div class="hero-time-item">
+
+          <strong>Finally</strong>
+
+          We returned home.
+
+        </div>
+
+      </div>
+
+      <div class="hero-bottom">
+
+        FIRST → THEN → AFTER THAT → FINALLY
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     MAIN LAYOUT
+========================================================= -->
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+  <div class="sidebar-heading">
+
+    Your Learning Journey
+
+  </div>
+
+  <nav class="side-links">
+
+    <a class="side-link" href="#step1">
+      <span class="side-number">01</span>
+      Discover
+    </a>
+
+    <a class="side-link" href="#step2">
+      <span class="side-number">02</span>
+      Grammar Toolkit
+    </a>
+
+    <a class="side-link" href="#step3">
+      <span class="side-number">03</span>
+      Choose the Marker
+    </a>
+
+    <a class="side-link" href="#step4">
+      <span class="side-number">04</span>
+      Sentence Builder
+    </a>
+
+    <a class="side-link" href="#step5">
+      <span class="side-number">05</span>
+      Timeline Mission
+    </a>
+
+    <a class="side-link" href="#step6">
+      <span class="side-number">06</span>
+      Biography Mission
+    </a>
+
+    <a class="side-link" href="#step7">
+      <span class="side-number">07</span>
+      Grammar Detective
+    </a>
+
+    <a class="side-link" href="#step8">
+      <span class="side-number">08</span>
+      Travel Itinerary
+    </a>
+
+    <a class="side-link" href="#step9">
+      <span class="side-number">09</span>
+      Master Challenge
+    </a>
+
+    <a class="side-link" href="#step10">
+      <span class="side-number">10</span>
+      BEM Writing
+    </a>
+
+  </nav>
+
+  <div class="sidebar-progress">
+
+    <strong>🎯 Mission Progress</strong>
+
+    <div class="progress-track">
+
+      <div
+        class="progress-fill"
+        id="progressBar">
+      </div>
+
+    </div>
+
+    <div
+      class="progress-text"
+      id="progressText">
+
+      0 / 10 activities
+
+    </div>
+
+  </div>
+
+</aside>
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="content">
+
+<!-- =========================================================
+     STEP 01 — DISCOVER
+========================================================= -->
+
+<section class="lesson-section" id="step1">
+
+  <div class="section-top">
+
+    <div class="step-number">01</div>
+
+    <div class="step-label">
+      Notice & Discover
+    </div>
+
+  </div>
+
+  <h2>👀 Discover the Order of Events</h2>
+
+  <p class="intro">
+
+    Read the following short recount about a school trip.
+
+    Pay attention to the highlighted expressions.
+
+  </p>
+
+  <div class="discovery-box">
+
+    <div class="discovery-title">
+
+      📖 Our School Trip to Algiers
+
+    </div>
+
+    <div class="story-card">
+
+      Last spring, our class went on a wonderful trip to Algiers.
+
+      <br><br>
+
+      <span class="marker">First,</span>
+
+      we left our school early in the morning.
+
+      <br><br>
+
+      <span class="marker">Then,</span>
+
+      we travelled by bus to the capital.
+
+      <br><br>
+
+      <span class="marker">After that,</span>
+
+      we visited the Martyrs' Memorial.
+
+      <br><br>
+
+      <span class="marker">Later,</span>
+
+      we took photographs and had lunch.
+
+      <br><br>
+
+      <span class="marker">Finally,</span>
+
+      we returned home in the evening.
+
+      <br><br>
+
+      It was an unforgettable journey!
+
+    </div>
+
+  </div>
+
+  <div class="notice">
+
+    <strong>💡 What do you notice?</strong>
+
+    <br><br>
+
+    The highlighted expressions help us understand
+
+    <strong>the order in which events happened</strong>.
+
+    <br><br>
+
+    They make a recount clearer and easier to follow.
+
+  </div>
+
+  <div class="task-box">
+
+    <h3 class="task-title">
+
+      🎯 Mission 1 — Discover the Function
+
+    </h3>
+
+    <p class="task-instruction">
+
+      Why do we use first, then, after that, later and finally?
+
+    </p>
+
+    <div id="discoveryQuiz">
+
+      <div class="question" data-answer="1">
+
+        <div class="options">
+
+          <button class="option">
+
+            To compare two landmarks.
+
+          </button>
+
+          <button class="option">
+
+            To organise events in chronological order.
+
+          </button>
+
+          <button class="option">
+
+            To describe someone's personality.
+
+          </button>
+
+        </div>
+
+        <div class="feedback">
+
+          ✓ Correct! Chronological markers organise events in time.
+
+        </div>
+
+      </div>
+
+      <div class="quiz-summary"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     STEP 02 — GRAMMAR TOOLKIT
+========================================================= -->
+
+<section class="lesson-section" id="step2">
+
+  <div class="section-top">
+
+    <div class="step-number">02</div>
+
+    <div class="step-label">
+      Understand the Rule
+    </div>
+
+  </div>
+
+  <h2>📚 Chronological Markers Toolkit</h2>
+
+  <p class="intro">
+
+    Chronological markers are words and expressions
+
+    that show the sequence of events.
+
+  </p>
+
+  <div class="main-rule">
+
+    <h3>🌿 The Main Rule</h3>
+
+    <p>
+
+      Use chronological markers to connect events
+
+      and show what happened first, next and last.
+
+    </p>
+
+    <div class="big-formula">
+
+      FIRST → THEN → NEXT → AFTER THAT → LATER → FINALLY
+
+    </div>
+
+    <p>
+
+      They are especially useful in biographies,
+
+      historical recounts and travel descriptions.
+
+    </p>
+
+  </div>
+
+  <div class="marker-grid">
+
+    <div class="marker-card">
+
+      <h3>🥇 First</h3>
+
+      <p>Introduces the first event.</p>
+
+      <div class="marker-example">
+
+        First, we visited the museum.
+
+      </div>
+
+    </div>
+
+    <div class="marker-card">
+
+      <h3>➡️ Then</h3>
+
+      <p>Introduces the following event.</p>
+
+      <div class="marker-example">
+
+        Then, we walked to the monument.
+
+      </div>
+
+    </div>
+
+    <div class="marker-card">
+
+      <h3>➡️ Next</h3>
+
+      <p>Introduces another event.</p>
+
+      <div class="marker-example">
+
+        Next, we took photographs.
+
+      </div>
+
+    </div>
+
+    <div class="marker-card">
+
+      <h3>⏭️ After that</h3>
+
+      <p>Shows what happened afterwards.</p>
+
+      <div class="marker-example">
+
+        After that, we had lunch.
+
+      </div>
+
+    </div>
+
+    <div class="marker-card">
+
+      <h3>🕒 Later</h3>
+
+      <p>Introduces an event at a later time.</p>
+
+      <div class="marker-example">
+
+        Later, we visited the old city.
+
+      </div>
+
+    </div>
+
+    <div class="marker-card">
+
+      <h3>🏁 Finally</h3>
+
+      <p>Introduces the last event.</p>
+
+      <div class="marker-example">
+
+        Finally, we returned home.
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="arabic">
+
+    <strong>📖 الشرح بالعربية</strong>
+
+    <br><br>
+
+    نستعمل أدوات الترتيب الزمني لتنظيم الأحداث
+
+    حسب ترتيب وقوعها.
+
+    <br><br>
+
+    <strong>First</strong> = أولاً
+
+    <br>
+
+    <strong>Then</strong> = ثم
+
+    <br>
+
+    <strong>Next</strong> = بعد ذلك
+
+    <br>
+
+    <strong>After that</strong> = بعد ذلك
+
+    <br>
+
+    <strong>Later</strong> = لاحقاً
+
+    <br>
+
+    <strong>Finally</strong> = أخيراً
+
+    <br><br>
+
+    نستعمل هذه الأدوات عند سرد رحلة أو كتابة سيرة ذاتية
+
+    أو وصف أحداث تاريخية.
+
+  </div>
+
+  <div class="notice">
+
+    <strong>⚠️ Grammar Alert</strong>
+
+    <br><br>
+
+    We often put a comma after a chronological marker
+
+    at the beginning of a sentence.
+
+    <br><br>
+
+    ✅ First, we visited the museum.
+
+    <br>
+
+    ✅ After that, we took photographs.
+
+    <br>
+
+    ✅ Finally, we returned home.
+
+    <br><br>
+
+    <strong>Remember:</strong>
+
+    When recounting past events, we usually use
+
+    the <strong>past simple tense</strong>.
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     STEP 03 — CHOOSE THE MARKER
+========================================================= -->
+
+<section class="lesson-section" id="step3">
+
+  <span class="level lots">
+    LOTS · Understand
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-number">03</div>
+
+    <div class="step-label">
+      Choose the Marker
+    </div>
+
+  </div>
+
+  <h2>🎯 Which Marker Fits?</h2>
+
+  <p class="intro">
+
+    Read each situation and choose the most suitable marker.
+
+  </p>
+
+  <div id="markerQuiz">
+
+    <div class="question" data-answer="0">
+
+      <div class="question-text">
+
+        1. Which marker introduces the beginning of a journey?
+
+      </div>
+
+      <div class="options">
+
+        <button class="option">First</button>
+
+        <button class="option">Finally</button>
+
+        <button class="option">Later</button>
+
+      </div>
+
+      <div class="feedback">
+
+        ✓ First introduces the beginning.
+
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="2">
+
+      <div class="question-text">
+
+        2. Which marker usually introduces the last event?
+
+      </div>
+
+      <div class="options">
+
+        <button class="option">Then</button>
+
+        <button class="option">Next</button>
+
+        <button class="option">Finally</button>
+
+      </div>
+
+      <div class="feedback">
+
+        ✓ Finally introduces the last event.
+
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="1">
+
+      <div class="question-text">
+
+        3. We visited the museum. _____, we walked to the old town.
+
+      </div>
+
+      <div class="options">
+
+        <button class="option">Because</button>
+
+        <button class="option">After that</button>
+
+        <button class="option">Although</button>
+
+      </div>
+
+      <div class="feedback">
+
+        ✓ After that introduces the following event.
+
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="0">
+
+      <div class="question-text">
+
+        4. Which expression can introduce another event in a sequence?
+
+      </div>
+
+      <div class="options">
+
+        <button class="option">Next</button>
+
+        <button class="option">Very</button>
+
+        <button class="option">Beautiful</button>
+
+      </div>
+
+      <div class="feedback">
+
+        ✓ Next is a chronological marker.
+
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="1">
+
+      <div class="question-text">
+
+        5. Choose the correctly punctuated sentence.
+
+      </div>
+
+      <div class="options">
+
+        <button class="option">
+
+          Finally we returned home.
+
+        </button>
+
+        <button class="option">
+
+          Finally, we returned home.
+
+        </button>
+
+        <button class="option">
+
+          finally, we returned home.
+
+        </button>
+
+      </div>
+
+      <div class="feedback">
+
+        ✓ Use a capital letter and a comma.
+
+      </div>
+
+    </div>
+
+    <div class="quiz-summary"></div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     STEP 04 — SENTENCE BUILDER
+========================================================= -->
+
+<section class="lesson-section" id="step4">
+
+  <span class="level apply">
+    Apply
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-number">04</div>
+
+    <div class="step-label">
+      Sentence Builder
+    </div>
+
+  </div>
+
+  <h2>🧩 Build a Correct Sentence</h2>
+
+  <p class="intro">
+
+    Click the words in the correct order.
+
+    Remember to begin with the chronological marker.
+
+  </p>
+
+  <div class="task-box">
+
+    <h3 class="task-title">
+
+      🏗️ Build the Sentence
+
+    </h3>
+
+    <p class="task-instruction">
+
+      Meaning: We visited the Martyrs' Memorial after another activity.
+
+    </p>
+
+    <div class="builder-bank" id="builderBank">
+
+      <button class="word-chip">Memorial.</button>
+
+      <button class="word-chip">visited</button>
+
+      <button class="word-chip">After</button>
+
+      <button class="word-chip">we</button>
+
+      <button class="word-chip">Martyrs'</button>
+
+      <button class="word-chip">that,</button>
+
+      <button class="word-chip">the</button>
+
+    </div>
+
+    <div class="build-area" id="buildArea">
+
+      <span style="color:var(--muted)">
+
+        Your sentence will appear here...
+
+      </span>
+
+    </div>
+
+    <button
+      class="btn btn-primary"
+      onclick="checkBuilder()">
+
+      ✓ Check Sentence
+
+    </button>
+
+    <button
+      class="btn btn-secondary"
+      onclick="resetBuilder()">
+
+      ↻ Reset
+
+    </button>
+
+    <div
+      class="result"
+      id="builderResult">
+    </div>
+
+  </div>
+
+  <div class="task-box">
+
+    <h3 class="task-title">
+
+      ✏️ Complete the Recount
+
+    </h3>
+
+    <p class="task-instruction">
+
+      Write the missing chronological markers.
+
+    </p>
+
+    <div class="question">
+
+      <div class="question-text">
+
+        1. _____, we left our school early in the morning.
+
+        (Beginning)
+
+      </div>
+
+      <input
+        id="fill1"
+        class="input"
+        placeholder="Type the marker">
+
+    </div>
+
+    <div class="question">
+
+      <div class="question-text">
+
+        2. _____, we visited the museum.
+
+        (Following event)
+
+      </div>
+
+      <input
+        id="fill2"
+        class="input"
+        placeholder="Type the marker">
+
+    </div>
+
+    <div class="question">
+
+      <div class="question-text">
+
+        3. _____, we returned home.
+
+        (Last event)
+
+      </div>
+
+      <input
+        id="fill3"
+        class="input"
+        placeholder="Type the marker">
+
+    </div>
+
+    <button
+      class="btn btn-primary"
+      onclick="checkFill()">
+
+      ✓ Check Answers
+
+    </button>
+
+    <div
+      class="result"
+      id="fillResult">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     STEP 05 — TIMELINE MISSION
+========================================================= -->
+
+<section class="lesson-section" id="step5">
+
+  <span class="level apply">
+    Apply
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-number">05</div>
+
+    <div class="step-label">
+      Timeline Mission
+    </div>
+
+  </div>
+
+  <h2>⏳ Put the Events in Order</h2>
+
+  <p class="intro">
+
+    Read the events from a school trip to Constantine.
+
+    Use the arrows to arrange them in the correct order.
+
+  </p>
+
+  <div class="discovery-box">
+
+    <div class="discovery-title">
+
+      🚌 School Trip — Constantine
+
+    </div>
+
+    <p>
+
+      The pupils left school in the morning.
+
+      They travelled to Constantine by bus.
+
+      They visited the famous bridges.
+
+      They took photographs.
+
+      They returned home in the evening.
+
+    </p>
+
+  </div>
+
+  <div class="task-box">
+
+    <h3 class="task-title">
+
+      🎮 Arrange the Events
+
+    </h3>
+
+    <p class="task-instruction">
+
+      Use ↑ and ↓ to move the events.
+
+    </p>
+
+    <div
+      class="order-list"
+      id="orderList">
+    </div>
+
+    <button
+      class="btn btn-primary"
+      onclick="checkOrder()">
+
+      ✓ Check Timeline
+
+    </button>
+
+    <button
+      class="btn btn-secondary"
+      onclick="resetOrder()">
+
+      ↻ Shuffle Again
+
+    </button>
+
+    <div
+      class="result"
+      id="orderResult">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     STEP 06 — BIOGRAPHY MISSION
+========================================================= -->
+
+<section class="lesson-section" id="step6">
+
+  <span class="level apply">
+    Apply
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-number">06</div>
+
+    <div class="step-label">
+      Biography Mission
+    </div>
+
+  </div>
+
+  <h2>👤 Recount an Outstanding Figure's Life</h2>
+
+  <p class="intro">
+
+    Read the fact file about Leonardo da Vinci.
+
+    Complete the short biography using chronological markers.
+
+  </p>
+
+  <div class="fact-grid">
+
+    <div class="fact-card">
+
+      <div class="fact-header">
+
+        <h3>🎨 Leonardo da Vinci</h3>
+
+      </div>
+
+      <div class="fact-body">
+
+        <div class="fact-row">
+
+          <span>Born</span>
+
+          <strong>1452</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Birthplace</span>
+
+          <strong>Vinci, Italy</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Profession</span>
+
+          <strong>Artist & Inventor</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Famous work</span>
+
+          <strong>Mona Lisa</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Died</span>
+
+          <strong>1519</strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="fact-card">
+
+      <div class="fact-header">
+
+        <h3>📜 Life Events</h3>
+
+      </div>
+
+      <div class="fact-body">
+
+        <div class="fact-row">
+
+          <span>1452</span>
+
+          <strong>Was born</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Childhood</span>
+
+          <strong>Developed artistic interests</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Career</span>
+
+          <strong>Worked as an artist</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Later</span>
+
+          <strong>Created famous paintings</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>1519</span>
+
+          <strong>Died in France</strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="task-box">
+
+    <h3 class="task-title">
+
+      ✏️ Complete the Biography
+
+    </h3>
+
+    <p class="task-instruction">
+
+      Use: First — Then — Later — Finally
+
+    </p>
+
+    <div class="question">
+
+      <div class="question-text">
+
+        1. _____, Leonardo da Vinci was born in Vinci, Italy, in 1452.
+
+      </div>
+
+      <input
+        id="bio1"
+        class="input"
+        placeholder="Type the marker">
+
+    </div>
+
+    <div class="question">
+
+      <div class="question-text">
+
+        2. _____, he developed an interest in art.
+
+      </div>
+
+      <input
+        id="bio2"
+        class="input"
+        placeholder="Type the marker">
+
+    </div>
+
+    <div class="question">
+
+      <div class="question-text">
+
+        3. _____, he created famous paintings.
+
+      </div>
+
+      <input
+        id="bio3"
+        class="input"
+        placeholder="Type the marker">
+
+    </div>
+
+    <div class="question">
+
+      <div class="question-text">
+
+        4. _____, he died in France in 1519.
+
+      </div>
+
+      <input
+        id="bio4"
+        class="input"
+        placeholder="Type the marker">
+
+    </div>
+
+    <button
+      class="btn btn-primary"
+      onclick="checkBiography()">
+
+      ✓ Check Biography
+
+    </button>
+
+    <div
+      class="result"
+      id="bioResult">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     STEP 07 — GRAMMAR DETECTIVE
+========================================================= -->
+
+<section class="lesson-section" id="step7">
+
+  <span class="level analyse">
+    Analyse
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-number">07</div>
+
+    <div class="step-label">
+      Grammar Detective
+    </div>
+
+  </div>
+
+  <h2>🕵️ Find and Repair the Mistakes</h2>
+
+  <p class="intro">
+
+    Each sentence contains a mistake.
+
+    Rewrite the sentence correctly.
+
+  </p>
+
+  <div class="task-box">
+
+    <div class="question">
+
+      <div class="question-text">
+
+        ❌ first, we visited the museum.
+
+      </div>
+
+      <input
+        id="error1"
+        class="input"
+        placeholder="Write the correct sentence">
+
+    </div>
+
+    <div class="question">
+
+      <div class="question-text">
+
+        ❌ Finally we returned home.
+
+      </div>
+
+      <input
+        id="error2"
+        class="input"
+        placeholder="Write the correct sentence">
+
+    </div>
+
+    <div class="question">
+
+      <div class="question-text">
+
+        ❌ After that we visited the old city.
+
+      </div>
+
+      <input
+        id="error3"
+        class="input"
+        placeholder="Write the correct sentence">
+
+    </div>
+
+    <div class="question">
+
+      <div class="question-text">
+
+        ❌ Then, we visit the monument yesterday.
+
+      </div>
+
+      <input
+        id="error4"
+        class="input"
+        placeholder="Write the correct sentence">
+
+    </div>
+
+    <button
+      class="btn btn-primary"
+      onclick="checkErrors()">
+
+      🔍 Check Corrections
+
+    </button>
+
+    <div
+      class="result"
+      id="errorResult">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     STEP 08 — TRAVEL ITINERARY
+========================================================= -->
+
+<section class="lesson-section" id="step8">
+
+  <span class="level analyse">
+    Analyse & Evaluate
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-number">08</div>
+
+    <div class="step-label">
+      Travel Itinerary
+    </div>
+
+  </div>
+
+  <h2>✈️ Follow the Journey</h2>
+
+  <p class="intro">
+
+    Study the itinerary and answer the questions.
+
+  </p>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+
+      <span class="timeline-label">
+
+        08:00 — FIRST
+
+      </span>
+
+      <p>
+
+        The tourists left their hotel in London.
+
+      </p>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <span class="timeline-label">
+
+        09:00 — THEN
+
+      </span>
+
+      <p>
+
+        They visited Big Ben.
+
+      </p>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <span class="timeline-label">
+
+        11:00 — AFTER THAT
+
+      </span>
+
+      <p>
+
+        They visited Buckingham Palace.
+
+      </p>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <span class="timeline-label">
+
+        14:00 — LATER
+
+      </span>
+
+      <p>
+
+        They walked along the River Thames.
+
+      </p>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <span class="timeline-label">
+
+        18:00 — FINALLY
+
+      </span>
+
+      <p>
+
+        They returned to their hotel.
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="task-box">
+
+    <div id="travelQuiz">
+
+      <div class="question" data-answer="1">
+
+        <div class="question-text">
+
+          1. What did the tourists do after visiting Big Ben?
+
+        </div>
+
+        <div class="options">
+
+          <button class="option">
+
+            They returned to the hotel.
+
+          </button>
+
+          <button class="option">
+
+            They visited Buckingham Palace.
+
+          </button>
+
+          <button class="option">
+
+            They left London.
+
+          </button>
+
+        </div>
+
+        <div class="feedback">
+
+          ✓ Buckingham Palace was the next destination.
+
+        </div>
+
+      </div>
+
+      <div class="question" data-answer="0">
+
+        <div class="question-text">
+
+          2. Which event happened last?
+
+        </div>
+
+        <div class="options">
+
+          <button class="option">
+
+            They returned to their hotel.
+
+          </button>
+
+          <button class="option">
+
+            They visited Big Ben.
+
+          </button>
+
+          <button class="option">
+
+            They walked along the River Thames.
+
+          </button>
+
+        </div>
+
+        <div class="feedback">
+
+          ✓ Returning to the hotel was the final event.
+
+        </div>
+
+      </div>
+
+      <div class="question" data-answer="2">
+
+        <div class="question-text">
+
+          3. Which marker introduces the visit to Buckingham Palace?
+
+        </div>
+
+        <div class="options">
+
+          <button class="option">First</button>
+
+          <button class="option">Finally</button>
+
+          <button class="option">After that</button>
+
+        </div>
+
+        <div class="feedback">
+
+          ✓ After that introduces the next activity.
+
+        </div>
+
+      </div>
+
+      <div class="quiz-summary"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     STEP 09 — MASTER CHALLENGE
+========================================================= -->
+
+<section class="lesson-section" id="step9">
+
+  <span class="level hots">
+    Evaluate
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-number">09</div>
+
+    <div class="step-label">
+      Master Challenge
+    </div>
+
+  </div>
+
+  <h2>🏆 Can You Beat the Challenge?</h2>
+
+  <p class="intro">
+
+    Answer all five questions and discover your score.
+
+  </p>
+
+  <div id="masterQuiz">
+
+    <div class="question" data-answer="0">
+
+      <div class="question-text">
+
+        1. Which expression begins a recount?
+
+      </div>
+
+      <div class="options">
+
+        <button class="option">First</button>
+
+        <button class="option">Finally</button>
+
+        <button class="option">However</button>
+
+      </div>
+
+      <div class="feedback">
+
+        ✓ First introduces the beginning.
+
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="1">
+
+      <div class="question-text">
+
+        2. Which sentence is correctly punctuated?
+
+      </div>
+
+      <div class="options">
+
+        <button class="option">
+
+          after that, we visited the museum.
+
+        </button>
+
+        <button class="option">
+
+          After that, we visited the museum.
+
+        </button>
+
+        <button class="option">
+
+          After that we visited the museum.
+
+        </button>
+
+      </div>
+
+      <div class="feedback">
+
+        ✓ Correct capitalization and punctuation.
+
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="2">
+
+      <div class="question-text">
+
+        3. Which marker introduces the last event?
+
+      </div>
+
+      <div class="options">
+
+        <button class="option">Next</button>
+
+        <button class="option">Then</button>
+
+        <button class="option">Finally</button>
+
+      </div>
+
+      <div class="feedback">
+
+        ✓ Finally introduces the last event.
+
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="0">
+
+      <div class="question-text">
+
+        4. Which sentence uses the correct tense for a past journey?
+
+      </div>
+
+      <div class="options">
+
+        <button class="option">
+
+          Then, we visited the monument.
+
+        </button>
+
+        <button class="option">
+
+          Then, we visit the monument yesterday.
+
+        </button>
+
+        <button class="option">
+
+          Then, we visiting the monument.
+
+        </button>
+
+      </div>
+
+      <div class="feedback">
+
+        ✓ Use the past simple tense.
+
+      </div>
+
+    </div>
+
+    <div class="question" data-answer="1">
+
+      <div class="question-text">
+
+        5. Which sequence is the most logical?
+
+      </div>
+
+      <div class="options">
+
+        <button class="option">
+
+          Finally → First → Then
+
+        </button>
+
+        <button class="option">
+
+          First → Then → Finally
+
+        </button>
+
+        <button class="option">
+
+          Then → Finally → First
+
+        </button>
+
+      </div>
+
+      <div class="feedback">
+
+        ✓ Correct chronological order!
+
+      </div>
+
+    </div>
+
+    <div class="quiz-summary"></div>
+
+  </div>
+
+  <div class="score-card">
+
+    <div>
+
+      <h3>🎯 Grammar Challenge</h3>
+
+      <p>
+
+        Complete all five questions to reveal your score.
+
+      </p>
+
+    </div>
+
+    <div
+      class="big-score"
+      id="masterScore">
+
+      0/5
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     STEP 10 — BEM WRITING
+========================================================= -->
+
+<section class="lesson-section" id="step10">
+
+  <span class="level hots">
+    HOTS · Create
+  </span>
+
+  <div class="section-top">
+
+    <div class="step-number">10</div>
+
+    <div class="step-label">
+      Final BEM Writing Mission
+    </div>
+
+  </div>
+
+  <h2>✍️ Recount a School Trip</h2>
+
+  <p class="intro">
+
+    Imagine that you went on a school trip to Algiers.
+
+    Use the information below to write a short recount.
+
+  </p>
+
+  <div class="fact-grid">
+
+    <div class="fact-card">
+
+      <div class="fact-header">
+
+        <h3>🚌 Trip Information</h3>
+
+      </div>
+
+      <div class="fact-body">
+
+        <div class="fact-row">
+
+          <span>Destination</span>
+
+          <strong>Algiers</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Transport</span>
+
+          <strong>Bus</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Departure</span>
+
+          <strong>07:00</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Return</span>
+
+          <strong>18:00</strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="fact-card">
+
+      <div class="fact-header">
+
+        <h3>🏛️ Activities</h3>
+
+      </div>
+
+      <div class="fact-body">
+
+        <div class="fact-row">
+
+          <span>Activity 1</span>
+
+          <strong>Leave school</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Activity 2</span>
+
+          <strong>Visit Martyrs' Memorial</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Activity 3</span>
+
+          <strong>Take photographs</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Activity 4</span>
+
+          <strong>Have lunch</strong>
+
+        </div>
+
+        <div class="fact-row">
+
+          <span>Activity 5</span>
+
+          <strong>Return home</strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="writing-goals">
+
+    <strong>🧠 Plan Your Recount</strong>
+
+    <p style="font-size:.88rem">
+
+      Use the fact file and organise the events in the correct order.
+
+    </p>
+
+    <div class="goal-grid">
+
+      <div class="goal">
+
+        <span class="goal-num">1</span>
+
+        Introduce the trip.
+
+      </div>
+
+      <div class="goal">
+
+        <span class="goal-num">2</span>
+
+        Use at least four chronological markers.
+
+      </div>
+
+      <div class="goal">
+
+        <span class="goal-num">3</span>
+
+        Use the past simple tense.
+
+      </div>
+
+      <div class="goal">
+
+        <span class="goal-num">4</span>
+
+        Finish with a conclusion.
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="writing-tools">
+
+    <span class="helper">First,</span>
+
+    <span class="helper">Then,</span>
+
+    <span class="helper">Next,</span>
+
+    <span class="helper">After that,</span>
+
+    <span class="helper">Later,</span>
+
+    <span class="helper">Finally,</span>
+
+    <span class="helper">visited</span>
+
+    <span class="helper">travelled</span>
+
+    <span class="helper">took</span>
+
+    <span class="helper">returned</span>
+
+  </div>
+
+  <div class="notice">
+
+    <strong>💡 Suggested Organisation</strong>
+
+    <br><br>
+
+    <strong>Sentence 1:</strong>
+
+    Introduce your school trip.
+
+    <br>
+
+    <strong>Sentences 2–5:</strong>
+
+    Recount the activities in chronological order.
+
+    <br>
+
+    <strong>Final sentence:</strong>
+
+    Describe your feelings about the trip.
+
+  </div>
+
+  <div class="writing-area">
+
+    <h3>📝 My Recount</h3>
+
+    <p class="intro">
+
+      Write about 60–90 words.
+
+    </p>
+
+    <textarea
+      id="finalWriting"
+      placeholder="Last spring, our class went on a wonderful trip to Algiers. First, ..."
+      aria-label="Write your recount">
+    </textarea>
+
+    <div class="live-stats">
+
+      <div class="stat">
+
+        <strong id="wordCount">0</strong>
+
+        <small>Words</small>
+
+      </div>
+
+      <div class="stat">
+
+        <strong id="markerCount">0</strong>
+
+        <small>Markers</small>
+
+      </div>
+
+      <div class="stat">
+
+        <strong id="pastCount">0</strong>
+
+        <small>Past Verbs</small>
+
+      </div>
+
+    </div>
+
+    <div class="writing-actions">
+
+      <button
+        class="btn btn-primary"
+        onclick="checkWriting()">
+
+        ✨ Check My Recount
+
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="showModel()">
+
+        👀 Show Model
+
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="clearWriting()">
+
+        ↻ Start Again
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div
+    class="correction-panel"
+    id="correctionPanel">
+
+    <div class="correction-head">
+
+      <div>
+
+        <small style="color:#059669;font-weight:900">
+
+          WRITING FEEDBACK
+
+        </small>
+
+        <h3>✨ Your Writing Coach</h3>
+
+      </div>
+
+      <div
+        class="writing-score"
+        id="writingScore">
+
+        0/6
+
+      </div>
+
+    </div>
+
+    <p class="intro">
+
+      This automatic checklist checks selected writing goals.
+
+      It cannot identify every grammar or spelling mistake.
+
+    </p>
+
+    <div
+      class="checklist"
+      id="writingChecklist">
+    </div>
+
+    <div
+      class="notice"
+      id="writingTip">
+    </div>
+
+  </div>
+
+  <div
+    class="model-answer"
+    id="modelAnswer">
+
+    <h3 style="color:#065f46">
+
+      🌟 Model Recount
+
+    </h3>
+
+    <p>
+
+      Last spring, our class went on a wonderful trip to Algiers.
+
+      <strong>First,</strong>
+
+      we left our school at seven o'clock in the morning.
+
+      <strong>Then,</strong>
+
+      we travelled to Algiers by bus.
+
+      <strong>After that,</strong>
+
+      we visited the famous Martyrs' Memorial and learned about its history.
+
+      <strong>Later,</strong>
+
+      we took photographs and had lunch with our classmates.
+
+      <strong>Finally,</strong>
+
+      we returned home at six o'clock in the evening.
+
+      It was an exciting and unforgettable journey.
+
+    </p>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     COMPLETION
+========================================================= -->
+
+<section class="complete" id="completion">
+
+  <div class="trophy">
+
+    🏆
+
+  </div>
+
+  <h2>
+
+    Grammar Mission Complete!
+
+  </h2>
+
+  <p id="finalScore">
+
+    Complete the activities to finish your grammar expedition.
+
+  </p>
+
+  <div style="
+    max-width:620px;
+    margin:25px auto;
+    background:rgba(255,255,255,.12);
+    padding:24px;
+    border-radius:14px;
+    text-align:left;
+    line-height:2;
+  ">
+
+    <strong>🧠 Remember:</strong>
+
+    <br><br>
+
+    🥇 <strong>First</strong> — Beginning
+
+    <br>
+
+    ➡️ <strong>Then / Next</strong> — Following event
+
+    <br>
+
+    ⏭️ <strong>After that</strong> — Afterwards
+
+    <br>
+
+    🕒 <strong>Later</strong> — Later event
+
+    <br>
+
+    🏁 <strong>Finally</strong> — Last event
+
+    <br><br>
+
+    <em>
+
+      Chronological markers help us recount events
+
+      clearly and logically.
+
+    </em>
+
+  </div>
+
+  <a
+    class="btn"
+    href="#step1">
+
+    ↑ Review the Lesson
+
+  </a>
+
+  <a
+    class="btn"
+    href="MS4-S1-Grammar-Lesson6.html">
+
+    Checkpoint 06 →
+
+  </a>
+
+</section>
+
+</main>
+
+</div>
+
+<!-- =========================================================
+     MINI DICTIONARY
+========================================================= -->
+
+<button
+  class="dictionary-button"
+  onclick="openDictionary()">
+
+  📖 Mini Dictionary
+
+</button>
+
+<div
+  class="dictionary-overlay"
+  id="dictionaryOverlay">
+
+  <div
+    class="dictionary"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mini Dictionary">
+
+    <div class="dictionary-header">
+
+      <h2>
+
+        📖 Mini Dictionary
+
+      </h2>
+
+      <button
+        class="close"
+        onclick="closeDictionary()"
+        aria-label="Close dictionary">
+
+        ×
+
+      </button>
+
+    </div>
+
+    <input
+      id="dictionarySearch"
+      class="dictionary-search"
+      placeholder="Search English or Arabic..."
+      oninput="filterDictionary()">
+
+    <div id="dictionaryList">
+
+      <div class="dict-row">
+        <span class="dict-en">first</span>
+        <span class="dict-ar">أولاً</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">then</span>
+        <span class="dict-ar">ثم</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">next</span>
+        <span class="dict-ar">بعد ذلك</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">after that</span>
+        <span class="dict-ar">بعد ذلك</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">later</span>
+        <span class="dict-ar">لاحقاً</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">finally</span>
+        <span class="dict-ar">أخيراً</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">chronological</span>
+        <span class="dict-ar">زمني</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">sequence</span>
+        <span class="dict-ar">تسلسل</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">recount</span>
+        <span class="dict-ar">يسرد / سرد</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">biography</span>
+        <span class="dict-ar">سيرة ذاتية</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">journey</span>
+        <span class="dict-ar">رحلة</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">itinerary</span>
+        <span class="dict-ar">برنامج رحلة</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">landmark</span>
+        <span class="dict-ar">مَعْلَم</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">monument</span>
+        <span class="dict-ar">نصب تذكاري</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">historical</span>
+        <span class="dict-ar">تاريخي</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">departure</span>
+        <span class="dict-ar">مغادرة</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">return</span>
+        <span class="dict-ar">عودة</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">unforgettable</span>
+        <span class="dict-ar">لا ينسى</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">outstanding figure</span>
+        <span class="dict-ar">شخصية بارزة</span>
+      </div>
+
+      <div class="dict-row">
+        <span class="dict-en">event</span>
+        <span class="dict-ar">حدث</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+
+  MY ENGLISH SPACE · MS4 · SEQUENCE 01 · GRAMMAR EXPEDITION
+
+</footer>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+"use strict";
+
+/* =========================================================
+   PROGRESS STORAGE
+========================================================= */
+
+const STORAGE_KEY =
+  "myEnglishSpace_MS4_S1_ChronologicalMarkers_v1";
+
+const progress = {
+
+  discovery:false,
+
+  markers:false,
+
+  builder:false,
+
+  fill:false,
+
+  order:false,
+
+  biography:false,
+
+  errors:false,
+
+  travel:false,
+
+  master:false,
+
+  writing:false
+
+};
+
+let saved = {};
+
+try{
+
+  saved =
+    JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+
+}catch(error){
+
+  saved = {};
+
+}
+
+if(saved.progress){
+
+  Object.keys(progress).forEach(key=>{
+
+    progress[key] =
+      saved.progress[key] === true;
+
+  });
+
+}
+
+/* =========================================================
+   SAVE PROGRESS
+========================================================= */
+
+function saveProgress(){
+
+  try{
+
+    const quizAnswers = {};
+
+    document.querySelectorAll(
+      "#discoveryQuiz,#markerQuiz,#travelQuiz,#masterQuiz"
+    ).forEach(quiz=>{
+
+      quizAnswers[quiz.id] = [
+
+        ...quiz.querySelectorAll(".question")
+
+      ].map(question=>{
+
+        return question.dataset.selected == null
+
+          ? null
+
+          : Number(question.dataset.selected);
+
+      });
+
+    });
+
+    const inputs = {};
+
+    document.querySelectorAll(".input").forEach(input=>{
+
+      inputs[input.id] = input.value;
+
+    });
+
+    const data = {
+
+      progress:progress,
+
+      quizAnswers:quizAnswers,
+
+      inputs:inputs,
+
+      writing:document.getElementById("finalWriting").value
+
+    };
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(data)
+    );
+
+  }catch(error){
+
+    /* Storage may be unavailable. */
+
+  }
+
+}
+
+/* =========================================================
+   UPDATE PROGRESS
+========================================================= */
+
+function updateProgress(){
+
+  const completed =
+    Object.values(progress).filter(Boolean).length;
+
+  const total =
+    Object.keys(progress).length;
+
+  const percent =
+    Math.round(completed / total * 100);
+
+  document.getElementById("progressBar").style.width =
+    percent + "%";
+
+  document.getElementById("progressText").textContent =
+    completed + " / " + total + " activities";
+
+  document.getElementById("finalScore").textContent =
+
+    completed === total
+
+      ? "🌟 Excellent! You completed every grammar activity!"
+
+      : "You completed " + completed + " of " + total +
+        " activities. Keep going!";
+
+  saveProgress();
+
+}
+
+/* =========================================================
+   QUIZ ENGINE
+========================================================= */
+
+function setupQuiz(id,progressKey){
+
+  const container =
+    document.getElementById(id);
+
+  if(!container) return;
+
+  const questions = [
+    ...container.querySelectorAll(".question")
+  ];
+
+  function showAnswer(question,index){
+
+    const answer =
+      Number(question.dataset.answer);
+
+    const options = [
+      ...question.querySelectorAll(".option")
+    ];
+
+    question.dataset.done = "true";
+
+    question.dataset.selected = String(index);
+
+    question.dataset.correct =
+      String(index === answer);
+
+    options.forEach((button,i)=>{
+
+      button.disabled = true;
+
+      if(i === answer){
+
+        button.classList.add("correct");
+
+      }else if(i === index){
+
+        button.classList.add("wrong");
+
+      }
+
+    });
+
+    const feedback =
+      question.querySelector(".feedback");
+
+    if(feedback){
+
+      feedback.classList.add("show");
+
+    }
+
+  }
+
+  function refreshSummary(){
+
+    const finished =
+      questions.every(
+        question=>question.dataset.done === "true"
+      );
+
+    if(!finished) return;
+
+    const score =
+      questions.filter(
+        question=>question.dataset.correct === "true"
+      ).length;
+
+    const summary =
+      container.querySelector(".quiz-summary");
+
+    if(summary){
+
+      summary.textContent =
+        "🎯 Activity complete! Your score: " +
+        score + " / " + questions.length +
+        (
+          score === questions.length
+          ? " — Excellent!"
+          : " — Review the correct answers."
+        );
+
+      summary.classList.add("show");
+
+    }
+
+    progress[progressKey] = true;
+
+    if(id === "masterQuiz"){
+
+      document.getElementById("masterScore").textContent =
+        score + "/" + questions.length;
+
+    }
+
+    updateProgress();
+
+  }
+
+  questions.forEach((question,qIndex)=>{
+
+    const options = [
+      ...question.querySelectorAll(".option")
+    ];
+
+    options.forEach((option,index)=>{
+
+      option.addEventListener("click",()=>{
+
+        if(question.dataset.done === "true") return;
+
+        showAnswer(question,index);
+
+        refreshSummary();
+
+      });
+
+    });
+
+    const stored =
+      saved.quizAnswers?.[id]?.[qIndex];
+
+    if(
+      Number.isInteger(stored) &&
+      stored >= 0 &&
+      stored < options.length
+    ){
+
+      showAnswer(question,stored);
+
+    }
+
+  });
+
+  refreshSummary();
+
+}
+
+setupQuiz("discoveryQuiz","discovery");
+
+setupQuiz("markerQuiz","markers");
+
+setupQuiz("travelQuiz","travel");
+
+setupQuiz("masterQuiz","master");
+
+/* =========================================================
+   NORMALISE
+========================================================= */
+
+function normalize(text){
+
+  return String(text)
+
+    .toLowerCase()
+
+    .replace(/[.,!?;:]/g,"")
+
+    .replace(/\s+/g," ")
+
+    .trim();
+
+}
+
+/* =========================================================
+   INPUT FEEDBACK
+========================================================= */
+
+function setInputState(input,correct){
+
+  input.classList.toggle(
+    "correct-input",
+    correct
+  );
+
+  input.classList.toggle(
+    "wrong-input",
+    !correct
+  );
+
+}
+
+function showResult(id,correct,message){
+
+  const result =
+    document.getElementById(id);
+
+  result.textContent = message;
+
+  result.className =
+    "result show " + (correct ? "correct" : "wrong");
+
+}
+
+/* =========================================================
+   SENTENCE BUILDER
+========================================================= */
+
+const builderBank =
+  document.getElementById("builderBank");
+
+const buildArea =
+  document.getElementById("buildArea");
+
+let builtWords = [];
+
+builderBank.querySelectorAll(".word-chip").forEach(chip=>{
+
+  chip.addEventListener("click",()=>{
+
+    if(chip.classList.contains("used")) return;
+
+    builtWords.push({
+
+      text:chip.textContent.trim(),
+
+      chip:chip
+
+    });
+
+    chip.classList.add("used");
+
+    renderBuilder();
+
+  });
+
+});
+
+function renderBuilder(){
+
+  buildArea.replaceChildren();
+
+  if(builtWords.length === 0){
+
+    const placeholder =
+      document.createElement("span");
+
+    placeholder.style.color =
+      "var(--muted)";
+
+    placeholder.textContent =
+      "Your sentence will appear here...";
+
+    buildArea.appendChild(placeholder);
+
+    return;
+
+  }
+
+  builtWords.forEach((item,index)=>{
+
+    const button =
+      document.createElement("button");
+
+    button.className =
+      "built-word";
+
+    button.textContent =
+      item.text;
+
+    button.title =
+      "Click to remove this word";
+
+    button.addEventListener("click",()=>{
+
+      item.chip.classList.remove("used");
+
+      builtWords.splice(index,1);
+
+      renderBuilder();
+
+    });
+
+    buildArea.appendChild(button);
+
+  });
+
+}
+
+function checkBuilder(){
+
+  const answer =
+    builtWords.map(item=>item.text).join(" ");
+
+  const correct =
+    "After that, we visited the Martyrs' Memorial.";
+
+  if(normalize(answer) === normalize(correct)){
+
+    showResult(
+
+      "builderResult",
+
+      true,
+
+      "🎉 Perfect! After that, we visited the Martyrs' Memorial."
+
+    );
+
+    progress.builder = true;
+
+    updateProgress();
+
+  }else{
+
+    showResult(
+
+      "builderResult",
+
+      false,
+
+      "Try again. Begin with After that, and follow with subject + past verb + object."
+
+    );
+
+  }
+
+}
+
+function resetBuilder(){
+
+  builtWords = [];
+
+  builderBank.querySelectorAll(".word-chip").forEach(chip=>{
+
+    chip.classList.remove("used");
+
+  });
+
+  renderBuilder();
+
+  document.getElementById("builderResult").className =
+    "result";
+
+}
+
+/* =========================================================
+   FILL TASK
+========================================================= */
+
+function checkFill(){
+
+  const answers = [
+
+    {
+      id:"fill1",
+      accepted:["first"]
+    },
+
+    {
+      id:"fill2",
+      accepted:["then","next","after that","later"]
+    },
+
+    {
+      id:"fill3",
+      accepted:["finally"]
+    }
+
+  ];
+
+  let score = 0;
+
+  answers.forEach(item=>{
+
+    const input =
+      document.getElementById(item.id);
+
+    const correct =
+      item.accepted.includes(
+        normalize(input.value)
+      );
+
+    setInputState(input,correct);
+
+    if(correct) score++;
+
+  });
+
+  if(score === 3){
+
+    showResult(
+
+      "fillResult",
+
+      true,
+
+      "🎉 Excellent! All three markers are correct."
+
+    );
+
+    progress.fill = true;
+
+    updateProgress();
+
+  }else{
+
+    showResult(
+
+      "fillResult",
+
+      false,
+
+      "Score: " + score + "/3. Review the timeline and try again."
+
+    );
+
+  }
+
+}
+
+/* =========================================================
+   ORDERING GAME
+========================================================= */
+
+const originalEvents = [
+
+  {
+    id:1,
+    text:"The pupils left school in the morning."
+  },
+
+  {
+    id:2,
+    text:"They travelled to Constantine by bus."
+  },
+
+  {
+    id:3,
+    text:"They visited the famous bridges."
+  },
+
+  {
+    id:4,
+    text:"They took photographs."
+  },
+
+  {
+    id:5,
+    text:"They returned home in the evening."
+  }
+
+];
+
+let orderedEvents = [];
+
+function shuffleArray(array){
+
+  const copy = [...array];
+
+  for(let i=copy.length-1;i>0;i--){
+
+    const j =
+      Math.floor(Math.random() * (i+1));
+
+    [copy[i],copy[j]] =
+      [copy[j],copy[i]];
+
+  }
+
+  return copy;
+
+}
+
+function resetOrder(){
+
+  orderedEvents =
+    shuffleArray(originalEvents);
+
+  const alreadyCorrect =
+    orderedEvents.every(
+      (item,index)=>item.id === index+1
+    );
+
+  if(alreadyCorrect){
+
+    orderedEvents.reverse();
+
+  }
+
+  renderOrder();
+
+  document.getElementById("orderResult").className =
+    "result";
+
+}
+
+function renderOrder(){
+
+  const container =
+    document.getElementById("orderList");
+
+  container.replaceChildren();
+
+  orderedEvents.forEach((event,index)=>{
+
+    const item =
+      document.createElement("div");
+
+    item.className =
+      "order-item";
+
+    const position =
+      document.createElement("span");
+
+    position.className =
+      "order-position";
+
+    position.textContent =
+      index+1;
+
+    const text =
+      document.createElement("span");
+
+    text.className =
+      "order-text";
+
+    text.textContent =
+      event.text;
+
+    const controls =
+      document.createElement("div");
+
+    controls.className =
+      "order-controls";
+
+    const up =
+      document.createElement("button");
+
+    up.className =
+      "move-btn";
+
+    up.textContent =
+      "↑";
+
+    up.title =
+      "Move up";
+
+    up.disabled =
+      index === 0;
+
+    up.addEventListener("click",()=>{
+
+      moveEvent(index,-1);
+
+    });
+
+    const down =
+      document.createElement("button");
+
+    down.className =
+      "move-btn";
+
+    down.textContent =
+      "↓";
+
+    down.title =
+      "Move down";
+
+    down.disabled =
+      index === orderedEvents.length-1;
+
+    down.addEventListener("click",()=>{
+
+      moveEvent(index,1);
+
+    });
+
+    controls.append(up,down);
+
+    item.append(position,text,controls);
+
+    container.appendChild(item);
+
+  });
+
+}
+
+function moveEvent(index,direction){
+
+  const newIndex =
+    index + direction;
+
+  if(
+    newIndex < 0 ||
+    newIndex >= orderedEvents.length
+  ) return;
+
+  [
+    orderedEvents[index],
+    orderedEvents[newIndex]
+  ] = [
+    orderedEvents[newIndex],
+    orderedEvents[index]
+  ];
+
+  renderOrder();
+
+}
+
+function checkOrder(){
+
+  const correct =
+    orderedEvents.every(
+      (item,index)=>item.id === index+1
+    );
+
+  if(correct){
+
+    showResult(
+
+      "orderResult",
+
+      true,
+
+      "🏆 Excellent! All five events are in the correct chronological order."
+
+    );
+
+    progress.order = true;
+
+    updateProgress();
+
+  }else{
+
+    const correctPositions =
+      orderedEvents.filter(
+        (item,index)=>item.id === index+1
+      ).length;
+
+    showResult(
+
+      "orderResult",
+
+      false,
+
+      "You have " + correctPositions +
+      "/5 events in the correct position. Try again!"
+
+    );
+
+  }
+
+}
+
+resetOrder();
+
+/* =========================================================
+   BIOGRAPHY TASK
+========================================================= */
+
+function checkBiography(){
+
+  const answers = [
+
+    {
+      id:"bio1",
+      accepted:["first"]
+    },
+
+    {
+      id:"bio2",
+      accepted:["then"]
+    },
+
+    {
+      id:"bio3",
+      accepted:["later"]
+    },
+
+    {
+      id:"bio4",
+      accepted:["finally"]
+    }
+
+  ];
+
+  let score = 0;
+
+  answers.forEach(item=>{
+
+    const input =
+      document.getElementById(item.id);
+
+    const correct =
+      item.accepted.includes(
+        normalize(input.value)
+      );
+
+    setInputState(input,correct);
+
+    if(correct) score++;
+
+  });
+
+  if(score === 4){
+
+    showResult(
+
+      "bioResult",
+
+      true,
+
+      "🎉 Excellent! You organised Leonardo da Vinci's biography correctly."
+
+    );
+
+    progress.biography = true;
+
+    updateProgress();
+
+  }else{
+
+    showResult(
+
+      "bioResult",
+
+      false,
+
+      "Score: " + score +
+      "/4. Use First, Then, Later and Finally."
+
+    );
+
+  }
+
+}
+
+/* =========================================================
+   GRAMMAR DETECTIVE
+========================================================= */
+
+function checkErrors(){
+
+  const answers = [
+
+    {
+      id:"error1",
+      answer:"first we visited the museum"
+    },
+
+    {
+      id:"error2",
+      answer:"finally we returned home"
+    },
+
+    {
+      id:"error3",
+      answer:"after that we visited the old city"
+    },
+
+    {
+      id:"error4",
+      answer:"then we visited the monument yesterday"
+    }
+
+  ];
+
+  let score = 0;
+
+  answers.forEach(item=>{
+
+    const input =
+      document.getElementById(item.id);
+
+    const value =
+      input.value.trim();
+
+    const correct =
+
+      normalize(value) === item.answer &&
+
+      /^[A-Z]/.test(value) &&
+
+      /^(First|Finally|After that|Then),/.test(value) &&
+
+      /[.!?]$/.test(value);
+
+    setInputState(input,correct);
+
+    if(correct) score++;
+
+  });
+
+  if(score === 4){
+
+    showResult(
+
+      "errorResult",
+
+      true,
+
+      "🕵️ Grammar Detective Master! All four corrections are correct."
+
+    );
+
+    progress.errors = true;
+
+    updateProgress();
+
+  }else{
+
+    showResult(
+
+      "errorResult",
+
+      false,
+
+      "You corrected " + score +
+      "/4 sentences. Check capital letters, commas and past simple verbs."
+
+    );
+
+  }
+
+}
+
+/* =========================================================
+   WRITING STATISTICS
+========================================================= */
+
+const writingBox =
+  document.getElementById("finalWriting");
+
+const chronologicalPattern =
+  /\b(first|then|next|after that|later|finally)\b/gi;
+
+const pastVerbPattern =
+  /\b(went|left|travelled|traveled|visited|took|had|returned|arrived|saw|learned|learnt|walked|enjoyed|started|finished|was|were)\b/gi;
+
+function getWritingData(){
+
+  const text =
+    writingBox.value.trim();
+
+  const words =
+    text ? text.split(/\s+/) : [];
+
+  const markers =
+    text.match(chronologicalPattern) || [];
+
+  const pastVerbs =
+    text.match(pastVerbPattern) || [];
+
+  return {
+
+    text:text,
+
+    wordCount:words.length,
+
+    markerCount:markers.length,
+
+    uniqueMarkers:[
+      ...new Set(
+        markers.map(marker=>marker.toLowerCase())
+      )
+    ].length,
+
+    pastCount:pastVerbs.length
+
+  };
+
+}
+
+function updateWritingStats(){
+
+  const data =
+    getWritingData();
+
+  document.getElementById("wordCount").textContent =
+    data.wordCount;
+
+  document.getElementById("markerCount").textContent =
+    data.markerCount;
+
+  document.getElementById("pastCount").textContent =
+    data.pastCount;
+
+}
+
+writingBox.addEventListener("input",()=>{
+
+  updateWritingStats();
+
+  saveProgress();
+
+});
+
+/* =========================================================
+   WRITING CHECKER
+========================================================= */
+
+function checkWriting(){
+
+  const data =
+    getWritingData();
+
+  const panel =
+    document.getElementById("correctionPanel");
+
+  const checklist =
+    document.getElementById("writingChecklist");
+
+  const tip =
+    document.getElementById("writingTip");
+
+  panel.classList.add("show");
+
+  if(data.wordCount === 0){
+
+    checklist.replaceChildren();
+
+    document.getElementById("writingScore").textContent =
+      "0/6";
+
+    tip.textContent =
+      "✏️ Write your recount first.";
+
+    return;
+
+  }
+
+  const checks = [
+
+    [
+      data.wordCount >= 60 &&
+      data.wordCount <= 90,
+
+      "Length",
+
+      "Write between 60 and 90 words."
+    ],
+
+    [
+      data.uniqueMarkers >= 4,
+
+      "Chronological Markers",
+
+      "Use at least four different chronological markers."
+    ],
+
+    [
+      data.pastCount >= 4,
+
+      "Past Simple",
+
+      "Use at least four past simple verbs."
+    ],
+
+    [
+      /\b(algiers|trip|journey)\b/i.test(data.text),
+
+      "Introduction",
+
+      "Introduce your trip or journey."
+    ],
+
+    [
+      /^[A-Z]/.test(data.text),
+
+      "Capital Letter",
+
+      "Begin your paragraph with a capital letter."
+    ],
+
+    [
+      /[.!?]$/.test(data.text),
+
+      "Punctuation",
+
+      "Finish your paragraph with punctuation."
+    ]
+
+  ];
+
+  const score =
+    checks.filter(item=>item[0]).length;
+
+  document.getElementById("writingScore").textContent =
+    score + "/6";
+
+  checklist.replaceChildren();
+
+  checks.forEach(([passed,title,description])=>{
+
+    const item =
+      document.createElement("div");
+
+    item.className =
+      "check-item " + (passed ? "pass" : "fail");
+
+    const icon =
+      document.createElement("span");
+
+    icon.className =
+      "check-icon";
+
+    icon.textContent =
+      passed ? "✓" : "!";
+
+    const details =
+      document.createElement("div");
+
+    const heading =
+      document.createElement("strong");
+
+    heading.textContent =
+      title;
+
+    const small =
+      document.createElement("small");
+
+    small.textContent =
+      description;
+
+    details.append(heading,small);
+
+    item.append(icon,details);
+
+    checklist.appendChild(item);
+
+  });
+
+  if(score === 6){
+
+    tip.textContent =
+      "🏆 Excellent! Your recount meets all six automatic writing goals. Read it again to check the meaning, grammar and spelling.";
+
+    progress.writing = true;
+
+    updateProgress();
+
+  }else if(score >= 4){
+
+    tip.textContent =
+      "🌟 Good work! Improve the items marked with ! and check again.";
+
+  }else{
+
+    tip.textContent =
+      "🌱 Good start! Use the fact file, chronological markers and past simple verbs to improve your recount.";
+
+  }
+
+  panel.scrollIntoView({
+
+    behavior:"smooth",
+
+    block:"nearest"
+
+  });
+
+}
+
+/* =========================================================
+   MODEL ANSWER
+========================================================= */
+
+function showModel(){
+
+  if(writingBox.value.trim().length < 20){
+
+    alert(
+      "Try writing your own recount first. Then compare it with the model."
+    );
+
+    return;
+
+  }
+
+  const model =
+    document.getElementById("modelAnswer");
+
+  model.classList.add("show");
+
+  model.scrollIntoView({
+
+    behavior:"smooth",
+
+    block:"nearest"
+
+  });
+
+}
+
+function clearWriting(){
+
+  writingBox.value = "";
+
+  updateWritingStats();
+
+  document.getElementById("correctionPanel")
+    .classList.remove("show");
+
+  document.getElementById("modelAnswer")
+    .classList.remove("show");
+
+  saveProgress();
+
+  writingBox.focus();
+
+}
+
+/* =========================================================
+   DICTIONARY
+========================================================= */
+
+const dictionaryOverlay =
+  document.getElementById("dictionaryOverlay");
+
+function openDictionary(){
+
+  dictionaryOverlay.classList.add("open");
+
+  document.getElementById("dictionarySearch").focus();
+
+}
+
+function closeDictionary(){
+
+  dictionaryOverlay.classList.remove("open");
+
+}
+
+function filterDictionary(){
+
+  const query =
+    document.getElementById("dictionarySearch")
+      .value.toLowerCase().trim();
+
+  document.querySelectorAll(".dict-row").forEach(row=>{
+
+    row.style.display =
+      row.textContent.toLowerCase().includes(query)
+
+        ? "grid"
+
+        : "none";
+
+  });
+
+}
+
+dictionaryOverlay.addEventListener("click",event=>{
+
+  if(event.target === dictionaryOverlay){
+
+    closeDictionary();
+
+  }
+
+});
+
+document.addEventListener("keydown",event=>{
+
+  if(event.key === "Escape"){
+
+    closeDictionary();
+
+  }
+
+});
+
+/* =========================================================
+   ACTIVE SIDEBAR
+========================================================= */
+
+const lessonSections =
+  document.querySelectorAll(".lesson-section");
+
+const sideLinks =
+  document.querySelectorAll(".side-link");
+
+if("IntersectionObserver" in window){
+
+  const observer =
+    new IntersectionObserver(entries=>{
+
+      entries.forEach(entry=>{
+
+        if(!entry.isIntersecting) return;
+
+        const id =
+          entry.target.id;
+
+        sideLinks.forEach(link=>{
+
+          link.classList.toggle(
+
+            "active",
+
+            link.getAttribute("href") === "#" + id
+
+          );
+
+        });
+
+      });
+
+    },{
+
+      rootMargin:"-20% 0px -65% 0px"
+
+    });
+
+  lessonSections.forEach(section=>{
+
+    observer.observe(section);
+
+  });
+
+}
+
+/* =========================================================
+   RESTORE SAVED INPUTS
+========================================================= */
+
+if(saved.inputs){
+
+  Object.entries(saved.inputs).forEach(([id,value])=>{
+
+    const input =
+      document.getElementById(id);
+
+    if(input){
+
+      input.value = value;
+
+    }
+
+  });
+
+}
+
+if(typeof saved.writing === "string"){
+
+  writingBox.value =
+    saved.writing;
+
+}
+
+updateWritingStats();
+
+document.querySelectorAll(".input").forEach(input=>{
+
+  input.addEventListener("input",()=>{
+
+    input.classList.remove(
+      "correct-input",
+      "wrong-input"
+    );
+
+    saveProgress();
+
+  });
+
+});
+
+updateProgress();
+
+</script>
+
+</body>
+
+</html>

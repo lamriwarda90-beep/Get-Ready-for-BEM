@@ -1,0 +1,19 @@
+{
+  "name": "my-english-space",
+  "version": "1.0.0",
+  "description": "MS4 English Learning Platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -l 3000"
+  },
+  "keywords": [
+    "english",
+    "education",
+    "ms4"
+  ],
+  "author": "Warda Lamri",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "11.2.0"
+  }
+}

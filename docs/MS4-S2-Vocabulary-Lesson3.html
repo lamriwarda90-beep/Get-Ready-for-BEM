@@ -1,0 +1,4688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Life Experiences & Memories | MS4 Vocabulary Expedition</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   DESIGN SYSTEM
+========================================= */
+
+:root{
+  --rose:#e85d8f;
+  --rose-dark:#b93668;
+  --rose-light:#ffe4ee;
+
+  --plum:#54213f;
+  --plum-dark:#37142d;
+  --purple:#7951a3;
+
+  --gold:#f5bd66;
+  --gold-light:#fff4db;
+
+  --green:#269966;
+  --green-light:#e9f9f0;
+
+  --red:#d94c63;
+  --red-light:#fff0f2;
+
+  --ink:#342c36;
+  --muted:#786d79;
+
+  --paper:#ffffff;
+  --background:#fff8fb;
+
+  --border:#f1e2e9;
+
+  --shadow:
+    0 14px 45px rgba(91,38,69,.09);
+
+  --shadow-hover:
+    0 22px 55px rgba(91,38,69,.15);
+
+  --radius:26px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:110px;
+}
+
+body{
+  margin:0;
+  font-family:"Nunito",sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(
+      circle at 0% 5%,
+      #ffe3ef 0,
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 100% 28%,
+      #f4e6ff 0,
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #fff9fc,
+      #fff3f8 65%,
+      #fff9fc
+    );
+  min-height:100vh;
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+input:focus-visible{
+  outline:3px solid var(--purple);
+  outline-offset:3px;
+}
+
+::selection{
+  background:#f7b7d1;
+  color:var(--plum);
+}
+
+/* =========================================
+   SCROLL PROGRESS
+========================================= */
+
+.scroll-progress{
+  position:fixed;
+  left:0;
+  top:0;
+  height:4px;
+  width:0;
+  z-index:3000;
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      var(--rose),
+      var(--purple)
+    );
+  transition:width .12s linear;
+}
+
+/* =========================================
+   TOP NAVIGATION
+========================================= */
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid #f2e5eb;
+}
+
+.topbar-inner{
+  max-width:1180px;
+  margin:auto;
+  min-height:72px;
+  padding:12px 25px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-family:"Baloo 2",sans-serif;
+  font-size:20px;
+  font-weight:800;
+  color:var(--plum);
+  white-space:nowrap;
+}
+
+.brand-icon{
+  width:40px;
+  height:40px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  background:
+    linear-gradient(
+      135deg,
+      var(--rose),
+      var(--purple)
+    );
+  color:white;
+  font-size:20px;
+}
+
+.topbar-right{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.course-tag{
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  font-weight:700;
+  color:var(--rose-dark);
+  background:#fff1f7;
+  border:1px solid #f6d6e4;
+  padding:9px 13px;
+  border-radius:999px;
+}
+
+.back-link{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:10px 15px;
+  background:var(--plum);
+  color:white;
+  border-radius:999px;
+  font-weight:800;
+  font-size:12px;
+  transition:.2s;
+}
+
+.back-link:hover{
+  background:var(--rose-dark);
+  transform:translateY(-2px);
+}
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.page{
+  width:min(1120px,94%);
+  margin:auto;
+  padding:32px 0 65px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:34px;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(255,255,255,.14),
+      transparent 28%
+    ),
+    linear-gradient(
+      125deg,
+      #54213f 0%,
+      #79365f 48%,
+      #aa4779 100%
+    );
+
+  color:white;
+  box-shadow:
+    0 24px 55px rgba(84,33,63,.2);
+
+  padding:55px 52px;
+  margin-bottom:28px;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  border:2px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  right:-100px;
+  top:-160px;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  border:2px solid rgba(255,255,255,.09);
+  border-radius:50%;
+  right:50px;
+  bottom:-150px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:790px;
+}
+
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:9px 15px;
+  border-radius:999px;
+
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.25);
+
+  font-family:"Space Mono",monospace;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.06em;
+}
+
+.hero h1{
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(43px,6.7vw,76px);
+  font-weight:800;
+  line-height:1.03;
+  letter-spacing:-1.5px;
+  margin:25px 0 18px;
+}
+
+.hero h1 span{
+  color:#ffd89a;
+}
+
+.hero-description{
+  max-width:680px;
+  font-size:16px;
+  line-height:1.85;
+  color:#fbeaf2;
+  margin:0;
+}
+
+.hero-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:28px 0;
+}
+
+.hero-stat{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.18);
+
+  border-radius:15px;
+  padding:12px 16px;
+}
+
+.hero-stat-icon{
+  font-size:23px;
+}
+
+.hero-stat strong{
+  display:block;
+  font-family:"Baloo 2",sans-serif;
+  font-size:19px;
+  line-height:1;
+}
+
+.hero-stat small{
+  display:block;
+  color:#f4dce9;
+  font-size:11px;
+  margin-top:5px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  border:0;
+  border-radius:13px;
+  padding:13px 20px;
+
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+
+  font-size:13px;
+  font-weight:900;
+
+  transition:
+    transform .2s,
+    background .2s,
+    box-shadow .2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:
+    linear-gradient(
+      135deg,
+      var(--rose),
+      var(--rose-dark)
+    );
+  color:white;
+  box-shadow:
+    0 8px 18px rgba(185,54,104,.18);
+}
+
+.btn-primary:hover{
+  box-shadow:
+    0 12px 25px rgba(185,54,104,.27);
+}
+
+.btn-secondary{
+  background:#fff1f6;
+  color:var(--rose-dark);
+  border:1px solid #f5d5e2;
+}
+
+.btn-white{
+  background:white;
+  color:var(--plum);
+}
+
+.btn-outline-white{
+  background:transparent;
+  border:1px solid rgba(255,255,255,.5);
+  color:white;
+}
+
+/* =========================================
+   PROGRESS NAVIGATION
+========================================= */
+
+.progress-panel{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:20px 23px;
+  box-shadow:var(--shadow);
+  margin-bottom:28px;
+}
+
+.progress-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
+}
+
+.progress-heading strong{
+  color:var(--plum);
+  font-family:"Baloo 2",sans-serif;
+  font-size:19px;
+}
+
+.progress-heading span{
+  font-family:"Space Mono",monospace;
+  font-size:11px;
+  color:var(--rose-dark);
+  font-weight:700;
+}
+
+.progress-track{
+  height:9px;
+  background:#f8e7ef;
+  border-radius:999px;
+  overflow:hidden;
+  margin-bottom:19px;
+}
+
+.progress-fill{
+  height:100%;
+  width:0;
+  background:
+    linear-gradient(
+      90deg,
+      var(--rose),
+      var(--purple)
+    );
+  border-radius:999px;
+  transition:width .4s;
+}
+
+.step-links{
+  display:grid;
+  grid-template-columns:repeat(9,1fr);
+  gap:8px;
+}
+
+.step-link{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  text-align:center;
+  min-width:0;
+}
+
+.step-link-number{
+  width:38px;
+  height:38px;
+  border-radius:13px;
+  background:#fff5f9;
+  border:1px solid #f3dce6;
+
+  display:grid;
+  place-items:center;
+
+  color:var(--rose-dark);
+  font-family:"Space Mono",monospace;
+  font-size:11px;
+  font-weight:700;
+  transition:.2s;
+}
+
+.step-link.active .step-link-number{
+  background:
+    linear-gradient(
+      135deg,
+      var(--rose),
+      var(--purple)
+    );
+  color:white;
+  border-color:transparent;
+  box-shadow:
+    0 7px 16px rgba(185,54,104,.22);
+}
+
+.step-link-label{
+  color:var(--muted);
+  font-size:10px;
+  font-weight:800;
+  line-height:1.3;
+}
+
+/* =========================================
+   MISSION CARD
+========================================= */
+
+.mission-card{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:19px;
+  align-items:start;
+
+  background:white;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:25px;
+  margin-bottom:28px;
+  box-shadow:var(--shadow);
+}
+
+.mission-icon{
+  width:60px;
+  height:60px;
+  border-radius:19px;
+  background:#fff1f7;
+  display:grid;
+  place-items:center;
+  font-size:29px;
+}
+
+.mission-card h2{
+  margin:0 0 5px;
+  color:var(--plum);
+  font-family:"Baloo 2",sans-serif;
+  font-size:26px;
+}
+
+.mission-card p{
+  color:var(--muted);
+  line-height:1.7;
+  margin:0 0 15px;
+}
+
+.mission-skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.skill{
+  background:#fff5f9;
+  border:1px solid #f4dce6;
+  color:var(--rose-dark);
+  border-radius:999px;
+  padding:7px 11px;
+  font-size:11px;
+  font-weight:800;
+}
+
+/* =========================================
+   STEP CARDS
+========================================= */
+
+.step{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:32px;
+  margin-bottom:28px;
+  scroll-margin-top:105px;
+  transition:box-shadow .25s;
+}
+
+.step:hover{
+  box-shadow:var(--shadow-hover);
+}
+
+.step-header{
+  display:flex;
+  align-items:center;
+  gap:17px;
+  margin-bottom:25px;
+}
+
+.step-number{
+  flex:0 0 auto;
+  width:62px;
+  height:62px;
+
+  display:grid;
+  place-items:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe6ef,
+      #f5e7ff
+    );
+
+  border-radius:19px;
+
+  color:var(--rose-dark);
+  font-family:"Space Mono",monospace;
+  font-weight:700;
+  font-size:19px;
+}
+
+.step-kicker{
+  font-family:"Space Mono",monospace;
+  color:var(--rose-dark);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.07em;
+  margin-bottom:5px;
+}
+
+.step h2{
+  margin:0;
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(24px,3vw,33px);
+  line-height:1.15;
+  color:var(--plum);
+}
+
+.level-tag{
+  display:inline-flex;
+  align-items:center;
+  margin-top:8px;
+  background:var(--gold-light);
+  color:#a16c23;
+  padding:5px 10px;
+  border-radius:999px;
+  font-family:"Space Mono",monospace;
+  font-size:9px;
+  font-weight:700;
+}
+
+/* =========================================
+   STORY
+========================================= */
+
+.story-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+
+.story-image-wrap{
+  position:relative;
+  border-radius:21px;
+  overflow:hidden;
+  background:#fae7ee;
+}
+
+.story-image{
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  transition:transform .5s;
+}
+
+.story-image-wrap:hover .story-image{
+  transform:scale(1.035);
+}
+
+.image-label{
+  position:absolute;
+  left:14px;
+  bottom:14px;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(8px);
+  padding:9px 13px;
+  border-radius:11px;
+  color:var(--plum);
+  font-size:11px;
+  font-weight:900;
+  box-shadow:0 5px 18px rgba(0,0,0,.1);
+}
+
+.story-copy{
+  padding:3px 0;
+}
+
+.story-copy h3{
+  font-family:"Baloo 2",sans-serif;
+  font-size:24px;
+  color:var(--rose-dark);
+  margin:0 0 12px;
+}
+
+.story-copy p{
+  font-size:14px;
+  line-height:1.9;
+  color:#5d5360;
+  margin:0 0 14px;
+}
+
+.story-copy strong{
+  color:var(--rose-dark);
+  font-weight:900;
+}
+
+.focus-box{
+  background:
+    linear-gradient(
+      135deg,
+      #fff5f9,
+      #fffaf0
+    );
+  border-left:4px solid var(--gold);
+  border-radius:0 14px 14px 0;
+  padding:14px 16px;
+  margin-top:18px;
+  color:#665460;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.focus-box strong{
+  color:var(--plum);
+}
+
+.vocab-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+
+.vocab-chip{
+  background:#fff2f7;
+  border:1px solid #f5d9e5;
+  color:var(--rose-dark);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:900;
+}
+
+/* =========================================
+   ACTIVITIES
+========================================= */
+
+.activity{
+  margin-top:28px;
+  border-top:1px dashed #eacbd8;
+  padding-top:25px;
+}
+
+.activity-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:17px;
+}
+
+.activity-title-icon{
+  width:40px;
+  height:40px;
+  border-radius:13px;
+  background:#fff0f6;
+  display:grid;
+  place-items:center;
+  font-size:20px;
+}
+
+.activity-title h3{
+  margin:0;
+  font-family:"Baloo 2",sans-serif;
+  color:var(--plum);
+  font-size:23px;
+}
+
+.activity-description{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+  margin:-4px 0 18px;
+}
+
+.question{
+  background:#fffafd;
+  border:1px solid #f1e0e8;
+  border-radius:18px;
+  padding:19px;
+  margin-bottom:13px;
+}
+
+.question p{
+  margin:0 0 14px;
+  color:var(--plum);
+  font-size:14px;
+  font-weight:900;
+  line-height:1.6;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.option{
+  border:1px solid #eddce5;
+  border-radius:12px;
+  background:white;
+  color:#625263;
+  text-align:left;
+  padding:13px 14px;
+  font-size:13px;
+  font-weight:800;
+  transition:.18s;
+}
+
+.option:not(:disabled):hover{
+  border-color:var(--rose);
+  background:#fff3f8;
+  transform:translateY(-2px);
+}
+
+.option.correct{
+  background:var(--green-light);
+  color:#20734d;
+  border-color:#6cc89c;
+}
+
+.option.wrong{
+  background:var(--red-light);
+  color:#a7354a;
+  border-color:#e58b99;
+}
+
+.option:disabled{
+  cursor:default;
+}
+
+.feedback{
+  display:none;
+  margin-top:14px;
+  padding:12px 15px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.6;
+}
+
+.feedback.show{
+  display:block;
+}
+
+.feedback.good{
+  background:var(--green-light);
+  color:#21734d;
+  border:1px solid #c5ebd5;
+}
+
+.feedback.bad{
+  background:var(--red-light);
+  color:#a7354a;
+  border:1px solid #f4ccd2;
+}
+
+.feedback.info{
+  background:#f4efff;
+  color:#62439a;
+  border:1px solid #e0d3fb;
+}
+
+/* =========================================
+   SORTING
+========================================= */
+
+.sort-bank{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  background:#fff5f9;
+  border:1px dashed #eac7d6;
+  border-radius:16px;
+  padding:17px;
+  min-height:72px;
+  margin-bottom:18px;
+}
+
+.sort-item{
+  background:white;
+  border:1px solid #eacbd9;
+  border-radius:999px;
+  padding:10px 14px;
+  color:var(--rose-dark);
+  font-size:12px;
+  font-weight:900;
+  transition:.18s;
+}
+
+.sort-item:hover{
+  background:#ffeaf3;
+}
+
+.sort-item.selected{
+  background:var(--plum);
+  color:white;
+  border-color:var(--plum);
+}
+
+.sort-item.placed{
+  background:var(--green-light);
+  border-color:#92d7b2;
+  color:#21734d;
+  cursor:default;
+}
+
+.sort-area{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+
+.sort-column{
+  background:#fffafd;
+  border:2px dashed #edcedb;
+  border-radius:17px;
+  padding:14px;
+  min-height:170px;
+  transition:.2s;
+}
+
+.sort-column:hover{
+  border-color:var(--rose);
+  background:#fff3f8;
+}
+
+.sort-column h4{
+  font-family:"Baloo 2",sans-serif;
+  font-size:16px;
+  color:var(--plum);
+  text-align:center;
+  margin:0 0 12px;
+  line-height:1.3;
+}
+
+.sort-column .sort-item{
+  display:block;
+  width:100%;
+  margin-top:7px;
+  text-align:center;
+}
+
+.sort-instructions{
+  background:#fff8eb;
+  border:1px solid #f4e0b8;
+  border-radius:12px;
+  padding:12px 15px;
+  margin-bottom:17px;
+  color:#8b672c;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* =========================================
+   SENTENCE BUILDER
+========================================= */
+
+.builder{
+  background:
+    linear-gradient(
+      135deg,
+      #fff6fa,
+      #fffaf1
+    );
+  border:1px solid #f2dce6;
+  border-radius:19px;
+  padding:20px;
+}
+
+.word-bank{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:17px;
+}
+
+.word-btn{
+  background:white;
+  border:1px solid #eccddd;
+  color:var(--rose-dark);
+  padding:10px 14px;
+  border-radius:11px;
+  font-size:12px;
+  font-weight:900;
+  transition:.18s;
+}
+
+.word-btn:not(:disabled):hover{
+  transform:translateY(-2px);
+  border-color:var(--rose);
+  background:#ffeaf3;
+}
+
+.word-btn:disabled{
+  opacity:.35;
+  cursor:default;
+}
+
+.sentence-box{
+  min-height:78px;
+  border:2px dashed #e7bbcf;
+  border-radius:14px;
+  background:white;
+  padding:16px;
+  margin-bottom:15px;
+  color:var(--muted);
+  line-height:1.9;
+  font-size:14px;
+  font-weight:800;
+}
+
+.sentence-token{
+  display:inline-block;
+  background:#ffe8f1;
+  color:var(--plum);
+  padding:4px 9px;
+  margin:3px;
+  border-radius:8px;
+}
+
+.builder-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+/* =========================================
+   FILL IN THE BLANK
+========================================= */
+
+.fill-row{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:9px;
+  padding:12px 0;
+  border-bottom:1px dashed #efdae4;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.fill-row:last-of-type{
+  border-bottom:0;
+}
+
+.fill-select{
+  border:1px solid #e9cbd8;
+  border-radius:10px;
+  padding:9px 11px;
+  background:white;
+  color:var(--plum);
+  font-size:13px;
+  font-weight:800;
+  max-width:100%;
+}
+
+.fill-select.correct{
+  border-color:var(--green);
+  background:var(--green-light);
+}
+
+.fill-select.wrong{
+  border-color:var(--red);
+  background:var(--red-light);
+}
+
+/* =========================================
+   WRITING
+========================================= */
+
+.writing-prompt{
+  background:
+    linear-gradient(
+      135deg,
+      #fff0f6,
+      #fff9ee
+    );
+  border:1px solid #f0d6e1;
+  border-radius:20px;
+  padding:24px;
+  margin-bottom:19px;
+}
+
+.writing-prompt h3{
+  margin:0 0 10px;
+  color:var(--plum);
+  font-family:"Baloo 2",sans-serif;
+  font-size:25px;
+}
+
+.writing-prompt p{
+  line-height:1.8;
+  color:#655666;
+  margin:0 0 14px;
+  font-size:14px;
+}
+
+.writing-prompt ul{
+  margin:9px 0 0 20px;
+  padding:0;
+  line-height:1.9;
+  color:#655666;
+  font-size:13px;
+}
+
+.writing-area{
+  display:block;
+  width:100%;
+  min-height:220px;
+  padding:19px;
+  resize:vertical;
+
+  border:1px solid #e8cbd8;
+  border-radius:18px;
+  background:white;
+
+  color:var(--ink);
+  font-size:14px;
+  line-height:1.9;
+}
+
+.writing-area:focus{
+  outline:none;
+  border-color:var(--rose);
+  box-shadow:
+    0 0 0 4px rgba(232,93,143,.1);
+}
+
+.writing-toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:13px;
+}
+
+.word-count{
+  font-family:"Space Mono",monospace;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.writing-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.writing-checklist{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:9px;
+  margin-top:16px;
+}
+
+.writing-check{
+  background:#fff9fc;
+  border:1px solid #f0dce5;
+  border-radius:11px;
+  padding:11px 13px;
+  color:var(--plum);
+  font-size:12px;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.writing-check input{
+  accent-color:var(--rose);
+}
+
+/* =========================================
+   FINAL SCORE
+========================================= */
+
+.score-card{
+  position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--plum-dark),
+      #693657,
+      #8e4772
+    );
+
+  border-radius:28px;
+  padding:38px 25px;
+  color:white;
+  text-align:center;
+  margin-bottom:28px;
+
+  box-shadow:
+    0 22px 45px rgba(84,33,63,.2);
+}
+
+.score-card::before{
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.08);
+  right:-100px;
+  top:-130px;
+}
+
+.score-card h2{
+  position:relative;
+  font-family:"Baloo 2",sans-serif;
+  font-size:32px;
+  margin:0 0 7px;
+}
+
+.score-subtitle{
+  color:#f5dfe9;
+  font-size:13px;
+  line-height:1.7;
+  margin:0;
+}
+
+.score-circle{
+  position:relative;
+  width:170px;
+  height:170px;
+  margin:26px auto;
+
+  border-radius:50%;
+  border:8px solid rgba(255,255,255,.15);
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  background:rgba(255,255,255,.1);
+}
+
+.score-number{
+  font-family:"Baloo 2",sans-serif;
+  font-size:55px;
+  line-height:1;
+  font-weight:800;
+  color:#ffd991;
+}
+
+.score-circle small{
+  font-family:"Space Mono",monospace;
+  font-size:11px;
+  margin-top:7px;
+  color:#f8e5ee;
+}
+
+.score-message{
+  font-weight:800;
+  font-size:14px;
+  margin-bottom:19px;
+}
+
+.score-progress{
+  max-width:550px;
+  height:10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.16);
+  overflow:hidden;
+  margin:0 auto 23px;
+}
+
+.score-progress span{
+  display:block;
+  height:100%;
+  width:0;
+  border-radius:999px;
+  background:
+    linear-gradient(
+      90deg,
+      #ffd991,
+      #ff9bc4
+    );
+  transition:width .5s;
+}
+
+/* =========================================
+   LESSON NAVIGATION
+========================================= */
+
+.lesson-nav{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-bottom:25px;
+}
+
+.nav-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:21px;
+  box-shadow:var(--shadow);
+  transition:.2s;
+}
+
+.nav-card:hover{
+  transform:translateY(-4px);
+  border-color:#eeb9ce;
+}
+
+.nav-card.next{
+  text-align:right;
+}
+
+.nav-small{
+  color:var(--rose-dark);
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  font-weight:700;
+}
+
+.nav-title{
+  color:var(--plum);
+  font-family:"Baloo 2",sans-serif;
+  font-size:21px;
+  font-weight:800;
+  margin-top:7px;
+}
+
+/* =========================================
+   DICTIONARY BUTTON
+========================================= */
+
+.dict-button{
+  position:fixed;
+  right:23px;
+  bottom:23px;
+  z-index:1100;
+
+  width:65px;
+  height:65px;
+
+  display:grid;
+  place-items:center;
+
+  border:3px solid white;
+  border-radius:21px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold),
+      var(--rose)
+    );
+
+  box-shadow:
+    0 10px 27px rgba(84,33,63,.28);
+
+  font-size:27px;
+  transition:.2s;
+}
+
+.dict-button:hover{
+  transform:translateY(-4px) rotate(-4deg);
+}
+
+.dict-label{
+  position:fixed;
+  right:22px;
+  bottom:98px;
+  z-index:1099;
+
+  background:white;
+  border:1px solid #f0d9e4;
+  color:var(--rose-dark);
+
+  padding:8px 13px;
+  border-radius:999px;
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  font-weight:700;
+
+  box-shadow:var(--shadow);
+}
+
+/* =========================================
+   DICTIONARY MODAL
+========================================= */
+
+.dict-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+
+  background:rgba(35,18,35,.62);
+  backdrop-filter:blur(5px);
+
+  padding:20px;
+  align-items:center;
+  justify-content:center;
+}
+
+.dict-overlay.open{
+  display:flex;
+}
+
+.dict-panel{
+  width:min(540px,100%);
+  max-height:85vh;
+
+  display:flex;
+  flex-direction:column;
+
+  background:white;
+  border-radius:25px;
+  padding:25px;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.24);
+
+  animation:modalIn .25s ease;
+}
+
+@keyframes modalIn{
+  from{
+    opacity:0;
+    transform:translateY(18px) scale(.98);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+.dict-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:15px;
+}
+
+.dict-head h3{
+  font-family:"Baloo 2",sans-serif;
+  color:var(--plum);
+  font-size:25px;
+  margin:0;
+}
+
+.dict-close{
+  width:39px;
+  height:39px;
+  border:0;
+  border-radius:12px;
+  background:#fff0f6;
+  color:var(--rose-dark);
+  font-size:19px;
+  font-weight:900;
+}
+
+.dict-search{
+  width:100%;
+  border:1px solid #ead4df;
+  border-radius:13px;
+  padding:13px 15px;
+  margin-bottom:15px;
+  font-size:13px;
+}
+
+.dict-search:focus{
+  outline:none;
+  border-color:var(--rose);
+}
+
+.dict-list{
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.dict-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+
+  padding:12px 15px;
+  border:1px solid #f2e0e8;
+  border-radius:13px;
+  background:#fffafd;
+}
+
+.dict-en{
+  font-family:"Baloo 2",sans-serif;
+  font-size:16px;
+  font-weight:800;
+  color:var(--plum);
+}
+
+.dict-pos{
+  display:block;
+  font-family:"Space Mono",monospace;
+  font-size:9px;
+  color:var(--muted);
+  margin-top:1px;
+}
+
+.dict-ar{
+  font-family:"Noto Naskh Arabic",serif;
+  font-size:18px;
+  font-weight:700;
+  color:var(--rose-dark);
+  direction:rtl;
+  text-align:right;
+}
+
+.dict-empty{
+  padding:20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+  text-align:center;
+  padding:15px 10px 25px;
+  color:#967d8b;
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  line-height:2;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:900px){
+
+  .story-layout{
+    grid-template-columns:1fr;
+  }
+
+  .story-image{
+    aspect-ratio:16/9;
+  }
+
+  .sort-area{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .step-links{
+    grid-template-columns:repeat(9,1fr);
+  }
+
+  .step-link-label{
+    display:none;
+  }
+
+}
+
+@media(max-width:650px){
+
+  .topbar-inner{
+    padding:12px 16px;
+    min-height:64px;
+  }
+
+  .brand{
+    font-size:16px;
+  }
+
+  .brand-icon{
+    width:35px;
+    height:35px;
+  }
+
+  .course-tag{
+    display:none;
+  }
+
+  .back-link{
+    font-size:11px;
+    padding:9px 12px;
+  }
+
+  .page{
+    width:94%;
+    padding-top:19px;
+  }
+
+  .hero{
+    padding:35px 23px;
+    border-radius:25px;
+  }
+
+  .hero h1{
+    font-size:43px;
+    letter-spacing:-1px;
+  }
+
+  .hero-description{
+    font-size:14px;
+  }
+
+  .hero-stats{
+    gap:8px;
+  }
+
+  .hero-stat{
+    padding:10px 12px;
+  }
+
+  .hero-stat strong{
+    font-size:16px;
+  }
+
+  .progress-panel{
+    padding:17px 13px;
+  }
+
+  .step-links{
+    gap:4px;
+  }
+
+  .step-link-number{
+    width:29px;
+    height:32px;
+    border-radius:9px;
+    font-size:9px;
+  }
+
+  .mission-card{
+    grid-template-columns:1fr;
+    padding:21px;
+  }
+
+  .step{
+    padding:22px 17px;
+    border-radius:21px;
+  }
+
+  .step-header{
+    align-items:flex-start;
+    gap:12px;
+  }
+
+  .step-number{
+    width:49px;
+    height:49px;
+    border-radius:15px;
+    font-size:14px;
+  }
+
+  .step h2{
+    font-size:25px;
+  }
+
+  .story-image{
+    aspect-ratio:4/3;
+  }
+
+  .options{
+    grid-template-columns:1fr;
+  }
+
+  .sort-area{
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+  }
+
+  .sort-column{
+    padding:10px;
+    min-height:150px;
+  }
+
+  .sort-column h4{
+    font-size:14px;
+  }
+
+  .writing-checklist{
+    grid-template-columns:1fr;
+  }
+
+  .lesson-nav{
+    grid-template-columns:1fr;
+  }
+
+  .nav-card.next{
+    text-align:left;
+  }
+
+  .dict-button{
+    right:16px;
+    bottom:16px;
+    width:58px;
+    height:58px;
+  }
+
+  .dict-label{
+    right:15px;
+    bottom:83px;
+  }
+
+  .dict-overlay{
+    padding:0;
+    align-items:flex-end;
+  }
+
+  .dict-panel{
+    width:100%;
+    max-height:82vh;
+    border-radius:24px 24px 0 0;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    animation:none!important;
+    transition:none!important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- =========================================
+     TOP BAR
+========================================= -->
+
+<header class="topbar">
+
+  <div class="topbar-inner">
+
+    <a class="brand" href="MS4-S2-Vocabulary.html">
+      <span class="brand-icon">✦</span>
+      MY ENGLISH SPACE
+    </a>
+
+    <div class="topbar-right">
+
+      <span class="course-tag">
+        MS4 / S2 / VOCABULARY 03
+      </span>
+
+      <a
+        href="MS4-S2-Vocabulary.html"
+        class="back-link"
+      >
+        ← Vocabulary Map
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main class="page">
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-eyebrow">
+      ✦ VOCABULARY EXPEDITION · CHECKPOINT 03
+    </div>
+
+    <h1>
+      Life Experiences<br>
+      <span>& Memories</span>
+    </h1>
+
+    <p class="hero-description">
+      Every photograph tells a story. Join Adam as he opens
+      an old memory box and travels through the most important
+      moments of his childhood. Discover the language of
+      memories, feelings, achievements and personal growth.
+    </p>
+
+    <div class="hero-stats">
+
+      <div class="hero-stat">
+        <span class="hero-stat-icon">📸</span>
+        <div>
+          <strong>7</strong>
+          <small>Memory Moments</small>
+        </div>
+      </div>
+
+      <div class="hero-stat">
+        <span class="hero-stat-icon">🧩</span>
+        <div>
+          <strong>9</strong>
+          <small>Learning Stages</small>
+        </div>
+      </div>
+
+      <div class="hero-stat">
+        <span class="hero-stat-icon">🏆</span>
+        <div>
+          <strong>100%</strong>
+          <small>Mission Score</small>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hero-actions">
+
+      <a href="#step1" class="btn btn-white">
+        🚀 Begin the Journey
+      </a>
+
+      <a
+        href="MS4-S2-Vocabulary.html"
+        class="btn btn-outline-white"
+      >
+        ← Back to Vocabulary
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     JOURNEY PROGRESS
+========================================= -->
+
+<div class="progress-panel">
+
+  <div class="progress-heading">
+    <strong>🗺️ Your Learning Journey</strong>
+    <span id="journeyLabel">STEP 01 / 09</span>
+  </div>
+
+  <div class="progress-track">
+    <div class="progress-fill" id="journeyFill"></div>
+  </div>
+
+  <nav class="step-links" aria-label="Lesson steps">
+
+    <a class="step-link active" href="#step1" data-step="1">
+      <span class="step-link-number">01</span>
+      <span class="step-link-label">Memory Box</span>
+    </a>
+
+    <a class="step-link" href="#step2" data-step="2">
+      <span class="step-link-number">02</span>
+      <span class="step-link-label">First Day</span>
+    </a>
+
+    <a class="step-link" href="#step3" data-step="3">
+      <span class="step-link-number">03</span>
+      <span class="step-link-label">School Trip</span>
+    </a>
+
+    <a class="step-link" href="#step4" data-step="4">
+      <span class="step-link-number">04</span>
+      <span class="step-link-label">Achievement</span>
+    </a>
+
+    <a class="step-link" href="#step5" data-step="5">
+      <span class="step-link-number">05</span>
+      <span class="step-link-label">Challenge</span>
+    </a>
+
+    <a class="step-link" href="#step6" data-step="6">
+      <span class="step-link-number">06</span>
+      <span class="step-link-label">Happy Memory</span>
+    </a>
+
+    <a class="step-link" href="#step7" data-step="7">
+      <span class="step-link-number">07</span>
+      <span class="step-link-label">Reflection</span>
+    </a>
+
+    <a class="step-link" href="#step8" data-step="8">
+      <span class="step-link-number">08</span>
+      <span class="step-link-label">Practice</span>
+    </a>
+
+    <a class="step-link" href="#step9" data-step="9">
+      <span class="step-link-number">09</span>
+      <span class="step-link-label">Writing</span>
+    </a>
+
+  </nav>
+
+</div>
+
+
+<!-- =========================================
+     MISSION
+========================================= -->
+
+<section class="mission-card">
+
+  <div class="mission-icon">🎯</div>
+
+  <div>
+
+    <h2>Your Vocabulary Mission</h2>
+
+    <p>
+      Follow Adam's story, discover new words in context,
+      practise their meanings, and use them to describe
+      a memorable experience of your own.
+    </p>
+
+    <div class="mission-skills">
+
+      <span class="skill">📖 Understand</span>
+      <span class="skill">🔎 Discover</span>
+      <span class="skill">🧠 Analyse</span>
+      <span class="skill">🧩 Practise</span>
+      <span class="skill">✍️ Create</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     STEP 1
+========================================= -->
+
+<section class="step" id="step1">
+
+  <div class="step-header">
+
+    <div class="step-number">01</div>
+
+    <div>
+      <div class="step-kicker">
+        MEMORY MOMENT 01 · DISCOVER
+      </div>
+
+      <h2>📦 The Memory Box</h2>
+
+      <span class="level-tag">
+        🌱 LEVEL 1 · REMEMBER
+      </span>
+    </div>
+
+  </div>
+
+  <div class="story-layout">
+
+    <div class="story-image-wrap">
+
+      <img
+        class="story-image"
+        src="https://i.imgur.com/nZ8mtub.png"
+        alt="Adam discovering an old memory box"
+      >
+
+      <span class="image-label">
+        📸 A box full of memories
+      </span>
+
+    </div>
+
+    <div class="story-copy">
+
+      <h3>Adam discovers the past</h3>
+
+      <p>
+        One afternoon, Adam was cleaning his room when
+        he found an old box under his bed. It was full
+        of photographs, school notebooks and little
+        objects from his childhood.
+      </p>
+
+      <p>
+        Adam opened the box carefully. Each object
+        brought back a different <strong>memory</strong>.
+        He began to <strong>remember</strong> the
+        experiences that had made his childhood special.
+      </p>
+
+      <div class="focus-box">
+        <strong>💡 Vocabulary Focus</strong><br>
+        A <strong>memory</strong> is something you remember
+        from the past. An <strong>experience</strong> is
+        something that happened to you.
+      </div>
+
+      <div class="vocab-strip">
+        <span class="vocab-chip">memory</span>
+        <span class="vocab-chip">childhood</span>
+        <span class="vocab-chip">past</span>
+        <span class="vocab-chip">remember</span>
+        <span class="vocab-chip">experience</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="activity">
+
+    <div class="activity-title">
+      <span class="activity-title-icon">🔎</span>
+      <h3>Meaning Detective</h3>
+    </div>
+
+    <p class="activity-description">
+      Read carefully and choose the correct meaning.
+    </p>
+
+    <div class="question">
+
+      <p>1. What does a “memory” refer to?</p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          A plan for the future
+        </button>
+
+        <button class="option" data-correct="true">
+          Something you remember from the past
+        </button>
+
+        <button class="option" data-correct="false">
+          A school subject
+        </button>
+
+        <button class="option" data-correct="false">
+          A place you want to visit
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <p>
+        2. Which word means “something that happened to you”?
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          experience
+        </button>
+
+        <button class="option" data-correct="false">
+          future
+        </button>
+
+        <button class="option" data-correct="false">
+          decision
+        </button>
+
+        <button class="option" data-correct="false">
+          profession
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     STEP 2
+========================================= -->
+
+<section class="step" id="step2">
+
+  <div class="step-header">
+
+    <div class="step-number">02</div>
+
+    <div>
+      <div class="step-kicker">
+        MEMORY MOMENT 02 · CHILDHOOD
+      </div>
+
+      <h2>🏫 My First Day at School</h2>
+
+      <span class="level-tag">
+        🌱 LEVEL 2 · UNDERSTAND
+      </span>
+    </div>
+
+  </div>
+
+  <div class="story-layout">
+
+    <div class="story-image-wrap">
+
+      <img
+        class="story-image"
+        src="https://i.imgur.com/BzSoN6E.png"
+        alt="Young Adam on his first day at school"
+      >
+
+      <span class="image-label">
+        🎒 A new beginning
+      </span>
+
+    </div>
+
+    <div class="story-copy">
+
+      <h3>A new beginning</h3>
+
+      <p>
+        Adam remembers his first day at primary school.
+        He was only six years old. He had a new schoolbag
+        and was standing at the school entrance for
+        the first time.
+      </p>
+
+      <p>
+        At first, he felt <strong>nervous</strong> because
+        everything was new. Then his teacher smiled and
+        welcomed him. Adam soon felt
+        <strong>excited</strong> when he met his
+        new classmates.
+      </p>
+
+      <div class="focus-box">
+        <strong>❤️ Feelings Focus</strong><br>
+        <strong>Nervous:</strong> worried about something new.<br>
+        <strong>Excited:</strong> very happy and interested.
+      </div>
+
+      <div class="vocab-strip">
+        <span class="vocab-chip">first day</span>
+        <span class="vocab-chip">nervous</span>
+        <span class="vocab-chip">excited</span>
+        <span class="vocab-chip">classmate</span>
+        <span class="vocab-chip">welcome</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="activity">
+
+    <div class="activity-title">
+      <span class="activity-title-icon">❤️</span>
+      <h3>Feelings Check</h3>
+    </div>
+
+    <div class="question">
+
+      <p>
+        Adam felt worried because everything was new.
+        Which word describes this feeling?
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          nervous
+        </button>
+
+        <button class="option" data-correct="false">
+          proud
+        </button>
+
+        <button class="option" data-correct="false">
+          joyful
+        </button>
+
+        <button class="option" data-correct="false">
+          relaxed
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <p>
+        Adam was very happy and interested when he
+        met his classmates. He felt...
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          disappointed
+        </button>
+
+        <button class="option" data-correct="true">
+          excited
+        </button>
+
+        <button class="option" data-correct="false">
+          worried
+        </button>
+
+        <button class="option" data-correct="false">
+          lonely
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     STEP 3
+========================================= -->
+
+<section class="step" id="step3">
+
+  <div class="step-header">
+
+    <div class="step-number">03</div>
+
+    <div>
+      <div class="step-kicker">
+        MEMORY MOMENT 03 · ADVENTURE
+      </div>
+
+      <h2>🚌 A Special School Trip</h2>
+
+      <span class="level-tag">
+        🌿 LEVEL 3 · EXPLORE
+      </span>
+    </div>
+
+  </div>
+
+  <div class="story-layout">
+
+    <div class="story-image-wrap">
+
+      <img
+        class="story-image"
+        src="https://i.imgur.com/w7c2P8d.png"
+        alt="Adam and his classmates enjoying a school trip"
+      >
+
+      <span class="image-label">
+        🚌 An unforgettable adventure
+      </span>
+
+    </div>
+
+    <div class="story-copy">
+
+      <h3>An unforgettable adventure</h3>
+
+      <p>
+        A few years later, Adam went on a special school
+        trip with his classmates. They visited an
+        interesting place and discovered something
+        new together.
+      </p>
+
+      <p>
+        Adam loved exploring the place and taking
+        photographs. The trip was so
+        <strong>exciting</strong> that he knew he
+        would never forget it. It became one of his
+        most <strong>unforgettable</strong>
+        childhood experiences.
+      </p>
+
+      <div class="focus-box">
+        <strong>🔎 Word Detective</strong><br>
+        <strong>Unforgettable</strong> describes something
+        so special that you cannot forget it.
+      </div>
+
+      <div class="vocab-strip">
+        <span class="vocab-chip">trip</span>
+        <span class="vocab-chip">explore</span>
+        <span class="vocab-chip">discover</span>
+        <span class="vocab-chip">exciting</span>
+        <span class="vocab-chip">unforgettable</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="activity">
+
+    <div class="activity-title">
+      <span class="activity-title-icon">🧠</span>
+      <h3>Choose the Best Meaning</h3>
+    </div>
+
+    <div class="question">
+
+      <p>What does “unforgettable” mean?</p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          Very boring
+        </button>
+
+        <button class="option" data-correct="false">
+          Very difficult
+        </button>
+
+        <button class="option" data-correct="true">
+          Impossible or difficult to forget
+        </button>
+
+        <button class="option" data-correct="false">
+          Something that happens every day
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <p>
+        Which verb means “to look around a place
+        to learn about it”?
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          forget
+        </button>
+
+        <button class="option" data-correct="true">
+          explore
+        </button>
+
+        <button class="option" data-correct="false">
+          receive
+        </button>
+
+        <button class="option" data-correct="false">
+          achieve
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     STEP 4
+========================================= -->
+
+<section class="step" id="step4">
+
+  <div class="step-header">
+
+    <div class="step-number">04</div>
+
+    <div>
+      <div class="step-kicker">
+        MEMORY MOMENT 04 · ACHIEVEMENT
+      </div>
+
+      <h2>🏆 The Day I Felt Proud</h2>
+
+      <span class="level-tag">
+        🌿 LEVEL 4 · APPLY
+      </span>
+    </div>
+
+  </div>
+
+  <div class="story-layout">
+
+    <div class="story-image-wrap">
+
+      <img
+        class="story-image"
+        src="https://i.imgur.com/x1hK7Fh.png"
+        alt="Young Adam receiving a school certificate"
+      >
+
+      <span class="image-label">
+        🏆 A moment of success
+      </span>
+
+    </div>
+
+    <div class="story-copy">
+
+      <h3>A moment of success</h3>
+
+      <p>
+        Another photograph reminded Adam of a very
+        special school day. He had worked hard for
+        a class activity and finally succeeded.
+      </p>
+
+      <p>
+        His teacher gave him a certificate and
+        congratulated him. His classmates applauded.
+        Adam felt extremely <strong>proud</strong>
+        because his hard work had led to an important
+        <strong>achievement</strong>.
+      </p>
+
+      <div class="focus-box">
+        <strong>🏆 Connect the Ideas</strong><br>
+        Hard work → Achievement → Success → Feeling proud.
+      </div>
+
+      <div class="vocab-strip">
+        <span class="vocab-chip">achievement</span>
+        <span class="vocab-chip">succeed</span>
+        <span class="vocab-chip">proud</span>
+        <span class="vocab-chip">certificate</span>
+        <span class="vocab-chip">congratulate</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="activity">
+
+    <div class="activity-title">
+      <span class="activity-title-icon">🏆</span>
+      <h3>Cause & Effect</h3>
+    </div>
+
+    <div class="question">
+
+      <p>Why did Adam feel proud?</p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          He lost his schoolbag.
+        </button>
+
+        <button class="option" data-correct="true">
+          He worked hard and achieved something.
+        </button>
+
+        <button class="option" data-correct="false">
+          He missed the school trip.
+        </button>
+
+        <button class="option" data-correct="false">
+          He forgot his classmates.
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+    <div class="question">
+
+      <p>
+        Which word means “something important
+        that you successfully did”?
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          mistake
+        </button>
+
+        <button class="option" data-correct="false">
+          memory
+        </button>
+
+        <button class="option" data-correct="true">
+          achievement
+        </button>
+
+        <button class="option" data-correct="false">
+          problem
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     STEP 5
+========================================= -->
+
+<section class="step" id="step5">
+
+  <div class="step-header">
+
+    <div class="step-number">05</div>
+
+    <div>
+      <div class="step-kicker">
+        MEMORY MOMENT 05 · CHALLENGE
+      </div>
+
+      <h2>🌧️ A Difficult Experience</h2>
+
+      <span class="level-tag">
+        🌳 LEVEL 5 · ANALYSE
+      </span>
+    </div>
+
+  </div>
+
+  <div class="story-layout">
+
+    <div class="story-image-wrap">
+
+      <img
+        class="story-image"
+        src="https://i.imgur.com/7Q7Au94.png"
+        alt="Young Adam learning from a difficult school experience"
+      >
+
+      <span class="image-label">
+        🌧️ Learning from mistakes
+      </span>
+
+    </div>
+
+    <div class="story-copy">
+
+      <h3>A mistake becomes a lesson</h3>
+
+      <p>
+        Not every memory was happy. Adam also remembered
+        a difficult day when he made a mistake during
+        a school activity.
+      </p>
+
+      <p>
+        At first, he felt <strong>disappointed</strong>
+        and worried. However, his teacher encouraged
+        him to try again. Adam understood that a mistake
+        could become a <strong>lesson</strong> if he
+        learned from it and tried to improve.
+      </p>
+
+      <div class="focus-box">
+        <strong>💡 Life Lesson</strong><br>
+        A difficult experience is not always a bad
+        experience. Sometimes it teaches us
+        an important lesson.
+      </div>
+
+      <div class="vocab-strip">
+        <span class="vocab-chip">difficult</span>
+        <span class="vocab-chip">mistake</span>
+        <span class="vocab-chip">disappointed</span>
+        <span class="vocab-chip">encourage</span>
+        <span class="vocab-chip">lesson</span>
+        <span class="vocab-chip">improve</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="activity">
+
+    <div class="activity-title">
+      <span class="activity-title-icon">🔄</span>
+      <h3>Complete the Thought</h3>
+    </div>
+
+    <div class="question">
+
+      <p>
+        Adam made a mistake, but he learned from it.
+        Which conclusion is best?
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="true">
+          A difficult experience can teach us something.
+        </button>
+
+        <button class="option" data-correct="false">
+          Every mistake means failure forever.
+        </button>
+
+        <button class="option" data-correct="false">
+          We should never try again.
+        </button>
+
+        <button class="option" data-correct="false">
+          Problems cannot be solved.
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     STEP 6
+========================================= -->
+
+<section class="step" id="step6">
+
+  <div class="step-header">
+
+    <div class="step-number">06</div>
+
+    <div>
+      <div class="step-kicker">
+        MEMORY MOMENT 06 · EMOTIONS
+      </div>
+
+      <h2>🎉 A Happy Memory</h2>
+
+      <span class="level-tag">
+        🌳 LEVEL 6 · CLASSIFY
+      </span>
+    </div>
+
+  </div>
+
+  <div class="story-layout">
+
+    <div class="story-image-wrap">
+
+      <img
+        class="story-image"
+        src="https://i.imgur.com/Wnp28Vk.png"
+        alt="Adam sharing a happy school memory with friends"
+      >
+
+      <span class="image-label">
+        🎉 Happiness and friendship
+      </span>
+
+    </div>
+
+    <div class="story-copy">
+
+      <h3>A moment shared with friends</h3>
+
+      <p>
+        Adam smiled when he found another photograph.
+        It showed him and his classmates during
+        a joyful school celebration.
+      </p>
+
+      <p>
+        Everyone was laughing and enjoying the moment
+        together. Adam remembers feeling
+        <strong>joyful</strong> because he was surrounded
+        by good friends. For him, friendship made
+        the experience even more special.
+      </p>
+
+      <div class="focus-box">
+        <strong>❤️ Vocabulary Connection</strong><br>
+        Joyful, happy, laugh, friendship,
+        celebration and together can all describe
+        a positive shared experience.
+      </div>
+
+      <div class="vocab-strip">
+        <span class="vocab-chip">joyful</span>
+        <span class="vocab-chip">happy</span>
+        <span class="vocab-chip">laugh</span>
+        <span class="vocab-chip">friendship</span>
+        <span class="vocab-chip">celebration</span>
+        <span class="vocab-chip">together</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="activity">
+
+    <div class="activity-title">
+      <span class="activity-title-icon">🧩</span>
+      <h3>Vocabulary Classification</h3>
+    </div>
+
+    <p class="activity-description">
+      Select a word, then select the category
+      where it belongs.
+    </p>
+
+    <div class="sort-instructions">
+      👆 STEP 1: Select a word.
+      STEP 2: Click its correct category.
+    </div>
+
+    <div class="sort-bank" id="sortBank">
+
+      <button class="sort-item" data-type="feeling">
+        joyful
+      </button>
+
+      <button class="sort-item" data-type="action">
+        laugh
+      </button>
+
+      <button class="sort-item" data-type="relationship">
+        friendship
+      </button>
+
+      <button class="sort-item" data-type="event">
+        celebration
+      </button>
+
+      <button class="sort-item" data-type="feeling">
+        happy
+      </button>
+
+      <button class="sort-item" data-type="action">
+        enjoy
+      </button>
+
+    </div>
+
+    <div class="sort-area">
+
+      <div
+        class="sort-column"
+        data-category="feeling"
+        role="button"
+        tabindex="0"
+        aria-label="Feelings category"
+      >
+        <h4>❤️ Feelings</h4>
+      </div>
+
+      <div
+        class="sort-column"
+        data-category="action"
+        role="button"
+        tabindex="0"
+        aria-label="Actions category"
+      >
+        <h4>⚡ Actions</h4>
+      </div>
+
+      <div
+        class="sort-column"
+        data-category="relationship"
+        role="button"
+        tabindex="0"
+        aria-label="Relationships category"
+      >
+        <h4>🤝 Relationships</h4>
+      </div>
+
+      <div
+        class="sort-column"
+        data-category="event"
+        role="button"
+        tabindex="0"
+        aria-label="Events category"
+      >
+        <h4>🎊 Events</h4>
+      </div>
+
+    </div>
+
+    <div
+      class="feedback"
+      id="sortFeedback"
+      aria-live="polite"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     STEP 7
+========================================= -->
+
+<section class="step" id="step7">
+
+  <div class="step-header">
+
+    <div class="step-number">07</div>
+
+    <div>
+      <div class="step-kicker">
+        MEMORY MOMENT 07 · REFLECT
+      </div>
+
+      <h2>💭 Looking Back</h2>
+
+      <span class="level-tag">
+        🌳 LEVEL 7 · THINK DEEPER
+      </span>
+    </div>
+
+  </div>
+
+  <div class="story-layout">
+
+    <div class="story-image-wrap">
+
+      <img
+        class="story-image"
+        src="https://i.imgur.com/nZ8mtub.png"
+        alt="Adam looking back at his childhood memories"
+      >
+
+      <span class="image-label">
+        💭 Memories shape our lives
+      </span>
+
+    </div>
+
+    <div class="story-copy">
+
+      <h3>Memories shape who we are</h3>
+
+      <p>
+        Adam put the photographs back into the box.
+        He had remembered happy moments, difficult
+        moments, achievements and unforgettable adventures.
+      </p>
+
+      <p>
+        Looking at his childhood, Adam realized that
+        every experience had taught him something.
+        Some memories made him smile, while others
+        helped him become stronger and more confident.
+      </p>
+
+      <div class="focus-box">
+        <strong>🌟 Big Idea</strong><br>
+        Our experiences can teach us lessons,
+        influence our feelings and help us grow.
+      </div>
+
+      <div class="vocab-strip">
+        <span class="vocab-chip">remember</span>
+        <span class="vocab-chip">realize</span>
+        <span class="vocab-chip">experience</span>
+        <span class="vocab-chip">lesson</span>
+        <span class="vocab-chip">grow</span>
+        <span class="vocab-chip">confident</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="activity">
+
+    <div class="activity-title">
+      <span class="activity-title-icon">💡</span>
+      <h3>Think Deeper</h3>
+    </div>
+
+    <div class="question">
+
+      <p>
+        Why are difficult experiences sometimes useful?
+      </p>
+
+      <div class="options">
+
+        <button class="option" data-correct="false">
+          Because they are always enjoyable.
+        </button>
+
+        <button class="option" data-correct="true">
+          Because they can teach us lessons and help us grow.
+        </button>
+
+        <button class="option" data-correct="false">
+          Because we should repeat every mistake.
+        </button>
+
+        <button class="option" data-correct="false">
+          Because memories are not important.
+        </button>
+
+      </div>
+
+      <div class="feedback" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     STEP 8
+========================================= -->
+
+<section class="step" id="step8">
+
+  <div class="step-header">
+
+    <div class="step-number">08</div>
+
+    <div>
+      <div class="step-kicker">
+        LANGUAGE WORKSHOP · PRACTISE
+      </div>
+
+      <h2>🧩 Build Your Memory Sentences</h2>
+
+      <span class="level-tag">
+        🚀 LEVEL 8 · CREATE
+      </span>
+    </div>
+
+  </div>
+
+  <!-- SENTENCE BUILDER 1 -->
+
+  <div class="activity" style="margin-top:0;border-top:0;padding-top:0;">
+
+    <div class="activity-title">
+      <span class="activity-title-icon">✏️</span>
+      <h3>Sentence Builder 1</h3>
+    </div>
+
+    <p class="activity-description">
+      Click the words in the correct order.
+      Each word can be used only once.
+    </p>
+
+    <div class="builder" id="builder1">
+
+      <div class="word-bank">
+
+        <button class="word-btn">school.</button>
+        <button class="word-btn">first</button>
+        <button class="word-btn">remember</button>
+        <button class="word-btn">at</button>
+        <button class="word-btn">I</button>
+        <button class="word-btn">day</button>
+        <button class="word-btn">my</button>
+
+      </div>
+
+      <div class="sentence-box" id="sentenceBox1">
+        Click the words above...
+      </div>
+
+      <div class="builder-actions">
+
+        <button
+          class="btn btn-primary"
+          onclick="checkSentence(1)"
+        >
+          ✓ Check Sentence
+        </button>
+
+        <button
+          class="btn btn-secondary"
+          onclick="clearSentence(1)"
+        >
+          ↺ Clear
+        </button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="sentenceFeedback1"
+        aria-live="polite"
+      ></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- SENTENCE BUILDER 2 -->
+
+  <div class="activity">
+
+    <div class="activity-title">
+      <span class="activity-title-icon">🧩</span>
+      <h3>Sentence Builder 2</h3>
+    </div>
+
+    <p class="activity-description">
+      Build a sentence explaining why the school trip
+      was unforgettable.
+    </p>
+
+    <div class="builder" id="builder2">
+
+      <div class="word-bank">
+
+        <button class="word-btn">something</button>
+        <button class="word-btn">trip</button>
+        <button class="word-btn">because</button>
+        <button class="word-btn">The</button>
+        <button class="word-btn">new.</button>
+        <button class="word-btn">was</button>
+        <button class="word-btn">discovered</button>
+        <button class="word-btn">unforgettable</button>
+        <button class="word-btn">we</button>
+
+      </div>
+
+      <div class="sentence-box" id="sentenceBox2">
+        Click the words above...
+      </div>
+
+      <div class="builder-actions">
+
+        <button
+          class="btn btn-primary"
+          onclick="checkSentence(2)"
+        >
+          ✓ Check Sentence
+        </button>
+
+        <button
+          class="btn btn-secondary"
+          onclick="clearSentence(2)"
+        >
+          ↺ Clear
+        </button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="sentenceFeedback2"
+        aria-live="polite"
+      ></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FILL IN THE BLANK -->
+
+  <div class="activity">
+
+    <div class="activity-title">
+      <span class="activity-title-icon">🎯</span>
+      <h3>Choose the Best Word</h3>
+    </div>
+
+    <p class="activity-description">
+      Complete each sentence with the correct word.
+    </p>
+
+    <div class="question">
+
+      <div class="fill-row">
+
+        I felt
+
+        <select class="fill-select" id="fill1">
+          <option value="">Choose...</option>
+          <option value="proud">proud</option>
+          <option value="difficult">difficult</option>
+          <option value="trip">trip</option>
+        </select>
+
+        when I received my certificate.
+
+      </div>
+
+      <div class="fill-row">
+
+        My school trip was
+
+        <select class="fill-select" id="fill2">
+          <option value="">Choose...</option>
+          <option value="unforgettable">unforgettable</option>
+          <option value="mistake">mistake</option>
+          <option value="nervous">nervous</option>
+        </select>
+
+        .
+
+      </div>
+
+      <div class="fill-row">
+
+        I learned an important
+
+        <select class="fill-select" id="fill3">
+          <option value="">Choose...</option>
+          <option value="lesson">lesson</option>
+          <option value="celebration">celebration</option>
+          <option value="classmate">classmate</option>
+        </select>
+
+        from my mistake.
+
+      </div>
+
+      <div style="margin-top:19px;">
+
+        <button
+          class="btn btn-primary"
+          onclick="checkFill()"
+        >
+          ✓ Check Answers
+        </button>
+
+      </div>
+
+      <div
+        class="feedback"
+        id="fillFeedback"
+        aria-live="polite"
+      ></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     STEP 9
+========================================= -->
+
+<section class="step" id="step9">
+
+  <div class="step-header">
+
+    <div class="step-number">09</div>
+
+    <div>
+      <div class="step-kicker">
+        FINAL MISSION · WRITE
+      </div>
+
+      <h2>✍️ My Memorable Experience</h2>
+
+      <span class="level-tag">
+        🏆 LEVEL 9 · PRODUCE
+      </span>
+    </div>
+
+  </div>
+
+  <div class="writing-prompt">
+
+    <h3>🌟 Tell Your Own Memory Story</h3>
+
+    <p>
+      Think about a real or imaginary memorable experience
+      from your childhood or school life. Write a short
+      paragraph about it.
+    </p>
+
+    <strong>Include these details:</strong>
+
+    <ul>
+      <li>When and where it happened</li>
+      <li>What happened</li>
+      <li>How you felt</li>
+      <li>Why you remember it</li>
+      <li>What you learned from the experience</li>
+    </ul>
+
+    <div class="vocab-strip">
+
+      <span class="vocab-chip">remember</span>
+      <span class="vocab-chip">experience</span>
+      <span class="vocab-chip">memorable</span>
+      <span class="vocab-chip">excited</span>
+      <span class="vocab-chip">proud</span>
+      <span class="vocab-chip">disappointed</span>
+      <span class="vocab-chip">unforgettable</span>
+      <span class="vocab-chip">lesson</span>
+
+    </div>
+
+  </div>
+
+  <textarea
+    class="writing-area"
+    id="writingArea"
+    placeholder="I remember a special day when..."
+  ></textarea>
+
+  <div class="writing-toolbar">
+
+    <div class="word-count" id="wordCount">
+      0 words
+    </div>
+
+    <div class="writing-actions">
+
+      <button
+        class="btn btn-primary"
+        onclick="evaluateWriting()"
+      >
+        ✨ Check My Writing
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="clearWriting()"
+      >
+        ↺ Clear
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="writing-checklist">
+
+    <label class="writing-check">
+      <input type="checkbox" class="writing-check-input">
+      I mentioned when and where.
+    </label>
+
+    <label class="writing-check">
+      <input type="checkbox" class="writing-check-input">
+      I described what happened.
+    </label>
+
+    <label class="writing-check">
+      <input type="checkbox" class="writing-check-input">
+      I described my feelings.
+    </label>
+
+    <label class="writing-check">
+      <input type="checkbox" class="writing-check-input">
+      I explained why it was memorable.
+    </label>
+
+  </div>
+
+  <div
+    class="feedback"
+    id="writingFeedback"
+    aria-live="polite"
+  ></div>
+
+</section>
+
+
+<!-- =========================================
+     FINAL SCORE
+========================================= -->
+
+<section class="score-card">
+
+  <h2>🏅 Memory Explorer</h2>
+
+  <p class="score-subtitle">
+    Your journey through Adam's memories is almost complete.
+    See how much vocabulary you have mastered!
+  </p>
+
+  <div class="score-circle">
+
+    <div class="score-number">
+      <span id="score">0</span>%
+    </div>
+
+    <small>MISSION SCORE</small>
+
+  </div>
+
+  <div class="score-message" id="scoreMessage">
+    Start exploring the memories to build your score!
+  </div>
+
+  <div class="score-progress">
+    <span id="scoreBar"></span>
+  </div>
+
+  <button
+    class="btn btn-white"
+    onclick="resetLesson()"
+  >
+    ↺ Restart the Expedition
+  </button>
+
+</section>
+
+
+<!-- =========================================
+     LESSON NAVIGATION
+========================================= -->
+
+<div class="lesson-nav">
+
+  <a
+    class="nav-card"
+    href="MS4-S2-Vocabulary-Lesson2.html"
+  >
+
+    <div class="nav-small">
+      ← PREVIOUS CHECKPOINT
+    </div>
+
+    <div class="nav-title">
+      🚀 Dreams & Career Prospects
+    </div>
+
+  </a>
+
+  <a
+    class="nav-card next"
+    href="MS4-S2-Vocabulary-Lesson4.html"
+  >
+
+    <div class="nav-small">
+      NEXT CHECKPOINT →
+    </div>
+
+    <div class="nav-title">
+      🎨 Hobbies & Interests
+    </div>
+
+  </a>
+
+</div>
+
+
+<footer>
+  ✦ MY ENGLISH SPACE ✦<br>
+  MS4 · SEQUENCE 2 · VOCABULARY EXPEDITION<br>
+  LIFE EXPERIENCES & MEMORIES
+</footer>
+
+</main>
+
+
+<!-- =========================================
+     MINI DICTIONARY
+========================================= -->
+
+<div class="dict-label">
+  ENGLISH ↔ ARABIC
+</div>
+
+<button
+  class="dict-button"
+  id="dictBtn"
+  aria-label="Open mini dictionary"
+  title="Mini Dictionary"
+>
+  📖
+</button>
+
+
+<div
+  class="dict-overlay"
+  id="dictOverlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="dictTitle"
+>
+
+  <div class="dict-panel">
+
+    <div class="dict-head">
+
+      <h3 id="dictTitle">
+        📖 Mini Dictionary
+      </h3>
+
+      <button
+        class="dict-close"
+        id="dictClose"
+        aria-label="Close dictionary"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <input
+      type="search"
+      class="dict-search"
+      id="dictSearch"
+      placeholder="🔎 Search for a word..."
+      aria-label="Search vocabulary"
+    >
+
+    <div class="dict-list" id="dictList"></div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================================
+   SCORE SYSTEM
+   11 MCQ + SORT + 2 BUILDERS + FILL + WRITING
+   TOTAL: 16 POINTS
+========================================= */
+
+const earned = new Set();
+
+const TOTAL_POINTS =
+  document.querySelectorAll(
+    ".question .option[data-correct]"
+  ).length > 0
+    ? document.querySelectorAll(
+        ".question:has(.option[data-correct])"
+      ).length + 5
+    : 16;
+
+/*
+  The five additional tasks are:
+  1. Sorting
+  2. Sentence Builder 1
+  3. Sentence Builder 2
+  4. Fill in the Blanks
+  5. Writing
+*/
+
+function awardPoint(key){
+
+  if(earned.has(key)){
+    return;
+  }
+
+  earned.add(key);
+
+  updateScore();
+
+}
+
+
+function updateScore(){
+
+  const percent = Math.round(
+    (earned.size / TOTAL_POINTS) * 100
+  );
+
+  document.getElementById("score").textContent =
+    percent;
+
+  document.getElementById("scoreBar").style.width =
+    percent + "%";
+
+  const message =
+    document.getElementById("scoreMessage");
+
+  if(percent === 0){
+
+    message.textContent =
+      "Start exploring the memories to build your score!";
+
+  }else if(percent < 40){
+
+    message.textContent =
+      "🌱 Good beginning! Keep exploring Adam's memories.";
+
+  }else if(percent < 70){
+
+    message.textContent =
+      "🌟 Nice work! Your vocabulary is growing.";
+
+  }else if(percent < 90){
+
+    message.textContent =
+      "🎯 Excellent! You are becoming a Memory Explorer.";
+
+  }else if(percent < 100){
+
+    message.textContent =
+      "🏆 Fantastic! Just a little more to complete your mission.";
+
+  }else{
+
+    message.textContent =
+      "🎉 Outstanding! You completed the vocabulary expedition!";
+
+  }
+
+}
+
+
+/* =========================================
+   FEEDBACK HELPER
+========================================= */
+
+function showFeedback(element,message,type){
+
+  element.textContent = message;
+
+  element.className =
+    "feedback show " + type;
+
+}
+
+
+/* =========================================
+   MULTIPLE CHOICE
+========================================= */
+
+const mcQuestions = [
+  ...document.querySelectorAll(
+    ".question:has(.option[data-correct])"
+  )
+];
+
+mcQuestions.forEach((question,index)=>{
+
+  const options =
+    question.querySelectorAll(".option");
+
+  const feedback =
+    question.querySelector(".feedback");
+
+  options.forEach(option=>{
+
+    option.addEventListener("click",()=>{
+
+      if(question.dataset.done === "true"){
+        return;
+      }
+
+      question.dataset.done = "true";
+
+      const correct =
+        option.dataset.correct === "true";
+
+      options.forEach(btn=>{
+
+        btn.disabled = true;
+
+        if(btn.dataset.correct === "true"){
+          btn.classList.add("correct");
+        }
+
+      });
+
+      if(correct){
+
+        showFeedback(
+          feedback,
+          "✓ Excellent! You chose the correct answer.",
+          "good"
+        );
+
+        awardPoint("mc" + index);
+
+      }else{
+
+        option.classList.add("wrong");
+
+        showFeedback(
+          feedback,
+          "✗ Not quite. The correct answer is highlighted in green. Read the story again.",
+          "bad"
+        );
+
+      }
+
+    });
+
+  });
+
+});
+
+
+/* =========================================
+   SORTING ACTIVITY
+========================================= */
+
+let selectedSortItem = null;
+
+const sortBank =
+  document.getElementById("sortBank");
+
+const sortFeedback =
+  document.getElementById("sortFeedback");
+
+const sortItems = [
+  ...document.querySelectorAll(".sort-item")
+];
+
+sortItems.forEach(item=>{
+
+  item.addEventListener("click",()=>{
+
+    if(item.classList.contains("placed")){
+      return;
+    }
+
+    sortItems.forEach(word=>{
+      word.classList.remove("selected");
+    });
+
+    selectedSortItem = item;
+
+    item.classList.add("selected");
+
+    showFeedback(
+      sortFeedback,
+      'Selected "' + item.textContent.trim() +
+      '". Now choose the correct category.',
+      "info"
+    );
+
+  });
+
+});
+
+
+document.querySelectorAll(".sort-column")
+  .forEach(column=>{
+
+    function placeWord(){
+
+      if(!selectedSortItem){
+        showFeedback(
+          sortFeedback,
+          "Select a word from the word bank first.",
+          "info"
+        );
+        return;
+      }
+
+      const correctCategory =
+        selectedSortItem.dataset.type;
+
+      const chosenCategory =
+        column.dataset.category;
+
+      if(correctCategory !== chosenCategory){
+
+        showFeedback(
+          sortFeedback,
+          "✗ Not this category. Think about the meaning of the word and try again.",
+          "bad"
+        );
+
+        return;
+      }
+
+      selectedSortItem.classList.remove("selected");
+      selectedSortItem.classList.add("placed");
+      selectedSortItem.disabled = true;
+
+      column.appendChild(selectedSortItem);
+
+      selectedSortItem = null;
+
+      const placedCount =
+        document.querySelectorAll(
+          ".sort-item.placed"
+        ).length;
+
+      if(placedCount === sortItems.length){
+
+        showFeedback(
+          sortFeedback,
+          "✓ Wonderful! You classified all six words correctly.",
+          "good"
+        );
+
+        awardPoint("sorting");
+
+      }else{
+
+        showFeedback(
+          sortFeedback,
+          "✓ Correct category! " +
+          placedCount + " / " +
+          sortItems.length + " words placed.",
+          "good"
+        );
+
+      }
+
+    }
+
+    column.addEventListener("click",placeWord);
+
+    column.addEventListener("keydown",event=>{
+
+      if(event.key === "Enter" || event.key === " "){
+        event.preventDefault();
+        placeWord();
+      }
+
+    });
+
+  });
+
+
+/* =========================================
+   SENTENCE BUILDERS
+========================================= */
+
+const sentenceAnswers = {
+
+  1:
+    "I remember my first day at school.",
+
+  2:
+    "The trip was unforgettable because we discovered something new."
+
+};
+
+
+function getSentenceWords(number){
+
+  return [
+    ...document.querySelectorAll(
+      "#builder" + number + " .word-btn:disabled"
+    )
+  ].map(button=>button.dataset.orderWord);
+
+}
+
+
+/*
+  We keep the selected word order separately.
+*/
+
+const selectedSentences = {
+  1:[],
+  2:[]
+};
+
+
+function renderSentence(number){
+
+  const box =
+    document.getElementById(
+      "sentenceBox" + number
+    );
+
+  const words =
+    selectedSentences[number];
+
+  if(words.length === 0){
+
+    box.textContent =
+      "Click the words above...";
+
+    return;
+  }
+
+  box.innerHTML = "";
+
+  words.forEach(word=>{
+
+    const span =
+      document.createElement("span");
+
+    span.className =
+      "sentence-token";
+
+    span.textContent = word;
+
+    box.appendChild(span);
+
+  });
+
+}
+
+
+[1,2].forEach(number=>{
+
+  const buttons =
+    document.querySelectorAll(
+      "#builder" + number + " .word-btn"
+    );
+
+  buttons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+      if(button.disabled){
+        return;
+      }
+
+      const word =
+        button.textContent.trim();
+
+      selectedSentences[number].push(word);
+
+      button.disabled = true;
+
+      renderSentence(number);
+
+      document.getElementById(
+        "sentenceFeedback" + number
+      ).className = "feedback";
+
+    });
+
+  });
+
+});
+
+
+function clearSentence(number){
+
+  selectedSentences[number] = [];
+
+  document.querySelectorAll(
+    "#builder" + number + " .word-btn"
+  ).forEach(button=>{
+
+    button.disabled = false;
+
+  });
+
+  renderSentence(number);
+
+  const feedback =
+    document.getElementById(
+      "sentenceFeedback" + number
+    );
+
+  feedback.className = "feedback";
+  feedback.textContent = "";
+
+}
+
+
+function checkSentence(number){
+
+  const answer =
+    selectedSentences[number].join(" ");
+
+  const feedback =
+    document.getElementById(
+      "sentenceFeedback" + number
+    );
+
+  if(answer === sentenceAnswers[number]){
+
+    showFeedback(
+      feedback,
+      "✓ Perfect! Your sentence is in the correct order.",
+      "good"
+    );
+
+    awardPoint("sentence" + number);
+
+  }else{
+
+    showFeedback(
+      feedback,
+      "✗ Check the word order. You can clear the sentence and try again.",
+      "bad"
+    );
+
+  }
+
+}
+
+
+/* =========================================
+   FILL IN THE BLANK
+========================================= */
+
+function checkFill(){
+
+  const answers = {
+
+    fill1:"proud",
+    fill2:"unforgettable",
+    fill3:"lesson"
+
+  };
+
+  let correct = 0;
+
+  Object.entries(answers).forEach(([id,answer])=>{
+
+    const select =
+      document.getElementById(id);
+
+    select.classList.remove(
+      "correct",
+      "wrong"
+    );
+
+    if(select.value === answer){
+
+      select.classList.add("correct");
+      correct++;
+
+    }else{
+
+      select.classList.add("wrong");
+
+    }
+
+  });
+
+  const feedback =
+    document.getElementById("fillFeedback");
+
+  if(correct === 3){
+
+    showFeedback(
+      feedback,
+      "✓ Excellent! All three sentences are correct.",
+      "good"
+    );
+
+    awardPoint("fill");
+
+  }else{
+
+    showFeedback(
+      feedback,
+      "You got " + correct +
+      " / 3 correct. Review the highlighted answers and try again.",
+      "bad"
+    );
+
+  }
+
+}
+
+
+/* =========================================
+   WRITING
+========================================= */
+
+const writingArea =
+  document.getElementById("writingArea");
+
+function countWords(text){
+
+  const clean = text.trim();
+
+  return clean
+    ? clean.split(/\s+/).length
+    : 0;
+
+}
+
+
+writingArea.addEventListener("input",()=>{
+
+  const words =
+    countWords(writingArea.value);
+
+  document.getElementById("wordCount")
+    .textContent =
+      words + (words === 1 ? " word" : " words");
+
+});
+
+
+function evaluateWriting(){
+
+  const text =
+    writingArea.value.trim();
+
+  const words =
+    countWords(text);
+
+  const feedback =
+    document.getElementById(
+      "writingFeedback"
+    );
+
+  if(words < 30){
+
+    showFeedback(
+      feedback,
+      "🌱 Keep writing! Try to produce at least 30 words about your experience.",
+      "bad"
+    );
+
+    return;
+
+  }
+
+  const usefulWords = [
+
+    "memory",
+    "remember",
+    "experience",
+    "school",
+    "childhood",
+    "happy",
+    "excited",
+    "proud",
+    "difficult",
+    "unforgettable",
+    "mistake",
+    "lesson",
+    "friend",
+    "trip",
+    "achievement",
+    "nervous",
+    "joyful",
+    "disappointed",
+    "memorable",
+    "celebration"
+
+  ];
+
+  const lowerText =
+    text.toLowerCase();
+
+  const usedWords =
+    usefulWords.filter(word=>{
+
+      const regex =
+        new RegExp(
+          "\\b" + word + "\\b",
+          "i"
+        );
+
+      return regex.test(lowerText);
+
+    });
+
+  const checked =
+    document.querySelectorAll(
+      ".writing-check-input:checked"
+    ).length;
+
+  let message =
+    "✓ Well done! You wrote " +
+    words + " words.";
+
+  if(usedWords.length >= 4){
+
+    message +=
+      " Excellent vocabulary use!";
+
+  }else{
+
+    message +=
+      " Try to include more words from this lesson.";
+
+  }
+
+  if(checked < 3){
+
+    message +=
+      " Review your writing checklist to make sure your paragraph has enough details.";
+
+  }else{
+
+    message +=
+      " Your checklist shows that you included important details.";
+
+  }
+
+  message +=
+    " Remember to check spelling, punctuation and grammar yourself.";
+
+  showFeedback(
+    feedback,
+    message,
+    "good"
+  );
+
+  /*
+    Writing earns a point when:
+    - At least 30 words
+    - At least 3 checklist items
+    - At least 4 target vocabulary words
+  */
+
+  if(
+    words >= 30 &&
+    checked >= 3 &&
+    usedWords.length >= 4
+  ){
+
+    awardPoint("writing");
+
+  }
+
+}
+
+
+function clearWriting(){
+
+  writingArea.value = "";
+
+  document.getElementById("wordCount")
+    .textContent = "0 words";
+
+  document.querySelectorAll(
+    ".writing-check-input"
+  ).forEach(input=>{
+
+    input.checked = false;
+
+  });
+
+  const feedback =
+    document.getElementById(
+      "writingFeedback"
+    );
+
+  feedback.className = "feedback";
+  feedback.textContent = "";
+
+}
+
+
+/* =========================================
+   MINI DICTIONARY
+========================================= */
+
+const dictionaryWords = [
+
+  {en:"memory",pos:"noun",ar:"ذِكرى"},
+  {en:"childhood",pos:"noun",ar:"الطفولة"},
+  {en:"past",pos:"noun",ar:"الماضي"},
+  {en:"remember",pos:"verb",ar:"يتذكّر"},
+  {en:"experience",pos:"noun",ar:"تجربة"},
+
+  {en:"first day",pos:"noun phrase",ar:"اليوم الأول"},
+  {en:"nervous",pos:"adjective",ar:"متوتر"},
+  {en:"excited",pos:"adjective",ar:"متحمّس"},
+  {en:"classmate",pos:"noun",ar:"زميل في القسم"},
+  {en:"welcome",pos:"verb",ar:"يرحّب"},
+
+  {en:"trip",pos:"noun",ar:"رحلة"},
+  {en:"explore",pos:"verb",ar:"يستكشف"},
+  {en:"discover",pos:"verb",ar:"يكتشف"},
+  {en:"exciting",pos:"adjective",ar:"مثير"},
+  {en:"unforgettable",pos:"adjective",ar:"لا يُنسى"},
+
+  {en:"achievement",pos:"noun",ar:"إنجاز"},
+  {en:"succeed",pos:"verb",ar:"ينجح"},
+  {en:"proud",pos:"adjective",ar:"فخور"},
+  {en:"certificate",pos:"noun",ar:"شهادة"},
+  {en:"congratulate",pos:"verb",ar:"يهنّئ"},
+
+  {en:"difficult",pos:"adjective",ar:"صعب"},
+  {en:"mistake",pos:"noun",ar:"خطأ"},
+  {en:"disappointed",pos:"adjective",ar:"خائب الأمل"},
+  {en:"encourage",pos:"verb",ar:"يشجّع"},
+  {en:"lesson",pos:"noun",ar:"درس"},
+  {en:"improve",pos:"verb",ar:"يحسّن"},
+
+  {en:"joyful",pos:"adjective",ar:"مبتهج"},
+  {en:"happy",pos:"adjective",ar:"سعيد"},
+  {en:"laugh",pos:"verb",ar:"يضحك"},
+  {en:"enjoy",pos:"verb",ar:"يستمتع"},
+  {en:"friendship",pos:"noun",ar:"صداقة"},
+  {en:"celebration",pos:"noun",ar:"احتفال"},
+
+  {en:"realize",pos:"verb",ar:"يدرك"},
+  {en:"grow",pos:"verb",ar:"ينمو / يتطوّر"},
+  {en:"confident",pos:"adjective",ar:"واثق من نفسه"},
+  {en:"memorable",pos:"adjective",ar:"لا يُنسى / مميّز"}
+
+];
+
+
+const dictOverlay =
+  document.getElementById(
+    "dictOverlay"
+  );
+
+const dictBtn =
+  document.getElementById(
+    "dictBtn"
+  );
+
+const dictClose =
+  document.getElementById(
+    "dictClose"
+  );
+
+const dictSearch =
+  document.getElementById(
+    "dictSearch"
+  );
+
+const dictList =
+  document.getElementById(
+    "dictList"
+  );
+
+
+function renderDictionary(filter=""){
+
+  dictList.innerHTML = "";
+
+  const words =
+    dictionaryWords.filter(word=>
+      word.en.toLowerCase().includes(
+        filter.toLowerCase()
+      )
+    );
+
+  if(words.length === 0){
+
+    const empty =
+      document.createElement("div");
+
+    empty.className = "dict-empty";
+
+    empty.textContent =
+      "🔎 No matching word found.";
+
+    dictList.appendChild(empty);
+
+    return;
+
+  }
+
+  words.forEach(word=>{
+
+    const row =
+      document.createElement("div");
+
+    row.className = "dict-row";
+
+    const left =
+      document.createElement("div");
+
+    const english =
+      document.createElement("div");
+
+    english.className = "dict-en";
+    english.textContent = word.en;
+
+    const pos =
+      document.createElement("span");
+
+    pos.className = "dict-pos";
+    pos.textContent = word.pos;
+
+    english.appendChild(pos);
+    left.appendChild(english);
+
+    const arabic =
+      document.createElement("div");
+
+    arabic.className = "dict-ar";
+    arabic.textContent = word.ar;
+
+    row.appendChild(left);
+    row.appendChild(arabic);
+
+    dictList.appendChild(row);
+
+  });
+
+}
+
+
+function openDictionary(){
+
+  dictOverlay.classList.add("open");
+
+  dictSearch.value = "";
+
+  renderDictionary();
+
+  document.body.style.overflow = "hidden";
+
+  dictSearch.focus();
+
+}
+
+
+function closeDictionary(){
+
+  dictOverlay.classList.remove("open");
+
+  document.body.style.overflow = "";
+
+  dictBtn.focus();
+
+}
+
+
+dictBtn.addEventListener(
+  "click",
+  openDictionary
+);
+
+dictClose.addEventListener(
+  "click",
+  closeDictionary
+);
+
+dictSearch.addEventListener("input",()=>{
+
+  renderDictionary(
+    dictSearch.value.trim()
+  );
+
+});
+
+
+dictOverlay.addEventListener("click",event=>{
+
+  if(event.target === dictOverlay){
+    closeDictionary();
+  }
+
+});
+
+
+document.addEventListener("keydown",event=>{
+
+  if(
+    event.key === "Escape" &&
+    dictOverlay.classList.contains("open")
+  ){
+
+    closeDictionary();
+
+  }
+
+});
+
+
+renderDictionary();
+
+
+/* =========================================
+   ACTIVE STEP TRACKING
+========================================= */
+
+const steps =
+  document.querySelectorAll(
+    ".step"
+  );
+
+const stepLinks =
+  document.querySelectorAll(
+    ".step-link"
+  );
+
+
+function setActiveStep(number){
+
+  stepLinks.forEach(link=>{
+
+    link.classList.toggle(
+      "active",
+      Number(link.dataset.step) === number
+    );
+
+  });
+
+  document.getElementById(
+    "journeyLabel"
+  ).textContent =
+    "STEP " +
+    String(number).padStart(2,"0") +
+    " / 09";
+
+  document.getElementById(
+    "journeyFill"
+  ).style.width =
+    (number / 9 * 100) + "%";
+
+}
+
+
+function updateActiveStep(){
+
+  let current = 1;
+
+  steps.forEach(step=>{
+
+    if(
+      step.getBoundingClientRect().top <=
+      window.innerHeight * .42
+    ){
+
+      current =
+        Number(
+          step.id.replace("step","")
+        );
+
+    }
+
+  });
+
+  setActiveStep(current);
+
+}
+
+
+/* =========================================
+   PAGE SCROLL PROGRESS
+========================================= */
+
+function updateScrollProgress(){
+
+  const maxScroll =
+    document.documentElement.scrollHeight -
+    window.innerHeight;
+
+  const percent =
+    maxScroll > 0
+      ? window.scrollY / maxScroll * 100
+      : 0;
+
+  document.getElementById(
+    "scrollProgress"
+  ).style.width =
+    percent + "%";
+
+}
+
+
+let scrollScheduled = false;
+
+window.addEventListener("scroll",()=>{
+
+  if(scrollScheduled){
+    return;
+  }
+
+  scrollScheduled = true;
+
+  requestAnimationFrame(()=>{
+
+    updateScrollProgress();
+    updateActiveStep();
+
+    scrollScheduled = false;
+
+  });
+
+},{passive:true});
+
+
+/* =========================================
+   RESET LESSON
+========================================= */
+
+function resetLesson(){
+
+  const confirmed =
+    confirm(
+      "Restart the expedition? Your answers and writing will be cleared."
+    );
+
+  if(!confirmed){
+    return;
+  }
+
+  earned.clear();
+
+  /* Reset MCQ */
+
+  mcQuestions.forEach(question=>{
+
+    delete question.dataset.done;
+
+    question.querySelectorAll(
+      ".option"
+    ).forEach(option=>{
+
+      option.disabled = false;
+
+      option.classList.remove(
+        "correct",
+        "wrong"
+      );
+
+    });
+
+    const feedback =
+      question.querySelector(".feedback");
+
+    feedback.className = "feedback";
+    feedback.textContent = "";
+
+  });
+
+
+  /* Reset sorting */
+
+  selectedSortItem = null;
+
+  sortItems.forEach(item=>{
+
+    item.disabled = false;
+
+    item.classList.remove(
+      "selected",
+      "placed"
+    );
+
+    sortBank.appendChild(item);
+
+  });
+
+  sortFeedback.className = "feedback";
+  sortFeedback.textContent = "";
+
+
+  /* Reset builders */
+
+  clearSentence(1);
+  clearSentence(2);
+
+
+  /* Reset fill */
+
+  ["fill1","fill2","fill3"].forEach(id=>{
+
+    const select =
+      document.getElementById(id);
+
+    select.value = "";
+
+    select.classList.remove(
+      "correct",
+      "wrong"
+    );
+
+  });
+
+  const fillFeedback =
+    document.getElementById(
+      "fillFeedback"
+    );
+
+  fillFeedback.className = "feedback";
+  fillFeedback.textContent = "";
+
+
+  /* Reset writing */
+
+  clearWriting();
+
+
+  /* Reset score */
+
+  updateScore();
+
+  setActiveStep(1);
+
+
+  /* Return to top */
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================
+   INITIALISE
+========================================= */
+
+updateScore();
+
+updateActiveStep();
+
+updateScrollProgress();
+
+</script>
+
+</body>
+</html>

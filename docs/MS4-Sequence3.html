@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#4d268e">
+
+<title>Sequence 3 | My English Space — MS4</title>
+
+<meta name="description"
+content="Explore community life, citizenship, solidarity and environmental protection through interactive MS4 English lessons.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================
+   MY ENGLISH SPACE — SEQUENCE 03
+   PREMIUM PHOTOGRAPHIC PURPLE EDITION
+========================================== */
+
+:root {
+
+  --purple-dark: #180d32;
+  --purple-deep: #291354;
+  --purple: #5d32a8;
+
+  --violet: #a77cff;
+  --violet-light: #dbc9ff;
+
+  --white: #ffffff;
+  --muted: #e5dcf7;
+
+  --blue: #91c6ff;
+  --pink: #ff9dd1;
+  --green: #80e5bd;
+  --coral: #ffb49d;
+  --gold: #ffe09a;
+
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  margin: 0;
+  min-height: 100vh;
+
+  color: white;
+
+  font-family: 'DM Sans', sans-serif;
+
+  background: #291354;
+
+  overflow-x: hidden;
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.container {
+
+  width: min(1400px, calc(100% - 70px));
+
+  margin: auto;
+
+}
+
+::selection {
+
+  background: var(--violet-light);
+  color: var(--purple-dark);
+
+}
+
+a:focus-visible,
+button:focus-visible {
+
+  outline: 3px solid var(--violet-light);
+  outline-offset: 4px;
+
+}
+
+/* ==========================================
+   FULL SCREEN BACKGROUND
+========================================== */
+
+.backdrop {
+
+  position: fixed;
+  inset: 0;
+
+  z-index: -2;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(27,10,61,.84),
+      rgba(53,24,102,.32) 75%
+    ),
+
+    linear-gradient(
+      0deg,
+      rgba(22,8,48,.84),
+      transparent 85%
+    ),
+
+    url('https://i.imgur.com/2jGdSgR.png')
+    center center / cover no-repeat;
+
+}
+
+/* FALLBACK PURPLE ATMOSPHERE */
+
+.backdrop::after {
+
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background:
+
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(180,129,255,.12),
+      transparent 38%
+    ),
+
+    linear-gradient(
+      180deg,
+      rgba(41,19,84,.05),
+      rgba(24,13,50,.45)
+    );
+
+}
+
+/* ==========================================
+   SCROLL PROGRESS
+========================================== */
+
+.progress {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 4px;
+
+  z-index: 1000;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--violet-light),
+      var(--violet)
+    );
+
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.nav {
+
+  margin: 15px auto 0;
+
+  padding: 13px 20px;
+
+  border: 1px solid rgba(219,201,255,.42);
+
+  border-radius: 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  background: rgba(41,19,84,.55);
+
+  backdrop-filter: blur(19px);
+  -webkit-backdrop-filter: blur(19px);
+
+  box-shadow:
+    0 9px 30px rgba(10,4,25,.5);
+
+}
+
+.brand {
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  font-family: Sora, sans-serif;
+
+  font-size: 15px;
+  font-weight: 800;
+
+}
+
+.brand b {
+  color: var(--violet-light);
+}
+
+.logo {
+
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 9px;
+
+  color: #291354;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eee3ff,
+      #a77cff
+    );
+
+  font-size: 19px;
+
+  position: relative;
+
+}
+
+.logo::after {
+
+  content: '';
+
+  position: absolute;
+
+  right: -3px;
+  top: -3px;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: var(--gold);
+
+}
+
+.nav-links {
+
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+
+}
+
+.nav-links a {
+
+  font-size: 12px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition: color .2s;
+
+}
+
+.nav-links a:hover {
+  color: var(--violet-light);
+}
+
+.back {
+
+  border-radius: 30px;
+
+  padding: 13px 22px;
+
+  background: var(--violet-light);
+
+  color: #291354;
+
+  font-weight: 800;
+  font-size: 12px;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 6px 20px rgba(0,0,0,.2);
+
+  transition: .2s;
+
+}
+
+.back:hover {
+
+  background: white;
+  transform: translateY(-2px);
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+
+  min-height: 400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 34px 12px 38px;
+
+}
+
+.hero-copy {
+  max-width: 680px;
+}
+
+.eyebrow {
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+
+  color: var(--violet-light);
+
+}
+
+.eyebrow::before {
+
+  content: '';
+
+  display: inline-block;
+
+  vertical-align: middle;
+
+  width: 32px;
+  height: 3px;
+
+  background: var(--violet);
+
+  margin-right: 10px;
+
+}
+
+.hero h1 {
+
+  font: 800 clamp(40px,4.2vw,64px)/1.05
+  Sora,sans-serif;
+
+  letter-spacing: -2.8px;
+
+  margin: 14px 0 12px;
+
+  text-shadow:
+    0 3px 16px rgba(24,13,50,.7);
+
+}
+
+.hero h1 em {
+
+  font-style: normal;
+
+  color: var(--violet-light);
+
+}
+
+.hero p {
+
+  font-size: 15px;
+
+  line-height: 1.65;
+
+  max-width: 580px;
+
+  text-shadow:
+    0 2px 9px rgba(24,13,50,.9);
+
+}
+
+/* ==========================================
+   HERO TOPIC PILLS
+========================================== */
+
+.pills {
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin: 18px 0;
+
+}
+
+.pills span {
+
+  border-radius: 25px;
+
+  border: 1px solid rgba(219,201,255,.5);
+
+  background: rgba(41,19,84,.65);
+
+  backdrop-filter: blur(8px);
+
+  padding: 9px 15px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+}
+
+/* ==========================================
+   HERO BUTTON
+========================================== */
+
+.cta {
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 26px;
+
+  background: var(--violet-light);
+
+  color: #291354;
+
+  font-weight: 800;
+
+  border-radius: 28px;
+
+  padding: 12px 13px 12px 28px;
+
+  box-shadow:
+    0 8px 30px rgba(10,4,25,.5);
+
+  transition: .2s;
+
+}
+
+.cta:hover {
+
+  background: white;
+
+  transform: translateY(-2px);
+
+}
+
+.cta i {
+
+  font-style: normal;
+
+  display: grid;
+  place-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: #4d268e;
+
+  color: white;
+
+}
+
+/* ==========================================
+   DECORATIVE HERO TEXT
+========================================== */
+
+.hero-script {
+
+  align-self: flex-end;
+
+  text-align: center;
+
+  margin: 0 15px 25px 0;
+
+  text-shadow:
+    0 4px 16px #180d32;
+
+}
+
+.hero-script strong {
+
+  font: 400 clamp(29px,3vw,48px)/.95
+  'Great Vibes', cursive;
+
+  display: block;
+
+  transform: rotate(-7deg);
+
+}
+
+.hero-script strong::after {
+
+  content: '';
+
+  display: block;
+
+  width: 115px;
+  height: 3px;
+
+  background: var(--violet-light);
+
+  margin: 13px auto 0;
+
+  transform: rotate(-5deg);
+
+}
+
+.hero-script small {
+
+  display: block;
+
+  letter-spacing: 2.5px;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  margin-top: 17px;
+
+}
+
+/* ==========================================
+   GLASS PANELS
+========================================== */
+
+.glass {
+
+  border: 1px solid rgba(219,201,255,.38);
+
+  background:
+    linear-gradient(
+      125deg,
+      rgba(28,12,65,.86),
+      rgba(64,30,119,.72)
+    );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 14px 35px rgba(10,4,25,.5);
+
+  border-radius: 23px;
+
+}
+
+/* ==========================================
+   LEARNING SECTION
+========================================== */
+
+.learning {
+
+  padding: 22px 23px 20px;
+
+  scroll-margin-top: 20px;
+
+}
+
+.learning-header {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin: 0 28px 20px;
+
+}
+
+.learning-header h2 {
+
+  font: 800 clamp(23px,2.4vw,34px)/1.2
+  Sora,sans-serif;
+
+  letter-spacing: -1px;
+
+  margin: 7px 0;
+
+}
+
+.learning-header h2 em,
+.feature h2 em {
+
+  font-style: normal;
+
+  color: var(--violet-light);
+
+}
+
+.learning-header .note {
+
+  max-width: 415px;
+
+  border-left:
+    4px solid var(--violet-light);
+
+  padding-left: 22px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+}
+
+/* ==========================================
+   FIVE LEARNING CARDS
+========================================== */
+
+.cards {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5,minmax(0,1fr));
+
+  gap: 12px;
+
+}
+
+.card {
+
+  --accent: #91c6ff;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 278px;
+
+  padding: 18px;
+
+  border-radius: 19px;
+
+  overflow: hidden;
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--accent),
+      transparent 50%
+    );
+
+  background:
+
+    linear-gradient(
+      180deg,
+      rgba(25,10,57,.18),
+      rgba(19,8,45,.86)
+    ),
+
+    linear-gradient(
+      125deg,
+      color-mix(
+        in srgb,
+        var(--accent),
+        transparent 45%
+      ),
+      transparent
+    ),
+
+    var(--card-bg) center / cover;
+
+  transition:
+    transform .25s,
+    box-shadow .25s;
+
+}
+
+.card:hover {
+
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 12px 30px rgba(10,4,25,.65);
+
+}
+
+.card-top {
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+.icon {
+
+  display: grid;
+  place-items: center;
+
+  width: 51px;
+  height: 51px;
+
+  flex: none;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 5px 14px rgba(10,4,25,.5);
+
+  color: #241044;
+
+  font-size: 25px;
+
+}
+
+.index {
+
+  font: 800 17px Sora,sans-serif;
+
+  color: var(--accent);
+
+}
+
+.category {
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .5px;
+
+}
+
+.card h3 {
+
+  font: 800 20px/1.25 Sora,sans-serif;
+
+  letter-spacing: -.6px;
+
+  margin: 21px 0 7px;
+
+}
+
+.card p {
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  margin: 0 0 14px;
+
+  flex: 1;
+
+}
+
+.card-btn {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  border-radius: 25px;
+
+  background: var(--accent);
+
+  padding: 12px 9px;
+
+  color: #241044;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  text-align: center;
+
+}
+
+/* ==========================================
+   CARD THEMES
+========================================== */
+
+.grammar {
+
+  --accent: #91c6ff;
+
+  --card-bg:
+    url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&q=80');
+
+}
+
+.vocab {
+
+  --accent: #ff9dd1;
+
+  --card-bg:
+    url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=700&q=80');
+
+}
+
+.reading {
+
+  --accent: #80e5bd;
+
+  --card-bg:
+    url('https://images.unsplash.com/photo-1512820790803-83ca734da794?w=700&q=80');
+
+}
+
+.writing {
+
+  --accent: #ffb49d;
+
+  --card-bg:
+    url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=700&q=80');
+
+}
+
+.games {
+
+  --accent: #ffe09a;
+
+  --card-bg:
+    url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=700&q=80');
+
+}
+
+/* ==========================================
+   CITIZENSHIP FEATURE
+========================================== */
+
+.feature {
+
+  margin: 12px 0 30px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto 1.05fr 1.35fr auto;
+
+  gap: 22px;
+
+  align-items: center;
+
+  padding: 21px 24px;
+
+}
+
+.feature-symbol {
+
+  width: 83px;
+  height: 83px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  font-size: 45px;
+
+  background:
+    radial-gradient(
+      circle at 25% 20%,
+      #e9dfff,
+      #7643c7 75%
+    );
+
+  box-shadow:
+    inset -9px -9px 18px #32165e,
+    0 3px 15px rgba(0,0,0,.4);
+
+}
+
+.feature h2 {
+
+  font: 800 clamp(21px,2vw,30px)/1.2
+  Sora,sans-serif;
+
+  letter-spacing: -1px;
+
+  margin: 6px 0;
+
+}
+
+.feature p {
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  border-left:
+    3px solid var(--violet-light);
+
+  padding-left: 18px;
+
+  margin: 0;
+
+}
+
+.feature-tags {
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  justify-content: flex-end;
+
+}
+
+.feature-tags span {
+
+  border: 1px solid rgba(255,255,255,.27);
+
+  background: rgba(255,255,255,.08);
+
+  border-radius: 25px;
+
+  padding: 9px 12px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+
+  padding: 12px 0 25px;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+}
+
+/* ==========================================
+   REVEAL ANIMATION
+========================================== */
+
+.reveal {
+
+  opacity: 0;
+
+  transform: translateY(18px);
+
+  transition:
+    opacity .6s,
+    transform .6s;
+
+}
+
+.reveal.visible {
+
+  opacity: 1;
+
+  transform: none;
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:1100px) {
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .cards {
+
+    grid-template-columns:
+      repeat(3,minmax(0,1fr));
+
+  }
+
+  .feature {
+
+    grid-template-columns:
+      auto 1fr 1fr;
+
+  }
+
+  .feature-tags {
+
+    grid-column: 1 / -1;
+
+    justify-content: center;
+
+  }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:750px) {
+
+  .container {
+
+    width: calc(100% - 28px);
+
+  }
+
+  .nav {
+
+    padding: 10px 12px;
+
+  }
+
+  .nav-links {
+
+    display: none;
+
+  }
+
+  .brand {
+
+    font-size: 12px;
+
+  }
+
+  .back {
+
+    padding: 11px 13px;
+
+    font-size: 11px;
+
+  }
+
+  .hero {
+
+    min-height: 430px;
+
+    padding: 35px 4px;
+
+  }
+
+  .hero h1 {
+
+    font-size: clamp(36px,8vw,56px);
+
+  }
+
+  .hero-script {
+
+    display: none;
+
+  }
+
+  .learning-header {
+
+    display: block;
+
+    margin: 0 4px 20px;
+
+  }
+
+  .learning-header .note {
+
+    margin-top: 15px;
+
+  }
+
+  .cards {
+
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+
+  }
+
+  .learning {
+
+    padding: 18px;
+
+  }
+
+  .feature {
+
+    grid-template-columns:
+      auto 1fr;
+
+    gap: 14px;
+
+  }
+
+  .feature p {
+
+    grid-column: 1 / -1;
+
+  }
+
+  .feature-tags {
+
+    grid-column: 1 / -1;
+
+  }
+
+  .feature-symbol {
+
+    width: 65px;
+    height: 65px;
+
+    font-size: 35px;
+
+  }
+
+}
+
+@media(max-width:490px) {
+
+  .cards {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .card {
+
+    min-height: 240px;
+
+  }
+
+  .hero p {
+
+    font-size: 13px;
+
+  }
+
+  .hero {
+
+    min-height: 440px;
+
+  }
+
+  .brand b {
+
+    display: none;
+
+  }
+
+  .pills span {
+
+    font-size: 10px;
+
+  }
+
+  .learning-header h2 {
+
+    font-size: 25px;
+
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+  *,
+  *::before,
+  *::after {
+
+    scroll-behavior: auto !important;
+    transition: none !important;
+
+  }
+
+  .reveal {
+
+    opacity: 1;
+    transform: none;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ==========================================
+     FULL SCREEN BACKGROUND
+========================================== -->
+
+<div
+  class="backdrop"
+  aria-hidden="true"
+></div>
+
+<!-- ==========================================
+     SCROLL PROGRESS
+========================================== -->
+
+<div
+  class="progress"
+  id="progress"
+></div>
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<header class="container">
+
+  <nav
+    class="nav"
+    aria-label="Main navigation"
+  >
+
+    <a
+      href="MS4.html"
+      class="brand"
+    >
+
+      <span class="logo">
+        ES
+      </span>
+
+      MY ENGLISH
+
+      <b>SPACE</b>
+
+    </a>
+
+    <div class="nav-links">
+
+      <a href="MS4.html">
+        ⌂ &nbsp;Home
+      </a>
+
+      <a href="#learning">
+        ▤ &nbsp;Learning Areas
+      </a>
+
+      <a href="#discovery">
+        ☆ &nbsp;Discover
+      </a>
+
+    </div>
+
+    <a
+      class="back"
+      href="MS4.html"
+    >
+
+      ← &nbsp; Back to MS4
+
+    </a>
+
+  </nav>
+
+</header>
+
+<main class="container">
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section
+  class="hero"
+  aria-labelledby="hero-title"
+>
+
+  <div class="hero-copy">
+
+    <div class="eyebrow">
+
+      MS4 / SEQUENCE 03
+
+    </div>
+
+    <h1 id="hero-title">
+
+      Build Your
+
+      <em>Community.</em>
+
+      <br>
+
+      Be a Better
+
+      <em>Citizen.</em>
+
+    </h1>
+
+    <p>
+
+      Discover your community,
+      understand your rights
+      and responsibilities,
+      help others and protect
+      the environment.
+
+      Learn how small actions
+      can create positive changes
+      and build a better society.
+
+    </p>
+
+    <div class="pills">
+
+      <span>
+        ♡ &nbsp;Citizenship
+      </span>
+
+      <span>
+        🤝 &nbsp;Solidarity
+      </span>
+
+      <span>
+        🌱 &nbsp;Environment
+      </span>
+
+    </div>
+
+    <a
+      class="cta"
+      href="#learning"
+    >
+
+      Explore the Learning Areas
+
+      <i>➜</i>
+
+    </a>
+
+  </div>
+
+  <div class="hero-script">
+
+    <strong>
+
+      Our Community
+
+      <br>
+
+      Our Responsibility
+
+    </strong>
+
+    <small>
+
+      CITIZENSHIP · SOLIDARITY · ENVIRONMENT
+
+    </small>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     LEARNING AREAS
+========================================== -->
+
+<section
+  class="glass learning reveal"
+  id="learning"
+>
+
+  <div class="learning-header">
+
+    <div>
+
+      <div class="eyebrow">
+
+        01 / YOUR LEARNING JOURNEY
+
+      </div>
+
+      <h2>
+
+        Five Ways to
+
+        <em>
+          Make a Difference.
+        </em>
+
+      </h2>
+
+    </div>
+
+    <div class="note">
+
+      Choose a learning area
+      and begin exploring.
+
+      Each destination helps you develop
+      useful English for communicating
+      about real-life situations,
+      community projects
+      and responsible citizenship.
+
+    </div>
+
+  </div>
+
+  <div class="cards">
+
+    <!-- ======================================
+         GRAMMAR
+    ======================================= -->
+
+    <a
+      class="card grammar"
+      href="MS4-S3-Grammar.html"
+    >
+
+      <div class="card-top">
+
+        <span class="icon">
+          ▤
+        </span>
+
+        <div>
+
+          <div class="index">
+            01
+          </div>
+
+          <div class="category">
+            GRAMMAR
+          </div>
+
+        </div>
+
+      </div>
+
+      <h3>
+        Grammar Lab
+      </h3>
+
+      <p>
+
+        Master the imperative,
+        first conditional,
+        gerunds after verbs
+        of preference
+        and discourse markers.
+
+        Learn to express rules,
+        give advice and discuss
+        possible consequences.
+
+      </p>
+
+      <span class="card-btn">
+
+        Explore Grammar &nbsp; →
+
+      </span>
+
+    </a>
+
+    <!-- ======================================
+         VOCABULARY
+    ======================================= -->
+
+    <a
+      class="card vocab"
+      href="MS4-S3-Vocabulary.html"
+    >
+
+      <div class="card-top">
+
+        <span class="icon">
+          ▣
+        </span>
+
+        <div>
+
+          <div class="index">
+            02
+          </div>
+
+          <div class="category">
+            VOCABULARY
+          </div>
+
+        </div>
+
+      </div>
+
+      <h3>
+        Vocabulary Zone
+      </h3>
+
+      <p>
+
+        Discover useful words
+        about citizenship,
+        charity organisations,
+        volunteering,
+        community services,
+        solidarity and
+        environmental protection.
+
+      </p>
+
+      <span class="card-btn">
+
+        Build Your Vocabulary &nbsp; →
+
+      </span>
+
+    </a>
+
+    <!-- ======================================
+         READING
+    ======================================= -->
+
+    <a
+      class="card reading"
+      href="MS4-S3-Reading.html"
+    >
+
+      <div class="card-top">
+
+        <span class="icon">
+          ◫
+        </span>
+
+        <div>
+
+          <div class="index">
+            03
+          </div>
+
+          <div class="category">
+            READING
+          </div>
+
+        </div>
+
+      </div>
+
+      <h3>
+        Reading Corner
+      </h3>
+
+      <p>
+
+        Read engaging texts
+        about good citizens,
+        volunteers,
+        charity organisations,
+        community projects
+        and global citizenship.
+
+      </p>
+
+      <span class="card-btn">
+
+        Discover Reading &nbsp; →
+
+      </span>
+
+    </a>
+
+    <!-- ======================================
+         WRITING
+    ======================================= -->
+
+    <a
+      class="card writing"
+      href="MS4-S3-Writing.html"
+    >
+
+      <div class="card-top">
+
+        <span class="icon">
+          ✎
+        </span>
+
+        <div>
+
+          <div class="index">
+            04
+          </div>
+
+          <div class="category">
+            WRITING
+          </div>
+
+        </div>
+
+      </div>
+
+      <h3>
+        Writing Studio
+      </h3>
+
+      <p>
+
+        Learn to write about
+        responsible citizenship,
+        volunteering,
+        environmental problems,
+        charity work
+        and ways to improve
+        your community.
+
+        Organise your ideas
+        and write meaningful paragraphs.
+
+      </p>
+
+      <span class="card-btn">
+
+        Start Writing &nbsp; →
+
+      </span>
+
+    </a>
+
+    <!-- ======================================
+         GAMES
+    ======================================= -->
+
+    <a
+      class="card games"
+      href="MS4-S3-Games.html"
+    >
+
+      <div class="card-top">
+
+        <span class="icon">
+          ✦
+        </span>
+
+        <div>
+
+          <div class="index">
+            05
+          </div>
+
+          <div class="category">
+            GAMES
+          </div>
+
+        </div>
+
+      </div>
+
+      <h3>
+        Game Arena
+      </h3>
+
+      <p>
+
+        Challenge yourself
+        with interactive grammar missions,
+        citizenship quizzes,
+        vocabulary games
+        and environmental challenges.
+
+        Learn English through
+        exciting activities
+        and meaningful missions.
+
+      </p>
+
+      <span class="card-btn">
+
+        Play &amp; Learn &nbsp; →
+
+      </span>
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     CITIZENSHIP FEATURE
+========================================== -->
+
+<section
+  class="glass feature reveal"
+  id="discovery"
+>
+
+  <div
+    class="feature-symbol"
+    aria-hidden="true"
+  >
+
+    🌍
+
+  </div>
+
+  <div>
+
+    <div class="eyebrow">
+
+      THE HEART OF SEQUENCE THREE
+
+    </div>
+
+    <h2>
+
+      Small Actions.
+
+      <br>
+
+      <em>
+        Big Changes.
+      </em>
+
+    </h2>
+
+  </div>
+
+  <p>
+
+    Being a good citizen starts
+    with simple everyday actions.
+
+    Respect others,
+    protect your environment,
+    support people in need
+    and take part in activities
+    that make your community better.
+
+    Discover how you can become
+    an active, responsible citizen
+    and make a positive difference.
+
+  </p>
+
+  <div class="feature-tags">
+
+    <span>
+      ♡ Good Citizenship
+    </span>
+
+    <span>
+      🤝 Volunteering
+    </span>
+
+    <span>
+      ✦ Charity Work
+    </span>
+
+    <span>
+      🌱 Environment
+    </span>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+  MY ENGLISH SPACE · MS4 · SEQUENCE 03
+
+  —
+
+  MY COMMUNITY &amp; CITIZENSHIP
+
+</footer>
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+/* ==========================================
+   SCROLL PROGRESS
+========================================== */
+
+const progress =
+  document.getElementById("progress");
+
+function onScroll() {
+
+  const max =
+    document.documentElement.scrollHeight -
+    innerHeight;
+
+  progress.style.width =
+    (
+      max > 0
+        ? scrollY / max * 100
+        : 0
+    ) + "%";
+
+}
+
+addEventListener(
+  "scroll",
+  onScroll,
+  { passive: true }
+);
+
+onScroll();
+
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+const items =
+  document.querySelectorAll(".reveal");
+
+const reducedMotion =
+  matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+if (
+  "IntersectionObserver" in window &&
+  !reducedMotion
+) {
+
+  const observer =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: .07
+      }
+
+    );
+
+  items.forEach(el => {
+
+    observer.observe(el);
+
+  });
+
+} else {
+
+  items.forEach(el => {
+
+    el.classList.add("visible");
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>

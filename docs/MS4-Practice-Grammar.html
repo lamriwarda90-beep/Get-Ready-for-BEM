@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#086cb6">
+
+<title>MS4 Grammar Challenge | My English Space</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#087bc6;
+  --deep:#083e7b;
+  --navy:#12375b;
+  --sky:#e9f6ff;
+  --gold:#ffd36d;
+  --green:#16875a;
+  --red:#c83c56;
+  --purple:#7650b8;
+  --ink:#183a59;
+  --muted:#667e92;
+  --white:#fff;
+  --line:#dce9f4;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:"Nunito",Arial,sans-serif;
+  color:var(--ink);
+  background:#e9f4ff;
+  line-height:1.65;
+}
+
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline:3px solid #f0a92e;
+  outline-offset:3px;
+}
+
+h1,h2,h3{
+  font-family:"Baloo 2",Arial,sans-serif;
+  line-height:1.2;
+}
+
+.shell{
+  width:min(1180px,94%);
+  margin:auto;
+}
+
+/* HEADER */
+
+.topbar{
+  background:#073e7b;
+  color:white;
+  padding:15px 0;
+}
+
+.top-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.brand{
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand-icon{
+  display:grid;
+  place-items:center;
+  width:43px;
+  height:43px;
+  border-radius:15px;
+  background:#168bd0;
+  font-size:24px;
+}
+
+.back{
+  border:1px solid #9bd9ff;
+  padding:10px 17px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  color:white;
+  background:
+    radial-gradient(circle at 12% 15%,rgba(255,255,255,.18),transparent 23%),
+    radial-gradient(circle at 88% 20%,rgba(255,218,116,.22),transparent 25%),
+    linear-gradient(135deg,#084b95,#087bc6 55%,#2fc0dc);
+  padding:75px 20px 85px;
+  text-align:center;
+}
+
+.hero:before,
+.hero:after{
+  content:"";
+  position:absolute;
+  border:2px dashed rgba(255,255,255,.22);
+  border-radius:50%;
+  width:350px;
+  height:350px;
+}
+
+.hero:before{top:-180px;left:-150px}
+.hero:after{bottom:-220px;right:-100px}
+
+.hero-inner{position:relative;z-index:1}
+
+.eyebrow{
+  display:inline-block;
+  padding:8px 18px;
+  border-radius:30px;
+  background:white;
+  color:#075b9b;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.hero h1{
+  margin:19px 0 10px;
+  font-size:clamp(45px,8vw,85px);
+  text-shadow:0 5px 0 rgba(0,47,110,.32);
+}
+
+.hero h1 span{color:#ffe19a}
+
+.hero p{
+  max-width:680px;
+  margin:auto;
+  font-size:15px;
+  font-weight:800;
+}
+
+.hero-icons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin:24px 0;
+  font-size:37px;
+}
+
+.hero-icons span{
+  animation:bob 3s ease-in-out infinite;
+}
+
+.hero-icons span:nth-child(2){animation-delay:.5s}
+.hero-icons span:nth-child(3){animation-delay:1s}
+
+@keyframes bob{
+  50%{transform:translateY(-10px)}
+}
+
+.hero-stats{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:26px;
+}
+
+.hero-stat{
+  min-width:125px;
+  padding:12px 20px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.55);
+  background:rgba(0,48,107,.35);
+}
+
+.hero-stat strong{
+  display:block;
+  font-size:27px;
+  color:#ffe19a;
+}
+
+.hero-stat small{
+  font-size:10px;
+  font-weight:900;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+  position:relative;
+  margin-top:-40px;
+  z-index:3;
+  background:white;
+  border-radius:25px;
+  box-shadow:0 15px 45px rgba(13,65,117,.15);
+  padding:25px;
+}
+
+.dashboard-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.dashboard h2{font-size:24px}
+
+.dashboard p{
+  font-size:12px;
+  color:var(--muted);
+  font-weight:800;
+}
+
+.score-pill{
+  background:#fff2ce;
+  color:#73500c;
+  padding:10px 17px;
+  border-radius:30px;
+  font-weight:900;
+}
+
+.progress-track{
+  height:17px;
+  border-radius:20px;
+  background:#e4eef7;
+  margin-top:18px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#23b79a,#31b6e9);
+  border-radius:20px;
+  transition:width .4s;
+}
+
+.progress-caption{
+  margin-top:9px;
+  font-size:12px;
+  font-weight:900;
+  color:#57748c;
+}
+
+/* SEQUENCE NAVIGATION */
+
+.section-intro{
+  text-align:center;
+  padding:50px 0 25px;
+}
+
+.section-intro small{
+  font-weight:900;
+  color:var(--blue);
+  letter-spacing:2px;
+}
+
+.section-intro h2{
+  font-size:clamp(29px,5vw,41px);
+  margin:8px 0;
+}
+
+.section-intro p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:800;
+}
+
+.sequence-tabs{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.sequence-tab{
+  border:3px solid transparent;
+  background:white;
+  border-radius:22px;
+  padding:23px 15px;
+  box-shadow:0 10px 24px rgba(14,76,125,.09);
+  text-align:left;
+  transition:.2s;
+}
+
+.sequence-tab:hover{transform:translateY(-4px)}
+
+.sequence-tab.active{
+  border-color:#0d91ce;
+  background:#f1fbff;
+}
+
+.sequence-tab .icon{
+  font-size:34px;
+  display:block;
+  margin-bottom:8px;
+}
+
+.sequence-tab strong{
+  display:block;
+  font-size:18px;
+  color:var(--deep);
+}
+
+.sequence-tab small{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:800;
+}
+
+.sequence-tab .count{
+  display:inline-block;
+  margin-top:12px;
+  padding:5px 11px;
+  border-radius:20px;
+  background:#e3f2ff;
+  font-size:11px;
+  font-weight:900;
+}
+
+.sequence-tab[data-seq="s2"] .count{
+  background:#f0e6ff;
+}
+
+.sequence-tab[data-seq="s3"] .count{
+  background:#e0f6e9;
+}
+
+/* LEARNING PANEL */
+
+.learning-panel{
+  margin-top:25px;
+  background:white;
+  border-radius:27px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(14,76,125,.1);
+}
+
+.panel-header{
+  padding:30px;
+  color:white;
+  background:linear-gradient(120deg,#075d9e,#29acd3);
+}
+
+.learning-panel.s2 .panel-header{
+  background:linear-gradient(120deg,#613caa,#ae6dd6);
+}
+
+.learning-panel.s3 .panel-header{
+  background:linear-gradient(120deg,#08775e,#27b99c);
+}
+
+.panel-header small{
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.panel-header h2{
+  font-size:clamp(27px,4vw,38px);
+  margin:8px 0;
+}
+
+.panel-header p{
+  max-width:760px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.topic-chips{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:16px;
+}
+
+.topic-chips span{
+  padding:7px 12px;
+  border-radius:30px;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.45);
+  font-size:11px;
+  font-weight:900;
+}
+
+/* TASKS */
+
+.tasks-container{
+  padding:25px;
+}
+
+.task{
+  margin-bottom:20px;
+  padding:25px;
+  background:#fbfdff;
+  border:2px solid var(--line);
+  border-radius:22px;
+}
+
+.task:last-child{margin-bottom:0}
+
+.task-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+
+.task-type{
+  display:inline-flex;
+  gap:7px;
+  align-items:center;
+  padding:7px 12px;
+  border-radius:30px;
+  background:#e5f4ff;
+  color:#086eaa;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+
+.task-number{
+  color:#8295a5;
+  font-size:11px;
+  font-weight:900;
+}
+
+.task h3{
+  font-size:22px;
+  margin-bottom:7px;
+}
+
+.instruction{
+  font-size:13px;
+  font-weight:900;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.arabic-help{
+  margin-top:5px;
+  font-size:12px;
+  color:#697d93;
+  direction:rtl;
+  text-align:left;
+}
+
+.question-list{
+  display:grid;
+  gap:13px;
+  margin-top:18px;
+}
+
+.question{
+  background:white;
+  border:1px solid #e1ebf3;
+  border-radius:15px;
+  padding:15px;
+}
+
+.question-label{
+  display:block;
+  font-size:14px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.question-context{
+  font-size:13px;
+  color:#5f7184;
+  margin-bottom:8px;
+  font-weight:800;
+}
+
+.answer-input,
+.answer-select{
+  width:100%;
+  padding:12px 13px;
+  border:2px solid #d9e7f1;
+  border-radius:11px;
+  background:white;
+  color:#1c3d59;
+  font-size:14px;
+  font-weight:800;
+}
+
+.answer-input:focus,
+.answer-select:focus{
+  border-color:#198fcb;
+  outline:none;
+}
+
+.choices{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+
+.choice{
+  border:2px solid #dce9f3;
+  border-radius:12px;
+  padding:12px;
+  text-align:left;
+  background:white;
+  color:#254d70;
+  font-size:13px;
+  font-weight:900;
+}
+
+.choice:hover{border-color:#56afe2}
+
+.choice.selected{
+  border-color:#168dd2;
+  background:#e4f5ff;
+}
+
+.choice:disabled{cursor:default}
+
+.answer-note{
+  margin-top:9px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.question.correct{
+  border-color:#66c69e;
+  background:#f0fff7;
+}
+
+.question.incorrect{
+  border-color:#efb0bd;
+  background:#fff7f8;
+}
+
+.question.correct .answer-note{color:var(--green)}
+.question.incorrect .answer-note{color:var(--red)}
+
+.task-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.action-btn{
+  border:0;
+  padding:12px 19px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:900;
+  color:white;
+  background:linear-gradient(135deg,#0877c1,#19a5d6);
+}
+
+.action-btn:hover{filter:brightness(.95)}
+
+.action-btn.secondary{
+  color:#27638f;
+  background:#e3f3ff;
+}
+
+.task-result{
+  margin-top:14px;
+  padding:13px;
+  border-radius:13px;
+  background:#eaf7ff;
+  color:#155e8f;
+  font-size:12px;
+  font-weight:900;
+}
+
+.task-result[hidden]{display:none}
+
+/* HELP BOX */
+
+.exam-tip{
+  margin-top:20px;
+  padding:22px;
+  border-radius:18px;
+  background:#fff4d6;
+  border:2px dashed #eac675;
+}
+
+.exam-tip h3{
+  font-size:19px;
+  color:#815914;
+}
+
+.exam-tip p{
+  font-size:13px;
+  color:#765e36;
+  font-weight:800;
+  margin-top:5px;
+}
+
+/* FINAL */
+
+.final-section{
+  margin:35px 0;
+  padding:38px 25px;
+  background:linear-gradient(135deg,#063d79,#0b8cc8);
+  color:white;
+  text-align:center;
+  border-radius:26px;
+}
+
+.final-icon{font-size:58px}
+
+.final-section h2{
+  color:#ffe4a2;
+  font-size:36px;
+  margin:10px 0;
+}
+
+.final-section p{
+  max-width:680px;
+  margin:auto;
+  font-size:14px;
+  font-weight:800;
+}
+
+.final-score{
+  margin:22px auto;
+  padding:15px 25px;
+  display:inline-block;
+  border:2px solid rgba(255,255,255,.5);
+  border-radius:18px;
+  background:rgba(0,0,0,.13);
+}
+
+.final-score strong{
+  display:block;
+  font-size:36px;
+  color:#ffe19a;
+}
+
+.final-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+}
+
+.final-buttons button{
+  padding:13px 21px;
+  border:0;
+  border-radius:30px;
+  background:#ffe0a0;
+  color:#634514;
+  font-weight:900;
+}
+
+.final-buttons .reset-all{
+  background:white;
+  color:#155d90;
+}
+
+/* CERTIFICATE */
+
+.certificate{
+  display:none;
+  margin:30px auto;
+  padding:35px;
+  max-width:750px;
+  text-align:center;
+  background:#fffdf3;
+  border:9px double #d6a951;
+  border-radius:12px;
+}
+
+.certificate h2{
+  font-size:38px;
+  color:#0a5c9d;
+}
+
+.certificate .medal{font-size:65px}
+
+.certificate p{
+  margin:12px 0;
+  font-weight:800;
+}
+
+.certificate .cert-score{
+  font-size:32px;
+  color:#0879bb;
+  font-weight:900;
+}
+
+footer{
+  text-align:center;
+  padding:25px 10px 40px;
+  color:#5d7992;
+  font-size:12px;
+  font-weight:900;
+}
+
+@media(max-width:760px){
+  .sequence-tabs{grid-template-columns:1fr}
+  .sequence-tab{
+    display:grid;
+    grid-template-columns:48px 1fr;
+    gap:2px 12px;
+    align-items:center;
+  }
+  .sequence-tab .icon{
+    grid-row:span 3;
+    margin:0;
+  }
+  .sequence-tab .count{margin-top:3px}
+  .choices{grid-template-columns:1fr}
+  .tasks-container{padding:14px}
+  .task{padding:18px}
+  .panel-header{padding:24px}
+  .hero{padding:55px 15px 70px}
+}
+
+@media(max-width:440px){
+  .top-inner{gap:8px}
+  .brand{font-size:11px}
+  .back{font-size:10px;padding:8px 10px}
+  .hero h1{font-size:48px}
+  .hero-icons{font-size:28px}
+  .dashboard{padding:18px}
+  .task h3{font-size:19px}
+}
+
+@media print{
+  body{background:white}
+  .topbar,.hero,.dashboard,
+  .section-intro,.sequence-tabs,
+  .learning-panel,.final-section,
+  footer{display:none!important}
+  .certificate{
+    display:block!important;
+    margin:35px auto;
+    box-shadow:none;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    animation:none!important;
+    transition:none!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="shell top-inner">
+    <div class="brand">
+      <span class="brand-icon">📚</span>
+      MY ENGLISH SPACE
+    </div>
+
+    <a class="back" href="MS4-Practice.html">
+      ← Practice More
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="shell hero-inner">
+    <span class="eyebrow">
+      🧩 MS4 · PRACTICE MORE · GRAMMAR
+    </span>
+
+    <h1>Grammar <span>Challenge!</span></h1>
+
+    <p>
+      Three sequences. Different grammar tasks.
+      One mission: become a confident English learner!
+    </p>
+
+    <div class="hero-icons">
+      <span>🧠</span>
+      <span>✍️</span>
+      <span>🏆</span>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>03</strong>
+        <small>SEQUENCES</small>
+      </div>
+      <div class="hero-stat">
+        <strong>24</strong>
+        <small>ACTIVITIES</small>
+      </div>
+      <div class="hero-stat">
+        <strong>06</strong>
+        <small>TASK FORMATS</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="shell">
+
+<section class="dashboard" aria-label="Practice progress">
+  <div class="dashboard-top">
+    <div>
+      <h2>🎯 My Grammar Progress</h2>
+      <p>Complete activities and collect points.</p>
+    </div>
+
+    <div class="score-pill" id="scorePill">
+      ⭐ 0 / 0 points
+    </div>
+  </div>
+
+  <div
+    class="progress-track"
+    role="progressbar"
+    aria-label="Activities completed"
+    aria-valuemin="0"
+    aria-valuemax="24"
+    aria-valuenow="0"
+    id="progressTrack"
+  >
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <p class="progress-caption" id="progressCaption">
+    0 of 24 activities completed
+  </p>
+</section>
+
+<section class="section-intro">
+  <small>✦ CHOOSE YOUR SEQUENCE ✦</small>
+  <h2>Explore the Grammar Missions</h2>
+  <p>
+    Start with any sequence. Check your answers and improve.
+  </p>
+</section>
+
+<nav class="sequence-tabs" aria-label="Choose sequence">
+
+  <button
+    type="button"
+    class="sequence-tab active"
+    data-seq="s1"
+    aria-pressed="true"
+  >
+    <span class="icon">🏛️</span>
+    <strong>Sequence 01</strong>
+    <small>Landmarks & Journeys</small>
+    <span class="count">8 activities</span>
+  </button>
+
+  <button
+    type="button"
+    class="sequence-tab"
+    data-seq="s2"
+    aria-pressed="false"
+  >
+    <span class="icon">🕰️</span>
+    <strong>Sequence 02</strong>
+    <small>Memories & Personality</small>
+    <span class="count">8 activities</span>
+  </button>
+
+  <button
+    type="button"
+    class="sequence-tab"
+    data-seq="s3"
+    aria-pressed="false"
+  >
+    <span class="icon">🌍</span>
+    <strong>Sequence 03</strong>
+    <small>Citizenship & Community</small>
+    <span class="count">8 activities</span>
+  </button>
+
+</nav>
+
+<section
+  class="learning-panel s1"
+  id="learningPanel"
+  aria-live="off"
+>
+
+  <div class="panel-header">
+    <small id="sequenceLabel">SEQUENCE 01 · GRAMMAR PRACTICE</small>
+    <h2 id="sequenceTitle">🏛️ Landmarks & Journeys</h2>
+    <p id="sequenceDescription"></p>
+    <div class="topic-chips" id="topicChips"></div>
+  </div>
+
+  <div class="tasks-container" id="tasksContainer"></div>
+
+</section>
+
+<section class="final-section">
+  <div class="final-icon">🏆</div>
+
+  <h2>My Grammar Achievement</h2>
+
+  <p>
+    Great learners practise regularly.
+    Complete the activities, review your mistakes
+    and improve your grammar skills.
+  </p>
+
+  <div class="final-score">
+    <strong id="finalPercentage">0%</strong>
+    <span id="finalSummary">0 of 24 activities completed</span>
+  </div>
+
+  <div class="final-buttons">
+    <button type="button" id="certificateBtn">
+      🎓 My Certificate
+    </button>
+
+    <button type="button" class="reset-all" id="resetAllBtn">
+      🔄 Restart Practice
+    </button>
+  </div>
+</section>
+
+<section class="certificate" id="certificate">
+  <div class="medal">🏆</div>
+  <h2>Certificate of Achievement</h2>
+
+  <p>
+    MY ENGLISH SPACE · MS4
+  </p>
+
+  <p>
+    This certificate celebrates successful participation
+    in the Grammar Challenge.
+  </p>
+
+  <p class="cert-score" id="certificateScore"></p>
+
+  <p id="certificateCompletion"></p>
+
+  <p>
+    Keep learning. Keep improving. Keep shining!
+  </p>
+</section>
+
+</main>
+
+<footer>
+  MY ENGLISH SPACE · MS4 · PRACTICE MORE
+  <br><br>
+  Practise • Improve • Achieve • Succeed
+</footer>
+
+<script>
+"use strict";
+
+/* ============================================
+   TASK DATA
+   Types:
+   mcq, completion, transformation,
+   editing, combining, morphology
+============================================ */
+
+const sequences = {
+
+s1:{
+  label:"SEQUENCE 01 · GRAMMAR PRACTICE",
+  title:"🏛️ Landmarks & Journeys",
+  description:
+    "Travel through famous landmarks while practising past tenses, passive voice, comparison and qualifiers.",
+  topics:[
+    "Past Simple",
+    "Past Passive",
+    "Comparatives",
+    "Qualifiers",
+    "Transformations"
+  ],
+
+  tasks:[
+
+    {
+      id:"s1t1",
+      type:"mcq",
+      icon:"🎯",
+      title:"Choose the Correct Form",
+      instruction:"Choose the correct answer.",
+      arabic:"اختر الإجابة الصحيحة.",
+      items:[
+        {
+          q:"The Eiffel Tower ___ built in 1889.",
+          options:["is","was","were","did"],
+          answer:"was",
+          why:"Use was + past participle for a singular subject in the past passive."
+        },
+        {
+          q:"Last summer, we ___ the Roman ruins in Timgad.",
+          options:["visit","visits","visited","visiting"],
+          answer:"visited",
+          why:"Last summer indicates the past simple tense."
+        },
+        {
+          q:"Big Ben is ___ famous than many other clocks.",
+          options:["most","more","much","many"],
+          answer:"more",
+          why:"Use more + adjective + than for this comparison."
+        }
+      ]
+    },
+
+    {
+      id:"s1t2",
+      type:"completion",
+      icon:"✍️",
+      title:"Complete the Travel Diary",
+      instruction:"Complete the sentences with the correct form of the verbs in brackets.",
+      arabic:"أكمل الجمل بالصيغة الصحيحة للفعل.",
+      items:[
+        {
+          q:"Last year, my family ___ (travel) to Algiers.",
+          answers:["travelled","traveled"],
+          display:"travelled",
+          why:"Use the past simple after Last year."
+        },
+        {
+          q:"We ___ (see) the Martyrs' Memorial.",
+          answers:["saw"],
+          why:"The past simple of see is saw."
+        },
+        {
+          q:"The guide ___ (tell) us interesting facts.",
+          answers:["told"],
+          why:"The past simple of tell is told."
+        }
+      ]
+    },
+
+    {
+      id:"s1t3",
+      type:"transformation",
+      icon:"🔄",
+      title:"Active to Passive",
+      instruction:"Rewrite the sentences in the past passive voice.",
+      arabic:"حوّل الجمل إلى المبني للمجهول في الماضي.",
+      items:[
+        {
+          q:"The Romans built the theatre.",
+          prompt:"The theatre ...",
+          answers:[
+            "The theatre was built by the Romans."
+          ],
+          why:"Object + was/were + past participle + by + agent."
+        },
+        {
+          q:"The workers restored the monument.",
+          prompt:"The monument ...",
+          answers:[
+            "The monument was restored by the workers."
+          ],
+          why:"The singular subject monument takes was restored."
+        },
+        {
+          q:"The artist painted the pictures.",
+          prompt:"The pictures ...",
+          answers:[
+            "The pictures were painted by the artist."
+          ],
+          why:"The plural subject pictures takes were painted."
+        }
+      ]
+    },
+
+    {
+      id:"s1t4",
+      type:"transformation",
+      icon:"🔁",
+      title:"Passive to Active",
+      instruction:"Rewrite the sentences in the active voice.",
+      arabic:"حوّل الجمل إلى المبني للمعلوم.",
+      items:[
+        {
+          q:"The monument was visited by thousands of tourists.",
+          answers:[
+            "Thousands of tourists visited the monument."
+          ],
+          why:"The agent becomes the subject; use the past simple."
+        },
+        {
+          q:"The bridge was designed by a famous architect.",
+          answers:[
+            "A famous architect designed the bridge."
+          ],
+          why:"Use designed in the active past simple."
+        }
+      ]
+    },
+
+    {
+      id:"s1t5",
+      type:"editing",
+      icon:"🔎",
+      title:"Find and Correct the Mistakes",
+      instruction:"Rewrite each sentence correctly.",
+      arabic:"اكتشف الخطأ وصحّح الجملة.",
+      items:[
+        {
+          q:"The Eiffel Tower were built in France.",
+          answers:["The Eiffel Tower was built in France."],
+          why:"Eiffel Tower is singular, so use was."
+        },
+        {
+          q:"We goed to London last year.",
+          answers:["We went to London last year."],
+          why:"The irregular past form of go is went."
+        },
+        {
+          q:"Big Ben is more taller than this tower.",
+          answers:["Big Ben is taller than this tower."],
+          why:"Do not use more with the -er comparative taller."
+        }
+      ]
+    },
+
+    {
+      id:"s1t6",
+      type:"completion",
+      icon:"📏",
+      title:"Comparatives and Qualifiers",
+      instruction:"Complete with the correct word or form.",
+      arabic:"أكمل باستعمال المقارنة أو كلمات التوكيد.",
+      items:[
+        {
+          q:"The Eiffel Tower is ___ (tall) than the Arc de Triomphe.",
+          answers:["taller"],
+          why:"Tall becomes taller in the comparative."
+        },
+        {
+          q:"The museum is ___ interesting. (very / many)",
+          answers:["very"],
+          why:"Very intensifies the adjective interesting."
+        },
+        {
+          q:"This monument is ___ old. (a bit / many)",
+          answers:["a bit"],
+          why:"A bit can modify an adjective."
+        }
+      ]
+    },
+
+    {
+      id:"s1t7",
+      type:"combining",
+      icon:"🔗",
+      title:"Connect the Ideas",
+      instruction:"Combine each pair using the word in brackets.",
+      arabic:"اربط الجمل باستعمال الكلمة المعطاة.",
+      items:[
+        {
+          q:"The museum is old. It is beautiful. (but)",
+          answers:[
+            "The museum is old, but it is beautiful."
+          ],
+          why:"But connects contrasting ideas."
+        },
+        {
+          q:"We visited the tower. We took photos. (and)",
+          answers:[
+            "We visited the tower and took photos.",
+            "We visited the tower, and we took photos."
+          ],
+          why:"And connects related actions."
+        }
+      ]
+    },
+
+    {
+      id:"s1t8",
+      type:"mcq",
+      icon:"🏆",
+      title:"BEM Mini Challenge",
+      instruction:"Choose the best answer to complete the sentence.",
+      arabic:"اختر أفضل إجابة لإكمال الجملة.",
+      items:[
+        {
+          q:"The Great Mosque of Algiers ___ in 2019.",
+          options:[
+            "completed",
+            "was completed",
+            "were completed",
+            "complete"
+          ],
+          answer:"was completed",
+          why:"Use was + past participle for the singular passive subject."
+        },
+        {
+          q:"My grandfather ___ the Casbah when he was young.",
+          options:["visits","visit","visited","visiting"],
+          answer:"visited",
+          why:"The past time reference requires past simple."
+        },
+        {
+          q:"The monument is ___ impressive.",
+          options:["extremely","many","much of","a few"],
+          answer:"extremely",
+          why:"Extremely modifies the adjective impressive."
+        }
+      ]
+    }
+
+  ]
+},
+
+s2:{
+  label:"SEQUENCE 02 · GRAMMAR PRACTICE",
+  title:"🕰️ Memories & Personality",
+  description:
+    "Discover childhood memories, personality traits and dream jobs while practising different grammar structures.",
+  topics:[
+    "Past Tenses",
+    "Comparisons",
+    "Negation Prefixes",
+    "-ful / -less",
+    "Like / Unlike / Whereas"
+  ],
+
+  tasks:[
+
+    {
+      id:"s2t1",
+      type:"mcq",
+      icon:"🎯",
+      title:"A Journey into the Past",
+      instruction:"Choose the correct verb form.",
+      arabic:"اختر الصيغة الصحيحة للفعل.",
+      items:[
+        {
+          q:"When I was seven, I ___ in a small village.",
+          options:["live","lived","living","lives"],
+          answer:"lived",
+          why:"A finished childhood situation takes the past simple."
+        },
+        {
+          q:"While I ___ my homework, my friend called me.",
+          options:["do","did","was doing","am doing"],
+          answer:"was doing",
+          why:"Past continuous describes an action in progress."
+        },
+        {
+          q:"My grandmother ___ wonderful stories when I was little.",
+          options:["told","tell","telling","tells"],
+          answer:"told",
+          why:"Told is the past simple of tell."
+        }
+      ]
+    },
+
+    {
+      id:"s2t2",
+      type:"completion",
+      icon:"✍️",
+      title:"My Childhood Memories",
+      instruction:"Put the verbs in brackets in the correct past form.",
+      arabic:"صرّف الأفعال في الزمن الماضي المناسب.",
+      items:[
+        {
+          q:"I ___ (play) football every afternoon when I was young.",
+          answers:["played"],
+          why:"Use past simple for a finished past habit."
+        },
+        {
+          q:"While my mother was cooking, I ___ (read) a story.",
+          answers:["was reading"],
+          why:"The action was in progress at that moment."
+        },
+        {
+          q:"My best friend ___ (be) very generous.",
+          answers:["was"],
+          why:"The past simple of be with a singular subject is was."
+        }
+      ]
+    },
+
+    {
+      id:"s2t3",
+      type:"morphology",
+      icon:"🧩",
+      title:"Make the Opposite",
+      instruction:"Add the correct negative prefix.",
+      arabic:"أضف السابقة المناسبة لتكوين المعنى المضاد.",
+      items:[
+        {
+          q:"kind → ______",
+          answers:["unkind"],
+          why:"The opposite of kind is unkind."
+        },
+        {
+          q:"polite → ______",
+          answers:["impolite"],
+          why:"Polite takes the prefix im-."
+        },
+        {
+          q:"regular → ______",
+          answers:["irregular"],
+          why:"Regular takes the prefix ir-."
+        },
+        {
+          q:"honest → ______",
+          answers:["dishonest"],
+          why:"Honest takes the prefix dis-."
+        },
+        {
+          q:"legal → ______",
+          answers:["illegal"],
+          why:"Legal takes the prefix il-."
+        },
+        {
+          q:"active → ______",
+          answers:["inactive"],
+          why:"Active takes the prefix in-."
+        }
+      ]
+    },
+
+    {
+      id:"s2t4",
+      type:"morphology",
+      icon:"🌟",
+      title:"Adjectives with -ful and -less",
+      instruction:"Form the correct adjective.",
+      arabic:"كوّن الصفة المناسبة باستعمال ful أو less.",
+      items:[
+        {
+          q:"A person who helps others is ______. (help)",
+          answers:["helpful"],
+          why:"Help + ful = helpful."
+        },
+        {
+          q:"A person without hope feels ______. (hope)",
+          answers:["hopeless"],
+          why:"Hope + less = hopeless."
+        },
+        {
+          q:"My teacher is very ______. (care)",
+          answers:["careful"],
+          why:"Care + ful = careful."
+        },
+        {
+          q:"He acted without care. He was ______. (care)",
+          answers:["careless"],
+          why:"Care + less = careless."
+        }
+      ]
+    },
+
+    {
+      id:"s2t5",
+      type:"combining",
+      icon:"🔗",
+      title:"Like, Unlike and Whereas",
+      instruction:"Combine or rewrite using the word in brackets.",
+      arabic:"اربط أو أعد كتابة الجمل بالكلمة المعطاة.",
+      items:[
+        {
+          q:"Sara is generous. Her sister is generous. (Like)",
+          answers:[
+            "Like her sister, Sara is generous.",
+            "Like Sara, her sister is generous."
+          ],
+          why:"Like introduces a similarity."
+        },
+        {
+          q:"Amine is shy. His brother is sociable. (whereas)",
+          answers:[
+            "Amine is shy, whereas his brother is sociable.",
+            "Amine is shy whereas his brother is sociable."
+          ],
+          why:"Whereas connects two contrasting clauses."
+        },
+        {
+          q:"Nadia is patient. Her friend is impatient. (Unlike)",
+          answers:[
+            "Unlike her friend, Nadia is patient.",
+            "Unlike Nadia, her friend is impatient."
+          ],
+          why:"Unlike introduces a difference."
+        }
+      ]
+    },
+
+    {
+      id:"s2t6",
+      type:"editing",
+      icon:"🔎",
+      title:"Correct the Memory Story",
+      instruction:"Rewrite each sentence correctly.",
+      arabic:"أعد كتابة الجمل بعد تصحيح الأخطاء.",
+      items:[
+        {
+          q:"When I was young, I use to play outside.",
+          answers:[
+            "When I was young, I used to play outside."
+          ],
+          why:"Used to describes a past habit."
+        },
+        {
+          q:"My friend was more kinder than me.",
+          answers:[
+            "My friend was kinder than me.",
+            "My friend was kinder than I was."
+          ],
+          why:"Kinder is already comparative."
+        },
+        {
+          q:"She is a very helpfull person.",
+          answers:[
+            "She is a very helpful person."
+          ],
+          why:"The correct spelling is helpful, with one final l."
+        }
+      ]
+    },
+
+    {
+      id:"s2t7",
+      type:"transformation",
+      icon:"🔄",
+      title:"Rewrite and Transform",
+      instruction:"Rewrite without changing the meaning.",
+      arabic:"أعد كتابة الجملة دون تغيير معناها.",
+      items:[
+        {
+          q:"I played with toys when I was little. (used to)",
+          answers:[
+            "I used to play with toys when I was little."
+          ],
+          why:"Used to + base verb expresses a past habit."
+        },
+        {
+          q:"My sister is more sociable than I am. (less)",
+          answers:[
+            "I am less sociable than my sister."
+          ],
+          why:"Less + adjective expresses a lower degree."
+        }
+      ]
+    },
+
+    {
+      id:"s2t8",
+      type:"mcq",
+      icon:"🏆",
+      title:"BEM Mini Challenge",
+      instruction:"Choose the correct answer.",
+      arabic:"اختر الإجابة الصحيحة.",
+      items:[
+        {
+          q:"A person who never gives up is usually ___.",
+          options:["hopeless","determined","careless","unkind"],
+          answer:"determined",
+          why:"Determined describes someone who continues trying."
+        },
+        {
+          q:"___ her brother, Lina is very shy.",
+          options:["Whereas","Unlike","Because","And"],
+          answer:"Unlike",
+          why:"Unlike can introduce a contrast between people."
+        },
+        {
+          q:"While we ___, the teacher entered.",
+          options:["talk","talked","were talking","talks"],
+          answer:"were talking",
+          why:"Past continuous describes an ongoing action."
+        }
+      ]
+    }
+
+  ]
+},
+
+s3:{
+  label:"SEQUENCE 03 · GRAMMAR PRACTICE",
+  title:"🌍 Citizenship & Community",
+  description:
+    "Become a responsible citizen while practising instructions, conditions, preferences and discourse markers.",
+  topics:[
+    "Imperative",
+    "Conditional Type 1",
+    "Gerunds",
+    "Discourse Markers",
+    "BEM Transformations"
+  ],
+
+  tasks:[
+
+    {
+      id:"s3t1",
+      type:"mcq",
+      icon:"🎯",
+      title:"Good Citizen Rules",
+      instruction:"Choose the correct imperative form.",
+      arabic:"اختر صيغة الأمر الصحيحة.",
+      items:[
+        {
+          q:"___ rubbish in the street!",
+          options:[
+            "Not throw",
+            "Don't throw",
+            "Doesn't throw",
+            "Didn't throw"
+          ],
+          answer:"Don't throw",
+          why:"Use Don't + base verb for a negative imperative."
+        },
+        {
+          q:"___ your neighbours when they need help.",
+          options:["Helping","Helps","Help","To help"],
+          answer:"Help",
+          why:"An affirmative imperative starts with the base verb."
+        },
+        {
+          q:"___ respectful to elderly people.",
+          options:["Be","Being","Are","Is"],
+          answer:"Be",
+          why:"Use Be + adjective in an imperative."
+        }
+      ]
+    },
+
+    {
+      id:"s3t2",
+      type:"completion",
+      icon:"🌱",
+      title:"If We Work Together",
+      instruction:"Complete using the correct verb forms.",
+      arabic:"أكمل باستعمال التصريف الصحيح للشرط من النوع الأول.",
+      items:[
+        {
+          q:"If we plant trees, our town ___ (become) greener.",
+          answers:["will become"],
+          why:"If + present simple, will + base verb."
+        },
+        {
+          q:"If you ___ (study) hard, you will succeed.",
+          answers:["study"],
+          why:"Use present simple after if."
+        },
+        {
+          q:"If everyone helps, we ___ (finish) the work quickly.",
+          answers:["will finish"],
+          why:"Use will + base verb in the result clause."
+        }
+      ]
+    },
+
+    {
+      id:"s3t3",
+      type:"transformation",
+      icon:"🔄",
+      title:"Conditional Transformations",
+      instruction:"Rewrite using if.",
+      arabic:"أعد كتابة الجمل باستعمال if.",
+      items:[
+        {
+          q:"Study hard and you will pass the exam.",
+          answers:[
+            "If you study hard, you will pass the exam."
+          ],
+          why:"Use If + present simple, will + base verb."
+        },
+        {
+          q:"Work together and you will finish earlier.",
+          answers:[
+            "If you work together, you will finish earlier."
+          ],
+          why:"The condition is expressed with present simple."
+        }
+      ]
+    },
+
+    {
+      id:"s3t4",
+      type:"completion",
+      icon:"💚",
+      title:"I Love Helping Others",
+      instruction:"Complete with the -ing form.",
+      arabic:"أكمل بإضافة ing إلى الفعل.",
+      items:[
+        {
+          q:"I enjoy ___ (help) elderly people.",
+          answers:["helping"],
+          why:"Enjoy is followed by a gerund."
+        },
+        {
+          q:"Sara prefers ___ (work) with volunteers.",
+          answers:["working"],
+          why:"Prefer can be followed by an -ing form."
+        },
+        {
+          q:"We love ___ (collect) books for charity.",
+          answers:["collecting"],
+          why:"Love can be followed by an -ing form."
+        },
+        {
+          q:"They dislike ___ (waste) water.",
+          answers:["wasting"],
+          why:"Dislike can be followed by an -ing form."
+        }
+      ]
+    },
+
+    {
+      id:"s3t5",
+      type:"combining",
+      icon:"🔗",
+      title:"Connect Your Ideas",
+      instruction:"Combine using the connector in brackets.",
+      arabic:"اربط الجمل باستعمال أداة الربط المعطاة.",
+      items:[
+        {
+          q:"We collected clothes. We donated food. (Moreover)",
+          answers:[
+            "We collected clothes. Moreover, we donated food.",
+            "We collected clothes; moreover, we donated food."
+          ],
+          why:"Moreover adds another supporting idea."
+        },
+        {
+          q:"The volunteers cleaned the park. They planted trees. (In addition)",
+          answers:[
+            "The volunteers cleaned the park. In addition, they planted trees.",
+            "The volunteers cleaned the park; in addition, they planted trees."
+          ],
+          why:"In addition introduces another related action."
+        },
+        {
+          q:"We worked hard. We finished the project. (As a result)",
+          answers:[
+            "We worked hard. As a result, we finished the project.",
+            "We worked hard; as a result, we finished the project."
+          ],
+          why:"As a result introduces a consequence."
+        }
+      ]
+    },
+
+    {
+      id:"s3t6",
+      type:"editing",
+      icon:"🔎",
+      title:"Correct the Community Message",
+      instruction:"Find the mistake and rewrite correctly.",
+      arabic:"اكتشف الخطأ وأعد كتابة الجملة بشكل صحيح.",
+      items:[
+        {
+          q:"If we will recycle, we will protect nature.",
+          answers:[
+            "If we recycle, we will protect nature."
+          ],
+          why:"Do not use will in the if-clause of a first conditional."
+        },
+        {
+          q:"Don't throwing rubbish in the street.",
+          answers:[
+            "Don't throw rubbish in the street."
+          ],
+          why:"Use Don't + base verb."
+        },
+        {
+          q:"I enjoy to help poor families.",
+          answers:[
+            "I enjoy helping poor families."
+          ],
+          why:"Enjoy is followed by a gerund."
+        }
+      ]
+    },
+
+    {
+      id:"s3t7",
+      type:"transformation",
+      icon:"✍️",
+      title:"Give Advice and Instructions",
+      instruction:"Rewrite as instructed.",
+      arabic:"أعد كتابة الجمل حسب التعليمة.",
+      items:[
+        {
+          q:"You must not waste water. (negative imperative)",
+          answers:[
+            "Don't waste water."
+          ],
+          why:"Use Don't + base verb."
+        },
+        {
+          q:"You should help your neighbours. (imperative)",
+          answers:[
+            "Help your neighbours."
+          ],
+          why:"An affirmative imperative starts with the base verb."
+        },
+        {
+          q:"If you see litter, you should pick it up. (if + imperative)",
+          answers:[
+            "If you see litter, pick it up."
+          ],
+          why:"If + present simple can be followed by an imperative."
+        }
+      ]
+    },
+
+    {
+      id:"s3t8",
+      type:"mcq",
+      icon:"🏆",
+      title:"BEM Mini Challenge",
+      instruction:"Choose the correct answer.",
+      arabic:"اختر الإجابة الصحيحة.",
+      items:[
+        {
+          q:"If everyone volunteers, the community ___ stronger.",
+          options:["become","becomes","will become","became"],
+          answer:"will become",
+          why:"Use will + base verb in the result clause."
+        },
+        {
+          q:"We enjoy ___ charity activities.",
+          options:["organise","organised","organising","organises"],
+          answer:"organising",
+          why:"Enjoy takes an -ing form."
+        },
+        {
+          q:"___, we should identify the problem. Then, we can find solutions.",
+          options:["Finally","First","However","Because"],
+          answer:"First",
+          why:"First introduces the initial step."
+        }
+      ]
+    }
+
+  ]
+}
+
+};
+
+/* ============================================
+   STATE
+============================================ */
+
+const STORAGE_KEY = "ms4GrammarChallenge_v1";
+
+let activeSequence = "s1";
+let results = {};
+
+try{
+  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  if(saved && typeof saved === "object" && !Array.isArray(saved)){
+    results = saved;
+  }
+}catch(error){
+  results = {};
+}
+
+const allTasks = Object.values(sequences)
+  .flatMap(sequence => sequence.tasks);
+
+const totalActivities = allTasks.length;
+
+const totalQuestions = allTasks.reduce(
+  (sum,task) => sum + task.items.length,0
+);
+
+function saveProgress(){
+  try{
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(results));
+  }catch(error){
+    // Practice remains usable if storage is unavailable.
+  }
+}
+
+/* ============================================
+   HELPERS
+============================================ */
+
+function escapeHTML(value){
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#39;");
+}
+
+function normalise(value){
+  return String(value)
+    .trim()
+    .toLowerCase()
+    .replace(/[’‘]/g,"'")
+    .replace(/[.,!?;:]+/g," ")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function getCorrectAnswers(item){
+  if(Array.isArray(item.answers))return item.answers;
+  return [item.answer];
+}
+
+function getDisplayAnswer(item){
+  return item.display || getCorrectAnswers(item)[0];
+}
+
+function getTaskById(taskId){
+  return allTasks.find(task => task.id === taskId);
+}
+
+/* ============================================
+   RENDER SEQUENCE
+============================================ */
+
+function renderSequence(seqId){
+
+  activeSequence = seqId;
+
+  const sequence = sequences[seqId];
+  const panel = document.getElementById("learningPanel");
+
+  panel.className = "learning-panel " + seqId;
+
+  document.getElementById("sequenceLabel").textContent =
+    sequence.label;
+
+  document.getElementById("sequenceTitle").textContent =
+    sequence.title;
+
+  document.getElementById("sequenceDescription").textContent =
+    sequence.description;
+
+  document.getElementById("topicChips").innerHTML =
+    sequence.topics
+      .map(topic => `<span>${escapeHTML(topic)}</span>`)
+      .join("");
+
+  document.querySelectorAll(".sequence-tab")
+    .forEach(tab => {
+      const selected = tab.dataset.seq === seqId;
+      tab.classList.toggle("active",selected);
+      tab.setAttribute("aria-pressed",String(selected));
+    });
+
+  document.getElementById("tasksContainer").innerHTML =
+    sequence.tasks.map((task,index) =>
+      renderTask(task,index)
+    ).join("");
+
+  sequence.tasks.forEach(task => {
+    if(results[task.id]){
+      showSavedResult(task);
+    }
+  });
+
+  updateProgress();
+}
+
+function renderTask(task,index){
+
+  const questionsHTML = task.items.map((item,i) => {
+
+    let answerHTML = "";
+
+    if(task.type === "mcq"){
+
+      answerHTML = `
+        <div class="choices">
+          ${item.options.map(option => `
+            <button
+              type="button"
+              class="choice"
+              data-option="${escapeHTML(option)}"
+              onclick="chooseOption('${task.id}',${i},this)"
+            >
+              ${escapeHTML(option)}
+            </button>
+          `).join("")}
+        </div>
+      `;
+
+    }else{
+
+      answerHTML = `
+        <input
+          class="answer-input"
+          type="text"
+          data-task="${task.id}"
+          data-index="${i}"
+          autocomplete="off"
+          spellcheck="true"
+          placeholder="Write your answer here..."
+          aria-label="Answer to question ${i+1}"
+        >
+      `;
+
+    }
+
+    return `
+      <div class="question" id="${task.id}-q${i}">
+        <label class="question-label">
+          ${i+1}. ${escapeHTML(item.q)}
+        </label>
+
+        ${item.prompt ? `
+          <p class="question-context">
+            Start with: ${escapeHTML(item.prompt)}
+          </p>
+        ` : ""}
+
+        ${answerHTML}
+
+        <p class="answer-note" id="${task.id}-note${i}"></p>
+      </div>
+    `;
+
+  }).join("");
+
+  return `
+    <article class="task" id="${task.id}">
+
+      <div class="task-top">
+        <span class="task-type">
+          ${task.icon} ${escapeHTML(task.type.toUpperCase())}
+        </span>
+
+        <span class="task-number">
+          TASK ${String(index+1).padStart(2,"0")}
+          · ${task.items.length} POINTS
+        </span>
+      </div>
+
+      <h3>${escapeHTML(task.title)}</h3>
+
+      <p class="instruction">
+        ${escapeHTML(task.instruction)}
+      </p>
+
+      <p class="arabic-help" lang="ar">
+        ${escapeHTML(task.arabic)}
+      </p>
+
+      <div class="question-list">
+        ${questionsHTML}
+      </div>
+
+      <div class="task-actions">
+
+        <button
+          type="button"
+          class="action-btn"
+          onclick="checkTask('${task.id}')"
+        >
+          ✓ Check My Answers
+        </button>
+
+        <button
+          type="button"
+          class="action-btn secondary"
+          onclick="retryTask('${task.id}')"
+        >
+          ↻ Try Again
+        </button>
+
+      </div>
+
+      <div
+        class="task-result"
+        id="${task.id}-result"
+        role="status"
+        hidden
+      ></div>
+
+    </article>
+  `;
+}
+
+/* ============================================
+   MULTIPLE CHOICE
+============================================ */
+
+function chooseOption(taskId,index,button){
+
+  const question = document.getElementById(
+    `${taskId}-q${index}`
+  );
+
+  question.querySelectorAll(".choice").forEach(choice => {
+    choice.classList.remove("selected");
+    choice.setAttribute("aria-pressed","false");
+  });
+
+  button.classList.add("selected");
+  button.setAttribute("aria-pressed","true");
+}
+
+/* ============================================
+   CHECK ANSWERS
+============================================ */
+
+function checkTask(taskId){
+
+  const task = getTaskById(taskId);
+  if(!task)return;
+
+  let score = 0;
+  const submittedAnswers = [];
+
+  task.items.forEach((item,index) => {
+
+    const question = document.getElementById(
+      `${taskId}-q${index}`
+    );
+
+    const note = document.getElementById(
+      `${taskId}-note${index}`
+    );
+
+    let userAnswer = "";
+
+    if(task.type === "mcq"){
+
+      const selected = question.querySelector(
+        ".choice.selected"
+      );
+
+      userAnswer = selected
+        ? selected.dataset.option
+        : "";
+
+    }else{
+
+      userAnswer = question.querySelector(
+        ".answer-input"
+      ).value;
+
+    }
+
+    submittedAnswers.push(userAnswer);
+
+    const isCorrect = getCorrectAnswers(item)
+      .some(answer =>
+        normalise(answer) === normalise(userAnswer)
+      );
+
+    question.classList.remove("correct","incorrect");
+
+    if(isCorrect){
+      score++;
+      question.classList.add("correct");
+      note.textContent = "✓ Correct! " + item.why;
+    }else{
+      question.classList.add("incorrect");
+      note.textContent =
+        "✗ Correct answer: " +
+        getDisplayAnswer(item) +
+        " — " +
+        item.why;
+    }
+
+  });
+
+  results[taskId] = {
+    score,
+    max:task.items.length,
+    answers:submittedAnswers
+  };
+
+  saveProgress();
+
+  const resultBox = document.getElementById(
+    `${taskId}-result`
+  );
+
+  resultBox.hidden = false;
+
+  if(score === task.items.length){
+    resultBox.textContent =
+      `🏆 Excellent! ${score}/${task.items.length}. Perfect score!`;
+  }else if(score >= task.items.length/2){
+    resultBox.textContent =
+      `🌟 Good effort! ${score}/${task.items.length}. Review the corrections and try again.`;
+  }else{
+    resultBox.textContent =
+      `💪 You scored ${score}/${task.items.length}. Read the explanations and practise again.`;
+  }
+
+  updateProgress();
+}
+
+/* ============================================
+   RESTORE ANSWERS
+============================================ */
+
+function showSavedResult(task){
+
+  const saved = results[task.id];
+
+  if(!saved || !Array.isArray(saved.answers))return;
+
+  task.items.forEach((item,index) => {
+
+    const question = document.getElementById(
+      `${task.id}-q${index}`
+    );
+
+    const note = document.getElementById(
+      `${task.id}-note${index}`
+    );
+
+    if(!question || !note)return;
+
+    const answer = saved.answers[index] || "";
+
+    if(task.type === "mcq"){
+
+      question.querySelectorAll(".choice").forEach(choice => {
+        const selected = choice.dataset.option === answer;
+        choice.classList.toggle("selected",selected);
+        choice.setAttribute("aria-pressed",String(selected));
+      });
+
+    }else{
+
+      question.querySelector(".answer-input").value =
+        answer;
+
+    }
+
+    const correct = getCorrectAnswers(item).some(
+      expected =>
+        normalise(expected) === normalise(answer)
+    );
+
+    question.classList.add(
+      correct ? "correct" : "incorrect"
+    );
+
+    note.textContent = correct
+      ? "✓ Correct! " + item.why
+      : "✗ Correct answer: " +
+        getDisplayAnswer(item) +
+        " — " + item.why;
+
+  });
+
+  const resultBox = document.getElementById(
+    `${task.id}-result`
+  );
+
+  resultBox.hidden = false;
+  resultBox.textContent =
+    `📌 Previous score: ${saved.score}/${task.items.length}. You can try again to improve.`;
+}
+
+/* ============================================
+   RETRY
+============================================ */
+
+function retryTask(taskId){
+
+  delete results[taskId];
+  saveProgress();
+
+  const task = getTaskById(taskId);
+
+  if(!task)return;
+
+  task.items.forEach((item,index) => {
+
+    const question = document.getElementById(
+      `${taskId}-q${index}`
+    );
+
+    question.classList.remove("correct","incorrect");
+
+    document.getElementById(
+      `${taskId}-note${index}`
+    ).textContent = "";
+
+    if(task.type === "mcq"){
+
+      question.querySelectorAll(".choice").forEach(choice => {
+        choice.classList.remove("selected");
+        choice.setAttribute("aria-pressed","false");
+      });
+
+    }else{
+
+      question.querySelector(".answer-input").value = "";
+
+    }
+
+  });
+
+  document.getElementById(
+    `${taskId}-result`
+  ).hidden = true;
+
+  updateProgress();
+}
+
+/* ============================================
+   GLOBAL PROGRESS
+============================================ */
+
+function updateProgress(){
+
+  let completed = 0;
+  let earnedPoints = 0;
+
+  allTasks.forEach(task => {
+
+    const saved = results[task.id];
+
+    if(saved){
+      completed++;
+      earnedPoints += Math.max(
+        0,
+        Math.min(task.items.length,Number(saved.score)||0)
+      );
+    }
+
+  });
+
+  const completionPercentage =
+    Math.round((completed/totalActivities)*100);
+
+  const accuracyPercentage =
+    Math.round((earnedPoints/totalQuestions)*100);
+
+  document.getElementById("scorePill").textContent =
+    `⭐ ${earnedPoints} / ${totalQuestions} points`;
+
+  document.getElementById("progressFill").style.width =
+    completionPercentage + "%";
+
+  document.getElementById("progressCaption").textContent =
+    `${completed} of ${totalActivities} activities completed`;
+
+  document.getElementById("progressTrack")
+    .setAttribute("aria-valuenow",String(completed));
+
+  document.getElementById("finalPercentage").textContent =
+    accuracyPercentage + "%";
+
+  document.getElementById("finalSummary").textContent =
+    `${completed} of ${totalActivities} activities completed`;
+
+  document.getElementById("certificateScore").textContent =
+    `${earnedPoints} / ${totalQuestions} points`;
+
+  document.getElementById("certificateCompletion").textContent =
+    `${completed} of ${totalActivities} grammar activities completed`;
+
+  document.querySelectorAll(".sequence-tab").forEach(tab => {
+
+    const seq = sequences[tab.dataset.seq];
+
+    const done = seq.tasks.filter(
+      task => Boolean(results[task.id])
+    ).length;
+
+    tab.querySelector(".count").textContent =
+      `${done} / ${seq.tasks.length} completed`;
+
+  });
+
+}
+
+/* ============================================
+   CERTIFICATE
+============================================ */
+
+document.getElementById("certificateBtn")
+  .addEventListener("click",function(){
+
+    const completed = allTasks.filter(
+      task => Boolean(results[task.id])
+    ).length;
+
+    if(completed !== totalActivities){
+
+      alert(
+        "Complete all 24 activities before printing your achievement certificate. You have completed " +
+        completed +
+        " activities."
+      );
+
+      return;
+    }
+
+    const certificate = document.getElementById(
+      "certificate"
+    );
+
+    certificate.style.display = "block";
+
+    certificate.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+
+    setTimeout(() => {
+      window.print();
+    },400);
+
+  });
+
+/* ============================================
+   RESET ALL
+============================================ */
+
+document.getElementById("resetAllBtn")
+  .addEventListener("click",function(){
+
+    const confirmed = confirm(
+      "Restart all grammar practice? Your saved scores will be cleared."
+    );
+
+    if(!confirmed)return;
+
+    results = {};
+    saveProgress();
+
+    document.getElementById("certificate")
+      .style.display = "none";
+
+    renderSequence(activeSequence);
+
+    document.querySelector(".dashboard")
+      .scrollIntoView({behavior:"smooth"});
+
+  });
+
+/* ============================================
+   NAVIGATION
+============================================ */
+
+document.querySelectorAll(".sequence-tab")
+  .forEach(tab => {
+
+    tab.addEventListener("click",function(){
+
+      renderSequence(tab.dataset.seq);
+
+      document.getElementById("learningPanel")
+        .scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        });
+
+    });
+
+  });
+
+/* ============================================
+   START
+============================================ */
+
+renderSequence("s1");
+
+</script>
+
+</body>
+</html>

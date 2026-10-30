@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#864bc0">
+
+<title>MS4 Second Term Tests & Exams | My English Space</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   DESIGN SYSTEM
+========================================= */
+
+:root{
+  --purple:#864bc0;
+  --purple-dark:#552780;
+  --purple-light:#f3eaff;
+  --pink:#ef6fa4;
+  --rose:#fff0f7;
+  --gold:#ffd77f;
+  --green:#21a77a;
+  --red:#e15b65;
+  --navy:#253454;
+  --ink:#34445e;
+  --muted:#718096;
+  --white:#fff;
+  --line:#e6dff0;
+  --shadow:0 16px 40px rgba(69,35,107,.12);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"Nunito",Arial,sans-serif;
+  background:#f8f3ff;
+  color:var(--ink);
+  line-height:1.65;
+}
+
+h1,h2,h3,h4{
+  font-family:"Baloo 2",Arial,sans-serif;
+  line-height:1.2;
+}
+
+button,input,textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(1150px,calc(100% - 30px));
+  margin:auto;
+}
+
+.hidden{
+  display:none!important;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+  background:linear-gradient(120deg,#52247c,#874dc0);
+  color:white;
+  padding:16px 0;
+}
+
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.logo{
+  font-weight:900;
+  font-size:19px;
+}
+
+.back-link{
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:30px;
+  padding:10px 17px;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+  background:
+    radial-gradient(circle at 85% 20%,rgba(255,215,127,.2),transparent 30%),
+    linear-gradient(125deg,#542582,#884bc1,#c16bb4);
+
+  color:white;
+  padding:70px 0 80px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:45px;
+  align-items:center;
+}
+
+.hero-badge{
+  display:inline-block;
+  padding:10px 17px;
+  background:white;
+  color:var(--purple);
+  border-radius:30px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.hero h1{
+  margin:23px 0 15px;
+  font-size:clamp(43px,6vw,72px);
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+}
+
+.hero p{
+  max-width:560px;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.95;
+  color:#f8efff;
+}
+
+.hero-tags{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:24px;
+}
+
+.hero-tags span{
+  padding:9px 13px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:25px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.hero-image{
+  position:relative;
+}
+
+.hero-image img{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  border:7px solid white;
+  border-radius:28px;
+  box-shadow:0 25px 50px rgba(38,13,72,.35);
+}
+
+.hero-sticker{
+  position:absolute;
+  bottom:-15px;
+  right:-10px;
+  background:var(--gold);
+  color:#67441d;
+  border:4px solid white;
+  border-radius:18px;
+  padding:13px 18px;
+  font-weight:900;
+  font-size:14px;
+}
+
+/* =========================================
+   INSTRUCTIONS
+========================================= */
+
+.instructions{
+  position:relative;
+  margin-top:-32px;
+  padding:27px;
+  background:white;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+}
+
+.instructions h2{
+  font-size:27px;
+  color:var(--purple-dark);
+  margin-bottom:12px;
+}
+
+.instructions-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+}
+
+.instruction{
+  background:#f7f0ff;
+  border-radius:15px;
+  padding:15px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.instruction strong{
+  display:block;
+  color:var(--purple);
+  margin-bottom:5px;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.section-heading{
+  text-align:center;
+  margin:65px 0 30px;
+}
+
+.section-heading small{
+  color:var(--purple);
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.section-heading h2{
+  font-size:clamp(32px,4vw,43px);
+  color:var(--purple-dark);
+  margin:10px 0;
+}
+
+.section-heading p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:800;
+}
+
+/* =========================================
+   EXAM SELECTION
+========================================= */
+
+.exam-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:15px;
+}
+
+.exam-card{
+  position:relative;
+  overflow:hidden;
+  background:white;
+  border:2px solid #eadcf7;
+  border-radius:22px;
+  padding:22px 15px;
+  text-align:center;
+  box-shadow:var(--shadow);
+  transition:.25s;
+}
+
+.exam-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--purple);
+}
+
+.exam-card.active{
+  background:linear-gradient(150deg,#783bb4,#aa65d1);
+  color:white;
+  border-color:#783bb4;
+}
+
+.exam-icon{
+  display:grid;
+  place-items:center;
+  width:60px;
+  height:60px;
+  margin:0 auto 13px;
+  background:#f3eaff;
+  border-radius:19px;
+  font-size:29px;
+}
+
+.exam-card.active .exam-icon{
+  background:rgba(255,255,255,.2);
+}
+
+.exam-card h3{
+  font-size:20px;
+  margin-bottom:7px;
+}
+
+.exam-card p{
+  font-size:11px;
+  font-weight:800;
+  min-height:50px;
+}
+
+.exam-card small{
+  display:block;
+  margin-top:12px;
+  font-weight:900;
+  font-size:10px;
+  color:var(--purple);
+}
+
+.exam-card.active small{
+  color:var(--gold);
+}
+
+/* =========================================
+   EXAM PAPER
+========================================= */
+
+.exam-paper{
+  margin:38px 0 60px;
+  background:white;
+  border-radius:25px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.paper-header{
+  padding:28px 30px;
+  background:linear-gradient(120deg,#663298,#9654c7);
+  color:white;
+}
+
+.paper-header-top{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  font-size:12px;
+  font-weight:900;
+}
+
+.paper-header h2{
+  margin:16px 0 8px;
+  font-size:35px;
+}
+
+.paper-header p{
+  font-size:12px;
+  font-weight:800;
+  color:#f4e7ff;
+}
+
+.paper-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+
+.paper-stats span{
+  background:rgba(255,255,255,.15);
+  padding:9px 13px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.paper-body{
+  padding:32px;
+}
+
+.part-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  padding:15px 20px;
+  background:#f2e8ff;
+  border-left:5px solid var(--purple);
+  border-radius:12px;
+  margin:25px 0 20px;
+}
+
+.part-heading h3{
+  font-size:23px;
+  color:var(--purple-dark);
+}
+
+.part-heading span{
+  font-size:12px;
+  font-weight:900;
+  color:var(--purple);
+}
+
+.sub-heading{
+  font-size:20px;
+  color:var(--purple-dark);
+  margin:25px 0 13px;
+}
+
+.reading-text{
+  padding:28px;
+  border:1px solid #e5d8f3;
+  border-radius:19px;
+  background:linear-gradient(145deg,#fff,#faf5ff);
+}
+
+.reading-text h3{
+  text-align:center;
+  color:var(--purple-dark);
+  font-size:26px;
+  margin-bottom:18px;
+}
+
+.reading-text p{
+  font-size:14px;
+  line-height:2.1;
+  margin-bottom:13px;
+  text-align:justify;
+}
+
+.activity{
+  margin:25px 0;
+  padding:23px;
+  border:1px solid #eee5f6;
+  border-radius:18px;
+  background:#fff;
+}
+
+.activity-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:15px;
+}
+
+.activity-title h4{
+  color:var(--navy);
+  font-size:19px;
+}
+
+.points{
+  background:#f3eaff;
+  color:var(--purple);
+  border-radius:25px;
+  padding:6px 11px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.question{
+  padding:14px 0;
+  border-bottom:1px dashed #e8dfef;
+}
+
+.question:last-child{
+  border-bottom:0;
+}
+
+.question-label{
+  display:block;
+  margin-bottom:11px;
+  font-size:13px;
+  font-weight:850;
+}
+
+.options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.option{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:10px 13px;
+  background:#f7f2fc;
+  border:1px solid #eadcf6;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.option:has(input:checked){
+  background:#e7d5fa;
+  border-color:var(--purple);
+}
+
+.option input{
+  accent-color:var(--purple);
+}
+
+.answer-input{
+  width:100%;
+  padding:13px 15px;
+  border:2px solid #e8dff2;
+  border-radius:12px;
+  background:#fff;
+  outline:none;
+  color:var(--ink);
+  font-size:13px;
+}
+
+.answer-input:focus{
+  border-color:var(--purple);
+}
+
+textarea.answer-input{
+  min-height:210px;
+  resize:vertical;
+  line-height:1.9;
+}
+
+.answer-feedback{
+  display:none;
+  margin-top:10px;
+  padding:11px 13px;
+  border-radius:11px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.answer-feedback.correct{
+  display:block;
+  background:#e7f9f0;
+  color:#117e58;
+}
+
+.answer-feedback.incorrect{
+  display:block;
+  background:#fff0f0;
+  color:#b63b47;
+}
+
+.fact-file{
+  background:#fff9e9;
+  border:1px solid #f3dfaa;
+  border-radius:16px;
+  padding:20px;
+  margin:18px 0;
+}
+
+.fact-file h4{
+  font-size:19px;
+  color:#8e6423;
+  margin-bottom:10px;
+}
+
+.fact-file p{
+  font-size:13px;
+  line-height:1.9;
+}
+
+.writing-hints{
+  margin:16px 0;
+  padding:17px;
+  background:#f4edff;
+  border-radius:14px;
+  font-size:12px;
+  line-height:1.9;
+}
+
+.word-count{
+  margin:8px 0;
+  text-align:right;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:900;
+}
+
+.exam-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+  padding:26px 0 10px;
+}
+
+.btn{
+  border:0;
+  border-radius:30px;
+  padding:15px 23px;
+  font-size:13px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:linear-gradient(120deg,#8243bd,#a660d3);
+  color:white;
+}
+
+.btn-secondary{
+  background:#f0e7fa;
+  color:var(--purple-dark);
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#6d4a1d;
+}
+
+/* =========================================
+   RESULTS
+========================================= */
+
+.result-panel{
+  margin:30px 0;
+  padding:30px;
+  background:linear-gradient(130deg,#f4e9ff,#fff8fd);
+  border:2px solid #d9b9f4;
+  border-radius:23px;
+  text-align:center;
+}
+
+.result-panel h2{
+  color:var(--purple-dark);
+  font-size:32px;
+}
+
+.result-score{
+  font-family:"Baloo 2",sans-serif;
+  font-size:55px;
+  font-weight:800;
+  color:var(--purple);
+}
+
+.result-panel p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:800;
+}
+
+.score-note{
+  margin-top:12px;
+  font-size:12px;
+  color:#775c8e;
+}
+
+.model-answer{
+  margin-top:25px;
+  padding:22px;
+  background:#fff;
+  border:1px solid #e2d1f1;
+  border-radius:16px;
+  text-align:left;
+}
+
+.model-answer h3{
+  color:var(--purple-dark);
+  margin-bottom:10px;
+}
+
+.model-answer p{
+  font-size:13px;
+  line-height:2;
+  white-space:pre-line;
+}
+
+.model-answer ul{
+  padding-left:20px;
+  margin-top:12px;
+  font-size:12px;
+  line-height:1.9;
+}
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-section{
+  margin-bottom:70px;
+  padding:28px;
+  background:white;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+}
+
+.progress-section h2{
+  color:var(--purple-dark);
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.progress-section p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:800;
+}
+
+.progress-track{
+  height:14px;
+  margin:20px 0;
+  background:#eee4f7;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,#a764da,#22b98c);
+  transition:width .4s;
+}
+
+.progress-label{
+  font-size:12px;
+  font-weight:900;
+  color:var(--purple);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+  background:#46206d;
+  color:white;
+  text-align:center;
+  padding:32px 15px;
+  font-size:12px;
+  font-weight:800;
+}
+
+footer strong{
+  color:var(--gold);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:1000px){
+
+  .exam-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .hero-grid{
+    gap:25px;
+  }
+
+}
+
+@media(max-width:760px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    text-align:center;
+  }
+
+  .hero p{
+    margin:auto;
+  }
+
+  .hero-tags{
+    justify-content:center;
+  }
+
+  .hero-image{
+    width:min(500px,100%);
+    margin:auto;
+  }
+
+  .hero-image img{
+    height:280px;
+  }
+
+  .instructions-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .exam-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:520px){
+
+  .hero{
+    padding:45px 0 65px;
+  }
+
+  .hero h1{
+    font-size:45px;
+  }
+
+  .instructions{
+    padding:20px;
+  }
+
+  .instructions-grid{
+    grid-template-columns:1fr;
+  }
+
+  .exam-grid{
+    gap:10px;
+  }
+
+  .exam-card{
+    padding:17px 10px;
+  }
+
+  .exam-card h3{
+    font-size:17px;
+  }
+
+  .paper-header{
+    padding:22px;
+  }
+
+  .paper-header h2{
+    font-size:27px;
+  }
+
+  .paper-body{
+    padding:16px;
+  }
+
+  .reading-text{
+    padding:17px;
+  }
+
+  .activity{
+    padding:16px;
+  }
+
+  .option{
+    width:100%;
+  }
+
+  .result-panel{
+    padding:20px;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header>
+  <div class="container header-inner">
+
+    <a href="index.html" class="logo">
+      📚 My English Space
+    </a>
+
+    <a href="MS4-Tests and exams.html" class="back-link">
+      ← Tests & Exams Homepage
+    </a>
+
+  </div>
+</header>
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <span class="hero-badge">
+        💜 MS4 · SEQUENCE 2 · SECOND TERM
+      </span>
+
+      <h1>
+        Second Term
+        <span>Exam Challenge!</span>
+      </h1>
+
+      <p>
+
+        Welcome to your Second Term Examination Centre!
+
+        Complete five BEM-style English examinations
+        about childhood memories, friendship,
+        personality, dreams and life experiences.
+
+        Read carefully, answer independently
+        and discover how much you have learned!
+
+      </p>
+
+      <div class="hero-tags">
+
+        <span>📖 Reading</span>
+        <span>🧩 Language</span>
+        <span>✍️ Writing</span>
+        <span>🏆 5 Exams</span>
+
+      </div>
+
+    </div>
+
+    <div class="hero-image">
+
+      <img
+        src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1100&q=85"
+        alt="Notebook for writing memories and personal stories"
+      >
+
+      <div class="hero-sticker">
+        ⭐ 5 Exam Challenges
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<main class="container">
+
+<!-- =========================================
+     INSTRUCTIONS
+========================================= -->
+
+<section class="instructions">
+
+  <h2>🎯 How to Complete Your Exams</h2>
+
+  <div class="instructions-grid">
+
+    <div class="instruction">
+      <strong>1. Choose an Exam</strong>
+      Select one of the five challenges.
+    </div>
+
+    <div class="instruction">
+      <strong>2. Read Carefully</strong>
+      Understand the passage and instructions.
+    </div>
+
+    <div class="instruction">
+      <strong>3. Answer Independently</strong>
+      Complete reading, language and writing.
+    </div>
+
+    <div class="instruction">
+      <strong>4. Submit & Learn</strong>
+      Check corrections and improve your work.
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     EXAM SELECTOR
+========================================= -->
+
+<section id="choose">
+
+  <div class="section-heading">
+
+    <small>✦ CHOOSE YOUR CHALLENGE ✦</small>
+
+    <h2>Five Exams — Five Adventures!</h2>
+
+    <p>
+      Select an examination to begin your practice.
+    </p>
+
+  </div>
+
+  <div class="exam-grid" id="examGrid">
+
+    <!-- Generated by JavaScript -->
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     EXAM CONTENT
+========================================= -->
+
+<section class="exam-paper" id="examPaper">
+
+  <div class="paper-header">
+
+    <div class="paper-header-top">
+
+      <span>🇩🇿 MS4 ENGLISH EXAMINATION</span>
+
+      <span>SECOND TERM · SEQUENCE 2</span>
+
+    </div>
+
+    <h2 id="paperTitle">
+      Examination One
+    </h2>
+
+    <p id="paperSubtitle"></p>
+
+    <div class="paper-stats">
+
+      <span>📖 Reading: 7 pts</span>
+
+      <span>🧩 Language: 7 pts</span>
+
+      <span>✍️ Writing: 6 pts</span>
+
+      <span>🏆 Total: 20 pts</span>
+
+    </div>
+
+  </div>
+
+  <div class="paper-body" id="paperBody">
+
+    <!-- Generated by JavaScript -->
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     PROGRESS
+========================================= -->
+
+<section class="progress-section">
+
+  <h2>🏆 My Second Term Progress</h2>
+
+  <p>
+    Your completed examinations are saved on this device.
+  </p>
+
+  <div class="progress-track">
+
+    <div class="progress-fill" id="progressFill"></div>
+
+  </div>
+
+  <div class="progress-label" id="progressLabel">
+    0 / 5 Exams Completed
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <strong>MY ENGLISH SPACE</strong>
+
+  <br><br>
+
+  MS4 · Second Term Tests & Exams
+
+  <br>
+
+  © <span id="year"></span> My English Space
+
+</footer>
+
+<script>
+
+/* =========================================
+   EXAMINATION DATA
+
+   Each exam includes:
+   - Reading text
+   - 3 T/F/NM questions
+   - 2 comprehension questions
+   - 2 vocabulary questions
+   - 7 language questions
+   - Guided written expression
+
+   Objective questions = 14 points.
+   Writing = 6 points, reviewed by learner.
+========================================= */
+
+const exams = [
+
+/* =========================================
+   EXAM 1
+========================================= */
+
+{
+  title:"My Childhood Memories",
+  icon:"🧸",
+  subtitle:"Exam 01 · Childhood and Family Memories",
+
+  passageTitle:"A Wonderful Childhood",
+
+  passage:[
+    "My name is Amine. I am sixteen years old and I live in Constantine. When I was a little boy, I lived with my grandparents in a small village near the city. My grandfather was a kind and generous man. He always helped our neighbours and told us interesting stories about his childhood.",
+
+    "Every summer, my cousins and I visited our grandparents. We played traditional games in the garden, collected flowers and listened to our grandmother's stories. We did not spend much time watching television because we preferred playing outdoors.",
+
+    "My best childhood memory was my tenth birthday. My family organised a wonderful surprise party for me. My grandmother prepared a delicious cake, and my grandfather gave me a beautiful storybook. I felt extremely happy that day.",
+
+    "Today, I still remember those wonderful moments. They taught me the importance of family, kindness and sharing."
+  ],
+
+  tf:[
+    {
+      q:"Amine spent his childhood with his grandparents.",
+      a:"True"
+    },
+    {
+      q:"Amine preferred watching television to playing outdoors.",
+      a:"False"
+    },
+    {
+      q:"Amine's grandfather was a schoolteacher.",
+      a:"Not Mentioned"
+    }
+  ],
+
+  comprehension:[
+    {
+      q:"Where did Amine live when he was a little boy?",
+      answers:[
+        "in a small village near constantine",
+        "in a small village near the city",
+        "with his grandparents in a small village"
+      ],
+      display:"He lived with his grandparents in a small village near Constantine."
+    },
+    {
+      q:"What did his grandfather give him for his birthday?",
+      answers:[
+        "a storybook",
+        "a beautiful storybook",
+        "he gave him a beautiful storybook"
+      ],
+      display:"He gave him a beautiful storybook."
+    }
+  ],
+
+  vocabulary:[
+    {
+      q:"Find in the text a word meaning 'nice and caring'.",
+      a:["kind"],
+      display:"kind"
+    },
+    {
+      q:"Find in the text the opposite of 'sad'.",
+      a:["happy"],
+      display:"happy"
+    }
+  ],
+
+  language:[
+    {
+      q:"Correct the mistake: 'Amine use to live with his grandparents.'",
+      a:["amine used to live with his grandparents"],
+      display:"Amine used to live with his grandparents."
+    },
+    {
+      q:"Put the verb in the past simple: 'He (visit) his grandparents.'",
+      a:["visited"],
+      display:"visited"
+    },
+    {
+      q:"Complete: 'When I was young, I _____ play in the garden.'",
+      a:["used to"],
+      display:"used to"
+    },
+    {
+      q:"Write the opposite using a prefix: 'kind'.",
+      a:["unkind"],
+      display:"unkind"
+    },
+    {
+      q:"Form an adjective using -ful: 'care'.",
+      a:["careful"],
+      display:"careful"
+    },
+    {
+      q:"Complete with the correct comparative: 'My grandfather is (old) _____ than my father.'",
+      a:["older"],
+      display:"older"
+    },
+    {
+      q:"Choose the correct linker: 'I loved my childhood _____ I spent time with my family.'",
+      a:["because"],
+      display:"because"
+    }
+  ],
+
+  writingTitle:"My Favourite Childhood Memory",
+
+  writingTask:
+    "Write a short paragraph of 8–10 sentences about your favourite childhood memory. Mention your age, the place, the people, the activities and your feelings.",
+
+  factFile:
+    "You may write about: a birthday, a family celebration, a school trip, a holiday or a special day.",
+
+  model:
+    "When I was a little child, I lived in Sétif with my family. I was very cheerful and active. I used to play with my friends every afternoon. My favourite childhood memory was my eighth birthday. My parents organised a small party at home. My mother prepared a delicious cake. My cousins came to celebrate with me. We played games and took many pictures. I felt extremely happy. I will never forget that wonderful day."
+},
+
+/* =========================================
+   EXAM 2
+========================================= */
+
+{
+  title:"My Best Friend",
+  icon:"🤝",
+  subtitle:"Exam 02 · Friendship and Personality Traits",
+
+  passageTitle:"A Friend to Remember",
+
+  passage:[
+    "Lina and Sara have been best friends since primary school. They first met when they were seven years old. Lina was a shy and quiet girl, while Sara was cheerful, confident and talkative.",
+
+    "Although their personalities were different, the two girls enjoyed spending time together. Sara helped Lina become more confident, and Lina taught Sara to be more patient. They used to study together, share books and play in the school playground.",
+
+    "One day, Lina forgot her school project at home. She was very worried because the teacher wanted to collect the projects that morning. Sara immediately offered to help her explain the situation to their teacher. The teacher understood and gave Lina another chance.",
+
+    "Today, Lina believes that a true friend is someone who is honest, supportive and helpful. She feels lucky to have Sara in her life."
+  ],
+
+  tf:[
+    {
+      q:"Lina and Sara met in primary school.",
+      a:"True"
+    },
+    {
+      q:"Lina was more talkative than Sara.",
+      a:"False"
+    },
+    {
+      q:"Sara has two younger brothers.",
+      a:"Not Mentioned"
+    }
+  ],
+
+  comprehension:[
+    {
+      q:"How old were the girls when they first met?",
+      answers:[
+        "seven",
+        "seven years old",
+        "7",
+        "7 years old"
+      ],
+      display:"They were seven years old."
+    },
+    {
+      q:"What did Sara help Lina become?",
+      answers:[
+        "more confident",
+        "confident"
+      ],
+      display:"She helped Lina become more confident."
+    }
+  ],
+
+  vocabulary:[
+    {
+      q:"Find in the text a word meaning 'truthful'.",
+      a:["honest"],
+      display:"honest"
+    },
+    {
+      q:"Find in the text the opposite of 'noisy'.",
+      a:["quiet"],
+      display:"quiet"
+    }
+  ],
+
+  language:[
+    {
+      q:"Correct the mistake: 'Sara is more kinder than Lina.'",
+      a:["sara is kinder than lina"],
+      display:"Sara is kinder than Lina."
+    },
+    {
+      q:"Complete: 'Lina is _____ (shy) than Sara.'",
+      a:["shyer","shier"],
+      display:"shyer / shier"
+    },
+    {
+      q:"Write the negative adjective using a prefix: 'honest'.",
+      a:["dishonest"],
+      display:"dishonest"
+    },
+    {
+      q:"Form an adjective using -ful: 'help'.",
+      a:["helpful"],
+      display:"helpful"
+    },
+    {
+      q:"Form an adjective using -less: 'care'.",
+      a:["careless"],
+      display:"careless"
+    },
+    {
+      q:"Complete: 'Lina is quiet, _____ Sara is talkative.'",
+      a:["whereas","while"],
+      display:"whereas / while"
+    },
+    {
+      q:"Put the verb in the past: 'They (meet) at school.'",
+      a:["met"],
+      display:"met"
+    }
+  ],
+
+  writingTitle:"Describe Your Best Friend",
+
+  writingTask:
+    "Write 8–10 sentences describing your best friend. Include physical appearance, personality, hobbies and the reasons why you like this friend.",
+
+  factFile:
+    "Name: Yasmine | Age: 15 | Appearance: tall, brown eyes, curly hair | Personality: honest, generous, helpful, cheerful | Hobbies: reading, drawing, helping others",
+
+  model:
+    "My best friend is Yasmine. She is fifteen years old. She is tall and has beautiful brown eyes and curly hair. She is a very cheerful and friendly girl. She is also honest and generous. Yasmine enjoys reading books and drawing pictures. She always helps her classmates when they have problems. Unlike some people, she is never selfish. We often study and spend time together. I am lucky to have such a wonderful friend."
+},
+
+/* =========================================
+   EXAM 3
+========================================= */
+
+{
+  title:"My Dream Job",
+  icon:"🚀",
+  subtitle:"Exam 03 · Ambitions and Future Dreams",
+
+  passageTitle:"A Dream for the Future",
+
+  passage:[
+    "Nour is a hardworking fifteen-year-old pupil from Oran. Since her childhood, she has dreamed of becoming a doctor. She is particularly interested in science because she wants to understand how the human body works.",
+
+    "When she was younger, Nour used to play hospital games with her friends. She pretended to be a doctor and helped her dolls get better. Her parents always encouraged her to follow her dreams.",
+
+    "Today, Nour studies hard and tries to improve her English and scientific knowledge. She is organised, patient and responsible. She believes that a good doctor must be caring and helpful, not careless or selfish.",
+
+    "In the future, Nour hopes to work in a hospital and help sick children. She knows that becoming a doctor is difficult, but she is determined to achieve her goal."
+  ],
+
+  tf:[
+    {
+      q:"Nour wants to become a doctor.",
+      a:"True"
+    },
+    {
+      q:"Nour dislikes science.",
+      a:"False"
+    },
+    {
+      q:"Nour's mother works in a hospital.",
+      a:"Not Mentioned"
+    }
+  ],
+
+  comprehension:[
+    {
+      q:"Where is Nour from?",
+      answers:["oran","she is from oran"],
+      display:"She is from Oran."
+    },
+    {
+      q:"Why does Nour study hard?",
+      answers:[
+        "to achieve her goal",
+        "to become a doctor",
+        "because she wants to become a doctor"
+      ],
+      display:"Because she wants to become a doctor and achieve her goal."
+    }
+  ],
+
+  vocabulary:[
+    {
+      q:"Find in the text a word meaning 'goal or ambition'.",
+      a:["dream","dreams"],
+      display:"dream / dreams"
+    },
+    {
+      q:"Find in the text the opposite of 'easy'.",
+      a:["difficult"],
+      display:"difficult"
+    }
+  ],
+
+  language:[
+    {
+      q:"Correct the mistake: 'Nour want to becomes a doctor.'",
+      a:["nour wants to become a doctor"],
+      display:"Nour wants to become a doctor."
+    },
+    {
+      q:"Complete: 'When she was young, Nour _____ play hospital games.'",
+      a:["used to"],
+      display:"used to"
+    },
+    {
+      q:"Write the negative adjective using a prefix: 'responsible'.",
+      a:["irresponsible"],
+      display:"irresponsible"
+    },
+    {
+      q:"Form an adjective using -ful: 'care'.",
+      a:["careful"],
+      display:"careful"
+    },
+    {
+      q:"Form an adjective using -less: 'hope'.",
+      a:["hopeless"],
+      display:"hopeless"
+    },
+    {
+      q:"Complete: 'Nour is _____ (hardworking) than her brother.'",
+      a:["more hardworking"],
+      display:"more hardworking"
+    },
+    {
+      q:"Put the verb in the correct form: 'She enjoys (read) _____ science books.'",
+      a:["reading"],
+      display:"reading"
+    }
+  ],
+
+  writingTitle:"My Future Dream Job",
+
+  writingTask:
+    "Write a paragraph of 8–10 sentences about your dream job. Explain what you want to become, why you like this job, the qualities you need and what you will do to achieve your dream.",
+
+  factFile:
+    "You may choose: teacher, doctor, engineer, pilot, architect, scientist, journalist or another profession.",
+
+  model:
+    "My dream is to become an English teacher. I have loved English since primary school. I enjoy learning new words and reading interesting stories. I think teaching is a wonderful profession. A good teacher should be patient, helpful and understanding. Teachers must also be responsible and hardworking. I want to help children learn and become confident. To achieve my dream, I will study hard and improve my English. I hope to work in a middle school one day. I believe that hard work can make my dream come true."
+},
+
+/* =========================================
+   EXAM 4
+========================================= */
+
+{
+  title:"An Outstanding Woman",
+  icon:"🌟",
+  subtitle:"Exam 04 · Life Stories and Achievements",
+
+  passageTitle:"A Woman Who Inspired Others",
+
+  passage:[
+    "Malala Yousafzai is a Pakistani education activist. She was born in 1997 in Mingora, Pakistan. As a young girl, she loved learning and believed that every child should have the opportunity to go to school.",
+
+    "Malala became well known for defending girls' right to education. In 2012, she was attacked while travelling home from school. She survived and continued speaking about the importance of education.",
+
+    "In 2014, Malala received the Nobel Peace Prize. She became the youngest person to receive this award. Her courage and determination inspired millions of people around the world.",
+
+    "Today, Malala continues supporting education. Her story reminds young people that courage, hard work and determination can help change the world."
+  ],
+
+  tf:[
+    {
+      q:"Malala was born in Pakistan.",
+      a:"True"
+    },
+    {
+      q:"Malala stopped defending education after 2012.",
+      a:"False"
+    },
+    {
+      q:"Malala has three sisters.",
+      a:"Not Mentioned"
+    }
+  ],
+
+  comprehension:[
+    {
+      q:"When was Malala born?",
+      answers:["1997","in 1997"],
+      display:"She was born in 1997."
+    },
+    {
+      q:"What prize did she receive in 2014?",
+      answers:[
+        "the nobel peace prize",
+        "nobel peace prize"
+      ],
+      display:"She received the Nobel Peace Prize."
+    }
+  ],
+
+  vocabulary:[
+    {
+      q:"Find in the text a word meaning 'bravery'.",
+      a:["courage"],
+      display:"courage"
+    },
+    {
+      q:"Find in the text the opposite of 'oldest'.",
+      a:["youngest"],
+      display:"youngest"
+    }
+  ],
+
+  language:[
+    {
+      q:"Correct the mistake: 'Malala was born on 1997.'",
+      a:["malala was born in 1997"],
+      display:"Malala was born in 1997."
+    },
+    {
+      q:"Put the verb in the past simple: 'She (receive) _____ a prize.'",
+      a:["received"],
+      display:"received"
+    },
+    {
+      q:"Complete: 'Malala is one of the _____ (famous) activists in the world.'",
+      a:["most famous"],
+      display:"most famous"
+    },
+    {
+      q:"Write the negative adjective using a prefix: 'fair'.",
+      a:["unfair"],
+      display:"unfair"
+    },
+    {
+      q:"Form an adjective using -ful: 'hope'.",
+      a:["hopeful"],
+      display:"hopeful"
+    },
+    {
+      q:"Complete: 'Malala is brave, _____ she faced many difficulties.'",
+      a:["although","even though"],
+      display:"although / even though"
+    },
+    {
+      q:"Complete with the correct past passive form: 'The prize _____ (award) to Malala in 2014.'",
+      a:["was awarded"],
+      display:"was awarded"
+    }
+  ],
+
+  writingTitle:"An Inspiring Person",
+
+  writingTask:
+    "Write a short biographical paragraph about an inspiring person. Use the information in the fact file and organise your ideas chronologically.",
+
+  factFile:
+    "Name: Helen Keller | Born: 1880, Alabama, USA | Childhood: became deaf and blind | Teacher: Anne Sullivan | Achievements: learned to communicate, became a writer and speaker | Died: 1968",
+
+  model:
+    "Helen Keller was an inspiring American writer and speaker. She was born in 1880 in Alabama, USA. When she was very young, she became deaf and blind. Her childhood was difficult, but she was determined to learn. Her teacher, Anne Sullivan, helped her communicate with other people. Helen worked hard and continued her education. Later, she became a successful writer and speaker. She inspired many people with disabilities around the world. She died in 1968. Helen Keller will always be remembered for her courage and determination."
+},
+
+/* =========================================
+   EXAM 5
+========================================= */
+
+{
+  title:"The Ideal Teacher",
+  icon:"👩‍🏫",
+  subtitle:"Exam 05 · Character Traits and School Memories",
+
+  passageTitle:"The Teacher I Will Never Forget",
+
+  passage:[
+    "When I was in primary school, my favourite teacher was Mrs Amina. She was a patient, cheerful and understanding woman. She always welcomed us with a warm smile and encouraged us to do our best.",
+
+    "Mrs Amina was strict about classroom rules, but she was never unfair. She believed that every pupil could succeed with practice and determination. Whenever we made mistakes, she explained the lesson again instead of getting angry.",
+
+    "I remember one day when I felt nervous before an English test. Mrs Amina noticed that I was worried and told me to believe in myself. Her kind words made me feel more confident.",
+
+    "Today, I still admire her because she taught me more than school subjects. She taught me respect, responsibility and the importance of helping others. In my opinion, an ideal teacher is knowledgeable, caring and supportive."
+  ],
+
+  tf:[
+    {
+      q:"Mrs Amina was patient and understanding.",
+      a:"True"
+    },
+    {
+      q:"Mrs Amina became angry whenever pupils made mistakes.",
+      a:"False"
+    },
+    {
+      q:"Mrs Amina taught mathematics for twenty years.",
+      a:"Not Mentioned"
+    }
+  ],
+
+  comprehension:[
+    {
+      q:"How did Mrs Amina welcome her pupils?",
+      answers:[
+        "with a warm smile",
+        "she welcomed them with a warm smile"
+      ],
+      display:"She welcomed them with a warm smile."
+    },
+    {
+      q:"Why does the writer still admire Mrs Amina?",
+      answers:[
+        "because she taught respect and responsibility",
+        "because she taught more than school subjects",
+        "because she taught respect responsibility and the importance of helping others"
+      ],
+      display:"Because she taught respect, responsibility and the importance of helping others."
+    }
+  ],
+
+  vocabulary:[
+    {
+      q:"Find in the text a word meaning 'worried or anxious'.",
+      a:["nervous"],
+      display:"nervous"
+    },
+    {
+      q:"Find in the text the opposite of 'unfair'.",
+      a:["fair"],
+      display:"fair"
+    }
+  ],
+
+  language:[
+    {
+      q:"Correct the mistake: 'Mrs Amina were a helpful teacher.'",
+      a:["mrs amina was a helpful teacher"],
+      display:"Mrs Amina was a helpful teacher."
+    },
+    {
+      q:"Put the verb in the past: 'She (teach) _____ us English.'",
+      a:["taught"],
+      display:"taught"
+    },
+    {
+      q:"Write the negative adjective using a prefix: 'patient'.",
+      a:["impatient"],
+      display:"impatient"
+    },
+    {
+      q:"Write the negative adjective using a prefix: 'logical'.",
+      a:["illogical"],
+      display:"illogical"
+    },
+    {
+      q:"Form an adjective using -less: 'care'.",
+      a:["careless"],
+      display:"careless"
+    },
+    {
+      q:"Complete: 'Mrs Amina was _____ (good) than many other teachers.'",
+      a:["better"],
+      display:"better"
+    },
+    {
+      q:"Complete: '_____ some teachers were strict, Mrs Amina was understanding.'",
+      a:["while","whereas"],
+      display:"While / Whereas"
+    }
+  ],
+
+  writingTitle:"Describe Your Ideal Teacher",
+
+  writingTask:
+    "Write a paragraph of 8–10 sentences describing your ideal teacher. Mention appearance, personality traits, teaching methods and the qualities that make a good teacher.",
+
+  factFile:
+    "Useful adjectives: patient, kind, helpful, understanding, fair, creative, organised, knowledgeable, cheerful, responsible.",
+
+  model:
+    "My ideal teacher is a kind and understanding person. An ideal teacher should be patient, helpful and fair. He or she should explain lessons clearly and encourage pupils to participate. A good teacher is also organised and responsible. Unlike an impatient teacher, an ideal teacher listens carefully to pupils. When learners make mistakes, the teacher helps them understand and improve. An ideal teacher should use interesting activities and creative methods. I also think that a teacher must respect all pupils. In my opinion, a good teacher inspires learners to work hard and believe in themselves."
+}
+
+];
+
+/* =========================================
+   STATE
+========================================= */
+
+let currentExam = 0;
+let submitted = false;
+
+const STORAGE_KEY = "MS4_TERM2_EXAMS_V1";
+
+let progress = {};
+
+try{
+  progress = JSON.parse(
+    localStorage.getItem(STORAGE_KEY)
+  ) || {};
+}catch(error){
+  progress = {};
+}
+
+/* =========================================
+   UTILITIES
+========================================= */
+
+function escapeHTML(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#39;");
+
+}
+
+function normalize(value){
+
+  return String(value)
+    .toLowerCase()
+    .trim()
+    .replace(/[’']/g,"")
+    .replace(/[.,!?;:]/g,"")
+    .replace(/\s+/g," ");
+
+}
+
+function isCorrect(value,answers){
+
+  const response = normalize(value);
+
+  return answers.some(function(answer){
+    return response === normalize(answer);
+  });
+
+}
+
+function saveProgress(){
+
+  try{
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(progress)
+    );
+  }catch(error){
+    // The page continues if storage is unavailable.
+  }
+
+}
+
+function scrollToPaper(){
+
+  document.getElementById("examPaper")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+}
+
+/* =========================================
+   EXAM SELECTOR
+========================================= */
+
+function renderExamSelector(){
+
+  const grid = document.getElementById("examGrid");
+
+  grid.innerHTML = exams.map(function(exam,index){
+
+    const completed = progress[index] !== undefined;
+
+    return `
+
+      <button
+        type="button"
+        class="exam-card ${index===currentExam?"active":""}"
+        onclick="selectExam(${index})"
+        aria-pressed="${index===currentExam}"
+      >
+
+        <span class="exam-icon">
+          ${exam.icon}
+        </span>
+
+        <h3>
+          Exam ${index+1}
+        </h3>
+
+        <p>
+          ${escapeHTML(exam.title)}
+        </p>
+
+        <small>
+          ${completed?"✅ COMPLETED":"🚀 START CHALLENGE"}
+        </small>
+
+      </button>
+
+    `;
+
+  }).join("");
+
+}
+
+/* =========================================
+   QUESTION RENDERING
+========================================= */
+
+function renderTF(exam){
+
+  return exam.tf.map(function(item,index){
+
+    return `
+
+      <div class="question" data-type="tf" data-index="${index}">
+
+        <span class="question-label">
+          ${index+1}. ${escapeHTML(item.q)}
+        </span>
+
+        <div class="options">
+
+          ${["True","False","Not Mentioned"].map(function(option){
+
+            return `
+
+              <label class="option">
+
+                <input
+                  type="radio"
+                  name="tf${index}"
+                  value="${option}"
+                >
+
+                ${option}
+
+              </label>
+
+            `;
+
+          }).join("")}
+
+        </div>
+
+        <div class="answer-feedback"></div>
+
+      </div>
+
+    `;
+
+  }).join("");
+
+}
+
+function renderTextQuestions(items,type){
+
+  return items.map(function(item,index){
+
+    return `
+
+      <div
+        class="question"
+        data-type="${type}"
+        data-index="${index}"
+      >
+
+        <label
+          class="question-label"
+          for="${type}${index}"
+        >
+
+          ${index+1}. ${escapeHTML(item.q)}
+
+        </label>
+
+        <input
+          class="answer-input"
+          id="${type}${index}"
+          type="text"
+          autocomplete="off"
+          placeholder="Write your answer here..."
+        >
+
+        <div class="answer-feedback"></div>
+
+      </div>
+
+    `;
+
+  }).join("");
+
+}
+
+/* =========================================
+   RENDER EXAM
+========================================= */
+
+function renderExam(){
+
+  submitted = false;
+
+  const exam = exams[currentExam];
+
+  document.getElementById("paperTitle").textContent =
+    exam.icon+" "+exam.title;
+
+  document.getElementById("paperSubtitle").textContent =
+    exam.subtitle;
+
+  document.getElementById("paperBody").innerHTML = `
+
+    <!-- PART ONE -->
+
+    <div class="part-heading">
+
+      <h3>PART ONE — Reading & Language</h3>
+
+      <span>14 POINTS</span>
+
+    </div>
+
+    <h3 class="sub-heading">
+      A / Reading Comprehension
+    </h3>
+
+    <div class="reading-text">
+
+      <h3>
+        ${escapeHTML(exam.passageTitle)}
+      </h3>
+
+      ${exam.passage.map(function(paragraph){
+
+        return `<p>${escapeHTML(paragraph)}</p>`;
+
+      }).join("")}
+
+    </div>
+
+    <!-- READING ACTIVITY 1 -->
+
+    <div class="activity">
+
+      <div class="activity-title">
+
+        <h4>
+          Activity 1 — True, False or Not Mentioned
+        </h4>
+
+        <span class="points">03 pts</span>
+
+      </div>
+
+      <p>
+        Read the statements and choose the correct answer.
+      </p>
+
+      ${renderTF(exam)}
+
+    </div>
+
+    <!-- READING ACTIVITY 2 -->
+
+    <div class="activity">
+
+      <div class="activity-title">
+
+        <h4>
+          Activity 2 — Answer the Questions
+        </h4>
+
+        <span class="points">02 pts</span>
+
+      </div>
+
+      <p>
+        Answer the questions using information from the text.
+      </p>
+
+      ${renderTextQuestions(exam.comprehension,"comprehension")}
+
+    </div>
+
+    <!-- READING ACTIVITY 3 -->
+
+    <div class="activity">
+
+      <div class="activity-title">
+
+        <h4>
+          Activity 3 — Vocabulary
+        </h4>
+
+        <span class="points">02 pts</span>
+
+      </div>
+
+      <p>
+        Find the appropriate words in the reading text.
+      </p>
+
+      ${renderTextQuestions(exam.vocabulary,"vocabulary")}
+
+    </div>
+
+    <!-- LANGUAGE -->
+
+    <h3 class="sub-heading">
+      B / Mastery of Language
+    </h3>
+
+    <div class="activity">
+
+      <div class="activity-title">
+
+        <h4>
+          Language Activities
+        </h4>
+
+        <span class="points">07 pts</span>
+
+      </div>
+
+      <p>
+        Complete each activity carefully.
+      </p>
+
+      ${renderTextQuestions(exam.language,"language")}
+
+    </div>
+
+    <!-- PART TWO -->
+
+    <div class="part-heading">
+
+      <h3>PART TWO — Written Expression</h3>
+
+      <span>06 POINTS</span>
+
+    </div>
+
+    <div class="activity">
+
+      <div class="activity-title">
+
+        <h4>
+          ✍️ ${escapeHTML(exam.writingTitle)}
+        </h4>
+
+        <span class="points">06 pts</span>
+
+      </div>
+
+      <p>
+        ${escapeHTML(exam.writingTask)}
+      </p>
+
+      <div class="fact-file">
+
+        <h4>📋 Fact File / Writing Support</h4>
+
+        <p>
+          ${escapeHTML(exam.factFile)}
+        </p>
+
+      </div>
+
+      <div class="writing-hints">
+
+        <strong>💡 Writing Checklist</strong>
+
+        <br>
+
+        ✓ Write a clear opening sentence.
+
+        <br>
+
+        ✓ Organise your ideas logically.
+
+        <br>
+
+        ✓ Use appropriate vocabulary and grammar.
+
+        <br>
+
+        ✓ Use linking words when necessary.
+
+        <br>
+
+        ✓ Check spelling, punctuation and capital letters.
+
+      </div>
+
+      <label
+        for="writingArea"
+        class="question-label"
+      >
+        Your Written Expression:
+      </label>
+
+      <textarea
+        id="writingArea"
+        class="answer-input"
+        placeholder="Write your paragraph here..."
+      ></textarea>
+
+      <div class="word-count" id="wordCount">
+        0 words
+      </div>
+
+    </div>
+
+    <!-- ACTIONS -->
+
+    <div class="exam-actions">
+
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="submitBtn"
+        onclick="submitExam()"
+      >
+
+        ✅ Submit My Examination
+
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-secondary"
+        onclick="resetExam()"
+      >
+
+        🔄 Try Again
+
+      </button>
+
+    </div>
+
+    <!-- RESULTS -->
+
+    <div
+      class="result-panel hidden"
+      id="resultPanel"
+      aria-live="polite"
+    ></div>
+
+  `;
+
+  document.getElementById("writingArea")
+    .addEventListener("input",updateWordCount);
+
+  renderExamSelector();
+
+}
+
+/* =========================================
+   SELECT EXAM
+========================================= */
+
+function selectExam(index){
+
+  if(index<0 || index>=exams.length){
+    return;
+  }
+
+  currentExam = index;
+
+  renderExam();
+
+  scrollToPaper();
+
+}
+
+/* =========================================
+   WORD COUNT
+========================================= */
+
+function updateWordCount(){
+
+  const value = document.getElementById("writingArea")
+    .value.trim();
+
+  const count = value
+    ? value.split(/\s+/).length
+    : 0;
+
+  document.getElementById("wordCount").textContent =
+    count+" words";
+
+}
+
+/* =========================================
+   CORRECTION FEEDBACK
+========================================= */
+
+function markQuestion(element,correct,answer){
+
+  const feedback = element.querySelector(
+    ".answer-feedback"
+  );
+
+  feedback.className =
+    "answer-feedback "+(correct?"correct":"incorrect");
+
+  feedback.textContent = correct
+    ? "✅ Correct!"
+    : "❌ Correct answer: "+answer;
+
+}
+
+/* =========================================
+   SUBMIT EXAM
+========================================= */
+
+function submitExam(){
+
+  if(submitted){
+    return;
+  }
+
+  const exam = exams[currentExam];
+
+  let score = 0;
+
+  let answered = 0;
+
+  const total = 14;
+
+  /* TRUE / FALSE / NOT MENTIONED */
+
+  document.querySelectorAll(
+    '[data-type="tf"]'
+  ).forEach(function(element){
+
+    const index = Number(element.dataset.index);
+
+    const selected = element.querySelector(
+      'input[type="radio"]:checked'
+    );
+
+    const value = selected ? selected.value : "";
+
+    if(value){
+      answered++;
+    }
+
+    const correct =
+      value === exam.tf[index].a;
+
+    if(correct){
+      score++;
+    }
+
+    markQuestion(
+      element,
+      correct,
+      exam.tf[index].a
+    );
+
+  });
+
+  /* COMPREHENSION */
+
+  document.querySelectorAll(
+    '[data-type="comprehension"]'
+  ).forEach(function(element){
+
+    const index = Number(element.dataset.index);
+
+    const value = element.querySelector("input").value;
+
+    if(value.trim()){
+      answered++;
+    }
+
+    const item = exam.comprehension[index];
+
+    const correct = isCorrect(
+      value,
+      item.answers
+    );
+
+    if(correct){
+      score++;
+    }
+
+    markQuestion(
+      element,
+      correct,
+      item.display
+    );
+
+  });
+
+  /* VOCABULARY */
+
+  document.querySelectorAll(
+    '[data-type="vocabulary"]'
+  ).forEach(function(element){
+
+    const index = Number(element.dataset.index);
+
+    const value = element.querySelector("input").value;
+
+    if(value.trim()){
+      answered++;
+    }
+
+    const item = exam.vocabulary[index];
+
+    const correct = isCorrect(
+      value,
+      item.a
+    );
+
+    if(correct){
+      score++;
+    }
+
+    markQuestion(
+      element,
+      correct,
+      item.display
+    );
+
+  });
+
+  /* LANGUAGE */
+
+  document.querySelectorAll(
+    '[data-type="language"]'
+  ).forEach(function(element){
+
+    const index = Number(element.dataset.index);
+
+    const value = element.querySelector("input").value;
+
+    if(value.trim()){
+      answered++;
+    }
+
+    const item = exam.language[index];
+
+    const correct = isCorrect(
+      value,
+      item.a
+    );
+
+    if(correct){
+      score++;
+    }
+
+    markQuestion(
+      element,
+      correct,
+      item.display
+    );
+
+  });
+
+  /* WRITING */
+
+  const writing = document.getElementById(
+    "writingArea"
+  ).value.trim();
+
+  if(answered===0 && writing===""){
+
+    alert(
+      "Please answer at least one question before submitting."
+    );
+
+    return;
+
+  }
+
+  submitted = true;
+
+  /* LOCK OBJECTIVE ANSWERS */
+
+  document.querySelectorAll(
+    '#paperBody input'
+  ).forEach(function(input){
+
+    input.disabled = true;
+
+  });
+
+  document.getElementById("writingArea").readOnly = true;
+
+  document.getElementById("submitBtn").disabled = true;
+
+  document.getElementById("submitBtn").textContent =
+    "✅ Examination Submitted";
+
+  /* SAVE PROGRESS */
+
+  progress[currentExam] = {
+    score:score,
+    total:total,
+    date:new Date().toISOString()
+  };
+
+  saveProgress();
+
+  updateProgress();
+
+  renderExamSelector();
+
+  /* RESULT MESSAGE */
+
+  let message = "";
+
+  if(score>=12){
+    message="Excellent work! You are making wonderful progress.";
+  }
+  else if(score>=9){
+    message="Very good! Keep practising to improve even more.";
+  }
+  else if(score>=6){
+    message="Good effort! Review your mistakes and try again.";
+  }
+  else{
+    message="Keep learning! Every mistake is an opportunity to improve.";
+  }
+
+  /* WRITING MODEL */
+
+  const model = escapeHTML(exam.model);
+
+  const result = document.getElementById(
+    "resultPanel"
+  );
+
+  result.innerHTML = `
+
+    <h2>
+      🏆 Your Examination Results
+    </h2>
+
+    <div class="result-score">
+      ${score} / ${total}
+    </div>
+
+    <p>
+      ${message}
+    </p>
+
+    <p class="score-note">
+
+      This is your automatically marked score
+      for Reading Comprehension and Mastery of Language.
+
+      <br>
+
+      Your Written Expression is worth another 6 points
+      and must be assessed separately.
+
+    </p>
+
+    <div class="model-answer">
+
+      <h3>
+        ✍️ Model Written Expression
+      </h3>
+
+      <p>${model}</p>
+
+      <h3 style="margin-top:22px;">
+        📋 How to Review Your Writing
+      </h3>
+
+      <ul>
+
+        <li>
+          <strong>Relevance — 2 pts:</strong>
+          Did you answer the writing task?
+        </li>
+
+        <li>
+          <strong>Coherence — 1.5 pts:</strong>
+          Are your ideas organised and connected?
+        </li>
+
+        <li>
+          <strong>Language — 1.5 pts:</strong>
+          Did you use correct grammar and vocabulary?
+        </li>
+
+        <li>
+          <strong>Excellence — 1 pt:</strong>
+          Is your writing clear, original and well presented?
+        </li>
+
+      </ul>
+
+      <p style="margin-top:13px;">
+
+        <strong>Remember:</strong>
+        The model paragraph is an example.
+        Your own correct and well-organised paragraph
+        may be different.
+
+      </p>
+
+    </div>
+
+    <div class="exam-actions">
+
+      <button
+        class="btn btn-secondary"
+        onclick="resetExam()"
+      >
+        🔄 Try Again
+      </button>
+
+      ${
+        currentExam<exams.length-1
+          ? `<button
+               class="btn btn-primary"
+               onclick="selectExam(${currentExam+1})"
+             >
+               Next Examination →
+             </button>`
+          : `<button
+               class="btn btn-gold"
+               onclick="selectExam(0)"
+             >
+               🏆 Review All Exams
+             </button>`
+      }
+
+    </div>
+
+  `;
+
+  result.classList.remove("hidden");
+
+  result.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+/* =========================================
+   RESET EXAM
+========================================= */
+
+function resetExam(){
+
+  if(!submitted){
+
+    const confirmed = confirm(
+      "Restart this examination? Your current answers will be cleared."
+    );
+
+    if(!confirmed){
+      return;
+    }
+
+  }
+
+  renderExam();
+
+  scrollToPaper();
+
+}
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+function updateProgress(){
+
+  const completed = Object.keys(progress)
+    .filter(function(key){
+
+      const index = Number(key);
+
+      return Number.isInteger(index)
+        && index>=0
+        && index<exams.length;
+
+    }).length;
+
+  const percentage =
+    completed/exams.length*100;
+
+  document.getElementById("progressFill")
+    .style.width = percentage+"%";
+
+  document.getElementById("progressLabel")
+    .textContent =
+      completed+" / "+exams.length+
+      " Exams Completed";
+
+}
+
+/* =========================================
+   INITIALISE
+========================================= */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+renderExam();
+
+updateProgress();
+
+</script>
+
+</body>
+</html>

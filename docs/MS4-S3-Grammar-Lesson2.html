@@ -1,0 +1,4548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6c43b7">
+
+<title>Checkpoint 02 | Conditional Type 1 — MS4 Grammar</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================
+   MY ENGLISH SPACE
+   MS4 · SEQUENCE 3 · GRAMMAR CHECKPOINT 02
+   CONDITIONAL TYPE 1 — GIVING ADVICE
+===================================================== */
+
+:root{
+  --purple:#7552c7;
+  --purple-dark:#432779;
+  --purple-deep:#2b1b54;
+  --lavender:#eee7ff;
+  --pink:#f65c98;
+  --pink-soft:#fff0f7;
+  --orange:#ff9b62;
+  --gold:#ffcf70;
+  --green:#24a977;
+  --green-soft:#e8fbf2;
+  --red:#e35a70;
+  --red-soft:#fff0f2;
+  --blue:#4c9ce5;
+  --ink:#292341;
+  --muted:#77708d;
+  --line:#e9e3f2;
+  --white:#fff;
+  --surface:#fbf9ff;
+  --shadow:0 14px 40px rgba(65,38,112,.09);
+  --shadow-lg:0 24px 65px rgba(65,38,112,.16);
+  --radius:24px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+}
+
+body{
+  font-family:"Nunito",sans-serif;
+  color:var(--ink);
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 0% 8%,rgba(246,92,152,.12),transparent 25%),
+    radial-gradient(circle at 100% 30%,rgba(117,82,199,.12),transparent 27%),
+    radial-gradient(circle at 10% 85%,rgba(255,207,112,.13),transparent 26%),
+    #faf8ff;
+}
+
+button,input,textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+button:disabled{
+  cursor:default;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible{
+  outline:3px solid var(--orange);
+  outline-offset:3px;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+::selection{
+  background:#e4d4ff;
+}
+
+.container{
+  max-width:1140px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* =====================================================
+   TOP NAVIGATION
+===================================================== */
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.93);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(117,82,199,.12);
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:13px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-logo{
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--pink),var(--purple));
+  color:white;
+  border-radius:14px;
+  font-family:"Baloo 2",sans-serif;
+  font-weight:800;
+  font-size:1.4rem;
+  box-shadow:0 7px 18px rgba(117,82,199,.22);
+}
+
+.brand-name{
+  font-family:"Baloo 2",sans-serif;
+  font-size:1.12rem;
+  font-weight:800;
+  line-height:1.1;
+  color:var(--purple-deep);
+}
+
+.brand-sub{
+  font-size:.68rem;
+  font-weight:900;
+  color:var(--muted);
+  letter-spacing:1px;
+}
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.nav-pill{
+  padding:9px 14px;
+  background:var(--lavender);
+  color:var(--purple-dark);
+  border-radius:12px;
+  font-weight:900;
+  font-size:.84rem;
+  white-space:nowrap;
+}
+
+.score-pill{
+  background:var(--purple-deep);
+  color:white;
+}
+
+.nav-reset{
+  border:1px solid var(--line);
+  background:white;
+  border-radius:12px;
+  padding:9px 13px;
+  color:var(--purple-dark);
+  font-weight:900;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+  padding-top:30px;
+}
+
+.hero-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:34px;
+  min-height:380px;
+  padding:54px 55px;
+  background:
+    radial-gradient(circle at 95% 10%,rgba(255,255,255,.17),transparent 27%),
+    radial-gradient(circle at 10% 100%,rgba(255,255,255,.10),transparent 30%),
+    linear-gradient(125deg,#ee639e 0%,#9565db 48%,#50318e 100%);
+  color:white;
+  box-shadow:var(--shadow-lg);
+}
+
+.hero-card:before,
+.hero-card:after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.15);
+  pointer-events:none;
+}
+
+.hero-card:before{
+  width:340px;
+  height:340px;
+  right:-125px;
+  top:-125px;
+}
+
+.hero-card:after{
+  width:230px;
+  height:230px;
+  right:95px;
+  bottom:-165px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+}
+
+.eyebrow{
+  display:inline-block;
+  padding:8px 15px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:99px;
+  background:rgba(255,255,255,.13);
+  font-family:"Space Mono",monospace;
+  font-size:.7rem;
+  letter-spacing:.7px;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(2.7rem,6vw,5rem);
+  line-height:1.04;
+  letter-spacing:-1.5px;
+}
+
+.hero h1 span{
+  color:#ffe2a0;
+}
+
+.hero p{
+  max-width:650px;
+  font-size:1.08rem;
+  line-height:1.8;
+  margin-top:15px;
+  color:#fff7ff;
+}
+
+.hero-formulas{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:25px;
+}
+
+.hero-formula{
+  padding:12px 16px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:14px;
+  font-family:"Space Mono",monospace;
+  font-size:.76rem;
+  font-weight:700;
+}
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+.dashboard{
+  margin-top:-25px;
+  position:relative;
+  z-index:5;
+}
+
+.dashboard-card{
+  background:white;
+  padding:22px 25px;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  display:grid;
+  grid-template-columns:1fr auto auto;
+  align-items:center;
+  gap:25px;
+  border:1px solid var(--line);
+}
+
+.dashboard-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+  gap:10px;
+}
+
+.dashboard-heading strong{
+  font-size:.87rem;
+  color:var(--purple-dark);
+}
+
+.dashboard-heading span{
+  font-family:"Space Mono",monospace;
+  font-size:.73rem;
+  color:var(--muted);
+}
+
+.progress-track{
+  height:11px;
+  border-radius:99px;
+  overflow:hidden;
+  background:#eeeaf5;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,var(--pink),var(--purple),var(--orange));
+  border-radius:99px;
+  transition:width .45s ease;
+}
+
+.stat{
+  min-width:95px;
+  text-align:center;
+  border-left:1px solid var(--line);
+  padding-left:20px;
+}
+
+.stat strong{
+  display:block;
+  font-family:"Baloo 2",sans-serif;
+  font-size:1.65rem;
+  line-height:1.2;
+  color:var(--purple);
+}
+
+.stat span{
+  font-size:.72rem;
+  font-weight:900;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+/* =====================================================
+   STAGE NAVIGATION
+===================================================== */
+
+.stage-nav{
+  margin-top:25px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.stage-link{
+  padding:11px 16px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:99px;
+  font-size:.8rem;
+  font-weight:900;
+  color:var(--purple-dark);
+  transition:.2s;
+}
+
+.stage-link:hover{
+  background:var(--lavender);
+  transform:translateY(-2px);
+}
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.lesson-section{
+  margin-top:55px;
+}
+
+.section-heading{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:22px;
+}
+
+.section-index{
+  flex:none;
+  width:54px;
+  height:54px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  color:white;
+  border-radius:17px;
+  font-family:"Space Mono",monospace;
+  font-weight:700;
+}
+
+.section-heading small{
+  display:block;
+  color:var(--pink);
+  font-family:"Space Mono",monospace;
+  font-size:.67rem;
+  font-weight:700;
+  letter-spacing:1px;
+  margin-bottom:2px;
+}
+
+.section-heading h2{
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(1.55rem,3vw,2.1rem);
+  line-height:1.15;
+  color:var(--purple-deep);
+}
+
+.section-heading p{
+  color:var(--muted);
+  margin-top:4px;
+  font-size:.9rem;
+}
+
+/* =====================================================
+   GENERAL CARDS
+===================================================== */
+
+.card{
+  background:white;
+  padding:28px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+}
+
+.intro-card{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:25px;
+  align-items:center;
+}
+
+.intro-card h3{
+  font-family:"Baloo 2",sans-serif;
+  font-size:1.8rem;
+  line-height:1.2;
+  margin-bottom:12px;
+}
+
+.intro-card p{
+  line-height:1.8;
+  color:var(--muted);
+}
+
+.mission-panel{
+  background:linear-gradient(135deg,#fff1f7,#f1ebff);
+  border-radius:20px;
+  padding:24px;
+  border:1px solid #ead9f9;
+}
+
+.mission-panel small{
+  display:block;
+  color:var(--purple);
+  font-family:"Space Mono",monospace;
+  font-weight:700;
+  font-size:.72rem;
+  margin-bottom:10px;
+}
+
+.mission-panel p{
+  color:var(--ink);
+  font-weight:800;
+}
+
+/* =====================================================
+   ORIGINAL PICTURE STORY
+===================================================== */
+
+.picture-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+
+.picture-card{
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+  transition:.25s;
+}
+
+.picture-card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow-lg);
+}
+
+.picture-frame{
+  position:relative;
+  height:260px;
+  overflow:hidden;
+  background:#f0eaf9;
+}
+
+.picture-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .5s;
+}
+
+.picture-card:hover img{
+  transform:scale(1.035);
+}
+
+.picture-label{
+  position:absolute;
+  top:15px;
+  left:15px;
+  padding:7px 12px;
+  background:rgba(255,255,255,.95);
+  color:var(--purple-dark);
+  border-radius:10px;
+  font-family:"Space Mono",monospace;
+  font-weight:700;
+  font-size:.7rem;
+}
+
+.picture-info{
+  padding:21px;
+}
+
+.picture-info h3{
+  font-family:"Baloo 2",sans-serif;
+  font-size:1.3rem;
+  line-height:1.25;
+  margin-bottom:7px;
+}
+
+.picture-info p{
+  color:var(--muted);
+  line-height:1.65;
+  font-size:.92rem;
+}
+
+.story-question{
+  margin-top:23px;
+  padding:22px;
+  background:linear-gradient(135deg,#fff4f8,#f6f2ff);
+  border-radius:18px;
+  border:1px solid #f0e3f4;
+}
+
+.story-question h3{
+  font-family:"Baloo 2",sans-serif;
+  font-size:1.3rem;
+  margin-bottom:8px;
+}
+
+.story-question p{
+  line-height:1.7;
+}
+
+/* =====================================================
+   GRAMMAR LAB
+===================================================== */
+
+.grammar-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+
+.grammar-card{
+  border-radius:22px;
+  padding:25px;
+  border:2px solid;
+}
+
+.grammar-card.result{
+  border-color:#ffd5e5;
+  background:linear-gradient(145deg,#fff5f9,#fff);
+}
+
+.grammar-card.advice{
+  border-color:#ddd0ff;
+  background:linear-gradient(145deg,#f6f2ff,#fff);
+}
+
+.grammar-tag{
+  display:inline-block;
+  padding:7px 11px;
+  border-radius:9px;
+  background:white;
+  font-family:"Space Mono",monospace;
+  font-size:.69rem;
+  font-weight:700;
+  color:var(--purple-dark);
+  margin-bottom:14px;
+}
+
+.grammar-card h3{
+  font-family:"Baloo 2",sans-serif;
+  font-size:1.65rem;
+  margin-bottom:8px;
+}
+
+.grammar-card p{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:.92rem;
+}
+
+.formula{
+  background:white;
+  padding:16px;
+  border-radius:15px;
+  margin:18px 0;
+  font-family:"Space Mono",monospace;
+  font-size:.8rem;
+  font-weight:700;
+  line-height:1.9;
+  border:1px solid var(--line);
+}
+
+.formula .if{
+  color:var(--pink);
+}
+
+.formula .then{
+  color:var(--purple);
+}
+
+.example{
+  background:white;
+  border-radius:14px;
+  padding:14px 16px;
+  line-height:1.75;
+  font-weight:800;
+  margin-top:10px;
+  border:1px solid var(--line);
+}
+
+.pink-text{
+  color:var(--pink);
+}
+
+.purple-text{
+  color:var(--purple);
+}
+
+.grammar-notes{
+  display:grid;
+  gap:13px;
+  margin-top:20px;
+}
+
+.grammar-note{
+  padding:19px 20px;
+  border-radius:16px;
+  background:#f7f4ff;
+  border-left:5px solid var(--purple);
+  line-height:1.75;
+}
+
+.grammar-note.warning{
+  background:#fff5f1;
+  border-left-color:var(--orange);
+}
+
+.grammar-note strong{
+  color:var(--purple-dark);
+}
+
+.arabic-box{
+  margin-top:20px;
+  border:1px solid #dcd0ff;
+  border-radius:18px;
+  overflow:hidden;
+  background:#f8f5ff;
+}
+
+.arabic-toggle{
+  width:100%;
+  border:0;
+  background:transparent;
+  color:var(--purple-dark);
+  padding:16px 20px;
+  text-align:left;
+  font-weight:900;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.arabic-content{
+  display:none;
+  padding:0 20px 20px;
+  font-family:"Noto Naskh Arabic",serif;
+  font-size:1.13rem;
+  line-height:2;
+}
+
+.arabic-content.open{
+  display:block;
+}
+
+/* =====================================================
+   ACTIVITY CARDS
+===================================================== */
+
+.activity-list{
+  display:grid;
+  gap:18px;
+}
+
+.activity{
+  background:white;
+  padding:26px;
+  border-radius:23px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+  scroll-margin-top:110px;
+}
+
+.activity-top{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  margin-bottom:17px;
+}
+
+.activity-number{
+  width:43px;
+  height:43px;
+  flex:none;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  color:white;
+  font-family:"Space Mono",monospace;
+  font-weight:700;
+  font-size:.85rem;
+}
+
+.activity-heading{
+  flex:1;
+}
+
+.activity-heading h3{
+  font-family:"Baloo 2",sans-serif;
+  font-size:1.35rem;
+  line-height:1.2;
+}
+
+.activity-heading p{
+  color:var(--muted);
+  line-height:1.6;
+  margin-top:4px;
+  font-size:.9rem;
+}
+
+.activity-status{
+  font-size:.68rem;
+  font-weight:900;
+  padding:6px 9px;
+  border-radius:99px;
+  background:#f4f0fa;
+  color:var(--muted);
+  white-space:nowrap;
+}
+
+.activity-status.done{
+  background:var(--green-soft);
+  color:var(--green);
+}
+
+.prompt{
+  padding:15px 18px;
+  border-radius:15px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  margin-bottom:16px;
+  font-weight:800;
+  line-height:1.75;
+}
+
+.option-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+}
+
+.option{
+  border:2px solid #eae4f2;
+  border-radius:15px;
+  padding:14px 16px;
+  background:white;
+  color:var(--ink);
+  font-weight:800;
+  text-align:left;
+  line-height:1.5;
+  transition:.18s;
+  min-height:55px;
+}
+
+.option:not(:disabled):hover{
+  border-color:var(--purple);
+  background:#faf7ff;
+  transform:translateY(-2px);
+}
+
+.option.correct{
+  border-color:var(--green);
+  background:var(--green-soft);
+  color:#137b55;
+}
+
+.option.wrong{
+  border-color:var(--red);
+  background:var(--red-soft);
+  color:#a7354a;
+}
+
+.option:disabled{
+  opacity:.85;
+}
+
+.feedback{
+  display:none;
+  margin-top:15px;
+  border-radius:14px;
+  padding:13px 16px;
+  line-height:1.65;
+  font-weight:800;
+  font-size:.9rem;
+}
+
+.feedback.show{
+  display:block;
+}
+
+.feedback.good{
+  background:var(--green-soft);
+  color:#137b55;
+  border:1px solid #b9efd7;
+}
+
+.feedback.bad{
+  background:var(--red-soft);
+  color:#a7354a;
+  border:1px solid #ffd5dc;
+}
+
+.feedback.info{
+  background:#f0ebff;
+  color:var(--purple-dark);
+  border:1px solid #e0d4ff;
+}
+
+.activity input[type="text"],
+.activity textarea{
+  width:100%;
+  background:white;
+  border:2px solid #e8e1f0;
+  border-radius:14px;
+  padding:13px 15px;
+  color:var(--ink);
+  outline:none;
+  transition:.2s;
+}
+
+.activity input[type="text"]:focus,
+.activity textarea:focus{
+  border-color:var(--purple);
+  box-shadow:0 0 0 4px rgba(117,82,199,.09);
+}
+
+.activity textarea{
+  min-height:170px;
+  resize:vertical;
+  line-height:1.8;
+}
+
+.input-stack{
+  display:grid;
+  gap:12px;
+}
+
+.input-label{
+  display:block;
+  font-size:.84rem;
+  font-weight:900;
+  color:var(--purple-dark);
+  margin-bottom:7px;
+}
+
+.fill-sentence{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px;
+  margin-bottom:15px;
+  line-height:2;
+  font-weight:800;
+}
+
+.fill-sentence input{
+  width:165px!important;
+  max-width:100%;
+  padding:9px 11px!important;
+}
+
+.btn{
+  border:none;
+  border-radius:13px;
+  padding:12px 19px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  color:white;
+  box-shadow:0 8px 20px rgba(117,82,199,.16);
+}
+
+.btn-secondary{
+  background:var(--lavender);
+  color:var(--purple-dark);
+}
+
+.btn-dark{
+  background:var(--purple-deep);
+  color:white;
+}
+
+.action-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:16px;
+}
+
+.hint{
+  display:none;
+  background:#fff8ed;
+  border:1px solid #ffe4b9;
+  padding:12px 15px;
+  border-radius:12px;
+  margin-top:12px;
+  font-size:.88rem;
+  line-height:1.6;
+  color:#825422;
+}
+
+.hint.show{
+  display:block;
+}
+
+/* =====================================================
+   MATCHING
+===================================================== */
+
+.match-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.match-column{
+  display:grid;
+  gap:10px;
+  align-content:start;
+}
+
+.match-column-title{
+  font-family:"Space Mono",monospace;
+  font-size:.7rem;
+  font-weight:700;
+  color:var(--purple);
+  margin-bottom:4px;
+}
+
+.match-item{
+  padding:15px;
+  border:2px solid var(--line);
+  background:#faf9ff;
+  border-radius:14px;
+  text-align:left;
+  font-weight:800;
+  line-height:1.5;
+  transition:.2s;
+}
+
+.match-item.selected{
+  border-color:var(--purple);
+  background:var(--lavender);
+}
+
+.match-item.matched{
+  border-color:var(--green);
+  background:var(--green-soft);
+  color:#137b55;
+}
+
+.pair-summary{
+  margin-top:15px;
+  display:grid;
+  gap:8px;
+}
+
+.pair-line{
+  padding:10px 13px;
+  background:var(--green-soft);
+  border-radius:10px;
+  font-size:.87rem;
+  font-weight:800;
+  color:#137b55;
+}
+
+/* =====================================================
+   SORTING
+===================================================== */
+
+.sort-source{
+  display:grid;
+  gap:9px;
+  margin-bottom:18px;
+}
+
+.sort-item{
+  width:100%;
+  text-align:left;
+  padding:13px 15px;
+  border-radius:12px;
+  border:2px solid var(--line);
+  background:white;
+  font-weight:800;
+  line-height:1.5;
+}
+
+.sort-item.selected{
+  border-color:var(--purple);
+  background:var(--lavender);
+}
+
+.sort-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.sort-zone{
+  min-height:170px;
+  padding:16px;
+  background:#faf8ff;
+  border:2px dashed #cfc2e9;
+  border-radius:17px;
+  transition:.2s;
+}
+
+.sort-zone:hover{
+  background:#f2ecff;
+  border-color:var(--purple);
+}
+
+.sort-zone h4{
+  font-family:"Baloo 2",sans-serif;
+  font-size:1.15rem;
+  margin-bottom:12px;
+  color:var(--purple-dark);
+}
+
+.sort-zone .sort-item{
+  margin-bottom:8px;
+  font-size:.87rem;
+}
+
+/* =====================================================
+   WORD BUILDER
+===================================================== */
+
+.word-bank{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.word-chip{
+  border:2px solid #e6ddf1;
+  border-radius:12px;
+  background:white;
+  padding:10px 14px;
+  font-weight:900;
+  color:var(--purple-dark);
+  transition:.2s;
+}
+
+.word-chip:hover{
+  background:var(--lavender);
+}
+
+.word-chip.used{
+  opacity:.35;
+  pointer-events:none;
+}
+
+.word-output{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  min-height:65px;
+  padding:14px;
+  margin-top:16px;
+  border-radius:14px;
+  background:#f6f2ff;
+  border:2px dashed #d8c9f1;
+}
+
+.output-chip{
+  background:white;
+  border:1px solid #ddd1f3;
+  border-radius:9px;
+  padding:8px 11px;
+  font-weight:900;
+  color:var(--purple-dark);
+}
+
+.output-placeholder{
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* =====================================================
+   FINAL WRITING
+===================================================== */
+
+.production-card{
+  background:
+    radial-gradient(circle at 100% 0%,rgba(246,92,152,.11),transparent 35%),
+    linear-gradient(135deg,#fff,#f8f4ff);
+  border:2px solid #e9ddff;
+}
+
+.writing-checklist{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:11px;
+  margin:18px 0;
+}
+
+.checkline{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  background:white;
+  padding:13px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  font-size:.88rem;
+  font-weight:800;
+}
+
+.checkline input{
+  margin-top:3px;
+  accent-color:var(--purple);
+}
+
+.writing-counter{
+  text-align:right;
+  margin-top:8px;
+  font-size:.78rem;
+  color:var(--muted);
+  font-weight:800;
+}
+
+.model-toggle{
+  margin:15px 0;
+}
+
+.model-text{
+  display:none;
+  padding:18px;
+  background:white;
+  border-radius:15px;
+  border:1px solid #ddd0ff;
+  line-height:1.85;
+}
+
+.model-text.show{
+  display:block;
+}
+
+/* =====================================================
+   FINAL RESULT
+===================================================== */
+
+.result-card{
+  text-align:center;
+  padding:42px 28px;
+  background:
+    radial-gradient(circle at 0% 100%,rgba(246,92,152,.09),transparent 30%),
+    linear-gradient(135deg,#fff,#f6f1ff);
+}
+
+.result-label{
+  font-family:"Space Mono",monospace;
+  font-size:.74rem;
+  color:var(--purple);
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.result-title{
+  font-family:"Baloo 2",sans-serif;
+  font-size:2.2rem;
+  color:var(--purple-deep);
+  margin:10px 0;
+}
+
+.result-stars{
+  color:#f5b84b;
+  font-size:2.3rem;
+  letter-spacing:6px;
+}
+
+.result-score{
+  font-family:"Baloo 2",sans-serif;
+  font-size:4.2rem;
+  color:var(--purple);
+  line-height:1.2;
+  margin:10px 0;
+}
+
+.result-message{
+  max-width:620px;
+  margin:0 auto 22px;
+  color:var(--muted);
+  line-height:1.8;
+}
+
+.certificate{
+  display:none;
+  max-width:650px;
+  margin:25px auto 0;
+  padding:30px;
+  border:3px double #cbb5ef;
+  border-radius:20px;
+  background:white;
+}
+
+.certificate.show{
+  display:block;
+}
+
+.certificate h3{
+  font-family:"Baloo 2",sans-serif;
+  font-size:1.7rem;
+  color:var(--purple-dark);
+}
+
+.certificate p{
+  line-height:1.8;
+}
+
+.certificate input{
+  max-width:340px;
+  display:block;
+  margin:15px auto;
+  padding:12px 15px;
+  text-align:center;
+  border:2px solid var(--line);
+  border-radius:12px;
+}
+
+.footer{
+  margin-top:70px;
+  padding:32px 20px;
+  background:var(--purple-deep);
+  color:#ddd2f4;
+  text-align:center;
+  font-size:.8rem;
+  font-weight:800;
+}
+
+.footer strong{
+  color:white;
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+  position:fixed;
+  bottom:24px;
+  left:50%;
+  transform:translate(-50%,120px);
+  opacity:0;
+  z-index:200;
+  background:var(--purple-deep);
+  color:white;
+  padding:14px 22px;
+  border-radius:14px;
+  box-shadow:var(--shadow-lg);
+  font-weight:900;
+  transition:.3s;
+  max-width:calc(100vw - 30px);
+  text-align:center;
+}
+
+.toast.show{
+  transform:translate(-50%,0);
+  opacity:1;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:850px){
+  .intro-card,
+  .grammar-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-card{
+    padding:42px 32px;
+  }
+
+  .dashboard-card{
+    gap:15px;
+  }
+}
+
+@media(max-width:650px){
+  .container{
+    padding:0 13px;
+  }
+
+  .nav-inner{
+    padding:10px 12px;
+  }
+
+  .brand-name{
+    font-size:.93rem;
+  }
+
+  .brand-sub{
+    font-size:.57rem;
+  }
+
+  .brand-logo{
+    width:36px;
+    height:36px;
+  }
+
+  .nav-pill{
+    padding:8px 9px;
+    font-size:.72rem;
+  }
+
+  .nav-reset{
+    display:none;
+  }
+
+  .hero{
+    padding-top:16px;
+  }
+
+  .hero-card{
+    border-radius:25px;
+    padding:36px 23px 43px;
+    min-height:auto;
+  }
+
+  .hero h1{
+    font-size:2.8rem;
+  }
+
+  .hero p{
+    font-size:.96rem;
+  }
+
+  .hero-formula{
+    font-size:.67rem;
+    width:100%;
+  }
+
+  .dashboard-card{
+    grid-template-columns:1fr 1fr;
+    padding:17px;
+    gap:15px;
+  }
+
+  .dashboard-progress{
+    grid-column:1/-1;
+  }
+
+  .stat{
+    border-left:0;
+    padding-left:0;
+    border-top:1px solid var(--line);
+    padding-top:12px;
+  }
+
+  .picture-grid,
+  .option-grid,
+  .match-grid,
+  .sort-grid,
+  .writing-checklist{
+    grid-template-columns:1fr;
+  }
+
+  .picture-frame{
+    height:230px;
+  }
+
+  .card,
+  .activity{
+    padding:20px;
+    border-radius:19px;
+  }
+
+  .section-heading{
+    gap:12px;
+  }
+
+  .section-index{
+    width:45px;
+    height:45px;
+  }
+
+  .activity-status{
+    font-size:.62rem;
+  }
+
+  .activity-top{
+    gap:10px;
+  }
+
+  .stage-link{
+    font-size:.72rem;
+    padding:9px 12px;
+  }
+
+  .result-score{
+    font-size:3.5rem;
+  }
+}
+
+@media print{
+  .topbar,
+  .stage-nav,
+  .action-row,
+  .toast,
+  .btn,
+  .word-bank{
+    display:none!important;
+  }
+
+  body{
+    background:white;
+  }
+
+  .hero-card{
+    box-shadow:none;
+  }
+
+  .card,
+  .activity,
+  .picture-card{
+    box-shadow:none;
+    break-inside:avoid;
+  }
+
+  .certificate{
+    display:block!important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,
+  *:before,
+  *:after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="topbar">
+  <div class="nav-inner">
+
+    <div class="brand">
+      <div class="brand-logo">E</div>
+
+      <div>
+        <div class="brand-name">MY ENGLISH SPACE</div>
+        <div class="brand-sub">MS4 · SEQUENCE 3</div>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <div class="nav-pill score-pill">
+        <span id="topScore">0</span> POINTS
+      </div>
+
+      <div class="nav-pill">
+        <span id="topCompleted">0</span>/38
+      </div>
+
+      <button class="nav-reset" onclick="restartLesson()">
+        Restart
+      </button>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero container">
+
+  <div class="hero-card">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        GRAMMAR EXPEDITION · CHECKPOINT 02
+      </div>
+
+      <h1>
+        If You Try,<br>
+        <span>You Will Shine!</span>
+      </h1>
+
+      <p>
+        Discover Conditional Type 1 and learn to give meaningful
+        advice, predict possible results, and make smart choices.
+        Complete 38 exciting grammar challenges!
+      </p>
+
+      <div class="hero-formulas">
+
+        <div class="hero-formula">
+          IF + PRESENT SIMPLE → WILL + VERB
+        </div>
+
+        <div class="hero-formula">
+          IF + PRESENT SIMPLE → IMPERATIVE
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROGRESS DASHBOARD
+===================================================== -->
+
+<div class="dashboard container">
+
+  <div class="dashboard-card">
+
+    <div class="dashboard-progress">
+
+      <div class="dashboard-heading">
+        <strong>Your learning journey</strong>
+        <span id="progressPercent">0%</span>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+    </div>
+
+    <div class="stat">
+      <strong id="dashboardTasks">0/38</strong>
+      <span>Activities</span>
+    </div>
+
+    <div class="stat">
+      <strong id="dashboardScore">0</strong>
+      <span>Points</span>
+    </div>
+
+  </div>
+
+  <nav class="stage-nav" aria-label="Lesson stages">
+    <a class="stage-link" href="#discover">01 · Discover</a>
+    <a class="stage-link" href="#grammar">02 · Learn</a>
+    <a class="stage-link" href="#practice">03 · Practise</a>
+    <a class="stage-link" href="#challenge">04 · Challenge</a>
+    <a class="stage-link" href="#create">05 · Create</a>
+    <a class="stage-link" href="#finish">06 · Celebrate</a>
+  </nav>
+
+</div>
+
+
+<main class="container">
+
+<!-- =====================================================
+     STAGE 1: DISCOVER
+===================================================== -->
+
+<section class="lesson-section" id="discover">
+
+  <div class="section-heading">
+    <div class="section-index">01</div>
+
+    <div>
+      <small>STAGE ONE · OBSERVE & THINK</small>
+      <h2>Every Choice Has a Result</h2>
+      <p>Look at the pictures and discover the relationship between actions and results.</p>
+    </div>
+  </div>
+
+  <div class="card intro-card">
+
+    <div>
+      <h3>Two pupils. Two different choices.</h3>
+
+      <p>
+        One pupil studies regularly and prepares carefully.
+        Another pupil spends too much time playing and forgets
+        to revise.
+      </p>
+
+      <p style="margin-top:12px">
+        What may happen to each pupil?
+        How can we give them useful advice?
+      </p>
+    </div>
+
+    <div class="mission-panel">
+      <small>YOUR MISSION</small>
+
+      <p>
+        Learn how to connect a condition with a possible result
+        and how to give direct advice using the imperative.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="picture-grid" style="margin-top:22px">
+
+    <article class="picture-card">
+      <div class="picture-frame">
+        <img
+          src="https://i.imgur.com/1zRludf.png"
+          alt="A pupil revising lessons carefully"
+          loading="lazy"
+        >
+        <span class="picture-label">PICTURE 01</span>
+      </div>
+
+      <div class="picture-info">
+        <h3>Preparing for Success</h3>
+        <p>The pupil revises lessons and prepares for an exam.</p>
+      </div>
+    </article>
+
+    <article class="picture-card">
+      <div class="picture-frame">
+        <img
+          src="https://i.imgur.com/Fk2CI0y.png"
+          alt="A pupil receiving a reward for hard work"
+          loading="lazy"
+        >
+        <span class="picture-label">PICTURE 02</span>
+      </div>
+
+      <div class="picture-info">
+        <h3>Hard Work Pays Off</h3>
+        <p>The pupil receives a reward after working hard.</p>
+      </div>
+    </article>
+
+    <article class="picture-card">
+      <div class="picture-frame">
+        <img
+          src="https://i.imgur.com/dSqhyDt.png"
+          alt="A pupil playing games instead of revising"
+          loading="lazy"
+        >
+        <span class="picture-label">PICTURE 03</span>
+      </div>
+
+      <div class="picture-info">
+        <h3>Too Much Playing</h3>
+        <p>The pupil spends time playing instead of studying.</p>
+      </div>
+    </article>
+
+    <article class="picture-card">
+      <div class="picture-frame">
+        <img
+          src="https://i.imgur.com/0FcAW1m.png"
+          alt="A pupil disappointed by a poor result"
+          loading="lazy"
+        >
+        <span class="picture-label">PICTURE 04</span>
+      </div>
+
+      <div class="picture-info">
+        <h3>A Disappointing Result</h3>
+        <p>Poor preparation may lead to disappointing results.</p>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="story-question">
+    <h3>Think about it!</h3>
+
+    <p>
+      <strong>Condition:</strong> If you revise regularly,<br>
+      <strong>Possible result:</strong> you will feel more confident.
+    </p>
+
+    <p style="margin-top:12px">
+      <strong>Condition:</strong> If you want to succeed,<br>
+      <strong>Advice:</strong> revise every day.
+    </p>
+  </div>
+
+  <div class="activity-list" id="discoveryTasks" style="margin-top:20px"></div>
+
+</section>
+
+
+<!-- =====================================================
+     STAGE 2: GRAMMAR LAB
+===================================================== -->
+
+<section class="lesson-section" id="grammar">
+
+  <div class="section-heading">
+    <div class="section-index">02</div>
+
+    <div>
+      <small>STAGE TWO · NOTICE & LEARN</small>
+      <h2>The Grammar Lab</h2>
+      <p>Discover the two important conditional structures.</p>
+    </div>
+  </div>
+
+  <div class="card">
+
+    <div class="grammar-grid">
+
+      <div class="grammar-card result">
+
+        <div class="grammar-tag">FORM 01 · POSSIBLE RESULT</div>
+
+        <h3>If + Present, Will + Verb</h3>
+
+        <p>
+          We use this structure to talk about a possible
+          future result of a condition.
+        </p>
+
+        <div class="formula">
+          <span class="if">IF + PRESENT SIMPLE</span>
+          <br>
+          +
+          <br>
+          <span class="then">WILL + BASE VERB</span>
+        </div>
+
+        <div class="example">
+          <span class="pink-text">If you revise regularly,</span>
+          <span class="purple-text">you will improve.</span>
+        </div>
+
+        <div class="example">
+          <span class="pink-text">If she studies hard,</span>
+          <span class="purple-text">she will succeed.</span>
+        </div>
+
+        <div class="example">
+          <span class="pink-text">If you don't prepare,</span>
+          <span class="purple-text">you won't feel ready.</span>
+        </div>
+
+      </div>
+
+
+      <div class="grammar-card advice">
+
+        <div class="grammar-tag">FORM 02 · DIRECT ADVICE</div>
+
+        <h3>If + Present, Imperative</h3>
+
+        <p>
+          We use this structure to give advice,
+          instructions, or recommendations.
+        </p>
+
+        <div class="formula">
+          <span class="if">IF + PRESENT SIMPLE</span>
+          <br>
+          +
+          <br>
+          <span class="then">IMPERATIVE</span>
+        </div>
+
+        <div class="example">
+          <span class="pink-text">If you want to succeed,</span>
+          <span class="purple-text">revise regularly.</span>
+        </div>
+
+        <div class="example">
+          <span class="pink-text">If you feel tired,</span>
+          <span class="purple-text">take a short break.</span>
+        </div>
+
+        <div class="example">
+          <span class="pink-text">If you want to concentrate,</span>
+          <span class="purple-text">don't use your phone.</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="grammar-notes">
+
+      <div class="grammar-note">
+        <strong>RULE 1 · Present Simple after IF</strong><br>
+        In ordinary first conditional sentences, we normally
+        use the Present Simple after <strong>if</strong>,
+        not <strong>will</strong>.
+
+        <br><br>
+
+        <span style="color:var(--red)">
+          Incorrect: If you will study, you will succeed.
+        </span>
+
+        <br>
+
+        <span style="color:var(--green)">
+          Correct: If you study, you will succeed.
+        </span>
+      </div>
+
+
+      <div class="grammar-note">
+        <strong>RULE 2 · The imperative</strong><br>
+        Use the base form of the verb for positive advice:
+        <strong>Study! Revise! Listen!</strong>
+
+        <br>
+
+        Use <strong>don't + base verb</strong>
+        for negative advice:
+        <strong>Don't waste time!</strong>
+      </div>
+
+
+      <div class="grammar-note">
+        <strong>RULE 3 · Punctuation</strong><br>
+        When the if-clause comes first, put a comma
+        after it.
+
+        <br><br>
+
+        <strong>If you practise, you will improve.</strong>
+
+        <br>
+
+        When the result comes first, a comma is usually unnecessary.
+
+        <br>
+
+        <strong>You will improve if you practise.</strong>
+      </div>
+
+
+      <div class="grammar-note warning">
+        <strong>IMPORTANT · Prediction versus advice</strong><br>
+
+        <strong>If you revise, you will improve.</strong>
+        predicts a possible result.
+
+        <br><br>
+
+        <strong>If you want to improve, revise.</strong>
+        gives direct advice.
+
+        <br><br>
+
+        Both structures are useful, but they communicate
+        different meanings.
+      </div>
+
+    </div>
+
+
+    <div class="arabic-box">
+
+      <button
+        class="arabic-toggle"
+        type="button"
+        onclick="toggleArabic()"
+        aria-expanded="false"
+        id="arabicButton"
+      >
+        <span>Arabic Grammar Support · الشرح بالعربية</span>
+        <span id="arabicArrow">+</span>
+      </button>
+
+      <div class="arabic-content" id="arabicContent" dir="rtl">
+
+        <p>
+          <strong>الشرط من النوع الأول:</strong>
+          نستعمله للحديث عن شرط ممكن الحدوث ونتيجته المحتملة في المستقبل.
+        </p>
+
+        <p>
+          <strong>الصيغة الأولى:</strong><br>
+          If + المضارع البسيط، will + الفعل في المصدر.
+        </p>
+
+        <p>
+          <strong>مثال:</strong><br>
+          If you study hard, you will succeed.<br>
+          إذا درست بجد، فسوف تنجح.
+        </p>
+
+        <p>
+          <strong>الصيغة الثانية:</strong><br>
+          If + المضارع البسيط، فعل الأمر.
+        </p>
+
+        <p>
+          <strong>مثال:</strong><br>
+          If you want to succeed, study hard.<br>
+          إذا أردت النجاح، ادرس بجد.
+        </p>
+
+        <p>
+          <strong>تذكّر:</strong>
+          لا نستعمل عادةً will مباشرة بعد if في هذا النوع من الجمل.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="activity-list" id="grammarTasks" style="margin-top:20px"></div>
+
+</section>
+
+
+<!-- =====================================================
+     STAGE 3: PRACTISE
+===================================================== -->
+
+<section class="lesson-section" id="practice">
+
+  <div class="section-heading">
+    <div class="section-index">03</div>
+
+    <div>
+      <small>STAGE THREE · GUIDED PRACTICE</small>
+      <h2>Train Your Grammar Skills</h2>
+      <p>Complete sentences, match ideas, and identify the correct structures.</p>
+    </div>
+  </div>
+
+  <div class="activity-list" id="practiceTasks"></div>
+
+</section>
+
+
+<!-- =====================================================
+     STAGE 4: CHALLENGE
+===================================================== -->
+
+<section class="lesson-section" id="challenge">
+
+  <div class="section-heading">
+    <div class="section-index">04</div>
+
+    <div>
+      <small>STAGE FOUR · APPLY & ANALYSE</small>
+      <h2>The Conditional Challenge</h2>
+      <p>Correct mistakes, build sentences, and solve real-life problems.</p>
+    </div>
+  </div>
+
+  <div class="activity-list" id="challengeTasks"></div>
+
+</section>
+
+
+<!-- =====================================================
+     STAGE 5: CREATE
+===================================================== -->
+
+<section class="lesson-section" id="create">
+
+  <div class="section-heading">
+    <div class="section-index">05</div>
+
+    <div>
+      <small>STAGE FIVE · INDEPENDENT PRODUCTION</small>
+      <h2>Become an Advice Expert</h2>
+      <p>Use Conditional Type 1 to communicate your own ideas.</p>
+    </div>
+  </div>
+
+  <div class="activity-list" id="createTasks"></div>
+
+  <div class="activity production-card" id="task38" style="margin-top:20px">
+
+    <div class="activity-top">
+
+      <div class="activity-number">38</div>
+
+      <div class="activity-heading">
+        <h3>Final Mission · A Message to Your Friend</h3>
+
+        <p>
+          Write a short message giving advice to a friend
+          who wants to achieve a goal but spends too much
+          time playing and does not revise regularly.
+        </p>
+      </div>
+
+      <div class="activity-status" id="status38">NOT DONE</div>
+
+    </div>
+
+
+    <div class="prompt">
+      Write 5–7 sentences. Use both conditional structures,
+      at least two pieces of advice, and one possible result.
+    </div>
+
+
+    <div class="writing-checklist">
+
+      <label class="checkline">
+        <input type="checkbox">
+        <span>I used an if-clause.</span>
+      </label>
+
+      <label class="checkline">
+        <input type="checkbox">
+        <span>I used Present Simple after if.</span>
+      </label>
+
+      <label class="checkline">
+        <input type="checkbox">
+        <span>I used will + base verb.</span>
+      </label>
+
+      <label class="checkline">
+        <input type="checkbox">
+        <span>I used an imperative to give advice.</span>
+      </label>
+
+      <label class="checkline">
+        <input type="checkbox">
+        <span>My advice is logical and useful.</span>
+      </label>
+
+      <label class="checkline">
+        <input type="checkbox">
+        <span>I checked capitals and punctuation.</span>
+      </label>
+
+    </div>
+
+
+    <textarea
+      id="finalWriting"
+      aria-label="Final writing task"
+      placeholder="Dear friend,
+
+I know you want to succeed..."
+      oninput="updateWordCount()"
+    ></textarea>
+
+    <div class="writing-counter">
+      <span id="wordCount">0</span> words
+    </div>
+
+
+    <div class="model-toggle">
+      <button
+        class="btn btn-secondary"
+        onclick="toggleModel()"
+      >
+        Show / Hide Model Answer
+      </button>
+    </div>
+
+    <div class="model-text" id="modelAnswer">
+
+      <strong>Model message:</strong>
+
+      <p style="margin-top:9px">
+        Dear friend,<br>
+        I know you want to succeed at school.
+        If you revise regularly, you will improve your results.
+        If you want to manage your time better, make a study plan.
+        Don't spend all your time playing games.
+        If you work hard, you will feel more confident.
+        Remember to take short breaks and stay positive.
+        I believe you can achieve your goal!
+      </p>
+
+    </div>
+
+
+    <div class="action-row">
+
+      <button class="btn btn-primary" onclick="checkFinalWriting()">
+        Check My Writing
+      </button>
+
+      <button class="btn btn-secondary" onclick="clearWriting()">
+        Clear Writing
+      </button>
+
+    </div>
+
+    <div class="feedback" id="feedback38" role="status"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     STAGE 6: RESULTS
+===================================================== -->
+
+<section class="lesson-section" id="finish">
+
+  <div class="section-heading">
+    <div class="section-index">06</div>
+
+    <div>
+      <small>STAGE SIX · REFLECT & CELEBRATE</small>
+      <h2>Your Learning Achievement</h2>
+      <p>Review your progress and celebrate what you have learned.</p>
+    </div>
+  </div>
+
+  <div class="card result-card">
+
+    <div class="result-label">
+      CONDITIONAL TYPE 1 · FINAL RESULT
+    </div>
+
+    <h3 class="result-title" id="resultTitle">
+      Your Journey Is Underway
+    </h3>
+
+    <div class="result-stars" id="resultStars">
+      ☆ ☆ ☆
+    </div>
+
+    <div class="result-score" id="finalScore">
+      0
+    </div>
+
+    <p class="result-message" id="resultMessage">
+      Complete the activities to collect points,
+      practise both conditional forms,
+      and unlock your achievement certificate.
+    </p>
+
+    <div class="action-row" style="justify-content:center">
+
+      <button class="btn btn-primary" onclick="showResult()">
+        View My Result
+      </button>
+
+      <button class="btn btn-secondary" onclick="restartLesson()">
+        Start Again
+      </button>
+
+    </div>
+
+
+    <div class="certificate" id="certificate">
+
+      <div class="result-label">
+        MY ENGLISH SPACE · CERTIFICATE
+      </div>
+
+      <h3>Conditional Champion</h3>
+
+      <p>
+        This certificate is awarded to
+      </p>
+
+      <input
+        type="text"
+        id="studentName"
+        placeholder="Write your name"
+        aria-label="Student name"
+      >
+
+      <p>
+        for completing the learning journey
+        <strong>Conditional Type 1 — Giving Advice</strong>.
+      </p>
+
+      <p style="margin-top:12px">
+        <strong>Score:</strong>
+        <span id="certificateScore">0</span> points
+      </p>
+
+      <button
+        class="btn btn-dark"
+        style="margin-top:20px"
+        onclick="window.print()"
+      >
+        Print Certificate
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+  <strong>MY ENGLISH SPACE</strong>
+
+  <br><br>
+
+  MS4 · SEQUENCE 3 · GRAMMAR CHECKPOINT 02
+
+  <br>
+
+  Conditional Type 1 — Giving Advice
+
+  <br><br>
+
+  Learn · Practise · Create · Succeed
+
+</footer>
+
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+<script>
+"use strict";
+
+/* =====================================================
+   ACTIVITY DATA
+   38 TASKS TOTAL
+===================================================== */
+
+const activities = [
+
+  /* ==========================
+     DISCOVERY · 1–3
+  ========================== */
+
+  {
+    id:1,
+    stage:"discovery",
+    type:"mcq",
+    title:"Who Is More Likely to Succeed?",
+    instruction:"Look at the first two pictures.",
+    prompt:"Which pupil is more likely to succeed?",
+    options:[
+      "The pupil who revises and prepares.",
+      "The pupil who spends all the time playing."
+    ],
+    answer:0,
+    explanation:"Regular revision improves the chances of success."
+  },
+
+  {
+    id:2,
+    stage:"discovery",
+    type:"mcq",
+    title:"Discover the Possible Result",
+    instruction:"Choose the sentence that correctly describes Pictures 1 and 2.",
+    prompt:"Which sentence is correct?",
+    options:[
+      "If you will revise, you succeed.",
+      "If you revise your lessons, you will improve.",
+      "If you revised, you will improving."
+    ],
+    answer:1,
+    explanation:"Use Present Simple after if and will + base verb for the result."
+  },
+
+  {
+    id:3,
+    stage:"discovery",
+    type:"mcq",
+    title:"Which Sentence Gives Advice?",
+    instruction:"Identify the sentence that gives a direct instruction.",
+    prompt:"Choose the sentence giving direct advice.",
+    options:[
+      "If you revise, you will feel ready.",
+      "If you want to succeed, revise regularly."
+    ],
+    answer:1,
+    explanation:"The verb 'revise' is an imperative. It gives direct advice."
+  },
+
+
+  /* ==========================
+     GRAMMAR LAB · 4–5
+  ========================== */
+
+  {
+    id:4,
+    stage:"grammar",
+    type:"mcq",
+    title:"Choose the Correct Verb",
+    instruction:"Use Present Simple after if.",
+    prompt:"If you _____ your lessons, you will feel confident.",
+    options:[
+      "will revise",
+      "revised",
+      "revise",
+      "revising"
+    ],
+    answer:2,
+    explanation:"The if-clause takes the Present Simple: 'If you revise...'"
+  },
+
+  {
+    id:5,
+    stage:"grammar",
+    type:"mcq",
+    title:"Choose the Correct Result",
+    instruction:"Complete the first conditional sentence.",
+    prompt:"If you manage your time well, ...",
+    options:[
+      "you will complete your work on time.",
+      "you will completing your work.",
+      "you complete will your work."
+    ],
+    answer:0,
+    explanation:"The correct structure is 'will + base verb'."
+  },
+
+
+  /* ==========================
+     GUIDED PRACTICE · 6–18
+  ========================== */
+
+  {
+    id:6,
+    stage:"practice",
+    type:"fill",
+    title:"Complete the Sentences",
+    instruction:"Write the correct form of each verb.",
+    sentences:[
+      {
+        parts:["If you "," regularly, you "," your English."],
+        answers:["study","will improve"],
+        placeholders:["study","improve"]
+      },
+      {
+        parts:["If she "," hard, she "," her goal."],
+        answers:["works","will achieve"],
+        placeholders:["work","achieve"]
+      }
+    ],
+    explanation:"Use study / will improve / works / will achieve."
+  },
+
+  {
+    id:7,
+    stage:"practice",
+    type:"matching",
+    title:"Match the Two Parts",
+    instruction:"Select one beginning, then its correct ending.",
+    pairs:[
+      [
+        "If you revise every day,",
+        "you will remember more."
+      ],
+      [
+        "If you want to improve your English,",
+        "practise every day."
+      ],
+      [
+        "If you organize your time,",
+        "you will have time for your activities."
+      ]
+    ]
+  },
+
+  {
+    id:8,
+    stage:"practice",
+    type:"sorting",
+    title:"Sort the Conditional Sentences",
+    instruction:"Select a sentence, then click the correct category.",
+    categories:[
+      "IF + PRESENT → WILL",
+      "IF + PRESENT → IMPERATIVE"
+    ],
+    items:[
+      ["If you revise, you will succeed.",0],
+      ["If you want to succeed, revise regularly.",1],
+      ["If you work hard, you will improve.",0],
+      ["If you want better marks, study carefully.",1]
+    ]
+  },
+
+  {
+    id:9,
+    stage:"practice",
+    type:"mcq",
+    title:"Find the Mistake",
+    instruction:"Choose the corrected sentence.",
+    prompt:"If you will revise, you will get a good result.",
+    options:[
+      "If you revised, you will get a good result.",
+      "If you revise, you will get a good result.",
+      "If you will revise, you get a good result."
+    ],
+    answer:1,
+    explanation:"Use 'revise', not 'will revise', after if."
+  },
+
+  {
+    id:10,
+    stage:"practice",
+    type:"mcq",
+    title:"Give Useful Advice",
+    instruction:"Your friend plays games instead of revising.",
+    prompt:"Which advice is the best?",
+    options:[
+      "If you want to succeed, revise before playing.",
+      "If you want to succeed, you will playing all evening.",
+      "If you will want to succeed, revise."
+    ],
+    answer:0,
+    explanation:"This sentence uses If + Present Simple + imperative."
+  },
+
+  {
+    id:11,
+    stage:"practice",
+    type:"builder",
+    title:"Put the Words in Order",
+    instruction:"Click the words to build a correct conditional sentence.",
+    words:["revise","you","If","will","succeed",",","you"],
+    expected:["If","you","revise",",","you","will","succeed"],
+    explanation:"If you revise, you will succeed."
+  },
+
+  {
+    id:12,
+    stage:"practice",
+    type:"open",
+    title:"Complete the Advice",
+    instruction:"Give one useful piece of advice.",
+    prompt:"If you want to get better results, ...",
+    placeholder:"Write your advice",
+    kind:"imperative",
+    example:"revise regularly.",
+    hints:["revise","study","organize","practise","practice","work","manage","listen","read","make","don't"]
+  },
+
+  {
+    id:13,
+    stage:"practice",
+    type:"exact",
+    title:"Complete the Imperative",
+    instruction:"Use the verb in brackets.",
+    prompt:"If you feel nervous before an exam, _____ (take) a deep breath.",
+    answers:["take"],
+    example:"take",
+    explanation:"After the if-clause, use the base verb to give advice."
+  },
+
+  {
+    id:14,
+    stage:"practice",
+    type:"transform",
+    title:"Change the Result into Advice",
+    instruction:"Rewrite using the imperative form.",
+    prompt:"If you revise, you will improve.",
+    example:"If you want to improve, revise.",
+    answers:[
+      "if you want to improve revise",
+      "if you want to improve revise regularly"
+    ],
+    explanation:"Use If + Present Simple, imperative."
+  },
+
+  {
+    id:15,
+    stage:"practice",
+    type:"transform",
+    title:"Change the Advice into a Result",
+    instruction:"Rewrite using will + base verb.",
+    prompt:"If you want to succeed, work hard.",
+    example:"If you work hard, you will succeed.",
+    answers:[
+      "if you work hard you will succeed",
+      "if you work hard you will achieve your goal"
+    ],
+    explanation:"Use If + Present Simple, will + base verb."
+  },
+
+  {
+    id:16,
+    stage:"practice",
+    type:"mcq",
+    title:"Improve Your English",
+    instruction:"Your friend wants to improve his English.",
+    prompt:"What would you say?",
+    options:[
+      "If you will want to improve, practise every day.",
+      "If you want to improve, practise every day.",
+      "If you want to improve, you will practise yesterday."
+    ],
+    answer:1,
+    explanation:"The imperative 'practise' gives direct advice."
+  },
+
+  {
+    id:17,
+    stage:"practice",
+    type:"mcq",
+    title:"Predict a Logical Result",
+    instruction:"A pupil studies regularly.",
+    prompt:"What is a likely result?",
+    options:[
+      "If the pupil studies, he will forgetting everything.",
+      "If the pupil studies, study harder yesterday.",
+      "If the pupil studies regularly, he will be better prepared."
+    ],
+    answer:2,
+    explanation:"The result is logical and uses 'will + base verb'."
+  },
+
+  {
+    id:18,
+    stage:"practice",
+    type:"open",
+    title:"Write a Possible Result",
+    instruction:"Complete the sentence with will + base verb.",
+    prompt:"If you organize your study time, ...",
+    placeholder:"You will...",
+    kind:"result",
+    example:"you will finish your homework on time.",
+    hints:["will"]
+  },
+
+
+  /* ==========================
+     CHALLENGE · 19–36
+  ========================== */
+
+  {
+    id:19,
+    stage:"challenge",
+    type:"transform",
+    title:"Make the Advice Direct",
+    instruction:"Rewrite as direct advice. The original sentence is grammatical, but it makes a prediction rather than giving an instruction.",
+    prompt:"If you want to improve, you will practise every day.",
+    example:"If you want to improve, practise every day.",
+    answers:[
+      "if you want to improve practise every day",
+      "if you want to improve practice every day"
+    ],
+    explanation:"The imperative 'practise' gives direct advice."
+  },
+
+  {
+    id:20,
+    stage:"challenge",
+    type:"mcq",
+    title:"Check the Punctuation",
+    instruction:"Choose the correctly punctuated sentence.",
+    prompt:"Which sentence uses the comma correctly?",
+    options:[
+      "If you revise you, will feel confident.",
+      "If you revise you will feel confident.",
+      "If you revise, you will feel confident."
+    ],
+    answer:2,
+    explanation:"Use a comma after an introductory if-clause."
+  },
+
+  {
+    id:21,
+    stage:"challenge",
+    type:"mcq",
+    title:"Choose the Correct Structure",
+    instruction:"Find the grammatically correct sentence.",
+    prompt:"Which sentence is correct?",
+    options:[
+      "If you will work hard, you will achieve your goal.",
+      "If you work hard, you will achieve your goal.",
+      "If you work hard, you will achieving your goal."
+    ],
+    answer:1,
+    explanation:"Present Simple after if; will + base verb in the result."
+  },
+
+  {
+    id:22,
+    stage:"challenge",
+    type:"mcq",
+    title:"Make It Negative",
+    instruction:"Choose the correct negative conditional.",
+    prompt:"Which sentence is correct?",
+    options:[
+      "If you don't revise, you won't feel ready.",
+      "If you won't revise, you don't feel ready.",
+      "If you don't revise, you won't feeling ready."
+    ],
+    answer:0,
+    explanation:"Use don't + base verb and won't + base verb."
+  },
+
+  {
+    id:23,
+    stage:"challenge",
+    type:"mcq",
+    title:"Give Negative Advice",
+    instruction:"Choose the sentence with a negative imperative.",
+    prompt:"Your friend cannot concentrate because of a phone.",
+    options:[
+      "If you want to concentrate, don't will use your phone.",
+      "If you will concentrate, don't use your phone.",
+      "If you want to concentrate, don't use your phone all the time."
+    ],
+    answer:2,
+    explanation:"The negative imperative is 'don't + base verb'."
+  },
+
+  {
+    id:24,
+    stage:"challenge",
+    type:"mcq",
+    title:"Picture Challenge · Advice",
+    instruction:"Look again at Picture 3.",
+    prompt:"Which advice is most helpful?",
+    options:[
+      "If you have an exam soon, play all night.",
+      "If you have an exam soon, reduce your playing time and revise.",
+      "If you will have an exam soon, playing all night."
+    ],
+    answer:1,
+    explanation:"The advice is logical and uses the imperative."
+  },
+
+  {
+    id:25,
+    stage:"challenge",
+    type:"open",
+    title:"Picture Challenge · Result",
+    instruction:"Look at Pictures 1 and 2. Write a conditional sentence explaining the possible result.",
+    prompt:"If the pupil studies regularly, ...",
+    placeholder:"He / She will...",
+    kind:"result",
+    example:"he will get better results.",
+    hints:["will"]
+  },
+
+  {
+    id:26,
+    stage:"challenge",
+    type:"open",
+    title:"Picture Challenge · Advice",
+    instruction:"Look at Pictures 3 and 4. Give the pupil direct advice.",
+    prompt:"If you want to succeed, ...",
+    placeholder:"Give your advice",
+    kind:"imperative",
+    example:"revise before playing games.",
+    hints:["revise","study","reduce","organize","manage","don't","stop","make"]
+  },
+
+  {
+    id:27,
+    stage:"challenge",
+    type:"twoforms",
+    title:"Express the Idea in Two Ways",
+    instruction:"Write one prediction and one piece of advice about studying.",
+    prompts:[
+      "Form 1: If + Present Simple, will + base verb",
+      "Form 2: If + Present Simple, imperative"
+    ],
+    examples:[
+      "If you study regularly, you will improve.",
+      "If you want to improve, study regularly."
+    ]
+  },
+
+  {
+    id:28,
+    stage:"challenge",
+    type:"multi",
+    title:"Choose Two Useful Pieces of Advice",
+    instruction:"Select exactly TWO helpful pieces of advice.",
+    prompt:"Your friend wants better school results.",
+    options:[
+      "Revise regularly.",
+      "Waste all your study time.",
+      "Organize your time.",
+      "Ignore your lessons."
+    ],
+    answers:[0,2],
+    explanation:"Revising and organizing time are useful habits."
+  },
+
+  {
+    id:29,
+    stage:"challenge",
+    type:"builder",
+    title:"Build a Conditional Sentence",
+    instruction:"Put the words in the correct order.",
+    words:["will","hard","you","If","improve","work",",","you"],
+    expected:["If","you","work","hard",",","you","will","improve"],
+    explanation:"If you work hard, you will improve."
+  },
+
+  {
+    id:30,
+    stage:"challenge",
+    type:"mcq",
+    title:"Understand the Meaning",
+    instruction:"Identify the communicative purpose.",
+    prompt:"If you want to improve, practise every day.",
+    options:[
+      "It describes a past event.",
+      "It gives advice.",
+      "It asks about someone's age."
+    ],
+    answer:1,
+    explanation:"The sentence gives direct advice using an imperative."
+  },
+
+  {
+    id:31,
+    stage:"challenge",
+    type:"open",
+    title:"Remember New Vocabulary",
+    instruction:"Complete the sentence with logical advice.",
+    prompt:"If you want to remember new vocabulary, ...",
+    placeholder:"Write your advice",
+    kind:"imperative",
+    example:"revise the words every day.",
+    hints:["revise","read","write","repeat","practise","practice","use","make","review","learn"]
+  },
+
+  {
+    id:32,
+    stage:"challenge",
+    type:"mcq",
+    title:"Help a Nervous Friend",
+    instruction:"Your friend feels nervous before an exam.",
+    prompt:"Choose the best advice.",
+    options:[
+      "If you feel nervous, take a deep breath and stay calm.",
+      "If you will feel nervous, take a deep breath.",
+      "If you feel nervous, will take a deep breath."
+    ],
+    answer:0,
+    explanation:"'Take' and 'stay' are imperatives."
+  },
+
+  {
+    id:33,
+    stage:"challenge",
+    type:"builder",
+    title:"Build a Sentence of Advice",
+    instruction:"Put the words in the correct order.",
+    words:["revise","want","If","regularly","you","to","succeed",","],
+    expected:["If","you","want","to","succeed",",","revise","regularly"],
+    explanation:"If you want to succeed, revise regularly."
+  },
+
+  {
+    id:34,
+    stage:"challenge",
+    type:"open",
+    title:"Make a Prediction",
+    instruction:"Complete the sentence with a possible result.",
+    prompt:"If the pupil continues to revise regularly, ...",
+    placeholder:"The pupil will...",
+    kind:"result",
+    example:"the pupil will become more confident.",
+    hints:["will"]
+  },
+
+  {
+    id:35,
+    stage:"challenge",
+    type:"transform",
+    title:"Make the Advice Stronger",
+    instruction:"Change the prediction into direct advice.",
+    prompt:"If you want to get better results, you will revise every day.",
+    example:"If you want to get better results, revise every day.",
+    answers:[
+      "if you want to get better results revise every day"
+    ],
+    explanation:"Remove 'you will' and use the imperative 'revise'."
+  },
+
+  {
+    id:36,
+    stage:"challenge",
+    type:"mcq",
+    title:"Compare the Two Forms",
+    instruction:"Choose the pair that correctly expresses a prediction and related advice.",
+    prompt:"Which pair is correct?",
+    options:[
+      "If you will revise, you improve. / If you want improve, revise.",
+      "If you revised, you will improve. / If you want improving, revise.",
+      "If you revise, you will improve. / If you want to improve, revise."
+    ],
+    answer:2,
+    explanation:"The first sentence predicts a result; the second gives advice."
+  },
+
+
+  /* ==========================
+     CREATE · 37
+     TASK 38 HAS CUSTOM HTML
+  ========================== */
+
+  {
+    id:37,
+    stage:"create",
+    type:"clinic",
+    title:"The Advice Clinic",
+    instruction:"Write one conditional sentence for each situation.",
+    situations:[
+      "Your friend wastes too much time on the phone.",
+      "Your friend wants to improve English.",
+      "Your friend wants to achieve a future ambition."
+    ],
+    examples:[
+      "If you want to concentrate, put your phone away.",
+      "If you practise English every day, you will improve.",
+      "If you want to achieve your ambition, work hard."
+    ]
+  }
+
+];
+
+
+/* =====================================================
+   STATE
+===================================================== */
+
+const TOTAL_TASKS = 38;
+
+const MAX_POINTS = 100;
+
+const completed = new Set();
+
+const awarded = new Map();
+
+const attempts = new Map();
+
+const builderState = {};
+
+const sortingState = {};
+
+const matchingState = {};
+
+let totalScore = 0;
+
+
+/* =====================================================
+   UTILITIES
+===================================================== */
+
+function el(id){
+  return document.getElementById(id);
+}
+
+function escapeHTML(value){
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#39;");
+}
+
+function normalize(value){
+  return String(value)
+    .toLowerCase()
+    .replace(/[.,!?;:]/g," ")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function words(value){
+  return normalize(value).split(" ").filter(Boolean);
+}
+
+function toast(message){
+  const box=el("toast");
+
+  box.textContent=message;
+  box.classList.add("show");
+
+  clearTimeout(toast.timer);
+
+  toast.timer=setTimeout(()=>{
+    box.classList.remove("show");
+  },2500);
+}
+
+function showFeedback(id,message,type="info"){
+  const box=el("feedback"+id);
+
+  if(!box)return;
+
+  box.textContent=message;
+  box.className="feedback show "+type;
+}
+
+function showHint(id){
+  const hint=el("hint"+id);
+
+  if(hint){
+    hint.classList.toggle("show");
+  }
+}
+
+function toggleArabic(){
+  const content=el("arabicContent");
+  const button=el("arabicButton");
+
+  const open=content.classList.toggle("open");
+
+  button.setAttribute("aria-expanded",String(open));
+  el("arabicArrow").textContent=open?"−":"+";
+}
+
+function toggleModel(){
+  el("modelAnswer").classList.toggle("show");
+}
+
+function updateWordCount(){
+  const text=el("finalWriting").value.trim();
+
+  const count=text?text.split(/\s+/).length:0;
+
+  el("wordCount").textContent=count;
+}
+
+function clearWriting(){
+  el("finalWriting").value="";
+  updateWordCount();
+
+  showFeedback(
+    38,
+    "Your writing area is clear. You can start again.",
+    "info"
+  );
+}
+
+
+/* =====================================================
+   SCORING
+===================================================== */
+
+function taskPoints(id){
+  if(id===38)return 10;
+  if(id===37)return 5;
+  if([6,7,8,11,14,15,27,29,33,35].includes(id))return 3;
+  if([12,18,25,26,31,34].includes(id))return 2;
+  return 2;
+}
+
+function completeTask(id,points){
+
+  if(completed.has(id)){
+    return;
+  }
+
+  completed.add(id);
+
+  const awardedPoints=Math.max(0,Math.min(points,taskPoints(id)));
+
+  awarded.set(id,awardedPoints);
+
+  totalScore=[...awarded.values()].reduce((a,b)=>a+b,0);
+
+  const status=el("status"+id);
+
+  if(status){
+    status.textContent="COMPLETED";
+    status.classList.add("done");
+  }
+
+  updateDashboard();
+
+  if(completed.size===TOTAL_TASKS){
+    toast("All 38 activities completed!");
+    showResult();
+  }else{
+    toast("Activity "+id+" completed!");
+  }
+}
+
+function updateDashboard(){
+
+  const percentage=Math.round(
+    completed.size/TOTAL_TASKS*100
+  );
+
+  el("progressFill").style.width=percentage+"%";
+
+  el("progressPercent").textContent=percentage+"%";
+
+  el("topCompleted").textContent=completed.size;
+
+  el("dashboardTasks").textContent=
+    completed.size+"/"+TOTAL_TASKS;
+
+  el("topScore").textContent=totalScore;
+
+  el("dashboardScore").textContent=totalScore;
+
+  el("finalScore").textContent=totalScore;
+
+  el("certificateScore").textContent=totalScore;
+
+  const stars=el("resultStars");
+
+  if(completed.size===0){
+    stars.textContent="☆ ☆ ☆";
+  }else if(completed.size<13){
+    stars.textContent="★ ☆ ☆";
+  }else if(completed.size<30){
+    stars.textContent="★ ★ ☆";
+  }else{
+    stars.textContent="★ ★ ★";
+  }
+}
+
+
+/* =====================================================
+   RENDER ACTIVITIES
+===================================================== */
+
+function renderActivities(){
+
+  const containers={
+    discovery:el("discoveryTasks"),
+    grammar:el("grammarTasks"),
+    practice:el("practiceTasks"),
+    challenge:el("challengeTasks"),
+    create:el("createTasks")
+  };
+
+  activities.forEach(task=>{
+
+    const wrapper=document.createElement("article");
+
+    wrapper.className="activity";
+    wrapper.id="task"+task.id;
+
+    wrapper.innerHTML=`
+      <div class="activity-top">
+        <div class="activity-number">${task.id}</div>
+
+        <div class="activity-heading">
+          <h3>${escapeHTML(task.title)}</h3>
+          <p>${escapeHTML(task.instruction)}</p>
+        </div>
+
+        <div class="activity-status" id="status${task.id}">
+          NOT DONE
+        </div>
+      </div>
+
+      ${renderTaskBody(task)}
+
+      <div
+        class="feedback"
+        id="feedback${task.id}"
+        role="status"
+        aria-live="polite"
+      ></div>
+    `;
+
+    containers[task.stage].appendChild(wrapper);
+  });
+}
+
+function renderTaskBody(task){
+
+  switch(task.type){
+
+    case "mcq":
+      return renderMCQ(task);
+
+    case "multi":
+      return renderMulti(task);
+
+    case "fill":
+      return renderFill(task);
+
+    case "exact":
+    case "transform":
+    case "open":
+      return renderInput(task);
+
+    case "matching":
+      return renderMatching(task);
+
+    case "sorting":
+      return renderSorting(task);
+
+    case "builder":
+      return renderBuilder(task);
+
+    case "twoforms":
+      return renderTwoForms(task);
+
+    case "clinic":
+      return renderClinic(task);
+
+    default:
+      return "";
+  }
+}
+
+
+/* =====================================================
+   MULTIPLE CHOICE
+===================================================== */
+
+function renderMCQ(task){
+
+  return `
+    <div class="prompt">
+      ${escapeHTML(task.prompt)}
+    </div>
+
+    <div class="option-grid" id="options${task.id}">
+      ${task.options.map((option,index)=>`
+        <button
+          type="button"
+          class="option"
+          onclick="checkMCQ(${task.id},${index},this)"
+        >
+          ${escapeHTML(option)}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function checkMCQ(id,index,button){
+
+  if(completed.has(id))return;
+
+  const task=activities.find(t=>t.id===id);
+
+  const options=el("options"+id).querySelectorAll(".option");
+
+  attempts.set(id,(attempts.get(id)||0)+1);
+
+  if(index===task.answer){
+
+    button.classList.add("correct");
+
+    options.forEach(option=>{
+      option.disabled=true;
+    });
+
+    const points=attempts.get(id)===1?taskPoints(id):1;
+
+    completeTask(id,points);
+
+    showFeedback(
+      id,
+      "Correct! "+task.explanation,
+      "good"
+    );
+
+  }else{
+
+    button.classList.add("wrong");
+    button.disabled=true;
+
+    showFeedback(
+      id,
+      "Not quite. Look at the grammar rule and try another answer.",
+      "bad"
+    );
+  }
+}
+
+
+/* =====================================================
+   MULTIPLE SELECTION
+===================================================== */
+
+function renderMulti(task){
+
+  return `
+    <div class="prompt">${escapeHTML(task.prompt)}</div>
+
+    <div class="option-grid" id="multi${task.id}">
+      ${task.options.map((option,index)=>`
+        <button
+          type="button"
+          class="option"
+          aria-pressed="false"
+          data-index="${index}"
+          onclick="toggleMulti(this)"
+        >
+          ${escapeHTML(option)}
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="action-row">
+      <button
+        class="btn btn-primary"
+        onclick="checkMulti(${task.id})"
+      >
+        Check My Choices
+      </button>
+    </div>
+  `;
+}
+
+function toggleMulti(button){
+
+  if(button.disabled)return;
+
+  const selected=button.classList.toggle("selected");
+
+  button.setAttribute("aria-pressed",String(selected));
+
+  button.style.background=selected?"#eee7ff":"white";
+  button.style.borderColor=selected?"#7552c7":"#eae4f2";
+}
+
+function checkMulti(id){
+
+  if(completed.has(id))return;
+
+  const task=activities.find(t=>t.id===id);
+
+  const selected=[
+    ...el("multi"+id).querySelectorAll(".option.selected")
+  ].map(button=>Number(button.dataset.index));
+
+  const correct=
+    selected.length===task.answers.length &&
+    task.answers.every(answer=>selected.includes(answer));
+
+  if(correct){
+
+    completeTask(id,taskPoints(id));
+
+    el("multi"+id).querySelectorAll(".option").forEach((button,index)=>{
+      button.disabled=true;
+
+      if(task.answers.includes(index)){
+        button.classList.add("correct");
+      }
+    });
+
+    showFeedback(id,"Excellent! "+task.explanation,"good");
+
+  }else{
+
+    showFeedback(
+      id,
+      "Choose exactly two useful actions. Avoid habits that harm learning.",
+      "bad"
+    );
+  }
+}
+
+
+/* =====================================================
+   FILL IN THE BLANKS
+===================================================== */
+
+function renderFill(task){
+
+  let html="";
+
+  let counter=0;
+
+  task.sentences.forEach((sentence)=>{
+
+    html+='<div class="fill-sentence">';
+
+    sentence.parts.forEach((part,index)=>{
+
+      html+=`<span>${escapeHTML(part)}</span>`;
+
+      if(index<sentence.answers.length){
+
+        html+=`
+          <input
+            type="text"
+            id="fill${task.id}_${counter}"
+            placeholder="Verb form"
+            aria-label="Missing verb ${counter+1}"
+            autocomplete="off"
+          >
+        `;
+
+        counter++;
+      }
+    });
+
+    html+="</div>";
+  });
+
+  html+=`
+    <div class="action-row">
+      <button
+        class="btn btn-primary"
+        onclick="checkFill(${task.id})"
+      >
+        Check Answers
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="showHint(${task.id})"
+      >
+        Hint
+      </button>
+    </div>
+
+    <div class="hint" id="hint${task.id}">
+      After if, use Present Simple.
+      In the result clause, use will + base verb.
+      Remember the -s ending with she.
+    </div>
+  `;
+
+  return html;
+}
+
+function checkFill(id){
+
+  if(completed.has(id))return;
+
+  const task=activities.find(t=>t.id===id);
+
+  const answers=task.sentences.flatMap(s=>s.answers);
+
+  let correct=0;
+
+  answers.forEach((answer,index)=>{
+
+    const input=el("fill"+id+"_"+index);
+
+    const right=normalize(input.value)===normalize(answer);
+
+    input.style.borderColor=right?"#24a977":"#e35a70";
+
+    if(right)correct++;
+  });
+
+  if(correct===answers.length){
+
+    completeTask(id,taskPoints(id));
+
+    showFeedback(
+      id,
+      "Excellent! All four verb forms are correct.",
+      "good"
+    );
+
+  }else{
+
+    showFeedback(
+      id,
+      correct+" of "+answers.length+
+      " answers are correct. Check the highlighted fields.",
+      "bad"
+    );
+  }
+}
+
+
+/* =====================================================
+   TEXT INPUTS
+===================================================== */
+
+function renderInput(task){
+
+  return `
+    <div class="prompt">
+      ${escapeHTML(task.prompt)}
+    </div>
+
+    <input
+      type="text"
+      id="input${task.id}"
+      placeholder="${escapeHTML(task.placeholder||"Write your answer here")}"
+      autocomplete="off"
+      aria-label="Answer for activity ${task.id}"
+    >
+
+    <div class="action-row">
+
+      <button
+        class="btn btn-primary"
+        onclick="checkText(${task.id})"
+      >
+        Check Answer
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="showHint(${task.id})"
+      >
+        Show Hint
+      </button>
+
+    </div>
+
+    <div class="hint" id="hint${task.id}">
+      Example: ${escapeHTML(task.example)}
+    </div>
+  `;
+}
+
+function checkText(id){
+
+  if(completed.has(id))return;
+
+  const task=activities.find(t=>t.id===id);
+
+  const value=el("input"+id).value.trim();
+
+  const answer=normalize(value);
+
+  if(!answer){
+    showFeedback(id,"Please write your answer first.","bad");
+    return;
+  }
+
+  if(task.type==="exact" || task.type==="transform"){
+
+    const correct=task.answers.some(
+      expected=>normalize(expected)===answer
+    );
+
+    if(correct){
+
+      completeTask(id,taskPoints(id));
+
+      showFeedback(
+        id,
+        "Correct! "+task.explanation,
+        "good"
+      );
+
+    }else{
+
+      showFeedback(
+        id,
+        "Check your answer. One possible answer is: "+
+        task.example,
+        "bad"
+      );
+    }
+
+    return;
+  }
+
+  /* Open answers receive structural feedback.
+     This is not a full grammar or meaning evaluator. */
+
+  const result=evaluateOpen(task,value);
+
+  if(result.ok){
+
+    completeTask(id,taskPoints(id));
+
+    showFeedback(
+      id,
+      "Your answer follows the expected structure. "+
+      "Now check whether the meaning is logical. "+
+      "Example: "+task.example,
+      "good"
+    );
+
+  }else{
+
+    showFeedback(id,result.message,"bad");
+  }
+}
+
+function evaluateOpen(task,value){
+
+  const text=normalize(value);
+
+  const wordList=words(value);
+
+  if(wordList.length<3){
+    return {
+      ok:false,
+      message:"Write a complete idea, not just one or two words."
+    };
+  }
+
+  if(task.kind==="result"){
+
+    if(!/\bwill\b|\bwon t\b|\bwon't\b/.test(value.toLowerCase())){
+      return {
+        ok:false,
+        message:"Use will + base verb to express a possible result."
+      };
+    }
+
+    if(/\bwill\s+\w+ing\b/i.test(value)){
+      return {
+        ok:false,
+        message:"After will, use the base verb, not an -ing form."
+      };
+    }
+
+    return {ok:true};
+  }
+
+  if(task.kind==="imperative"){
+
+    if(/\bwill\b/i.test(value)){
+      return {
+        ok:false,
+        message:"This activity asks for direct advice. Use an imperative without will."
+      };
+    }
+
+    const startsWithAdvice=task.hints.some(
+      verb=>text===verb || text.startsWith(verb+" ")
+    );
+
+    if(!startsWithAdvice){
+      return {
+        ok:false,
+        message:"Start with an action verb such as revise, study, practise, or don't. Example: "+
+        task.example
+      };
+    }
+
+    return {ok:true};
+  }
+
+  return {ok:true};
+}
+
+
+/* =====================================================
+   MATCHING GAME
+===================================================== */
+
+function renderMatching(task){
+
+  matchingState[task.id]={
+    selectedLeft:null,
+    selectedRight:null,
+    matched:new Set()
+  };
+
+  const left=task.pairs.map((pair,index)=>({
+    text:pair[0],
+    index
+  }));
+
+  const right=task.pairs.map((pair,index)=>({
+    text:pair[1],
+    index
+  })).reverse();
+
+  return `
+    <div class="match-grid">
+
+      <div class="match-column">
+
+        <div class="match-column-title">
+          BEGINNINGS
+        </div>
+
+        ${left.map(item=>`
+          <button
+            type="button"
+            class="match-item"
+            id="matchL${task.id}_${item.index}"
+            onclick="selectMatch(${task.id},'left',${item.index})"
+          >
+            ${escapeHTML(item.text)}
+          </button>
+        `).join("")}
+
+      </div>
+
+      <div class="match-column">
+
+        <div class="match-column-title">
+          ENDINGS
+        </div>
+
+        ${right.map(item=>`
+          <button
+            type="button"
+            class="match-item"
+            id="matchR${task.id}_${item.index}"
+            onclick="selectMatch(${task.id},'right',${item.index})"
+          >
+            ${escapeHTML(item.text)}
+          </button>
+        `).join("")}
+
+      </div>
+
+    </div>
+
+    <div class="pair-summary" id="pairSummary${task.id}"></div>
+  `;
+}
+
+function selectMatch(id,side,index){
+
+  if(completed.has(id))return;
+
+  const state=matchingState[id];
+
+  if(state.matched.has(index))return;
+
+  const key=side==="left"?"selectedLeft":"selectedRight";
+
+  const previous=state[key];
+
+  if(previous!==null){
+    const old=el(
+      (side==="left"?"matchL":"matchR")+id+"_"+previous
+    );
+
+    if(old)old.classList.remove("selected");
+  }
+
+  state[key]=index;
+
+  const button=el(
+    (side==="left"?"matchL":"matchR")+id+"_"+index
+  );
+
+  button.classList.add("selected");
+
+  if(
+    state.selectedLeft!==null &&
+    state.selectedRight!==null
+  ){
+    checkMatchPair(id);
+  }
+}
+
+function checkMatchPair(id){
+
+  const state=matchingState[id];
+
+  const leftIndex=state.selectedLeft;
+  const rightIndex=state.selectedRight;
+
+  const leftButton=el("matchL"+id+"_"+leftIndex);
+  const rightButton=el("matchR"+id+"_"+rightIndex);
+
+  if(leftIndex===rightIndex){
+
+    leftButton.classList.remove("selected");
+    rightButton.classList.remove("selected");
+
+    leftButton.classList.add("matched");
+    rightButton.classList.add("matched");
+
+    leftButton.disabled=true;
+    rightButton.disabled=true;
+
+    state.matched.add(leftIndex);
+
+    const task=activities.find(t=>t.id===id);
+
+    const pair=task.pairs[leftIndex];
+
+    const line=document.createElement("div");
+
+    line.className="pair-line";
+
+    line.textContent=pair[0]+" "+pair[1];
+
+    el("pairSummary"+id).appendChild(line);
+
+    showFeedback(
+      id,
+      "Correct pair! "+state.matched.size+
+      " of "+task.pairs.length+" completed.",
+      "good"
+    );
+
+    if(state.matched.size===task.pairs.length){
+
+      completeTask(id,taskPoints(id));
+
+      showFeedback(
+        id,
+        "Excellent! You matched all three conditional sentences.",
+        "good"
+      );
+    }
+
+  }else{
+
+    leftButton.classList.remove("selected");
+    rightButton.classList.remove("selected");
+
+    showFeedback(
+      id,
+      "Those parts do not match. Think about the meaning and try again.",
+      "bad"
+    );
+  }
+
+  state.selectedLeft=null;
+  state.selectedRight=null;
+}
+
+
+/* =====================================================
+   SORTING GAME
+===================================================== */
+
+function renderSorting(task){
+
+  sortingState[task.id]={
+    selected:null,
+    placed:{}
+  };
+
+  return `
+    <div class="sort-source" id="sortSource${task.id}">
+
+      ${task.items.map((item,index)=>`
+        <button
+          type="button"
+          class="sort-item"
+          id="sortItem${task.id}_${index}"
+          onclick="selectSortItem(${task.id},${index})"
+        >
+          ${escapeHTML(item[0])}
+        </button>
+      `).join("")}
+
+    </div>
+
+    <div class="sort-grid">
+
+      ${task.categories.map((category,index)=>`
+        <div
+          class="sort-zone"
+          onclick="placeSortItem(${task.id},${index})"
+          role="button"
+          tabindex="0"
+          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();placeSortItem(${task.id},${index})}"
+        >
+          <h4>${escapeHTML(category)}</h4>
+          <div id="sortZone${task.id}_${index}"></div>
+        </div>
+      `).join("")}
+
+    </div>
+
+    <div class="action-row">
+
+      <button
+        class="btn btn-primary"
+        onclick="checkSorting(${task.id})"
+      >
+        Check Sorting
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="resetSorting(${task.id})"
+      >
+        Reset Sorting
+      </button>
+
+    </div>
+  `;
+}
+
+function selectSortItem(id,index){
+
+  if(completed.has(id))return;
+
+  const state=sortingState[id];
+
+  if(state.selected!==null){
+    el("sortItem"+id+"_"+state.selected)
+      .classList.remove("selected");
+  }
+
+  state.selected=index;
+
+  el("sortItem"+id+"_"+index)
+    .classList.add("selected");
+
+  showFeedback(
+    id,
+    "Now click the correct category below.",
+    "info"
+  );
+}
+
+function placeSortItem(id,category){
+
+  if(completed.has(id))return;
+
+  const state=sortingState[id];
+
+  if(state.selected===null){
+    showFeedback(
+      id,
+      "Select a sentence first.",
+      "info"
+    );
+    return;
+  }
+
+  const index=state.selected;
+
+  const item=el("sortItem"+id+"_"+index);
+
+  item.classList.remove("selected");
+
+  el("sortZone"+id+"_"+category).appendChild(item);
+
+  state.placed[index]=category;
+  state.selected=null;
+}
+
+function resetSorting(id){
+
+  if(completed.has(id))return;
+
+  const task=activities.find(t=>t.id===id);
+
+  task.items.forEach((item,index)=>{
+
+    const button=el("sortItem"+id+"_"+index);
+
+    button.classList.remove("selected");
+
+    el("sortSource"+id).appendChild(button);
+  });
+
+  sortingState[id]={
+    selected:null,
+    placed:{}
+  };
+
+  showFeedback(id,"Sorting reset. Try again.","info");
+}
+
+function checkSorting(id){
+
+  if(completed.has(id))return;
+
+  const task=activities.find(t=>t.id===id);
+
+  const state=sortingState[id];
+
+  if(Object.keys(state.placed).length!==task.items.length){
+
+    showFeedback(
+      id,
+      "Place all four sentences before checking.",
+      "bad"
+    );
+
+    return;
+  }
+
+  const correct=task.items.every(
+    (item,index)=>state.placed[index]===item[1]
+  );
+
+  if(correct){
+
+    completeTask(id,taskPoints(id));
+
+    showFeedback(
+      id,
+      "Perfect! You distinguished predictions from direct advice.",
+      "good"
+    );
+
+  }else{
+
+    showFeedback(
+      id,
+      "Some sentences are in the wrong category. "+
+      "Remember: will predicts a result; the imperative gives advice. "+
+      "Click a sentence and move it to the other category.",
+      "bad"
+    );
+  }
+}
+
+
+/* =====================================================
+   SENTENCE BUILDER
+===================================================== */
+
+function renderBuilder(task){
+
+  builderState[task.id]=[];
+
+  return `
+    <div class="word-bank" id="wordBank${task.id}">
+
+      ${task.words.map((word,index)=>`
+        <button
+          type="button"
+          class="word-chip"
+          id="word${task.id}_${index}"
+          onclick="addBuilderWord(${task.id},${index})"
+        >
+          ${escapeHTML(word)}
+        </button>
+      `).join("")}
+
+    </div>
+
+    <div class="word-output" id="wordOutput${task.id}">
+      <span class="output-placeholder">
+        Click the words in the correct order...
+      </span>
+    </div>
+
+    <div class="action-row">
+
+      <button
+        class="btn btn-primary"
+        onclick="checkBuilder(${task.id})"
+      >
+        Check Sentence
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="undoBuilder(${task.id})"
+      >
+        Undo
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="resetBuilder(${task.id})"
+      >
+        Reset
+      </button>
+
+    </div>
+  `;
+}
+
+function addBuilderWord(id,index){
+
+  if(completed.has(id))return;
+
+  const button=el("word"+id+"_"+index);
+
+  if(button.classList.contains("used"))return;
+
+  button.classList.add("used");
+
+  builderState[id].push(index);
+
+  renderBuilderOutput(id);
+}
+
+function renderBuilderOutput(id){
+
+  const task=activities.find(t=>t.id===id);
+
+  const indexes=builderState[id];
+
+  const output=el("wordOutput"+id);
+
+  if(indexes.length===0){
+
+    output.innerHTML=`
+      <span class="output-placeholder">
+        Click the words in the correct order...
+      </span>
+    `;
+
+    return;
+  }
+
+  output.innerHTML=indexes.map(index=>`
+    <span class="output-chip">
+      ${escapeHTML(task.words[index])}
+    </span>
+  `).join("");
+}
+
+function undoBuilder(id){
+
+  if(completed.has(id))return;
+
+  const index=builderState[id].pop();
+
+  if(index===undefined)return;
+
+  el("word"+id+"_"+index).classList.remove("used");
+
+  renderBuilderOutput(id);
+}
+
+function resetBuilder(id){
+
+  if(completed.has(id))return;
+
+  builderState[id].forEach(index=>{
+    el("word"+id+"_"+index).classList.remove("used");
+  });
+
+  builderState[id]=[];
+
+  renderBuilderOutput(id);
+
+  showFeedback(id,"Sentence reset. Try again.","info");
+}
+
+function checkBuilder(id){
+
+  if(completed.has(id))return;
+
+  const task=activities.find(t=>t.id===id);
+
+  const answer=builderState[id].map(
+    index=>task.words[index]
+  );
+
+  const correct=
+    answer.length===task.expected.length &&
+    answer.every(
+      (word,index)=>word===task.expected[index]
+    );
+
+  if(correct){
+
+    completeTask(id,taskPoints(id));
+
+    showFeedback(
+      id,
+      "Excellent word order! "+task.explanation,
+      "good"
+    );
+
+  }else{
+
+    showFeedback(
+      id,
+      "Check the complete word order. "+
+      "Remember: If + subject + present verb, "+
+      "subject + will + base verb; or use an imperative.",
+      "bad"
+    );
+  }
+}
+
+
+/* =====================================================
+   TWO FORMS
+===================================================== */
+
+function renderTwoForms(task){
+
+  return `
+    <div class="input-stack">
+
+      ${task.prompts.map((prompt,index)=>`
+        <div>
+          <label
+            class="input-label"
+            for="two${task.id}_${index}"
+          >
+            ${escapeHTML(prompt)}
+          </label>
+
+          <input
+            type="text"
+            id="two${task.id}_${index}"
+            placeholder="Write your conditional sentence"
+          >
+        </div>
+      `).join("")}
+
+    </div>
+
+    <div class="action-row">
+
+      <button
+        class="btn btn-primary"
+        onclick="checkTwoForms(${task.id})"
+      >
+        Check Both Forms
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="showHint(${task.id})"
+      >
+        See Examples
+      </button>
+
+    </div>
+
+    <div class="hint" id="hint${task.id}">
+      ${task.examples.map(escapeHTML).join("<br>")}
+    </div>
+  `;
+}
+
+function checkTwoForms(id){
+
+  if(completed.has(id))return;
+
+  const first=el("two"+id+"_0").value.trim();
+
+  const second=el("two"+id+"_1").value.trim();
+
+  const firstWords=words(first);
+  const secondWords=words(second);
+
+  const form1=
+    /^if\b/i.test(first) &&
+    /\bwill\s+[a-z]+\b/i.test(first) &&
+    !/\bif\s+\w+\s+will\b/i.test(first) &&
+    firstWords.length>=7;
+
+  const form2=
+    /^if\b/i.test(second) &&
+    !/\bwill\b/i.test(second) &&
+    second.includes(",") &&
+    secondWords.length>=6;
+
+  if(form1&&form2){
+
+    completeTask(id,taskPoints(id));
+
+    showFeedback(
+      id,
+      "Both sentences show the expected structures. "+
+      "Read them again to check their meaning and accuracy.",
+      "good"
+    );
+
+  }else{
+
+    showFeedback(
+      id,
+      "Form 1 needs if + Present Simple and will + base verb. "+
+      "Form 2 needs if + Present Simple and an imperative. "+
+      "Use the examples if you need help.",
+      "bad"
+    );
+  }
+}
+
+
+/* =====================================================
+   ADVICE CLINIC
+===================================================== */
+
+function renderClinic(task){
+
+  return `
+    <div class="input-stack">
+
+      ${task.situations.map((situation,index)=>`
+        <div>
+
+          <label
+            class="input-label"
+            for="clinic${task.id}_${index}"
+          >
+            Situation ${index+1}
+          </label>
+
+          <div class="prompt">
+            ${escapeHTML(situation)}
+          </div>
+
+          <input
+            type="text"
+            id="clinic${task.id}_${index}"
+            placeholder="If..., ..."
+          >
+
+        </div>
+      `).join("")}
+
+    </div>
+
+    <div class="action-row">
+
+      <button
+        class="btn btn-primary"
+        onclick="checkClinic(${task.id})"
+      >
+        Check My Advice
+      </button>
+
+      <button
+        class="btn btn-secondary"
+        onclick="showHint(${task.id})"
+      >
+        Model Sentences
+      </button>
+
+    </div>
+
+    <div class="hint" id="hint${task.id}">
+      ${task.examples.map((example,index)=>
+        `${index+1}. ${escapeHTML(example)}`
+      ).join("<br>")}
+    </div>
+  `;
+}
+
+function checkClinic(id){
+
+  if(completed.has(id))return;
+
+  const answers=[0,1,2].map(index=>
+    el("clinic"+id+"_"+index).value.trim()
+  );
+
+  const valid=answers.every(answer=>{
+
+    const text=normalize(answer);
+
+    return (
+      text.startsWith("if ") &&
+      answer.includes(",") &&
+      words(answer).length>=7
+    );
+  });
+
+  if(valid){
+
+    completeTask(id,taskPoints(id));
+
+    showFeedback(
+      id,
+      "You wrote three conditional sentences. "+
+      "Check that each one gives relevant advice "+
+      "and uses the correct verb forms.",
+      "good"
+    );
+
+  }else{
+
+    showFeedback(
+      id,
+      "Write three complete conditional sentences. "+
+      "Begin with If, use a comma after the condition, "+
+      "and complete each idea.",
+      "bad"
+    );
+  }
+}
+
+
+/* =====================================================
+   FINAL WRITING ASSESSMENT
+===================================================== */
+
+function checkFinalWriting(){
+
+  if(completed.has(38)){
+    showFeedback(
+      38,
+      "Your final writing activity is already completed.",
+      "good"
+    );
+    return;
+  }
+
+  const text=el("finalWriting").value.trim();
+
+  const wordCount=text?text.split(/\s+/).length:0;
+
+  const sentences=text
+    .split(/[.!?]+/)
+    .map(s=>s.trim())
+    .filter(Boolean);
+
+  const hasIf=/\bif\b/i.test(text);
+
+  const hasWill=/\bwill\b|\bwon't\b/i.test(text);
+
+  const hasPossibleAdvice=
+    /\b(revise|study|practise|practice|organize|organise|manage|work|read|listen|make|plan|reduce|avoid|don't|stop|take)\b/i.test(text);
+
+  const ifClauses=(text.match(/\bif\b/gi)||[]).length;
+
+  const checked=[
+    ...document.querySelectorAll(
+      "#task38 .checkline input"
+    )
+  ].filter(input=>input.checked).length;
+
+  const issues=[];
+
+  if(wordCount<45){
+    issues.push("Write at least 45 words.");
+  }
+
+  if(sentences.length<4){
+    issues.push("Write at least four complete sentences.");
+  }
+
+  if(ifClauses<2){
+    issues.push("Use at least two if-clauses.");
+  }
+
+  if(!hasWill){
+    issues.push("Include a possible result using will.");
+  }
+
+  if(!hasPossibleAdvice){
+    issues.push("Include useful advice with an action verb.");
+  }
+
+  if(checked<4){
+    issues.push("Review and tick at least four checklist items.");
+  }
+
+  if(issues.length===0){
+
+    completeTask(38,10);
+
+    showFeedback(
+      38,
+      "Your message meets the basic length and structure "+
+      "requirements. Great effort! Review your grammar "+
+      "and meaning carefully or ask your teacher for feedback.",
+      "good"
+    );
+
+    el("resultTitle").textContent="Lesson Completed!";
+
+    el("resultMessage").textContent=
+      "You finished the final writing mission. "+
+      "Your achievement certificate is ready.";
+
+    el("certificate").classList.add("show");
+
+    showResult();
+
+  }else{
+
+    showFeedback(
+      38,
+      "Before finishing: "+issues.join(" "),
+      "bad"
+    );
+  }
+}
+
+
+/* =====================================================
+   FINAL RESULT
+===================================================== */
+
+function showResult(){
+
+  updateDashboard();
+
+  const count=completed.size;
+
+  const title=el("resultTitle");
+
+  const message=el("resultMessage");
+
+  if(count===TOTAL_TASKS){
+
+    title.textContent="Conditional Champion!";
+
+    message.textContent=
+      "Congratulations! You completed all 38 activities. "+
+      "You can now identify possible results, give direct advice, "+
+      "and use both conditional structures.";
+
+    el("certificate").classList.add("show");
+
+  }else if(count>=25){
+
+    title.textContent="Excellent Progress!";
+
+    message.textContent=
+      "You have completed "+count+
+      " of 38 activities. Keep practising to finish the lesson.";
+
+  }else if(count>=10){
+
+    title.textContent="You're Improving!";
+
+    message.textContent=
+      "You have completed "+count+
+      " activities. Continue your grammar journey.";
+
+  }else{
+
+    title.textContent="Keep Going!";
+
+    message.textContent=
+      "You have completed "+count+
+      " of 38 activities. Every step helps you improve.";
+  }
+
+  el("certificateScore").textContent=totalScore;
+
+  if(count===TOTAL_TASKS){
+    el("finish").scrollIntoView({
+      behavior:"smooth"
+    });
+  }
+}
+
+
+/* =====================================================
+   RESTART
+===================================================== */
+
+function restartLesson(){
+
+  const confirmed=confirm(
+    "Restart the lesson? Your current progress will be lost."
+  );
+
+  if(!confirmed)return;
+
+  window.location.reload();
+}
+
+
+/* =====================================================
+   INITIALISE
+===================================================== */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+  renderActivities();
+
+  updateDashboard();
+
+  updateWordCount();
+
+});
+</script>
+
+</body>
+</html>

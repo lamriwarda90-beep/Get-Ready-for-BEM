@@ -1,0 +1,5973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff1f7">
+
+<title>MS4 S2 Reading Lesson 4 | Zohra Drif</title>
+
+<meta name="description" content="An interactive MS4 English reading lesson about Zohra Drif, with photographs, comprehension, vocabulary, grammar, biography writing and an English-Arabic dictionary.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   DESIGN SYSTEM
+===================================================== */
+
+:root{
+  --rose:#ec5794;
+  --rose-dark:#b82f6a;
+  --rose-light:#fff0f6;
+  --rose-soft:#ffe0ed;
+
+  --purple:#8058c8;
+  --purple-dark:#4d337b;
+  --purple-light:#f1eaff;
+
+  --gold:#f3bd55;
+  --gold-light:#fff3d8;
+
+  --ink:#382b43;
+  --navy:#30243e;
+  --muted:#786d80;
+
+  --white:#ffffff;
+  --paper:#fffdfd;
+
+  --green:#279769;
+  --green-light:#e7f8ef;
+
+  --red:#d94e62;
+  --red-light:#fff0f2;
+
+  --line:#f0dce7;
+
+  --shadow:0 18px 55px rgba(112,49,92,.10);
+  --shadow-hover:0 22px 60px rgba(112,49,92,.17);
+
+  --radius:28px;
+  --reading-size:17px;
+}
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:"Nunito",sans-serif;
+  color:var(--ink);
+
+  background:
+    radial-gradient(circle at 8% 3%,rgba(255,202,225,.65),transparent 27%),
+    radial-gradient(circle at 94% 14%,rgba(221,207,255,.65),transparent 28%),
+    radial-gradient(circle at 50% 60%,rgba(255,239,213,.45),transparent 40%),
+    #fff8fb;
+
+  min-height:100vh;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+button:disabled{
+  cursor:not-allowed;
+  opacity:.6;
+}
+
+a{
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+}
+
+::selection{
+  background:#ffd4e5;
+  color:#7c1f51;
+}
+
+:focus-visible{
+  outline:3px solid var(--purple);
+  outline-offset:3px;
+}
+
+.hidden{
+  display:none!important;
+}
+
+/* =====================================================
+   SCROLL PROGRESS
+===================================================== */
+
+.scroll-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:5px;
+  width:0;
+  z-index:1000;
+
+  background:linear-gradient(
+    90deg,
+    var(--rose),
+    var(--purple),
+    var(--gold)
+  );
+
+  transition:width .1s linear;
+}
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  background:rgba(255,255,255,.91);
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid rgba(236,87,148,.12);
+}
+
+.topbar-inner{
+  width:min(1220px,calc(100% - 36px));
+  min-height:72px;
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+
+  text-decoration:none;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:1.25rem;
+  font-weight:800;
+  color:var(--navy);
+}
+
+.brand-icon{
+  width:43px;
+  height:43px;
+
+  display:grid;
+  place-items:center;
+
+  background:linear-gradient(135deg,var(--rose),var(--purple));
+  color:white;
+
+  border-radius:15px;
+  font-size:22px;
+}
+
+.brand span span{
+  color:var(--rose-dark);
+}
+
+.topbar-actions{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.nav-pill{
+  border:1px solid var(--line);
+  background:white;
+
+  padding:10px 15px;
+  border-radius:999px;
+
+  text-decoration:none;
+  font-size:12px;
+  font-weight:900;
+
+  color:var(--purple-dark);
+}
+
+.nav-pill:hover{
+  background:var(--purple-light);
+}
+
+.icon-btn{
+  width:42px;
+  height:42px;
+
+  border:1px solid var(--line);
+  background:white;
+
+  border-radius:14px;
+
+  display:grid;
+  place-items:center;
+
+  font-size:18px;
+}
+
+.icon-btn:hover{
+  background:var(--rose-light);
+}
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+  width:min(1180px,calc(100% - 34px));
+  margin:auto;
+  padding-bottom:80px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+
+  margin:32px 0 27px;
+  border-radius:38px;
+
+  background:
+    radial-gradient(circle at 90% 15%,rgba(255,255,255,.28),transparent 28%),
+    linear-gradient(125deg,#492d75 0%,#8e4a9f 48%,#e35c96 100%);
+
+  color:white;
+  padding:62px 60px;
+
+  box-shadow:0 25px 65px rgba(102,50,124,.19);
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  border:2px solid rgba(255,255,255,.12);
+  border-radius:50%;
+
+  right:-150px;
+  top:-190px;
+}
+
+.hero-layout{
+  position:relative;
+  z-index:1;
+
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  align-items:center;
+  gap:35px;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+
+  padding:9px 15px;
+  border-radius:999px;
+
+  background:rgba(255,255,255,.17);
+  border:1px solid rgba(255,255,255,.25);
+
+  font-family:"Space Mono",monospace;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.4px;
+}
+
+.hero h1{
+  margin:22px 0 12px;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(43px,6vw,75px);
+  line-height:1.04;
+  letter-spacing:-1.5px;
+  font-weight:800;
+}
+
+.hero h1 span{
+  display:block;
+  color:#ffe2a0;
+  font-size:.55em;
+  line-height:1.3;
+  margin-top:8px;
+}
+
+.hero-description{
+  max-width:650px;
+  margin:0;
+
+  font-size:16px;
+  line-height:1.85;
+
+  color:rgba(255,255,255,.93);
+}
+
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:25px;
+}
+
+.hero-tags span{
+  padding:9px 13px;
+  border-radius:999px;
+
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.19);
+
+  font-size:12px;
+  font-weight:900;
+}
+
+.hero-bottom{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:29px;
+}
+
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+
+  padding:14px 21px;
+  border-radius:15px;
+
+  background:white;
+  color:var(--purple-dark);
+
+  text-decoration:none;
+  font-weight:900;
+
+  box-shadow:0 9px 25px rgba(33,12,56,.13);
+  transition:.2s;
+}
+
+.hero-btn:hover{
+  transform:translateY(-3px);
+}
+
+.hero-btn.secondary{
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.3);
+  color:white;
+}
+
+.hero-photo{
+  position:relative;
+  padding:12px;
+
+  background:rgba(255,255,255,.17);
+  border:1px solid rgba(255,255,255,.35);
+
+  border-radius:28px;
+  box-shadow:0 20px 45px rgba(30,15,52,.2);
+
+  transform:rotate(2deg);
+}
+
+.hero-photo img{
+  display:block;
+  width:100%;
+  max-height:390px;
+
+  object-fit:contain;
+  background:white;
+
+  border-radius:19px;
+}
+
+.hero-photo-caption{
+  padding:13px 5px 4px;
+  text-align:center;
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  font-weight:700;
+  color:white;
+}
+
+/* =====================================================
+   LESSON NAVIGATION
+===================================================== */
+
+.lesson-nav{
+  position:sticky;
+  top:82px;
+  z-index:80;
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  padding:11px;
+  margin-bottom:27px;
+
+  overflow-x:auto;
+
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(15px);
+
+  border:1px solid var(--line);
+  border-radius:22px;
+
+  box-shadow:var(--shadow);
+  scrollbar-width:thin;
+}
+
+.lesson-nav a{
+  flex:1 0 auto;
+  min-width:80px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:3px;
+
+  padding:10px 11px;
+  border-radius:15px;
+
+  text-decoration:none;
+  color:var(--muted);
+
+  transition:.2s;
+}
+
+.lesson-nav a strong{
+  font-family:"Space Mono",monospace;
+  font-size:12px;
+}
+
+.lesson-nav a small{
+  font-size:10px;
+  font-weight:900;
+}
+
+.lesson-nav a:hover,
+.lesson-nav a.active{
+  background:var(--rose-light);
+  color:var(--rose-dark);
+}
+
+.lesson-nav a.done{
+  background:var(--green-light);
+  color:var(--green);
+}
+
+/* =====================================================
+   STEPS
+===================================================== */
+
+.step{
+  position:relative;
+
+  margin-bottom:28px;
+  padding:36px;
+
+  background:rgba(255,255,255,.97);
+
+  border:1px solid rgba(236,87,148,.08);
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow);
+  scroll-margin-top:185px;
+}
+
+.step-header{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:25px;
+}
+
+.step-icon{
+  flex:0 0 58px;
+
+  width:58px;
+  height:58px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:20px;
+  background:var(--rose-light);
+
+  font-size:26px;
+}
+
+.step:nth-of-type(3n) .step-icon{
+  background:var(--purple-light);
+}
+
+.step-kicker{
+  margin:0 0 4px;
+
+  color:var(--rose-dark);
+
+  font-family:"Space Mono",monospace;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.7px;
+}
+
+.step-title{
+  margin:0;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(25px,3vw,34px);
+  font-weight:800;
+  line-height:1.12;
+
+  color:var(--navy);
+}
+
+.step-subtitle{
+  margin:8px 0 0;
+
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+}
+
+.section-heading{
+  margin:30px 0 16px;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:23px;
+
+  color:var(--purple-dark);
+}
+
+.info-note{
+  padding:15px 18px;
+
+  background:var(--gold-light);
+  border-left:4px solid var(--gold);
+  border-radius:13px;
+
+  font-size:14px;
+  line-height:1.75;
+  color:#79571b;
+}
+
+.info-note.purple{
+  background:var(--purple-light);
+  border-left-color:var(--purple);
+  color:var(--purple-dark);
+}
+
+.info-note.rose{
+  background:var(--rose-light);
+  border-left-color:var(--rose);
+  color:var(--rose-dark);
+}
+
+/* =====================================================
+   BUTTONS AND FEEDBACK
+===================================================== */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+
+  border:0;
+  padding:13px 20px;
+  border-radius:14px;
+
+  font-weight:900;
+  font-size:14px;
+  transition:.2s;
+}
+
+.btn:hover:not(:disabled){
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,var(--rose),var(--rose-dark));
+  color:white;
+  box-shadow:0 8px 20px rgba(236,87,148,.21);
+}
+
+.btn-purple{
+  background:var(--purple);
+  color:white;
+}
+
+.btn-light{
+  background:var(--rose-light);
+  color:var(--rose-dark);
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#604000;
+}
+
+.btn-outline{
+  background:white;
+  color:var(--purple-dark);
+  border:2px solid #e9def4;
+}
+
+.action-row{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+  margin-top:22px;
+}
+
+.feedback{
+  display:none;
+
+  margin-top:17px;
+  padding:16px 19px;
+
+  border-radius:17px;
+
+  font-size:14px;
+  line-height:1.7;
+  font-weight:800;
+}
+
+.feedback.show{
+  display:block;
+}
+
+.feedback.good{
+  background:var(--green-light);
+  color:#176642;
+  border:1px solid #c8ead8;
+}
+
+.feedback.bad{
+  background:var(--red-light);
+  color:#a6384c;
+  border:1px solid #f4d2d9;
+}
+
+.feedback.info{
+  background:var(--purple-light);
+  color:var(--purple-dark);
+  border:1px solid #e4d6ff;
+}
+
+/* =====================================================
+   PICTURE-BASED PREDICTION
+===================================================== */
+
+.picture-intro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  align-items:center;
+}
+
+.intro-image{
+  padding:13px;
+
+  background:linear-gradient(145deg,#fff3f8,#f5ecff);
+  border:1px solid var(--line);
+  border-radius:24px;
+}
+
+.intro-image img{
+  display:block;
+  width:100%;
+  max-height:420px;
+  object-fit:contain;
+
+  background:white;
+  border-radius:17px;
+}
+
+.intro-caption{
+  padding:13px 8px 4px;
+
+  text-align:center;
+  font-size:12px;
+  font-weight:900;
+  color:var(--purple-dark);
+}
+
+.picture-questions{
+  display:grid;
+  gap:13px;
+}
+
+.picture-question{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+
+  padding:16px;
+
+  border:1px solid var(--line);
+  border-radius:16px;
+
+  background:#fffafd;
+}
+
+.picture-question span{
+  font-size:24px;
+}
+
+.picture-question p{
+  margin:0;
+  font-size:14px;
+  line-height:1.7;
+  font-weight:800;
+}
+
+.prediction-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px;
+  margin-top:22px;
+}
+
+.prediction{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  min-height:85px;
+  padding:17px;
+
+  border:2px solid var(--line);
+  border-radius:18px;
+
+  background:#fffafd;
+  text-align:left;
+
+  color:var(--ink);
+  font-weight:900;
+  transition:.2s;
+}
+
+.prediction:hover{
+  transform:translateY(-2px);
+  border-color:#f5a6c9;
+}
+
+.prediction.selected{
+  border-color:var(--rose);
+  background:var(--rose-light);
+}
+
+.prediction.correct{
+  border-color:var(--green);
+  background:var(--green-light);
+}
+
+.prediction.incorrect{
+  border-color:var(--red);
+  background:var(--red-light);
+}
+
+.prediction-icon{
+  flex:0 0 38px;
+
+  width:38px;
+  height:38px;
+
+  display:grid;
+  place-items:center;
+
+  background:white;
+  border-radius:12px;
+  font-size:19px;
+}
+
+/* =====================================================
+   READING
+===================================================== */
+
+.reading-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.6fr) minmax(270px,.85fr);
+  gap:23px;
+  align-items:start;
+}
+
+.reading-paper{
+  padding:28px;
+
+  border-radius:24px;
+  background:white;
+  border:1px solid #f0e3eb;
+
+  box-shadow:inset 0 0 0 5px #fff9fc;
+}
+
+.reading-label{
+  display:inline-flex;
+  padding:7px 12px;
+
+  background:var(--gold-light);
+  color:#896018;
+  border-radius:999px;
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  font-weight:700;
+}
+
+.reading-paper h3{
+  margin:18px 0 20px;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:35px;
+  line-height:1.15;
+
+  color:var(--rose-dark);
+}
+
+.reading-paragraph{
+  position:relative;
+
+  margin-bottom:13px;
+  padding:19px 17px 19px 56px;
+
+  border-radius:17px;
+  transition:.25s;
+}
+
+.reading-paragraph:hover,
+.reading-paragraph.active{
+  background:#fff1f7;
+}
+
+.reading-paragraph p{
+  margin:0;
+  font-size:var(--reading-size);
+  line-height:1.93;
+}
+
+.reading-paragraph strong{
+  color:var(--rose-dark);
+}
+
+.paragraph-number{
+  position:absolute;
+  top:20px;
+  left:10px;
+
+  width:34px;
+  height:34px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+  background:var(--rose);
+  color:white;
+
+  font-family:"Space Mono",monospace;
+  font-size:11px;
+  font-weight:700;
+}
+
+.reading-tools{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:9px;
+
+  padding:14px;
+  margin-bottom:20px;
+
+  border-radius:17px;
+  background:var(--purple-light);
+}
+
+.reading-tools button{
+  padding:9px 12px;
+
+  border:1px solid #e0d1f6;
+  background:white;
+  border-radius:11px;
+
+  font-weight:900;
+  color:var(--purple-dark);
+}
+
+.reading-tools button:hover{
+  background:#faf6ff;
+}
+
+.tool-status{
+  font-size:12px;
+  font-weight:800;
+  color:var(--purple-dark);
+}
+
+/* =====================================================
+   VISUAL RAIL
+===================================================== */
+
+.visual-rail{
+  position:sticky;
+  top:180px;
+
+  display:grid;
+  gap:16px;
+}
+
+.visual-card{
+  padding:13px;
+
+  border:1px solid var(--line);
+  background:white;
+  border-radius:22px;
+
+  box-shadow:0 12px 28px rgba(112,49,92,.09);
+  transition:.25s;
+}
+
+.visual-card.active{
+  border-color:var(--rose);
+  box-shadow:0 15px 35px rgba(236,87,148,.18);
+  transform:translateY(-3px);
+}
+
+.visual-card img{
+  display:block;
+  width:100%;
+  max-height:300px;
+
+  object-fit:contain;
+  border-radius:15px;
+  background:#fff7fb;
+}
+
+.visual-caption{
+  padding:12px 7px 4px;
+}
+
+.visual-caption small{
+  display:block;
+  margin-bottom:5px;
+
+  color:var(--rose-dark);
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  font-weight:700;
+}
+
+.visual-caption strong{
+  display:block;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:17px;
+  line-height:1.25;
+}
+
+.visual-caption p{
+  margin:5px 0 0;
+
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+}
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:24px;
+}
+
+.timeline-item{
+  padding:16px;
+
+  border-radius:17px;
+  background:var(--rose-light);
+  border:1px solid #f7dce8;
+}
+
+.timeline-year{
+  display:block;
+  margin-bottom:7px;
+
+  color:var(--rose-dark);
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:24px;
+  font-weight:800;
+}
+
+.timeline-item p{
+  margin:0;
+
+  font-size:12px;
+  line-height:1.6;
+  font-weight:800;
+}
+
+/* =====================================================
+   QUESTIONS
+===================================================== */
+
+.question{
+  margin:15px 0;
+  padding:20px;
+
+  background:#fffafd;
+  border:2px solid #f3e5ed;
+  border-radius:19px;
+
+  transition:.2s;
+}
+
+.question:hover{
+  border-color:#ecc9dd;
+}
+
+.question.correct{
+  border-color:var(--green);
+  background:#f7fffa;
+}
+
+.question.wrong{
+  border-color:var(--red);
+  background:#fff8f9;
+}
+
+.question-title{
+  margin:0 0 15px;
+
+  font-weight:900;
+  font-size:15px;
+  line-height:1.7;
+}
+
+.options{
+  display:grid;
+  gap:9px;
+}
+
+.option{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  gap:11px;
+
+  padding:13px 15px;
+
+  border:1px solid #ebdce6;
+  background:white;
+  border-radius:13px;
+
+  color:var(--ink);
+  text-align:left;
+
+  font-weight:800;
+  font-size:14px;
+  line-height:1.55;
+
+  transition:.18s;
+}
+
+.option:hover{
+  border-color:var(--rose);
+  background:#fff7fb;
+}
+
+.option.selected{
+  border-color:var(--purple);
+  background:var(--purple-light);
+}
+
+.option.correct-answer{
+  border-color:var(--green);
+  background:var(--green-light);
+}
+
+.option.wrong-answer{
+  border-color:var(--red);
+  background:var(--red-light);
+}
+
+.option-letter{
+  flex:0 0 29px;
+
+  width:29px;
+  height:29px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:9px;
+  background:#f7edf3;
+  color:var(--rose-dark);
+
+  font-family:"Space Mono",monospace;
+  font-size:11px;
+}
+
+.question-feedback{
+  display:none;
+
+  margin-top:12px;
+
+  font-size:13px;
+  line-height:1.6;
+  font-weight:800;
+}
+
+.question-feedback.show{
+  display:block;
+}
+
+.question.correct .question-feedback{
+  color:var(--green);
+}
+
+.question.wrong .question-feedback{
+  color:var(--red);
+}
+
+/* =====================================================
+   FORM ELEMENTS
+===================================================== */
+
+select,
+input[type="text"],
+textarea{
+  width:100%;
+
+  border:2px solid #eadbe7;
+  background:white;
+  border-radius:13px;
+
+  padding:12px 14px;
+
+  color:var(--ink);
+  outline:none;
+  font-size:14px;
+}
+
+select:focus,
+input[type="text"]:focus,
+textarea:focus{
+  border-color:var(--purple);
+  box-shadow:0 0 0 3px rgba(128,88,200,.09);
+}
+
+textarea{
+  min-height:160px;
+  resize:vertical;
+  line-height:1.8;
+}
+
+.field-correct{
+  border-color:var(--green)!important;
+  background:#f4fff8!important;
+}
+
+.field-wrong{
+  border-color:var(--red)!important;
+  background:#fff8f9!important;
+}
+
+.field-hint{
+  display:block;
+  margin-top:6px;
+
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+}
+
+/* =====================================================
+   TRUE / FALSE
+===================================================== */
+
+.tf-card{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 155px;
+  gap:12px;
+
+  padding:18px;
+  margin:12px 0;
+
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:#fffafd;
+}
+
+.tf-statement{
+  font-weight:900;
+  line-height:1.65;
+}
+
+.tf-evidence{
+  grid-column:1/-1;
+}
+
+.tf-evidence label{
+  display:block;
+  margin-bottom:7px;
+
+  color:var(--muted);
+  font-size:12px;
+  font-weight:900;
+}
+
+/* =====================================================
+   LANGUAGE / GRAMMAR
+===================================================== */
+
+.language-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+.language-card{
+  padding:20px;
+
+  border-radius:18px;
+  background:#fffafd;
+  border:1px solid var(--line);
+}
+
+.language-card strong{
+  display:block;
+  margin-bottom:8px;
+  color:var(--rose-dark);
+}
+
+.language-card p{
+  margin:0 0 15px;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.table-wrap{
+  overflow-x:auto;
+}
+
+.hunt-table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0 9px;
+}
+
+.hunt-table th{
+  text-align:left;
+  padding:11px;
+
+  font-size:12px;
+  color:var(--purple-dark);
+}
+
+.hunt-table td{
+  padding:12px;
+  background:#fff8fc;
+}
+
+.hunt-table td:first-child{
+  min-width:170px;
+  border-radius:13px 0 0 13px;
+  font-weight:900;
+}
+
+.hunt-table td:last-child{
+  min-width:240px;
+  border-radius:0 13px 13px 0;
+}
+
+/* =====================================================
+   ORDERING
+===================================================== */
+
+.order-row{
+  display:grid;
+  grid-template-columns:45px minmax(0,1fr) 125px;
+  gap:12px;
+  align-items:center;
+
+  padding:14px;
+  margin:10px 0;
+
+  background:#fffafd;
+  border:1px solid var(--line);
+  border-radius:16px;
+}
+
+.order-badge{
+  width:38px;
+  height:38px;
+
+  display:grid;
+  place-items:center;
+
+  background:var(--gold-light);
+  border-radius:12px;
+
+  color:#886019;
+  font-weight:900;
+}
+
+.order-row p{
+  margin:0;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.6;
+}
+
+/* =====================================================
+   PROFILE AND WORD BUILDING
+===================================================== */
+
+.profile-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px;
+}
+
+.profile-item{
+  padding:17px;
+
+  border:1px solid var(--line);
+  background:#fffafd;
+  border-radius:17px;
+}
+
+.profile-item label{
+  display:block;
+  margin-bottom:9px;
+
+  font-size:12px;
+  font-weight:900;
+  color:var(--rose-dark);
+}
+
+.word-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:13px;
+}
+
+.word-card{
+  padding:17px;
+
+  border:1px solid var(--line);
+  background:#fffafd;
+  border-radius:17px;
+}
+
+.word-card strong{
+  display:block;
+  margin-bottom:12px;
+
+  font-size:17px;
+  color:var(--purple-dark);
+}
+
+/* =====================================================
+   WRITING
+===================================================== */
+
+.writing-box{
+  padding:21px;
+  margin:16px 0;
+
+  border:1px solid var(--line);
+  background:#fffafd;
+  border-radius:20px;
+}
+
+.writing-box h3{
+  margin:0 0 8px;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:22px;
+}
+
+.writing-box p{
+  margin:0 0 15px;
+
+  color:var(--muted);
+  line-height:1.7;
+  font-size:14px;
+}
+
+.word-counter{
+  margin-top:8px;
+  text-align:right;
+
+  font-size:12px;
+  color:var(--muted);
+  font-weight:900;
+}
+
+.writing-plan{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.plan-card{
+  padding:15px;
+
+  border-radius:16px;
+  background:var(--purple-light);
+  border:1px solid #e5d9fa;
+}
+
+.plan-card strong{
+  display:block;
+  margin-bottom:6px;
+  color:var(--purple-dark);
+}
+
+.plan-card p{
+  margin:0;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.checklist{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+  margin:20px 0;
+}
+
+.check-item{
+  display:flex;
+  align-items:flex-start;
+  gap:11px;
+
+  padding:13px;
+
+  border:1px solid var(--line);
+  background:#fffafd;
+  border-radius:14px;
+
+  font-size:13px;
+  font-weight:800;
+  line-height:1.6;
+}
+
+.check-item input{
+  width:18px;
+  height:18px;
+
+  flex:0 0 18px;
+  margin-top:2px;
+
+  accent-color:var(--rose);
+}
+
+/* =====================================================
+   SCORE
+===================================================== */
+
+.score-section{
+  text-align:center;
+  padding:40px 25px;
+
+  background:radial-gradient(circle at top,#fff0f6,white 70%);
+  border-radius:25px;
+  border:1px solid var(--line);
+}
+
+.score-circle{
+  width:180px;
+  height:180px;
+
+  margin:22px auto;
+  padding:12px;
+
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+
+  background:conic-gradient(var(--rose) 0%,#f3dce7 0%);
+}
+
+.score-inner{
+  width:100%;
+  height:100%;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+  background:white;
+}
+
+.score-number{
+  font-family:"Baloo 2",sans-serif;
+  font-size:56px;
+  line-height:1;
+  font-weight:800;
+
+  color:var(--rose-dark);
+}
+
+.score-total{
+  font-family:"Space Mono",monospace;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.score-message{
+  max-width:570px;
+  margin:0 auto;
+
+  font-size:15px;
+  line-height:1.7;
+  font-weight:800;
+  color:var(--muted);
+}
+
+.score-details{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:22px 0;
+}
+
+.score-details span{
+  padding:9px 13px;
+
+  background:white;
+  border:1px solid var(--line);
+  border-radius:999px;
+
+  font-size:12px;
+  font-weight:900;
+}
+
+.score-mini{
+  position:fixed;
+  left:18px;
+  bottom:18px;
+  z-index:90;
+
+  padding:12px 17px;
+  border-radius:17px;
+
+  background:white;
+  border:1px solid var(--line);
+
+  box-shadow:var(--shadow);
+  color:var(--rose-dark);
+
+  font-family:"Space Mono",monospace;
+  font-size:13px;
+  font-weight:700;
+}
+
+/* =====================================================
+   FLOATING TOOLS
+===================================================== */
+
+.floating-tools{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:90;
+
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.float-btn{
+  width:57px;
+  height:57px;
+
+  border:0;
+  border-radius:19px;
+
+  display:grid;
+  place-items:center;
+
+  font-size:24px;
+  box-shadow:0 10px 25px rgba(75,33,70,.18);
+  transition:.2s;
+}
+
+.float-btn:hover{
+  transform:translateY(-3px);
+}
+
+.float-btn.dictionary{
+  background:linear-gradient(135deg,var(--rose),var(--purple));
+  color:white;
+}
+
+.float-btn.top{
+  width:46px;
+  height:46px;
+  align-self:flex-end;
+
+  background:white;
+  color:var(--rose-dark);
+  font-size:21px;
+}
+
+/* =====================================================
+   DICTIONARY
+===================================================== */
+
+.dictionary-overlay{
+  position:fixed;
+  inset:0;
+  z-index:500;
+
+  display:none;
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+
+  background:rgba(34,22,45,.58);
+  backdrop-filter:blur(7px);
+}
+
+.dictionary-overlay.open{
+  display:flex;
+}
+
+.dictionary-panel{
+  width:min(700px,100%);
+  max-height:88vh;
+  overflow:auto;
+
+  background:white;
+  border-radius:27px;
+  padding:26px;
+
+  box-shadow:0 30px 90px rgba(0,0,0,.25);
+}
+
+.dictionary-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:19px;
+}
+
+.dictionary-header h2{
+  margin:0;
+
+  font-family:"Baloo 2",sans-serif;
+  font-size:28px;
+  color:var(--rose-dark);
+}
+
+.dictionary-close{
+  width:40px;
+  height:40px;
+
+  border:0;
+  border-radius:13px;
+
+  background:var(--rose-light);
+  color:var(--rose-dark);
+  font-size:22px;
+}
+
+.dictionary-search{
+  margin-bottom:18px;
+}
+
+.dictionary-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.dictionary-word{
+  padding:13px;
+
+  background:#fffafd;
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+
+.dictionary-word strong{
+  color:var(--rose-dark);
+  font-size:15px;
+}
+
+.dictionary-word small{
+  display:block;
+  margin:3px 0 5px;
+  color:var(--muted);
+}
+
+.arabic{
+  display:block;
+
+  direction:rtl;
+  text-align:right;
+
+  font-family:"Noto Naskh Arabic",serif;
+  font-size:19px;
+  color:var(--purple-dark);
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:23px;
+  z-index:700;
+
+  transform:translate(-50%,30px);
+
+  max-width:calc(100% - 35px);
+  padding:12px 20px;
+
+  background:var(--navy);
+  color:white;
+  border-radius:13px;
+
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+  opacity:0;
+  pointer-events:none;
+
+  font-size:13px;
+  font-weight:900;
+  transition:.3s;
+}
+
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+  padding:30px 15px;
+
+  text-align:center;
+  color:var(--muted);
+
+  font-family:"Space Mono",monospace;
+  font-size:10px;
+  line-height:2;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+  .reading-layout{
+    grid-template-columns:1fr;
+  }
+
+  .visual-rail{
+    position:static;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .visual-card img{
+    max-height:280px;
+  }
+
+  .timeline{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero-layout{
+    grid-template-columns:1fr 290px;
+  }
+
+}
+
+@media(max-width:760px){
+
+  .hero{
+    padding:40px 28px;
+    border-radius:27px;
+  }
+
+  .hero-layout{
+    grid-template-columns:1fr;
+  }
+
+  .hero-photo{
+    max-width:360px;
+    margin:auto;
+    transform:none;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .step{
+    padding:23px;
+    border-radius:22px;
+  }
+
+  .picture-intro,
+  .prediction-grid,
+  .language-grid,
+  .profile-grid,
+  .checklist,
+  .writing-plan{
+    grid-template-columns:1fr;
+  }
+
+  .word-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .lesson-nav{
+    top:77px;
+  }
+
+  .topbar-inner{
+    min-height:65px;
+  }
+
+  .nav-pill{
+    display:none;
+  }
+
+}
+
+@media(max-width:520px){
+
+  .page{
+    width:calc(100% - 18px);
+  }
+
+  .topbar-inner{
+    width:calc(100% - 22px);
+  }
+
+  .brand{
+    font-size:16px;
+  }
+
+  .brand-icon{
+    width:37px;
+    height:37px;
+  }
+
+  .hero{
+    margin-top:13px;
+    padding:35px 22px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero-description{
+    font-size:14px;
+  }
+
+  .hero-tags span{
+    font-size:10px;
+  }
+
+  .step{
+    padding:19px;
+  }
+
+  .step-header{
+    gap:11px;
+  }
+
+  .step-icon{
+    flex-basis:46px;
+    width:46px;
+    height:46px;
+    font-size:21px;
+  }
+
+  .step-title{
+    font-size:25px;
+  }
+
+  .reading-paper{
+    padding:15px;
+  }
+
+  .reading-paper h3{
+    font-size:29px;
+  }
+
+  .reading-paragraph{
+    padding:16px 12px 16px 48px;
+  }
+
+  .reading-paragraph p{
+    line-height:1.8;
+  }
+
+  .paragraph-number{
+    left:5px;
+    width:31px;
+    height:31px;
+  }
+
+  .visual-rail,
+  .timeline,
+  .word-grid,
+  .dictionary-grid{
+    grid-template-columns:1fr;
+  }
+
+  .tf-card{
+    grid-template-columns:1fr;
+  }
+
+  .order-row{
+    grid-template-columns:40px 1fr;
+  }
+
+  .order-row select{
+    grid-column:2;
+  }
+
+  .floating-tools{
+    right:10px;
+    bottom:10px;
+  }
+
+  .float-btn.dictionary{
+    width:50px;
+    height:50px;
+  }
+
+  .dictionary-panel{
+    padding:19px;
+  }
+
+  .score-mini{
+    left:10px;
+    bottom:10px;
+    font-size:11px;
+    padding:10px;
+  }
+
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *:before,
+  *:after{
+    scroll-behavior:auto!important;
+    animation:none!important;
+    transition:none!important;
+  }
+
+}
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@media print{
+
+  body{
+    background:white!important;
+  }
+
+  .topbar,
+  .lesson-nav,
+  .floating-tools,
+  .score-mini,
+  .scroll-progress,
+  .reading-tools,
+  .action-row,
+  .dictionary-overlay,
+  .toast{
+    display:none!important;
+  }
+
+  .hero{
+    background:white!important;
+    color:black!important;
+    box-shadow:none!important;
+    padding:20px!important;
+    border:2px solid #ddd;
+  }
+
+  .hero h1 span,
+  .hero-description{
+    color:black!important;
+  }
+
+  .step{
+    box-shadow:none!important;
+    border:1px solid #ddd!important;
+    break-inside:avoid;
+  }
+
+  .reading-layout{
+    display:block;
+  }
+
+  .visual-rail{
+    display:none;
+  }
+
+  .reading-paragraph{
+    break-inside:avoid;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<nav class="topbar">
+  <div class="topbar-inner">
+
+    <a class="brand" href="MS4-S2-Reading.html">
+      <div class="brand-icon">📚</div>
+      <span>My <span>English Space</span></span>
+    </a>
+
+    <div class="topbar-actions">
+
+      <a class="nav-pill" href="MS4-S2-Reading.html">
+        ← Reading Home
+      </a>
+
+      <button class="icon-btn" id="printButton"
+        title="Print lesson" aria-label="Print lesson">
+        🖨️
+      </button>
+
+      <button class="icon-btn" id="resetButton"
+        title="Reset lesson" aria-label="Reset lesson">
+        ↺
+      </button>
+
+    </div>
+
+  </div>
+</nav>
+
+<main class="page">
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+  <div class="hero-layout">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        ✦ MS4 · SEQUENCE 2 · READING 04
+      </div>
+
+      <h1>
+        Zohra Drif
+        <span>A Life of Courage &amp; Memory</span>
+      </h1>
+
+      <p class="hero-description">
+
+        Discover the story of an Algerian woman whose
+        childhood, education and experiences during
+        the War of Independence shaped her life.
+
+        Explore photographs, read her biography,
+        investigate historical facts and practise
+        your English skills.
+
+      </p>
+
+      <div class="hero-tags">
+        <span>🖼️ Picture Exploration</span>
+        <span>📖 Reading</span>
+        <span>🧠 Comprehension</span>
+        <span>🔎 Vocabulary</span>
+        <span>✏️ Writing</span>
+      </div>
+
+      <div class="hero-bottom">
+
+        <a class="hero-btn" href="#step1">
+          Start Exploring →
+        </a>
+
+        <a class="hero-btn secondary" href="#step2">
+          Read the Biography
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-photo">
+
+      <img
+        src="https://i.imgur.com/Rg0e9kW.jpeg"
+        alt="Picture introducing Zohra Drif and her life"
+        loading="eager">
+
+      <div class="hero-photo-caption">
+        READING EXPEDITION · LESSON 04
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="lesson-nav" aria-label="Lesson sections">
+
+  <a href="#step1">
+    <strong>01</strong>
+    <small>Predict</small>
+  </a>
+
+  <a href="#step2">
+    <strong>02</strong>
+    <small>Read</small>
+  </a>
+
+  <a href="#step3">
+    <strong>03</strong>
+    <small>Understand</small>
+  </a>
+
+  <a href="#step4">
+    <strong>04</strong>
+    <small>Details</small>
+  </a>
+
+  <a href="#step5">
+    <strong>05</strong>
+    <small>Evidence</small>
+  </a>
+
+  <a href="#step6">
+    <strong>06</strong>
+    <small>Language</small>
+  </a>
+
+  <a href="#step7">
+    <strong>07</strong>
+    <small>Grammar</small>
+  </a>
+
+  <a href="#step8">
+    <strong>08</strong>
+    <small>Explore</small>
+  </a>
+
+  <a href="#step9">
+    <strong>09</strong>
+    <small>Write</small>
+  </a>
+
+</nav>
+
+<!-- =====================================================
+     STEP 1 — PICTURE-BASED PREDICTION
+===================================================== -->
+
+<section class="step" id="step1">
+
+  <div class="step-header">
+
+    <div class="step-icon">🖼️</div>
+
+    <div>
+
+      <div class="step-kicker">
+        STEP 01 · BEFORE READING
+      </div>
+
+      <h2 class="step-title">
+        Look, Think &amp; Predict!
+      </h2>
+
+      <p class="step-subtitle">
+        Explore the picture and predict what the biography
+        will tell you.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="picture-intro">
+
+    <div class="intro-image">
+
+      <img
+        src="https://i.imgur.com/Rg0e9kW.jpeg"
+        alt="Introductory picture for the biography of Zohra Drif"
+        loading="lazy">
+
+      <div class="intro-caption">
+        🖼️ LOOK CLOSELY AT THE PICTURE
+      </div>
+
+    </div>
+
+    <div class="picture-questions">
+
+      <div class="picture-question">
+        <span>👀</span>
+        <p>
+          <strong>Observe:</strong><br>
+          What can you see in the picture?
+        </p>
+      </div>
+
+      <div class="picture-question">
+        <span>💭</span>
+        <p>
+          <strong>Think:</strong><br>
+          What do you already know about Zohra Drif?
+        </p>
+      </div>
+
+      <div class="picture-question">
+        <span>🇩🇿</span>
+        <p>
+          <strong>Connect:</strong><br>
+          Which important period of Algerian history
+          might be mentioned?
+        </p>
+      </div>
+
+      <div class="picture-question">
+        <span>📖</span>
+        <p>
+          <strong>Predict:</strong><br>
+          What information do we usually find
+          in a biography?
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <h3 class="section-heading">
+    🔮 Make Your Predictions
+  </h3>
+
+  <div class="info-note">
+    <strong>Your mission:</strong>
+    Select all the topics that are likely to appear
+    in Zohra Drif's biography.
+  </div>
+
+  <div class="prediction-grid" id="predictionGrid">
+
+    <button type="button" class="prediction" data-correct="true">
+      <span class="prediction-icon">🏡</span>
+      Her childhood and education
+    </button>
+
+    <button type="button" class="prediction" data-correct="true">
+      <span class="prediction-icon">🇩🇿</span>
+      Her experiences during the struggle for independence
+    </button>
+
+    <button type="button" class="prediction" data-correct="true">
+      <span class="prediction-icon">📜</span>
+      Important memories from her life
+    </button>
+
+    <button type="button" class="prediction" data-correct="true">
+      <span class="prediction-icon">💭</span>
+      How historical events influenced her life
+    </button>
+
+    <button type="button" class="prediction" data-correct="false">
+      <span class="prediction-icon">⚽</span>
+      Her career as a professional football player
+    </button>
+
+    <button type="button" class="prediction" data-correct="false">
+      <span class="prediction-icon">🎤</span>
+      Her international singing career
+    </button>
+
+  </div>
+
+  <div class="action-row">
+
+    <button class="btn btn-primary" onclick="checkPrediction()">
+      ✓ Check Predictions
+    </button>
+
+    <a class="btn btn-outline" href="#step2">
+      Continue to Reading →
+    </a>
+
+  </div>
+
+  <div class="feedback" id="predictionFeedback"></div>
+
+</section>
+
+<!-- =====================================================
+     STEP 2 — READING
+===================================================== -->
+
+<section class="step" id="step2">
+
+  <div class="step-header">
+
+    <div class="step-icon">📖</div>
+
+    <div>
+
+      <div class="step-kicker">
+        STEP 02 · READING TIME
+      </div>
+
+      <h2 class="step-title">
+        Discover Her Story
+      </h2>
+
+      <p class="step-subtitle">
+        Read the biography and explore the pictures.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="reading-tools">
+
+    <button type="button" onclick="changeReadingSize(-1)">
+      A−
+    </button>
+
+    <button type="button" onclick="changeReadingSize(1)">
+      A+
+    </button>
+
+    <button type="button" onclick="readStory()">
+      🔊 Read Aloud
+    </button>
+
+    <button type="button" onclick="stopReading()">
+      ⏹ Stop
+    </button>
+
+    <span class="tool-status" id="readingStatus">
+      Reading tools
+    </span>
+
+  </div>
+
+  <div class="reading-layout">
+
+    <article class="reading-paper" id="readingPaper">
+
+      <div class="reading-label">
+        BIOGRAPHICAL TEXT · 6 PARAGRAPHS
+      </div>
+
+      <h3>
+        Zohra Drif: A Life of Courage and Memory
+      </h3>
+
+      <!-- PARAGRAPH 1 -->
+
+      <div class="reading-paragraph" data-picture="picture1">
+
+        <span class="paragraph-number">01</span>
+
+        <p>
+
+          Zohra Drif was born on
+          <strong>28 December 1934</strong>
+          in the Tiaret region of French Algeria,
+          on the Sersou plain.
+
+          Her family valued education, and her father,
+          Ahmed Drif, was a qadi, or judge, and a scholar.
+
+          She grew up in
+          <strong>Vialar</strong>,
+          now called Tissemsilt.
+
+          In her memoir, she remembers how her mother
+          taught her about Algerian history, customs,
+          language, religion and the stories of her
+          ancestors.
+
+          These childhood memories helped shape the
+          young girl's sense of identity.
+
+        </p>
+
+      </div>
+
+      <!-- PARAGRAPH 2 -->
+
+      <div class="reading-paragraph" data-picture="picture1">
+
+        <span class="paragraph-number">02</span>
+
+        <p>
+
+          Zohra was also a very good student.
+
+          She attended a French colonial school and
+          remembers being one of the few Algerian girls
+          in her classes.
+
+          At primary school, she was especially
+          successful and even tied for first place
+          with her friend Roselyne Garcia.
+
+          When Roselyne later failed an entrance exam,
+          Zohra comforted her.
+
+          The experience remained in her memory because
+          it made her think about the opportunities
+          available to Algerian girls.
+
+          In <strong>1947</strong>,
+          she entered Lycée Fromentin in Algiers,
+          where she continued her studies.
+
+        </p>
+
+      </div>
+
+      <!-- PARAGRAPH 3 -->
+
+      <div class="reading-paragraph" data-picture="picture2">
+
+        <span class="paragraph-number">03</span>
+
+        <p>
+
+          In <strong>1954</strong>, Zohra began studying law
+          at the University of Algiers.
+
+          The same year, the Algerian War of Independence
+          began.
+
+          Gradually, she became involved in the Algerian
+          nationalist movement and in clandestine
+          activities in Algiers.
+
+          During the
+          <strong>Battle of Algiers</strong>,
+          she took part in the urban resistance.
+
+          On <strong>30 September 1956</strong>,
+          she participated in the bombing at the Milk Bar
+          in Algiers.
+
+          The attack killed three young women and injured
+          other people.
+
+          This was one of the events that later became
+          associated with the Battle of Algiers.
+
+        </p>
+
+      </div>
+
+      <!-- PARAGRAPH 4 -->
+
+      <div class="reading-paragraph" data-picture="picture2">
+
+        <span class="paragraph-number">04</span>
+
+        <p>
+
+          Life as a freedom fighter was very different
+          from her childhood.
+
+          She had to live secretly and make difficult
+          decisions in a dangerous situation.
+
+          Her memoir does not present the period as a
+          simple story of heroes and enemies.
+
+          Instead, she looks back on the war and describes
+          fear, loss, difficult choices and the
+          responsibilities that came with her actions.
+
+          Her experiences changed her understanding of
+          courage, loyalty and the price of freedom.
+
+        </p>
+
+      </div>
+
+      <!-- PARAGRAPH 5 -->
+
+      <div class="reading-paragraph" data-picture="picture3">
+
+        <span class="paragraph-number">05</span>
+
+        <p>
+
+          On <strong>22 September 1957</strong>,
+          Zohra Drif was arrested in the Casbah of Algiers.
+
+          She was later tried by a military tribunal and,
+          in August 1958, received a sentence of
+          <strong>20 years of hard labour</strong>.
+
+          She spent about five years in prison,
+          in Algeria and later in France.
+
+          During this period, she continued her studies
+          and wrote about her experiences.
+
+          She was released in
+          <strong>1962</strong>
+          after Algeria gained independence.
+
+          Her childhood memories, her years as a student
+          and her experiences during the war all became
+          important parts of the story she later told
+          about her life.
+
+        </p>
+
+      </div>
+
+      <!-- PARAGRAPH 6 -->
+
+      <div class="reading-paragraph" data-picture="picture3">
+
+        <span class="paragraph-number">06</span>
+
+        <p>
+
+          After independence, Zohra Drif became a lawyer
+          and a public figure.
+
+          She was elected to Algeria's first National
+          Constituent Assembly in 1962 and later served
+          in the Council of the Nation.
+
+          Many years later, she published her memoir,
+          <em>
+            Inside the Battle of Algiers:
+            Memoir of a Woman Freedom Fighter
+          </em>.
+
+          Looking back at her childhood and wartime
+          experiences, she shows how a person's life
+          can contain very different chapters.
+
+          Her story connects education, identity,
+          friendship, difficult experiences and
+          determination.
+
+          It also invites readers to think carefully
+          about history and about the human experiences
+          behind important historical events.
+
+        </p>
+
+      </div>
+
+    </article>
+
+    <!-- PHOTOGRAPHIC RAIL -->
+
+    <aside class="visual-rail">
+
+      <div class="visual-card" id="picture1">
+
+        <img
+          src="https://i.imgur.com/Rg0e9kW.jpeg"
+          alt="Visual introduction to Zohra Drif's life"
+          loading="lazy">
+
+        <div class="visual-caption">
+
+          <small>01 · LIFE STORY</small>
+
+          <strong>
+            Childhood &amp; Education
+          </strong>
+
+          <p>
+            Discover her early life, school years
+            and personal memories.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="visual-card" id="picture2">
+
+        <img
+          src="https://i.imgur.com/zEliFCy.jpeg"
+          alt="Cover of Zohra Drif's memoir"
+          loading="lazy">
+
+        <div class="visual-caption">
+
+          <small>02 · HER MEMOIR</small>
+
+          <strong>
+            Inside the Battle of Algiers
+          </strong>
+
+          <p>
+            A memoir reflecting on identity,
+            memories and wartime experiences.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="visual-card" id="picture3">
+
+        <img
+          src="https://i.imgur.com/OvR9QUe.jpeg"
+          alt="Historical photograph associated with Zohra Drif's arrest"
+          loading="lazy">
+
+        <div class="visual-caption">
+
+          <small>03 · HISTORICAL RECORD</small>
+
+          <strong>
+            Arrest &amp; Later Life
+          </strong>
+
+          <p>
+            Historical events connected to
+            September 1957 and the years that followed.
+          </p>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+  <h3 class="section-heading">
+    🗓️ A Quick Historical Timeline
+  </h3>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <span class="timeline-year">1934</span>
+      <p>Born in the Tiaret region.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-year">1947</span>
+      <p>Entered Lycée Fromentin.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-year">1957</span>
+      <p>Arrested in the Casbah of Algiers.</p>
+    </div>
+
+    <div class="timeline-item">
+      <span class="timeline-year">1962</span>
+      <p>Released after independence.</p>
+    </div>
+
+  </div>
+
+  <div class="info-note purple" style="margin-top:20px;">
+
+    <strong>Critical reading:</strong>
+
+    Biographies about wars may include difficult
+    and painful historical events.
+
+    Understanding a person's life also means recognising
+    the consequences of their actions and the experiences
+    of other people affected by those events.
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     STEP 3 — GLOBAL COMPREHENSION
+===================================================== -->
+
+<section class="step" id="step3">
+
+  <div class="step-header">
+
+    <div class="step-icon">🧠</div>
+
+    <div>
+      <div class="step-kicker">
+        STEP 03 · GLOBAL COMPREHENSION
+      </div>
+
+      <h2 class="step-title">
+        The Big Picture
+      </h2>
+
+      <p class="step-subtitle">
+        Choose the best answer for each question.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="question mcq" data-answer="0">
+
+    <p class="question-title">
+      1. What is the main purpose of the text?
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        To present important stages and experiences
+        in Zohra Drif's life
+      </button>
+
+      <button class="option" type="button">
+        To explain how to become a lawyer
+      </button>
+
+      <button class="option" type="button">
+        To describe life in a modern Algerian school
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <div class="question mcq" data-answer="1">
+
+    <p class="question-title">
+      2. Which title is most suitable for the whole text?
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        A Successful School Project
+      </button>
+
+      <button class="option" type="button">
+        Zohra Drif: Childhood, Struggle and Memory
+      </button>
+
+      <button class="option" type="button">
+        A Day at University
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <div class="question mcq" data-answer="2">
+
+    <p class="question-title">
+      3. What does the writer mainly show about Zohra Drif?
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        She only cared about her studies.
+      </button>
+
+      <button class="option" type="button">
+        She avoided difficult experiences.
+      </button>
+
+      <button class="option" type="button">
+        Her life was shaped by education,
+        historical events and difficult experiences.
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <div class="action-row">
+
+    <button class="btn btn-primary"
+      onclick="checkMCQSection('step3')">
+      ✓ Check Answers
+    </button>
+
+  </div>
+
+  <div class="feedback" id="step3Feedback"></div>
+
+</section>
+
+<!-- =====================================================
+     STEP 4 — DETAILED COMPREHENSION
+===================================================== -->
+
+<section class="step" id="step4">
+
+  <div class="step-header">
+
+    <div class="step-icon">🔎</div>
+
+    <div>
+
+      <div class="step-kicker">
+        STEP 04 · DETAILED COMPREHENSION
+      </div>
+
+      <h2 class="step-title">
+        Find the Facts
+      </h2>
+
+      <p class="step-subtitle">
+        Scan the biography to locate important information.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="question mcq" data-answer="1">
+
+    <p class="question-title">
+      1. Where did Zohra Drif grow up?
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        Algiers
+      </button>
+
+      <button class="option" type="button">
+        Vialar, now called Tissemsilt
+      </button>
+
+      <button class="option" type="button">
+        France
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <div class="question mcq" data-answer="0">
+
+    <p class="question-title">
+      2. What was Zohra's father?
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        A qadi and scholar
+      </button>
+
+      <button class="option" type="button">
+        A military officer
+      </button>
+
+      <button class="option" type="button">
+        A university professor
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <div class="question mcq" data-answer="1">
+
+    <p class="question-title">
+      3. When did Zohra begin studying law?
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">1947</button>
+      <button class="option" type="button">1954</button>
+      <button class="option" type="button">1962</button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <div class="question mcq" data-answer="2">
+
+    <p class="question-title">
+      4. What happened on 22 September 1957?
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        She entered university.
+      </button>
+
+      <button class="option" type="button">
+        She published her memoir.
+      </button>
+
+      <button class="option" type="button">
+        She was arrested in the Casbah of Algiers.
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <div class="action-row">
+
+    <button class="btn btn-primary"
+      onclick="checkMCQSection('step4')">
+      ✓ Check Answers
+    </button>
+
+  </div>
+
+  <div class="feedback" id="step4Feedback"></div>
+
+</section>
+
+<!-- =====================================================
+     STEP 5 — TRUE / FALSE
+===================================================== -->
+
+<section class="step" id="step5">
+
+  <div class="step-header">
+
+    <div class="step-icon">⚖️</div>
+
+    <div>
+
+      <div class="step-kicker">
+        STEP 05 · EVIDENCE DETECTIVE
+      </div>
+
+      <h2 class="step-title">
+        True or False?
+      </h2>
+
+      <p class="step-subtitle">
+        Choose True or False and support your answer
+        with evidence from the text.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="tf-card"
+    data-answer="false"
+    data-evidence="vialar|tissemsilt">
+
+    <div class="tf-statement">
+      1. Zohra Drif grew up in Algiers.
+    </div>
+
+    <select aria-label="Statement 1">
+      <option value="">Choose...</option>
+      <option value="true">True</option>
+      <option value="false">False</option>
+    </select>
+
+    <div class="tf-evidence">
+
+      <label>
+        Evidence or correction
+      </label>
+
+      <input type="text"
+        placeholder="Find the correct place in paragraph 1...">
+
+      <span class="field-hint"></span>
+
+    </div>
+
+  </div>
+
+  <div class="tf-card"
+    data-answer="true"
+    data-evidence="valued education|family valued|education">
+
+    <div class="tf-statement">
+      2. Zohra's family valued education.
+    </div>
+
+    <select aria-label="Statement 2">
+      <option value="">Choose...</option>
+      <option value="true">True</option>
+      <option value="false">False</option>
+    </select>
+
+    <div class="tf-evidence">
+
+      <label>
+        Evidence from paragraph 1
+      </label>
+
+      <input type="text"
+        placeholder="What does the text say about her family?">
+
+      <span class="field-hint"></span>
+
+    </div>
+
+  </div>
+
+  <div class="tf-card"
+    data-answer="false"
+    data-evidence="lycee|fromentin|university|studying law|continued her studies">
+
+    <div class="tf-statement">
+      3. Zohra stopped studying after primary school.
+    </div>
+
+    <select aria-label="Statement 3">
+      <option value="">Choose...</option>
+      <option value="true">True</option>
+      <option value="false">False</option>
+    </select>
+
+    <div class="tf-evidence">
+
+      <label>
+        Evidence or correction
+      </label>
+
+      <input type="text"
+        placeholder="Mention a later stage of her education...">
+
+      <span class="field-hint"></span>
+
+    </div>
+
+  </div>
+
+  <div class="tf-card"
+    data-answer="true"
+    data-evidence="1957|casbah|september">
+
+    <div class="tf-statement">
+      4. Zohra was arrested in 1957.
+    </div>
+
+    <select aria-label="Statement 4">
+      <option value="">Choose...</option>
+      <option value="true">True</option>
+      <option value="false">False</option>
+    </select>
+
+    <div class="tf-evidence">
+
+      <label>
+        Evidence from paragraph 5
+      </label>
+
+      <input type="text"
+        placeholder="Give the date or place...">
+
+      <span class="field-hint"></span>
+
+    </div>
+
+  </div>
+
+  <div class="action-row">
+
+    <button class="btn btn-primary" onclick="checkTF()">
+      ✓ Check Evidence
+    </button>
+
+  </div>
+
+  <div class="feedback" id="step5Feedback"></div>
+
+</section>
+
+<!-- =====================================================
+     STEP 6 — LANGUAGE
+===================================================== -->
+
+<section class="step" id="step6">
+
+  <div class="step-header">
+
+    <div class="step-icon">🧩</div>
+
+    <div>
+
+      <div class="step-kicker">
+        STEP 06 · LANGUAGE DETECTIVE
+      </div>
+
+      <h2 class="step-title">
+        Words &amp; Events
+      </h2>
+
+      <p class="step-subtitle">
+        Explore references, vocabulary and chronology.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="question mcq" data-answer="0">
+
+    <p class="question-title">
+      1. In paragraph 1, who does “she” refer to
+      in “She grew up in Vialar”?
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        Zohra Drif
+      </button>
+
+      <button class="option" type="button">
+        Her mother
+      </button>
+
+      <button class="option" type="button">
+        Roselyne Garcia
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <div class="question mcq" data-answer="1">
+
+    <p class="question-title">
+      2. “Clandestine” is closest in meaning to:
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        Public
+      </button>
+
+      <button class="option" type="button">
+        Secret
+      </button>
+
+      <button class="option" type="button">
+        Educational
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <div class="question mcq" data-answer="1">
+
+    <p class="question-title">
+      3. The opposite of “difficult” is:
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        Dangerous
+      </button>
+
+      <button class="option" type="button">
+        Easy
+      </button>
+
+      <button class="option" type="button">
+        Important
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <h3 class="section-heading">
+    🗓️ Put the Events in Order
+  </h3>
+
+  <div class="info-note purple">
+
+    Write the correct position for each event:
+    <strong>1 = first</strong> and
+    <strong>4 = last</strong>.
+
+  </div>
+
+  <div class="order-row" data-answer="3">
+
+    <div class="order-badge">A</div>
+
+    <p>
+      She studied law at the University of Algiers.
+    </p>
+
+    <select aria-label="Position of event A">
+      <option value="">Position</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+
+  </div>
+
+  <div class="order-row" data-answer="1">
+
+    <div class="order-badge">B</div>
+
+    <p>
+      She grew up in Vialar and received her early education.
+    </p>
+
+    <select aria-label="Position of event B">
+      <option value="">Position</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+
+  </div>
+
+  <div class="order-row" data-answer="2">
+
+    <div class="order-badge">C</div>
+
+    <p>
+      She entered Lycée Fromentin in Algiers.
+    </p>
+
+    <select aria-label="Position of event C">
+      <option value="">Position</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+
+  </div>
+
+  <div class="order-row" data-answer="4">
+
+    <div class="order-badge">D</div>
+
+    <p>
+      She was arrested during the Battle of Algiers.
+    </p>
+
+    <select aria-label="Position of event D">
+      <option value="">Position</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+
+  </div>
+
+  <div class="action-row">
+
+    <button class="btn btn-primary" onclick="checkLanguage()">
+      ✓ Check Language
+    </button>
+
+  </div>
+
+  <div class="feedback" id="step6Feedback"></div>
+
+</section>
+
+<!-- =====================================================
+     STEP 7 — GRAMMAR
+===================================================== -->
+
+<section class="step" id="step7">
+
+  <div class="step-header">
+
+    <div class="step-icon">✏️</div>
+
+    <div>
+
+      <div class="step-kicker">
+        STEP 07 · GRAMMAR EXPLORER
+      </div>
+
+      <h2 class="step-title">
+        Grammar in Context
+      </h2>
+
+      <p class="step-subtitle">
+        Recognise structures used to describe
+        experiences and historical events.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="info-note">
+
+    <strong>Grammar reminder:</strong>
+
+    The biography mainly uses the
+    <strong>Past Simple</strong>
+    because it describes completed events.
+
+    Some sentences below are additional examples
+    for grammar practice.
+
+  </div>
+
+  <div class="language-grid" style="margin-top:19px;">
+
+    <div class="language-card">
+
+      <strong>1 · Present Simple</strong>
+
+      <p>
+        “Her family values education.”
+      </p>
+
+      <select data-answer="present">
+        <option value="">Choose...</option>
+        <option value="present">Present Simple</option>
+        <option value="past">Past Simple</option>
+        <option value="future">Future with will</option>
+      </select>
+
+    </div>
+
+    <div class="language-card">
+
+      <strong>2 · Past Simple</strong>
+
+      <p>
+        “Zohra entered Lycée Fromentin in 1947.”
+      </p>
+
+      <select data-answer="past">
+        <option value="">Choose...</option>
+        <option value="present">Present Simple</option>
+        <option value="past">Past Simple</option>
+        <option value="future">Future with will</option>
+      </select>
+
+    </div>
+
+    <div class="language-card">
+
+      <strong>3 · Past Continuous + Past Simple</strong>
+
+      <p>
+        “She was studying law when the war began.”
+      </p>
+
+      <select data-answer="pastmix">
+        <option value="">Choose...</option>
+        <option value="pastmix">Past Continuous + Past Simple</option>
+        <option value="present">Present Simple</option>
+        <option value="future">Future with will</option>
+      </select>
+
+    </div>
+
+    <div class="language-card">
+
+      <strong>4 · Future with Will</strong>
+
+      <p>
+        “Her story will remain important to readers.”
+      </p>
+
+      <select data-answer="future">
+        <option value="">Choose...</option>
+        <option value="past">Past Simple</option>
+        <option value="future">Future with will</option>
+        <option value="present">Present Simple</option>
+      </select>
+
+    </div>
+
+    <div class="language-card">
+
+      <strong>5 · Superlative</strong>
+
+      <p>
+        “It became one of the most important
+        experiences of her life.”
+      </p>
+
+      <select data-answer="superlative">
+        <option value="">Choose...</option>
+        <option value="comparative">Comparative</option>
+        <option value="superlative">Superlative</option>
+        <option value="prefix">Negative prefix</option>
+      </select>
+
+    </div>
+
+    <div class="language-card">
+
+      <strong>6 · Contrast</strong>
+
+      <p>
+        “Unlike her peaceful childhood,
+        her wartime life was dangerous.”
+      </p>
+
+      <select data-answer="contrast">
+        <option value="">Choose...</option>
+        <option value="contrast">Contrast</option>
+        <option value="sequence">Sequence</option>
+        <option value="cause">Cause</option>
+      </select>
+
+    </div>
+
+  </div>
+
+  <h3 class="section-heading">
+    🔍 Grammar Hunt
+  </h3>
+
+  <div class="info-note purple">
+
+    Find examples in the biography where possible.
+
+    For structures that do not appear directly,
+    write your own sentence about Zohra Drif.
+
+  </div>
+
+  <div class="table-wrap">
+
+    <table class="hunt-table">
+
+      <thead>
+        <tr>
+          <th>Language Point</th>
+          <th>Your Example</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr class="hunt-row" data-type="present">
+
+          <td>
+            Present Simple
+            <span class="field-hint">From the text</span>
+          </td>
+
+          <td>
+            <input type="text"
+              placeholder="Example: She remembers...">
+          </td>
+
+        </tr>
+
+        <tr class="hunt-row" data-type="past">
+
+          <td>
+            Past Simple
+            <span class="field-hint">From the text</span>
+          </td>
+
+          <td>
+            <input type="text"
+              placeholder="Example: She entered...">
+          </td>
+
+        </tr>
+
+        <tr class="hunt-row" data-type="continuous">
+
+          <td>
+            Past Continuous
+            <span class="field-hint">Write your own sentence</span>
+          </td>
+
+          <td>
+            <input type="text"
+              placeholder="She was studying...">
+          </td>
+
+        </tr>
+
+        <tr class="hunt-row" data-type="future">
+
+          <td>
+            Future with will
+            <span class="field-hint">Write your own sentence</span>
+          </td>
+
+          <td>
+            <input type="text"
+              placeholder="Her story will...">
+          </td>
+
+        </tr>
+
+        <tr class="hunt-row" data-type="superlative">
+
+          <td>
+            Superlative
+            <span class="field-hint">Write your own sentence</span>
+          </td>
+
+          <td>
+            <input type="text"
+              placeholder="One of the most...">
+          </td>
+
+        </tr>
+
+        <tr class="hunt-row" data-type="contrast">
+
+          <td>
+            Contrast
+            <span class="field-hint">
+              From the text or your own sentence
+            </span>
+          </td>
+
+          <td>
+            <input type="text"
+              placeholder="Unlike... / However...">
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="action-row">
+
+    <button class="btn btn-primary" onclick="checkGrammar()">
+      ✓ Check Grammar
+    </button>
+
+  </div>
+
+  <div class="feedback" id="step7Feedback"></div>
+
+</section>
+
+<!-- =====================================================
+     STEP 8 — THINK AND CONNECT
+===================================================== -->
+
+<section class="step" id="step8">
+
+  <div class="step-header">
+
+    <div class="step-icon">💡</div>
+
+    <div>
+
+      <div class="step-kicker">
+        STEP 08 · HIGHER-ORDER THINKING
+      </div>
+
+      <h2 class="step-title">
+        Think &amp; Connect
+      </h2>
+
+      <p class="step-subtitle">
+        Make inferences, transfer information and build words.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="question mcq" data-answer="0">
+
+    <p class="question-title">
+      1. Why was education important in Zohra's childhood?
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        Her family valued education and encouraged learning.
+      </button>
+
+      <button class="option" type="button">
+        She wanted to become a singer.
+      </button>
+
+      <button class="option" type="button">
+        Her friends forced her to study.
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <div class="question mcq" data-answer="1">
+
+    <p class="question-title">
+      2. What can we infer from Roselyne's experience?
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        School was unimportant to Zohra.
+      </button>
+
+      <button class="option" type="button">
+        Zohra was aware that education could open
+        opportunities for girls.
+      </button>
+
+      <button class="option" type="button">
+        Zohra disliked her classmates.
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <div class="question mcq" data-answer="2">
+
+    <p class="question-title">
+      3. Why does the final paragraph mention
+      several stages of her life?
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        To show that she changed schools every year.
+      </button>
+
+      <button class="option" type="button">
+        To list random dates.
+      </button>
+
+      <button class="option" type="button">
+        To show how different experiences
+        contributed to her life story.
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <h3 class="section-heading">
+    📋 Complete the Biography File
+  </h3>
+
+  <div class="profile-grid">
+
+    <div class="profile-item" data-profile="birth">
+
+      <label>Date and Place of Birth</label>
+
+      <input type="text"
+        placeholder="Date and region...">
+
+      <span class="field-hint"></span>
+
+    </div>
+
+    <div class="profile-item" data-profile="town">
+
+      <label>Childhood Town</label>
+
+      <input type="text"
+        placeholder="Name of the town...">
+
+      <span class="field-hint"></span>
+
+    </div>
+
+    <div class="profile-item" data-profile="father">
+
+      <label>Father's Profession</label>
+
+      <input type="text"
+        placeholder="His profession...">
+
+      <span class="field-hint"></span>
+
+    </div>
+
+    <div class="profile-item" data-profile="subject">
+
+      <label>University Subject</label>
+
+      <input type="text"
+        placeholder="What did she study?">
+
+      <span class="field-hint"></span>
+
+    </div>
+
+    <div class="profile-item" data-profile="arrest">
+
+      <label>Arrest</label>
+
+      <input type="text"
+        placeholder="Date or place...">
+
+      <span class="field-hint"></span>
+
+    </div>
+
+    <div class="profile-item" data-profile="release">
+
+      <label>Year of Release</label>
+
+      <input type="text"
+        placeholder="Year...">
+
+      <span class="field-hint"></span>
+
+    </div>
+
+  </div>
+
+  <h3 class="section-heading">
+    🔤 Word-Building Laboratory
+  </h3>
+
+  <div class="info-note">
+
+    Use the correct prefix or suffix to form a new adjective.
+
+    Example:
+    <strong>hope + ful → hopeful</strong>
+
+  </div>
+
+  <div class="word-grid" style="margin-top:17px;">
+
+    <div class="word-card" data-answer="unsuccessful">
+
+      <strong>un + successful</strong>
+
+      <input type="text" placeholder="New adjective...">
+
+    </div>
+
+    <div class="word-card" data-answer="independent">
+
+      <strong>in + dependent</strong>
+
+      <input type="text" placeholder="New adjective...">
+
+    </div>
+
+    <div class="word-card" data-answer="impossible">
+
+      <strong>im + possible</strong>
+
+      <input type="text" placeholder="New adjective...">
+
+    </div>
+
+    <div class="word-card" data-answer="irresponsible">
+
+      <strong>ir + responsible</strong>
+
+      <input type="text" placeholder="New adjective...">
+
+    </div>
+
+    <div class="word-card" data-answer="dishonest">
+
+      <strong>dis + honest</strong>
+
+      <input type="text" placeholder="New adjective...">
+
+    </div>
+
+    <div class="word-card" data-answer="careless">
+
+      <strong>care + less</strong>
+
+      <input type="text" placeholder="New adjective...">
+
+    </div>
+
+  </div>
+
+  <div class="action-row">
+
+    <button class="btn btn-primary" onclick="checkStep8()">
+      ✓ Check All Activities
+    </button>
+
+  </div>
+
+  <div class="feedback" id="step8Feedback"></div>
+
+</section>
+
+<!-- =====================================================
+     STEP 9 — FINAL WRITING CHALLENGE
+===================================================== -->
+
+<section class="step" id="step9">
+
+  <div class="step-header">
+
+    <div class="step-icon">🏆</div>
+
+    <div>
+
+      <div class="step-kicker">
+        STEP 09 · FINAL CHALLENGE
+      </div>
+
+      <h2 class="step-title">
+        Think, Reflect &amp; Write
+      </h2>
+
+      <p class="step-subtitle">
+        Show what you have understood and create
+        a well-organised biography.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="question mcq" data-answer="2">
+
+    <p class="question-title">
+      Which statement best expresses the message
+      of the biography?
+    </p>
+
+    <div class="options">
+
+      <button class="option" type="button">
+        A person's childhood has no connection
+        with later life.
+      </button>
+
+      <button class="option" type="button">
+        Historical events are only lists of dates.
+      </button>
+
+      <button class="option" type="button">
+        A person's identity and life story can be
+        shaped by education, memories and difficult
+        historical experiences.
+      </button>
+
+    </div>
+
+    <div class="question-feedback"></div>
+
+  </div>
+
+  <div class="writing-box">
+
+    <h3>
+      💭 Part A — Explain Your Choice
+    </h3>
+
+    <p>
+
+      Explain why you chose this statement.
+
+      Use at least two ideas from the biography.
+
+      <strong>Suggested length: 30–60 words.</strong>
+
+    </p>
+
+    <textarea id="explanation"
+      placeholder="I chose this statement because..."></textarea>
+
+    <div class="word-counter">
+      <span id="explanationCount">0</span> words
+    </div>
+
+  </div>
+
+  <h3 class="section-heading">
+    🗂️ Plan Your Biography
+  </h3>
+
+  <div class="writing-plan">
+
+    <div class="plan-card">
+
+      <strong>1. Introduction</strong>
+
+      <p>
+        Name, date and place of birth.
+      </p>
+
+    </div>
+
+    <div class="plan-card">
+
+      <strong>2. Childhood</strong>
+
+      <p>
+        Family, childhood town and early memories.
+      </p>
+
+    </div>
+
+    <div class="plan-card">
+
+      <strong>3. Education</strong>
+
+      <p>
+        School, lycée and university studies.
+      </p>
+
+    </div>
+
+    <div class="plan-card">
+
+      <strong>4. Important Events</strong>
+
+      <p>
+        Wartime experiences, arrest and release.
+      </p>
+
+    </div>
+
+    <div class="plan-card">
+
+      <strong>5. Later Life</strong>
+
+      <p>
+        Career as a lawyer and public figure.
+      </p>
+
+    </div>
+
+    <div class="plan-card">
+
+      <strong>6. Conclusion</strong>
+
+      <p>
+        What can readers learn from her life story?
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="writing-box">
+
+    <h3>
+      ✍️ Part B — Write a Biography
+    </h3>
+
+    <p>
+
+      Write a paragraph about Zohra Drif.
+
+      Include her childhood, education,
+      important experiences during the War of Independence
+      and what happened after independence.
+
+      <strong>Target: 80–110 words.</strong>
+
+    </p>
+
+    <textarea id="biography"
+      placeholder="Zohra Drif was born on 28 December 1934..."></textarea>
+
+    <div class="word-counter">
+      <span id="biographyCount">0</span> / 80–110 words
+    </div>
+
+    <div class="action-row">
+
+      <button class="btn btn-light" onclick="insertOpening()">
+        ✨ Insert Opening
+      </button>
+
+      <button class="btn btn-outline" onclick="copyBiography()">
+        📋 Copy
+      </button>
+
+      <button class="btn btn-purple" onclick="downloadBiography()">
+        ⬇ Download Writing
+      </button>
+
+    </div>
+
+  </div>
+
+  <h3 class="section-heading">
+    ✅ My Writing Checklist
+  </h3>
+
+  <div class="checklist" id="writingChecklist">
+
+    <label class="check-item">
+      <input type="checkbox">
+      <span>I mentioned her childhood.</span>
+    </label>
+
+    <label class="check-item">
+      <input type="checkbox">
+      <span>I included her education.</span>
+    </label>
+
+    <label class="check-item">
+      <input type="checkbox">
+      <span>I used important dates.</span>
+    </label>
+
+    <label class="check-item">
+      <input type="checkbox">
+      <span>I described important wartime experiences.</span>
+    </label>
+
+    <label class="check-item">
+      <input type="checkbox">
+      <span>I used the Past Simple.</span>
+    </label>
+
+    <label class="check-item">
+      <input type="checkbox">
+      <span>I used linking words.</span>
+    </label>
+
+    <label class="check-item">
+      <input type="checkbox">
+      <span>I organised the events logically.</span>
+    </label>
+
+    <label class="check-item">
+      <input type="checkbox">
+      <span>I finished with a meaningful idea.</span>
+    </label>
+
+  </div>
+
+  <div class="info-note purple">
+
+    <strong>Writing tip:</strong>
+
+    Use chronological expressions:
+
+    <em>
+      At first, Later, In 1947, In 1954,
+      During the war, After independence, Finally.
+    </em>
+
+    Remember to describe historical events accurately
+    and sensitively.
+
+  </div>
+
+  <div class="action-row">
+
+    <button class="btn btn-primary" onclick="checkFinal()">
+      🏆 Finish the Lesson
+    </button>
+
+    <a class="btn btn-outline" href="#results">
+      View My Score →
+    </a>
+
+  </div>
+
+  <div class="feedback" id="step9Feedback"></div>
+
+</section>
+
+<!-- =====================================================
+     RESULTS
+===================================================== -->
+
+<section class="step" id="results">
+
+  <div class="step-header">
+
+    <div class="step-icon">🌟</div>
+
+    <div>
+
+      <div class="step-kicker">
+        YOUR LEARNING JOURNEY
+      </div>
+
+      <h2 class="step-title">
+        Your Achievement
+      </h2>
+
+      <p class="step-subtitle">
+        Review your progress and celebrate what you have learned.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="score-section">
+
+    <div class="score-label">
+      YOUR PRACTICE SCORE
+    </div>
+
+    <div class="score-circle" id="scoreCircle">
+
+      <div class="score-inner">
+
+        <div class="score-number" id="score">
+          0
+        </div>
+
+        <div class="score-total">
+          OUT OF 100
+        </div>
+
+      </div>
+
+    </div>
+
+    <p class="score-message" id="scoreMessage">
+
+      Complete the activities and check your answers
+      to build your score.
+
+    </p>
+
+    <div class="score-details">
+
+      <span>🖼️ Prediction</span>
+      <span>📖 Reading</span>
+      <span>🧠 Understanding</span>
+      <span>🔎 Language</span>
+      <span>✏️ Writing</span>
+
+    </div>
+
+    <div class="action-row" style="justify-content:center;">
+
+      <button class="btn btn-purple" onclick="window.print()">
+        🖨️ Print Lesson
+      </button>
+
+      <button class="btn btn-outline" onclick="resetLesson()">
+        ↺ Start Again
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  MY ENGLISH SPACE
+
+  <br>
+
+  MS4 · SEQUENCE 2 · READING EXPEDITION
+
+  <br>
+
+  Learn • Explore • Practise • Achieve
+
+</footer>
+
+</main>
+
+<!-- =====================================================
+     FLOATING SCORE
+===================================================== -->
+
+<div class="score-mini">
+  ⭐ <span id="floatingScore">0</span> / 100
+</div>
+
+<!-- =====================================================
+     FLOATING TOOLS
+===================================================== -->
+
+<div class="floating-tools">
+
+  <button class="float-btn top"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    title="Back to top"
+    aria-label="Back to top">
+    ↑
+  </button>
+
+  <button class="float-btn dictionary"
+    onclick="openDictionary()"
+    title="English-Arabic dictionary"
+    aria-label="Open English-Arabic dictionary">
+    📖
+  </button>
+
+</div>
+
+<!-- =====================================================
+     DICTIONARY
+===================================================== -->
+
+<div class="dictionary-overlay"
+  id="dictionaryOverlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="English-Arabic mini dictionary">
+
+  <div class="dictionary-panel">
+
+    <div class="dictionary-header">
+
+      <h2>📖 Mini Dictionary</h2>
+
+      <button class="dictionary-close"
+        onclick="closeDictionary()"
+        aria-label="Close dictionary">
+        ×
+      </button>
+
+    </div>
+
+    <input type="text"
+      class="dictionary-search"
+      id="dictionarySearch"
+      placeholder="🔎 Search in English or Arabic...">
+
+    <div class="dictionary-grid" id="dictionaryGrid"></div>
+
+    <p id="dictionaryEmpty"
+      class="field-hint hidden"
+      style="text-align:center;padding:20px;">
+      No matching word found.
+    </p>
+
+  </div>
+
+</div>
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div class="toast"
+  id="toast"
+  role="status"
+  aria-live="polite">
+</div>
+
+<script>
+
+/* =====================================================
+   CONFIGURATION
+===================================================== */
+
+const STORAGE_KEY = "ms4_s2_zohra_drif_picture_v3";
+
+/*
+  SCORE RUBRIC — TOTAL 100
+
+  Step 1: Prediction                 5
+  Step 3: Global comprehension      12
+  Step 4: Detailed comprehension    12
+  Step 5: True / False + evidence   12
+  Step 6: Language + chronology     14
+  Step 7: Grammar + hunt            16
+  Step 8: Inference + profile
+          + word building           19
+  Step 9: Final writing             10
+
+  TOTAL                            100
+*/
+
+const MAX_POINTS = {
+  step1:5,
+  step3:12,
+  step4:12,
+  step5:12,
+  step6:14,
+  step7:16,
+  step8:19,
+  step9:10
+};
+
+let sectionScores = {};
+let readingSize = 17;
+let toastTimer = null;
+let saveTimer = null;
+let currentUtterance = null;
+
+/* =====================================================
+   UTILITIES
+===================================================== */
+
+function $(selector,root=document){
+  return root.querySelector(selector);
+}
+
+function $$(selector,root=document){
+  return [...root.querySelectorAll(selector)];
+}
+
+function normalize(text){
+  return String(text || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"")
+    .replace(/[’']/g,"")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function containsAny(text,patterns){
+  const value = normalize(text);
+
+  return patterns.some(pattern =>
+    value.includes(normalize(pattern))
+  );
+}
+
+function wordCount(text){
+  const cleaned = String(text || "").trim();
+  return cleaned ? cleaned.split(/\s+/).length : 0;
+}
+
+function showFeedback(element,message,kind="info"){
+  if(!element) return;
+
+  element.className = "feedback show " + kind;
+  element.textContent = message;
+}
+
+function showToast(message){
+  const toast = $("#toast");
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(()=>{
+    toast.classList.remove("show");
+  },2500);
+}
+
+function setFieldState(field,correct){
+  field.classList.remove("field-correct","field-wrong");
+  field.classList.add(
+    correct ? "field-correct" : "field-wrong"
+  );
+}
+
+function setSectionScore(id,points){
+  const maximum = MAX_POINTS[id] || 0;
+
+  sectionScores[id] = Math.max(
+    0,
+    Math.min(maximum,points)
+  );
+
+  updateScore();
+  saveProgress();
+}
+
+function sectionScoreTotal(){
+  return Object.values(sectionScores)
+    .reduce((sum,value)=>sum+Number(value || 0),0);
+}
+
+/* =====================================================
+   SCORE SYSTEM
+===================================================== */
+
+function updateScore(){
+
+  const score = Math.max(
+    0,
+    Math.min(100,Math.round(sectionScoreTotal()))
+  );
+
+  $("#score").textContent = score;
+  $("#floatingScore").textContent = score;
+
+  $("#scoreCircle").style.background =
+    `conic-gradient(
+      var(--rose) ${score}%,
+      #f3dce7 ${score}%
+    )`;
+
+  const message = $("#scoreMessage");
+
+  if(score >= 90){
+
+    message.textContent =
+      "Outstanding! You have demonstrated strong reading, language and writing skills.";
+
+  }else if(score >= 75){
+
+    message.textContent =
+      "Very good work! Review any questions you missed.";
+
+  }else if(score >= 50){
+
+    message.textContent =
+      "Good progress! Keep reading carefully and improving your answers.";
+
+  }else{
+
+    message.textContent =
+      "Your journey has begun! Complete the activities and check your answers.";
+
+  }
+
+  $$(".lesson-nav a").forEach(link=>{
+
+    const id = link.getAttribute("href").slice(1);
+
+    link.classList.toggle(
+      "done",
+      Object.prototype.hasOwnProperty.call(sectionScores,id)
+    );
+
+  });
+
+}
+
+/* =====================================================
+   MULTIPLE CHOICE
+===================================================== */
+
+$$(".mcq").forEach(question=>{
+
+  const options = $$(".option",question);
+
+  options.forEach((option,index)=>{
+
+    const badge = document.createElement("span");
+
+    badge.className = "option-letter";
+    badge.textContent = String.fromCharCode(65+index);
+
+    option.prepend(badge);
+
+    option.addEventListener("click",()=>{
+
+      options.forEach(item=>{
+        item.classList.remove(
+          "selected",
+          "correct-answer",
+          "wrong-answer"
+        );
+      });
+
+      option.classList.add("selected");
+
+      question.classList.remove("correct","wrong");
+
+      $(".question-feedback",question)
+        .classList.remove("show");
+
+      saveProgress();
+
+    });
+
+  });
+
+});
+
+function evaluateMCQ(question){
+
+  const options = $$(".option",question);
+
+  const selected = options.findIndex(
+    option=>option.classList.contains("selected")
+  );
+
+  const correctIndex = Number(question.dataset.answer);
+
+  question.classList.remove("correct","wrong");
+
+  options.forEach(option=>{
+    option.classList.remove(
+      "correct-answer",
+      "wrong-answer"
+    );
+  });
+
+  const feedback = $(".question-feedback",question);
+
+  if(selected === -1){
+
+    feedback.textContent = "Please choose an answer.";
+    feedback.classList.add("show");
+    question.classList.add("wrong");
+
+    return false;
+  }
+
+  const correct = selected === correctIndex;
+
+  if(correct){
+
+    question.classList.add("correct");
+    options[selected].classList.add("correct-answer");
+    feedback.textContent = "✓ Correct! Well done.";
+
+  }else{
+
+    question.classList.add("wrong");
+    options[selected].classList.add("wrong-answer");
+
+    feedback.textContent =
+      "Not quite. Review the relevant part of the text and try again.";
+
+  }
+
+  feedback.classList.add("show");
+
+  return correct;
+}
+
+function checkMCQSection(sectionId){
+
+  const section = document.getElementById(sectionId);
+  const questions = $$(".mcq",section);
+
+  const correct = questions.filter(
+    question=>evaluateMCQ(question)
+  ).length;
+
+  const total = questions.length;
+
+  const points = MAX_POINTS[sectionId] * correct / total;
+
+  setSectionScore(sectionId,points);
+
+  showFeedback(
+    document.getElementById(sectionId+"Feedback"),
+    `${correct}/${total} correct. ${
+      correct===total
+        ? "Excellent! You understood the text."
+        : "Review the highlighted questions and try again."
+    }`,
+    correct===total ? "good" : "bad"
+  );
+
+}
+
+/* =====================================================
+   STEP 1 — PREDICTION
+===================================================== */
+
+$$(".prediction").forEach(button=>{
+
+  button.setAttribute("aria-pressed","false");
+
+  button.addEventListener("click",()=>{
+
+    button.classList.toggle("selected");
+
+    button.setAttribute(
+      "aria-pressed",
+      button.classList.contains("selected") ? "true" : "false"
+    );
+
+    button.classList.remove("correct","incorrect");
+
+    $("#predictionFeedback").className = "feedback";
+
+    saveProgress();
+
+  });
+
+});
+
+function checkPrediction(){
+
+  const buttons = $$(".prediction");
+  let correct = 0;
+
+  buttons.forEach(button=>{
+
+    const shouldSelect = button.dataset.correct === "true";
+    const selected = button.classList.contains("selected");
+
+    const accurate = selected === shouldSelect;
+
+    button.classList.remove("correct","incorrect");
+
+    button.classList.add(
+      accurate ? "correct" : "incorrect"
+    );
+
+    if(accurate) correct++;
+
+  });
+
+  const points = 5 * correct / buttons.length;
+
+  setSectionScore("step1",points);
+
+  showFeedback(
+    $("#predictionFeedback"),
+    `${correct}/${buttons.length} predictions classified correctly. ${
+      correct===buttons.length
+        ? "Excellent prediction! You are ready to read."
+        : "Green choices are correct. Review the red choices and try again."
+    }`,
+    correct===buttons.length ? "good" : "bad"
+  );
+
+}
+
+/* =====================================================
+   STEP 5 — TRUE / FALSE
+===================================================== */
+
+function checkTF(){
+
+  const rows = $$("#step5 .tf-card");
+  let earned = 0;
+
+  rows.forEach(row=>{
+
+    const select = $("select",row);
+    const input = $("input",row);
+    const hint = $(".field-hint",row);
+
+    const choiceCorrect =
+      select.value === row.dataset.answer;
+
+    const evidencePatterns =
+      row.dataset.evidence.split("|");
+
+    const evidenceCorrect =
+      input.value.trim().length > 3 &&
+      containsAny(input.value,evidencePatterns);
+
+    if(choiceCorrect) earned += 1;
+
+    if(choiceCorrect && evidenceCorrect){
+      earned += 1;
+    }
+
+    setFieldState(select,choiceCorrect);
+
+    setFieldState(
+      input,
+      choiceCorrect && evidenceCorrect
+    );
+
+    hint.textContent =
+      choiceCorrect && evidenceCorrect
+        ? "✓ Answer and supporting evidence accepted."
+        : "Review the statement and use a relevant fact from the passage.";
+
+  });
+
+  const points = 12 * earned / 8;
+
+  setSectionScore("step5",points);
+
+  showFeedback(
+    $("#step5Feedback"),
+    `${earned}/8 answer-and-evidence points earned. ${
+      earned===8
+        ? "Excellent! Your answers are supported by the biography."
+        : "Correct your choices or improve your evidence, then check again."
+    }`,
+    earned===8 ? "good" : "bad"
+  );
+
+}
+
+/* =====================================================
+   STEP 6 — LANGUAGE AND CHRONOLOGY
+===================================================== */
+
+function checkLanguage(){
+
+  const section = $("#step6");
+
+  const questions = $$(".mcq",section);
+
+  const mcqCorrect = questions.filter(
+    question=>evaluateMCQ(question)
+  ).length;
+
+  const orders = $$(".order-row",section);
+
+  let orderCorrect = 0;
+
+  const chosenPositions = orders.map(
+    row=>$("select",row).value
+  );
+
+  const noDuplicates =
+    chosenPositions.every(Boolean) &&
+    new Set(chosenPositions).size === chosenPositions.length;
+
+  orders.forEach(row=>{
+
+    const select = $("select",row);
+
+    const correct =
+      noDuplicates &&
+      select.value === row.dataset.answer;
+
+    if(correct) orderCorrect++;
+
+    setFieldState(select,correct);
+
+  });
+
+  const totalCorrect = mcqCorrect + orderCorrect;
+  const points = 14 * totalCorrect / 7;
+
+  setSectionScore("step6",points);
+
+  showFeedback(
+    $("#step6Feedback"),
+    `${mcqCorrect}/3 vocabulary questions and ${orderCorrect}/4 chronology answers correct. ${
+      !noDuplicates
+        ? "Use each position (1, 2, 3, 4) only once."
+        : totalCorrect===7
+          ? "Wonderful! You have mastered this section."
+          : "Review the meanings and dates, then try again."
+    }`,
+    totalCorrect===7 ? "good" : "bad"
+  );
+
+}
+
+/* =====================================================
+   STEP 7 — GRAMMAR
+===================================================== */
+
+function validateGrammarHunt(type,text){
+
+  const value = normalize(text);
+
+  if(!value) return false;
+
+  const patterns = {
+
+    present:[
+      "remembers",
+      "looks back",
+      "describes",
+      "shows",
+      "connects",
+      "invites",
+      "does not present"
+    ],
+
+    past:[
+      "was born",
+      "grew up",
+      "entered",
+      "began",
+      "became",
+      "was arrested",
+      "was released",
+      "continued",
+      "published",
+      "spent",
+      "taught",
+      "valued",
+      "participated",
+      "received",
+      "helped"
+    ],
+
+    continuous:[
+      "was studying",
+      "were studying",
+      "was learning",
+      "were learning",
+      "was living",
+      "was working"
+    ],
+
+    future:[
+      "will remain",
+      "will remember",
+      "will learn",
+      "will inspire",
+      "will study",
+      "will understand",
+      "will be"
+    ],
+
+    superlative:[
+      "most important",
+      "most difficult",
+      "most memorable",
+      "most inspiring",
+      "best",
+      "greatest"
+    ],
+
+    contrast:[
+      "very different from",
+      "instead",
+      "however",
+      "unlike",
+      "whereas",
+      "while",
+      "in contrast"
+    ]
+
+  };
+
+  return containsAny(value,patterns[type] || []);
+
+}
+
+function checkGrammar(){
+
+  const selects = $$("#step7 .language-card select");
+
+  let identificationCorrect = 0;
+
+  selects.forEach(select=>{
+
+    const correct =
+      select.value === select.dataset.answer;
+
+    if(correct) identificationCorrect++;
+
+    setFieldState(select,correct);
+
+  });
+
+  const hunts = $$("#step7 .hunt-row");
+
+  let huntCorrect = 0;
+
+  hunts.forEach(row=>{
+
+    const input = $("input",row);
+
+    const correct = validateGrammarHunt(
+      row.dataset.type,
+      input.value
+    );
+
+    if(correct) huntCorrect++;
+
+    setFieldState(input,correct);
+
+  });
+
+  const total = identificationCorrect + huntCorrect;
+  const points = 16 * total / 12;
+
+  setSectionScore("step7",points);
+
+  showFeedback(
+    $("#step7Feedback"),
+    `${identificationCorrect}/6 grammar structures identified and ${huntCorrect}/6 examples accepted. ${
+      total===12
+        ? "Excellent grammar detective work!"
+        : "Check the highlighted answers. The example checker recognises common valid answers; other correct sentences may need teacher review."
+    }`,
+    total===12 ? "good" : "bad"
+  );
+
+}
+
+/* =====================================================
+   STEP 8 — PROFILE AND WORD BUILDING
+===================================================== */
+
+function validateProfile(type,text){
+
+  const value = normalize(text);
+
+  if(!value) return false;
+
+  switch(type){
+
+    case "birth":
+      return (
+        value.includes("1934") &&
+        (
+          value.includes("tiaret") ||
+          value.includes("sersou") ||
+          value.includes("december")
+        )
+      );
+
+    case "town":
+      return containsAny(value,["vialar","tissemsilt"]);
+
+    case "father":
+      return containsAny(value,["qadi","judge","scholar"]);
+
+    case "subject":
+      return containsAny(value,["law","legal studies"]);
+
+    case "arrest":
+      return containsAny(value,["1957","casbah","september"]);
+
+    case "release":
+      return value.includes("1962");
+
+    default:
+      return false;
+  }
+
+}
+
+function checkStep8(){
+
+  const section = $("#step8");
+
+  const questions = $$(".mcq",section);
+
+  const mcqCorrect = questions.filter(
+    question=>evaluateMCQ(question)
+  ).length;
+
+  const profiles = $$(".profile-item",section);
+
+  let profileCorrect = 0;
+
+  profiles.forEach(item=>{
+
+    const input = $("input",item);
+
+    const correct = validateProfile(
+      item.dataset.profile,
+      input.value
+    );
+
+    if(correct) profileCorrect++;
+
+    setFieldState(input,correct);
+
+    $(".field-hint",item).textContent =
+      correct
+        ? "✓ Information accepted."
+        : "Look again at the relevant paragraph.";
+
+  });
+
+  const words = $$(".word-card",section);
+
+  let wordCorrect = 0;
+
+  words.forEach(card=>{
+
+    const input = $("input",card);
+
+    const correct =
+      normalize(input.value) ===
+      normalize(card.dataset.answer);
+
+    if(correct) wordCorrect++;
+
+    setFieldState(input,correct);
+
+  });
+
+  const total = mcqCorrect + profileCorrect + wordCorrect;
+  const points = 19 * total / 15;
+
+  setSectionScore("step8",points);
+
+  showFeedback(
+    $("#step8Feedback"),
+    `${mcqCorrect}/3 inference answers, ${profileCorrect}/6 profile details and ${wordCorrect}/6 adjectives correct. ${
+      total===15
+        ? "Outstanding! You have completed every task correctly."
+        : "Review the highlighted fields and try again."
+    }`,
+    total===15 ? "good" : "bad"
+  );
+
+}
+
+/* =====================================================
+   STEP 9 — WRITING
+===================================================== */
+
+function updateWordCounters(){
+
+  $("#explanationCount").textContent =
+    wordCount($("#explanation").value);
+
+  const count = wordCount($("#biography").value);
+
+  $("#biographyCount").textContent = count;
+
+  $("#biographyCount").style.color =
+    count >= 80 && count <= 110
+      ? "var(--green)"
+      : "var(--rose-dark)";
+
+}
+
+$("#explanation").addEventListener(
+  "input",
+  updateWordCounters
+);
+
+$("#biography").addEventListener(
+  "input",
+  updateWordCounters
+);
+
+function insertOpening(){
+
+  const textarea = $("#biography");
+
+  if(textarea.value.trim()){
+
+    showToast(
+      "Your writing is already started. Continue your paragraph!"
+    );
+
+    return;
+  }
+
+  textarea.value =
+    "Zohra Drif was born on 28 December 1934 in the Tiaret region of Algeria. ";
+
+  updateWordCounters();
+  saveProgress();
+
+  textarea.focus();
+
+  showToast("✨ Opening sentence added!");
+
+}
+
+async function copyBiography(){
+
+  const text = $("#biography").value.trim();
+
+  if(!text){
+
+    showToast("Write your biography first.");
+    return;
+  }
+
+  try{
+
+    await navigator.clipboard.writeText(text);
+
+    showToast("📋 Biography copied!");
+
+  }catch(error){
+
+    const field = $("#biography");
+
+    field.focus();
+    field.select();
+
+    showToast("Select and copy your biography.");
+
+  }
+
+}
+
+function downloadBiography(){
+
+  const text = $("#biography").value.trim();
+
+  if(!text){
+
+    showToast("Write your biography first.");
+    return;
+  }
+
+  const content =
+    "MS4 SEQUENCE 2 — READING LESSON 4\n" +
+    "ZOHRA DRIF — BIOGRAPHY\n\n" +
+    text + "\n";
+
+  const blob = new Blob(
+    [content],
+    {type:"text/plain;charset=utf-8"}
+  );
+
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "Zohra-Drif-My-Biography.txt";
+
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  setTimeout(()=>{
+    URL.revokeObjectURL(url);
+  },1000);
+
+  showToast("⬇ Biography downloaded!");
+
+}
+
+function checkFinal(){
+
+  const question = $("#step9 .mcq");
+  const mcqCorrect = evaluateMCQ(question);
+
+  const explanation = $("#explanation").value.trim();
+  const biography = $("#biography").value.trim();
+
+  const explanationWords = wordCount(explanation);
+  const biographyWords = wordCount(biography);
+
+  const checklist = $$("#writingChecklist input");
+
+  const checked = checklist.filter(
+    input=>input.checked
+  ).length;
+
+  let points = 0;
+
+  if(mcqCorrect){
+    points += 2;
+  }
+
+  if(explanationWords >= 30){
+    points += 2;
+  }else if(explanationWords >= 15){
+    points += 1;
+  }
+
+  if(biographyWords >= 80 && biographyWords <= 110){
+    points += 3;
+  }else if(biographyWords >= 40){
+    points += 2;
+  }else if(biographyWords >= 20){
+    points += 1;
+  }
+
+  if(
+    containsAny(
+      biography,
+      ["1934","1947","1954","1957","1962"]
+    )
+  ){
+    points += 1;
+  }
+
+  if(
+    containsAny(
+      biography,
+      [
+        "later",
+        "after",
+        "during",
+        "then",
+        "finally",
+        "in 1947",
+        "in 1954"
+      ]
+    )
+  ){
+    points += 1;
+  }
+
+  if(checked >= 6){
+    points += 1;
+  }
+
+  setSectionScore("step9",points);
+
+  const message =
+    `You earned ${points}/10 points in the final challenge. ` +
+    `Your explanation contains ${explanationWords} words, ` +
+    `and your biography contains ${biographyWords} words. ` +
+    `The target length is 80–110 words. ` +
+    `This is an automatic writing checklist, not a full grammar assessment. ` +
+    `Ask your teacher to review historical accuracy, organisation, spelling and verb forms.`;
+
+  showFeedback(
+    $("#step9Feedback"),
+    message,
+    points>=8 ? "good" : "info"
+  );
+
+  showToast("🏆 Final challenge checked!");
+
+}
+
+/* =====================================================
+   READING TOOLS
+===================================================== */
+
+function changeReadingSize(direction){
+
+  readingSize += direction;
+
+  readingSize = Math.max(
+    14,
+    Math.min(23,readingSize)
+  );
+
+  document.documentElement.style.setProperty(
+    "--reading-size",
+    readingSize+"px"
+  );
+
+  $("#readingStatus").textContent =
+    `Text size: ${readingSize}px`;
+
+  saveProgress();
+
+}
+
+function readStory(){
+
+  if(!("speechSynthesis" in window)){
+
+    showToast(
+      "Text-to-speech is not supported in this browser."
+    );
+
+    return;
+  }
+
+  stopReading();
+
+  const text = $$(".reading-paragraph p")
+    .map(p=>p.textContent.trim())
+    .join(" ");
+
+  currentUtterance = new SpeechSynthesisUtterance(text);
+
+  currentUtterance.lang = "en-GB";
+  currentUtterance.rate = .88;
+  currentUtterance.pitch = 1;
+
+  currentUtterance.onstart = ()=>{
+    $("#readingStatus").textContent =
+      "🔊 Reading the biography...";
+  };
+
+  currentUtterance.onend = ()=>{
+    $("#readingStatus").textContent =
+      "Reading finished.";
+  };
+
+  currentUtterance.onerror = ()=>{
+    $("#readingStatus").textContent =
+      "Narration stopped or unavailable.";
+  };
+
+  window.speechSynthesis.speak(currentUtterance);
+
+}
+
+function stopReading(){
+
+  if("speechSynthesis" in window){
+    window.speechSynthesis.cancel();
+  }
+
+  currentUtterance = null;
+
+  $("#readingStatus").textContent = "Reading tools";
+
+}
+
+/* =====================================================
+   PARAGRAPH HIGHLIGHTING
+===================================================== */
+
+const readingParagraphs = $$(".reading-paragraph");
+
+if("IntersectionObserver" in window){
+
+  const paragraphObserver =
+    new IntersectionObserver(entries=>{
+
+      const visible = entries
+        .filter(entry=>entry.isIntersecting)
+        .sort((a,b)=>
+          b.intersectionRatio-a.intersectionRatio
+        );
+
+      if(!visible.length) return;
+
+      const target = visible[0].target;
+
+      readingParagraphs.forEach(p=>{
+        p.classList.remove("active");
+      });
+
+      $$(".visual-card").forEach(card=>{
+        card.classList.remove("active");
+      });
+
+      target.classList.add("active");
+
+      const picture = document.getElementById(
+        target.dataset.picture
+      );
+
+      if(picture){
+        picture.classList.add("active");
+      }
+
+    },{
+      rootMargin:"-15% 0px -45% 0px",
+      threshold:[0,.25,.5]
+    });
+
+  readingParagraphs.forEach(p=>{
+    paragraphObserver.observe(p);
+  });
+
+}
+
+if(readingParagraphs.length){
+
+  readingParagraphs[0].classList.add("active");
+
+  const firstPicture = $("#picture1");
+
+  if(firstPicture){
+    firstPicture.classList.add("active");
+  }
+
+}
+
+/* =====================================================
+   NAVIGATION AND SCROLL
+===================================================== */
+
+const lessonSections = $$(".step[id^='step']");
+const navLinks = $$(".lesson-nav a");
+
+function updateScrollProgress(){
+
+  const scrollTop = window.scrollY;
+
+  const maxScroll =
+    document.documentElement.scrollHeight -
+    window.innerHeight;
+
+  const percentage =
+    maxScroll>0
+      ? scrollTop/maxScroll*100
+      : 0;
+
+  $("#scrollProgress").style.width =
+    percentage+"%";
+
+}
+
+function updateActiveNavigation(){
+
+  let activeId = "step1";
+
+  lessonSections.forEach(section=>{
+
+    if(section.getBoundingClientRect().top <= 220){
+      activeId = section.id;
+    }
+
+  });
+
+  navLinks.forEach(link=>{
+
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === "#"+activeId
+    );
+
+  });
+
+}
+
+window.addEventListener("scroll",()=>{
+
+  updateScrollProgress();
+  updateActiveNavigation();
+
+},{passive:true});
+
+/* =====================================================
+   DICTIONARY DATA
+===================================================== */
+
+const dictionary = [
+
+  ["memoir","noun","مذكرات"],
+  ["childhood","noun","الطفولة"],
+  ["education","noun","التعليم"],
+  ["identity","noun","الهوية"],
+  ["ancestor","noun","سلف / جد من الأجداد"],
+  ["qadi","noun","قاضٍ"],
+  ["scholar","noun","عالم / باحث"],
+  ["opportunity","noun","فرصة"],
+  ["struggle","noun","نضال / كفاح"],
+  ["independence","noun","الاستقلال"],
+  ["freedom fighter","noun","مناضل من أجل الحرية"],
+  ["clandestine","adjective","سري"],
+  ["resistance","noun","مقاومة"],
+  ["arrest","verb / noun","يعتقل / اعتقال"],
+  ["tribunal","noun","محكمة"],
+  ["sentence","noun","حكم قضائي"],
+  ["prison","noun","سجن"],
+  ["release","verb / noun","يطلق سراح / إطلاق سراح"],
+  ["courage","noun","شجاعة"],
+  ["loyalty","noun","وفاء / إخلاص"],
+  ["determination","noun","عزيمة / إصرار"],
+  ["difficult","adjective","صعب"],
+  ["experience","noun","تجربة"],
+  ["historical","adjective","تاريخي"],
+  ["inspiring","adjective","ملهم"],
+  ["successful","adjective","ناجح"],
+  ["unsuccessful","adjective","غير ناجح"],
+  ["independent","adjective","مستقل"],
+  ["responsible","adjective","مسؤول"],
+  ["important","adjective","مهم"],
+  ["custom","noun","عادة / تقليد"],
+  ["comfort","verb","يواسي"],
+  ["loyal","adjective","وفي / مخلص"],
+  ["memory","noun","ذكرى / ذاكرة"],
+  ["colonial","adjective","استعماري"],
+  ["nationalist","adjective","وطني"],
+  ["hard labour","noun","الأشغال الشاقة"],
+  ["public figure","noun","شخصية عامة"],
+  ["lawyer","noun","محامٍ"],
+  ["judge","noun","قاضٍ"],
+  ["courageous","adjective","شجاع"],
+  ["dangerous","adjective","خطير"],
+  ["independent Algeria","phrase","الجزائر المستقلة"],
+  ["assembly","noun","مجلس / جمعية"],
+  ["war","noun","حرب"],
+  ["peace","noun","سلام"],
+  ["biography","noun","سيرة ذاتية"],
+  ["historical event","noun","حدث تاريخي"],
+  ["remember","verb","يتذكر"],
+  ["describe","verb","يصف"],
+  ["compare","verb","يقارن"],
+  ["unlike","preposition","على خلاف"],
+  ["whereas","conjunction","بينما"],
+  ["however","adverb","مع ذلك"],
+  ["later","adverb","لاحقاً"],
+  ["finally","adverb","أخيراً"],
+  ["during","preposition","خلال"]
+
+];
+
+/* =====================================================
+   DICTIONARY RENDERING
+===================================================== */
+
+function renderDictionary(query=""){
+
+  const grid = $("#dictionaryGrid");
+
+  grid.innerHTML = "";
+
+  const search = normalize(query);
+
+  const filtered = dictionary.filter(item=>
+    normalize(item.join(" ")).includes(search)
+  );
+
+  filtered.forEach(([english,pos,arabic])=>{
+
+    const card = document.createElement("div");
+    card.className = "dictionary-word";
+
+    const strong = document.createElement("strong");
+    strong.textContent = english;
+
+    const small = document.createElement("small");
+    small.textContent = pos;
+
+    const translation = document.createElement("span");
+    translation.className = "arabic";
+    translation.lang = "ar";
+    translation.textContent = arabic;
+
+    card.append(strong,small,translation);
+
+    grid.appendChild(card);
+
+  });
+
+  $("#dictionaryEmpty").classList.toggle(
+    "hidden",
+    filtered.length>0
+  );
+
+}
+
+function openDictionary(){
+
+  $("#dictionaryOverlay").classList.add("open");
+
+  document.body.style.overflow = "hidden";
+
+  renderDictionary($("#dictionarySearch").value);
+
+  $("#dictionarySearch").focus();
+
+}
+
+function closeDictionary(){
+
+  $("#dictionaryOverlay").classList.remove("open");
+
+  document.body.style.overflow = "";
+
+}
+
+$("#dictionarySearch").addEventListener(
+  "input",
+  event=>renderDictionary(event.target.value)
+);
+
+$("#dictionaryOverlay").addEventListener(
+  "click",
+  event=>{
+
+    if(event.target.id === "dictionaryOverlay"){
+      closeDictionary();
+    }
+
+  }
+);
+
+document.addEventListener("keydown",event=>{
+
+  if(event.key === "Escape"){
+    closeDictionary();
+  }
+
+});
+
+/* =====================================================
+   SAVE PROGRESS
+===================================================== */
+
+function saveProgress(){
+
+  clearTimeout(saveTimer);
+
+  saveTimer = setTimeout(()=>{
+
+    try{
+
+      const state = {
+
+        scores:sectionScores,
+        readingSize,
+
+        predictions:$$(".prediction").map(button=>
+          button.classList.contains("selected")
+        ),
+
+        mcq:$$(".mcq").map(question=>
+          $$(".option",question).findIndex(option=>
+            option.classList.contains("selected")
+          )
+        ),
+
+        fields:$$(
+          "main input[type='text'], main select, main textarea"
+        ).map(field=>field.value),
+
+        checkboxes:$$("#writingChecklist input").map(
+          input=>input.checked
+        )
+
+      };
+
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(state)
+      );
+
+    }catch(error){
+
+      console.warn(
+        "Progress could not be saved.",
+        error
+      );
+
+    }
+
+  },250);
+
+}
+
+/* =====================================================
+   RESTORE PROGRESS
+===================================================== */
+
+function restoreProgress(){
+
+  let state;
+
+  try{
+
+    const saved = localStorage.getItem(STORAGE_KEY);
+
+    if(!saved) return;
+
+    state = JSON.parse(saved);
+
+  }catch(error){
+
+    return;
+
+  }
+
+  if(!state || typeof state!=="object") return;
+
+  sectionScores = {};
+
+  if(state.scores && typeof state.scores==="object"){
+
+    Object.keys(MAX_POINTS).forEach(key=>{
+
+      const value = Number(state.scores[key]);
+
+      if(Number.isFinite(value)){
+
+        sectionScores[key] = Math.max(
+          0,
+          Math.min(MAX_POINTS[key],value)
+        );
+
+      }
+
+    });
+
+  }
+
+  readingSize = Number(state.readingSize) || 17;
+
+  readingSize = Math.max(
+    14,
+    Math.min(23,readingSize)
+  );
+
+  document.documentElement.style.setProperty(
+    "--reading-size",
+    readingSize+"px"
+  );
+
+  if(Array.isArray(state.predictions)){
+
+    $$(".prediction").forEach((button,index)=>{
+
+      const selected = Boolean(
+        state.predictions[index]
+      );
+
+      button.classList.toggle("selected",selected);
+
+      button.setAttribute(
+        "aria-pressed",
+        selected ? "true" : "false"
+      );
+
+    });
+
+  }
+
+  if(Array.isArray(state.mcq)){
+
+    $$(".mcq").forEach((question,index)=>{
+
+      const selected = state.mcq[index];
+      const options = $$(".option",question);
+
+      if(
+        Number.isInteger(selected) &&
+        selected>=0 &&
+        selected<options.length
+      ){
+
+        options[selected].classList.add("selected");
+
+      }
+
+    });
+
+  }
+
+  if(Array.isArray(state.fields)){
+
+    const fields = $$(
+      "main input[type='text'], main select, main textarea"
+    );
+
+    fields.forEach((field,index)=>{
+
+      if(state.fields[index]!==undefined){
+        field.value = state.fields[index];
+      }
+
+    });
+
+  }
+
+  if(Array.isArray(state.checkboxes)){
+
+    $$("#writingChecklist input").forEach(
+      (input,index)=>{
+
+        input.checked = Boolean(
+          state.checkboxes[index]
+        );
+
+      }
+    );
+
+  }
+
+  updateWordCounters();
+  updateScore();
+
+}
+
+/* =====================================================
+   AUTOMATIC SAVE
+===================================================== */
+
+document.addEventListener("input",event=>{
+
+  if(event.target.closest("main")){
+    saveProgress();
+  }
+
+});
+
+document.addEventListener("change",event=>{
+
+  if(event.target.closest("main")){
+    saveProgress();
+  }
+
+});
+
+/* =====================================================
+   RESET LESSON
+===================================================== */
+
+function resetLesson(){
+
+  const confirmed = window.confirm(
+    "Do you want to reset the entire lesson? Your answers and score will be cleared."
+  );
+
+  if(!confirmed) return;
+
+  stopReading();
+
+  clearTimeout(saveTimer);
+
+  localStorage.removeItem(STORAGE_KEY);
+
+  window.location.reload();
+
+}
+
+/* =====================================================
+   TOP BUTTONS
+===================================================== */
+
+$("#printButton").addEventListener(
+  "click",
+  ()=>window.print()
+);
+
+$("#resetButton").addEventListener(
+  "click",
+  resetLesson
+);
+
+/* =====================================================
+   INITIALISE
+===================================================== */
+
+function initialiseLesson(){
+
+  restoreProgress();
+
+  renderDictionary();
+
+  updateScore();
+  updateWordCounters();
+  updateScrollProgress();
+  updateActiveNavigation();
+
+}
+
+if(document.readyState === "loading"){
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    initialiseLesson
+  );
+
+}else{
+
+  initialiseLesson();
+
+}
+
+</script>
+
+</body>
+</html>

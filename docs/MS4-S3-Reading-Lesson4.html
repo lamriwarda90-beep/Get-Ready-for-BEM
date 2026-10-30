@@ -1,0 +1,2877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS4 Reading Lesson 4 | The Connected World</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --purple:#7542bb;
+  --deep:#302052;
+  --lavender:#f3eaff;
+  --gold:#ffda8a;
+  --ink:#332744;
+  --line:#e6d9f5;
+  --green:#237b50;
+  --red:#b63758;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:linear-gradient(145deg,#fcfaff,#eee4fb);
+  color:var(--ink);
+  font:15px/1.75 "Nunito",sans-serif;
+}
+h1,h2,h3{font-family:"Baloo 2",sans-serif;line-height:1.2}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+button:focus-visible,select:focus-visible,
+textarea:focus-visible,input:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:2px;
+}
+nav{
+  position:sticky;top:0;z-index:10;
+  background:#ffffffee;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  padding:12px max(18px,calc((100% - 1100px)/2));
+  display:flex;align-items:center;
+  justify-content:space-between;
+  gap:12px;flex-wrap:wrap;
+}
+.brand{font-weight:900;color:var(--deep)}
+.navlinks{display:flex;gap:7px;flex-wrap:wrap}
+.navlinks a{
+  background:var(--lavender);
+  color:var(--purple);
+  padding:7px 11px;border-radius:25px;
+  font-size:12px;font-weight:900;
+}
+.hero{
+  text-align:center;color:white;
+  padding:65px 18px 90px;
+  background:
+    radial-gradient(circle at 85% 10%,#b28bdf88,transparent 40%),
+    linear-gradient(120deg,#302052,#7948b8);
+}
+.badge{
+  display:inline-block;
+  border:1px solid #ffffff77;
+  background:#ffffff20;
+  border-radius:30px;
+  padding:7px 15px;
+  font-size:11px;font-weight:900;
+}
+.hero h1{
+  font-size:clamp(38px,7vw,70px);
+  margin:15px 0;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{max-width:690px;margin:auto}
+.hero-tags{
+  display:flex;justify-content:center;
+  gap:9px;flex-wrap:wrap;margin-top:22px;
+}
+.hero-tags span{
+  background:#ffffff20;
+  padding:7px 13px;border-radius:25px;
+  font-size:12px;font-weight:800;
+}
+main{
+  max-width:1080px;
+  margin:-37px auto 60px;
+  padding:0 17px;position:relative;
+}
+section{margin-bottom:30px;scroll-margin-top:90px}
+section>h2{
+  color:var(--deep);font-size:30px;
+  margin:8px 0 16px;
+}
+.label{
+  color:var(--purple);
+  font-size:11px;letter-spacing:1.5px;
+  font-weight:900;text-transform:uppercase;
+}
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:24px;padding:25px;
+  box-shadow:0 12px 30px #3e216016;
+}
+.cover{
+  width:100%;max-height:370px;
+  object-fit:cover;border-radius:17px;
+  display:block;background:var(--lavender);
+}
+.caption{font-size:12px;color:#756685}
+.tiles{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+.tile{
+  overflow:hidden;background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+}
+.tile img{width:100%;height:175px;object-fit:cover}
+.tile-body{padding:17px}
+.tile h3{font-size:23px;margin:0;color:var(--deep)}
+.tile p{font-size:13px}
+.btn,.tile a{
+  display:inline-block;
+  border:0;border-radius:25px;
+  padding:11px 18px;
+  background:linear-gradient(110deg,#593191,#9663d1);
+  color:white;font-size:12px;font-weight:900;
+  margin-top:12px;
+}
+.btn.secondary{
+  background:white;color:var(--purple);
+  border:2px solid var(--line);
+}
+.visualpair{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+.visualpair figure{margin:0}
+.visualpair img{
+  width:100%;height:245px;
+  object-fit:cover;border-radius:16px;
+}
+.visualpair figcaption{
+  text-align:center;font-weight:900;
+  font-size:13px;margin-top:8px;
+}
+.article-title{
+  color:var(--deep);font-size:35px;
+  margin:0;
+}
+.byline{
+  font-size:12px;color:#776985;
+  margin:5px 0 20px;
+}
+.para{
+  display:grid;
+  grid-template-columns:37px 1fr;
+  gap:14px;padding:20px 0;
+  border-bottom:1px solid #efe7f8;
+}
+.para:last-of-type{border-bottom:0}
+.num{
+  width:36px;height:36px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--purple);
+  color:white;font-size:12px;font-weight:900;
+}
+.para p{margin:0;line-height:2}
+.argument{color:var(--purple);font-weight:900}
+.highlight{
+  background:#f0e3ff;
+  padding:1px 5px;border-radius:5px;
+  color:#6737a6;font-weight:900;
+}
+.quote{
+  background:#fff7e7;
+  border-left:5px solid var(--gold);
+  border-radius:0 13px 13px 0;
+  padding:16px 20px;
+  color:#805a20;font-weight:900;
+  margin-top:15px;
+}
+.task{
+  background:#fcfaff;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:19px;margin:14px 0;
+}
+.task h3{
+  color:var(--deep);
+  font-size:19px;margin:0 0 12px;
+}
+.options{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.option{
+  background:white;color:var(--ink);
+  border:2px solid var(--line);
+  border-radius:13px;
+  padding:12px;text-align:left;
+  font-size:13px;font-weight:800;
+  min-height:52px;
+  transition:.2s;
+}
+.option:hover:not(:disabled){
+  border-color:#a87bdc;
+  transform:translateY(-2px);
+}
+.option.correct{
+  background:#e5f7ed;
+  border-color:#4aae7b;color:var(--green);
+}
+.option.wrong{
+  background:#fff0f4;
+  border-color:#e6a0b0;color:var(--red);
+}
+.option:disabled{cursor:default}
+.feedback{
+  display:none;margin-top:12px;
+  padding:11px 14px;
+  border-radius:12px;
+  font-size:13px;font-weight:800;
+}
+.feedback.show{display:block}
+.feedback.good{background:#e5f7ed;color:var(--green)}
+.feedback.bad{background:#fff0f4;color:var(--red)}
+.feedback.info{background:#f1e7ff;color:var(--purple)}
+.matchrow,.tfrow{
+  display:grid;
+  grid-template-columns:1fr 190px;
+  gap:12px;align-items:center;
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+}
+.matchrow strong,.tfrow strong{font-size:13px}
+.tfrow input{grid-column:1/-1}
+select,input,textarea{
+  width:100%;padding:11px 12px;
+  border:2px solid var(--line);
+  border-radius:12px;background:white;
+  color:var(--ink);
+}
+textarea{min-height:190px;resize:vertical;margin-top:15px}
+.support{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.support div{
+  background:#f8f2ff;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:14px;font-size:13px;
+}
+.support strong{color:var(--deep)}
+.wordcount{color:var(--purple);font-weight:900}
+.progress{
+  background:linear-gradient(120deg,#302052,#7748b4);
+  border-radius:22px;padding:24px;color:white;
+}
+.track{
+  height:13px;background:#ffffff40;
+  border-radius:20px;overflow:hidden;margin-top:13px;
+}
+.fill{
+  height:100%;width:0;
+  background:var(--gold);
+  transition:width .3s;
+}
+.dictbtn{
+  position:fixed;bottom:19px;right:19px;
+  z-index:20;width:60px;height:60px;
+  border-radius:50%;border:3px solid white;
+  background:linear-gradient(120deg,#ffdc94,#ad7cdb);
+  box-shadow:0 9px 25px #38205c55;
+  font-size:27px;
+}
+.overlay{
+  display:none;position:fixed;inset:0;
+  z-index:30;background:#170b30bd;
+  align-items:center;justify-content:center;
+  padding:15px;
+}
+.overlay.open{display:flex}
+.dictionary{
+  background:white;width:min(460px,100%);
+  max-height:85vh;border-radius:22px;
+  padding:20px;display:flex;flex-direction:column;
+}
+.dicthead{
+  display:flex;align-items:center;
+  justify-content:space-between;
+}
+.dicthead h3{margin:0;color:var(--deep)}
+.close{
+  border:0;background:var(--lavender);
+  border-radius:50%;width:36px;height:36px;
+  font-size:21px;
+}
+.dictlist{overflow:auto;margin-top:12px}
+.word{
+  display:flex;justify-content:space-between;
+  gap:15px;padding:9px 2px;
+  border-bottom:1px solid var(--line);
+}
+.word span{color:var(--purple);direction:rtl;font-size:18px}
+footer{
+  text-align:center;color:#79648f;
+  font-size:12px;font-weight:900;
+  padding:0 15px 80px;
+}
+@media(max-width:750px){
+  .tiles,.visualpair,.options,.support{
+    grid-template-columns:1fr;
+  }
+  .matchrow,.tfrow{grid-template-columns:1fr}
+  .tfrow input{grid-column:auto}
+  .card{padding:18px}
+  .article-title{font-size:28px}
+  .hero{padding:48px 14px 75px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a class="brand" href="MS4-S3-Reading-Beautiful.html">
+    📚 MY ENGLISH SPACE
+  </a>
+  <div class="navlinks">
+    <a href="#internet">🌐 Internet</a>
+    <a href="#social">📱 Social Media</a>
+    <a href="#global">🌍 Globalisation</a>
+    <a href="#writing">✍️ Writing</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="badge">
+    MS4 • SEQUENCE 3 • READING LESSON 04
+  </span>
+  <h1>Our <span>Connected World</span></h1>
+  <p>
+    Read three argumentative texts, discover advantages
+    and disadvantages, identify opinions and arguments,
+    and express your own point of view.
+  </p>
+  <div class="hero-tags">
+    <span>🌐 Internet</span>
+    <span>📱 Social Media</span>
+    <span>🌍 Globalisation</span>
+    <span>⚖️ Pros & Cons</span>
+  </div>
+</header>
+
+<main>
+
+<!-- INTRODUCTION IMAGE -->
+
+<section>
+  <div class="card">
+    <img
+      class="cover"
+      src="https://i.imgur.com/Tzi8ayn.jpeg"
+      alt="The Connected World"
+      onerror="this.style.display='none'"
+    >
+    <p class="caption">
+      Reading Lesson 4 — Three topics, three texts,
+      one connected world.
+    </p>
+  </div>
+</section>
+
+<!-- WORKSHOP CARDS -->
+
+<section>
+  <span class="label">Choose your reading workshop</span>
+  <h2>📚 Today's Reading Journey</h2>
+
+  <div class="tiles">
+
+    <div class="tile">
+      <img
+        src="https://i.imgur.com/Tm2wsD2.jpeg"
+        alt="The Internet and Social Media"
+      >
+      <div class="tile-body">
+        <h3>01 • The Internet</h3>
+        <p>
+          Explore the advantages and disadvantages
+          of the Internet.
+        </p>
+        <a href="#internet">Start Reading →</a>
+      </div>
+    </div>
+
+    <div class="tile">
+      <img
+        src="https://i.imgur.com/mmfx1xd.jpeg"
+        alt="Internet Advantages"
+      >
+      <div class="tile-body">
+        <h3>02 • Social Media</h3>
+        <p>
+          Learn how to defend an opinion
+          with arguments and examples.
+        </p>
+        <a href="#social">Start Reading →</a>
+      </div>
+    </div>
+
+    <div class="tile">
+      <img
+        src="https://i.imgur.com/50Or9Ie.jpeg"
+        alt="Globalisation"
+      >
+      <div class="tile-body">
+        <h3>03 • Globalisation</h3>
+        <p>
+          Discover the positive and negative
+          effects of globalisation.
+        </p>
+        <a href="#global">Start Reading →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================================
+     READING WORKSHOP 1
+===================================== -->
+
+<section id="internet">
+
+  <span class="label">
+    WORKSHOP 01 • BEFORE READING
+  </span>
+
+  <h2>🌐 The Internet: Helpful or Harmful?</h2>
+
+  <div class="card">
+
+    <div class="visualpair">
+
+      <figure>
+        <img
+          src="https://i.imgur.com/mmfx1xd.jpeg"
+          alt="Advantages of the Internet"
+        >
+        <figcaption>💻 Advantages of the Internet</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="https://i.imgur.com/cKD4wIT.jpeg"
+          alt="Disadvantages of the Internet"
+        >
+        <figcaption>⚠️ Disadvantages of the Internet</figcaption>
+      </figure>
+
+    </div>
+
+    <div class="task">
+      <h3>Look at the pictures. What will the text discuss?</h3>
+      <div class="options" data-q="predict1">
+        <button class="option">Only online games</button>
+        <button class="option" data-right="1">
+          Both the benefits and risks of the Internet
+        </button>
+        <button class="option">The history of television</button>
+        <button class="option">A famous inventor</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEXT 1 -->
+
+<section>
+  <span class="label">WORKSHOP 01 • READING DISCOVERY</span>
+  <h2>📖 Read Text One</h2>
+
+  <article class="card">
+
+    <h2 class="article-title">
+      The Internet: A Blessing or a Problem?
+    </h2>
+
+    <p class="byline">
+      An argumentative article for young readers
+    </p>
+
+    <div class="para">
+      <span class="num">01</span>
+      <p>
+        Today, the Internet is an important part of our
+        daily lives. Millions of people use
+        <span class="highlight">it</span> to study,
+        communicate and enjoy entertainment.
+        Some people believe that the Internet makes
+        life easier, while others think that it creates
+        serious problems. In fact, this modern technology
+        has both advantages and disadvantages.
+      </p>
+    </div>
+
+    <div class="para">
+      <span class="num">02</span>
+      <p>
+        <span class="argument">On the one hand,</span>
+        the Internet offers many benefits.
+        <span class="argument">Firstly,</span>
+        pupils can find useful information and educational
+        videos in seconds.
+        <span class="argument">Secondly,</span>
+        people can communicate easily with friends and
+        relatives who live far away.
+        <span class="argument">Moreover,</span>
+        the Internet provides opportunities to learn
+        new skills and discover other cultures.
+        <span class="highlight">These advantages</span>
+        make it a valuable tool for learning and communication.
+      </p>
+    </div>
+
+    <div class="para">
+      <span class="num">03</span>
+      <p>
+        <span class="argument">On the other hand,</span>
+        the Internet has several drawbacks.
+        Spending too much time online can reduce physical
+        activity and disturb sleep. Some websites may
+        contain false information, while online strangers
+        can sometimes be dangerous.
+        <span class="argument">In addition,</span>
+        excessive Internet use may distract pupils
+        from their homework.
+        <span class="highlight">These problems</span>
+        show why users should be careful.
+      </p>
+    </div>
+
+    <div class="para">
+      <span class="num">04</span>
+      <p>
+        <span class="argument">In my opinion,</span>
+        the Internet is more helpful than harmful
+        when people use it responsibly.
+        We should choose reliable websites,
+        protect our personal information
+        and limit our screen time.
+        <span class="argument">To conclude,</span>
+        the Internet is a powerful invention,
+        but its value depends on how we use it.
+        We must enjoy its benefits without ignoring its risks.
+      </p>
+    </div>
+
+    <div class="quote">
+      ✨ Technology becomes useful when we use it wisely.
+    </div>
+
+  </article>
+</section>
+
+<!-- TEXT 1 COMPREHENSION -->
+
+<section>
+  <span class="label">WORKSHOP 01 • GLOBAL COMPREHENSION</span>
+  <h2>🌍 Understand the Main Message</h2>
+
+  <div class="card">
+
+    <div class="task">
+      <h3>1. What is the text mainly about?</h3>
+      <div class="options" data-q="i1">
+        <button class="option">The history of computers</button>
+        <button class="option" data-right="1">
+          The benefits and drawbacks of the Internet
+        </button>
+        <button class="option">Famous inventors</button>
+        <button class="option">School holidays</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>2. What is the writer's purpose?</h3>
+      <div class="options" data-q="i2">
+        <button class="option">To tell a funny story</button>
+        <button class="option" data-right="1">
+          To discuss two sides of an issue and give an opinion
+        </button>
+        <button class="option">To describe a monument</button>
+        <button class="option">To advertise a computer</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>3. What is the writer's final opinion?</h3>
+      <div class="options" data-q="i3">
+        <button class="option">The Internet is always dangerous.</button>
+        <button class="option" data-right="1">
+          The Internet is helpful when used responsibly.
+        </button>
+        <button class="option">The Internet has no disadvantages.</button>
+        <button class="option">Pupils should always stay online.</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEXT 1 MATCHING -->
+
+<section>
+  <span class="label">WORKSHOP 01 • MAIN IDEAS</span>
+  <h2>🧩 Match the Ideas with the Paragraphs</h2>
+
+  <div class="card">
+
+    <p>
+      Match each main idea with its paragraph.
+      Use each paragraph number only once.
+    </p>
+
+    <div id="ideas1" class="matching" data-count="4">
+
+      <div class="matchrow" data-answer="3">
+        <strong>A. The dangers of the Internet.</strong>
+        <select aria-label="Idea A"></select>
+      </div>
+
+      <div class="matchrow" data-answer="1">
+        <strong>B. Introducing the topic of debate.</strong>
+        <select aria-label="Idea B"></select>
+      </div>
+
+      <div class="matchrow" data-answer="4">
+        <strong>C. The writer's opinion and advice.</strong>
+        <select aria-label="Idea C"></select>
+      </div>
+
+      <div class="matchrow" data-answer="2">
+        <strong>D. The advantages of the Internet.</strong>
+        <select aria-label="Idea D"></select>
+      </div>
+
+    </div>
+
+    <button class="btn" onclick="checkMatching('ideas1',true)">
+      ✓ Check Matching
+    </button>
+
+    <div class="feedback" id="ideas1-feedback"></div>
+
+  </div>
+</section>
+
+<!-- TEXT 1 DETAILED COMPREHENSION -->
+
+<section>
+  <span class="label">WORKSHOP 01 • DETAILED COMPREHENSION</span>
+  <h2>🎯 Find Specific Information</h2>
+
+  <div class="card">
+
+    <div class="task">
+      <h3>4. How does the Internet help pupils?</h3>
+      <div class="options" data-q="i4">
+        <button class="option">It prevents them from learning.</button>
+        <button class="option" data-right="1">
+          It provides information and educational videos.
+        </button>
+        <button class="option">It replaces all teachers.</button>
+        <button class="option">It makes homework unnecessary.</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>5. Which advantage is mentioned in paragraph 2?</h3>
+      <div class="options" data-q="i5">
+        <button class="option">Sleeping less</button>
+        <button class="option" data-right="1">
+          Communicating with relatives far away
+        </button>
+        <button class="option">Avoiding physical activity</button>
+        <button class="option">Believing every website</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>6. What can excessive Internet use cause?</h3>
+      <div class="options" data-q="i6">
+        <button class="option">Better sleep</button>
+        <button class="option" data-right="1">
+          Sleep problems and distraction from homework
+        </button>
+        <button class="option">More physical activity</button>
+        <button class="option">Perfect concentration</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>7. What does the writer advise users to do?</h3>
+      <div class="options" data-q="i7">
+        <button class="option">Share personal information.</button>
+        <button class="option" data-right="1">
+          Choose reliable websites and limit screen time.
+        </button>
+        <button class="option">Believe everything online.</button>
+        <button class="option">Stay online all night.</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEXT 1 PROS AND CONS -->
+
+<section>
+  <span class="label">WORKSHOP 01 • IDENTIFY ARGUMENTS</span>
+  <h2>⚖️ Advantages or Disadvantages?</h2>
+
+  <div class="card">
+
+    <p>Classify each statement.</p>
+
+    <div id="proscons1">
+
+      <div class="matchrow" data-answer="pro">
+        <strong>1. Finding educational videos.</strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="pro">Advantage</option>
+          <option value="con">Disadvantage</option>
+        </select>
+      </div>
+
+      <div class="matchrow" data-answer="con">
+        <strong>2. Spending too much time online.</strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="pro">Advantage</option>
+          <option value="con">Disadvantage</option>
+        </select>
+      </div>
+
+      <div class="matchrow" data-answer="pro">
+        <strong>3. Communicating with distant relatives.</strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="pro">Advantage</option>
+          <option value="con">Disadvantage</option>
+        </select>
+      </div>
+
+      <div class="matchrow" data-answer="con">
+        <strong>4. Finding false information online.</strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="pro">Advantage</option>
+          <option value="con">Disadvantage</option>
+        </select>
+      </div>
+
+      <div class="matchrow" data-answer="pro">
+        <strong>5. Learning new skills.</strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="pro">Advantage</option>
+          <option value="con">Disadvantage</option>
+        </select>
+      </div>
+
+      <div class="matchrow" data-answer="con">
+        <strong>6. Being distracted from homework.</strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="pro">Advantage</option>
+          <option value="con">Disadvantage</option>
+        </select>
+      </div>
+
+    </div>
+
+    <button class="btn" onclick="checkMatching('proscons1')">
+      ✓ Check Answers
+    </button>
+    <div class="feedback" id="proscons1-feedback"></div>
+
+  </div>
+</section>
+
+<!-- TEXT 1 TRUE / FALSE -->
+
+<section>
+  <span class="label">WORKSHOP 01 • TEXTUAL EVIDENCE</span>
+  <h2>🧾 True or False? Justify.</h2>
+
+  <div class="card">
+    <p>
+      Choose True or False, then copy evidence from the text.
+    </p>
+
+    <div id="tf1">
+
+      <div class="tfrow"
+           data-answer="true"
+           data-evidence="find useful information|educational videos">
+        <strong>
+          1. The Internet can be useful for education.
+        </strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+        <input placeholder="Evidence from the text...">
+      </div>
+
+      <div class="tfrow"
+           data-answer="false"
+           data-evidence="has several drawbacks|false information|dangerous">
+        <strong>
+          2. The Internet has no disadvantages.
+        </strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+        <input placeholder="Evidence from the text...">
+      </div>
+
+      <div class="tfrow"
+           data-answer="false"
+           data-evidence="limit our screen time|use it responsibly">
+        <strong>
+          3. The writer encourages unlimited Internet use.
+        </strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+        <input placeholder="Evidence from the text...">
+      </div>
+
+    </div>
+
+    <button class="btn" onclick="checkTF('tf1')">
+      ✓ Check Evidence
+    </button>
+    <div class="feedback" id="tf1-feedback"></div>
+
+  </div>
+</section>
+
+<!-- TEXT 1 REFERENCES AND VOCABULARY -->
+
+<section>
+  <span class="label">WORKSHOP 01 • LANGUAGE IN CONTEXT</span>
+  <h2>🔗 References & Vocabulary</h2>
+
+  <div class="card">
+
+    <div class="task">
+      <h3>
+        8. Paragraph 1: “Millions of people use
+        <em>it</em> to study...” What does “it” refer to?
+      </h3>
+      <div class="options" data-q="i8">
+        <button class="option">Daily life</button>
+        <button class="option" data-right="1">The Internet</button>
+        <button class="option">Entertainment</button>
+        <button class="option">A school</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>
+        9. Paragraph 2: What does “These advantages” refer to?
+      </h3>
+      <div class="options" data-q="i9">
+        <button class="option">Online risks</button>
+        <button class="option" data-right="1">
+          Learning, communication and discovering cultures
+        </button>
+        <button class="option">Sleep problems</button>
+        <button class="option">False information</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>
+        10. Find a word in paragraph 2 meaning “advantages”.
+      </h3>
+      <div class="options" data-q="i10">
+        <button class="option">Skills</button>
+        <button class="option" data-right="1">Benefits</button>
+        <button class="option">Relatives</button>
+        <button class="option">Cultures</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>
+        11. Find a word in paragraph 3 meaning “disadvantages”.
+      </h3>
+      <div class="options" data-q="i11">
+        <button class="option">Websites</button>
+        <button class="option" data-right="1">Drawbacks</button>
+        <button class="option">Strangers</button>
+        <button class="option">Homework</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>
+        12. Choose the opposite of “harmful”.
+      </h3>
+      <div class="options" data-q="i12">
+        <button class="option">Dangerous</button>
+        <button class="option" data-right="1">Helpful</button>
+        <button class="option">Risky</button>
+        <button class="option">Negative</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================================
+     READING WORKSHOP 2
+===================================== -->
+
+<section id="social">
+
+  <span class="label">WORKSHOP 02 • BEFORE READING</span>
+  <h2>📱 Should Teenagers Use Social Media?</h2>
+
+  <div class="card">
+
+    <img
+      class="cover"
+      src="https://i.imgur.com/Tm2wsD2.jpeg"
+      alt="Internet and Social Media"
+    >
+
+    <div class="task">
+      <h3>
+        What will the second text probably contain?
+      </h3>
+      <div class="options" data-q="spredict">
+        <button class="option">A recipe</button>
+        <button class="option" data-right="1">
+          An opinion supported by arguments
+        </button>
+        <button class="option">A historical biography</button>
+        <button class="option">A weather forecast</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEXT 2 -->
+
+<section>
+  <span class="label">WORKSHOP 02 • READING DISCOVERY</span>
+  <h2>📖 Read Text Two</h2>
+
+  <article class="card">
+
+    <h2 class="article-title">
+      Should Teenagers Use Social Media?
+    </h2>
+
+    <p class="byline">A student's opinion article</p>
+
+    <div class="para">
+      <span class="num">01</span>
+      <p>
+        Social media has become very popular among teenagers.
+        Some adults believe that young people should avoid
+        <span class="highlight">it</span> because it can
+        waste time and cause problems.
+        <span class="argument">Personally, I believe</span>
+        that teenagers should be allowed to use
+        age-appropriate social media, provided that
+        they use it safely and responsibly.
+      </p>
+    </div>
+
+    <div class="para">
+      <span class="num">02</span>
+      <p>
+        <span class="argument">First of all,</span>
+        social media helps teenagers communicate with
+        friends and family members.
+        <span class="argument">For example,</span>
+        pupils can exchange messages with classmates
+        about homework or school projects.
+        <span class="highlight">This communication</span>
+        allows them to share useful information
+        and support one another.
+        Therefore, social media can strengthen relationships
+        when it is used positively.
+      </p>
+    </div>
+
+    <div class="para">
+      <span class="num">03</span>
+      <p>
+        <span class="argument">Secondly,</span>
+        social media can be a useful learning tool.
+        Teenagers can follow educational pages,
+        watch language-learning videos
+        and discover interesting ideas.
+        <span class="argument">For instance,</span>
+        an English learner may watch short lessons
+        to improve vocabulary and pronunciation.
+        <span class="highlight">These resources</span>
+        can make learning more enjoyable and accessible.
+      </p>
+    </div>
+
+    <div class="para">
+      <span class="num">04</span>
+      <p>
+        <span class="argument">Of course,</span>
+        social media also has risks, such as cyberbullying,
+        false information and excessive screen time.
+        <span class="argument">However,</span>
+        these problems do not mean that teenagers
+        must avoid every platform.
+        They should protect their privacy,
+        report harmful behaviour and take regular breaks.
+        Parents and teachers can guide
+        <span class="highlight">them</span>
+        towards safer online habits.
+      </p>
+    </div>
+
+    <div class="para">
+      <span class="num">05</span>
+      <p>
+        <span class="argument">To sum up,</span>
+        I strongly believe that social media
+        can be beneficial for teenagers when used carefully.
+        It helps them communicate, learn and express
+        their ideas. Instead of banning social media
+        completely, we should teach young people
+        how to use it responsibly.
+        <strong>
+          Good digital habits are more useful
+          than unlimited screen time.
+        </strong>
+      </p>
+    </div>
+
+    <div class="quote">
+      ✨ Use social media to learn, connect and inspire.
+    </div>
+
+  </article>
+</section>
+
+<!-- TEXT 2 GLOBAL COMPREHENSION -->
+
+<section>
+  <span class="label">WORKSHOP 02 • GLOBAL COMPREHENSION</span>
+  <h2>🌍 Identify the Writer's Viewpoint</h2>
+
+  <div class="card">
+
+    <div class="task">
+      <h3>13. What is the writer's opinion?</h3>
+      <div class="options" data-q="s1">
+        <button class="option">
+          Teenagers should never use social media.
+        </button>
+        <button class="option" data-right="1">
+          Teenagers can use suitable social media responsibly.
+        </button>
+        <button class="option">
+          Social media is useful only for adults.
+        </button>
+        <button class="option">
+          Teenagers should use social media without limits.
+        </button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>14. What is the writer trying to do?</h3>
+      <div class="options" data-q="s2">
+        <button class="option">Describe a famous person</button>
+        <button class="option" data-right="1">
+          Convince readers by giving reasons and examples
+        </button>
+        <button class="option">Tell a fictional story</button>
+        <button class="option">Explain how to build a phone</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>15. Which title best expresses the writer's position?</h3>
+      <div class="options" data-q="s3">
+        <button class="option">Social Media Is Always Dangerous</button>
+        <button class="option" data-right="1">
+          Social Media Can Be Useful When Used Wisely
+        </button>
+        <button class="option">Why Teenagers Should Stop Learning</button>
+        <button class="option">Life Without Communication</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEXT 2 MAIN IDEAS -->
+
+<section>
+  <span class="label">WORKSHOP 02 • MAIN IDEAS</span>
+  <h2>🧩 Match the Main Ideas with the Paragraphs</h2>
+
+  <div class="card">
+
+    <div id="ideas2" class="matching" data-count="5">
+
+      <div class="matchrow" data-answer="4">
+        <strong>A. Recognising risks and suggesting safe habits.</strong>
+        <select aria-label="Idea A"></select>
+      </div>
+
+      <div class="matchrow" data-answer="1">
+        <strong>B. Introducing the topic and expressing an opinion.</strong>
+        <select aria-label="Idea B"></select>
+      </div>
+
+      <div class="matchrow" data-answer="5">
+        <strong>C. Restating the opinion in the conclusion.</strong>
+        <select aria-label="Idea C"></select>
+      </div>
+
+      <div class="matchrow" data-answer="2">
+        <strong>D. Social media as a communication tool.</strong>
+        <select aria-label="Idea D"></select>
+      </div>
+
+      <div class="matchrow" data-answer="3">
+        <strong>E. Social media as a learning tool.</strong>
+        <select aria-label="Idea E"></select>
+      </div>
+
+    </div>
+
+    <button class="btn" onclick="checkMatching('ideas2',true)">
+      ✓ Check Matching
+    </button>
+    <div class="feedback" id="ideas2-feedback"></div>
+
+  </div>
+</section>
+
+<!-- TEXT 2 DETAILED COMPREHENSION -->
+
+<section>
+  <span class="label">WORKSHOP 02 • DETAILED COMPREHENSION</span>
+  <h2>🎯 Read Carefully</h2>
+
+  <div class="card">
+
+    <div class="task">
+      <h3>16. How can social media help classmates?</h3>
+      <div class="options" data-q="s4">
+        <button class="option">By encouraging them to ignore homework</button>
+        <button class="option" data-right="1">
+          By allowing them to exchange school information
+        </button>
+        <button class="option">By replacing all lessons</button>
+        <button class="option">By preventing communication</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>17. Which example supports the second argument?</h3>
+      <div class="options" data-q="s5">
+        <button class="option">Buying a new phone</button>
+        <button class="option" data-right="1">
+          Watching English lessons to improve vocabulary
+        </button>
+        <button class="option">Staying online all night</button>
+        <button class="option">Sharing passwords</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>18. Which danger is mentioned in paragraph 4?</h3>
+      <div class="options" data-q="s6">
+        <button class="option">Reading books</button>
+        <button class="option" data-right="1">Cyberbullying</button>
+        <button class="option">Learning languages</button>
+        <button class="option">Doing projects</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>
+        19. What does the writer recommend instead of banning social media?
+      </h3>
+      <div class="options" data-q="s7">
+        <button class="option">Allowing unlimited screen time</button>
+        <button class="option" data-right="1">
+          Teaching responsible digital habits
+        </button>
+        <button class="option">Ignoring online risks</button>
+        <button class="option">Sharing private information</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEXT 2 ARGUMENTS -->
+
+<section>
+  <span class="label">WORKSHOP 02 • ARGUMENTS AND EXAMPLES</span>
+  <h2>🧠 How Does the Writer Defend an Opinion?</h2>
+
+  <div class="card">
+
+    <p>
+      Classify each statement as an opinion,
+      argument, example or conclusion.
+    </p>
+
+    <div id="argumentTypes">
+
+      <div class="matchrow" data-answer="opinion">
+        <strong>
+          1. “I believe that teenagers should be allowed
+          to use age-appropriate social media.”
+        </strong>
+        <select class="type-select"></select>
+      </div>
+
+      <div class="matchrow" data-answer="argument">
+        <strong>
+          2. “Social media helps teenagers communicate
+          with friends and family members.”
+        </strong>
+        <select class="type-select"></select>
+      </div>
+
+      <div class="matchrow" data-answer="example">
+        <strong>
+          3. “Pupils can exchange messages with classmates
+          about homework.”
+        </strong>
+        <select class="type-select"></select>
+      </div>
+
+      <div class="matchrow" data-answer="argument">
+        <strong>
+          4. “Social media can be a useful learning tool.”
+        </strong>
+        <select class="type-select"></select>
+      </div>
+
+      <div class="matchrow" data-answer="example">
+        <strong>
+          5. “An English learner may watch short lessons
+          to improve vocabulary.”
+        </strong>
+        <select class="type-select"></select>
+      </div>
+
+      <div class="matchrow" data-answer="conclusion">
+        <strong>
+          6. “To sum up, I strongly believe that
+          social media can be beneficial...”
+        </strong>
+        <select class="type-select"></select>
+      </div>
+
+    </div>
+
+    <button class="btn" onclick="checkMatching('argumentTypes')">
+      ✓ Check Answers
+    </button>
+    <div class="feedback" id="argumentTypes-feedback"></div>
+
+  </div>
+</section>
+
+<!-- TEXT 2 REFERENCES AND VOCABULARY -->
+
+<section>
+  <span class="label">WORKSHOP 02 • LANGUAGE IN CONTEXT</span>
+  <h2>🔗 References & Vocabulary</h2>
+
+  <div class="card">
+
+    <div class="task">
+      <h3>20. Paragraph 1: What does “it” refer to?</h3>
+      <div class="options" data-q="s8">
+        <button class="option">Homework</button>
+        <button class="option" data-right="1">Social media</button>
+        <button class="option">School</button>
+        <button class="option">Communication</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>21. Paragraph 3: What does “These resources” refer to?</h3>
+      <div class="options" data-q="s9">
+        <button class="option">Online dangers</button>
+        <button class="option" data-right="1">
+          Educational pages and learning videos
+        </button>
+        <button class="option">Passwords</button>
+        <button class="option">Phone batteries</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>22. Find a word in paragraph 3 meaning “make better”.</h3>
+      <div class="options" data-q="s10">
+        <button class="option">Follow</button>
+        <button class="option" data-right="1">Improve</button>
+        <button class="option">Watch</button>
+        <button class="option">Discover</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>23. Find a word in paragraph 5 meaning “useful”.</h3>
+      <div class="options" data-q="s11">
+        <button class="option">Carefully</button>
+        <button class="option" data-right="1">Beneficial</button>
+        <button class="option">Completely</button>
+        <button class="option">Strongly</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>24. Choose the opposite of “harmful”.</h3>
+      <div class="options" data-q="s12">
+        <button class="option">Dangerous</button>
+        <button class="option" data-right="1">Harmless</button>
+        <button class="option">Risky</button>
+        <button class="option">Negative</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEXT 2 INFERENCE -->
+
+<section>
+  <span class="label">WORKSHOP 02 • CRITICAL THINKING</span>
+  <h2>💡 Read Between the Lines</h2>
+
+  <div class="card">
+
+    <div class="task">
+      <h3>25. Why does the writer mention cyberbullying?</h3>
+      <div class="options" data-q="s13">
+        <button class="option">To prove social media is always safe</button>
+        <button class="option" data-right="1">
+          To recognise a risk before suggesting safer habits
+        </button>
+        <button class="option">To encourage harmful behaviour</button>
+        <button class="option">To change the topic</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>26. Which statement best reflects the writer's attitude?</h3>
+      <div class="options" data-q="s14">
+        <button class="option">Social media is perfect.</button>
+        <button class="option" data-right="1">
+          Social media offers benefits, but safety matters.
+        </button>
+        <button class="option">Online risks do not exist.</button>
+        <button class="option">Teenagers do not need guidance.</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================================
+     READING WORKSHOP 3
+===================================== -->
+
+<section id="global">
+
+  <span class="label">WORKSHOP 03 • BEFORE READING</span>
+  <h2>🌍 Globalisation: A Connected World</h2>
+
+  <div class="card">
+
+    <div class="visualpair">
+
+      <figure>
+        <img
+          src="https://i.imgur.com/50Or9Ie.jpeg"
+          alt="Globalisation illustration one"
+        >
+        <figcaption>🌍 A Connected World</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="https://i.imgur.com/AMZkezz.jpeg"
+          alt="Globalisation illustration two"
+        >
+        <figcaption>🤝 Global Connections</figcaption>
+      </figure>
+
+    </div>
+
+    <div class="task">
+      <h3>What does globalisation mainly involve?</h3>
+      <div class="options" data-q="gpredict">
+        <button class="option">Countries becoming completely isolated</button>
+        <button class="option" data-right="1">
+          Countries becoming more connected
+        </button>
+        <button class="option">The disappearance of all technology</button>
+        <button class="option">People never travelling abroad</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEXT 3 -->
+
+<section>
+  <span class="label">WORKSHOP 03 • READING DISCOVERY</span>
+  <h2>📖 Read Text Three</h2>
+
+  <article class="card">
+
+    <h2 class="article-title">
+      Globalisation: A World Without Borders?
+    </h2>
+
+    <p class="byline">
+      An argumentative article about global connections
+    </p>
+
+    <div class="para">
+      <span class="num">01</span>
+      <p>
+        Today, countries around the world are more connected
+        than ever before. People can buy products from
+        other countries, communicate across continents
+        and discover different cultures.
+        This growing connection is called
+        <strong>globalisation</strong>.
+        Some people see
+        <span class="highlight">it</span>
+        as an opportunity for progress,
+        while others believe that it creates serious
+        challenges. Globalisation has both positive
+        and negative effects.
+      </p>
+    </div>
+
+    <div class="para">
+      <span class="num">02</span>
+      <p>
+        <span class="argument">On the one hand,</span>
+        globalisation offers several advantages.
+        <span class="argument">Firstly,</span>
+        it allows countries to exchange goods,
+        services and knowledge.
+        <span class="argument">Secondly,</span>
+        businesses can reach international customers,
+        which may create new jobs.
+        <span class="argument">Moreover,</span>
+        students can discover foreign languages,
+        scientific ideas and different traditions.
+        <span class="highlight">These opportunities</span>
+        can encourage cooperation and cultural understanding.
+      </p>
+    </div>
+
+    <div class="para">
+      <span class="num">03</span>
+      <p>
+        <span class="argument">On the other hand,</span>
+        globalisation can also cause problems.
+        Small local businesses may struggle to compete
+        with large international companies.
+        In addition, some communities may gradually
+        lose parts of their cultural identity
+        if they stop practising their traditions.
+        The transportation of products across long
+        distances can also increase pollution.
+        <span class="highlight">These drawbacks</span>
+        show that globalisation does not benefit
+        everyone equally.
+      </p>
+    </div>
+
+    <div class="para">
+      <span class="num">04</span>
+      <p>
+        Algeria is also part of this connected world.
+        Globalisation can help Algerian businesses
+        discover new markets and allow young people
+        to learn about other countries.
+        However, Algerians should continue supporting
+        local products and protecting their cultural
+        heritage, including traditional crafts,
+        music, clothing and food.
+        <span class="highlight">These traditions</span>
+        are important parts of our national identity.
+      </p>
+    </div>
+
+    <div class="para">
+      <span class="num">05</span>
+      <p>
+        <span class="argument">In my opinion,</span>
+        globalisation can be beneficial if countries
+        manage it fairly and responsibly.
+        We should welcome useful ideas,
+        encourage international cooperation
+        and protect local communities.
+        <span class="argument">To conclude,</span>
+        globalisation can bring people closer together,
+        but progress should not come at the cost
+        of cultural identity or the environment.
+        <strong>
+          We can be connected to the world
+          while remaining proud of our traditions.
+        </strong>
+      </p>
+    </div>
+
+    <div class="quote">
+      ✨ We can discover the world without forgetting who we are.
+    </div>
+
+  </article>
+</section>
+
+<!-- TEXT 3 GLOBAL COMPREHENSION -->
+
+<section>
+  <span class="label">WORKSHOP 03 • GLOBAL COMPREHENSION</span>
+  <h2>🌍 Understand the Main Message</h2>
+
+  <div class="card">
+
+    <div class="task">
+      <h3>27. What is the text mainly about?</h3>
+      <div class="options" data-q="g1">
+        <button class="option">Only Algerian traditions</button>
+        <button class="option" data-right="1">
+          The advantages and disadvantages of globalisation
+        </button>
+        <button class="option">A famous journey</button>
+        <button class="option">The history of computers</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>28. What is the writer's purpose?</h3>
+      <div class="options" data-q="g2">
+        <button class="option">To tell a fictional story</button>
+        <button class="option" data-right="1">
+          To discuss globalisation and express an opinion
+        </button>
+        <button class="option">To describe a building</button>
+        <button class="option">To advertise a product</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>29. What is the writer's final opinion?</h3>
+      <div class="options" data-q="g3">
+        <button class="option">Globalisation is always harmful.</button>
+        <button class="option" data-right="1">
+          Globalisation can be useful if managed responsibly.
+        </button>
+        <button class="option">Traditions are unimportant.</button>
+        <button class="option">Countries should avoid cooperation.</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEXT 3 MAIN IDEAS -->
+
+<section>
+  <span class="label">WORKSHOP 03 • MAIN IDEAS</span>
+  <h2>🧩 Match the Main Ideas with the Paragraphs</h2>
+
+  <div class="card">
+
+    <div id="ideas3" class="matching" data-count="5">
+
+      <div class="matchrow" data-answer="3">
+        <strong>A. The negative effects of globalisation.</strong>
+        <select aria-label="Idea A"></select>
+      </div>
+
+      <div class="matchrow" data-answer="1">
+        <strong>B. Introducing globalisation.</strong>
+        <select aria-label="Idea B"></select>
+      </div>
+
+      <div class="matchrow" data-answer="5">
+        <strong>C. The writer's opinion and conclusion.</strong>
+        <select aria-label="Idea C"></select>
+      </div>
+
+      <div class="matchrow" data-answer="2">
+        <strong>D. The benefits of globalisation.</strong>
+        <select aria-label="Idea D"></select>
+      </div>
+
+      <div class="matchrow" data-answer="4">
+        <strong>E. Globalisation and Algerian identity.</strong>
+        <select aria-label="Idea E"></select>
+      </div>
+
+    </div>
+
+    <button class="btn" onclick="checkMatching('ideas3',true)">
+      ✓ Check Matching
+    </button>
+    <div class="feedback" id="ideas3-feedback"></div>
+
+  </div>
+</section>
+
+<!-- TEXT 3 DETAILED COMPREHENSION -->
+
+<section>
+  <span class="label">WORKSHOP 03 • DETAILED COMPREHENSION</span>
+  <h2>🎯 Find Specific Information</h2>
+
+  <div class="card">
+
+    <div class="task">
+      <h3>30. What is globalisation?</h3>
+      <div class="options" data-q="g4">
+        <button class="option">The separation of countries</button>
+        <button class="option" data-right="1">
+          The growing connection between countries
+        </button>
+        <button class="option">The end of international trade</button>
+        <button class="option">A traditional celebration</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>31. How can globalisation help businesses?</h3>
+      <div class="options" data-q="g5">
+        <button class="option">By stopping international trade</button>
+        <button class="option" data-right="1">
+          By helping them reach international customers
+        </button>
+        <button class="option">By preventing cooperation</button>
+        <button class="option">By closing all markets</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>32. Which problem is mentioned in paragraph 3?</h3>
+      <div class="options" data-q="g6">
+        <button class="option">Learning new languages</button>
+        <button class="option" data-right="1">
+          Small businesses struggling against large companies
+        </button>
+        <button class="option">Discovering new cultures</button>
+        <button class="option">International cooperation</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>33. What should Algerians protect?</h3>
+      <div class="options" data-q="g7">
+        <button class="option">Only foreign products</button>
+        <button class="option" data-right="1">
+          Local products and cultural heritage
+        </button>
+        <button class="option">Only international companies</button>
+        <button class="option">Online advertisements</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>34. Why can globalisation affect the environment?</h3>
+      <div class="options" data-q="g8">
+        <button class="option">Because it stops transportation</button>
+        <button class="option" data-right="1">
+          Because long-distance transport can increase pollution
+        </button>
+        <button class="option">Because it prevents trade</button>
+        <button class="option">Because it eliminates waste</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEXT 3 PROS AND CONS -->
+
+<section>
+  <span class="label">WORKSHOP 03 • IDENTIFY ARGUMENTS</span>
+  <h2>⚖️ Globalisation: Pros or Cons?</h2>
+
+  <div class="card">
+
+    <p>
+      Decide whether each statement is an advantage
+      or a disadvantage of globalisation.
+    </p>
+
+    <div id="proscons3">
+
+      <div class="matchrow" data-answer="pro">
+        <strong>1. Exchanging knowledge between countries.</strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="pro">Advantage</option>
+          <option value="con">Disadvantage</option>
+        </select>
+      </div>
+
+      <div class="matchrow" data-answer="con">
+        <strong>2. Small local businesses facing strong competition.</strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="pro">Advantage</option>
+          <option value="con">Disadvantage</option>
+        </select>
+      </div>
+
+      <div class="matchrow" data-answer="pro">
+        <strong>3. Discovering foreign languages and cultures.</strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="pro">Advantage</option>
+          <option value="con">Disadvantage</option>
+        </select>
+      </div>
+
+      <div class="matchrow" data-answer="con">
+        <strong>4. Losing parts of local cultural identity.</strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="pro">Advantage</option>
+          <option value="con">Disadvantage</option>
+        </select>
+      </div>
+
+      <div class="matchrow" data-answer="pro">
+        <strong>5. Reaching international customers.</strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="pro">Advantage</option>
+          <option value="con">Disadvantage</option>
+        </select>
+      </div>
+
+      <div class="matchrow" data-answer="con">
+        <strong>6. Increasing pollution through long-distance transport.</strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="pro">Advantage</option>
+          <option value="con">Disadvantage</option>
+        </select>
+      </div>
+
+    </div>
+
+    <button class="btn" onclick="checkMatching('proscons3')">
+      ✓ Check Answers
+    </button>
+    <div class="feedback" id="proscons3-feedback"></div>
+
+  </div>
+</section>
+
+<!-- TEXT 3 TRUE FALSE -->
+
+<section>
+  <span class="label">WORKSHOP 03 • TEXTUAL EVIDENCE</span>
+  <h2>🧾 True or False? Justify.</h2>
+
+  <div class="card">
+
+    <div id="tf3">
+
+      <div class="tfrow"
+           data-answer="true"
+           data-evidence="exchange goods|services and knowledge">
+        <strong>
+          1. Globalisation allows countries to exchange goods and knowledge.
+        </strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+        <input placeholder="Copy evidence...">
+      </div>
+
+      <div class="tfrow"
+           data-answer="false"
+           data-evidence="struggle to compete|large international companies">
+        <strong>
+          2. Small local businesses never face competition.
+        </strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+        <input placeholder="Copy evidence...">
+      </div>
+
+      <div class="tfrow"
+           data-answer="true"
+           data-evidence="protecting their cultural heritage|supporting local products">
+        <strong>
+          3. Algerians should protect their cultural heritage.
+        </strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+        <input placeholder="Copy evidence...">
+      </div>
+
+      <div class="tfrow"
+           data-answer="false"
+           data-evidence="protect local communities|cultural identity or the environment">
+        <strong>
+          4. The writer thinks cultural identity should be ignored.
+        </strong>
+        <select>
+          <option value="">Choose...</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+        <input placeholder="Copy evidence...">
+      </div>
+
+    </div>
+
+    <button class="btn" onclick="checkTF('tf3')">
+      ✓ Check Evidence
+    </button>
+    <div class="feedback" id="tf3-feedback"></div>
+
+  </div>
+</section>
+
+<!-- TEXT 3 REFERENCES -->
+
+<section>
+  <span class="label">WORKSHOP 03 • REFERENCE WORDS</span>
+  <h2>🔗 What Do These Words Refer To?</h2>
+
+  <div class="card">
+
+    <div class="task">
+      <h3>35. Paragraph 1: What does “it” refer to?</h3>
+      <div class="options" data-q="g9">
+        <button class="option">Technology</button>
+        <button class="option" data-right="1">Globalisation</button>
+        <button class="option">A country</button>
+        <button class="option">A culture</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>
+        36. Paragraph 2: What does “These opportunities” refer to?
+      </h3>
+      <div class="options" data-q="g10">
+        <button class="option">Environmental problems</button>
+        <button class="option" data-right="1">
+          Trade, jobs, knowledge and cultural exchange
+        </button>
+        <button class="option">Local competition</button>
+        <button class="option">Pollution</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>
+        37. Paragraph 4: What does “These traditions” refer to?
+      </h3>
+      <div class="options" data-q="g11">
+        <button class="option">International companies</button>
+        <button class="option" data-right="1">
+          Traditional crafts, music, clothing and food
+        </button>
+        <button class="option">Foreign markets</button>
+        <button class="option">Modern technology</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEXT 3 VOCABULARY -->
+
+<section>
+  <span class="label">WORKSHOP 03 • VOCABULARY IN CONTEXT</span>
+  <h2>🔎 Synonyms & Opposites</h2>
+
+  <div class="card">
+
+    <div class="task">
+      <h3>
+        38. Find a word in paragraph 1 meaning “difficulties”.
+      </h3>
+      <div class="options" data-q="g12">
+        <button class="option">Connections</button>
+        <button class="option" data-right="1">Challenges</button>
+        <button class="option">Products</button>
+        <button class="option">Cultures</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>
+        39. Find a word in paragraph 3 meaning “disadvantages”.
+      </h3>
+      <div class="options" data-q="g13">
+        <button class="option">Communities</button>
+        <button class="option" data-right="1">Drawbacks</button>
+        <button class="option">Traditions</button>
+        <button class="option">Companies</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>40. Choose the opposite of “local”.</h3>
+      <div class="options" data-q="g14">
+        <button class="option">Regional</button>
+        <button class="option" data-right="1">International</button>
+        <button class="option">Traditional</button>
+        <button class="option">National</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>41. Choose the opposite of “positive”.</h3>
+      <div class="options" data-q="g15">
+        <button class="option">Useful</button>
+        <button class="option" data-right="1">Negative</button>
+        <button class="option">Helpful</button>
+        <button class="option">Beneficial</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEXT 3 INFERENCE -->
+
+<section>
+  <span class="label">WORKSHOP 03 • CRITICAL THINKING</span>
+  <h2>💡 Read Between the Lines</h2>
+
+  <div class="card">
+
+    <div class="task">
+      <h3>
+        42. Why does the writer mention Algerian traditions?
+      </h3>
+      <div class="options" data-q="g16">
+        <button class="option">
+          To suggest that Algeria should avoid all foreign cultures
+        </button>
+        <button class="option" data-right="1">
+          To show the importance of protecting cultural identity
+        </button>
+        <button class="option">
+          To prove international trade is impossible
+        </button>
+        <button class="option">
+          To encourage people to forget local products
+        </button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>
+        43. What can we infer from the final paragraph?
+      </h3>
+      <div class="options" data-q="g17">
+        <button class="option">
+          Countries must choose between progress and identity.
+        </button>
+        <button class="option" data-right="1">
+          Countries can cooperate globally while protecting local values.
+        </button>
+        <button class="option">
+          Traditions should disappear.
+        </button>
+        <button class="option">
+          Globalisation has no environmental effects.
+        </button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="task">
+      <h3>
+        44. Which action best reflects responsible globalisation?
+      </h3>
+      <div class="options" data-q="g18">
+        <button class="option">
+          Ignoring local businesses
+        </button>
+        <button class="option" data-right="1">
+          Learning from other cultures while supporting local products
+        </button>
+        <button class="option">
+          Rejecting all international cooperation
+        </button>
+        <button class="option">
+          Forgetting national traditions
+        </button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================================
+     FINAL WRITING CHALLENGE
+===================================== -->
+
+<section id="writing">
+
+  <span class="label">FINAL CHALLENGE • WRITTEN PRODUCTION</span>
+  <h2>✍️ Express and Defend Your Opinion</h2>
+
+  <div class="card">
+
+    <p><strong>Choose ONE topic:</strong></p>
+
+    <p>
+      <strong>A.</strong> Is the Internet more helpful than harmful?
+      <br>
+      <strong>B.</strong> Should teenagers use social media?
+      <br>
+      <strong>C.</strong> Is globalisation good for Algeria?
+    </p>
+
+    <p>
+      Write an argumentative paragraph of
+      <strong>80–100 words</strong>.
+      State your opinion, give two supporting arguments,
+      provide an example and finish with a conclusion.
+    </p>
+
+    <div class="support">
+
+      <div>
+        <strong>① Express your opinion</strong>
+        <br>
+        In my opinion, ...
+        <br>
+        I believe that ...
+      </div>
+
+      <div>
+        <strong>② Give your first argument</strong>
+        <br>
+        First of all, ...
+        <br>
+        One reason is that ...
+      </div>
+
+      <div>
+        <strong>③ Add an argument and example</strong>
+        <br>
+        Secondly, ...
+        <br>
+        For example, ...
+      </div>
+
+      <div>
+        <strong>④ Write a conclusion</strong>
+        <br>
+        To conclude, ...
+        <br>
+        Therefore, ...
+      </div>
+
+    </div>
+
+    <textarea
+      id="writingText"
+      aria-label="Write your argumentative paragraph"
+      placeholder="In my opinion, ..."
+    ></textarea>
+
+    <p class="wordcount" id="wordcount">0 words</p>
+
+    <button class="btn" onclick="reviewWriting()">
+      ✨ Review My Writing
+    </button>
+
+    <button class="btn secondary" onclick="saveWriting()">
+      💾 Save My Work
+    </button>
+
+    <button class="btn secondary" onclick="printWriting()">
+      🖨️ Print
+    </button>
+
+    <div class="feedback" id="writing-feedback"></div>
+
+  </div>
+
+  <div class="progress" style="margin-top:20px">
+
+    <strong>
+      ⭐ Your Reading Score:
+      <span id="score">0</span> /
+      <span id="total">0</span>
+    </strong>
+
+    <div class="track">
+      <div class="fill" id="fill"></div>
+    </div>
+
+    <button class="btn secondary" onclick="resetAnswers()">
+      ↻ Try Again
+    </button>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  💜 MY ENGLISH SPACE
+  <br>
+  MS4 • SEQUENCE 3 • READING LESSON 04
+  <br>
+  Internet • Social Media • Globalisation
+</footer>
+
+<!-- =====================================
+     ENGLISH–ARABIC DICTIONARY
+===================================== -->
+
+<button
+  class="dictbtn"
+  id="dictOpen"
+  aria-label="Open English Arabic dictionary"
+>
+  📖
+</button>
+
+<div
+  class="overlay"
+  id="overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="English Arabic dictionary"
+>
+
+  <div class="dictionary">
+
+    <div class="dicthead">
+      <h3>📖 English ↔ Arabic</h3>
+      <button class="close" id="dictClose">×</button>
+    </div>
+
+    <input
+      id="dictSearch"
+      placeholder="Search for a word..."
+    >
+
+    <div class="dictlist" id="dictList"></div>
+
+  </div>
+
+</div>
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+"use strict";
+
+/* SCORING */
+
+const awarded = new Set();
+let score = 0;
+
+const mcqs = [
+  ...document.querySelectorAll("[data-q]")
+];
+
+const rows = [
+  ...document.querySelectorAll(".matchrow,.tfrow")
+];
+
+const total = mcqs.length + rows.length;
+
+document.getElementById("total").textContent = total;
+
+function award(key){
+
+  if(awarded.has(key)) return;
+
+  awarded.add(key);
+  score++;
+
+  document.getElementById("score").textContent = score;
+
+  document.getElementById("fill").style.width =
+    (100 * score / total) + "%";
+}
+
+function feedback(element,type,message){
+
+  element.className = "feedback show " + type;
+  element.textContent = message;
+}
+
+/* MULTIPLE CHOICE */
+
+mcqs.forEach(group => {
+
+  const buttons = [
+    ...group.querySelectorAll("button")
+  ];
+
+  const message = group.nextElementSibling;
+
+  buttons.forEach(button => {
+
+    button.addEventListener("click",() => {
+
+      if(group.dataset.done) return;
+
+      if(button.dataset.right === "1"){
+
+        group.dataset.done = "yes";
+
+        button.classList.add("correct");
+
+        buttons.forEach(b => {
+          b.disabled = true;
+        });
+
+        award("q:" + group.dataset.q);
+
+        feedback(
+          message,
+          "good",
+          "✓ Correct! Excellent work."
+        );
+
+      }else{
+
+        button.disabled = true;
+        button.classList.add("wrong");
+
+        feedback(
+          message,
+          "bad",
+          "Not quite! Read the text again and try another answer."
+        );
+      }
+
+    });
+
+  });
+
+});
+
+/* PARAGRAPH MATCHING OPTIONS */
+
+document.querySelectorAll(".matching[data-count]")
+  .forEach(group => {
+
+    const count = Number(group.dataset.count);
+
+    group.querySelectorAll("select").forEach(select => {
+
+      select.innerHTML =
+        '<option value="">Choose a paragraph...</option>';
+
+      for(let i = 1; i <= count; i++){
+
+        select.add(
+          new Option("Paragraph " + i,String(i))
+        );
+
+      }
+
+    });
+
+  });
+
+/* OPINION / ARGUMENT / EXAMPLE OPTIONS */
+
+document.querySelectorAll(".type-select")
+  .forEach(select => {
+
+    select.innerHTML = `
+      <option value="">Choose...</option>
+      <option value="opinion">Opinion</option>
+      <option value="argument">Argument</option>
+      <option value="example">Example</option>
+      <option value="conclusion">Conclusion</option>
+    `;
+
+  });
+
+/* MATCHING CHECKER */
+
+function checkMatching(id,unique=false){
+
+  const group = document.getElementById(id);
+
+  const items = [
+    ...group.querySelectorAll(".matchrow")
+  ];
+
+  const selected = items
+    .map(row => row.querySelector("select").value)
+    .filter(Boolean);
+
+  const uniqueOK =
+    !unique ||
+    selected.length === new Set(selected).size;
+
+  let correct = 0;
+
+  items.forEach((row,index) => {
+
+    const select = row.querySelector("select");
+
+    const ok =
+      uniqueOK &&
+      select.value === row.dataset.answer;
+
+    select.style.borderColor =
+      ok ? "#4aae7b" : "#e6a0b0";
+
+    if(ok){
+
+      correct++;
+      award(id + ":" + index);
+
+    }
+
+  });
+
+  let message =
+    correct + " / " + items.length + " correct. ";
+
+  if(!uniqueOK){
+    message += "Use each paragraph only once.";
+  }else if(correct === items.length){
+    message += "Excellent!";
+  }else{
+    message += "Check the text and try again.";
+  }
+
+  feedback(
+    document.getElementById(id + "-feedback"),
+    correct === items.length ? "good" : "bad",
+    message
+  );
+}
+
+/* TRUE / FALSE WITH EVIDENCE */
+
+function normalise(text){
+
+  return text
+    .toLowerCase()
+    .replace(/[“”"'.,!?;:]/g,"")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function checkTF(id){
+
+  const items = [
+    ...document.querySelectorAll(
+      "#" + id + " .tfrow"
+    )
+  ];
+
+  let correct = 0;
+
+  items.forEach((row,index) => {
+
+    const selected =
+      row.querySelector("select").value;
+
+    const evidence = normalise(
+      row.querySelector("input").value
+    );
+
+    const phrases =
+      row.dataset.evidence.split("|");
+
+    const validEvidence =
+      evidence.length >= 8 &&
+      phrases.some(phrase =>
+        evidence.includes(normalise(phrase))
+      );
+
+    const ok =
+      selected === row.dataset.answer &&
+      validEvidence;
+
+    row.style.background =
+      ok ? "#e5f7ed" : "#fff0f4";
+
+    if(ok){
+
+      correct++;
+      award(id + ":" + index);
+
+    }
+
+  });
+
+  feedback(
+    document.getElementById(id + "-feedback"),
+    correct === items.length ? "good" : "bad",
+    correct + " / " + items.length +
+    " correctly justified. " +
+    (
+      correct === items.length
+        ? "Great evidence!"
+        : "Check your answer and copy a suitable phrase."
+    )
+  );
+}
+
+/* WRITING */
+
+const writing =
+  document.getElementById("writingText");
+
+try{
+
+  writing.value =
+    localStorage.getItem(
+      "ms4_s3_lesson4_writing"
+    ) || "";
+
+}catch(error){}
+
+function countWords(){
+
+  const text = writing.value.trim();
+
+  const count = text
+    ? text.split(/\s+/).length
+    : 0;
+
+  document.getElementById("wordcount").textContent =
+    count + " words";
+
+  return count;
+}
+
+writing.addEventListener("input",countWords);
+countWords();
+
+function reviewWriting(){
+
+  const text = writing.value;
+  const count = countWords();
+  const notes = [];
+
+  if(count < 80){
+    notes.push("Write at least 80 words.");
+  }
+
+  if(count > 100){
+    notes.push("Shorten your paragraph to 100 words.");
+  }
+
+  if(!/in my opinion|i think|i believe|personally/i.test(text)){
+    notes.push("State your opinion clearly.");
+  }
+
+  if(!/first|firstly|one reason/i.test(text)){
+    notes.push("Give your first argument.");
+  }
+
+  if(!/second|moreover|another reason|furthermore/i.test(text)){
+    notes.push("Add a second argument.");
+  }
+
+  if(!/for example|for instance|such as/i.test(text)){
+    notes.push("Provide an example.");
+  }
+
+  if(!/to conclude|in conclusion|to sum up|therefore|finally/i.test(text)){
+    notes.push("Add a conclusion.");
+  }
+
+  feedback(
+    document.getElementById("writing-feedback"),
+    notes.length ? "info" : "good",
+    notes.length
+      ? notes.join(" ")
+      : "Good progress! Your paragraph meets the basic structure checks. Read it again for clarity and accuracy."
+  );
+}
+
+function saveWriting(){
+
+  try{
+
+    localStorage.setItem(
+      "ms4_s3_lesson4_writing",
+      writing.value
+    );
+
+    feedback(
+      document.getElementById("writing-feedback"),
+      "good",
+      "✓ Your writing has been saved on this device."
+    );
+
+  }catch(error){
+
+    feedback(
+      document.getElementById("writing-feedback"),
+      "bad",
+      "Saving is unavailable. Please copy your work."
+    );
+  }
+}
+
+function printWriting(){
+
+  if(!writing.value.trim()){
+
+    feedback(
+      document.getElementById("writing-feedback"),
+      "bad",
+      "Write your paragraph first."
+    );
+
+    return;
+  }
+
+  const windowPrint = window.open("","_blank");
+
+  if(!windowPrint){
+    alert("Please allow pop-ups to print.");
+    return;
+  }
+
+  const safe = writing.value
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;");
+
+  windowPrint.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>My Argumentative Paragraph</title>
+      <style>
+        body{
+          font:17px/1.8 Arial;
+          margin:45px;
+        }
+        p{white-space:pre-wrap}
+      </style>
+    </head>
+    <body>
+      <h1>My Argumentative Paragraph</h1>
+      <p>Name: ________________________</p>
+      <p>Class: ________________________</p>
+      <hr>
+      <p>${safe}</p>
+    </body>
+    </html>
+  `);
+
+  windowPrint.document.close();
+  windowPrint.focus();
+  windowPrint.print();
+}
+
+/* RESET */
+
+function resetAnswers(){
+
+  if(!confirm(
+    "Reset all answers? Your writing will remain."
+  )) return;
+
+  awarded.clear();
+  score = 0;
+
+  document.getElementById("score").textContent = "0";
+  document.getElementById("fill").style.width = "0";
+
+  mcqs.forEach(group => {
+
+    delete group.dataset.done;
+
+    group.querySelectorAll("button").forEach(button => {
+
+      button.disabled = false;
+      button.classList.remove("correct","wrong");
+
+    });
+
+    group.nextElementSibling.className = "feedback";
+
+  });
+
+  document.querySelectorAll(".matchrow select,.tfrow select")
+    .forEach(select => {
+
+      select.value = "";
+      select.style.borderColor = "";
+
+    });
+
+  document.querySelectorAll(".tfrow input")
+    .forEach(input => {
+      input.value = "";
+    });
+
+  document.querySelectorAll(".tfrow")
+    .forEach(row => {
+      row.style.background = "";
+    });
+
+  document.querySelectorAll(".feedback")
+    .forEach(element => {
+      element.className = "feedback";
+    });
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+/* ENGLISH–ARABIC DICTIONARY */
+
+const dictionary = [
+  ["globalisation","العولمة"],
+  ["Internet","الإنترنت"],
+  ["social media","وسائل التواصل الاجتماعي"],
+  ["argumentative text","نص حجاجي"],
+  ["opinion","رأي"],
+  ["argument","حجة"],
+  ["example","مثال"],
+  ["conclusion","خاتمة"],
+  ["advantage","إيجابية"],
+  ["disadvantage","سلبية"],
+  ["pros and cons","الإيجابيات والسلبيات"],
+  ["benefit","فائدة"],
+  ["drawback","عيب"],
+  ["opportunity","فرصة"],
+  ["challenge","تحدٍّ"],
+  ["connection","ترابط"],
+  ["trade","تجارة"],
+  ["goods","سلع"],
+  ["service","خدمة"],
+  ["business","مؤسسة تجارية"],
+  ["customer","زبون"],
+  ["competition","منافسة"],
+  ["international","دولي"],
+  ["local","محلي"],
+  ["tradition","تقليد"],
+  ["cultural identity","هوية ثقافية"],
+  ["culture","ثقافة"],
+  ["diversity","تنوع"],
+  ["cooperation","تعاون"],
+  ["nation","أمة"],
+  ["environment","البيئة"],
+  ["pollution","تلوث"],
+  ["transport","نقل"],
+  ["community","مجتمع"],
+  ["fair","عادل"],
+  ["effect","تأثير"],
+  ["responsibly","بمسؤولية"],
+  ["screen time","وقت استخدام الشاشة"],
+  ["reliable","موثوق"],
+  ["false information","معلومات خاطئة"],
+  ["privacy","خصوصية"],
+  ["cyberbullying","تنمر إلكتروني"],
+  ["beneficial","مفيد"],
+  ["harmful","ضار"],
+  ["helpful","مفيد"],
+  ["risk","خطر"],
+  ["resource","مورد"],
+  ["reference word","كلمة إحالة"],
+  ["synonym","مرادف"],
+  ["opposite","ضد"],
+  ["evidence","دليل من النص"],
+  ["on the one hand","من جهة"],
+  ["on the other hand","من جهة أخرى"],
+  ["firstly","أولاً"],
+  ["secondly","ثانياً"],
+  ["moreover","علاوة على ذلك"],
+  ["however","لكن"],
+  ["for example","على سبيل المثال"],
+  ["in my opinion","في رأيي"],
+  ["to conclude","في الختام"]
+];
+
+const overlay =
+  document.getElementById("overlay");
+
+const search =
+  document.getElementById("dictSearch");
+
+const list =
+  document.getElementById("dictList");
+
+function renderDictionary(){
+
+  list.replaceChildren();
+
+  const query =
+    search.value.toLowerCase().trim();
+
+  const matches = dictionary.filter(([english,arabic]) =>
+    english.toLowerCase().includes(query) ||
+    arabic.includes(query)
+  );
+
+  matches.forEach(([english,arabic]) => {
+
+    const row = document.createElement("div");
+    const en = document.createElement("strong");
+    const ar = document.createElement("span");
+
+    row.className = "word";
+
+    en.textContent = english;
+    ar.textContent = arabic;
+
+    row.append(en,ar);
+    list.append(row);
+
+  });
+
+  if(!matches.length){
+    list.textContent = "No matching word found.";
+  }
+}
+
+document.getElementById("dictOpen").onclick = () => {
+
+  overlay.classList.add("open");
+  renderDictionary();
+  search.focus();
+
+};
+
+document.getElementById("dictClose").onclick = () => {
+
+  overlay.classList.remove("open");
+
+};
+
+overlay.addEventListener("click",event => {
+
+  if(event.target === overlay){
+    overlay.classList.remove("open");
+  }
+
+});
+
+document.addEventListener("keydown",event => {
+
+  if(event.key === "Escape"){
+    overlay.classList.remove("open");
+  }
+
+});
+
+search.addEventListener("input",renderDictionary);
+
+</script>
+
+</body>
+</html>

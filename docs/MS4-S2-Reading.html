@@ -1,0 +1,2779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#a93668">
+
+<title>MS4 Sequence 2 | Reading Expedition</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   DESIGN SYSTEM
+===================================================== */
+
+:root{
+
+--pink-dark:#632143;
+--pink-deep:#a93668;
+--pink-main:#d94d88;
+--pink-bright:#ec76a7;
+--pink-light:#f7a8c8;
+
+--pink-soft:#ffe5ef;
+
+--rose:#fff4f8;
+--rose-light:#fff9fc;
+
+--gold:#f4c66a;
+--gold-light:#ffe7a4;
+
+--white:#ffffff;
+
+--ink:#4a2940;
+--muted:#8b6e80;
+
+--border:#f5dbe7;
+
+--shadow:
+0 20px 55px rgba(130,43,84,.14);
+
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:"Nunito",sans-serif;
+
+background:var(--rose-light);
+
+color:var(--ink);
+
+overflow-x:hidden;
+
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+button{
+font:inherit;
+}
+
+a:focus-visible,
+button:focus-visible{
+outline:3px solid var(--gold);
+outline-offset:4px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+position:relative;
+
+overflow:hidden;
+
+color:white;
+
+background:
+
+radial-gradient(
+circle at 85% 15%,
+rgba(255,214,232,.28),
+transparent 30%
+),
+
+radial-gradient(
+circle at 10% 80%,
+rgba(255,214,232,.18),
+transparent 35%
+),
+
+linear-gradient(
+135deg,
+#632143 0%,
+#a93668 45%,
+#e86f9f 100%
+);
+
+padding:28px 20px 115px;
+
+}
+
+/* decorative circles */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:520px;
+height:520px;
+
+border:1px solid rgba(255,255,255,.09);
+
+border-radius:50%;
+
+right:-160px;
+top:-270px;
+
+box-shadow:
+
+0 0 0 75px rgba(255,255,255,.025),
+
+0 0 0 150px rgba(255,255,255,.018);
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:400px;
+height:400px;
+
+border-radius:50%;
+
+left:-200px;
+bottom:-270px;
+
+background:rgba(255,220,235,.08);
+
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.nav{
+
+max-width:1180px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:16px;
+
+position:relative;
+
+z-index:3;
+
+}
+
+.brand{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-family:"Baloo 2",sans-serif;
+
+font-weight:800;
+
+font-size:20px;
+
+}
+
+.brand-icon{
+
+width:46px;
+height:46px;
+
+display:grid;
+
+place-items:center;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.13);
+
+border:1px solid rgba(255,255,255,.22);
+
+font-size:23px;
+
+}
+
+.brand span{
+color:var(--pink-soft);
+}
+
+.back-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:8px;
+
+padding:11px 19px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.11);
+
+border:1px solid rgba(255,255,255,.25);
+
+color:white;
+
+font-size:13px;
+
+font-weight:900;
+
+transition:.25s;
+
+}
+
+.back-btn:hover{
+
+background:white;
+
+color:var(--pink-dark);
+
+transform:translateY(-2px);
+
+}
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:900px;
+
+margin:60px auto 0;
+
+text-align:center;
+
+}
+
+.eyebrow{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:9px 17px;
+
+border-radius:100px;
+
+background:rgba(255,255,255,.12);
+
+border:1px solid rgba(255,255,255,.23);
+
+font-family:"Space Mono",monospace;
+
+font-size:10px;
+
+font-weight:700;
+
+letter-spacing:1.2px;
+
+}
+
+.eyebrow-dot{
+
+width:8px;
+height:8px;
+
+border-radius:50%;
+
+background:var(--gold);
+
+box-shadow:0 0 12px var(--gold);
+
+}
+
+/* hero illustration */
+
+.hero-symbol{
+
+width:90px;
+height:90px;
+
+margin:25px auto 17px;
+
+display:grid;
+
+place-items:center;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.12);
+
+border:1px solid rgba(255,255,255,.24);
+
+box-shadow:0 15px 30px rgba(0,0,0,.13);
+
+font-size:43px;
+
+animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+}
+
+.hero h1{
+
+font-family:"Baloo 2",sans-serif;
+
+font-size:clamp(43px,7vw,72px);
+
+font-weight:800;
+
+letter-spacing:-2px;
+
+line-height:1.03;
+
+}
+
+.hero h1 span{
+color:#ffe0ed;
+}
+
+.hero-description{
+
+max-width:720px;
+
+margin:19px auto 0;
+
+color:rgba(255,255,255,.86);
+
+font-size:16px;
+
+font-weight:600;
+
+line-height:1.85;
+
+}
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-actions{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin-top:29px;
+
+}
+
+.hero-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+padding:14px 23px;
+
+border-radius:14px;
+
+font-size:13px;
+
+font-weight:900;
+
+transition:.25s;
+
+}
+
+.hero-btn.primary{
+
+background:var(--gold);
+
+color:#51321b;
+
+box-shadow:0 12px 25px rgba(244,198,106,.18);
+
+}
+
+.hero-btn.secondary{
+
+background:rgba(255,255,255,.12);
+
+border:1px solid rgba(255,255,255,.22);
+
+color:white;
+
+}
+
+.hero-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* =====================================================
+   HERO STATS
+===================================================== */
+
+.hero-stats{
+
+display:flex;
+
+justify-content:center;
+
+gap:14px;
+
+flex-wrap:wrap;
+
+margin-top:38px;
+
+}
+
+.hero-stat{
+
+min-width:165px;
+
+padding:14px 20px;
+
+border-radius:16px;
+
+background:rgba(255,255,255,.1);
+
+border:1px solid rgba(255,255,255,.17);
+
+backdrop-filter:blur(10px);
+
+}
+
+.hero-stat strong{
+
+display:block;
+
+font-family:"Baloo 2",sans-serif;
+
+font-size:23px;
+
+line-height:1.1;
+
+}
+
+.hero-stat span{
+
+display:block;
+
+margin-top:4px;
+
+color:rgba(255,255,255,.7);
+
+font-family:"Space Mono",monospace;
+
+font-size:9px;
+
+letter-spacing:.5px;
+
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main{
+
+max-width:1160px;
+
+margin:-63px auto 0;
+
+padding:0 22px 75px;
+
+position:relative;
+
+z-index:5;
+
+}
+
+/* =====================================================
+   MISSION
+===================================================== */
+
+.mission{
+
+padding:30px 35px;
+
+background:white;
+
+border:1px solid var(--border);
+
+border-radius:24px;
+
+box-shadow:var(--shadow);
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:25px;
+
+margin-bottom:45px;
+
+}
+
+.mission-left{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+.mission-icon{
+
+width:65px;
+height:65px;
+
+flex-shrink:0;
+
+display:grid;
+
+place-items:center;
+
+border-radius:19px;
+
+background:var(--pink-soft);
+
+font-size:31px;
+
+}
+
+.mission h2{
+
+font-family:"Baloo 2",sans-serif;
+
+font-size:24px;
+
+line-height:1.25;
+
+color:var(--pink-dark);
+
+}
+
+.mission p{
+
+max-width:700px;
+
+margin-top:6px;
+
+color:var(--muted);
+
+font-size:13px;
+
+line-height:1.75;
+
+font-weight:700;
+
+}
+
+.mission-badge{
+
+white-space:nowrap;
+
+background:var(--pink-soft);
+
+color:var(--pink-deep);
+
+padding:11px 17px;
+
+border-radius:12px;
+
+font-size:12px;
+
+font-weight:900;
+
+}
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progress-box{
+
+position:sticky;
+
+top:12px;
+
+z-index:30;
+
+max-width:830px;
+
+margin:0 auto 60px;
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+padding:13px 20px;
+
+border-radius:100px;
+
+background:rgba(99,33,67,.96);
+
+border:1px solid rgba(255,255,255,.13);
+
+box-shadow:0 15px 35px rgba(0,0,0,.16);
+
+color:white;
+
+}
+
+.progress-label{
+
+white-space:nowrap;
+
+font-family:"Space Mono",monospace;
+
+font-size:10px;
+
+font-weight:700;
+
+}
+
+.progress-track{
+
+height:8px;
+
+flex:1;
+
+background:rgba(255,255,255,.16);
+
+border-radius:100px;
+
+overflow:hidden;
+
+}
+
+.progress-fill{
+
+width:0%;
+
+height:100%;
+
+border-radius:100px;
+
+background:linear-gradient(
+90deg,
+var(--pink-light),
+var(--gold)
+);
+
+transition:width .15s;
+
+}
+
+.progress-value{
+
+min-width:35px;
+
+text-align:right;
+
+font-family:"Space Mono",monospace;
+
+font-size:10px;
+
+}
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading{
+
+text-align:center;
+
+margin-bottom:60px;
+
+scroll-margin-top:110px;
+
+}
+
+.section-label{
+
+font-family:"Space Mono",monospace;
+
+font-size:11px;
+
+letter-spacing:2px;
+
+font-weight:700;
+
+color:var(--pink-deep);
+
+}
+
+.section-heading h2{
+
+margin:10px 0;
+
+font-family:"Baloo 2",sans-serif;
+
+font-size:clamp(30px,4vw,42px);
+
+line-height:1.2;
+
+color:var(--pink-dark);
+
+}
+
+.section-heading p{
+
+color:var(--muted);
+
+font-size:14px;
+
+font-weight:700;
+
+}
+
+/* =====================================================
+   READING JOURNEY
+===================================================== */
+
+.journey{
+
+max-width:1060px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:65px;
+
+position:relative;
+
+}
+
+.journey::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:50px;
+
+bottom:50px;
+
+width:3px;
+
+background:repeating-linear-gradient(
+
+to bottom,
+
+var(--gold) 0px,
+
+var(--gold) 12px,
+
+transparent 12px,
+
+transparent 24px
+
+);
+
+transform:translateX(-50%);
+
+opacity:.8;
+
+}
+
+/* =====================================================
+   CHECKPOINT
+===================================================== */
+
+.checkpoint{
+
+display:grid;
+
+grid-template-columns:1fr 90px 1fr;
+
+align-items:center;
+
+position:relative;
+
+}
+
+.checkpoint:nth-child(odd) .reading-card{
+grid-column:1;
+}
+
+.checkpoint:nth-child(even) .reading-card{
+grid-column:3;
+}
+
+.checkpoint:nth-child(odd) .checkpoint-info{
+
+grid-column:3;
+
+grid-row:1;
+
+padding-left:35px;
+
+}
+
+.checkpoint:nth-child(even) .checkpoint-info{
+
+grid-column:1;
+
+grid-row:1;
+
+text-align:right;
+
+padding-right:35px;
+
+}
+
+.checkpoint-number{
+
+grid-column:2;
+
+grid-row:1;
+
+width:62px;
+
+height:62px;
+
+margin:auto;
+
+display:grid;
+
+place-items:center;
+
+background:linear-gradient(
+135deg,
+var(--gold-light),
+var(--gold)
+);
+
+border:6px solid var(--rose-light);
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 0 3px rgba(244,198,106,.45),
+
+0 9px 25px rgba(130,43,84,.18);
+
+color:var(--pink-dark);
+
+font-family:"Space Mono",monospace;
+
+font-size:15px;
+
+font-weight:700;
+
+position:relative;
+
+z-index:3;
+
+}
+
+/* =====================================================
+   CHECKPOINT INFORMATION
+===================================================== */
+
+.checkpoint-info .step-label{
+
+font-family:"Space Mono",monospace;
+
+font-size:10px;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+color:var(--pink-deep);
+
+}
+
+.checkpoint-info h3{
+
+margin:10px 0;
+
+font-family:"Baloo 2",sans-serif;
+
+font-size:26px;
+
+line-height:1.2;
+
+color:var(--pink-dark);
+
+}
+
+.checkpoint-info p{
+
+max-width:315px;
+
+color:var(--muted);
+
+font-size:13px;
+
+font-weight:700;
+
+line-height:1.8;
+
+}
+
+.checkpoint:nth-child(even) .checkpoint-info p{
+margin-left:auto;
+}
+
+.info-tag{
+
+display:inline-block;
+
+margin-top:14px;
+
+padding:8px 13px;
+
+background:var(--pink-soft);
+
+border-radius:9px;
+
+color:var(--pink-deep);
+
+font-size:11px;
+
+font-weight:900;
+
+}
+
+/* =====================================================
+   READING CARD
+===================================================== */
+
+.reading-card{
+
+display:block;
+
+background:white;
+
+border:1px solid var(--border);
+
+border-radius:24px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+transition:
+transform .35s,
+box-shadow .35s;
+
+}
+
+.reading-card:hover{
+
+transform:translateY(-9px);
+
+box-shadow:0 28px 60px rgba(130,43,84,.2);
+
+}
+
+/* =====================================================
+   REAL ILLUSTRATIONS
+===================================================== */
+
+.card-image{
+
+height:255px;
+
+position:relative;
+
+overflow:hidden;
+
+background:#f5dbe7;
+
+}
+
+.card-image img{
+
+display:block;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+object-position:center;
+
+transition:
+transform .65s ease,
+filter .65s ease;
+
+}
+
+.reading-card:hover .card-image img{
+
+transform:scale(1.075);
+
+filter:saturate(1.08);
+
+}
+
+/* image overlay */
+
+.card-image::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+
+to top,
+
+rgba(70,20,45,.36),
+
+transparent 65%
+
+);
+
+pointer-events:none;
+
+}
+
+/* image badge */
+
+.image-badge{
+
+position:absolute;
+
+top:16px;
+
+left:16px;
+
+z-index:2;
+
+display:inline-flex;
+
+align-items:center;
+
+gap:7px;
+
+padding:9px 13px;
+
+border-radius:10px;
+
+background:rgba(255,255,255,.95);
+
+color:var(--pink-dark);
+
+font-size:11px;
+
+font-weight:900;
+
+box-shadow:0 6px 15px rgba(0,0,0,.12);
+
+}
+
+/* image bottom caption */
+
+.image-caption{
+
+position:absolute;
+
+bottom:17px;
+
+left:19px;
+
+right:19px;
+
+z-index:2;
+
+font-family:"Baloo 2",sans-serif;
+
+font-size:20px;
+
+font-weight:800;
+
+line-height:1.1;
+
+color:white;
+
+text-shadow:0 2px 10px rgba(0,0,0,.4);
+
+}
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.card-content{
+
+padding:25px;
+
+}
+
+.card-topline{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:10px;
+
+}
+
+.card-category{
+
+font-family:"Space Mono",monospace;
+
+font-size:10px;
+
+letter-spacing:1px;
+
+font-weight:700;
+
+color:var(--pink-deep);
+
+}
+
+.card-icon{
+
+width:38px;
+
+height:38px;
+
+display:grid;
+
+place-items:center;
+
+background:var(--pink-soft);
+
+border-radius:11px;
+
+font-size:19px;
+
+}
+
+.card-content h3{
+
+font-family:"Baloo 2",sans-serif;
+
+font-size:25px;
+
+line-height:1.15;
+
+color:var(--pink-dark);
+
+margin-bottom:10px;
+
+}
+
+.card-content p{
+
+color:var(--muted);
+
+font-size:13px;
+
+font-weight:700;
+
+line-height:1.8;
+
+margin-bottom:18px;
+
+}
+
+/* =====================================================
+   TOPIC TAGS
+===================================================== */
+
+.topic-list{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:7px;
+
+margin-bottom:22px;
+
+}
+
+.topic{
+
+padding:6px 10px;
+
+background:var(--pink-soft);
+
+border-radius:100px;
+
+color:var(--pink-deep);
+
+font-size:10px;
+
+font-weight:900;
+
+}
+
+/* =====================================================
+   CARD BUTTON
+===================================================== */
+
+.card-button{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:14px 17px;
+
+border-radius:13px;
+
+background:linear-gradient(
+135deg,
+var(--pink-main),
+var(--pink-deep)
+);
+
+color:white;
+
+font-size:13px;
+
+font-weight:900;
+
+transition:.25s;
+
+}
+
+.card-button .arrow{
+
+width:29px;
+
+height:29px;
+
+display:grid;
+
+place-items:center;
+
+border-radius:9px;
+
+background:rgba(255,255,255,.18);
+
+transition:.25s;
+
+}
+
+.reading-card:hover .card-button{
+background:var(--pink-dark);
+}
+
+.reading-card:hover .arrow{
+transform:translateX(4px);
+}
+
+/* =====================================================
+   FINISH
+===================================================== */
+
+.finish{
+
+max-width:850px;
+
+margin:90px auto 0;
+
+padding:55px 25px;
+
+text-align:center;
+
+background:
+
+radial-gradient(
+circle at 85% 15%,
+rgba(255,220,235,.16),
+transparent 40%
+),
+
+linear-gradient(
+135deg,
+var(--pink-dark),
+var(--pink-main)
+);
+
+border-radius:30px;
+
+color:white;
+
+box-shadow:0 20px 50px rgba(130,43,84,.2);
+
+}
+
+.finish-icon{
+
+width:80px;
+
+height:80px;
+
+display:grid;
+
+place-items:center;
+
+margin:0 auto 18px;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.12);
+
+border:1px solid rgba(255,255,255,.2);
+
+font-size:38px;
+
+}
+
+.finish h2{
+
+font-family:"Baloo 2",sans-serif;
+
+font-size:33px;
+
+line-height:1.2;
+
+}
+
+.finish p{
+
+max-width:580px;
+
+margin:12px auto 26px;
+
+color:rgba(255,255,255,.8);
+
+font-size:14px;
+
+line-height:1.8;
+
+font-weight:700;
+
+}
+
+.finish-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:14px 24px;
+
+border-radius:13px;
+
+background:var(--gold);
+
+color:#51321b;
+
+font-size:13px;
+
+font-weight:900;
+
+transition:.25s;
+
+}
+
+.finish-btn:hover{
+
+background:var(--gold-light);
+
+transform:translateY(-3px);
+
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+text-align:center;
+
+background:white;
+
+padding:30px 20px;
+
+border-top:1px solid var(--border);
+
+}
+
+.footer-brand{
+
+font-family:"Baloo 2",sans-serif;
+
+font-size:19px;
+
+font-weight:800;
+
+color:var(--pink-dark);
+
+}
+
+footer p{
+
+margin-top:5px;
+
+font-family:"Space Mono",monospace;
+
+font-size:10px;
+
+color:var(--muted);
+
+letter-spacing:.4px;
+
+}
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.reveal{
+
+opacity:1;
+
+transform:none;
+
+}
+
+@media(prefers-reduced-motion:no-preference){
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(30px);
+
+transition:
+opacity .7s ease,
+transform .7s ease;
+
+}
+
+.reveal.visible{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:900px){
+
+.checkpoint{
+
+grid-template-columns:1fr 65px 1fr;
+
+}
+
+.checkpoint:nth-child(odd) .checkpoint-info{
+padding-left:15px;
+}
+
+.checkpoint:nth-child(even) .checkpoint-info{
+padding-right:15px;
+}
+
+.checkpoint-info h3{
+font-size:21px;
+}
+
+.card-image{
+height:210px;
+}
+
+.card-content{
+padding:19px;
+}
+
+.card-content h3{
+font-size:22px;
+}
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:650px){
+
+.hero{
+padding:20px 16px 100px;
+}
+
+.brand{
+font-size:15px;
+}
+
+.brand-icon{
+width:38px;
+height:38px;
+font-size:19px;
+}
+
+.back-btn{
+padding:10px 12px;
+font-size:11px;
+}
+
+.hero-content{
+margin-top:45px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero-description{
+font-size:14px;
+}
+
+.hero-stats{
+gap:9px;
+}
+
+.hero-stat{
+min-width:95px;
+padding:12px;
+}
+
+.hero-stat strong{
+font-size:19px;
+}
+
+.hero-stat span{
+font-size:8px;
+}
+
+.main{
+
+padding:0 16px 55px;
+
+margin-top:-55px;
+
+}
+
+.mission{
+
+padding:22px;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+margin-bottom:35px;
+
+}
+
+.mission-left{
+
+align-items:flex-start;
+
+gap:14px;
+
+}
+
+.mission-icon{
+
+width:50px;
+height:50px;
+
+font-size:24px;
+
+}
+
+.mission h2{
+font-size:21px;
+}
+
+.progress-box{
+
+padding:11px 13px;
+
+gap:9px;
+
+margin-bottom:48px;
+
+}
+
+.progress-label,
+.progress-value{
+font-size:8px;
+}
+
+.section-heading{
+margin-bottom:40px;
+}
+
+.journey{
+
+gap:35px;
+
+padding-left:34px;
+
+}
+
+.journey::before{
+
+left:12px;
+
+transform:none;
+
+}
+
+.checkpoint{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+.checkpoint-number{
+
+position:absolute;
+
+left:-50px;
+
+top:20px;
+
+width:56px;
+height:56px;
+
+font-size:13px;
+
+}
+
+.checkpoint-info{
+display:none;
+}
+
+.card-image{
+height:225px;
+}
+
+.card-content{
+padding:20px;
+}
+
+.finish{
+
+margin-top:60px;
+
+padding:38px 20px;
+
+}
+
+.finish h2{
+font-size:27px;
+}
+
+}
+
+@media(max-width:380px){
+
+.brand{
+font-size:12px;
+gap:7px;
+}
+
+.back-btn{
+font-size:10px;
+padding:9px;
+}
+
+.hero h1{
+font-size:37px;
+}
+
+.progress-label{
+font-size:7px;
+}
+
+.card-image{
+height:190px;
+}
+
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+html{
+scroll-behavior:auto;
+}
+
+*,
+*::before,
+*::after{
+
+animation:none!important;
+
+transition:none!important;
+
+}
+
+.reveal{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+<nav class="nav">
+
+<div class="brand">
+
+<div class="brand-icon">
+📚
+</div>
+
+<div>
+MY ENGLISH <span>SPACE</span>
+</div>
+
+</div>
+
+<a href="MS4-Sequence2.html" class="back-btn">
+
+← Back to Sequence 2
+
+</a>
+
+</nav>
+
+<div class="hero-content">
+
+<div class="eyebrow">
+
+<span class="eyebrow-dot"></span>
+
+MS4 · SEQUENCE 02 · READING
+
+</div>
+
+<div class="hero-symbol">
+📖
+</div>
+
+<h1>
+
+Reading <span>Expedition</span>
+
+</h1>
+
+<p class="hero-description">
+
+Discover meaningful friendships, meet inspiring teachers,
+explore personal experiences, and learn about outstanding
+figures — one reading adventure at a time.
+
+</p>
+
+<div class="hero-actions">
+
+<a href="#reading-route" class="hero-btn primary">
+
+🧭 Start Reading →
+
+</a>
+
+<a href="MS4-S2-Vocabulary.html" class="hero-btn secondary">
+
+📚 Explore Vocabulary
+
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div class="hero-stat">
+
+<strong>04</strong>
+
+<span>READING STOPS</span>
+
+</div>
+
+<div class="hero-stat">
+
+<strong>📖</strong>
+
+<span>READ &amp; DISCOVER</span>
+
+</div>
+
+<div class="hero-stat">
+
+<strong>★</strong>
+
+<span>BEM PREPARATION</span>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+<!-- =====================================================
+     MISSION
+===================================================== -->
+
+<section class="mission">
+
+<div class="mission-left">
+
+<div class="mission-icon">
+🗺️
+</div>
+
+<div>
+
+<h2>
+
+Your Reading Adventure Starts Here!
+
+</h2>
+
+<p>
+
+Travel through four reading destinations.
+Explore childhood friendships, meet an ideal teacher,
+discover personal profiles and read about remarkable people.
+
+At every checkpoint, practise reading comprehension and
+develop the skills you need for BEM-style reading tasks.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="mission-badge">
+
+✦ 4 Reading Destinations
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="progress-box">
+
+<span class="progress-label">
+
+🧭 READING PROGRESS
+
+</span>
+
+<div class="progress-track">
+
+<div
+class="progress-fill"
+id="progressFill">
+</div>
+
+</div>
+
+<span
+class="progress-value"
+id="progressValue">
+
+0%
+
+</span>
+
+</div>
+
+<!-- =====================================================
+     SECTION HEADING
+===================================================== -->
+
+<div class="section-heading" id="reading-route">
+
+<span class="section-label">
+
+YOUR READING ROUTE
+
+</span>
+
+<h2>
+
+Choose Your Next Destination
+
+</h2>
+
+<p>
+
+Four reading checkpoints.
+Four exciting topics.
+One amazing learning journey.
+
+</p>
+
+</div>
+
+<!-- =====================================================
+     READING JOURNEY
+===================================================== -->
+
+<section class="journey" aria-label="Reading lessons">
+
+<!-- =====================================================
+     LESSON 01
+===================================================== -->
+
+<div class="checkpoint reveal">
+
+<a
+href="MS4-S2-Reading-Lesson1.html"
+class="reading-card"
+>
+
+<div class="card-image">
+
+<img
+src="https://i.imgur.com/PfxPA0v.png"
+alt="Two Algerian middle school friends enjoying happy childhood memories together in a park."
+loading="lazy"
+decoding="async"
+>
+
+<div class="image-badge">
+
+🤝 READING STOP 01
+
+</div>
+
+<div class="image-caption">
+
+Friendship &amp; Memories
+
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="card-topline">
+
+<span class="card-category">
+
+READING · FRIENDSHIP
+
+</span>
+
+<div class="card-icon">
+🤝
+</div>
+
+</div>
+
+<h3>
+
+Best Childhood Friend
+
+</h3>
+
+<p>
+
+Discover a special childhood friendship,
+personality traits, shared activities,
+memories and unforgettable moments.
+
+</p>
+
+<div class="topic-list">
+
+<span class="topic">
+friendship
+</span>
+
+<span class="topic">
+personality
+</span>
+
+<span class="topic">
+memories
+</span>
+
+<span class="topic">
+activities
+</span>
+
+</div>
+
+<span class="card-button">
+
+Start Reading
+
+<span class="arrow">
+→
+</span>
+
+</span>
+
+</div>
+
+</a>
+
+<div class="checkpoint-number">
+01
+</div>
+
+<div class="checkpoint-info">
+
+<span class="step-label">
+
+FIRST DESTINATION
+
+</span>
+
+<h3>
+
+Discover the Value of Friendship
+
+</h3>
+
+<p>
+
+Read about childhood friendships and explore
+the qualities that make a good friend.
+
+</p>
+
+<span class="info-tag">
+
+Friendship &amp; Memories
+
+</span>
+
+</div>
+
+</div>
+
+<!-- =====================================================
+     LESSON 02
+===================================================== -->
+
+<div class="checkpoint reveal">
+
+<a
+href="MS4-S2-Reading-Lesson2.html"
+class="reading-card"
+>
+
+<div class="card-image">
+
+<img
+src="https://i.imgur.com/4BtBc0p.png"
+alt="An inspiring female English teacher helping Algerian middle school pupils in a classroom."
+loading="lazy"
+decoding="async"
+>
+
+<div class="image-badge">
+
+👩‍🏫 READING STOP 02
+
+</div>
+
+<div class="image-caption">
+
+School Life &amp; Inspiration
+
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="card-topline">
+
+<span class="card-category">
+
+READING · SCHOOL LIFE
+
+</span>
+
+<div class="card-icon">
+👩‍🏫
+</div>
+
+</div>
+
+<h3>
+
+The Ideal Teacher
+
+</h3>
+
+<p>
+
+Meet an inspiring teacher and discover
+qualities, classroom behaviour,
+encouragement and positive influence.
+
+</p>
+
+<div class="topic-list">
+
+<span class="topic">
+teacher
+</span>
+
+<span class="topic">
+qualities
+</span>
+
+<span class="topic">
+school
+</span>
+
+<span class="topic">
+inspiration
+</span>
+
+</div>
+
+<span class="card-button">
+
+Start Reading
+
+<span class="arrow">
+→
+</span>
+
+</span>
+
+</div>
+
+</a>
+
+<div class="checkpoint-number">
+02
+</div>
+
+<div class="checkpoint-info">
+
+<span class="step-label">
+
+SECOND DESTINATION
+
+</span>
+
+<h3>
+
+Meet an Inspiring Teacher
+
+</h3>
+
+<p>
+
+Explore the qualities and actions of teachers
+who encourage and inspire their pupils.
+
+</p>
+
+<span class="info-tag">
+
+School Life &amp; Inspiration
+
+</span>
+
+</div>
+
+</div>
+
+<!-- =====================================================
+     LESSON 03
+===================================================== -->
+
+<div class="checkpoint reveal">
+
+<a
+href="MS4-S2-Reading-Lesson3.html"
+class="reading-card"
+>
+
+<div class="card-image">
+
+<img
+src="https://i.imgur.com/FzgBc2M.png"
+alt="An Algerian middle school pupil creating a personal scrapbook about hobbies, personality and memories."
+loading="lazy"
+decoding="async"
+>
+
+<div class="image-badge">
+
+🪪 READING STOP 03
+
+</div>
+
+<div class="image-caption">
+
+Identity &amp; Experiences
+
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="card-topline">
+
+<span class="card-category">
+
+READING · PERSONAL PROFILE
+
+</span>
+
+<div class="card-icon">
+🪪
+</div>
+
+</div>
+
+<h3>
+
+All About Me
+
+</h3>
+
+<p>
+
+Explore a personal profile including identity,
+personality, hobbies, best friend,
+best teacher and an unforgettable past experience.
+
+</p>
+
+<div class="topic-list">
+
+<span class="topic">
+identity
+</span>
+
+<span class="topic">
+hobbies
+</span>
+
+<span class="topic">
+personality
+</span>
+
+<span class="topic">
+experiences
+</span>
+
+</div>
+
+<span class="card-button">
+
+Discover the Profile
+
+<span class="arrow">
+→
+</span>
+
+</span>
+
+</div>
+
+</a>
+
+<div class="checkpoint-number">
+03
+</div>
+
+<div class="checkpoint-info">
+
+<span class="step-label">
+
+THIRD DESTINATION
+
+</span>
+
+<h3>
+
+Explore Personal Stories
+
+</h3>
+
+<p>
+
+Read personal profiles and discover how people
+describe their personalities, interests and experiences.
+
+</p>
+
+<span class="info-tag">
+
+Identity &amp; Experiences
+
+</span>
+
+</div>
+
+</div>
+
+<!-- =====================================================
+     LESSON 04
+===================================================== -->
+
+<div class="checkpoint reveal">
+
+<a
+href="MS4-S2-Reading-Lesson4.html"
+class="reading-card"
+>
+
+<div class="card-image">
+
+<img
+src="https://i.imgur.com/Av0UdXw.png"
+alt="Algerian middle school pupils exploring Leonardo da Vinci's inventions and achievements in a museum."
+loading="lazy"
+decoding="async"
+>
+
+<div class="image-badge">
+
+🌟 READING STOP 04
+
+</div>
+
+<div class="image-caption">
+
+History, Art &amp; Achievements
+
+</div>
+
+</div>
+
+<div class="card-content">
+
+<div class="card-topline">
+
+<span class="card-category">
+
+READING · HISTORY &amp; ART
+
+</span>
+
+<div class="card-icon">
+🌟
+</div>
+
+</div>
+
+<h3>
+
+An Outstanding Figure
+
+</h3>
+
+<p>
+
+Read an inspiring biography and explore
+an outstanding figure's childhood, life,
+achievements, contribution and legacy.
+
+</p>
+
+<div class="topic-list">
+
+<span class="topic">
+biography
+</span>
+
+<span class="topic">
+childhood
+</span>
+
+<span class="topic">
+achievements
+</span>
+
+<span class="topic">
+legacy
+</span>
+
+</div>
+
+<span class="card-button">
+
+Begin the Final Quest
+
+<span class="arrow">
+→
+</span>
+
+</span>
+
+</div>
+
+</a>
+
+<div class="checkpoint-number">
+04
+</div>
+
+<div class="checkpoint-info">
+
+<span class="step-label">
+
+FINAL DESTINATION
+
+</span>
+
+<h3>
+
+Discover Remarkable People
+
+</h3>
+
+<p>
+
+Read inspiring biographies and learn about
+important achievements and contributions.
+
+</p>
+
+<span class="info-tag">
+
+History &amp; Achievements
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     FINISH
+===================================================== -->
+
+<section class="finish reveal">
+
+<div class="finish-icon">
+🏆
+</div>
+
+<h2>
+
+Become a Reading Explorer!
+
+</h2>
+
+<p>
+
+Complete all four reading destinations,
+develop your comprehension skills,
+discover inspiring stories and prepare
+for your next BEM reading challenge.
+
+</p>
+
+<a
+href="MS4-S2-Reading-Lesson1.html"
+class="finish-btn"
+>
+
+🚀 Begin Reading Stop 01 →
+
+</a>
+
+</section>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-brand">
+
+📚 My English Space
+
+</div>
+
+<p>
+
+MS4 · SEQUENCE 02 · READING EXPEDITION
+
+</p>
+
+</footer>
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =====================================================
+   READING PROGRESS
+===================================================== */
+
+const progressFill =
+document.getElementById("progressFill");
+
+const progressValue =
+document.getElementById("progressValue");
+
+function updateProgress(){
+
+const scrollTop =
+window.scrollY;
+
+const scrollHeight =
+document.documentElement.scrollHeight -
+window.innerHeight;
+
+let percent = 0;
+
+if(scrollHeight > 0){
+
+percent = Math.round(
+(scrollTop / scrollHeight) * 100
+);
+
+}
+
+percent = Math.max(
+0,
+Math.min(100,percent)
+);
+
+progressFill.style.width =
+percent + "%";
+
+progressValue.textContent =
+percent + "%";
+
+}
+
+window.addEventListener(
+"scroll",
+updateProgress,
+{passive:true}
+);
+
+window.addEventListener(
+"resize",
+updateProgress
+);
+
+updateProgress();
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+if(
+"IntersectionObserver" in window &&
+!window.matchMedia(
+"(prefers-reduced-motion: reduce)"
+).matches
+){
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},
+
+{
+threshold:0.08
+}
+
+);
+
+revealElements.forEach(element=>{
+
+observer.observe(element);
+
+});
+
+}else{
+
+revealElements.forEach(element=>{
+
+element.classList.add("visible");
+
+});
+
+}
+
+/* =====================================================
+   SAVE LAST READING LESSON
+===================================================== */
+
+const lessonLinks =
+document.querySelectorAll(".reading-card");
+
+lessonLinks.forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+try{
+
+localStorage.setItem(
+
+"ms4_s2_reading_last_lesson",
+
+link.getAttribute("href")
+
+);
+
+}catch(error){
+
+// Navigation remains available.
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

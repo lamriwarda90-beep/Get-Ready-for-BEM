@@ -1,0 +1,3736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#54218e">
+
+<title>MS4-S1-Writing-Lesson2 | Writing a Biography</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   GLOBAL DESIGN
+===================================================== */
+
+:root{
+  --purple-dark:#261047;
+  --purple-deep:#421b77;
+  --purple:#7138b6;
+  --purple-light:#a776e5;
+  --lavender:#eee3ff;
+  --gold:#ffcf70;
+  --gold-light:#fff1cb;
+  --white:#ffffff;
+  --ink:#292342;
+  --muted:#706782;
+  --green:#24845e;
+  --red:#cf5367;
+  --blue:#3875ba;
+  --border:#e7dcf4;
+  --shadow:0 15px 40px rgba(45,20,83,.12);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:"Nunito",sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 8%,#f1e5ff,transparent 30%),
+    radial-gradient(circle at 95% 30%,#fff0d2,transparent 30%),
+    #f8f5ff;
+}
+
+h1,h2,h3{
+  font-family:"Baloo 2",sans-serif;
+  line-height:1.15;
+}
+
+button,input,select,textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+input:focus-visible{
+  outline:3px solid #e4a934;
+  outline-offset:3px;
+}
+
+.container{
+  width:min(1120px,94%);
+  margin:auto;
+}
+
+/* =====================================================
+   TOP NAVIGATION
+===================================================== */
+
+.topbar{
+  background:white;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:80;
+  box-shadow:0 4px 20px #31135b10;
+}
+
+.topbar-inner{
+  min-height:70px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  color:var(--purple-deep);
+  font-size:14px;
+}
+
+.brand-icon{
+  width:42px;
+  height:42px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:var(--lavender);
+  font-size:23px;
+}
+
+.home-link{
+  background:var(--purple-deep);
+  color:white;
+  padding:11px 18px;
+  border-radius:30px;
+  font-weight:900;
+  font-size:12px;
+  transition:.2s;
+}
+
+.home-link:hover{
+  background:var(--purple);
+  transform:translateY(-2px);
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero{
+  background:
+    radial-gradient(circle at 85% 20%,rgba(255,210,125,.18),transparent 27%),
+    radial-gradient(circle at 12% 80%,rgba(198,154,255,.25),transparent 30%),
+    linear-gradient(130deg,#29104c,#51248b 55%,#7841bd);
+  color:white;
+  padding:62px 0 52px;
+  overflow:hidden;
+  position:relative;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  align-items:center;
+  gap:45px;
+}
+
+.hero-badge{
+  display:inline-block;
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:40px;
+  padding:9px 17px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.hero h1{
+  font-size:clamp(40px,6vw,70px);
+  margin:17px 0 10px;
+  line-height:1;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+}
+
+.hero p{
+  max-width:580px;
+  line-height:1.8;
+  color:#f0e5ff;
+  font-size:14px;
+  font-weight:700;
+}
+
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:20px;
+}
+
+.hero-tags span{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+  padding:9px 14px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.hero-art{
+  position:relative;
+  max-width:360px;
+  margin:auto;
+}
+
+.hero-art img{
+  width:100%;
+  height:335px;
+  object-fit:cover;
+  border:9px solid white;
+  border-radius:24px;
+  transform:rotate(4deg);
+  box-shadow:0 25px 50px #16092b99;
+}
+
+.hero-sticker{
+  position:absolute;
+  left:-25px;
+  bottom:20px;
+  background:var(--gold);
+  color:#39204b;
+  border:5px solid white;
+  border-radius:20px;
+  padding:15px;
+  font-size:28px;
+  transform:rotate(-10deg);
+  box-shadow:0 10px 25px #1e0d3977;
+}
+
+/* =====================================================
+   PROGRESS BAR
+===================================================== */
+
+.progress-panel{
+  background:white;
+  margin-top:-22px;
+  position:relative;
+  z-index:5;
+  border-radius:22px;
+  padding:23px 26px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+  font-weight:900;
+  font-size:13px;
+}
+
+.progress-top strong{
+  color:var(--purple);
+}
+
+.progress-track{
+  height:13px;
+  background:#eee5f8;
+  border-radius:30px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  border-radius:30px;
+  background:linear-gradient(90deg,#8d4ed1,#e6a64c);
+  transition:width .5s;
+}
+
+.step-nav{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:8px;
+  margin-top:17px;
+}
+
+.step-nav a{
+  padding:10px 5px;
+  text-align:center;
+  border-radius:12px;
+  background:#f5effc;
+  color:#68448f;
+  font-size:10px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.step-nav a:hover{
+  background:#e6d4fb;
+}
+
+/* =====================================================
+   LESSON CARDS
+===================================================== */
+
+main{
+  padding:35px 0 65px;
+}
+
+.lesson-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:26px;
+  box-shadow:var(--shadow);
+  padding:32px;
+  margin-bottom:27px;
+  scroll-margin-top:95px;
+}
+
+.step-heading{
+  display:flex;
+  gap:17px;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.step-number{
+  width:60px;
+  height:60px;
+  flex-shrink:0;
+  border-radius:19px;
+  background:linear-gradient(145deg,#9b5bd6,#54218e);
+  color:white;
+  display:grid;
+  place-items:center;
+  font-family:"Baloo 2";
+  font-size:28px;
+  font-weight:800;
+  box-shadow:0 8px 20px #6733a444;
+}
+
+.step-label{
+  font-size:10px;
+  letter-spacing:1.5px;
+  color:var(--purple);
+  font-weight:900;
+}
+
+.step-heading h2{
+  font-size:clamp(24px,3.5vw,32px);
+  margin:4px 0 0;
+  color:var(--purple-dark);
+}
+
+.intro-text{
+  line-height:1.85;
+  color:var(--muted);
+  font-size:14px;
+  font-weight:700;
+}
+
+.mission-box{
+  background:linear-gradient(130deg,#fff8e6,#fffdf7);
+  border:2px solid #f7e1aa;
+  border-radius:20px;
+  padding:23px;
+  line-height:1.85;
+  font-size:14px;
+}
+
+.mission-box strong{
+  color:var(--purple-deep);
+}
+
+.arabic-help{
+  direction:rtl;
+  text-align:right;
+  background:#f1eaff;
+  border-right:4px solid var(--purple);
+  padding:13px 17px;
+  border-radius:12px;
+  margin-top:14px;
+  color:#563580;
+  font-size:13px;
+  line-height:1.9;
+  font-weight:700;
+}
+
+/* =====================================================
+   ACTIVITIES
+===================================================== */
+
+.activity{
+  background:#faf8ff;
+  border:1px solid #e8ddf4;
+  padding:22px;
+  border-radius:19px;
+  margin-top:18px;
+}
+
+.activity h3{
+  font-size:19px;
+  margin:0 0 12px;
+  color:var(--purple-deep);
+}
+
+.question{
+  padding:15px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:14px;
+  margin:12px 0;
+}
+
+.question p{
+  font-weight:900;
+  margin:0 0 11px;
+  line-height:1.6;
+}
+
+.choice{
+  display:block;
+  padding:10px 12px;
+  border:1px solid #e4d9f1;
+  border-radius:11px;
+  margin:7px 0;
+  background:white;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.choice:hover{
+  background:#f5effd;
+  border-color:var(--purple-light);
+}
+
+.choice input{
+  accent-color:var(--purple);
+  margin-right:8px;
+}
+
+.feedback{
+  min-height:20px;
+  margin-top:10px;
+  font-size:13px;
+  font-weight:900;
+}
+
+.feedback.good{
+  color:var(--green);
+}
+
+.feedback.bad{
+  color:var(--red);
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn{
+  border:none;
+  padding:12px 20px;
+  border-radius:30px;
+  font-weight:900;
+  font-size:13px;
+  transition:.2s;
+  margin:5px 5px 5px 0;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,#8d4acc,#5a2595);
+  color:white;
+  box-shadow:0 6px 15px #5d289b33;
+}
+
+.btn-gold{
+  background:linear-gradient(135deg,#ffe29a,#f5bb54);
+  color:#39264b;
+}
+
+.btn-soft{
+  background:#eee6f8;
+  color:var(--purple-deep);
+}
+
+.btn-green{
+  background:var(--green);
+  color:white;
+}
+
+/* =====================================================
+   MODEL BIOGRAPHY
+===================================================== */
+
+.model-grid{
+  display:grid;
+  grid-template-columns:210px 1fr;
+  gap:23px;
+  align-items:start;
+}
+
+.portrait{
+  width:100%;
+  height:255px;
+  object-fit:cover;
+  border-radius:20px;
+  border:6px solid white;
+  box-shadow:0 9px 25px #30155222;
+  background:#eee;
+}
+
+.portrait-caption{
+  text-align:center;
+  font-weight:900;
+  color:var(--purple);
+  margin-top:10px;
+  font-size:14px;
+}
+
+.model-text{
+  background:#fffdf6;
+  border:1px solid #f0e1b8;
+  border-radius:19px;
+  padding:23px;
+  font-size:15px;
+  line-height:2.05;
+}
+
+.highlight{
+  border-radius:6px;
+  padding:2px 4px;
+  cursor:help;
+}
+
+.topic{
+  background:#dceefe;
+}
+
+.detail{
+  background:#fff0c4;
+}
+
+.linker{
+  background:#dff3e8;
+  color:#1f6948;
+}
+
+.conclusion{
+  background:#f1defa;
+}
+
+.legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:15px;
+}
+
+.legend span{
+  padding:8px 12px;
+  border-radius:25px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.legend .l1{
+  background:#dceefe;
+}
+
+.legend .l2{
+  background:#fff0c4;
+}
+
+.legend .l3{
+  background:#dff3e8;
+}
+
+.legend .l4{
+  background:#f1defa;
+}
+
+/* =====================================================
+   MATCHING TASKS
+===================================================== */
+
+.match-row{
+  display:grid;
+  grid-template-columns:1fr 220px;
+  gap:15px;
+  align-items:center;
+  margin:12px 0;
+  padding:13px;
+  background:white;
+  border-radius:13px;
+  border:1px solid var(--border);
+  font-size:13px;
+  font-weight:800;
+}
+
+select{
+  width:100%;
+  padding:12px;
+  border:2px solid #dfd0f0;
+  border-radius:12px;
+  background:white;
+  color:var(--ink);
+  font-size:13px;
+  font-weight:800;
+}
+
+select:focus{
+  border-color:var(--purple);
+}
+
+/* =====================================================
+   FACT FILE
+===================================================== */
+
+.fact-intro{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:22px;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.fact-photo{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:20px;
+  border:6px solid white;
+  box-shadow:0 12px 30px rgba(52,24,88,.18);
+  background:#eee;
+}
+
+.fact-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.fact{
+  padding:16px;
+  border:1px solid #e5d8f3;
+  border-radius:15px;
+  background:linear-gradient(135deg,#fcfaff,#f6f0ff);
+}
+
+.fact b{
+  display:block;
+  font-size:10px;
+  color:var(--purple);
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  margin-bottom:7px;
+}
+
+.fact span{
+  font-size:13px;
+  font-weight:900;
+  line-height:1.6;
+}
+
+.tip{
+  background:#eaf8f1;
+  border-left:5px solid var(--green);
+  border-radius:12px;
+  padding:15px 18px;
+  margin-top:17px;
+  line-height:1.8;
+  font-size:13px;
+  font-weight:800;
+}
+
+.word-chips{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:13px;
+}
+
+.word-chips span{
+  padding:9px 13px;
+  border-radius:25px;
+  background:#eee5fb;
+  color:#60338f;
+  font-weight:900;
+  font-size:12px;
+}
+
+/* =====================================================
+   SENTENCE BUILDERS
+===================================================== */
+
+.builder{
+  background:#faf7ff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px;
+  margin:13px 0;
+}
+
+.builder-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.builder-title{
+  font-size:14px;
+  font-weight:900;
+  color:var(--purple-deep);
+}
+
+.builder-tag{
+  padding:6px 11px;
+  background:#eadbfa;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:900;
+  color:#663397;
+}
+
+.builder select{
+  margin-bottom:12px;
+}
+
+.preview{
+  background:white;
+  border:1px dashed #ba9cdb;
+  border-radius:12px;
+  padding:14px;
+  line-height:1.8;
+  color:#402a5a;
+  font-size:14px;
+  font-weight:800;
+}
+
+/* =====================================================
+   WRITING STUDIO
+===================================================== */
+
+.writing-tools{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+  margin:15px 0;
+}
+
+.word-count{
+  background:#f0e7fb;
+  padding:10px 15px;
+  border-radius:25px;
+  color:var(--purple-deep);
+  font-size:12px;
+  font-weight:900;
+}
+
+textarea{
+  width:100%;
+  min-height:300px;
+  padding:23px;
+  border:2px solid #dfd0ef;
+  border-radius:17px;
+  resize:vertical;
+  outline:none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      white 0,
+      white 34px,
+      #f0eaf8 35px
+    );
+  font-size:15px;
+  line-height:35px;
+  color:#33284b;
+}
+
+textarea:focus{
+  border-color:var(--purple);
+}
+
+.result-box{
+  display:none;
+  padding:20px;
+  border-radius:16px;
+  margin-top:16px;
+  background:#f1eafa;
+  border:1px solid #dcc9f0;
+  line-height:1.9;
+  font-size:13px;
+  font-weight:800;
+}
+
+/* =====================================================
+   SELF-CORRECTION
+===================================================== */
+
+.checklist{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:11px;
+  margin-top:15px;
+}
+
+.check-item{
+  background:#faf8ff;
+  border:1px solid var(--border);
+  padding:14px;
+  border-radius:13px;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.6;
+}
+
+.check-item input{
+  accent-color:var(--purple);
+  margin-top:4px;
+}
+
+.finish-banner{
+  margin-top:22px;
+  background:linear-gradient(120deg,#3c196d,#7942b7);
+  color:white;
+  padding:28px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.finish-banner h3{
+  color:var(--gold);
+  font-size:28px;
+  margin:0 0 8px;
+}
+
+.finish-banner p{
+  font-size:13px;
+  line-height:1.8;
+}
+
+/* =====================================================
+   ENGLISH-ARABIC DICTIONARY
+===================================================== */
+
+.dict-open{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:100;
+  border:none;
+  background:linear-gradient(145deg,#ffc963,#e9a63c);
+  color:#39244c;
+  padding:15px 19px;
+  border-radius:35px;
+  box-shadow:0 10px 30px #30145355;
+  font-weight:900;
+  font-size:13px;
+}
+
+.dict-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(27,13,48,.65);
+  z-index:150;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+}
+
+.dict-overlay.open{
+  display:flex;
+}
+
+.dict-panel{
+  width:min(510px,100%);
+  max-height:85vh;
+  overflow:auto;
+  background:white;
+  border-radius:25px;
+  padding:25px;
+  box-shadow:0 30px 70px #160b2880;
+}
+
+.dict-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.dict-header h2{
+  color:var(--purple-deep);
+  margin:0;
+  font-size:24px;
+}
+
+.dict-close{
+  border:none;
+  border-radius:50%;
+  width:37px;
+  height:37px;
+  background:#f0e7fa;
+  color:var(--purple);
+  font-size:22px;
+  font-weight:900;
+}
+
+.dict-search{
+  width:100%;
+  border:2px solid #dfd0ef;
+  border-radius:13px;
+  padding:13px;
+  margin:17px 0;
+  outline:none;
+}
+
+.dict-row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  border-bottom:1px solid #eee5f5;
+  padding:12px 5px;
+  font-size:13px;
+}
+
+.dict-row strong{
+  color:var(--purple-deep);
+}
+
+.dict-row span{
+  direction:rtl;
+  text-align:right;
+  font-weight:800;
+}
+
+.toast{
+  position:fixed;
+  bottom:85px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#34204f;
+  color:white;
+  padding:12px 20px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:900;
+  z-index:200;
+  display:none;
+  box-shadow:0 8px 25px #21103644;
+  text-align:center;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+  background:#281247;
+  color:#eee3ff;
+  text-align:center;
+  padding:28px 15px;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.8;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media(max-width:800px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-art{
+    max-width:260px;
+  }
+
+  .hero-art img{
+    height:260px;
+  }
+
+  .model-grid{
+    grid-template-columns:1fr;
+  }
+
+  .portrait{
+    max-width:230px;
+    display:block;
+    margin:auto;
+  }
+
+  .fact-intro{
+    grid-template-columns:1fr;
+  }
+
+  .fact-photo{
+    max-width:250px;
+    display:block;
+    margin:auto;
+  }
+
+  .fact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .step-nav{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
+@media(max-width:560px){
+
+  .hero{
+    padding:40px 0;
+  }
+
+  .hero h1{
+    font-size:45px;
+  }
+
+  .lesson-card{
+    padding:19px;
+    border-radius:20px;
+  }
+
+  .step-number{
+    width:49px;
+    height:49px;
+    font-size:24px;
+  }
+
+  .step-heading h2{
+    font-size:23px;
+  }
+
+  .match-row{
+    grid-template-columns:1fr;
+  }
+
+  .checklist{
+    grid-template-columns:1fr;
+  }
+
+  .topbar-inner{
+    min-height:62px;
+  }
+
+  .brand{
+    font-size:11px;
+  }
+
+  .home-link{
+    font-size:10px;
+    padding:10px;
+  }
+
+  .dict-open{
+    right:12px;
+    bottom:12px;
+    font-size:11px;
+  }
+
+}
+
+@media print{
+
+  .topbar,
+  .hero,
+  .progress-panel,
+  .dict-open,
+  .btn,
+  .dict-overlay,
+  .toast{
+    display:none!important;
+  }
+
+  body{
+    background:white;
+  }
+
+  .lesson-card{
+    box-shadow:none;
+    border:1px solid #ccc;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     TOP NAVIGATION
+===================================================== -->
+
+<nav class="topbar">
+
+  <div class="container topbar-inner">
+
+    <div class="brand">
+      <span class="brand-icon">✍️</span>
+      MY ENGLISH SPACE
+    </div>
+
+    <a class="home-link" href="MS4-S1-Writing.html">
+      ← Writing Homepage
+    </a>
+
+  </div>
+
+</nav>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <span class="hero-badge">
+        ✨ MS4 · SEQUENCE 1 · WRITING STUDIO
+      </span>
+
+      <h1>
+        Writing a
+        <span>Biography</span>
+      </h1>
+
+      <p>
+        Every remarkable person has a story.
+        Discover how to organise important life events,
+        connect ideas and write a meaningful biography
+        step by step.
+      </p>
+
+      <div class="hero-tags">
+        <span>🎨 Pablo Picasso</span>
+        <span>🧠 Malek Bennabi</span>
+        <span>✍️ Your Biography</span>
+      </div>
+
+    </div>
+
+    <div class="hero-art">
+
+      <!-- MALEK BENNABI PICTURE -->
+
+      <img
+        src="https://i.imgur.com/SjjrIHh.jpeg"
+        alt="Malek Bennabi"
+      >
+
+      <div class="hero-sticker">
+        📖
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<div class="container">
+
+  <div class="progress-panel">
+
+    <div class="progress-top">
+
+      <span>
+        🧭 YOUR WRITING JOURNEY
+      </span>
+
+      <strong id="progressText">
+        0 of 6 steps completed
+      </strong>
+
+    </div>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="step-nav">
+
+      <a href="#step1">01 · Mission</a>
+      <a href="#step2">02 · Discover</a>
+      <a href="#step3">03 · Explore</a>
+      <a href="#step4">04 · Build</a>
+      <a href="#step5">05 · Write</a>
+      <a href="#step6">06 · Check</a>
+
+    </div>
+
+  </div>
+
+</div>
+
+<main class="container">
+
+<!-- =====================================================
+     STEP 1 — WRITING MISSION
+===================================================== -->
+
+<section class="lesson-card" id="step1">
+
+  <div class="step-heading">
+
+    <div class="step-number">01</div>
+
+    <div>
+
+      <span class="step-label">
+        YOUR WRITING MISSION
+      </span>
+
+      <h2>
+        📮 People Who Changed the World
+      </h2>
+
+    </div>
+
+  </div>
+
+  <div class="mission-box">
+
+    <p>
+      Your school is preparing a digital exhibition
+      called
+      <strong>“People Who Changed the World”.</strong>
+    </p>
+
+    <p>
+      The English Club wants to present short biographies
+      of famous people from different fields.
+    </p>
+
+    <p>
+      Your teacher asks you to write a biography of
+      <strong>Malek Bennabi</strong>,
+      a famous Algerian thinker.
+    </p>
+
+    <p>
+      <strong>Your task:</strong>
+      Write a well-organised paragraph of
+      <strong>80–100 words</strong>
+      about his life, education, achievements
+      and importance.
+    </p>
+
+    <div class="arabic-help">
+
+      المهمة: اكتب فقرة من 80 إلى 100 كلمة عن المفكر
+      الجزائري مالك بن نبي.
+
+      تحدث عن حياته وتعليمه وإنجازاته وأهميته،
+      واستعمل أدوات الربط لتنظيم الأفكار.
+
+    </div>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>🎯 Check Your Mission</h3>
+
+    <div class="question">
+
+      <p>
+        1. Who are you going to write about?
+      </p>
+
+      <label class="choice">
+        <input type="radio" name="mission1" value="0">
+        Pablo Picasso
+      </label>
+
+      <label class="choice">
+        <input type="radio" name="mission1" value="1">
+        Malek Bennabi
+      </label>
+
+      <label class="choice">
+        <input type="radio" name="mission1" value="0">
+        William Shakespeare
+      </label>
+
+    </div>
+
+    <div class="question">
+
+      <p>
+        2. What kind of text will you write?
+      </p>
+
+      <label class="choice">
+        <input type="radio" name="mission2" value="0">
+        A trip report
+      </label>
+
+      <label class="choice">
+        <input type="radio" name="mission2" value="1">
+        A biography
+      </label>
+
+      <label class="choice">
+        <input type="radio" name="mission2" value="0">
+        A landmark description
+      </label>
+
+    </div>
+
+    <button
+      class="btn btn-primary"
+      onclick="checkMission()"
+    >
+      ✓ Check Answers
+    </button>
+
+    <div
+      class="feedback"
+      id="missionFeedback"
+      aria-live="polite"
+    ></div>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     STEP 2 — MODEL BIOGRAPHY
+===================================================== -->
+
+<section class="lesson-card" id="step2">
+
+  <div class="step-heading">
+
+    <div class="step-number">02</div>
+
+    <div>
+
+      <span class="step-label">
+        READ AND NOTICE
+      </span>
+
+      <h2>
+        🎨 Discover Pablo Picasso
+      </h2>
+
+    </div>
+
+  </div>
+
+  <p class="intro-text">
+
+    Read this model biography carefully.
+
+    Notice how the writer introduces the person,
+    presents life events in order and finishes
+    with a concluding sentence.
+
+  </p>
+
+  <div class="model-grid">
+
+    <div>
+
+      <img
+        class="portrait"
+        src="https://i.imgur.com/3MYG6G2.jpeg"
+        alt="Pablo Picasso"
+        loading="lazy"
+      >
+
+      <div class="portrait-caption">
+        Pablo Picasso
+      </div>
+
+    </div>
+
+    <div>
+
+      <div class="model-text">
+
+        <span
+          class="highlight topic"
+          title="Topic sentence"
+        >
+          Pablo Picasso was a famous Spanish artist
+          who changed modern art.
+        </span>
+
+        <span
+          class="highlight detail"
+          title="Personal information"
+        >
+          He was born in Málaga, Spain, in 1881
+          and began drawing and painting at an early age.
+        </span>
+
+        <span
+          class="highlight linker"
+          title="Linking word"
+        >
+          Later,
+        </span>
+
+        <span class="highlight detail">
+          he moved to Barcelona and continued
+          his artistic studies.
+        </span>
+
+        <span class="highlight linker">
+          In 1904,
+        </span>
+
+        <span class="highlight detail">
+          he settled in Paris, where he developed
+          several important artistic styles,
+          including Cubism.
+        </span>
+
+        <span class="highlight linker">
+          Moreover,
+        </span>
+
+        <span class="highlight detail">
+          he produced paintings, drawings,
+          sculptures, prints and ceramics.
+          One of his most famous paintings
+          is <em>Guernica</em>, created in 1937.
+        </span>
+
+        <span class="highlight linker">
+          Finally,
+        </span>
+
+        <span class="highlight conclusion">
+          Picasso remained one of the most influential
+          artists of the twentieth century
+          until his death in 1973.
+        </span>
+
+      </div>
+
+      <div class="legend">
+
+        <span class="l1">
+          🔵 Topic sentence
+        </span>
+
+        <span class="l2">
+          🟡 Life details
+        </span>
+
+        <span class="l3">
+          🟢 Linking words
+        </span>
+
+        <span class="l4">
+          🟣 Conclusion
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>
+      🔎 Understand the Biography
+    </h3>
+
+    <p class="intro-text">
+      Choose the correct function for each part.
+    </p>
+
+    <div class="match-row">
+
+      <span>
+        1. “Pablo Picasso was a famous Spanish artist...”
+      </span>
+
+      <select id="model1">
+
+        <option value="">
+          Choose an answer
+        </option>
+
+        <option value="topic">
+          Topic sentence
+        </option>
+
+        <option value="detail">
+          Life detail
+        </option>
+
+        <option value="conclusion">
+          Conclusion
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="match-row">
+
+      <span>
+        2. “He was born in Málaga in 1881.”
+      </span>
+
+      <select id="model2">
+
+        <option value="">
+          Choose an answer
+        </option>
+
+        <option value="topic">
+          Topic sentence
+        </option>
+
+        <option value="detail">
+          Life detail
+        </option>
+
+        <option value="conclusion">
+          Conclusion
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="match-row">
+
+      <span>
+        3. “Later, he moved to Barcelona...”
+      </span>
+
+      <select id="model3">
+
+        <option value="">
+          Choose an answer
+        </option>
+
+        <option value="linker">
+          Chronological linking word
+        </option>
+
+        <option value="conclusion">
+          Conclusion
+        </option>
+
+        <option value="topic">
+          Topic sentence
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="match-row">
+
+      <span>
+        4. “Picasso remained one of the most influential artists...”
+      </span>
+
+      <select id="model4">
+
+        <option value="">
+          Choose an answer
+        </option>
+
+        <option value="detail">
+          Birth information
+        </option>
+
+        <option value="topic">
+          Topic sentence
+        </option>
+
+        <option value="conclusion">
+          Conclusion
+        </option>
+
+      </select>
+
+    </div>
+
+    <button
+      class="btn btn-primary"
+      onclick="checkModel()"
+    >
+      ✓ Check My Answers
+    </button>
+
+    <div
+      class="feedback"
+      id="modelFeedback"
+      aria-live="polite"
+    ></div>
+
+  </div>
+
+  <div class="tip">
+
+    💡 <strong>Remember:</strong>
+
+    A biography usually contains a topic sentence,
+    personal information, education, achievements,
+    important events and a conclusion.
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     STEP 3 — MALEK BENNABI FACT FILE
+===================================================== -->
+
+<section class="lesson-card" id="step3">
+
+  <div class="step-heading">
+
+    <div class="step-number">03</div>
+
+    <div>
+
+      <span class="step-label">
+        COLLECT INFORMATION
+      </span>
+
+      <h2>
+        🧠 Explore Malek Bennabi's Life
+      </h2>
+
+    </div>
+
+  </div>
+
+  <p class="intro-text">
+
+    You are now ready to write about an outstanding
+    Algerian thinker.
+
+    Read his fact file and collect the information
+    you need.
+
+  </p>
+
+  <div class="fact-intro">
+
+    <div>
+
+      <!-- USER-PROVIDED MALEK BENNABI PICTURE -->
+
+      <img
+        class="fact-photo"
+        src="https://i.imgur.com/SjjrIHh.jpeg"
+        alt="Portrait of Malek Bennabi"
+        loading="lazy"
+      >
+
+      <div class="portrait-caption">
+        Malek Bennabi
+      </div>
+
+    </div>
+
+    <div class="mission-box">
+
+      <h3 style="margin-top:0;color:#54218e">
+        🇩🇿 An Outstanding Algerian Thinker
+      </h3>
+
+      <p>
+        Malek Bennabi was an Algerian thinker,
+        writer and philosopher.
+      </p>
+
+      <p>
+        He is remembered for his important ideas
+        about culture, civilisation and society.
+      </p>
+
+      <div class="arabic-help">
+
+        مالك بن نبي مفكر وكاتب وفيلسوف جزائري،
+        اشتهر بأفكاره حول الثقافة والحضارة والمجتمع.
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="fact-grid">
+
+    <div class="fact">
+      <b>Full name</b>
+      <span>Malek Bennabi</span>
+    </div>
+
+    <div class="fact">
+      <b>Date of birth</b>
+      <span>1 January 1905</span>
+    </div>
+
+    <div class="fact">
+      <b>Place of birth</b>
+      <span>Constantine, Algeria</span>
+    </div>
+
+    <div class="fact">
+      <b>Profession</b>
+      <span>Thinker, writer and philosopher</span>
+    </div>
+
+    <div class="fact">
+      <b>Education</b>
+      <span>Studied in Algeria and France</span>
+    </div>
+
+    <div class="fact">
+      <b>Main interests</b>
+      <span>Culture, civilisation and society</span>
+    </div>
+
+    <div class="fact">
+      <b>Important books</b>
+      <span>
+        The Conditions of the Renaissance;
+        The Quranic Phenomenon
+      </span>
+    </div>
+
+    <div class="fact">
+      <b>Major contribution</b>
+      <span>
+        Developed important ideas about
+        civilisation and culture
+      </span>
+    </div>
+
+    <div class="fact">
+      <b>Returned to Algeria</b>
+      <span>1963</span>
+    </div>
+
+    <div class="fact">
+      <b>Date and place of death</b>
+      <span>31 October 1973, Algiers</span>
+    </div>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>
+      🎯 Check the Facts
+    </h3>
+
+    <div class="question">
+
+      <p>
+        1. Where was Malek Bennabi born?
+      </p>
+
+      <label class="choice">
+        <input type="radio" name="fact1" value="1">
+        Constantine
+      </label>
+
+      <label class="choice">
+        <input type="radio" name="fact1" value="0">
+        Paris
+      </label>
+
+      <label class="choice">
+        <input type="radio" name="fact1" value="0">
+        Oran
+      </label>
+
+    </div>
+
+    <div class="question">
+
+      <p>
+        2. What did Malek Bennabi write about?
+      </p>
+
+      <label class="choice">
+        <input type="radio" name="fact2" value="0">
+        Modern painting
+      </label>
+
+      <label class="choice">
+        <input type="radio" name="fact2" value="1">
+        Culture and civilisation
+      </label>
+
+      <label class="choice">
+        <input type="radio" name="fact2" value="0">
+        Sports and travel
+      </label>
+
+    </div>
+
+    <button
+      class="btn btn-primary"
+      onclick="checkFacts()"
+    >
+      ✓ Check Facts
+    </button>
+
+    <div
+      class="feedback"
+      id="factsFeedback"
+      aria-live="polite"
+    ></div>
+
+  </div>
+
+  <div class="tip">
+
+    ✨ <strong>Grammar reminder:</strong>
+
+    Use the <strong>past simple</strong>
+    for completed events in a person's life.
+
+    <br>
+
+    He <strong>was born</strong> in 1905.
+
+    <br>
+
+    He <strong>studied</strong> in Algeria and France.
+
+    <br>
+
+    He <strong>returned</strong> to Algeria in 1963.
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     STEP 4 — SENTENCE BUILDERS
+===================================================== -->
+
+<section class="lesson-card" id="step4">
+
+  <div class="step-heading">
+
+    <div class="step-number">04</div>
+
+    <div>
+
+      <span class="step-label">
+        GUIDED WRITING
+      </span>
+
+      <h2>
+        🧩 Build Your Biography
+      </h2>
+
+    </div>
+
+  </div>
+
+  <p class="intro-text">
+
+    Great writers build their paragraphs one sentence
+    at a time.
+
+    Choose the best sentence in each box.
+
+    Your choices will become your first draft.
+
+  </p>
+
+  <div class="arabic-help">
+
+    اختر الجملة الصحيحة في كل مرحلة.
+
+    بعد الانتهاء، اضغط على زر إنشاء الفقرة
+    لجمع الجمل في نص واحد.
+
+  </div>
+
+  <!-- SENTENCE 1 -->
+
+  <div class="builder">
+
+    <div class="builder-top">
+
+      <span class="builder-title">
+        1. Introduce the person
+      </span>
+
+      <span class="builder-tag">
+        TOPIC SENTENCE
+      </span>
+
+    </div>
+
+    <select class="sentence-select" id="sentence1">
+
+      <option value="">
+        Choose the best opening sentence
+      </option>
+
+      <option value="Malek Bennabi was a famous Algerian thinker, writer and philosopher.">
+        Malek Bennabi was a famous Algerian thinker, writer and philosopher.
+      </option>
+
+      <option value="Malek Bennabi is a famous painter from Spain.">
+        Malek Bennabi is a famous painter from Spain.
+      </option>
+
+      <option value="Malek Bennabi was a famous Algerian footballer.">
+        Malek Bennabi was a famous Algerian footballer.
+      </option>
+
+    </select>
+
+    <div class="preview" id="preview1">
+      ✍️ Your sentence will appear here.
+    </div>
+
+  </div>
+
+  <!-- SENTENCE 2 -->
+
+  <div class="builder">
+
+    <div class="builder-top">
+
+      <span class="builder-title">
+        2. Give birth information
+      </span>
+
+      <span class="builder-tag">
+        PERSONAL DETAILS
+      </span>
+
+    </div>
+
+    <select class="sentence-select" id="sentence2">
+
+      <option value="">
+        Choose the correct sentence
+      </option>
+
+      <option value="He was born in Constantine, Algeria, on 1 January 1905.">
+        He was born in Constantine, Algeria, on 1 January 1905.
+      </option>
+
+      <option value="He born in Constantine in 1905.">
+        He born in Constantine in 1905.
+      </option>
+
+      <option value="He was born in Paris in 1973.">
+        He was born in Paris in 1973.
+      </option>
+
+    </select>
+
+    <div class="preview" id="preview2">
+      ✍️ Your sentence will appear here.
+    </div>
+
+  </div>
+
+  <!-- SENTENCE 3 -->
+
+  <div class="builder">
+
+    <div class="builder-top">
+
+      <span class="builder-title">
+        3. Talk about education
+      </span>
+
+      <span class="builder-tag">
+        EDUCATION
+      </span>
+
+    </div>
+
+    <select class="sentence-select" id="sentence3">
+
+      <option value="">
+        Choose the best sentence
+      </option>
+
+      <option value="He studied in Algeria and France.">
+        He studied in Algeria and France.
+      </option>
+
+      <option value="He study in Algeria and France.">
+        He study in Algeria and France.
+      </option>
+
+      <option value="He studied only in Spain.">
+        He studied only in Spain.
+      </option>
+
+    </select>
+
+    <div class="preview" id="preview3">
+      ✍️ Your sentence will appear here.
+    </div>
+
+  </div>
+
+  <!-- SENTENCE 4 -->
+
+  <div class="builder">
+
+    <div class="builder-top">
+
+      <span class="builder-title">
+        4. Describe his interests
+      </span>
+
+      <span class="builder-tag">
+        FIELD OF WORK
+      </span>
+
+    </div>
+
+    <select class="sentence-select" id="sentence4">
+
+      <option value="">
+        Choose the correct sentence
+      </option>
+
+      <option value="He was interested in culture, civilisation and society.">
+        He was interested in culture, civilisation and society.
+      </option>
+
+      <option value="He was interested only in football.">
+        He was interested only in football.
+      </option>
+
+      <option value="He were interested in culture and civilisation.">
+        He were interested in culture and civilisation.
+      </option>
+
+    </select>
+
+    <div class="preview" id="preview4">
+      ✍️ Your sentence will appear here.
+    </div>
+
+  </div>
+
+  <!-- SENTENCE 5 -->
+
+  <div class="builder">
+
+    <div class="builder-top">
+
+      <span class="builder-title">
+        5. Mention his books
+      </span>
+
+      <span class="builder-tag">
+        ACHIEVEMENTS
+      </span>
+
+    </div>
+
+    <select class="sentence-select" id="sentence5">
+
+      <option value="">
+        Choose the best sentence
+      </option>
+
+      <option value="Moreover, he wrote important books such as The Conditions of the Renaissance and The Quranic Phenomenon.">
+        Moreover, he wrote important books such as The Conditions of the Renaissance and The Quranic Phenomenon.
+      </option>
+
+      <option value="Moreover, he write important books about painting.">
+        Moreover, he write important books about painting.
+      </option>
+
+      <option value="However, he was a famous singer.">
+        However, he was a famous singer.
+      </option>
+
+    </select>
+
+    <div class="preview" id="preview5">
+      ✍️ Your sentence will appear here.
+    </div>
+
+  </div>
+
+  <!-- SENTENCE 6 -->
+
+  <div class="builder">
+
+    <div class="builder-top">
+
+      <span class="builder-title">
+        6. Explain his contribution
+      </span>
+
+      <span class="builder-tag">
+        IMPORTANCE
+      </span>
+
+    </div>
+
+    <select class="sentence-select" id="sentence6">
+
+      <option value="">
+        Choose the best sentence
+      </option>
+
+      <option value="He developed important ideas about civilisation, culture and society.">
+        He developed important ideas about civilisation, culture and society.
+      </option>
+
+      <option value="He developed a new style of Cubist painting.">
+        He developed a new style of Cubist painting.
+      </option>
+
+      <option value="He develop important ideas about civilisation.">
+        He develop important ideas about civilisation.
+      </option>
+
+    </select>
+
+    <div class="preview" id="preview6">
+      ✍️ Your sentence will appear here.
+    </div>
+
+  </div>
+
+  <!-- SENTENCE 7 -->
+
+  <div class="builder">
+
+    <div class="builder-top">
+
+      <span class="builder-title">
+        7. Give a later life event
+      </span>
+
+      <span class="builder-tag">
+        CHRONOLOGY
+      </span>
+
+    </div>
+
+    <select class="sentence-select" id="sentence7">
+
+      <option value="">
+        Choose the correct sentence
+      </option>
+
+      <option value="Later, he returned to Algeria in 1963.">
+        Later, he returned to Algeria in 1963.
+      </option>
+
+      <option value="Later, he returns to Algeria in 1905.">
+        Later, he returns to Algeria in 1905.
+      </option>
+
+      <option value="Later, he moved to Barcelona in 1963.">
+        Later, he moved to Barcelona in 1963.
+      </option>
+
+    </select>
+
+    <div class="preview" id="preview7">
+      ✍️ Your sentence will appear here.
+    </div>
+
+  </div>
+
+  <!-- SENTENCE 8 -->
+
+  <div class="builder">
+
+    <div class="builder-top">
+
+      <span class="builder-title">
+        8. End the biography
+      </span>
+
+      <span class="builder-tag">
+        CONCLUSION
+      </span>
+
+    </div>
+
+    <select class="sentence-select" id="sentence8">
+
+      <option value="">
+        Choose the best concluding sentence
+      </option>
+
+      <option value="He died in Algiers on 31 October 1973, but he is still remembered as an influential Algerian thinker.">
+        He died in Algiers on 31 October 1973, but he is still remembered as an influential Algerian thinker.
+      </option>
+
+      <option value="He died in Paris in 1905 and nobody remembers him.">
+        He died in Paris in 1905 and nobody remembers him.
+      </option>
+
+      <option value="He was born in Constantine in 1905.">
+        He was born in Constantine in 1905.
+      </option>
+
+    </select>
+
+    <div class="preview" id="preview8">
+      ✍️ Your sentence will appear here.
+    </div>
+
+  </div>
+
+  <div class="activity">
+
+    <h3>
+      🚀 Ready to Build Your Paragraph?
+    </h3>
+
+    <p class="intro-text">
+
+      Choose eight correct sentences, then click
+      the button below to create your first draft.
+
+    </p>
+
+    <button
+      class="btn btn-primary"
+      onclick="buildParagraph()"
+    >
+      ✨ Build My Biography
+    </button>
+
+    <div
+      class="feedback"
+      id="builderFeedback"
+      aria-live="polite"
+    ></div>
+
+  </div>
+
+</section>
+
+<!-- =====================================================
+     STEP 5 — WRITING STUDIO
+===================================================== -->
+
+<section class="lesson-card" id="step5">
+
+  <div class="step-heading">
+
+    <div class="step-number">05</div>
+
+    <div>
+
+      <span class="step-label">
+        INDEPENDENT WRITING
+      </span>
+
+      <h2>
+        ✍️ Your Writing Studio
+      </h2>
+
+    </div>
+
+  </div>
+
+  <p class="intro-text">
+
+    Your paragraph is almost ready!
+
+    Use your sentence builders to create a draft,
+    then improve it by adding your own words.
+
+  </p>
+
+  <div class="tip">
+
+    💡 <strong>Writing tip:</strong>
+
+    Try to write 80–100 words.
+
+    Begin with a topic sentence,
+    organise the events chronologically
+    and end with a conclusion.
+
+  </div>
+
+  <div class="word-chips">
+
+    <span>First</span>
+    <span>Later</span>
+    <span>Moreover</span>
+    <span>In 1963</span>
+    <span>Finally</span>
+    <span>He was born</span>
+    <span>He studied</span>
+    <span>He wrote</span>
+    <span>He developed</span>
+
+  </div>
+
+  <div class="writing-tools">
+
+    <span class="word-count" id="wordCount">
+      📝 0 words
+    </span>
+
+    <span class="word-count" id="sentenceCount">
+      ✏️ 0 sentences
+    </span>
+
+  </div>
+
+  <textarea
+    id="writing"
+    aria-label="Write your biography of Malek Bennabi"
+    placeholder="Malek Bennabi was a famous Algerian thinker...
+
+Write your biography here."
+  ></textarea>
+
+  <div style="margin-top:15px">
+
+    <button
+      class="btn btn-primary"
+      onclick="checkWriting()"
+    >
+      🔍 Check My Writing
+    </button>
+
+    <button
+      class="btn btn-green"
+      onclick="saveWriting()"
+    >
+      💾 Save My Work
+    </button>
+
+    <button
+      class="btn btn-soft"
+      onclick="loadWriting()"
+    >
+      📂 Load Saved Work
+    </button>
+
+    <button
+      class="btn btn-gold"
+      onclick="printWriting()"
+    >
+      🖨️ Print
+    </button>
+
+    <button
+      class="btn btn-soft"
+      onclick="clearWriting()"
+    >
+      ↻ Clear Draft
+    </button>
+
+  </div>
+
+  <div
+    class="result-box"
+    id="writingResult"
+    aria-live="polite"
+  ></div>
+
+</section>
+
+<!-- =====================================================
+     STEP 6 — SELF-CORRECTION
+===================================================== -->
+
+<section class="lesson-card" id="step6">
+
+  <div class="step-heading">
+
+    <div class="step-number">06</div>
+
+    <div>
+
+      <span class="step-label">
+        REVIEW AND IMPROVE
+      </span>
+
+      <h2>
+        🪞 My Writer's Checklist
+      </h2>
+
+    </div>
+
+  </div>
+
+  <p class="intro-text">
+
+    Great writers always check their work.
+
+    Read each statement and tick the box
+    when you have completed it.
+
+  </p>
+
+  <div class="checklist">
+
+    <label class="check-item">
+
+      <input type="checkbox" class="review-check">
+
+      I wrote a clear topic sentence.
+
+    </label>
+
+    <label class="check-item">
+
+      <input type="checkbox" class="review-check">
+
+      I introduced Malek Bennabi correctly.
+
+    </label>
+
+    <label class="check-item">
+
+      <input type="checkbox" class="review-check">
+
+      I mentioned his date and place of birth.
+
+    </label>
+
+    <label class="check-item">
+
+      <input type="checkbox" class="review-check">
+
+      I included his education.
+
+    </label>
+
+    <label class="check-item">
+
+      <input type="checkbox" class="review-check">
+
+      I mentioned his achievements and books.
+
+    </label>
+
+    <label class="check-item">
+
+      <input type="checkbox" class="review-check">
+
+      I used the past simple correctly.
+
+    </label>
+
+    <label class="check-item">
+
+      <input type="checkbox" class="review-check">
+
+      I used chronological linking words.
+
+    </label>
+
+    <label class="check-item">
+
+      <input type="checkbox" class="review-check">
+
+      I wrote a concluding sentence.
+
+    </label>
+
+    <label class="check-item">
+
+      <input type="checkbox" class="review-check">
+
+      I checked spelling and punctuation.
+
+    </label>
+
+    <label class="check-item">
+
+      <input type="checkbox" class="review-check">
+
+      My paragraph contains about 80–100 words.
+
+    </label>
+
+  </div>
+
+  <div style="margin-top:20px">
+
+    <button
+      class="btn btn-primary"
+      onclick="finishLesson()"
+    >
+      🏆 Finish My Writing Journey
+    </button>
+
+    <div
+      class="feedback"
+      id="finishFeedback"
+      aria-live="polite"
+    ></div>
+
+  </div>
+
+  <div class="finish-banner">
+
+    <h3>
+      🌟 You Are a Young Biographer!
+    </h3>
+
+    <p>
+
+      You have learned how to introduce an outstanding
+      person, organise important events, describe
+      achievements and write a meaningful biography.
+
+    </p>
+
+    <a
+      href="MS4-S1-Writing.html"
+      class="btn btn-gold"
+      style="display:inline-block;margin-top:10px"
+    >
+      ← Return to Writing Journey
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- =====================================================
+     DICTIONARY BUTTON
+===================================================== -->
+
+<button
+  class="dict-open"
+  id="dictOpen"
+  onclick="openDictionary()"
+  aria-haspopup="dialog"
+>
+  📚 EN–AR Dictionary
+</button>
+
+<!-- =====================================================
+     DICTIONARY WINDOW
+===================================================== -->
+
+<div
+  class="dict-overlay"
+  id="dictOverlay"
+  aria-hidden="true"
+>
+
+  <div
+    class="dict-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="dictTitle"
+  >
+
+    <div class="dict-header">
+
+      <h2 id="dictTitle">
+        📚 Mini Dictionary
+      </h2>
+
+      <button
+        class="dict-close"
+        id="dictClose"
+        onclick="closeDictionary()"
+        aria-label="Close dictionary"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <p class="intro-text">
+
+      Search for useful English words
+      and read their Arabic meanings.
+
+    </p>
+
+    <input
+      class="dict-search"
+      id="dictSearch"
+      type="search"
+      placeholder="Search a word..."
+      oninput="renderDictionary()"
+    >
+
+    <div id="dictResults"></div>
+
+  </div>
+
+</div>
+
+<div
+  class="toast"
+  id="toast"
+  role="status"
+></div>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  ✍️ MY ENGLISH SPACE
+  — MS4 · SEQUENCE 1 · WRITING STUDIO
+
+  <br>
+
+  Discover • Organise • Write • Improve
+
+</footer>
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =====================================================
+   GENERAL HELPERS
+===================================================== */
+
+const $ = id => document.getElementById(id);
+
+const completedSteps = new Set();
+
+const correctSentences = [
+
+  "Malek Bennabi was a famous Algerian thinker, writer and philosopher.",
+
+  "He was born in Constantine, Algeria, on 1 January 1905.",
+
+  "He studied in Algeria and France.",
+
+  "He was interested in culture, civilisation and society.",
+
+  "Moreover, he wrote important books such as The Conditions of the Renaissance and The Quranic Phenomenon.",
+
+  "He developed important ideas about civilisation, culture and society.",
+
+  "Later, he returned to Algeria in 1963.",
+
+  "He died in Algiers on 31 October 1973, but he is still remembered as an influential Algerian thinker."
+
+];
+
+function showToast(message){
+
+  const toast = $("toast");
+
+  toast.textContent = message;
+
+  toast.style.display = "block";
+
+  clearTimeout(window.toastTimer);
+
+  window.toastTimer = setTimeout(function(){
+
+    toast.style.display = "none";
+
+  },3000);
+
+}
+
+function completeStep(number){
+
+  completedSteps.add(number);
+
+  const count = completedSteps.size;
+
+  $("progressText").textContent =
+    count + " of 6 steps completed";
+
+  $("progressFill").style.width =
+    (count / 6 * 100) + "%";
+
+}
+
+function setFeedback(id,message,good){
+
+  const element = $(id);
+
+  element.textContent = message;
+
+  element.className =
+    "feedback " + (good ? "good" : "bad");
+
+}
+
+/* =====================================================
+   STEP 1 — MISSION CHECK
+===================================================== */
+
+function checkMission(){
+
+  const q1 = document.querySelector(
+    'input[name="mission1"]:checked'
+  );
+
+  const q2 = document.querySelector(
+    'input[name="mission2"]:checked'
+  );
+
+  if(!q1 || !q2){
+
+    setFeedback(
+      "missionFeedback",
+      "⚠ Please answer both questions.",
+      false
+    );
+
+    return;
+
+  }
+
+  const score =
+    Number(q1.value) + Number(q2.value);
+
+  if(score === 2){
+
+    setFeedback(
+      "missionFeedback",
+      "🌟 Excellent! You understand your writing mission.",
+      true
+    );
+
+    completeStep(1);
+
+  }else{
+
+    setFeedback(
+      "missionFeedback",
+      "Try again. Read the mission carefully.",
+      false
+    );
+
+  }
+
+}
+
+/* =====================================================
+   STEP 2 — MODEL CHECK
+===================================================== */
+
+function checkModel(){
+
+  const answers = [
+
+    ["model1","topic"],
+    ["model2","detail"],
+    ["model3","linker"],
+    ["model4","conclusion"]
+
+  ];
+
+  let score = 0;
+
+  answers.forEach(function(item){
+
+    const id = item[0];
+
+    const correct = item[1];
+
+    const select = $(id);
+
+    if(select.value === correct){
+
+      score++;
+
+      select.style.borderColor = "#24845e";
+
+    }else{
+
+      select.style.borderColor = "#cf5367";
+
+    }
+
+  });
+
+  if(score === 4){
+
+    setFeedback(
+      "modelFeedback",
+      "🌟 Perfect! 4/4. You understand the structure of a biography.",
+      true
+    );
+
+    completeStep(2);
+
+  }else{
+
+    setFeedback(
+      "modelFeedback",
+      "You got " + score +
+      "/4. Review the coloured model and try again.",
+      false
+    );
+
+  }
+
+}
+
+/* =====================================================
+   STEP 3 — FACT FILE CHECK
+===================================================== */
+
+function checkFacts(){
+
+  const q1 = document.querySelector(
+    'input[name="fact1"]:checked'
+  );
+
+  const q2 = document.querySelector(
+    'input[name="fact2"]:checked'
+  );
+
+  if(!q1 || !q2){
+
+    setFeedback(
+      "factsFeedback",
+      "⚠ Answer both questions first.",
+      false
+    );
+
+    return;
+
+  }
+
+  const score =
+    Number(q1.value) + Number(q2.value);
+
+  if(score === 2){
+
+    setFeedback(
+      "factsFeedback",
+      "🎉 Excellent! You know the important facts about Malek Bennabi.",
+      true
+    );
+
+    completeStep(3);
+
+  }else{
+
+    setFeedback(
+      "factsFeedback",
+      "You got " + score +
+      "/2. Check the fact file again.",
+      false
+    );
+
+  }
+
+}
+
+/* =====================================================
+   STEP 4 — SENTENCE PREVIEWS
+===================================================== */
+
+document.querySelectorAll(".sentence-select")
+  .forEach(function(select){
+
+    select.addEventListener("change",function(){
+
+      const number =
+        select.id.replace("sentence","");
+
+      const preview =
+        $("preview" + number);
+
+      preview.textContent =
+        select.value ||
+        "✍️ Your sentence will appear here.";
+
+    });
+
+  });
+
+/* =====================================================
+   STEP 4 — BUILD PARAGRAPH
+===================================================== */
+
+function buildParagraph(){
+
+  const selected = [];
+
+  let correctCount = 0;
+
+  for(let i=1;i<=8;i++){
+
+    const value = $("sentence" + i).value;
+
+    if(!value){
+
+      setFeedback(
+        "builderFeedback",
+        "⚠ Please choose a sentence in every box.",
+        false
+      );
+
+      return;
+
+    }
+
+    selected.push(value);
+
+    if(value === correctSentences[i-1]){
+
+      correctCount++;
+
+    }
+
+  }
+
+  if(correctCount !== 8){
+
+    setFeedback(
+      "builderFeedback",
+      "You selected " + correctCount +
+      "/8 correct sentences. Review the fact file and grammar, then try again.",
+      false
+    );
+
+    return;
+
+  }
+
+  $("writing").value = selected.join(" ");
+
+  updateCounters();
+
+  completeStep(4);
+
+  setFeedback(
+    "builderFeedback",
+    "🌟 Excellent! Your biography has been created. Go to Step 5 and improve it.",
+    true
+  );
+
+  showToast(
+    "✨ Your first draft is ready!"
+  );
+
+  $("step5").scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+/* =====================================================
+   STEP 5 — WORD COUNTER
+===================================================== */
+
+function getWords(text){
+
+  const trimmed = text.trim();
+
+  if(!trimmed){
+
+    return [];
+
+  }
+
+  return trimmed.split(/\s+/).filter(Boolean);
+
+}
+
+function updateCounters(){
+
+  const text = $("writing").value.trim();
+
+  const words = getWords(text);
+
+  const sentences = text
+    ? text.split(/[.!?]+/).filter(
+        part => part.trim().length > 0
+      )
+    : [];
+
+  $("wordCount").textContent =
+    "📝 " + words.length + " words";
+
+  $("sentenceCount").textContent =
+    "✏️ " + sentences.length + " sentences";
+
+}
+
+$("writing").addEventListener(
+  "input",
+  updateCounters
+);
+
+/* =====================================================
+   STEP 5 — WRITING CHECKER
+===================================================== */
+
+function checkWriting(){
+
+  const text = $("writing").value.trim();
+
+  const result = $("writingResult");
+
+  result.style.display = "block";
+
+  if(!text){
+
+    result.textContent =
+      "✏️ Please write your biography first.";
+
+    return;
+
+  }
+
+  const words = getWords(text);
+
+  const checks = [
+
+    {
+      ok:words.length>=80 && words.length<=100,
+
+      yes:"Good! Your paragraph has 80–100 words.",
+
+      no:"Try to write between 80 and 100 words."
+    },
+
+    {
+      ok:/Malek Bennabi/i.test(text),
+
+      yes:"You introduced Malek Bennabi.",
+
+      no:"Introduce Malek Bennabi in your opening sentence."
+    },
+
+    {
+      ok:/1905/.test(text) &&
+         /Constantine/i.test(text),
+
+      yes:"You included his birth date and birthplace.",
+
+      no:"Mention Constantine and 1905."
+    },
+
+    {
+      ok:/studied|education|France/i.test(text),
+
+      yes:"You mentioned his education.",
+
+      no:"Add information about his education."
+    },
+
+    {
+      ok:/wrote|books|Renaissance|Quranic/i.test(text),
+
+      yes:"You mentioned his books or achievements.",
+
+      no:"Mention at least one important book or achievement."
+    },
+
+    {
+      ok:/later|moreover|finally|first|then|after/i.test(text),
+
+      yes:"You used linking words.",
+
+      no:"Add linking words such as Later or Moreover."
+    },
+
+    {
+      ok:/1973|died|remembered|influential/i.test(text),
+
+      yes:"You included information for a conclusion.",
+
+      no:"Finish with his death or importance."
+    }
+
+  ];
+
+  let score = 0;
+
+  const lines = checks.map(function(item){
+
+    if(item.ok){
+
+      score++;
+
+      return "✓ " + item.yes;
+
+    }
+
+    return "⚠ " + item.no;
+
+  });
+
+  result.innerHTML = "";
+
+  const heading = document.createElement("h3");
+
+  heading.textContent =
+    "🧭 Writing Check: " + score + "/7";
+
+  result.appendChild(heading);
+
+  const note = document.createElement("p");
+
+  note.textContent =
+    "This automatic check gives suggestions. It cannot fully judge grammar, spelling or the quality of your ideas.";
+
+  result.appendChild(note);
+
+  lines.forEach(function(line){
+
+    const p = document.createElement("p");
+
+    p.textContent = line;
+
+    result.appendChild(p);
+
+  });
+
+  if(score >= 5){
+
+    completeStep(5);
+
+  }
+
+}
+
+/* =====================================================
+   SAVE AND LOAD
+===================================================== */
+
+const STORAGE_KEY =
+  "ms4-s1-writing-lesson2";
+
+function saveWriting(){
+
+  try{
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      $("writing").value
+    );
+
+    showToast(
+      "💾 Your biography has been saved!"
+    );
+
+  }catch(error){
+
+    showToast(
+      "Saving is unavailable in this browser."
+    );
+
+  }
+
+}
+
+function loadWriting(){
+
+  try{
+
+    const saved =
+      localStorage.getItem(STORAGE_KEY);
+
+    if(saved === null){
+
+      showToast(
+        "No saved biography was found."
+      );
+
+      return;
+
+    }
+
+    $("writing").value = saved;
+
+    updateCounters();
+
+    showToast(
+      "📂 Your biography has been loaded!"
+    );
+
+  }catch(error){
+
+    showToast(
+      "Loading is unavailable in this browser."
+    );
+
+  }
+
+}
+
+/* =====================================================
+   CLEAR WRITING
+===================================================== */
+
+function clearWriting(){
+
+  if(!confirm(
+    "Do you want to clear your current draft?"
+  )){
+
+    return;
+
+  }
+
+  $("writing").value = "";
+
+  $("writingResult").style.display = "none";
+
+  updateCounters();
+
+  showToast(
+    "Your draft has been cleared."
+  );
+
+}
+
+/* =====================================================
+   PRINT WRITING
+===================================================== */
+
+function printWriting(){
+
+  const text = $("writing").value.trim();
+
+  if(!text){
+
+    showToast(
+      "Write your biography before printing."
+    );
+
+    return;
+
+  }
+
+  const printWindow = window.open(
+    "",
+    "_blank"
+  );
+
+  if(!printWindow){
+
+    showToast(
+      "Please allow pop-ups to print your work."
+    );
+
+    return;
+
+  }
+
+  const escaped = text
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;");
+
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+
+      <meta charset="UTF-8">
+
+      <title>
+        My Biography — Malek Bennabi
+      </title>
+
+      <style>
+
+        body{
+          font-family:Georgia,serif;
+          margin:45px;
+          line-height:1.9;
+          color:#222;
+        }
+
+        h1{
+          text-align:center;
+          font-size:25px;
+        }
+
+        .info{
+          margin:25px 0;
+          font-size:14px;
+        }
+
+        .paragraph{
+          font-size:17px;
+          text-align:justify;
+          white-space:pre-wrap;
+          text-indent:35px;
+        }
+
+      </style>
+
+    </head>
+
+    <body>
+
+      <h1>
+        Writing a Biography
+      </h1>
+
+      <div class="info">
+
+        Name: __________________________
+
+        <br>
+
+        Class: __________________________
+
+      </div>
+
+      <h2>
+        Malek Bennabi
+      </h2>
+
+      <div class="paragraph">${escaped}</div>
+
+    </body>
+
+    </html>
+  `);
+
+  printWindow.document.close();
+
+  printWindow.focus();
+
+  setTimeout(function(){
+
+    printWindow.print();
+
+  },300);
+
+}
+
+/* =====================================================
+   STEP 6 — SELF-ASSESSMENT
+===================================================== */
+
+function finishLesson(){
+
+  const checks = [
+    ...document.querySelectorAll(
+      ".review-check"
+    )
+  ];
+
+  const checked = checks.filter(
+    checkbox => checkbox.checked
+  ).length;
+
+  if(checked === checks.length){
+
+    setFeedback(
+      "finishFeedback",
+      "🏆 Congratulations! You have completed your biography writing journey!",
+      true
+    );
+
+    completeStep(6);
+
+    showToast(
+      "🌟 You earned your Biography Writer badge!"
+    );
+
+  }else{
+
+    setFeedback(
+      "finishFeedback",
+      "You checked " + checked +
+      "/" + checks.length +
+      " items. Review the remaining points.",
+      false
+    );
+
+  }
+
+}
+
+/* =====================================================
+   ENGLISH-ARABIC DICTIONARY DATA
+===================================================== */
+
+const dictionary = [
+
+  ["Biography","سيرة ذاتية"],
+
+  ["Born","وُلِد"],
+
+  ["Birthplace","مكان الميلاد"],
+
+  ["Date of birth","تاريخ الميلاد"],
+
+  ["Died","توفي"],
+
+  ["Death","وفاة"],
+
+  ["Thinker","مفكر"],
+
+  ["Writer","كاتب"],
+
+  ["Philosopher","فيلسوف"],
+
+  ["Artist","فنان"],
+
+  ["Painter","رسام"],
+
+  ["Education","تعليم"],
+
+  ["Studied","درس"],
+
+  ["School","مدرسة"],
+
+  ["University","جامعة"],
+
+  ["Achievement","إنجاز"],
+
+  ["Contribution","مساهمة"],
+
+  ["Civilisation","حضارة"],
+
+  ["Culture","ثقافة"],
+
+  ["Society","مجتمع"],
+
+  ["Famous","مشهور"],
+
+  ["Outstanding","بارز / متميز"],
+
+  ["Influential","مؤثر"],
+
+  ["Important","مهم"],
+
+  ["Remembered","يُتذكَّر"],
+
+  ["Developed","طوّر"],
+
+  ["Returned","عاد"],
+
+  ["Moved","انتقل"],
+
+  ["Settled","استقر"],
+
+  ["Wrote","كتب"],
+
+  ["Book","كتاب"],
+
+  ["Works","مؤلفات / أعمال"],
+
+  ["Ideas","أفكار"],
+
+  ["Life","حياة"],
+
+  ["Event","حدث"],
+
+  ["Chronology","تسلسل زمني"],
+
+  ["Later","لاحقًا"],
+
+  ["Moreover","علاوة على ذلك"],
+
+  ["Finally","أخيرًا"],
+
+  ["First","أولًا"],
+
+  ["Then","ثم"],
+
+  ["After","بعد"],
+
+  ["Before","قبل"],
+
+  ["Topic sentence","الجملة الرئيسية"],
+
+  ["Details","تفاصيل"],
+
+  ["Conclusion","خاتمة"],
+
+  ["Paragraph","فقرة"],
+
+  ["Linking words","أدوات الربط"],
+
+  ["Past simple","الماضي البسيط"],
+
+  ["Fact file","بطاقة معلومات"]
+
+];
+
+/* =====================================================
+   DICTIONARY FUNCTIONS
+===================================================== */
+
+let previousFocus = null;
+
+function renderDictionary(){
+
+  const query = $("dictSearch")
+    .value.trim().toLowerCase();
+
+  const results = dictionary.filter(
+    item =>
+      item[0].toLowerCase().includes(query) ||
+      item[1].includes(query)
+  );
+
+  const container = $("dictResults");
+
+  container.innerHTML = "";
+
+  if(results.length === 0){
+
+    const p = document.createElement("p");
+
+    p.textContent =
+      "No matching word was found.";
+
+    container.appendChild(p);
+
+    return;
+
+  }
+
+  results.forEach(function(item){
+
+    const row = document.createElement("div");
+
+    row.className = "dict-row";
+
+    const english = document.createElement("strong");
+
+    english.textContent = item[0];
+
+    const arabic = document.createElement("span");
+
+    arabic.textContent = item[1];
+
+    row.appendChild(english);
+
+    row.appendChild(arabic);
+
+    container.appendChild(row);
+
+  });
+
+}
+
+function openDictionary(){
+
+  previousFocus = document.activeElement;
+
+  $("dictOverlay").classList.add("open");
+
+  $("dictOverlay").setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow = "hidden";
+
+  $("dictSearch").value = "";
+
+  renderDictionary();
+
+  $("dictSearch").focus();
+
+}
+
+function closeDictionary(){
+
+  $("dictOverlay").classList.remove("open");
+
+  $("dictOverlay").setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow = "";
+
+  if(previousFocus){
+
+    previousFocus.focus();
+
+  }
+
+}
+
+/* =====================================================
+   DICTIONARY EVENTS
+===================================================== */
+
+$("dictOverlay").addEventListener(
+  "click",
+  function(event){
+
+    if(event.target === $("dictOverlay")){
+
+      closeDictionary();
+
+    }
+
+  }
+);
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(
+      !$("dictOverlay").classList.contains("open")
+    ){
+
+      return;
+
+    }
+
+    if(event.key === "Escape"){
+
+      closeDictionary();
+
+      return;
+
+    }
+
+    if(event.key === "Tab"){
+
+      const focusable = [
+        $("dictClose"),
+        $("dictSearch")
+      ];
+
+      const first = focusable[0];
+
+      const last = focusable[focusable.length-1];
+
+      if(
+        event.shiftKey &&
+        document.activeElement === first
+      ){
+
+        event.preventDefault();
+
+        last.focus();
+
+      }else if(
+        !event.shiftKey &&
+        document.activeElement === last
+      ){
+
+        event.preventDefault();
+
+        first.focus();
+
+      }
+
+    }
+
+  }
+);
+
+/* =====================================================
+   INITIALISATION
+===================================================== */
+
+updateCounters();
+
+</script>
+
+</body>
+</html>

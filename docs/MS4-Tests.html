@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b5794">
+
+<title>MS4 Tests & Exams | My English Space</title>
+
+<meta name="description" content="Practise MS4 English term tests and examinations with reading comprehension, grammar activities and writing challenges.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================
+   DESIGN SYSTEM
+========================================== */
+
+:root{
+  --navy:#102e56;
+  --deep:#164b84;
+  --blue:#267fc4;
+  --sky:#5cc4e9;
+  --gold:#ffd77f;
+  --gold-dark:#e8a943;
+  --purple:#8359c8;
+  --green:#19a979;
+  --rose:#ec6791;
+  --ink:#263d58;
+  --muted:#687d91;
+  --white:#ffffff;
+  --light:#f1f8ff;
+  --line:#deebf6;
+  --shadow:0 18px 45px rgba(13,48,96,.14);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+}
+
+body{
+  font-family:"Nunito",Arial,sans-serif;
+  background:#eef7ff;
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4{
+  font-family:"Baloo 2",Arial,sans-serif;
+  line-height:1.2;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.container{
+  width:min(1180px,calc(100% - 34px));
+  margin:auto;
+}
+
+:focus-visible{
+  outline:3px solid var(--gold-dark);
+  outline-offset:4px;
+}
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+.page-background{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    linear-gradient(
+      140deg,
+      rgba(9,48,102,.93),
+      rgba(14,93,155,.87),
+      rgba(8,54,108,.95)
+    ),
+    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=85");
+  background-size:cover;
+  background-position:center;
+}
+
+.page-background::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(102,208,255,.2),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 65%,
+      rgba(255,215,127,.12),
+      transparent 35%
+    );
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.site-header{
+  background:rgba(9,41,87,.93);
+  border-bottom:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(16px);
+}
+
+.header-inner{
+  min-height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:white;
+  font-size:19px;
+  font-weight:900;
+}
+
+.brand-icon{
+  display:grid;
+  place-items:center;
+  width:47px;
+  height:47px;
+  background:white;
+  border-radius:15px;
+  font-size:24px;
+}
+
+.header-nav{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.header-nav a{
+  padding:11px 17px;
+  border-radius:30px;
+  color:white;
+  background:rgba(255,255,255,.11);
+  border:1px solid rgba(255,255,255,.22);
+  font-size:12px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.header-nav a:hover{
+  background:white;
+  color:var(--deep);
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+  padding:76px 0 82px;
+  color:white;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:58px;
+}
+
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:11px 18px;
+  border-radius:30px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.35);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.8px;
+}
+
+.hero h1{
+  margin:25px 0 18px;
+  font-size:clamp(48px,6.3vw,79px);
+  line-height:1.03;
+  text-shadow:0 6px 20px rgba(0,20,55,.2);
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+}
+
+.hero-description{
+  max-width:590px;
+  color:#e9f6ff;
+  font-size:15px;
+  line-height:1.95;
+  font-weight:700;
+}
+
+.hero-actions{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:49px;
+  padding:14px 23px;
+  border:0;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:900;
+  transition:.25s;
+}
+
+.button:hover{
+  transform:translateY(-3px);
+}
+
+.button-gold{
+  background:linear-gradient(180deg,#ffebba,#ffd078);
+  color:#62451b;
+  box-shadow:0 10px 25px rgba(255,200,100,.2);
+}
+
+.button-white{
+  background:white;
+  color:var(--deep);
+}
+
+.button-blue{
+  background:linear-gradient(120deg,#257fc5,#1664a8);
+  color:white;
+}
+
+.hero-visual{
+  position:relative;
+}
+
+.hero-photo{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  border:7px solid white;
+  border-radius:30px;
+  box-shadow:0 30px 60px rgba(0,20,60,.35);
+}
+
+.hero-floating{
+  position:absolute;
+  left:-24px;
+  bottom:-22px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:18px 23px;
+  border:4px solid white;
+  border-radius:20px;
+  background:var(--gold);
+  color:#664b20;
+  box-shadow:var(--shadow);
+}
+
+.hero-floating-icon{
+  font-size:29px;
+}
+
+.hero-floating strong{
+  display:block;
+  font-size:14px;
+  font-weight:900;
+}
+
+.hero-floating small{
+  display:block;
+  margin-top:4px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.hero-highlights{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+
+.hero-highlights span{
+  padding:10px 14px;
+  border-radius:30px;
+  background:rgba(6,38,83,.5);
+  border:1px solid rgba(255,255,255,.23);
+  font-size:11px;
+  font-weight:900;
+}
+
+/* ==========================================
+   CONTENT WRAPPER
+========================================== */
+
+.content-shell{
+  padding:44px 0 60px;
+  border-radius:42px 42px 0 0;
+  background:linear-gradient(
+    180deg,
+    #f6fbff,
+    #eaf5ff 70%,
+    #f7fbff
+  );
+}
+
+/* ==========================================
+   SECTION TITLES
+========================================== */
+
+.section-title{
+  text-align:center;
+  margin:0 auto 35px;
+}
+
+.section-title .eyebrow{
+  display:inline-block;
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.5px;
+}
+
+.section-title h2{
+  margin:10px 0 13px;
+  color:var(--navy);
+  font-size:clamp(31px,4vw,45px);
+}
+
+.section-title p{
+  max-width:650px;
+  margin:auto;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:800;
+  line-height:1.9;
+}
+
+/* ==========================================
+   WELCOME BANNER
+========================================== */
+
+.welcome-banner{
+  display:grid;
+  grid-template-columns:85px 1fr;
+  align-items:center;
+  gap:25px;
+  margin-bottom:55px;
+  padding:30px 34px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  box-shadow:var(--shadow);
+}
+
+.welcome-icon{
+  display:grid;
+  place-items:center;
+  width:80px;
+  height:80px;
+  border-radius:23px;
+  background:#e8f4ff;
+  font-size:42px;
+}
+
+.welcome-banner h2{
+  margin-bottom:9px;
+  color:var(--navy);
+  font-size:28px;
+}
+
+.welcome-banner p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:750;
+  line-height:1.85;
+}
+
+/* ==========================================
+   TERM CARDS
+========================================== */
+
+.term-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:23px;
+}
+
+.term-card{
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border-radius:25px;
+  background:white;
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+  transition:.3s;
+}
+
+.term-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 24px 55px rgba(13,48,96,.19);
+}
+
+.term-image{
+  position:relative;
+  height:220px;
+  overflow:hidden;
+}
+
+.term-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.term-card:hover .term-image img{
+  transform:scale(1.07);
+}
+
+.term-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    transparent 45%,
+    rgba(4,30,75,.45)
+  );
+}
+
+.term-label{
+  position:absolute;
+  z-index:2;
+  top:16px;
+  left:16px;
+  padding:9px 14px;
+  border-radius:30px;
+  background:white;
+  color:var(--deep);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+
+.term-number{
+  position:absolute;
+  z-index:2;
+  right:17px;
+  bottom:13px;
+  color:white;
+  font-family:"Baloo 2",sans-serif;
+  font-size:53px;
+  font-weight:800;
+  line-height:1;
+}
+
+.term-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:25px;
+}
+
+.term-category{
+  color:var(--blue);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.term-card:nth-child(2) .term-category{
+  color:var(--purple);
+}
+
+.term-card:nth-child(3) .term-category{
+  color:var(--green);
+}
+
+.term-body h3{
+  margin:10px 0;
+  color:var(--navy);
+  font-size:27px;
+}
+
+.term-body p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+.topic-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:20px 0;
+}
+
+.topic-list span{
+  padding:8px 11px;
+  border-radius:20px;
+  background:#eef6ff;
+  color:#3b79ab;
+  font-size:10px;
+  font-weight:900;
+}
+
+.term-card:nth-child(2) .topic-list span{
+  background:#f4edff;
+  color:#8359c8;
+}
+
+.term-card:nth-child(3) .topic-list span{
+  background:#e9f9f1;
+  color:#15936a;
+}
+
+.term-footer{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:auto;
+}
+
+.term-status{
+  font-size:11px;
+  font-weight:900;
+  color:#1c9a70;
+}
+
+.term-status.pending{
+  color:#a77d3a;
+}
+
+.term-link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:15px 17px;
+  border-radius:14px;
+  background:#e7f3ff;
+  color:#176bad;
+  font-size:12px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.term-link:hover{
+  background:#d4eaff;
+}
+
+.term-link.disabled{
+  background:#f1f3f6;
+  color:#8a99a8;
+  cursor:not-allowed;
+}
+
+/* ==========================================
+   EXAM SKILLS
+========================================== */
+
+.skills-section{
+  margin-top:75px;
+}
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+}
+
+.skill-card{
+  padding:30px 25px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:24px;
+  box-shadow:0 12px 30px rgba(13,48,96,.08);
+  text-align:center;
+  transition:.25s;
+}
+
+.skill-card:hover{
+  transform:translateY(-5px);
+}
+
+.skill-icon{
+  display:grid;
+  place-items:center;
+  width:78px;
+  height:78px;
+  margin:0 auto 19px;
+  border-radius:22px;
+  background:#e9f4ff;
+  font-size:36px;
+}
+
+.skill-card:nth-child(2) .skill-icon{
+  background:#f1eaff;
+}
+
+.skill-card:nth-child(3) .skill-icon{
+  background:#e8f9ef;
+}
+
+.skill-card h3{
+  margin-bottom:12px;
+  color:var(--navy);
+  font-size:23px;
+}
+
+.skill-card p{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+/* ==========================================
+   EXAM STRATEGY
+========================================== */
+
+.strategy-section{
+  margin-top:75px;
+}
+
+.strategy-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:center;
+  padding:35px;
+  background:linear-gradient(120deg,#e2f2ff,#f4faff);
+  border:2px solid #d4e8f8;
+  border-radius:28px;
+}
+
+.strategy-image img{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  border-radius:20px;
+}
+
+.strategy-content h2{
+  margin-bottom:14px;
+  color:var(--navy);
+  font-size:35px;
+}
+
+.strategy-content p{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+.strategy-steps{
+  display:grid;
+  gap:13px;
+  margin-top:22px;
+}
+
+.strategy-step{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:13px 15px;
+  background:white;
+  border-radius:13px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.strategy-step span{
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  width:32px;
+  height:32px;
+  border-radius:10px;
+  background:#e5f3ff;
+  color:var(--blue);
+}
+
+/* ==========================================
+   FINAL CTA
+========================================== */
+
+.final-cta{
+  margin-top:75px;
+  padding:48px 25px;
+  border-radius:28px;
+  background:linear-gradient(
+    120deg,
+    #174e8d,
+    #267fc4,
+    #15518f
+  );
+  text-align:center;
+  color:white;
+  box-shadow:var(--shadow);
+}
+
+.final-cta h2{
+  font-size:clamp(30px,4vw,43px);
+}
+
+.final-cta p{
+  max-width:650px;
+  margin:15px auto 25px;
+  color:#e9f5ff;
+  font-size:13px;
+  font-weight:750;
+  line-height:1.9;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.site-footer{
+  padding:35px 20px;
+  color:white;
+  text-align:center;
+  font-size:12px;
+  font-weight:800;
+  line-height:2;
+}
+
+.site-footer strong{
+  color:var(--gold);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1000px){
+
+  .hero-grid{
+    gap:30px;
+  }
+
+  .hero-photo{
+    height:350px;
+  }
+
+  .term-grid{
+    gap:15px;
+  }
+
+  .term-body{
+    padding:20px;
+  }
+}
+
+@media(max-width:800px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-description{
+    margin:auto;
+  }
+
+  .hero-actions,
+  .hero-highlights{
+    justify-content:center;
+  }
+
+  .hero-visual{
+    width:min(540px,100%);
+    margin:15px auto 0;
+  }
+
+  .term-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .strategy-box{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:620px){
+
+  .header-inner{
+    flex-direction:column;
+    padding:16px 0;
+  }
+
+  .header-nav{
+    justify-content:center;
+  }
+
+  .hero{
+    padding:52px 0 70px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero-photo{
+    height:285px;
+  }
+
+  .hero-floating{
+    left:8px;
+    bottom:-20px;
+    padding:13px 16px;
+  }
+
+  .welcome-banner{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:25px;
+  }
+
+  .welcome-icon{
+    margin:auto;
+  }
+
+  .term-grid,
+  .skills-grid{
+    grid-template-columns:1fr;
+  }
+
+  .term-image{
+    height:230px;
+  }
+
+  .strategy-box{
+    padding:20px;
+  }
+
+  .strategy-image img{
+    height:240px;
+  }
+
+  .final-cta{
+    padding:36px 20px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page-background"></div>
+
+<!-- HEADER -->
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="index.html" class="brand">
+      <span class="brand-icon">📚</span>
+      My English Space
+    </a>
+
+    <nav class="header-nav" aria-label="Main navigation">
+
+      <a href="index.html">
+        🏠 Home
+      </a>
+
+      <a href="#terms">
+        📝 Term Exams
+      </a>
+
+      <a href="#skills">
+        🎯 Exam Skills
+      </a>
+
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <span class="hero-eyebrow">
+        ✨ MS4 · TESTS & EXAMS CENTRE
+      </span>
+
+      <h1>
+        Your Exam
+        <span>Success Starts Here!</span>
+      </h1>
+
+      <p class="hero-description">
+        Welcome to your English Tests & Exams Centre!
+
+        Practise with carefully designed term examinations,
+        develop your reading and language skills,
+        and improve your written expression.
+
+        Every challenge is another opportunity
+        to learn, improve and succeed!
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#terms" class="button button-gold">
+          🚀 Explore Term Exams
+        </a>
+
+        <a href="#skills" class="button button-white">
+          🎯 Discover Exam Skills
+        </a>
+
+      </div>
+
+      <div class="hero-highlights">
+        <span>📖 Reading</span>
+        <span>🧩 Language</span>
+        <span>✍️ Writing</span>
+        <span>🎯 Exam Confidence</span>
+      </div>
+
+    </div>
+
+    <div class="hero-visual">
+
+      <img
+        class="hero-photo"
+        src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1100&q=85"
+        alt="Notebook and study materials prepared for an examination"
+      >
+
+      <div class="hero-floating">
+
+        <span class="hero-floating-icon">🏆</span>
+
+        <div>
+          <strong>Believe in Yourself!</strong>
+          <small>LEARN · PRACTISE · ACHIEVE</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MAIN CONTENT -->
+
+<div class="content-shell">
+<div class="container">
+
+<!-- WELCOME -->
+
+<section class="welcome-banner">
+
+  <div class="welcome-icon">🎓</div>
+
+  <div>
+
+    <h2>Welcome, Future Champions!</h2>
+
+    <p>
+      Here you can practise English examinations
+      throughout the school year.
+
+      Start with your first term tests,
+      continue with the second and third terms,
+      and improve your English skills step by step.
+
+      Read carefully, answer independently,
+      check your corrections
+      and learn from every mistake.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- TERM EXAMINATIONS -->
+
+<section id="terms">
+
+  <div class="section-title">
+
+    <span class="eyebrow">
+      ✦ YOUR SCHOOL YEAR EXAMINATIONS ✦
+    </span>
+
+    <h2>Choose Your Term!</h2>
+
+    <p>
+      Explore English tests and examinations
+      based on the MS4 curriculum.
+
+      Each term focuses on its own themes,
+      vocabulary and grammar points.
+    </p>
+
+  </div>
+
+  <div class="term-grid">
+
+    <!-- FIRST TERM -->
+
+    <article class="term-card">
+
+      <div class="term-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85"
+          alt="Beautiful landscape representing travel and exploration"
+          loading="lazy"
+        >
+
+        <span class="term-label">SEQUENCE 1</span>
+        <span class="term-number">01</span>
+
+      </div>
+
+      <div class="term-body">
+
+        <span class="term-category">
+          🌍 LANDMARKS · TRAVEL · HISTORY
+        </span>
+
+        <h3>First Term Tests & Exams</h3>
+
+        <p>
+          Travel around the world,
+          discover outstanding figures
+          and famous landmarks,
+          and practise describing
+          historical monuments.
+
+          Revise the past simple,
+          past passive voice,
+          qualifiers and pronunciation.
+        </p>
+
+        <div class="topic-list">
+          <span>🏛️ Landmarks</span>
+          <span>✈️ Travelling</span>
+          <span>📜 Biography</span>
+          <span>🧩 Grammar</span>
+        </div>
+
+        <div class="term-footer">
+
+          <div class="term-status">
+            ✅ 5 Interactive Exams Available
+          </div>
+
+          <a
+            href="MS4-Tests-Term1.html"
+            class="term-link"
+          >
+            Start First Term Exams
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- SECOND TERM -->
+
+    <article class="term-card">
+
+      <div class="term-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=85"
+          alt="Writing notebook representing memories and personal stories"
+          loading="lazy"
+        >
+
+        <span class="term-label">SEQUENCE 2</span>
+        <span class="term-number">02</span>
+
+      </div>
+
+      <div class="term-body">
+
+        <span class="term-category">
+          💜 MEMORIES · PERSONALITY · DREAMS
+        </span>
+
+        <h3>Second Term Tests & Exams</h3>
+
+        <p>
+          Explore childhood memories,
+          friendship, personality traits,
+          personal experiences
+          and future ambitions.
+
+          Practise narration,
+          description, comparisons,
+          word formation
+          and written expression.
+        </p>
+
+        <div class="topic-list">
+          <span>💭 Memories</span>
+          <span>🤝 Friendship</span>
+          <span>🌟 Personality</span>
+          <span>✍️ Writing</span>
+        </div>
+
+        <div class="term-footer">
+
+          <div class="term-status pending">
+            ⏳ Coming Soon
+          </div>
+
+          <span class="term-link disabled">
+            Second Term Exams Coming Soon
+            <span>🔒</span>
+          </span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- THIRD TERM -->
+
+    <article class="term-card">
+
+      <div class="term-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85"
+          alt="Friends working together representing community and citizenship"
+          loading="lazy"
+        >
+
+        <span class="term-label">SEQUENCE 3</span>
+        <span class="term-number">03</span>
+
+      </div>
+
+      <div class="term-body">
+
+        <span class="term-category">
+          💚 CITIZENSHIP · CHARITY · COMMUNITY
+        </span>
+
+        <h3>Third Term Tests & Exams</h3>
+
+        <p>
+          Discover the importance
+          of being a good citizen,
+          helping others,
+          volunteering
+          and protecting your community.
+
+          Revise imperatives,
+          conditional type one,
+          gerunds and discourse markers.
+        </p>
+
+        <div class="topic-list">
+          <span>🌍 Citizenship</span>
+          <span>🤲 Charity</span>
+          <span>🤝 Volunteering</span>
+          <span>🧩 Grammar</span>
+        </div>
+
+        <div class="term-footer">
+
+          <div class="term-status pending">
+            ⏳ Coming Soon
+          </div>
+
+          <span class="term-link disabled">
+            Third Term Exams Coming Soon
+            <span>🔒</span>
+          </span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+<!-- EXAM SKILLS -->
+
+<section id="skills" class="skills-section">
+
+  <div class="section-title">
+
+    <span class="eyebrow">
+      ✦ THREE ESSENTIAL SKILLS ✦
+    </span>
+
+    <h2>What Will You Practise?</h2>
+
+    <p>
+      Each examination helps you develop
+      the three essential skills
+      needed for successful English examinations.
+    </p>
+
+  </div>
+
+  <div class="skills-grid">
+
+    <article class="skill-card">
+
+      <div class="skill-icon">📖</div>
+
+      <h3>Reading Comprehension</h3>
+
+      <p>
+        Read different texts,
+        identify main ideas,
+        find information,
+        answer questions
+        and understand vocabulary in context.
+      </p>
+
+    </article>
+
+    <article class="skill-card">
+
+      <div class="skill-icon">🧩</div>
+
+      <h3>Mastery of Language</h3>
+
+      <p>
+        Revise grammar,
+        correct mistakes,
+        transform sentences,
+        practise vocabulary,
+        word formation and pronunciation.
+      </p>
+
+    </article>
+
+    <article class="skill-card">
+
+      <div class="skill-icon">✍️</div>
+
+      <h3>Written Expression</h3>
+
+      <p>
+        Organise ideas,
+        use appropriate vocabulary,
+        write clear paragraphs
+        and improve spelling,
+        punctuation and sentence structure.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+<!-- EXAM STRATEGY -->
+
+<section class="strategy-section">
+
+  <div class="strategy-box">
+
+    <div class="strategy-image">
+
+      <img
+        src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1000&q=85"
+        alt="Study notebook and pen"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="strategy-content">
+
+      <h2>💡 How to Use This Exam Centre</h2>
+
+      <p>
+        Follow these simple steps
+        whenever you practise an examination.
+      </p>
+
+      <div class="strategy-steps">
+
+        <div class="strategy-step">
+          <span>1</span>
+          Choose a term or examination.
+        </div>
+
+        <div class="strategy-step">
+          <span>2</span>
+          Read the text and instructions carefully.
+        </div>
+
+        <div class="strategy-step">
+          <span>3</span>
+          Complete all activities independently.
+        </div>
+
+        <div class="strategy-step">
+          <span>4</span>
+          Submit your answers and check corrections.
+        </div>
+
+        <div class="strategy-step">
+          <span>5</span>
+          Review mistakes and try again.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FINAL CTA -->
+
+<section class="final-cta">
+
+  <h2>
+    🌟 Every Great Result Begins with Practice!
+  </h2>
+
+  <p>
+    You do not need to be perfect
+    to start practising.
+
+    Every question you answer,
+    every mistake you correct
+    and every paragraph you write
+    brings you one step closer to success.
+
+    Believe in yourself and keep improving!
+  </p>
+
+  <a
+    href="MS4-Tests-Term1.html"
+    class="button button-gold"
+  >
+    🚀 Start Your First Examination →
+  </a>
+
+</section>
+
+</div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+  <strong>MY ENGLISH SPACE</strong>
+
+  <br>
+
+  MS4 · Tests & Exams Centre
+
+  <br>
+
+  © <span id="year"></span> My English Space
+
+</footer>
+
+<script>
+
+/* ==========================================
+   CURRENT YEAR
+========================================== */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>

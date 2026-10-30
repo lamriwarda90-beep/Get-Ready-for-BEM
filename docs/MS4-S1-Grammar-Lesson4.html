@@ -1,0 +1,3697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#087c85">
+
+<title>Checkpoint 05 | Cause & Effect | MS4 Grammar</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================
+   GLOBAL DESIGN
+========================================= */
+
+:root{
+--deep:#073e49;
+--dark:#075b67;
+--teal:#0d9ba6;
+--aqua:#3bd0c7;
+--gold:#ffc857;
+--orange:#ff995c;
+--green:#16a36b;
+--red:#db5555;
+--blue:#388ed0;
+--purple:#8255c5;
+--ink:#173b46;
+--muted:#607985;
+--soft:#effbfc;
+--shadow:0 18px 45px rgba(3,55,68,.14);
+}
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:"Nunito",Arial,sans-serif;
+background:#e9f8f9;
+color:var(--ink);
+}
+
+button,input,textarea{
+font:inherit;
+}
+
+button{
+cursor:pointer;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+h1,h2,h3,h4{
+font-family:"Baloo 2",Arial,sans-serif;
+}
+
+.container{
+width:92%;
+max-width:1080px;
+margin:auto;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+background:
+radial-gradient(circle at 10% 20%,rgba(75,220,211,.3),transparent 30%),
+linear-gradient(135deg,#073e49,#087c85 65%,#0ba6a5);
+
+color:white;
+padding:24px 0 65px;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.brand{
+font-size:13px;
+font-weight:900;
+letter-spacing:1px;
+}
+
+.back{
+padding:11px 18px;
+border-radius:30px;
+background:rgba(255,255,255,.14);
+border:1px solid rgba(255,255,255,.4);
+font-size:12px;
+font-weight:900;
+transition:.25s;
+}
+
+.back:hover{
+background:rgba(255,255,255,.25);
+}
+
+.hero-content{
+text-align:center;
+max-width:850px;
+margin:55px auto 0;
+}
+
+.eyebrow{
+display:inline-block;
+background:var(--gold);
+color:#533b08;
+padding:9px 18px;
+border-radius:30px;
+font-size:11px;
+font-weight:900;
+letter-spacing:1px;
+}
+
+.hero h1{
+font-size:clamp(40px,7vw,75px);
+line-height:1.05;
+margin:20px 0 14px;
+}
+
+.hero h1 span{
+display:block;
+color:#ffe09b;
+}
+
+.hero-description{
+font-size:15px;
+font-weight:700;
+line-height:1.8;
+}
+
+.hero-chips{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin-top:23px;
+}
+
+.hero-chip{
+padding:9px 15px;
+background:rgba(255,255,255,.15);
+border:1px solid rgba(255,255,255,.35);
+border-radius:30px;
+font-size:12px;
+font-weight:900;
+}
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-wrap{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(255,255,255,.97);
+border-bottom:1px solid #c8e9e9;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.progress-inner{
+display:flex;
+align-items:center;
+gap:14px;
+padding:13px 0;
+}
+
+.progress-label,
+.progress-number{
+white-space:nowrap;
+color:var(--dark);
+font-size:11px;
+font-weight:900;
+}
+
+.progress-track{
+flex:1;
+height:10px;
+background:#d9eff0;
+border-radius:30px;
+overflow:hidden;
+}
+
+.progress-fill{
+width:0;
+height:100%;
+background:linear-gradient(90deg,#0d9ba6,#ffc857);
+transition:width .3s;
+}
+
+/* =========================================
+   LESSON SECTIONS
+========================================= */
+
+main{
+padding:35px 0 55px;
+}
+
+.stage{
+background:white;
+border-radius:26px;
+margin-bottom:28px;
+padding:32px;
+border:1px solid #d8eded;
+box-shadow:var(--shadow);
+scroll-margin-top:90px;
+}
+
+.stage-top{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:14px;
+}
+
+.stage-number{
+display:grid;
+place-items:center;
+width:45px;
+height:45px;
+background:var(--gold);
+border-radius:14px;
+font-weight:900;
+color:#58400b;
+}
+
+.stage-label{
+background:#e2f7f7;
+color:var(--dark);
+padding:8px 13px;
+border-radius:25px;
+font-size:11px;
+font-weight:900;
+}
+
+.level{
+margin-left:auto;
+background:#e8f8ee;
+color:#158152;
+border-radius:25px;
+padding:7px 12px;
+font-size:10px;
+font-weight:900;
+}
+
+.level.medium{
+background:#fff2da;
+color:#9a6a10;
+}
+
+.level.hard{
+background:#ffe6e3;
+color:#b94e48;
+}
+
+.stage h2{
+font-size:clamp(25px,4vw,35px);
+color:var(--deep);
+margin:5px 0 10px;
+line-height:1.2;
+}
+
+.stage-description{
+color:var(--muted);
+font-size:14px;
+line-height:1.8;
+font-weight:700;
+margin-bottom:23px;
+}
+
+.subheading{
+color:var(--dark);
+font-size:23px;
+margin:25px 0 12px;
+}
+
+/* =========================================
+   OBSERVATION CARDS
+========================================= */
+
+.story-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.story-card{
+border:2px solid #d9efef;
+border-radius:21px;
+overflow:hidden;
+background:#f2fbfb;
+transition:.3s;
+}
+
+.story-card:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+
+.story-image{
+height:230px;
+background:#dff2f2;
+overflow:hidden;
+}
+
+.story-image img{
+display:block;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.story-body{
+padding:19px;
+}
+
+.story-body h3{
+margin:0 0 7px;
+color:var(--dark);
+font-size:21px;
+}
+
+.story-body p{
+font-size:13px;
+font-weight:700;
+line-height:1.8;
+margin:5px 0;
+}
+
+/* =========================================
+   HIGHLIGHTS & CALLOUTS
+========================================= */
+
+.cause-highlight{
+background:#ffe9c2;
+color:#975d08;
+padding:2px 6px;
+border-radius:5px;
+font-weight:900;
+}
+
+.effect-highlight{
+background:#d9f7e5;
+color:#087548;
+padding:2px 6px;
+border-radius:5px;
+font-weight:900;
+}
+
+.connector-highlight{
+background:#e8ddff;
+color:#623c9d;
+padding:2px 6px;
+border-radius:5px;
+font-weight:900;
+}
+
+.notice{
+background:#fff8e7;
+border-left:5px solid var(--gold);
+padding:18px;
+border-radius:13px;
+margin-top:20px;
+font-weight:800;
+line-height:1.9;
+}
+
+.arabic{
+direction:rtl;
+text-align:right;
+background:#e9f7f2;
+border-right:5px solid var(--green);
+border-radius:12px;
+padding:17px;
+font-size:14px;
+line-height:2.1;
+font-weight:800;
+margin-top:18px;
+}
+
+.tip{
+background:#eaf7ff;
+border-left:5px solid #48a7d4;
+padding:16px;
+border-radius:12px;
+margin-top:17px;
+font-weight:800;
+line-height:1.8;
+}
+
+/* =========================================
+   CAUSE EFFECT DIAGRAM
+========================================= */
+
+.diagram{
+display:grid;
+grid-template-columns:1fr auto 1fr;
+gap:15px;
+align-items:center;
+margin:22px 0;
+}
+
+.diagram-box{
+border-radius:20px;
+padding:25px 18px;
+text-align:center;
+min-height:155px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.diagram-box.cause{
+background:#fff1d8;
+border:3px solid #f3cb85;
+}
+
+.diagram-box.effect{
+background:#e3f8ec;
+border:3px solid #9bdcb9;
+}
+
+.diagram-box h3{
+margin:0 0 10px;
+font-size:26px;
+}
+
+.diagram-box p{
+font-size:14px;
+font-weight:900;
+line-height:1.8;
+margin:0;
+}
+
+.diagram-arrow{
+font-size:42px;
+color:var(--teal);
+font-weight:900;
+text-align:center;
+}
+
+/* =========================================
+   RULE CARDS
+========================================= */
+
+.rule-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:17px;
+}
+
+.rule-card{
+padding:22px;
+border-radius:20px;
+border:2px solid;
+}
+
+.rule-card.cause{
+background:#fff6e9;
+border-color:#f0d49e;
+}
+
+.rule-card.effect{
+background:#effbf3;
+border-color:#a8dfbd;
+}
+
+.rule-card h3{
+font-size:23px;
+margin:0 0 10px;
+}
+
+.rule-card p{
+font-size:14px;
+font-weight:700;
+line-height:1.8;
+}
+
+.formula{
+background:white;
+border-radius:12px;
+padding:14px;
+font-weight:900;
+color:var(--deep);
+line-height:1.9;
+margin:12px 0;
+}
+
+.example{
+background:rgba(255,255,255,.8);
+padding:12px;
+border-radius:12px;
+margin:10px 0;
+font-size:14px;
+font-weight:800;
+line-height:1.8;
+}
+
+/* =========================================
+   CONNECTOR CARDS
+========================================= */
+
+.connector-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+}
+
+.connector-card{
+border-radius:17px;
+padding:20px;
+background:#f2fbfb;
+border:2px solid #d6eeee;
+}
+
+.connector-card h3{
+font-size:24px;
+color:var(--dark);
+margin:0 0 7px;
+}
+
+.connector-card p{
+font-size:13px;
+font-weight:700;
+line-height:1.8;
+}
+
+.connector-tag{
+display:inline-block;
+font-size:10px;
+font-weight:900;
+padding:6px 10px;
+border-radius:20px;
+background:#fff0d4;
+color:#a16b11;
+}
+
+.connector-card.effect-card .connector-tag{
+background:#def7e9;
+color:#168357;
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-wrap{
+overflow-x:auto;
+border-radius:16px;
+border:1px solid #d6ecec;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:600px;
+font-size:13px;
+}
+
+th{
+background:var(--dark);
+color:white;
+padding:14px;
+text-align:left;
+}
+
+td{
+padding:13px 14px;
+border-bottom:1px solid #e4eeee;
+font-weight:700;
+line-height:1.7;
+}
+
+tr:nth-child(even) td{
+background:#f1fafa;
+}
+
+/* =========================================
+   QUIZZES
+========================================= */
+
+.question{
+background:#f3fbfb;
+border:2px solid #d8eded;
+border-radius:17px;
+padding:18px;
+margin:13px 0;
+}
+
+.question-title{
+font-weight:900;
+font-size:14px;
+line-height:1.8;
+margin:0 0 12px;
+}
+
+.options{
+display:flex;
+flex-wrap:wrap;
+gap:9px;
+}
+
+.option{
+background:white;
+color:var(--dark);
+border:2px solid #cce7e7;
+border-radius:12px;
+padding:11px 15px;
+font-weight:900;
+font-size:13px;
+transition:.2s;
+}
+
+.option:hover{
+background:#e7f9f8;
+}
+
+.option.selected{
+background:#fff0bd;
+border-color:#e8ad30;
+}
+
+.option.correct{
+background:#d9f7e5;
+border-color:#159b63;
+color:#087548;
+}
+
+.option.wrong{
+background:#ffe3e3;
+border-color:#dc6666;
+color:#b53c3c;
+}
+
+.question-feedback{
+min-height:20px;
+font-size:12px;
+font-weight:900;
+margin-top:10px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.controls{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:20px;
+}
+
+.btn{
+border:0;
+padding:13px 22px;
+border-radius:30px;
+font-size:13px;
+font-weight:900;
+transition:.2s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.btn-primary{
+background:linear-gradient(135deg,#0c9ba6,#087581);
+color:white;
+}
+
+.btn-secondary{
+background:#e7f3f3;
+color:var(--dark);
+}
+
+.btn-gold{
+background:var(--gold);
+color:#503909;
+}
+
+.result{
+margin-top:15px;
+padding:14px 17px;
+background:#eaf7f7;
+border-radius:12px;
+font-weight:900;
+color:var(--dark);
+line-height:1.8;
+min-height:50px;
+}
+
+/* =========================================
+   SORTING
+========================================= */
+
+.sort-bank{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+padding:18px;
+background:#f0fafa;
+border-radius:18px;
+margin-bottom:18px;
+min-height:80px;
+}
+
+.sort-chip{
+border:2px solid #cde5e5;
+background:white;
+border-radius:25px;
+padding:10px 15px;
+font-weight:900;
+color:var(--dark);
+font-size:13px;
+}
+
+.sort-chip.active{
+background:var(--gold);
+border-color:#dfaa38;
+}
+
+.sort-zones{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.sort-zone{
+min-height:160px;
+padding:18px;
+border-radius:19px;
+border:3px dashed #c1e3e3;
+background:#f5fbfb;
+text-align:center;
+cursor:pointer;
+}
+
+.sort-zone.cause-zone{
+background:#fffaf0;
+border-color:#f2d5a1;
+}
+
+.sort-zone.effect-zone{
+background:#f0fcf5;
+border-color:#b4e7c8;
+}
+
+.sort-zone h3{
+margin:0 0 12px;
+color:var(--dark);
+}
+
+.zone-items{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:8px;
+}
+
+/* =========================================
+   READING
+========================================= */
+
+.reading{
+background:linear-gradient(135deg,#f1fbfb,#fff8eb);
+border:2px solid #d7ebeb;
+padding:23px;
+border-radius:20px;
+font-size:15px;
+line-height:2.1;
+font-weight:700;
+}
+
+.reading h3{
+margin-top:0;
+font-size:25px;
+color:var(--dark);
+}
+
+/* =========================================
+   INPUT TASKS
+========================================= */
+
+.task-card{
+background:#f3fbfb;
+border:2px solid #d8eded;
+border-radius:18px;
+padding:19px;
+margin:14px 0;
+}
+
+.task-card h3{
+font-size:17px;
+color:var(--dark);
+margin:0 0 9px;
+}
+
+.original{
+background:white;
+border-left:4px solid var(--blue);
+padding:13px;
+border-radius:9px;
+font-size:14px;
+font-weight:800;
+margin-bottom:12px;
+line-height:1.8;
+}
+
+.answer-input{
+width:100%;
+padding:13px;
+border:2px solid #cde5e5;
+border-radius:12px;
+background:white;
+font-size:14px;
+font-weight:700;
+}
+
+.answer-input:focus{
+outline:none;
+border-color:var(--teal);
+}
+
+.answer-input.correct{
+border-color:var(--green);
+background:#e8f8ef;
+}
+
+.answer-input.wrong{
+border-color:var(--red);
+background:#fff0f0;
+}
+
+.answer-feedback{
+min-height:20px;
+margin-top:9px;
+font-size:12px;
+font-weight:900;
+}
+
+/* =========================================
+   SENTENCE BUILDER
+========================================= */
+
+.builder{
+background:#f3fbfb;
+border:2px solid #d8eded;
+border-radius:18px;
+padding:19px;
+margin:15px 0;
+}
+
+.builder h3{
+color:var(--dark);
+margin:0 0 10px;
+font-size:19px;
+}
+
+.answer-strip{
+min-height:65px;
+border:3px dashed #c4e3e3;
+border-radius:14px;
+background:white;
+padding:13px;
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:8px;
+margin:13px 0;
+}
+
+.word-bank{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+}
+
+.word-chip{
+border:2px solid #cde5e5;
+border-radius:20px;
+padding:9px 14px;
+background:white;
+color:var(--dark);
+font-weight:900;
+font-size:13px;
+}
+
+.word-chip.used{
+opacity:.3;
+pointer-events:none;
+}
+
+.word-chip.in-answer{
+background:var(--teal);
+border-color:var(--teal);
+color:white;
+}
+
+.builder-feedback{
+min-height:20px;
+margin-top:10px;
+font-weight:900;
+font-size:13px;
+}
+
+/* =========================================
+   WRITING
+========================================= */
+
+.writing-guide{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-bottom:22px;
+}
+
+.guide-card{
+background:#eaf8f8;
+border-radius:16px;
+padding:18px;
+border:2px solid #d4eeee;
+}
+
+.guide-card:nth-child(2){
+background:#fff5e0;
+border-color:#f4e0b0;
+}
+
+.guide-card:nth-child(3){
+background:#f1ebff;
+border-color:#dfd3fa;
+}
+
+.guide-card h3{
+margin:0 0 8px;
+font-size:20px;
+}
+
+.guide-card p{
+font-size:13px;
+line-height:1.8;
+font-weight:700;
+}
+
+textarea{
+width:100%;
+min-height:90px;
+resize:vertical;
+padding:17px;
+border:2px solid #cce5e5;
+border-radius:16px;
+background:#fbffff;
+color:var(--ink);
+font-size:14px;
+line-height:1.9;
+margin-bottom:12px;
+}
+
+textarea:focus{
+outline:none;
+border-color:var(--teal);
+}
+
+.writing-label{
+font-weight:900;
+color:var(--dark);
+font-size:14px;
+display:block;
+margin:15px 0 8px;
+}
+
+.checklist{
+display:grid;
+gap:10px;
+margin-top:18px;
+}
+
+.check-item{
+display:flex;
+align-items:center;
+gap:10px;
+background:#f1fbfb;
+padding:13px;
+border-radius:12px;
+font-size:13px;
+font-weight:800;
+}
+
+.check-item input{
+width:18px;
+height:18px;
+accent-color:var(--teal);
+}
+
+/* =========================================
+   ACHIEVEMENT
+========================================= */
+
+.achievement{
+text-align:center;
+background:linear-gradient(135deg,#074854,#0c9fa7);
+color:white;
+padding:40px 25px;
+border-radius:26px;
+box-shadow:var(--shadow);
+}
+
+.achievement-icon{
+font-size:65px;
+}
+
+.achievement h2{
+font-size:37px;
+color:#ffe09b;
+margin:10px 0;
+}
+
+.achievement p{
+font-size:14px;
+font-weight:700;
+line-height:1.8;
+}
+
+.next-link{
+display:inline-block;
+background:var(--gold);
+color:#49370b;
+border-radius:30px;
+padding:15px 26px;
+font-weight:900;
+margin-top:20px;
+}
+
+footer{
+text-align:center;
+padding:25px;
+color:#567880;
+font-size:12px;
+font-weight:900;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:900px){
+
+.story-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.connector-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.writing-guide{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:650px){
+
+.container{
+width:94%;
+}
+
+.hero-content{
+margin-top:45px;
+}
+
+.hero h1{
+font-size:43px;
+}
+
+.hero-description{
+font-size:13px;
+}
+
+.stage{
+padding:22px 17px;
+border-radius:21px;
+}
+
+.story-grid,
+.rule-grid,
+.connector-grid,
+.sort-zones{
+grid-template-columns:1fr;
+}
+
+.diagram{
+grid-template-columns:1fr;
+}
+
+.diagram-arrow{
+transform:rotate(90deg);
+}
+
+.stage h2{
+font-size:26px;
+}
+
+.level{
+margin-left:0;
+}
+
+.progress-inner{
+gap:8px;
+}
+
+.progress-label,
+.progress-number{
+font-size:10px;
+}
+
+.option{
+flex:1;
+}
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+*,*:before,*:after{
+transition:none!important;
+scroll-behavior:auto!important;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<header class="hero">
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="brand">
+📚 MY ENGLISH SPACE · MS4
+</div>
+
+<a href="MS4-S1-Grammar.html" class="back">
+← Grammar Map
+</a>
+
+</div>
+
+<div class="hero-content">
+
+<span class="eyebrow">
+✦ SEQUENCE 01 · GRAMMAR CHECKPOINT 05 ✦
+</span>
+
+<h1>
+Cause & Effect
+<span>Connectors</span>
+</h1>
+
+<p class="hero-description">
+Discover how to explain why things happened
+and what happened as a result.
+
+<br>
+
+Learn to connect ideas and write
+clear, meaningful sentences about famous landmarks.
+</p>
+
+<div class="hero-chips">
+
+<span class="hero-chip">🔍 Discover</span>
+<span class="hero-chip">📖 Learn</span>
+<span class="hero-chip">🧠 Understand</span>
+<span class="hero-chip">🎮 Practise</span>
+<span class="hero-chip">✍️ Write</span>
+<span class="hero-chip">🏆 Achieve</span>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- =====================================
+     PROGRESS
+===================================== -->
+
+<div class="progress-wrap">
+
+<div class="container progress-inner">
+
+<span class="progress-label" id="progressLabel">
+STEP 1 / 9
+</span>
+
+<div class="progress-track">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+
+<span class="progress-number" id="progressNumber">
+11%
+</span>
+
+</div>
+
+</div>
+
+<main class="container">
+
+<!-- =====================================
+     STEP 1
+===================================== -->
+
+<section class="stage" id="stage1">
+
+<div class="stage-top">
+
+<span class="stage-number">01</span>
+
+<span class="stage-label">
+NOTICE & DISCOVER
+</span>
+
+<span class="level">
+⭐ EASY
+</span>
+
+</div>
+
+<h2>🏛️ Why Do Things Happen?</h2>
+
+<p class="stage-description">
+Look at the famous landmarks.
+Read the sentences and discover how we express
+reasons and results.
+</p>
+
+<div class="story-grid">
+
+<!-- EIFFEL TOWER -->
+
+<article class="story-card">
+
+<div class="story-image">
+
+<img
+src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=900&q=85"
+alt="Eiffel Tower in Paris"
+loading="eager">
+
+</div>
+
+<div class="story-body">
+
+<h3>🗼 Eiffel Tower</h3>
+
+<p>
+The Eiffel Tower attracts millions of visitors
+<span class="connector-highlight">because</span>
+it is a famous landmark.
+</p>
+
+</div>
+
+</article>
+
+<!-- BURJ KHALIFA -->
+
+<article class="story-card">
+
+<div class="story-image">
+
+<img
+src="https://i.imgur.com/mGTBDEc.jpeg"
+alt="Burj Khalifa in Dubai"
+loading="lazy">
+
+</div>
+
+<div class="story-body">
+
+<h3>🏙️ Burj Khalifa</h3>
+
+<p>
+The Burj Khalifa is extremely tall.
+<span class="connector-highlight">Therefore,</span>
+it can be seen from far away.
+</p>
+
+</div>
+
+</article>
+
+<!-- GREAT PYRAMID -->
+
+<article class="story-card">
+
+<div class="story-image">
+
+<img
+src="https://i.imgur.com/xqBsG5p.jpeg"
+alt="The Great Pyramid of Giza"
+loading="lazy">
+
+</div>
+
+<div class="story-body">
+
+<h3>🔺 Great Pyramid</h3>
+
+<p>
+The Great Pyramid is very old,
+<span class="connector-highlight">so</span>
+it is an important historical monument.
+</p>
+
+</div>
+
+</article>
+
+</div>
+
+<div class="notice">
+
+🔎 <b>Notice the highlighted words:</b>
+
+<br><br>
+
+<span class="connector-highlight">because</span>
+
+<span class="connector-highlight">therefore</span>
+
+<span class="connector-highlight">so</span>
+
+<br><br>
+
+These words help us connect two ideas.
+
+<br>
+
+One idea explains the <b>reason</b>.
+
+<br>
+
+The other idea explains the <b>result</b>.
+
+</div>
+
+<h3 class="subheading">
+🎯 Quick Discovery Quiz
+</h3>
+
+<div id="discoveryQuiz"></div>
+
+<div class="controls">
+
+<button class="btn btn-primary" onclick="checkQuiz('discovery')">
+✓ Check Answers
+</button>
+
+<button class="btn btn-secondary" onclick="resetQuiz('discovery')">
+↻ Try Again
+</button>
+
+</div>
+
+<div class="result" id="discoveryResult" aria-live="polite">
+Choose your answers, then check.
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 2
+===================================== -->
+
+<section class="stage" id="stage2">
+
+<div class="stage-top">
+
+<span class="stage-number">02</span>
+
+<span class="stage-label">
+UNDERSTAND THE MEANING
+</span>
+
+<span class="level">
+⭐ EASY
+</span>
+
+</div>
+
+<h2>🧠 Cause vs Effect</h2>
+
+<p class="stage-description">
+Before learning the connectors,
+we need to understand the difference
+between a cause and an effect.
+</p>
+
+<div class="diagram">
+
+<div class="diagram-box cause">
+
+<h3>🟠 CAUSE</h3>
+
+<p>
+WHY something happens
+</p>
+
+<p>
+The weather was very cold.
+</p>
+
+</div>
+
+<div class="diagram-arrow">
+➜
+</div>
+
+<div class="diagram-box effect">
+
+<h3>🟢 EFFECT</h3>
+
+<p>
+WHAT happens as a result
+</p>
+
+<p>
+The tourists stayed inside.
+</p>
+
+</div>
+
+</div>
+
+<div class="notice">
+
+<b>Two ideas:</b>
+
+<br><br>
+
+🟠 The weather was very cold.
+
+<br>
+
+🟢 The tourists stayed inside.
+
+<br><br>
+
+<b>Connected sentence:</b>
+
+<br><br>
+
+The tourists stayed inside
+<span class="connector-highlight">because</span>
+the weather was very cold.
+
+<br><br>
+
+OR
+
+<br><br>
+
+The weather was very cold,
+<span class="connector-highlight">so</span>
+the tourists stayed inside.
+
+</div>
+
+<div class="arabic">
+
+📘 الشرح بالعربية:
+
+<br><br>
+
+السبب (Cause) هو لماذا وقع الحدث.
+
+<br>
+
+النتيجة (Effect) هي ما حدث بسبب ذلك.
+
+<br><br>
+
+مثال:
+
+<br>
+
+كان الجو بارداً جداً ← السبب
+
+<br>
+
+بقي السياح في الداخل ← النتيجة
+
+<br><br>
+
+نستعمل أدوات الربط لتوضيح العلاقة بين السبب والنتيجة.
+
+</div>
+
+<h3 class="subheading">
+🔍 Identify the Cause and Effect
+</h3>
+
+<div id="meaningQuiz"></div>
+
+<div class="controls">
+
+<button class="btn btn-primary" onclick="checkQuiz('meaning')">
+✓ Check Answers
+</button>
+
+<button class="btn btn-secondary" onclick="resetQuiz('meaning')">
+↻ Try Again
+</button>
+
+</div>
+
+<div class="result" id="meaningResult" aria-live="polite">
+Read carefully and identify the cause or effect.
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 3
+===================================== -->
+
+<section class="stage" id="stage3">
+
+<div class="stage-top">
+
+<span class="stage-number">03</span>
+
+<span class="stage-label">
+LEARN THE RULES
+</span>
+
+<span class="level medium">
+⭐⭐ LEARN
+</span>
+
+</div>
+
+<h2>📜 The Seven Connectors</h2>
+
+<p class="stage-description">
+We use different connectors to introduce
+causes and effects.
+</p>
+
+<div class="rule-grid">
+
+<div class="rule-card cause">
+
+<h3>🟠 Cause Connectors</h3>
+
+<div class="formula">
+BECAUSE · AS · SINCE
+</div>
+
+<p>
+These connectors introduce a
+<b>reason</b>.
+</p>
+
+<div class="example">
+The museum is popular
+<b>because</b>
+it contains rare artefacts.
+</div>
+
+<div class="example">
+<b>As</b>
+the weather was rainy,
+the visitors stayed inside.
+</div>
+
+<div class="example">
+<b>Since</b>
+the monument is famous,
+many tourists visit it.
+</div>
+
+</div>
+
+<div class="rule-card effect">
+
+<h3>🟢 Effect Connectors</h3>
+
+<div class="formula">
+SO · THEREFORE · CONSEQUENTLY · AS A RESULT
+</div>
+
+<p>
+These connectors introduce a
+<b>result</b>.
+</p>
+
+<div class="example">
+The monument is famous,
+<b>so</b>
+many people visit it.
+</div>
+
+<div class="example">
+The bridge was damaged.
+<b>Therefore,</b>
+it was closed.
+</div>
+
+<div class="example">
+The museum was renovated.
+<b>As a result,</b>
+more visitors came.
+</div>
+
+</div>
+
+</div>
+
+<h3 class="subheading">
+✨ Meet Each Connector
+</h3>
+
+<div class="connector-grid">
+
+<div class="connector-card">
+
+<span class="connector-tag">
+CAUSE
+</span>
+
+<h3>Because</h3>
+
+<p>
+Introduces a reason.
+</p>
+
+<p>
+The tower is famous
+<b>because</b>
+it is very tall.
+</p>
+
+</div>
+
+<div class="connector-card">
+
+<span class="connector-tag">
+CAUSE
+</span>
+
+<h3>As</h3>
+
+<p>
+Introduces a reason.
+Often used at the beginning.
+</p>
+
+<p>
+<b>As</b>
+the tower is famous,
+many tourists visit it.
+</p>
+
+</div>
+
+<div class="connector-card">
+
+<span class="connector-tag">
+CAUSE
+</span>
+
+<h3>Since</h3>
+
+<p>
+Introduces a reason.
+</p>
+
+<p>
+<b>Since</b>
+the museum is interesting,
+many pupils visit it.
+</p>
+
+</div>
+
+<div class="connector-card effect-card">
+
+<span class="connector-tag">
+EFFECT
+</span>
+
+<h3>So</h3>
+
+<p>
+Introduces a result.
+</p>
+
+<p>
+The museum was closed,
+<b>so</b>
+we went home.
+</p>
+
+</div>
+
+<div class="connector-card effect-card">
+
+<span class="connector-tag">
+EFFECT
+</span>
+
+<h3>Therefore</h3>
+
+<p>
+Introduces a result.
+Common in formal writing.
+</p>
+
+<p>
+The road was blocked.
+<b>Therefore,</b>
+we changed our route.
+</p>
+
+</div>
+
+<div class="connector-card effect-card">
+
+<span class="connector-tag">
+EFFECT
+</span>
+
+<h3>Consequently</h3>
+
+<p>
+Introduces a result.
+Common in formal writing.
+</p>
+
+<p>
+The monument was damaged.
+<b>Consequently,</b>
+it was closed.
+</p>
+
+</div>
+
+<div class="connector-card effect-card">
+
+<span class="connector-tag">
+EFFECT
+</span>
+
+<h3>As a Result</h3>
+
+<p>
+Introduces a result.
+</p>
+
+<p>
+The museum became popular.
+<b>As a result,</b>
+more visitors came.
+</p>
+
+</div>
+
+</div>
+
+<h3 class="subheading">
+📚 Connector Reference Table
+</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Connector</th>
+<th>Function</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Because</td>
+<td>Cause</td>
+<td>We stayed home because it rained.</td>
+</tr>
+
+<tr>
+<td>As</td>
+<td>Cause</td>
+<td>As it rained, we stayed home.</td>
+</tr>
+
+<tr>
+<td>Since</td>
+<td>Cause</td>
+<td>Since it rained, we stayed home.</td>
+</tr>
+
+<tr>
+<td>So</td>
+<td>Effect</td>
+<td>It rained, so we stayed home.</td>
+</tr>
+
+<tr>
+<td>Therefore</td>
+<td>Effect</td>
+<td>It rained. Therefore, we stayed home.</td>
+</tr>
+
+<tr>
+<td>Consequently</td>
+<td>Effect</td>
+<td>It rained. Consequently, we stayed home.</td>
+</tr>
+
+<tr>
+<td>As a result</td>
+<td>Effect</td>
+<td>It rained. As a result, we stayed home.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="arabic">
+
+📘 أدوات السبب:
+
+<br>
+
+Because / As / Since
+
+<br>
+
+ومعناها: لأن / بما أن
+
+<br><br>
+
+📘 أدوات النتيجة:
+
+<br>
+
+So / Therefore / Consequently / As a result
+
+<br>
+
+ومعناها: لذلك / وبالتالي / نتيجة لذلك
+
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 4
+===================================== -->
+
+<section class="stage" id="stage4">
+
+<div class="stage-top">
+
+<span class="stage-number">04</span>
+
+<span class="stage-label">
+GRAMMAR TOOLKIT
+</span>
+
+<span class="level medium">
+⭐⭐ LEARN
+</span>
+
+</div>
+
+<h2>⚠️ Word Order & Punctuation</h2>
+
+<p class="stage-description">
+Learn where to place each connector
+and how to use punctuation correctly.
+</p>
+
+<h3 class="subheading">
+🟠 Cause Connectors
+</h3>
+
+<div class="notice">
+
+<b>Pattern 1:</b>
+
+<br>
+
+EFFECT + because/as/since + CAUSE
+
+<br><br>
+
+The tourists stayed inside
+<b>because</b>
+it was raining.
+
+<br><br>
+
+<b>Pattern 2:</b>
+
+<br>
+
+Because/As/Since + CAUSE, + EFFECT
+
+<br><br>
+
+<b>Because</b>
+it was raining,
+the tourists stayed inside.
+
+</div>
+
+<h3 class="subheading">
+🟢 Effect Connectors
+</h3>
+
+<div class="notice">
+
+<b>With SO:</b>
+
+<br><br>
+
+CAUSE, so EFFECT
+
+<br><br>
+
+It was raining,
+<b>so</b>
+the tourists stayed inside.
+
+<br><br>
+
+<b>With THEREFORE / CONSEQUENTLY / AS A RESULT:</b>
+
+<br><br>
+
+CAUSE. Therefore, EFFECT.
+
+<br><br>
+
+It was raining.
+<b>Therefore,</b>
+the tourists stayed inside.
+
+</div>
+
+<div class="tip">
+
+💡 <b>Important punctuation:</b>
+
+<br><br>
+
+Use a comma before <b>so</b> when joining two independent clauses.
+
+<br>
+
+Use a comma after an introductory
+<b>because / as / since</b> clause.
+
+<br>
+
+When <b>therefore, consequently,</b> or
+<b>as a result</b> begins a new sentence,
+use a full stop before it and a comma after it.
+
+</div>
+
+<h3 class="subheading">
+❌ Common Mistakes
+</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Incorrect</th>
+<th>Correct</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Because it rained, so we stayed home.</td>
+<td>Because it rained, we stayed home.</td>
+</tr>
+
+<tr>
+<td>The road was closed because we took another route.</td>
+<td>The road was closed, so we took another route.</td>
+</tr>
+
+<tr>
+<td>It rained, therefore we stayed home.</td>
+<td>It rained. Therefore, we stayed home.</td>
+</tr>
+
+<tr>
+<td>As it was cold we stayed inside.</td>
+<td>As it was cold, we stayed inside.</td>
+</tr>
+
+<tr>
+<td>The museum was closed. As a result we went home.</td>
+<td>The museum was closed. As a result, we went home.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="arabic">
+
+⚠️ انتبه:
+
+<br><br>
+
+لا نستعمل Because و So معاً لربط نفس الجملتين.
+
+<br><br>
+
+❌ Because it rained, so we stayed home.
+
+<br><br>
+
+✅ Because it rained, we stayed home.
+
+<br><br>
+
+✅ It rained, so we stayed home.
+
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 5
+===================================== -->
+
+<section class="stage" id="stage5">
+
+<div class="stage-top">
+
+<span class="stage-number">05</span>
+
+<span class="stage-label">
+INTERACTIVE SORTING GAME
+</span>
+
+<span class="level">
+⭐ EASY
+</span>
+
+</div>
+
+<h2>🎮 Cause or Effect?</h2>
+
+<p class="stage-description">
+Tap a connector, then tap its correct category.
+Tap a placed connector to return it to the bank.
+</p>
+
+<div class="sort-bank" id="sortBank"></div>
+
+<div class="sort-zones">
+
+<div class="sort-zone cause-zone" id="causeZone">
+
+<h3>🟠 CAUSE CONNECTORS</h3>
+
+<div class="zone-items" id="causeItems"></div>
+
+</div>
+
+<div class="sort-zone effect-zone" id="effectZone">
+
+<h3>🟢 EFFECT CONNECTORS</h3>
+
+<div class="zone-items" id="effectItems"></div>
+
+</div>
+
+</div>
+
+<div class="controls">
+
+<button class="btn btn-primary" onclick="checkSorting()">
+✓ Check Sorting
+</button>
+
+<button class="btn btn-secondary" onclick="resetSorting()">
+↻ Play Again
+</button>
+
+</div>
+
+<div class="result" id="sortResult" aria-live="polite">
+Sort all seven connectors.
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 6
+===================================== -->
+
+<section class="stage" id="stage6">
+
+<div class="stage-top">
+
+<span class="stage-number">06</span>
+
+<span class="stage-label">
+CONTROLLED PRACTICE
+</span>
+
+<span class="level medium">
+⭐⭐ MEDIUM
+</span>
+
+</div>
+
+<h2>🎯 Choose the Correct Connector</h2>
+
+<p class="stage-description">
+Read each sentence and choose the connector
+that makes the meaning and grammar correct.
+</p>
+
+<div id="grammarQuiz"></div>
+
+<div class="controls">
+
+<button class="btn btn-primary" onclick="checkQuiz('grammar')">
+✓ Check Answers
+</button>
+
+<button class="btn btn-secondary" onclick="resetQuiz('grammar')">
+↻ Try Again
+</button>
+
+</div>
+
+<div class="result" id="grammarResult" aria-live="polite">
+Complete the quiz and check your score.
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 7
+===================================== -->
+
+<section class="stage" id="stage7">
+
+<div class="stage-top">
+
+<span class="stage-number">07</span>
+
+<span class="stage-label">
+SENTENCE TRANSFORMATION
+</span>
+
+<span class="level medium">
+⭐⭐ MEDIUM
+</span>
+
+</div>
+
+<h2>✏️ Join the Sentences</h2>
+
+<p class="stage-description">
+Join each pair of sentences using
+the connector in brackets.
+
+Remember the correct word order and punctuation.
+</p>
+
+<div id="transformationArea"></div>
+
+<div class="controls">
+
+<button class="btn btn-primary" onclick="checkTransformations()">
+✓ Check My Sentences
+</button>
+
+<button class="btn btn-secondary" onclick="resetTransformations()">
+↻ Clear Answers
+</button>
+
+</div>
+
+<div class="result" id="transformationResult" aria-live="polite">
+Join the sentences, then check.
+</div>
+
+</section>
+
+<!-- =====================================
+     STEP 8
+===================================== -->
+
+<section class="stage" id="stage8">
+
+<div class="stage-top">
+
+<span class="stage-number">08</span>
+
+<span class="stage-label">
+BUILD THE SENTENCE
+</span>
+
+<span class="level medium">
+⭐⭐ MEDIUM
+</span>
+
+</div>
+
+<h2>🧩 Cause & Effect Sentence Builder</h2>
+
+<p class="stage-description">
+Tap the word chips in the correct order
+to make meaningful sentences.
+</p>
+
+<div id="builderArea"></div>
+
+</section>
+
+<!-- =====================================
+     STEP 9
+===================================== -->
+
+<section class="stage" id="stage9">
+
+<div class="stage-top">
+
+<span class="stage-number">09</span>
+
+<span class="stage-label">
+WRITING WORKSHOP
+</span>
+
+<span class="level hard">
+⭐⭐⭐ CHALLENGE
+</span>
+
+</div>
+
+<h2>✍️ Write About a Famous Landmark</h2>
+
+<p class="stage-description">
+Write a short descriptive paragraph about
+a famous landmark.
+
+Use cause-and-effect connectors
+to explain why it is important or popular.
+</p>
+
+<h3 class="subheading">
+🪜 Follow the Writing Steps
+</h3>
+
+<div class="writing-guide">
+
+<div class="guide-card">
+
+<h3>1️⃣ Introduce</h3>
+
+<p>
+Introduce the landmark and its location.
+</p>
+
+<p>
+The Eiffel Tower is a famous landmark
+in Paris, France.
+</p>
+
+</div>
+
+<div class="guide-card">
+
+<h3>2️⃣ Explain</h3>
+
+<p>
+Give reasons using
+because, as or since.
+</p>
+
+<p>
+It is popular because
+it is an important symbol of France.
+</p>
+
+</div>
+
+<div class="guide-card">
+
+<h3>3️⃣ Add Results</h3>
+
+<p>
+Use so, therefore,
+consequently or as a result.
+</p>
+
+<p>
+It attracts many visitors.
+As a result, it is one of
+Paris's best-known attractions.
+</p>
+
+</div>
+
+</div>
+
+<div class="notice">
+
+<b>📝 Model Paragraph</b>
+
+<br><br>
+
+The Eiffel Tower is a famous landmark
+in Paris, France.
+
+It attracts many tourists
+<span class="connector-highlight">because</span>
+it is an important symbol of the country.
+
+<span class="connector-highlight">Since</span>
+it offers beautiful views of Paris,
+many visitors enjoy going to the top.
+
+The tower is internationally famous.
+<span class="connector-highlight">Therefore,</span>
+it is one of the most recognisable
+landmarks in the world.
+
+</div>
+
+<h3 class="subheading">
+✍️ Your Turn!
+</h3>
+
+<label class="writing-label" for="writing1">
+Sentence 1 — Introduce the landmark.
+</label>
+
+<textarea
+id="writing1"
+placeholder="The landmark is located in..."
+></textarea>
+
+<label class="writing-label" for="writing2">
+Sentence 2 — Explain a cause using because, as or since.
+</label>
+
+<textarea
+id="writing2"
+placeholder="It is famous because..."
+></textarea>
+
+<label class="writing-label" for="writing3">
+Sentence 3 — Explain a result using so, therefore, consequently or as a result.
+</label>
+
+<textarea
+id="writing3"
+placeholder="It attracts many visitors. As a result,..."
+></textarea>
+
+<div class="controls">
+
+<button class="btn btn-primary" onclick="checkWriting()">
+✓ Check My Writing
+</button>
+
+<button class="btn btn-secondary" onclick="clearWriting()">
+↻ Clear Writing
+</button>
+
+</div>
+
+<div class="result" id="writingResult" aria-live="polite">
+Write your sentences and check the writing reminders.
+</div>
+
+<h3 class="subheading">
+✅ My Writing Checklist
+</h3>
+
+<div class="checklist">
+
+<label class="check-item">
+<input type="checkbox">
+I introduced the landmark correctly.
+</label>
+
+<label class="check-item">
+<input type="checkbox">
+I used a cause connector correctly.
+</label>
+
+<label class="check-item">
+<input type="checkbox">
+I used an effect connector correctly.
+</label>
+
+<label class="check-item">
+<input type="checkbox">
+I checked capital letters and punctuation.
+</label>
+
+<label class="check-item">
+<input type="checkbox">
+My sentences are clear and meaningful.
+</label>
+
+</div>
+
+<div class="arabic">
+
+📝 نصيحة للكتابة:
+
+<br><br>
+
+اختر معلماً تاريخياً تعرفه.
+
+<br>
+
+اكتب جملة للتعريف به.
+
+<br>
+
+ثم اشرح سبب شهرته باستعمال:
+
+<br>
+
+Because / As / Since
+
+<br><br>
+
+وأضف نتيجة باستعمال:
+
+<br>
+
+So / Therefore / Consequently / As a result
+
+</div>
+
+</section>
+
+<!-- =====================================
+     ACHIEVEMENT
+===================================== -->
+
+<section class="achievement">
+
+<div class="achievement-icon">
+🏆
+</div>
+
+<h2>
+Cause & Effect Champion!
+</h2>
+
+<p>
+You have learned seven important connectors,
+identified causes and effects,
+joined sentences and practised writing
+about famous landmarks.
+</p>
+
+<p>
+Keep practising to make your
+English writing clearer and more connected!
+</p>
+
+<a href="MS4-S1-Grammar.html" class="next-link">
+🏠 Return to Grammar Map →
+</a>
+
+</section>
+
+</main>
+
+<footer>
+
+MY ENGLISH SPACE · MS4 · SEQUENCE 1
+
+<br><br>
+
+LEARN · PRACTISE · IMPROVE · SUCCEED
+
+</footer>
+
+<script>
+
+"use strict";
+
+/* =====================================
+   QUIZ DATA
+===================================== */
+
+const quizzes={
+
+discovery:[
+
+{
+q:"1. In 'The tower is famous because it is tall', which word introduces the reason?",
+options:["famous","because","tower"],
+answer:1,
+hint:"BECAUSE introduces a cause."
+},
+
+{
+q:"2. Which connector introduces a result?",
+options:["Since","As","Therefore"],
+answer:2,
+hint:"THEREFORE introduces an effect."
+},
+
+{
+q:"3. Which question helps us identify a cause?",
+options:["Why did it happen?","What happened next?","Where is it?"],
+answer:0,
+hint:"A cause answers WHY."
+}
+
+],
+
+meaning:[
+
+{
+q:"1. The weather was cold, so the visitors stayed inside. What is the cause?",
+options:["The weather was cold.","The visitors stayed inside."],
+answer:0,
+hint:"The cold weather caused the result."
+},
+
+{
+q:"2. The museum was closed, so we went home. What is the effect?",
+options:["The museum was closed.","We went home."],
+answer:1,
+hint:"The result is what happened because the museum was closed."
+},
+
+{
+q:"3. The bridge was damaged. Therefore, it was closed. What is the cause?",
+options:["The bridge was damaged.","It was closed."],
+answer:0,
+hint:"The damage caused the closure."
+},
+
+{
+q:"4. The monument is famous because it is very old. What is the cause?",
+options:["It is famous.","It is very old."],
+answer:1,
+hint:"BECAUSE introduces the reason."
+}
+
+],
+
+grammar:[
+
+{
+q:"1. The Eiffel Tower is popular ___ it is a famous landmark.",
+options:["because","therefore","so"],
+answer:0,
+hint:"The second clause explains the reason."
+},
+
+{
+q:"2. The museum was closed, ___ we went home.",
+options:["because","so","since"],
+answer:1,
+hint:"SO introduces the result."
+},
+
+{
+q:"3. ___ the weather was rainy, the tourists stayed inside.",
+options:["Therefore","As","So"],
+answer:1,
+hint:"AS can introduce a cause at the beginning."
+},
+
+{
+q:"4. The road was blocked. ___, we changed our route.",
+options:["Because","Therefore","Since"],
+answer:1,
+hint:"THEREFORE introduces a result."
+},
+
+{
+q:"5. ___ the monument is important, it is protected.",
+options:["Since","So","Consequently"],
+answer:0,
+hint:"SINCE introduces a reason."
+},
+
+{
+q:"6. The building was damaged. ___, it was closed.",
+options:["As a result","Because","As"],
+answer:0,
+hint:"AS A RESULT introduces an effect."
+},
+
+{
+q:"7. The museum became very popular. ___, more tourists visited it.",
+options:["Because","Consequently","Since"],
+answer:1,
+hint:"CONSEQUENTLY introduces a result."
+},
+
+{
+q:"8. Choose the correct sentence.",
+options:[
+"Because it rained, so we stayed home.",
+"Because it rained, we stayed home.",
+"Because it rained so, we stayed home."
+],
+answer:1,
+hint:"Do not use BECAUSE and SO together in this structure."
+},
+
+{
+q:"9. Choose the correct punctuation.",
+options:[
+"The tower is famous therefore, many tourists visit it.",
+"The tower is famous. Therefore, many tourists visit it.",
+"The tower is famous because, many tourists visit it."
+],
+answer:1,
+hint:"Use a full stop before THEREFORE and a comma after it."
+},
+
+{
+q:"10. The museum was renovated, ___ more visitors came.",
+options:["so","because","since"],
+answer:0,
+hint:"The arrival of visitors is the result."
+},
+
+{
+q:"11. Which connector introduces a cause?",
+options:["Consequently","As","Therefore"],
+answer:1,
+hint:"AS can mean BECAUSE."
+},
+
+{
+q:"12. Which group contains only effect connectors?",
+options:[
+"Because, as, since",
+"So, therefore, consequently",
+"Since, so, because"
+],
+answer:1,
+hint:"SO, THEREFORE and CONSEQUENTLY introduce results."
+}
+
+]
+
+};
+
+/* =====================================
+   BUILD QUIZZES
+===================================== */
+
+function buildQuiz(name){
+
+const container=document.getElementById(name+"Quiz");
+
+if(!container)return;
+
+container.innerHTML="";
+
+quizzes[name].forEach(function(item,index){
+
+const card=document.createElement("div");
+
+card.className="question";
+
+card.dataset.answer=String(item.answer);
+
+card.dataset.selected="";
+
+const title=document.createElement("p");
+
+title.className="question-title";
+
+title.textContent=item.q;
+
+card.appendChild(title);
+
+const options=document.createElement("div");
+
+options.className="options";
+
+item.options.forEach(function(option,i){
+
+const button=document.createElement("button");
+
+button.type="button";
+
+button.className="option";
+
+button.textContent=option;
+
+button.dataset.index=String(i);
+
+button.addEventListener("click",function(){
+
+options.querySelectorAll(".option").forEach(function(b){
+
+b.classList.remove("selected","correct","wrong");
+
+});
+
+button.classList.add("selected");
+
+card.dataset.selected=String(i);
+
+card.querySelector(".question-feedback").textContent="";
+
+});
+
+options.appendChild(button);
+
+});
+
+card.appendChild(options);
+
+const feedback=document.createElement("div");
+
+feedback.className="question-feedback";
+
+feedback.setAttribute("aria-live","polite");
+
+card.appendChild(feedback);
+
+container.appendChild(card);
+
+});
+
+document.getElementById(name+"Result").textContent=
+"Choose your answers, then check.";
+
+}
+
+/* =====================================
+   CHECK QUIZZES
+===================================== */
+
+function checkQuiz(name){
+
+const container=document.getElementById(name+"Quiz");
+
+const cards=container.querySelectorAll(".question");
+
+let score=0;
+
+let missing=0;
+
+cards.forEach(function(card,index){
+
+const selected=card.dataset.selected;
+
+const answer=card.dataset.answer;
+
+const feedback=card.querySelector(".question-feedback");
+
+const buttons=card.querySelectorAll(".option");
+
+buttons.forEach(function(button){
+
+button.classList.remove("correct","wrong");
+
+});
+
+if(selected===""){
+
+missing++;
+
+feedback.textContent="Please choose an answer.";
+
+feedback.style.color="#c64747";
+
+return;
+
+}
+
+if(selected===answer){
+
+score++;
+
+feedback.textContent="✓ Correct!";
+
+feedback.style.color="#168357";
+
+}else{
+
+feedback.textContent=
+"Not quite! Hint: "+quizzes[name][index].hint;
+
+feedback.style.color="#c64747";
+
+}
+
+buttons.forEach(function(button){
+
+if(button.dataset.index===answer){
+
+button.classList.add("correct");
+
+}else if(button.dataset.index===selected){
+
+button.classList.add("wrong");
+
+}
+
+});
+
+});
+
+const result=document.getElementById(name+"Result");
+
+if(missing>0){
+
+result.textContent=
+"📌 "+missing+" unanswered question(s). Current score: "+
+score+"/"+cards.length;
+
+}else if(score===cards.length){
+
+result.textContent=
+"🏆 Perfect! "+score+"/"+cards.length+
+" — Excellent work!";
+
+}else{
+
+result.textContent=
+"⭐ Your score: "+score+"/"+cards.length+
+". Read the hints and try again!";
+
+}
+
+}
+
+function resetQuiz(name){
+
+buildQuiz(name);
+
+}
+
+/* =====================================
+   SORTING GAME
+===================================== */
+
+const sortingWords=[
+
+{text:"Because",type:"cause"},
+{text:"As",type:"cause"},
+{text:"Since",type:"cause"},
+{text:"So",type:"effect"},
+{text:"Therefore",type:"effect"},
+{text:"Consequently",type:"effect"},
+{text:"As a result",type:"effect"}
+
+];
+
+let selectedSortChip=null;
+
+function resetSorting(){
+
+const bank=document.getElementById("sortBank");
+
+const cause=document.getElementById("causeItems");
+
+const effect=document.getElementById("effectItems");
+
+bank.innerHTML="";
+
+cause.innerHTML="";
+
+effect.innerHTML="";
+
+selectedSortChip=null;
+
+sortingWords.forEach(function(item,index){
+
+const button=document.createElement("button");
+
+button.type="button";
+
+button.className="sort-chip";
+
+button.textContent=item.text;
+
+button.dataset.type=item.type;
+
+button.dataset.id=String(index);
+
+button.addEventListener("click",function(event){
+
+event.stopPropagation();
+
+if(button.parentElement.id!=="sortBank"){
+
+bank.appendChild(button);
+
+button.classList.remove("active");
+
+button.dataset.placed="";
+
+button.style.background="";
+
+button.style.borderColor="";
+
+selectedSortChip=null;
+
+return;
+
+}
+
+document.querySelectorAll(".sort-chip").forEach(function(chip){
+
+chip.classList.remove("active");
+
+});
+
+selectedSortChip=button;
+
+button.classList.add("active");
+
+});
+
+bank.appendChild(button);
+
+});
+
+document.getElementById("sortResult").textContent=
+"Tap a connector, then choose its category.";
+
+}
+
+function placeSort(type){
+
+if(!selectedSortChip)return;
+
+const destination=type==="cause"
+?document.getElementById("causeItems")
+:document.getElementById("effectItems");
+
+selectedSortChip.dataset.placed=type;
+
+selectedSortChip.classList.remove("active");
+
+destination.appendChild(selectedSortChip);
+
+selectedSortChip=null;
+
+}
+
+document.getElementById("causeZone").addEventListener("click",function(){
+
+placeSort("cause");
+
+});
+
+document.getElementById("effectZone").addEventListener("click",function(){
+
+placeSort("effect");
+
+});
+
+function checkSorting(){
+
+const remaining=document
+.getElementById("sortBank")
+.querySelectorAll(".sort-chip").length;
+
+if(remaining>0){
+
+document.getElementById("sortResult").textContent=
+"📌 Sort all seven connectors first. "+remaining+" remaining.";
+
+return;
+
+}
+
+let score=0;
+
+document.querySelectorAll(".sort-chip").forEach(function(chip){
+
+const correct=chip.dataset.type===chip.dataset.placed;
+
+if(correct){
+
+score++;
+
+chip.style.background="#d9f7e5";
+
+chip.style.borderColor="#159b63";
+
+}else{
+
+chip.style.background="#ffe3e3";
+
+chip.style.borderColor="#dc6666";
+
+}
+
+});
+
+document.getElementById("sortResult").textContent=
+score===7
+?"🏆 Perfect sorting! 7/7!"
+:"⭐ "+score+"/7 correct. Tap the red connectors to return them to the bank and try again.";
+
+}
+
+/* =====================================
+   SENTENCE TRANSFORMATIONS
+===================================== */
+
+const transformations=[
+
+{
+original:"The Eiffel Tower is famous. It attracts many visitors. (because)",
+answers:[
+"the eiffel tower attracts many visitors because it is famous",
+"because the eiffel tower is famous it attracts many visitors"
+],
+hint:"The Eiffel Tower attracts many visitors because it is famous."
+},
+
+{
+original:"The museum was closed. We went home. (so)",
+answers:[
+"the museum was closed so we went home"
+],
+hint:"The museum was closed, so we went home."
+},
+
+{
+original:"The weather was rainy. The tourists stayed inside. (as)",
+answers:[
+"as the weather was rainy the tourists stayed inside",
+"the tourists stayed inside as the weather was rainy"
+],
+hint:"As the weather was rainy, the tourists stayed inside."
+},
+
+{
+original:"The road was blocked. We changed our route. (therefore)",
+answers:[
+"the road was blocked therefore we changed our route"
+],
+hint:"The road was blocked. Therefore, we changed our route."
+},
+
+{
+original:"The monument is important. It is protected. (since)",
+answers:[
+"since the monument is important it is protected",
+"the monument is protected since it is important"
+],
+hint:"Since the monument is important, it is protected."
+},
+
+{
+original:"The building was damaged. It was closed. (consequently)",
+answers:[
+"the building was damaged consequently it was closed"
+],
+hint:"The building was damaged. Consequently, it was closed."
+},
+
+{
+original:"The museum was renovated. More visitors came. (as a result)",
+answers:[
+"the museum was renovated as a result more visitors came"
+],
+hint:"The museum was renovated. As a result, more visitors came."
+}
+
+];
+
+function normalise(text){
+
+return text
+.toLowerCase()
+.trim()
+.replace(/[.!?,;:]/g,"")
+.replace(/\s+/g," ");
+
+}
+
+function buildTransformations(){
+
+const container=document.getElementById("transformationArea");
+
+container.innerHTML="";
+
+transformations.forEach(function(item,index){
+
+const card=document.createElement("div");
+
+card.className="task-card";
+
+const title=document.createElement("h3");
+
+title.textContent="Sentence "+(index+1);
+
+const original=document.createElement("div");
+
+original.className="original";
+
+original.textContent=item.original;
+
+const input=document.createElement("input");
+
+input.type="text";
+
+input.className="answer-input";
+
+input.placeholder="Join the sentences...";
+
+input.setAttribute("aria-label","Combined sentence "+(index+1));
+
+const feedback=document.createElement("div");
+
+feedback.className="answer-feedback";
+
+card.appendChild(title);
+
+card.appendChild(original);
+
+card.appendChild(input);
+
+card.appendChild(feedback);
+
+container.appendChild(card);
+
+});
+
+}
+
+function checkTransformations(){
+
+const cards=document.querySelectorAll(".task-card");
+
+let score=0;
+
+cards.forEach(function(card,index){
+
+const input=card.querySelector("input");
+
+const feedback=card.querySelector(".answer-feedback");
+
+const answer=normalise(input.value);
+
+const correct=transformations[index].answers.some(function(a){
+
+return normalise(a)===answer;
+
+});
+
+input.classList.remove("correct","wrong");
+
+if(correct){
+
+score++;
+
+input.classList.add("correct");
+
+feedback.textContent="✓ Correct!";
+
+feedback.style.color="#168357";
+
+}else{
+
+input.classList.add("wrong");
+
+feedback.textContent=
+"Hint: "+transformations[index].hint;
+
+feedback.style.color="#c64747";
+
+}
+
+});
+
+document.getElementById("transformationResult").textContent=
+score===cards.length
+?"🏆 Perfect! "+score+"/"+cards.length+" correct!"
+:"⭐ "+score+"/"+cards.length+" correct. Read the hints and improve your answers.";
+
+}
+
+function resetTransformations(){
+
+buildTransformations();
+
+document.getElementById("transformationResult").textContent=
+"Join the sentences, then check.";
+
+}
+
+/* =====================================
+   SENTENCE BUILDER
+===================================== */
+
+const builders=[
+
+{
+words:["The","tower","is","famous","because","it","is","tall"],
+answer:"The tower is famous because it is tall"
+},
+
+{
+words:["The","museum","was","closed","so","we","went","home"],
+answer:"The museum was closed so we went home"
+},
+
+{
+words:["Since","the","monument","is","important","it","is","protected"],
+answer:"Since the monument is important it is protected"
+},
+
+{
+words:["The","road","was","blocked","Therefore","we","changed","our","route"],
+answer:"The road was blocked Therefore we changed our route"
+}
+
+];
+
+const builderStates=[];
+
+function shuffle(array){
+
+const copy=array.slice();
+
+for(let i=copy.length-1;i>0;i--){
+
+const j=Math.floor(Math.random()*(i+1));
+
+[copy[i],copy[j]]=[copy[j],copy[i]];
+
+}
+
+return copy;
+
+}
+
+function buildSentenceBuilders(){
+
+const container=document.getElementById("builderArea");
+
+container.innerHTML="";
+
+builders.forEach(function(item,index){
+
+builderStates[index]=[];
+
+const card=document.createElement("div");
+
+card.className="builder";
+
+const title=document.createElement("h3");
+
+title.textContent="🧩 Sentence "+(index+1);
+
+const strip=document.createElement("div");
+
+strip.className="answer-strip";
+
+strip.id="answerStrip"+index;
+
+const bank=document.createElement("div");
+
+bank.className="word-bank";
+
+bank.id="wordBank"+index;
+
+const controls=document.createElement("div");
+
+controls.className="controls";
+
+const check=document.createElement("button");
+
+check.type="button";
+
+check.className="btn btn-primary";
+
+check.textContent="✓ Check";
+
+check.addEventListener("click",function(){
+
+checkBuilder(index);
+
+});
+
+const clear=document.createElement("button");
+
+clear.type="button";
+
+clear.className="btn btn-secondary";
+
+clear.textContent="↻ Clear";
+
+clear.addEventListener("click",function(){
+
+clearBuilder(index);
+
+});
+
+controls.appendChild(check);
+
+controls.appendChild(clear);
+
+const feedback=document.createElement("div");
+
+feedback.className="builder-feedback";
+
+feedback.id="builderFeedback"+index;
+
+card.appendChild(title);
+
+card.appendChild(strip);
+
+card.appendChild(bank);
+
+card.appendChild(controls);
+
+card.appendChild(feedback);
+
+container.appendChild(card);
+
+shuffle(item.words).forEach(function(word){
+
+const chip=document.createElement("button");
+
+chip.type="button";
+
+chip.className="word-chip";
+
+chip.textContent=word;
+
+chip.addEventListener("click",function(){
+
+if(chip.classList.contains("used"))return;
+
+chip.classList.add("used");
+
+builderStates[index].push({
+
+word:word,
+element:chip
+
+});
+
+renderBuilder(index);
+
+});
+
+bank.appendChild(chip);
+
+});
+
+renderBuilder(index);
+
+});
+
+}
+
+function renderBuilder(index){
+
+const strip=document.getElementById("answerStrip"+index);
+
+strip.innerHTML="";
+
+if(builderStates[index].length===0){
+
+const placeholder=document.createElement("span");
+
+placeholder.textContent="Tap the words below in order...";
+
+placeholder.style.color="#607985";
+
+placeholder.style.fontWeight="800";
+
+strip.appendChild(placeholder);
+
+return;
+
+}
+
+builderStates[index].forEach(function(item,position){
+
+const chip=document.createElement("button");
+
+chip.type="button";
+
+chip.className="word-chip in-answer";
+
+chip.textContent=item.word;
+
+chip.addEventListener("click",function(){
+
+item.element.classList.remove("used");
+
+builderStates[index].splice(position,1);
+
+renderBuilder(index);
+
+});
+
+strip.appendChild(chip);
+
+});
+
+}
+
+function checkBuilder(index){
+
+const sentence=builderStates[index]
+.map(function(item){
+return item.word;
+})
+.join(" ");
+
+const feedback=document.getElementById("builderFeedback"+index);
+
+if(sentence===builders[index].answer){
+
+feedback.textContent="🏆 Excellent! Correct sentence.";
+
+feedback.style.color="#168357";
+
+}else{
+
+feedback.textContent="Try again! Check the word order.";
+
+feedback.style.color="#c64747";
+
+}
+
+}
+
+function clearBuilder(index){
+
+builderStates[index].forEach(function(item){
+
+item.element.classList.remove("used");
+
+});
+
+builderStates[index]=[];
+
+renderBuilder(index);
+
+document.getElementById("builderFeedback"+index).textContent="";
+
+}
+
+/* =====================================
+   WRITING CHECK
+===================================== */
+
+function checkWriting(){
+
+const ids=["writing1","writing2","writing3"];
+
+const texts=ids.map(function(id){
+
+return document.getElementById(id).value.trim();
+
+});
+
+const completed=texts.filter(function(text){
+
+return text.length>0;
+
+}).length;
+
+const causeUsed=/\b(because|as|since)\b/i.test(texts[1]);
+
+const effectUsed=/\b(so|therefore|consequently|as a result)\b/i.test(texts[2]);
+
+const reminders=[];
+
+if(completed<3){
+
+document.getElementById("writingResult").textContent=
+"✏️ Write all three sentences before checking.";
+
+return;
+
+}
+
+if(!causeUsed){
+
+reminders.push(
+"Use BECAUSE, AS or SINCE in sentence 2."
+);
+
+}
+
+if(!effectUsed){
+
+reminders.push(
+"Use SO, THEREFORE, CONSEQUENTLY or AS A RESULT in sentence 3."
+);
+
+}
+
+texts.forEach(function(text,index){
+
+if(!/[.!?]$/.test(text)){
+
+reminders.push(
+"Add punctuation to sentence "+(index+1)+"."
+);
+
+}
+
+});
+
+const result=document.getElementById("writingResult");
+
+if(reminders.length===0){
+
+result.textContent=
+"🌟 Well done! You included cause and effect connectors. Now check that your ideas are meaningful and your punctuation is correct.";
+
+}else{
+
+result.textContent=
+"📝 Writing reminders: "+reminders.join(" ");
+
+}
+
+}
+
+function clearWriting(){
+
+["writing1","writing2","writing3"].forEach(function(id){
+
+document.getElementById(id).value="";
+
+});
+
+document.querySelectorAll(".check-item input").forEach(function(box){
+
+box.checked=false;
+
+});
+
+document.getElementById("writingResult").textContent=
+"Write your sentences and check the writing reminders.";
+
+}
+
+/* =====================================
+   PROGRESS
+===================================== */
+
+const stages=[
+"stage1",
+"stage2",
+"stage3",
+"stage4",
+"stage5",
+"stage6",
+"stage7",
+"stage8",
+"stage9"
+];
+
+function updateProgress(){
+
+let current=0;
+
+stages.forEach(function(id,index){
+
+const element=document.getElementById(id);
+
+if(element){
+
+const rect=element.getBoundingClientRect();
+
+if(rect.top<window.innerHeight*.65){
+
+current=index;
+
+}
+
+}
+
+});
+
+const percentage=Math.round(
+((current+1)/stages.length)*100
+);
+
+document.getElementById("progressLabel").textContent=
+"STEP "+(current+1)+" / 9";
+
+document.getElementById("progressFill").style.width=
+percentage+"%";
+
+document.getElementById("progressNumber").textContent=
+percentage+"%";
+
+}
+
+window.addEventListener(
+"scroll",
+updateProgress,
+{passive:true}
+);
+
+/* =====================================
+   INITIALISE
+===================================== */
+
+Object.keys(quizzes).forEach(function(name){
+
+buildQuiz(name);
+
+});
+
+resetSorting();
+
+buildTransformations();
+
+buildSentenceBuilders();
+
+updateProgress();
+
+</script>
+
+</body>
+</html>

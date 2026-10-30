@@ -1,0 +1,2986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#25144b">
+
+<title>Grammar Guardians | The Enchanted Kingdom — MS4 S3</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --night:#20113e;
+  --deep:#34205d;
+  --purple:#8150d7;
+  --violet:#a979f4;
+  --pink:#ff80b8;
+  --gold:#ffdc70;
+  --mint:#73eac0;
+  --white:#fff;
+  --ink:#33234c;
+  --soft:#f8f3ff;
+  --border:#e9d9ff;
+  --shadow:0 18px 45px rgba(30,12,66,.18);
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:"Nunito",Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 5%,#7b45c8 0,transparent 25%),
+    radial-gradient(circle at 90% 25%,#a341a3 0,transparent 23%),
+    linear-gradient(150deg,#241440,#130c2c 70%);
+  min-height:100vh;
+}
+
+button,input,select{font:inherit}
+
+button{
+  cursor:pointer;
+  touch-action:manipulation;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+[hidden]{display:none!important}
+
+.app{
+  width:min(1190px,calc(100% - 24px));
+  margin:auto;
+  padding:16px 0 35px;
+}
+
+/* HEADER */
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+  padding:14px 18px;
+  border:1px solid #ffffff32;
+  border-radius:22px;
+  background:#ffffff12;
+  backdrop-filter:blur(15px);
+  color:white;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-icon{
+  width:56px;
+  height:56px;
+  display:grid;
+  place-items:center;
+  font-size:32px;
+  border-radius:19px;
+  background:linear-gradient(135deg,#ffdb7a,#ff91bd);
+  box-shadow:0 8px 20px #0003;
+}
+
+.brand h1{
+  font-family:"Baloo 2",sans-serif;
+  font-size:clamp(22px,3vw,32px);
+  line-height:1;
+  margin:0;
+  color:#ffe68f;
+}
+
+.brand p{
+  font-size:12px;
+  font-weight:800;
+  color:#e4d3ff;
+  margin:4px 0 0;
+}
+
+.top-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.icon-btn{
+  border:1px solid #ffffff45;
+  border-radius:13px;
+  padding:10px 13px;
+  background:#ffffff1c;
+  color:white;
+  font-weight:900;
+  transition:.2s;
+}
+
+.icon-btn:hover{
+  background:#ffffff35;
+  transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  border-radius:27px;
+  padding:23px 18px;
+  margin-bottom:15px;
+  background:linear-gradient(115deg,#fff5dc,#ffe5f4,#e6dbff);
+  box-shadow:var(--shadow);
+}
+
+.hero::before,
+.hero::after{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  opacity:.3;
+}
+
+.hero::before{
+  background:#ffc5e3;
+  left:-90px;
+  top:-110px;
+}
+
+.hero::after{
+  background:#a98bff;
+  right:-80px;
+  bottom:-130px;
+}
+
+.hero>*{
+  position:relative;
+  z-index:1;
+}
+
+.eyebrow{
+  display:inline-block;
+  border-radius:30px;
+  background:white;
+  padding:6px 13px;
+  color:#8750be;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.hero h2{
+  font-family:"Baloo 2",sans-serif;
+  color:#56318b;
+  font-size:clamp(27px,4vw,42px);
+  margin:9px 0 2px;
+  line-height:1.15;
+}
+
+.hero p{
+  color:#745d8f;
+  margin:0 auto;
+  max-width:650px;
+  font-weight:800;
+  line-height:1.6;
+}
+
+.hero-chips{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+
+.hero-chips span{
+  background:#ffffffc9;
+  border:1px solid white;
+  padding:7px 12px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:900;
+  color:#64409c;
+}
+
+/* HUD */
+
+.hud{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:11px;
+  margin-bottom:13px;
+}
+
+.stat{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:14px;
+  border-radius:19px;
+  background:white;
+  box-shadow:0 8px 20px #0002;
+}
+
+.stat-icon{
+  width:43px;
+  height:43px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  font-size:22px;
+  background:#f3eaff;
+}
+
+.stat:nth-child(2) .stat-icon{background:#fff0c6}
+.stat:nth-child(3) .stat-icon{background:#defcf0}
+.stat:nth-child(4) .stat-icon{background:#ffe7f1}
+
+.stat small{
+  display:block;
+  color:#8e7e9f;
+  font-weight:900;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+.stat strong{
+  display:block;
+  font-family:"Baloo 2";
+  font-size:20px;
+  line-height:1.1;
+  color:#56318b;
+}
+
+.progress-wrap{
+  background:#ffffff22;
+  border:1px solid #ffffff33;
+  border-radius:15px;
+  padding:10px 13px;
+  margin-bottom:13px;
+  color:white;
+}
+
+.progress-label{
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:7px;
+}
+
+.progress-track{
+  height:12px;
+  border-radius:20px;
+  overflow:hidden;
+  background:#140b2f;
+}
+
+.progress-fill{
+  height:100%;
+  width:0;
+  border-radius:20px;
+  background:linear-gradient(90deg,#6ef0bc,#ffdc70,#ff8dbb);
+  transition:width .5s ease;
+}
+
+/* GAME WORLD */
+
+.world{
+  height:410px;
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  border:5px solid #e8d6ff;
+  border-radius:30px;
+  box-shadow:0 22px 55px #0006;
+  background:linear-gradient(#7b73d8,#b1a3ef 58%,#ffe3e2);
+  transition:background .4s;
+}
+
+.world.forest{
+  background:linear-gradient(#72a6e8 0%,#b8dafa 54%,#f9d4d7);
+}
+
+.world.castle{
+  background:linear-gradient(#4a468a,#a47ab4 60%,#f0b4c8);
+}
+
+.world.islands{
+  background:linear-gradient(#4eaeeb,#a5e8ff 70%,#d7f8ff);
+}
+
+.world.crystal{
+  background:linear-gradient(#443879,#8d7de3 65%,#d5aaff);
+}
+
+.world.final{
+  background:linear-gradient(#7951bd,#f3a1c6 65%,#ffdeab);
+}
+
+.sky-stars{
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle,#fff 1.5px,transparent 2px),
+    radial-gradient(circle,#fff8 1px,transparent 2px);
+  background-size:110px 85px,175px 130px;
+  background-position:10px 10px,50px 40px;
+  opacity:.45;
+  pointer-events:none;
+}
+
+.sun{
+  position:absolute;
+  top:38px;
+  right:13%;
+  width:82px;
+  height:82px;
+  border-radius:50%;
+  background:#fff3b7;
+  box-shadow:0 0 65px 22px #fff1aa8c;
+  animation:glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+  to{
+    transform:scale(1.08);
+    box-shadow:0 0 85px 35px #fff1aa99;
+  }
+}
+
+.cloud{
+  position:absolute;
+  font-size:60px;
+  opacity:.8;
+  animation:cloud 17s ease-in-out infinite alternate;
+}
+
+.cloud.a{top:14px;left:10%}
+.cloud.b{top:80px;left:48%;animation-delay:-5s}
+
+@keyframes cloud{
+  to{transform:translateX(75px)}
+}
+
+.hill{
+  position:absolute;
+  bottom:73px;
+  border-radius:50% 50% 0 0;
+}
+
+.hill.one{
+  width:75%;
+  height:180px;
+  left:-20%;
+  background:#8c93bd;
+}
+
+.hill.two{
+  width:70%;
+  height:140px;
+  right:-17%;
+  background:#a4a4cb;
+}
+
+.world.forest .hill.one{background:#81b69c}
+.world.forest .hill.two{background:#9bceaa}
+.world.islands .hill.one{background:#8fcfce}
+.world.islands .hill.two{background:#a6e4dc}
+.world.crystal .hill.one{background:#786ab9}
+.world.crystal .hill.two{background:#a28dd4}
+
+.ground{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:95px;
+  background:linear-gradient(#4cae84,#26816d);
+  border-top:13px solid #b4edaa;
+}
+
+.world.castle .ground{
+  background:linear-gradient(#80739e,#4c416d);
+  border-color:#c7b6d6;
+}
+
+.world.islands .ground{
+  background:linear-gradient(#6ad8bb,#319b9d);
+  border-color:#c5fff0;
+}
+
+.world.crystal .ground{
+  background:linear-gradient(#755cbb,#423481);
+  border-color:#d3bbff;
+}
+
+.world.final .ground{
+  background:linear-gradient(#82bfa0,#3d8a85);
+  border-color:#ffe4a0;
+}
+
+.scenery{
+  position:absolute;
+  left:0;
+  bottom:81px;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  align-items:end;
+  font-size:clamp(35px,6vw,80px);
+  filter:drop-shadow(0 8px 4px #0003);
+  pointer-events:none;
+}
+
+.scenery span:nth-child(2){transform:translateY(-17px)}
+.scenery span:nth-child(4){transform:translateY(-27px)}
+
+.world-name{
+  position:absolute;
+  z-index:5;
+  top:14px;
+  left:14px;
+  max-width:calc(100% - 28px);
+  background:#21163bcc;
+  color:white;
+  border:1px solid #ffffff66;
+  border-radius:14px;
+  padding:10px 14px;
+  font-weight:900;
+  font-size:13px;
+  backdrop-filter:blur(8px);
+}
+
+.world-hint{
+  position:absolute;
+  z-index:5;
+  right:14px;
+  top:65px;
+  border-radius:13px;
+  padding:9px 12px;
+  background:#25143cc7;
+  color:white;
+  font-size:11px;
+  font-weight:900;
+}
+
+#finn{
+  position:absolute;
+  left:8%;
+  bottom:86px;
+  z-index:10;
+  width:80px;
+  height:80px;
+  display:grid;
+  place-items:center;
+  font-size:67px;
+  filter:drop-shadow(0 10px 5px #0004);
+  will-change:left,bottom;
+}
+
+.fox{
+  display:block;
+  animation:foxIdle 1.7s ease-in-out infinite alternate;
+}
+
+@keyframes foxIdle{
+  to{transform:translateY(-5px) rotate(-3deg)}
+}
+
+#finn.walking .fox{
+  animation:foxWalk .22s infinite alternate;
+}
+
+@keyframes foxWalk{
+  to{transform:translateY(-7px) rotate(8deg)}
+}
+
+#finn.happy .fox{
+  animation:foxHappy .4s 3;
+}
+
+@keyframes foxHappy{
+  50%{transform:translateY(-23px) rotate(12deg)}
+}
+
+#magicObject{
+  position:absolute;
+  z-index:7;
+  left:73%;
+  bottom:91px;
+  display:grid;
+  justify-items:center;
+  gap:5px;
+  transition:transform .3s;
+}
+
+.object-art{
+  font-size:clamp(53px,8vw,85px);
+  animation:objectFloat 2.1s ease-in-out infinite alternate;
+  filter:drop-shadow(0 8px 5px #0004);
+}
+
+@keyframes objectFloat{
+  to{transform:translateY(-11px)}
+}
+
+.object-tag{
+  background:#281b48e8;
+  border:1px solid #e5c8ff;
+  color:white;
+  padding:8px 12px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+#magicObject.ready .object-tag{
+  background:#0e9676;
+  border-color:#c0ffe5;
+  animation:pulse 1s infinite alternate;
+}
+
+@keyframes pulse{
+  to{transform:scale(1.07)}
+}
+
+.particle{
+  position:absolute;
+  z-index:15;
+  font-size:22px;
+  pointer-events:none;
+  animation:particleFly 1.2s ease-out forwards;
+}
+
+@keyframes particleFly{
+  to{
+    transform:translate(var(--dx),-110px) rotate(200deg);
+    opacity:0;
+  }
+}
+
+/* CONTROLS */
+
+.controls{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin:14px 0;
+}
+
+.control-group{
+  display:flex;
+  gap:9px;
+}
+
+.control{
+  min-width:70px;
+  min-height:58px;
+  border-radius:17px;
+  border:2px solid #d9c0ff;
+  background:linear-gradient(#946dd8,#6a45ad);
+  color:white;
+  font-weight:900;
+  font-size:23px;
+  box-shadow:0 5px 0 #3c236c;
+  transition:.12s;
+}
+
+.control:active{
+  transform:translateY(4px);
+  box-shadow:0 1px 0 #3c236c;
+}
+
+.control.interact{
+  background:linear-gradient(#ffe78b,#ffb0d2);
+  border-color:#fff3c1;
+  color:#493061;
+  font-size:15px;
+  padding:0 18px;
+}
+
+/* GUIDE */
+
+.guide{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:15px;
+  align-items:center;
+  padding:19px;
+  background:linear-gradient(120deg,#fff,#f5eaff);
+  border-radius:23px;
+  box-shadow:var(--shadow);
+  margin-bottom:15px;
+}
+
+.guide-avatar{
+  width:67px;
+  height:67px;
+  display:grid;
+  place-items:center;
+  border-radius:20px;
+  font-size:39px;
+  background:#ffe4b5;
+}
+
+.guide h3{
+  font-family:"Baloo 2";
+  font-size:22px;
+  color:#65409a;
+  margin:0 0 3px;
+}
+
+.guide p{
+  margin:0;
+  color:#68557e;
+  font-size:14px;
+  font-weight:750;
+  line-height:1.65;
+}
+
+.rule-chip{
+  display:inline-block;
+  margin-top:9px;
+  background:#eadbff;
+  color:#6d42a6;
+  border-radius:20px;
+  padding:6px 11px;
+  font-size:11px;
+  font-weight:900;
+}
+
+/* MAP */
+
+.map-panel{
+  background:white;
+  padding:22px;
+  border-radius:25px;
+  box-shadow:var(--shadow);
+}
+
+.map-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:15px;
+}
+
+.map-title h3{
+  margin:0;
+  font-family:"Baloo 2";
+  color:#603991;
+  font-size:24px;
+}
+
+.map-title span{
+  font-size:12px;
+  color:#9579b5;
+  font-weight:900;
+}
+
+.map{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+}
+
+.map-world{
+  border:2px solid #e6d7fb;
+  background:#fbf8ff;
+  border-radius:17px;
+  padding:15px 8px;
+  color:#73539c;
+  min-height:112px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.map-world:hover:not(:disabled){
+  transform:translateY(-3px);
+  border-color:#b68af3;
+}
+
+.map-world.active{
+  background:linear-gradient(140deg,#8b59d6,#b97cdb);
+  border-color:#e4baff;
+  color:white;
+  box-shadow:0 10px 22px #8b59d644;
+}
+
+.map-world:disabled{
+  opacity:.52;
+  cursor:not-allowed;
+}
+
+.map-world .map-icon{
+  display:block;
+  font-size:33px;
+  margin-bottom:7px;
+}
+
+.map-world small{
+  display:block;
+  font-size:10px;
+  margin-top:5px;
+  opacity:.8;
+}
+
+footer{
+  text-align:center;
+  color:#d8c6f1;
+  padding:25px 10px;
+  font-size:12px;
+  line-height:1.8;
+}
+
+/* MODAL */
+
+.overlay{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:#100821df;
+  backdrop-filter:blur(9px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+}
+
+.modal{
+  width:min(690px,100%);
+  max-height:92vh;
+  overflow-y:auto;
+  background:
+    radial-gradient(circle at 100% 0%,#a574d8 0,transparent 35%),
+    linear-gradient(145deg,#6b46a8,#332052);
+  border:2px solid #d7b7ff;
+  color:white;
+  border-radius:29px;
+  padding:27px;
+  box-shadow:0 30px 85px #0008;
+}
+
+.modal-icon{
+  text-align:center;
+  font-size:62px;
+  line-height:1.1;
+  margin-bottom:6px;
+}
+
+.modal h2{
+  font-family:"Baloo 2";
+  font-size:clamp(25px,4vw,36px);
+  line-height:1.2;
+  color:#ffe38a;
+  text-align:center;
+  margin:5px 0 15px;
+}
+
+.modal p{
+  line-height:1.8;
+  font-weight:750;
+}
+
+.modal-badge{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:25px;
+  background:#ffffff24;
+  border:1px solid #ffffff45;
+  font-size:12px;
+  font-weight:900;
+}
+
+.modal-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:17px;
+}
+
+.primary,
+.secondary{
+  border-radius:13px;
+  padding:13px 17px;
+  min-height:46px;
+  font-weight:900;
+  border:none;
+  transition:.2s;
+}
+
+.primary{
+  background:linear-gradient(120deg,#ffe388,#ff9bc8);
+  color:#452554;
+  box-shadow:0 7px 0 #4a2c69;
+}
+
+.primary:hover{
+  transform:translateY(-2px);
+}
+
+.secondary{
+  background:#ffffff1e;
+  border:1px solid #ffffff70;
+  color:white;
+}
+
+.secondary:hover{
+  background:#ffffff35;
+}
+
+.choices{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin:18px 0;
+}
+
+.choice{
+  min-height:70px;
+  border:2px solid #d9baff;
+  background:#8e65c3;
+  color:white;
+  text-align:left;
+  padding:14px;
+  border-radius:15px;
+  font-weight:900;
+  transition:.2s;
+}
+
+.choice:hover:not(:disabled){
+  background:#a47bd7;
+  transform:translateY(-2px);
+}
+
+.choice.correct{
+  background:#16876d;
+  border-color:#8affcf;
+}
+
+.choice.wrong{
+  background:#aa426a;
+  border-color:#ffafc8;
+}
+
+.choice:disabled{cursor:default}
+
+.feedback{
+  min-height:29px;
+  margin-top:12px;
+  font-weight:900;
+  line-height:1.7;
+  color:#ffe89b;
+}
+
+.hint{
+  padding:14px;
+  margin:13px 0;
+  background:#ffffff1a;
+  border:1px solid #ffffff38;
+  border-radius:13px;
+  line-height:1.8;
+}
+
+.arabic{
+  font-family:"Noto Naskh Arabic",serif;
+  font-size:17px;
+  direction:rtl;
+  display:block;
+  margin-top:8px;
+}
+
+.words{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:15px 0;
+}
+
+.word{
+  border:1px solid #e0c9ff;
+  border-radius:12px;
+  padding:11px 14px;
+  background:#986bca;
+  color:white;
+  font-weight:900;
+}
+
+.word:disabled{opacity:.35}
+
+.sentence{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  min-height:65px;
+  padding:12px;
+  border:2px dashed #d9b8ff;
+  border-radius:13px;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.field{
+  width:100%;
+  padding:14px;
+  border:2px solid #dfc5ff;
+  border-radius:13px;
+  background:white;
+  color:#38234c;
+  font-size:16px;
+}
+
+.mode-select{
+  display:block;
+  width:100%;
+  padding:13px;
+  border:2px solid #e0c5ff;
+  border-radius:13px;
+  background:white;
+  color:#422860;
+  font-weight:900;
+  margin:12px 0;
+}
+
+.mission-tag{
+  background:#ffffff22;
+  border:1px solid #ffffff44;
+  padding:8px 12px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:900;
+  display:inline-block;
+}
+
+.result-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin:15px 0;
+}
+
+.result-box{
+  text-align:center;
+  padding:15px;
+  border-radius:15px;
+  background:#ffffff1b;
+  border:1px solid #ffffff38;
+}
+
+.result-box strong{
+  display:block;
+  font-family:"Baloo 2";
+  font-size:27px;
+  color:#ffe18a;
+}
+
+.result-box span{
+  font-size:12px;
+  font-weight:900;
+}
+
+.result-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+}
+
+.result-table th,
+.result-table td{
+  padding:10px 7px;
+  border-bottom:1px solid #ffffff33;
+  text-align:left;
+}
+
+.spark{
+  position:fixed;
+  top:-30px;
+  z-index:999;
+  pointer-events:none;
+  animation:confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall{
+  to{
+    transform:translateY(110vh) rotate(700deg);
+    opacity:0;
+  }
+}
+
+@media(max-width:800px){
+  .hud{grid-template-columns:repeat(2,1fr)}
+  .map{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(max-width:580px){
+  .app{width:calc(100% - 14px)}
+  .topbar{padding:12px}
+  .brand-icon{width:46px;height:46px;font-size:27px}
+  .brand h1{font-size:21px}
+  .brand p{font-size:10px}
+  .top-actions{width:100%;justify-content:space-between}
+  .icon-btn{padding:9px;font-size:12px}
+  .hero{padding:19px 13px}
+  .world{height:315px;border-width:3px}
+  .world-name{font-size:11px}
+  .world-hint{font-size:10px}
+  .scenery{font-size:44px}
+  #finn{font-size:54px;width:62px;height:65px}
+  .object-art{font-size:58px}
+  .object-tag{font-size:9px}
+  .control{min-width:55px;min-height:54px}
+  .control.interact{padding:0 10px;font-size:12px}
+  .guide{grid-template-columns:52px 1fr;padding:14px}
+  .guide-avatar{width:52px;height:52px;font-size:30px}
+  .guide h3{font-size:19px}
+  .map-panel{padding:15px}
+  .map{grid-template-columns:repeat(2,1fr)}
+  .modal{padding:20px}
+  .choices{grid-template-columns:1fr}
+  .stat{padding:10px;gap:7px}
+  .stat-icon{width:35px;height:35px;font-size:19px}
+  .stat strong{font-size:17px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation:none!important;
+    transition:none!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="topbar">
+
+  <div class="brand">
+    <div class="brand-icon">🦊</div>
+    <div>
+      <h1>THE ENCHANTED KINGDOM</h1>
+      <p>✨ GRAMMAR GUARDIANS • MS4 • SEQUENCE 3</p>
+    </div>
+  </div>
+
+  <div class="top-actions">
+    <button class="icon-btn" id="soundBtn">🔇 Sound</button>
+    <button class="icon-btn" id="pauseBtn">⏸ Pause</button>
+    <button class="icon-btn" id="resultsBtn">📊 Results</button>
+    <button class="icon-btn" id="restartBtn">↻ Restart</button>
+  </div>
+
+</header>
+
+<section class="hero">
+  <span class="eyebrow">🌟 THE ULTIMATE GRAMMAR ADVENTURE</span>
+  <h2>Help Finn Save the Magical Kingdom!</h2>
+  <p>
+    Explore enchanted worlds, defeat grammar mistakes,
+    collect stars and become a legendary Grammar Guardian!
+  </p>
+
+  <div class="hero-chips">
+    <span>🌳 5 Magical Worlds</span>
+    <span>🎯 65 Challenges</span>
+    <span>🧠 Grammar Practice</span>
+    <span>🏆 Magical Rewards</span>
+  </div>
+</section>
+
+<section class="hud">
+
+  <div class="stat">
+    <div class="stat-icon">⭐</div>
+    <div>
+      <small>Magic Stars</small>
+      <strong id="stars">0</strong>
+    </div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-icon">🎯</div>
+    <div>
+      <small>Mission</small>
+      <strong id="mission">1 / 65</strong>
+    </div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-icon">🌍</div>
+    <div>
+      <small>Kingdom</small>
+      <strong id="worldNumber">1 / 5</strong>
+    </div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-icon">🏆</div>
+    <div>
+      <small>Accuracy</small>
+      <strong id="accuracy">100%</strong>
+    </div>
+  </div>
+
+</section>
+
+<div class="progress-wrap">
+  <div class="progress-label">
+    <span>✨ Kingdom Restoration</span>
+    <span id="progressText">0%</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+</div>
+
+<main>
+
+<div class="world forest" id="world">
+
+  <div class="sky-stars"></div>
+  <div class="sun"></div>
+  <div class="cloud a">☁️</div>
+  <div class="cloud b">☁️</div>
+
+  <div class="hill one"></div>
+  <div class="hill two"></div>
+
+  <div class="scenery" id="scenery">
+    <span>🌲</span>
+    <span>🌳</span>
+    <span>🌸</span>
+    <span>🌲</span>
+    <span>🌳</span>
+  </div>
+
+  <div class="ground"></div>
+
+  <div class="world-name" id="worldName">
+    🌳 The Whispering Forest
+  </div>
+
+  <div class="world-hint" id="worldHint">
+    ✨ Find the magical object!
+  </div>
+
+  <div id="finn">
+    <span class="fox">🦊</span>
+  </div>
+
+  <div id="magicObject">
+    <div class="object-art" id="objectArt">🌳</div>
+    <div class="object-tag" id="objectTag">
+      ✨ Come closer!
+    </div>
+  </div>
+
+</div>
+
+<div class="controls">
+
+  <div class="control-group">
+    <button class="control" id="leftBtn" aria-label="Move left">◀</button>
+    <button class="control" id="rightBtn" aria-label="Move right">▶</button>
+  </div>
+
+  <div class="control-group">
+    <button class="control" id="jumpBtn">⬆</button>
+    <button class="control interact" id="interactBtn">✨ INTERACT</button>
+  </div>
+
+</div>
+
+<section class="guide">
+
+  <div class="guide-avatar">🦊</div>
+
+  <div>
+    <h3 id="guideTitle">Hello, Grammar Guardian!</h3>
+    <p id="guideText">
+      Move Finn towards the magical object.
+      Press INTERACT to solve a grammar challenge!
+    </p>
+    <span class="rule-chip" id="grammarRule">
+      Grammar: Affirmative Imperative
+    </span>
+  </div>
+
+</section>
+
+<section class="map-panel">
+
+  <div class="map-title">
+    <h3>🗺️ Your Magical Journey</h3>
+    <span>Unlock every kingdom!</span>
+  </div>
+
+  <div class="map" id="worldMap"></div>
+
+</section>
+
+</main>
+
+<footer>
+  💜 My English Space • MS4 English • Sequence 3<br>
+  🌍 Me, My Community & Citizenship<br>
+  ✨ Learn • Explore • Practise • Succeed
+</footer>
+
+</div>
+
+<!-- MODAL -->
+
+<div class="overlay" id="overlay">
+
+  <div class="modal">
+
+    <div class="modal-icon" id="modalIcon">🦊</div>
+
+    <h2 id="modalTitle">Welcome!</h2>
+
+    <div id="modalContent"></div>
+
+    <div class="modal-actions" id="modalActions"></div>
+
+  </div>
+
+</div>
+
+<script>
+"use strict";
+
+/* =====================================================
+   HELPERS
+===================================================== */
+
+const $ = id => document.getElementById(id);
+
+function escapeHTML(value){
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;");
+}
+
+function shuffle(array){
+  const result=[...array];
+
+  for(let i=result.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [result[i],result[j]]=[result[j],result[i]];
+  }
+
+  return result;
+}
+
+function normalize(text){
+  return String(text)
+    .trim()
+    .toLowerCase()
+    .replace(/[.!?]+$/,"")
+    .replace(/\s+/g," ");
+}
+
+/* =====================================================
+   WORLD INFORMATION
+===================================================== */
+
+const WORLDS=[
+
+  {
+    name:"The Whispering Forest",
+    icon:"🌳",
+    theme:"forest",
+    grammar:"Affirmative Imperative",
+    rule:"Base verb + object: Help others!",
+    arabic:"الأمر المثبت: نبدأ بالفعل في المصدر دون فاعل.",
+    story:"The forest is losing its magic! Use positive commands to help nature and restore its beauty.",
+    objects:["🌳","🌻","🌿","🦋","🍄"],
+    scenery:["🌲","🌳","🌸","🌲","🌳"]
+  },
+
+  {
+    name:"The Forbidden Castle",
+    icon:"🏰",
+    theme:"castle",
+    grammar:"Negative Imperative",
+    rule:"Don't + base verb: Don't run!",
+    arabic:"الأمر المنفي: نستعمل Don't ثم الفعل في المصدر.",
+    story:"The castle gates are locked! Use negative commands to warn Finn and open the magical doors.",
+    objects:["🚪","🗝️","🔥","🛡️","🔒"],
+    scenery:["🏰","🗼","🧱","🏰","🗼"]
+  },
+
+  {
+    name:"The Floating Islands",
+    icon:"🌈",
+    theme:"islands",
+    grammar:"First Conditional",
+    rule:"If + present simple, will + base verb.",
+    arabic:"الشرط الأول: If + المضارع البسيط، ثم will + الفعل في المصدر.",
+    story:"The floating islands are drifting apart! Build bridges using correct conditional sentences.",
+    objects:["🌉","☁️","💎","🌈","🪄"],
+    scenery:["☁️","🏝️","☁️","🏝️","☁️"]
+  },
+
+  {
+    name:"The Crystal Labyrinth",
+    icon:"💎",
+    theme:"crystal",
+    grammar:"Grammar Correction & Advice",
+    rule:"Use correct imperatives, should / shouldn't and first conditional forms.",
+    arabic:"راجع الأمر والنهي والنصيحة باستعمال should والشرط الأول.",
+    story:"The crystals are enchanted! Find grammar mistakes and activate the crystal switches.",
+    objects:["💎","🔮","🪞","⚙️","💠"],
+    scenery:["💠","🔮","💎","🔮","💠"]
+  },
+
+  {
+    name:"The Royal Rescue",
+    icon:"👑",
+    theme:"final",
+    grammar:"Mixed Grammar Challenge",
+    rule:"Combine commands, prohibitions, advice and first conditional sentences.",
+    arabic:"استعمل الأمر والنهي والنصيحة والشرط الأول لإنقاذ المملكة.",
+    story:"The kingdom needs its final guardian! Use all your grammar powers to break the last spell.",
+    objects:["👑","🏆","🌟","🪄","🏰"],
+    scenery:["🌺","🏰","🌈","🌸","🏰"]
+  }
+
+];
+
+/* =====================================================
+   QUESTION BANK
+   65 QUESTIONS / 13 PER WORLD
+===================================================== */
+
+const QUESTIONS=[];
+
+function mc(world,prompt,answer,wrong,explain){
+  QUESTIONS.push({
+    world,
+    type:"mc",
+    prompt,
+    answer,
+    options:[answer,...wrong],
+    explain:explain||WORLDS[world].rule
+  });
+}
+
+function build(world,prompt,answer){
+  QUESTIONS.push({
+    world,
+    type:"build",
+    prompt,
+    answer,
+    words:answer.split(" "),
+    explain:WORLDS[world].rule
+  });
+}
+
+function write(world,prompt,answers){
+  QUESTIONS.push({
+    world,
+    type:"write",
+    prompt,
+    answer:answers[0],
+    accepted:answers,
+    explain:WORLDS[world].rule
+  });
+}
+
+/* WORLD 1 */
+
+mc(0,"The flowers need water. Choose the correct command.",
+"Water the flowers!",
+["Watering the flowers!","Waters the flowers!","To water the flowers!"]);
+
+mc(0,"The school garden is dirty.",
+"Clean the garden!",
+["Cleaning the garden!","Cleans the garden!","To cleaning the garden!"]);
+
+mc(0,"Your friend needs support.",
+"Help your friend!",
+["Helping your friend!","Helps your friend!","To helping your friend!"]);
+
+mc(0,"The forest needs more trees.",
+"Plant more trees!",
+["Planting more trees!","Plants more trees!","To planting more trees!"]);
+
+mc(0,"The animals are hungry.",
+"Feed the animals!",
+["Feeding the animals!","Feeds the animals!","To feeding the animals!"]);
+
+mc(0,"You want to encourage people to protect the environment.",
+"Protect nature!",
+["Protecting nature!","Protects nature!","To protecting nature!"]);
+
+mc(0,"The classroom is untidy.",
+"Keep it clean!",
+["Keeping it clean!","Keeps it clean!","To keeping it clean!"]);
+
+mc(0,"Finn needs directions.",
+"Follow the path!",
+["Following the path!","Follows the path!","To following the path!"]);
+
+mc(0,"Choose the correct command about citizenship.",
+"Respect your neighbours!",
+["Respecting your neighbours!","Respects your neighbours!","To respecting your neighbours!"]);
+
+build(0,"Build a command about solidarity.",
+"Help people in need.");
+
+build(0,"Build a command about Algerian heritage.",
+"Preserve our cultural heritage.");
+
+build(0,"Build a command about charity.",
+"Join the charity campaign.");
+
+write(0,"Write a positive command meaning: ساعد الآخرين",
+["Help others!","Help others.","Help others"]);
+
+/* WORLD 2 */
+
+mc(1,"The castle floor is slippery.",
+"Don't run!",
+["Don't running!","Not run!","Doesn't run!"]);
+
+mc(1,"There is a dangerous flame.",
+"Don't touch the fire!",
+["Don't touching the fire!","Not touch the fire!","Doesn't touch the fire!"]);
+
+mc(1,"A door must stay closed.",
+"Don't open the door!",
+["Don't opening the door!","Not open the door!","Doesn't open the door!"]);
+
+mc(1,"A pupil is shouting in the library.",
+"Don't make noise!",
+["Don't making noise!","Not making noise!","Doesn't make noise!"]);
+
+mc(1,"Someone asks for your password.",
+"Don't share your password!",
+["Don't sharing your password!","Not share your password!","Doesn't share your password!"]);
+
+mc(1,"Someone is wasting water.",
+"Don't waste water!",
+["Don't wasting water!","Not waste water!","Doesn't waste water!"]);
+
+mc(1,"Someone is damaging an old monument.",
+"Don't damage monuments!",
+["Don't damaging monuments!","Not damage monuments!","Doesn't damage monuments!"]);
+
+mc(1,"A pupil wants to post a hurtful comment.",
+"Don't hurt others online!",
+["Don't hurting others online!","Not hurt others online!","Doesn't hurt others online!"]);
+
+mc(1,"Choose the correct prohibition.",
+"Don't throw litter!",
+["Don't throws litter!","Don't throwing litter!","No throw litter!"]);
+
+build(1,"Build a warning about online information.",
+"Don't share personal information.");
+
+build(1,"Build a warning about public places.",
+"Don't damage public property.");
+
+build(1,"Build a warning about cyberbullying.",
+"Don't bully people online.");
+
+write(1,"Write a negative command meaning: لا تجرِ",
+["Don't run!","Don't run.","Don't run"]);
+
+/* WORLD 3 */
+
+mc(2,"If we plant trees, our city ___ greener.",
+"will become",["becomes","became","becoming"]);
+
+mc(2,"If you practise English, you ___ better.",
+"will speak",["speaks","speaking","spoke"]);
+
+mc(2,"If it rains, we ___ inside.",
+"will stay",["stayed","staying","stays"]);
+
+mc(2,"If we recycle paper, we ___ trees.",
+"will save",["saved","saving","saves"]);
+
+mc(2,"If pupils study hard, they ___ their exams.",
+"will pass",["passed","passing","passes"]);
+
+mc(2,"If people ___ water, they will protect nature.",
+"save",["will save","saved","saving"]);
+
+mc(2,"If you ___ kind, others will trust you.",
+"are",["will be","is","being"]);
+
+mc(2,"If we ___ together, we will succeed.",
+"work",["will work","worked","working"]);
+
+mc(2,"If she ___ the rules, she will stay safe.",
+"follows",["will follow","follow","following"]);
+
+build(2,"Build a conditional sentence about recycling.",
+"If we recycle, we will reduce waste.");
+
+build(2,"Build a conditional sentence about studying.",
+"If you study hard, you will succeed.");
+
+build(2,"Build a conditional sentence about kindness.",
+"If you help others, they will feel happy.");
+
+write(2,"Complete: If we protect nature, our planet ___ greener.",
+["will become"]);
+
+/* WORLD 4 */
+
+mc(3,"Choose the correct imperative.",
+"Respect other people!",
+["Respecting other people!","Respects other people!","To respecting other people!"]);
+
+mc(3,"Choose the correct negative imperative.",
+"Don't waste electricity!",
+["Don't wasting electricity!","Not waste electricity!","Doesn't waste electricity!"]);
+
+mc(3,"Correct: If she will study, she will pass.",
+"If she studies, she will pass.",
+["If she will studies, she will pass.","If she studying, she will pass.","If she study, she will pass."]);
+
+mc(3,"Which sentence uses the first conditional?",
+"If we cooperate, we will succeed.",
+["If we cooperated, we would succeed.","Cooperate with your friends!","We cooperated yesterday."]);
+
+mc(3,"Choose the correct advice.",
+"You should help people in need.",
+["You should helping people in need.","You should to help people in need.","You should helps people in need."]);
+
+mc(3,"Choose the correct prohibition.",
+"Don't post hurtful comments!",
+["Don't posting hurtful comments!","Doesn't post hurtful comments!","Not posting hurtful comments!"]);
+
+mc(3,"Correct: If we will recycle, we will save resources.",
+"If we recycle, we will save resources.",
+["If we recycled, we will save resources.","If we recycling, we will save resources.","If we recycles, we will save resources."]);
+
+mc(3,"Choose the correct advice.",
+"You shouldn't share your password.",
+["You shouldn't sharing your password.","You shouldn't to share your password.","You shouldn't shares your password."]);
+
+mc(3,"Which sentence expresses a condition and result?",
+"If we respect others, they will respect us.",
+["Respect other people!","Don't hurt others!","You should respect others."]);
+
+build(3,"Build a negative imperative.",
+"Don't throw rubbish.");
+
+build(3,"Build a correct first conditional.",
+"If we save energy, we will reduce pollution.");
+
+build(3,"Build advice using should.",
+"You should respect your classmates.");
+
+write(3,"Correct: You should to help others.",
+["You should help others.","You should help others"]);
+
+/* WORLD 5 */
+
+mc(4,"Finn finds an injured bird. Choose the best command.",
+"Help the injured bird!",
+["Helping the injured bird!","Helps the injured bird!","To helping the injured bird!"]);
+
+mc(4,"A stranger asks for your password.",
+"Don't share your password!",
+["Don't sharing your password!","You should sharing your password.","If share your password!"]);
+
+mc(4,"If we help our community, it ___ stronger.",
+"will become",["became","becoming","becomes yesterday"]);
+
+mc(4,"Choose the best advice.",
+"You should respect different cultures.",
+["You should respecting different cultures.","You should to respect different cultures.","You should respects different cultures."]);
+
+mc(4,"Choose the correct prediction.",
+"If we protect our heritage, future generations will enjoy it.",
+["If we will protect our heritage, future generations enjoy it.","If we protecting our heritage, future generations will enjoy it.","If we protects our heritage, future generations will enjoy it."]);
+
+build(4,"Give a command about citizenship.",
+"Respect public places.");
+
+build(4,"Give a warning about online safety.",
+"Don't share private information.");
+
+build(4,"Give advice about solidarity.",
+"You should help people in need.");
+
+build(4,"Build a conditional sentence about kindness.",
+"If we help others, our community will become stronger.");
+
+build(4,"Build a conditional sentence about the environment.",
+"If we plant trees, our city will become greener.");
+
+build(4,"Give a command about cultural identity.",
+"Preserve our Algerian traditions.");
+
+write(4,"Write a negative command meaning: لا تهدر الماء",
+["Don't waste water!","Don't waste water.","Don't waste water"]);
+
+write(4,"Complete: If you study hard, you ___ succeed.",
+["will"]);
+
+/* =====================================================
+   GAME STATE
+===================================================== */
+
+const SAVE_KEY="MS4_Grammar_Guardians_Modern_V1";
+
+const DEFAULT_STATE=()=>({
+  index:0,
+  stars:0,
+  correct:0,
+  incorrect:0,
+  attempts:0,
+  unlocked:0,
+  solved:[],
+  mistakes:[0,0,0,0,0],
+  mode:"adventurer",
+  sound:false,
+  active:false,
+  paused:false
+});
+
+let state=DEFAULT_STATE();
+
+let playerX=8;
+let playerY=0;
+let velocityY=0;
+let moveLeft=false;
+let moveRight=false;
+let lastFrame=0;
+let questionLocked=false;
+let selectedWords=[];
+let audioContext=null;
+let transitioning=false;
+
+const reducedMotion=window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+function save(){
+  try{
+    localStorage.setItem(SAVE_KEY,JSON.stringify(state));
+  }catch(e){}
+}
+
+function load(){
+  try{
+    const saved=JSON.parse(localStorage.getItem(SAVE_KEY));
+
+    if(saved&&Array.isArray(saved.solved)){
+      state={...DEFAULT_STATE(),...saved};
+
+      state.index=Math.max(
+        0,
+        Math.min(QUESTIONS.length-1,state.index)
+      );
+
+      state.unlocked=Math.max(
+        0,
+        Math.min(4,state.unlocked)
+      );
+
+      state.active=false;
+      state.paused=false;
+
+      return true;
+    }
+  }catch(e){}
+
+  return false;
+}
+
+function currentWorld(){
+  return Math.floor(state.index/13);
+}
+
+function currentQuestion(){
+  return QUESTIONS[state.index];
+}
+
+function updateHUD(){
+  $("stars").textContent=state.stars;
+
+  $("mission").textContent=
+    (state.index+1)+" / "+QUESTIONS.length;
+
+  $("worldNumber").textContent=
+    (currentWorld()+1)+" / 5";
+
+  const accuracy=state.attempts
+    ?Math.round(state.correct/state.attempts*100)
+    :100;
+
+  $("accuracy").textContent=accuracy+"%";
+
+  const percentage=Math.round(
+    state.solved.length/QUESTIONS.length*100
+  );
+
+  $("progressFill").style.width=percentage+"%";
+  $("progressText").textContent=percentage+"%";
+}
+
+/* =====================================================
+   MAP
+===================================================== */
+
+function renderMap(){
+  const map=$("worldMap");
+  map.innerHTML="";
+
+  WORLDS.forEach((world,i)=>{
+    const button=document.createElement("button");
+
+    button.className="map-world";
+
+    if(i===currentWorld()){
+      button.classList.add("active");
+    }
+
+    const unlocked=i<=state.unlocked;
+    const finished=state.solved.filter(
+      index=>Math.floor(index/13)===i
+    ).length;
+
+    button.disabled=!unlocked;
+
+    button.innerHTML=`
+      <span class="map-icon">${world.icon}</span>
+      World ${i+1}
+      <small>${unlocked
+        ?finished+"/13 missions"
+        :"🔒 Locked"}</small>
+    `;
+
+    button.title=world.name;
+
+    button.addEventListener("click",()=>{
+      if(!unlocked||transitioning)return;
+
+      const firstUnsolved=Array.from(
+        {length:13},
+        (_,j)=>i*13+j
+      ).find(index=>!state.solved.includes(index));
+
+      if(firstUnsolved===undefined){
+        showCompletedWorld(world);
+        return;
+      }
+
+      state.index=firstUnsolved;
+      save();
+      setupWorld();
+    });
+
+    map.appendChild(button);
+  });
+}
+
+/* =====================================================
+   WORLD RENDERING
+===================================================== */
+
+function setupWorld(){
+  const world=WORLDS[currentWorld()];
+
+  $("world").className="world "+world.theme;
+
+  $("worldName").textContent=
+    world.icon+" "+world.name;
+
+  $("guideTitle").textContent=world.name;
+  $("guideText").textContent=world.story;
+
+  $("grammarRule").textContent=
+    "📚 "+world.grammar;
+
+  $("scenery").innerHTML=world.scenery
+    .map(item=>"<span>"+item+"</span>")
+    .join("");
+
+  playerX=8;
+  playerY=0;
+  velocityY=0;
+
+  questionLocked=false;
+  transitioning=false;
+
+  updateObject();
+  renderPlayer();
+  updateHUD();
+  renderMap();
+  save();
+}
+
+function updateObject(){
+  const world=WORLDS[currentWorld()];
+  const localIndex=state.index%13;
+
+  $("objectArt").textContent=
+    world.objects[localIndex%world.objects.length];
+
+  $("magicObject").style.left=
+    (67+(localIndex%3)*4)+"%";
+
+  $("magicObject").classList.remove("ready");
+
+  $("objectTag").textContent="✨ Come closer!";
+}
+
+function renderPlayer(){
+  $("finn").style.left=playerX+"%";
+  $("finn").style.bottom=(86+playerY)+"px";
+}
+
+function nearObject(){
+  const target=67+(state.index%13%3)*4;
+  return Math.abs(playerX-target)<14;
+}
+
+function updateProximity(){
+  const ready=nearObject();
+
+  $("magicObject").classList.toggle("ready",ready);
+
+  $("objectTag").textContent=ready
+    ?"✨ Press INTERACT!"
+    :"✨ Come closer!";
+}
+
+/* =====================================================
+   MOVEMENT
+===================================================== */
+
+function jump(){
+  if(!state.active||state.paused||!$("overlay").hidden){
+    return;
+  }
+
+  if(playerY===0){
+    velocityY=12;
+    playTone(510,.1);
+  }
+}
+
+function animate(time){
+  if(!lastFrame)lastFrame=time;
+
+  const dt=Math.min((time-lastFrame)/16.67,2);
+  lastFrame=time;
+
+  if(state.active&&!state.paused&&$("overlay").hidden){
+    let walking=false;
+
+    if(moveLeft){
+      playerX=Math.max(1,playerX-.62*dt);
+      walking=true;
+    }
+
+    if(moveRight){
+      playerX=Math.min(88,playerX+.62*dt);
+      walking=true;
+    }
+
+    $("finn").classList.toggle(
+      "walking",
+      walking&&playerY===0
+    );
+
+    if(playerY>0||velocityY>0){
+      playerY+=velocityY*dt;
+      velocityY-=.68*dt;
+
+      if(playerY<=0){
+        playerY=0;
+        velocityY=0;
+      }
+    }
+
+    renderPlayer();
+    updateProximity();
+  }
+
+  requestAnimationFrame(animate);
+}
+
+/* =====================================================
+   SOUND
+===================================================== */
+
+function playTone(frequency,duration=.15){
+  if(!state.sound)return;
+
+  try{
+    const AC=window.AudioContext||
+      window.webkitAudioContext;
+
+    if(!AC)return;
+
+    if(!audioContext)audioContext=new AC();
+
+    if(audioContext.state==="suspended"){
+      audioContext.resume();
+    }
+
+    const oscillator=audioContext.createOscillator();
+    const gain=audioContext.createGain();
+
+    const now=audioContext.currentTime;
+
+    oscillator.type="sine";
+    oscillator.frequency.setValueAtTime(frequency,now);
+
+    gain.gain.setValueAtTime(.055,now);
+    gain.gain.exponentialRampToValueAtTime(
+      .001,
+      now+duration
+    );
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+
+    oscillator.start(now);
+    oscillator.stop(now+duration+.01);
+
+  }catch(e){}
+}
+
+function successSound(){
+  [550,750,1000].forEach((frequency,i)=>{
+    setTimeout(
+      ()=>playTone(frequency,.13),
+      i*110
+    );
+  });
+}
+
+/* =====================================================
+   CELEBRATIONS
+===================================================== */
+
+function particles(){
+  if(reducedMotion)return;
+
+  const symbols=["✨","⭐","🌸","💜","🌟"];
+
+  for(let i=0;i<20;i++){
+    const particle=document.createElement("span");
+
+    particle.className="particle";
+    particle.textContent=symbols[i%symbols.length];
+
+    particle.style.left=
+      (58+Math.random()*30)+"%";
+
+    particle.style.bottom=
+      (120+Math.random()*60)+"px";
+
+    particle.style.setProperty(
+      "--dx",
+      (Math.random()*170-85)+"px"
+    );
+
+    $("world").appendChild(particle);
+
+    setTimeout(()=>particle.remove(),1300);
+  }
+}
+
+function confetti(){
+  if(reducedMotion)return;
+
+  const symbols=["🎉","✨","⭐","💜","🌟","🏆"];
+
+  for(let i=0;i<45;i++){
+    const piece=document.createElement("div");
+
+    piece.className="spark";
+    piece.textContent=
+      symbols[Math.floor(Math.random()*symbols.length)];
+
+    piece.style.left=Math.random()*100+"vw";
+    piece.style.fontSize=(13+Math.random()*17)+"px";
+    piece.style.animationDelay=Math.random()*.5+"s";
+
+    document.body.appendChild(piece);
+
+    setTimeout(()=>piece.remove(),4000);
+  }
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+function modal(icon,title,html,buttons){
+  $("modalIcon").textContent=icon;
+  $("modalTitle").textContent=title;
+  $("modalContent").innerHTML=html;
+  $("modalActions").innerHTML="";
+
+  buttons.forEach(item=>{
+    const button=document.createElement("button");
+
+    button.className=item.primary
+      ?"primary"
+      :"secondary";
+
+    button.textContent=item.label;
+    button.addEventListener("click",item.action);
+
+    $("modalActions").appendChild(button);
+  });
+
+  $("overlay").hidden=false;
+
+  moveLeft=false;
+  moveRight=false;
+}
+
+function closeModal(){
+  $("overlay").hidden=true;
+}
+
+function showWelcome(hasSave){
+  state.active=false;
+
+  modal(
+    "🦊",
+    "Welcome, Grammar Guardian!",
+    `
+      <p>
+        A mysterious spell has frozen the Enchanted Kingdom!
+        Only your English grammar powers can save it.
+      </p>
+
+      <div class="result-grid">
+        <div class="result-box">
+          <strong>5</strong>
+          <span>Magical Worlds</span>
+        </div>
+        <div class="result-box">
+          <strong>65</strong>
+          <span>Grammar Challenges</span>
+        </div>
+      </div>
+
+      <p>
+        🌳 Restore the Whispering Forest.<br>
+        🏰 Unlock the Forbidden Castle.<br>
+        🌈 Reconnect the Floating Islands.<br>
+        💎 Solve the Crystal Labyrinth.<br>
+        👑 Save the Royal Kingdom!
+      </p>
+
+      <p><strong>Choose your learning mode:</strong></p>
+
+      <select class="mode-select" id="modeSelect">
+        <option value="explorer">🌱 Explorer — Extra hints</option>
+        <option value="adventurer">⚔️ Adventurer — Standard</option>
+        <option value="master">👑 Master — Extra stars</option>
+      </select>
+
+      <div class="hint">
+        🎮 <strong>How to play</strong><br>
+        Move: ← → or A / D<br>
+        Jump: Space or ↑<br>
+        Interact: E or INTERACT button<br>
+        On phones and tablets, use the on-screen buttons.
+      </div>
+    `,
+    [
+      {
+        label:hasSave?"▶ Continue Adventure":"✨ Begin Adventure",
+        primary:true,
+        action:()=>{
+          state.mode=$("modeSelect").value;
+          state.active=true;
+
+          closeModal();
+          setupWorld();
+        }
+      }
+    ]
+  );
+
+  $("modeSelect").value=state.mode;
+}
+
+/* =====================================================
+   INTERACTION
+===================================================== */
+
+function interact(){
+  if(
+    !state.active||
+    state.paused||
+    transitioning||
+    !$("overlay").hidden
+  )return;
+
+  if(!nearObject()){
+    $("guideTitle").textContent="🦊 Almost there!";
+    $("guideText").textContent=
+      "Move Finn closer to the glowing magical object!";
+
+    return;
+  }
+
+  openChallenge();
+}
+
+function openChallenge(){
+  const question=currentQuestion();
+  const world=WORLDS[question.world];
+
+  questionLocked=false;
+  selectedWords=[];
+
+  modal(
+    world.icon,
+    "✨ Magical Grammar Challenge!",
+    `
+      <span class="mission-tag">
+        ${world.icon} Mission ${state.index+1} / 65
+      </span>
+
+      <p style="font-size:18px">
+        ${escapeHTML(question.prompt)}
+      </p>
+
+      <div id="taskArea"></div>
+
+      <div class="feedback"
+           id="taskFeedback"
+           aria-live="polite"></div>
+
+      <div class="hint" id="taskHint" hidden>
+        💡 <strong>Grammar Rule:</strong><br>
+        ${escapeHTML(world.rule)}
+        <span class="arabic">
+          ${escapeHTML(world.arabic)}
+        </span>
+      </div>
+    `,
+    [
+      {
+        label:"💡 Grammar Hint",
+        action:()=>{
+          $("taskHint").hidden=!$("taskHint").hidden;
+        }
+      },
+      {
+        label:"↩ Return",
+        action:closeModal
+      }
+    ]
+  );
+
+  if(question.type==="mc"){
+    renderChoices(question);
+  }
+
+  if(question.type==="build"){
+    renderBuilder(question);
+  }
+
+  if(question.type==="write"){
+    renderWriting(question);
+  }
+}
+
+/* =====================================================
+   MULTIPLE CHOICE
+===================================================== */
+
+function renderChoices(question){
+  const grid=document.createElement("div");
+  grid.className="choices";
+
+  shuffle(question.options).forEach(option=>{
+    const button=document.createElement("button");
+
+    button.className="choice";
+    button.textContent=option;
+
+    button.addEventListener("click",()=>{
+      if(questionLocked)return;
+
+      if(option===question.answer){
+        button.classList.add("correct");
+
+        [...grid.children].forEach(child=>{
+          child.disabled=true;
+        });
+
+        success(question);
+      }else{
+        button.classList.add("wrong");
+        button.disabled=true;
+
+        wrong(question);
+      }
+    });
+
+    grid.appendChild(button);
+  });
+
+  $("taskArea").appendChild(grid);
+}
+
+/* =====================================================
+   SENTENCE BUILDER
+===================================================== */
+
+function renderBuilder(question){
+  const area=$("taskArea");
+
+  const bank=document.createElement("div");
+  const sentence=document.createElement("div");
+  const actions=document.createElement("div");
+
+  bank.className="words";
+  sentence.className="sentence";
+  actions.className="modal-actions";
+
+  const shuffled=shuffle(
+    question.words.map((word,id)=>({word,id}))
+  );
+
+  function redraw(){
+    bank.innerHTML="";
+    sentence.innerHTML="";
+
+    shuffled.forEach(item=>{
+      const button=document.createElement("button");
+
+      button.className="word";
+      button.textContent=item.word;
+
+      button.disabled=selectedWords.some(
+        selected=>selected.id===item.id
+      );
+
+      button.addEventListener("click",()=>{
+        if(questionLocked)return;
+
+        selectedWords.push(item);
+        redraw();
+      });
+
+      bank.appendChild(button);
+    });
+
+    selectedWords.forEach((item,index)=>{
+      const button=document.createElement("button");
+
+      button.className="word";
+      button.textContent=item.word;
+      button.title="Tap to remove";
+
+      button.addEventListener("click",()=>{
+        if(questionLocked)return;
+
+        selectedWords.splice(index,1);
+        redraw();
+      });
+
+      sentence.appendChild(button);
+    });
+  }
+
+  area.append(bank,sentence,actions);
+
+  const undo=document.createElement("button");
+  undo.className="secondary";
+  undo.textContent="↶ Undo";
+
+  undo.addEventListener("click",()=>{
+    if(questionLocked)return;
+
+    selectedWords.pop();
+    redraw();
+  });
+
+  const check=document.createElement("button");
+  check.className="primary";
+  check.textContent="✨ Activate Magic";
+
+  check.addEventListener("click",()=>{
+    if(questionLocked)return;
+
+    const answer=selectedWords
+      .map(item=>item.word)
+      .join(" ");
+
+    if(!answer){
+      $("taskFeedback").textContent=
+        "✏️ Choose the words to build your sentence.";
+      return;
+    }
+
+    if(answer===question.answer){
+      success(question);
+    }else{
+      wrong(question);
+    }
+  });
+
+  actions.append(undo,check);
+
+  redraw();
+}
+
+/* =====================================================
+   WRITING QUESTIONS
+===================================================== */
+
+function renderWriting(question){
+  const area=$("taskArea");
+
+  const input=document.createElement("input");
+
+  input.className="field";
+  input.placeholder="Write your English answer...";
+  input.setAttribute("aria-label","Your English answer");
+
+  const info=document.createElement("p");
+
+  info.style.fontSize="12px";
+  info.textContent=
+    "Write the expected answer. Capital letters and final punctuation are optional.";
+
+  const check=document.createElement("button");
+
+  check.className="primary";
+  check.textContent="✨ Check My Answer";
+
+  function submit(){
+    if(questionLocked)return;
+
+    const answer=normalize(input.value);
+
+    if(!answer){
+      $("taskFeedback").textContent=
+        "✏️ Write your answer first.";
+      return;
+    }
+
+    const correct=question.accepted.some(
+      accepted=>normalize(accepted)===answer
+    );
+
+    if(correct){
+      success(question);
+    }else{
+      wrong(question);
+
+      $("taskFeedback").textContent+=
+        " The game checks the expected answer.";
+    }
+  }
+
+  check.addEventListener("click",submit);
+
+  input.addEventListener("keydown",event=>{
+    if(event.key==="Enter")submit();
+  });
+
+  area.append(input,info,check);
+}
+
+/* =====================================================
+   ANSWER FEEDBACK
+===================================================== */
+
+function wrong(question){
+  state.incorrect++;
+  state.attempts++;
+  state.mistakes[question.world]++;
+
+  $("taskFeedback").textContent=
+    "💜 Good try! "+question.explain+
+    " Have another go!";
+
+  if(state.mode==="explorer"){
+    $("taskHint").hidden=false;
+  }
+
+  playTone(240,.18);
+
+  updateHUD();
+  save();
+}
+
+function success(question){
+  if(questionLocked)return;
+
+  questionLocked=true;
+
+  state.correct++;
+  state.attempts++;
+
+  const reward=state.mode==="master"?15:10;
+
+  state.stars+=reward;
+
+  if(!state.solved.includes(state.index)){
+    state.solved.push(state.index);
+  }
+
+  $("taskFeedback").textContent=
+    "🌟 Fantastic, Guardian! "+question.explain;
+
+  const next=document.createElement("button");
+
+  next.className="primary";
+  next.textContent="🌈 Restore the Magic!";
+  next.style.marginTop="12px";
+
+  next.addEventListener("click",completeMission);
+
+  $("taskArea").appendChild(next);
+
+  successSound();
+
+  updateHUD();
+  save();
+}
+
+/* =====================================================
+   MISSION COMPLETION
+===================================================== */
+
+function completeMission(){
+  if(transitioning)return;
+
+  transitioning=true;
+  closeModal();
+
+  $("finn").classList.add("happy");
+
+  particles();
+
+  $("guideTitle").textContent="🌟 Magic Restored!";
+  $("guideText").textContent=
+    "Amazing work! Finn has restored another piece of the kingdom!";
+
+  const oldWorld=currentWorld();
+
+  setTimeout(()=>{
+    $("finn").classList.remove("happy");
+  },1100);
+
+  if(state.solved.length===QUESTIONS.length){
+    setTimeout(finishGame,750);
+    return;
+  }
+
+  state.index++;
+
+  const newWorld=currentWorld();
+
+  if(newWorld!==oldWorld){
+    state.unlocked=Math.max(
+      state.unlocked,
+      newWorld
+    );
+
+    save();
+
+    setTimeout(()=>{
+      transitioning=false;
+      showWorldComplete(oldWorld);
+    },800);
+  }else{
+    save();
+
+    setTimeout(()=>{
+      setupWorld();
+    },800);
+  }
+}
+
+function showWorldComplete(index){
+  const world=WORLDS[index];
+
+  confetti();
+
+  modal(
+    "🏆",
+    "KINGDOM RESTORED!",
+    `
+      <p style="text-align:center;font-size:18px">
+        🎉 You saved <strong>${escapeHTML(world.name)}</strong>!
+      </p>
+
+      <div class="result-grid">
+        <div class="result-box">
+          <strong>13</strong>
+          <span>Missions Completed</span>
+        </div>
+        <div class="result-box">
+          <strong>⭐</strong>
+          <span>New Kingdom Unlocked</span>
+        </div>
+      </div>
+
+      <p>
+        Finn is proud of you! Your grammar skills are
+        making the Enchanted Kingdom stronger.
+      </p>
+    `,
+    [
+      {
+        label:"🌈 Enter the Next Kingdom",
+        primary:true,
+        action:()=>{
+          closeModal();
+          setupWorld();
+        }
+      }
+    ]
+  );
+}
+
+function showCompletedWorld(world){
+  modal(
+    world.icon,
+    "World Already Restored!",
+    `
+      <p>
+        You have already completed all 13 missions in
+        <strong>${escapeHTML(world.name)}</strong>.
+      </p>
+      <p>🌟 Continue your adventure in an unfinished world!</p>
+    `,
+    [
+      {
+        label:"✨ Continue",
+        primary:true,
+        action:closeModal
+      }
+    ]
+  );
+}
+
+/* =====================================================
+   FINAL VICTORY
+===================================================== */
+
+function finishGame(){
+  state.active=false;
+  transitioning=false;
+
+  save();
+  confetti();
+
+  modal(
+    "👑",
+    "MASTER GRAMMAR GUARDIAN!",
+    `
+      <p style="text-align:center;font-size:19px">
+        🎉 YOU DID IT! 🎉
+      </p>
+
+      <p style="text-align:center">
+        The spell is broken!<br>
+        Finn and the entire Enchanted Kingdom are saved!
+      </p>
+
+      <div class="result-grid">
+        <div class="result-box">
+          <strong>${state.stars}</strong>
+          <span>Magic Stars</span>
+        </div>
+        <div class="result-box">
+          <strong>65</strong>
+          <span>Completed Missions</span>
+        </div>
+        <div class="result-box">
+          <strong>${state.correct}</strong>
+          <span>Correct Attempts</span>
+        </div>
+        <div class="result-box">
+          <strong>${state.incorrect}</strong>
+          <span>Incorrect Attempts</span>
+        </div>
+      </div>
+
+      <p style="text-align:center">
+        🏆 Congratulations! You are a true Grammar Guardian!
+      </p>
+    `,
+    [
+      {
+        label:"📊 My Results",
+        action:showResults
+      },
+      {
+        label:"🔄 Play Again",
+        primary:true,
+        action:resetGame
+      }
+    ]
+  );
+}
+
+/* =====================================================
+   RESULTS
+===================================================== */
+
+function showResults(){
+  const accuracy=state.attempts
+    ?Math.round(state.correct/state.attempts*100)
+    :100;
+
+  const rows=WORLDS.map((world,i)=>`
+    <tr>
+      <td>${world.icon} ${escapeHTML(world.grammar)}</td>
+      <td>${state.mistakes[i]}</td>
+    </tr>
+  `).join("");
+
+  modal(
+    "📊",
+    "Your Grammar Adventure Results",
+    `
+      <div class="result-grid">
+        <div class="result-box">
+          <strong>${state.solved.length}/65</strong>
+          <span>Missions</span>
+        </div>
+        <div class="result-box">
+          <strong>${state.stars}</strong>
+          <span>Stars</span>
+        </div>
+        <div class="result-box">
+          <strong>${accuracy}%</strong>
+          <span>Accuracy</span>
+        </div>
+        <div class="result-box">
+          <strong>${state.attempts}</strong>
+          <span>Attempts</span>
+        </div>
+      </div>
+
+      <p>
+        🎮 Learning mode:
+        <strong>${escapeHTML(state.mode)}</strong>
+      </p>
+
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th>Grammar Area</th>
+            <th>Mistakes</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+
+      <p style="font-size:12px">
+        Your results are saved locally in this browser.
+      </p>
+    `,
+    [
+      {
+        label:"⬇ Download Results",
+        primary:true,
+        action:downloadResults
+      },
+      {
+        label:"↩ Back to Adventure",
+        action:()=>{
+          closeModal();
+
+          if(!state.active){
+            showWelcome(true);
+          }
+        }
+      }
+    ]
+  );
+}
+
+function downloadResults(){
+  const rows=[
+    ["Metric","Value"],
+    ["Learning mode",state.mode],
+    ["Missions completed",state.solved.length],
+    ["Stars",state.stars],
+    ["Correct attempts",state.correct],
+    ["Incorrect attempts",state.incorrect],
+    ["Total attempts",state.attempts]
+  ];
+
+  WORLDS.forEach((world,i)=>{
+    rows.push([
+      world.grammar+" mistakes",
+      state.mistakes[i]
+    ]);
+  });
+
+  const csv=rows.map(row=>
+    row.map(value=>
+      '"'+String(value).replaceAll('"','""')+'"'
+    ).join(",")
+  ).join("\r\n");
+
+  const blob=new Blob(
+    [csv],
+    {type:"text/csv;charset=utf-8"}
+  );
+
+  const url=URL.createObjectURL(blob);
+  const link=document.createElement("a");
+
+  link.href=url;
+  link.download="MS4_Grammar_Guardians_Results.csv";
+
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+/* =====================================================
+   RESTART
+===================================================== */
+
+function resetGame(){
+  const sound=state.sound;
+
+  state=DEFAULT_STATE();
+  state.sound=sound;
+  state.active=true;
+
+  save();
+  closeModal();
+  setupWorld();
+}
+
+/* =====================================================
+   TOUCH CONTROLS
+===================================================== */
+
+function bindMovement(id,direction){
+  const button=$(id);
+
+  button.addEventListener("pointerdown",event=>{
+    event.preventDefault();
+
+    if(direction==="left"){
+      moveLeft=true;
+    }else{
+      moveRight=true;
+    }
+
+    try{
+      button.setPointerCapture(event.pointerId);
+    }catch(e){}
+  });
+
+  const stop=()=>{
+    if(direction==="left"){
+      moveLeft=false;
+    }else{
+      moveRight=false;
+    }
+  };
+
+  button.addEventListener("pointerup",stop);
+  button.addEventListener("pointercancel",stop);
+  button.addEventListener("lostpointercapture",stop);
+}
+
+bindMovement("leftBtn","left");
+bindMovement("rightBtn","right");
+
+$("jumpBtn").addEventListener("click",jump);
+$("interactBtn").addEventListener("click",interact);
+
+/* =====================================================
+   KEYBOARD CONTROLS
+===================================================== */
+
+document.addEventListener("keydown",event=>{
+  const active=document.activeElement;
+
+  if(
+    active&&
+    ["INPUT","TEXTAREA","SELECT"].includes(active.tagName)
+  ){
+    return;
+  }
+
+  if(!$("overlay").hidden)return;
+
+  const key=event.key.toLowerCase();
+
+  if(["arrowleft","arrowright","arrowup"," "].includes(key)){
+    event.preventDefault();
+  }
+
+  if(key==="arrowleft"||key==="a"){
+    moveLeft=true;
+  }
+
+  if(key==="arrowright"||key==="d"){
+    moveRight=true;
+  }
+
+  if(key==="arrowup"||key===" "){
+    if(!event.repeat)jump();
+  }
+
+  if(key==="e"&&!event.repeat){
+    interact();
+  }
+});
+
+document.addEventListener("keyup",event=>{
+  const key=event.key.toLowerCase();
+
+  if(key==="arrowleft"||key==="a"){
+    moveLeft=false;
+  }
+
+  if(key==="arrowright"||key==="d"){
+    moveRight=false;
+  }
+});
+
+window.addEventListener("blur",()=>{
+  moveLeft=false;
+  moveRight=false;
+});
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+$("soundBtn").addEventListener("click",()=>{
+  state.sound=!state.sound;
+
+  $("soundBtn").textContent=state.sound
+    ?"🔊 Sound"
+    :"🔇 Sound";
+
+  if(state.sound){
+    playTone(750,.15);
+  }
+
+  save();
+});
+
+$("pauseBtn").addEventListener("click",()=>{
+  if(!state.active||!$("overlay").hidden)return;
+
+  state.paused=true;
+
+  modal(
+    "⏸",
+    "Adventure Paused",
+    `
+      <p>
+        🦊 Finn is taking a little rest.
+      </p>
+      <p>
+        Your stars and completed missions are safe!
+      </p>
+    `,
+    [
+      {
+        label:"▶ Resume Adventure",
+        primary:true,
+        action:()=>{
+          state.paused=false;
+          closeModal();
+        }
+      }
+    ]
+  );
+});
+
+$("resultsBtn").addEventListener("click",showResults);
+
+$("restartBtn").addEventListener("click",()=>{
+  modal(
+    "🔄",
+    "Restart the Adventure?",
+    `
+      <p>
+        Are you sure you want to start again?
+      </p>
+      <p>
+        Your current stars, missions and results
+        will be reset.
+      </p>
+    `,
+    [
+      {
+        label:"Cancel",
+        action:closeModal
+      },
+      {
+        label:"Yes, Restart",
+        primary:true,
+        action:resetGame
+      }
+    ]
+  );
+});
+
+/* =====================================================
+   INITIALISATION
+===================================================== */
+
+const hasSave=load();
+
+$("soundBtn").textContent=state.sound
+  ?"🔊 Sound"
+  :"🔇 Sound";
+
+setupWorld();
+showWelcome(hasSave);
+
+requestAnimationFrame(animate);
+
+</script>
+
+</body>
+</html>
